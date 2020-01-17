@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2p001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<!--ReleaseHeader-->
+	<!--EndReleaseHeader-->
+	<a name="Scope">  </a>
+	<p>&#160;</p>
+	<p>
+As part of an effort intended to support future electronic acquisition and use of submitted information, a project was undertaken at FDA to identify and prioritize pharmaceutical quality/chemistry, manufacturing and controls (PQ/CMC) information that would benefit from a structured submission approach. This information would be submitted in the Common Technical Document as defined by the International Council for Harmonisation’s (ICH) Common Technical Document (CTD) . The goals of this project were (a) to identify types of PQ/CMC information that are available in applications, information that is important to evaluate an application, information categories and elements that are common across the various application types, and (b) to provide recommendations for standardization of the categories and data types necessary for application review.  This initiative will align, where comparable elements exist, with substance and product identifiers described by the International Organization of Standardization for the Identification of Medicinal Products (ISO IDMP) standards.
+	 </p>
+	<p>
+	 For consistency of product quality data across FDA centers, the draft standardized data elements and terminologies were created by an Agency workgroup comprised of Subject Matter Experts (SMEs) from Center for Drug Evaluation and Research (CDER), Center for Veterinary Medicine (CVM) and Center for Biologics Evaluation and Research (CBER).   The draft data elements and terminologies associated with PQ/CMC subject areas and scoped to some of what is currently submitted in Module 3 of the electronic Common Technical Document (eCTD)  submission, but is not intended to be comprehensive in covering all eCTD pharmaceutical quality information. FDA has developed limited structured data elements and supporting terminologies for PQ/CMC and has recently engaged in discussions with standard setting bodies to codify these data elements into a data exchange specification for the submission of PQ/CMC data. 
+	 </p>
+	<p>
+	 At present FDA is exploring HL7 FHIR as a potential data exchange solution for submission of PQ/CMC structured data as part of Module 3 eCTD submission.  Since this is an exploratory effort, FDA is conducting a tightly scoped Proof-of-Concept (PoC) with FHIR for just the Quality Specification domain of PQ/CMC.  The PoC effort has created a DRAFT FHIR Profile called PQ/CMC Specification Profile.  The DRAFT FHIR Profile is intended to be used by few sponsor organizations to create FHIR xml instances and submit test applications to the FDA Test Gateway.  
+	 </p>
+	<p>&#160;</p>
+	<a href="#Scope">Back to top of page</a>
+</div>

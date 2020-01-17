@@ -1,0 +1,10 @@
+#guidename must match the id of the implementation guide
+guidename=pq-cmc
+copyrightyear=2019+
+license=CC0-1.0
+version=0.0.1
+ballotstatus=CI Build
+fhirspec=http://build.fhir.org/
+#excludexml=Yes
+excludejson=Yes
+excludettl=Yes

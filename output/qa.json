@@ -1,0 +1,10 @@
+{
+  "url": "http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.pq-cmc",
+  "name": "PharmaceuticalQualityImplementationGuide",
+  "package-id": "hl7.fhir.pq-cmc",
+  "ig-ver": "0.0.1",
+  "date": "Thu, 16 Jan, 2020 11:51:30 -0500",
+  "exception": "Unable to generate snapshot for http://hl7.org/fhir/pq-cmc/StructureDefinition/qualityspecification in PharmQualitySpecification",
+  "version": "4.0.1",
+  "tool": "4.2.0 (3)"
+}

@@ -1,0 +1,85 @@
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
+	<id value="pqcmc"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.pq-cmc"/>
+	<name value="PharmaceuticalQualityImplementationGuide"/>
+	<version value="0.0.1"/>
+	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<publisher value="U.S. Federal Drug Administration - Center for Drug Evaluation and Research"/>
+	<contact>
+		<telecom>
+			<system value="other"/>
+			<value value="https://www.fda.gov/industry/fda-resources-data-standards"/>
+		</telecom>
+	</contact>
+	<description value="IG for standardizing submissions relating to the Chemistry, Manufacturing and Controls (CMC) of regulated products"/>
+	<copyright value="HL7"/>
+	<jurisdiction>
+		<coding>
+			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+			<code value="001"/>
+		</coding>
+	</jurisdiction>
+	<packageId value="hl7.fhir.pq-cmc"/>
+	<fhirVersion value="4.0.1"/>
+	<definition>
+		<!--    <grouping id="conformance">
+      <name value="Capability Statements"/>
+      <description value="Capabilities of systems claiming to be conformant to the PQ-CMC implementation guide"/>
+    </grouping>-->
+		<grouping id="profiles">
+			<name value="Profiles"/>
+			<description value="Constraints on FHIR resources to be adhered to as part of the PQ-CMC implementation guide"/>
+		</grouping>
+		<!--    <grouping id="extensions">
+      <name value="Extensions"/>
+      <description value="Extensions defined as part of the PQ-CMC implementation guide"/>
+    </grouping>
+    <grouping id="terminology">
+      <name value="Terminology"/>
+      <description value="ValueSets (and Code Systems) defined for use within the PQ-CMC implementation guide"/>
+    </grouping>
+    <grouping id="operations">
+      <name value="Operation Definitions"/>
+      <description value="Additional operations defined for use within the PQ-CMC implementation guide"/>
+    </grouping>
+    <grouping id="search">
+      <name value="Search Parameters"/>
+      <description value="Additional search parameters defined for use within the PQ-CMC implementation guide"/>
+    </grouping>
+    <grouping id="examples">
+      <name value="Example(s)"/>
+      <description value="Example(s) showing the use of the PQ-CMC profiles"/>
+    </grouping>-->
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/qualityspecification"/>
+			</reference>
+			<name value="Pharm Quality Specification"/>
+			<description value="Describes the protocol for checking the chemical, physical and biological properties in pharmaceutical manufacturing."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
+		<page>
+			<nameUrl value="toc.html"/>
+			<title value="Table of Contents"/>
+			<generation value="html"/>
+			<page>
+				<nameUrl value="index-2.html"/>
+				<title value="Example - Dissolution"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="index.html"/>
+				<title value="Implementation Guide Home Page"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="artifacts.html"/>
+				<title value="Artifact index"/>
+				<generation value="html"/>
+			</page>
+		</page>
+	</definition>
+</ImplementationGuide>
