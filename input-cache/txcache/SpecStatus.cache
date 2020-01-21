@@ -1,0 +1,89 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "SpecStatus",
+      "concept" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "A specification that met the requirements for approval but the application could not be approved for reasons such as patents and exclusivity."
+        }],
+        "code" : "C134010",
+        "display" : "Tentatively Approved"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "A specification that has not yet been approved."
+        }],
+        "code" : "C134011",
+        "display" : "Not Approved"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "The specification may be used without prior approval, and was submitted in a changes being effected CBE supplement or an annual report AR."
+        }],
+        "code" : "C134012",
+        "display" : "Reported in a CBE or AR"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "A specification that has met the requirements for approval"
+        }],
+        "code" : "C25425",
+        "display" : "Approved"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system SpecStatus"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "SpecStatus",
+      "concept" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "A specification that met the requirements for approval but the application could not be approved for reasons such as patents and exclusivity."
+        }],
+        "code" : "C134010",
+        "display" : "Tentatively Approved"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "A specification that has not yet been approved."
+        }],
+        "code" : "C134011",
+        "display" : "Not Approved"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "The specification may be used without prior approval, and was submitted in a changes being effected CBE supplement or an annual report AR."
+        }],
+        "code" : "C134012",
+        "display" : "Reported in a CBE or AR"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+          "valueString" : "A specification that has met the requirements for approval"
+        }],
+        "code" : "C25425",
+        "display" : "Approved"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system SpecStatus"
+}
+-------------------------------------------------------------------------------------

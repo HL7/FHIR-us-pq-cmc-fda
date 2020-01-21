@@ -6,10 +6,13 @@
 		<a href="toc.html">Table of Contents</a>
 	</li>
 	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">SDC Background<b class="caret">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">PQ-CMC Background<b class="caret">
 			</b>
 		</a>
 		<ul class="dropdown-menu">
+			<li>
+				<a href="Introduction.html">Intro</a>
+			</li>
 		</ul>
 		<li>
 			<a href="artifacts.html">Artifact Index</a>
@@ -29,11 +32,17 @@
 				</a>
 			</li>
 			<li>
-				<a target="_blank" href="http://cql.hl7.org">CQL Spec <img src="external.png" style="text-align: baseline"/>
+				<p>Use Google Chorme or Firefox to open the IG.  If the only browser available is Microsoft Edge, then the Validator Pack can be downloaded only by following thest steps:
+				<uf>
+				<li>Click Download</li>
+				<li>Select open</li>
+				<li>When prompted with which application, choose other</li>
+				<li>Navigate to iexplore.exe ususally at C:\Program Files\Internet Explorer\</li>
+				<li>A save as prompt will appear, then follow instructions.</li>
+				</uf></p>
+				<!--<a href="Validator.Pack" target="_blank">Download <img src="download.png" style="text-align: baseline"/>-->
+				<a target="_blank" href="Validator.Pack" download="Validator.Pack">Download <img src="download.png" style="text-align: baseline"/>
 				</a>
-			</li>
-			<li>
-				Downloads
 			</li>
 		</ul>
 	</li>
