@@ -32,16 +32,10 @@
 				</a>
 			</li>
 			<li>
-				<p>Use Google Chorme or Firefox to open the IG.  If the only browser available is Microsoft Edge, then the Validator Pack can be downloaded only by following thest steps:
-				<uf>
-				<li>Click Download</li>
-				<li>Select open</li>
-				<li>When prompted with which application, choose other</li>
-				<li>Navigate to iexplore.exe ususally at C:\Program Files\Internet Explorer\</li>
-				<li>A save as prompt will appear, then follow instructions.</li>
-				</uf></p>
+				<p>Use Google Chorme or Firefox to open the IG. 
+				</p>
 				<!--<a href="Validator.Pack" target="_blank">Download <img src="download.png" style="text-align: baseline"/>-->
-				<a target="_blank" href="Validator.Pack" download="Validator.Pack">Download <img src="download.png" style="text-align: baseline"/>
+				<a target="_blank" href=".Validator.Pack" download="Validator.Pack">Download <img src="download.png" style="text-align: baseline"/>
 				</a>
 			</li>
 		</ul>
