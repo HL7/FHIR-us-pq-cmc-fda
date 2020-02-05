@@ -4,8 +4,8 @@
 		<valueString value="..\PQCMC_IG\input\resources"/>
 	</extension>
 	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.pq-cmc"/>
-	<name value="PharmaceuticalQualityImplementationGuide"/>
 	<version value="0.0.3"/>
+	<name value="PharmaceuticalQualityImplementationGuide"/>
 	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
 	<status value="draft"/>
 	<experimental value="false"/>
@@ -17,14 +17,15 @@
 		</telecom>
 	</contact>
 	<description value="IG for standardizing submissions relating to the Chemistry, Manufacturing and Controls (CMC) of regulated products"/>
-	<copyright value="HL7"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
 			<code value="001"/>
 		</coding>
 	</jurisdiction>
+	<copyright value="HL7"/>
 	<packageId value="hl7.fhir.pq-cmc"/>
+	<license value="CC0-1.0"/>
 	<fhirVersion value="4.0.1"/>
 	<definition>
 		<!--    <grouping id="conformance">
@@ -108,10 +109,18 @@
 				<generation value="html"/>
 			</page>
 		</page>
-		<parameter>
-			<code value="generate"/>
-			<value value="xml"/>
-		</parameter>
+    <parameter>
+      <code value="excludejson"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludettl"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludemap"/>
+      <value value="true"/>
+    </parameter>
 		<parameter>
 			<code value="releaselabel"/>
 			<value value="CI Build"/>
@@ -120,5 +129,9 @@
 			<code value="copyrightyear"/>
 			<value value="2020+"/>
 		</parameter>
+    <parameter>
+      <code value="find-other-resources"/>
+      <value value="true"/>
+    </parameter>
 	</definition>
 </ImplementationGuide>
