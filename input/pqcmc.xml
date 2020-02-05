@@ -81,10 +81,10 @@
 				<valueBoolean value="true"/>
 			</extension>
 			<reference>
-				<reference value="StructureDefinition/myObservation"/>
+				<reference value="StructureDefinition/pharmqualityspeccomposition"/>
 			</reference>
-			<name value="Pharm Observation"/>
-			<description value="makes observation"/>
+			<name value="Pharm Quality Specification Composition"/>
+			<description value="Reports the various types of specification "/>
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
 		</resource>
