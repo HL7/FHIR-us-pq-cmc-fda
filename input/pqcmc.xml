@@ -32,7 +32,7 @@
       <name value="Capability Statements"/>
       <description value="Capabilities of systems claiming to be conformant to the PQ-CMC implementation guide"/>
     </grouping>-->
-		<grouping id="profiles">
+<!--		<grouping id="profiles">
 			<name value="Profiles"/>
 			<description value="Constraints on FHIR resources to be adhered to as part of the PQ-CMC implementation guide"/>
 		</grouping>
@@ -43,7 +43,7 @@
 		<grouping id="terminology">
 			<name value="Terminology"/>
 			<description value="ValueSets (and Code Systems) defined for use within the PQ-CMC implementation guide"/>
-		</grouping>
+		</grouping>-->
 		<!--   <grouping id="operations">
       <name value="Operation Definitions"/>
       <description value="Additional operations defined for use within the PQ-CMC implementation guide"/>
@@ -56,7 +56,7 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the PQ-CMC profiles"/>
     </grouping>-->
-		<resource>
+<!--		<resource>
 			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
 				<valueBoolean value="false"/>
 			</extension>
@@ -67,7 +67,7 @@
 			<description value="Describes the protocol for checking the chemical, physical and biological properties in pharmaceutical manufacturing."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
-		</resource>
+		</resource>-->
 		<!--		<resource>
 	<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
 				<valueBoolean value="false"/>
@@ -80,7 +80,7 @@
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
 		</resource> -->
-		<resource>
+<!--		<resource>
 			<reference>
 				<reference value="StructureDefinition/extSpecificationType"/>
 			</reference>
@@ -214,7 +214,7 @@
 			<description value="	List of codes specifying the time point during the manufacturing process of a substance or product when a particular analytical procedure or measurement is being performed"/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
-		</resource>
+		</resource>-->
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>
