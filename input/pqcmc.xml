@@ -31,7 +31,7 @@
 		<!--    <grouping id="conformance">
       <name value="Capability Statements"/>
       <description value="Capabilities of systems claiming to be conformant to the PQ-CMC implementation guide"/>
-    </grouping>-->
+    </grouping>
 		<grouping id="profiles">
 			<name value="Profiles"/>
 			<description value="Constraints on FHIR resources to be adhered to as part of the PQ-CMC implementation guide"/>
@@ -43,7 +43,7 @@
 		<grouping id="terminology">
 			<name value="Terminology"/>
 			<description value="ValueSets (and Code Systems) defined for use within the PQ-CMC implementation guide"/>
-		</grouping>
+		</grouping>-->
 		<!--   <grouping id="operations">
       <name value="Operation Definitions"/>
       <description value="Additional operations defined for use within the PQ-CMC implementation guide"/>
@@ -65,7 +65,7 @@
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
 		</resource>-->
-		<resource>
+<!--		<resource>
 			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
 				<valueBoolean value="false"/>
 			</extension>
@@ -82,13 +82,13 @@
 				<valueBoolean value="true"/>
 			</extension>
 			<reference>
-				<reference value="StructureDefinition/myObservation"/>
+				<reference value="StructureDefinition/pharmqualityspeccomposition"/>
 			</reference>
-			<name value="Pharm Observation"/>
-			<description value="makes observation"/>
+			<name value="Pharm Quality Specification Composition"/>
+			<description value="Reports the various types of specification "/>
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
-		</resource>
+		</resource>-->
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>
