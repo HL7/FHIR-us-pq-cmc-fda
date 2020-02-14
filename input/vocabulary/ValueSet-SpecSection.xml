@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/r4/fhir-single.xsd">
+	<id value="SpecSection"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/SpecSection"/>
+	<name value="SpecSection"/>
+	<title value="Specification Section"/>
+	<status value="draft"/>
+	<description value="Code indicating the type of section within a PQ/CMC specification"/>
+	<compose>
+    <include>
+      <system value="http://ncimeta.nci.nih.gov"/>
+      <concept>
+        <code value="C133931"/>
+        <display value="Raw Materials/Excipients/Intermediates/Reagents"/>
+      </concept>
+      <concept>
+        <code value="C134021"/>
+        <display value="Drug Product"/>
+      </concept>
+      <concept>
+        <code value="C134022"/>
+        <display value="Drug Substance"/>
+      </concept>
+      <concept>
+        <!-- TODO: replace with something more appropriate -->
+        <code value="C133805"/>
+        <display value="FDA Pharmaceutical Quality/CMC Terminology"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>
