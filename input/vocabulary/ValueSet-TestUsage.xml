@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas-r5\fhir-single.xsd">
+	<id value="TestUsage"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/TestUsage"/>
+	<name value="TestUsage"/>
+	<title value="Pharmaceutical Quality/CMC Test Usage Terminology"/>
+	<status value="draft"/>
+	<publisher value="{site.data.fhir.ig.publisher}"/>
+	<contact>
+		<name value="HL7 Biomedical Research and Regulation WorkGroup"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
+		</telecom>
+	</contact>
+	<description value="A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined] Examples: Release, Stability.    Note:  The concept of &quot;In-Process&quot; is subsumed by the Release code."/>
+	<compose>
+		<include>
+			<system value="evs.nci.nih.gov"/>
+			<concept>
+				<code value="C134029"/>
+				<display value="Release"/>
+			</concept>
+			<concept>
+				<code value="C134030"/>
+				<display value="Stability"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>

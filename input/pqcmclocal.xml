@@ -1,4 +1,4 @@
-<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/FHIR_PQCMCworkingfiles/fhir-all-xsd/fhir-single.xsd">
 	<id value="pqcmc"/>
 	<extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
 		<valueString value="..\PQCMC_IG\input\resources"/>
@@ -56,31 +56,6 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the PQ-CMC profiles"/>
     </grouping>-->
-		
-		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
-			<reference>
-				<reference value="StructureDefinition/pharmqualitydrugsubstance"/>
-			</reference>
-			<name value="Pharm Quality Drug Substance"/>
-			<description value="Describes the active pharmaceutical ingredieint in the drug product."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
-			<reference>
-				<reference value="StructureDefinition/pharmqualitydrugproduct"/>
-			</reference>
-			<name value="Pharm Quality Drug Product"/>
-			<description value="Describes the pharmaceutical product."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
 		<resource>
 			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
 				<valueBoolean value="false"/>
@@ -93,20 +68,20 @@
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
 		</resource>
-		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+<resource>
+	<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
 				<valueBoolean value="false"/>
 			</extension>
 			<reference>
-				<reference value="StructureDefinition/pharmqualityspeccomposition"/>
+				<reference value="StructureDefinition/pharmqualitydrugproduct"/>
 			</reference>
-			<name value="Composition for Pharm Quality Specifications"/>
-			<description value="Specifies the arrangement of sections for the three types of Pharm Quality Specification."/>
+			<name value="Pharm Quality Drug Product"/>
+			<description value="Describes the pharmaceutical product."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="profiles"/>
 		</resource>
 		<resource>
-			<reference>
+		<reference>
 				<reference value="StructureDefinition/extSpecificationType"/>
 			</reference>
 			<name value="Specification Type"/>
@@ -186,43 +161,7 @@
 			<exampleBoolean value="false"/>
 			<groupingId value="extensions"/>
 		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/appType"/>
-			</reference>
-			<name value="Application Type"/>
-			<description value="The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined]. "/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/Dosage"/>
-			</reference>
-			<name value="Dosage Form"/>
-			<description value="The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI EVS - C42636]  Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]  Note: If there is a new dosage form that does not exist in the controlled terminology, then propose register this new dosage form during sponsor meetings with FDA.    SME comment -- this is the marketed dosage form"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/SpecStatus"/>
-			</reference>
-			<name value="Specification Status"/>
-			<description value="Code indicating the current FDA regulatory status of the specification."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="CodeSystem/sectionType"/>
-			</reference>
-			<name value="Composition Section Type"/>
-			<description value="Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
+<!--		<resource>
 			<reference>
 				<reference value="ValueSet/SpecType"/>
 			</reference>
@@ -230,13 +169,22 @@
 			<description value="A classification of specification related to the kind of the entity it is referencing."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
-		</resource>
+		</resource> 
 		<resource>
 			<reference>
-				<reference value="ValueSet/MethodOrigin"/>
+				<reference value="ValueSet/MethodOrig"/>
 			</reference>
 			<name value="Method Origin"/>
 			<description value="Codes specifying the source of the method."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="ValueSet/SpecStat"/>
+			</reference>
+			<name value="Specification Status"/>
+			<description value="Code indicating the current FDA regulatory status of the specification"/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
 		</resource>
@@ -266,7 +214,7 @@
 			<description value="	List of codes specifying the time point during the manufacturing process of a substance or product when a particular analytical procedure or measurement is being performed"/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
-		</resource>
+		</resource>-->
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>

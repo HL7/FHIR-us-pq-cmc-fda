@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas-r5\fhir-single.xsd">
+	<id value="SpecStatus"/>
+	<url value="http://hl7.org/fhir/pq-cmc/valueset/SpecStatus"/>
+	<name value="SpecStatus"/>
+	<title value="Specification Status"/>
+	<status value="draft"/>
+	<publisher value="{site.data.fhir.ig.publisher}"/>
+	<contact>
+		<name value="HL7 Biomedical Research and Regulation WorkGroup"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
+		</telecom>
+	</contact>
+	<description value="Code indicating the current FDA regulatory status of the specification"/>
+	<compose>
+		<include>
+			<system value="evs.nci.nih.gov"/>
+			<concept>
+				<code value="C134010"/>
+				<display value="Tentatively Approved"/>
+			</concept>
+			<concept>
+				<code value="C134011"/>
+				<display value="Not Approved"/>
+			</concept>
+			<concept>
+				<code value="C25425"/>
+				<display value="Approved"/>
+			</concept>
+			<concept>
+				<code value="C134012"/>
+				<display value="Reported in a CBE or AR"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>

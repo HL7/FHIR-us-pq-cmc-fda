@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas-r5\fhir-single.xsd">
+	<id value="MethodOrigin"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/MethodOrigin"/>
+	<name value="MethodOrigin"/>
+	<title value="Pharmaceutical Quality/CMC Test Method Origin Terminology"/>
+	<status value="draft"/>
+	<publisher value="{site.data.fhir.ig.publisher}"/>
+	<contact>
+		<name value="HL7 Biomedical Research and Regulation WorkGroup"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
+		</telecom>
+	</contact>
+	<description value="A coded value specifying the source of the method. [Source: SME Defined]  Example: Compendial"/>
+	<compose>
+		<include>
+			<system value="evs.nci.nih.gov"/>
+			<concept>
+				<code value="C96164"/>
+				<display value="CFR"/>
+			</concept>
+			<concept>
+				<code value="C96103"/>
+				<display value="Proprietary"/>
+			</concept>
+			<concept>
+				<code value="C96102"/>
+				<display value="Compendial"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>

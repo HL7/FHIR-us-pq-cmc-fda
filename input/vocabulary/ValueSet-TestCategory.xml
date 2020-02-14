@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas-r5\fhir-single.xsd">
+	<id value="TestCategory"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/TestCategory"/>
+	<name value="TestCategory"/>
+	<title value="Pharmaceutical Quality/CMC Test Category Terminology"/>
+	<status value="draft"/>
+	<publisher value="{site.data.fhir.ig.publisher}"/>
+	<contact>
+		<name value="HL7 Biomedical Research and Regulation WorkGroup"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
+		</telecom>
+	</contact>
+	<description value="A high-level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined] Examples: Assay, Impurities, Description, etc."/>
+	<compose>
+		<include>
+			<system value="evs.nci.nih.gov"/>
+			<concept>
+				<code value="C17771"/>
+				<display value="Chemical Properties"/>
+			</concept>
+			<concept>
+				<code value="C138990"/>
+				<display value="Description"/>
+			</concept>
+			<concept>
+				<code value="C158423"/>
+				<display value="Impurities"/>
+			</concept>
+			<concept>
+				<code value="C158425"/>
+				<display value="Biological Properties"/>
+			</concept>
+			<concept>
+				<code value="C158424"/>
+				<display value="Physical Properties"/>
+			</concept>
+			<concept>
+				<code value="C138993"/>
+				<display value="Identification"/>
+			</concept>
+			<concept>
+				<code value="C60819"/>
+				<display value="Assay"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>

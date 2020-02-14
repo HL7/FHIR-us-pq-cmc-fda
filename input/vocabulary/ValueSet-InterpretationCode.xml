@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas-r5\fhir-single.xsd">
+	<id value="InterpretationCode"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/InterpretationCode"/>
+	<name value="InterpretationCode"/>
+	<title value="Pharmaceutical Quality/CMC Interpretation Code Terminology"/>
+	<status value="draft"/>
+	<publisher value="{site.data.fhir.ig.publisher}"/>
+	<contact>
+		<name value="HL7 Biomedical Research and Regulation WorkGroup"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
+		</telecom>
+	</contact>
+	<description value="x"/>
+	<compose>
+		<include>
+			<system value="evs.nci.nih.gov"/>
+			<concept>
+				<code value="C48793"/>
+				<display value="EQ"/>
+			</concept>
+			<concept>
+				<code value="C61584"/>
+				<display value="MT"/>
+			</concept>
+			<concept>
+				<code value="C61585"/>
+				<display value="LT"/>
+			</concept>
+			<concept>
+				<code value="C61583"/>
+				<display value="NLT"/>
+			</concept>
+			<concept>
+				<code value="C61586"/>
+				<display value="NMT"/>
+			</concept>
+			<concept>
+				<code value="C48660"/>
+				<display value="NA"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>
