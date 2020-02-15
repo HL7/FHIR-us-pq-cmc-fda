@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
 	<id value="pqcmc"/>
-	<extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-		<valueString value="..\PQCMC_IG\input\resources"/>
-	</extension>
 	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.pq-cmc"/>
 	<version value="0.0.3"/>
 	<name value="PharmaceuticalQualityImplementationGuide"/>
@@ -57,11 +53,7 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the PQ-CMC profiles"/>
     </grouping>-->
-		
 		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
 			<reference>
 				<reference value="StructureDefinition/pharmqualitydrugsubstance"/>
 			</reference>
@@ -71,9 +63,6 @@
 			<groupingId value="profiles"/>
 		</resource>
 		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
 			<reference>
 				<reference value="StructureDefinition/pharmqualitydrugproduct"/>
 			</reference>
@@ -83,9 +72,6 @@
 			<groupingId value="profiles"/>
 		</resource>
 		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
 			<reference>
 				<reference value="StructureDefinition/pharmqualityspecification"/>
 			</reference>
@@ -95,9 +81,6 @@
 			<groupingId value="profiles"/>
 		</resource>
 		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
 			<reference>
 				<reference value="StructureDefinition/pharmqualityspeccomposition"/>
 			</reference>
@@ -192,7 +175,7 @@
 				<reference value="ValueSet/appType"/>
 			</reference>
 			<name value="Application Type"/>
-			<description value="The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined]. "/>
+			<description value="The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined]."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
 		</resource>
@@ -254,284 +237,20 @@
 			<reference>
 				<reference value="ValueSet/InterpretationCode"/>
 			</reference>
-			<name value="	Interpretation Code"/>
-			<description value="	A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."/>
+			<name value="Interpretation Code"/>
+			<description value="A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
 		</resource>
 		<resource>
 			<reference>
 				<reference value="ValueSet/TestUsage"/>
-			</reference>
-			<name value="	Test Usage"/>
-			<description value="	List of codes specifying the time point during the manufacturing process of a substance or product when a particular analytical procedure or measurement is being performed"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<page>
-			<nameUrl value="toc.html"/>
-			<title value="Table of Contents"/>
-			<generation value="html"/>
-			<page>
-				<nameUrl value="index.html"/>
-				<title value="Implementation Guide Home Page"/>
-				<generation value="html"/>
-			</page>
-			<page>
-				<nameUrl value="artifacts.html"/>
-				<title value="Artifact index"/>
-				<generation value="html"/>
-			</page>
-			<page>
-				<nameUrl value="background.html"/>
-				<title value="Background"/>
-				<generation value="html"/>
-			</page>
-		</page>
-		<parameter>
-			<code value="excludejson"/>
-			<value value="true"/>
-		</parameter>
-		<parameter>
-			<code value="excludettl"/>
-			<value value="true"/>
-		</parameter>
-		<parameter>
-			<code value="excludemap"/>
-			<value value="true"/>
-		</parameter>
-		<parameter>
-			<code value="releaselabel"/>
-			<value value="CI Build"/>
-		</parameter>
-		<parameter>
-			<code value="copyrightyear"/>
-			<value value="2020+"/>
-		</parameter>
-		<parameter>
-			<code value="find-other-resources"/>
-			<value value="true"/>
-		</parameter>
-	</definition>
-</ImplementationGuide>
-=======
-<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
-	<id value="pqcmc"/>
-	<extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-		<valueString value="..\PQCMC_IG\input\resources"/>
-	</extension>
-	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.pq-cmc"/>
-	<version value="0.0.3"/>
-	<name value="PharmaceuticalQualityImplementationGuide"/>
-	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
-	<status value="draft"/>
-	<experimental value="false"/>
-	<publisher value="U.S. Federal Drug Administration - Center for Drug Evaluation and Research"/>
-	<contact>
-		<telecom>
-			<system value="other"/>
-			<value value="https://www.fda.gov/industry/fda-resources-data-standards"/>
-		</telecom>
-	</contact>
-	<description value="IG for standardizing submissions relating to the Chemistry, Manufacturing and Controls (CMC) of regulated products"/>
-	<jurisdiction>
-		<coding>
-			<system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
-			<code value="001"/>
-		</coding>
-	</jurisdiction>
-	<copyright value="HL7"/>
-	<packageId value="hl7.fhir.pq-cmc"/>
-	<license value="CC0-1.0"/>
-	<fhirVersion value="4.0.1"/>
-	<definition>
-		<!--    <grouping id="conformance">
-      <name value="Capability Statements"/>
-      <description value="Capabilities of systems claiming to be conformant to the PQ-CMC implementation guide"/>
-    </grouping>-->
-<!--		<grouping id="profiles">
-			<name value="Profiles"/>
-			<description value="Constraints on FHIR resources to be adhered to as part of the PQ-CMC implementation guide"/>
-		</grouping>
-		<grouping id="extensions">
-			<name value="Extensions"/>
-			<description value="Extensions defined as part of the PQ-CMC implementation guide"/>
-		</grouping>
-		<grouping id="terminology">
-			<name value="Terminology"/>
-			<description value="ValueSets (and Code Systems) defined for use within the PQ-CMC implementation guide"/>
-		</grouping>-->
-		<!--   <grouping id="operations">
-      <name value="Operation Definitions"/>
-      <description value="Additional operations defined for use within the PQ-CMC implementation guide"/>
-    </grouping>
-    <grouping id="search">
-      <name value="Search Parameters"/>
-      <description value="Additional search parameters defined for use within the PQ-CMC implementation guide"/>
-    </grouping>
-    <grouping id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the PQ-CMC profiles"/>
-    </grouping>-->
-<!--		<resource>
-			<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
-			<reference>
-				<reference value="StructureDefinition/pharmqualityspecification"/>
-			</reference>
-			<name value="Pharm Quality Specification"/>
-			<description value="Describes the protocol for checking the chemical, physical and biological properties in pharmaceutical manufacturing."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>-->
-		<!--		<resource>
-	<extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-				<valueBoolean value="false"/>
-			</extension>
-			<reference>
-				<reference value="StructureDefinition/pharmqualitydrugproduct"/>
-			</reference>
-			<name value="Pharm Quality Drug Product"/>
-			<description value="Describes the pharmaceutical product."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource> -->
-<!--		<resource>
-			<reference>
-				<reference value="StructureDefinition/extSpecificationType"/>
-			</reference>
-			<name value="Specification Type"/>
-			<description value="A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined]  Examples:  Drug product, drug substance, etc."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extSpecificationStatus"/>
-			</reference>
-			<name value="Specification Status"/>
-			<description value="The current FDA regulatory status of the specification. [Source: SME Defined]  Examples: Approved, Not Approved, etc.  Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.    Note: This is different from Application Status"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extTestMethodOrigin"/>
-			</reference>
-			<name value="Test Method Origin"/>
-			<description value="A coded value specifying the source of the method. [Source: SME Defined]  Example: Compendial"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extReferenceToProcedure"/>
-			</reference>
-			<name value="Reference to Procedure"/>
-			<description value="A sponsor/applicant provided alphanumeric code that describes the procedure. [Source: SME Defined]  Example: HP1234-2008  Note: This could also be a transferred lab method."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extRelativeRetentionTime"/>
-			</reference>
-			<name value="Relative Retention Time"/>
-			<description value="The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP]   Example: 1:23 a ratio  Note: This is the title or name of the impurity and not the value."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extAdditionalInformation"/>
-			</reference>
-			<name value="Additional Information"/>
-			<description value="A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]  Example: value changed from 4% to 5% on 01/01/2010"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extTestOrder"/>
-			</reference>
-			<name value="Test Order"/>
-			<description value="The display sequence of the test."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extAcTestUsage"/>
 			</reference>
 			<name value="Test Usage"/>
-			<description value="A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined] Examples: Release, Stability.    Note:  The concept of In-Process is subsumed by the Release code."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extInterpCode"/>
-			</reference>
-			<name value="Intrepretation Code"/>
-			<description value="A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]  Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/SpecType"/>
-			</reference>
-			<name value="Specification Type"/>
-			<description value="A classification of specification related to the kind of the entity it is referencing."/>
+			<description value="List of codes specifying the time point during the manufacturing process of a substance or product when a particular analytical procedure or measurement is being performed"/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
 		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/MethodOrig"/>
-			</reference>
-			<name value="Method Origin"/>
-			<description value="Codes specifying the source of the method."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/SpecStat"/>
-			</reference>
-			<name value="Specification Status"/>
-			<description value="Code indicating the current FDA regulatory status of the specification"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/TestCategory"/>
-			</reference>
-			<name value="Test Category"/>
-			<description value="List of test categories allowable values for the Test Category data element"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/InterpretationCode"/>
-			</reference>
-			<name value="	Interpretation Code"/>
-			<description value="	A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="ValueSet/TestUsage"/>
-			</reference>
-			<name value="	Test Usage"/>
-			<description value="	List of codes specifying the time point during the manufacturing process of a substance or product when a particular analytical procedure or measurement is being performed"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="terminology"/>
-		</resource>-->
 		<page>
 			<nameUrl value="toc.html"/>
 			<title value="Table of Contents"/>
@@ -549,6 +268,11 @@
 			<page>
 				<nameUrl value="background.html"/>
 				<title value="Background"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="downloads.html"/>
+				<title value="Downloads"/>
 				<generation value="html"/>
 			</page>
 		</page>
@@ -578,4 +302,3 @@
 		</parameter>
 	</definition>
 </ImplementationGuide>
->>>>>>> bb7a931e0d6b6c83172722b43771fc47a21e0abe

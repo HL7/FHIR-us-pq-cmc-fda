@@ -7,19 +7,21 @@
  xmlns:html="http://www.w3.org/TR/REC-html40">
  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
   <Author>Catherine</Author>
-  <LastAuthor>Catherine</LastAuthor>
+  <LastAuthor>Lloyd McKenzie</LastAuthor>
   <Created>2020-01-13T20:07:42Z</Created>
-  <LastSaved>2020-02-07T23:23:32Z</LastSaved>
+  <LastSaved>2020-02-15T00:10:48Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7260</WindowHeight>
-  <WindowWidth>18408</WindowWidth>
+  <WindowHeight>12818</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
+  <ActiveSheet>7</ActiveSheet>
+  <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -306,6 +308,12 @@
   <Style ss:ID="s100">
    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
+  </Style>
+  <Style ss:ID="s101">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"
+    ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12"/>
+   <Interior/>
   </Style>
   <Style ss:ID="s102">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"/>
@@ -897,18 +905,12 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
     ss:Bold="1"/>
   </Style>
-  <Style ss:ID="s185">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"
-    ss:WrapText="1"/>
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12"/>
-   <Interior/>
-  </Style>
  </Styles>
  <Worksheet ss:Name="Metadata">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="15" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:Width="98.4"/>
-   <Column ss:AutoFitWidth="0" ss:Width="400.79999999999995"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:Width="98.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="400.875"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s64"><Data ss:Type="String">Name</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">Value</Data></Cell>
@@ -994,7 +996,6 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
-   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -1007,32 +1008,32 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="pharmqualityspeccomposition">
-  <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="42" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:Width="98.4"/>
-   <Column ss:Width="67.8"/>
-   <Column ss:Width="91.8"/>
+  <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="43" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:Width="98.25"/>
+   <Column ss:Width="67.875"/>
+   <Column ss:Width="91.875"/>
    <Column ss:Width="69"/>
-   <Column ss:Width="42.6"/>
+   <Column ss:Width="42.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="222"/>
-   <Column ss:Width="59.4"/>
-   <Column ss:Width="243.6"/>
-   <Column ss:Width="38.4"/>
-   <Column ss:Width="29.4"/>
-   <Column ss:Width="22.799999999999997"/>
+   <Column ss:Width="59.25"/>
+   <Column ss:Width="243.75"/>
+   <Column ss:Width="38.25"/>
+   <Column ss:Width="29.25"/>
+   <Column ss:Width="22.875"/>
    <Column ss:Width="159"/>
-   <Column ss:AutoFitWidth="0" ss:Width="63.599999999999994"/>
+   <Column ss:AutoFitWidth="0" ss:Width="63.75"/>
    <Column ss:Width="45"/>
-   <Column ss:Width="124.80000000000001"/>
-   <Column ss:Width="1235.4000000000001"/>
+   <Column ss:Width="124.875"/>
+   <Column ss:Width="1235.25"/>
    <Column ss:Width="72"/>
-   <Column ss:Width="55.800000000000004"/>
-   <Column ss:Width="31.799999999999997"/>
-   <Column ss:Width="67.8"/>
-   <Column ss:Width="59.4"/>
-   <Column ss:Width="64.8"/>
-   <Column ss:Width="60.6"/>
-   <Column ss:Width="88.800000000000011"/>
+   <Column ss:Width="55.875"/>
+   <Column ss:Width="31.875"/>
+   <Column ss:Width="67.875"/>
+   <Column ss:Width="59.25"/>
+   <Column ss:Width="64.875"/>
+   <Column ss:Width="60.75"/>
+   <Column ss:Width="88.875"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s82"><Data ss:Type="String">Profile Name</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -1193,11 +1194,38 @@
     <Cell ss:StyleID="s87"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s95"/>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">Composition.author</Data></Cell>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">1..*</Data></Cell>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">Reference(Organization)</Data></Cell>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">Sponsor</Data></Cell>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">The organization filing to the US FDA</Data></Cell>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s93"/>
+    <Cell ss:StyleID="s88"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="15.75">
+    <Cell ss:StyleID="s87"/>
+    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">Composition.author.organization.identifier</Data></Cell>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">!Composition.author.organization.identifier</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">1..*</Data></Cell>
     <Cell ss:StyleID="s88"/>
@@ -1224,7 +1252,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">Composition.author.organization.type</Data></Cell>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">!Composition.author.organization.type</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">1..*</Data></Cell>
     <Cell ss:StyleID="s88"/>
@@ -1251,7 +1279,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">Composition.author.organization.name</Data></Cell>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">!Composition.author.organization.name</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:StyleID="s88"/>
@@ -1278,7 +1306,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">Composition.author.organization.physicalAddress</Data></Cell>
+    <Cell ss:StyleID="s88"><Data ss:Type="String">!Composition.author.organization.physicalAddress</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">0..1</Data></Cell>
     <Cell ss:StyleID="s88"/>
@@ -1625,7 +1653,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s185"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType&quot;, &quot;code&quot;:&quot;SP4151&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s101"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType&quot;, &quot;code&quot;:&quot;SP4151&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Composition.section.code</Data></Cell>
     <Cell ss:StyleID="s88"/>
@@ -2226,10 +2254,11 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <LeftColumnVisible>3</LeftColumnVisible>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>3</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -2237,8 +2266,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>12</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2247,16 +2276,16 @@
  </Worksheet>
  <Worksheet ss:Name="Invariants">
   <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="50" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
    <Column ss:AutoFitWidth="0" ss:Width="63"/>
-   <Column ss:AutoFitWidth="0" ss:Width="114.6"/>
-   <Column ss:AutoFitWidth="0" ss:Width="115.80000000000001"/>
-   <Column ss:AutoFitWidth="0" ss:Width="87.6"/>
+   <Column ss:AutoFitWidth="0" ss:Width="114.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="115.875"/>
+   <Column ss:AutoFitWidth="0" ss:Width="87.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="72"/>
-   <Column ss:AutoFitWidth="0" ss:Width="108.6"/>
+   <Column ss:AutoFitWidth="0" ss:Width="108.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="105"/>
-   <Column ss:AutoFitWidth="0" ss:Width="138.6"/>
-   <Column ss:AutoFitWidth="0" ss:Width="299.39999999999998"/>
+   <Column ss:AutoFitWidth="0" ss:Width="138.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="299.25"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s107"><Data ss:Type="String">Id</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
@@ -2895,30 +2924,30 @@
  </Worksheet>
  <Worksheet ss:Name="Extensions">
   <Table ss:ExpandedColumnCount="23" ss:ExpandedRowCount="27" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:Width="98.4"/>
-   <Column ss:Width="66.600000000000009"/>
-   <Column ss:Width="96.6"/>
-   <Column ss:Width="100.8"/>
-   <Column ss:Width="170.4"/>
-   <Column ss:Width="38.4"/>
-   <Column ss:Width="29.4"/>
-   <Column ss:Width="22.799999999999997"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:Width="98.25"/>
+   <Column ss:Width="66.75"/>
+   <Column ss:Width="96.75"/>
+   <Column ss:Width="100.875"/>
+   <Column ss:Width="170.25"/>
+   <Column ss:Width="38.25"/>
+   <Column ss:Width="29.25"/>
+   <Column ss:Width="22.875"/>
    <Column ss:AutoFitWidth="0" ss:Width="93"/>
-   <Column ss:Width="56.4"/>
+   <Column ss:Width="56.25"/>
    <Column ss:Width="225"/>
-   <Column ss:Width="39.6"/>
+   <Column ss:Width="39.75"/>
    <Column ss:Width="45"/>
-   <Column ss:Width="100.8"/>
-   <Column ss:StyleID="s116" ss:AutoFitWidth="0" ss:Width="572.4"/>
+   <Column ss:Width="100.875"/>
+   <Column ss:StyleID="s116" ss:AutoFitWidth="0" ss:Width="572.25"/>
    <Column ss:Width="72"/>
-   <Column ss:Width="55.800000000000004"/>
-   <Column ss:Width="31.799999999999997"/>
-   <Column ss:Width="67.8"/>
-   <Column ss:Width="59.4"/>
-   <Column ss:Width="64.8"/>
-   <Column ss:Width="60.6"/>
-   <Column ss:Width="88.800000000000011"/>
+   <Column ss:Width="55.875"/>
+   <Column ss:Width="31.875"/>
+   <Column ss:Width="67.875"/>
+   <Column ss:Width="59.25"/>
+   <Column ss:Width="64.875"/>
+   <Column ss:Width="60.75"/>
+   <Column ss:Width="88.875"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s83"><Data ss:Type="String">Code</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
@@ -3019,7 +3048,7 @@
     <Cell ss:StyleID="s126"/>
     <Cell ss:StyleID="s119"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s126"/>
-    <Cell ss:StyleID="s126"><Data ss:Type="String">http://hl7.org/fhir/pq-cmc/ValueSet/appType</Data></Cell>
+    <Cell ss:StyleID="s126"><Data ss:Type="String">appType</Data></Cell>
     <Cell ss:StyleID="s126"/>
     <Cell ss:StyleID="s126"/>
     <Cell ss:StyleID="s127"><Data ss:Type="String">Application Type</Data></Cell>
@@ -3620,7 +3649,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>19</ActiveRow>
+     <ActiveRow>2</ActiveRow>
      <ActiveCol>10</ActiveCol>
     </Pane>
    </Panes>
@@ -3630,12 +3659,12 @@
  </Worksheet>
  <Worksheet ss:Name="Search">
   <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="31" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:AutoFitWidth="0" ss:Width="76.8"/>
-   <Column ss:AutoFitWidth="0" ss:Width="85.8"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="76.875"/>
+   <Column ss:AutoFitWidth="0" ss:Width="85.875"/>
    <Column ss:AutoFitWidth="0" ss:Width="138"/>
    <Column ss:AutoFitWidth="0" ss:Width="246"/>
-   <Column ss:AutoFitWidth="0" ss:Width="495.6"/>
+   <Column ss:AutoFitWidth="0" ss:Width="495.75"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s107"><Data ss:Type="String">Name</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
@@ -3916,8 +3945,8 @@
  </Worksheet>
  <Worksheet ss:Name="Operations">
   <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="6" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:AutoFitWidth="0" ss:Width="195.60000000000002"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="195.75"/>
    <Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="258"/>
    <Row ss:AutoFitHeight="0" ss:Height="30.75">
     <Cell ss:StyleID="s146"><Data ss:Type="String">Name</Data><Comment ss:Author=""><ss:Data
@@ -4007,12 +4036,12 @@
  </Worksheet>
  <Worksheet ss:Name="Packages">
   <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="31" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:AutoFitWidth="0" ss:Width="188.4"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="188.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="201"/>
-   <Column ss:AutoFitWidth="0" ss:Width="282.59999999999997"/>
-   <Column ss:AutoFitWidth="0" ss:Width="114.6"/>
-   <Column ss:AutoFitWidth="0" ss:Width="187.8"/>
+   <Column ss:AutoFitWidth="0" ss:Width="282.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="114.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="187.875"/>
    <Row ss:AutoFitHeight="0" ss:Height="30.75">
     <Cell ss:StyleID="s155"><Data ss:Type="String">Name</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40"> Required - This is the name of the profile referenced. It will appear in the list of associated profile. (Comment the row by starting the name with '!')</ss:Data></Comment></Cell>
@@ -4257,20 +4286,20 @@
  </Worksheet>
  <Worksheet ss:Name="Bindings">
   <Table ss:ExpandedColumnCount="15" ss:ExpandedRowCount="24" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:AutoFitWidth="0" ss:Width="104.39999999999999"/>
-   <Column ss:AutoFitWidth="0" ss:Width="264.59999999999997"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="104.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="264.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="120"/>
-   <Column ss:Width="67.8"/>
-   <Column ss:AutoFitWidth="0" ss:Width="264.59999999999997"/>
-   <Column ss:StyleID="s116" ss:AutoFitWidth="0" ss:Width="311.40000000000003"/>
-   <Column ss:AutoFitWidth="0" ss:Width="104.39999999999999"/>
+   <Column ss:Width="67.875"/>
+   <Column ss:AutoFitWidth="0" ss:Width="264.75"/>
+   <Column ss:StyleID="s116" ss:AutoFitWidth="0" ss:Width="311.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="104.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="87"/>
-   <Column ss:AutoFitWidth="0" ss:Width="117.6"/>
-   <Column ss:Width="50.4"/>
-   <Column ss:Width="39.6"/>
-   <Column ss:Width="15.600000000000001" ss:Span="1"/>
-   <Column ss:Index="14" ss:Width="88.800000000000011"/>
+   <Column ss:AutoFitWidth="0" ss:Width="117.75"/>
+   <Column ss:Width="50.25"/>
+   <Column ss:Width="39.75"/>
+   <Column ss:Width="15.75" ss:Span="1"/>
+   <Column ss:Index="14" ss:Width="88.875"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s155"><Data ss:Type="String">Binding Name</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -4316,9 +4345,10 @@
    <Row ss:AutoFitHeight="0" ss:Height="76.5" ss:StyleID="s124">
     <Cell ss:StyleID="s119"><Data ss:Type="String">appType</Data></Cell>
     <Cell ss:StyleID="s119"><Data ss:Type="String">A classification of specification related to the kind of the entity it is referencing. </Data></Cell>
-    <Cell ss:StyleID="s66"><Data ss:Type="String">code list</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">value set</Data></Cell>
     <Cell><Data ss:Type="String">required</Data></Cell>
-    <Cell ss:StyleID="s166"/>
+    <Cell ss:StyleID="s166" ss:HRef="http://hl7.org/fhir/pq-cmc/ValueSet/appType"><Data
+      ss:Type="String">http://hl7.org/fhir/pq-cmc/ValueSet/appType</Data></Cell>
     <Cell ss:StyleID="s167"><Data ss:Type="String">This code should indicate the type of application the data supports or whether the data is submitted to an existing application. The codes indicate that the data is part of an Annual Report, New Drug Application, New Active Ingredient, Biologics License Application, Premarket Approval, or Supplement to an Approved Application.</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">https://evs.nci.nih.gov/ftp1/FDA/Stability/Stability.xml</Data></Cell>
     <Cell ss:Index="11"><Data ss:Type="String">draft</Data></Cell>
@@ -4329,8 +4359,8 @@
     <Cell ss:StyleID="s168"><Data ss:Type="String">Classification of a section of a composition/document.</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">value set</Data></Cell>
     <Cell><Data ss:Type="String">required</Data></Cell>
-    <Cell ss:StyleID="s166" ss:HRef="http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType"><Data
-      ss:Type="String">http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType</Data></Cell>
+    <Cell ss:StyleID="s166" ss:HRef="http://hl7.org/fhir/pq-cmc/ValueSet/sectionType"><Data
+      ss:Type="String">http://hl7.org/fhir/pq-cmc/ValueSet/sectionType</Data></Cell>
     <Cell><Data ss:Type="String">Codes for different sections within a PQ/CMC document submission</Data></Cell>
     <Cell ss:Index="11"><Data ss:Type="String">draft</Data></Cell>
     <Cell ss:Index="14" ss:StyleID="s161"/>
@@ -4684,11 +4714,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <TopRowVisible>2</TopRowVisible>
+   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -4697,14 +4728,14 @@
  </Worksheet>
  <Worksheet ss:Name="some-code-list">
   <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="51" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:AutoFitWidth="0" ss:Width="127.8"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="127.875"/>
    <Column ss:AutoFitWidth="0" ss:Width="147"/>
-   <Column ss:AutoFitWidth="0" ss:Width="116.4"/>
-   <Column ss:AutoFitWidth="0" ss:Width="117.6"/>
-   <Column ss:AutoFitWidth="0" ss:Width="127.8"/>
-   <Column ss:AutoFitWidth="0" ss:Width="193.8"/>
-   <Column ss:Index="9" ss:AutoFitWidth="0" ss:Width="156.6"/>
+   <Column ss:AutoFitWidth="0" ss:Width="116.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="117.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="127.875"/>
+   <Column ss:AutoFitWidth="0" ss:Width="193.875"/>
+   <Column ss:Index="9" ss:AutoFitWidth="0" ss:Width="156.75"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s155"><Data ss:Type="String">Code</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
@@ -5356,14 +5387,14 @@
  </Worksheet>
  <Worksheet ss:Name="Examples">
   <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="31" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultRowHeight="15">
-   <Column ss:AutoFitWidth="0" ss:Width="174.6"/>
-   <Column ss:AutoFitWidth="0" ss:Width="116.4"/>
-   <Column ss:AutoFitWidth="0" ss:Width="221.4"/>
-   <Column ss:AutoFitWidth="0" ss:Width="153.6"/>
-   <Column ss:AutoFitWidth="0" ss:Width="197.4"/>
-   <Column ss:AutoFitWidth="0" ss:Width="173.39999999999998"/>
-   <Column ss:AutoFitWidth="0" ss:Width="158.4"/>
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="174.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="116.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="221.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="153.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="197.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="173.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="158.25"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75">
     <Cell ss:StyleID="s155"><Data ss:Type="String">Name</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40"> Required - A descriptive label for the example starting with upper-case.</ss:Data></Comment></Cell>

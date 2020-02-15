@@ -11,7 +11,7 @@
 		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a href="Introduction.html">Intro</a>
+				<a href="background.html">Background</a>
 			</li>
 		</ul>
 		<li>
@@ -35,8 +35,7 @@
 				<p>Use Google Chorme or Firefox to open the IG. 
 				</p>
 				<!--<a href="Validator.Pack" target="_blank">Download <img src="download.png" style="text-align: baseline"/>-->
-				<a target="_blank" href=".Validator.Pack" download="Validator.Pack">Download <img src="download.png" style="text-align: baseline"/>
-				</a>
+				<a target="_blank" href="downloads.html">Downloads</a>
 			</li>
 		</ul>
 	</li>
