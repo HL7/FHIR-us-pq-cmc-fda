@@ -31,9 +31,7 @@
 				<a target="_blank" href="http://hl7.org/fhirpath">FHIRPath Spec <img src="external.png" style="text-align: baseline"/>
 				</a>
 			</li>
-			<li>
-				<p>Use Google Chorme or Firefox to open the IG. 
-				</p>
+			<li>				
 				<!--<a href="Validator.Pack" target="_blank">Download <img src="download.png" style="text-align: baseline"/>-->
 				<a target="_blank" href="downloads.html">Downloads</a>
 			</li>

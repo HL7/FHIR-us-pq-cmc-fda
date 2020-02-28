@@ -1,7 +1,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
 	<id value="pqcmc"/>
 	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.pq-cmc"/>
-	<version value="0.0.3"/>
+	<version value="0.0.4"/>
 	<name value="PharmaceuticalQualityImplementationGuide"/>
 	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
 	<status value="draft"/>
@@ -53,6 +53,15 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the PQ-CMC profiles"/>
     </grouping>-->
+    		<resource>
+			<reference>
+				<reference value="StructureDefinition/pharmqualityorganization"/>
+			</reference>
+			<name value="Pharm Quality Organization"/>
+			<description value="Describesthe required features of an organization."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="profiles"/>
+		</resource>
 		<resource>
 			<reference>
 				<reference value="StructureDefinition/pharmqualitydrugsubstance"/>

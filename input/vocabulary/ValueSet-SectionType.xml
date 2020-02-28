@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
+	<id value="SectionType"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/SectionType"/>
+	<name value="SectionType"/>
+	<title value="Section Type"/>
+	<status value="draft"/>
+	<publisher value="{site.data.fhir.ig.publisher}"/>
+	<contact>
+		<name value="HL7 Biomedical Research and Regulation WorkGroup"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
+		</telecom>
+	</contact>
+	<description value="Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."/>
+	<compose>
+		<include>
+			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType"/>
+			<concept>
+				<code value="32S41"/>
+				<display value="Substance Specification"/>
+			</concept>
+			<concept>
+				<code value="32P41"/>
+				<display value="Excipients Specifications"/>
+			</concept>
+			<concept>
+				<code value="32P51"/>
+				<display value="Product Specifications"/>
+			</concept>
+			<concept>
+				<code value="SP4151"/>
+				<display value="Quality Specification"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>
