@@ -1,7 +1,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
 	<id value="hl7.fhir.us.pq-cmc"/>
 	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc"/>
-	<version value="0.0.4"/>
+	<version value="0.0.5"/>
 	<name value="PharmaceuticalQualityImplementationGuide"/>
 	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
 	<status value="draft"/>
@@ -48,12 +48,12 @@
     <grouping id="search">
       <name value="Search Parameters"/>
       <description value="Additional search parameters defined for use within the PQ-CMC implementation guide"/>
-    </grouping>
-    <grouping id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the PQ-CMC profiles"/>
     </grouping>-->
-    		<resource>
+		<grouping id="examples">
+			<name value="Example(s)"/>
+			<description value="Example(s) showing the use of the PQ-CMC profiles"/>
+		</grouping>
+		<resource>
 			<reference>
 				<reference value="StructureDefinition/pharmqualityorganization"/>
 			</reference>
@@ -122,15 +122,6 @@
 			</reference>
 			<name value="Test Method Origin"/>
 			<description value="A coded value specifying the source of the method. [Source: SME Defined]  Example: Compendial"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extReferenceToProcedure"/>
-			</reference>
-			<name value="Reference to Procedure"/>
-			<description value="A sponsor/applicant provided alphanumeric code that describes the procedure. [Source: SME Defined]  Example: HP1234-2008  Note: This could also be a transferred lab method."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="extensions"/>
 		</resource>
@@ -259,6 +250,15 @@
 			<description value="List of codes specifying the time point during the manufacturing process of a substance or product when a particular analytical procedure or measurement is being performed"/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Bundle/qualityspec-product-profile-example"/>
+			</reference>
+			<name value="ProductExample"/>
+			<description value="FHIR XML illustrating a Drug Product Quality Specification"/>
+			<exampleBoolean value="true"/>
+			<groupingId value="examples"/>
 		</resource>
 		<page>
 			<nameUrl value="toc.html"/>

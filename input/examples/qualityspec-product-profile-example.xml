@@ -1,0 +1,655 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="qualityspec-product-profile-example"/>
+	<type value="document"/>
+	<timestamp value="2017-07-20T14:30:00+01:00"/>
+	<entry>
+		<fullUrl value="http://hl7.org/fhir/pq-cmc/qualityspec-product-profile-example.xml"/>
+		<resource>
+			<Composition>
+				<meta>
+					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualityspeccomposition"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details TBD</b>
+						</p>
+					</div>
+				</text>
+				<status value="final"/>
+				<type>
+					<coding>
+						<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType"/>
+						<code value="32P51"/>
+						<display value="Product Specifications"/>
+					</coding>
+				</type>
+				<author>
+					<reference value="Organization/1c616b24-3895-48c4-9a02-9a64110351ef"/>
+				</author>
+				<section>
+					<title value="Drug Product"/>
+					<text>
+						<status value="generated"/>
+						<div xmlns="http://www.w3.org/1999/xhtml">Drug Product</div>
+					</text>
+					<entry>
+						<reference value="MedicinalProduct/4a60da87-b9b4-47d4-a67b-4cf56debac31"/>
+					</entry>
+				</section>
+				<section>
+					<title value="Quality Specification"/>
+					<text>
+						<status value="generated"/>
+						<div xmlns="http://www.w3.org/1999/xhtml">Quality Specification</div>
+					</text>
+					<entry>
+						<reference value="PlanDefinition/5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
+					</entry>
+				</section>
+			</Composition>
+		</resource>
+	</entry>
+	<!-- org -->
+	<entry>
+		<fullUrl value="urn:uuid:81828938-0ecd-4f06-b4e3-1494fb99fe1d"/>
+		<resource>
+			<Organization>
+				<id value="81828938-0ecd-4f06-b4e3-1494fb99fe1d"/>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Sponsor</b>
+						</p>
+						<p>
+							<b>id</b>: 81828938-0ecd-4f06-b4e3-1494fb99fe1d</p>
+						<p>
+							<b>DUNS Number</b>: 489049423</p>
+						<p>
+							<p>
+								<b>FDA Establishment Identifier</b>: 3000268812</p>
+							<p>
+								<b>active</b>: true</p>
+							<p>
+								<b>name</b>: Abbott Biologicals BV</p>
+							<b>address</b>: Veerweg 12, Olst, 8121, Netherlands</p>
+					</div>
+				</text>
+				<identifier>
+					<value value="489049423"/>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIndentificationType">
+						<valueCode value="DUNS"/>
+					</extension>
+				</identifier>
+				<identifier>
+					<value value="3000268812"/>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIndentificationType">
+						<valueCode value="FEI"/>
+					</extension>
+				</identifier>
+				<active value="true"/>
+				<name value="Abc Biologicals BV"/>
+				<address>
+					<line value="Veerweg 12"/>
+					<city value="Olst"/>
+					<postalCode value="8121"/>
+					<country value="Netherlands"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+	<!-- prod -->
+	<entry>
+		<fullUrl value="urn:uuid:4a60da87-b9b4-47d4-a67b-4cf56debac31"/>
+		<resource>
+			<MedicinalProduct>
+				<id value="4a60da87-b9b4-47d4-a67b-4cf56debac31"/>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Drug Product Name</b>: Benadryl HCL</p>
+						<p>
+							<b>Dosage Form</b>: TABLET  <b> Code</b>: C42998</p>
+					</div>
+				</text>
+				<combinedPharmaceuticalDoseForm id="a">
+					<coding id="Dosage">
+						<system value="evs.nci.nih.gov">
+						</system>
+						<version value="draft"/>
+						<code value="C42998"/>
+						<display value="TABLET"/>
+					</coding>
+				</combinedPharmaceuticalDoseForm>
+				<name>
+					<productName value="Benadryl HCL">
+					</productName>
+				</name>
+			</MedicinalProduct>
+		</resource>
+	</entry>
+	<!-- spec-->
+	<entry>
+		<fullUrl value="urn:uuid:e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
+		<resource>
+			<PlanDefinition>
+				<id value="e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
+				<meta>
+					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualityspecification"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Proof of Concept PC/CMC Quality Specification</b>
+						</p>
+					</div>
+				</text>
+				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extSpecificationStatus">
+					<extension url="type">
+						<valueCode value="C25425"/>
+					</extension>
+					<extension url="date">
+						<valueDate value="2017-02-05"/>
+					</extension>
+				</extension>
+				<title value=" Benadryl HCL Specification"/>
+				<version value="1.0"/>
+				<status value="active"/>
+				<subjectCodeableConcept id="SpecType">
+					<coding>
+						<system value="evs.nci.nih.gov">
+						</system>
+						<version value="draft">
+						</version>
+						<code value="C134021"/>
+						<display value="Drug Product"/>
+					</coding>
+				</subjectCodeableConcept>
+				<date value="2016-09-24"/>
+				<usage>Testing specification</usage>
+				<goal id="goal1">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAdditionalInformation">
+						<valueString value="Light to medium light color"/>
+					</extension>
+					<description>
+						<text value="Oval Pink Tablet"/>
+					</description>
+					<target>
+						<detailCodeableConcept>
+							<text value="Oval Pink"/>
+						</detailCodeableConcept>
+					</target>
+				</goal>
+				<goal id="goal2">
+					<description>
+						<text value="1.9% - 2.5%"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134029"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61584"/>
+						</extension>
+						<detailQuantity>
+							<value value="1.9">
+							</value>
+							<comparator value="&gt;=">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal3">
+					<description>
+						<text value="1.9%-2.5%;"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134029"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61585"/>
+						</extension>
+						<detailQuantity>
+							<value value="2.5">
+							</value>
+							<comparator value="&lt;=">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal4">
+					<description>
+						<text value="NMT 1000 cfu/g"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61586"/>
+						</extension>
+						<detailQuantity>
+							<value value="1000">
+							</value>
+							<comparator value="&lt;">
+							</comparator>
+							<unit value="cfu/g">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="{cfu}/g">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal5">
+					<description>
+						<text value="Should be Absent/g"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C48660"/>
+						</extension>
+						<detailCodeableConcept>
+							<text value="Should be Absent/g"/>
+						</detailCodeableConcept>
+					</target>
+				</goal>
+				<goal id="goal6">
+					<description>
+						<text value="no one unit (of the 6) is LT 10%"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134029"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61585"/>
+						</extension>
+						<detailQuantity>
+							<value value="10">
+							</value>
+							<comparator value="&lt;=">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal7">
+					<description>
+						<text value="(average of 12) LT 10%"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134029"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61585"/>
+						</extension>
+						<detailQuantity>
+							<value value="10">
+							</value>
+							<comparator value="&lt;=">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal8">
+					<description>
+						<text value="no one unit is NMT 25%"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134029"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61586"/>
+						</extension>
+						<detailQuantity>
+							<value value="25">
+							</value>
+							<comparator value="&lt;">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal9">
+					<description>
+						<text value="(average of 24) NMT 10%"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61586"/>
+						</extension>
+						<detailQuantity>
+							<value value="10">
+							</value>
+							<comparator value="&lt;">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal10">
+					<description>
+						<text value="no one unit is NMT 25%"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61586"/>
+						</extension>
+						<detailQuantity>
+							<value value="25">
+							</value>
+							<comparator value="&lt;">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal11">
+					<description>
+						<text value="≥99.0% main peak area"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+							<valueCode value="C134030"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCode value="C61584"/>
+						</extension>
+						<detailQuantity>
+							<value value="99.0">
+							</value>
+							<comparator value="&gt;">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Proprietary"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="1.0"/>
+					</extension>
+					<title value="Description"/>
+					<code>
+						<coding>
+							<code value="C138990"/>
+							<display value="Description"/>
+						</coding>
+						<text value="Visual"/>
+					</code>
+					<reason>
+						<coding>
+							<code value="C134029"/>
+							<display value="Release"/>
+						</coding>
+					</reason>
+					<definitionUri value="POC32801/Product/ver_1.0/Visual"/>
+					<action id="idvnm0ta5zyl22fbg2qqxymlmljbbhngwtvwdl4dkgdd20ephziase">
+						<title value="Single Stage"/>
+						<goalId value="goal1"/>
+					</action>
+				</action>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Compendial"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="2.0"/>
+					</extension>
+					<title value="Water % w/v by KF"/>
+					<code>
+						<coding>
+							<code value="C17771"/>
+							<display value="Chemical Properties"/>
+						</coding>
+						<text value="KF"/>
+					</code>
+					<reason>
+						<coding>
+							<code value="C134029"/>
+							<display value="Release"/>
+						</coding>
+					</reason>
+					<definitionUri value="POC32801/Product/ver_1.0/USP_&lt;921&gt;"/>
+					<action id="idro5omudnrrx3elfnxt5su4q1geqlbm2t3jvzujdogwq1kggm24be">
+						<title value="Single Stage"/>
+						<goalId value="goal2"/>
+						<goalId value="goal3"/>
+					</action>
+				</action>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Proprietary"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="3.0"/>
+					</extension>
+					<title value="Total Aerobic microbial count"/>
+					<code>
+						<coding>
+							<code value="C158425"/>
+							<display value="Biological Properties"/>
+						</coding>
+						<text value="Microbial limits"/>
+					</code>
+					<reason>
+						<coding>
+							<code value="C134029"/>
+							<display value="Release"/>
+						</coding>
+					</reason>
+					<definitionUri value="POC32801/Product/ver_1.0/MTE-2000"/>
+					<action id="id1pghkcl2wcoccmzsip3w32oomjvh1czjjud2uipbmevrklsiim1k">
+						<title value="Single Stage"/>
+						<goalId value="goal4"/>
+					</action>
+				</action>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Proprietary"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="4.0"/>
+					</extension>
+					<title value="E.Coli"/>
+					<code>
+						<coding>
+							<code value="C158425"/>
+							<display value="Biological Properties"/>
+						</coding>
+						<text value="Microbial limits"/>
+					</code>
+					<reason>
+						<coding>
+							<code value="C134029"/>
+							<display value="Release"/>
+						</coding>
+					</reason>
+					<definitionUri value="POC32801/Product/ver_1.0/MTE-20065"/>
+					<action id="idlu0pynrj324dnq3wyiapoafdokm2m3ub1ld1ohmxsjtsivnvs5g">
+						<title value="Single Stage"/>
+						<goalId value="goal5"/>
+					</action>
+				</action>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Compendial"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="5.0"/>
+					</extension>
+					<title value="Dissolution in Acid Stage (2 hours)"/>
+					<code>
+						<coding>
+							<code value="C60819"/>
+							<display value="Assay"/>
+						</coding>
+						<text value="711"/>
+					</code>
+					<reason>
+						<coding>
+							<code value="C134029"/>
+							<display value="Release"/>
+						</coding>
+					</reason>
+					<definitionUri value="POC32801/Product/ver_1.0/USP&lt;711&gt;"/>
+					<action id="idjsuiv3smxndoho0nb5y551juwdr31madwensw2bac2ngjaoyyo5e">
+						<title value="First Stage"/>
+						<goalId value="goal6"/>
+					</action>
+					<action id="iddqp5os1advhhgopfugbe2dgknqqhhugouvcdrohmdqac3oluwpm">
+						<title value="Second Stage"/>
+						<goalId value="goal7"/>
+						<goalId value="goal8"/>
+						<relatedAction>
+							<actionId value="d39aeafc-901c-4386-9642-22438da8e444"/>
+							<relationship value="after"/>
+						</relatedAction>
+					</action>
+					<definitionUri/>
+					<action id="idrwszgobaqa4lrnpqcgc32mzoeoikjurhtbcprk5lqmdlk0ieg3e">
+						<title value="Third Stage"/>
+						<goalId value="goal9"/>
+						<goalId value="goal10"/>
+						<relatedAction>
+							<actionId value="9fca490e-ef23-4fa4-922a-527956f60faf"/>
+							<relationship value="after"/>
+						</relatedAction>
+					</action>
+				</action>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Proprietary"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extReferenceToProcedure">
+						<valueString value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="6.1"/>
+					</extension>
+					<title value="Size exclusion HPLC"/>
+					<code>
+						<coding>
+							<code value="C158423"/>
+							<display value="Impurities"/>
+						</coding>
+						<text value="Size exclusion HPLC"/>
+					</code>
+					<definitionUri value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
+					<action id="e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
+					<title value="Single Stage"/>
+					<goalId value="goal11"/>
+					<relatedAction>
+						<actionId value="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
+						<relationship value="concurrent"/>
+					</relatedAction>
+					<selectionBehavior value="exactly-one"/>
+				</action>
+				<action>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
+						<valueCode value="Proprietary"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
+						<valueString valueDecimal="6.2"/>
+					</extension>
+					<title value="Reversed Phase HPLC"/>
+					<code>
+						<coding>
+							<code value="C158423"/>
+							<display value="Impurities"/>
+						</coding>
+						<text value="Reversed Phase HPLC"/>
+					</code>
+					<definitionUri value="../32s42-analyt-proc/analytical-procedures-reversed-phase-hplc.pdf"/>
+					<definitionUri/>
+					<action id="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
+					<title value="Single Stage"/>
+					<goalId value="goal11"/>
+					<relatedAction>
+						<actionId value="e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
+						<relationship value="concurrent"/>
+					</relatedAction>
+					<selectionBehavior value="exactly-one"/>
+				</action>
+			</PlanDefinition>
+		</resource>
+	</entry>
+</Bundle>
