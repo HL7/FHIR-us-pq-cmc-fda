@@ -883,6 +883,35 @@ e: {
   "error" : "Error from server: Unable to provide support for code system evs.nci.nih.gov"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "evs.nci.nih.gov",
+  "code" : "C134021"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "evs.nci.nih.gov",
+      "concept" : [{
+        "code" : "C134021",
+        "display" : "Drug Product"
+      },
+      {
+        "code" : "C134022",
+        "display" : "Drug Substance"
+      },
+      {
+        "code" : "C133931",
+        "display" : "Raw Materials/Excipients/Intermediates/Reagents"
+      }]
+    }]
+  }
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "CodeSystem uri 'evs.nci.nih.gov' is unknown"
+}
+-------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
@@ -1765,34 +1794,5 @@ e: {
 }}####
 e: {
   "error" : "Error from server: Unable to provide support for code system evs.nci.nih.gov"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "evs.nci.nih.gov",
-  "code" : "C134021"
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "evs.nci.nih.gov",
-      "concept" : [{
-        "code" : "C134021",
-        "display" : "Drug Product"
-      },
-      {
-        "code" : "C134022",
-        "display" : "Drug Substance"
-      },
-      {
-        "code" : "C133931",
-        "display" : "Raw Materials/Excipients/Intermediates/Reagents"
-      }]
-    }]
-  }
-}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "CodeSystem uri 'evs.nci.nih.gov' is unknown"
 }
 -------------------------------------------------------------------------------------

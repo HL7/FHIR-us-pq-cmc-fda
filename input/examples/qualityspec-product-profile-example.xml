@@ -1,4 +1,4 @@
-<Bundle xmlns="http://hl7.org/fhir">
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/lloyd/Documents/SVN/_IGs/FHIR-pq-cmc/input-cache/schemas/R4/fhir-single.xsd">
 	<id value="qualityspec-product-profile-example"/>
 	<type value="document"/>
 	<timestamp value="2017-07-20T14:30:00+01:00"/>
@@ -25,9 +25,13 @@
 						<display value="Product Specifications"/>
 					</coding>
 				</type>
+				<!-- Added date - it's mandatory -->
+				<date value="2020-01-01"/>
 				<author>
 					<reference value="Organization/1c616b24-3895-48c4-9a02-9a64110351ef"/>
 				</author>
+				<!-- Added date - it's mandatory -->
+				<title value="Some Title"/>
 				<section>
 					<title value="Drug Product"/>
 					<text>
@@ -67,27 +71,27 @@
 							<b>id</b>: 81828938-0ecd-4f06-b4e3-1494fb99fe1d</p>
 						<p>
 							<b>DUNS Number</b>: 489049423</p>
-						<p>
-							<p>
-								<b>FDA Establishment Identifier</b>: 3000268812</p>
-							<p>
-								<b>active</b>: true</p>
-							<p>
-								<b>name</b>: Abbott Biologicals BV</p>
+            <p>
+              <b>FDA Establishment Identifier</b>: 3000268812</p>
+            <p>
+              <b>active</b>: true</p>
+            <p>
+              <b>name</b>: Abbott Biologicals BV</p>
+            <p>
 							<b>address</b>: Veerweg 12, Olst, 8121, Netherlands</p>
 					</div>
 				</text>
 				<identifier>
-					<value value="489049423"/>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIndentificationType">
 						<valueCode value="DUNS"/>
 					</extension>
+					<value value="489049423"/>
 				</identifier>
 				<identifier>
-					<value value="3000268812"/>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIndentificationType">
 						<valueCode value="FEI"/>
 					</extension>
+					<value value="3000268812"/>
 				</identifier>
 				<active value="true"/>
 				<name value="Abc Biologicals BV"/>
@@ -156,8 +160,8 @@
 						<valueDate value="2017-02-05"/>
 					</extension>
 				</extension>
-				<title value=" Benadryl HCL Specification"/>
 				<version value="1.0"/>
+				<title value=" Benadryl HCL Specification"/>
 				<status value="active"/>
 				<subjectCodeableConcept id="SpecType">
 					<coding>
@@ -170,7 +174,7 @@
 					</coding>
 				</subjectCodeableConcept>
 				<date value="2016-09-24"/>
-				<usage>Testing specification</usage>
+				<usage value="Testing specification"/>
 				<goal id="goal1">
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAdditionalInformation">
 						<valueString value="Light to medium light color"/>
@@ -445,7 +449,7 @@
 						<valueCode value="Proprietary"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="1.0"/>
+						<valueDecimal value="1.0"/>
 					</extension>
 					<title value="Description"/>
 					<code>
@@ -472,7 +476,7 @@
 						<valueCode value="Compendial"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="2.0"/>
+						<valueDecimal value="2.0"/>
 					</extension>
 					<title value="Water % w/v by KF"/>
 					<code>
@@ -500,7 +504,7 @@
 						<valueCode value="Proprietary"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="3.0"/>
+						<valueDecimal value="3.0"/>
 					</extension>
 					<title value="Total Aerobic microbial count"/>
 					<code>
@@ -527,7 +531,7 @@
 						<valueCode value="Proprietary"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="4.0"/>
+						<valueDecimal value="4.0"/>
 					</extension>
 					<title value="E.Coli"/>
 					<code>
@@ -554,7 +558,7 @@
 						<valueCode value="Compendial"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="5.0"/>
+						<valueDecimal value="5.0"/>
 					</extension>
 					<title value="Dissolution in Acid Stage (2 hours)"/>
 					<code>
@@ -584,7 +588,6 @@
 							<relationship value="after"/>
 						</relatedAction>
 					</action>
-					<definitionUri/>
 					<action id="idrwszgobaqa4lrnpqcgc32mzoeoikjurhtbcprk5lqmdlk0ieg3e">
 						<title value="Third Stage"/>
 						<goalId value="goal9"/>
@@ -603,7 +606,7 @@
 						<valueString value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="6.1"/>
+						<valueDecimal value="6.1"/>
 					</extension>
 					<title value="Size exclusion HPLC"/>
 					<code>
@@ -613,22 +616,21 @@
 						</coding>
 						<text value="Size exclusion HPLC"/>
 					</code>
-					<definitionUri value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
-					<action id="e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
-					<title value="Single Stage"/>
 					<goalId value="goal11"/>
 					<relatedAction>
 						<actionId value="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
 						<relationship value="concurrent"/>
 					</relatedAction>
 					<selectionBehavior value="exactly-one"/>
+					<definitionUri value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
+					<action id="e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
 				</action>
 				<action>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCode value="Proprietary"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueString valueDecimal="6.2"/>
+						<valueDecimal value="6.2"/>
 					</extension>
 					<title value="Reversed Phase HPLC"/>
 					<code>
@@ -638,16 +640,14 @@
 						</coding>
 						<text value="Reversed Phase HPLC"/>
 					</code>
-					<definitionUri value="../32s42-analyt-proc/analytical-procedures-reversed-phase-hplc.pdf"/>
-					<definitionUri/>
-					<action id="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
-					<title value="Single Stage"/>
 					<goalId value="goal11"/>
 					<relatedAction>
 						<actionId value="e5cd079b-6c56-4a0f-9f1e-fd64a6f5a7a8"/>
 						<relationship value="concurrent"/>
 					</relatedAction>
 					<selectionBehavior value="exactly-one"/>
+					<definitionUri value="../32s42-analyt-proc/analytical-procedures-reversed-phase-hplc.pdf"/>
+					<action id="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
 				</action>
 			</PlanDefinition>
 		</resource>
