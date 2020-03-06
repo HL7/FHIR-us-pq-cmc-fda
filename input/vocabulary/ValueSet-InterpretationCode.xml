@@ -16,7 +16,7 @@
 	<description value="x"/>
 	<compose>
 		<include>
-			<system value="evs.nci.nih.gov"/>
+			<system value="https://evs.nci.nih.gov"/>
 			<concept>
 				<code value="C48793"/>
 				<display value="EQ"/>

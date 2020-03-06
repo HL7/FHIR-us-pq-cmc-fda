@@ -55,60 +55,6 @@
 		</grouping>
 		<resource>
 			<reference>
-				<reference value="StructureDefinition/pharmqualityorganization"/>
-			</reference>
-			<name value="Pharm Quality Organization"/>
-			<description value="Describesthe required features of an organization."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/pharmqualitydrugsubstance"/>
-			</reference>
-			<name value="Pharm Quality Drug Substance"/>
-			<description value="Describes the active pharmaceutical ingredieint in the drug product."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/pharmqualitydrugproduct"/>
-			</reference>
-			<name value="Pharm Quality Drug Product"/>
-			<description value="Describes the pharmaceutical product."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/pharmqualityspecification"/>
-			</reference>
-			<name value="Pharm Quality Specification"/>
-			<description value="Describes the protocol for checking the chemical, physical and biological properties in pharmaceutical manufacturing."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/pharmqualityspeccomposition"/>
-			</reference>
-			<name value="Composition for Pharm Quality Specifications"/>
-			<description value="Specifies the arrangement of sections for the three types of Pharm Quality Specification."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="profiles"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extSpecificationType"/>
-			</reference>
-			<name value="Specification Type"/>
-			<description value="A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined]  Examples:  Drug product, drug substance, etc."/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
 				<reference value="StructureDefinition/extSpecificationStatus"/>
 			</reference>
 			<name value="Specification Status"/>
@@ -154,6 +100,15 @@
 		</resource>
 		<resource>
 			<reference>
+				<reference value="StructureDefinition/extActionType"/>
+			</reference>
+			<name value="Action Type"/>
+			<description value="A code to designate a group of alternate tests vs a singular test."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>
+		<resource>
+			<reference>
 				<reference value="StructureDefinition/extAcTestUsage"/>
 			</reference>
 			<name value="Test Usage"/>
@@ -172,7 +127,7 @@
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/appType"/>
+				<reference value="ValueSet/ApplicationType"/>
 			</reference>
 			<name value="Application Type"/>
 			<description value="The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined]."/>

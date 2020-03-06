@@ -16,7 +16,7 @@
 	<description value="Code indicating the current FDA regulatory status of the specification"/>
 	<compose>
 		<include>
-			<system value="evs.nci.nih.gov"/>
+			<system value="https://evs.nci.nih.gov"/>
 			<concept>
 				<code value="C134010"/>
 				<display value="Tentatively Approved"/>

@@ -16,7 +16,7 @@
 	<description value="The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI EVS - C42636]  Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]  Note: If there is a new dosage form that does not exist in the controlled terminology, then propose register this new dosage form during sponsor meetings with FDA.    SME comment -- this is the marketed dosage form"/>
 <compose>
     <include>
-      <system value="evs.nci.nih.gov"/>
+      <system value="https://evs.nci.nih.gov"/>
 	<concept>
 		<code value="C42887"/>
 		<display value="AEROSOL"/>
