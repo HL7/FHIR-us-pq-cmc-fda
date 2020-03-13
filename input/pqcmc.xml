@@ -53,6 +53,42 @@
 			<name value="Example(s)"/>
 			<description value="Example(s) showing the use of the PQ-CMC profiles"/>
 		</grouping>
+<!--		<resource>
+			<reference>
+				<reference value="StructureDefinition/extApplicationType"/>
+			</reference>
+			<name value="Application Type"/>
+			<description value="Todo"/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/extApplicationNumber"/>
+			</reference>
+			<name value="Application Number"/>
+			<description value="Todo"/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/extIdentificationType"/>
+			</reference>
+			<name value="Identification Type"/>
+			<description value="Todo"/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/extReferenceToProcedure"/>
+			</reference>
+			<name value="Reference To Procedure"/>
+			<description value="Todo"/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>-->
 		<resource>
 			<reference>
 				<reference value="StructureDefinition/extSpecificationStatus"/>

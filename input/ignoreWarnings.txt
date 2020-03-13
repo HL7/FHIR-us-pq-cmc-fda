@@ -1,1 +1,3 @@
 // Temporarily suppress these to reduce noise.  The first is a tooling bug
+Code System URI "https://evs.nci.nih.gov" is unknown so the code cannot be validated
+None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/doc-typecodes (http://hl7.org/fhir/ValueSet/doc-typecodes, and a code is recommended to come from this value set) (codes = http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType#32P51)

@@ -1,4 +1,4 @@
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/PQCMC_IG/input-cache/schemas/R4/fhir-single.xsd">
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
 	<id value="qualityspec-product-profile-example"/>
 	<identifier>
 		<system value="urn:ietf:rfc:3986"/>
@@ -7,9 +7,10 @@
 	<type value="document"/>
 	<timestamp value="2017-07-20T14:30:00+01:00"/>
 	<entry>
-		<fullUrl value="Composition//qualityspec-product-profile-example"/>
+		<fullUrl value="urn:uuid:9e61dc92-e98f-4e20-8b24-ff9ac654fcff"/>
 		<resource>
 			<Composition>
+        <id value="9e61dc92-e98f-4e20-8b24-ff9ac654fcff"/>
 				<meta>
 					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualityspeccomposition"/>
 				</meta>
@@ -111,13 +112,14 @@
 					</div>
 				</text>
 				<identifier>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIndentificationType">
+          <!-- Lloyd note: An extension is inappropriate here.  You should be using the 'system' value for DUNS and FEI - that's the correct way to identify a specific identifier -->
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIdentificationType">
 						<valueCode value="DUNS"/>
 					</extension>
 					<value value="489049423"/>
 				</identifier>
 				<identifier>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIndentificationType">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIdentificationType">
 						<valueCode value="FEI"/>
 					</extension>
 					<value value="3000268812"/>
@@ -156,8 +158,7 @@
 					</coding>
 				</combinedPharmaceuticalDoseForm>
 				<name>
-					<productName value="Benadryl HCL">
-					</productName>
+					<productName value="Benadryl HCL"/>
 				</name>
 			</MedicinalProduct>
 		</resource>
@@ -648,7 +649,7 @@
 				</goal>
 				<goal id="goal12">
 					<description>
-						<text value=" Individual unspecified (%)"/>
+						<text value="Individual unspecified (%)"/>
 					</description>
 					<target>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
@@ -903,9 +904,10 @@
 							</coding>
 						</valueCodeableConcept>
 					</extension>
+					<!-- This extension hasn't been defined
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extReferenceToProcedure">
 						<valueString value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
-					</extension>
+					</extension>-->
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
 						<valueDecimal value="6.1"/>
 					</extension>

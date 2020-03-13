@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
 	<id value="SpecStatus"/>
-	<url value="http://hl7.org/fhir/pq-cmc/valueset/SpecStatus"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/SpecStatus"/>
 	<name value="SpecStatus"/>
 	<title value="Specification Status"/>
 	<status value="draft"/>

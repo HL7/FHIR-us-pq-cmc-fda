@@ -16,11 +16,11 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>9075</WindowHeight>
-  <WindowWidth>24465</WindowWidth>
+  <WindowHeight>12818</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
-  <ActiveSheet>3</ActiveSheet>
+  <ActiveSheet>1</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -909,10 +909,10 @@
  <Worksheet ss:Name="pharmqualitydrugsubstance">
   <Names>
    <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="=pharmqualitydrugsubstance!R1C1:R19C24" ss:Hidden="1"/>
+    ss:RefersTo="=pharmqualitydrugsubstance!R1C1:R18C24" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="20" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="14.4375">
+   x:FullRows="1" ss:DefaultColumnWidth="51" ss:DefaultRowHeight="14.53125">
    <Column ss:Width="66.75"/>
    <Column ss:Width="42.75"/>
    <Column ss:Width="46.5"/>
@@ -935,7 +935,7 @@
    <Column ss:Width="46.5" ss:Span="2"/>
    <Column ss:Index="23" ss:Width="39"/>
    <Column ss:Width="47.25"/>
-   <Row ss:AutoFitHeight="0" ss:Height="43.6875">
+   <Row ss:AutoFitHeight="0" ss:Height="43.78125">
     <Cell ss:StyleID="s82"><Data ss:Type="String">Profile Name</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The name of an element for the purposes of this profile (used for slicing, code generation, etc. (see wiki for more details)</Font>       </ss:Data></Comment><NamedCell
@@ -1053,37 +1053,6 @@
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="57.5625">
-    <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s97"><Data ss:Type="String">Substance.description</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">1..1</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Substance Name</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">A commonly used name or a systematic name assigned to the material.  [Source: SME Defined]  Examples: acetaminophen; acetamide, N-(4-hydroxyphenyl)-; 4-hydroxyacetanilide; vaccine - rituximab, OkT3</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s92"><Data ss:Type="String">Will be name.name in R5</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1170,7 +1139,7 @@
     <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="28.6875">
+   <Row ss:AutoFitHeight="0" ss:Height="28.78125">
     <Cell ss:Index="2" ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1200,7 +1169,7 @@
     <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="115.3125">
+   <Row ss:AutoFitHeight="0" ss:Height="115.21875">
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1289,7 +1258,7 @@
     <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="100.6875">
+   <Row ss:AutoFitHeight="0" ss:Height="100.78125">
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1360,7 +1329,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="15" ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="43.3125">
+   <Row ss:AutoFitHeight="0" ss:Height="43.21875">
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="5" ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="8" ss:StyleID="s97"><Data ss:Type="String">Substance.code.coding.code</Data><NamedCell
@@ -1425,7 +1394,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="12" ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="28.6875">
+   <Row ss:AutoFitHeight="0" ss:Height="28.78125">
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="5" ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="8" ss:StyleID="s97"><Data ss:Type="String">Substance.code.coding.display</Data><NamedCell
@@ -1437,6 +1406,32 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell><Data ss:Type="String">An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="57.46875">
+    <Cell ss:StyleID="s95"/>
+    <Cell ss:StyleID="s96"/>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s96"/>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s97"><Data ss:Type="String">Substance.description</Data></Cell>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s96"/>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s92"/>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Substance Name</Data></Cell>
+    <Cell ss:StyleID="s98"><Data ss:Type="String">A commonly used name or a systematic name assigned to the material.  [Source: SME Defined]  Examples: acetaminophen; acetamide, N-(4-hydroxyphenyl)-; 4-hydroxyacetanilide; vaccine - rituximab, OkT3</Data></Cell>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s92"><Data ss:Type="String">Will be name.name in R5</Data></Cell>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s100"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s95"/>
@@ -1454,18 +1449,11 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
-   <TopRowVisible>3</TopRowVisible>
-   <Panes>
-    <Pane>
-     <Number>3</Number>
-     <ActiveRow>18</ActiveRow>
-     <ActiveCol>4</ActiveCol>
-    </Pane>
-   </Panes>
+   <Selected/>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
-  <AutoFilter x:Range="R1C1:R19C24"
+  <AutoFilter x:Range="R1C1:R18C24"
    xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
  </Worksheet>
@@ -2847,7 +2835,6 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
-   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
