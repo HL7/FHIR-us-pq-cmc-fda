@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
+	<id value="testUsage"/>
+	<url value="http://hl7.org/fhir/pq-cmc/CodeSystem/testUsage"/>
+	<name value="TestUsageCodes"/>
+	<title value="Test Usage Codes"/>
+	<status value="draft"/>
+	<description value="Pharmaceutical Quality/CMC Test Usage Terminology NCI Thesaurus Code:  C133868"/>
+	<content value="complete"/>
+	<concept>
+		<code value="C134029"/>
+		<display value="Release"/>
+	</concept>
+	<concept>
+		<code value="C134030"/>
+		<display value="Stability"/>
+	</concept>
+</CodeSystem>

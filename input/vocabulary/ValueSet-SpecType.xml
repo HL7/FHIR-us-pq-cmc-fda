@@ -16,7 +16,7 @@
 	<description value="A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined] Examples:  Drug product, drug substance, etc."/>
 	<compose>
 		<include>
-			<system value="https://evs.nci.nih.gov"/>
+			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/specType"/>
 			<concept>
 				<code value="C134021"/>
 				<display value="Drug Product"/>

@@ -2,7 +2,7 @@
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
 	<id value="SectionType"/>
 	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/SectionType"/>
-	<name value="SectionType"/>
+	<name value="SectionTypes"/>
 	<title value="Section Type"/>
 	<status value="draft"/>
 	<publisher value="{site.data.fhir.ig.publisher}"/>

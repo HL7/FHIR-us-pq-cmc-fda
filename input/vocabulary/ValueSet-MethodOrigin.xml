@@ -16,7 +16,7 @@
 	<description value="A coded value specifying the source of the method. [Source: SME Defined]  Example: Compendial"/>
 	<compose>
 		<include>
-			<system value="https://evs.nci.nih.gov"/>
+			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/methodOrigin"/>
 			<concept>
 				<code value="C96164"/>
 				<display value="CFR"/>

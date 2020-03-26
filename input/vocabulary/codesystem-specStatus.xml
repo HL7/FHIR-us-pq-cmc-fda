@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
+	<id value="specStatus"/>
+	<url value="http://hl7.org/fhir/pq-cmc/CodeSystem/specStatus"/>
+	<name value="SpecStatusCodes"/>
+	<title value="Specification Status Codes"/>
+	<status value="draft"/>
+	<description value="Pharmaceutical Quality/CMC Specification Status Terminology NCI Thesaurus Code:  C133863"/>
+	<content value="complete"/>
+	<concept>
+		<code value="C134010"/>
+		<display value="Tentatively Approved"/>
+	</concept>
+	<concept>
+		<code value="C134011"/>
+		<display value="Not Approved"/>
+	</concept>
+	<concept>
+		<code value="C25425"/>
+		<display value="Approved"/>
+	</concept>
+	<concept>
+		<code value="C134012"/>
+		<display value="Reported in a CBE or AR"/>
+	</concept>
+</CodeSystem>

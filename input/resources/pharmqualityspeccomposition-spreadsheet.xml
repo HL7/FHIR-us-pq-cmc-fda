@@ -7,20 +7,19 @@
  xmlns:html="http://www.w3.org/TR/REC-html40">
  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
   <Author>Catherine</Author>
-  <LastAuthor>Lloyd McKenzie</LastAuthor>
+  <LastAuthor>Catherine</LastAuthor>
   <Created>2020-01-13T20:07:42Z</Created>
-  <LastSaved>2020-03-10T19:05:19Z</LastSaved>
+  <LastSaved>2020-03-26T04:40:02Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>12818</WindowHeight>
-  <WindowWidth>28800</WindowWidth>
+  <WindowHeight>6735</WindowHeight>
+  <WindowWidth>16860</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
-  <ActiveSheet>3</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -935,7 +934,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="45">
     <Cell ss:StyleID="s69"><Data ss:Type="String">description</Data></Cell>
-    <Cell ss:StyleID="s74"><Data ss:Type="String">Group of profiles for submission of Module 3 of the eCTD </Data></Cell>
+    <Cell ss:StyleID="s74"><Data ss:Type="String">A compistion profile that groups entrys for submission of Module 3  sections 3.2.S.4.1- Substance Specification,    3.2.P.4 Excipients Specifications and  3.2.P.5.1Product Specifications of the eCTD.</Data></Cell>
     <Cell ss:StyleID="s66"/>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -987,11 +986,12 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
+   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>12</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2137,6 +2137,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <LeftColumnVisible>2</LeftColumnVisible>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -2148,8 +2149,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2904,7 +2905,7 @@
     <Cell><Data ss:Type="String">ApplicationNumber</Data></Cell>
     <Cell><Data ss:Type="String">Resource</Data></Cell>
     <Cell><Data ss:Type="String">Composition</Data></Cell>
-    <Cell><Data ss:Type="String">Application Number</Data></Cell>
+    <Cell><Data ss:Type="String">Application Identifier</Data></Cell>
     <Cell><Data ss:Type="String">Composition</Data></Cell>
     <Cell ss:Index="7"><Data ss:Type="String">1..1</Data></Cell>
     <Cell ss:Index="9"><Data ss:Type="String">string</Data></Cell>
@@ -3520,11 +3521,11 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
-   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>2</ActiveRow>
+     <ActiveRow>10</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

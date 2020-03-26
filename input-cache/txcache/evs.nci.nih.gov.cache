@@ -1,0 +1,145 @@
+-------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "evs.nci.nih.gov",
+      "concept" : [{
+        "code" : "C115123",
+        "display" : "Abbreviated New Animal Drug Application"
+      },
+      {
+        "code" : "C73113",
+        "display" : "Abbreviated New Drug Application"
+      },
+      {
+        "code" : "C96089",
+        "display" : "Annual Report"
+      },
+      {
+        "code" : "C71778",
+        "display" : "Biologics License Application"
+      },
+      {
+        "code" : "C115122",
+        "display" : "Generic Investigational New Animal Drug File"
+      },
+      {
+        "code" : "C80440",
+        "display" : "Humanitarian Device Exemption (HDE)"
+      },
+      {
+        "code" : "C82667",
+        "display" : "Investigational Device Exemption"
+      },
+      {
+        "code" : "C96091",
+        "display" : "Investigational New Animal Drug File"
+      },
+      {
+        "code" : "C96090",
+        "display" : "Investigational New Drug Application"
+      },
+      {
+        "code" : "C96092",
+        "display" : "New Active Ingredient"
+      },
+      {
+        "code" : "C72901",
+        "display" : "New Animal Drug Application"
+      },
+      {
+        "code" : "C72899",
+        "display" : "New Drug Application"
+      },
+      {
+        "code" : "C70880",
+        "display" : "Premarket Approval"
+      },
+      {
+        "code" : "C80442",
+        "display" : "Premarket Notification 510(K)"
+      },
+      {
+        "code" : "C96094",
+        "display" : "Supplement to an Approved Application"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system evs.nci.nih.gov"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "evs.nci.nih.gov",
+      "concept" : [{
+        "code" : "C115123",
+        "display" : "Abbreviated New Animal Drug Application"
+      },
+      {
+        "code" : "C73113",
+        "display" : "Abbreviated New Drug Application"
+      },
+      {
+        "code" : "C96089",
+        "display" : "Annual Report"
+      },
+      {
+        "code" : "C71778",
+        "display" : "Biologics License Application"
+      },
+      {
+        "code" : "C115122",
+        "display" : "Generic Investigational New Animal Drug File"
+      },
+      {
+        "code" : "C80440",
+        "display" : "Humanitarian Device Exemption (HDE)"
+      },
+      {
+        "code" : "C82667",
+        "display" : "Investigational Device Exemption"
+      },
+      {
+        "code" : "C96091",
+        "display" : "Investigational New Animal Drug File"
+      },
+      {
+        "code" : "C96090",
+        "display" : "Investigational New Drug Application"
+      },
+      {
+        "code" : "C96092",
+        "display" : "New Active Ingredient"
+      },
+      {
+        "code" : "C72901",
+        "display" : "New Animal Drug Application"
+      },
+      {
+        "code" : "C72899",
+        "display" : "New Drug Application"
+      },
+      {
+        "code" : "C70880",
+        "display" : "Premarket Approval"
+      },
+      {
+        "code" : "C80442",
+        "display" : "Premarket Notification 510(K)"
+      },
+      {
+        "code" : "C96094",
+        "display" : "Supplement to an Approved Application"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system evs.nci.nih.gov"
+}
+-------------------------------------------------------------------------------------

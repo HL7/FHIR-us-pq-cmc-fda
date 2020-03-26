@@ -16,7 +16,7 @@
 	<description value="A high-level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined] Examples: Assay, Impurities, Description, etc."/>
 	<compose>
 		<include>
-			<system value="https://evs.nci.nih.gov"/>
+			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/testCategory"/>
 			<concept>
 				<code value="C17771"/>
 				<display value="Chemical Properties"/>

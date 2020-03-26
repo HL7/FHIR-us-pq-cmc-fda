@@ -10,7 +10,7 @@
 		<fullUrl value="urn:uuid:9e61dc92-e98f-4e20-8b24-ff9ac654fcff"/>
 		<resource>
 			<Composition>
-        <id value="9e61dc92-e98f-4e20-8b24-ff9ac654fcff"/>
+				<id value="9e61dc92-e98f-4e20-8b24-ff9ac654fcff"/>
 				<meta>
 					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualityspeccomposition"/>
 				</meta>
@@ -27,8 +27,7 @@
 				</extension>
 				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extApplicationType">
 					<valueCodeableConcept>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="ApplicationType">
 							<version value="draft"/>
 							<code value="C73113"/>
 							<display value="Abbreviated New Drug Application"/>
@@ -46,7 +45,6 @@
 						<display value="Product Specifications"/>
 					</coding>
 				</type>
-				<!-- Added date - it's mandatory -->
 				<date value="2020-01-01"/>
 				<author>
 					<reference value="Organization/95480d76-b621-43b5-9b9b-e7f015134ce6"/>
@@ -91,6 +89,9 @@
 		<resource>
 			<Organization>
 				<id value="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
+				<meta>
+					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualityorganization"/>
+				</meta>
 				<text>
 					<status value="generated"/>
 					<div xmlns="http://www.w3.org/1999/xhtml">
@@ -106,22 +107,17 @@
 						<p>
 							<b>active</b>: true</p>
 						<p>
-							<b>name</b>: Abbott Biologicals BV</p>
+							<b>name:</b>Abbott Biologicals BV</p>
 						<p>
 							<b>address</b>: Veerweg 12, Olst, 8121, Netherlands</p>
 					</div>
 				</text>
 				<identifier>
-          <!-- Lloyd note: An extension is inappropriate here.  You should be using the 'system' value for DUNS and FEI - that's the correct way to identify a specific identifier -->
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIdentificationType">
-						<valueCode value="DUNS"/>
-					</extension>
+					<system value="urn:ISIN:US26483E1001"/>
 					<value value="489049423"/>
 				</identifier>
 				<identifier>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIdentificationType">
-						<valueCode value="FEI"/>
-					</extension>
+					<system value="https://www.fda.gov"/>
 					<value value="3000268812"/>
 				</identifier>
 				<active value="true"/>
@@ -141,6 +137,9 @@
 		<resource>
 			<MedicinalProduct>
 				<id value="1c616b24-3895-48c4-9a02-9a64110351ef"/>
+				<meta>
+					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualitydrugproduct"/>
+				</meta>
 				<text>
 					<status value="generated"/>
 					<div xmlns="http://www.w3.org/1999/xhtml">
@@ -176,14 +175,13 @@
 					<status value="generated"/>
 					<div xmlns="http://www.w3.org/1999/xhtml">
 						<p>
-							<b>TBD  -  PC/CMC Quality Specification</b>
+							<b>TBD Product -  PC/CMC Quality Specification</b>
 						</p>
 					</div>
 				</text>
 				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extSpecificationStatus">
 					<valueCodeableConcept>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="SpecStatus">
 							<version value="draft"/>
 							<code value="C134011"/>
 							<display value="Not Approved"/>
@@ -194,8 +192,7 @@
 				<title value="Benadryl HCL Specification"/>
 				<status value="active"/>
 				<subjectCodeableConcept>
-					<coding>
-						<system value="https://evs.nci.nih.gov"/>
+					<coding id="SpecType">
 						<version value="draft"/>
 						<code value="C134021"/>
 						<display value="Drug Product"/>
@@ -203,48 +200,70 @@
 				</subjectCodeableConcept>
 				<date value="2016-09-24"/>
 				<usage value="Testing specification"/>
+				<!--	<approvalDate value=""/> -->
 				<goal id="goal1">
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAdditionalInformation">
 						<valueString value="Light to medium light color"/>
 					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134029"/>
+								<display value="Release"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="Oval Pink Tablet"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="Oval Pink Tablet"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCodeableConcept>
+								<coding id="InterpretationCode">
+									<version value="draft"/>
+									<code value="C48660"/>
+									<display value="NA"/>
+								</coding>
+							</valueCodeableConcept>
+						</extension>
 						<detailCodeableConcept>
 							<text value="Oval Pink"/>
 						</detailCodeableConcept>
 					</target>
 				</goal>
 				<goal id="goal2">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134029"/>
+								<display value="Release"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="1.9% - 2.5%"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134029"/>
-									<display value="Release"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="1.9% - 2.5%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61584"/>
 									<display value="MT"/>
@@ -254,7 +273,7 @@
 						<detailQuantity>
 							<value value="1.9">
 							</value>
-							<comparator value="&gt;=">
+							<comparator value="&gt;">
 							</comparator>
 							<unit value="%">
 							</unit>
@@ -264,36 +283,13 @@
 							</code>
 						</detailQuantity>
 					</target>
-				</goal>
-				<goal id="goal3">
-					<description>
-						<text value="range"/>
-					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134029"/>
-									<display value="Release"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="range"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61585"/>
 									<display value="LT"/>
@@ -303,7 +299,7 @@
 						<detailQuantity>
 							<value value="2.5">
 							</value>
-							<comparator value="&lt;=">
+							<comparator value="&lt;">
 							</comparator>
 							<unit value="%">
 							</unit>
@@ -315,24 +311,25 @@
 					</target>
 				</goal>
 				<goal id="goal4">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="NMT 1000 cfu/g"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="NMT 1000 cfu/g"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61586"/>
 									<display value="NMT"/>
@@ -342,7 +339,7 @@
 						<detailQuantity>
 							<value value="1000">
 							</value>
-							<comparator value="&lt;">
+							<comparator value="&lt;=">
 							</comparator>
 							<unit value="cfu/g">
 							</unit>
@@ -354,24 +351,25 @@
 					</target>
 				</goal>
 				<goal id="goal5">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="Should be Absent/g"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="Should be Absent/g"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C48660"/>
 									<display value="NA"/>
@@ -384,34 +382,34 @@
 					</target>
 				</goal>
 				<goal id="goal6">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134029"/>
+								<display value="Release"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="no one unit (of the 6) is LT 10%"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134029"/>
-									<display value="Release"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="no one unit (of the 6) is LT 10%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61585"/>
 									<display value="LT"/>
@@ -421,7 +419,7 @@
 						<detailQuantity>
 							<value value="10">
 							</value>
-							<comparator value="&lt;=">
+							<comparator value="&lt;">
 							</comparator>
 							<unit value="%">
 							</unit>
@@ -433,37 +431,126 @@
 					</target>
 				</goal>
 				<goal id="goal7">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134029"/>
+								<display value="Release"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="(average of 12) LT 10%"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134029"/>
-									<display value="Release"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="(average of 12) LT 10%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61585"/>
 									<display value="LT"/>
+								</coding>
+							</valueCodeableConcept>
+						</extension>
+						<detailQuantity>
+							<value value="10">
+							</value>
+							<comparator value="&lt;">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal8">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134029"/>
+								<display value="Release"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<description>
+						<text value="Acceptance Criteria"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="no one unit is NMT 25%"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCodeableConcept>
+								<coding id="InterpretationCode">
+									<version value="draft"/>
+									<code value="C61586"/>
+									<display value="NMT"/>
+								</coding>
+							</valueCodeableConcept>
+						</extension>
+						<detailQuantity>
+							<value value="25">
+							</value>
+							<comparator value="&lt;=">
+							</comparator>
+							<unit value="%">
+							</unit>
+							<system value="http://unitsofmeasure.org">
+							</system>
+							<code value="%">
+							</code>
+						</detailQuantity>
+					</target>
+				</goal>
+				<goal id="goal9">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<description>
+						<text value="Acceptance Criteria"/>
+					</description>
+					<target>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="(average of 24) NMT 10%"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
+							<valueCodeableConcept>
+								<coding id="TestUsage">
+									<version value="draft"/>
+									<code value="C61586"/>
+									<display value="NMT"/>
 								</coding>
 							</valueCodeableConcept>
 						</extension>
@@ -481,113 +568,26 @@
 						</detailQuantity>
 					</target>
 				</goal>
-				<goal id="goal8">
-					<description>
-						<text value="no one unit is NMT 25%"/>
-					</description>
-					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134029"/>
-									<display value="Release"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C61586"/>
-									<display value="NMT"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<detailQuantity>
-							<value value="25">
-							</value>
-							<comparator value="&lt;">
-							</comparator>
-							<unit value="%">
-							</unit>
-							<system value="http://unitsofmeasure.org">
-							</system>
-							<code value="%">
-							</code>
-						</detailQuantity>
-					</target>
-				</goal>
-				<goal id="goal9">
-					<description>
-						<text value="(average of 24) NMT 10%"/>
-					</description>
-					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C61586"/>
-									<display value="NMT"/>
-								</coding>
-							</valueCodeableConcept>
-						</extension>
-						<detailQuantity>
-							<value value="10">
-							</value>
-							<comparator value="&lt;">
-							</comparator>
-							<unit value="%">
-							</unit>
-							<system value="http://unitsofmeasure.org">
-							</system>
-							<code value="%">
-							</code>
-						</detailQuantity>
-					</target>
-				</goal>
 				<goal id="goal10">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="no one unit is NMT 25%"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="no one unit is NMT 25%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61586"/>
 									<display value="NMT"/>
@@ -597,7 +597,7 @@
 						<detailQuantity>
 							<value value="25">
 							</value>
-							<comparator value="&lt;">
+							<comparator value="&lt;=">
 							</comparator>
 							<unit value="%">
 							</unit>
@@ -609,24 +609,25 @@
 					</target>
 				</goal>
 				<goal id="goal11">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="≥99.0% main peak area"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="≥99.0% main peak area"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C61584"/>
 									<display value="MT"/>
@@ -648,24 +649,25 @@
 					</target>
 				</goal>
 				<goal id="goal12">
+					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
+						<valueCodeableConcept>
+							<coding id="TestUsage">
+								<version value="draft"/>
+								<code value="C134030"/>
+								<display value="Stability"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
 					<description>
-						<text value="Individual unspecified (%)"/>
+						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extAcTestUsage">
-							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
-									<version value="draft"/>
-									<code value="C134030"/>
-									<display value="Stability"/>
-								</coding>
-							</valueCodeableConcept>
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+							<valueString value="Individual unspecified (%)"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
 							<valueCodeableConcept>
-								<coding>
-									<system value="https://evs.nci.nih.gov"/>
+								<coding id="InterpretationCode">
 									<version value="draft"/>
 									<code value="C48793"/>
 									<display value="EQ"/>
@@ -690,8 +692,7 @@
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
+							<coding id="MethodOrigin">
 								<version value="draft"/>
 								<code value="C96103"/>
 								<display value="Proprietary"/>
@@ -703,8 +704,7 @@
 					</extension>
 					<title value="Description"/>
 					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="TestCategory">
 							<version value="draft"/>
 							<code value="C138990"/>
 							<display value="Description"/>
@@ -723,8 +723,7 @@
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
+							<coding id="MethodOrigin">
 								<version value="draft"/>
 								<code value="C96102"/>
 								<display value="Compendial"/>
@@ -736,8 +735,7 @@
 					</extension>
 					<title value="Water % w/v by KF"/>
 					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="TestCategory">
 							<version value="draft"/>
 							<code value="C17771"/>
 							<display value="Chemical Properties"/>
@@ -748,7 +746,6 @@
 					<action id="idro5omudnrrx3elfnxt5su4q1geqlbm2t3jvzujdogwq1kggm24be">
 						<title value="Single Stage"/>
 						<goalId value="goal2"/>
-						<goalId value="goal3"/>
 					</action>
 				</action>
 				<action>
@@ -757,8 +754,7 @@
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
+							<coding id="MethodOrigin">
 								<version value="draft"/>
 								<code value="C96103"/>
 								<display value="Proprietary"/>
@@ -770,8 +766,7 @@
 					</extension>
 					<title value="Total Aerobic microbial count"/>
 					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="TestCategory">
 							<version value="draft"/>
 							<code value="C158425"/>
 							<display value="Biological Properties"/>
@@ -790,8 +785,7 @@
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
+							<coding id="MethodOrigin">
 								<version value="draft"/>
 								<code value="C96103"/>
 								<display value="Proprietary"/>
@@ -803,8 +797,7 @@
 					</extension>
 					<title value="E.Coli"/>
 					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="TestCategory">
 							<version value="draft"/>
 							<code value="C158425"/>
 							<display value="Biological Properties"/>
@@ -823,8 +816,7 @@
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
+							<coding id="MethodOrigin">
 								<version value="draft"/>
 								<code value="C96102"/>
 								<display value="Compendial"/>
@@ -836,22 +828,13 @@
 					</extension>
 					<title value="Dissolution in Acid Stage (2 hours)"/>
 					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="TestCategory">
 							<version value="draft"/>
 							<code value="C60819"/>
 							<display value="Assay"/>
 						</coding>
 						<text value="711"/>
 					</code>
-					<reason>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
-							<version value="draft"/>
-							<code value="C134029"/>
-							<display value="Release"/>
-						</coding>
-					</reason>
 					<definitionUri value="POC32801/Product/ver_1.0/USP&lt;711&gt;"/>
 					<action id="idjsuiv3smxndoho0nb5y551juwdr31madwensw2bac2ngjaoyyo5e">
 						<title value="First Stage"/>
@@ -878,92 +861,11 @@
 				</action>
 				<action>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extActionType">
-						<valueCode value="Alternate"/>
-					</extension>
-					<relatedAction>
-						<actionId value="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
-						<relationship value="concurrent"/>
-					</relatedAction>
-					<relatedAction>
-						<actionId value="e915468b-c30f-4a03-baa9-ed90f02f3c70"/>
-						<relationship value="concurrent"/>
-					</relatedAction>
-					<selectionBehavior value="exactly-one"/>
-				</action>
-				<action>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extActionType">
 						<valueCode value="Single"/>
 					</extension>
 					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
 						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
-								<version value="draft"/>
-								<code value="C96103"/>
-								<display value="Proprietary"/>
-							</coding>
-						</valueCodeableConcept>
-					</extension>
-					<!-- This extension hasn't been defined
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extReferenceToProcedure">
-						<valueString value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
-					</extension>-->
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueDecimal value="6.1"/>
-					</extension>
-					<title value="Size exclusion HPLC"/>
-					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
-							<version value="draft"/>
-							<code value="C158423"/>
-							<display value="Impurities"/>
-						</coding>
-						<text value="Size exclusion HPLC"/>
-					</code>
-					<goalId value="goal11"/>
-					<definitionUri value="../32s42-analyt-proc/analytical-procedures-size-exclusion-hplc.pdff"/>
-					<action id="7aa1a85c-a334-4c70-9863-787ec7de0c62"/>
-				</action>
-				<action>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extActionType">
-						<valueCode value="Single"/>
-					</extension>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
-						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
-								<version value="draft"/>
-								<code value="C96103"/>
-								<display value="Proprietary"/>
-							</coding>
-						</valueCodeableConcept>
-					</extension>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestOrder">
-						<valueDecimal value="6.2"/>
-					</extension>
-					<title value="Reversed Phase HPLC"/>
-					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
-							<version value="draft"/>
-							<code value="C158423"/>
-							<display value="Impurities"/>
-						</coding>
-						<text value="Reversed Phase HPLC"/>
-					</code>
-					<goalId value="goal11"/>
-					<definitionUri value="../32s42-analyt-proc/analytical-procedures-reversed-phase-hplc.pdf"/>
-					<action id="95480d76-b621-43b5-9b9b-e7f015134ce6"/>
-				</action>
-				<action>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extActionType">
-						<valueCode value="Single"/>
-					</extension>
-					<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extTestMethodOrigin">
-						<valueCodeableConcept>
-							<coding>
-								<system value="https://evs.nci.nih.gov"/>
+							<coding id="MethodOrigin">
 								<version value="draft"/>
 								<code value="C96102"/>
 								<display value="Compendial"/>
@@ -978,22 +880,13 @@
 					</extension>
 					<title value="Degraded Product Impurities"/>
 					<code>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
+						<coding id="TestCategory">
 							<version value="draft"/>
 							<code value="C17771"/>
 							<display value="Chemical Properties"/>
 						</coding>
 						<text value="Deg Products"/>
 					</code>
-					<reason>
-						<coding>
-							<system value="https://evs.nci.nih.gov"/>
-							<version value="draft"/>
-							<code value="C134030"/>
-							<display value="Stability"/>
-						</coding>
-					</reason>
 					<definitionUri value="POC32801/Product/ver_1.0/DegImpur"/>
 					<action id="500ec5da-bd6f-4a0a-bd8b-23b670eb2f9b">
 						<title value="Single Stage"/>

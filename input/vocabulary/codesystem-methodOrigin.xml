@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
+	<id value="methodOrigin"/>
+	<url value="http://hl7.org/fhir/pq-cmc/CodeSystem/methodOrigin"/>
+	<name value="MethodOrigins"/>
+	<title value="Method Origin"/>
+	<status value="draft"/>
+	<description value="Pharmaceutical Quality/CMC Test Method Origin Terminology NCI Thesaurus Code:  C133867"/>
+	<content value="complete"/>
+				<concept>
+				<code value="C96164"/>
+				<display value="CFR"/>
+			</concept>
+			<concept>
+				<code value="C96103"/>
+				<display value="Proprietary"/>
+			</concept>
+			<concept>
+				<code value="C96102"/>
+				<display value="Compendial"/>
+			</concept>
+</CodeSystem>

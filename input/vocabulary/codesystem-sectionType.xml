@@ -2,7 +2,7 @@
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
 	<id value="sectionType"/>
 	<url value="http://hl7.org/fhir/pq-cmc/CodeSystem/sectionType"/>
-	<name value="SectionType"/>
+	<name value="CompSectionTypes"/>
 	<title value="Composition Section Type"/>
 	<status value="draft"/>
 	<description value="Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."/>
@@ -197,7 +197,7 @@
 	</concept>
 	<concept>
 		<code value="32P50"/>
-		<display value="Product name, dosage form]"/>
+		<display value="Product name - dosage form"/>
 	</concept>
 	<concept>
 		<code value="32P51"/>

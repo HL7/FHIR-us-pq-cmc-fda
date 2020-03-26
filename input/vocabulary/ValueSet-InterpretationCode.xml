@@ -2,7 +2,7 @@
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
 	<id value="InterpretationCode"/>
 	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/InterpretationCode"/>
-	<name value="InterpretationCode"/>
+	<name value="InterpretationCodes"/>
 	<title value="Pharmaceutical Quality/CMC Interpretation Code Terminology"/>
 	<status value="draft"/>
 	<publisher value="{site.data.fhir.ig.publisher}"/>
@@ -13,10 +13,10 @@
 			<value value="https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation"/>
 		</telecom>
 	</contact>
-	<description value="x"/>
+	<description value="A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]"/>
 	<compose>
 		<include>
-			<system value="https://evs.nci.nih.gov"/>
+			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/interpretationCode"/>
 			<concept>
 				<code value="C48793"/>
 				<display value="EQ"/>

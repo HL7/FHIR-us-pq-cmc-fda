@@ -4,14 +4,20 @@
 	<a name="Scope">  </a>
 	<p>&#160;</p>
 	<p>
-As part of an effort intended to support future electronic acquisition and use of submitted information, a project was undertaken at FDA to identify and prioritize pharmaceutical quality/chemistry, manufacturing and controls (PQ/CMC) information that would benefit from a structured submission approach. This information would be submitted in the Common Technical Document as defined by the International Council for Harmonisation’s (ICH) Common Technical Document (CTD) . The goals of this project were (a) to identify types of PQ/CMC information that are available in applications, information that is important to evaluate an application, information categories and elements that are common across the various application types, and (b) to provide recommendations for standardization of the categories and data types necessary for application review.  This initiative will align, where comparable elements exist, with substance and product identifiers described by the International Organization of Standardization for the Identification of Medicinal Products (ISO IDMP) standards.
-	 </p>
+FDA intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications. The impetus for this standardization effort was the provisions from the 2012 Food and Drug Administration Safety and Innovation Act (FDASIA) (Pub. L. 112-144), which authorized the Agency to require certain submissions to be in a specified electronic format. The development of a structured format for PQ/CMC data will enable consistency in the content and format of PQ/CMC data submitted, thus providing a harmonized language for submission content, allowing reviewers to query the data, and, in general, contributing to a more efficient and effective regulatory decision-making process by creating a standardized data dictionary.	 </p>
 	<p>
-	 For consistency of product quality data across FDA centers, the draft standardized data elements and terminologies were created by an Agency workgroup comprised of Subject Matter Experts (SMEs) from Center for Drug Evaluation and Research (CDER), Center for Veterinary Medicine (CVM) and Center for Biologics Evaluation and Research (CBER).   The draft data elements and terminologies associated with PQ/CMC subject areas and scoped to some of what is currently submitted in Module 3 of the electronic Common Technical Document (eCTD)  submission, but is not intended to be comprehensive in covering all eCTD pharmaceutical quality information. FDA has developed limited structured data elements and supporting terminologies for PQ/CMC and has recently engaged in discussions with standard setting bodies to codify these data elements into a data exchange specification for the submission of PQ/CMC data. 
-	 </p>
+	•	At HL7, the PQ/CMC Project will create a single IG which will have MANY Profiles.    HL7 allows balloting of an IG for specific Profiles.  September 2020 will be the first HL7 ballot for PQ/CMC IG with Quality Specification (QS) Profile.  Below is the list of planned Profiles. These set of profiles may change as we proceed through design and development to cover all the PQ/CMC requirements.  
+<ul>
+			<li>	Quality Specification Profile</li>
+			<li>Drug Product Profile</li>
+			<li>Drug Substance Profile</li>
+			<li>Excipient Profile</li>
+			<li>Batch Analysis Profile</li>
+			<li>Stability Profile </li>
+		</ul>
+	</p>
 	<p>
-	 At present FDA is exploring HL7 FHIR as a potential data exchange solution for submission of PQ/CMC structured data as part of Module 3 eCTD submission.  Since this is an exploratory effort, FDA is conducting a tightly scoped Proof-of-Concept (PoC) with FHIR for just the Quality Specification domain of PQ/CMC.  The PoC effort has created a DRAFT FHIR Profile called PQ/CMC Specification Profile.  The DRAFT FHIR Profile is intended to be used by few sponsor organizations to create FHIR xml instances and submit test applications to the FDA Test Gateway.  
-	 </p>
+The PQ/CMC Profile design and development of IG is being bound to the FHIR Build definition at https://build.fhir.org/ and NOT to the FHIR Release 4.2.  The rationale for leveraging the resource definition on FHIR build site is that it has the latest definitions for the evolving resources and PQ/CMC needs those updates.  The PQ/CMC data model is dependent on R5 of FHIR.  The pharmqualitydrugproduct and pharmqualitydrugsubstance profiles are temporary.  The pharmqualityspecification profile is not complete. ActionType extension is to allow for two types of test relationships.  The current tooling does not suppor slicing on an extension. This release of the IG only support the action type of 'Single'.  An actiion type of 'Alternate' would specify that one of two different test would be executed. The use case arrose during the POC.</p>
 	<p>&#160;</p>
 	<a href="#Scope">Back to top of page</a>
 </div>

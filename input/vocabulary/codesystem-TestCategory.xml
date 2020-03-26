@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
+	<id value="testCategory"/>
+	<url value="http://hl7.org/fhir/pq-cmc/CodeSystem/testCategory"/>
+	<name value="SectionType"/>
+	<title value="Test Category Codes"/>
+	<status value="draft"/>
+	<description value="Pharmaceutical Quality/CMC Test Category Terminology NCI Thesaurus Code:  C133807"/>
+	<content value="complete"/>
+				<concept>
+				<code value="C17771"/>
+				<display value="Chemical Properties"/>
+			</concept>
+			<concept>
+				<code value="C138990"/>
+				<display value="Description"/>
+			</concept>
+			<concept>
+				<code value="C158423"/>
+				<display value="Impurities"/>
+			</concept>
+			<concept>
+				<code value="C158425"/>
+				<display value="Biological Properties"/>
+			</concept>
+			<concept>
+				<code value="C158424"/>
+				<display value="Physical Properties"/>
+			</concept>
+			<concept>
+				<code value="C138993"/>
+				<display value="Identification"/>
+			</concept>
+			<concept>
+				<code value="C60819"/>
+				<display value="Assay"/>
+			</concept>
+</CodeSystem>

@@ -1,7 +1,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
 	<id value="hl7.fhir.us.pq-cmc"/>
 	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc"/>
-	<version value="0.0.5"/>
+	<version value="0.0.6"/>
 	<name value="PharmaceuticalQualityImplementationGuide"/>
 	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
 	<status value="draft"/>
@@ -53,12 +53,12 @@
 			<name value="Example(s)"/>
 			<description value="Example(s) showing the use of the PQ-CMC profiles"/>
 		</grouping>
-<!--		<resource>
+		<resource>
 			<reference>
 				<reference value="StructureDefinition/extApplicationType"/>
 			</reference>
 			<name value="Application Type"/>
-			<description value="Todo"/>
+			<description value="The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined]."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="extensions"/>
 		</resource>
@@ -66,29 +66,11 @@
 			<reference>
 				<reference value="StructureDefinition/extApplicationNumber"/>
 			</reference>
-			<name value="Application Number"/>
-			<description value="Todo"/>
+			<name value="Application Idenifer"/>
+			<description value="A unique identifier assigned by the FDA to each application for approval and or in support of a drug in the United States.  Often known as the application number.  This includes all the types captured in the Application type data element [Source: SME Defined]"/>
 			<exampleBoolean value="false"/>
 			<groupingId value="extensions"/>
 		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extIdentificationType"/>
-			</reference>
-			<name value="Identification Type"/>
-			<description value="Todo"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>
-		<resource>
-			<reference>
-				<reference value="StructureDefinition/extReferenceToProcedure"/>
-			</reference>
-			<name value="Reference To Procedure"/>
-			<description value="Todo"/>
-			<exampleBoolean value="false"/>
-			<groupingId value="extensions"/>
-		</resource>-->
 		<resource>
 			<reference>
 				<reference value="StructureDefinition/extSpecificationStatus"/>
@@ -152,6 +134,16 @@
 			<exampleBoolean value="false"/>
 			<groupingId value="extensions"/>
 		</resource>
+		<resource>
+			<reference>
+				<reference value="StructureDefinition/extorigText"/>
+			</reference>
+			<name value="Test Usage"/>
+			<description value="The text of the acceptance criteria as provided in the specification. [Source: SME Defined]  Examples: White to off-white cake; 22.5 - 27.5 mg/ml  Note: This is the text as it appears in the Specification."/>
+			<exampleBoolean value="false"/>
+			<groupingId value="extensions"/>
+		</resource>
+		
 		<resource>
 			<reference>
 				<reference value="StructureDefinition/extInterpCode"/>
@@ -248,6 +240,15 @@
 			</reference>
 			<name value="ProductExample"/>
 			<description value="FHIR XML illustrating a Drug Product Quality Specification"/>
+			<exampleBoolean value="true"/>
+			<groupingId value="examples"/>
+		</resource>
+		<resource>
+			<reference>
+				<reference value="Bundle/qualityspec-substance-profile-example"/>
+			</reference>
+			<name value="SubstancetExample"/>
+			<description value="FHIR XML illustrating a Drug Substance Quality Specification"/>
 			<exampleBoolean value="true"/>
 			<groupingId value="examples"/>
 		</resource>
