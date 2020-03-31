@@ -1,7 +1,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
 	<id value="hl7.fhir.us.pq-cmc"/>
 	<url value="http://hl7.org/fhir/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc"/>
-	<version value="0.0.6"/>
+	<version value="OBI"/>
 	<name value="PharmaceuticalQualityImplementationGuide"/>
 	<title value="Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guides"/>
 	<status value="draft"/>
