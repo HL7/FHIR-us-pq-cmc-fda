@@ -5,7 +5,7 @@
 	<name value="ApplicationType"/>
 	<title value="Composition Application Type"/>
 	<status value="draft"/>
-	<description value="NCI Thesaurus: Pharmaceutical Quality/CMC Application Type Terminology (Code C168639)."/>
+	<description value="NCI Thesaurus: Pharmaceutical Quality/CMC Application Type Terminology (Code C168639)"/>
 	<content value="complete"/>
 	<concept>
 		<code value="C115123"/>

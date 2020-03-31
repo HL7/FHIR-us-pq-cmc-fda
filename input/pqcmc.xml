@@ -136,14 +136,13 @@
 		</resource>
 		<resource>
 			<reference>
-				<reference value="StructureDefinition/extorigText"/>
+				<reference value="StructureDefinition/extOriginalText"/>
 			</reference>
 			<name value="Test Usage"/>
 			<description value="The text of the acceptance criteria as provided in the specification. [Source: SME Defined]  Examples: White to off-white cake; 22.5 - 27.5 mg/ml  Note: This is the text as it appears in the Specification."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="extensions"/>
 		</resource>
-		
 		<resource>
 			<reference>
 				<reference value="StructureDefinition/extInterpCode"/>
@@ -191,9 +190,9 @@
 		</resource>
 		<resource>
 			<reference>
-				<reference value="ValueSet/SpecType"/>
+				<reference value="ValueSet/SpecTypes"/>
 			</reference>
-			<name value="Specification Type"/>
+			<name value="Specification Types"/>
 			<description value="A classification of specification related to the kind of the entity it is referencing."/>
 			<exampleBoolean value="false"/>
 			<groupingId value="terminology"/>
@@ -247,7 +246,7 @@
 			<reference>
 				<reference value="Bundle/qualityspec-substance-profile-example"/>
 			</reference>
-			<name value="SubstancetExample"/>
+			<name value="SubstanceExample"/>
 			<description value="FHIR XML illustrating a Drug Substance Quality Specification"/>
 			<exampleBoolean value="true"/>
 			<groupingId value="examples"/>

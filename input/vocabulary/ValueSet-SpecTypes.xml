@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
-	<id value="SpecType"/>
-	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/SpecType"/>
-	<name value="SpecType"/>
-	<title value="Specification Type"/>
+	<id value="SpecTypes"/>
+	<url value="http://hl7.org/fhir/pq-cmc/ValueSet/SpecTypes"/>
+	<name value="SpecTypes"/>
+	<title value="Specification Types"/>
 	<status value="draft"/>
 	<publisher value="{site.data.fhir.ig.publisher}"/>
 	<contact>
@@ -16,7 +16,7 @@
 	<description value="A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined] Examples:  Drug product, drug substance, etc."/>
 	<compose>
 		<include>
-			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/specType"/>
+			<system value="http://hl7.org/fhir/pq-cmc/CodeSystem/specTypeCodes"/> 
 			<concept>
 				<code value="C134021"/>
 				<display value="Drug Product"/>
@@ -27,7 +27,7 @@
 			</concept>
 			<concept>
 				<code value="C133931"/>
-				<display value="Raw Materials/Excipients/Intermediates/Reagents"/>
+				<display value="Raw Materials-Excipients-Intermediates-Reagents"/>
 			</concept>
 		</include>
 	</compose>

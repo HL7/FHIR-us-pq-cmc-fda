@@ -1,4 +1,9 @@
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/PQCMC_IG/input-cache/schemas/R4/fhir-single.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Use which ever schema declaration is appropriate for the file system used to write or validate the message. 
+The default name space is all that is needed for the IG validator> -->
+<Bundle xmlns="http://hl7.org/fhir">
+	<!-- 		 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">  
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ./fhir-single.xsd">-->
 	<id value="qualityspec-substance-profile-example"/>
 	<identifier>
 		<system value="urn:ietf:rfc:3986"/>
@@ -150,37 +155,23 @@
 							<b>Dosage Form</b>: TABLET  <b> Code</b>: C42998</p>
 					</div>
 				</text>
-				<identifier>
-					<type>
-						<text value="CAS"/>
-					</type>
-					<system value="https://www.cas.org/"/>
-					<value value="147-24-0"/>
-				</identifier>
-				<identifier>
-					<type>
-						<text value="IUPAC"/>
-					</type>
-					<system value="https://iupac.org/what-we-do/nomenclature/"/>
-					<value value="[2-(diphenylmethoxy)ethyl]dimethylamine hydrochloride"/>
-				</identifier>
-				<identifier>
-					<type>
-						<text value="INN"/>
-					</type>
-					<system value="https://www.who.int/medicines/services/inn/en/"/>
-					<value value="1774"/>
-				</identifier>
-				<identifier>
-					<type>
-						<text value="USAN"/>
-					</type>
-					<system value="https://www.ama-assn.org/about-ama/united-states-adopted-names"/>
-					<value value="diphenhydramine hydrochloride"/>
-				</identifier>
+				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extCAS">
+					<valueString value="147-24-0"/>
+				</extension>
+				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extINN">
+					<valueString value="1774"/>
+				</extension>
+				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extUSAN">
+					<valueString value="diphenhydramine hydrochloride"/>
+				</extension>
+				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extIUPACName">
+					<valueString value="[2-(diphenylmethoxy)ethyl]dimethylamine hydrochloride"/>
+				</extension>
+				<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extCoCode">
+					<valueString value="PF-340294-DS"/>
+				</extension>
 				<code>
 					<coding>
-						<system value="https://www.fda.gov/industry/fda-resources-data-standards/fdas-global-substance-registration-system"/>
 						<code value="TC2D6JAD40"/>
 					</coding>
 				</code>
@@ -241,7 +232,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="Diphenhydramine hydrochloride appears as white or almost-white crystalline powder"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -290,7 +281,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="NLT 4"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -316,7 +307,7 @@
 						</detailQuantity>
 					</target>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="NMT 6"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -356,7 +347,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="NMT 1000 cfu/g"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -396,7 +387,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="Should be Absent/g"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">

@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>12818</WindowHeight>
-  <WindowWidth>28800</WindowWidth>
+  <WindowHeight>8565</WindowHeight>
+  <WindowWidth>25935</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <ActiveSheet>1</ActiveSheet>
@@ -270,17 +270,6 @@
     <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
    </Borders>
   </Style>
-  <Style ss:ID="s94">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
-   <Borders>
-    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
-    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
-    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
-    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"/>
-   </Borders>
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
-   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
-  </Style>
   <Style ss:ID="s95">
    <Font ss:FontName="Calibri" x:Family="Swiss"/>
   </Style>
@@ -291,16 +280,6 @@
   <Style ss:ID="s97">
    <Alignment ss:Vertical="Top"/>
    <Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="11" ss:Color="#333333"/>
-  </Style>
-  <Style ss:ID="s98">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
-   <Borders>
-    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
-    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
-    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
-   </Borders>
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
-   <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
   </Style>
   <Style ss:ID="s99">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"/>
@@ -867,7 +846,7 @@
    x:FullRows="1" ss:StyleID="s81" ss:DefaultColumnWidth="65.25"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s81" ss:Width="78.75"/>
-   <Column ss:StyleID="s82" ss:Width="79.875"/>
+   <Column ss:StyleID="s82" ss:Width="80.25"/>
    <Column ss:StyleID="s82" ss:Width="95.25"/>
    <Column ss:StyleID="s81" ss:Width="81"/>
    <Column ss:StyleID="s81" ss:Width="74.25"/>
@@ -876,20 +855,20 @@
    <Column ss:StyleID="s82" ss:Width="272.25"/>
    <Column ss:StyleID="s81" ss:Width="50.25"/>
    <Column ss:StyleID="s81" ss:Width="41.25"/>
-   <Column ss:StyleID="s81" ss:Width="34.875"/>
+   <Column ss:StyleID="s81" ss:Width="35.25"/>
    <Column ss:StyleID="s81" ss:Width="84.75"/>
    <Column ss:StyleID="s81" ss:AutoFitWidth="0" ss:Width="90.75"/>
    <Column ss:StyleID="s81" ss:Width="57"/>
-   <Column ss:StyleID="s81" ss:Width="114.75"/>
+   <Column ss:StyleID="s81" ss:AutoFitWidth="0" ss:Width="135.75"/>
    <Column ss:StyleID="s83" ss:Width="399.75"/>
    <Column ss:StyleID="s81" ss:Width="84"/>
-   <Column ss:StyleID="s81" ss:Width="67.875"/>
-   <Column ss:StyleID="s81" ss:Width="43.875"/>
-   <Column ss:StyleID="s81" ss:Width="79.875"/>
+   <Column ss:StyleID="s81" ss:Width="68.25"/>
+   <Column ss:StyleID="s81" ss:Width="44.25"/>
+   <Column ss:StyleID="s81" ss:Width="80.25"/>
    <Column ss:StyleID="s81" ss:Width="71.25"/>
-   <Column ss:StyleID="s81" ss:Width="76.875"/>
+   <Column ss:StyleID="s81" ss:Width="77.25"/>
    <Column ss:StyleID="s81" ss:Width="72.75"/>
-   <Column ss:StyleID="s81" ss:Width="100.875"/>
+   <Column ss:StyleID="s81" ss:Width="101.25"/>
    <Row ss:AutoFitHeight="0" ss:Height="15.75" ss:StyleID="s84">
     <Cell ss:StyleID="s85"><Data ss:Type="String">Profile Name</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -1019,9 +998,10 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s93"><Data ss:Type="String">DoseForm</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="15" ss:StyleID="s94"><Data ss:Type="String">Dosage Form</Data><NamedCell
+    <Cell ss:Index="15" ss:StyleID="s63"><Data ss:Type="String">Dosage Form</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s81"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s91"><Data ss:Type="String">### Dosage Form      &#10;The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI EVS - C42636]&#10;Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]&#10;Note: If there is a new dosage form that does not exist in the controlled terminology, then propose register this new dosage form during sponsor meetings with FDA.&#10;&#10;SME comment &#45;- this is the marketed dosage form&#10;</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="19" ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1038,9 +1018,9 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="10" ss:StyleID="s95"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="15" ss:StyleID="s95"><Data ss:Type="String">Product Proprietary Name</Data><NamedCell
+    <Cell ss:Index="15" ss:StyleID="s63"><Data ss:Type="String">Product Proprietary Name</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s91"><Data ss:Type="String">The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO).  Note:  Excludes dosage form, route of administration and strength.  Example:  Tylenol</Data><NamedCell
+    <Cell ss:StyleID="s91"><Data ss:Type="String">### Product Proprietary Name      &#10;he exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO).  Note:  Excludes dosage form, route of administration and strength.  Example:  Tylenol</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="19" ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1063,7 +1043,8 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="12"><Data ss:Type="String">code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="16" ss:StyleID="s81"><Data ss:Type="String">Characterizes MedicinalProduct.name.productName as Non-Proprietary.</Data><NamedCell
+    <Cell ss:Index="15" ss:StyleID="s63"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s81"><Data ss:Type="String">Characterizes MedicinalProduct.name.productName as Non-Proprietary.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="19" ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1082,7 +1063,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="10"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="15" ss:StyleID="s98"><Data ss:Type="String">Product Component Name</Data><NamedCell
+    <Cell ss:Index="15" ss:StyleID="s63"><Data ss:Type="String">Product Component Name</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s81"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="19" ss:StyleID="s83"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1490,7 +1471,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>8</SplitVertical>
-   <LeftColumnRightPane>9</LeftColumnRightPane>
+   <LeftColumnRightPane>15</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -1505,7 +1486,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>3</ActiveRow>
+     <ActiveRow>5</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2122,22 +2103,22 @@
    <Column ss:StyleID="s116" ss:AutoFitWidth="0" ss:Width="315"/>
    <Column ss:StyleID="s115" ss:Width="50.25"/>
    <Column ss:StyleID="s115" ss:Width="41.25"/>
-   <Column ss:StyleID="s115" ss:Width="34.875"/>
-   <Column ss:StyleID="s115" ss:Width="88.875"/>
+   <Column ss:StyleID="s115" ss:Width="35.25"/>
+   <Column ss:StyleID="s115" ss:Width="89.25"/>
    <Column ss:StyleID="s115" ss:Width="48.75"/>
-   <Column ss:StyleID="s115" ss:Width="61.875"/>
+   <Column ss:StyleID="s115" ss:Width="62.25"/>
    <Column ss:StyleID="s115" ss:Width="51.75"/>
    <Column ss:StyleID="s115" ss:Width="57"/>
    <Column ss:StyleID="s115" ss:Width="69"/>
-   <Column ss:StyleID="s115" ss:Width="1342.875"/>
+   <Column ss:StyleID="s115" ss:Width="1342.5"/>
    <Column ss:StyleID="s115" ss:Width="84"/>
-   <Column ss:StyleID="s115" ss:Width="67.875"/>
-   <Column ss:StyleID="s115" ss:Width="43.875"/>
-   <Column ss:StyleID="s115" ss:Width="79.875"/>
+   <Column ss:StyleID="s115" ss:Width="68.25"/>
+   <Column ss:StyleID="s115" ss:Width="44.25"/>
+   <Column ss:StyleID="s115" ss:Width="80.25"/>
    <Column ss:StyleID="s115" ss:Width="71.25"/>
-   <Column ss:StyleID="s115" ss:Width="76.875"/>
+   <Column ss:StyleID="s115" ss:Width="77.25"/>
    <Column ss:StyleID="s115" ss:Width="72.75"/>
-   <Column ss:StyleID="s115" ss:Width="100.875"/>
+   <Column ss:StyleID="s115" ss:Width="101.25"/>
    <Row ss:AutoFitHeight="0" ss:Height="30.75" ss:StyleID="s105">
     <Cell ss:StyleID="s117"><Data ss:Type="String">Code</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
@@ -3455,7 +3436,7 @@
  <Worksheet ss:Name="Bindings">
   <Table ss:ExpandedColumnCount="14" ss:ExpandedRowCount="22" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s110" ss:DefaultColumnWidth="65.25"
-   ss:DefaultRowHeight="14.53125">
+   ss:DefaultRowHeight="14.4375">
    <Column ss:StyleID="s110" ss:Width="114.75"/>
    <Column ss:StyleID="s110" ss:AutoFitWidth="0" ss:Width="275.25"/>
    <Column ss:StyleID="s110" ss:Width="51"/>

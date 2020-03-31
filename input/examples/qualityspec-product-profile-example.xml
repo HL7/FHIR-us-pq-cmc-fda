@@ -1,4 +1,10 @@
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Use which ever schema declaration is appropriate for the file system used to write or validate the message. 
+The default name space is all that is needed for the IG validator> -->
+<Bundle xmlns="http://hl7.org/fhir">
+<!-- 		 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">  
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ./fhir-single.xsd">-->
 	<id value="qualityspec-product-profile-example"/>
 	<identifier>
 		<system value="urn:ietf:rfc:3986"/>
@@ -218,7 +224,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="Oval Pink Tablet"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -258,7 +264,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="1.9% - 2.5%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -284,7 +290,7 @@
 						</detailQuantity>
 					</target>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="range"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -324,7 +330,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="NMT 1000 cfu/g"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -364,7 +370,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="Should be Absent/g"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -404,7 +410,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="no one unit (of the 6) is LT 10%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -453,7 +459,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="(average of 12) LT 10%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -502,7 +508,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="no one unit is NMT 25%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -542,7 +548,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="(average of 24) NMT 10%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -582,7 +588,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="no one unit is NMT 25%"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -622,7 +628,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="≥99.0% main peak area"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">
@@ -662,7 +668,7 @@
 						<text value="Acceptance Criteria"/>
 					</description>
 					<target>
-						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extorigText">
+						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extOriginalText">
 							<valueString value="Individual unspecified (%)"/>
 						</extension>
 						<extension url="http://hl7.org/fhir/pq-cmc/StructureDefinition/extInterpCode">

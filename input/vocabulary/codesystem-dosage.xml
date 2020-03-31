@@ -5,7 +5,7 @@
 	<name value="Dosage"/>
 	<title value="Dosage Form"/>
 	<status value="draft"/>
-	<description value="SPL PQ/CMC Dosage Form Terminology NCI Thesaurus Code:  C133854 "/>
+	<description value="SPL PQ/CMC Dosage Form Terminology NCI Thesaurus Code:  C133854"/>
 	<content value="complete"/>
 	<concept>
 		<code value="C42887"/>

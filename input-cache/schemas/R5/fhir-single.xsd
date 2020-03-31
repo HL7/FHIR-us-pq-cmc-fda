@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Mar 25, 2020 18:43+0000 for FHIR v4.2.0 
+  Generated on Thu, Mar 26, 2020 16:39+0000 for FHIR v4.2.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -27999,7 +27999,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="role" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Ingredient role e.g. Active ingredient, excipient.</xs:documentation>
+              <xs:documentation xml:lang="en">Ingredient role within a drug product e.g. Active ingredient, Excipient.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="function" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A classification of the ingredient identifying its precise purpose(s) in the drug product. This extends the Ingredient.role to add more detail. Example: Antioxidant, Alkalizing Agent.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="allergenicIndicator" minOccurs="0" maxOccurs="1" type="boolean">
@@ -28076,6 +28081,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">An upper limit for the quantity of substance in the unit of presentation. For use when there is a range of strengths, this is the high limit, with the presentation attribute becoming the lower limit.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="presentationText" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A textual represention of either the whole of the presentation strength or a part of it - with the rest being in Strength.presentation as a ratio.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="concentration" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
               <xs:documentation xml:lang="en">The strength per unitary volume (or mass).</xs:documentation>
@@ -28084,6 +28094,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="concentrationHighLimit" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
               <xs:documentation xml:lang="en">An upper limit for the strength per unitary volume (or mass), for when there is a range. The concentration attribute then becomes the lower limit.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="concentrationText" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A textual represention of either the whole of the concentration strength or a part of it - with the rest being in Strength.concentration as a ratio.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="measurementPoint" minOccurs="0" maxOccurs="1" type="string">
@@ -42621,9 +42636,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The molecular weight or weight range (for proteins, polymers or nucleic acids).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="sourceCoding" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="technique" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Describes the source of information.</xs:documentation>
+              <xs:documentation xml:lang="en">The method used to elucidate the structure or characterization of the drug substance. Examples: X-ray, HPLC, NMR, Peptide mapping, Ligand binding assay.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="sourceDocument" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -42716,7 +42731,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="representation" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The structural representation as text string in a format e.g. InChI, SMILES, MOLFILE, CDX.</xs:documentation>
+              <xs:documentation xml:lang="en">The structural representation as text string in a standard format e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB, mmCIF.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="format" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, SDF, PDB, mmCIF.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="attachment" minOccurs="0" maxOccurs="1" type="Attachment">
@@ -43071,6 +43091,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Todo.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="class" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
@@ -43086,9 +43111,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="modification" minOccurs="0" maxOccurs="unbounded" type="string">
+          <xs:element name="modification" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Todo.</xs:documentation>
+              <xs:documentation xml:lang="en">Todo. This is intended to connect to a repeating full modification structure, also used by Protein and Nucleic Acid . String is just a placeholder.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="monomerSet" type="SubstancePolymer.MonomerSet" minOccurs="0" maxOccurs="unbounded">
@@ -43133,12 +43158,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="material" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
            </xs:annotation>
@@ -43195,12 +43220,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="orientationOfPolymerisation" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="unit" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="repeatUnit" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="orientation" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
            </xs:annotation>
@@ -43258,6 +43283,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
            </xs:annotation>
           </xs:element>
           <xs:element name="representation" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Todo.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="format" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Todo.</xs:documentation>
            </xs:annotation>

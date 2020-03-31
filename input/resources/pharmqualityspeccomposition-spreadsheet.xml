@@ -16,10 +16,11 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>6735</WindowHeight>
-  <WindowWidth>16860</WindowWidth>
+  <WindowHeight>8565</WindowHeight>
+  <WindowWidth>25935</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -895,6 +896,13 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
     ss:Bold="1"/>
   </Style>
+  <Style ss:ID="s186">
+   <Font ss:FontName="Consolas" x:Family="Modern" ss:Color="#242729"/>
+  </Style>
+  <Style ss:ID="s187">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Font ss:FontName="Consolas" x:Family="Modern" ss:Color="#242729"/>
+  </Style>
  </Styles>
  <Worksheet ss:Name="Metadata">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="15" x:FullColumns="1"
@@ -986,7 +994,6 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
-   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -1016,7 +1023,7 @@
    <Column ss:AutoFitWidth="0" ss:Width="63.75"/>
    <Column ss:Width="45"/>
    <Column ss:Width="125.25"/>
-   <Column ss:Width="1235.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="237"/>
    <Column ss:Width="72"/>
    <Column ss:Width="56.25"/>
    <Column ss:Width="32.25"/>
@@ -1143,7 +1150,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s94"><Data ss:Type="String">Application Number</Data></Cell>
-    <Cell ss:StyleID="s92"><Data ss:Type="String">A unique identifier assigned by the FDA to each application for approval and or in support of a drug in the United States.  Often known as the application number.  This includes all the types captured in the Application type data element [Source: SME Defined]</Data></Cell>
+    <Cell ss:StyleID="s187"><Data ss:Type="String">### Application Number      &#10;A unique identifier assigned by the FDA to each application for approval and or in support of a drug in the United States.  Often known as the application number.  This includes all the types captured in the Application type data element [Source: SME Defined]</Data></Cell>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1170,7 +1177,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Application Type</Data></Cell>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined].</Data></Cell>
+    <Cell ss:StyleID="s187"><Data ss:Type="String">### Application Type      &#10;The various kinds of files/documents submitted to the FDA for approval and or in support of a drug in the United States [Source: SME Defined].</Data></Cell>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1197,7 +1204,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Sponsor</Data></Cell>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">The organization filing to the US FDA</Data></Cell>
+    <Cell ss:StyleID="s187"><Data ss:Type="String">### Sponsor      &#10;The organization filing to the US FDA</Data></Cell>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1224,7 +1231,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"><Data ss:Type="String">   </Data></Cell>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1251,7 +1258,7 @@
     <Cell ss:StyleID="s92"><Data ss:Type="String">sectionType</Data></Cell>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"><Data ss:Type="String">### Sectiion Type</Data></Cell>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1276,7 +1283,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s92"><Data ss:Type="String">BackboneElement&#13;&#10;</Data></Cell>
-    <Cell ss:StyleID="s91"><Data ss:Type="String">Quality Speciication Type Section</Data></Cell>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1303,7 +1310,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Specification Type</Data></Cell>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1330,7 +1337,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1357,7 +1364,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s92"><Data ss:Type="String">BackboneElement&#13;&#10;</Data></Cell>
-    <Cell ss:StyleID="s91"><Data ss:Type="String">Quality Speciication Type Section</Data></Cell>
+    <Cell ss:StyleID="s186"><Data ss:Type="String">   </Data></Cell>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1384,7 +1391,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"><Data ss:Type="String">Specification Type</Data></Cell>
-    <Cell ss:StyleID="s88"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1411,7 +1418,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s91"/>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1438,7 +1445,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s98"><Data ss:Type="String">BackboneElement&#13;&#10;</Data></Cell>
-    <Cell ss:StyleID="s91"><Data ss:Type="String">Quality Speciication Type Section</Data></Cell>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
@@ -1465,7 +1472,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Specification Type</Data></Cell>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
@@ -1492,7 +1499,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s91"/>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s91"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s91"/>
@@ -1519,7 +1526,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s92"><Data ss:Type="String">BackboneElement&#13;&#10;</Data></Cell>
-    <Cell ss:StyleID="s91"><Data ss:Type="String">Quality Speciication Type Section</Data></Cell>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
@@ -1546,7 +1553,7 @@
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"><Data ss:Type="String">Specification Type</Data></Cell>
-    <Cell ss:StyleID="s91"/>
+    <Cell ss:StyleID="s186"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
     <Cell ss:StyleID="s88"/>
@@ -2137,7 +2144,8 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <LeftColumnVisible>2</LeftColumnVisible>
+   <Selected/>
+   <LeftColumnVisible>6</LeftColumnVisible>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -2149,8 +2157,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>6</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>18</ActiveRow>
+     <ActiveCol>15</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
