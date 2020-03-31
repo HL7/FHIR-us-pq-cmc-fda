@@ -4,20 +4,24 @@
 	<a name="Scope">  </a>
 	<p>&#160;</p>
 	<p>
-FDA intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications. The impetus for this standardization effort was the provisions from the 2012 Food and Drug Administration Safety and Innovation Act (FDASIA) (Pub. L. 112-144), which authorized the Agency to require certain submissions to be in a specified electronic format. The development of a structured format for PQ/CMC data will enable consistency in the content and format of PQ/CMC data submitted, thus providing a harmonized language for submission content, allowing reviewers to query the data, and, in general, contributing to a more efficient and effective regulatory decision-making process by creating a standardized data dictionary.	 </p>
+US FDA intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in eCTD Module 3. The impetus for this standardization effort was the provisions from the 2012 Food and Drug Administration Safety and Innovation Act (FDASIA) (Pub. L. 112-144), which authorized the Agency to require certain submissions to be in a specified electronic format. The development of a structured format for PQ/CMC data will enable consistency in the content and format of PQ/CMC data submitted, thus providing a harmonized language for submission content, allowing reviewers to query the data, and, in general, contributing to a more efficient and effective regulatory decision-making process by creating a standardized data dictionary.</p>
 	<p>
-	•	At HL7, the PQ/CMC Project will create a single IG which will have MANY Profiles.    HL7 allows balloting of an IG for specific Profiles.  September 2020 will be the first HL7 ballot for PQ/CMC IG with Quality Specification (QS) Profile.  Below is the list of planned Profiles. These set of profiles may change as we proceed through design and development to cover all the PQ/CMC requirements.  
-<ul>
-			<li>	Quality Specification Profile</li>
-			<li>Drug Product Profile</li>
-			<li>Drug Substance Profile</li>
-			<li>Excipient Profile</li>
-			<li>Batch Analysis Profile</li>
-			<li>Stability Profile </li>
-		</ul>
-	</p>
+At HL7, the PQ/CMC Project will create a single IG which will have MANY Profiles. HL7 allows balloting of an IG for specific Profiles.. Below is the currently planned Profiles. These set of profiles may change as we proceed through design and development to cover all the PQ/CMC requirements.
+</p>
+	<ul>
+		<li>Quality Specification Profile</li>
+		<li>Drug Product Profile</li>
+		<li>Drug Substance Profile</li>
+		<li>Excipient Profile</li>
+		<li>Batch Analysis Profile</li>
+		<li>Stability Profile </li>
+	</ul>
 	<p>
-The PQ/CMC Profile design and development of IG is being bound to the FHIR Build definition at https://build.fhir.org/ and NOT to the FHIR Release 4.2.  The rationale for leveraging the resource definition on FHIR build site is that it has the latest definitions for the evolving resources and PQ/CMC needs those updates.  The PQ/CMC data model is dependent on R5 of FHIR.  The pharmqualitydrugproduct and pharmqualitydrugsubstance profiles are temporary.  The pharmqualityspecification profile is not complete. ActionType extension is to allow for two types of test relationships.  The current tooling does not suppor slicing on an extension. This release of the IG only support the action type of 'Single'.  An actiion type of 'Alternate' would specify that one of two different test would be executed. The use case arrose during the POC.</p>
+The PQ/CMC Profile design and development of IG is being bound to the FHIR Build definition at https://build.fhir.org/  and NOT to the FHIR Release 4.2. The rationale for leveraging the resource definition on FHIR build site is that it has the latest definitions for the evolving resources and PQ/CMC needs those updates. The PQ/CMC model is dependent on R5 of FHIR. The pharmqualitydrugproduct and pharmqualitydrugsubstance FHIR Profiles are temporary. The pharmqualityspecification FHIR Profile is not complete. </p>
+	<ul>
+		<li>ActionType extension is to allow for two types of test relationships. This release of the IG only supports the action type of 'Single'. An action type of 'Alternate' would specify that one of the two different Specification Test’s would be executed. The use case was identified during a FDA proof-of-concept with the industry. </li>
+		<li>The current tooling does not support slicing on an extension. </li>
+	</ul>
 	<p>&#160;</p>
 	<a href="#Scope">Back to top of page</a>
 </div>
