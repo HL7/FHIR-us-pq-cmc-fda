@@ -22,6 +22,7 @@ The PQ/CMC Profile design and development of IG is being bound to the FHIR Build
 		<li>ActionType extension is to allow for two types of test relationships. This release of the IG only supports the action type of 'Single'. An action type of 'Alternate' would specify that one of the two different Specification Test’s would be executed. The use case was identified during a FDA proof-of-concept with the industry. </li>
 		<li>The current tooling does not support slicing on an extension. </li>
 	</ul>
+	<p>The Project Scope Statement (PSS) for this project can be found here https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+PSS</p>
 	<p>&#160;</p>
 	<a href="#Scope">Back to top of page</a>
 </div>

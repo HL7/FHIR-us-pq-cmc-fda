@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir  ..\..\input-cache\schemas\R5\fhir-single.xsd">
-	<id value="testCategory"/>
+	<id value="testCategoryCodes"/>
 	<url value="http://hl7.org/fhir/pq-cmc/CodeSystem/testCategory"/>
-	<name value="SectionType"/>
+	<name value="TestCategoriesCodes"/>
 	<title value="Test Category Codes"/>
 	<status value="draft"/>
 	<description value="Pharmaceutical Quality/CMC Test Category Terminology NCI Thesaurus Code:  C133807"/>
