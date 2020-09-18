@@ -2,8 +2,8 @@
 <!-- Use which ever schema declaration is appropriate for the file system used to write or validate the message. 
 The default name space is all that is needed for the IG validator> -->
 <!-- 		<Bundle xmlns="http://hl7.org/fhir">-->
- <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">  
-<!-- 		<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ./fhir-single.xsd">-->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+	<!-- 		<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ./fhir-single.xsd">-->
 	<id value="qualityspec-product-profile-example"/>
 	<identifier>
 		<system value="urn:ietf:rfc:3986"/>
@@ -67,7 +67,7 @@ The default name space is all that is needed for the IG validator> -->
 						<div xmlns="http://www.w3.org/1999/xhtml">Drug Product</div>
 					</text>
 					<entry>
-						<reference value="MedicinalProduct/1c616b24-3895-48c4-9a02-9a64110351ef"/>
+						<reference value="MedicinalProductDefinition/1c616b24-3895-48c4-9a02-9a64110351ef"/>
 					</entry>
 				</section>
 				<section>
@@ -140,7 +140,7 @@ The default name space is all that is needed for the IG validator> -->
 	<entry>
 		<fullUrl value="urn:uuid:1c616b24-3895-48c4-9a02-9a64110351ef"/>
 		<resource>
-			<MedicinalProduct>
+			<MedicinalProductDefinition>
 				<id value="1c616b24-3895-48c4-9a02-9a64110351ef"/>
 				<meta>
 					<profile value="http://hl7.org/fhir/pq-cmc/StructureDefinition/pharmqualitydrugproduct"/>
@@ -150,21 +150,12 @@ The default name space is all that is needed for the IG validator> -->
 					<div xmlns="http://www.w3.org/1999/xhtml">
 						<p>
 							<b>Drug Product Name</b>: Benadryl HCL</p>
-						<p>
-							<b>Dosage Form</b>: TABLET  <b> Code</b>: C42998</p>
 					</div>
 				</text>
-				<combinedPharmaceuticalDoseForm>
-					<coding id="Dosage">
-						<version value="draft"/>
-						<code value="C42998"/>
-						<display value="TABLET"/>
-					</coding>
-				</combinedPharmaceuticalDoseForm>
 				<name>
 					<productName value="Benadryl HCL"/>
 				</name>
-			</MedicinalProduct>
+			</MedicinalProductDefinition>
 		</resource>
 	</entry>
 	<!-- spec-->

@@ -5,9 +5,10 @@
 	"introduction": "The Pharmaceutical Quality/Chemistry, Manufacturing and Controls  specification is an Implementation Guide of the FHIR Specification that provides guidance on the creation of FHIR documents and subsequent submission of XML files in Module 3 of the eCTD.",
 	"list": [
 		{
+			
 			"desc": "Continuous Integration Build (latest in version control)",
 			"status": "ci-build",
-			"current": true,
+			"version" : "4.5.0",
 			"paths": {
 				"history": "http://hl7.org/fhir/pq-cmc/history.html"
 			}
