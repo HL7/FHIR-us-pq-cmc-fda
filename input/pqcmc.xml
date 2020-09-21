@@ -23,7 +23,7 @@
 	<copyright value="HL7"/>
 	<packageId value="hl7.fhir.us.pq-cmc"/>
 	<license value="CC0-1.0"/>
-<fhirVersion value="current"/>
+  <fhirVersion value="4.5.0"/>
 	<definition>
 		<!--    <grouping id="conformance">
       <name value="Capability Statements"/>
