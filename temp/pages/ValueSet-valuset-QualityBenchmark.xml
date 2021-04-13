@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-QualityBenchmark"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C176793</td><td>BP</td></tr><tr><td>C134009</td><td>Company Standard</td></tr><tr><td>C134007</td><td>EP</td></tr><tr><td>C134008</td><td>JP</td></tr><tr><td>C134006</td><td>USP-NF</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-QualityBenchmark"/>
+  <version value="current"/>
+  <name value="QualityBenchmark"/>
+  <title value="PQ/CMC Quality Benchmark Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C176793"/>
+        <display value="BP"/>
+      </concept>
+      <concept>
+        <code value="C134009"/>
+        <display value="Company Standard"/>
+      </concept>
+      <concept>
+        <code value="C134007"/>
+        <display value="EP"/>
+      </concept>
+      <concept>
+        <code value="C134008"/>
+        <display value="JP"/>
+      </concept>
+      <concept>
+        <code value="C134006"/>
+        <display value="USP-NF"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

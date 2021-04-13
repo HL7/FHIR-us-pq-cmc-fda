@@ -1,0 +1,269 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "valuset-ExcipientFunction"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C176637</td><td>Absorption modifier</td></tr><tr><td>C89528</td><td>Adhesive</td></tr><tr><td>C176642</td><td>Adsorbent</td></tr><tr><td>C176643</td><td>Air displacement</td></tr><tr><td>C42654</td><td>Anticaking agent</td></tr><tr><td>C275</td><td>Antioxidant</td></tr><tr><td>C42647</td><td>Binder</td></tr><tr><td>C70815</td><td>Buffering agent</td></tr><tr><td>C176644</td><td>Bulking agent</td></tr><tr><td>C92708</td><td>CAPSULE</td></tr><tr><td>C176645</td><td>Carrier</td></tr><tr><td>C360</td><td>Chelating agent</td></tr><tr><td>C42656</td><td>Coloring agent</td></tr><tr><td>C176646</td><td>Complexing agent</td></tr><tr><td>C53306</td><td>Cryoprotectant</td></tr><tr><td>C176647</td><td>Denaturant</td></tr><tr><td>C42648</td><td>Disintegrant</td></tr><tr><td>C42662</td><td>Dispersing agent</td></tr><tr><td>C176638</td><td>Effervescent agent</td></tr><tr><td>C176632</td><td>Emollient</td></tr><tr><td>C73477</td><td>Emulsifying Excipient</td></tr><tr><td>C176633</td><td>Emulsion stabilizing agent</td></tr><tr><td>C42650</td><td>Filler</td></tr><tr><td>C176648</td><td>Film coating agent</td></tr><tr><td>C176634</td><td>Foam stabilizing agent</td></tr><tr><td>C176649</td><td>Free radical scavenger</td></tr><tr><td>C176650</td><td>Gelling agent</td></tr><tr><td>C176651</td><td>Humectant</td></tr><tr><td>C42657</td><td>Ink</td></tr><tr><td>C42653</td><td>Lubricant</td></tr><tr><td>C176652</td><td>Lyophilization aid</td></tr><tr><td>C176653</td><td>Matrix-forming agent</td></tr><tr><td>C176654</td><td>Microencapsulating agent</td></tr><tr><td>C176655</td><td>Ointment base</td></tr><tr><td>C176656</td><td>Opacifier</td></tr><tr><td>C176635</td><td>Organoleptic agent</td></tr><tr><td>C176657</td><td>Osmotic agent</td></tr><tr><td>C176658</td><td>pH modifier</td></tr><tr><td>C55826</td><td>Plasticizer</td></tr><tr><td>C176659</td><td>Polishing agent</td></tr><tr><td>C176660</td><td>Polymers for ophthalmic use</td></tr><tr><td>C42659</td><td>Preservative</td></tr><tr><td>C176661</td><td>Propellant</td></tr><tr><td>C176639</td><td>Reducing agent</td></tr><tr><td>C176662</td><td>Release modifying agent</td></tr><tr><td>C176640</td><td>Solubilizing agent</td></tr><tr><td>C45790</td><td>Solvent</td></tr><tr><td>C176636</td><td>Stabilizer</td></tr><tr><td>C176663</td><td>Suppository base</td></tr><tr><td>C42739</td><td>Surfactant</td></tr><tr><td>C42660</td><td>Suspending agent</td></tr><tr><td>C176641</td><td>Tonicity agent</td></tr><tr><td>C176664</td><td>Transdermal delivery component</td></tr><tr><td>C176665</td><td>Transfer ligand</td></tr><tr><td>C927</td><td>Vehicle</td></tr><tr><td>C176666</td><td>Viscosity modifier</td></tr><tr><td>C176667</td><td>Water-repelling agent</td></tr><tr><td>C176668</td><td>Wetting agent</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction"];
+  fhir:ValueSet.version [ fhir:value "current"];
+  fhir:ValueSet.name [ fhir:value "ExcipientFunction"];
+  fhir:ValueSet.title [ fhir:value "PQ/CMC Excipient Function Terminology"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-04-13T00:29:45-04:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)"];
+  fhir:ValueSet.description [ fhir:value "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:oid:2.16.840.1.113883.3.26.1.1" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176637" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Absorption modifier" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C89528" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Adhesive" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176642" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Adsorbent" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176643" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Air displacement" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42654" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Anticaking agent" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C275" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Antioxidant" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42647" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Binder" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C70815" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Buffering agent" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176644" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Bulking agent" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C92708" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "CAPSULE" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176645" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Carrier" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C360" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chelating agent" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42656" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Coloring agent" ]
+       ], [
+         fhir:index 13;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176646" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Complexing agent" ]
+       ], [
+         fhir:index 14;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C53306" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Cryoprotectant" ]
+       ], [
+         fhir:index 15;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176647" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Denaturant" ]
+       ], [
+         fhir:index 16;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42648" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Disintegrant" ]
+       ], [
+         fhir:index 17;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42662" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Dispersing agent" ]
+       ], [
+         fhir:index 18;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176638" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Effervescent agent" ]
+       ], [
+         fhir:index 19;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176632" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Emollient" ]
+       ], [
+         fhir:index 20;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C73477" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Emulsifying Excipient" ]
+       ], [
+         fhir:index 21;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176633" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Emulsion stabilizing agent" ]
+       ], [
+         fhir:index 22;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42650" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Filler" ]
+       ], [
+         fhir:index 23;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176648" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Film coating agent" ]
+       ], [
+         fhir:index 24;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176634" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Foam stabilizing agent" ]
+       ], [
+         fhir:index 25;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176649" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Free radical scavenger" ]
+       ], [
+         fhir:index 26;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176650" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Gelling agent" ]
+       ], [
+         fhir:index 27;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176651" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Humectant" ]
+       ], [
+         fhir:index 28;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42657" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ink" ]
+       ], [
+         fhir:index 29;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42653" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Lubricant" ]
+       ], [
+         fhir:index 30;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176652" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Lyophilization aid" ]
+       ], [
+         fhir:index 31;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176653" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Matrix-forming agent" ]
+       ], [
+         fhir:index 32;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176654" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Microencapsulating agent" ]
+       ], [
+         fhir:index 33;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176655" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ointment base" ]
+       ], [
+         fhir:index 34;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176656" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Opacifier" ]
+       ], [
+         fhir:index 35;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176635" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Organoleptic agent" ]
+       ], [
+         fhir:index 36;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176657" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Osmotic agent" ]
+       ], [
+         fhir:index 37;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176658" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "pH modifier" ]
+       ], [
+         fhir:index 38;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C55826" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Plasticizer" ]
+       ], [
+         fhir:index 39;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176659" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Polishing agent" ]
+       ], [
+         fhir:index 40;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176660" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Polymers for ophthalmic use" ]
+       ], [
+         fhir:index 41;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42659" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Preservative" ]
+       ], [
+         fhir:index 42;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176661" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Propellant" ]
+       ], [
+         fhir:index 43;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176639" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Reducing agent" ]
+       ], [
+         fhir:index 44;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176662" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Release modifying agent" ]
+       ], [
+         fhir:index 45;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176640" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Solubilizing agent" ]
+       ], [
+         fhir:index 46;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C45790" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Solvent" ]
+       ], [
+         fhir:index 47;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176636" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Stabilizer" ]
+       ], [
+         fhir:index 48;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176663" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Suppository base" ]
+       ], [
+         fhir:index 49;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42739" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Surfactant" ]
+       ], [
+         fhir:index 50;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42660" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Suspending agent" ]
+       ], [
+         fhir:index 51;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176641" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Tonicity agent" ]
+       ], [
+         fhir:index 52;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176664" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Transdermal delivery component" ]
+       ], [
+         fhir:index 53;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176665" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Transfer ligand" ]
+       ], [
+         fhir:index 54;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C927" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Vehicle" ]
+       ], [
+         fhir:index 55;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176666" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Viscosity modifier" ]
+       ], [
+         fhir:index 56;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176667" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Water-repelling agent" ]
+       ], [
+         fhir:index 57;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176668" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Wetting agent" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

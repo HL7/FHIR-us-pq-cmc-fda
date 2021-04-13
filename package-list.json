@@ -1,7 +1,7 @@
 {
 	"package-id": "hl7.fhir.us.pq-cmc",
 	"title": "Pharmaceutical Quality/Chemistry, Manufacturing and Controls Implementation Guide",
-	"canonical": "http://hl7.org/fhir/pq-cmc",
+	"canonical": "https://hl7.org/fhir/us-pq-cmc",
 	"introduction": "The Pharmaceutical Quality/Chemistry, Manufacturing and Controls  specification is an Implementation Guide of the FHIR Specification that provides guidance on the creation of FHIR documents and subsequent submission of XML files in Module 3 of the eCTD.",
 	"list": [
 		{
@@ -10,7 +10,7 @@
 			"status": "ci-build",
 			"version" : "4.5.0",
 			"paths": {
-				"history": "http://hl7.org/fhir/pq-cmc/history.html"
+				"history": "https://hl7.org/fhir/pq-cmc/history.html"
 			}
 		}
 	]

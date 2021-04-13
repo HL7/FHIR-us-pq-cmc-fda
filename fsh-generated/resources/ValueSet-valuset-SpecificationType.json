@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SpecificationType",
+  "id": "valuset-SpecificationType",
+  "title": "PQ/CMC Specification Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationType",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C134021",
+            "display": "Drug Product"
+          },
+          {
+            "code": "C134022",
+            "display": "Drug Substance"
+          },
+          {
+            "code": "C133931",
+            "display": "Raw Materials/Excipients/Intermediates/Reagents"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "id": "valuset-TestMethodOrigin",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C96164</td><td>CFR</td></tr><tr><td>C96102</td><td>Compendial</td></tr><tr><td>C96103</td><td>Proprietary</td></tr></table></li></ul></div>"
+  },
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestMethodOrigin",
+  "version": "current",
+  "name": "TestMethodOrigin",
+  "title": "PQ/CMC Test Usage Terminology",
+  "status": "active",
+  "date": "2021-04-13T00:29:45-04:00",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "description": "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C96164",
+            "display": "CFR"
+          },
+          {
+            "code": "C96102",
+            "display": "Compendial"
+          },
+          {
+            "code": "C96103",
+            "display": "Proprietary"
+          }
+        ]
+      }
+    ]
+  }
+}

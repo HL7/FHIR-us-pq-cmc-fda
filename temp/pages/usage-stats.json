@@ -1,0 +1,12 @@
+{
+  "package": "hl7.fhir.us.pq-cmc",
+  "version": "current",
+  "fhirVersion": "4.5.0",
+  "extensions": [],
+  "profiles": {},
+  "usage": {
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ]
+  }
+}

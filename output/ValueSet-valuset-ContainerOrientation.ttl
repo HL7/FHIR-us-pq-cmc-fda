@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "valuset-ContainerOrientation"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C25241</td><td>Horizontal</td></tr><tr><td>C133999</td><td>Inverted</td></tr><tr><td>C86043</td><td>Upright</td></tr><tr><td>C133915</td><td>Valve-down</td></tr><tr><td>C133914</td><td>Valve-up</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation"];
+  fhir:ValueSet.version [ fhir:value "current"];
+  fhir:ValueSet.name [ fhir:value "ContainerOrientation"];
+  fhir:ValueSet.title [ fhir:value "PQ/CMC Container Orientation Terminology"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-04-13T00:29:45-04:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)"];
+  fhir:ValueSet.description [ fhir:value "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:oid:2.16.840.1.113883.3.26.1.1" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C25241" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Horizontal" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C133999" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Inverted" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C86043" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Upright" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C133915" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Valve-down" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C133914" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Valve-up" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

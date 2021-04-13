@@ -1,0 +1,87 @@
+﻿<html>
+<head>
+  <title>ValueSet-ApplicationType-ttl-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<pre class="rdf"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:ValueSet;
+  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://build.fhir.org//valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org//datatypes.html#id">fhir:value</a> &quot;ApplicationType&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
+     <a href="http://build.fhir.org//narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;code&gt;http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl&lt;/code&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C115123&lt;/td&gt;&lt;td&gt;Abbreviated New Animal Drug Application&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C73113&lt;/td&gt;&lt;td&gt;Abbreviated New Drug Application&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C71778&lt;/td&gt;&lt;td&gt;Biologics License Application&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C115122&lt;/td&gt;&lt;td&gt;Generic Investigational New Animal Drug File&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C80440&lt;/td&gt;&lt;td&gt;Humanitarian Device Exemption (HDE)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C82667&lt;/td&gt;&lt;td&gt;Investigational Device Exemption&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C96091&lt;/td&gt;&lt;td&gt;Investigational New Animal Drug File&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C96090&lt;/td&gt;&lt;td&gt;Investigational New Drug Application&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C70877&lt;/td&gt;&lt;td&gt;Master File&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C96092&lt;/td&gt;&lt;td&gt;New Active Ingredient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C72901&lt;/td&gt;&lt;td&gt;New Animal Drug Application&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C72899&lt;/td&gt;&lt;td&gt;New Drug Application&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C70880&lt;/td&gt;&lt;td&gt;Premarket Approval&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C80442&lt;/td&gt;&lt;td&gt;Premarket Notification 510(K)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;http://hl7.fhir/us/pq-cmc/ValueSet/ApplicationType&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;0.1.0&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;ApplicationType&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.title">fhir:ValueSet.title</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;PQ/CMC Application Type Terminology&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;active&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://build.fhir.org//datatypes.html#dateTime">fhir:value</a> &quot;2021-04-07T05:02:47-04:00&quot;^^xsd:dateTime];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.publisher">fhir:ValueSet.publisher</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.description">fhir:ValueSet.description</a> [ <a href="http://build.fhir.org//datatypes.html#markdown">fhir:value</a> &quot;Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.compose">fhir:ValueSet.compose</a> [
+     <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include">fhir:ValueSet.compose.include</a> [
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.system">fhir:ValueSet.compose.include.system</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl&quot; ];
+       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept">fhir:ValueSet.compose.include.concept</a> [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C115123&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Abbreviated New Animal Drug Application&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C73113&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Abbreviated New Drug Application&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C71778&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Biologics License Application&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 3;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C115122&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Generic Investigational New Animal Drug File&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 4;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C80440&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Humanitarian Device Exemption (HDE)&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 5;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C82667&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Investigational Device Exemption&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 6;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C96091&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Investigational New Animal Drug File&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 7;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C96090&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Investigational New Drug Application&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 8;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C70877&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Master File&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 9;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C96092&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;New Active Ingredient&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 10;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C72901&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;New Animal Drug Application&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 11;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C72899&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;New Drug Application&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 12;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C70880&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Premarket Approval&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 13;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C80442&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Premarket Notification 510(K)&quot; ]       ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</code></pre>
+
+</body>
+</html>

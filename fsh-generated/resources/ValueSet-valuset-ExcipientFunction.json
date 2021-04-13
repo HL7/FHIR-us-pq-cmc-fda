@@ -1,0 +1,252 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ExcipientFunction",
+  "id": "valuset-ExcipientFunction",
+  "title": "PQ/CMC Excipient Function Terminology",
+  "description": "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C176637",
+            "display": "Absorption modifier"
+          },
+          {
+            "code": "C89528",
+            "display": "Adhesive"
+          },
+          {
+            "code": "C176642",
+            "display": "Adsorbent"
+          },
+          {
+            "code": "C176643",
+            "display": "Air displacement"
+          },
+          {
+            "code": "C42654",
+            "display": "Anticaking agent"
+          },
+          {
+            "code": "C275",
+            "display": "Antioxidant"
+          },
+          {
+            "code": "C42647",
+            "display": "Binder"
+          },
+          {
+            "code": "C70815",
+            "display": "Buffering agent"
+          },
+          {
+            "code": "C176644",
+            "display": "Bulking agent"
+          },
+          {
+            "code": "C92708",
+            "display": "CAPSULE"
+          },
+          {
+            "code": "C176645",
+            "display": "Carrier"
+          },
+          {
+            "code": "C360",
+            "display": "Chelating agent"
+          },
+          {
+            "code": "C42656",
+            "display": "Coloring agent"
+          },
+          {
+            "code": "C176646",
+            "display": "Complexing agent"
+          },
+          {
+            "code": "C53306",
+            "display": "Cryoprotectant"
+          },
+          {
+            "code": "C176647",
+            "display": "Denaturant"
+          },
+          {
+            "code": "C42648",
+            "display": "Disintegrant"
+          },
+          {
+            "code": "C42662",
+            "display": "Dispersing agent"
+          },
+          {
+            "code": "C176638",
+            "display": "Effervescent agent"
+          },
+          {
+            "code": "C176632",
+            "display": "Emollient"
+          },
+          {
+            "code": "C73477",
+            "display": "Emulsifying Excipient"
+          },
+          {
+            "code": "C176633",
+            "display": "Emulsion stabilizing agent"
+          },
+          {
+            "code": "C42650",
+            "display": "Filler"
+          },
+          {
+            "code": "C176648",
+            "display": "Film coating agent"
+          },
+          {
+            "code": "C176634",
+            "display": "Foam stabilizing agent"
+          },
+          {
+            "code": "C176649",
+            "display": "Free radical scavenger"
+          },
+          {
+            "code": "C176650",
+            "display": "Gelling agent"
+          },
+          {
+            "code": "C176651",
+            "display": "Humectant"
+          },
+          {
+            "code": "C42657",
+            "display": "Ink"
+          },
+          {
+            "code": "C42653",
+            "display": "Lubricant"
+          },
+          {
+            "code": "C176652",
+            "display": "Lyophilization aid"
+          },
+          {
+            "code": "C176653",
+            "display": "Matrix-forming agent"
+          },
+          {
+            "code": "C176654",
+            "display": "Microencapsulating agent"
+          },
+          {
+            "code": "C176655",
+            "display": "Ointment base"
+          },
+          {
+            "code": "C176656",
+            "display": "Opacifier"
+          },
+          {
+            "code": "C176635",
+            "display": "Organoleptic agent"
+          },
+          {
+            "code": "C176657",
+            "display": "Osmotic agent"
+          },
+          {
+            "code": "C176658",
+            "display": "pH modifier"
+          },
+          {
+            "code": "C55826",
+            "display": "Plasticizer"
+          },
+          {
+            "code": "C176659",
+            "display": "Polishing agent"
+          },
+          {
+            "code": "C176660",
+            "display": "Polymers for ophthalmic use"
+          },
+          {
+            "code": "C42659",
+            "display": "Preservative"
+          },
+          {
+            "code": "C176661",
+            "display": "Propellant"
+          },
+          {
+            "code": "C176639",
+            "display": "Reducing agent"
+          },
+          {
+            "code": "C176662",
+            "display": "Release modifying agent"
+          },
+          {
+            "code": "C176640",
+            "display": "Solubilizing agent"
+          },
+          {
+            "code": "C45790",
+            "display": "Solvent"
+          },
+          {
+            "code": "C176636",
+            "display": "Stabilizer"
+          },
+          {
+            "code": "C176663",
+            "display": "Suppository base"
+          },
+          {
+            "code": "C42739",
+            "display": "Surfactant"
+          },
+          {
+            "code": "C42660",
+            "display": "Suspending agent"
+          },
+          {
+            "code": "C176641",
+            "display": "Tonicity agent"
+          },
+          {
+            "code": "C176664",
+            "display": "Transdermal delivery component"
+          },
+          {
+            "code": "C176665",
+            "display": "Transfer ligand"
+          },
+          {
+            "code": "C927",
+            "display": "Vehicle"
+          },
+          {
+            "code": "C176666",
+            "display": "Viscosity modifier"
+          },
+          {
+            "code": "C176667",
+            "display": "Water-repelling agent"
+          },
+          {
+            "code": "C176668",
+            "display": "Wetting agent"
+          }
+        ]
+      }
+    ]
+  }
+}

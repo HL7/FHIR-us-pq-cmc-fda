@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "QualityBenchmark",
+  "id": "valuset-QualityBenchmark",
+  "title": "PQ/CMC Quality Benchmark Terminology",
+  "description": "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-QualityBenchmark",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C176793",
+            "display": "BP"
+          },
+          {
+            "code": "C134009",
+            "display": "Company Standard"
+          },
+          {
+            "code": "C134007",
+            "display": "EP"
+          },
+          {
+            "code": "C134008",
+            "display": "JP"
+          },
+          {
+            "code": "C134006",
+            "display": "USP-NF"
+          }
+        ]
+      }
+    ]
+  }
+}

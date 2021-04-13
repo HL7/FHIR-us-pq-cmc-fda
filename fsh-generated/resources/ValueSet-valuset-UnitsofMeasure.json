@@ -1,0 +1,295 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "UnitsofMeasure",
+  "id": "valuset-UnitsofMeasure",
+  "title": "PQ/CMC Units of Measure Terminology",
+  "description": "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure",
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          {
+            "code": "%",
+            "display": "percent"
+          },
+          {
+            "code": "%{VolumeToVolume}",
+            "display": "percent volume per volume"
+          },
+          {
+            "code": "%{WeightToVolume}",
+            "display": "percent weight per volume"
+          },
+          {
+            "code": "%{WeightToWeight}",
+            "display": "percent weight/weight"
+          },
+          {
+            "code": "(m2.d)",
+            "display": "meter squared in 24 hours"
+          },
+          {
+            "code": "[Btu]",
+            "display": "British Thermal Unit"
+          },
+          {
+            "code": "[CFU]",
+            "display": "colony forming units"
+          },
+          {
+            "code": "[degF]",
+            "display": "degree Fahrenheit"
+          },
+          {
+            "code": "[EU]",
+            "display": "Ehrlich unit"
+          },
+          {
+            "code": "[in_i]",
+            "display": "inch"
+          },
+          {
+            "code": "[IU]",
+            "display": "international unit"
+          },
+          {
+            "code": "[lb_av]",
+            "display": "pound"
+          },
+          {
+            "code": "[lbf_av]",
+            "display": "pound foot"
+          },
+          {
+            "code": "[oz_av]",
+            "display": "ounce"
+          },
+          {
+            "code": "[pH]",
+            "display": "pH"
+          },
+          {
+            "code": "[ppb]",
+            "display": "parts per billion"
+          },
+          {
+            "code": "[ppm]",
+            "display": "parts per million"
+          },
+          {
+            "code": "[ppth]",
+            "display": "parts per thousand"
+          },
+          {
+            "code": "[pptr]",
+            "display": "parts per trillion"
+          },
+          {
+            "code": "[psi]",
+            "display": "pounds per square inch"
+          },
+          {
+            "code": "[pt_us]",
+            "display": "pints (US Dry)"
+          },
+          {
+            "code": "[qt_us]",
+            "display": "quarts (US Dry)"
+          },
+          {
+            "code": "{actuation}",
+            "display": "actuation"
+          },
+          {
+            "code": "{can}",
+            "display": "can"
+          },
+          {
+            "code": "{tbl}",
+            "display": "tablet"
+          },
+          {
+            "code": "{tot}",
+            "display": "particles"
+          },
+          {
+            "code": "{vial}",
+            "display": "vial"
+          },
+          {
+            "code": "a",
+            "display": "year"
+          },
+          {
+            "code": "Cel",
+            "display": "degree Celsius"
+          },
+          {
+            "code": "cm",
+            "display": "centimeter"
+          },
+          {
+            "code": "d",
+            "display": "day"
+          },
+          {
+            "code": "deg",
+            "display": "degrees to rotation"
+          },
+          {
+            "code": "g",
+            "display": "gram"
+          },
+          {
+            "code": "gal",
+            "display": "gallon"
+          },
+          {
+            "code": "h",
+            "display": "hour"
+          },
+          {
+            "code": "K",
+            "display": "degree Kelvin"
+          },
+          {
+            "code": "kg",
+            "display": "kilogram"
+          },
+          {
+            "code": "kgf",
+            "display": "kilopond"
+          },
+          {
+            "code": "ku",
+            "display": "kiloDalton"
+          },
+          {
+            "code": "L",
+            "display": "liter"
+          },
+          {
+            "code": "m",
+            "display": "meter"
+          },
+          {
+            "code": "m2",
+            "display": "square meter"
+          },
+          {
+            "code": "m3",
+            "display": "cubic meter"
+          },
+          {
+            "code": "mg",
+            "display": "milligram"
+          },
+          {
+            "code": "mg%",
+            "display": "milligram per 100 milliliters of solution"
+          },
+          {
+            "code": "min",
+            "display": "minute"
+          },
+          {
+            "code": "mm",
+            "display": "millimeter"
+          },
+          {
+            "code": "mmol",
+            "display": "millimole"
+          },
+          {
+            "code": "mo",
+            "display": "month"
+          },
+          {
+            "code": "mol",
+            "display": "mole"
+          },
+          {
+            "code": "mosm",
+            "display": "milliosmole"
+          },
+          {
+            "code": "ms",
+            "display": "millisiemens"
+          },
+          {
+            "code": "N",
+            "display": "Newton"
+          },
+          {
+            "code": "ng",
+            "display": "nanogram"
+          },
+          {
+            "code": "nm",
+            "display": "nanometer"
+          },
+          {
+            "code": "nmol",
+            "display": "nanomole"
+          },
+          {
+            "code": "pg",
+            "display": "picogram"
+          },
+          {
+            "code": "pmol",
+            "display": "picomole"
+          },
+          {
+            "code": "rad",
+            "display": "radian"
+          },
+          {
+            "code": "s",
+            "display": "second"
+          },
+          {
+            "code": "u",
+            "display": "Dalton"
+          },
+          {
+            "code": "u",
+            "display": "atomic mass unit"
+          },
+          {
+            "code": "U",
+            "display": "catalytic activity unit"
+          },
+          {
+            "code": "ug",
+            "display": "microgram"
+          },
+          {
+            "code": "uL",
+            "display": "microliter"
+          },
+          {
+            "code": "um",
+            "display": "micrometer || micron"
+          },
+          {
+            "code": "umho",
+            "display": "micromhos"
+          },
+          {
+            "code": "umol",
+            "display": "micromole"
+          },
+          {
+            "code": "wk",
+            "display": "week"
+          }
+        ]
+      }
+    ]
+  }
+}

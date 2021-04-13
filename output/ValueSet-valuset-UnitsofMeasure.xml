@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-UnitsofMeasure"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <a href="http://unitsofmeasure.org"><code>http://unitsofmeasure.org</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>%</td><td>percent</td></tr><tr><td>%{VolumeToVolume}</td><td>percent volume per volume</td></tr><tr><td>%{WeightToVolume}</td><td>percent weight per volume</td></tr><tr><td>%{WeightToWeight}</td><td>percent weight/weight</td></tr><tr><td>(m2.d)</td><td>meter squared in 24 hours</td></tr><tr><td>[Btu]</td><td>British Thermal Unit</td></tr><tr><td>[CFU]</td><td>colony forming units</td></tr><tr><td>[degF]</td><td>degree Fahrenheit</td></tr><tr><td>[EU]</td><td>Ehrlich unit</td></tr><tr><td>[in_i]</td><td>inch</td></tr><tr><td>[IU]</td><td>international unit</td></tr><tr><td>[lb_av]</td><td>pound</td></tr><tr><td>[lbf_av]</td><td>pound foot</td></tr><tr><td>[oz_av]</td><td>ounce</td></tr><tr><td>[pH]</td><td>pH</td></tr><tr><td>[ppb]</td><td>parts per billion</td></tr><tr><td>[ppm]</td><td>parts per million</td></tr><tr><td>[ppth]</td><td>parts per thousand</td></tr><tr><td>[pptr]</td><td>parts per trillion</td></tr><tr><td>[psi]</td><td>pounds per square inch</td></tr><tr><td>[pt_us]</td><td>pints (US Dry)</td></tr><tr><td>[qt_us]</td><td>quarts (US Dry)</td></tr><tr><td>{actuation}</td><td>actuation</td></tr><tr><td>{can}</td><td>can</td></tr><tr><td>{tbl}</td><td>tablet</td></tr><tr><td>{tot}</td><td>particles</td></tr><tr><td>{vial}</td><td>vial</td></tr><tr><td>a</td><td>year</td></tr><tr><td>Cel</td><td>degree Celsius</td></tr><tr><td>cm</td><td>centimeter</td></tr><tr><td>d</td><td>day</td></tr><tr><td>deg</td><td>degrees to rotation</td></tr><tr><td>g</td><td>gram</td></tr><tr><td>gal</td><td>gallon</td></tr><tr><td>h</td><td>hour</td></tr><tr><td>K</td><td>degree Kelvin</td></tr><tr><td>kg</td><td>kilogram</td></tr><tr><td>kgf</td><td>kilopond</td></tr><tr><td>ku</td><td>kiloDalton</td></tr><tr><td>L</td><td>liter</td></tr><tr><td>m</td><td>meter</td></tr><tr><td>m2</td><td>square meter</td></tr><tr><td>m3</td><td>cubic meter</td></tr><tr><td>mg</td><td>milligram</td></tr><tr><td>mg%</td><td>milligram per 100 milliliters of solution</td></tr><tr><td>min</td><td>minute</td></tr><tr><td>mm</td><td>millimeter</td></tr><tr><td>mmol</td><td>millimole</td></tr><tr><td>mo</td><td>month</td></tr><tr><td>mol</td><td>mole</td></tr><tr><td>mosm</td><td>milliosmole</td></tr><tr><td>ms</td><td>millisiemens</td></tr><tr><td>N</td><td>Newton</td></tr><tr><td>ng</td><td>nanogram</td></tr><tr><td>nm</td><td>nanometer</td></tr><tr><td>nmol</td><td>nanomole</td></tr><tr><td>pg</td><td>picogram</td></tr><tr><td>pmol</td><td>picomole</td></tr><tr><td>rad</td><td>radian</td></tr><tr><td>s</td><td>second</td></tr><tr><td>u</td><td>Dalton</td></tr><tr><td>u</td><td>atomic mass unit</td></tr><tr><td>U</td><td>catalytic activity unit</td></tr><tr><td>ug</td><td>microgram</td></tr><tr><td>uL</td><td>microliter</td></tr><tr><td>um</td><td>micrometer || micron</td></tr><tr><td>umho</td><td>micromhos</td></tr><tr><td>umol</td><td>micromole</td></tr><tr><td>wk</td><td>week</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure"/>
+  <version value="current"/>
+  <name value="UnitsofMeasure"/>
+  <title value="PQ/CMC Units of Measure Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <description value="Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="http://unitsofmeasure.org"/>
+      <concept>
+        <code value="%"/>
+        <display value="percent"/>
+      </concept>
+      <concept>
+        <code value="%{VolumeToVolume}"/>
+        <display value="percent volume per volume"/>
+      </concept>
+      <concept>
+        <code value="%{WeightToVolume}"/>
+        <display value="percent weight per volume"/>
+      </concept>
+      <concept>
+        <code value="%{WeightToWeight}"/>
+        <display value="percent weight/weight"/>
+      </concept>
+      <concept>
+        <code value="(m2.d)"/>
+        <display value="meter squared in 24 hours"/>
+      </concept>
+      <concept>
+        <code value="[Btu]"/>
+        <display value="British Thermal Unit"/>
+      </concept>
+      <concept>
+        <code value="[CFU]"/>
+        <display value="colony forming units"/>
+      </concept>
+      <concept>
+        <code value="[degF]"/>
+        <display value="degree Fahrenheit"/>
+      </concept>
+      <concept>
+        <code value="[EU]"/>
+        <display value="Ehrlich unit"/>
+      </concept>
+      <concept>
+        <code value="[in_i]"/>
+        <display value="inch"/>
+      </concept>
+      <concept>
+        <code value="[IU]"/>
+        <display value="international unit"/>
+      </concept>
+      <concept>
+        <code value="[lb_av]"/>
+        <display value="pound"/>
+      </concept>
+      <concept>
+        <code value="[lbf_av]"/>
+        <display value="pound foot"/>
+      </concept>
+      <concept>
+        <code value="[oz_av]"/>
+        <display value="ounce"/>
+      </concept>
+      <concept>
+        <code value="[pH]"/>
+        <display value="pH"/>
+      </concept>
+      <concept>
+        <code value="[ppb]"/>
+        <display value="parts per billion"/>
+      </concept>
+      <concept>
+        <code value="[ppm]"/>
+        <display value="parts per million"/>
+      </concept>
+      <concept>
+        <code value="[ppth]"/>
+        <display value="parts per thousand"/>
+      </concept>
+      <concept>
+        <code value="[pptr]"/>
+        <display value="parts per trillion"/>
+      </concept>
+      <concept>
+        <code value="[psi]"/>
+        <display value="pounds per square inch"/>
+      </concept>
+      <concept>
+        <code value="[pt_us]"/>
+        <display value="pints (US Dry)"/>
+      </concept>
+      <concept>
+        <code value="[qt_us]"/>
+        <display value="quarts (US Dry)"/>
+      </concept>
+      <concept>
+        <code value="{actuation}"/>
+        <display value="actuation"/>
+      </concept>
+      <concept>
+        <code value="{can}"/>
+        <display value="can"/>
+      </concept>
+      <concept>
+        <code value="{tbl}"/>
+        <display value="tablet"/>
+      </concept>
+      <concept>
+        <code value="{tot}"/>
+        <display value="particles"/>
+      </concept>
+      <concept>
+        <code value="{vial}"/>
+        <display value="vial"/>
+      </concept>
+      <concept>
+        <code value="a"/>
+        <display value="year"/>
+      </concept>
+      <concept>
+        <code value="Cel"/>
+        <display value="degree Celsius"/>
+      </concept>
+      <concept>
+        <code value="cm"/>
+        <display value="centimeter"/>
+      </concept>
+      <concept>
+        <code value="d"/>
+        <display value="day"/>
+      </concept>
+      <concept>
+        <code value="deg"/>
+        <display value="degrees to rotation"/>
+      </concept>
+      <concept>
+        <code value="g"/>
+        <display value="gram"/>
+      </concept>
+      <concept>
+        <code value="gal"/>
+        <display value="gallon"/>
+      </concept>
+      <concept>
+        <code value="h"/>
+        <display value="hour"/>
+      </concept>
+      <concept>
+        <code value="K"/>
+        <display value="degree Kelvin"/>
+      </concept>
+      <concept>
+        <code value="kg"/>
+        <display value="kilogram"/>
+      </concept>
+      <concept>
+        <code value="kgf"/>
+        <display value="kilopond"/>
+      </concept>
+      <concept>
+        <code value="ku"/>
+        <display value="kiloDalton"/>
+      </concept>
+      <concept>
+        <code value="L"/>
+        <display value="liter"/>
+      </concept>
+      <concept>
+        <code value="m"/>
+        <display value="meter"/>
+      </concept>
+      <concept>
+        <code value="m2"/>
+        <display value="square meter"/>
+      </concept>
+      <concept>
+        <code value="m3"/>
+        <display value="cubic meter"/>
+      </concept>
+      <concept>
+        <code value="mg"/>
+        <display value="milligram"/>
+      </concept>
+      <concept>
+        <code value="mg%"/>
+        <display value="milligram per 100 milliliters of solution"/>
+      </concept>
+      <concept>
+        <code value="min"/>
+        <display value="minute"/>
+      </concept>
+      <concept>
+        <code value="mm"/>
+        <display value="millimeter"/>
+      </concept>
+      <concept>
+        <code value="mmol"/>
+        <display value="millimole"/>
+      </concept>
+      <concept>
+        <code value="mo"/>
+        <display value="month"/>
+      </concept>
+      <concept>
+        <code value="mol"/>
+        <display value="mole"/>
+      </concept>
+      <concept>
+        <code value="mosm"/>
+        <display value="milliosmole"/>
+      </concept>
+      <concept>
+        <code value="ms"/>
+        <display value="millisiemens"/>
+      </concept>
+      <concept>
+        <code value="N"/>
+        <display value="Newton"/>
+      </concept>
+      <concept>
+        <code value="ng"/>
+        <display value="nanogram"/>
+      </concept>
+      <concept>
+        <code value="nm"/>
+        <display value="nanometer"/>
+      </concept>
+      <concept>
+        <code value="nmol"/>
+        <display value="nanomole"/>
+      </concept>
+      <concept>
+        <code value="pg"/>
+        <display value="picogram"/>
+      </concept>
+      <concept>
+        <code value="pmol"/>
+        <display value="picomole"/>
+      </concept>
+      <concept>
+        <code value="rad"/>
+        <display value="radian"/>
+      </concept>
+      <concept>
+        <code value="s"/>
+        <display value="second"/>
+      </concept>
+      <concept>
+        <code value="u"/>
+        <display value="Dalton"/>
+      </concept>
+      <concept>
+        <code value="u"/>
+        <display value="atomic mass unit"/>
+      </concept>
+      <concept>
+        <code value="U"/>
+        <display value="catalytic activity unit"/>
+      </concept>
+      <concept>
+        <code value="ug"/>
+        <display value="microgram"/>
+      </concept>
+      <concept>
+        <code value="uL"/>
+        <display value="microliter"/>
+      </concept>
+      <concept>
+        <code value="um"/>
+        <display value="micrometer || micron"/>
+      </concept>
+      <concept>
+        <code value="umho"/>
+        <display value="micromhos"/>
+      </concept>
+      <concept>
+        <code value="umol"/>
+        <display value="micromole"/>
+      </concept>
+      <concept>
+        <code value="wk"/>
+        <display value="week"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

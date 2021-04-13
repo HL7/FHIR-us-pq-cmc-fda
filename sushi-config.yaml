@@ -1,0 +1,29 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: hl7.fhir.us.pq-cmc
+canonical: https://www.hl7.org/fhir/us-pq-cmc
+gitUrl: https://github.com/HL7/FHIR-us-pq-cmc
+name: PharmaceuticalQualityImplementationGuide
+status: draft
+version: current
+fhirVersion: current
+copyrightYear: 2021+
+releaseLabel: ci-build
+
+pages:
+  index.md:
+    title: PQ/CMC Mapping Implementation Guide Home Page
+  downloads.md:
+    title: Downloads
+  credits.md:
+    title: Credits
+
+menu:
+  Table of Contents: toc.html
+  Conformance:
+    Home Page: index.html
+    Downloads: downloads.html
+    Credits: credits.html
+  Artifacts: artifacts.html

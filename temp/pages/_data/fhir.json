@@ -1,0 +1,30 @@
+{
+  "path": "http://build.fhir.org/",
+  "canonical": "https://www.hl7.org/fhir/us-pq-cmc",
+  "igId": "hl7.fhir.us.pq-cmc",
+  "igName": "PharmaceuticalQualityImplementationGuide",
+  "packageId": "hl7.fhir.us.pq-cmc",
+  "igVer": "current",
+  "errorCount": 1,
+  "version": "4.5.0",
+  "revision": "d607c37d",
+  "versionFull": "4.5.0-d607c37d",
+  "toolingVersion": "4.5.0",
+  "toolingRevision": "3",
+  "toolingVersionFull": "4.5.0 (3)",
+  "totalFiles": 33,
+  "processedFiles": 45,
+  "genDate": "Tue, Apr 13, 2021 00:29-0400",
+  "genDay": "13/04/2021",
+  "ig": {
+    "id": "hl7.fhir.us.pq-cmc",
+    "name": "PharmaceuticalQualityImplementationGuide",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
+    "version": "current",
+    "status": "draft",
+    "experimental": false,
+    "gitstatus": "",
+    "date": "2021-04-13T00:29:45-04:00",
+    "fhirVersion": "4.5.0"
+  }
+}

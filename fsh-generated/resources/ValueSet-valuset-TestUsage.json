@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TestUsage",
+  "id": "valuset-TestUsage",
+  "title": "PQ/CMC Testing Site Unique Identifier Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestUsage",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C134029",
+            "display": "Release"
+          },
+          {
+            "code": "C134030",
+            "display": "Stability"
+          }
+        ]
+      }
+    ]
+  }
+}

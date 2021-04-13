@@ -1,0 +1,60 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "StorageConditions",
+  "id": "valuset-StorageConditions",
+  "title": "PQ/CMC Storage Conditions Terminology",
+  "description": "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StorageConditions",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C133936",
+            "display": "-20 +/- 5 degrees C"
+          },
+          {
+            "code": "C134018",
+            "display": "25 +/- 2 degrees C/40% +/- 5%RH"
+          },
+          {
+            "code": "C134014",
+            "display": "25 +/- 2 degrees C/60% +/- 5%RH"
+          },
+          {
+            "code": "C134015",
+            "display": "30 +/- 2 degrees C/65% +/- 5%RH"
+          },
+          {
+            "code": "C134017",
+            "display": "30 +/- 2 degrees C/75% +/- 5%RH"
+          },
+          {
+            "code": "C134019",
+            "display": "30 degrees C +/- 2 degrees C/35%RH +/- 5%RH"
+          },
+          {
+            "code": "C134016",
+            "display": "40 +/- 2 degrees C/75% +/- 5%RH"
+          },
+          {
+            "code": "C133940",
+            "display": "40 degrees C +/- 2 degrees C/not more than (NMT) 25%RH"
+          },
+          {
+            "code": "C133935",
+            "display": "5 +/- 3 degrees C"
+          },
+          {
+            "code": "C96148",
+            "display": "Proprietary"
+          }
+        ]
+      }
+    ]
+  }
+}

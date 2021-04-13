@@ -1,0 +1,91 @@
+{
+  "resourceType": "ValueSet",
+  "id": "valuset-ApplicationType",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C115123</td><td>Abbreviated New Animal Drug Application</td></tr><tr><td>C73113</td><td>Abbreviated New Drug Application</td></tr><tr><td>C71778</td><td>Biologics License Application</td></tr><tr><td>C115122</td><td>Generic Investigational New Animal Drug File</td></tr><tr><td>C80440</td><td>Humanitarian Device Exemption (HDE)</td></tr><tr><td>C82667</td><td>Investigational Device Exemption</td></tr><tr><td>C96091</td><td>Investigational New Animal Drug File</td></tr><tr><td>C96090</td><td>Investigational New Drug Application</td></tr><tr><td>C70877</td><td>Master File</td></tr><tr><td>C96092</td><td>New Active Ingredient</td></tr><tr><td>C72901</td><td>New Animal Drug Application</td></tr><tr><td>C72899</td><td>New Drug Application</td></tr><tr><td>C70880</td><td>Premarket Approval</td></tr><tr><td>C80442</td><td>Premarket Notification 510(K)</td></tr></table></li></ul></div>"
+  },
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType",
+  "version": "current",
+  "name": "ApplicationType",
+  "title": "PQ/CMC Application Type Terminology",
+  "status": "active",
+  "date": "2021-04-13T00:29:45-04:00",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "description": "Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "840"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C115123",
+            "display": "Abbreviated New Animal Drug Application"
+          },
+          {
+            "code": "C73113",
+            "display": "Abbreviated New Drug Application"
+          },
+          {
+            "code": "C71778",
+            "display": "Biologics License Application"
+          },
+          {
+            "code": "C115122",
+            "display": "Generic Investigational New Animal Drug File"
+          },
+          {
+            "code": "C80440",
+            "display": "Humanitarian Device Exemption (HDE)"
+          },
+          {
+            "code": "C82667",
+            "display": "Investigational Device Exemption"
+          },
+          {
+            "code": "C96091",
+            "display": "Investigational New Animal Drug File"
+          },
+          {
+            "code": "C96090",
+            "display": "Investigational New Drug Application"
+          },
+          {
+            "code": "C70877",
+            "display": "Master File"
+          },
+          {
+            "code": "C96092",
+            "display": "New Active Ingredient"
+          },
+          {
+            "code": "C72901",
+            "display": "New Animal Drug Application"
+          },
+          {
+            "code": "C72899",
+            "display": "New Drug Application"
+          },
+          {
+            "code": "C70880",
+            "display": "Premarket Approval"
+          },
+          {
+            "code": "C80442",
+            "display": "Premarket Notification 510(K)"
+          }
+        ]
+      }
+    ]
+  }
+}

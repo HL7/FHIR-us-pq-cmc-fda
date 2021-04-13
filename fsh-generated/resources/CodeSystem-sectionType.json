@@ -1,0 +1,260 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CompSectionTypes",
+  "id": "sectionType",
+  "title": "Composition Section Type",
+  "description": "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes.",
+  "version": "Internal",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/CodeSystem/sectionType",
+  "date": "2020-04-06T10:07:08-04:00",
+  "publisher": "U.S. Federal Drug Administration",
+  "concept": [
+    {
+      "code": "32S10",
+      "display": "Substance General Information"
+    },
+    {
+      "code": "32S11",
+      "display": "Substance Nomenclature"
+    },
+    {
+      "code": "32S12",
+      "display": "Substance Structure"
+    },
+    {
+      "code": "32S13",
+      "display": "Substance General Properties"
+    },
+    {
+      "code": "32S20",
+      "display": "Substance Manufacture"
+    },
+    {
+      "code": "32S21",
+      "display": "Substance Manufacturers"
+    },
+    {
+      "code": "32S22",
+      "display": "Substance Description of Manufacturing Process and Process Controls"
+    },
+    {
+      "code": "32S23",
+      "display": "Substance Control of Materials"
+    },
+    {
+      "code": "32S24",
+      "display": "Substance Controls of Critical Steps and Intermediates"
+    },
+    {
+      "code": "32S25",
+      "display": "Substance Process Validation and/or Evaluation"
+    },
+    {
+      "code": "32S26",
+      "display": "Substance Manufacturing Process Development"
+    },
+    {
+      "code": "32S30",
+      "display": "Substance Characterization"
+    },
+    {
+      "code": "32S31",
+      "display": "Substance Elucidation of Structure and other Characteristics"
+    },
+    {
+      "code": "32S32",
+      "display": "Substance Impurities"
+    },
+    {
+      "code": "32S40",
+      "display": "Substance Control of Drug Substance"
+    },
+    {
+      "code": "32S41",
+      "display": "Substance Specification"
+    },
+    {
+      "code": "32S42",
+      "display": "Substance Analytical Procedures"
+    },
+    {
+      "code": "32S43",
+      "display": "Substance Validation of Analytical Procedures"
+    },
+    {
+      "code": "32S44",
+      "display": "Substance Batch Analyses"
+    },
+    {
+      "code": "32S45",
+      "display": "Substance Justification of Specification"
+    },
+    {
+      "code": "32S50",
+      "display": "Substance Reference Standards or Materials"
+    },
+    {
+      "code": "32S60",
+      "display": "Substance Container Closure System"
+    },
+    {
+      "code": "32S70",
+      "display": "Substance Stability"
+    },
+    {
+      "code": "32S71",
+      "display": "Substance Stability Summary and Conclusions"
+    },
+    {
+      "code": "32S72",
+      "display": "Substance Postapproval Stability Protocol and Stability Commitment"
+    },
+    {
+      "code": "32S73",
+      "display": "Substance Stability Data"
+    },
+    {
+      "code": "32P10",
+      "display": "Product Description and Composition of the Drug Product"
+    },
+    {
+      "code": "32P20",
+      "display": "Product Pharmaceutical Development"
+    },
+    {
+      "code": "32P21",
+      "display": "Product Components of the Drug Product"
+    },
+    {
+      "code": "32P22",
+      "display": "Product Drug Product"
+    },
+    {
+      "code": "32P23",
+      "display": "Product Manufacturing Process Development"
+    },
+    {
+      "code": "32P24",
+      "display": "Product Container Closure System"
+    },
+    {
+      "code": "32P25",
+      "display": "Product Microbiological Attributes"
+    },
+    {
+      "code": "32P26",
+      "display": "Product Compatibility"
+    },
+    {
+      "code": "32P30",
+      "display": "Product Manufacture"
+    },
+    {
+      "code": "32P31",
+      "display": "Product Manufacturers"
+    },
+    {
+      "code": "32P32",
+      "display": "Product Batch Formula"
+    },
+    {
+      "code": "32P33",
+      "display": "Product Description of Manufacturing Process and Process Controls"
+    },
+    {
+      "code": "32P34",
+      "display": "Product Controls of Critical Steps and Intermediates"
+    },
+    {
+      "code": "32P35",
+      "display": "Product Process Validation and/or Evaluation"
+    },
+    {
+      "code": "32P40",
+      "display": "Product Control of Excipients"
+    },
+    {
+      "code": "32P41",
+      "display": "Excipients Specifications"
+    },
+    {
+      "code": "32P42",
+      "display": "Product Analytical Procedures"
+    },
+    {
+      "code": "32P43",
+      "display": "Product Validation of Analytical Procedures"
+    },
+    {
+      "code": "32P44",
+      "display": "Product Justification of Specifications"
+    },
+    {
+      "code": "32P45",
+      "display": "Product Excipients of Human or Animal Origin"
+    },
+    {
+      "code": "32P46",
+      "display": "Product Novel Excipients"
+    },
+    {
+      "code": "32P50",
+      "display": "Product name - dosage form"
+    },
+    {
+      "code": "32P51",
+      "display": "Product Specifications"
+    },
+    {
+      "code": "32P52",
+      "display": "Product Analytical Procedures"
+    },
+    {
+      "code": "32P53",
+      "display": "Product Validation of Analytical Procedures"
+    },
+    {
+      "code": "32P54",
+      "display": "Product Batch Analyses"
+    },
+    {
+      "code": "32P55",
+      "display": "Product Characterization of Impurities"
+    },
+    {
+      "code": "32P56",
+      "display": "Product Justification of Specifications"
+    },
+    {
+      "code": "32P60",
+      "display": "Product Reference Standards or Materials"
+    },
+    {
+      "code": "32P70",
+      "display": "Product Container Closure System"
+    },
+    {
+      "code": "32P80",
+      "display": "Product Stability"
+    },
+    {
+      "code": "32P81",
+      "display": "Product Stability Summary and Conclusion"
+    },
+    {
+      "code": "32P82",
+      "display": "Product Postapproval Stability Protocol and Stability Commitment"
+    },
+    {
+      "code": "32P83",
+      "display": "Product Stability Data"
+    },
+    {
+      "code": "SP4151",
+      "display": "Quality Specification"
+    }
+  ],
+  "count": 61
+}

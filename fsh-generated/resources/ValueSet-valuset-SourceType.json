@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SourceType",
+  "id": "valuset-SourceType",
+  "title": "PQ/CMC Source Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SourceType",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C14182",
+            "display": "Animal"
+          },
+          {
+            "code": "C18634",
+            "display": "Animal-derived indirectly"
+          },
+          {
+            "code": "C48807",
+            "display": "Chemical"
+          },
+          {
+            "code": "C14225",
+            "display": "Human"
+          },
+          {
+            "code": "C14227",
+            "display": "Insect"
+          },
+          {
+            "code": "C14329",
+            "display": "Microbial"
+          },
+          {
+            "code": "C14258",
+            "display": "Plant"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TestingSiteUniqueIdentifierType",
+  "id": "valuset-TestingSiteUniqueIdentifierType",
+  "title": "PQ/CMC Test Method Origin Terminology",
+  "description": "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestingSiteUniqueIdentifierType",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C134005",
+            "display": "CFN"
+          },
+          {
+            "code": "C134003",
+            "display": "DUNS"
+          },
+          {
+            "code": "C134004",
+            "display": "FEI"
+          },
+          {
+            "code": "C17998",
+            "display": "Unknown"
+          }
+        ]
+      }
+    ]
+  }
+}
