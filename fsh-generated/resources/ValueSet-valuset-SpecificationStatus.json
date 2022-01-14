@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SpecificationStatus",
+  "id": "valuset-SpecificationStatus",
+  "title": "PQ/CMC Specification Status Terminology",
+  "description": "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationStatus",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C25425",
+            "display": "Approved"
+          },
+          {
+            "code": "C48660",
+            "display": "Not Applicable"
+          },
+          {
+            "code": "C134011",
+            "display": "Not Approved"
+          },
+          {
+            "code": "C134012",
+            "display": "Reported in a CBE or AR"
+          },
+          {
+            "code": "C134010",
+            "display": "Tentatively Approved"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+  <title>CodeSystem-TestCategoriesCodes-ttl-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<pre class="rdf"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:CodeSystem;
+  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org//datatypes.html#id">fhir:value</a> &quot;TestCategoriesCodes&quot;];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.text">fhir:DomainResource.text</a> [
+     <a href="http://build.fhir.org//narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;This code system http://hl7.org/fhir/pq-cmc/CodeSystem/TestCategoriesCodes defines the following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.url">fhir:CodeSystem.url</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/pq-cmc/CodeSystem/TestCategoriesCodes&quot;];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.version">fhir:CodeSystem.version</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;0.1.0&quot;];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.name">fhir:CodeSystem.name</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;TestCategoriesCodes&quot;];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.status">fhir:CodeSystem.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;active&quot;];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.date">fhir:CodeSystem.date</a> [ <a href="http://build.fhir.org//datatypes.html#dateTime">fhir:value</a> &quot;2021-04-07T03:37:46-04:00&quot;^^xsd:dateTime];
+  <a href="http://build.fhir.org//codesystem.html#CodeSystem.content">fhir:CodeSystem.content</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;complete&quot;].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</code></pre>
+
+</body>
+</html>

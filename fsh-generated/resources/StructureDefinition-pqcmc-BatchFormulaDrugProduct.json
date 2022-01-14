@@ -1,0 +1,47 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pqcmc-BatchFormulaDrugProduct",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "anonymous"
+    }
+  ],
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/StructureDefinition/pqcmc-BatchFormulaDrugProduct",
+  "version": "current",
+  "name": "BatchFormulaDrugProduct",
+  "title": "Batch Formula Drug Product",
+  "status": "active",
+  "description": "tbd",
+  "fhirVersion": "4.6.0",
+  "mapping": [
+    {
+      "identity": "idmp",
+      "name": "IDMP Mapping",
+      "uri": "https://en.wikipedia.org/wiki/Identification_of_medicinal_products"
+    },
+    {
+      "identity": "w5",
+      "name": "FiveWs Pattern Mapping",
+      "uri": "http://hl7.org/fhir/fivews"
+    },
+    {
+      "identity": "rim",
+      "name": "RIM Mapping",
+      "uri": "http://hl7.org/v3"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicinalProductDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicinalProductDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicinalProductDefinition",
+        "path": "MedicinalProductDefinition"
+      }
+    ]
+  }
+}

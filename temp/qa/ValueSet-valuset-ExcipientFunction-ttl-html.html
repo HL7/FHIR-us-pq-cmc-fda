@@ -1,0 +1,219 @@
+﻿<html>
+<head>
+  <title>ValueSet-valuset-ExcipientFunction-ttl-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<pre class="rdf"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:ValueSet;
+  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://build.fhir.org//valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org//datatypes.html#id">fhir:value</a> &quot;valuset-ExcipientFunction&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
+     <a href="http://build.fhir.org//narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;code&gt;urn:oid:2.16.840.1.113883.3.26.1.1&lt;/code&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176637&lt;/td&gt;&lt;td&gt;Absorption modifier&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C89528&lt;/td&gt;&lt;td&gt;Adhesive&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176642&lt;/td&gt;&lt;td&gt;Adsorbent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176643&lt;/td&gt;&lt;td&gt;Air displacement&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42654&lt;/td&gt;&lt;td&gt;Anticaking agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C275&lt;/td&gt;&lt;td&gt;Antioxidant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42647&lt;/td&gt;&lt;td&gt;Binder&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C70815&lt;/td&gt;&lt;td&gt;Buffering agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176644&lt;/td&gt;&lt;td&gt;Bulking agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C92708&lt;/td&gt;&lt;td&gt;CAPSULE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176645&lt;/td&gt;&lt;td&gt;Carrier&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C360&lt;/td&gt;&lt;td&gt;Chelating agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42656&lt;/td&gt;&lt;td&gt;Coloring agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176646&lt;/td&gt;&lt;td&gt;Complexing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C53306&lt;/td&gt;&lt;td&gt;Cryoprotectant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176647&lt;/td&gt;&lt;td&gt;Denaturant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42648&lt;/td&gt;&lt;td&gt;Disintegrant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42662&lt;/td&gt;&lt;td&gt;Dispersing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176638&lt;/td&gt;&lt;td&gt;Effervescent agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176632&lt;/td&gt;&lt;td&gt;Emollient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C73477&lt;/td&gt;&lt;td&gt;Emulsifying Excipient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176633&lt;/td&gt;&lt;td&gt;Emulsion stabilizing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42650&lt;/td&gt;&lt;td&gt;Filler&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176648&lt;/td&gt;&lt;td&gt;Film coating agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176634&lt;/td&gt;&lt;td&gt;Foam stabilizing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176649&lt;/td&gt;&lt;td&gt;Free radical scavenger&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176650&lt;/td&gt;&lt;td&gt;Gelling agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176651&lt;/td&gt;&lt;td&gt;Humectant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42657&lt;/td&gt;&lt;td&gt;Ink&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42653&lt;/td&gt;&lt;td&gt;Lubricant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176652&lt;/td&gt;&lt;td&gt;Lyophilization aid&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176653&lt;/td&gt;&lt;td&gt;Matrix-forming agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176654&lt;/td&gt;&lt;td&gt;Microencapsulating agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176655&lt;/td&gt;&lt;td&gt;Ointment base&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176656&lt;/td&gt;&lt;td&gt;Opacifier&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176635&lt;/td&gt;&lt;td&gt;Organoleptic agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176657&lt;/td&gt;&lt;td&gt;Osmotic agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176658&lt;/td&gt;&lt;td&gt;pH modifier&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C55826&lt;/td&gt;&lt;td&gt;Plasticizer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176659&lt;/td&gt;&lt;td&gt;Polishing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176660&lt;/td&gt;&lt;td&gt;Polymers for ophthalmic use&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42659&lt;/td&gt;&lt;td&gt;Preservative&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176661&lt;/td&gt;&lt;td&gt;Propellant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176639&lt;/td&gt;&lt;td&gt;Reducing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176662&lt;/td&gt;&lt;td&gt;Release modifying agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176640&lt;/td&gt;&lt;td&gt;Solubilizing agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C45790&lt;/td&gt;&lt;td&gt;Solvent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176636&lt;/td&gt;&lt;td&gt;Stabilizer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176663&lt;/td&gt;&lt;td&gt;Suppository base&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42739&lt;/td&gt;&lt;td&gt;Surfactant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C42660&lt;/td&gt;&lt;td&gt;Suspending agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176641&lt;/td&gt;&lt;td&gt;Tonicity agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176664&lt;/td&gt;&lt;td&gt;Transdermal delivery component&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176665&lt;/td&gt;&lt;td&gt;Transfer ligand&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C927&lt;/td&gt;&lt;td&gt;Vehicle&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176666&lt;/td&gt;&lt;td&gt;Viscosity modifier&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176667&lt;/td&gt;&lt;td&gt;Water-repelling agent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C176668&lt;/td&gt;&lt;td&gt;Wetting agent&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;current&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;ExcipientFunction&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.title">fhir:ValueSet.title</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;PQ/CMC Excipient Function Terminology&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;active&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://build.fhir.org//datatypes.html#dateTime">fhir:value</a> &quot;2021-04-13T00:29:45-04:00&quot;^^xsd:dateTime];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.publisher">fhir:ValueSet.publisher</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.description">fhir:ValueSet.description</a> [ <a href="http://build.fhir.org//datatypes.html#markdown">fhir:value</a> &quot;Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.compose">fhir:ValueSet.compose</a> [
+     <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include">fhir:ValueSet.compose.include</a> [
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.system">fhir:ValueSet.compose.include.system</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;urn:oid:2.16.840.1.113883.3.26.1.1&quot; ];
+       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept">fhir:ValueSet.compose.include.concept</a> [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176637&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Absorption modifier&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C89528&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Adhesive&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176642&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Adsorbent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 3;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176643&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Air displacement&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 4;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42654&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Anticaking agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 5;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C275&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Antioxidant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 6;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42647&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Binder&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 7;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C70815&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Buffering agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 8;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176644&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Bulking agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 9;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C92708&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;CAPSULE&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 10;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176645&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Carrier&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 11;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C360&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Chelating agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 12;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42656&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Coloring agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 13;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176646&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Complexing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 14;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C53306&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Cryoprotectant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 15;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176647&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Denaturant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 16;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42648&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Disintegrant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 17;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42662&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Dispersing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 18;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176638&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Effervescent agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 19;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176632&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Emollient&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 20;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C73477&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Emulsifying Excipient&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 21;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176633&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Emulsion stabilizing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 22;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42650&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Filler&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 23;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176648&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Film coating agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 24;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176634&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Foam stabilizing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 25;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176649&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Free radical scavenger&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 26;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176650&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Gelling agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 27;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176651&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Humectant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 28;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42657&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Ink&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 29;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42653&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Lubricant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 30;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176652&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Lyophilization aid&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 31;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176653&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Matrix-forming agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 32;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176654&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Microencapsulating agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 33;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176655&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Ointment base&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 34;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176656&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Opacifier&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 35;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176635&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Organoleptic agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 36;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176657&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Osmotic agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 37;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176658&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;pH modifier&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 38;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C55826&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Plasticizer&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 39;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176659&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Polishing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 40;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176660&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Polymers for ophthalmic use&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 41;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42659&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Preservative&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 42;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176661&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Propellant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 43;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176639&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Reducing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 44;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176662&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Release modifying agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 45;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176640&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Solubilizing agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 46;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C45790&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Solvent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 47;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176636&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Stabilizer&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 48;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176663&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Suppository base&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 49;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42739&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Surfactant&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 50;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C42660&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Suspending agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 51;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176641&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Tonicity agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 52;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176664&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Transdermal delivery component&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 53;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176665&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Transfer ligand&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 54;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C927&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Vehicle&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 55;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176666&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Viscosity modifier&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 56;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176667&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Water-repelling agent&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 57;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C176668&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Wetting agent&quot; ]       ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</code></pre>
+
+</body>
+</html>

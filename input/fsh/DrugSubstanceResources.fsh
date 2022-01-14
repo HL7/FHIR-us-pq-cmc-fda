@@ -36,7 +36,6 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * supplier only Reference(MfgTestSiteOrganization)
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
-* molecularWeight.amount 0..1 MS
 * structure MS
 * structure.molecularFormula 1..1 MS
 * structure.molecularFormula ^short = "Molecular Formula"
@@ -247,8 +246,8 @@ Description: "The amount detais about the drug product compoents to define the p
 * .extension contains pq-additional-info-extension named additional-info 1..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
 * status.code 
-//* for only Reference(pqcmc-RoutineDrugProduct)
-//* for ^short = "Reference to MedicinalProductDefinition"
+* for only Reference(pqcmc-RoutineDrugProduct)
+* for ^short = "Reference to MedicinalProductDefinition"
 * role.coding.code 1..1 MS
 * role.coding.code ^short = "Drug Product Component Function Category"
 * role.coding.code from PqcmcDrugProductComponentFunctionCategoryTerminology

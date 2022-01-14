@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ChemicalStructureDataFileOrigin",
+  "id": "valuset-ChemicalStructureDataFileOrigin",
+  "title": "PQ/CMC Chemical Structure Data File Origin Terminology",
+  "description": "Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileOrigin",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C16275",
+            "display": "Calculated"
+          },
+          {
+            "code": "C133995",
+            "display": "Experimental"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "valuset-TestCategory"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C60819</td><td>Assay</td></tr><tr><td>C158425</td><td>Biological Properties</td></tr><tr><td>C138990</td><td>Description</td></tr><tr><td>C138993</td><td>Identification</td></tr><tr><td>C158423</td><td>Impurities</td></tr><tr><td>C176810</td><td>Microbiological Properties</td></tr><tr><td>C176811</td><td>Physico-Chemical Properties</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory"];
+  fhir:ValueSet.version [ fhir:value "current"];
+  fhir:ValueSet.name [ fhir:value "TestCategory"];
+  fhir:ValueSet.title [ fhir:value "PQ/CMC Test Category Terminology"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-04-13T00:29:45-04:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)"];
+  fhir:ValueSet.description [ fhir:value "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:oid:2.16.840.1.113883.3.26.1.1" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C60819" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Assay" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C158425" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Biological Properties" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C138990" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Description" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C138993" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Identification" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C158423" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Impurities" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176810" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Microbiological Properties" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C176811" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Physico-Chemical Properties" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

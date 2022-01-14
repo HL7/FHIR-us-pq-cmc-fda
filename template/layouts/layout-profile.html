@@ -9,7 +9,11 @@
   {% include fragment-profile-navtabs.html type='{{[type]}}' id='{{[id]}}' active='content' %}
 
   <a name="root"> </a>
+<<<<<<< HEAD
   <h2 id="root">{{modelType}}: {{site.data.pages[page.path].title | escape_once}}</h2>
+=======
+  <h2 id="root">{{modelType}}: {{site.data.pages[page.path].title}}</h2>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 
 {% include {{[type]}}-{{[id]}}-summary-table.xhtml type='{{[type]}}' id='{{[id]}}' %}
 
@@ -187,9 +191,16 @@
     </div>
   </div>
   <p>&#160;</p>
+<<<<<<< HEAD
   <p>Other representations of profile: <a href="{{[type]}}-{{[id]}}.csv">CSV</a>, <a href="{{[type]}}-{{[id]}}.xlsx">Excel</a>{% unless modelType == 'Logical Model' %}, <a href="{{[type]}}-{{[id]}}.sch">Schematron</a>
 {% endunless %} 
   </p>
+=======
+  {% unless modelType == 'Logical Model' %}
+    <p>Other representations of profile: <a href="{{[type]}}-{{[id]}}.sch">Schematron</a>
+    </p>
+  {% endunless %} 
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   <a name="tx"> </a>
   <!--Terminology Bindings heading in the fragment -->
   {%include StructureDefinition-{{[id]}}-tx.xhtml%}

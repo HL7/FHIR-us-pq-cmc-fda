@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CoPackagedIndicator",
+  "id": "valuset-CoPackagedIndicator",
+  "title": "PQ/CMC Co-Packaged Indicator Terminology",
+  "description": "Terminology used to qualify the information pertaining to co-packaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-CoPackagedIndicator",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C49487",
+            "display": "No"
+          },
+          {
+            "code": "C49488",
+            "display": "Yes"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
+<<<<<<< HEAD
    <id value="pqcmc_ig"/>
    <text>
       <status value="extensions"/>
@@ -25,6 +26,25 @@
    <packageId value="pqcmc_ig"/>
    <license value="CC0-1.0"/>
    <fhirVersion value="4.6.0"/>
+=======
+   <id value="hl7.fhir.us.pq-cmc"/>
+   <text>
+      <status value="extensions"/>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+         <h2>PharmaceuticalQualityImplementationGuide</h2>
+         <p>The official URL for this implementation guide is: </p>
+         <pre>https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc</pre>
+      </div>
+   </text>
+   <url value="https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc"/>
+   <version value="current"/>
+   <name value="PharmaceuticalQualityImplementationGuide"/>
+   <status value="draft"/>
+   <date value="2021-04-13T00:29:45-04:00"/>
+   <packageId value="hl7.fhir.us.pq-cmc"/>
+   <license value="CC0-1.0"/>
+   <fhirVersion value="4.5.0"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
    <definition>
 
 
@@ -32,6 +52,7 @@
 
 
 
+<<<<<<< HEAD
       <grouping id="-str-abstractprofile">
          <name value="Structures: Abstract Profiles"/>
          <description value="These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves."/>
@@ -50,6 +71,17 @@
          <description value="These define sets of codes used by systems conforming to this implementation guide"/>
       </grouping>
       <grouping id="-term-codesystem">
+=======
+
+
+
+
+      <grouping id="_term_valueset">
+         <name value="Terminology: Value Sets"/>
+         <description value="These define sets of codes used by systems conforming to this implementation guide"/>
+      </grouping>
+      <grouping id="_term_codesystem">
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
          <name value="Terminology: Code Systems"/>
          <description value="These define new code systems used by systems conforming to this implementation guide"/>
       </grouping>
@@ -65,6 +97,7 @@
 
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+<<<<<<< HEAD
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -212,12 +245,27 @@
          <description value="A profile for the data elements required to identify the sponsor of the drug products or substances."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-abstractprofile"/>
+=======
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-valuset-ApplicationSubmissionType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ApplicationSubmissionType"/>
+         </reference>
+         <name value="PQ/CMC Application Submission Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to application submission types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccBatchUtilizationTerminology.html"/>
          </extension>
          <reference>
@@ -227,12 +275,39 @@
          <description value="Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ApplicationType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ApplicationType"/>
+         </reference>
+         <name value="PQ/CMC Application Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-valuset-BatchUtilization.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-BatchUtilization"/>
+         </reference>
+         <name value="PQ/CMC Batch Utilization Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccChemicalStructureDataFileOriginTerminology.html"/>
          </extension>
          <reference>
@@ -242,12 +317,24 @@
          <description value="Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ChemicalStructureDataFileOrigin.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ChemicalStructureDataFileOrigin"/>
+         </reference>
+         <name value="PQ/CMC Chemical Structure Data File Origin Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccChemicalStructureDataFileTypeTerminology.html"/>
          </extension>
          <reference>
@@ -257,12 +344,24 @@
          <description value="Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ChemicalStructureDataFileType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ChemicalStructureDataFileType"/>
+         </reference>
+         <name value="PQ/CMC Chemical Structure Data File Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccClosureTypeTerminology.html"/>
          </extension>
          <reference>
@@ -272,12 +371,24 @@
          <description value="Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ClosureType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ClosureType"/>
+         </reference>
+         <name value="PQ/CMC Closure Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccCoPackagedIndicatorTerminology.html"/>
          </extension>
          <reference>
@@ -287,12 +398,24 @@
          <description value="Terminology used to qualify the information pertaining to copackaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-CoPackagedIndicator.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-CoPackagedIndicator"/>
+         </reference>
+         <name value="PQ/CMC Co-Packaged Indicator Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to co-packaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccConformancetoCriteriaTerminology.html"/>
          </extension>
          <reference>
@@ -302,12 +425,24 @@
          <description value="Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ConformancetoCriteria.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ConformancetoCriteria"/>
+         </reference>
+         <name value="PQ/CMC Conformance to Criteria Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccContainerOrientationTerminology.html"/>
          </extension>
          <reference>
@@ -317,12 +452,24 @@
          <description value="Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ContainerOrientation.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ContainerOrientation"/>
+         </reference>
+         <name value="PQ/CMC Container Orientation Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccContainerTypeTerminology.html"/>
          </extension>
          <reference>
@@ -332,12 +479,24 @@
          <description value="Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ContainerType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ContainerType"/>
+         </reference>
+         <name value="PQ/CMC Container Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccDrugProductComponentFunctionCategoryTerminology.html"/>
          </extension>
          <reference>
@@ -347,12 +506,24 @@
          <description value="Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-DrugProductComponentFunctionCategory.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-DrugProductComponentFunctionCategory"/>
+         </reference>
+         <name value="PQ/CMC Drug Product Component Function Category Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccDrugSubstanceProductIndicatorTerminology.html"/>
          </extension>
          <reference>
@@ -362,12 +533,24 @@
          <description value="Terminology used to qualify the information pertaining to drug substance product indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-DrugSubstanceProductIndicator.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-DrugSubstanceProductIndicator"/>
+         </reference>
+         <name value="PQ/CMC Drug Substance Product Indicator Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to drug substance product indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccExcipientFunctionTerminology.html"/>
          </extension>
          <reference>
@@ -377,12 +560,24 @@
          <description value="Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ExcipientFunction.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ExcipientFunction"/>
+         </reference>
+         <name value="PQ/CMC Excipient Function Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccImpurityClassificationTerminology.html"/>
          </extension>
          <reference>
@@ -392,12 +587,24 @@
          <description value="Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ImpurityClassification.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ImpurityClassification"/>
+         </reference>
+         <name value="PQ/CMC Impurity Classification Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccInterpretationCodeTerminology.html"/>
          </extension>
          <reference>
@@ -407,12 +614,24 @@
          <description value="Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-InterpretationCodeNumeric.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-InterpretationCodeNumeric"/>
+         </reference>
+         <name value="PQ/CMC Interpretation Code (numeric) Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccProcessRelatedImpurityCategoryTerminology.html"/>
          </extension>
          <reference>
@@ -422,12 +641,39 @@
          <description value="Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-InterpretationCodeText.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-InterpretationCodeText"/>
+         </reference>
+         <name value="PQ/CMC Interpretation Code (text) Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to textual interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-valuset-ProcessRelatedImpurityCategory.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ProcessRelatedImpurityCategory"/>
+         </reference>
+         <name value="PQ/CMC Process Related Impurity Category Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccProductRelatedImpurityCategoryTerminology.html"/>
          </extension>
          <reference>
@@ -437,12 +683,24 @@
          <description value="Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-ProductRelatedImpurityCategory.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-ProductRelatedImpurityCategory"/>
+         </reference>
+         <name value="PQ/CMC Product Related Impurity Category Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccQualityBenchmarkTerminology.html"/>
          </extension>
          <reference>
@@ -452,12 +710,24 @@
          <description value="Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-QualityBenchmark.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-QualityBenchmark"/>
+         </reference>
+         <name value="PQ/CMC Quality Benchmark Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccSourceTypeTerminology.html"/>
          </extension>
          <reference>
@@ -467,12 +737,24 @@
          <description value="Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-SourceType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-SourceType"/>
+         </reference>
+         <name value="PQ/CMC Source Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccSpecificationStatusTerminology.html"/>
          </extension>
          <reference>
@@ -482,12 +764,24 @@
          <description value="Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-SpecificationStatus.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-SpecificationStatus"/>
+         </reference>
+         <name value="PQ/CMC Specification Status Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccSpecificationTypeTerminology.html"/>
          </extension>
          <reference>
@@ -497,12 +791,24 @@
          <description value="Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-SpecificationType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-SpecificationType"/>
+         </reference>
+         <name value="PQ/CMC Specification Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccSponsorIdentifierTypeTerminology.html"/>
          </extension>
          <reference>
@@ -512,12 +818,24 @@
          <description value="Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-SponsorIdentifierType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-SponsorIdentifierType"/>
+         </reference>
+         <name value="PQ/CMC Sponsor Identifier Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccStorageConditionsTerminology.html"/>
          </extension>
          <reference>
@@ -527,12 +845,24 @@
          <description value="Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-StorageConditions.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-StorageConditions"/>
+         </reference>
+         <name value="PQ/CMC Storage Conditions Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccStrengthOperatorTerminology.html"/>
          </extension>
          <reference>
@@ -542,12 +872,24 @@
          <description value="Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-StrengthOperator.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-StrengthOperator"/>
+         </reference>
+         <name value="PQ/CMC Strength Operator Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccStrengthTypeTerminology.html"/>
          </extension>
          <reference>
@@ -557,12 +899,24 @@
          <description value="Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-StrengthType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-StrengthType"/>
+         </reference>
+         <name value="PQ/CMC Strength Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccTestCategoryTerminology.html"/>
          </extension>
          <reference>
@@ -572,12 +926,24 @@
          <description value="Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-TestCategory.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-TestCategory"/>
+         </reference>
+         <name value="PQ/CMC Test Category Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccTestMethodOriginTerminology.html"/>
          </extension>
          <reference>
@@ -602,12 +968,24 @@
          <description value="Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-TestMethodOrigin.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-TestMethodOrigin"/>
+         </reference>
+         <name value="PQ/CMC Test Usage Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology.html"/>
          </extension>
          <reference>
@@ -617,12 +995,24 @@
          <description value="Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-TestUsage.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-TestUsage"/>
+         </reference>
+         <name value="PQ/CMC Testing Site Unique Identifier Type Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="ValueSet-vsUnitsMeasure.html"/>
          </extension>
          <reference>
@@ -677,12 +1067,39 @@
          <description value="Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
+=======
+            <valueUri value="ValueSet-valuset-TestingSiteUniqueIdentifierType.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-TestingSiteUniqueIdentifierType"/>
+         </reference>
+         <name value="PQ/CMC Test Method Origin Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-valuset-UnitsofMeasure.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/valuset-UnitsofMeasure"/>
+         </reference>
+         <name value="PQ/CMC Units of Measure Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
             <valueUri value="CodeSystem-codesystemPqcmccCompSectionTypes.html"/>
          </extension>
          <reference>
@@ -692,6 +1109,17 @@
          <description value="Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-codesystem"/>
+=======
+            <valueUri value="CodeSystem-sectionType.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/sectionType"/>
+         </reference>
+         <name value="Composition Section Type"/>
+         <description value="Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_codesystem"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </resource>
       <page>
          <nameUrl value="toc.html"/>
@@ -699,7 +1127,21 @@
          <generation value="html"/>
          <page>
             <nameUrl value="index.html"/>
+<<<<<<< HEAD
             <title value="Home"/>
+=======
+            <title value="PQ/CMC Mapping Implementation Guide Home Page"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <nameUrl value="downloads.html"/>
+            <title value="Downloads"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <nameUrl value="credits.html"/>
+            <title value="Credits"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
             <generation value="markdown"/>
          </page>
          <page>
@@ -707,6 +1149,7 @@
             <title value="Artifacts Summary"/>
             <generation value="html"/>
             <page>
+<<<<<<< HEAD
                <nameUrl value="StructureDefinition-MfgTestSiteOrganization.html"/>
                <title value="MfgTestSiteOrganization"/>
                <generation value="generated"/>
@@ -914,6 +1357,165 @@
             <page>
                <nameUrl value="CodeSystem-codesystemPqcmccCompSectionTypes.html"/>
                <title value="PqcmccCompSectionTypes"/>
+=======
+               <nameUrl value="ValueSet-valuset-ApplicationSubmissionType.html"/>
+               <title value="PQ/CMC Application Submission Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ApplicationType.html"/>
+               <title value="PQ/CMC Application Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-BatchUtilization.html"/>
+               <title value="PQ/CMC Batch Utilization Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ChemicalStructureDataFileOrigin.html"/>
+               <title value="PQ/CMC Chemical Structure Data File Origin Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ChemicalStructureDataFileType.html"/>
+               <title value="PQ/CMC Chemical Structure Data File Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ClosureType.html"/>
+               <title value="PQ/CMC Closure Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-CoPackagedIndicator.html"/>
+               <title value="PQ/CMC Co-Packaged Indicator Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ConformancetoCriteria.html"/>
+               <title value="PQ/CMC Conformance to Criteria Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ContainerOrientation.html"/>
+               <title value="PQ/CMC Container Orientation Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ContainerType.html"/>
+               <title value="PQ/CMC Container Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-DrugProductComponentFunctionCategory.html"/>
+               <title value="PQ/CMC Drug Product Component Function Category Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-DrugSubstanceProductIndicator.html"/>
+               <title value="PQ/CMC Drug Substance Product Indicator Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ExcipientFunction.html"/>
+               <title value="PQ/CMC Excipient Function Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ImpurityClassification.html"/>
+               <title value="PQ/CMC Impurity Classification Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-InterpretationCodeNumeric.html"/>
+               <title value="PQ/CMC Interpretation Code (numeric) Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-InterpretationCodeText.html"/>
+               <title value="PQ/CMC Interpretation Code (text) Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ProcessRelatedImpurityCategory.html"/>
+               <title value="PQ/CMC Process Related Impurity Category Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-ProductRelatedImpurityCategory.html"/>
+               <title value="PQ/CMC Product Related Impurity Category Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-QualityBenchmark.html"/>
+               <title value="PQ/CMC Quality Benchmark Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-SourceType.html"/>
+               <title value="PQ/CMC Source Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-SpecificationStatus.html"/>
+               <title value="PQ/CMC Specification Status Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-SpecificationType.html"/>
+               <title value="PQ/CMC Specification Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-SponsorIdentifierType.html"/>
+               <title value="PQ/CMC Sponsor Identifier Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-StorageConditions.html"/>
+               <title value="PQ/CMC Storage Conditions Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-StrengthOperator.html"/>
+               <title value="PQ/CMC Strength Operator Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-StrengthType.html"/>
+               <title value="PQ/CMC Strength Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-TestCategory.html"/>
+               <title value="PQ/CMC Test Category Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-TestMethodOrigin.html"/>
+               <title value="PQ/CMC Test Usage Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-TestUsage.html"/>
+               <title value="PQ/CMC Testing Site Unique Identifier Type Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-TestingSiteUniqueIdentifierType.html"/>
+               <title value="PQ/CMC Test Method Origin Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-valuset-UnitsofMeasure.html"/>
+               <title value="PQ/CMC Units of Measure Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-sectionType.html"/>
+               <title value="Composition Section Type"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                <generation value="generated"/>
             </page>
          </page>
@@ -1012,7 +1614,11 @@
       </parameter>
       <parameter>
          <code value="path-history"/>
+<<<<<<< HEAD
          <value value="http://example.org/history.html"/>
+=======
+         <value value="https://www.hl7.org/fhir/us-pq-cmc/history.html"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       </parameter>
       <parameter>
          <code value="template-html"/>

@@ -1,0 +1,50 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BatchUtilization",
+  "id": "valuset-BatchUtilization",
+  "title": "PQ/CMC Batch Utilization Terminology",
+  "description": "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-BatchUtilization",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "840",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C133994",
+            "display": "Bioequivalence"
+          },
+          {
+            "code": "C133992",
+            "display": "Clinical"
+          },
+          {
+            "code": "C133990",
+            "display": "Commercial"
+          },
+          {
+            "code": "C133991",
+            "display": "Development"
+          },
+          {
+            "code": "C133993",
+            "display": "Validation"
+          }
+        ]
+      }
+    ]
+  }
+}

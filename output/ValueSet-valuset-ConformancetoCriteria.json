@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "id": "valuset-ConformancetoCriteria",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C80262</td><td>Conforms</td></tr><tr><td>C133998</td><td>Does not conform</td></tr></table></li></ul></div>"
+  },
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ConformancetoCriteria",
+  "version": "current",
+  "name": "ConformancetoCriteria",
+  "title": "PQ/CMC Conformance to Criteria Terminology",
+  "status": "active",
+  "date": "2021-04-13T00:29:45-04:00",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "description": "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C80262",
+            "display": "Conforms"
+          },
+          {
+            "code": "C133998",
+            "display": "Does not conform"
+          }
+        ]
+      }
+    ]
+  }
+}

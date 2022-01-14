@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProductRelatedImpurityCategory",
+  "id": "valuset-ProductRelatedImpurityCategory",
+  "title": "PQ/CMC Product Related Impurity Category Terminology",
+  "description": "Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProductRelatedImpurityCategory",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C176816",
+            "display": "Degradants"
+          },
+          {
+            "code": "C176813",
+            "display": "Product Related"
+          }
+        ]
+      }
+    ]
+  }
+}

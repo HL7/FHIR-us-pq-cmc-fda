@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-ContainerOrientation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C25241</td><td>Horizontal</td></tr><tr><td>C133999</td><td>Inverted</td></tr><tr><td>C86043</td><td>Upright</td></tr><tr><td>C133915</td><td>Valve-down</td></tr><tr><td>C133914</td><td>Valve-up</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation"/>
+  <version value="current"/>
+  <name value="ContainerOrientation"/>
+  <title value="PQ/CMC Container Orientation Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C25241"/>
+        <display value="Horizontal"/>
+      </concept>
+      <concept>
+        <code value="C133999"/>
+        <display value="Inverted"/>
+      </concept>
+      <concept>
+        <code value="C86043"/>
+        <display value="Upright"/>
+      </concept>
+      <concept>
+        <code value="C133915"/>
+        <display value="Valve-down"/>
+      </concept>
+      <concept>
+        <code value="C133914"/>
+        <display value="Valve-up"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

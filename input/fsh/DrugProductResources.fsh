@@ -37,10 +37,10 @@ Description: "Includes the properties of the drug product, its components and im
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
 * combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology
-//* route 1..1 MS
-//* route.coding.code 1..1 MS
-//* route.coding.code ^short = "Route of Administration"
-//* route.coding.code from vsSplDrugRouteofAdministrationTerminology
+* route 1..1 MS
+* route.coding.code 1..1 MS
+* route.coding.code ^short = "Route of Administration"
+* route.coding.code from vsSplDrugRouteofAdministrationTerminology
 * impurity 0..1 MS
 * impurity ^short = "Product Impurity"
 * name 1..1 MS

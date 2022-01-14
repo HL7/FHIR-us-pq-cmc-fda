@@ -1,0 +1,54 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ApplicationSubmissionType",
+  "id": "valuset-ApplicationSubmissionType",
+  "title": "PQ/CMC Application Submission Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to application submission types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationSubmissionType",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "840",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C176802",
+            "display": "Amendment to INDs"
+          },
+          {
+            "code": "C176803",
+            "display": "Amendment to Master Files"
+          },
+          {
+            "code": "C176796",
+            "display": "Amendment to Original"
+          },
+          {
+            "code": "C176798",
+            "display": "Amendment to Supplement"
+          },
+          {
+            "code": "C70860",
+            "display": "Original"
+          },
+          {
+            "code": "C176797",
+            "display": "Supplement to Original"
+          }
+        ]
+      }
+    ]
+  }
+}

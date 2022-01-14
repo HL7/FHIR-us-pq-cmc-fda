@@ -3,20 +3,32 @@
   "id": "pqcmc-DrugSubstance",
   "extension": [
     {
+<<<<<<< HEAD
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
       "valueString": "Specialized.Medication Definition"
     },
     {
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
       "valueCode": "anonymous"
     }
   ],
+<<<<<<< HEAD
   "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstance",
   "version": "0.1.0",
   "name": "DrugSubstance",
   "title": "Drug Substance",
   "status": "active",
   "description": "Drug Substance (Active Ingredient) nomenclature and characterizaiton",
+=======
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/StructureDefinition/pqcmc-DrugSubstance",
+  "version": "current",
+  "name": "DrugSubstance",
+  "title": "Drug Substance",
+  "status": "active",
+  "description": "E",
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   "fhirVersion": "4.6.0",
   "mapping": [
     {
@@ -43,6 +55,7 @@
   "differential": {
     "element": [
       {
+<<<<<<< HEAD
         "id": "SubstanceDefinition.identifier",
         "path": "SubstanceDefinition.identifier",
         "short": "UNII",
@@ -177,6 +190,10 @@
         "id": "SubstanceDefinition.relationship.type.text",
         "path": "SubstanceDefinition.relationship.type.text",
         "short": "Preferred values: 'Polymorph', 'Raw Material', and  'Impurity'"
+=======
+        "id": "SubstanceDefinition",
+        "path": "SubstanceDefinition"
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       }
     ]
   }

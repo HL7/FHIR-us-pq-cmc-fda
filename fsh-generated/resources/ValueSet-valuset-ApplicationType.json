@@ -1,0 +1,86 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ApplicationType",
+  "id": "valuset-ApplicationType",
+  "title": "PQ/CMC Application Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "840",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C115123",
+            "display": "Abbreviated New Animal Drug Application"
+          },
+          {
+            "code": "C73113",
+            "display": "Abbreviated New Drug Application"
+          },
+          {
+            "code": "C71778",
+            "display": "Biologics License Application"
+          },
+          {
+            "code": "C115122",
+            "display": "Generic Investigational New Animal Drug File"
+          },
+          {
+            "code": "C80440",
+            "display": "Humanitarian Device Exemption (HDE)"
+          },
+          {
+            "code": "C82667",
+            "display": "Investigational Device Exemption"
+          },
+          {
+            "code": "C96091",
+            "display": "Investigational New Animal Drug File"
+          },
+          {
+            "code": "C96090",
+            "display": "Investigational New Drug Application"
+          },
+          {
+            "code": "C70877",
+            "display": "Master File"
+          },
+          {
+            "code": "C96092",
+            "display": "New Active Ingredient"
+          },
+          {
+            "code": "C72901",
+            "display": "New Animal Drug Application"
+          },
+          {
+            "code": "C72899",
+            "display": "New Drug Application"
+          },
+          {
+            "code": "C70880",
+            "display": "Premarket Approval"
+          },
+          {
+            "code": "C80442",
+            "display": "Premarket Notification 510(K)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "id": "codesystemPqcmccCompSectionTypes",
     "type": "CodeSystem",
     "url": "http://example.org/CodeSystem/codesystemPqcmccCompSectionTypes",
@@ -299,5 +300,236 @@
     "url": "http://example.org/ValueSet/vsUnitsMeasure",
     "version": "0.1.0",
     "name": "PqcmcUnitsMeasure"
+=======
+    "id": "sectionType",
+    "type": "CodeSystem",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/CodeSystem/sectionType",
+    "version": "current",
+    "name": "CompSectionTypes"
+  },
+  {
+    "id": "hl7.fhir.us.pq-cmc",
+    "type": "ImplementationGuide",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
+    "version": "current",
+    "name": "PharmaceuticalQualityImplementationGuide"
+  },
+  {
+    "id": "valuset-ApplicationSubmissionType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationSubmissionType",
+    "version": "current",
+    "name": "ApplicationSubmissionType"
+  },
+  {
+    "id": "valuset-ApplicationType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType",
+    "version": "current",
+    "name": "ApplicationType"
+  },
+  {
+    "id": "valuset-BatchUtilization",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-BatchUtilization",
+    "version": "current",
+    "name": "BatchUtilization"
+  },
+  {
+    "id": "valuset-ChemicalStructureDataFileOrigin",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileOrigin",
+    "version": "current",
+    "name": "ChemicalStructureDataFileOrigin"
+  },
+  {
+    "id": "valuset-ChemicalStructureDataFileType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileType",
+    "version": "current",
+    "name": "ChemicalStructureDataFileType"
+  },
+  {
+    "id": "valuset-ClosureType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ClosureType",
+    "version": "current",
+    "name": "ClosureType"
+  },
+  {
+    "id": "valuset-CoPackagedIndicator",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-CoPackagedIndicator",
+    "version": "current",
+    "name": "CoPackagedIndicator"
+  },
+  {
+    "id": "valuset-ConformancetoCriteria",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ConformancetoCriteria",
+    "version": "current",
+    "name": "ConformancetoCriteria"
+  },
+  {
+    "id": "valuset-ContainerOrientation",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation",
+    "version": "current",
+    "name": "ContainerOrientation"
+  },
+  {
+    "id": "valuset-ContainerType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerType",
+    "version": "current",
+    "name": "ContainerType"
+  },
+  {
+    "id": "valuset-DrugProductComponentFunctionCategory",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory",
+    "version": "current",
+    "name": "DrugProductComponentFunctionCategory"
+  },
+  {
+    "id": "valuset-DrugSubstanceProductIndicator",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugSubstanceProductIndicator",
+    "version": "current",
+    "name": "DrugSubstanceProductIndicator"
+  },
+  {
+    "id": "valuset-ExcipientFunction",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction",
+    "version": "current",
+    "name": "ExcipientFunction"
+  },
+  {
+    "id": "valuset-ImpurityClassification",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ImpurityClassification",
+    "version": "current",
+    "name": "ImpurityClassification"
+  },
+  {
+    "id": "valuset-InterpretationCodeNumeric",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeNumeric",
+    "version": "current",
+    "name": "InterpretationCodeNumeric"
+  },
+  {
+    "id": "valuset-InterpretationCodeText",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeText",
+    "version": "current",
+    "name": "InterpretationCodeText"
+  },
+  {
+    "id": "valuset-ProcessRelatedImpurityCategory",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProcessRelatedImpurityCategory",
+    "version": "current",
+    "name": "ProcessRelatedImpurityCategory"
+  },
+  {
+    "id": "valuset-ProductRelatedImpurityCategory",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProductRelatedImpurityCategory",
+    "version": "current",
+    "name": "ProductRelatedImpurityCategory"
+  },
+  {
+    "id": "valuset-QualityBenchmark",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-QualityBenchmark",
+    "version": "current",
+    "name": "QualityBenchmark"
+  },
+  {
+    "id": "valuset-SourceType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SourceType",
+    "version": "current",
+    "name": "SourceType"
+  },
+  {
+    "id": "valuset-SpecificationStatus",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationStatus",
+    "version": "current",
+    "name": "SpecificationStatus"
+  },
+  {
+    "id": "valuset-SpecificationType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationType",
+    "version": "current",
+    "name": "SpecificationType"
+  },
+  {
+    "id": "valuset-SponsorIdentifierType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SponsorIdentifierType",
+    "version": "current",
+    "name": "SponsorIdentifierType"
+  },
+  {
+    "id": "valuset-StorageConditions",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StorageConditions",
+    "version": "current",
+    "name": "StorageConditions"
+  },
+  {
+    "id": "valuset-StrengthOperator",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthOperator",
+    "version": "current",
+    "name": "StrengthOperator"
+  },
+  {
+    "id": "valuset-StrengthType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthType",
+    "version": "current",
+    "name": "StrengthType"
+  },
+  {
+    "id": "valuset-TestCategory",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory",
+    "version": "current",
+    "name": "TestCategory"
+  },
+  {
+    "id": "valuset-TestMethodOrigin",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestMethodOrigin",
+    "version": "current",
+    "name": "TestMethodOrigin"
+  },
+  {
+    "id": "valuset-TestUsage",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestUsage",
+    "version": "current",
+    "name": "TestUsage"
+  },
+  {
+    "id": "valuset-TestingSiteUniqueIdentifierType",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestingSiteUniqueIdentifierType",
+    "version": "current",
+    "name": "TestingSiteUniqueIdentifierType"
+  },
+  {
+    "id": "valuset-UnitsofMeasure",
+    "type": "ValueSet",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure",
+    "version": "current",
+    "name": "UnitsofMeasure"
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   }
 ]

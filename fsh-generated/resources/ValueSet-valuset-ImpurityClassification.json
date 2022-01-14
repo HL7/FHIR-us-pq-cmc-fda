@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ImpurityClassification",
+  "id": "valuset-ImpurityClassification",
+  "title": "PQ/CMC Impurity Classification Terminology",
+  "description": "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ImpurityClassification",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C84280",
+            "display": "Contaminants"
+          },
+          {
+            "code": "C176812",
+            "display": "Process Related"
+          },
+          {
+            "code": "C176813",
+            "display": "Product Related"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "InterpretationCodeNumeric",
+  "id": "valuset-InterpretationCodeNumeric",
+  "title": "PQ/CMC Interpretation Code (numeric) Terminology",
+  "description": "Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeNumeric",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C48793",
+            "display": "EQ"
+          },
+          {
+            "code": "C61585",
+            "display": "LT (less than)"
+          },
+          {
+            "code": "C61584",
+            "display": "MT (more than)"
+          },
+          {
+            "code": "C61583",
+            "display": "NLT (not less than)"
+          },
+          {
+            "code": "C61586",
+            "display": "NMT (not more than)"
+          },
+          {
+            "code": "C48660",
+            "display": "Not Applicable"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ContainerOrientation",
+  "id": "valuset-ContainerOrientation",
+  "title": "PQ/CMC Container Orientation Terminology",
+  "description": "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C25241",
+            "display": "Horizontal"
+          },
+          {
+            "code": "C133999",
+            "display": "Inverted"
+          },
+          {
+            "code": "C86043",
+            "display": "Upright"
+          },
+          {
+            "code": "C133915",
+            "display": "Valve-down"
+          },
+          {
+            "code": "C133914",
+            "display": "Valve-up"
+          }
+        ]
+      }
+    ]
+  }
+}

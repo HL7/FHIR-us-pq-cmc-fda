@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ConformancetoCriteria",
+  "id": "valuset-ConformancetoCriteria",
+  "title": "PQ/CMC Conformance to Criteria Terminology",
+  "description": "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ConformancetoCriteria",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C80262",
+            "display": "Conforms"
+          },
+          {
+            "code": "C133998",
+            "display": "Does not conform"
+          }
+        ]
+      }
+    ]
+  }
+}

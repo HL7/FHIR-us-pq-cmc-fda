@@ -1,0 +1,990 @@
+﻿<html>
+<head>
+  <title>StructureDefinition-USAgentAffiliation-json-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<pre class="json"><code>
+{
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition">resourceType</a>" : "StructureDefinition",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.id">id</a>" : "USAgentAffiliation",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.text">text</a>" : {
+    "<a href="http://build.fhir.org//narrative.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://build.fhir.org//narrative.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table border=\&quot;0\&quot; cellpadding=\&quot;0\&quot; cellspacing=\&quot;0\&quot; style=\&quot;border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\&quot;&gt;&lt;tr style=\&quot;border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\&quot;&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;The logical name of the element\&quot;&gt;Name&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Information about the use of the element\&quot;&gt;Flags&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Minimum and Maximum # of times the the element can appear in the instance\&quot;&gt;Card.&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;width: 100px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Reference to the type of the element\&quot;&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Additional information about the element\&quot;&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style=\&quot;float: right\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Legend for this format\&quot;&gt;&lt;img src=\&quot;http://build.fhir.org/help16.png\&quot; alt=\&quot;doco\&quot; style=\&quot;background-color: inherit\&quot;/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_resource.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Resource\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-USAgentAffiliation-definitions.html#OrganizationAffiliation\&quot;&gt;OrganizationAffiliation&lt;/a&gt;&lt;a name=\&quot;OrganizationAffiliation\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;0&lt;/span&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;..&lt;/span&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;*&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org//organizationaffiliation.html\&quot;&gt;OrganizationAffiliation&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;Defines an affiliation/assotiation/relationship between 2 distinct oganizations, that is not a part-of relationship/sub-division relationship&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_element.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: #F7F7F7; background-color: inherit\&quot; title=\&quot;Element\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-USAgentAffiliation-definitions.html#OrganizationAffiliation.organization\&quot;&gt;organization&lt;/a&gt;&lt;a name=\&quot;OrganizationAffiliation.organization\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;padding-left: 3px; padding-right: 3px; color: white; background-color: red\&quot; title=\&quot;This element must be supported\&quot;&gt;S&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..&lt;span style=\&quot;opacity: 0.5\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/references.html\&quot;&gt;Reference&lt;/a&gt;(&lt;a style=\&quot;opacity: 0.5\&quot; href=\&quot;http://build.fhir.org//organization.html\&quot;&gt;Organization&lt;/a&gt;)&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;Organization where the role is available&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_reference.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Reference to another Resource\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-USAgentAffiliation-definitions.html#OrganizationAffiliation.participatingOrganization\&quot;&gt;participatingOrganization&lt;/a&gt;&lt;a name=\&quot;OrganizationAffiliation.participatingOrganization\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;padding-left: 3px; padding-right: 3px; color: white; background-color: red\&quot; title=\&quot;This element must be supported\&quot;&gt;S&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..&lt;span style=\&quot;opacity: 0.5\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/references.html\&quot;&gt;Reference&lt;/a&gt;(&lt;a href=\&quot;StructureDefinition-USAgentOrganization.html\&quot;&gt;USAgentOrganization&lt;/a&gt;)&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;Organization that provides/performs the role (e.g. providing services or is a member of)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin_end.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_element.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: #F7F7F7; background-color: inherit\&quot; title=\&quot;Element\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-USAgentAffiliation-definitions.html#OrganizationAffiliation.code\&quot;&gt;code&lt;/a&gt;&lt;a name=\&quot;OrganizationAffiliation.code\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;padding-left: 3px; padding-right: 3px; color: white; background-color: red\&quot; title=\&quot;This element must be supported\&quot;&gt;S&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..1&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a style=\&quot;opacity: 0.5\&quot; href=\&quot;http://build.fhir.org//datatypes.html#CodeableConcept\&quot;&gt;CodeableConcept&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;Definition of the role the participatingOrganization plays&lt;/span&gt;&lt;br/&gt;&lt;span style=\&quot;font-weight:bold\&quot;&gt;Fixed Value: &lt;/span&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;As shown&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck001.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin_end.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_fixed.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Fixed Value\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;http://build.fhir.org//datatypes-definitions.html#CodeableConcept.coding\&quot;&gt;coding&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..1&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org//datatypes.html#Coding\&quot;&gt;Coding&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;Code defined by a terminology system&lt;br/&gt;&lt;span style=\&quot;font-weight: bold\&quot;&gt;Fixed Value: &lt;/span&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;(complex)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0010.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_fixed.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: #F7F7F7; background-color: inherit\&quot; title=\&quot;Fixed Value\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;http://build.fhir.org//datatypes-definitions.html#Coding.system\&quot;&gt;system&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..1&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org//datatypes.html#uri\&quot;&gt;uri&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;Identity of the terminology system&lt;br/&gt;&lt;span style=\&quot;font-weight: bold\&quot;&gt;Fixed Value: &lt;/span&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0010.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_fixed.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Fixed Value\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;http://build.fhir.org//datatypes-definitions.html#Coding.code\&quot;&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..1&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org//datatypes.html#code\&quot;&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;Symbol in syntax defined by the system&lt;br/&gt;&lt;span style=\&quot;font-weight: bold\&quot;&gt;Fixed Value: &lt;/span&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;C73330&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0000.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_blank.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin_end.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_fixed.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: #F7F7F7; background-color: inherit\&quot; title=\&quot;Fixed Value\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;http://build.fhir.org//datatypes-definitions.html#Coding.display\&quot;&gt;display&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;1..1&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org//datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;Representation defined by the system&lt;br/&gt;&lt;span style=\&quot;font-weight: bold\&quot;&gt;Fixed Value: &lt;/span&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;Foreign Facility's United States Agent&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr&gt;&lt;td colspan=\&quot;5\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;br/&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Legend for this format\&quot;&gt;&lt;img src=\&quot;http://build.fhir.org/help16.png\&quot; alt=\&quot;doco\&quot; style=\&quot;background-color: inherit\&quot;/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.extension">extension</a>" : [
+    {
+      "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueString</a>" : "Base.Entities"
+    },
+    {
+      "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueCode</a>" : "business"
+    }
+  ],
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.url">url</a>" : "https://github.com/HL7/FHIR-pq-cmc/StructureDefinition/USAgentAffiliation",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.version">version</a>" : "current",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.name">name</a>" : "USAgentAffiliation",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.status">status</a>" : "active",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.date">date</a>" : "2021-04-12T01:37:13-04:00",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.description">description</a>" : "A profile that associates an organization to its US Agent.",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.fhirVersion">fhirVersion</a>" : "4.5.0",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping">mapping</a>" : [
+    {
+      "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "rim",
+      "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "http://hl7.org/v3",
+      "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "RIM Mapping"
+    },
+    {
+      "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "w5",
+      "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "http://hl7.org/fhir/fivews",
+      "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "FiveWs Pattern Mapping"
+    }
+  ],
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.kind">kind</a>" : "resource",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.abstract">abstract</a>" : false,
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.type">type</a>" : "OrganizationAffiliation",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.baseDefinition">baseDefinition</a>" : "http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.derivation">derivation</a>" : "constraint",
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.snapshot">snapshot</a>" : {
+    "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.snapshot.element">element</a>" : [
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Defines an affiliation/assotiation/relationship between 2 distinct oganizations, that is not a part-of relationship/sub-division relationship",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Defines an affiliation/assotiation/relationship between 2 distinct oganizations, that is not a part-of relationship/sub-division relationship.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "dom-2",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "contained.contained.empty()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(parent::f:contained and f:contained)",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "dom-3",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "dom-4",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "dom-5",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "If a resource is contained in another resource, it SHALL NOT have a security label",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "contained.meta.security.empty()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "not(exists(f:contained/*/f:meta/f:security))",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.extension">extension</a>" : [
+              {
+                "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueBoolean</a>" : true
+              },
+              {
+                "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation",
+                "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueMarkdown</a>" : "When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time."
+              }
+            ],
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "dom-6",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "warning",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "A resource should have narrative for robust management",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "text.`div`.exists()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:text/h:div)",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Entity. Role, or Act"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Role"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.id",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.id",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Logical id of this artifact",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "The only time that a resource does not have an id is when it is being submitted to the server using a create operation.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "Resource.id",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.extension">extension</a>" : [
+              {
+                "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+                "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueUri</a>" : "id"
+              }
+            ],
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "http://hl7.org/fhirpath/System.String"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.meta",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.meta",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Metadata about the resource",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "Resource.meta",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Meta"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.implicitRules",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.implicitRules",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "A set of rules under which this content was created",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "Resource.implicitRules",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "uri"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifierReason">isModifierReason</a>" : "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.language",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.language",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Language of the resource content",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The base language in which the resource is written.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "Resource.language",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "code"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding">binding</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.extension">extension</a>" : [
+            {
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueCanonical</a>" : "http://hl7.org/fhir/ValueSet/all-languages"
+            },
+            {
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueString</a>" : "Language"
+            },
+            {
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueBoolean</a>" : true
+            }
+          ],
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.strength">strength</a>" : "preferred",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.description">description</a>" : "A human language.",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.valueSet">valueSet</a>" : "http://hl7.org/fhir/ValueSet/languages"
+        }
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.text",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.text",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Text summary of the resource, for human interpretation",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \&quot;clinically safe\&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "Contained resources do not have a narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a \&quot;text blob\&quot; or where text is additionally entered raw or narrated and encoded information is added later.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.alias">alias</a>" : [
+          "narrative",
+          "html",
+          "xhtml",
+          "display"
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "DomainResource.text",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Narrative"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Act.text?"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.contained",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.contained",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Contained, inline Resources",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, nor can they have their own independent transaction scope.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.alias">alias</a>" : [
+          "inline resources",
+          "anonymous resources",
+          "contained resources"
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "DomainResource.contained",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Resource"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "N/A"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.extension",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.extension",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Additional content defined by implementations",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.alias">alias</a>" : [
+          "extensions",
+          "user content"
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "DomainResource.extension",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Extension"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ext-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Must have either extensions or value[x], not both",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "extension.exists() != value.exists()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Extension"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "N/A"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.modifierExtension",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.modifierExtension",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Extensions that cannot be ignored",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.requirements">requirements</a>" : "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.alias">alias</a>" : [
+          "extensions",
+          "user content"
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "DomainResource.modifierExtension",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Extension"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ext-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "Must have either extensions or value[x], not both",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "extension.exists() != value.exists()",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \&quot;value\&quot;)])",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Extension"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifierReason">isModifierReason</a>" : "Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "N/A"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.identifier",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.identifier",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Business identifiers that are specific to this role",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Business identifiers that are specific to this role.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.requirements">requirements</a>" : "Often, specific identities are assigned for the agent.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.identifier",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Identifier"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "w5",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "FiveWs.identifier"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".id"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.active",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.active",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Whether this organization affiliation record is in active use",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Whether this organization affiliation record is in active use.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.comment">comment</a>" : "If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.requirements">requirements</a>" : "Need to be able to mark an organization affiliation record as not to be used because it was created in error, or otherwise no longer in active use.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.active",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "boolean"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.meaningWhenMissing">meaningWhenMissing</a>" : "This resource is generally assumed to be active if no value is provided for the active element",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "w5",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "FiveWs.status"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".statusCode"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.period",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.period",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "The period during which the participatingOrganization is affiliated with the primary organization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The period during which the participatingOrganization is affiliated with the primary organization.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.requirements">requirements</a>" : "An affiliation may be created ahead of time and only be active for a defined period of time. Once the affiliation is complete, the fact that it existed may still be required.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.period",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Period"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "w5",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "FiveWs.done[x]"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".performance[@typeCode &lt;= 'PPRF'].ActDefinitionOrEvent.effectiveTime"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.organization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.organization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Organization where the role is available",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Organization where the role is available (primary organization/has members).",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.organization",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".scoper"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.participatingOrganization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.participatingOrganization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Organization that provides/performs the role (e.g. providing services or is a member of)",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The Participating Organization provides/performs the role(s) defined by the code to the Primary Organization (e.g. providing services or is a member of).",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.participatingOrganization",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "1"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "https://github.com/HL7/FHIR-pq-cmc/StructureDefinition/USAgentOrganization"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".player"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.network",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.network",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined)",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.network",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.code",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.code",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Definition of the role the participatingOrganization plays",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Definition of the role the participatingOrganization plays in the association.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.code",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "CodeableConcept"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.fixed[x]">fixedCodeableConcept</a>" : {
+          "<a href="http://build.fhir.org//datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://build.fhir.org//datatypes.html#Coding#Coding.system">system</a>" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+              "<a href="http://build.fhir.org//datatypes.html#Coding#Coding.code">code</a>" : "C73330",
+              "<a href="http://build.fhir.org//datatypes.html#Coding#Coding.display">display</a>" : "Foreign Facility's United States Agent"
+            }
+          ]
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding">binding</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.extension">extension</a>" : [
+            {
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueString</a>" : "OrganizationAffiliation"
+            }
+          ],
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.strength">strength</a>" : "example",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.description">description</a>" : "The role the participating organization providing services to the primary organization.",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.valueSet">valueSet</a>" : "http://hl7.org/fhir/ValueSet/organization-role"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".code"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.specialty",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.specialty",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Specific specialty of the participatingOrganization in the context of the role",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Specific specialty of the participatingOrganization in the context of the role.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.specialty",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "CodeableConcept"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding">binding</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.extension">extension</a>" : [
+            {
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "<a href="http://build.fhir.org//extensibility.html#Extension#Extension.value[x]">valueString</a>" : "OrganizationSpecialty"
+            }
+          ],
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.strength">strength</a>" : "preferred",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.description">description</a>" : "Specific specialty associated with the participating organization.",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.binding.valueSet">valueSet</a>" : "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".player.HealthCareProvider[@classCode = 'PROV'].code"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.location",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.location",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "The location(s) at which the role occurs",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "The location(s) at which the role occurs.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.location",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "w5",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "FiveWs.where[x]"
+          },
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".performance.ActDefinitionOrEvent.ServiceDeliveryLocation[@classCode = 'SDLOC']"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.healthcareService",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.healthcareService",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Healthcare services provided through the role",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Healthcare services provided through the role.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.healthcareService",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "http://hl7.org/fhir/StructureDefinition/HealthcareService"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".player.QualifiedEntity[@classCode = 'QUAL'].code"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.telecom",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.telecom",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Contact details at the participatingOrganization relevant to this Affiliation",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Contact details at the participatingOrganization relevant to this Affiliation.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.requirements">requirements</a>" : "Sometimes a participating organization provides dedicated contacts to handle enquiries specifically for the role provided to the affiliated organization.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.telecom",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "ContactPoint"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : true,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : ".telecom"
+          }
+        ]
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.endpoint",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.endpoint",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.short">short</a>" : "Technical endpoints providing access to services operated for this role",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.definition">definition</a>" : "Technical endpoints providing access to services operated for this role.",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 0,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "*",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base">base</a>" : {
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.path">path</a>" : "OrganizationAffiliation.endpoint",
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.min">min</a>" : 0,
+          "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.base.max">max</a>" : "*"
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "http://hl7.org/fhir/StructureDefinition/Endpoint"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint">constraint</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.key">key</a>" : "ele-1",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.severity">severity</a>" : "error",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.human">human</a>" : "All FHIR elements must have a @value or children",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.expression">expression</a>" : "hasValue() or (children().count() &gt; id.count())",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.xpath">xpath</a>" : "@value|f:*|h:div",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.constraint.source">source</a>" : "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "n/a"
+          }
+        ]
+      }
+    ]
+  },
+  "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.differential">differential</a>" : {
+    "<a href="http://build.fhir.org//structuredefinition.html#StructureDefinition.differential.element">element</a>" : [
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation"
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.organization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.organization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a>" : true
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.participatingOrganization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.participatingOrganization",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type">type</a>" : [
+          {
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.code">code</a>" : "Reference",
+            "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.type.targetProfile">targetProfile</a>" : [
+              "https://github.com/HL7/FHIR-pq-cmc/StructureDefinition/USAgentOrganization"
+            ]
+          }
+        ],
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a>" : true
+      },
+      {
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.id">id</a>" : "OrganizationAffiliation.code",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.path">path</a>" : "OrganizationAffiliation.code",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.min">min</a>" : 1,
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.max">max</a>" : "1",
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.fixed[x]">fixedCodeableConcept</a>" : {
+          "<a href="http://build.fhir.org//datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://build.fhir.org//datatypes.html#Coding#Coding.system">system</a>" : "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+              "<a href="http://build.fhir.org//datatypes.html#Coding#Coding.code">code</a>" : "C73330",
+              "<a href="http://build.fhir.org//datatypes.html#Coding#Coding.display">display</a>" : "Foreign Facility's United States Agent"
+            }
+          ]
+        },
+        "<a href="http://build.fhir.org//elementdefinition.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a>" : true
+      }
+    ]
+  }
+}</code></pre>
+</body>
+</html>

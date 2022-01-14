@@ -1,0 +1,21 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='ValueSet' id='valuset-ExcipientFunction' active='history' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{type}}: ExcipientFunction - Change History</h2>
+  <p>History of changes for valuset-ExcipientFunction {{type | downcase}}.</p>
+
+  {%include ValueSet-valuset-ExcipientFunction-history.xhtml%}
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}

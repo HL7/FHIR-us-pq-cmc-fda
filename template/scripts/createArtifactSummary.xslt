@@ -21,8 +21,13 @@
       <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
       <xsl:for-each select="f:definition/f:grouping">
         <xsl:variable name="relevantResources">
+<<<<<<< HEAD
           <xsl:for-each select="f:resource[f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $version) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version)]|
           parent::f:definition/f:resource[f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']][f:package/@value=current()/@id or f:groupingId/@value=current()/@id][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $version) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version)]">content</xsl:for-each>
+=======
+          <xsl:for-each select="f:resource[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $version) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version)]|
+          parent::f:definition/f:resource[f:package/@value=current()/@id or f:groupingId/@value=current()/@id][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $version) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$version)]">content</xsl:for-each>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
         </xsl:variable>
         <xsl:if test="$relevantResources">
           <a name="{position()}">

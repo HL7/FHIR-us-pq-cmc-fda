@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+  <title>ValueSet-valuset-StrengthOperator-ttl-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<pre class="rdf"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:ValueSet;
+  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://build.fhir.org//valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org//datatypes.html#id">fhir:value</a> &quot;valuset-StrengthOperator&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
+     <a href="http://build.fhir.org//narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;code&gt;urn:oid:2.16.840.1.113883.3.26.1.1&lt;/code&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C48793&lt;/td&gt;&lt;td&gt;EQ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C61585&lt;/td&gt;&lt;td&gt;LT (less than)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C61584&lt;/td&gt;&lt;td&gt;MT (more than)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C61583&lt;/td&gt;&lt;td&gt;NLT (not less than)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C61586&lt;/td&gt;&lt;td&gt;NMT (not more than)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C48660&lt;/td&gt;&lt;td&gt;Not Applicable&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthOperator&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;current&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;StrengthOperator&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.title">fhir:ValueSet.title</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;PQ/CMC Strength Operator Terminology&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;active&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://build.fhir.org//datatypes.html#dateTime">fhir:value</a> &quot;2021-04-13T00:29:45-04:00&quot;^^xsd:dateTime];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.publisher">fhir:ValueSet.publisher</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.description">fhir:ValueSet.description</a> [ <a href="http://build.fhir.org//datatypes.html#markdown">fhir:value</a> &quot;Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.&quot;];
+  <a href="http://build.fhir.org//valueset.html#ValueSet.compose">fhir:ValueSet.compose</a> [
+     <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include">fhir:ValueSet.compose.include</a> [
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.system">fhir:ValueSet.compose.include.system</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> &quot;urn:oid:2.16.840.1.113883.3.26.1.1&quot; ];
+       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept">fhir:ValueSet.compose.include.concept</a> [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C48793&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;EQ&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C61585&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;LT (less than)&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C61584&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;MT (more than)&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 3;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C61583&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;NLT (not less than)&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 4;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C61586&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;NMT (not more than)&quot; ]       ], [
+         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 5;
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> &quot;C48660&quot; ];
+         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> &quot;Not Applicable&quot; ]       ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</code></pre>
+
+</body>
+</html>

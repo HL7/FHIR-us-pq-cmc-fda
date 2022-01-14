@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-DrugProductComponentFunctionCategory"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C82533</td><td>Active Ingredient</td></tr><tr><td>C2140</td><td>Adjuvant</td></tr><tr><td>C42637</td><td>Inactive Ingredient</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory"/>
+  <version value="current"/>
+  <name value="DrugProductComponentFunctionCategory"/>
+  <title value="PQ/CMC Drug Product Component Function Category Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C82533"/>
+        <display value="Active Ingredient"/>
+      </concept>
+      <concept>
+        <code value="C2140"/>
+        <display value="Adjuvant"/>
+      </concept>
+      <concept>
+        <code value="C42637"/>
+        <display value="Inactive Ingredient"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

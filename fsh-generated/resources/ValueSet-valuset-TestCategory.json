@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TestCategory",
+  "id": "valuset-TestCategory",
+  "title": "PQ/CMC Test Category Terminology",
+  "description": "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "version": "current",
+  "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory",
+  "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "concept": [
+          {
+            "code": "C60819",
+            "display": "Assay"
+          },
+          {
+            "code": "C158425",
+            "display": "Biological Properties"
+          },
+          {
+            "code": "C138990",
+            "display": "Description"
+          },
+          {
+            "code": "C138993",
+            "display": "Identification"
+          },
+          {
+            "code": "C158423",
+            "display": "Impurities"
+          },
+          {
+            "code": "C176810",
+            "display": "Microbiological Properties"
+          },
+          {
+            "code": "C176811",
+            "display": "Physico-Chemical Properties"
+          }
+        ]
+      }
+    ]
+  }
+}

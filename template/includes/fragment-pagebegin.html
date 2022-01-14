@@ -3,7 +3,11 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<<<<<<< HEAD
     <title>{{site.data.fhir.igId | upcase}}\{{site.data.pages[page.path].title | escape_once}} - FHIR v{{site.data.fhir.version}}</title>
+=======
+    <title>{{site.data.fhir.igId | upcase}}\{{site.data.pages[page.path].title}} - FHIR v{{site.data.fhir.version}}</title>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -11,6 +15,10 @@
     <link href="{{site.data.info.assets}}fhir.css" rel="stylesheet"/>
 
     <!-- Bootstrap core CSS -->
+<<<<<<< HEAD
+=======
+    <link href="{{site.data.info.assets}}assets/css/bootstrap.css" rel="stylesheet"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     <link href="{{site.data.info.assets}}assets/css/bootstrap-fhir.css" rel="stylesheet"/>
 
     <!-- Project extras -->
@@ -50,7 +58,11 @@
 {% assign status = site.data.fhir.ig.status %}
 {% endif %}
         <div id="ig-status">
+<<<<<<< HEAD
           <p><span style="font-size:12pt;font-weight:bold">{{site.data.fhir.ig.title | escape_once}}</span><br/>{{site.data.fhir.ig.version}} - {{status}}</p>
+=======
+          <p><span style="font-size:12pt;font-weight:bold">{{site.data.fhir.ig.title}}</span><br/>{{site.data.fhir.ig.version}} - {{status}}</p>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -78,11 +90,15 @@
       </div>  <!-- /container -->
     </div>  <!-- /segment-navbar -->
     <!--status-bar-->
+<<<<<<< HEAD
 {% assign shownav = site.data.info.shownav | downcase | slice: 0 %}
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
           {{site.data.pages[page.path].breadcrumb}}
+<<<<<<< HEAD
 {% if shownav == 'y' %}
           <span style="float:right;">
 {% if site.data.pages[page.path].previous %}
@@ -94,12 +110,18 @@
 {% endif %}
           </span>
 {% endif %}
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
 
+<<<<<<< HEAD
     <a name="top"> </a>
     <div id="segment-content" class="segment">  <!-- segment-content -->
+=======
+    <div id="segment-content">  <!-- segment-content -->
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
