@@ -1,0 +1,275 @@
+﻿pqcmcsushi : Validation Results
+=========================================
+
+err = 29, warn = 141, info = 1
+IG Publisher Version: 1.1.90
+Generated Tue Dec 07 01:06:37 EST 2021. FHIR version 4.6.0 for pqcmc_ig#0.1.0 (canonical = http://example.org)
+ Build Errors : 12 / 0 / 0
+ C:\pqcmcsushi\fsh-generated\resources\ImplementationGuide-pqcmc_ig : 2 / 1 / 1
+ C:\pqcmcsushi\fsh-generated\resources\codesystem-codesystemPqcmccCompSectionTypes : 0 / 2 / 2
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-Base64DocumentReference : 9 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-MfgTestSiteOrganization : 1 / 4 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-PqAddress : 0 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-SponsorOrganization : 1 / 4 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-pqcmc-ComponentSubstance : 1 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-pqcmc-DrugProduct : 5 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-pqcmc-DrugProductInstance : 3 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-pqcmc-DrugSubstance : 2 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-pqcmc-DrugSubstanceImpurity : 1 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\structuredefinition-pqcmc-PolymorphicForm : 1 / 5 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccBatchUtilizationTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccChemicalStructureDataFileOriginTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccChemicalStructureDataFileTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccClosureTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccCoPackagedIndicatorTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccConformancetoCriteriaTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccContainerOrientationTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccContainerTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccDrugProductComponentFunctionCategoryTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccDrugSubstanceProductIndicatorTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccExcipientFunctionTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccImpurityClassificationTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccInterpretationCodeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccProcessRelatedImpurityCategoryTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccProductRelatedImpurityCategoryTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccQualityBenchmarkTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccSourceTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccSpecificationStatusTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccSpecificationTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccSponsorIdentifierTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccStorageConditionsTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccStrengthOperatorTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccStrengthTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccTestCategoryTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccTestMethodOriginTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccTestUsageTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccUnitsofMeasureTerminology : 0 / 1 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsPqcmccValidationParameterTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsSPLPharmaceuticalDosageFormTerminology : 0 / 3 / 1
+ C:\pqcmcsushi\fsh-generated\resources\valueset-vsUnitsMeasure : 0 / 2 / 1
+</table>
+== n/a ==
+ERROR: DocumentReference.type: The reference http://hl7.org/fhir/ValueSet/c80-doc-typecodes could not be resolved
+ERROR: DocumentReference.facilityType: The reference http://hl7.org/fhir/ValueSet/c80-facilitycodes could not be resolved
+ERROR: DocumentReference.practiceSetting: The reference http://hl7.org/fhir/ValueSet/c80-practice-codes could not be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference-definitions.html#/html/body/div/div/div/div/div/table/tr/td/a at Line 315, column 114: The link 'c80-doc-typecodes.html' for "c80-doc-typecodes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference-definitions.html#/html/body/div/div/div/div/div/table/tr/td/a at Line 366, column 106: The link 'c80-facilitycodes.html' for "c80-facilitycodes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference-definitions.html#/html/body/div/div/div/div/div/table/tr/td/a at Line 376, column 106: The link 'c80-practice-codes.html' for "c80-practice-codes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference.html#/html/body/div/div/div/div/div/div/div/div/div/table/tr/td/a at Line 283, column 1875: The link 'c80-doc-typecodes.html' for "c80-doc-typecodes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference.html#/html/body/div/div/div/div/div/div/div/div/div/table/tr/td/a at Line 288, column 1623: The link 'c80-facilitycodes.html' for "c80-facilitycodes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference.html#/html/body/div/div/div/div/div/div/div/div/div/table/tr/td/a at Line 289, column 1772: The link 'c80-practice-codes.html' for "c80-practice-codes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference.html#/html/body/div/div/div/div/div/div/div/div/div/table/tr/td/a at Line 502, column 1875: The link 'c80-doc-typecodes.html' for "c80-doc-typecodes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference.html#/html/body/div/div/div/div/div/div/div/div/div/table/tr/td/a at Line 507, column 1623: The link 'c80-facilitycodes.html' for "c80-facilitycodes" cannot be resolved
+ERROR: C:\pqcmcsushi\output\StructureDefinition-Base64DocumentReference.html#/html/body/div/div/div/div/div/div/div/div/div/table/tr/td/a at Line 508, column 1772: The link 'c80-practice-codes.html' for "c80-practice-codes" cannot be resolved
+== fsh-generated\resources\ImplementationGuide-pqcmc_ig.json ==
+ERROR: ImplementationGuide/pqcmc_ig: ImplementationGuide.id: Invalid Resource id
+WARNING: ImplementationGuide/pqcmc_ig: ImplementationGuide: cnl-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+ERROR: ImplementationGuide/pqcmc_ig: ImplementationGuide.packageId: id value 'pqcmc_ig' is not valid
+== fsh-generated\resources\CodeSystem-codesystemPqcmccCompSectionTypes.json ==
+WARNING: CodeSystem/codesystemPqcmccCompSectionTypes: CodeSystem.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: CodeSystem/codesystemPqcmccCompSectionTypes: CodeSystem.content: ValueSet http://hl7.org/fhir/ValueSet/codesystem-content-mode|4.6.0|4.6.0 not found by validator
+INFORMATION: CodeSystem/codesystemPqcmccCompSectionTypes: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+== fsh-generated\resources\StructureDefinition-Base64DocumentReference.json ==
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.extension[1].value.ofType(code): The value provided ('not-classified') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = The code system "http://hl7.org/fhir/resource-security-category" in the include in "http://hl7.org/fhir/ValueSet/resource-security-category" is not known; The code system 'http://hl7.org/fhir/resource-security-category' is not known (encountered paired with code = 'not-classified'); The code provided (http://hl7.org/fhir/resource-security-category#not-classified) is not valid in the value set 'ResourceSecurityCategory' (from http://tx.fhir.org/r4))
+WARNING: StructureDefinition/Base64DocumentReference: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/Base64DocumentReference: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/Base64DocumentReference: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/Base64DocumentReference: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[13].binding.valueSet: Canonical URL 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes' does not resolve
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[18].binding.valueSet: Canonical URL 'http://hl7.org/fhir/ValueSet/c80-facilitycodes' does not resolve
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[19].binding.valueSet: Canonical URL 'http://hl7.org/fhir/ValueSet/c80-practice-codes' does not resolve
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[54].extension[0].value.ofType(code): The value provided ('trial-use') is not in the value set 'StandardsStatus' (http://hl7.org/fhir/ValueSet/standards-status), and a code is required from this value set) (error message = The code system "http://hl7.org/fhir/standards-status" in the include in "http://hl7.org/fhir/ValueSet/standards-status" is not known; The code system 'http://hl7.org/fhir/standards-status' is not known (encountered paired with code = 'trial-use'); The code provided (http://hl7.org/fhir/standards-status#trial-use) is not valid in the value set 'StandardsStatus' (from http://tx.fhir.org/r4))
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[55].extension[0].value.ofType(code): The value provided ('trial-use') is not in the value set 'StandardsStatus' (http://hl7.org/fhir/ValueSet/standards-status), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/standards-status' is unknown so the code cannot be validated)
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[56].extension[0].value.ofType(code): The value provided ('trial-use') is not in the value set 'StandardsStatus' (http://hl7.org/fhir/ValueSet/standards-status), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/standards-status' is unknown so the code cannot be validated)
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[57].extension[0].value.ofType(code): The value provided ('trial-use') is not in the value set 'StandardsStatus' (http://hl7.org/fhir/ValueSet/standards-status), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/standards-status' is unknown so the code cannot be validated)
+ERROR: StructureDefinition/Base64DocumentReference: StructureDefinition.snapshot.element[58].extension[0].value.ofType(code): The value provided ('trial-use') is not in the value set 'StandardsStatus' (http://hl7.org/fhir/ValueSet/standards-status), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/standards-status' is unknown so the code cannot be validated)
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/Base64DocumentReference'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-MfgTestSiteOrganization.json ==
+ERROR: StructureDefinition/MfgTestSiteOrganization: StructureDefinition.extension[1].value.ofType(code): The value provided ('business') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/MfgTestSiteOrganization: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/MfgTestSiteOrganization: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/MfgTestSiteOrganization: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/MfgTestSiteOrganization: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+== fsh-generated\resources\StructureDefinition-PqAddress.json ==
+WARNING: StructureDefinition/PqAddress: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/PqAddress: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/PqAddress: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/PqAddress: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/PqAddress'): The Implementation Guide contains no examples for this data type profile
+== fsh-generated\resources\StructureDefinition-SponsorOrganization.json ==
+ERROR: StructureDefinition/SponsorOrganization: StructureDefinition.extension[1].value.ofType(code): The value provided ('business') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/SponsorOrganization: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/SponsorOrganization: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/SponsorOrganization: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/SponsorOrganization: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+== fsh-generated\resources\StructureDefinition-pqcmc-ComponentSubstance.json ==
+ERROR: StructureDefinition/pqcmc-ComponentSubstance: StructureDefinition.extension[1].value.ofType(code): The value provided ('anonymous') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/pqcmc-ComponentSubstance: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-ComponentSubstance: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-ComponentSubstance: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-ComponentSubstance: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-ComponentSubstance'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-pqcmc-DrugProduct.json ==
+ERROR: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.extension[1].value.ofType(code): The value provided ('anonymous') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+ERROR: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.snapshot.element[26].type[0].targetProfile[0]: Type CodeableReference does not allow for target Profiles 
+ERROR: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.snapshot.element[27].type[0].targetProfile[0]: Type CodeableReference does not allow for target Profiles 
+ERROR: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.snapshot.element[60].type[0].targetProfile[0]: Type CodeableReference does not allow for target Profiles 
+ERROR: StructureDefinition/pqcmc-DrugProduct: StructureDefinition.snapshot.element[66].type[0].targetProfile[0]: Type CodeableReference does not allow for target Profiles 
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-DrugProduct'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-pqcmc-DrugProductInstance.json ==
+ERROR: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.extension[1].value.ofType(code): The value provided ('business') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+ERROR: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.snapshot.element[19].type[0].targetProfile[0]: Type CodeableReference does not allow for target Profiles 
+ERROR: StructureDefinition/pqcmc-DrugProductInstance: StructureDefinition.snapshot.element[19].type[0].targetProfile[0]: Type CodeableReference does not allow for target Profiles 
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-DrugProductInstance'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-pqcmc-DrugSubstance.json ==
+ERROR: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-DrugSubstance'): The element SubstanceDefinition.structure is out of order (and maybe others after it)
+ERROR: StructureDefinition/pqcmc-DrugSubstance: StructureDefinition.extension[1].value.ofType(code): The value provided ('anonymous') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/pqcmc-DrugSubstance: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugSubstance: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugSubstance: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugSubstance: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-DrugSubstance'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-pqcmc-DrugSubstanceImpurity.json ==
+ERROR: StructureDefinition/pqcmc-DrugSubstanceImpurity: StructureDefinition.extension[1].value.ofType(code): The value provided ('anonymous') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/pqcmc-DrugSubstanceImpurity: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugSubstanceImpurity: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugSubstanceImpurity: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-DrugSubstanceImpurity: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-DrugSubstanceImpurity'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-pqcmc-PolymorphicForm.json ==
+ERROR: StructureDefinition/pqcmc-PolymorphicForm: StructureDefinition.extension[1].value.ofType(code): The value provided ('anonymous') is not in the value set 'ResourceSecurityCategory' (http://hl7.org/fhir/ValueSet/resource-security-category), and a code is required from this value set) (error message = Code System URI 'http://hl7.org/fhir/resource-security-category' is unknown so the code cannot be validated)
+WARNING: StructureDefinition/pqcmc-PolymorphicForm: StructureDefinition.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-PolymorphicForm: StructureDefinition.fhirVersion: ValueSet http://hl7.org/fhir/ValueSet/FHIR-version|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-PolymorphicForm: StructureDefinition.kind: ValueSet http://hl7.org/fhir/ValueSet/structure-definition-kind|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition/pqcmc-PolymorphicForm: StructureDefinition.derivation: ValueSet http://hl7.org/fhir/ValueSet/type-derivation-rule|4.6.0|4.6.0 not found by validator
+WARNING: StructureDefinition.where(url = 'http://example.org/StructureDefinition/pqcmc-PolymorphicForm'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\ValueSet-vsPqcmccBatchUtilizationTerminology.json ==
+WARNING: ValueSet/vsPqcmccBatchUtilizationTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccBatchUtilizationTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccBatchUtilizationTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccChemicalStructureDataFileOriginTerminology.json ==
+WARNING: ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccChemicalStructureDataFileOriginTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccChemicalStructureDataFileTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccChemicalStructureDataFileTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccClosureTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccClosureTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccClosureTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccClosureTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccCoPackagedIndicatorTerminology.json ==
+WARNING: ValueSet/vsPqcmccCoPackagedIndicatorTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccCoPackagedIndicatorTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccCoPackagedIndicatorTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccConformancetoCriteriaTerminology.json ==
+WARNING: ValueSet/vsPqcmccConformancetoCriteriaTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccConformancetoCriteriaTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccConformancetoCriteriaTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccContainerOrientationTerminology.json ==
+WARNING: ValueSet/vsPqcmccContainerOrientationTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccContainerOrientationTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccContainerOrientationTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccContainerTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccContainerTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccContainerTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccContainerTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccDrugProductComponentFunctionCategoryTerminology.json ==
+WARNING: ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccDrugProductComponentFunctionCategoryTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccDrugSubstanceProductIndicatorTerminology.json ==
+WARNING: ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccDrugSubstanceProductIndicatorTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccExcipientFunctionTerminology.json ==
+WARNING: ValueSet/vsPqcmccExcipientFunctionTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccExcipientFunctionTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccExcipientFunctionTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccImpurityClassificationTerminology.json ==
+WARNING: ValueSet/vsPqcmccImpurityClassificationTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccImpurityClassificationTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccImpurityClassificationTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccInterpretationCodeTerminology.json ==
+WARNING: ValueSet/vsPqcmccInterpretationCodeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccInterpretationCodeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccInterpretationCodeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccProcessRelatedImpurityCategoryTerminology.json ==
+WARNING: ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccProcessRelatedImpurityCategoryTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccProductRelatedImpurityCategoryTerminology.json ==
+WARNING: ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccProductRelatedImpurityCategoryTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccQualityBenchmarkTerminology.json ==
+WARNING: ValueSet/vsPqcmccQualityBenchmarkTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccQualityBenchmarkTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccQualityBenchmarkTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccSourceTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccSourceTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccSourceTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccSourceTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccSpecificationStatusTerminology.json ==
+WARNING: ValueSet/vsPqcmccSpecificationStatusTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccSpecificationStatusTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccSpecificationStatusTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccSpecificationTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccSpecificationTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccSpecificationTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccSpecificationTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccSponsorIdentifierTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccSponsorIdentifierTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccSponsorIdentifierTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccSponsorIdentifierTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccStorageConditionsTerminology.json ==
+WARNING: ValueSet/vsPqcmccStorageConditionsTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccStorageConditionsTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccStorageConditionsTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccStrengthOperatorTerminology.json ==
+WARNING: ValueSet/vsPqcmccStrengthOperatorTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccStrengthOperatorTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccStrengthOperatorTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccStrengthTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccStrengthTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccStrengthTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccStrengthTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccTestCategoryTerminology.json ==
+WARNING: ValueSet/vsPqcmccTestCategoryTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccTestCategoryTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccTestCategoryTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccTestMethodOriginTerminology.json ==
+WARNING: ValueSet/vsPqcmccTestMethodOriginTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccTestMethodOriginTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccTestMethodOriginTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccTestUsageTerminology.json ==
+WARNING: ValueSet/vsPqcmccTestUsageTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccTestUsageTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccTestUsageTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology.json ==
+WARNING: ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccTestingSiteUniqueIdentifierTypeTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsPqcmccUnitsofMeasureTerminology.json ==
+WARNING: ValueSet/vsPqcmccUnitsofMeasureTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+== fsh-generated\resources\ValueSet-vsPqcmccValidationParameterTerminology.json ==
+WARNING: ValueSet/vsPqcmccValidationParameterTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsPqcmccValidationParameterTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsPqcmccValidationParameterTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsSPLPharmaceuticalDosageFormTerminology.json ==
+WARNING: ValueSet/vsSPLPharmaceuticalDosageFormTerminology: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsSPLPharmaceuticalDosageFormTerminology: ValueSet.compose[0].include[0]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet.where(id = 'vsSPLPharmaceuticalDosageFormTerminology'): Error from server: Unable to provide support for code system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+== fsh-generated\resources\ValueSet-vsUnitsMeasure.json ==
+WARNING: ValueSet/vsUnitsMeasure: ValueSet.status: ValueSet http://hl7.org/fhir/ValueSet/publication-status|4.6.0|4.6.0 not found by validator
+WARNING: ValueSet/vsUnitsMeasure: ValueSet.compose[0].include[0].concept[34]: The code gal is not valid in the system http://unitsofmeasure.org

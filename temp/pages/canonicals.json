@@ -1,0 +1,303 @@
+[
+  {
+    "id": "codesystemPqcmccCompSectionTypes",
+    "type": "CodeSystem",
+    "url": "http://example.org/CodeSystem/codesystemPqcmccCompSectionTypes",
+    "version": "0.1.0",
+    "name": "PqcmccCompSectionTypes"
+  },
+  {
+    "id": "pqcmc_ig",
+    "type": "ImplementationGuide",
+    "url": "http://example.org/ImplementationGuide/pqcmc_ig",
+    "version": "0.1.0",
+    "name": "pqcmcsushi"
+  },
+  {
+    "id": "Base64DocumentReference",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/Base64DocumentReference",
+    "version": "0.1.0",
+    "name": "Base64DocumentReference"
+  },
+  {
+    "id": "MfgTestSiteOrganization",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/MfgTestSiteOrganization",
+    "version": "0.1.0",
+    "name": "MfgTestSiteOrganization"
+  },
+  {
+    "id": "PqAddress",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/PqAddress",
+    "version": "0.1.0",
+    "name": "PqAddress"
+  },
+  {
+    "id": "SponsorOrganization",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/SponsorOrganization",
+    "version": "0.1.0",
+    "name": "SponsorOrganization"
+  },
+  {
+    "id": "pqcmc-ComponentSubstance",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/pqcmc-ComponentSubstance",
+    "version": "0.1.0",
+    "name": "ComponentSubstance"
+  },
+  {
+    "id": "pqcmc-DrugProduct",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugProduct",
+    "version": "0.1.0",
+    "name": "DrugProduct"
+  },
+  {
+    "id": "pqcmc-DrugProductInstance",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugProductInstance",
+    "version": "0.1.0",
+    "name": "DrugProductInstance"
+  },
+  {
+    "id": "pqcmc-DrugSubstance",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstance",
+    "version": "0.1.0",
+    "name": "DrugSubstance"
+  },
+  {
+    "id": "pqcmc-DrugSubstanceImpurity",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstanceImpurity",
+    "version": "0.1.0",
+    "name": "DrugSubstanceImpurity"
+  },
+  {
+    "id": "pqcmc-PolymorphicForm",
+    "type": "StructureDefinition",
+    "url": "http://example.org/StructureDefinition/pqcmc-PolymorphicForm",
+    "version": "0.1.0",
+    "name": "PolymorphicForm"
+  },
+  {
+    "id": "vsPqcmccBatchUtilizationTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccBatchUtilizationTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCBatchUtilizationTerminology"
+  },
+  {
+    "id": "vsPqcmccChemicalStructureDataFileOriginTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCChemicalStructureDataFileOriginTerminology"
+  },
+  {
+    "id": "vsPqcmccChemicalStructureDataFileTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCChemicalStructureDataFileTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccClosureTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccClosureTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcClosureTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccCoPackagedIndicatorTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccCoPackagedIndicatorTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCoPackagedIndicatorTerminology"
+  },
+  {
+    "id": "vsPqcmccConformancetoCriteriaTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccConformancetoCriteriaTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcConformanceCriteriaTerminology"
+  },
+  {
+    "id": "vsPqcmccContainerOrientationTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccContainerOrientationTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcContainerOrientationTerminology"
+  },
+  {
+    "id": "vsPqcmccContainerTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccContainerTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcContainerTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccDrugProductComponentFunctionCategoryTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcDrugProductComponentFunctionCategoryTerminology"
+  },
+  {
+    "id": "vsPqcmccDrugSubstanceProductIndicatorTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcDrugSubstanceProductIndicatorTerminology"
+  },
+  {
+    "id": "vsPqcmccExcipientFunctionTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccExcipientFunctionTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcExcipientFunctionTerminology"
+  },
+  {
+    "id": "vsPqcmccImpurityClassificationTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccImpurityClassificationTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcImpurityClassificationTerminology"
+  },
+  {
+    "id": "vsPqcmccInterpretationCodeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccInterpretationCodeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcInterpretationCodeTerminology"
+  },
+  {
+    "id": "vsPqcmccProcessRelatedImpurityCategoryTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcProcessRelatedImpurityCategoryTerminology"
+  },
+  {
+    "id": "vsPqcmccProductRelatedImpurityCategoryTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcProductRelatedImpurityCategoryTerminology"
+  },
+  {
+    "id": "vsPqcmccQualityBenchmarkTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccQualityBenchmarkTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcQualityBenchmarkTerminology"
+  },
+  {
+    "id": "vsPqcmccSourceTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccSourceTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSourceTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccSpecificationStatusTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccSpecificationStatusTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSpecificationStatusTerminology"
+  },
+  {
+    "id": "vsPqcmccSpecificationTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccSpecificationTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSpecificationTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccSponsorIdentifierTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccSponsorIdentifierTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSponsorIdentifierTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccStorageConditionsTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccStorageConditionsTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcStorageConditionsTerminology"
+  },
+  {
+    "id": "vsPqcmccStrengthOperatorTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccStrengthOperatorTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcStrengthOperatorTerminology"
+  },
+  {
+    "id": "vsPqcmccStrengthTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccStrengthTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcStrengthTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccTestCategoryTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccTestCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestCategoryTerminology"
+  },
+  {
+    "id": "vsPqcmccTestMethodOriginTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccTestMethodOriginTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestMethodOriginTerminology"
+  },
+  {
+    "id": "vsPqcmccTestUsageTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccTestUsageTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestUsageTerminology"
+  },
+  {
+    "id": "vsPqcmccTestingSiteUniqueIdentifierTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestingSiteUniqueIdentifierTypeTerminology"
+  },
+  {
+    "id": "vsPqcmccUnitsofMeasureTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccUnitsofMeasureTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcUnitsMeasureTerminology"
+  },
+  {
+    "id": "vsPqcmccValidationParameterTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsPqcmccValidationParameterTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcValidationParameterTerminology"
+  },
+  {
+    "id": "vsSPLPharmaceuticalDosageFormTerminology",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsSPLPharmaceuticalDosageFormTerminology",
+    "version": "0.1.0",
+    "name": "SplPharmaceuticalDosageFormTerminology"
+  },
+  {
+    "id": "vsUnitsMeasure",
+    "type": "ValueSet",
+    "url": "http://example.org/ValueSet/vsUnitsMeasure",
+    "version": "0.1.0",
+    "name": "PqcmcUnitsMeasure"
+  }
+]

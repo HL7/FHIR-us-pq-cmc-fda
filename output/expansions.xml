@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="750d4c99-6faa-4df8-b91c-3282c9ca9737"/>
+  <meta>
+    <lastUpdated value="2021-12-07T01:03:31.831-05:00"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://example.org/ValueSet/vsUnitsMeasure"/>
+    <resource>
+      <ValueSet>
+        <id value="vsUnitsMeasure"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 67 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on UCUM version 2.0.1</p>
+            <p>All codes in this table are from the system 
+              <a href="http://terminology.hl7.org/3.0.0/CodeSystem-v3-ucum.html">
+                <code>http://unitsofmeasure.org</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--"> </a>%
+                </td>
+                <td>%</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org---VolumeToVolume-"> </a>%{VolumeToVolume}
+                </td>
+                <td>%{VolumeToVolume}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org---WeightToVolume-"> </a>%{WeightToVolume}
+                </td>
+                <td>%{WeightToVolume}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org---WeightToWeight-"> </a>%{WeightToWeight}
+                </td>
+                <td>%{WeightToWeight}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--m2.d-"> </a>(m2.d)
+                </td>
+                <td>(m2.d)</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--Btu-"> </a>[Btu]
+                </td>
+                <td>[Btu]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--CFU-"> </a>[CFU]
+                </td>
+                <td>[CFU]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--degF-"> </a>[degF]
+                </td>
+                <td>[degF]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--EU-"> </a>[EU]
+                </td>
+                <td>[EU]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--in-i-"> </a>[in_i]
+                </td>
+                <td>[in_i]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--IU-"> </a>[IU]
+                </td>
+                <td>[IU]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--lb-av-"> </a>[lb_av]
+                </td>
+                <td>[lb_av]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--lbf-av-"> </a>[lbf_av]
+                </td>
+                <td>[lbf_av]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--oz-av-"> </a>[oz_av]
+                </td>
+                <td>[oz_av]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--pH-"> </a>[pH]
+                </td>
+                <td>[pH]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--ppb-"> </a>[ppb]
+                </td>
+                <td>[ppb]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--ppm-"> </a>[ppm]
+                </td>
+                <td>[ppm]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--ppth-"> </a>[ppth]
+                </td>
+                <td>[ppth]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--pptr-"> </a>[pptr]
+                </td>
+                <td>[pptr]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--psi-"> </a>[psi]
+                </td>
+                <td>[psi]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--pt-us-"> </a>[pt_us]
+                </td>
+                <td>[pt_us]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--qt-us-"> </a>[qt_us]
+                </td>
+                <td>[qt_us]</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--actuation-"> </a>{actuation}
+                </td>
+                <td>{actuation}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--can-"> </a>{can}
+                </td>
+                <td>{can}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--tbl-"> </a>{tbl}
+                </td>
+                <td>{tbl}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--tot-"> </a>{tot}
+                </td>
+                <td>{tot}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org--vial-"> </a>{vial}
+                </td>
+                <td>{vial}</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-a"> </a>a
+                </td>
+                <td>a</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-Cel"> </a>Cel
+                </td>
+                <td>Cel</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-cm"> </a>cm
+                </td>
+                <td>cm</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-cm3"> </a>cm3
+                </td>
+                <td>cm3</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-d"> </a>d
+                </td>
+                <td>d</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-deg"> </a>deg
+                </td>
+                <td>deg</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-g"> </a>g
+                </td>
+                <td>g</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-h"> </a>h
+                </td>
+                <td>h</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-K"> </a>K
+                </td>
+                <td>K</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-kg"> </a>kg
+                </td>
+                <td>kg</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-kgf"> </a>kgf
+                </td>
+                <td>kgf</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-ku"> </a>ku
+                </td>
+                <td>ku</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-L"> </a>L
+                </td>
+                <td>L</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-m"> </a>m
+                </td>
+                <td>m</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-m2"> </a>m2
+                </td>
+                <td>m2</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-m3"> </a>m3
+                </td>
+                <td>m3</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mg"> </a>mg
+                </td>
+                <td>mg</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mg-"> </a>mg%
+                </td>
+                <td>mg%</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-min"> </a>min
+                </td>
+                <td>min</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mm"> </a>mm
+                </td>
+                <td>mm</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mmol"> </a>mmol
+                </td>
+                <td>mmol</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mo"> </a>mo
+                </td>
+                <td>mo</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mol"> </a>mol
+                </td>
+                <td>mol</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-mosm"> </a>mosm
+                </td>
+                <td>mosm</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-ms"> </a>ms
+                </td>
+                <td>ms</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-N"> </a>N
+                </td>
+                <td>N</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-ng"> </a>ng
+                </td>
+                <td>ng</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-nm"> </a>nm
+                </td>
+                <td>nm</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-nmol"> </a>nmol
+                </td>
+                <td>nmol</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-pg"> </a>pg
+                </td>
+                <td>pg</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-pmol"> </a>pmol
+                </td>
+                <td>pmol</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-rad"> </a>rad
+                </td>
+                <td>rad</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-s"> </a>s
+                </td>
+                <td>s</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-u"> </a>u
+                </td>
+                <td>u</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-ug"> </a>ug
+                </td>
+                <td>ug</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-uL"> </a>uL
+                </td>
+                <td>uL</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-um"> </a>um
+                </td>
+                <td>um</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-umho"> </a>umho
+                </td>
+                <td>umho</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-umol"> </a>umol
+                </td>
+                <td>umol</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---unitsofmeasure.org-wk"> </a>wk
+                </td>
+                <td>wk</td>
+                <td/>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/ValueSet/vsUnitsMeasure"/>
+        <version value="0.1.0"/>
+        <name value="PqcmcUnitsMeasure"/>
+        <title value="PQ/CMC Units of MeasureTerminology"/>
+        <status value="active"/>
+        <date value="2021-12-07T01:03:31-05:00"/>
+        <publisher value="Example Publisher"/>
+        <contact>
+          <name value="Example Publisher"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://example.org/example-publisher"/>
+          </telecom>
+        </contact>
+        <description value="Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+        <expansion>
+          <identifier value="urn:uuid:5f9ef500-dc5c-42d8-a503-52c19b2584fd"/>
+          <timestamp value="2021-12-07T01:05:52-05:00"/>
+          <total value="67"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="limitedExpansion"/>
+            <valueBoolean value="true"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://unitsofmeasure.org|2.0.1"/>
+          </parameter>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="%"/>
+            <display value="%"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="%{VolumeToVolume}"/>
+            <display value="%{VolumeToVolume}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="%{WeightToVolume}"/>
+            <display value="%{WeightToVolume}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="%{WeightToWeight}"/>
+            <display value="%{WeightToWeight}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="(m2.d)"/>
+            <display value="(m2.d)"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[Btu]"/>
+            <display value="[Btu]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[CFU]"/>
+            <display value="[CFU]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[degF]"/>
+            <display value="[degF]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[EU]"/>
+            <display value="[EU]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[in_i]"/>
+            <display value="[in_i]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[IU]"/>
+            <display value="[IU]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[lb_av]"/>
+            <display value="[lb_av]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[lbf_av]"/>
+            <display value="[lbf_av]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[oz_av]"/>
+            <display value="[oz_av]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[pH]"/>
+            <display value="[pH]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[ppb]"/>
+            <display value="[ppb]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[ppm]"/>
+            <display value="[ppm]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[ppth]"/>
+            <display value="[ppth]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[pptr]"/>
+            <display value="[pptr]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[psi]"/>
+            <display value="[psi]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[pt_us]"/>
+            <display value="[pt_us]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="[qt_us]"/>
+            <display value="[qt_us]"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="{actuation}"/>
+            <display value="{actuation}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="{can}"/>
+            <display value="{can}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="{tbl}"/>
+            <display value="{tbl}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="{tot}"/>
+            <display value="{tot}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="{vial}"/>
+            <display value="{vial}"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="a"/>
+            <display value="a"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="Cel"/>
+            <display value="Cel"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="cm"/>
+            <display value="cm"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="cm3"/>
+            <display value="cm3"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+            <display value="d"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="deg"/>
+            <display value="deg"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="g"/>
+            <display value="g"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="h"/>
+            <display value="h"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="K"/>
+            <display value="K"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="kg"/>
+            <display value="kg"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="kgf"/>
+            <display value="kgf"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="ku"/>
+            <display value="ku"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="L"/>
+            <display value="L"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="m"/>
+            <display value="m"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="m2"/>
+            <display value="m2"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="m3"/>
+            <display value="m3"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mg"/>
+            <display value="mg"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mg%"/>
+            <display value="mg%"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="min"/>
+            <display value="min"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mm"/>
+            <display value="mm"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mmol"/>
+            <display value="mmol"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mo"/>
+            <display value="mo"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mol"/>
+            <display value="mol"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mosm"/>
+            <display value="mosm"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="ms"/>
+            <display value="ms"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="N"/>
+            <display value="N"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="ng"/>
+            <display value="ng"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="nm"/>
+            <display value="nm"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="nmol"/>
+            <display value="nmol"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="pg"/>
+            <display value="pg"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="pmol"/>
+            <display value="pmol"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="rad"/>
+            <display value="rad"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="s"/>
+            <display value="s"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="u"/>
+            <display value="u"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="ug"/>
+            <display value="ug"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="uL"/>
+            <display value="uL"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="um"/>
+            <display value="um"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="umho"/>
+            <display value="umho"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="umol"/>
+            <display value="umol"/>
+          </contains>
+          <contains>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="wk"/>
+            <display value="wk"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/ValueSet/vsPqcmccUnitsofMeasureTerminology"/>
+    <resource>
+      <ValueSet>
+        <id value="vsPqcmccUnitsofMeasureTerminology"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 0 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/ValueSet/vsPqcmccUnitsofMeasureTerminology"/>
+        <version value="0.1.0"/>
+        <name value="PqcmcUnitsMeasureTerminology"/>
+        <status value="active"/>
+        <date value="2021-12-07T01:03:31-05:00"/>
+        <publisher value="Example Publisher"/>
+        <contact>
+          <name value="Example Publisher"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://example.org/example-publisher"/>
+          </telecom>
+        </contact>
+        <description value="Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+        <expansion>
+          <identifier value="urn:uuid:a0d129f1-15c2-4a15-a7d5-9dde531b48dd"/>
+          <timestamp value="2021-12-07T01:05:52-05:00"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+</Bundle>

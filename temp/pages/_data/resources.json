@@ -1,0 +1,654 @@
+{
+  "ImplementationGuide/pqcmc_ig": {
+    "history": false,
+    "index": 0,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\ImplementationGuide-pqcmc_ig.json",
+    "url": "http://example.org/ImplementationGuide/pqcmc_ig",
+    "name": "pqcmcsushi",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colsd",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Draft"
+    }
+  },
+  "StructureDefinition/Base64DocumentReference": {
+    "history": false,
+    "index": 1,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-Base64DocumentReference.json",
+    "url": "http://example.org/StructureDefinition/Base64DocumentReference",
+    "name": "Base64DocumentReference",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/pqcmc-ComponentSubstance": {
+    "history": false,
+    "index": 2,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-ComponentSubstance.json",
+    "url": "http://example.org/StructureDefinition/pqcmc-ComponentSubstance",
+    "name": "ComponentSubstance",
+    "title": "Component Substance",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/pqcmc-DrugProduct": {
+    "history": false,
+    "index": 3,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugProduct.json",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugProduct",
+    "name": "DrugProduct",
+    "title": "Drug Product",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/pqcmc-DrugProductInstance": {
+    "history": false,
+    "index": 4,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugProductInstance.json",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugProductInstance",
+    "name": "DrugProductInstance",
+    "title": "Drug Product Manufactured Instance",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/pqcmc-DrugSubstance": {
+    "history": false,
+    "index": 5,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugSubstance.json",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstance",
+    "name": "DrugSubstance",
+    "title": "Drug Substance",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/pqcmc-DrugSubstanceImpurity": {
+    "history": false,
+    "index": 6,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugSubstanceImpurity.json",
+    "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstanceImpurity",
+    "name": "DrugSubstanceImpurity",
+    "title": "Drug Substance Impurity",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/MfgTestSiteOrganization": {
+    "history": false,
+    "index": 7,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-MfgTestSiteOrganization.json",
+    "url": "http://example.org/StructureDefinition/MfgTestSiteOrganization",
+    "name": "MfgTestSiteOrganization",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/pqcmc-PolymorphicForm": {
+    "history": false,
+    "index": 8,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-PolymorphicForm.json",
+    "url": "http://example.org/StructureDefinition/pqcmc-PolymorphicForm",
+    "name": "PolymorphicForm",
+    "title": "Polymorphic Form",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/PqAddress": {
+    "history": false,
+    "index": 9,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-PqAddress.json",
+    "url": "http://example.org/StructureDefinition/PqAddress",
+    "name": "PqAddress",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "StructureDefinition/SponsorOrganization": {
+    "history": false,
+    "index": 10,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-SponsorOrganization.json",
+    "url": "http://example.org/StructureDefinition/SponsorOrganization",
+    "name": "SponsorOrganization",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccBatchUtilizationTerminology": {
+    "history": false,
+    "index": 11,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccBatchUtilizationTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccBatchUtilizationTerminology",
+    "name": "PqcmcCBatchUtilizationTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology": {
+    "history": false,
+    "index": 12,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccChemicalStructureDataFileOriginTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology",
+    "name": "PqcmcCChemicalStructureDataFileOriginTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology": {
+    "history": false,
+    "index": 13,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccChemicalStructureDataFileTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology",
+    "name": "PqcmcCChemicalStructureDataFileTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccClosureTypeTerminology": {
+    "history": false,
+    "index": 14,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccClosureTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccClosureTypeTerminology",
+    "name": "PqcmcClosureTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccCoPackagedIndicatorTerminology": {
+    "history": false,
+    "index": 15,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccCoPackagedIndicatorTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccCoPackagedIndicatorTerminology",
+    "name": "PqcmcCoPackagedIndicatorTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccConformancetoCriteriaTerminology": {
+    "history": false,
+    "index": 16,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccConformancetoCriteriaTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccConformancetoCriteriaTerminology",
+    "name": "PqcmcConformanceCriteriaTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccContainerOrientationTerminology": {
+    "history": false,
+    "index": 17,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccContainerOrientationTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccContainerOrientationTerminology",
+    "name": "PqcmcContainerOrientationTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccContainerTypeTerminology": {
+    "history": false,
+    "index": 18,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccContainerTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccContainerTypeTerminology",
+    "name": "PqcmcContainerTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology": {
+    "history": false,
+    "index": 19,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccDrugProductComponentFunctionCategoryTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology",
+    "name": "PqcmcDrugProductComponentFunctionCategoryTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology": {
+    "history": false,
+    "index": 20,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccDrugSubstanceProductIndicatorTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology",
+    "name": "PqcmcDrugSubstanceProductIndicatorTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccExcipientFunctionTerminology": {
+    "history": false,
+    "index": 21,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccExcipientFunctionTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccExcipientFunctionTerminology",
+    "name": "PqcmcExcipientFunctionTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccImpurityClassificationTerminology": {
+    "history": false,
+    "index": 22,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccImpurityClassificationTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccImpurityClassificationTerminology",
+    "name": "PqcmcImpurityClassificationTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccInterpretationCodeTerminology": {
+    "history": false,
+    "index": 23,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccInterpretationCodeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccInterpretationCodeTerminology",
+    "name": "PqcmcInterpretationCodeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology": {
+    "history": false,
+    "index": 24,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccProcessRelatedImpurityCategoryTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology",
+    "name": "PqcmcProcessRelatedImpurityCategoryTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology": {
+    "history": false,
+    "index": 25,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccProductRelatedImpurityCategoryTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology",
+    "name": "PqcmcProductRelatedImpurityCategoryTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccQualityBenchmarkTerminology": {
+    "history": false,
+    "index": 26,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccQualityBenchmarkTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccQualityBenchmarkTerminology",
+    "name": "PqcmcQualityBenchmarkTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccSourceTypeTerminology": {
+    "history": false,
+    "index": 27,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSourceTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccSourceTypeTerminology",
+    "name": "PqcmcSourceTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccSpecificationStatusTerminology": {
+    "history": false,
+    "index": 28,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSpecificationStatusTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccSpecificationStatusTerminology",
+    "name": "PqcmcSpecificationStatusTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccSpecificationTypeTerminology": {
+    "history": false,
+    "index": 29,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSpecificationTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccSpecificationTypeTerminology",
+    "name": "PqcmcSpecificationTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccSponsorIdentifierTypeTerminology": {
+    "history": false,
+    "index": 30,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSponsorIdentifierTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccSponsorIdentifierTypeTerminology",
+    "name": "PqcmcSponsorIdentifierTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccStorageConditionsTerminology": {
+    "history": false,
+    "index": 31,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccStorageConditionsTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccStorageConditionsTerminology",
+    "name": "PqcmcStorageConditionsTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccStrengthOperatorTerminology": {
+    "history": false,
+    "index": 32,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccStrengthOperatorTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccStrengthOperatorTerminology",
+    "name": "PqcmcStrengthOperatorTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccStrengthTypeTerminology": {
+    "history": false,
+    "index": 33,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccStrengthTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccStrengthTypeTerminology",
+    "name": "PqcmcStrengthTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccTestCategoryTerminology": {
+    "history": false,
+    "index": 34,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestCategoryTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccTestCategoryTerminology",
+    "name": "PqcmcTestCategoryTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccTestMethodOriginTerminology": {
+    "history": false,
+    "index": 35,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestMethodOriginTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccTestMethodOriginTerminology",
+    "name": "PqcmcTestMethodOriginTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccTestUsageTerminology": {
+    "history": false,
+    "index": 36,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestUsageTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccTestUsageTerminology",
+    "name": "PqcmcTestUsageTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology": {
+    "history": false,
+    "index": 37,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology",
+    "name": "PqcmcTestingSiteUniqueIdentifierTypeTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsUnitsMeasure": {
+    "history": false,
+    "index": 38,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsUnitsMeasure.json",
+    "url": "http://example.org/ValueSet/vsUnitsMeasure",
+    "name": "PqcmcUnitsMeasure",
+    "title": "PQ/CMC Units of MeasureTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccUnitsofMeasureTerminology": {
+    "history": false,
+    "index": 39,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccUnitsofMeasureTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccUnitsofMeasureTerminology",
+    "name": "PqcmcUnitsMeasureTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsPqcmccValidationParameterTerminology": {
+    "history": false,
+    "index": 40,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccValidationParameterTerminology.json",
+    "url": "http://example.org/ValueSet/vsPqcmccValidationParameterTerminology",
+    "name": "PqcmcValidationParameterTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "ValueSet/vsSPLPharmaceuticalDosageFormTerminology": {
+    "history": false,
+    "index": 41,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsSPLPharmaceuticalDosageFormTerminology.json",
+    "url": "http://example.org/ValueSet/vsSPLPharmaceuticalDosageFormTerminology",
+    "name": "SplPharmaceuticalDosageFormTerminology",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  },
+  "CodeSystem/codesystemPqcmccCompSectionTypes": {
+    "history": false,
+    "index": 42,
+    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\codesystem-codesystemPqcmccCompSectionTypes.json",
+    "url": "http://example.org/CodeSystem/codesystemPqcmccCompSectionTypes",
+    "name": "PqcmccCompSectionTypes",
+    "version": "0.1.0",
+    "date": "2021-12-07T01:03:31-05:00",
+    "status": {
+      "class": "colstu",
+      "owner": "Example Publisher",
+      "link": "http://example.org/example-publisher",
+      "status": "Active"
+    }
+  }
+}

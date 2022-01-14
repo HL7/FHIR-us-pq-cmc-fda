@@ -1,0 +1,39 @@
+{
+  "path": "http://build.fhir.org/",
+  "canonical": "http://example.org",
+  "igId": "pqcmc_ig",
+  "igName": "pqcmcsushi",
+  "packageId": "pqcmc_ig",
+  "igVer": "0.1.0",
+  "errorCount": 29,
+  "version": "4.6.0",
+  "revision": "bbafc66",
+  "versionFull": "4.6.0-bbafc66",
+  "toolingVersion": "4.6.0",
+  "toolingRevision": "3",
+  "toolingVersionFull": "4.6.0 (3)",
+  "totalFiles": 43,
+  "processedFiles": 50,
+  "genDate": "Tue, Dec 7, 2021 01:03-0500",
+  "genDay": "07/12/2021",
+  "ig": {
+    "id": "pqcmc_ig",
+    "name": "pqcmcsushi",
+    "url": "http://example.org/ImplementationGuide/pqcmc_ig",
+    "version": "0.1.0",
+    "status": "draft",
+    "experimental": false,
+    "publisher": "Example Publisher",
+    "gitstatus": "",
+    "contact": [
+      {
+        "name": "Example Publisher",
+        "telecom": [
+          "http://example.org/example-publisher"
+        ]
+      }
+    ],
+    "date": "2021-12-07T01:03:31-05:00",
+    "fhirVersion": "4.6.0"
+  }
+}
