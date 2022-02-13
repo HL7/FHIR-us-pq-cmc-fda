@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "valuset-DrugProductComponentFunctionCategory"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C82533</td><td>Active Ingredient</td></tr><tr><td>C2140</td><td>Adjuvant</td></tr><tr><td>C42637</td><td>Inactive Ingredient</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory"];
+  fhir:ValueSet.version [ fhir:value "current"];
+  fhir:ValueSet.name [ fhir:value "DrugProductComponentFunctionCategory"];
+  fhir:ValueSet.title [ fhir:value "PQ/CMC Drug Product Component Function Category Terminology"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-04-13T00:29:45-04:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)"];
+  fhir:ValueSet.description [ fhir:value "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:oid:2.16.840.1.113883.3.26.1.1" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C82533" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Active Ingredient" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C2140" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Adjuvant" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C42637" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Inactive Ingredient" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

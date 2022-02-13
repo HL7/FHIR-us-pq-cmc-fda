@@ -17,6 +17,29 @@ Title: "Strength Type  (for API)"
 Description: "A physical (contetn) of activity measurement of the strenght of the active ingredient."
 * valueString
 
+Extension: QuantityPercentExtension
+Id:  pq-quantity-percent-extension
+Title: "Quantity Percent"
+Description: "The percentage of the component in the batch."
+* valueDecimal  
+
+Extension: OverageExtension
+Id: pq-overage-extension
+Title: "Overage"
+Description: "Amount and rationale for excess drug substance."
+* . ^short = "Container Closure System Information"
+* extension contains 
+    overagePercent 1..1 MS and
+    overageJustification 1..1 MS 
+* extension[overagePercent]
+* extension[overagePercent].valueDecimal 
+* extension[overagePercent].valueDecimal ^short = "Overage Percent"
+* extension[overagePercent].valueDecimal ^definition = "Overage is teh percent of a drug substance in exell of the label claim to compensate for the loss, such as manufacturing or others."
+* extension[overageJustification]
+* extension[overageJustification].valueMarkdown
+* extension[overageJustification].valueMarkdown ^short = "Overage Justification"
+* extension[overageJustification].valueMarkdown ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product."
+
 Profile: DrugSubstance
 Parent: SubstanceDefinition
 Id: pqcmc-DrugSubstance
@@ -36,7 +59,6 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * supplier only Reference(MfgTestSiteOrganization)
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
-* molecularWeight.amount 0..1 MS
 * structure MS
 * structure.molecularFormula 1..1 MS
 * structure.molecularFormula ^short = "Molecular Formula"
@@ -247,8 +269,8 @@ Description: "The amount detais about the drug product compoents to define the p
 * .extension contains pq-additional-info-extension named additional-info 1..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
 * status.code 
-//* for only Reference(pqcmc-RoutineDrugProduct)
-//* for ^short = "Reference to MedicinalProductDefinition"
+* for only Reference(pqcmc-routine-drug-product)
+* for ^short = "Reference to MedicinalProductDefinition"
 * role.coding.code 1..1 MS
 * role.coding.code ^short = "Drug Product Component Function Category"
 * role.coding.code from PqcmcDrugProductComponentFunctionCategoryTerminology
@@ -259,21 +281,52 @@ Description: "The amount detais about the drug product compoents to define the p
 * group 0..1 MS
 * group ^short = "Component Group"
 * substance.code.reference 1..1 MS
-* substance.code.reference ^short = " ingredient substance"
+* substance.code.reference ^short = "Ingredient Substance"
 * substance.code.reference only Reference(ComponentSubstance) //* substance.code/reference/reference/@value
 * substance.strength 1..1 MS
 * substance.strength.presentation[x] 1..1 MS
-* substance.strength.presentation[x] only Quantity or Ratio //check if range needed or RatioRange  
+* substance.strength.presentation[x] only Quantity
+* ingredient.quantity.numerator MS
+* ingredient.quantity.denominator MS
 * substance.strength.extension contains pq-strength-type-extension named strengthType 1..1 MS
 * substance.strength.extension[strengthType] ^short = "Strength Type (for API)"
 * substance.strength.extension contains pq-content-percent-extension named contentPercent 1..1 MS
 * substance.strength.extension[contentPercent] ^short = "Content (%)"
 * substance.strength.presentationRatio MS
 * substance.strength.presentationRatio ^short = "StrengthNumericNumerator StrengthNumericNumerator UOM  Denominator and UOM"
-//* substance.strength.presentationRatioRange MS
-//* substance.strength.presentationRatioRange ^short = "StrengthNumericNumerator StrengthNumericNumerator UOM  Denominator and UOM"
+* substance.strength.presentationRatio.numerator MS
+* substance.strength.presentationRatio.denominator MS
 * substance.strength.presentationQuantity MS
 * substance.strength.presentationQuantity.extension contains pq-strength-operator-extension named strengthOperator  0..1 MS
 * substance.strength.presentationQuantity.extension[strengthOperator] ^short = "Strength Operator"
 * substance.strength.presentationText 0..1 MS
 
+Profile: DrugProductIngredient
+Parent: Ingredient
+Id: pqcmc-ingredient
+Title: "Drug Product Ingredient"
+Description: "The amount detais about the drug product ingredients in the batch." 
+
+* .extension contains pq-additional-info-extension named additional-info 1..1 MS
+* .extension[additional-info] ^short = "Drug Product Ingredient Additional Information"
+* substance.code.reference 1..1 MS
+* substance.code.reference ^short = "Ingredient Substance"
+* substance.code.reference only Reference(pqcmc-routine-drug-substance)
+* substance.code ^short = "Ingredient Substance"
+* substance.strength.extension contains pq-quantity-percent-extension named quantity-percent 1..1 MS
+* substance.strength.extension[quantity-percent] ^short = "Quantity Percent"
+* substance.strength.extension contains pq-overage-extension named overage 0..1 MS
+* substance.strength.extension[overage] ^short = "Overage"
+* substance.strength.concentrationQuantity MS
+* substance.strength.concentrationQuantity ^short = "Component Quanty Per Batch"
+* substance.strength.concentrationText 0..1 MS
+* substance.strength.concentrationText ^short = "Strength Textual"
+
+Profile: DrugSubstanceInstance
+Parent: Substance
+Id: pqcmc-drug-substnace-instance
+Title: "Drug Substance Manufactured Instance"
+Description: "Includes the properties of the drug substance as manufactured."
+
+* identifier 
+* identifier.value

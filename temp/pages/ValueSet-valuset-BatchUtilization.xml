@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-BatchUtilization"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C133994</td><td>Bioequivalence</td></tr><tr><td>C133992</td><td>Clinical</td></tr><tr><td>C133990</td><td>Commercial</td></tr><tr><td>C133991</td><td>Development</td></tr><tr><td>C133993</td><td>Validation</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-BatchUtilization"/>
+  <version value="current"/>
+  <name value="BatchUtilization"/>
+  <title value="PQ/CMC Batch Utilization Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="840"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C133994"/>
+        <display value="Bioequivalence"/>
+      </concept>
+      <concept>
+        <code value="C133992"/>
+        <display value="Clinical"/>
+      </concept>
+      <concept>
+        <code value="C133990"/>
+        <display value="Commercial"/>
+      </concept>
+      <concept>
+        <code value="C133991"/>
+        <display value="Development"/>
+      </concept>
+      <concept>
+        <code value="C133993"/>
+        <display value="Validation"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

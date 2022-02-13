@@ -48,7 +48,11 @@ var(--publish-box-border); */
   --ig-status-text-color: maroon; /* 1. IG Title and status text color */
   --navbar-bg-color: #7b1fad; /* 2. Header container color */
   --footer-bg-color: #707070; /* 3. Footer background color*/
+<<<<<<< HEAD
   --footer-container-bg-color: #7b1fad; /* 4. Footer container color */
+=======
+  --footer-container-color: #7b1fad; /* 4. Footer container color */
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   --stripe-bg-color: #999999; /* 5. Header strip color */
 
   --btn-hover-color: #9b2fdd;  /* 6. Menu button hover color */
@@ -72,6 +76,7 @@ var(--publish-box-border); */
 
   --ig-header-color: #f5f5f5; /* 21. Header color (sides) */
   --ig-header-container-color: #ffffff; /* 22. Header container color (center) */
+<<<<<<< HEAD
   --footer-nav-bg-color: #f5f5f5; /* 23. Footer navigation background color*/
 
   --footer-text-color: #ffffff; /* 24. Footer highlight font color */
@@ -83,6 +88,8 @@ var(--publish-box-border); */
 
   --dragon-background-color: #fffbf7; /* 29. Dragon background color */
   --dragon-text-color: #101020; /* 30. Dragon font color */
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 
 }
 
@@ -114,8 +121,13 @@ body {
 }
 
 #segment-footer > .container {
+<<<<<<< HEAD
   background-color: var(--footer-container-bg-color);
   color: var(--footer-text-color);
+=======
+  background-color: var(--footer-container-color);
+  color: #ffffff;
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 }
 .navbar-inverse {
   background-color: var(--navbar-bg-color);
@@ -129,7 +141,10 @@ body {
 #segment-footer > .container .inner-wrapper > p {
   padding-bottom: 0px;
   margin-bottom: 0px;
+<<<<<<< HEAD
   color:var(--footer-text-color);
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 }
 #segment-post-footer {
   background-color: #f5f5f5;
@@ -229,6 +244,7 @@ body {
   padding: 5px;
 }
 
+<<<<<<< HEAD
 .dragon {
   border: 1px solid maroon;
   padding: 10px;
@@ -248,6 +264,8 @@ body {
   height: 150px;
 }
 
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 .note-to-balloters, .stu-note {
     margin: 5px;
     padding: 10px;
@@ -465,10 +483,16 @@ a:focus {
 }
 .breadcrumb {
   margin-bottom: 0;
+<<<<<<< HEAD
   background-color: var(--breadcrumb-bg-color);;
 }
 .breadcrumb a {
   color: var(--breadcrumb-text-color);
+=======
+}
+.breadcrumb a {
+  color: #555555;
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 }
 .nav-listing {
   overflow: hidden;
@@ -625,7 +649,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 /* ============ downloads css ============= */
 
+<<<<<<< HEAD
 a[href$=".sch"]:after, a[href$=".xlsx"]:after, a[href$=".zip"]:after, a[href$=".tgz"]:after, a[href$=".xml"]:not([no-download^="true"]):after, a[href$=".json"]:not([no-download^="true"]):after, a[href$=".csv"]:after, a[href$=".ttl"]:not([no-download^="true"]):after {
+=======
+a[href$=".sch"]:after, a[href$=".zip"]:after, a[href$=".tgz"]:after, a[href$=".xml"]:not([no-download^="true"]):after, a[href$=".json"]:not([no-download^="true"]):after, a[href$=".csv"]:after, a[href$=".ttl"]:not([no-download^="true"]):after {
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   content: url(../images/download.png);
   display: inline-block;
   text-decoration: none;
@@ -633,14 +661,22 @@ a[href$=".sch"]:after, a[href$=".xlsx"]:after, a[href$=".zip"]:after, a[href$=".
 }
 
 /* =========== external links ============= */
+<<<<<<< HEAD
 p a[href^="http://"]:not([no-external^="true"]):after,p a[href^="https://"]:not([no-external^="true"]):after {
+=======
+p a[href^="http://"]:not([no-external^="true"]):after, a[href^="https://"]:not([no-external^="true"]):after {
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     content: url(../images/external.png);
     display: inline-block;
     text-decoration: none;
     padding-left: 3px;
 }
 
+<<<<<<< HEAD
 li a[href^="http://"]:not([no-external^="true"]):after,li a[href^="https://"]:not([no-external^="true"]):after {
+=======
+li a[href^="http://"]:not([no-external^="true"]):after, a[href^="https://"]:not([no-external^="true"]):after {
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     content: url(../images/external.png);
     display: inline-block;
     text-decoration: none;
@@ -687,6 +723,21 @@ li a[href^="http://"]:not([no-external^="true"]):after,li a[href^="https://"]:no
 }
 
 
+<<<<<<< HEAD
+=======
+/*--------- smooth transitions ---------- */
+
+body{
+    opacity: 0;
+    transition: opacity 0.7s;
+    -webkit-transition: opacity 0.7s; /* Safari */
+    -ms-transition: opacity 0.7s; /* ie */
+    -o-transition: opacity 0.7s; /* opera */
+    -moz-transition: opacity 0.7s; /* firefox */
+}
+
+
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 .feedback {
   color: #e0e0e0;
   padding:1px ;
@@ -698,7 +749,11 @@ li a[href^="http://"]:not([no-external^="true"]):after,li a[href^="https://"]:no
   padding-left: 7px;
   padding-right: 7px;
   float: right ; /* none or right */
+<<<<<<< HEAD
   border-radius: 6px;
+=======
+  border-radius: 6px; 
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   border: 0.5px solid #ffffff;
 }
 

@@ -25,12 +25,20 @@
   <xsl:template match="f:definition">
     <!-- If we've defined the groups, then we sort based on the groups, then alphabetically -->
     <xsl:choose>
+<<<<<<< HEAD
       <xsl:when test="f:group[starts-with(@id, '-')]">
+=======
+      <xsl:when test="f:group[starts-with(@id, '_')]">
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
         <xsl:copy>
           <xsl:apply-templates select="@*|f:extension|f:modifierExtension|f:grouping|comment()[not(preceding-sibling::f:resource)]"/>
           <xsl:for-each select="f:grouping">
             <xsl:choose>
+<<<<<<< HEAD
               <xsl:when test="starts-with(@id, '-')">
+=======
+              <xsl:when test="starts-with(@id, '_')">
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                 <xsl:for-each select="parent::f:definition/f:resource[f:groupingId/@value=current()/@id]">
                   <xsl:sort select="f:name/@value"/>
                   <xsl:sort select="f:reference/f:reference/@value"/>
@@ -87,7 +95,11 @@
   </xsl:template>
   <xsl:template name="artifactPages">
     <xsl:for-each select="/f:ImplementationGuide/f:definition/f:grouping">
+<<<<<<< HEAD
       <xsl:for-each select="parent::f:definition/f:resource[f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']][f:groupingId/@value=current()/@id]">
+=======
+      <xsl:for-each select="parent::f:definition/f:resource[f:groupingId/@value=current()/@id]">
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
         <page xmlns="http://hl7.org/fhir">
           <nameUrl value="{f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']/f:valueUri/@value}"/>
           <title value="{f:name/@value}"/>

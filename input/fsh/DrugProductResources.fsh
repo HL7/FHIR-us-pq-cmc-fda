@@ -25,7 +25,7 @@ packaging system and any precautions needed to ensure the protection and preserv
 
 Profile: DrugProduct
 Parent: MedicinalProductDefinition
-Id: pqcmc-DrugProduct
+Id: pqcmc-druproduct
 Title: "Drug Product"
 Description: "Includes the properties of the drug product, its components and impurities"
 * .contained only DrugProductComponent
@@ -37,12 +37,13 @@ Description: "Includes the properties of the drug product, its components and im
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
 * combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology
-//* route 1..1 MS
-//* route.coding.code 1..1 MS
-//* route.coding.code ^short = "Route of Administration"
-//* route.coding.code from vsSplDrugRouteofAdministrationTerminology
+* route 1..1 MS
+* route.coding.code 1..1 MS
+* route.coding.code ^short = "Route of Administration"
+* route.coding.code from vsSplDrugRouteofAdministrationTerminology
 * impurity 0..1 MS
 * impurity ^short = "Product Impurity"
+* impurity.reference only Reference(DrugSubstanceImpurity)
 * name 1..1 MS
 * name.productName 1..1 MS
 * name.productName ^short = "Product Proprietary name/ Product Non-proprietary Name"
@@ -53,7 +54,7 @@ Description: "Includes the properties of the drug product, its components and im
 
 Profile: DrugProductInstance
 Parent: Medication
-Id: pqcmc-DrugProductInstance
+Id: pqcmc-drug-product-instance
 Title: "Drug Product Manufactured Instance"
 Description: "Includes the properties of the drug product as manufactured."
 
@@ -62,14 +63,46 @@ Description: "Includes the properties of the drug product as manufactured."
 
 Profile: RoutineDrugProduct
 Parent: MedicinalProductDefinition
-Id: pqcmc-RoutineDrugProduct
+Id: pqcmc-routine-drug-product
 Title: "Drug Product"
 Description: "Includes the identfying information of the drug product"
 
 * identifier 1..1 MS
 * description 1..1 MS
 * description ^short = "Drug Product Description"
-* name 1..1 MS
 * name.productName 1..1 MS
 * name.productName ^short = "Product Proprietary name/ Product Non-proprietary Name"
 * name.type 1..1 MS
+
+Profile: BatchFormula
+Parent: MedicinalProductDefinition
+Id: pqcmc-batch-formula
+Title: "Batch Formula"
+Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
+
+* identifier 1..1 MS
+* name.productName 1..1 MS
+* name.productName ^short = "Product Proprietary name/ Product Non-proprietary Name"
+* name.type 1..1 MS
+* operation 1..* MS
+* operation.type 1..1 MS
+* operation.type ^short = "Batch Ingredient"
+* operation.type.reference 1..1 MS
+* operation.type.reference only Reference(pqcmc-batch-ingredient)
+* characteristic.type = http://hl7.org/fhir/pq-cmc/codesystem/ProductCharacteristic/#batchsize
+* characteristic.valueQuantity
+* characteristic.valueQuantity ^short = "Batch Quantity"
+* description ^short = "Batch Formula Additional Information"
+
+Profile: BatchIngredient
+Parent: ActivityDefinition
+Id: pqcmc-batch-ingredient
+Title: "Batch Ingredient"
+Description: "Identifies the ingredients for the batch forumla"
+
+* description 0..1 MS
+* description ^short = "Component Additional Information"
+* productReference 0..1 MS
+* productReference ^short = "Ingredient"
+//* productReference.reference only Reference(pqcmc-ingredient)
+

@@ -1,6 +1,13 @@
 {
+<<<<<<< HEAD
   "version": "0.1.0",
   "fhirVersion": "[4.6.0]",
   "date": "20211207010216",
   "name": "pqcmc_ig"
+=======
+  "version": "current",
+  "fhirVersion": "[4.5.0]",
+  "date": "20210413002920",
+  "name": "hl7.fhir.us.pq-cmc"
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 }

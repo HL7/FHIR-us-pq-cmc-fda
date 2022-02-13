@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "Base64DocumentReference": {
     "index": 0,
@@ -180,3 +181,6 @@
     "description": "A profile for the data elements required to identify the sponsor of the drug products or substances."
   }
 }
+=======
+{}
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66

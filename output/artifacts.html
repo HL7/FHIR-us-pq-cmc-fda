@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
     <title>PQCMC_IG\Artifacts Summary - FHIR v4.6.0</title>
+=======
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.FHIR.US.PQ-CMC\Artifacts Summary - FHIR v4.5.0</title>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
+<<<<<<< HEAD
     <link href="fhir.css" rel="stylesheet"/>
 
     <!-- Bootstrap core CSS -->
@@ -32,6 +42,35 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+=======
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
@@ -39,6 +78,7 @@
 
 	  <script src="assets/js/prism.js"></script>
 
+<<<<<<< HEAD
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -61,10 +101,47 @@
           <!--status-bar-->
           <div class="container">
             <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+=======
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4.0"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold"></span><br/>current - ci-build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
+<<<<<<< HEAD
             <a class="navbar-brand hidden" href="http://build.fhir.org/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <!-- menu.xml  -->
@@ -72,11 +149,37 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
     <a href="index.html">Home</a>
+=======
+            <a href="http://build.fhir.org/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="index.html">Home Page</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
+<<<<<<< HEAD
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
         </nav>  <!-- /.navbar -->
@@ -97,6 +200,25 @@
     <a name="top"> </a>
     <div id="segment-content" class="segment">  <!-- segment-content -->
       <div class="container">  <!-- container -->
+=======
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
         <div class="row">
           <div class="inner-wrapper">
 
@@ -108,6 +230,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
+<<<<<<< HEAD
   <!--ReleaseHeader--><p id="publish-box">pqcmcsushi - Local Development build (v0.1.0). See the <a href="http://example.org/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
@@ -265,6 +388,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="4"> </a>
+=======
+    <!-- ReleaseHeader --><p id="publish-box">PharmaceuticalQualityImplementationGuide - Local Development build (vcurrent). See the <a href="https://www.hl7.org/fhir/us-pq-cmc/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Artifacts Summary</h2>
+  
+    <!-- DO NOT EDIT THIS FILE - It is generated and any changes made will be overwritten --><div class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#2">Terminology: Code Systems</a>
+      </li>
+   </ul>
+</div>
+<div>
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
    <h3>Terminology: Value Sets </h3>
    <p>
     <p>These define sets of codes used by systems conforming to this implementation guide</p>
@@ -275,8 +417,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccBatchUtilizationTerminology.html"
                      title="ValueSet/vsPqcmccBatchUtilizationTerminology">PqcmcCBatchUtilizationTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ApplicationSubmissionType.html" title="ValueSet/valuset-ApplicationSubmissionType">PQ/CMC Application Submission Type Terminology</a>
+               </td>
+               <td>
+<p>Terminology used to qualify the information pertaining to application submission types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-valuset-ApplicationType.html" title="ValueSet/valuset-ApplicationType">PQ/CMC Application Type Terminology</a>
+               </td>
+               <td>
+<p>Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-valuset-BatchUtilization.html" title="ValueSet/valuset-BatchUtilization">PQ/CMC Batch Utilization Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -284,8 +446,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccChemicalStructureDataFileOriginTerminology.html"
                      title="ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology">PqcmcCChemicalStructureDataFileOriginTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ChemicalStructureDataFileOrigin.html" title="ValueSet/valuset-ChemicalStructureDataFileOrigin">PQ/CMC Chemical Structure Data File Origin Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -293,8 +459,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccChemicalStructureDataFileTypeTerminology.html"
                      title="ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology">PqcmcCChemicalStructureDataFileTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ChemicalStructureDataFileType.html" title="ValueSet/valuset-ChemicalStructureDataFileType">PQ/CMC Chemical Structure Data File Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -302,8 +472,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccClosureTypeTerminology.html"
                      title="ValueSet/vsPqcmccClosureTypeTerminology">PqcmcClosureTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ClosureType.html" title="ValueSet/valuset-ClosureType">PQ/CMC Closure Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -311,17 +485,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccCoPackagedIndicatorTerminology.html"
                      title="ValueSet/vsPqcmccCoPackagedIndicatorTerminology">PqcmcCoPackagedIndicatorTerminology</a>
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to copackaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
+=======
+                  <a href="ValueSet-valuset-CoPackagedIndicator.html" title="ValueSet/valuset-CoPackagedIndicator">PQ/CMC Co-Packaged Indicator Terminology</a>
+               </td>
+               <td>
+<p>Terminology used to qualify the information pertaining to co-packaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccConformancetoCriteriaTerminology.html"
                      title="ValueSet/vsPqcmccConformancetoCriteriaTerminology">PqcmcConformanceCriteriaTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ConformancetoCriteria.html" title="ValueSet/valuset-ConformancetoCriteria">PQ/CMC Conformance to Criteria Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -329,8 +514,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccContainerOrientationTerminology.html"
                      title="ValueSet/vsPqcmccContainerOrientationTerminology">PqcmcContainerOrientationTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ContainerOrientation.html" title="ValueSet/valuset-ContainerOrientation">PQ/CMC Container Orientation Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -338,8 +527,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccContainerTypeTerminology.html"
                      title="ValueSet/vsPqcmccContainerTypeTerminology">PqcmcContainerTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ContainerType.html" title="ValueSet/valuset-ContainerType">PQ/CMC Container Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -347,8 +540,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccDrugProductComponentFunctionCategoryTerminology.html"
                      title="ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology">PqcmcDrugProductComponentFunctionCategoryTerminology</a>
+=======
+                  <a href="ValueSet-valuset-DrugProductComponentFunctionCategory.html" title="ValueSet/valuset-DrugProductComponentFunctionCategory">PQ/CMC Drug Product Component Function Category Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -356,8 +553,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccDrugSubstanceProductIndicatorTerminology.html"
                      title="ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology">PqcmcDrugSubstanceProductIndicatorTerminology</a>
+=======
+                  <a href="ValueSet-valuset-DrugSubstanceProductIndicator.html" title="ValueSet/valuset-DrugSubstanceProductIndicator">PQ/CMC Drug Substance Product Indicator Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to drug substance product indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -365,8 +566,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccExcipientFunctionTerminology.html"
                      title="ValueSet/vsPqcmccExcipientFunctionTerminology">PqcmcExcipientFunctionTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ExcipientFunction.html" title="ValueSet/valuset-ExcipientFunction">PQ/CMC Excipient Function Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -374,8 +579,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccImpurityClassificationTerminology.html"
                      title="ValueSet/vsPqcmccImpurityClassificationTerminology">PqcmcImpurityClassificationTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ImpurityClassification.html" title="ValueSet/valuset-ImpurityClassification">PQ/CMC Impurity Classification Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -383,8 +592,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccInterpretationCodeTerminology.html"
                      title="ValueSet/vsPqcmccInterpretationCodeTerminology">PqcmcInterpretationCodeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-InterpretationCodeNumeric.html" title="ValueSet/valuset-InterpretationCodeNumeric">PQ/CMC Interpretation Code (numeric) Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -392,8 +605,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccProcessRelatedImpurityCategoryTerminology.html"
                      title="ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology">PqcmcProcessRelatedImpurityCategoryTerminology</a>
+=======
+                  <a href="ValueSet-valuset-InterpretationCodeText.html" title="ValueSet/valuset-InterpretationCodeText">PQ/CMC Interpretation Code (text) Terminology</a>
+               </td>
+               <td>
+<p>Terminology used to qualify the information pertaining to textual interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-valuset-ProcessRelatedImpurityCategory.html" title="ValueSet/valuset-ProcessRelatedImpurityCategory">PQ/CMC Process Related Impurity Category Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -401,8 +626,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccProductRelatedImpurityCategoryTerminology.html"
                      title="ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology">PqcmcProductRelatedImpurityCategoryTerminology</a>
+=======
+                  <a href="ValueSet-valuset-ProductRelatedImpurityCategory.html" title="ValueSet/valuset-ProductRelatedImpurityCategory">PQ/CMC Product Related Impurity Category Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -410,8 +639,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccQualityBenchmarkTerminology.html"
                      title="ValueSet/vsPqcmccQualityBenchmarkTerminology">PqcmcQualityBenchmarkTerminology</a>
+=======
+                  <a href="ValueSet-valuset-QualityBenchmark.html" title="ValueSet/valuset-QualityBenchmark">PQ/CMC Quality Benchmark Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -419,8 +652,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccSourceTypeTerminology.html"
                      title="ValueSet/vsPqcmccSourceTypeTerminology">PqcmcSourceTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-SourceType.html" title="ValueSet/valuset-SourceType">PQ/CMC Source Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -428,8 +665,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccSpecificationStatusTerminology.html"
                      title="ValueSet/vsPqcmccSpecificationStatusTerminology">PqcmcSpecificationStatusTerminology</a>
+=======
+                  <a href="ValueSet-valuset-SpecificationStatus.html" title="ValueSet/valuset-SpecificationStatus">PQ/CMC Specification Status Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -437,8 +678,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccSpecificationTypeTerminology.html"
                      title="ValueSet/vsPqcmccSpecificationTypeTerminology">PqcmcSpecificationTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-SpecificationType.html" title="ValueSet/valuset-SpecificationType">PQ/CMC Specification Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -446,8 +691,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccSponsorIdentifierTypeTerminology.html"
                      title="ValueSet/vsPqcmccSponsorIdentifierTypeTerminology">PqcmcSponsorIdentifierTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-SponsorIdentifierType.html" title="ValueSet/valuset-SponsorIdentifierType">PQ/CMC Sponsor Identifier Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -455,8 +704,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccStorageConditionsTerminology.html"
                      title="ValueSet/vsPqcmccStorageConditionsTerminology">PqcmcStorageConditionsTerminology</a>
+=======
+                  <a href="ValueSet-valuset-StorageConditions.html" title="ValueSet/valuset-StorageConditions">PQ/CMC Storage Conditions Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -464,8 +717,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccStrengthOperatorTerminology.html"
                      title="ValueSet/vsPqcmccStrengthOperatorTerminology">PqcmcStrengthOperatorTerminology</a>
+=======
+                  <a href="ValueSet-valuset-StrengthOperator.html" title="ValueSet/valuset-StrengthOperator">PQ/CMC Strength Operator Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -473,8 +730,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccStrengthTypeTerminology.html"
                      title="ValueSet/vsPqcmccStrengthTypeTerminology">PqcmcStrengthTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-StrengthType.html" title="ValueSet/valuset-StrengthType">PQ/CMC Strength Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -482,8 +743,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccTestCategoryTerminology.html"
                      title="ValueSet/vsPqcmccTestCategoryTerminology">PqcmcTestCategoryTerminology</a>
+=======
+                  <a href="ValueSet-valuset-TestCategory.html" title="ValueSet/valuset-TestCategory">PQ/CMC Test Category Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -491,6 +756,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccTestMethodOriginTerminology.html"
                      title="ValueSet/vsPqcmccTestMethodOriginTerminology">PqcmcTestMethodOriginTerminology</a>
                </td>
@@ -502,6 +768,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                <td style="column-width:30%">
                   <a href="ValueSet-vsPqcmccTestUsageTerminology.html"
                      title="ValueSet/vsPqcmccTestUsageTerminology">PqcmcTestUsageTerminology</a>
+=======
+                  <a href="ValueSet-valuset-TestMethodOrigin.html" title="ValueSet/valuset-TestMethodOrigin">PQ/CMC Test Usage Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -509,8 +778,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology.html"
                      title="ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology">PqcmcTestingSiteUniqueIdentifierTypeTerminology</a>
+=======
+                  <a href="ValueSet-valuset-TestUsage.html" title="ValueSet/valuset-TestUsage">PQ/CMC Testing Site Unique Identifier Type Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
@@ -518,12 +791,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="ValueSet-vsUnitsMeasure.html" title="ValueSet/vsUnitsMeasure">PQ/CMC Units of MeasureTerminology</a>
+=======
+                  <a href="ValueSet-valuset-TestingSiteUniqueIdentifierType.html" title="ValueSet/valuset-TestingSiteUniqueIdentifierType">PQ/CMC Test Method Origin Terminology</a>
+               </td>
+               <td>
+<p>Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-valuset-UnitsofMeasure.html" title="ValueSet/valuset-UnitsofMeasure">PQ/CMC Units of Measure Terminology</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.</p>
 </td>
             </tr>
+<<<<<<< HEAD
             <tr>
                <td style="column-width:30%">
                   <a href="ValueSet-vsPqcmccUnitsofMeasureTerminology.html"
@@ -555,6 +841,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="5"> </a>
+=======
+         </tbody>
+      </table>
+   </p>
+   <a name="2"> </a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
    <h3>Terminology: Code Systems </h3>
    <p>
     <p>These define new code systems used by systems conforming to this implementation guide</p>
@@ -565,8 +857,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+<<<<<<< HEAD
                   <a href="CodeSystem-codesystemPqcmccCompSectionTypes.html"
                      title="CodeSystem/codesystemPqcmccCompSectionTypes">PqcmccCompSectionTypes</a>
+=======
+                  <a href="CodeSystem-sectionType.html" title="CodeSystem/sectionType">Composition Section Type</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>
 <p>Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes.</p>
@@ -578,6 +874,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 
 </div>
+<<<<<<< HEAD
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -585,6 +882,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+=======
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -593,6 +899,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       }
     });
   </script>
+<<<<<<< HEAD
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -639,3 +946,55 @@ anchors.add()</script>
   </body>
 </html>
 
+=======
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p><a name="1f0713c1-e949-43ed-8ea9-3e7c96093ff0">​</a>
+          IG &copy; 2021+ <a style="color: #81BEF7" href="null"></a>.  Package hl7.fhir.us.pq-cmc#current based on <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR 4.5.0</a>. Generated <span title="Tue, Apr 13, 2021 00:29-0400">2021-04-13</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 
+                
+               | <a style="color: #81BEF7" href="https://www.hl7.org/fhir/us-pq-cmc/history.html" target="_blank">Version History  |
+               <a style="color: #81BEF7" href="searchform.html" target="_blank">Search  |
+                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.org/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change </a>
+
+          
+        
+          <!-- /inner-wrapper -->
+        <!-- /container -->
+      <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- feedback form - Google forms -->
+  <!-- v0.1, 2021-01-09 -->
+
+
+
+  <!-- / feedback form -->
+
+    <!-- Analytics Below
+  ================================================== -->
+  
+
+</a></a></span></p></div></div></div></body></html>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66

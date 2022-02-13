@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "valuset-ApplicationType"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C115123</td><td>Abbreviated New Animal Drug Application</td></tr><tr><td>C73113</td><td>Abbreviated New Drug Application</td></tr><tr><td>C71778</td><td>Biologics License Application</td></tr><tr><td>C115122</td><td>Generic Investigational New Animal Drug File</td></tr><tr><td>C80440</td><td>Humanitarian Device Exemption (HDE)</td></tr><tr><td>C82667</td><td>Investigational Device Exemption</td></tr><tr><td>C96091</td><td>Investigational New Animal Drug File</td></tr><tr><td>C96090</td><td>Investigational New Drug Application</td></tr><tr><td>C70877</td><td>Master File</td></tr><tr><td>C96092</td><td>New Active Ingredient</td></tr><tr><td>C72901</td><td>New Animal Drug Application</td></tr><tr><td>C72899</td><td>New Drug Application</td></tr><tr><td>C70880</td><td>Premarket Approval</td></tr><tr><td>C80442</td><td>Premarket Notification 510(K)</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType"];
+  fhir:ValueSet.version [ fhir:value "current"];
+  fhir:ValueSet.name [ fhir:value "ApplicationType"];
+  fhir:ValueSet.title [ fhir:value "PQ/CMC Application Type Terminology"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2021-04-13T00:29:45-04:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)"];
+  fhir:ValueSet.description [ fhir:value "Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "840" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:oid:2.16.840.1.113883.3.26.1.1" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C115123" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Abbreviated New Animal Drug Application" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C73113" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Abbreviated New Drug Application" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C71778" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Biologics License Application" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C115122" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Generic Investigational New Animal Drug File" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C80440" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Humanitarian Device Exemption (HDE)" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C82667" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Investigational Device Exemption" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C96091" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Investigational New Animal Drug File" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C96090" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Investigational New Drug Application" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C70877" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Master File" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C96092" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "New Active Ingredient" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C72901" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "New Animal Drug Application" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C72899" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "New Drug Application" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C70880" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Premarket Approval" ]
+       ], [
+         fhir:index 13;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "C80442" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Premarket Notification 510(K)" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

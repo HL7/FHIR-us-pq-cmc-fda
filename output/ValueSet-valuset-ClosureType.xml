@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-ClosureType"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C96113</td><td>Child-resistant, Metal</td></tr><tr><td>C96114</td><td>Child-resistant, Plastic</td></tr><tr><td>C96115</td><td>Continuous Thread, Metal</td></tr><tr><td>C96116</td><td>Continuous Thread, Plastic</td></tr><tr><td>C96125</td><td>Crown, Metal</td></tr><tr><td>C96128</td><td>Flip-Top (Dispensing), Plastic</td></tr><tr><td>C96129</td><td>Hinged (Dispensing), Plastic</td></tr><tr><td>C96130</td><td>Linerless, Plastic</td></tr><tr><td>C96126</td><td>Lug, Metal</td></tr><tr><td>C96124</td><td>Press-on, Composite</td></tr><tr><td>C96123</td><td>Press-on/twist-off, Metal</td></tr><tr><td>C96131</td><td>Pump (Dispensing), Plastic</td></tr><tr><td>C96132</td><td>Push-pull (Dispensing), Plastic</td></tr><tr><td>C96127</td><td>Roll-on, Metal</td></tr><tr><td>C96133</td><td>Snap-on Cap, Plastic</td></tr><tr><td>C96134</td><td>Snip-tip (Dispensing), Plastic</td></tr><tr><td>C96139</td><td>Stopper</td></tr><tr><td>C96120</td><td>Tamper-evident, Composite</td></tr><tr><td>C96117</td><td>Tamper-evident, Metal</td></tr><tr><td>C96118</td><td>Tamper-evident, Plastic</td></tr><tr><td>C96140</td><td>Tie</td></tr><tr><td>C96135</td><td>Toggle-swing (Dispensing), Plastic</td></tr><tr><td>C96136</td><td>Trigger Sprayer (Dispensing), Plastic</td></tr><tr><td>C96137</td><td>Twist Open/Close (Dispensing), Plastic</td></tr><tr><td>C96122</td><td>Vacuum, Composite</td></tr><tr><td>C96119</td><td>Vacuum, Metal</td></tr><tr><td>C96121</td><td>Vacuum, Plastic</td></tr><tr><td>C96138</td><td>Valved (Dispensing), Plastic</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ClosureType"/>
+  <version value="current"/>
+  <name value="ClosureType"/>
+  <title value="PQ/CMC Closure Type Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C96113"/>
+        <display value="Child-resistant, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96114"/>
+        <display value="Child-resistant, Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96115"/>
+        <display value="Continuous Thread, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96116"/>
+        <display value="Continuous Thread, Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96125"/>
+        <display value="Crown, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96128"/>
+        <display value="Flip-Top (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96129"/>
+        <display value="Hinged (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96130"/>
+        <display value="Linerless, Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96126"/>
+        <display value="Lug, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96124"/>
+        <display value="Press-on, Composite"/>
+      </concept>
+      <concept>
+        <code value="C96123"/>
+        <display value="Press-on/twist-off, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96131"/>
+        <display value="Pump (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96132"/>
+        <display value="Push-pull (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96127"/>
+        <display value="Roll-on, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96133"/>
+        <display value="Snap-on Cap, Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96134"/>
+        <display value="Snip-tip (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96139"/>
+        <display value="Stopper"/>
+      </concept>
+      <concept>
+        <code value="C96120"/>
+        <display value="Tamper-evident, Composite"/>
+      </concept>
+      <concept>
+        <code value="C96117"/>
+        <display value="Tamper-evident, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96118"/>
+        <display value="Tamper-evident, Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96140"/>
+        <display value="Tie"/>
+      </concept>
+      <concept>
+        <code value="C96135"/>
+        <display value="Toggle-swing (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96136"/>
+        <display value="Trigger Sprayer (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96137"/>
+        <display value="Twist Open/Close (Dispensing), Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96122"/>
+        <display value="Vacuum, Composite"/>
+      </concept>
+      <concept>
+        <code value="C96119"/>
+        <display value="Vacuum, Metal"/>
+      </concept>
+      <concept>
+        <code value="C96121"/>
+        <display value="Vacuum, Plastic"/>
+      </concept>
+      <concept>
+        <code value="C96138"/>
+        <display value="Valved (Dispensing), Plastic"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,4 +1,4 @@
-RuleSet: DUNSNumber
+RuleSet: DUNSandFEINumber
 * identifier 1..* MS
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
@@ -6,16 +6,19 @@ RuleSet: DUNSNumber
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Require specific types of identifiers."
-* identifier contains DUNSNumber 1..1 MS
-* identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier contains DUNSNumber 0..1 MS
+* identifier[DUNSNumber].system = $DUNS
 * identifier[DUNSNumber] obeys pq-1.1.1
-
+* identifier contains FEINumber 0..1 MS
+* identifierFEINumber].system = $FEINumber
+* identifier[FEINumber] obeys pq-1.1.1
+//Lloyd - they need to provide at least one. Does this do it?
 
 Profile: SponsorOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify the sponsor of the drug products or substances."
 * ^abstract = true
-* insert DUNSNumber
+* insert DUNSandFEINumber
 * type 1..1 MS
 * type from PqcmcSponsorIdentifierTypeTerminology (required)
 * name 1..1 MS
@@ -23,15 +26,15 @@ Description: "A profile for the data elements required to identify the sponsor o
 * address only PqAddress
 
 Invariant: pq-1.1.1
-Description: "DUNS number is 9 digits"
-Expression: "system = 'urn:oid:1.3.6.1.4.1.519.1' implies value.length() = 9"
+Description: "Identifier number is 9 digits"
+Expression: "system = 'urn:oid:1.3.6.1.4.1.519.1' or 'urn:oid:2.16.840.1.113883.4.82' implies value.length() = 9"
 Severity: #error
 
 Profile: MfgTestSiteOrganization
 Parent: Organization
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 * ^abstract = true
-* insert DUNSNumber
+* insert DUNSandFEINumber
 * type 1..1 MS
 * type from PqcmcTestingSiteUniqueIdentifierTypeTerminology (required)
 * name 1..1 MS

@@ -5,7 +5,11 @@
   <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
   {% include fragment-profile-navtabs.html type='{{[type]}}' id='{{[id]}}' active='content' %}
   <a name="root"> </a>
+<<<<<<< HEAD
   <h2 id="root">Extension: {{site.data.pages[page.path].title | escape_once}}</h2>
+=======
+  <h2 id="root">Extension: {{site.data.pages[page.path].title}}</h2>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   <p>{{site.data.structuredefinitions['{{[id]}}'].description | markdownify}}</p>
   <p>
   The official URL for this extension is:
@@ -183,7 +187,11 @@
     </div>
   </div>
   <p>&#160;</p>
+<<<<<<< HEAD
   <p>Other representations of profile: <a href="{{[type]}}-{{[id]}}.csv">CSV</a>, <a href="{{[type]}}-{{[id]}}.xlsx">Excel</a>, <a href="{{[type]}}-{{[id]}}.sch">Schematron</a>
+=======
+  <p>Other representations of extension: <a href="{{[type]}}-{{[id]}}.sch">Schematron</a>
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   </p>
   <a name="tx"> </a>
   <!--Terminology Bindings heading in the fragment -->

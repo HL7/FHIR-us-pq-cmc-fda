@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-ApplicationType"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C115123</td><td>Abbreviated New Animal Drug Application</td></tr><tr><td>C73113</td><td>Abbreviated New Drug Application</td></tr><tr><td>C71778</td><td>Biologics License Application</td></tr><tr><td>C115122</td><td>Generic Investigational New Animal Drug File</td></tr><tr><td>C80440</td><td>Humanitarian Device Exemption (HDE)</td></tr><tr><td>C82667</td><td>Investigational Device Exemption</td></tr><tr><td>C96091</td><td>Investigational New Animal Drug File</td></tr><tr><td>C96090</td><td>Investigational New Drug Application</td></tr><tr><td>C70877</td><td>Master File</td></tr><tr><td>C96092</td><td>New Active Ingredient</td></tr><tr><td>C72901</td><td>New Animal Drug Application</td></tr><tr><td>C72899</td><td>New Drug Application</td></tr><tr><td>C70880</td><td>Premarket Approval</td></tr><tr><td>C80442</td><td>Premarket Notification 510(K)</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType"/>
+  <version value="current"/>
+  <name value="ApplicationType"/>
+  <title value="PQ/CMC Application Type Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to application types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="840"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C115123"/>
+        <display value="Abbreviated New Animal Drug Application"/>
+      </concept>
+      <concept>
+        <code value="C73113"/>
+        <display value="Abbreviated New Drug Application"/>
+      </concept>
+      <concept>
+        <code value="C71778"/>
+        <display value="Biologics License Application"/>
+      </concept>
+      <concept>
+        <code value="C115122"/>
+        <display value="Generic Investigational New Animal Drug File"/>
+      </concept>
+      <concept>
+        <code value="C80440"/>
+        <display value="Humanitarian Device Exemption (HDE)"/>
+      </concept>
+      <concept>
+        <code value="C82667"/>
+        <display value="Investigational Device Exemption"/>
+      </concept>
+      <concept>
+        <code value="C96091"/>
+        <display value="Investigational New Animal Drug File"/>
+      </concept>
+      <concept>
+        <code value="C96090"/>
+        <display value="Investigational New Drug Application"/>
+      </concept>
+      <concept>
+        <code value="C70877"/>
+        <display value="Master File"/>
+      </concept>
+      <concept>
+        <code value="C96092"/>
+        <display value="New Active Ingredient"/>
+      </concept>
+      <concept>
+        <code value="C72901"/>
+        <display value="New Animal Drug Application"/>
+      </concept>
+      <concept>
+        <code value="C72899"/>
+        <display value="New Drug Application"/>
+      </concept>
+      <concept>
+        <code value="C70880"/>
+        <display value="Premarket Approval"/>
+      </concept>
+      <concept>
+        <code value="C80442"/>
+        <display value="Premarket Notification 510(K)"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

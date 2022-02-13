@@ -12,7 +12,11 @@
     <xsl:apply-templates select="f:definition/f:resource"/>
   </xsl:template>
   <xsl:template match="@*|node()"/>
+<<<<<<< HEAD
   <xsl:template match="f:definition/f:resource[f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']]">
+=======
+  <xsl:template match="f:definition/f:resource">
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     <xsl:if test="not(f:name)">
       <xsl:call-template name="raiseIssue">
         <xsl:with-param name="severity">error</xsl:with-param>

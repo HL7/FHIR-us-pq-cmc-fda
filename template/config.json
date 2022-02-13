@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD
   "script": "scripts/ant.xml",
+=======
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   "targets": {
     "onLoad": "onLoad",
     "onGenerate": "onGenerate"
@@ -12,6 +15,7 @@
     },
     {
       "name": "examples",
+<<<<<<< HEAD
       "description": "Examples",
       "isExamples": true
     },
@@ -36,6 +40,31 @@
     "json",
     "ttl"
   ],
+=======
+      "description": "Examples"
+    },
+    {
+      "name": "profile-xml",
+      "description": "Profile XML"
+    },
+    {
+      "name": "profile-json",
+      "description": "Profile JSON"
+    },
+    {
+      "name": "profile-ttl",
+      "description": "Profile Turtle"
+    },
+    {
+      "name": "profile-history",
+      "description": "Profile Change History"
+    },
+    {
+      "name": "change-history",
+      "description": "Resource Change History"
+    }
+  ],
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   "_pre-process-documentation": "This array of objects indicates data being converted from existing files using scripts to support dependency checking when performing continuous builds",
   "pre-process": [
     {
@@ -78,7 +107,11 @@
       "template-format": "template/layouts/layout-instance-format.html",
       "base": "{{[type]}}-{{[id]}}.html",
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
+<<<<<<< HEAD
       "list-types": "CodeSystem|ValueSet|NamingSystem",
+=======
+      "list-types": "CodeSystem|ValueSet",
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       "template-change-history": "template/layouts/layout-changehistory.html",
       "change-history": "{{[type]}}-{{[id]}}.change.history.html"
     },
@@ -94,20 +127,38 @@
     "ImplementationGuide": {
       "template-base": "",
       "template-format": "",
+<<<<<<< HEAD
       "template-change-history":""
+=======
+      "template-change-history": ""
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     },
     "StructureDefinition:extension": {
       "template-base": "template/layouts/layout-ext.html",
       "template-defns": "template/layouts/layout-profile-definitions.html",
       "template-mappings": "template/layouts/layout-profile-mappings.html",
       "template-examples": "",
+<<<<<<< HEAD
       "template-profile-history": "template/layouts/layout-profile-history.html",
       "template-format": "template/layouts/layout-profile-format.html",
+=======
+      "template-profile-xml": "template/layouts/layout-profile-format.html",
+      "template-profile-json": "template/layouts/layout-profile-format.html",
+      "template-profile-ttl": "template/layouts/layout-profile-format.html",
+      "template-profile-history": "template/layouts/layout-profile-history.html",
+      "template-format": "",
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       "base": "{{[type]}}-{{[id]}}.html",
       "defns": "{{[type]}}-{{[id]}}-definitions.html",
       "mappings": "{{[type]}}-{{[id]}}-mappings.html",
       "examples": "{{[type]}}-{{[id]}}-examples.html",
+<<<<<<< HEAD
       "format": "{{[type]}}-{{[id]}}.profile.{{[fmt]}}.html",
+=======
+      "profile-xml": "{{[type]}}-{{[id]}}.profile.xml.html",
+      "profile-json": "{{[type]}}-{{[id]}}.profile.json.html",
+      "profile-ttl": "{{[type]}}-{{[id]}}.profile.ttl.html",
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       "profile-history": "{{[type]}}-{{[id]}}.profile.history.html",
       "template-change-history": ""
     },
@@ -116,13 +167,28 @@
       "template-defns": "template/layouts/layout-profile-definitions.html",
       "template-mappings": "template/layouts/layout-profile-mappings.html",
       "template-examples": "template/layouts/layout-profile-examples.html",
+<<<<<<< HEAD
       "template-profile-history": "template/layouts/layout-profile-history.html",
       "template-format": "template/layouts/layout-profile-format.html",
+=======
+      "template-profile-xml": "template/layouts/layout-profile-format.html",
+      "template-profile-json": "template/layouts/layout-profile-format.html",
+      "template-profile-ttl": "template/layouts/layout-profile-format.html",
+      "template-profile-history": "template/layouts/layout-profile-history.html",
+      "template-format": "",
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       "base": "{{[type]}}-{{[id]}}.html",
       "defns": "{{[type]}}-{{[id]}}-definitions.html",
       "mappings": "{{[type]}}-{{[id]}}-mappings.html",
       "examples": "{{[type]}}-{{[id]}}-examples.html",
+<<<<<<< HEAD
       "format": "{{[type]}}-{{[id]}}.profile.{{[fmt]}}.html",
+=======
+      "format": "{{[type]}}-{{[id]}}.profile.xml.html",
+      "profile-xml": "{{[type]}}-{{[id]}}.profile.xml.html",
+      "profile-json": "{{[type]}}-{{[id]}}.profile.json.html",
+      "profile-ttl": "{{[type]}}-{{[id]}}.profile.ttl.html",
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
       "profile-history": "{{[type]}}-{{[id]}}.profile.history.html",
       "template-change-history": "",
       "_comment": "this template-change-history is here to undo the definition in the Any settings"
@@ -151,6 +217,12 @@
       "format": "{{[type]}}-{{[id]}}.{{[fmt]}}.html",
       "change-history": "{{[type]}}-{{[id]}}.change.history.html"
     }
+<<<<<<< HEAD
   }
 }
 
+=======
+  },
+  "script": "scripts/ant-hl7.xml"
+}
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66

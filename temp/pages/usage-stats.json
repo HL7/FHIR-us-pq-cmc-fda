@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "package": "pqcmc_ig",
   "version": "0.1.0",
   "fhirVersion": "4.6.0",
@@ -84,6 +85,14 @@
     "http://hl7.org/fhir/build/StructureDefinition/definition": [
       "StructureDefinition.snapshot.element.binding"
     ],
+=======
+  "package": "hl7.fhir.us.pq-cmc",
+  "version": "current",
+  "fhirVersion": "4.5.0",
+  "extensions": [],
+  "profiles": {},
+  "usage": {
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
     ]

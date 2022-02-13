@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-TestMethodOrigin"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C96164</td><td>CFR</td></tr><tr><td>C96102</td><td>Compendial</td></tr><tr><td>C96103</td><td>Proprietary</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestMethodOrigin"/>
+  <version value="current"/>
+  <name value="TestMethodOrigin"/>
+  <title value="PQ/CMC Test Usage Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C96164"/>
+        <display value="CFR"/>
+      </concept>
+      <concept>
+        <code value="C96102"/>
+        <display value="Compendial"/>
+      </concept>
+      <concept>
+        <code value="C96103"/>
+        <display value="Proprietary"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

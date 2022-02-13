@@ -216,4 +216,8 @@ start copy /y "_updatePublisher.new.bat" "_updatePublisher.bat" ^&^& del "_updat
 
 IF "%skipPrompts%"=="true" (
   PAUSE
+<<<<<<< HEAD
 )
+=======
+}
+>>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66

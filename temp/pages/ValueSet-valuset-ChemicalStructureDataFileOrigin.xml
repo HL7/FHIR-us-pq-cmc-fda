@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="valuset-ChemicalStructureDataFileOrigin"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C16275</td><td>Calculated</td></tr><tr><td>C133995</td><td>Experimental</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileOrigin"/>
+  <version value="current"/>
+  <name value="ChemicalStructureDataFileOrigin"/>
+  <title value="PQ/CMC Chemical Structure Data File Origin Terminology"/>
+  <status value="active"/>
+  <date value="2021-04-13T00:29:45-04:00"/>
+  <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
+  <description value="Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+  <compose>
+    <include>
+      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <concept>
+        <code value="C16275"/>
+        <display value="Calculated"/>
+      </concept>
+      <concept>
+        <code value="C133995"/>
+        <display value="Experimental"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

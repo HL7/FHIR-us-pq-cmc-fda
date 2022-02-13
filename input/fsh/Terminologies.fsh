@@ -2,10 +2,16 @@ ValueSet: PqActionRelationTypeVS
 * $ART#concurrent
 * $ART#after
 
+CodeSystem: PqcmcProductCharacteristic
+Id: codesystemPqcmcProductCharacteristic
+Description: "Codes for the type MedicinalProductDefinition.characteristic.type.  These types designate additional features that may relate to the operations"
+* ^url =  http://hl7.org/fhir/pq-cmc/codesystem/ProductCharacteristic
+* #batchsize "Batch Size"
+
 CodeSystem: PqcmcCompSectionTypes
 Id: codesystemPqcmcCompSectionTypes
 Description: "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
-
+* ^url =  http://hl7.org/fhir/pq-cmc/codesystem/SectionType
 * #32S10 "Substance General Information"
 * #32S11 "Substance Nomenclature"
 * #32S12 "Substance Structure"

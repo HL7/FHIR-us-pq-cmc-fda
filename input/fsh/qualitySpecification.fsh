@@ -117,8 +117,8 @@ Description: "A quality specificaion is for a drug product or drug substance (ex
 * action.code.text  ^short = "Analytical Procedure"
 * action.documentation 0..* MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
-* action.documentation.url 1..1 MS
-* action.documentation.url ^short = "Refernce to Procedure" //http: or file:
+* action.documentation.document.url 1..1 MS
+* action.documentation.document.url ^short = "Refernce to Procedure" //http: or file:
 * action.goalId 1..* MS
 * action.goalId ^short = "Reference to Acceptance Criteria"
 * action.relatedAction ^short = "Alternate Test or Prior Stage"
