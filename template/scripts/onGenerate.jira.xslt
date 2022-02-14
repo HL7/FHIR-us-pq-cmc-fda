@@ -91,27 +91,37 @@
       <artifactPageExtension value="-definitions"/>
       <artifactPageExtension value="-examples"/>
       <artifactPageExtension value="-mappings"/>
-      <xsl:for-each select="/root/f:ImplementationGuide/f:definition/f:resource">
-        <xsl:variable name="baseId" select="substring-after(f:reference/f:reference/@value, '/')"/>
-        <xsl:variable name="artifactId" select="concat(substring-before(f:reference/f:reference/@value, '/'), '-', $baseId)"/>
-        <xsl:variable name="name" select="f:name/@value"/>
-        <xsl:variable name="ref" select="f:reference/f:reference/@value"/>
-        <artifact name="{$name}" key="{$artifactId}" id="{$ref}">
-          <xsl:for-each select="/root/specification/artifact[@id=$artifactId or @id=$baseId or @name=$name or normalize-space(substring-before(@name, '('))=$name]">
-            <xsl:copy-of select="@*[not(local-name(.)='id')]"/>
-          </xsl:for-each>
-        </artifact>
-      </xsl:for-each>
+      <xsl:variable name="artifacts">
+        <xsl:for-each select="/root/f:ImplementationGuide/f:definition/f:resource">
+          <xsl:variable name="baseId" select="substring-after(f:reference/f:reference/@value, '/')"/>
+          <xsl:variable name="artifactId" select="concat(substring-before(f:reference/f:reference/@value, '/'), '-', $baseId)"/>
+          <xsl:variable name="name" select="f:name/@value"/>
+          <xsl:variable name="ref" select="f:reference/f:reference/@value"/>
+          <artifact name="{$name}" key="{$artifactId}" id="{$ref}">
+            <xsl:variable name="candidates" select="/root/specification/artifact[@id=$ref or @id=$baseId or @name=$name or normalize-space(substring-before(@name, '('))=$name]"/>
+            <xsl:choose>
+              <xsl:when test="count($candidates)=1">
+                <xsl:copy-of select="$candidates/@*[not(local-name(.)='id' or local-name(.)='name')]"/>
+              </xsl:when>
+              <xsl:when test="$candidates[@key=$artifactId]">
+                <xsl:copy-of select="$candidates[@key=$artifactId]/@*[not(local-name(.)='id' or local-name(.)='name')]"/>
+              </xsl:when>
+              <xsl:when test="count($candidates)!=0">
+                <xsl:message terminate="yes">
+                  <xsl:value-of select="concat('Found multiple candidates for artifact ', $artifactId, ' in previous jira-spec-info')"/>
+                  <xsl:copy-of select="$candidates"/>
+                </xsl:message>
+              </xsl:when>
+            </xsl:choose>
+          </artifact>
+        </xsl:for-each>
+      </xsl:variable>
+      <xsl:copy-of select="$artifacts"/>
       <xsl:for-each select="/root/specification/artifact">
         <xsl:variable name="key" select="@key"/>
         <xsl:variable name="keyName" select="@name"/>
         <xsl:variable name="found">
-          <xsl:for-each select="/root/f:ImplementationGuide/f:definition/f:resource">
-            <xsl:variable name="baseId" select="substring-after(f:reference/f:reference/@value, '/')"/>
-            <xsl:variable name="artifactId" select="concat(substring-before(f:reference/f:reference/@value, '/'), '-', $baseId)"/>
-            <xsl:variable name="name" select="f:name/@value"/>
-            <xsl:if test="$key=$baseId or $key=$artifactId or $keyName=$name or normalize-space(substring-before($keyName, '('))=$name">yes</xsl:if>
-          </xsl:for-each>
+          <xsl:if test="$artifacts/*[@key=$key]">yes</xsl:if>
         </xsl:variable>
         <xsl:if test="$found=''">
           <xsl:copy>

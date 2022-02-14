@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>HL7.FHIR.US.PQ-CMC\PQ/CMC Units of Measure Terminology - TTL Representation - FHIR v4.5.0</title>
+    <title>HL7.FHIR.US.PQ-CMC\PQ/CMC Units of Measure Terminology - TTL Representation - FHIR v4.6.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="fhir.css"/>
 
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
       <!-- Project extras -->
@@ -42,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.31"}
-    h3,h4,h5,h6{--heading-prefix:"4.31"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.32"}
+    h3,h4,h5,h6{--heading-prefix:"4.32"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -115,15 +114,18 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-navbar -->
       <!-- status-bar -->
+
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
           <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>PQ/CMC Units of Measure Terminology</b></li>
+
         </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
 
-    <div id="segment-content">    <!-- segment-content -->
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
@@ -181,7 +183,7 @@
 
 
 
-  <pre class="rdf"><code class="language-turtle"><a name="37d30749-f4d9-45b5-846a-18b589c00455">​</a>
+  <pre class="rdf"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
@@ -191,230 +193,230 @@
 
  a fhir:ValueSet;
   <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
-  <a href="http://build.fhir.org//valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org//datatypes.html#id">fhir:value</a> "valuset-UnitsofMeasure"];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
-     <a href="http://build.fhir.org//narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "generated" ];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> "valuset-UnitsofMeasure"];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
+     <a href="http://build.fhir.org/narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "generated" ];
      fhir:Narrative.div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\"http://unitsofmeasure.org\"&gt;&lt;code&gt;http://unitsofmeasure.org&lt;/code&gt;&lt;/a&gt;&lt;table class=\"none\"&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;%&lt;/td&gt;&lt;td&gt;percent&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;%{VolumeToVolume}&lt;/td&gt;&lt;td&gt;percent volume per volume&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;%{WeightToVolume}&lt;/td&gt;&lt;td&gt;percent weight per volume&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;%{WeightToWeight}&lt;/td&gt;&lt;td&gt;percent weight/weight&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;(m2.d)&lt;/td&gt;&lt;td&gt;meter squared in 24 hours&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[Btu]&lt;/td&gt;&lt;td&gt;British Thermal Unit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[CFU]&lt;/td&gt;&lt;td&gt;colony forming units&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[degF]&lt;/td&gt;&lt;td&gt;degree Fahrenheit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[EU]&lt;/td&gt;&lt;td&gt;Ehrlich unit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[in_i]&lt;/td&gt;&lt;td&gt;inch&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[IU]&lt;/td&gt;&lt;td&gt;international unit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[lb_av]&lt;/td&gt;&lt;td&gt;pound&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[lbf_av]&lt;/td&gt;&lt;td&gt;pound foot&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[oz_av]&lt;/td&gt;&lt;td&gt;ounce&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[pH]&lt;/td&gt;&lt;td&gt;pH&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[ppb]&lt;/td&gt;&lt;td&gt;parts per billion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[ppm]&lt;/td&gt;&lt;td&gt;parts per million&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[ppth]&lt;/td&gt;&lt;td&gt;parts per thousand&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[pptr]&lt;/td&gt;&lt;td&gt;parts per trillion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[psi]&lt;/td&gt;&lt;td&gt;pounds per square inch&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[pt_us]&lt;/td&gt;&lt;td&gt;pints (US Dry)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;[qt_us]&lt;/td&gt;&lt;td&gt;quarts (US Dry)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;{actuation}&lt;/td&gt;&lt;td&gt;actuation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;{can}&lt;/td&gt;&lt;td&gt;can&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;{tbl}&lt;/td&gt;&lt;td&gt;tablet&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;{tot}&lt;/td&gt;&lt;td&gt;particles&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;{vial}&lt;/td&gt;&lt;td&gt;vial&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a&lt;/td&gt;&lt;td&gt;year&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cel&lt;/td&gt;&lt;td&gt;degree Celsius&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cm&lt;/td&gt;&lt;td&gt;centimeter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;d&lt;/td&gt;&lt;td&gt;day&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;deg&lt;/td&gt;&lt;td&gt;degrees to rotation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;g&lt;/td&gt;&lt;td&gt;gram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;gal&lt;/td&gt;&lt;td&gt;gallon&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;h&lt;/td&gt;&lt;td&gt;hour&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;K&lt;/td&gt;&lt;td&gt;degree Kelvin&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;kg&lt;/td&gt;&lt;td&gt;kilogram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;kgf&lt;/td&gt;&lt;td&gt;kilopond&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ku&lt;/td&gt;&lt;td&gt;kiloDalton&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;L&lt;/td&gt;&lt;td&gt;liter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;m&lt;/td&gt;&lt;td&gt;meter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;m2&lt;/td&gt;&lt;td&gt;square meter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;m3&lt;/td&gt;&lt;td&gt;cubic meter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mg&lt;/td&gt;&lt;td&gt;milligram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mg%&lt;/td&gt;&lt;td&gt;milligram per 100 milliliters of solution&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;min&lt;/td&gt;&lt;td&gt;minute&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mm&lt;/td&gt;&lt;td&gt;millimeter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mmol&lt;/td&gt;&lt;td&gt;millimole&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mo&lt;/td&gt;&lt;td&gt;month&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mol&lt;/td&gt;&lt;td&gt;mole&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;mosm&lt;/td&gt;&lt;td&gt;milliosmole&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ms&lt;/td&gt;&lt;td&gt;millisiemens&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;Newton&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ng&lt;/td&gt;&lt;td&gt;nanogram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nm&lt;/td&gt;&lt;td&gt;nanometer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nmol&lt;/td&gt;&lt;td&gt;nanomole&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pg&lt;/td&gt;&lt;td&gt;picogram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pmol&lt;/td&gt;&lt;td&gt;picomole&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;rad&lt;/td&gt;&lt;td&gt;radian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;s&lt;/td&gt;&lt;td&gt;second&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;u&lt;/td&gt;&lt;td&gt;Dalton&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;u&lt;/td&gt;&lt;td&gt;atomic mass unit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;U&lt;/td&gt;&lt;td&gt;catalytic activity unit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ug&lt;/td&gt;&lt;td&gt;microgram&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;uL&lt;/td&gt;&lt;td&gt;microliter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;um&lt;/td&gt;&lt;td&gt;micrometer || micron&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;umho&lt;/td&gt;&lt;td&gt;micromhos&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;umol&lt;/td&gt;&lt;td&gt;micromole&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;wk&lt;/td&gt;&lt;td&gt;week&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
   ];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure"];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "current"];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "UnitsofMeasure"];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.title">fhir:ValueSet.title</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "PQ/CMC Units of Measure Terminology"];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "active"];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://build.fhir.org//datatypes.html#dateTime">fhir:value</a> "2021-04-13T00:29:45-04:00"^^xsd:dateTime];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.description">fhir:ValueSet.description</a> [ <a href="http://build.fhir.org//datatypes.html#markdown">fhir:value</a> "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
-  <a href="http://build.fhir.org//valueset.html#ValueSet.compose">fhir:ValueSet.compose</a> [
-     <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include">fhir:ValueSet.compose.include</a> [
+  <a href="http://build.fhir.org/valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure"];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "current"];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "UnitsofMeasure"];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.title">fhir:ValueSet.title</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "PQ/CMC Units of Measure Terminology"];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "active"];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://build.fhir.org/datatypes.html#dateTime">fhir:value</a> "2021-11-05T20:46:56-04:00"^^xsd:dateTime];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.description">fhir:ValueSet.description</a> [ <a href="http://build.fhir.org/datatypes.html#markdown">fhir:value</a> "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.compose">fhir:ValueSet.compose</a> [
+     <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include">fhir:ValueSet.compose.include</a> [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.system">fhir:ValueSet.compose.include.system</a> [ <a href="http://build.fhir.org//datatypes.html#uri">fhir:value</a> "http://unitsofmeasure.org" ];
-       <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept">fhir:ValueSet.compose.include.concept</a> [
+       <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.system">fhir:ValueSet.compose.include.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> "http://unitsofmeasure.org" ];
+       <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept">fhir:ValueSet.compose.include.concept</a> [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "%" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "percent" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "%" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "percent" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "%{VolumeToVolume}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "percent volume per volume" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "%{VolumeToVolume}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "percent volume per volume" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "%{WeightToVolume}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "percent weight per volume" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "%{WeightToVolume}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "percent weight per volume" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 3;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "%{WeightToWeight}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "percent weight/weight" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "%{WeightToWeight}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "percent weight/weight" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 4;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "(m2.d)" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "meter squared in 24 hours" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "(m2.d)" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "meter squared in 24 hours" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 5;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[Btu]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "British Thermal Unit" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[Btu]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "British Thermal Unit" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 6;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[CFU]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "colony forming units" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[CFU]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "colony forming units" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 7;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[degF]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "degree Fahrenheit" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[degF]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "degree Fahrenheit" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 8;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[EU]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "Ehrlich unit" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[EU]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "Ehrlich unit" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 9;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[in_i]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "inch" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[in_i]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "inch" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 10;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[IU]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "international unit" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[IU]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "international unit" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 11;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[lb_av]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "pound" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[lb_av]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "pound" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 12;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[lbf_av]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "pound foot" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[lbf_av]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "pound foot" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 13;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[oz_av]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "ounce" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[oz_av]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "ounce" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 14;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[pH]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "pH" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[pH]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "pH" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 15;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[ppb]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "parts per billion" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[ppb]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "parts per billion" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 16;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[ppm]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "parts per million" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[ppm]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "parts per million" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 17;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[ppth]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "parts per thousand" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[ppth]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "parts per thousand" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 18;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[pptr]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "parts per trillion" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[pptr]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "parts per trillion" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 19;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[psi]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "pounds per square inch" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[psi]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "pounds per square inch" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 20;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[pt_us]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "pints (US Dry)" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[pt_us]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "pints (US Dry)" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 21;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "[qt_us]" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "quarts (US Dry)" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "[qt_us]" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "quarts (US Dry)" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 22;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "{actuation}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "actuation" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "{actuation}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "actuation" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 23;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "{can}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "can" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "{can}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "can" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 24;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "{tbl}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "tablet" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "{tbl}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "tablet" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 25;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "{tot}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "particles" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "{tot}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "particles" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 26;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "{vial}" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "vial" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "{vial}" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "vial" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 27;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "a" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "year" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "a" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "year" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 28;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "Cel" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "degree Celsius" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "Cel" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "degree Celsius" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 29;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "cm" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "centimeter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "cm" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "centimeter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 30;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "d" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "day" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "d" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "day" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 31;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "deg" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "degrees to rotation" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "deg" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "degrees to rotation" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 32;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "g" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "gram" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "g" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "gram" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 33;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "gal" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "gallon" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "gal" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "gallon" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 34;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "h" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "hour" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "h" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "hour" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 35;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "K" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "degree Kelvin" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "K" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "degree Kelvin" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 36;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "kg" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "kilogram" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "kg" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "kilogram" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 37;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "kgf" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "kilopond" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "kgf" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "kilopond" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 38;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "ku" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "kiloDalton" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "ku" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "kiloDalton" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 39;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "L" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "liter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "L" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "liter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 40;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "m" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "meter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "m" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "meter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 41;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "m2" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "square meter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "m2" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "square meter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 42;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "m3" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "cubic meter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "m3" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "cubic meter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 43;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mg" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "milligram" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mg" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "milligram" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 44;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mg%" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "milligram per 100 milliliters of solution" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mg%" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "milligram per 100 milliliters of solution" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 45;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "min" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "minute" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "min" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "minute" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 46;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mm" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "millimeter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mm" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "millimeter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 47;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mmol" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "millimole" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mmol" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "millimole" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 48;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mo" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "month" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mo" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "month" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 49;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mol" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "mole" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mol" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "mole" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 50;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "mosm" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "milliosmole" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "mosm" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "milliosmole" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 51;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "ms" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "millisiemens" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "ms" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "millisiemens" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 52;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "N" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "Newton" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "N" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "Newton" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 53;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "ng" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "nanogram" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "ng" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "nanogram" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 54;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "nm" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "nanometer" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "nm" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "nanometer" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 55;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "nmol" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "nanomole" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "nmol" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "nanomole" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 56;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "pg" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "picogram" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "pg" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "picogram" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 57;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "pmol" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "picomole" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "pmol" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "picomole" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 58;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "rad" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "radian" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "rad" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "radian" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 59;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "s" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "second" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "s" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "second" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 60;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "u" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "Dalton" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "u" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "Dalton" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 61;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "u" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "atomic mass unit" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "u" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "atomic mass unit" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 62;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "U" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "catalytic activity unit" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "U" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "catalytic activity unit" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 63;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "ug" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "microgram" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "ug" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "microgram" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 64;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "uL" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "microliter" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "uL" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "microliter" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 65;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "um" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "micrometer || micron" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "um" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "micrometer || micron" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 66;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "umho" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "micromhos" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "umho" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "micromhos" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 67;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "umol" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "micromole" ]       ], [
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "umol" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "micromole" ]       ], [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 68;
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org//datatypes.html#code">fhir:value</a> "wk" ];
-         <a href="http://build.fhir.org//valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org//datatypes.html#string">fhir:value</a> "week" ]       ]     ]
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">fhir:ValueSet.compose.include.concept.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> "wk" ];
+         <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.display">fhir:ValueSet.compose.include.concept.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> "week" ]       ]     ]
   ].
 
 # - ontology header ------------------------------------------------------------
@@ -447,15 +449,17 @@
       }
     });
   </script>
+  <a name="bottom"> </a>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
+
       <div class="inner-wrapper">
-        <p><a name="b1f57423-8a88-4b2e-b47d-a66b23dfdb2f">​</a>
-          IG &copy; 2021+ <a style="color: #81BEF7" href="null"></a>.  Package hl7.fhir.us.pq-cmc#current based on <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR 4.5.0</a>. Generated <span title="Tue, Apr 13, 2021 00:29-0400">2021-04-13</span>
+        <p><a name="l1463">​</a>
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="null"></a>.  Package hl7.fhir.us.pq-cmc#current based on <a style="color: var(--footer-hyperlink-text-color)" href="http://build.fhir.org/">FHIR 4.6.0</a>. Generated <span title="Fri, Nov 5, 2021 20:46-0400">2021-11-05</span>
           <br/>
-          <span style="color: #FFFF77">
-                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
-                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                  
                 
                | <a style="color: #81BEF7" href="https://www.hl7.org/fhir/us-pq-cmc/history.html" target="_blank">Version History  |
@@ -496,4 +500,5 @@ anchors.add()</script>
   ================================================== -->
   
 
-</a></a></span></p></div></div></div></body></html>
+
+</a></a></p></div></div></div></body></html>

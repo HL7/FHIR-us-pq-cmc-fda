@@ -11,9 +11,6 @@
 
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-<<<<<<< HEAD
-    <a href="index.html">Home</a>
-=======
     <a href="toc.html">Table of Contents</a>
   </li>
   <li class="dropdown">
@@ -31,7 +28,6 @@
         <a href="credits.html">Credits</a>
       </li>
     </ul>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>

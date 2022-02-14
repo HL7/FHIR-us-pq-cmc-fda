@@ -9,14 +9,28 @@
   "version": "current",
   "name": "PharmaceuticalQualityImplementationGuide",
   "status": "draft",
-  "date": "2021-04-13T00:29:45-04:00",
+  "date": "2021-11-05T20:46:56-04:00",
   "packageId": "hl7.fhir.us.pq-cmc",
   "license": "CC0-1.0",
   "fhirVersion": [
-    "4.5.0"
+    "4.6.0"
   ],
   "definition": {
     "resource": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/pqcmc-DrugSubstance"
+        },
+        "name": "Drug Substance",
+        "description": "E",
+        "exampleBoolean": false
+      },
       {
         "extension": [
           {
@@ -449,20 +463,6 @@
         },
         "name": "PQ/CMC Units of Measure Terminology",
         "description": "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
-          }
-        ],
-        "reference": {
-          "reference": "CodeSystem/sectionType"
-        },
-        "name": "Composition Section Type",
-        "description": "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes.",
         "exampleBoolean": false
       }
     ],

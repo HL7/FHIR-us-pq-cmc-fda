@@ -1,58 +1,21 @@
 {
   "path": "http://build.fhir.org/",
-<<<<<<< HEAD
-  "canonical": "http://example.org",
-  "igId": "pqcmc_ig",
-  "igName": "pqcmcsushi",
-  "packageId": "pqcmc_ig",
-  "igVer": "0.1.0",
-  "errorCount": 29,
+  "canonical": "https://www.hl7.org/fhir/us-pq-cmc",
+  "igId": "hl7.fhir.us.pq-cmc",
+  "igName": "PharmaceuticalQualityImplementationGuide",
+  "packageId": "hl7.fhir.us.pq-cmc",
+  "igVer": "current",
+  "errorCount": 4,
   "version": "4.6.0",
   "revision": "bbafc66",
   "versionFull": "4.6.0-bbafc66",
   "toolingVersion": "4.6.0",
   "toolingRevision": "3",
   "toolingVersionFull": "4.6.0 (3)",
-  "totalFiles": 43,
-  "processedFiles": 50,
-  "genDate": "Tue, Dec 7, 2021 01:03-0500",
-  "genDay": "07/12/2021",
-  "ig": {
-    "id": "pqcmc_ig",
-    "name": "pqcmcsushi",
-    "url": "http://example.org/ImplementationGuide/pqcmc_ig",
-    "version": "0.1.0",
-    "status": "draft",
-    "experimental": false,
-    "publisher": "Example Publisher",
-    "gitstatus": "",
-    "contact": [
-      {
-        "name": "Example Publisher",
-        "telecom": [
-          "http://example.org/example-publisher"
-        ]
-      }
-    ],
-    "date": "2021-12-07T01:03:31-05:00",
-    "fhirVersion": "4.6.0"
-=======
-  "canonical": "https://www.hl7.org/fhir/us-pq-cmc",
-  "igId": "hl7.fhir.us.pq-cmc",
-  "igName": "PharmaceuticalQualityImplementationGuide",
-  "packageId": "hl7.fhir.us.pq-cmc",
-  "igVer": "current",
-  "errorCount": 1,
-  "version": "4.5.0",
-  "revision": "d607c37d",
-  "versionFull": "4.5.0-d607c37d",
-  "toolingVersion": "4.5.0",
-  "toolingRevision": "3",
-  "toolingVersionFull": "4.5.0 (3)",
   "totalFiles": 33,
   "processedFiles": 45,
-  "genDate": "Tue, Apr 13, 2021 00:29-0400",
-  "genDay": "13/04/2021",
+  "genDate": "Fri, Nov 5, 2021 20:46-0400",
+  "genDay": "05/11/2021",
   "ig": {
     "id": "hl7.fhir.us.pq-cmc",
     "name": "PharmaceuticalQualityImplementationGuide",
@@ -60,9 +23,8 @@
     "version": "current",
     "status": "draft",
     "experimental": false,
-    "gitstatus": "",
-    "date": "2021-04-13T00:29:45-04:00",
-    "fhirVersion": "4.5.0"
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
+    "gitstatus": "master",
+    "date": "2021-11-05T20:46:56-04:00",
+    "fhirVersion": "4.6.0"
   }
 }

@@ -9,11 +9,22 @@
   <version value="current"/>
   <name value="PharmaceuticalQualityImplementationGuide"/>
   <status value="draft"/>
-  <date value="2021-04-13T00:29:45-04:00"/>
+  <date value="2021-11-05T20:46:56-04:00"/>
   <packageId value="hl7.fhir.us.pq-cmc"/>
   <license value="CC0-1.0"/>
-  <fhirVersion value="4.5.0"/>
+  <fhirVersion value="4.6.0"/>
   <definition>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pqcmc-DrugSubstance"/>
+      </reference>
+      <name value="Drug Substance"/>
+      <description value="E"/>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
@@ -353,17 +364,6 @@
       </reference>
       <name value="PQ/CMC Units of Measure Terminology"/>
       <description value="Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/sectionType"/>
-      </reference>
-      <name value="Composition Section Type"/>
-      <description value="Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

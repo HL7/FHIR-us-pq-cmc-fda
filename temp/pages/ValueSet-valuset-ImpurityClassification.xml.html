@@ -19,7 +19,7 @@
   {% assign example = 'Example ' %}
 {% endif %}
 {% assign prefix = site.data.artifacts[page.path].type %}
-<h2 id="root">{{example}}{{prefix}}: {{site.data.pages[page.path].title}}</h2>
+<h2 id="root">{{example}}{{prefix}}: {{site.data.pages[page.path].title | escape_once}}</h2>
 
 <p><a href="ValueSet-valuset-ImpurityClassification.xml" no-download="true">Raw xml</a> | <a href="ValueSet-valuset-ImpurityClassification.xml" download>Download</a></p>
 

@@ -3,19 +3,19 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="valuset-SourceType"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C14182</td><td>Animal</td></tr><tr><td>C18634</td><td>Animal-derived indirectly</td></tr><tr><td>C48807</td><td>Chemical</td></tr><tr><td>C14225</td><td>Human</td></tr><tr><td>C14227</td><td>Insect</td></tr><tr><td>C14329</td><td>Microbial</td></tr><tr><td>C14258</td><td>Plant</td></tr></table></li></ul></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C14182</td><td>Animal</td></tr><tr><td>C18634</td><td>Animal-derived indirectly</td></tr><tr><td>C48807</td><td>Chemical</td></tr><tr><td>C14225</td><td>Human</td></tr><tr><td>C14227</td><td>Insect</td></tr><tr><td>C14329</td><td>Microbial</td></tr><tr><td>C14258</td><td>Plant</td></tr></table></li></ul></div>
   </text>
   <url value="https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SourceType"/>
   <version value="current"/>
   <name value="SourceType"/>
   <title value="PQ/CMC Source Type Terminology"/>
   <status value="active"/>
-  <date value="2021-04-13T00:29:45-04:00"/>
+  <date value="2021-11-05T20:46:56-04:00"/>
   <publisher value="Food and Drug Administration (FDA) and the National Cancer Institute&#39;s Thesaurus (NCIt)"/>
   <description value="Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
   <compose>
     <include>
-      <system value="urn:oid:2.16.840.1.113883.3.26.1.1"/>
+      <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
       <concept>
         <code value="C14182"/>
         <display value="Animal"/>

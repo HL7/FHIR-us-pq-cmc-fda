@@ -19,11 +19,7 @@
   {% assign example = 'Example ' %}
 {% endif %}
 {% assign prefix = site.data.artifacts[page.path].type %}
-<<<<<<< HEAD
 <h2 id="root">{{example}}{{prefix}}: {{site.data.pages[page.path].title | escape_once}}</h2>
-=======
-<h2 id="root">{{example}}{{prefix}}: {{site.data.pages[page.path].title}}</h2>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 
 <p><a href="{{[type]}}-{{[id]}}.{{[fmt]}}" no-download="true">Raw {{[fmt]}}</a> | <a href="{{[type]}}-{{[id]}}.{{[fmt]}}" download>Download</a></p>
 

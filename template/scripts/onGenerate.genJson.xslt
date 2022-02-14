@@ -34,7 +34,6 @@
         <xsl:with-param name="property" select="'excludemap'"/>
       </xsl:call-template>
     </xsl:variable>
-<<<<<<< HEAD
     <xsl:variable name="shownav">
       <xsl:call-template name="getBoolean">
         <xsl:with-param name="boolean" select="f:definition/f:parameter[f:code/@value='shownav']/f:value/@value"/>
@@ -45,11 +44,6 @@
     '  &quot;releaselabel&quot;:&quot;', $releaselabel, '&quot;,&#xa;',
     '  &quot;copyrightyear&quot;:&quot;', $copyrightyear, '&quot;,&#xa;',
     '  &quot;shownav&quot;:&quot;', $shownav, '&quot;,&#xa;',
-=======
-    <xsl:value-of select="concat('{&#xa;',
-    '  &quot;releaselabel&quot;:&quot;', $releaselabel, '&quot;,&#xa;',
-    '  &quot;copyrightyear&quot;:&quot;', $copyrightyear, '&quot;,&#xa;',
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     '  &quot;excludexml&quot;:&quot;', $excludexml, '&quot;,&#xa;',
     '  &quot;excludejson&quot;:&quot;', $excludejson, '&quot;,&#xa;',
     '  &quot;excludettl&quot;:&quot;', $excludettl, '&quot;,&#xa;',

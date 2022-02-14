@@ -5,26 +5,10 @@
    <p>Contents:</p>
    <ul>
       <li>
-<<<<<<< HEAD
-         <a href="#1">Structures: Abstract Profiles</a>
+         <a href="#1">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#2">Structures: Resource Profiles</a>
-      </li>
-      <li>
-         <a href="#3">Structures: Data Type Profiles</a>
-      </li>
-      <li>
-         <a href="#4">Terminology: Value Sets</a>
-      </li>
-      <li>
-         <a href="#5">Terminology: Code Systems</a>
-=======
-         <a href="#1">Terminology: Value Sets</a>
-      </li>
-      <li>
-         <a href="#2">Terminology: Code Systems</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
+         <a href="#2">Terminology: Value Sets</a>
       </li>
    </ul>
 </div>
@@ -33,34 +17,6 @@
      xmlns:f="http://hl7.org/fhir">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
-<<<<<<< HEAD
-   <h3>Structures: Abstract Profiles </h3>
-   <p>{% capture grouping_desc %}These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles *based* on these abstract profiles, but do not declare conformance to the abstract profiles themselves.{% endcapture %}
-    {{ grouping_desc | markdownify}}</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-MfgTestSiteOrganization.html"
-                     title="StructureDefinition/MfgTestSiteOrganization">MfgTestSiteOrganization</a>
-               </td>
-               <td>{% capture desc %}A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-SponsorOrganization.html"
-                     title="StructureDefinition/SponsorOrganization">SponsorOrganization</a>
-               </td>
-               <td>{% capture desc %}A profile for the data elements required to identify the sponsor of the drug products or substances.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
    <p>{% capture grouping_desc %}These define constraints on FHIR resources for systems conforming to this implementation guide{% endcapture %}
     {{ grouping_desc | markdownify}}</p>
@@ -70,85 +26,16 @@
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-Base64DocumentReference.html"
-                     title="StructureDefinition/Base64DocumentReference">Base64DocumentReference</a>
-               </td>
-               <td>{% capture desc %}A profile that represents the document or diagram in base64.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-pqcmc-ComponentSubstance.html"
-                     title="StructureDefinition/pqcmc-ComponentSubstance">Component Substance</a>
-               </td>
-               <td>{% capture desc %}Any raw material intended for use int he manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-pqcmc-DrugProduct.html"
-                     title="StructureDefinition/pqcmc-DrugProduct">Drug Product</a>
-               </td>
-               <td>{% capture desc %}Includes the properties of the drug product, its components and impurities{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-pqcmc-DrugProductInstance.html"
-                     title="StructureDefinition/pqcmc-DrugProductInstance">Drug Product Manufactured Instance</a>
-               </td>
-               <td>{% capture desc %}Includes the properties of the drug product as manufactured.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="StructureDefinition-pqcmc-DrugSubstance.html"
                      title="StructureDefinition/pqcmc-DrugSubstance">Drug Substance</a>
                </td>
-               <td>{% capture desc %}Drug Substance (Active Ingredient) nomenclature and characterizaiton{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-pqcmc-DrugSubstanceImpurity.html"
-                     title="StructureDefinition/pqcmc-DrugSubstanceImpurity">Drug Substance Impurity</a>
-               </td>
-               <td>{% capture desc %}Any component of the drug substance that is not the chemical entity.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-pqcmc-PolymorphicForm.html"
-                     title="StructureDefinition/pqcmc-PolymorphicForm">Polymorphic Form</a>
-               </td>
-               <td>{% capture desc %}Alternate structure present inf the drug substance{% endcapture %}
+               <td>{% capture desc %}E{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
          </tbody>
       </table>
    </p>
-   <a name="3"> </a>
-   <h3>Structures: Data Type Profiles </h3>
-   <p>{% capture grouping_desc %}These define constraints on FHIR data types for systems conforming to this implementation guide{% endcapture %}
-    {{ grouping_desc | markdownify}}</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-PqAddress.html"
-                     title="StructureDefinition/PqAddress">PqAddress</a>
-               </td>
-               <td>{% capture desc %}pq-specific Constraints on the Address datatype dealing with US addresses.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="4"> </a>
-=======
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
+   <a name="2"> </a>
    <h3>Terminology: Value Sets </h3>
    <p>{% capture grouping_desc %}These define sets of codes used by systems conforming to this implementation guide{% endcapture %}
     {{ grouping_desc | markdownify}}</p>
@@ -158,10 +45,6 @@
          <tbody>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccBatchUtilizationTerminology.html"
-                     title="ValueSet/vsPqcmccBatchUtilizationTerminology">PqcmcCBatchUtilizationTerminology</a>
-=======
                   <a href="ValueSet-valuset-ApplicationSubmissionType.html"
                      title="ValueSet/valuset-ApplicationSubmissionType">PQ/CMC Application Submission Type Terminology</a>
                </td>
@@ -180,175 +63,108 @@
                <td style="column-width:30%">
                   <a href="ValueSet-valuset-BatchUtilization.html"
                      title="ValueSet/valuset-BatchUtilization">PQ/CMC Batch Utilization Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccChemicalStructureDataFileOriginTerminology.html"
-                     title="ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology">PqcmcCChemicalStructureDataFileOriginTerminology</a>
-=======
                   <a href="ValueSet-valuset-ChemicalStructureDataFileOrigin.html"
                      title="ValueSet/valuset-ChemicalStructureDataFileOrigin">PQ/CMC Chemical Structure Data File Origin Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccChemicalStructureDataFileTypeTerminology.html"
-                     title="ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology">PqcmcCChemicalStructureDataFileTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-ChemicalStructureDataFileType.html"
                      title="ValueSet/valuset-ChemicalStructureDataFileType">PQ/CMC Chemical Structure Data File Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccClosureTypeTerminology.html"
-                     title="ValueSet/vsPqcmccClosureTypeTerminology">PqcmcClosureTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-ClosureType.html"
                      title="ValueSet/valuset-ClosureType">PQ/CMC Closure Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccCoPackagedIndicatorTerminology.html"
-                     title="ValueSet/vsPqcmccCoPackagedIndicatorTerminology">PqcmcCoPackagedIndicatorTerminology</a>
-               </td>
-               <td>{% capture desc %}Terminology used to qualify the information pertaining to copackaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
-=======
                   <a href="ValueSet-valuset-CoPackagedIndicator.html"
                      title="ValueSet/valuset-CoPackagedIndicator">PQ/CMC Co-Packaged Indicator Terminology</a>
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to co-packaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccConformancetoCriteriaTerminology.html"
-                     title="ValueSet/vsPqcmccConformancetoCriteriaTerminology">PqcmcConformanceCriteriaTerminology</a>
-=======
                   <a href="ValueSet-valuset-ConformancetoCriteria.html"
                      title="ValueSet/valuset-ConformancetoCriteria">PQ/CMC Conformance to Criteria Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccContainerOrientationTerminology.html"
-                     title="ValueSet/vsPqcmccContainerOrientationTerminology">PqcmcContainerOrientationTerminology</a>
-=======
                   <a href="ValueSet-valuset-ContainerOrientation.html"
                      title="ValueSet/valuset-ContainerOrientation">PQ/CMC Container Orientation Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccContainerTypeTerminology.html"
-                     title="ValueSet/vsPqcmccContainerTypeTerminology">PqcmcContainerTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-ContainerType.html"
                      title="ValueSet/valuset-ContainerType">PQ/CMC Container Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccDrugProductComponentFunctionCategoryTerminology.html"
-                     title="ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology">PqcmcDrugProductComponentFunctionCategoryTerminology</a>
-=======
                   <a href="ValueSet-valuset-DrugProductComponentFunctionCategory.html"
                      title="ValueSet/valuset-DrugProductComponentFunctionCategory">PQ/CMC Drug Product Component Function Category Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccDrugSubstanceProductIndicatorTerminology.html"
-                     title="ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology">PqcmcDrugSubstanceProductIndicatorTerminology</a>
-=======
                   <a href="ValueSet-valuset-DrugSubstanceProductIndicator.html"
                      title="ValueSet/valuset-DrugSubstanceProductIndicator">PQ/CMC Drug Substance Product Indicator Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to drug substance product indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccExcipientFunctionTerminology.html"
-                     title="ValueSet/vsPqcmccExcipientFunctionTerminology">PqcmcExcipientFunctionTerminology</a>
-=======
                   <a href="ValueSet-valuset-ExcipientFunction.html"
                      title="ValueSet/valuset-ExcipientFunction">PQ/CMC Excipient Function Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccImpurityClassificationTerminology.html"
-                     title="ValueSet/vsPqcmccImpurityClassificationTerminology">PqcmcImpurityClassificationTerminology</a>
-=======
                   <a href="ValueSet-valuset-ImpurityClassification.html"
                      title="ValueSet/valuset-ImpurityClassification">PQ/CMC Impurity Classification Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccInterpretationCodeTerminology.html"
-                     title="ValueSet/vsPqcmccInterpretationCodeTerminology">PqcmcInterpretationCodeTerminology</a>
-=======
                   <a href="ValueSet-valuset-InterpretationCodeNumeric.html"
                      title="ValueSet/valuset-InterpretationCodeNumeric">PQ/CMC Interpretation Code (numeric) Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccProcessRelatedImpurityCategoryTerminology.html"
-                     title="ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology">PqcmcProcessRelatedImpurityCategoryTerminology</a>
-=======
                   <a href="ValueSet-valuset-InterpretationCodeText.html"
                      title="ValueSet/valuset-InterpretationCodeText">PQ/CMC Interpretation Code (text) Terminology</a>
                </td>
@@ -359,180 +175,108 @@
                <td style="column-width:30%">
                   <a href="ValueSet-valuset-ProcessRelatedImpurityCategory.html"
                      title="ValueSet/valuset-ProcessRelatedImpurityCategory">PQ/CMC Process Related Impurity Category Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccProductRelatedImpurityCategoryTerminology.html"
-                     title="ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology">PqcmcProductRelatedImpurityCategoryTerminology</a>
-=======
                   <a href="ValueSet-valuset-ProductRelatedImpurityCategory.html"
                      title="ValueSet/valuset-ProductRelatedImpurityCategory">PQ/CMC Product Related Impurity Category Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccQualityBenchmarkTerminology.html"
-                     title="ValueSet/vsPqcmccQualityBenchmarkTerminology">PqcmcQualityBenchmarkTerminology</a>
-=======
                   <a href="ValueSet-valuset-QualityBenchmark.html"
                      title="ValueSet/valuset-QualityBenchmark">PQ/CMC Quality Benchmark Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccSourceTypeTerminology.html"
-                     title="ValueSet/vsPqcmccSourceTypeTerminology">PqcmcSourceTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-SourceType.html"
                      title="ValueSet/valuset-SourceType">PQ/CMC Source Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccSpecificationStatusTerminology.html"
-                     title="ValueSet/vsPqcmccSpecificationStatusTerminology">PqcmcSpecificationStatusTerminology</a>
-=======
                   <a href="ValueSet-valuset-SpecificationStatus.html"
                      title="ValueSet/valuset-SpecificationStatus">PQ/CMC Specification Status Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccSpecificationTypeTerminology.html"
-                     title="ValueSet/vsPqcmccSpecificationTypeTerminology">PqcmcSpecificationTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-SpecificationType.html"
                      title="ValueSet/valuset-SpecificationType">PQ/CMC Specification Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccSponsorIdentifierTypeTerminology.html"
-                     title="ValueSet/vsPqcmccSponsorIdentifierTypeTerminology">PqcmcSponsorIdentifierTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-SponsorIdentifierType.html"
                      title="ValueSet/valuset-SponsorIdentifierType">PQ/CMC Sponsor Identifier Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccStorageConditionsTerminology.html"
-                     title="ValueSet/vsPqcmccStorageConditionsTerminology">PqcmcStorageConditionsTerminology</a>
-=======
                   <a href="ValueSet-valuset-StorageConditions.html"
                      title="ValueSet/valuset-StorageConditions">PQ/CMC Storage Conditions Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccStrengthOperatorTerminology.html"
-                     title="ValueSet/vsPqcmccStrengthOperatorTerminology">PqcmcStrengthOperatorTerminology</a>
-=======
                   <a href="ValueSet-valuset-StrengthOperator.html"
                      title="ValueSet/valuset-StrengthOperator">PQ/CMC Strength Operator Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccStrengthTypeTerminology.html"
-                     title="ValueSet/vsPqcmccStrengthTypeTerminology">PqcmcStrengthTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-StrengthType.html"
                      title="ValueSet/valuset-StrengthType">PQ/CMC Strength Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccTestCategoryTerminology.html"
-                     title="ValueSet/vsPqcmccTestCategoryTerminology">PqcmcTestCategoryTerminology</a>
-=======
                   <a href="ValueSet-valuset-TestCategory.html"
                      title="ValueSet/valuset-TestCategory">PQ/CMC Test Category Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccTestMethodOriginTerminology.html"
-                     title="ValueSet/vsPqcmccTestMethodOriginTerminology">PqcmcTestMethodOriginTerminology</a>
-               </td>
-               <td>{% capture desc %}Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-vsPqcmccTestUsageTerminology.html"
-                     title="ValueSet/vsPqcmccTestUsageTerminology">PqcmcTestUsageTerminology</a>
-=======
                   <a href="ValueSet-valuset-TestMethodOrigin.html"
                      title="ValueSet/valuset-TestMethodOrigin">PQ/CMC Test Usage Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology.html"
-                     title="ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology">PqcmcTestingSiteUniqueIdentifierTypeTerminology</a>
-=======
                   <a href="ValueSet-valuset-TestUsage.html"
                      title="ValueSet/valuset-TestUsage">PQ/CMC Testing Site Unique Identifier Type Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="ValueSet-vsUnitsMeasure.html" title="ValueSet/vsUnitsMeasure">PQ/CMC Units of MeasureTerminology</a>
-=======
                   <a href="ValueSet-valuset-TestingSiteUniqueIdentifierType.html"
                      title="ValueSet/valuset-TestingSiteUniqueIdentifierType">PQ/CMC Test Method Origin Terminology</a>
                </td>
@@ -543,63 +287,8 @@
                <td style="column-width:30%">
                   <a href="ValueSet-valuset-UnitsofMeasure.html"
                      title="ValueSet/valuset-UnitsofMeasure">PQ/CMC Units of Measure Terminology</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
                </td>
                <td>{% capture desc %}Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-<<<<<<< HEAD
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-vsPqcmccUnitsofMeasureTerminology.html"
-                     title="ValueSet/vsPqcmccUnitsofMeasureTerminology">PqcmcUnitsMeasureTerminology</a>
-               </td>
-               <td>{% capture desc %}Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-vsPqcmccValidationParameterTerminology.html"
-                     title="ValueSet/vsPqcmccValidationParameterTerminology">PqcmcValidationParameterTerminology</a>
-               </td>
-               <td>{% capture desc %}Terminology used to qualify the information pertaining to validation parameters in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="ValueSet-vsSPLPharmaceuticalDosageFormTerminology.html"
-                     title="ValueSet/vsSPLPharmaceuticalDosageFormTerminology">SplPharmaceuticalDosageFormTerminology</a>
-               </td>
-               <td>{% capture desc %}Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents.{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="5"> </a>
-=======
-         </tbody>
-      </table>
-   </p>
-   <a name="2"> </a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
-   <h3>Terminology: Code Systems </h3>
-   <p>{% capture grouping_desc %}These define new code systems used by systems conforming to this implementation guide{% endcapture %}
-    {{ grouping_desc | markdownify}}</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-<<<<<<< HEAD
-                  <a href="CodeSystem-codesystemPqcmccCompSectionTypes.html"
-                     title="CodeSystem/codesystemPqcmccCompSectionTypes">PqcmccCompSectionTypes</a>
-=======
-                  <a href="CodeSystem-sectionType.html" title="CodeSystem/sectionType">Composition Section Type</a>
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
-               </td>
-               <td>{% capture desc %}Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes.{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
          </tbody>

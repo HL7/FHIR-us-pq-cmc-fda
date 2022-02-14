@@ -12,7 +12,7 @@ RuleSet: DUNSandFEINumber
 * identifier contains FEINumber 0..1 MS
 * identifier[FEINumber].system = $FEINumber
 * identifier[FEINumber] obeys pq-1.1.1
-//Lloyd - they need to provide at least one. Does this do it?
+
 
 Profile: SponsorOrganization
 Parent: Organization

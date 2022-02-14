@@ -1,678 +1,40 @@
 {
-<<<<<<< HEAD
-  "ImplementationGuide/pqcmc_ig": {
+  "ImplementationGuide/hl7.fhir.us.pq-cmc": {
     "history": false,
     "index": 0,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\ImplementationGuide-pqcmc_ig.json",
-    "url": "http://example.org/ImplementationGuide/pqcmc_ig",
-    "name": "pqcmcsushi",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\ImplementationGuide-hl7.fhir.us.pq-cmc.json",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
+    "name": "PharmaceuticalQualityImplementationGuide",
+    "version": "current",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colsd",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
       "status": "Draft"
-    }
-  },
-  "StructureDefinition/Base64DocumentReference": {
-    "history": false,
-    "index": 1,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-Base64DocumentReference.json",
-    "url": "http://example.org/StructureDefinition/Base64DocumentReference",
-    "name": "Base64DocumentReference",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/pqcmc-ComponentSubstance": {
-    "history": false,
-    "index": 2,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-ComponentSubstance.json",
-    "url": "http://example.org/StructureDefinition/pqcmc-ComponentSubstance",
-    "name": "ComponentSubstance",
-    "title": "Component Substance",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/pqcmc-DrugProduct": {
-    "history": false,
-    "index": 3,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugProduct.json",
-    "url": "http://example.org/StructureDefinition/pqcmc-DrugProduct",
-    "name": "DrugProduct",
-    "title": "Drug Product",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/pqcmc-DrugProductInstance": {
-    "history": false,
-    "index": 4,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugProductInstance.json",
-    "url": "http://example.org/StructureDefinition/pqcmc-DrugProductInstance",
-    "name": "DrugProductInstance",
-    "title": "Drug Product Manufactured Instance",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
     }
   },
   "StructureDefinition/pqcmc-DrugSubstance": {
     "history": false,
-    "index": 5,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugSubstance.json",
-    "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstance",
+    "index": 1,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugSubstance.json",
+    "url": "https://www.hl7.org/fhir/us-pq-cmc/StructureDefinition/pqcmc-DrugSubstance",
     "name": "DrugSubstance",
     "title": "Drug Substance",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/pqcmc-DrugSubstanceImpurity": {
-    "history": false,
-    "index": 6,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-DrugSubstanceImpurity.json",
-    "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstanceImpurity",
-    "name": "DrugSubstanceImpurity",
-    "title": "Drug Substance Impurity",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/MfgTestSiteOrganization": {
-    "history": false,
-    "index": 7,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-MfgTestSiteOrganization.json",
-    "url": "http://example.org/StructureDefinition/MfgTestSiteOrganization",
-    "name": "MfgTestSiteOrganization",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/pqcmc-PolymorphicForm": {
-    "history": false,
-    "index": 8,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-pqcmc-PolymorphicForm.json",
-    "url": "http://example.org/StructureDefinition/pqcmc-PolymorphicForm",
-    "name": "PolymorphicForm",
-    "title": "Polymorphic Form",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/PqAddress": {
-    "history": false,
-    "index": 9,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-PqAddress.json",
-    "url": "http://example.org/StructureDefinition/PqAddress",
-    "name": "PqAddress",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "StructureDefinition/SponsorOrganization": {
-    "history": false,
-    "index": 10,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\structuredefinition-SponsorOrganization.json",
-    "url": "http://example.org/StructureDefinition/SponsorOrganization",
-    "name": "SponsorOrganization",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccBatchUtilizationTerminology": {
-    "history": false,
-    "index": 11,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccBatchUtilizationTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccBatchUtilizationTerminology",
-    "name": "PqcmcCBatchUtilizationTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology": {
-    "history": false,
-    "index": 12,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccChemicalStructureDataFileOriginTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccChemicalStructureDataFileOriginTerminology",
-    "name": "PqcmcCChemicalStructureDataFileOriginTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology": {
-    "history": false,
-    "index": 13,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccChemicalStructureDataFileTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccChemicalStructureDataFileTypeTerminology",
-    "name": "PqcmcCChemicalStructureDataFileTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccClosureTypeTerminology": {
-    "history": false,
-    "index": 14,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccClosureTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccClosureTypeTerminology",
-    "name": "PqcmcClosureTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccCoPackagedIndicatorTerminology": {
-    "history": false,
-    "index": 15,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccCoPackagedIndicatorTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccCoPackagedIndicatorTerminology",
-    "name": "PqcmcCoPackagedIndicatorTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccConformancetoCriteriaTerminology": {
-    "history": false,
-    "index": 16,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccConformancetoCriteriaTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccConformancetoCriteriaTerminology",
-    "name": "PqcmcConformanceCriteriaTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccContainerOrientationTerminology": {
-    "history": false,
-    "index": 17,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccContainerOrientationTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccContainerOrientationTerminology",
-    "name": "PqcmcContainerOrientationTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccContainerTypeTerminology": {
-    "history": false,
-    "index": 18,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccContainerTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccContainerTypeTerminology",
-    "name": "PqcmcContainerTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology": {
-    "history": false,
-    "index": 19,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccDrugProductComponentFunctionCategoryTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccDrugProductComponentFunctionCategoryTerminology",
-    "name": "PqcmcDrugProductComponentFunctionCategoryTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology": {
-    "history": false,
-    "index": 20,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccDrugSubstanceProductIndicatorTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccDrugSubstanceProductIndicatorTerminology",
-    "name": "PqcmcDrugSubstanceProductIndicatorTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccExcipientFunctionTerminology": {
-    "history": false,
-    "index": 21,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccExcipientFunctionTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccExcipientFunctionTerminology",
-    "name": "PqcmcExcipientFunctionTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccImpurityClassificationTerminology": {
-    "history": false,
-    "index": 22,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccImpurityClassificationTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccImpurityClassificationTerminology",
-    "name": "PqcmcImpurityClassificationTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccInterpretationCodeTerminology": {
-    "history": false,
-    "index": 23,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccInterpretationCodeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccInterpretationCodeTerminology",
-    "name": "PqcmcInterpretationCodeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology": {
-    "history": false,
-    "index": 24,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccProcessRelatedImpurityCategoryTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccProcessRelatedImpurityCategoryTerminology",
-    "name": "PqcmcProcessRelatedImpurityCategoryTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology": {
-    "history": false,
-    "index": 25,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccProductRelatedImpurityCategoryTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccProductRelatedImpurityCategoryTerminology",
-    "name": "PqcmcProductRelatedImpurityCategoryTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccQualityBenchmarkTerminology": {
-    "history": false,
-    "index": 26,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccQualityBenchmarkTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccQualityBenchmarkTerminology",
-    "name": "PqcmcQualityBenchmarkTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccSourceTypeTerminology": {
-    "history": false,
-    "index": 27,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSourceTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccSourceTypeTerminology",
-    "name": "PqcmcSourceTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccSpecificationStatusTerminology": {
-    "history": false,
-    "index": 28,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSpecificationStatusTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccSpecificationStatusTerminology",
-    "name": "PqcmcSpecificationStatusTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccSpecificationTypeTerminology": {
-    "history": false,
-    "index": 29,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSpecificationTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccSpecificationTypeTerminology",
-    "name": "PqcmcSpecificationTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccSponsorIdentifierTypeTerminology": {
-    "history": false,
-    "index": 30,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccSponsorIdentifierTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccSponsorIdentifierTypeTerminology",
-    "name": "PqcmcSponsorIdentifierTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccStorageConditionsTerminology": {
-    "history": false,
-    "index": 31,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccStorageConditionsTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccStorageConditionsTerminology",
-    "name": "PqcmcStorageConditionsTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccStrengthOperatorTerminology": {
-    "history": false,
-    "index": 32,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccStrengthOperatorTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccStrengthOperatorTerminology",
-    "name": "PqcmcStrengthOperatorTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccStrengthTypeTerminology": {
-    "history": false,
-    "index": 33,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccStrengthTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccStrengthTypeTerminology",
-    "name": "PqcmcStrengthTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccTestCategoryTerminology": {
-    "history": false,
-    "index": 34,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestCategoryTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccTestCategoryTerminology",
-    "name": "PqcmcTestCategoryTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccTestMethodOriginTerminology": {
-    "history": false,
-    "index": 35,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestMethodOriginTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccTestMethodOriginTerminology",
-    "name": "PqcmcTestMethodOriginTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccTestUsageTerminology": {
-    "history": false,
-    "index": 36,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestUsageTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccTestUsageTerminology",
-    "name": "PqcmcTestUsageTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology": {
-    "history": false,
-    "index": 37,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccTestingSiteUniqueIdentifierTypeTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccTestingSiteUniqueIdentifierTypeTerminology",
-    "name": "PqcmcTestingSiteUniqueIdentifierTypeTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsUnitsMeasure": {
-    "history": false,
-    "index": 38,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsUnitsMeasure.json",
-    "url": "http://example.org/ValueSet/vsUnitsMeasure",
-    "name": "PqcmcUnitsMeasure",
-    "title": "PQ/CMC Units of MeasureTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccUnitsofMeasureTerminology": {
-    "history": false,
-    "index": 39,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccUnitsofMeasureTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccUnitsofMeasureTerminology",
-    "name": "PqcmcUnitsMeasureTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsPqcmccValidationParameterTerminology": {
-    "history": false,
-    "index": 40,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsPqcmccValidationParameterTerminology.json",
-    "url": "http://example.org/ValueSet/vsPqcmccValidationParameterTerminology",
-    "name": "PqcmcValidationParameterTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "ValueSet/vsSPLPharmaceuticalDosageFormTerminology": {
-    "history": false,
-    "index": 41,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\valueset-vsSPLPharmaceuticalDosageFormTerminology.json",
-    "url": "http://example.org/ValueSet/vsSPLPharmaceuticalDosageFormTerminology",
-    "name": "SplPharmaceuticalDosageFormTerminology",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-    }
-  },
-  "CodeSystem/codesystemPqcmccCompSectionTypes": {
-    "history": false,
-    "index": 42,
-    "source": "C:\\pqcmcsushi\\fsh-generated\\resources\\codesystem-codesystemPqcmccCompSectionTypes.json",
-    "url": "http://example.org/CodeSystem/codesystemPqcmccCompSectionTypes",
-    "name": "PqcmccCompSectionTypes",
-    "version": "0.1.0",
-    "date": "2021-12-07T01:03:31-05:00",
-    "status": {
-      "class": "colstu",
-      "owner": "Example Publisher",
-      "link": "http://example.org/example-publisher",
-      "status": "Active"
-=======
-  "ImplementationGuide/hl7.fhir.us.pq-cmc": {
-    "history": false,
-    "index": 0,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\ImplementationGuide-hl7.fhir.us.pq-cmc.json",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
-    "name": "PharmaceuticalQualityImplementationGuide",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
-      "class": "colsd",
-      "status": "Draft"
+      "class": "colstu",
+      "status": "Active"
     }
   },
   "ValueSet/valuset-ApplicationSubmissionType": {
     "history": false,
-    "index": 1,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ApplicationSubmissionType.json",
+    "index": 2,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ApplicationSubmissionType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationSubmissionType",
     "name": "ApplicationSubmissionType",
     "title": "PQ/CMC Application Submission Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -681,13 +43,13 @@
   },
   "ValueSet/valuset-ApplicationType": {
     "history": false,
-    "index": 2,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ApplicationType.json",
+    "index": 3,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ApplicationType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType",
     "name": "ApplicationType",
     "title": "PQ/CMC Application Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -696,13 +58,13 @@
   },
   "ValueSet/valuset-BatchUtilization": {
     "history": false,
-    "index": 3,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-BatchUtilization.json",
+    "index": 4,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-BatchUtilization.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-BatchUtilization",
     "name": "BatchUtilization",
     "title": "PQ/CMC Batch Utilization Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -711,13 +73,13 @@
   },
   "ValueSet/valuset-ChemicalStructureDataFileOrigin": {
     "history": false,
-    "index": 4,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ChemicalStructureDataFileOrigin.json",
+    "index": 5,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ChemicalStructureDataFileOrigin.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileOrigin",
     "name": "ChemicalStructureDataFileOrigin",
     "title": "PQ/CMC Chemical Structure Data File Origin Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -726,13 +88,13 @@
   },
   "ValueSet/valuset-ChemicalStructureDataFileType": {
     "history": false,
-    "index": 5,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ChemicalStructureDataFileType.json",
+    "index": 6,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ChemicalStructureDataFileType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileType",
     "name": "ChemicalStructureDataFileType",
     "title": "PQ/CMC Chemical Structure Data File Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -741,13 +103,13 @@
   },
   "ValueSet/valuset-ClosureType": {
     "history": false,
-    "index": 6,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ClosureType.json",
+    "index": 7,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ClosureType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ClosureType",
     "name": "ClosureType",
     "title": "PQ/CMC Closure Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -756,13 +118,13 @@
   },
   "ValueSet/valuset-CoPackagedIndicator": {
     "history": false,
-    "index": 7,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-CoPackagedIndicator.json",
+    "index": 8,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-CoPackagedIndicator.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-CoPackagedIndicator",
     "name": "CoPackagedIndicator",
     "title": "PQ/CMC Co-Packaged Indicator Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -771,13 +133,13 @@
   },
   "ValueSet/valuset-ConformancetoCriteria": {
     "history": false,
-    "index": 8,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ConformancetoCriteria.json",
+    "index": 9,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ConformancetoCriteria.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ConformancetoCriteria",
     "name": "ConformancetoCriteria",
     "title": "PQ/CMC Conformance to Criteria Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -786,13 +148,13 @@
   },
   "ValueSet/valuset-ContainerOrientation": {
     "history": false,
-    "index": 9,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ContainerOrientation.json",
+    "index": 10,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ContainerOrientation.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation",
     "name": "ContainerOrientation",
     "title": "PQ/CMC Container Orientation Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -801,13 +163,13 @@
   },
   "ValueSet/valuset-ContainerType": {
     "history": false,
-    "index": 10,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ContainerType.json",
+    "index": 11,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ContainerType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerType",
     "name": "ContainerType",
     "title": "PQ/CMC Container Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -816,13 +178,13 @@
   },
   "ValueSet/valuset-DrugProductComponentFunctionCategory": {
     "history": false,
-    "index": 11,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-DrugProductComponentFunctionCategory.json",
+    "index": 12,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-DrugProductComponentFunctionCategory.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory",
     "name": "DrugProductComponentFunctionCategory",
     "title": "PQ/CMC Drug Product Component Function Category Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -831,13 +193,13 @@
   },
   "ValueSet/valuset-DrugSubstanceProductIndicator": {
     "history": false,
-    "index": 12,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-DrugSubstanceProductIndicator.json",
+    "index": 13,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-DrugSubstanceProductIndicator.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugSubstanceProductIndicator",
     "name": "DrugSubstanceProductIndicator",
     "title": "PQ/CMC Drug Substance Product Indicator Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -846,13 +208,13 @@
   },
   "ValueSet/valuset-ExcipientFunction": {
     "history": false,
-    "index": 13,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ExcipientFunction.json",
+    "index": 14,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ExcipientFunction.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction",
     "name": "ExcipientFunction",
     "title": "PQ/CMC Excipient Function Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -861,13 +223,13 @@
   },
   "ValueSet/valuset-ImpurityClassification": {
     "history": false,
-    "index": 14,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ImpurityClassification.json",
+    "index": 15,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ImpurityClassification.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ImpurityClassification",
     "name": "ImpurityClassification",
     "title": "PQ/CMC Impurity Classification Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -876,13 +238,13 @@
   },
   "ValueSet/valuset-InterpretationCodeNumeric": {
     "history": false,
-    "index": 15,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-InterpretationCodeNumeric.json",
+    "index": 16,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-InterpretationCodeNumeric.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeNumeric",
     "name": "InterpretationCodeNumeric",
     "title": "PQ/CMC Interpretation Code (numeric) Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -891,13 +253,13 @@
   },
   "ValueSet/valuset-InterpretationCodeText": {
     "history": false,
-    "index": 16,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-InterpretationCodeText.json",
+    "index": 17,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-InterpretationCodeText.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeText",
     "name": "InterpretationCodeText",
     "title": "PQ/CMC Interpretation Code (text) Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -906,13 +268,13 @@
   },
   "ValueSet/valuset-ProcessRelatedImpurityCategory": {
     "history": false,
-    "index": 17,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ProcessRelatedImpurityCategory.json",
+    "index": 18,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ProcessRelatedImpurityCategory.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProcessRelatedImpurityCategory",
     "name": "ProcessRelatedImpurityCategory",
     "title": "PQ/CMC Process Related Impurity Category Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -921,13 +283,13 @@
   },
   "ValueSet/valuset-ProductRelatedImpurityCategory": {
     "history": false,
-    "index": 18,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-ProductRelatedImpurityCategory.json",
+    "index": 19,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-ProductRelatedImpurityCategory.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProductRelatedImpurityCategory",
     "name": "ProductRelatedImpurityCategory",
     "title": "PQ/CMC Product Related Impurity Category Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -936,13 +298,13 @@
   },
   "ValueSet/valuset-QualityBenchmark": {
     "history": false,
-    "index": 19,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-QualityBenchmark.json",
+    "index": 20,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-QualityBenchmark.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-QualityBenchmark",
     "name": "QualityBenchmark",
     "title": "PQ/CMC Quality Benchmark Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -951,13 +313,13 @@
   },
   "ValueSet/valuset-SourceType": {
     "history": false,
-    "index": 20,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-SourceType.json",
+    "index": 21,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-SourceType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SourceType",
     "name": "SourceType",
     "title": "PQ/CMC Source Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -966,13 +328,13 @@
   },
   "ValueSet/valuset-SpecificationStatus": {
     "history": false,
-    "index": 21,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-SpecificationStatus.json",
+    "index": 22,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-SpecificationStatus.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationStatus",
     "name": "SpecificationStatus",
     "title": "PQ/CMC Specification Status Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -981,13 +343,13 @@
   },
   "ValueSet/valuset-SpecificationType": {
     "history": false,
-    "index": 22,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-SpecificationType.json",
+    "index": 23,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-SpecificationType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationType",
     "name": "SpecificationType",
     "title": "PQ/CMC Specification Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -996,13 +358,13 @@
   },
   "ValueSet/valuset-SponsorIdentifierType": {
     "history": false,
-    "index": 23,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-SponsorIdentifierType.json",
+    "index": 24,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-SponsorIdentifierType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SponsorIdentifierType",
     "name": "SponsorIdentifierType",
     "title": "PQ/CMC Sponsor Identifier Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1011,13 +373,13 @@
   },
   "ValueSet/valuset-StorageConditions": {
     "history": false,
-    "index": 24,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-StorageConditions.json",
+    "index": 25,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-StorageConditions.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StorageConditions",
     "name": "StorageConditions",
     "title": "PQ/CMC Storage Conditions Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1026,13 +388,13 @@
   },
   "ValueSet/valuset-StrengthOperator": {
     "history": false,
-    "index": 25,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-StrengthOperator.json",
+    "index": 26,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-StrengthOperator.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthOperator",
     "name": "StrengthOperator",
     "title": "PQ/CMC Strength Operator Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1041,13 +403,13 @@
   },
   "ValueSet/valuset-StrengthType": {
     "history": false,
-    "index": 26,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-StrengthType.json",
+    "index": 27,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-StrengthType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthType",
     "name": "StrengthType",
     "title": "PQ/CMC Strength Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1056,13 +418,13 @@
   },
   "ValueSet/valuset-TestCategory": {
     "history": false,
-    "index": 27,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-TestCategory.json",
+    "index": 28,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-TestCategory.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory",
     "name": "TestCategory",
     "title": "PQ/CMC Test Category Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1071,13 +433,13 @@
   },
   "ValueSet/valuset-TestMethodOrigin": {
     "history": false,
-    "index": 28,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-TestMethodOrigin.json",
+    "index": 29,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-TestMethodOrigin.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestMethodOrigin",
     "name": "TestMethodOrigin",
     "title": "PQ/CMC Test Usage Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1086,13 +448,13 @@
   },
   "ValueSet/valuset-TestUsage": {
     "history": false,
-    "index": 29,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-TestUsage.json",
+    "index": 30,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-TestUsage.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestUsage",
     "name": "TestUsage",
     "title": "PQ/CMC Testing Site Unique Identifier Type Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1101,13 +463,13 @@
   },
   "ValueSet/valuset-TestingSiteUniqueIdentifierType": {
     "history": false,
-    "index": 30,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-TestingSiteUniqueIdentifierType.json",
+    "index": 31,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-TestingSiteUniqueIdentifierType.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestingSiteUniqueIdentifierType",
     "name": "TestingSiteUniqueIdentifierType",
     "title": "PQ/CMC Test Method Origin Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "owner": "Food and Drug Administration (FDA) and the National Cancer Institute\u0027s Thesaurus (NCIt)",
@@ -1116,32 +478,16 @@
   },
   "ValueSet/valuset-UnitsofMeasure": {
     "history": false,
-    "index": 31,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\valueset-valuset-UnitsofMeasure.json",
+    "index": 32,
+    "source": "C:\\FHIR-us-pq-cmc\\fsh-generated\\resources\\valueset-valuset-UnitsofMeasure.json",
     "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure",
     "name": "UnitsofMeasure",
     "title": "PQ/CMC Units of Measure Terminology",
     "version": "current",
-    "date": "2021-04-13T00:29:45-04:00",
+    "date": "2021-11-05T20:46:56-04:00",
     "status": {
       "class": "colstu",
       "status": "Active"
-    }
-  },
-  "CodeSystem/sectionType": {
-    "history": false,
-    "index": 32,
-    "source": "C:\\PQCMC_IG_sushi\\fsh-generated\\resources\\codesystem-sectionType.json",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/CodeSystem/sectionType",
-    "name": "CompSectionTypes",
-    "title": "Composition Section Type",
-    "version": "current",
-    "date": "2020-04-06T10:07:08-04:00",
-    "status": {
-      "class": "colsd",
-      "owner": "U.S. Federal Drug Administration",
-      "status": "Draft"
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     }
   }
 }

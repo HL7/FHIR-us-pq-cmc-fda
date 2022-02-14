@@ -3,20 +3,20 @@
   "id": "valuset-ChemicalStructureDataFileType",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C54683</td><td>InChI File (small molecule)</td></tr><tr><td>C133997</td><td>mmCIF (large molecules)</td></tr><tr><td>C133910</td><td>MOLFILE</td></tr><tr><td>C49039</td><td>PDB</td></tr><tr><td>C133996</td><td>SDF</td></tr><tr><td>C54684</td><td>SMILES</td></tr></table></li></ul></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C54683</td><td>InChI File (small molecule)</td></tr><tr><td>C133997</td><td>mmCIF (large molecules)</td></tr><tr><td>C133910</td><td>MOLFILE</td></tr><tr><td>C49039</td><td>PDB</td></tr><tr><td>C133996</td><td>SDF</td></tr><tr><td>C54684</td><td>SMILES</td></tr></table></li></ul></div>"
   },
   "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileType",
   "version": "current",
   "name": "ChemicalStructureDataFileType",
   "title": "PQ/CMC Chemical Structure Data File Type Terminology",
   "status": "active",
-  "date": "2021-04-13T00:29:45-04:00",
+  "date": "2021-11-05T20:46:56-04:00",
   "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
   "description": "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
   "compose": {
     "include": [
       {
-        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
         "concept": [
           {
             "code": "C54683",

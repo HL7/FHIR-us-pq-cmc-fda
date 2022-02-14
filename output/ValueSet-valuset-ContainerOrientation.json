@@ -3,20 +3,20 @@
   "id": "valuset-ContainerOrientation",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.113883.3.26.1.1</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C25241</td><td>Horizontal</td></tr><tr><td>C133999</td><td>Inverted</td></tr><tr><td>C86043</td><td>Upright</td></tr><tr><td>C133915</td><td>Valve-down</td></tr><tr><td>C133914</td><td>Valve-up</td></tr></table></li></ul></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <code>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>C25241</td><td>Horizontal</td></tr><tr><td>C133999</td><td>Inverted</td></tr><tr><td>C86043</td><td>Upright</td></tr><tr><td>C133915</td><td>Valve-down</td></tr><tr><td>C133914</td><td>Valve-up</td></tr></table></li></ul></div>"
   },
   "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation",
   "version": "current",
   "name": "ContainerOrientation",
   "title": "PQ/CMC Container Orientation Terminology",
   "status": "active",
-  "date": "2021-04-13T00:29:45-04:00",
+  "date": "2021-11-05T20:46:56-04:00",
   "publisher": "Food and Drug Administration (FDA) and the National Cancer Institute's Thesaurus (NCIt)",
   "description": "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
   "compose": {
     "include": [
       {
-        "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
         "concept": [
           {
             "code": "C25241",

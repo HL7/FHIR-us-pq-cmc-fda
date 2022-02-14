@@ -1,50 +1,13 @@
 {
-<<<<<<< HEAD
-  "package": "pqcmc_ig",
-  "version": "0.1.0",
+  "package": "hl7.fhir.us.pq-cmc",
+  "version": "current",
   "fhirVersion": "4.6.0",
   "extensions": [],
   "profiles": {
-    "DocumentReference": [
-      {
-        "url": "http://example.org/StructureDefinition/Base64DocumentReference",
-        "title": "Base64DocumentReference"
-      }
-    ],
-    "Organization": [
-      {
-        "url": "http://example.org/StructureDefinition/MfgTestSiteOrganization",
-        "title": "MfgTestSiteOrganization"
-      },
-      {
-        "url": "http://example.org/StructureDefinition/SponsorOrganization",
-        "title": "SponsorOrganization"
-      }
-    ],
     "SubstanceDefinition": [
       {
-        "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstance",
+        "url": "https://www.hl7.org/fhir/us-pq-cmc/StructureDefinition/pqcmc-DrugSubstance",
         "title": "Drug Substance"
-      },
-      {
-        "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstanceImpurity",
-        "title": "Drug Substance Impurity"
-      },
-      {
-        "url": "http://example.org/StructureDefinition/pqcmc-PolymorphicForm",
-        "title": "Polymorphic Form"
-      }
-    ],
-    "MedicinalProductDefinition": [
-      {
-        "url": "http://example.org/StructureDefinition/pqcmc-DrugProduct",
-        "title": "Drug Product"
-      }
-    ],
-    "Medication": [
-      {
-        "url": "http://example.org/StructureDefinition/pqcmc-DrugProductInstance",
-        "title": "Drug Product Manufactured Instance"
       }
     ]
   },
@@ -64,35 +27,18 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
     ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
-      "StructureDefinition.snapshot.element"
-    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
       "StructureDefinition"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
-      "StructureDefinition.snapshot.element.type"
-    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category": [
       "StructureDefinition"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/build/StructureDefinition/definition": [
       "StructureDefinition.snapshot.element.binding"
     ],
-=======
-  "package": "hl7.fhir.us.pq-cmc",
-  "version": "current",
-  "fhirVersion": "4.5.0",
-  "extensions": [],
-  "profiles": {},
-  "usage": {
->>>>>>> c337534e68bd0994321e7d3bf93b9a52aa224c66
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
     ]
