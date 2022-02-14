@@ -282,21 +282,18 @@ Description: "The amount detais about the drug product compoents to define the p
 * group ^short = "Component Group"
 * substance.code.reference 1..1 MS
 * substance.code.reference ^short = "Ingredient Substance"
-* substance.code.reference only Reference(ComponentSubstance) //* substance.code/reference/reference/@value
+* substance.code.reference only Reference(ComponentSubstance) 
 * substance.strength 1..1 MS
 * substance.strength.presentation[x] 1..1 MS
-* substance.strength.presentation[x] only Quantity
-* ingredient.quantity.numerator MS
-* ingredient.quantity.denominator MS
+* substance.strength.presentation[x] only Ratio  or  Quantity
 * substance.strength.extension contains pq-strength-type-extension named strengthType 1..1 MS
 * substance.strength.extension[strengthType] ^short = "Strength Type (for API)"
 * substance.strength.extension contains pq-content-percent-extension named contentPercent 1..1 MS
 * substance.strength.extension[contentPercent] ^short = "Content (%)"
-* substance.strength.presentationRatio MS
-* substance.strength.presentationRatio ^short = "StrengthNumericNumerator StrengthNumericNumerator UOM  Denominator and UOM"
 * substance.strength.presentationRatio.numerator MS
+* substance.strength.presentationRatio.numerator ^short = "Strength Numeric Numerator"
 * substance.strength.presentationRatio.denominator MS
-* substance.strength.presentationQuantity MS
+* substance.strength.presentationRatio.denominator ^short = "Strength Numeric Numerator"
 * substance.strength.presentationQuantity.extension contains pq-strength-operator-extension named strengthOperator  0..1 MS
 * substance.strength.presentationQuantity.extension[strengthOperator] ^short = "Strength Operator"
 * substance.strength.presentationText 0..1 MS

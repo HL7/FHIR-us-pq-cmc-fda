@@ -10,7 +10,7 @@ RuleSet: DUNSandFEINumber
 * identifier[DUNSNumber].system = $DUNS
 * identifier[DUNSNumber] obeys pq-1.1.1
 * identifier contains FEINumber 0..1 MS
-* identifierFEINumber].system = $FEINumber
+* identifier[FEINumber].system = $FEINumber
 * identifier[FEINumber] obeys pq-1.1.1
 //Lloyd - they need to provide at least one. Does this do it?
 

@@ -4,16 +4,16 @@ Title: "Quality Specification Reference"
 Description: "The product specification used in the batch release or stability testing."
 * . ^short = "Specification and Specification Version"
 * extension contains 
-    Specification 1..1 MS 
-    SpecificationVersion 1..1 MS 
-* extension[Specification]
-* extension[Specification].valueString
-* extension[Specification].valueString ^short = "Specification Title"
-* extension[Specification].valueString ^definition = ""
-* extension[SpecificationVersion]
-* extension[SpecificationVersion].valueString
-* extension[SpecificationVersion].valueString ^short = "Specification Version"
-* extension[SpecificationVersion].valueString ^definition = ""
+    specification 1..1 MS and
+    specificationVersion 1..1 MS 
+* extension[specification]
+* extension[specification].valueString
+* extension[specification].valueString ^short = "Specification Title"
+* extension[specification].valueString ^definition = ""
+* extension[specificationVersion]
+* extension[specificationVersion].valueString
+* extension[specificationVersion].valueString ^short = "Specification Version"
+* extension[specificationVersion].valueString ^definition = ""
 
 Profile: BatchAnalysis
 Parent: DiagnosticReport
@@ -38,11 +38,11 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * performer ^short = "Test Site"
 * performer ^definition = "Reference to the organization profile that contains the name, identifer(s) and address of the testing site."
 * result MS
-* result only Reference(pqResultObservation)
+* result only Reference(RensultObservation)
 
-Profile: pqResultObservation
+Profile: RensultObservation
 Parent: Observation
-Id: pq-result-Observation
+Id: pq-result-observation
 Title: "Result Observation"
 Description: "Belgian profile for an observation in a laboratory report"
 
