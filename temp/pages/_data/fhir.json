@@ -1,30 +1,41 @@
 {
   "path": "http://build.fhir.org/",
-  "canonical": "https://www.hl7.org/fhir/us-pq-cmc",
+  "canonical": "http://hl7.org/fhir/us/pq-cmc",
   "igId": "hl7.fhir.us.pq-cmc",
-  "igName": "PharmaceuticalQualityImplementationGuide",
+  "igName": "FHIR_pqcmc",
   "packageId": "hl7.fhir.us.pq-cmc",
-  "igVer": "current",
-  "errorCount": 4,
-  "version": "4.6.0",
-  "revision": "bbafc66",
-  "versionFull": "4.6.0-bbafc66",
-  "toolingVersion": "4.6.0",
+  "igVer": "0.1.0",
+  "errorCount": 524,
+  "version": "5.0.0-snapshot1",
+  "revision": "522404c",
+  "versionFull": "5.0.0-snapshot1-522404c",
+  "toolingVersion": "5.0.0-snapshot1",
   "toolingRevision": "3",
-  "toolingVersionFull": "4.6.0 (3)",
-  "totalFiles": 33,
-  "processedFiles": 45,
-  "genDate": "Fri, Nov 5, 2021 20:46-0400",
-  "genDay": "05/11/2021",
+  "toolingVersionFull": "5.0.0-snapshot1 (3)",
+  "totalFiles": 72,
+  "processedFiles": 84,
+  "genDate": "Thu, Mar 10, 2022 00:19-0500",
+  "genDay": "10/03/2022",
   "ig": {
     "id": "hl7.fhir.us.pq-cmc",
-    "name": "PharmaceuticalQualityImplementationGuide",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
-    "version": "current",
+    "name": "FHIR_pqcmc",
+    "title": "PQ/CMC Mapping FHIR Implementation Guide",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
+    "version": "0.1.0",
     "status": "draft",
     "experimental": false,
+    "publisher": "Biomedical Research and Regulatory WG",
     "gitstatus": "master",
-    "date": "2021-11-05T20:46:56-04:00",
-    "fhirVersion": "4.6.0"
+    "contact": [
+      {
+        "name": "Biomedical Research and Regulatory WG",
+        "telecom": [
+          "http://www.hl7.org/Special/committees/rcrim/index.cfm"
+        ]
+      }
+    ],
+    "date": "2022-03-10T00:19:40-05:00",
+    "description": "A guide to submitting PQ/CMC data for exchanged in FHIR resources.",
+    "fhirVersion": "5.0.0-snapshot1"
   }
 }

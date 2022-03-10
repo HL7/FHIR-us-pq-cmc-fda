@@ -1,6 +1,6 @@
 {
-  "version": "current",
-  "fhirVersion": "[4.6.0]",
-  "date": "20211105204155",
+  "version": "0.1.0",
+  "fhirVersion": "[5.0.0-snapshot1]",
+  "date": "20220310001502",
   "name": "hl7.fhir.us.pq-cmc"
 }

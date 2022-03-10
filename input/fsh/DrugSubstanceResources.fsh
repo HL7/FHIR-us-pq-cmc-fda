@@ -304,6 +304,7 @@ Id: pqcmc-ingredient
 Title: "Drug Product Ingredient"
 Description: "The amount detais about the drug product ingredients in the batch." 
 
+* ^url = "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient"
 * .extension contains pq-additional-info-extension named additional-info 1..1 MS
 * .extension[additional-info] ^short = "Drug Product Ingredient Additional Information"
 * substance.code.reference 1..1 MS

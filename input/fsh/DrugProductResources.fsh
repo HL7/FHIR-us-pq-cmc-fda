@@ -1,3 +1,9 @@
+Extension: QuantityBatchSize
+Id:  pq-quantity-batch-size
+Title: "Batch Size"
+Description: "The quantity made by the batch formula."
+* valueQuantity
+
 Extension: ContainerClosureExtension
 Id: pq-container-closure-extension
 Title: "Container Closure"
@@ -52,15 +58,6 @@ Description: "Includes the properties of the drug product, its components and im
 * crossReference.product  MS
 * crossReference.product ^short = "Co-Package"
 
-Profile: DrugProductInstance
-Parent: Medication
-Id: pqcmc-drug-product-instance
-Title: "Drug Product Manufactured Instance"
-Description: "Includes the properties of the drug product as manufactured."
-
-* identifier 
-* identifier.value
-
 Profile: RoutineDrugProduct
 Parent: MedicinalProductDefinition
 Id: pqcmc-routine-drug-product
@@ -80,6 +77,8 @@ Id: pqcmc-batch-formula
 Title: "Batch Formula"
 Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
 
+* .extension contains pq-quantity-batch-size named batch-size 1..1 MS
+* .extension[batch-size] ^short = "Batch Quantity"
 * identifier 1..1 MS
 * name.productName 1..1 MS
 * name.productName ^short = "Product Proprietary name/ Product Non-proprietary Name"
@@ -89,9 +88,6 @@ Description: "Listing of all components of the dosage form to be used in the man
 * operation.type ^short = "Batch Ingredient"
 * operation.type.reference 1..1 MS
 * operation.type.reference only Reference(pqcmc-batch-ingredient)
-* characteristic.type = http://hl7.org/fhir/pq-cmc/codesystem/ProductCharacteristic/#batchsize
-* characteristic.valueQuantity
-* characteristic.valueQuantity ^short = "Batch Quantity"
 * description ^short = "Batch Formula Additional Information"
 
 Profile: BatchIngredient
@@ -102,7 +98,45 @@ Description: "Identifies the ingredients for the batch forumla"
 
 * description 0..1 MS
 * description ^short = "Component Additional Information"
-* productReference 0..1 MS
+* profile 1..1 MS
+* profile = "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient"
+* productReference 1..1 MS
 * productReference ^short = "Ingredient"
-//* productReference.reference only Reference(pqcmc-ingredient)
 
+Profile: DrugProductInstance
+Parent: Medication
+Id: pqcmc-drug-product-instance
+Title: "Drug Product Manufactured Instance"
+Description: "Includes the properties of the drug product as manufactured."
+
+* identifier 
+* identifier.value
+
+Profile: DrugProductmanufacturingBatch
+Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
+Id: drug-product-manufacturing-batch
+Title: "Drug Product Manufacturing Batch"
+Description: "This profile defines the details of a batch of medicine."
+ 
+* ^url = "https://hl7.org/fhir/pq-cmc/StructureDefinition/extDrugProductMfgBatch"
+* extension[manufacturingDate] MS 
+* extension[manufacturingDate]  ^short = "Manufacturing Date"  
+* extension[manufacturingDate].valueDateTime MS 
+* extension[manufacturingDateClassification] MS 
+* extension[manufacturingDateClassification]  ^short = "Manufacturing Date Description"  
+* extension[manufacturingDateClassification].valueCodeableConcept MS 
+* extension[assignedManufacturer] MS 
+* extension[assignedManufacturer]  ^short = " "  
+* extension[assignedManufacturer].valueReference only Reference(MfgTestSiteOrganization)
+* extension[expirationDateClassification] MS 
+* extension[expirationDateClassification]  ^short = " "  
+* extension[expirationDateClassification].valueCodeableConcept MS
+* extension[batchUtilization] MS 
+* extension[batchUtilization]  ^short = " "  
+* extension[batchUtilization].valueCodeableConcept MS 
+* extension[batchQuantity] MS
+* extension[batchQuantity]  ^short = "Batch Size"  
+* extension[batchQuantity].valueQuantity MS 
+* extension[additionalInformation] MS 
+* extension[additionalInformation]  ^short = " "  
+* extension[additionalInformation].valueString MS 

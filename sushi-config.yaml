@@ -3,22 +3,21 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: pqcmc_ig
-canonical: http://example.org
-name: pqcmcsushi
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
-status: draft # draft | active | retired | unknown
+id: hl7.fhir.us.pq-cmc
+canonical: http://hl7.org/fhir/us/pq-cmc
+name: FHIR_pqcmc
+title: PQ/CMC Mapping FHIR Implementation Guide
+description: A guide to submitting PQ/CMC data for exchanged in FHIR resources.
+status: draft
 version: 0.1.0
 fhirVersion: 5.0.0-snapshot1
 copyrightYear: 2021+
-releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
-# license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-# jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+releaseLabel: ci-build
 publisher:
-  name: Example Publisher
-  url: http://example.org/example-publisher
-  # email: test@example.org
+  name: Biomedical Research and Regulatory WG
+  url: http://www.hl7.org/Special/committees/rcrim/index.cfm
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced

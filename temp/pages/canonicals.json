@@ -1,233 +1,506 @@
 [
   {
+    "id": "codesystemPqcmcCompSectionTypes",
+    "type": "CodeSystem",
+    "url": "http://hl7.org/fhir/pq-cmc/codesystem/SectionType",
+    "version": "0.1.0",
+    "name": "PqcmcCompSectionTypes"
+  },
+  {
     "id": "hl7.fhir.us.pq-cmc",
     "type": "ImplementationGuide",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
-    "version": "current",
-    "name": "PharmaceuticalQualityImplementationGuide"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc",
+    "version": "0.1.0",
+    "name": "FHIR_pqcmc"
+  },
+  {
+    "id": "Base64DocumentReference",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/Base64DocumentReference",
+    "version": "0.1.0",
+    "name": "Base64DocumentReference"
+  },
+  {
+    "id": "MfgTestSiteOrganization",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/MfgTestSiteOrganization",
+    "version": "0.1.0",
+    "name": "MfgTestSiteOrganization"
+  },
+  {
+    "id": "PqAddress",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/PqAddress",
+    "version": "0.1.0",
+    "name": "PqAddress"
+  },
+  {
+    "id": "SponsorOrganization",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/SponsorOrganization",
+    "version": "0.1.0",
+    "name": "SponsorOrganization"
+  },
+  {
+    "id": "pq-additional-info-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-additional-info-extension",
+    "version": "0.1.0",
+    "name": "AditionalInformationExtension"
+  },
+  {
+    "id": "pq-container-closure-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-container-closure-extension",
+    "version": "0.1.0",
+    "name": "ContainerClosureExtension"
+  },
+  {
+    "id": "pq-content-percent-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-content-percent-extension",
+    "version": "0.1.0",
+    "name": "ContentPercentExtension"
+  },
+  {
+    "id": "pq-interpretation-code-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension",
+    "version": "0.1.0",
+    "name": "InterpretationCodeExtension"
+  },
+  {
+    "id": "pq-order-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension",
+    "version": "0.1.0",
+    "name": "TestOrderExtension"
+  },
+  {
+    "id": "pq-overage-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-overage-extension",
+    "version": "0.1.0",
+    "name": "OverageExtension"
+  },
+  {
+    "id": "pq-quality-specification-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-quality-specification-extension",
+    "version": "0.1.0",
+    "name": "QualitySpecificationExtension"
+  },
+  {
+    "id": "pq-quantity-batch-size",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-quantity-batch-size",
+    "version": "0.1.0",
+    "name": "QuantityBatchSize"
+  },
+  {
+    "id": "pq-quantity-percent-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-quantity-percent-extension",
+    "version": "0.1.0",
+    "name": "QuantityPercentExtension"
+  },
+  {
+    "id": "pq-result-observation",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-result-observation",
+    "version": "0.1.0",
+    "name": "RensultObservation"
+  },
+  {
+    "id": "pq-rrt-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-rrt-extension",
+    "version": "0.1.0",
+    "name": "RRTExtension"
+  },
+  {
+    "id": "pq-specification-status-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-specification-status-extension",
+    "version": "0.1.0",
+    "name": "SpecificationStatusExtension"
+  },
+  {
+    "id": "pq-specification-type-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-specification-type-extension",
+    "version": "0.1.0",
+    "name": "SpecificationTypeExtension"
+  },
+  {
+    "id": "pq-strength-operator-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-strength-operator-extension",
+    "version": "0.1.0",
+    "name": "StrengthOperatorExtension"
+  },
+  {
+    "id": "pq-strength-type-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-strength-type-extension",
+    "version": "0.1.0",
+    "name": "StrengthTypeExtension"
+  },
+  {
+    "id": "pq-test-method-origin-extension",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-test-method-origin-extension",
+    "version": "0.1.0",
+    "name": "TestMethodOriginExtension"
+  },
+  {
+    "id": "pqcmc-Component",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-Component",
+    "version": "0.1.0",
+    "name": "DrugProductComponent"
+  },
+  {
+    "id": "pqcmc-ComponentSubstance",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-ComponentSubstance",
+    "version": "0.1.0",
+    "name": "ComponentSubstance"
   },
   {
     "id": "pqcmc-DrugSubstance",
     "type": "StructureDefinition",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/StructureDefinition/pqcmc-DrugSubstance",
-    "version": "current",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-DrugSubstance",
+    "version": "0.1.0",
     "name": "DrugSubstance"
   },
   {
-    "id": "valuset-ApplicationSubmissionType",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationSubmissionType",
-    "version": "current",
-    "name": "ApplicationSubmissionType"
+    "id": "pqcmc-DrugSubstanceImpurity",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-DrugSubstanceImpurity",
+    "version": "0.1.0",
+    "name": "DrugSubstanceImpurity"
   },
   {
-    "id": "valuset-ApplicationType",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ApplicationType",
-    "version": "current",
-    "name": "ApplicationType"
+    "id": "pqcmc-PolymorphicForm",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-PolymorphicForm",
+    "version": "0.1.0",
+    "name": "PolymorphicForm"
   },
   {
-    "id": "valuset-BatchUtilization",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-BatchUtilization",
-    "version": "current",
-    "name": "BatchUtilization"
+    "id": "pqcmc-batch-analysis",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-analysis",
+    "version": "0.1.0",
+    "name": "BatchAnalysis"
   },
   {
-    "id": "valuset-ChemicalStructureDataFileOrigin",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileOrigin",
-    "version": "current",
-    "name": "ChemicalStructureDataFileOrigin"
+    "id": "pqcmc-batch-formula",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-formula",
+    "version": "0.1.0",
+    "name": "BatchFormula"
   },
   {
-    "id": "valuset-ChemicalStructureDataFileType",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ChemicalStructureDataFileType",
-    "version": "current",
-    "name": "ChemicalStructureDataFileType"
+    "id": "pqcmc-batch-ingredient",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-ingredient",
+    "version": "0.1.0",
+    "name": "BatchIngredient"
   },
   {
-    "id": "valuset-ClosureType",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ClosureType",
-    "version": "current",
-    "name": "ClosureType"
+    "id": "pqcmc-drug-product-instance",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-instance",
+    "version": "0.1.0",
+    "name": "DrugProductInstance"
   },
   {
-    "id": "valuset-CoPackagedIndicator",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-CoPackagedIndicator",
-    "version": "current",
-    "name": "CoPackagedIndicator"
+    "id": "pqcmc-drug-substnace-instance",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substnace-instance",
+    "version": "0.1.0",
+    "name": "DrugSubstanceInstance"
   },
   {
-    "id": "valuset-ConformancetoCriteria",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ConformancetoCriteria",
-    "version": "current",
-    "name": "ConformancetoCriteria"
+    "id": "pqcmc-druproduct",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-druproduct",
+    "version": "0.1.0",
+    "name": "DrugProduct"
   },
   {
-    "id": "valuset-ContainerOrientation",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerOrientation",
-    "version": "current",
-    "name": "ContainerOrientation"
+    "id": "pqcmc-excipient",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient",
+    "version": "0.1.0",
+    "name": "Excipient"
   },
   {
-    "id": "valuset-ContainerType",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ContainerType",
-    "version": "current",
-    "name": "ContainerType"
+    "id": "pqcmc-routine-drug-product",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-product",
+    "version": "0.1.0",
+    "name": "RoutineDrugProduct"
   },
   {
-    "id": "valuset-DrugProductComponentFunctionCategory",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugProductComponentFunctionCategory",
-    "version": "current",
-    "name": "DrugProductComponentFunctionCategory"
+    "id": "pqcmc-routine-drug-substance",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance",
+    "version": "0.1.0",
+    "name": "RoutineSubstanceDefinition"
   },
   {
-    "id": "valuset-DrugSubstanceProductIndicator",
-    "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-DrugSubstanceProductIndicator",
-    "version": "current",
-    "name": "DrugSubstanceProductIndicator"
+    "id": "pqcmcQualitySpecification",
+    "type": "StructureDefinition",
+    "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmcQualitySpecification",
+    "version": "0.1.0",
+    "name": "QualitySpecification"
   },
   {
-    "id": "valuset-ExcipientFunction",
+    "id": "PqActionRelationTypeVS",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ExcipientFunction",
-    "version": "current",
-    "name": "ExcipientFunction"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/PqActionRelationTypeVS",
+    "version": "0.1.0",
+    "name": "PqActionRelationTypeVS"
   },
   {
-    "id": "valuset-ImpurityClassification",
+    "id": "vsPqcmcBatchUtilizationTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ImpurityClassification",
-    "version": "current",
-    "name": "ImpurityClassification"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcBatchUtilizationTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCBatchUtilizationTerminology"
   },
   {
-    "id": "valuset-InterpretationCodeNumeric",
+    "id": "vsPqcmcChemicalStructureDataFileOriginTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeNumeric",
-    "version": "current",
-    "name": "InterpretationCodeNumeric"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcChemicalStructureDataFileOriginTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCChemicalStructureDataFileOriginTerminology"
   },
   {
-    "id": "valuset-InterpretationCodeText",
+    "id": "vsPqcmcChemicalStructureDataFileTypeTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-InterpretationCodeText",
-    "version": "current",
-    "name": "InterpretationCodeText"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcChemicalStructureDataFileTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCChemicalStructureDataFileTypeTerminology"
   },
   {
-    "id": "valuset-ProcessRelatedImpurityCategory",
+    "id": "vsPqcmcClosureTypeTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProcessRelatedImpurityCategory",
-    "version": "current",
-    "name": "ProcessRelatedImpurityCategory"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcClosureTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcClosureTypeTerminology"
   },
   {
-    "id": "valuset-ProductRelatedImpurityCategory",
+    "id": "vsPqcmcCoPackagedIndicatorTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-ProductRelatedImpurityCategory",
-    "version": "current",
-    "name": "ProductRelatedImpurityCategory"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcCoPackagedIndicatorTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcCoPackagedIndicatorTerminology"
   },
   {
-    "id": "valuset-QualityBenchmark",
+    "id": "vsPqcmcConformancetoCriteriaTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-QualityBenchmark",
-    "version": "current",
-    "name": "QualityBenchmark"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcConformancetoCriteriaTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcConformanceCriteriaTerminology"
   },
   {
-    "id": "valuset-SourceType",
+    "id": "vsPqcmcContainerOrientationTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SourceType",
-    "version": "current",
-    "name": "SourceType"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcContainerOrientationTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcContainerOrientationTerminology"
   },
   {
-    "id": "valuset-SpecificationStatus",
+    "id": "vsPqcmcContainerTypeTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationStatus",
-    "version": "current",
-    "name": "SpecificationStatus"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcContainerTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcContainerTypeTerminology"
   },
   {
-    "id": "valuset-SpecificationType",
+    "id": "vsPqcmcDrugProductComponentFunctionCategoryTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SpecificationType",
-    "version": "current",
-    "name": "SpecificationType"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcDrugProductComponentFunctionCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcDrugProductComponentFunctionCategoryTerminology"
   },
   {
-    "id": "valuset-SponsorIdentifierType",
+    "id": "vsPqcmcDrugSubstanceProductIndicatorTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-SponsorIdentifierType",
-    "version": "current",
-    "name": "SponsorIdentifierType"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcDrugSubstanceProductIndicatorTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcDrugSubstanceProductIndicatorTerminology"
   },
   {
-    "id": "valuset-StorageConditions",
+    "id": "vsPqcmcExcipientFunctionTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StorageConditions",
-    "version": "current",
-    "name": "StorageConditions"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcExcipientFunctionTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcExcipientFunctionTerminology"
   },
   {
-    "id": "valuset-StrengthOperator",
+    "id": "vsPqcmcImpurityClassificationTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthOperator",
-    "version": "current",
-    "name": "StrengthOperator"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcImpurityClassificationTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcImpurityClassificationTerminology"
   },
   {
-    "id": "valuset-StrengthType",
+    "id": "vsPqcmcInterpretationCodeTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-StrengthType",
-    "version": "current",
-    "name": "StrengthType"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcInterpretationCodeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcInterpretationCodeTerminology"
   },
   {
-    "id": "valuset-TestCategory",
+    "id": "vsPqcmcProcessRelatedImpurityCategoryTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestCategory",
-    "version": "current",
-    "name": "TestCategory"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcProcessRelatedImpurityCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcProcessRelatedImpurityCategoryTerminology"
   },
   {
-    "id": "valuset-TestMethodOrigin",
+    "id": "vsPqcmcProductRelatedImpurityCategoryTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestMethodOrigin",
-    "version": "current",
-    "name": "TestMethodOrigin"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcProductRelatedImpurityCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcProductRelatedImpurityCategoryTerminology"
   },
   {
-    "id": "valuset-TestUsage",
+    "id": "vsPqcmcQualityBenchmarkTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestUsage",
-    "version": "current",
-    "name": "TestUsage"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcQualityBenchmarkTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcQualityBenchmarkTerminology"
   },
   {
-    "id": "valuset-TestingSiteUniqueIdentifierType",
+    "id": "vsPqcmcSourceTypeTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-TestingSiteUniqueIdentifierType",
-    "version": "current",
-    "name": "TestingSiteUniqueIdentifierType"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcSourceTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSourceTypeTerminology"
   },
   {
-    "id": "valuset-UnitsofMeasure",
+    "id": "vsPqcmcSpecificationStatusTerminology",
     "type": "ValueSet",
-    "url": "https://www.hl7.org/fhir/us-pq-cmc/ValueSet/valuset-UnitsofMeasure",
-    "version": "current",
-    "name": "UnitsofMeasure"
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcSpecificationStatusTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSpecificationStatusTerminology"
+  },
+  {
+    "id": "vsPqcmcSpecificationTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcSpecificationTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSpecificationTypeTerminology"
+  },
+  {
+    "id": "vsPqcmcSponsorIdentifierTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcSponsorIdentifierTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcSponsorIdentifierTypeTerminology"
+  },
+  {
+    "id": "vsPqcmcStorageConditionsTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcStorageConditionsTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcStorageConditionsTerminology"
+  },
+  {
+    "id": "vsPqcmcStrengthOperatorTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcStrengthOperatorTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcStrengthOperatorTerminology"
+  },
+  {
+    "id": "vsPqcmcStrengthTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcStrengthTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcStrengthTypeTerminology"
+  },
+  {
+    "id": "vsPqcmcTestCategoryTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcTestCategoryTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestCategoryTerminology"
+  },
+  {
+    "id": "vsPqcmcTestMethodOriginTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcTestMethodOriginTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestMethodOriginTerminology"
+  },
+  {
+    "id": "vsPqcmcTestUsageTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcTestUsageTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestUsageTerminology"
+  },
+  {
+    "id": "vsPqcmcTestingSiteUniqueIdentifierTypeTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcTestingSiteUniqueIdentifierTypeTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcTestingSiteUniqueIdentifierTypeTerminology"
+  },
+  {
+    "id": "vsPqcmcUnitsofMeasureTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcUnitsofMeasureTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcUnitsMeasureTerminology"
+  },
+  {
+    "id": "vsPqcmcValidationParameterTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcValidationParameterTerminology",
+    "version": "0.1.0",
+    "name": "PqcmcValidationParameterTerminology"
+  },
+  {
+    "id": "vsSPLPharmaceuticalDosageFormTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsSPLPharmaceuticalDosageFormTerminology",
+    "version": "0.1.0",
+    "name": "SplPharmaceuticalDosageFormTerminology"
+  },
+  {
+    "id": "vsSplDrugRouteofAdministrationTerminology",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsSplDrugRouteofAdministrationTerminology",
+    "version": "0.1.0",
+    "name": "SplDrugRouteofAdministrationTerminology"
+  },
+  {
+    "id": "vsUnitsMeasure",
+    "type": "ValueSet",
+    "url": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsUnitsMeasure",
+    "version": "0.1.0",
+    "name": "PqcmcUnitsMeasure"
+  },
+  {
+    "id": "drug-product-manufacturing-batch",
+    "type": "StructureDefinition",
+    "url": "https://hl7.org/fhir/pq-cmc/StructureDefinition/extDrugProductMfgBatch",
+    "version": "0.1.0",
+    "name": "DrugProductmanufacturingBatch"
+  },
+  {
+    "id": "pqcmc-ingredient",
+    "type": "StructureDefinition",
+    "url": "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient",
+    "version": "0.1.0",
+    "name": "DrugProductIngredient"
   }
 ]

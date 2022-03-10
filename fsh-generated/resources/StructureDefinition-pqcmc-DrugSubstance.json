@@ -11,7 +11,7 @@
       "valueCode": "anonymous"
     }
   ],
-  "url": "http://example.org/StructureDefinition/pqcmc-DrugSubstance",
+  "url": "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-DrugSubstance",
   "version": "0.1.0",
   "name": "DrugSubstance",
   "title": "Drug Substance",
@@ -59,7 +59,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://example.org/StructureDefinition/MfgTestSiteOrganization"
+              "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/MfgTestSiteOrganization"
             ]
           }
         ],
@@ -73,7 +73,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://example.org/StructureDefinition/MfgTestSiteOrganization"
+              "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/MfgTestSiteOrganization"
             ]
           }
         ],
@@ -117,7 +117,7 @@
         "min": 1,
         "binding": {
           "strength": "required",
-          "valueSet": "http://example.org/ValueSet/vsPqcmcChemicalStructureDataFileTypeTerminology"
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc/ValueSet/vsPqcmcChemicalStructureDataFileTypeTerminology"
         }
       },
       {
@@ -127,7 +127,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://example.org/StructureDefinition/Base64DocumentReference"
+              "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/Base64DocumentReference"
             ]
           }
         ]
@@ -157,9 +157,9 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://example.org/StructureDefinition/pqcmc-DrugSubstanceImpurity",
-              "http://example.org/StructureDefinition/pqcmc-PolymorphicForm",
-              "http://example.org/StructureDefinition/pqcmc-ComponentSubstance"
+              "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-DrugSubstanceImpurity",
+              "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-PolymorphicForm",
+              "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-ComponentSubstance"
             ]
           }
         ]
