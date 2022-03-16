@@ -3,7 +3,7 @@ Id:  pq-strength-operator-extension
 Title: "Strength Operator"
 Description: "A mathematical symbol that denotes equality or inequality between two values."
 * extension.value[x] only CodeableConcept
-* extension.value[x] from PqcmcStrengthOperatorTerminology (required)
+* extension.value[x] from vsPqcmcStrengthOperatorTerminology (required)
 
 Extension: ContentPercentExtension
 Id:  pq-content-percent-extension
