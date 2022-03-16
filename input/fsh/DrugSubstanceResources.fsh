@@ -2,26 +2,26 @@ Extension: StrengthOperatorExtension
 Id:  pq-strength-operator-extension
 Title: "Strength Operator"
 Description: "A mathematical symbol that denotes equality or inequality between two values."
-* value[x] only CodeableConcept
-* value[x] from PqcmcStrengthOperatorTerminology (required)
+* extension.value[x] only CodeableConcept
+* extension.value[x] from PqcmcStrengthOperatorTerminology (required)
 
 Extension: ContentPercentExtension
 Id:  pq-content-percent-extension
 Title: "Content (%)"
 Description: "The percentage of the component in the drug product."
-* valueDecimal   
+* extension.value[x] only decimal   
 
 Extension: StrengthTypeExtension
 Id:  pq-strength-type-extension
 Title: "Strength Type  (for API)"
 Description: "A physical (contetn) of activity measurement of the strenght of the active ingredient."
-* valueString
+* extension.value[x] only string
 
 Extension: QuantityPercentExtension
 Id:  pq-quantity-percent-extension
 Title: "Quantity Percent"
 Description: "The percentage of the component in the batch."
-* valueDecimal  
+* extension.value[x] only decimal  
 
 Extension: OverageExtension
 Id: pq-overage-extension
@@ -71,19 +71,9 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * structure.representation.format from PqcmcCChemicalStructureDataFileTypeTerminology
 * structure.representation.document 
 * structure.representation.document only Reference(Base64DocumentReference) 
-* code MS
-* code.code.text 0..1
-* code.code ^short = "CAS Number" 
-* code.code.text 0..1
-* code.code ^short = "INN"
-* code.code.text 0..1
-* code.code ^short = "USAN"
-* code.code.text 0..1
-* code.code ^short = "IUPAC Name"
-* code.code.text  0..1
-* code.code ^short = "ISBT 128" 
-* code.code.text 0..1
-* code.code ^short = "Company Code"
+* code 1..* MS // Need rule that it be any of 6 kinds
+* code.code.text 1..1
+* code.code.text ^short = "CAS Number |INN | USAN |IUPAC Name | ISBT 128| Company Code"
 * name.name	1..1 MS
 * name.name	^short = "Substance Name"
 * relationship.substanceDefinitionReference only Reference(DrugSubstanceImpurity or PolymorphicForm or ComponentSubstance )
@@ -220,10 +210,8 @@ Description: "Provides sufficient information  to identify a drug substance."
 * supplier 0..1 MS
 * supplier only Reference(MfgTestSiteOrganization)
 * code MS
-* code.code.text 0..1
-* code.code ^short = "CAS Number" 
-* code.code.text 0..1
-* name.name	1..1 MS
+* code.code.text ^short = "CAS Number" 
+* name.name MS
 * name.name	^short = "Component/Raw Material Name"
 
 Profile: Excipient
@@ -305,7 +293,7 @@ Title: "Drug Product Ingredient"
 Description: "The amount detais about the drug product ingredients in the batch." 
 
 * ^url = "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient"
-* .extension contains pq-additional-info-extension named additional-info 1..1 MS
+* .extension contains pq-additional-info-extension named additional-info 0..1 MS 
 * .extension[additional-info] ^short = "Drug Product Ingredient Additional Information"
 * substance.code.reference 1..1 MS
 * substance.code.reference ^short = "Ingredient Substance"
@@ -317,8 +305,55 @@ Description: "The amount detais about the drug product ingredients in the batch.
 * substance.strength.extension[overage] ^short = "Overage"
 * substance.strength.concentrationQuantity MS
 * substance.strength.concentrationQuantity ^short = "Component Quanty Per Batch"
-* substance.strength.concentrationText 0..1 MS
+//* substance.strength.concentrationText 1..1 MS
 * substance.strength.concentrationText ^short = "Strength Textual"
+
+Profile: DrugSubstancemanufacturingBatch
+Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
+Id: drug-substance-manufacturing-batch
+Title: "Drug Substance Manufacturing Batch"
+Description: "This profile defines the details of a batch of API."
+ 
+* ^url = "https://hl7.org/fhir/pq-cmc/StructureDefinition/extSubstanceMfgBatch"
+* extension[manufacturingDate] 1..1 MS 
+* extension[manufacturingDate] ^short = "Manufacturing Date"  
+* extension[manufacturingDate].valueDateTime MS 
+* extension[manufacturingDateClassification] 1..1 MS 
+* extension[manufacturingDateClassification] ^short = "Manufacturing Date Description"  
+* extension[manufacturingDateClassification].valueCodeableConcept MS 
+* extension[assignedManufacturer] 1..1 MS 
+* extension[assignedManufacturer] ^short = "Assigned Manufacturer"  
+* extension[assignedManufacturer].valueReference only Reference(MfgTestSiteOrganization)
+* extension[batchUtilization] 1..1 MS 
+* extension[batchUtilization] ^short = "Batch Utilization"  
+* extension[batchUtilization].valueCodeableConcept MS 
+* extension[batchUtilization].valueCodeableConcept from vsPqcmcBatchUtilizationTerminology
+* extension[batchQuantity] 1..1 MS
+* extension[batchQuantity] ^short = "Batch Size"  
+* extension[batchQuantity].valueQuantity MS 
+* extension[additionalInformation] MS 
+* extension[additionalInformation] ^short = "Additional Information"  
+* extension[additionalInformation].valueString MS 
+* extension[container] 1..*  MS
+* extension[container] ^short = "Container"
+//* extension[container].extension[lotNumber] 1..1 MS
+//* extension[container].extension[lotNumber] ^short = "Container Lot Number"
+//* extension[container].extension[lotNumber].string  1..1 MS
+//* extension[container].extension[type] 1..1 MS
+//* extension[container].extension[type] ^short = "Container Type"
+//* extension[container].extension[type].CodeableConcept  1..1 MS
+//* extension[container].extension[type].CodeableConcept from vsPqcmcContainerTypeTerminology
+//* extension[container].extension[quantity] 1..1 MS
+//* extension[container].extension[quantity] ^short = "Container Fill per Container Size" 
+//* extension[container].extension[quantity].Ratio  1..1 MS
+//* extension[container].extension[closureSystemDescription] 1..1 MS
+//* extension[container].extension[closureSystemDescription] ^short = "Closure System Description" 
+//* extension[container].extension[closureSystemDescription].string  1..1 MS
+//* extension[container].extension[closureType] 1..1 MS
+//* extension[container].extension[closureType] ^short = "Closure Type"
+//* extension[container].extension[closureType].CodeableConcept  1..1 MS
+//* extension[container].extension[closureType].CodeableConcept from vsPqcmcClosureTypeTerminology
+
 
 Profile: DrugSubstanceInstance
 Parent: Substance
@@ -326,5 +361,12 @@ Id: pqcmc-drug-substnace-instance
 Title: "Drug Substance Manufactured Instance"
 Description: "Includes the properties of the drug substance as manufactured."
 
-* identifier 
-* identifier.value
+* extension contains drug-substance-manufacturing-batch named api-excipient-batch 1..1 MS
+* identifier.value 1..1 MS
+* identifier.value ^short = "Batch or Lot Numbe (Bulk Batch ID)"
+* instance = true
+* code MS
+* code.concept.coding ^short = "UNII| CAS Number|Substance Name" // Need rule that it be any of 3 kinds
+* expiry 1..1 MS
+* expiry ^short = "Retest Date" 
+* expiry only dateTime 

@@ -38,18 +38,19 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * performer ^short = "Test Site"
 * performer ^definition = "Reference to the organization profile that contains the name, identifer(s) and address of the testing site."
 * result MS
-* result only Reference(RensultObservation)
+* result only Reference(ResultObservation)
 
-Profile: RensultObservation
+Profile: ResultObservation
 Parent: Observation
 Id: pq-result-observation
 Title: "Result Observation"
-Description: "Belgian profile for an observation in a laboratory report"
+Description: "Profile for an observation in a batch-analysis report or a stability report"
 
 * identifier MS
 * status MS
-* category MS
-* code ^definition = ""
+* code ^short = "Release | Stability"
+* code ^definition = "FHIR manditory code. Designate Release or Stability from PqcmcTestUsageTerminology"
+// you are here binding
 * subject only Reference(DrugProductInstance or DrugSubstanceInstance)
 * effective[x] MS
 * issued MS

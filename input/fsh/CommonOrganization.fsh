@@ -1,5 +1,5 @@
 RuleSet: DUNSandFEINumber
-* identifier 1..* MS
+* identifier 1..1 MS
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
@@ -7,10 +7,10 @@ RuleSet: DUNSandFEINumber
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Require specific types of identifiers."
 * identifier contains DUNSNumber 0..1 MS
-* identifier[DUNSNumber].system = "urn:oid:1.3.6.1.4.1.519.1"
+* identifier[DUNSNumber].system = $DUNS
 * identifier[DUNSNumber] obeys pq-1.1.1
 * identifier contains FEINumber 0..1 MS
-* identifier[FEINumber].system = "urn:oid:2.16.840.1.113883.4.82"
+* identifier[FEINumber].system = $FEINumber
 * identifier[FEINumber] obeys pq-1.1.1
 
 
