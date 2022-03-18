@@ -14,16 +14,13 @@ packaging system and any precautions needed to ensure the protection and preserv
     description 1..1 MS and
     containerType 1..1 MS and
     closureType 1..1 MS 
-* extension[description]
 * extension[description].value[x] only markdown
 * extension[description].value[x] ^short = "Container Closure System Description"
 * extension[description].value[x] ^definition = "Any textual comments that describe the sum of container closure systems(CCS) components that together contain and protect the dosage form or drug substance."
-* extension[containerType]
 * extension[containerType].value[x] only CodeableConcept
 * extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
 * extension[containerType].value[x] ^short = "Container Type"
 * extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contined in, which could include both the immediate (or primary) and secondary containers."
-* extension[closureType]
 * extension[closureType].value[x] only CodeableConcept
 * extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
 * extension[closureType].value[x] ^short = "Closure Type"
@@ -87,21 +84,23 @@ Description: "Listing of all components of the dosage form to be used in the man
 * operation.type 1..1 MS
 * operation.type ^short = "Batch Ingredient"
 * operation.type.reference 1..1 MS
-* operation.type.reference only Reference(pqcmc-batch-ingredient)
+* operation.type.reference only Reference (BatchFormulaIngredient)
 * description ^short = "Batch Formula Additional Information"
 
-Profile: BatchIngredient
+Profile: BatchFormulaIngredient
 Parent: ActivityDefinition
 Id: pqcmc-batch-ingredient
-Title: "Batch Ingredient"
+Title: "Batch Formula Ingredient"
 Description: "Identifies the ingredients for the batch forumla"
 
 * description 0..1 MS
 * description ^short = "Component Additional Information"
 * profile 1..1 MS
 * profile = "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient"
+* product[x] 1..1 MS
+* productReference ^short = "Drug Product Component"
 * productReference 1..1 MS
-* productReference ^short = "Ingredient"
+* productReference only Reference (DrugProductIngredient)
 
 Profile: DrugProductInstance
 Parent: Medication

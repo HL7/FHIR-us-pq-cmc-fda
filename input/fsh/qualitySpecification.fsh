@@ -42,13 +42,13 @@ Extension: TestOrderExtension
 Id:  pq-order-extension
 Title: "Test/Stage Order"
 Description: ""
-* valueDecimal  
+* value[x] only decimal  
 
 Extension: RRTExtension
 Id:  pq-rrt-extension
 Title: "Relative Retention Time"
 Description: ""
-* valueString
+* value[x] only string
 
 Profile: QualitySpecification
 Parent: PlanDefinition

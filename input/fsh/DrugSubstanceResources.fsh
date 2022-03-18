@@ -27,15 +27,13 @@ Extension: OverageExtension
 Id: pq-overage-extension
 Title: "Overage"
 Description: "Amount and rationale for excess drug substance."
-* . ^short = "Container Closure System Information"
+
 * extension contains 
     overagePercent 1..1 MS and
     overageJustification 1..1 MS 
 * extension[overagePercent]
-* extension[overagePercent].valueDecimal 
 * extension[overagePercent].valueDecimal ^short = "Overage Percent"
 * extension[overagePercent].valueDecimal ^definition = "Overage is teh percent of a drug substance in exell of the label claim to compensate for the loss, such as manufacturing or others."
-* extension[overageJustification]
 * extension[overageJustification].valueMarkdown
 * extension[overageJustification].valueMarkdown ^short = "Overage Justification"
 * extension[overageJustification].valueMarkdown ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product."
@@ -51,8 +49,7 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * Example: 362O9ITL9D 
 * Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
  """
-* identifier ^short = "UNII"
-* identifier 1..1
+* identifier 0..1 MS
 * manufacturer 1..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
@@ -71,11 +68,17 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * structure.representation.format from PqcmcCChemicalStructureDataFileTypeTerminology
 * structure.representation.document 
 * structure.representation.document only Reference(Base64DocumentReference) 
-* code 1..* MS // Need rule that it be any of 6 kinds
-* code.code.text 1..1
-* code.code.text ^short = "CAS Number |INN | USAN |IUPAC Name | ISBT 128| Company Code"
+* code 1..* MS 
+* code.code.coding 0..0
+* code.code.text  1..1 MS
+* code.code.text ^short = "UNII"
 * name.name	1..1 MS
-* name.name	^short = "Substance Name"
+* name.name	^short = "Substance Name |CAS Number |INN | USAN |IUPAC Name | ISBT 128| Company Code"
+* name.type  1..1 MS
+* name.type.coding  ^short = "The code indicatiing the name source or type"
+* name.type.coding from vs-pqcmc-name-types
+* name.preferred MS
+* name.preferred ^short = "True when the name type is Substance Name"
 * relationship.substanceDefinitionReference only Reference(DrugSubstanceImpurity or PolymorphicForm or ComponentSubstance )
 * relationship.type.text 
 * relationship.type.text ^short = "Preferred values: 'Polymorph', 'Raw Material', and  'Impurity'"
@@ -252,7 +255,7 @@ Profile: DrugProductComponent
 Parent: Ingredient
 Id: pqcmc-Component
 Title: "Drug Product Component"
-Description: "The amount detais about the drug product compoents to define the product composition in a product unit."
+Description: "The amount detais about the drug product compoents to define the product composition in a product unit. Use composition."
 
 * .extension contains pq-additional-info-extension named additional-info 1..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
@@ -272,12 +275,13 @@ Description: "The amount detais about the drug product compoents to define the p
 * substance.code.reference ^short = "Ingredient Substance"
 * substance.code.reference only Reference(ComponentSubstance) 
 * substance.strength 1..1 MS
-* substance.strength.presentation[x] 1..1 MS
-* substance.strength.presentation[x] only Ratio  or  Quantity
+* substance.strength.extension 2..2
 * substance.strength.extension contains pq-strength-type-extension named strengthType 1..1 MS
 * substance.strength.extension[strengthType] ^short = "Strength Type (for API)"
 * substance.strength.extension contains pq-content-percent-extension named contentPercent 1..1 MS
 * substance.strength.extension[contentPercent] ^short = "Content (%)"
+* substance.strength.presentation[x] 1..1 MS
+* substance.strength.presentation[x] only Ratio  or  Quantity
 * substance.strength.presentationRatio.numerator MS
 * substance.strength.presentationRatio.numerator ^short = "Strength Numeric Numerator"
 * substance.strength.presentationRatio.denominator MS
@@ -290,7 +294,7 @@ Profile: DrugProductIngredient
 Parent: Ingredient
 Id: pqcmc-ingredient
 Title: "Drug Product Ingredient"
-Description: "The amount detais about the drug product ingredients in the batch." 
+Description: "The amount detais about the drug product ingredients in the batch. Use for Batch Formula." 
 
 * ^url = "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient"
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS 
@@ -298,7 +302,6 @@ Description: "The amount detais about the drug product ingredients in the batch.
 * substance.code.reference 1..1 MS
 * substance.code.reference ^short = "Ingredient Substance"
 * substance.code.reference only Reference(pqcmc-routine-drug-substance)
-* substance.code ^short = "Ingredient Substance"
 * substance.strength.extension contains pq-quantity-percent-extension named quantity-percent 1..1 MS
 * substance.strength.extension[quantity-percent] ^short = "Quantity Percent"
 * substance.strength.extension contains pq-overage-extension named overage 0..1 MS

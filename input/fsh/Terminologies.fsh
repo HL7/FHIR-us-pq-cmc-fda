@@ -1,6 +1,53 @@
+ValueSet: PqcmcStabilityStudyReasonTerminology
+Id:  vspqcmc-stability-study-reason-terminology
+Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+*  $NCIT#C115123 "Abbreviated New Animal Drug Application"
+*  $NCIT#C73113 "Abbreviated New Drug Application"
+*  $NCIT#C96089 "Annual Report"
+*  $NCIT#C96094 "Supplement to an Approved Application"
+*  $NCIT#C71778 "Biologics License Application"
+*  $NCIT#C70877 "Master File"
+*  $NCIT#C115122 "Generic Investigational New Animal Drug File"
+*  $NCIT#C80440 "Humanitarian Device Exemption (HDE)"
+*  $NCIT#C82667 "Investigational Device Exemption"
+*  $NCIT#C96091 "Investigational New Animal Drug File"
+*  $NCIT#C96090 "Investigational New Drug Application"
+*  $NCIT#C96092 "New Active Ingredient"
+*  $NCIT#C72901 "New Animal Drug Application"
+*  $NCIT#C72899 "New Drug Application"
+*  $NCIT#C70880 "Premarket Approval"
+*  $NCIT#C80442 "Premarket Notification 510(K)"
+
+ValueSet: PqcmcIntervalDescriptionCodeTerminology
+Id:  vsPqcmc-interval-description-code-terminology
+Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+*  $NCIT#C96154 "Ambient Delayed Testing"
+*  $NCIT#C96151 "Delayed Testing"
+*  $NCIT#C96153 "Frozen Delayed Testing"
+*  $NCIT#C96150 "Immediate Testing"
+*  $NCIT#C96155 "Refrigerated Delayed Testing"
+
 ValueSet: PqActionRelationTypeVS
 * $ART#concurrent
 * $ART#after
+
+CodeSystem: PqcmcNameTypesCodes
+Id: codesystemPqcmcNameTypes 
+Description: "Name types for the name element in SubstanceDefintion."
+* ^url =  http://hl7.org/fhir/pq-cmc/codesystem/NameType
+* #CAS "CAS Number"
+* #INN "INN"
+* #USAN "USAN"
+* #IUPAC "IUPAC Name"
+* #ISBT "ISBT 128"
+* #Company "Company Code"
+* #Substance "Substance Name"
+
+ValueSet: vsPqcmcNameTypes
+Id: vs-pqcmc-name-types
+Title: "Value set of Name Types Codes"
+Description: "Value set of all the values in PqcmcNameTypesCodes."
+* include codes from system http://hl7.org/fhir/pq-cmc/codesystem/NameType
 
 CodeSystem: PqcmcCompSectionTypes
 Id: codesystemPqcmcCompSectionTypes

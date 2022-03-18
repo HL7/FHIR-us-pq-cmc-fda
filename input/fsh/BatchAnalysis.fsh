@@ -35,9 +35,10 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * status MS
 * status ^short = "Status of the batch analysis"
 * status ^definition = "The status of the batch analysis. Consult the HL7 list of permitted values in http://hl7.org/fhir/ValueSet/diagnostic-report-status"
-* code MS
+* code  1..1 MS
+* code ^short = "Name for this batch analysis."
+* code.coding 0..0
 * code.text 1..1 MS
-* code.text ^short = "Name/Code for this batch analysis."
 * subject 1..1 MS
 * subject only Reference(DrugProductInstance or DrugSubstanceInstance)
 * subject ^short = "A single medication batch/lot or a single subtance batch/lot "
@@ -47,6 +48,89 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * performer ^definition = "Reference to the organization profile that contains the name, identifer(s) and address of the testing site."
 * result MS
 * result only Reference(ResultObservation)
+
+Profile: AdditionalStageResultObservation
+Parent: Observation
+Id: pq-additional-stage-result-observation
+Title: "Result Observation"
+Description: "Profile for an observation in a batch-analysis report or a stability report"
+
+* identifier 1..1 MS
+* identifier ^short = "Stage"
+* identifier ^comment = "Note: This can be named or numbered.  This will never be 'Single Stage'."
+* status MS
+* value[x] 1..1 MS 
+* value[x]  only Quantity or string
+* valueQuantity 0..1 MS
+* valueQuantity.unit 1..1 MS 
+* valueQuantity.code 1..1 MS
+* valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
+* valueQuantity.value 0..1 MS
+* valueString 0..1 MS
+* dataAbsentReason MS
+* interpretation 1..1 MS
+* interpretation ^short = "Conformance to Criteria"
+* interpretation from PqcmcConformanceCriteriaTerminology
+* note MS
+* note ^short = "Additional Information"
+// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'
+* referenceRange 1..1 MS
+* referenceRange ^comment = "Note: Correpsonds to  Acceptance Criteria in Quality Specification"
+* referenceRange.extension contains pq-interpretation-code-extension named interpretationCode  0..1 MS
+* referenceRange.extension[interpretationCode] ^short = "Interpretation Code"
+* referenceRange.low MS
+* referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
+* referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"
+* referenceRange.low.extension[interpretationCode] 1..1 MS
+* referenceRange.low.unit 1..1 MS
+* referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology
+* referenceRange.high MS
+* referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
+* referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"
+* referenceRange.high.extension[interpretationCode] 1..1 MS
+* referenceRange.high.value 1..1 MS
+* referenceRange.high.unit 1..1 MS
+* referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology
+* referenceRange.text ^short = "Original Text"
+* referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."
+* component 0..1 MS
+* component ^short = "Grouped replicates"
+* component.extension contains pq-replicate-extension named replicate  1..1 MS
+* component.extension[replicate] ^short = "Replicate Number"
+//* component.extension[replicate] only integer
+* component.code.text 1..1 MS
+* component.code.text ^short = "Test Name | RRT"
+* component.value[x] 1..1 MS 
+* component.valueQuantity 0..1 MS
+* component.valueQuantity.unit 1..1 MS
+* component.valueQuantity.code 1..1 MS
+* component.valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
+* component.valueQuantity.value 0..1 MS
+* component.valueString 0..1 MS
+* component.dataAbsentReason MS
+* component.interpretation 1..1 MS
+* component.interpretation ^short = "Conformance to Criteria"
+* component.interpretation from PqcmcConformanceCriteriaTerminology
+// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'
+* component.referenceRange 1..1 MS
+* component.referenceRange ^comment = "Note: Correpsonds to  Acceptance Criteria in Quality Specification"
+* component.referenceRange.extension contains pq-interpretation-code-extension named interpretationCode  0..1 MS
+* component.referenceRange.extension[interpretationCode] ^short = "Interpretation Code"
+* component.referenceRange.low MS
+* component.referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
+* component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"
+* component.referenceRange.low.value 1..1 MS
+* component.referenceRange.low.unit 1..1 MS
+* component.referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology
+* component.referenceRange.high MS
+* component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
+* component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"
+* component.referenceRange.high.extension[interpretationCode] 1..1 MS
+* component.referenceRange.high.value 1..1 MS
+* component.referenceRange.high.unit 1..1 MS
+* component.referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology
+* component.referenceRange.text ^short = "Original Text"
+* component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."
 
 Profile: ResultObservation
 Parent: Observation
@@ -73,7 +157,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * value[x]  only Quantity or string
 * valueQuantity.unit 1..1 MS 
 * valueQuantity.code 1..1 MS
-* valueQuantity.code from  http://unitsofmeasure.org 
+* valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
 * valueQuantity.value 0..1 MS
 * valueString 0..1 MS
 * dataAbsentReason MS
@@ -94,13 +178,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"
 * referenceRange.low.value 1..1 MS
 * referenceRange.low.unit 1..1 MS
-* referenceRange.low.unit from  http://unitsofmeasure.org 
+* referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology
 * referenceRange.high MS
 * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
 * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"
 * referenceRange.high.value 1..1 MS
 * referenceRange.high.unit 1..1 MS
-* referenceRange.high.unit from  http://unitsofmeasure.org 
+* referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology
 * referenceRange.text ^short = "Original Text"
 * referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."
 * hasMember MS
@@ -110,13 +194,14 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * component ^short = "Grouped replicates"
 * component.extension contains pq-replicate-extension named replicate  1..1 MS
 * component.extension[replicate] ^short = "Replicate Number"
+//* component.extension[replicate] only integer
 * component.code.text 1..1 MS
 * component.code.text ^short = "Test Name | RRT"
 * component.value[x] 1..1 MS 
 * component.valueQuantity 0..1 MS
 * component.valueQuantity.unit 1..1 MS
 * component.valueQuantity.code 1..1 MS
-* component.valueQuantity.code from  http://unitsofmeasure.org 
+* component.valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
 * component.valueQuantity.value 0..1 MS
 * component.valueString 0..1 MS
 * component.dataAbsentReason MS
@@ -133,92 +218,12 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"
 * component.referenceRange.low.value 1..1 MS
 * component.referenceRange.low.unit 1..1 MS
-* component.referenceRange.low.unit from  http://unitsofmeasure.org 
+* component.referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology
 * component.referenceRange.high MS
 * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
 * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"
 * component.referenceRange.high.value 1..1 MS
 * component.referenceRange.high.unit 1..1 MS
-* component.referenceRange.high.unit from  http://unitsofmeasure.org 
+* component.referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology
 * component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."
 
-Profile: AdditionalStageResultObservation
-Parent: Observation
-Id: pq-additional-stage-result-observation
-Title: "Result Observation"
-Description: "Profile for an observation in a batch-analysis report or a stability report"
-
-* identifier 1..1 MS
-* identifier ^short = "Stage"
-* identifier ^comment = "Note: This can be named or numbered.  This will never be 'Single Stage'."
-* status MS
-* value[x] 1..1 MS 
-* valueQuantity 0..1 MS
-* valueQuantity.unit 1..1 MS 
-* valueQuantity.code 1..1 MS
-* valueQuantity.code from  http://unitsofmeasure.org 
-* valueQuantity.value 0..1 MS
-* valueString 0..1 MS
-* dataAbsentReason MS
-* interpretation 1..1 MS
-* interpretation ^short = "Conformance to Criteria"
-* interpretation from PqcmcConformanceCriteriaTerminology
-* note MS
-* note ^short = "Additional Information"
-// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'
-* referenceRange 1..1 MS
-* referenceRange ^comment = "Note: Correpsonds to  Acceptance Criteria in Quality Specification"
-* referenceRange.extension contains pq-interpretation-code-extension named interpretationCode  0..1 MS
-* referenceRange.extension[interpretationCode] ^short = "Interpretation Code"
-* referenceRange.low MS
-* referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
-* referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"
-* referenceRange.low.extension[interpretationCode] 1..1 MS
-* referenceRange.low.unit 1..1 MS
-* referenceRange.low.unit from  http://unitsofmeasure.org 
-* referenceRange.high MS
-* referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
-* referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"
-* referenceRange.high.extension[interpretationCode] 1..1 MS
-* referenceRange.high.value 1..1 MS
-* referenceRange.high.unit 1..1 MS
-* referenceRange.high.unit from  http://unitsofmeasure.org 
-* referenceRange.text ^short = "Original Text"
-* referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."
-* component 0..1 MS
-* component ^short = "Grouped replicates"
-* component.extension contains pq-replicate-extension named replicate  1..1 MS
-* component.extension[replicate] ^short = "Replicate Number"
-* component.code.text 1..1 MS
-* component.code.text ^short = "Test Name | RRT"
-* component.value[x] 1..1 MS 
-* component.valueQuantity 0..1 MS
-* component.valueQuantity.unit 1..1 MS
-* component.valueQuantity.code 1..1 MS
-* component.valueQuantity.code from  http://unitsofmeasure.org 
-* component.valueQuantity.value 0..1 MS
-* component.valueString 0..1 MS
-* component.dataAbsentReason MS
-* component.interpretation 1..1 MS
-* component.interpretation ^short = "Conformance to Criteria"
-* component.interpretation from PqcmcConformanceCriteriaTerminology
-// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'
-* component.referenceRange 1..1 MS
-* component.referenceRange ^comment = "Note: Correpsonds to  Acceptance Criteria in Quality Specification"
-* component.referenceRange.extension contains pq-interpretation-code-extension named interpretationCode  0..1 MS
-* component.referenceRange.extension[interpretationCode] ^short = "Interpretation Code"
-* component.referenceRange.low MS
-* component.referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
-* component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"
-* component.referenceRange.low.value 1..1 MS
-* component.referenceRange.low.unit 1..1 MS
-* component.referenceRange.low.unit from  http://unitsofmeasure.org 
-* component.referenceRange.high MS
-* component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS
-* component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"
-* component.referenceRange.high.extension[interpretationCode] 1..1 MS
-* component.referenceRange.high.value 1..1 MS
-* component.referenceRange.high.unit 1..1 MS
-* component.referenceRange.high.unit from  http://unitsofmeasure.org 
-* component.referenceRange.text ^short = "Original Text"
-* component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."
