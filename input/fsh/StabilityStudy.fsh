@@ -11,7 +11,7 @@ Description: """Study protocol identification"""
 * extension[protocolVersion].valueString
 * extension[protocolVersion].valueString ^short = "Protocol Version"
 * extension[protocolVersion].valueString ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a stability study that is sequential. [Source: SME Defined]
-*Examples: 2.1, 2.2 or A1, Aw or P1, P2, etc."""
+Examples: 2.1, 2.2 or A1, Aw or P1, P2, etc."""
 
 Extension: PullIntervalExtension
 Id: pq-timePoint-extension
@@ -58,7 +58,7 @@ Description: "Profile for a the main stability study"
 * whyStopped.text 1..1 MS
 * whyStopped.text ^short = "Reason Stopped"
 * objective.description 1..1 MS
-* objective.description ^short = " Study Purpose"
+* objective.description ^short = "Study Purpose"
 
 Profile: StabilitySubStudy
 Parent: ResearchStudy
@@ -91,7 +91,7 @@ Description: "Profile for a the main stability Sub-Study"
 * whyStopped.coding 0..0
 * whyStopped.text 1..1 MS
 * objective.description 1..1 MS
-* objective.description ^short = " Study Purpose"
+* objective.description ^short = "Study Purpose"
 * result ^short = "Link to stability study results" 
 * result only Reference(StabilityStudyIntervalReport)
 

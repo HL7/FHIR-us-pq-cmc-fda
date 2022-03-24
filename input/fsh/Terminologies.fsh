@@ -27,6 +27,14 @@ Description: "Terminology used to qualify the information pertaining to interval
 *  $NCIT#C96150 "Immediate Testing"
 *  $NCIT#C96155 "Refrigerated Delayed Testing"
 
+ValueSet: PqcmcExpirationDateClassificationTerminology
+Id:  vsPqcmc-expiration-date-classification-terminology
+Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* $NCIT#C185186 "Adequate"
+* $NCIT#C185182 "Approved"
+* $NCIT#C48660 "Not Applicable"
+* $NCIT#C185188 "Proposed"
+
 ValueSet: PqActionRelationTypeVS
 * $ART#concurrent
 * $ART#after
@@ -43,7 +51,7 @@ Description: "Name types for the name element in SubstanceDefintion."
 * #Company "Company Code"
 * #Substance "Substance Name"
 
-ValueSet: vsPqcmcNameTypes
+ValueSet: PqcmcNameTypes
 Id: vs-pqcmc-name-types
 Title: "Value set of Name Types Codes"
 Description: "Value set of all the values in PqcmcNameTypesCodes."
@@ -114,7 +122,8 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #32P82 "Product Postapproval Stability Protocol and Stability Commitment"
 * #32P83 "Product Stability Data"
 * #SP4151 "Quality Specification"
-
+* #SP4454 "Batch Analyses"
+* #SP7383 "Stability Data"
 
 ValueSet: PqcmcCBatchUtilizationTerminology
 Id: vsPqcmcBatchUtilizationTerminology
@@ -678,19 +687,19 @@ Description: "Terminology used to qualify the information pertaining to units of
 * $UCUM#[CFU] "colony forming units"
 * $UCUM#[degF] "degree Fahrenheit"
 * $UCUM#[EU] "Ehrlich unit"
-* $UCUM#[in_i] "inch"
+* $UCUM#[in-i] "inch"
 * $UCUM#[IU] "international unit"
-* $UCUM#[lb_av] "pound"
-* $UCUM#[lbf_av] "pound foot"
-* $UCUM#[oz_av] "ounce"
+* $UCUM#[lb-av] "pound"
+* $UCUM#[lbf-av] "pound foot"
+* $UCUM#[oz-av] "ounce"
 * $UCUM#[pH] "pH"
 * $UCUM#[ppb] "parts per billion"
 * $UCUM#[ppm] "parts per million"
 * $UCUM#[ppth] "parts per thousand"
 * $UCUM#[pptr] "parts per trillion"
 * $UCUM#[psi] "pounds per square inch"
-* $UCUM#[pt_us] "pints (US Dry)"
-* $UCUM#[qt_us] "quarts (US Dry)"
+* $UCUM#[pt-us] "pints (US Dry)"
+* $UCUM#[qt-us] "quarts (US Dry)"
 * $UCUM#{actuation} "actuation"
 * $UCUM#{can} "can"
 * $UCUM#{tbl} "tablet"

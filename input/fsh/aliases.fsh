@@ -7,3 +7,4 @@ Alias: $DUNS  = urn:oid:1.3.6.1.4.1.519.1
 Alias: $FEINumber = urn:oid:2.16.840.1.113883.4.82
 Alias: $ART = http://hl7.org/fhir/action-relationship-type
 Alias: $FEI = https://www.fda.gov/drugs/drug-approvals-and-databases/drug-establishments-current-registration-site
+Alias: $SectionTypes = http://hl7.org/fhir/pq-cmc/codesystem/SectionType
