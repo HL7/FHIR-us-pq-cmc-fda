@@ -46,13 +46,12 @@ Parent: SubstanceDefinition
 Id: pqcmc-DrugSubstance		
 Title: "Drug Substance"		
 Description: "Drug Substance (Active Ingredient) nomenclature and characterizaiton"		
-* identifier		
+* identifier 0..1 MS	
 * identifier ^comment = """		
 The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]		
 * Example: 362O9ITL9D		
 * Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/		
- """		
-* identifier 0..1 MS		
+ """				
 * manufacturer 1..1 MS		
 * manufacturer only Reference(MfgTestSiteOrganization)		
 * supplier 0..1 MS		
@@ -60,8 +59,8 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * molecularWeight 0..1 MS		
 * molecularWeight ^short = "Molecular Weight"	
 * molecularWeight ^definition = "The average mass of a molecule of a compound compared to ¹/₁₂ the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms. [Source: Merriam Webster]"
-* structure MS		
-* structure.molecularFormula 1..1 MS		
+* structure 1..1 MS		
+* structure.molecularFormula 0..1 MS		
 * structure.molecularFormula ^short = "Molecular Formula"	
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
 * structure.technique 1..1 MS		
@@ -69,12 +68,12 @@ The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanum
 * structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] 
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
-* structure.technique.text 1..1		
-* structure.representation		
-* structure.representation.representation		
+* structure.technique.text 1..1	MS	
+* structure.representation 1..*		
+* structure.representation.representation 0..1	MS	
 * structure.representation.format 1..1		
 * structure.representation.format from PqcmcCChemicalStructureDataFileTypeTerminology		
-* structure.representation.document		
+* structure.representation.document	0..1	
 * structure.representation.document only Reference(Base64DocumentReference)		
 * code 1..* MS		
 * code.code.coding 0..0		
@@ -84,6 +83,7 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 Example: 362O9ITL9D
 Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/ 
 """
+* name 1..* MS	
 * name.name 1..1 MS		
 * name.name	^short = "Substance Name |CAS Number |INN | USAN |IUPAC Name | ISBT 128| Company Code"	
 * name.type  1..1 MS		
@@ -91,7 +91,6 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * name.type.coding from vs-pqcmc-name-types		
 * name.preferred MS		
 * name.preferred ^short = "True when the name type is Substance Name"	
-* name.preferred	
 * relationship.substanceDefinitionReference only Reference(ImpuritySubstance or PolymorphicForm or ComponentSubstance )		
 * relationship.type.text		
 * relationship.type.text ^short = "Preferred values: 'Polymorph', 'Raw Material', and  'Impurity'"	
@@ -246,29 +245,6 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin.coding 0..0	
 * sourceMaterial.countryOfOrigin.text	1..1 MS	
 		
-Profile: RoutineSubstanceDefinition		
-Parent: DrugSubstance		
-Id: pqcmc-routine-drug-substance		
-Title: "Brief Drug Substance"		
-Description: "Provides sufficient information  to identify a drug substance."		
-		
-* identifier ^short = "UNII"	
-* identifier ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/] 
-Example: 362O9ITL9D * Note: If a UNII does not exist, please go to 
-http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/ 
-"""
-* manufacturer 1..1 MS		
-* manufacturer only Reference(MfgTestSiteOrganization)		
-* supplier 0..1 MS		
-* supplier only Reference(MfgTestSiteOrganization)		
-* code MS		
-* code.code.text ^short = "CAS Number"	
-* code.code.text ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide unmistakable identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org] 
-Example: CAS [103-90-2] 
-"""
-* name.name MS		
-* name.name	^short = "Component/Raw Material Name"	
-		
 Profile: Excipient		
 Parent: DrugSubstance		
 Id: pqcmc-excipient		
@@ -337,7 +313,7 @@ Description: "The amount detais about the drug product compoents to define the p
 Examples: removed during process, adjusted for loss on drying, etc. 
 """
 * status.code		
-* for only Reference(pqcmc-routine-drug-product)		
+* for only Reference(DrugProductDescription)		
 * for ^short = "Reference to MedicinalProductDefinition"	
 * role.coding.code 1..1 MS		
 * role.coding.code ^short = "Drug Product Component Function Category"	
@@ -382,7 +358,7 @@ Note: For Excipients, this is the amount
 * substance.strength.presentationQuantity.extension[strengthOperator] ^short = "Strength Operator"	
 * substance.strength.presentationQuantity.extension[strengthOperator] ^definition = """A mathematical symbol that denotes equality or inequality between two values 
 Note:  This is typically applicable to biologics """
-* substance.strength.presentationText 0..1 MS		
+//* substance.strength.presentationText 1..1 MS		
 		
 Profile: DrugProductIngredient		
 Parent: Ingredient		
@@ -401,14 +377,14 @@ Description: "The amount detais about the drug product ingredients in the batch.
 * substance.strength.extension contains pq-overage-extension named overage 0..1 MS		
 * substance.strength.extension[overage] ^short = "Overage"	
 * substance.strength.concentration[x] 1..1 MS
-//* substance.strength.concentration[x] only Quantity		
+//* * substance.strength.concentration[x] only Quantity		
 //* substance.strength.concentrationQuantity ^short = "Component Quanty Per Batch"	
 //* substance.strength.concentrationText 1..1 MS		
-* substance.strength.concentrationText ^short = "Strength Textual"	
-* substance.strength.concentrationText ^definition = """A written description of the strength of the ingredient.[Source: SME Defined] 
- Note:  This is typically applicable to biologics 
- Example: International Units for Enzymes 
- """
+//* substance.strength.concentrationText ^short = "Strength Textual"	
+//* substance.strength.concentrationText ^definition = """A written description of the strength of the ingredient.[Source: SME Defined] 
+//*  Note:  This is typically applicable to biologics 
+//*  Example: International Units for Enzymes 
+//*  """
 
 Profile: DrugSubstancemanufacturingBatch		
 Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch		
@@ -497,3 +473,107 @@ Description: "Includes the properties of the drug substance as manufactured."
 * expiry ^short = "Retest Date"	
 * expiry ^definition = "The date after which samples of the drug substance should be examined to ensure compliance with the specification and thus suitable for use in the manufacture of a given drug product [Source: Adapted from Q1A(R2)]"
 * expiry only dateTime		
+//________________________________________________________________
+/// Profiles on Profiles
+//________________________________________________________________
+
+Profile: RoutineSubstanceDefinition		
+Parent: DrugSubstance		
+Id: pqcmc-routine-drug-substance		
+Title: "Brief Drug Substance"		
+Description: "Provides sufficient information  to identify a drug substance."		
+		
+* identifier 1..1 
+* manufacturer 1..1 
+* supplier 0..1 	
+* code  1..1 	
+* name.name 1..1 		
+
+Profile: SubstanceContainerClosure		
+Parent: DrugSubstance		
+Id: pqcmc-drug-substance-container-closure		
+Title: "Drug Substance Container Closure"		
+Description: "Description and coding of the container closure system."		
+* extension contains pq-container-closure-extension named containerClosure 1..1 MS			
+* identifier 1..1 
+* manufacturer 1..1 	
+* code  1..1 	
+* name.name 1..1 		
+
+Profile: DrugSubstanceNomenclature		
+Parent: DrugSubstance		
+Id: pqcmc-drug-substance-nomenclature			
+Title: "Substance Nomenclature"	
+Description: "Drug Substance (Active Ingredient) nomenclature"		
+
+* identifier 0..1 		
+* manufacturer 1..1 		
+* supplier 0..1 
+* molecularWeight 0..1
+* code.code.text  1..1 	
+* name.name 1..1 
+* name.type  1..1 
+* name.preferred 0..1	
+* relationship.substanceDefinitionReference only Reference( PolymorphicForm )		
+* relationship.type.text = "Polymorph"		
+
+
+Profile: DrugSubstanceStructure		
+Parent: DrugSubstance		
+Id: pqcmc-drug-substance-structure		
+Title: "Drug Substance"		
+Description: "Drug Substance (Active Ingredient) molecular structure"		
+	
+* identifier 0..1 		
+* molecularWeight 0..1 	
+* structure 1..1 	
+* structure.molecularFormula 0..1 		
+* code.code.text  1..1 
+* name.name 1..1 
+* name.type  1..1 
+
+Profile: DrugSubstanceMaterials		
+Parent: DrugSubstance		
+Id: pqcmc-drug-substance-materials			
+Title: "Substance Raw Materials"	
+Description: "Drug Substance Raw Materials"		
+
+* identifier 0..1 
+* code.code.text  1..1 	
+* name.name 1..1 
+* name.type  1..1 
+* name.preferred 0..1	
+* relationship.substanceDefinitionReference only Reference( ComponentSubstance )		
+* relationship.type.text = "Raw Material"	
+
+Profile: DrugSubstanceImpurities	
+Parent: DrugSubstance		
+Id: pqcmc-drug-substance-impurities		
+Title: "Substance Impurities"	
+Description: "Drug Substance Impurities"		
+
+* identifier 0..1 
+* code.code.text  1..1 	
+* name.name 1..1 
+* name.type  1..1 
+* name.preferred 0..1	
+* relationship.substanceDefinitionReference only Reference( ComponentSubstance )		
+* relationship.type.text = "Impurity"
+
+Profile: DrugSubstanceRepresentationalStructure		
+Parent: DrugSubstance		
+Id: pqcmc-drug-substance-structure-represent		
+Title: "Drug Substance"		
+Description: "Drug Substance (Active Ingredient) Representational Structures"		
+	
+* identifier 0..1 		
+* structure 1..1		
+* structure.technique 1..1 
+* structure.technique.text 1..1		
+* structure.representation	1..1	
+* structure.representation.representation 0..1			
+* structure.representation.format 1..1			
+* structure.representation.document	0..1			
+* code.code.text  1..1 
+* name.name 1..1 
+* name.type  1..1 

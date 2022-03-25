@@ -88,6 +88,8 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #32S72 "Substance Postapproval Stability Protocol and Stability Commitment"
 * #32S73 "Substance Stability Data"
 * #32P10 "Product Description and Composition of the Drug Product"
+* #32P11 "Product Description"
+* #32P12 "Product Composition"
 * #32P20 "Product Pharmaceutical Development"
 * #32P21 "Product Components of the Drug Product"
 * #32P22 "Product Drug Product"

@@ -32,10 +32,10 @@ Note: This includes primary packaging components and secondary packaging compone
 		
 Profile: DrugProduct		
 Parent: MedicinalProductDefinition		
-Id: pqcmc-druproduct		
+Id: pqcmc-drug-product		
 Title: "Drug Product"		
 Description: "Includes the properties of the drug product, its components and impurities"		
-* .contained only DrugProductComponent		
+
 * extension contains pq-container-closure-extension named containerClosure 1..1 MS		
 * identifier 1..1 MS		
 * description 1..1 MS		
@@ -45,7 +45,7 @@ Examples: dosage form, container closure system, purpose, etc. """
 * combinedPharmaceuticalDoseForm 1..1 MS		
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS		
 * combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"	
-* combinedPharmaceuticalDoseForm ^definition = """The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI EVS - C42636] 
+* combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI EVS - C42636] 
 Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] 
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA. 
 SME comment -- this is the marketed dosage form.
@@ -71,26 +71,6 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * crossReference  MS		
 * crossReference.product  MS		
 * crossReference.product ^short = "Co-Package"		
-		
-Profile: RoutineDrugProduct		
-Parent: MedicinalProductDefinition		
-Id: pqcmc-routine-drug-product		
-Title: "Routine Drug Product"		
-Description: "Includes the identfying information of the drug product"		
-		
-* identifier 1..1 MS		
-* description 1..1 MS		
-* description ^short = "Drug Product Description"	
-* description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined] 
-Examples: dosage form, container closure system, purpose, etc. """
-* name.productName 1..1 MS		
-* name.productName ^short = "Product Proprietary name | Product Non-proprietary Name"		
-* name.productName ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm] 
-* Note: Excludes dosage form, route of administration and strength. 
-* Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
-"""
-* name.type 1..1 MS		
 		
 Profile: BatchFormula		
 Parent: MedicinalProductDefinition		
@@ -225,8 +205,8 @@ Examples: commercial, development. """
 Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc.
 """
 * extension[additionalInformation].valueString MS		
-* extension[container] 1..*  MS		
-* extension[container] ^short = "Container"		
+// * extension[container] 1..*  MS		
+// * extension[container] ^short = "Container"		
 // * extension[container].extension[lotNumber] 1..1 MS 
 // * extension[container].extension[lotNumber] ^short = "Container Lot Number" 
 // * extension[container].extension[lotNumber] ^definition = """A combination of letters, numbers, or symbols, or any combination of them to uniquely identify the container's manufacturing lot. 
@@ -259,41 +239,58 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 // * extension[container].extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]" 
 // * extension[container].extension[closureType].CodeableConcept  1..1 MS 
 // * extension[container].extension[closureType].CodeableConcept from vsPqcmcClosureTypeTerminology 
+//________________________________________________________________
+/// Profiles on Profiles
+//________________________________________________________________
 
-Profile: DrugProductwithImpurites		
-Parent: MedicinalProductDefinition		
-Id: pqcmc-drug-product-with-impurities		
-Title: "Drug Product Impurities"		
-Description: "List of drug product impurities."		
-		
-* identifier 1..1 MS		
-* impurity 0..* MS		
-* impurity ^short = "Product Impurity"		
-* impurity.reference only Reference(ImpuritySubstance)		
-* name 1..1 MS		
-* name.productName 1..1 MS		
-* name.productName ^short = "Product Proprietary name | Product Non-proprietary Name"	
-* name.productName ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm] 
-* Note: Excludes dosage form, route of administration and strength. 
-* Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
-"""
-* name.type 1..1 MS		
+Profile: DrugProductwithImpurites
+Parent: DrugProduct
+Id: pqcmc-drug-product-with-impurities
+Title: "Drug Product Impurities"
+Description: "List of drug product impurities."
+
+* identifier 1..1
+* impurity 1..1
+* name 1..1
+* name.productName 1..1
+* name.type 1..1 MS
 
 Profile: DrugProductContainerClosure		
 Parent: MedicinalProductDefinition		
 Id: pqcmc-druproduct-container-closure		
 Title: "Drug Product Container Closure"		
-Description: "Description and coding of the container closure system."		
-* .contained only DrugProductComponent		
+Description: "Description and coding of the container closure system."				
 * extension contains pq-container-closure-extension named containerClosure 1..1 MS		
-* identifier 1..1 MS		
-* name 1..1 MS		
-* name.productName 1..1 MS		
-* name.productName ^short = "Product Proprietary name | Product Non-proprietary Name"	
-* name.productName ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm] 
-* Note: Excludes dosage form, route of administration and strength. 
-* Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
-"""
+* identifier 1..1 		
+* name 1..1 		
+* name.productName 1..1 
+* name.type 1..1 		
+
+Profile: DrugProductDescription		
+Parent: MedicinalProductDefinition		
+Id: pqcmc-drug-product-description		
+Title: "Drug Product Description"		
+Description: "Includes the properties of the drug product and components"		
+//* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
+* identifier 1..1 		
+* description 1..1 
+* combinedPharmaceuticalDoseForm 1..1 		
+* combinedPharmaceuticalDoseForm.coding.code 1..1 	
+* route 1..1 	
+* route.coding.code 1..1 
+* name 1..1		
+* name.productName 1..1	
+* name.type 1..1		
+* crossReference 		
+* crossReference.product 1..1			
+
+Profile: RoutineDrugProduct		
+Parent: MedicinalProductDefinition		
+Id: pqcmc-routine-drug-product		
+Title: "Routine Drug Product"		
+Description: "Includes the identfying information of the drug product"		
+		
+* identifier 1..1 		
+* name.productName 1..1 
 * name.type 1..1 MS		
+		
