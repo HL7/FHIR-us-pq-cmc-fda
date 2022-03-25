@@ -33,6 +33,41 @@ Description: "The fields needed to represent the Quality Specifications to be in
 * section[Excipient].entry only Reference(QualitySpecification)
 // need check that Specification type in instance matches the seciton selected.
 
+Profile: EctdCompositionSP7383
+Parent: Composition
+Id: ectd-composition-sp7383
+Title: "eCTD Stability Data Composition"
+Description: "The fields needed to represent the  Stability Datas to be included in the  eCTD."
+
+* status = #final
+* type = PqcmcCompSectionTypes#SP7383 "Stability Data"  
+* author 1..1 MS
+* author only Reference(SponsorOrganization)
+* title  1..1 MS
+/* 
+	SECTION SLICES 
+*/
+* section 1..1 MS
+* section.entry MS
+* section ^slicing.discriminator.type = #value
+* section ^slicing.discriminator.path = "code"
+* section ^slicing.rules = #open
+* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Data profile: RoutineDrugProduct or Routine Api or Excipient"
+* section contains DrugProduct 0..1 MS and Api 0..1 MS and Excipient 0..1 MS 
+* section[DrugProduct] ^definition = "Product Stability Data to be included in the 3.2.P.8.3 eCTD folder."
+* section[DrugProduct].code = PqcmcCompSectionTypes#32P83
+* section[DrugProduct].title = "Product Stability Data"
+* section[DrugProduct].entry only Reference(StabilityStudy)
+* section[Api] ^definition = "Drug Substance Stability Data to be included in the 3.2.S.7.3 eCTD folder."
+* section[Api].code = PqcmcCompSectionTypes#32S73
+* section[Api].title = "Substance Stability Data"
+* section[Api].entry only Reference(StabilityStudy)
+* section[Excipient] ^definition = "Excipient Stability Data to be included in the 3.2.P.4.5 eCTD folder."
+* section[Excipient].code = PqcmcCompSectionTypes#32P45
+* section[Excipient].title = "Product Excipients of Human or Animal Origin"
+* section[Excipient].entry only Reference(StabilityStudy)	
+// need check that subject type in instance matches the seciton selected.
+
 Profile: EctdCompositionSP4454
 Parent: Composition
 Id: ectd-composition-sp4454

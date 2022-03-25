@@ -9,11 +9,14 @@
 * eCTD Substance Control of Materials Composition
 * eCTD Substance General Information
 * eCTD Substance Container Closure System Composition
-* eCTD Specification Composition
-* eCTD Batch Analyses Composition
+
 * eCTD Product Description and Composition
 * eCTD Batch Formula Composition
 * eCTD Product Characterization of Impurities Composition
 * eCTD Product Container Closure System Composition
+
+* eCTD Specification Composition
+* eCTD Batch Analyses Composition
+* eCTD Stability Data Composition
 
 <span style="color:  #333333;;">The PQ/CMC Profile design and development of IG is being bound to the FHIR Build definition at [https://build.fhir.org/](https://build.fhir.org/) and NOT to the FHIR Release 4.5.0. </span>
