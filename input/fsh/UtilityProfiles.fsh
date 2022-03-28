@@ -11,4 +11,4 @@ Extension: AditionalInformationExtension
 Id:  pq-additional-info-extension
 Title: "Aditional Information"
 Description: "Any additional information"
-* extension.value[x] only markdown
+* value[x] only markdown

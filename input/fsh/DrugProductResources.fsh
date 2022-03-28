@@ -1,8 +1,8 @@
 Extension: QuantityBatchSize		
 Id: pq-quantity-batch-size		
 Title: "Batch Size"		
-Description: "The quantity made by the batch formula."		
-* extension.value[x] only Quantity		
+Description: "The quantity made by the batch formula."	
+* value[x] only Quantity
 		
 Extension: ContainerClosureExtension		
 Id: pq-container-closure-extension		
@@ -78,8 +78,6 @@ Id: pqcmc-batch-formula
 Title: "Batch Formula"		
 Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."		
 		
-* extension contains pq-quantity-batch-size named batch-size 1..1 MS		
-* extension[batch-size] ^short = "Batch Quantity"		
 * identifier 1..1 MS		
 * name.productName 1..1 MS		
 * name.productName ^short = "Product Proprietary name | Product Non-proprietary Name"	
@@ -89,7 +87,15 @@ Description: "Listing of all components of the dosage form to be used in the man
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
 """	
 * name.type 1..1 MS		
-* operation 1..* MS		
+* operation 1..* MS	
+* extension contains pq-quantity-batch-size named batch-size 1..1 MS
+* extension[batch-size].valueQuantity 1..1 MS			
+* extension[batch-size].valueQuantity ^short = "Batch Quantity | Quantity UOM"	
+* extension[batch-size].valueQuantity ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
+Example: 1000 kg
+
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]	
+"""	
 * operation.type 1..1 MS		
 * operation.type ^short = "Batch Ingredient"		
 * operation.type.reference 1..1 MS		
@@ -249,10 +255,10 @@ Id: pqcmc-drug-product-with-impurities
 Title: "Drug Product Impurities"
 Description: "List of drug product impurities."
 
-* identifier 1..1
-* impurity 1..1
-* name 1..1
-* name.productName 1..1
+* identifier 1..1 MS
+* impurity 1..1 MS
+* name 1..1 MS
+* name.productName 1..1 MS
 * name.type 1..1 MS
 
 Profile: DrugProductContainerClosure		
@@ -261,10 +267,10 @@ Id: pqcmc-druproduct-container-closure
 Title: "Drug Product Container Closure"		
 Description: "Description and coding of the container closure system."				
 * extension contains pq-container-closure-extension named containerClosure 1..1 MS		
-* identifier 1..1 		
-* name 1..1 		
-* name.productName 1..1 
-* name.type 1..1 		
+* identifier 1..1 MS 		
+* name 1..1 MS 		
+* name.productName 1..1 MS 
+* name.type 1..1 MS 		
 
 Profile: DrugProductDescription		
 Parent: MedicinalProductDefinition		
@@ -272,17 +278,17 @@ Id: pqcmc-drug-product-description
 Title: "Drug Product Description"		
 Description: "Includes the properties of the drug product and components"		
 //* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
-* identifier 1..1 		
-* description 1..1 
-* combinedPharmaceuticalDoseForm 1..1 		
-* combinedPharmaceuticalDoseForm.coding.code 1..1 	
-* route 1..1 	
-* route.coding.code 1..1 
-* name 1..1		
-* name.productName 1..1	
-* name.type 1..1		
+* identifier 1..1 MS		
+* description 1..1 MS 
+* combinedPharmaceuticalDoseForm 1..1 MS 		
+* combinedPharmaceuticalDoseForm.coding.code 1..1 MS 	
+* route 1..1 MS 	
+* route.coding.code 1..1 MS 
+* name 1..1 MS		
+* name.productName 1..1 MS	
+* name.type 1..1 MS		
 * crossReference 		
-* crossReference.product 1..1			
+* crossReference.product 1..1 MS			
 
 Profile: RoutineDrugProduct		
 Parent: MedicinalProductDefinition		
@@ -290,7 +296,7 @@ Id: pqcmc-routine-drug-product
 Title: "Routine Drug Product"		
 Description: "Includes the identfying information of the drug product"		
 		
-* identifier 1..1 		
-* name.productName 1..1 
+* identifier 1..1 MS 		
+* name.productName 1..1 MS 
 * name.type 1..1 MS		
 		

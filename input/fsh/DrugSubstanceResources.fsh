@@ -2,26 +2,26 @@ Extension: StrengthOperatorExtension
 Id:  pq-strength-operator-extension		
 Title: "Strength Operator"		
 Description: "A mathematical symbol that denotes equality or inequality between two values."		
-* extension.value[x] only CodeableConcept		
-* extension.value[x] from vsPqcmcStrengthOperatorTerminology (required)		
+* value[x] only CodeableConcept		
+* value[x] from vsPqcmcStrengthOperatorTerminology (required)		
 		
 Extension: ContentPercentExtension		
 Id:  pq-content-percent-extension		
 Title: "Content (%)"		
 Description: "The percentage of the component in the drug product."		
-* extension.value[x] only decimal		
+* value[x] only decimal		
 		
 Extension: StrengthTypeExtension		
 Id:  pq-strength-type-extension		
 Title: "Strength Type  (for API)"		
 Description: "A physical (contetn) of activity measurement of the strenght of the active ingredient."		
-* extension.value[x] only string		
+* value[x] only string		
 		
 Extension: QuantityPercentExtension		
 Id:  pq-quantity-percent-extension		
 Title: "Quantity Percent"		
 Description: "The percentage of the component in the batch."		
-* extension.value[x] only decimal		
+* value[x] only decimal		
 		
 Extension: OverageExtension		
 Id: pq-overage-extension		
@@ -480,7 +480,7 @@ Description: "Includes the properties of the drug substance as manufactured."
 Profile: RoutineSubstanceDefinition		
 Parent: DrugSubstance		
 Id: pqcmc-routine-drug-substance		
-Title: "Brief Drug Substance"		
+Title: "Routine Drug Substance"		
 Description: "Provides sufficient information  to identify a drug substance."		
 		
 * identifier 1..1 
@@ -521,7 +521,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature"
 Profile: DrugSubstanceStructure		
 Parent: DrugSubstance		
 Id: pqcmc-drug-substance-structure		
-Title: "Drug Substance"		
+Title: "Drug Substance Mlecular Structure"		
 Description: "Drug Substance (Active Ingredient) molecular structure"		
 	
 * identifier 0..1 		
@@ -563,7 +563,7 @@ Description: "Drug Substance Impurities"
 Profile: DrugSubstanceRepresentationalStructure		
 Parent: DrugSubstance		
 Id: pqcmc-drug-substance-structure-represent		
-Title: "Drug Substance"		
+Title: "Drug Substance Structures"		
 Description: "Drug Substance (Active Ingredient) Representational Structures"		
 	
 * identifier 0..1 		
