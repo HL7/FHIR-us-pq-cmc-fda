@@ -2,7 +2,7 @@ Profile: EctdCompositionSP4151
 Parent: Composition
 Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
-Description: "The fields needed to represent the Quality Specifications to be included in the  eCTD."
+Description: "The fields needed to represent the Quality Specifications to be included in the  eCTD. References Sponsor Organization and Quality Specification."
 
 * status = #final
 * type = PqcmcCompSectionTypes#SP4151 "Quality Specification"  
@@ -22,14 +22,17 @@ Description: "The fields needed to represent the Quality Specifications to be in
 * section[DrugProduct] ^definition = "Product Specification to be included in the 3.2.P.5.1 eCTD folder."
 * section[DrugProduct].code = PqcmcCompSectionTypes#32P51
 * section[DrugProduct].title = "Drug Product Quality Specification"
+* section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(QualitySpecification)
 * section[Api] ^definition = "Drug Substance Specification to be included in the 3.2.S.4.1 eCTD folder."
 * section[Api].code = PqcmcCompSectionTypes#32S41
 * section[Api].title = "Drug Substance Quality Specification"
+* section[Api].entry 1..1 MS
 * section[Api].entry only Reference(QualitySpecification)
 * section[Excipient] ^definition = "Excipient Specification to be included in the 3.2.P.4.1 eCTD folder."
 * section[Excipient].code = PqcmcCompSectionTypes#32P41
 * section[Excipient].title = "Excipient Quality Specification"
+* section[Excipient].entry 1..1 MS
 * section[Excipient].entry only Reference(QualitySpecification)
 // need check that Specification type in instance matches the seciton selected.
 
@@ -37,7 +40,7 @@ Profile: EctdCompositionSP7383
 Parent: Composition
 Id: ectd-composition-sp7383
 Title: "eCTD Stability Data Composition"
-Description: "The fields needed to represent the  Stability Datas to be included in the  eCTD."
+Description: "The fields needed to represent the  Stability Datas to be included in the  eCTD. References Sponsor Organization and Stability Study"
 
 * status = #final
 * type = PqcmcCompSectionTypes#SP7383 "Stability Data"  
@@ -57,14 +60,17 @@ Description: "The fields needed to represent the  Stability Datas to be included
 * section[DrugProduct] ^definition = "Product Stability Data to be included in the 3.2.P.8.3 eCTD folder."
 * section[DrugProduct].code = PqcmcCompSectionTypes#32P83
 * section[DrugProduct].title = "Product Stability Data"
+* section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(StabilityStudy)
 * section[Api] ^definition = "Drug Substance Stability Data to be included in the 3.2.S.7.3 eCTD folder."
 * section[Api].code = PqcmcCompSectionTypes#32S73
 * section[Api].title = "Substance Stability Data"
+* section[Api].entry 1..1 MS
 * section[Api].entry only Reference(StabilityStudy)
 * section[Excipient] ^definition = "Excipient Stability Data to be included in the 3.2.P.4.5 eCTD folder."
 * section[Excipient].code = PqcmcCompSectionTypes#32P45
 * section[Excipient].title = "Product Excipients of Human or Animal Origin"
+* section[Excipient].entry 1..1 MS
 * section[Excipient].entry only Reference(StabilityStudy)	
 // need check that subject type in instance matches the seciton selected.
 
@@ -72,7 +78,7 @@ Profile: EctdCompositionSP4454
 Parent: Composition
 Id: ectd-composition-sp4454
 Title: "eCTD Batch Analyses Composition"
-Description: "The fields needed to represent the Batch Analyses to be included in the  eCTD."
+Description: "The fields needed to represent the Batch Analyses to be included in the eCTD.  References Sponsor Organization and Batch Analysis"
 
 * status = #final
 * type = PqcmcCompSectionTypes#SP4454 "Batch Analyses" 
@@ -92,10 +98,12 @@ Description: "The fields needed to represent the Batch Analyses to be included i
 * section[DrugProduct] ^definition = "Product Batch Analyses to be included in the 3.2.P.5.4 eCTD folder."
 * section[DrugProduct].code = PqcmcCompSectionTypes#32P51
 * section[DrugProduct].title = "Product Batch Analyses"
+* section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(BatchAnalysis)
 * section[Api] ^definition = "Substance Batch Analyses to be included in the 3.2.S.4.4 eCTD folder."
 * section[Api].code = PqcmcCompSectionTypes#32S41
 * section[Api].title = "Substance Batch Analyses"
+* section[Api].entry 1..1 MS
 * section[Api].entry only Reference(BatchAnalysis)
 // need check that subject only Reference(DrugProductInstance or DrugSubstanceInstance)	matches section selected.
 
@@ -103,7 +111,7 @@ Profile: EctdComposition32P32
 Parent: Composition
 Id: ectd-composition-32p32
 Title: "eCTD Batch Formula Composition"
-Description: "The fields needed to represent the Product Batch Formula to be included in the eCTD."
+Description: "The fields needed to represent the Product Batch Formula to be included in the eCTD.   References Sponsor Organization and Batch Formula"
 
 * status = #final
 * type = PqcmcCompSectionTypes#32P32 "Product Batch Formula" 
@@ -124,7 +132,7 @@ Profile: EctdComposition32P55
 Parent: Composition
 Id: ectd-composition-32p55
 Title: "eCTD Product Characterization of Impurities Composition"
-Description: "The fields needed to represent the Product Characterization of Impurities in a to be included in the eCTD."
+Description: "The fields needed to represent the Product Characterization of Impurities in a to be included in the eCTD.   References Sponsor Organization and Product Characterization of Impurities"
 
 * status = #final
 * type = PqcmcCompSectionTypes#32P55 "Product Characterization of Impurities"
@@ -145,7 +153,7 @@ Profile: EctdComposition32P70
 Parent: Composition
 Id: ectd-composition-32p70
 Title: "eCTD Product Container Closure System Composition"
-Description: "The fields needed to represent the Product Container Closure Systems to be included in the eCTD???  - what was the decsion?  p.7.0 or p.1.0"
+Description: "The fields needed to represent the Product Container Closure Systems to be included in the eCTD p.7.0"
 
 * status = #final
 * type = PqcmcCompSectionTypes#32P70 "Product Container Closure System"
@@ -160,13 +168,14 @@ Description: "The fields needed to represent the Product Container Closure Syste
 * section ^definition = "Product Container Closure System to be included in the 3.2.P.7.0 eCTD folder."
 * section.code = PqcmcCompSectionTypes#32P70
 * section.title = "Product Container Closure System"
+* section.entry 1..1 MS
 * section.entry only Reference(DrugProductContainerClosure)
 
 Profile: EctdComposition32P10
 Parent: Composition
 Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition "
-Description: "The fields needed to represent the Product Description and Composition of the Drug Product to be included in the 3.2.P.1.0 folder of the eCTD."
+Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included in the 3.2.P.1.0 folder of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
 * status = #final
 * type = PqcmcCompSectionTypes#32P10 "Product Description and Composition of the Drug Product"
@@ -177,26 +186,33 @@ Description: "The fields needed to represent the Product Description and Composi
 	SECTION SLICES 
 */
 * section 1..* MS
-* section.entry MS
+* section.entry 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document."
-* section contains ProductDescription 1..1 MS and ProductComposition 0..* MS 
+* section contains ProductDescription 1..1 MS and ContainerClosure 1..1 MS and ProductComposition 0..* MS 
 * section[ProductDescription] ^definition = "Drug product description to be included in the 3.2.P.1.0 eCTD folder."
 * section[ProductDescription].code = PqcmcCompSectionTypes#32P11
 * section[ProductDescription].title = "Product Description"
+* section[ProductDescription].entry 1..1 MS
 * section[ProductDescription].entry only Reference(DrugProductDescription)
+* section[ContainerClosure] ^definition = "Product Container Closure System to be included in the 3.2.P.1.0 eCTD folder."
+* section[ContainerClosure].code = PqcmcCompSectionTypes#32P70
+* section[ContainerClosure].title = "Product Container Closure System"
+* section[ContainerClosure].entry 1..1 MS
+* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
 * section[ProductComposition] ^definition = "Drug product components to be included in the 3.2.P.1.0 eCTD folder."
 * section[ProductComposition].code = PqcmcCompSectionTypes#32P12
 * section[ProductComposition].title = "Product Composition"
+* section[ProductComposition].entry 1..1 MS
 * section[ProductComposition].entry only Reference(DrugProductComponent)
 
 Profile: EctdComposition32S60
 Parent: Composition
 Id: ectd-composition-32s60
 Title: "eCTD Substance Container Closure System Composition"
-Description: "The fields needed to represent the Substance Container Closure Systems to be included in the eCTD???  - what was the decsion?  p.7.0 or p.1.0"
+Description: "The fields needed to represent the Substance Container Closure Systems to be included in the eCTD 3.2.S.6.0 eCTD folder. References Sponsor Organization and Substance Container Closure"
 
 * status = #final
 * type = PqcmcCompSectionTypes#32S60 "Substance Container Closure System"
@@ -211,13 +227,14 @@ Description: "The fields needed to represent the Substance Container Closure Sys
 * section ^definition = "Substance Container Closure System to be included in the 3.2.S.6.0 eCTD folder."
 * section.code = PqcmcCompSectionTypes#32S60
 * section.title = "Substance Container Closure System"
+* section.entry 1..1 MS
 * section.entry only Reference(SubstanceContainerClosure)
 
 Profile: EctdComposition32S10
 Parent: Composition
 Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
-Description: "The fields needed to represent the Substance Nomenclature and Structure to be included in the 3.2.S.1.0 folder of the eCTD."
+Description: "The fields needed to represent the Substance Nomenclature and Structure to be included in the 3.2.S.1.0 folder of the eCTD. References Sponsor Organizationv"
 
 * status = #final
 * type = PqcmcCompSectionTypes#32S10 "Substance General Information"
@@ -237,17 +254,19 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section[SubstanceNomenclature] ^definition = "Substance Nomenclature to be included in the 3.2.S.1.0 eCTD folder."
 * section[SubstanceNomenclature].code = PqcmcCompSectionTypes#32S11
 * section[SubstanceNomenclature].title = "Substance Nomenclature"
+* section[SubstanceNomenclature].entry 1..1 MS
 * section[SubstanceNomenclature].entry only Reference(DrugSubstanceNomenclature)
 * section[SubstanceStructure] ^definition = "Drug product components to be included in the 3.2.S.1.0 eCTD folder."
 * section[SubstanceStructure].code = PqcmcCompSectionTypes#32S12
 * section[SubstanceStructure].title = "Substance Structure"
+* section[SubstanceStructure].entry 1..1 MS
 * section[SubstanceStructure].entry only Reference(DrugSubstanceStructure)
 
 Profile: EctdComposition32S23
 Parent: Composition
 Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
-Description: "The fields needed to represent the Substance Control of Materialss in a to be included in the eCTD."
+Description: "The fields needed to represent the Substance Control of Materialss in a to be included in the eCTD. References Sponsor Organization and Drug Substance Materials."
 
 * status = #final
 * type = PqcmcCompSectionTypes#32S23 "Substance Control of Materials"
@@ -268,7 +287,7 @@ Profile: EctdComposition32S30
 Parent: Composition
 Id: ectd-composition-32s30
 Title: "eCTD Substance General Information"
-Description: "The fields needed to represent the Substance Structure and Impurities to be included in the 3.2.S.3.0 folder of the eCTD."
+Description: "The fields needed to represent the Substance Structure and Impurities to be included in the 3.2.S.3.0 folder of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
 * status = #final
 * type = PqcmcCompSectionTypes#32S30 "Substance Characterization"
@@ -288,8 +307,10 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Structure] ^definition = "Substance Characterization to be included in the 3.2.S.3.0 eCTD folder."
 * section[Structure].code = PqcmcCompSectionTypes#32S31
 * section[Structure].title = "Substance Elucidation of Structure and other Characteristics"
+* section[Structure].entry  1..1 MS
 * section[Structure].entry only Reference(DrugSubstanceStructure)
 * section[Impurities] ^definition = "Drug Substance Impurities to be included in the 3.2.S.3.0 eCTD folder."
 * section[Impurities].code = PqcmcCompSectionTypes#32S32
 * section[Impurities].title = "Substance Impurities"
+* section[Impurities].entry  1..1 MS
 * section[Impurities].entry only Reference(DrugSubstanceImpurities)

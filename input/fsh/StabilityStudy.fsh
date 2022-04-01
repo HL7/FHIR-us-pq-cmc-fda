@@ -22,10 +22,14 @@ Description: "Contains elements related to the intervals of the stability study.
     timePointDescription 1..1 MS 
 * extension[timePoint].value[x] only Quantity
 * extension[timePoint].value[x] ^short = "Interval"
-* extension[timePoint].value[x] ^definition = "The scheduled time for the the pull date."
+* extension[timePoint].value[x] ^definition = "Storage time of the batch in a climatic chamber. [Source: eStability Implementation Guide]"
+* extension[timePoint].valueQuantity.value 1..1 MS
+* extension[timePoint].valueQuantity.unit 1..1 MS 
+* extension[timePoint].valueQuantity.code 1..1 MS
+* extension[timePoint].valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
 * extension[timePointDescription].value[x] only CodeableConcept
 * extension[timePointDescription].value[x] from vsPqcmc-interval-description-code-terminology (required)
-* extension[timePointDescription].value[x] ^short = "Interval Description"
+* extension[timePointDescription].value[x] ^short = "Interval Description Code"
 * extension[timePointDescription].value[x] ^definition = "A description of any 'delay' that happened diring testing, e.g. none (immediate) or freeze sample (Delayed Frozen). [Source NCIt]."
 
 Profile: StabilityStudy
@@ -114,7 +118,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * code.coding 0..0
 * code.text 1..1 MS
 * subject 1..1 MS
-* subject only Reference(DrugProductInstance or DrugSubstanceInstance)
+* subject only Reference(DrugProductBatch or DrugSubstanceBatch)
 * subject ^short = "A single medication batch/lot or a single subtance batch/lot "
 * performer 1..1 MS
 * performer only Reference(MfgTestSiteOrganization)

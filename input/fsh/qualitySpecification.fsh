@@ -107,6 +107,10 @@ Note:  The concept of  "In-Process" is  subsumed by the Release code. """
 * goal.target.detailQuantity.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS			
 * goal.target.detailQuantity.extension[interpretationCode] ^short = "Interpretation Code"	 
 * goal.target.detailQuantity.extension[interpretationCode]  ^definition = """ A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] * Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailQuantity.value 1..1 MS
+* goal.target.detailQuantity.unit 1..1 MS 
+* goal.target.detailQuantity.code 1..1 MS
+* goal.target.detailQuantity.code from  vsPqcmcUnitsofMeasureTerminology
 * goal.target.detailRange  0..1 MS			
 * goal.target.detailRange ^short = "Acceptance Criteria (Numeric range)"	 
 * goal.target.detailRange		
@@ -114,10 +118,18 @@ Note:  The concept of  "In-Process" is  subsumed by the Release code. """
 * goal.target.detailRange.low.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS			
 * goal.target.detailRange.low.extension[interpretationCode] ^short = "Interpretation Code"	 
 * goal.target.detailRange.low.extension[interpretationCode]  ^definition = """ A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] * Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailRange.low.value 1..1 MS
+* goal.target.detailRange.low.unit 1..1 MS 
+* goal.target.detailRange.low.code 1..1 MS
+* goal.target.detailRange.low.code from  vsPqcmcUnitsofMeasureTerminology
 * goal.target.detailRange.high 1..1			
 * goal.target.detailRange.high.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS			
 * goal.target.detailRange.high.extension[interpretationCode] ^short = "Interpretation Code"	 
 * goal.target.detailRange.high.extension[interpretationCode]  ^definition = """ A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] * Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailRange.high.value 1..1 MS
+* goal.target.detailRange.high.unit 1..1 MS 
+* goal.target.detailRange.high.code 1..1 MS
+* goal.target.detailRange.high.code from  vsPqcmcUnitsofMeasureTerminology
 * goal.target.detailCodeableConcept  0..1 MS			
 * goal.target.detailCodeableConcept ^short = "Acceptance Criteria (Text)"	 
 * goal.target.detailCodeableConcept		

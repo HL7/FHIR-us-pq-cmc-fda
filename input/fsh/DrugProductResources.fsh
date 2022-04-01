@@ -3,6 +3,11 @@ Id: pq-quantity-batch-size
 Title: "Batch Size"		
 Description: "The quantity made by the batch formula."	
 * value[x] only Quantity
+* valueQuantity 0..1 MS	
+* valueQuantity.value 1..1 MS
+* valueQuantity.unit 1..1 MS	
+* valueQuantity.code 1..1 MS	
+* valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
 		
 Extension: ContainerClosureExtension		
 Id: pq-container-closure-extension		
@@ -11,9 +16,9 @@ Description: "The packaging information including a brief description of the com
 packaging system and any precautions needed to ensure the protection and preservation of the drug substance and drug product during their use in the clinical trials"		
 * . ^short = "Container Closure System Information"		
 * extension contains		
-    description 1..1 MS and		
-    containerType 1..1 MS and		
-    closureType 1..1 MS		
+  description 1..1 MS and		
+  containerType 1..1 MS and		
+  closureType 1..1 MS		
 * extension[description].value[x] only markdown		
 * extension[description].value[x] ^short = "Container Closure System Description"	
 * extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary] 
@@ -29,7 +34,65 @@ Note: This includes primary packaging components and secondary packaging compone
 * extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)		
 * extension[closureType].value[x] ^short = "Closure Type"	
 * extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"		
-		
+
+Extension: BatchContainerClosureExtension		
+Id: pq-batch-container-closure-extension		
+Title: "Manufacturing Batch Container"		
+Description: "The Container data for a manufactured batch. Temporary extension until standard extension is repaired. "
+* . ^short = "Manufacturing Batch Container"		
+* extension contains	
+	container 1..1 MS and
+	lotNumber 1..1 MS and
+	type 1..1 MS and	
+	quantity 1..1 MS and	
+	closureSystemDescription 1..1 MS and
+	closureType 1..1 MS 
+
+* extension[container] 1..1 MS		
+* extension[container] ^short = "Container"		
+* extension[lotNumber] 1..1 MS 
+* extension[lotNumber] ^short = "Container Lot Number" 
+* extension[lotNumber] ^definition = """A combination of letters, numbers, or symbols, or any combination of them to uniquely identify the container's manufacturing lot. 
+ Note: This is different from the drug product batch/lot number. Example: Company A makes batch of bottles (container) -- need a lot number on the container (bottle) assigned by the manufacturer of the bottle (container). This requirement becomes critical when the dosing and delivery of the drug is impacted by the container (bottle).
+ """
+* extension[lotNumber].value[x] only string 
+* extension[type] 1..1 MS 
+* extension[type] ^short = "Container Type" 
+* extension[type].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]" 
+* extension[type].value[x] only CodeableConcept
+* extension[type].value[x] from vsPqcmcContainerTypeTerminology 
+* extension[quantity] 1..1 MS 
+* extension[quantity].value[x] only Ratio 
+* extension[quantity].valueRatio.numerator.value 1..1 MS
+* extension[quantity].valueRatio.numerator.value ^short = "Container Fill" 
+* extension[quantity].valueRatio.numerator.value ^definition = """Container Fill: Amount or volume of the drug product in the container. [Source: SME Defined]. Examples: 100 tablets; 10 mL, 1 transdermal system, 1 sachet, etc. Note: the examples include both the Container Fill and the Container Fill Unit 
+"""
+* extension[quantity].valueRatio.numerator.unit 1..1 MS 
+* extension[quantity].valueRatio.numerator.unit ^short = "Container Fill Unit" 
+* extension[quantity].valueRatio.numerator.unit  ^definition = """A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709] Examples: tablets, mL.
+"""
+* extension[quantity].valueRatio.denominator.value 1..1 MS
+* extension[quantity].valueRatio.denominator.value ^short = "Container Size" 
+* extension[quantity].valueRatio.denominator.value ^definition = """The volume or physical proportions or dimension of the container. [Source: SME Defined] Example: 250 (mL) Note: may not apply to all container types, for example – single dose dose container sizes
+"""
+* extension[quantity].valueRatio.denominator.unit 1..1 MS 
+* extension[quantity].valueRatio.denominator.unit ^short = "Container Size Unit" 
+* extension[quantity].valueRatio.denominator.unit ^definition = """ A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709] Examples: mL, L, cc.
+"""
+
+* extension[closureSystemDescription] 1..1 MS 
+* extension[closureSystemDescription] ^short = "Container Closure System Description" 
+* extension[closureSystemDescription] ^definition = """ Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary] 
+ Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+ Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+ """
+* extension[closureSystemDescription].value[x] only string 
+* extension[closureType] 1..1 MS 
+* extension[closureType] ^short = "Closure Type" 
+* extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]" 
+* extension[closureType].value[x] only CodeableConcept
+* extension[closureType].value[x] from vsPqcmcClosureTypeTerminology 
+
 Profile: DrugProduct		
 Parent: MedicinalProductDefinition		
 Id: pqcmc-drug-product		
@@ -68,8 +131,8 @@ SME comment -- this is the marketed dosage form.
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
 """
 * name.type 1..1 MS		
-* crossReference  MS		
-* crossReference.product  MS		
+* crossReference MS		
+* crossReference.product MS		
 * crossReference.product ^short = "Co-Package"		
 		
 Profile: BatchFormula		
@@ -90,12 +153,18 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * operation 1..* MS	
 * extension contains pq-quantity-batch-size named batch-size 1..1 MS
 * extension[batch-size].valueQuantity 1..1 MS			
-* extension[batch-size].valueQuantity ^short = "Batch Quantity | Quantity UOM"	
-* extension[batch-size].valueQuantity ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
+* extension[batch-size].valueQuantity.value ^short = "Batch Quantity"
+* extension[batch-size].valueQuantity ^definition = """The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]	
 """	
+* extension[batch-size].valueQuantity.unit 1..1 MS 
+* extension[batch-size].valueQuantity.unit ^short = "Quantity UOM"	
+* extension[batch-size].valueQuantity ^definition = """A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]	
+"""	
+* extension[batch-size].valueQuantity.code 1..1 MS
+* extension[batch-size].valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
+* extension[batch-size].valueQuantity.value 1..1 MS
+
 * operation.type 1..1 MS		
 * operation.type ^short = "Batch Ingredient"		
 * operation.type.reference 1..1 MS		
@@ -122,7 +191,7 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 * productReference 1..1 MS		
 * productReference only Reference (DrugProductIngredient)		
 		
-Profile: DrugProductInstance		
+Profile: DrugProductBatch		
 Parent: Medication		
 Id: pqcmc-drug-product-instance		
 Title: "Drug Product Manufactured Instance"		
@@ -141,7 +210,7 @@ Examples: tablet, capsule, solution, cream, etc. that contains a drug substance 
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA. 
 SME comment -- this is the marketed dosage form """
 * doseForm.coding from vsSPLPharmaceuticalDosageFormTerminology		
-* ingredient  1..* MS		
+* ingredient 1..* MS		
 * ingredient.item ^short = "UNII"	
 * ingredient.item ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/] 
 Example: 362O9ITL9D 
@@ -151,7 +220,7 @@ Note: If a UNII does not exist, please go to
 * ingredient.item.concept.text 1..1 MS				
 * ingredient.isActive 1..1 MS		
 * ingredient.isActive ^short = "Active ingredient indicator"		
-* ingredient.strengthRatio.numerator  1..1 MS		
+* ingredient.strengthRatio.numerator 1..1 MS		
 * ingredient.strengthRatio.numerator ^short = "Strength Numeric Numerator"		
 * ingredient.strengthRatio.numerator ^definition = """ Specifies the quantity of the ingredient(s) consistent with a single unit dose or as expresssed on the label. [Source: SME Defined] 
 Note: Kg value is only applicable for veterinary applications. 
@@ -164,7 +233,8 @@ Note: For Excipients, this is the amount
 * ingredient.strengthRatio.denominator ^definition = "The content of an ingredient expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dosage form. This should be the strength as listed on the label. [Source: Adapted from NCI EVS C53294]"
 
 * batch 1..1 MS		
-* batch.extension contains drug-product-manufacturing-batch named medication-batch 1..1 MS		
+* batch.extension contains drug-product-manufacturing-batch named medication-batch 1..1 MS	
+* batch.extension contains pq-batch-container-closure-extension named batch-container 1..1 MS			
 * batch.lotNumber 1..1 MS		
 * batch.lotNumber ^short = "Batch or Lot Numbe (Bulk Batch ID)"		
 * batch.expirationDate 1..1 MS		
@@ -204,26 +274,29 @@ Examples: commercial, development. """
 * extension[batchQuantity] 1..1 MS		
 * extension[batchQuantity] ^short = "Batch Size"	
 * extension[batchQuantity] ^definition = "The batch size can be defined either by a fixed quantity or by the amount produced in a fixed time interval. [Source: ICH Q7 - Part of the definition of Batch]"
-* extension[batchQuantity].valueQuantity MS		
+* extension[batchQuantity].valueQuantity 1..1 MS	
+* extension[batchQuantity].valueQuantity.unit 1..1 MS 
+* extension[batchQuantity].valueQuantity.code 1..1 MS
+* extension[batchQuantity].valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
 * extension[additionalInformation] MS		
 * extension[additionalInformation] ^short = "Additional Information"	
 * extension[additionalInformation] ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
 Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc.
 """
 * extension[additionalInformation].valueString MS		
-// * extension[container] 1..*  MS		
+// * extension[container] 1..* MS		
 // * extension[container] ^short = "Container"		
 // * extension[container].extension[lotNumber] 1..1 MS 
 // * extension[container].extension[lotNumber] ^short = "Container Lot Number" 
 // * extension[container].extension[lotNumber] ^definition = """A combination of letters, numbers, or symbols, or any combination of them to uniquely identify the container's manufacturing lot. 
-// // Note: This is different from the drug product batch/lot number. Example: Company A makes batch of bottles (container) -- need a lot number on the container (bottle) assigned by the manufacturer of the bottle (container).  This requirement becomes critical when the dosing and delivery of the drug is impacted by the container (bottle).
+// // Note: This is different from the drug product batch/lot number. Example: Company A makes batch of bottles (container) -- need a lot number on the container (bottle) assigned by the manufacturer of the bottle (container). This requirement becomes critical when the dosing and delivery of the drug is impacted by the container (bottle).
 // // """
-// * extension[container].extension[lotNumber].string  1..1 MS 
+// * extension[container].extension[lotNumber].string 1..1 MS 
 // * extension[container].extension[type] 1..1 MS 
 // * extension[container].extension[type] ^short = "Container Type" 
 // * extension[container].extension[type] 
 // * extension[container].extension[type] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]" 
-// * extension[container].extension[type].CodeableConcept  1..1 MS 
+// * extension[container].extension[type].CodeableConcept 1..1 MS 
 // * extension[container].extension[type].CodeableConcept from vsPqcmcContainerTypeTerminology 
 // * extension[container].extension[quantity] 1..1 MS 
 // * extension[container].extension[quantity] ^short = "Container Fill per Container Size" 
@@ -232,18 +305,18 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 // // Container Size: The volume or physical proportions or dimension of the container. [Source: SME Defined] Example: 250 (mL) Note: may not apply to all container types, for example – single dose dose container sizes
 // // Container Size Unit: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709] Examples: mL, L, cc.
 // // """
-// * extension[container].extension[quantity].Ratio  1..1 MS 
+// * extension[container].extension[quantity].Ratio 1..1 MS 
 // * extension[container].extension[closureSystemDescription] 1..1 MS 
 // * extension[container].extension[closureSystemDescription] ^short = "Container Closure System Description" 
 // * extension[container].extension[closureSystemDescription] ^definition = """ Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary] 
 // // Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
 // // Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
 // // """
-// * extension[container].extension[closureSystemDescription].string  1..1 MS 
+// * extension[container].extension[closureSystemDescription].string 1..1 MS 
 // * extension[container].extension[closureType] 1..1 MS 
 // * extension[container].extension[closureType] ^short = "Closure Type" 
 // * extension[container].extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]" 
-// * extension[container].extension[closureType].CodeableConcept  1..1 MS 
+// * extension[container].extension[closureType].CodeableConcept 1..1 MS 
 // * extension[container].extension[closureType].CodeableConcept from vsPqcmcClosureTypeTerminology 
 //________________________________________________________________
 /// Profiles on Profiles
@@ -253,7 +326,7 @@ Profile: DrugProductwithImpurites
 Parent: DrugProduct
 Id: pqcmc-drug-product-with-impurities
 Title: "Drug Product Impurities"
-Description: "List of drug product impurities."
+Description: "List of drug product impurities. Profie of Drug Product profile."
 
 * identifier 1..1 MS
 * impurity 1..1 MS
@@ -262,21 +335,21 @@ Description: "List of drug product impurities."
 * name.type 1..1 MS
 
 Profile: DrugProductContainerClosure		
-Parent: MedicinalProductDefinition		
+Parent: DrugProduct		
 Id: pqcmc-druproduct-container-closure		
 Title: "Drug Product Container Closure"		
-Description: "Description and coding of the container closure system."				
-* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
+Description: "Description and coding of the container closure system. Profie of Drug Product profile."				
+* extension contains pq-container-closure-extension named dpcontainerClosure 1..1 MS		
 * identifier 1..1 MS 		
 * name 1..1 MS 		
 * name.productName 1..1 MS 
 * name.type 1..1 MS 		
 
 Profile: DrugProductDescription		
-Parent: MedicinalProductDefinition		
+Parent: DrugProduct		
 Id: pqcmc-drug-product-description		
 Title: "Drug Product Description"		
-Description: "Includes the properties of the drug product and components"		
+Description: "Includes the properties of the drug product and components. Profie of Drug Product profile."		
 //* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
 * identifier 1..1 MS		
 * description 1..1 MS 
@@ -291,10 +364,10 @@ Description: "Includes the properties of the drug product and components"
 * crossReference.product 1..1 MS			
 
 Profile: RoutineDrugProduct		
-Parent: MedicinalProductDefinition		
+Parent: DrugProduct		
 Id: pqcmc-routine-drug-product		
 Title: "Routine Drug Product"		
-Description: "Includes the identfying information of the drug product"		
+Description: "Includes the identfying information of the drug product. Profie of Drug Product profile."		
 		
 * identifier 1..1 MS 		
 * name.productName 1..1 MS 

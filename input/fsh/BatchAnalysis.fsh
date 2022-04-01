@@ -44,7 +44,7 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * code.coding 0..0	
 * code.text 1..1 MS	
 * subject 1..1 MS	
-* subject only Reference(DrugProductInstance or DrugSubstanceInstance)	
+* subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
 * subject ^short = "A single medication batch/lot or a single subtance batch/lot"	
 * performer 1..1 MS	
 * performer only Reference(MfgTestSiteOrganization)	
@@ -69,14 +69,18 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * identifier ^definition = """A set of discrete sequential steps performed on a given test. [Source: SME Defined]"""
 * identifier ^comment = "Note: This can be named or numbered.  This will never be 'Single Stage'."	
 * status MS	
-* value[x] 1..1 MS	
-* value[x]  only Quantity or string	
-* valueQuantity 0..1 MS	
-* valueQuantity.unit 1..1 MS	
+* value[x] only Quantity or string	
+* valueQuantity.value 0..1 MS	
+* valueQuantity.value ^short = "ValueNumeric"	
+* valueQuantity. ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
+* valueQuantity.unit 1..1 MS
+* valueQuantity.unit ^short = "ValueNumeric UOM"	
+* valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
 * valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
-* valueQuantity.value 0..1 MS	
-* valueString 0..1 MS	
+* valueString 0..1 MS
+* valueString ^short = "Value"	
+* valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
 * interpretation ^short = "Conformance to Criteria"	
@@ -139,12 +143,18 @@ Relative Retention Time (RRT):	The ratio of the retention time of a component re
 * Example: 1:23 (a ratio) 
 * Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value."""
 * component.value[x] 1..1 MS	
-* component.valueQuantity 0..1 MS	
-* component.valueQuantity.unit 1..1 MS	
-* component.valueQuantity.code 1..1 MS	
-* component.valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
+* component.value[x] only Quantity or string	
 * component.valueQuantity.value 0..1 MS	
-* component.valueString 0..1 MS	
+* component.valueQuantity.value ^short = "ValueNumeric"	
+* component.valueQuantity.value ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
+* component.valueQuantity.unit 1..1 MS
+* component.valueQuantity.unit ^short = "ValueNumeric UOM"	
+* component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
+* component.valueQuantity.code 1..1 MS	
+* component.valueQuantity.code from vsPqcmcUnitsofMeasureTerminology	
+* component.valueString 0..1 MS
+* component.valueString ^short = "Value"	
+* component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
 * component.dataAbsentReason MS	
 * component.interpretation 1..1 MS	
 * component.interpretation ^short = "Conformance to Criteria"	
@@ -209,11 +219,17 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * performer only Reference(MfgTestSiteOrganization)	
 * value[x] 1..1 MS	
 * value[x]  only Quantity or string	
-* valueQuantity.unit 1..1 MS	
+* valueQuantity.value 0..1 MS	
+* valueQuantity.value ^short = "ValueNumeric"	
+* valueQuantity. ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
+* valueQuantity.unit 1..1 MS
+* valueQuantity.unit ^short = "ValueNumeric UOM"	
+* valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
 * valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
-* valueQuantity.value 0..1 MS	
-* valueString 0..1 MS	
+* valueString 0..1 MS
+* valueString ^short = "Value"	
+* valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
 * interpretation ^short = "Conformance to Criteria"	
@@ -268,14 +284,27 @@ Examples: Prepare six aliquots from the sample. Record the individual  values.
 Test 8 samples. If any fall above 110%, test an additional 7 samples.  Record all replicate values"""
 //* component.extension[replicate] only integer	
 * component.code.text 1..1 MS	
-* component.code.text ^short = "Test Name | RRT"	
+* component.code.text ^short = "Test Name | Relative Retention Time (RRT)"
+* component.code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+Note: as defined by the sponsor.
+Relative Retention Time:The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+Example: 1:23 (a ratio)
+Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
+"""	
 * component.value[x] 1..1 MS	
-* component.valueQuantity 0..1 MS	
-* component.valueQuantity.unit 1..1 MS	
+* component.value[x]  only Quantity or string	
+* component.valueQuantity.value 0..1 MS	
+* component.valueQuantity.value ^short = "ValueNumeric"	
+* component.valueQuantity.value ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
+* component.valueQuantity.unit 1..1 MS
+* component.valueQuantity.unit ^short = "ValueNumeric UOM"	
+* component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
 * component.valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
-* component.valueQuantity.value 0..1 MS	
-* component.valueString 0..1 MS	
+* component.valueString 0..1 MS
+* component.valueString ^short = "Value"	
+* component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
 * component.dataAbsentReason MS	
 * component.interpretation 1..1 MS	
 * component.interpretation ^short = "Conformance to Criteria"	
