@@ -150,7 +150,7 @@ Description: "Terminology used to qualify the information pertaining to batch ut
 * $NCIT#C133990 "Commercial"
 * $NCIT#C133991 "Development"
 * $NCIT#C133993 "Validation"
-* $NCIT#185328 "Stability Study"
+* $NCIT#C185328 "Stability Study"
 
 ValueSet: PqcmcChemicalStructureDataFileOriginTerminology
 Id: pqcmc-chemical-structure-datafile-origin-terminology
