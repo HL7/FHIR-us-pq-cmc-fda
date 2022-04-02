@@ -7,7 +7,7 @@ Description: "The quantity made by the batch formula."
 * valueQuantity.value 1..1 MS
 * valueQuantity.unit 1..1 MS	
 * valueQuantity.code 1..1 MS	
-* valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
+* valueQuantity.code from  PqcmcUnitsMeasureTerminology	
 		
 Extension: ContainerClosureExtension		
 Id: pq-container-closure-extension		
@@ -60,7 +60,7 @@ Description: "The Container data for a manufactured batch. Temporary extension u
 * extension[type] ^short = "Container Type" 
 * extension[type].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]" 
 * extension[type].value[x] only CodeableConcept
-* extension[type].value[x] from vsPqcmcContainerTypeTerminology 
+* extension[type].value[x] from PqcmcContainerTypeTerminology
 * extension[quantity] 1..1 MS 
 * extension[quantity].value[x] only Ratio 
 * extension[quantity].valueRatio.numerator.value 1..1 MS
@@ -71,6 +71,7 @@ Description: "The Container data for a manufactured batch. Temporary extension u
 * extension[quantity].valueRatio.numerator.unit ^short = "Container Fill Unit" 
 * extension[quantity].valueRatio.numerator.unit  ^definition = """A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709] Examples: tablets, mL.
 """
+* extension[quantity].valueRatio.numerator.code from PqcmcUnitsMeasureTerminology
 * extension[quantity].valueRatio.denominator.value 1..1 MS
 * extension[quantity].valueRatio.denominator.value ^short = "Container Size" 
 * extension[quantity].valueRatio.denominator.value ^definition = """The volume or physical proportions or dimension of the container. [Source: SME Defined] Example: 250 (mL) Note: may not apply to all container types, for example – single dose dose container sizes
@@ -79,7 +80,7 @@ Description: "The Container data for a manufactured batch. Temporary extension u
 * extension[quantity].valueRatio.denominator.unit ^short = "Container Size Unit" 
 * extension[quantity].valueRatio.denominator.unit ^definition = """ A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709] Examples: mL, L, cc.
 """
-
+* extension[quantity].valueRatio.denominator.code from PqcmcUnitsMeasureTerminology
 * extension[closureSystemDescription] 1..1 MS 
 * extension[closureSystemDescription] ^short = "Container Closure System Description" 
 * extension[closureSystemDescription] ^definition = """ Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary] 
@@ -91,7 +92,7 @@ Description: "The Container data for a manufactured batch. Temporary extension u
 * extension[closureType] ^short = "Closure Type" 
 * extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]" 
 * extension[closureType].value[x] only CodeableConcept
-* extension[closureType].value[x] from vsPqcmcClosureTypeTerminology 
+* extension[closureType].value[x] from PqcmcClosureTypeTerminology
 
 Profile: DrugProduct		
 Parent: MedicinalProductDefinition		
@@ -113,12 +114,12 @@ Examples: tablet, capsule, solution, cream, etc. that contains a drug substance 
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA. 
 SME comment -- this is the marketed dosage form.
 """
-* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology		
+* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology	
 * route 1..1 MS		
 * route.coding.code 1..1 MS		
 * route.coding.code ^short = "Route of Administration"	
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI EVS C38114]"
-* route.coding.code from vsSplDrugRouteofAdministrationTerminology		
+* route.coding.code from SplDrugRouteofAdministrationTerminology
 * impurity 0..* MS		
 * impurity ^short = "Product Impurity"		
 * impurity.reference only Reference(ImpuritySubstance)		
@@ -162,7 +163,7 @@ Example: 1000 kg
 * extension[batch-size].valueQuantity ^definition = """A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]	
 """	
 * extension[batch-size].valueQuantity.code 1..1 MS
-* extension[batch-size].valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
+* extension[batch-size].valueQuantity.code from  PqcmcUnitsMeasureTerminology
 * extension[batch-size].valueQuantity.value 1..1 MS
 
 * operation.type 1..1 MS		
@@ -198,18 +199,24 @@ Title: "Drug Product Manufactured Instance"
 Description: "Includes the properties of the drug product as manufactured."		
 		
 * identifier 1..* MS		
-* identifier ^short = "Product Proprietary Name | Product Non-Proprietary Name"		
-* identifier.value		
+* identifier ^short = "Product Proprietary Name | Product Non-Proprietary Name"	
+* identifier ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm] 
+* Note: Excludes dosage form, route of administration and strength. 
+* Example: Tylenol
+Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
+"""		
+* identifier.value	
+// hold authroization for eStability	
 * marketingAuthorizationHolder 0..1 MS		
 * marketingAuthorizationHolder ^short = ""		
 * marketingAuthorizationHolder only Reference(SponsorOrganization)		
 * doseForm 0..1 MS		
 * doseForm ^short = "Dosage Form"	
-* doseForm ^definition = """The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI EVS - C42636] 
-Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] 
-Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA. 
-SME comment -- this is the marketed dosage form """
-* doseForm.coding from vsSPLPharmaceuticalDosageFormTerminology		
+* doseForm ^definition = """The form in which active and/or inert ingredient (s) are physically present. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]
+Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+"""
+* doseForm.coding from SplPharmaceuticalDosageFormTerminology	
 * ingredient 1..* MS		
 * ingredient.item ^short = "UNII"	
 * ingredient.item ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/] 
@@ -236,11 +243,11 @@ Note: For Excipients, this is the amount
 * batch.extension contains drug-product-manufacturing-batch named medication-batch 1..1 MS	
 * batch.extension contains pq-batch-container-closure-extension named batch-container 1..1 MS			
 * batch.lotNumber 1..1 MS		
-* batch.lotNumber ^short = "Batch or Lot Numbe (Bulk Batch ID)"		
+* batch.lotNumber ^short = "Batch or Lot Number (Bulk Batch ID)"		
 * batch.expirationDate 1..1 MS		
 * batch.expirationDate ^short = "Expiration Date"	
-* batch.expirationDate ^definition = "The date the manufacturer guarantees the full potency and safety of a particular batch/lot of medicinal product. The complete point in time date consisting of day, month and year shall be specified using the ISO 8601 date format. [Source: ISO IDMP 11615-2017]"
-		
+* batch.expirationDate ^definition = "A combination of letters, numbers, or symbols, or any combination of them, from which the complete history of the manufacture, processing, packing, holding, and distribution of a batch or lot of drug product or other material can be determined. [Source: Adapted reference: 21 CFR 210.3 Definitions (4/1/2014)]"
+
 Profile: DrugProductmanufacturingBatch		
 Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch		
 Id: drug-product-manufacturing-batch		
@@ -264,20 +271,20 @@ Note: See Manufacturing Date Description element. """
 * extension[expirationDateClassification] ^short = "Expiration Date Classification"	
 * extension[expirationDateClassification] ^definition = "The endorsement of the expiration date that clarifies whether this date has been approved by the FDA or is being proposed by the sponsor/applicant. [Source: SME Defined]"	
 * extension[expirationDateClassification].valueCodeableConcept MS		
-* extension[expirationDateClassification].valueCodeableConcept from vsPqcmc-expiration-date-classification-terminology		
+* extension[expirationDateClassification].valueCodeableConcept from PqcmcExpirationDateClassificationTerminology		
 * extension[batchUtilization] 1..1 MS		
 * extension[batchUtilization] ^short = "Batch Utilization"	
 * extension[batchUtilization] ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined] 
 Examples: commercial, development. """
 * extension[batchUtilization].valueCodeableConcept MS		
-* extension[batchUtilization].valueCodeableConcept from vsPqcmcBatchUtilizationTerminology		
+* extension[batchUtilization].valueCodeableConcept from PqcmcBatchUtilizationTerminology	
 * extension[batchQuantity] 1..1 MS		
 * extension[batchQuantity] ^short = "Batch Size"	
 * extension[batchQuantity] ^definition = "The batch size can be defined either by a fixed quantity or by the amount produced in a fixed time interval. [Source: ICH Q7 - Part of the definition of Batch]"
 * extension[batchQuantity].valueQuantity 1..1 MS	
 * extension[batchQuantity].valueQuantity.unit 1..1 MS 
 * extension[batchQuantity].valueQuantity.code 1..1 MS
-* extension[batchQuantity].valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology
+* extension[batchQuantity].valueQuantity.code from  PqcmcUnitsMeasureTerminology
 * extension[additionalInformation] MS		
 * extension[additionalInformation] ^short = "Additional Information"	
 * extension[additionalInformation] ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
@@ -297,7 +304,7 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 // * extension[container].extension[type] 
 // * extension[container].extension[type] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]" 
 // * extension[container].extension[type].CodeableConcept 1..1 MS 
-// * extension[container].extension[type].CodeableConcept from vsPqcmcContainerTypeTerminology 
+// * extension[container].extension[type].CodeableConcept from 
 // * extension[container].extension[quantity] 1..1 MS 
 // * extension[container].extension[quantity] ^short = "Container Fill per Container Size" 
 // * extension[container].extension[quantity] ^definition = """Container Fill: Amount or volume of the drug product in the container. [Source: SME Defined]. Examples: 100 tablets; 10 mL, 1 transdermal system, 1 sachet, etc. Note: the examples include both the Container Fill and the Container Fill Unit 
@@ -317,7 +324,7 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 // * extension[container].extension[closureType] ^short = "Closure Type" 
 // * extension[container].extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]" 
 // * extension[container].extension[closureType].CodeableConcept 1..1 MS 
-// * extension[container].extension[closureType].CodeableConcept from vsPqcmcClosureTypeTerminology 
+// * extension[container].extension[closureType].CodeableConcept from  
 //________________________________________________________________
 /// Profiles on Profiles
 //________________________________________________________________

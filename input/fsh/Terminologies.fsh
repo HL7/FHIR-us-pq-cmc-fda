@@ -1,46 +1,59 @@
 ValueSet: PqcmcStabilityStudyReasonTerminology
-Id:  vspqcmc-stability-study-reason-terminology
+Id: pqcmc-stability-study-reason-terminology
+Title: "Stability Study Reason Terminology"
 Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-*  $NCIT#C115123 "Abbreviated New Animal Drug Application"
-*  $NCIT#C73113 "Abbreviated New Drug Application"
-*  $NCIT#C96089 "Annual Report"
-*  $NCIT#C96094 "Supplement to an Approved Application"
-*  $NCIT#C71778 "Biologics License Application"
-*  $NCIT#C70877 "Master File"
-*  $NCIT#C115122 "Generic Investigational New Animal Drug File"
-*  $NCIT#C80440 "Humanitarian Device Exemption (HDE)"
-*  $NCIT#C82667 "Investigational Device Exemption"
-*  $NCIT#C96091 "Investigational New Animal Drug File"
-*  $NCIT#C96090 "Investigational New Drug Application"
-*  $NCIT#C96092 "New Active Ingredient"
-*  $NCIT#C72901 "New Animal Drug Application"
-*  $NCIT#C72899 "New Drug Application"
-*  $NCIT#C70880 "Premarket Approval"
-*  $NCIT#C80442 "Premarket Notification 510(K)"
+* $NCIT#C115123 "Abbreviated New Animal Drug Application"
+* $NCIT#C73113 "Abbreviated New Drug Application"
+* $NCIT#C96089 "Annual Report"
+* $NCIT#C96094 "Supplement to an Approved Application"
+* $NCIT#C71778 "Biologics License Application"
+* $NCIT#C70877 "Master File"
+* $NCIT#C115122 "Generic Investigational New Animal Drug File"
+* $NCIT#C80440 "Humanitarian Device Exemption (HDE)"
+* $NCIT#C82667 "Investigational Device Exemption"
+* $NCIT#C96091 "Investigational New Animal Drug File"
+* $NCIT#C96090 "Investigational New Drug Application"
+* $NCIT#C96092 "New Active Ingredient"
+* $NCIT#C72901 "New Animal Drug Application"
+* $NCIT#C72899 "New Drug Application"
+* $NCIT#C70880 "Premarket Approval"
+* $NCIT#C80442 "Premarket Notification 510(K)"
 
 ValueSet: PqcmcIntervalDescriptionCodeTerminology
-Id:  vsPqcmc-interval-description-code-terminology
+Id: pqcmc-interval-description-code-terminology
+Title: "Interval Description Code Terminology"
 Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-*  $NCIT#C96154 "Ambient Delayed Testing"
-*  $NCIT#C96151 "Delayed Testing"
-*  $NCIT#C96153 "Frozen Delayed Testing"
-*  $NCIT#C96150 "Immediate Testing"
-*  $NCIT#C96155 "Refrigerated Delayed Testing"
+* $NCIT#C96154 "Ambient Delayed Testing"
+* $NCIT#C96151 "Delayed Testing"
+* $NCIT#C96153 "Frozen Delayed Testing"
+* $NCIT#C96150 "Immediate Testing"
+* $NCIT#C96155 "Refrigerated Delayed Testing"
+
+ValueSet: PqcmcStudyTypeTerminology
+Id: pqcmc-study-type-terminology
+Title: "Study Type Terminology"
+Description: "Terminology used to qualify the information pertaining to study types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* $NCIT#C134028 "Complex"
+* $NCIT#C134027 "Cycled-Simple"
+* $NCIT#C96087 "Photostability"
+* $NCIT#C134026 "Standard"
 
 ValueSet: PqcmcExpirationDateClassificationTerminology
-Id:  vsPqcmc-expiration-date-classification-terminology
+Id: pqcmc-expiration-date-classification-terminology
+Title: "Expiration Date Classification Terminology"
 Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C185186 "Adequate"
 * $NCIT#C185182 "Approved"
 * $NCIT#C48660 "Not Applicable"
 * $NCIT#C185188 "Proposed"
 
-ValueSet: PqActionRelationTypeVS
+ValueSet: PqActionRelationTypes
 * $ART#concurrent
 * $ART#after
 
 CodeSystem: PqcmcNameTypesCodes
-Id: codesystemPqcmcNameTypes 
+Id: code-system-pqcmc-name-types
+Title: "Code System PQCMC Name Types"
 Description: "Name types for the name element in SubstanceDefintion."
 * ^url =  http://hl7.org/fhir/pq-cmc/codesystem/NameType
 * #CAS "CAS Number"
@@ -52,13 +65,14 @@ Description: "Name types for the name element in SubstanceDefintion."
 * #Substance "Substance Name"
 
 ValueSet: PqcmcNameTypes
-Id: vs-pqcmc-name-types
-Title: "Value set of Name Types Codes"
+Id: pqcmc-name-types
+Title: "Name Types"
 Description: "Value set of all the values in PqcmcNameTypesCodes."
 * include codes from system http://hl7.org/fhir/pq-cmc/codesystem/NameType
 
 CodeSystem: PqcmcCompSectionTypes
-Id: codesystemPqcmcCompSectionTypes
+Id: code-system-pqcmc-comp-section-types
+Title: "Code system PQCMC Comp Section Types"
 Description: "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
 * ^url =  http://hl7.org/fhir/pq-cmc/codesystem/SectionType
 * #32S10 "Substance General Information"
@@ -127,23 +141,27 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #SP4454 "Batch Analyses"
 * #SP7383 "Stability Data"
 
-ValueSet: PqcmcCBatchUtilizationTerminology
-Id: vsPqcmcBatchUtilizationTerminology
+ValueSet: PqcmcBatchUtilizationTerminology
+Id: pqcmc-batch-utilization-terminology
+Title: "Batch utilization Terminology"
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C133994 "Bioequivalence"
 * $NCIT#C133992 "Clinical"
 * $NCIT#C133990 "Commercial"
 * $NCIT#C133991 "Development"
 * $NCIT#C133993 "Validation"
+* $NCIT#185328 "Stability Study"
 
-ValueSet: PqcmcCChemicalStructureDataFileOriginTerminology
-Id: vsPqcmcChemicalStructureDataFileOriginTerminology
+ValueSet: PqcmcChemicalStructureDataFileOriginTerminology
+Id: pqcmc-chemical-structure-datafile-origin-terminology
+Title: "Chemical Structure Datafile Origin Terminology"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C16275 "Calculated"
 * $NCIT#C133995 "Experimental"
 
-ValueSet: PqcmcCChemicalStructureDataFileTypeTerminology
-Id: vsPqcmcChemicalStructureDataFileTypeTerminology
+ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
+Id: pqcmc-chemical-structure-datafile-type-terminology
+Title: "Chemical Structure Datafile Type Terminology"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C54683 "InChI File (small molecule)"
 * $NCIT#C133997 "mmCIF (large molecules)"
@@ -153,7 +171,8 @@ Description: "Terminology used to qualify the information pertaining to chemical
 * $NCIT#C54684 "SMILES"
 
 ValueSet: PqcmcClosureTypeTerminology
-Id: vsPqcmcClosureTypeTerminology
+Id: pqcmc-closure-type-terminology
+Title: "Closure Type Terminology"
 Description: "Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C96113 "Childresistant, Metal"
 * $NCIT#C96114 "Childresistant, Plastic"
@@ -185,13 +204,15 @@ Description: "Terminology used to qualify the information pertaining to closure 
 * $NCIT#C96138 "Valved (Dispensing), Plastic"
 
 ValueSet: PqcmcConformanceCriteriaTerminology
-Id: vsPqcmcConformancetoCriteriaTerminology
+Id: pqcmc-conformance-to-criteria-terminology
+Title: "Conformance to Criteria Terminology"
 Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C80262 "Conforms"
 * $NCIT#C133998 "Does not conform"
 
 ValueSet: PqcmcContainerOrientationTerminology
-Id: vsPqcmcContainerOrientationTerminology
+Id: pqcmc-container-orientation-terminology
+Title: "Container Orientation Terminology"
 Description: "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C25241 "Horizontal"
 * $NCIT#C133999 "Inverted"
@@ -200,7 +221,8 @@ Description: "Terminology used to qualify the information pertaining to containe
 * $NCIT#C133914 "Valveup"
 
 ValueSet: PqcmcContainerTypeTerminology
-Id: vsPqcmcContainerTypeTerminology
+Id: pqcmc-container-type-terminology
+Title: "Container Type Terminology"
 Description: "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C43165 "AMPULE"
 * $NCIT#C43166 "APPLICATOR"
@@ -270,26 +292,30 @@ Description: "Terminology used to qualify the information pertaining to containe
 * $NCIT#C43216 "VIAL, SINGLEUSE"
 
 ValueSet: PqcmcCoPackagedIndicatorTerminology
-Id: vsPqcmcCoPackagedIndicatorTerminology
+Id: pqcmc-copackaged-indicator-terminology
+Title: "Co-packaged Indicator Terminology"
 Description: "Terminology used to qualify the information pertaining to copackaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C49487 "No"
 * $NCIT#C49488 "Yes"
 
 ValueSet: PqcmcDrugProductComponentFunctionCategoryTerminology
-Id: vsPqcmcDrugProductComponentFunctionCategoryTerminology
+Id: pqcmc-drug-product-component-function-category-terminology
+Title: "Drug Product Component Function Category Terminology"
 Description: "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C82533 "Active Ingredient"
 * $NCIT#C2140 "Adjuvant"
 * $NCIT#C42637 "Inactive Ingredient"
 
 ValueSet: PqcmcDrugSubstanceProductIndicatorTerminology
-Id: vsPqcmcDrugSubstanceProductIndicatorTerminology
+Id: pqcmc-drug-substance-product-indicator-terminology
+Title: "Drug substance Product Indicator Terminology"
 Description: "Terminology used to qualify the information pertaining to drug substance product indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C1909 "Product"
 * $NCIT#C45306 "SUBSTANCE"
 
 ValueSet: PqcmcExcipientFunctionTerminology
-Id: vsPqcmcExcipientFunctionTerminology
+Id: pqcmc-excipient-function-terminology
+Title: "Excipient Function Terminology"
 Description: "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C176637 "Absorption modifier"
 * $NCIT#C89528 "Adhesive"
@@ -351,14 +377,21 @@ Description: "Terminology used to qualify the information pertaining to excipien
 * $NCIT#C176668 "Wetting agent"
 
 ValueSet: PqcmcImpurityClassificationTerminology
-Id: vsPqcmcImpurityClassificationTerminology
+Id: pqcmc-impurity-classification-terminology
+Title: "Impurity classification Terminology"
 Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* $NCIT#C84280 "Contaminants"
-* $NCIT#C176812 "Process Related"
-* $NCIT#C176813 "Product Related"
+* $NCIT#C176816 "Degradant"
+* $NCIT#C185190 "Elemental Impurity"
+* $NCIT#C134001 "Inorganic Impurity"
+* $NCIT#C185192 "Leachable Material"
+* $NCIT#C92081 "Microbial Contamination"
+* $NCIT#C176812 "Process Related Impurity"
+* $NCIT#C176813 "Product Related Impurity"
+* $NCIT#C176815 "Residual Solvent"
 
 ValueSet: PqcmcInterpretationCodeTerminology
-Id: vsPqcmcInterpretationCodeTerminology
+Id: pqcmc-interpretation-code-terminology
+Title: "Interpretation Code Terminology"
 Description: "Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
@@ -368,20 +401,23 @@ Description: "Terminology used to qualify the information pertaining to numeric 
 * $NCIT#C48660 "Not Applicable"
 
 ValueSet: PqcmcProcessRelatedImpurityCategoryTerminology
-Id: vsPqcmcProcessRelatedImpurityCategoryTerminology
+Id: pqcmc-impurity-classification-category-terminology
+Title: "Impurity classification Category Terminology"
 Description: "Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C134001 "Inorganic"
 * $NCIT#C134000 "Organic"
 * $NCIT#C176815 "Residual Solvent"
 
 ValueSet: PqcmcProductRelatedImpurityCategoryTerminology
-Id: vsPqcmcProductRelatedImpurityCategoryTerminology
+Id: pqcmc-product-related-impurity-category-terminology
+Title: "Product Related Impurity Category Terminology"
 Description: "Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C176816 "Degradants"
 * $NCIT#C176813 "Product Related"
 
 ValueSet: PqcmcQualityBenchmarkTerminology
-Id: vsPqcmcQualityBenchmarkTerminology
+Id: pqcmc-quality-benchmark-terminology
+Title: "Quality benchmark Terminology"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C176793 "BP"
 * $NCIT#C134009 "Company Standard"
@@ -390,7 +426,8 @@ Description: "Terminology used to qualify the information pertaining to quality 
 * $NCIT#C134006 "USPNF"
 
 ValueSet: PqcmcSourceTypeTerminology
-Id: vsPqcmcSourceTypeTerminology
+Id: pqcmc-source-type-terminology
+Title: "Source Type Terminology"
 Description: "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C14182 "Animal"
 * $NCIT#C18634 "Animalderived indirectly"
@@ -401,7 +438,8 @@ Description: "Terminology used to qualify the information pertaining to source t
 * $NCIT#C14258 "Plant"
 
 ValueSet: PqcmcSpecificationStatusTerminology
-Id: vsPqcmcSpecificationStatusTerminology
+Id: pqcmc-specification-status-terminology
+Title: "Specification status Terminology"
 Description: "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C25425 "Approved"
 * $NCIT#C48660 "Not Applicable"
@@ -410,14 +448,16 @@ Description: "Terminology used to qualify the information pertaining to specific
 * $NCIT#C134010 "Tentatively Approved"
 
 ValueSet: PqcmcSpecificationTypeTerminology
-Id: vsPqcmcSpecificationTypeTerminology
+Id: pqcmc-specification-type-terminology
+Title: "Specification Type Terminology"
 Description: "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C134021 "Drug Product"
 * $NCIT#C134022 "Drug Substance"
 * $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 
 ValueSet: PqcmcSponsorIdentifierTypeTerminology
-Id: vsPqcmcSponsorIdentifierTypeTerminology
+Id: pqcmc-sponsor-identifier-type-terminology
+Title: "Sponsor identifier Type Terminology"
 Description: "Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
@@ -425,7 +465,8 @@ Description: "Terminology used to qualify the information pertaining to sponsor 
 * $NCIT#C17998 "Unknown"
 
 ValueSet: PqcmcStorageConditionsTerminology
-Id: vsPqcmcStorageConditionsTerminology
+Id: pqcmc-storage-conditions-terminology
+Title: "Storage conditions Terminology"
 Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C133936 "20 +/ 5 degrees C"
 * $NCIT#C134018 "25 +/ 2 degrees C/40% +/ 5%RH"
@@ -439,7 +480,8 @@ Description: "Terminology used to qualify the information pertaining to storage 
 * $NCIT#C96148 "Proprietary"
 
 ValueSet: PqcmcStrengthOperatorTerminology
-Id: vsPqcmcStrengthOperatorTerminology
+Id: pqcmc-strength-operator-terminology
+Title: "Strength operator Terminology"
 Description: "Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
@@ -449,13 +491,15 @@ Description: "Terminology used to qualify the information pertaining to strength
 * $NCIT#C48660 "Not Applicable"
 
 ValueSet: PqcmcStrengthTypeTerminology
-Id: vsPqcmcStrengthTypeTerminology
+Id: pqcmc-strength-type-terminology
+Title: "Strength Type Terminology"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C45420 "Activity"
 * $NCIT#C168628 "Mass"
 
 ValueSet: PqcmcTestCategoryTerminology
-Id: vsPqcmcTestCategoryTerminology
+Id: pqcmc-test-category-terminology
+Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C60819 "Assay"
 * $NCIT#C158425 "Biological Properties"
@@ -466,47 +510,32 @@ Description: "Terminology used to qualify the information pertaining to test cat
 * $NCIT#C176811 "PhysicoChemical Properties"
 
 ValueSet: PqcmcTestMethodOriginTerminology
-Id: vsPqcmcTestMethodOriginTerminology
+Id: pqcmc-test-method-origin-terminology
+Title: "Test Method Origin Terminology"
 Description: "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C96164 "CFR"
 * $NCIT#C96102 "Compendial"
 * $NCIT#C96103 "Proprietary"
 
 ValueSet: PqcmcTestUsageTerminology
-Id: vsPqcmcTestUsageTerminology
+Id: pqcmc-test-usage-terminology
+Title: "Test Usage Terminology"
 Description: "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $NCIT#C134029 "Release"
 * $NCIT#C134030 "Stability"
 
 ValueSet: PqcmcTestingSiteUniqueIdentifierTypeTerminology
-Id: vsPqcmcTestingSiteUniqueIdentifierTypeTerminology
+Id: pqcmc-testing-site-unique-identifier-type-terminology
+Title: "Testing Site Unique Identifier Type Terminology"
 Description: "Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
 * $NCIT#C134004 "FEI"
 * $NCIT#C17998 "Unknown"
 
-ValueSet: PqcmcUnitsMeasureTerminology
-Id: vsPqcmcUnitsofMeasureTerminology
-Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-
-ValueSet: PqcmcValidationParameterTerminology
-Id: vsPqcmcValidationParameterTerminology
-Description: "Terminology used to qualify the information pertaining to validation parameters in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* $NCIT#C134242 "Accuracy"
-* $NCIT#C134244 "Detection Limit"
-* $NCIT#C134033 "Linearity"
-* $NCIT#C134243 "Precision"
-* $NCIT#C134248 "Quantitation Limit"
-* $NCIT#C134240 "Range"
-* $NCIT#C134245 "Robustness"
-* $NCIT#C134032 "Specificity"
-* $NCIT#C134246 "System Suitability"
-
 ValueSet: SplPharmaceuticalDosageFormTerminology
-Id: vsSPLPharmaceuticalDosageFormTerminology
+Id: spl-pharmaceutical-dosage-form-terminology
+Title: "SPL Pharmaceutical Dosage Form Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."
 * $NCIT#C100103 "CELLULAR SHEET"
 * $NCIT#C113106 "INJECTABLE FOAM"
@@ -676,9 +705,9 @@ Description: "Terminology used for representation of the information on pharmace
 * $NCIT#C87541 "POWDER, LYOPHILIZED"
 * $NCIT#C87542 "PENDANT"
 
-ValueSet: PqcmcUnitsMeasure
-Id: vsUnitsMeasure
-Title: "PQ/CMC Units of MeasureTerminology"
+ValueSet: PqcmcUnitsMeasureTerminology
+Id: pqcmc-units-of-measure-terminology
+Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * $UCUM#% "percent"
 * $UCUM#%{VolumeToVolume} "percent volume per volume"
@@ -709,7 +738,7 @@ Description: "Terminology used to qualify the information pertaining to units of
 * $UCUM#{vial} "vial"
 * $UCUM#a "year"
 * $UCUM#Cel "degree Celsius"
-* $UCUM#cm "centimeter" 
+* $UCUM#cm "centimeter"
 * $UCUM#cm3 "mL"
 * $UCUM#d "day"
 * $UCUM#deg "degrees to rotation"
@@ -750,7 +779,8 @@ Description: "Terminology used to qualify the information pertaining to units of
 * $UCUM#wk "week"
 
 ValueSet: SplDrugRouteofAdministrationTerminology
-Id: vsSplDrugRouteofAdministrationTerminology
+Id: spl-drug-route-of-administration-terminology
+Title: "SPL Drug Route Of Administration Terminology"
 Description: "erminology used for representation of the information on pharmaceutical product route of administration in the framework of the Structured Product Labeling documents."
 * $NCIT#C132737 "Intracanalicular"
 * $NCIT#C28161 "INTRAMUSCULAR"

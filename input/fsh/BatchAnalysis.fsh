@@ -26,6 +26,15 @@ Description: """An identification number for a  member of the set of results for
 Examples: Prepare six aliquots from the sample.	
 Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method."""	
 * value[x] only integer	
+
+Extension: PullDateExtension
+Id: pq-pullDate-extension
+Title: "Pull Date"
+Description: "Contains elements related to the pull date of the study samples in a stability study."
+
+* extension.value[x] only dateTime
+* extension.value[x] ^short = "Pull Date"
+* extension.value[x] ^definition = "The date when a particular sample of the batch lot was pulled from the stability chamber. [Source: SME Defined]"
 	
 Profile: BatchAnalysis	
 Parent: DiagnosticReport	
@@ -46,6 +55,11 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * subject 1..1 MS	
 * subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
 * subject ^short = "A single medication batch/lot or a single subtance batch/lot"	
+* effectiveDateTime	1..1 MS
+* effectiveDateTime ^short = "Batch Analysis Release Date"
+* effectiveDateTime ^definition = """The date at which the drug substance or drug product is released by the quality assurance unit of the sponsor/applicant. [Source: SME Defined]
+Note: A single release date per batch.
+"""
 * performer 1..1 MS	
 * performer only Reference(MfgTestSiteOrganization)	
 * performer ^short = "Test Site"	
@@ -77,7 +91,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * valueQuantity.unit ^short = "ValueNumeric UOM"	
 * valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
-* valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
+* valueQuantity.code from  PqcmcUnitsMeasureTerminology
 * valueString 0..1 MS
 * valueString ^short = "Value"	
 * valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
@@ -108,7 +122,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 """
 * referenceRange.low.extension[interpretationCode] 1..1 MS	
 * referenceRange.low.unit 1..1 MS	
-* referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology	
+* referenceRange.low.unit from  PqcmcUnitsMeasureTerminology	
 * referenceRange.high MS	
 * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
@@ -118,7 +132,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 * referenceRange.high.extension[interpretationCode] 1..1 MS	
 * referenceRange.high.value 1..1 MS	
 * referenceRange.high.unit 1..1 MS	
-* referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology	
+* referenceRange.high.unit from PqcmcUnitsMeasureTerminology
 * referenceRange.text ^short = "Original Text"	
 * referenceRange.text  
 * referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -151,7 +165,7 @@ Relative Retention Time (RRT):	The ratio of the retention time of a component re
 * component.valueQuantity.unit ^short = "ValueNumeric UOM"	
 * component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
-* component.valueQuantity.code from vsPqcmcUnitsofMeasureTerminology	
+* component.valueQuantity.code from PqcmcUnitsMeasureTerminology
 * component.valueString 0..1 MS
 * component.valueString ^short = "Value"	
 * component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
@@ -175,7 +189,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * component.referenceRange.low.value 1..1 MS	
 * component.referenceRange.low.unit 1..1 MS	
-* component.referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology	
+* component.referenceRange.low.unit from  PqcmcUnitsMeasureTerminology
 * component.referenceRange.high MS	
 * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
@@ -184,7 +198,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 * component.referenceRange.high.extension[interpretationCode] 1..1 MS	
 * component.referenceRange.high.value 1..1 MS	
 * component.referenceRange.high.unit 1..1 MS	
-* component.referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology	
+* component.referenceRange.high.unit from  PqcmcUnitsMeasureTerminology
 * component.referenceRange.text ^short = "Original Text"	
 * component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
  Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -206,10 +220,11 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * category  1..1 MS	
 * category ^short = "Test Category"	
 * category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* category from vsPqcmcTestCategoryTerminology	
+* category from PqcmcTestCategoryTerminology
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
 * effective[x] 1..1 MS	
+* effective[x].extension contains pq-pullDate-extension named actualpulldate 1..1 MS	
 * effective[x] ^short = "Test Date"	
 * effective[x] ^definition = "The date when a particular test was performed. [Source: SME Defined]."
 * effective[x] only dateTime	
@@ -226,7 +241,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * valueQuantity.unit ^short = "ValueNumeric UOM"	
 * valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
-* valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
+* valueQuantity.code from PqcmcUnitsMeasureTerminology
 * valueString 0..1 MS
 * valueString ^short = "Value"	
 * valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
@@ -258,7 +273,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * referenceRange.low.value 1..1 MS	
 * referenceRange.low.unit 1..1 MS	
-* referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology	
+* referenceRange.low.unit from  PqcmcUnitsMeasureTerminology
 * referenceRange.high MS	
 * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
@@ -266,7 +281,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * referenceRange.high.value 1..1 MS	
 * referenceRange.high.unit 1..1 MS	
-* referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology	
+* referenceRange.high.unit from  PqcmcUnitsMeasureTerminology
 * referenceRange.text ^short = "Original Text"	
 * referenceRange.text  ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -301,7 +316,7 @@ Note: This is the title or name of the impurity (sometimes expressed as a ratio)
 * component.valueQuantity.unit ^short = "ValueNumeric UOM"	
 * component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
-* component.valueQuantity.code from  vsPqcmcUnitsofMeasureTerminology	
+* component.valueQuantity.code from PqcmcUnitsMeasureTerminology
 * component.valueString 0..1 MS
 * component.valueString ^short = "Value"	
 * component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
@@ -327,7 +342,7 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 """
 * component.referenceRange.low.value 1..1 MS	
 * component.referenceRange.low.unit 1..1 MS	
-* component.referenceRange.low.unit from  vsPqcmcUnitsofMeasureTerminology	
+* component.referenceRange.low.unit from PqcmcUnitsMeasureTerminology
 * component.referenceRange.high MS	
 * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
@@ -335,6 +350,6 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * component.referenceRange.high.value 1..1 MS	
 * component.referenceRange.high.unit 1..1 MS	
-* component.referenceRange.high.unit from  vsPqcmcUnitsofMeasureTerminology	
+* component.referenceRange.high.unit from PqcmcUnitsMeasureTerminology
 * component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
 	
