@@ -131,7 +131,7 @@ Example: Study Number- 565758
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference (StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
-* condition  MS
+* condition  1..1 MS
 * extension contains pq-condtions-extension named substudyconditions 1..1 MS
 * period 1..1 MS
 * period.start 1..1 MS

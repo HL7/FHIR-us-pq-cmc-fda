@@ -366,7 +366,7 @@ Example: Active Ingredient, Inactive Ingredient, Adjuvant.
 * role.coding.code from PqcmcDrugProductComponentFunctionCategoryTerminology 
 * function 1..1 MS  
 * function.coding.code 0..1 MS // need rule for expienet  
-* function.coding.code ^short = "PQ/CMC Excipient Function???" 
+* function.coding.code ^short = "PQ/CMC Excipient Function" 
 //* function.coding.code ^definition
 * function.coding.code from PqcmcExcipientFunctionTerminology
 * group 0..1 MS  

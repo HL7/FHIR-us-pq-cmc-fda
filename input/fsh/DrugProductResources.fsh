@@ -339,6 +339,7 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 
 * identifier 1..1 MS
 * impurity 1..1 MS
+* impurity.reference 1..1 MS
 * name 1..1 MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
@@ -378,7 +379,11 @@ Id: pqcmc-routine-drug-product
 Title: "Routine Drug Product"		
 Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."		
 		
-* identifier 1..1 MS 		
+* identifier 1..1 MS 
+* combinedPharmaceuticalDoseForm 1..1 MS 		
+* combinedPharmaceuticalDoseForm.coding.code 1..1 MS 	
+* route 1..1 MS 	
+* route.coding.code 1..1 MS 		
 * name.productName 1..1 MS 
 * name.type 1..1 MS		
 		
