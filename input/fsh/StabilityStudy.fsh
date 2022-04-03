@@ -145,9 +145,9 @@ Example: Study Number- 565758
 * whyStopped.text 1..1 MS
 * whyStopped.text ^short = "Reason Stopped"
 * whyStopped.text ^definition = "The rationale for why the Stability study was terminated. [Source: SME Defined]"
-* description 1..1 MS
-* description ^short = "Sub-Study Purpose"
-* description ^definition = """A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
+* objective.description 1..1 MS
+* objective.description ^short = "Study Purpose"
+* objective.description ^definition = """A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
 Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film 
 Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
 """
