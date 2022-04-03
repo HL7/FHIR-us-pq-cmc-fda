@@ -30,6 +30,7 @@ Examples:  Drug product, drug substance, etc.
 * value[x] 1..1 MS   
 * value[x] only CodeableConcept   
 * value[x] from PqcmcSpecificationTypeTerminology (required)   
+ 
    
 Extension: TestMethodOriginExtension   
 Id:  pq-test-method-origin-extension   
@@ -59,7 +60,7 @@ Profile: QualitySpecification
 Parent: PlanDefinition   
 Id: pqcmcQualitySpecification   
 Title: "Quality Specification"   
-Description: "	A quality specification is for a drug product or drug substance (excipient, API or raw material)."   
+Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."   
 * extension contains pq-specification-status-extension named specificationStatus 0..1 MS   
 * extension[specificationStatus] ^short = "Specification Status"  
 * extension[specificationStatus] ^definition = """ The current FDA regulatory status of the specification. [Source: SME Defined] 
@@ -112,7 +113,7 @@ Note:  This is not the application approval status date. """
 * goal.category.coding.code  ^short = "Aceptacnce Criteria Usage"  
 * goal.category.coding.code  ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability. 
 Note:  The concept of  'In-Process' is  subsumed by the Release code. "
-* goal.category.coding.code from PqcmcInterpretationCodeTerminology
+* goal.category.coding.code from PqcmcTestUsageTerminology
 * goal.category.text ^short = ""
 * goal.description  1..1 MS   
 * goal.description ^short = "Original Text"  

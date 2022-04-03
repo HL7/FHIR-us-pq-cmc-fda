@@ -105,19 +105,24 @@ Example: Study Number- 565758
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference (StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
-* condition  1..3 MS
+* condition 1..1 MS
+* condition.coding 1..1 MS
 * condition.coding ^short = "Sub-Study Type "
 * condition.coding ^definition = """A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
 Examples: Standard, Cycled-simple.
 """
 * condition.coding from PqcmcStudyTypeTerminology
+* condition 1..1 MS
+* condition.coding 1..1 MS
 * condition.coding ^short = "Storage Conditions Temp.RH"
 * condition.coding ^definition = "The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
 * condition.coding from  PqcmcStorageConditionsTerminology
+* condition 1..1 MS
+* condition.coding 1..1 MS //check cardinality cannot be 0 in fhir
 * condition.coding ^short = "Container Orientation"
 * condition.coding ^definition = """The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
 Examples: horizontal, upright.
-"""
+""" 
 * condition.coding from PqcmcContainerOrientationTerminology
 * period 1..1 MS
 * period.start 1..1 MS

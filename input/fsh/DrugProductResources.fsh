@@ -94,13 +94,14 @@ Description: "The Container data for a manufactured batch. Temporary extension u
 * extension[closureType].value[x] only CodeableConcept
 * extension[closureType].value[x] from PqcmcClosureTypeTerminology
 
+
 Profile: DrugProduct		
 Parent: MedicinalProductDefinition		
 Id: pqcmc-drug-product		
 Title: "Drug Product"		
 Description: "Includes the properties of the drug product, its components and impurities"		
 
-* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
+* extension contains pq-container-closure-extension named mdpcontainerClosure 1..1 MS		
 * identifier 1..1 MS		
 * description 1..1 MS		
 * description ^short = "Drug Product Description"	
@@ -235,10 +236,11 @@ Note: This is the denominator value when expressing the strength for APIs
 Example: 5 mg per 100 mL 
 Note: For Excipients, this is the amount 
 """
+* ingredient.strengthRatio.numerator.code from  PqcmcUnitsMeasureTerminology
 * ingredient.strengthRatio.denominator 1..1 MS		
 * ingredient.strengthRatio.denominator ^short = "Strength Numeric Denominator"		
 * ingredient.strengthRatio.denominator ^definition = "The content of an ingredient expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dosage form. This should be the strength as listed on the label. [Source: Adapted from NCI EVS C53294]"
-
+* ingredient.strengthRatio.denominator.code from  PqcmcUnitsMeasureTerminology
 * batch 1..1 MS		
 * batch.extension contains drug-product-manufacturing-batch named medication-batch 1..1 MS	
 * batch.extension contains pq-batch-container-closure-extension named batch-container 1..1 MS			
@@ -357,7 +359,7 @@ Parent: DrugProduct
 Id: pqcmc-drug-product-description		
 Title: "Drug Product Description"		
 Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."		
-//* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
+* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
 * identifier 1..1 MS		
 * description 1..1 MS 
 * combinedPharmaceuticalDoseForm 1..1 MS 		

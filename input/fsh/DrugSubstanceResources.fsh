@@ -5,21 +5,6 @@ Description: "A mathematical symbol that denotes equality or inequality between 
 * value[x] 1..1 MS   
 * value[x] only CodeableConcept  
 * value[x] from PqcmcStrengthOperatorTerminology (required) 
-
-Extension: RetestDateExtension  
-Id: pq-retest-date-extension  
-Title: "Retest Date"  
-Description: "Substance retest information for the SubstanceDefinition Resource."
-* extension contains
-    retestDate	 1..1 MS and
-    dateClassification	 1..1 MS 
-* extension[retestDate].value[x] only dateTime
-* extension[retestDate].value[x] ^short = "Retest Date"
-* extension[retestDate].value[x] ^definition = "The date after which samples of the drug substance should be examined to ensure compliance with the specification and thus suitable for use in the manufacture of a given drug product [Source: Adapted from Q1A(R2)]"  
-* extension[dateClassification].value[x] only CodeableConcept
-* extension[dateClassification].value[x] from PqcmcExpirationDateClassificationTerminology (required)
-* extension[dateClassification].value[x] ^short = "Retest Date Classification"
-* extension[dateClassification].value[x] ^definition = "The endorsement of the Retest date that clarifies whether this date has been approved by the FDA or is being proposed by the sponsor/applicant for a drug substance. [Source: SME Defined]"
   
 Extension: ContentPercentExtension  
 Id: pq-content-percent-extension  
@@ -154,7 +139,7 @@ Company Code An internal identifier assigned by the sponsor to this drug substan
 * relationship.substanceDefinitionReference only Reference(ImpuritySubstance or PolymorphicForm or ComponentSubstance )  
 * relationship.type.text  
 * relationship.type.text ^short = "Preferred values: 'Polymorph', 'Raw Material', and 'Impurity'" 
-//* Is a rule set required so that if reference is PolymorphicForm text is "Polymorph", if ComponentSubstance then text is "Raw Material" DrugSubstanceImpurity then text is "Impurity" ?  
+//* Is a rule set required so that if reference is PolymorphicForm text is "Polymorph", if ComponentSubstance then text is "Raw Material" DrugSubstanceImpurity then text is "Impurity"   
   
 Profile: ImpuritySubstance  
 Parent: SubstanceDefinition  
@@ -235,7 +220,7 @@ Profile: ComponentSubstance
 Parent: SubstanceDefinition  
 Id: pqcmc-ComponentSubstance  
 Title: "Component Substance"  
-Description: "Any raw material intended for use int he manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."  
+Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."  
 * identifier 1..1   
 * identifier ^short = "UNII preferred" 
 * identifier ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/] 
@@ -369,6 +354,7 @@ Description: "The amount details about the drug product components to define the
 * .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined] 
 Examples: removed during process, adjusted for loss on drying, etc. 
 """
+* .extension contains StrengthTypeExtension named strengthtype 0..1 MS  
 * status.code  
 * for only Reference(DrugProductDescription)  
 * for ^short = "Reference to MedicinalProductDefinition" 
@@ -470,11 +456,6 @@ Description: "This profile defines the details of a batch of API."
 * extension[assignedManufacturer] ^short = "Assigned Manufacturer" 
 * extension[assignedManufacturer] 
 * extension[assignedManufacturer].valueReference only Reference(MfgTestSiteOrganization)  
-* extension[expirationDateClassification] 1..1 MS		
-* extension[expirationDateClassification] ^short = "Expiration Date Classification"	
-* extension[expirationDateClassification] ^definition = "The endorsement of the expiration date that clarifies whether this date has been approved by the FDA or is being proposed by the sponsor/applicant. [Source: SME Defined]"	
-* extension[expirationDateClassification].valueCodeableConcept MS		
-* extension[expirationDateClassification].valueCodeableConcept from PqcmcExpirationDateClassificationTerminology		
 * extension[batchUtilization] 1..1 MS  
 * extension[batchUtilization] ^short = "Batch Utilization" 
 * extension[batchUtilization] ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined] * Examples: commercial, development. """

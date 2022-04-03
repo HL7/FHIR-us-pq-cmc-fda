@@ -2,7 +2,7 @@ Profile: EctdCompositionSP4151
 Parent: Composition
 Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
-Description: "The fields needed to represent the Quality Specifications to be included in the  eCTD. References Sponsor Organization and Quality Specification."
+Description: "The fields needed to represent the Quality Specifications to be included in the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 folders.. References Sponsor Organization and Quality Specification."
 
 * status = #final
 * type = PqcmcCompSectionTypes#SP4151 "Quality Specification"  
@@ -40,7 +40,7 @@ Profile: EctdCompositionSP7383
 Parent: Composition
 Id: ectd-composition-sp7383
 Title: "eCTD Stability Data Composition"
-Description: "The fields needed to represent the  Stability Datas to be included in the  eCTD. References Sponsor Organization and Stability Study"
+Description: "The fields needed to represent the Stability Data to be included in the 3.2.P.8.3 , 3.2.S.7.3 and 3.2.P.4.5 eCTD folders. References Sponsor Organization and Stability Study."
 
 * status = #final
 * type = PqcmcCompSectionTypes#SP7383 "Stability Data"  
@@ -78,13 +78,13 @@ Profile: EctdCompositionSP4454
 Parent: Composition
 Id: ectd-composition-sp4454
 Title: "eCTD Batch Analyses Composition"
-Description: "The fields needed to represent the Batch Analyses to be included in the eCTD.  References Sponsor Organization and Batch Analysis"
+Description: "The fields needed to represent the Batch Analyses to be included in the 3.2.P.5.4 and 3.2.S.4.4 eCTD folders.  References Sponsor Organization and Batch Analysis"
 
 * status = #final
 * type = PqcmcCompSectionTypes#SP4454 "Batch Analyses" 
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
-* title  1..1 MS
+* title  1..1 MS 
 /* 
 	SECTION SLICES 
 */
@@ -93,7 +93,7 @@ Description: "The fields needed to represent the Batch Analyses to be included i
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
-* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Batch Analyses profile: RoutineDrugProduct or Routine Api."
+* section ^slicing.description = "Slice based on the different sections that are needed in the ectd document. The code must correpond to the subject of the Batch Analyses profile: RoutineDrugProduct or Routine Api."
 * section contains DrugProduct 0..1 MS and Api 0..1 MS 
 * section[DrugProduct] ^definition = "Product Batch Analyses to be included in the 3.2.P.5.4 eCTD folder."
 * section[DrugProduct].code = PqcmcCompSectionTypes#32P51
@@ -234,7 +234,7 @@ Profile: EctdComposition32S10
 Parent: Composition
 Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
-Description: "The fields needed to represent the Substance Nomenclature and Structure to be included in the 3.2.S.1.0 folder of the eCTD. References Sponsor Organizationv"
+Description: "The fields needed to represent the Substance Nomenclature and Structure to be included in the 3.2.S.1.0 folder of the eCTD. References Sponsor Organization."
 
 * status = #final
 * type = PqcmcCompSectionTypes#32S10 "Substance General Information"
@@ -266,7 +266,7 @@ Profile: EctdComposition32S23
 Parent: Composition
 Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
-Description: "The fields needed to represent the Substance Control of Materialss in a to be included in the eCTD. References Sponsor Organization and Drug Substance Materials."
+Description: "The fields needed to represent the Substance Control of Materials in a to be included in the eCTD. References Sponsor Organization and Drug Substance Materials."
 
 * status = #final
 * type = PqcmcCompSectionTypes#32S23 "Substance Control of Materials"
