@@ -8,7 +8,7 @@ Description: "A mathematical symbol that denotes equality or inequality between 
 
 Extension: RetestDateExtension  
 Id: pq-retest-date-extension  
-Title: "Restest Date"  
+Title: "Retest Date"  
 Description: "Substance retest information for the SubstanceDefinition Resource."
 * extension contains
     retestDate	 1..1 MS and
@@ -31,21 +31,21 @@ Description: "The percentage of the component in the drug product."
 Extension: StrengthTypeExtension  
 Id: pq-strength-type-extension  
 Title: "Strength Type (for API)"  
-Description: "A physical (contetn) of activity measurement of the strenght of the active ingredient." 
+Description: "A physical (content) of activity measurement of the strength of the active ingredint.." 
 * value[x] 1..1 MS  
 * value[x] only string  
 
 Extension: StrengthTextExtension  
 Id: pq-strength-text-extension  
 Title: "Strength Text"  
-Description: "The strenth in text format." 
+Description: "The strength in text format." 
 * value[x] 1..1 MS  
 * value[x] only string 
   
 Extension: ProductBatchIngredientExtension
 Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
-Description: "Extention for measurement properties for ingredients in the batch formula."
+Description: "Extension for measurement properties for ingredients in the batch formla.."
 * extension contains  
   BatchIngredientIdentifier 1..1 MS and
   BatchIngredientVersion 1..1 MS and
@@ -85,10 +85,10 @@ Profile: DrugSubstance
 Parent: SubstanceDefinition  
 Id: pqcmc-DrugSubstance  
 Title: "Drug Substance"  
-Description: "Drug Substance (Active Ingredient) nomenclature and characterizaiton"  
+Description: "Drug Substance (Active Ingredient) nomenclature and characterization."  
 * identifier 0..1 MS
 * identifier ^short = "UNII (preferred)" 
-* identifier ^comment = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]  
+* identifier ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]  
 Example: 362O9ITL9D  
 Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/  
 """    
@@ -214,7 +214,7 @@ Profile: PolymorphicForm
 Parent: SubstanceDefinition  
 Id: pqcmc-PolymorphicForm  
 Title: "Polymorphic Form"  
-Description: "Alternate structure present inf the drug substance"  
+Description: "Alternate structure present in the drug substance"  
 * identifier    
 * identifier ^short = "UNII" 
 * identifier ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/] 
@@ -226,7 +226,10 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * structure.representation.type 1..1  
 * structure.representation.type.text  
 * name.name 1..1 MS  
-* name.name ^short = "Polymorphic Form Identification" 
+* name.name ^short = "Polymorphic Form Identification"
+* name.name ^definition = """The designation of the polymorphs present in the drug substance. [Source: SME Defined]
+Example: Polymorph A 
+"""
   
 Profile: ComponentSubstance  
 Parent: SubstanceDefinition  
@@ -296,6 +299,7 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin" 
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
 * sourceMaterial.countryOfOrigin.coding 0..0 
+* sourceMaterial.countryOfOrigin.coding from http://terminology.hl7.org/CodeSystem/v3-Country
 * sourceMaterial.countryOfOrigin.text 1..1 MS 
   
 Profile: Excipient  
@@ -358,7 +362,7 @@ Profile: DrugProductComponent
 Parent: Ingredient  
 Id: pqcmc-Component  
 Title: "Drug Product Component"  
-Description: "The amount detais about the drug product compoents to define the product composition in a product unit. Use composition."  
+Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."  
   
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS  
 * .extension[additional-info] ^short = "Drug Product Component Additional Information" 
@@ -433,7 +437,7 @@ Profile: DrugProductIngredient
 Parent: Ingredient  
 Id: pqcmc-ingredient  
 Title: "Drug Product Ingredient"  
-Description: "The amount detais about the drug product ingredients in the batch. Use for Batch Formula."  
+Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."  
   
 * ^url = "https://hl7.org/fhir/pq-cmc/StructureDefinition/prf-pqcmc-ingredient"  
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS  

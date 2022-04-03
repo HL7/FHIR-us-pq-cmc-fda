@@ -22,9 +22,7 @@ Note: This value should be unique across all specifications for a given material
 Extension: ReplicateExtension	
 Id: pq-replicate-extension	
 Title: "Replicate Number"	
-Description: """An identification number for a  member of the set of results for a test, usually the sequence order in twheich the test was exectured. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined]	
-Examples: Prepare six aliquots from the sample.	
-Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method."""	
+Description: """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method."""	
 * value[x] only integer	
 
 Extension: PullDateExtension

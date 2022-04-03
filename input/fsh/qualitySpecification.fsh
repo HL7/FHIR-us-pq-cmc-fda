@@ -59,7 +59,7 @@ Profile: QualitySpecification
 Parent: PlanDefinition   
 Id: pqcmcQualitySpecification   
 Title: "Quality Specification"   
-Description: "A quality specificaion is for a drug product or drug substance (excipient, API or raw material."   
+Description: "	A quality specification is for a drug product or drug substance (excipient, API or raw material)."   
 * extension contains pq-specification-status-extension named specificationStatus 0..1 MS   
 * extension[specificationStatus] ^short = "Specification Status"  
 * extension[specificationStatus] ^definition = """ The current FDA regulatory status of the specification. [Source: SME Defined] 

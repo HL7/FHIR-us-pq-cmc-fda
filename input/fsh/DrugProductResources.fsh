@@ -178,7 +178,7 @@ Profile: BatchFormulaIngredient
 Parent: ActivityDefinition		
 Id: pqcmc-batch-ingredient		
 Title: "Batch Formula Ingredient"		
-Description: "Identifies the ingredients for the batch forumla"		
+Description: "Identifies the ingredients for the batch formula."		
 		
 * description 0..1 MS		
 * description ^short = "Component Additional Information"	
@@ -333,7 +333,7 @@ Profile: DrugProductwithImpurites
 Parent: DrugProduct
 Id: pqcmc-drug-product-with-impurities
 Title: "Drug Product Impurities"
-Description: "List of drug product impurities. Profie of Drug Product profile."
+Description: "List of drug product impurities. Profile of Drug Product profile."
 
 * identifier 1..1 MS
 * impurity 1..1 MS
@@ -345,7 +345,7 @@ Profile: DrugProductContainerClosure
 Parent: DrugProduct		
 Id: pqcmc-druproduct-container-closure		
 Title: "Drug Product Container Closure"		
-Description: "Description and coding of the container closure system. Profie of Drug Product profile."				
+Description: "Description and coding of the container closure system. Profile of Drug Product profile."				
 * extension contains pq-container-closure-extension named dpcontainerClosure 1..1 MS		
 * identifier 1..1 MS 		
 * name 1..1 MS 		
@@ -356,7 +356,7 @@ Profile: DrugProductDescription
 Parent: DrugProduct		
 Id: pqcmc-drug-product-description		
 Title: "Drug Product Description"		
-Description: "Includes the properties of the drug product and components. Profie of Drug Product profile."		
+Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."		
 //* extension contains pq-container-closure-extension named containerClosure 1..1 MS		
 * identifier 1..1 MS		
 * description 1..1 MS 
@@ -374,7 +374,7 @@ Profile: RoutineDrugProduct
 Parent: DrugProduct		
 Id: pqcmc-routine-drug-product		
 Title: "Routine Drug Product"		
-Description: "Includes the identfying information of the drug product. Profie of Drug Product profile."		
+Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."		
 		
 * identifier 1..1 MS 		
 * name.productName 1..1 MS 

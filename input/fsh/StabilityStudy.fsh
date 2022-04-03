@@ -38,7 +38,7 @@ Profile: StabilityStudy
 Parent: ResearchStudy
 Id: pq-stability-study
 Title: "Stability Study"
-Description: "Profile for a the main stability study"
+Description: "Profile for the main stability study."
 
 * .extension contains pq-protocol-extension named protocolExtension 1..1 MS
 * .extension contains pq-additional-info-extension named study-additional-info 0..* MS  
@@ -88,7 +88,7 @@ Profile: StabilitySubStudy
 Parent: ResearchStudy
 Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
-Description: "Profile for a the main stability Sub-Study"
+Description: "Profile for the a stability sub-study."
 
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS 
 * identifier 1..1 MS
