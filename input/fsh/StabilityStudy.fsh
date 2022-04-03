@@ -1,3 +1,29 @@
+Extension: ConditionsExtension
+Id:  pq-condtions-extension
+Title: "SubStudy Conditions"
+Description: """Three values lists for substudy characterizaiton"""
+* extension MS
+* extension contains
+    substudytype 0..1 and
+    storage 0..1 and
+    orientation 0..1
+* extension[substudytype].value[x] only CodeableConcept
+* extension[substudytype].value[x] ^short = "Sub-Study Type"
+* extension[substudytype].value[x] ^definition = """A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
+Examples: Standard, Cycled-simple.
+"""
+* extension[substudytype].value[x] from PqcmcStudyTypeTerminology
+* extension[storage].value[x] only CodeableConcept
+* extension[storage].value[x] ^short = "Storage Conditions Temp.RH"
+* extension[storage].value[x] ^definition = "The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
+* extension[storage].value[x] from  PqcmcStorageConditionsTerminology
+* extension[orientation].value[x] only CodeableConcept
+* extension[orientation].value[x]  ^short = "Container Orientation"
+* extension[orientation].value[x] ^definition = """The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+Examples: horizontal, upright.
+"""
+* extension[orientation].value[x]  from PqcmcContainerOrientationTerminology
+
 Extension: ProtocolExtension
 Id:  pq-protocol-extension
 Title: "Study Protocol"
@@ -7,7 +33,7 @@ Description: """Study protocol identification"""
     protocolVersion 1..1 MS 
 * extension[protocolIdentifier]
 * extension[protocolIdentifier].valueString ^short = "Protocol Identifier"
-* extension[protocolIdentifier].valueString ^definition = "An alphanumeric identifier assigned to a prospective protocol plan by the sponsoring organication. [Source: SME Defined]"
+* extension[protocolIdentifier].valueString ^definition = "An alphanumeric identifier assigned to a prospective protocol plan by the sponsoring organization. [Source: SME Defined]"
 * extension[protocolVersion].valueString
 * extension[protocolVersion].valueString ^short = "Protocol Version"
 * extension[protocolVersion].valueString ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a stability study that is sequential. [Source: SME Defined]
@@ -50,8 +76,8 @@ Description: "Profile for the main stability study."
 * identifier ^definition = """An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
 Example: Study Number- 565758 
 """
-* version  0..1 MS
-* version ^short = "Study Identifier Version (optional)"
+//* version  0..1 MS
+//* version ^short = "Study Identifier Version (optional)"
 * title 1..1 MS
 * title ^short = "Study Name"
 * title ^definition = "A non-unique textual identifier given to the drug stability study by the sponsoring organization. [Source: SME Defined]"
@@ -78,9 +104,9 @@ Examples: Annual Report, NDA, Pre-market approval."""
 * whyStopped.text 1..1 MS
 * whyStopped.text ^short = "Reason Stopped"
 * whyStopped.text ^definition = "The rationale for why the Stability study was terminated. [Source: SME Defined]"
-* description 1..1 MS
-* description ^short = "Study Purpose"
-* description ^definition = """A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
+* objective.description 1..1 MS
+* objective.description ^short = "Study Purpose"
+* objective.description ^definition = """A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
 Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film 
 Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
 """
@@ -105,25 +131,8 @@ Example: Study Number- 565758
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference (StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
-* condition 1..1 MS
-* condition.coding 1..1 MS
-* condition.coding ^short = "Sub-Study Type "
-* condition.coding ^definition = """A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
-Examples: Standard, Cycled-simple.
-"""
-* condition.coding from PqcmcStudyTypeTerminology
-* condition 1..1 MS
-* condition.coding 1..1 MS
-* condition.coding ^short = "Storage Conditions Temp.RH"
-* condition.coding ^definition = "The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
-* condition.coding from  PqcmcStorageConditionsTerminology
-* condition 1..1 MS
-* condition.coding 1..1 MS //check cardinality cannot be 0 in fhir
-* condition.coding ^short = "Container Orientation"
-* condition.coding ^definition = """The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
-Examples: horizontal, upright.
-""" 
-* condition.coding from PqcmcContainerOrientationTerminology
+* condition  MS
+* extension contains pq-condtions-extension named substudyconditions 1..1 MS
 * period 1..1 MS
 * period.start 1..1 MS
 * period.start ^short = "Sub-study Start Date"
