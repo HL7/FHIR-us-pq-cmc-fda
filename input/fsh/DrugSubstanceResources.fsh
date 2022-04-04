@@ -190,7 +190,7 @@ Examples: spectrum, chromatogram
 * structure.representation.document only Reference(Base64DocumentReference)  
 * name.name 1..1 MS 
 * name.name ^short = "Drug Product Impurity Name" 
-* name.name ^short = """Any component of the drug substance which is not the chemical entity defined as the drug substance. [Source: ICH Q6A]
+* name.name ^definition = """Any component of the drug substance which is not the chemical entity defined as the drug substance. [Source: ICH Q6A]
 Examples: CHO cell protein, QQ201234, Residual DNA, gentamicin.
 Note: For example, this could also be a common name, systematic name or a company code
 """
@@ -366,8 +366,10 @@ Example: Active Ingredient, Inactive Ingredient, Adjuvant.
 * role.coding.code from PqcmcDrugProductComponentFunctionCategoryTerminology 
 * function 1..1 MS  
 * function.coding.code 0..1 MS // need rule for expienet  
-* function.coding.code ^short = "PQ/CMC Excipient Function" 
-//* function.coding.code ^definition
+* function.coding.code ^short = "Drug Product Component Function" 
+* function.coding.code ^definition = """A sub-classification of components identifying its purpose/role in the drug product. [Source: SME Defined]
+Examples: Filler, Surfactant.
+"""
 * function.coding.code from PqcmcExcipientFunctionTerminology
 * group 0..1 MS  
 * group ^short = "Component Group" 
