@@ -1,29 +1,3 @@
-Extension: ConditionsExtension
-Id:  pq-condtions-extension
-Title: "SubStudy Conditions"
-Description: """Three values lists for substudy characterizaiton"""
-* extension MS
-* extension contains
-    substudytype 0..1 and
-    storage 0..1 and
-    orientation 0..1
-* extension[substudytype].value[x] only CodeableConcept
-* extension[substudytype].value[x] ^short = "Sub-Study Type"
-* extension[substudytype].value[x] ^definition = """A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
-Examples: Standard, Cycled-simple.
-"""
-* extension[substudytype].value[x] from PqcmcStudyTypeTerminology
-* extension[storage].value[x] only CodeableConcept
-* extension[storage].value[x] ^short = "Storage Conditions Temp.RH"
-* extension[storage].value[x] ^definition = "The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
-* extension[storage].value[x] from  PqcmcStorageConditionsTerminology
-* extension[orientation].value[x] only CodeableConcept
-* extension[orientation].value[x]  ^short = "Container Orientation"
-* extension[orientation].value[x] ^definition = """The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
-Examples: horizontal, upright.
-"""
-* extension[orientation].value[x]  from PqcmcContainerOrientationTerminology
-
 Extension: ProtocolExtension
 Id:  pq-protocol-extension
 Title: "Study Protocol"
@@ -131,8 +105,22 @@ Example: Study Number- 565758
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference (StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
-* condition  1..1 MS
-* extension contains pq-condtions-extension named substudyconditions 1..1 MS
+* condition  2..3 MS
+//* extension contains pq-condtions-extension named substudyconditions 1..1 MS
+
+* condition ^slicing.discriminator.type = #value
+* condition ^slicing.discriminator.path = "$this"
+* condition ^slicing.rules = #open // or #closed if you don't want other concepts
+* condition contains
+    substudytype 1..1 and
+    storage 1..1 and
+    orientation 0..1
+* condition[substudytype] ^short = "Sub-Study Type"
+* condition[substudytype] from PqcmcStudyTypeTerminology
+* condition[storage] ^short = "Storage Conditions Temp.RH"
+* condition[storage] from PqcmcStorageConditionsTerminology
+* condition[orientation] ^short = "Container Orientation"
+* condition[orientation] from PqcmcContainerOrientationTerminology
 * period 1..1 MS
 * period.start 1..1 MS
 * period.start ^short = "Sub-study Start Date"
