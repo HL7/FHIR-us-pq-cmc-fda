@@ -1,0 +1,78 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Folder 3.2.P.3.2 Batch Formula Bundle" as NODES {
+ node "BatchIngredientReference" as NN { 
+      object "**Parent:** ActivityDefinition" as obj3 {
+       
+      }     
+}
+
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+node "DrugProductIngredient" as NNgred { 
+      object "**Parent:** Ingredient" as obj10 {
+        **ValueSets:**
+        Units of Measure Terminology
+          
+      }
+        object "**Extensions**" as objExs2 {
+        pq-additional-info-extension
+        pq-product-batch-ingredient-extension
+}
+
+ obj10 <|-- objExs2  
+
+}
+ node "EctdComposition32P32" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+     
+}
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+
+node "RoutineSubstanceDefinition" as NNS { 
+      object "**Parent:** SubstanceDefinition" as obj4 {
+                **ValueSets:**
+                EVMPDSubstanceClassification
+                Quality Benchmark Terminology
+                GENC Country Codes
+                Source Type Terminology
+      }  
+}
+node "BatchFormula" as NN2 { 
+      object "**Parent:** MedicinalProductDefinition" as obj32 {
+        **ValueSets:**
+          Units of Measure Terminology
+          
+      }
+  object "**Extensions**" as objExs32{
+       pq-quantity-batch-size 
+    }
+
+    obj32<|-- objExs32
+
+}
+
+
+N1 --> NN2
+N1 --> NSO
+NN --> NNgred
+NN2 --> NN
+NNgred --> NNS
+NNS --> NMFG
+}
+@enduml

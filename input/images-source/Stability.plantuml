@@ -1,0 +1,195 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Foldern 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle" as NODES {
+
+node "DrugProductBatch" as NN { 
+      object "**Parent:** Medication" as obj3 {
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+        Expiration Date Classification Terminology
+        Batch utilization Terminology
+        Units Of Measure Terminology 
+        Container Type Terminology
+        Closure Type Terminology        
+      }
+
+      object "**Extensions**" as objExsBatch  {
+                manufacturingDate
+                manufacturingDateClassification
+                assignedManufacturer
+                expirationDateClassification
+                batchUtilization
+                batchQuantity
+                additionalInformation
+                container.extension.closureSystemDescription
+                container.extension.closureType
+                container.extension.lotNumber
+                container.extension.quantity
+                container.extension.type 
+}
+objExsBatch *-- obj3 
+}
+diamond CH
+diamond CH2
+diamond CH3
+
+
+node "DrugSubstanceBatch" as NNS { 
+      object "**Parent:** Substance" as obj4 {
+                **ValueSets:**
+                Batch utilization Terminology
+                Units Of Measure Terminology
+                Container Type Terminology
+                Closure Type Terminology
+      }
+  object "**Extensions**" as objExs2 {
+          manufacturingDate
+          manufacturingDateClassification
+          assignedManufacturer
+          batchUtilization
+          batchQuantity
+          additionalInformation
+          container.extension.closureSystemDescription
+          container.extension.closureType
+          container.extension.lotNumber
+          container.extension.quantity
+          container.extension.type
+    }
+
+    objExs2 *-- obj4   
+}
+node "StabilityStudyIntervalReport" as Ninterval { 
+      object "**Parent:** DiagnosticReport" as objinterval {
+    }
+        object "**Extensions**" as objIntEx {
+        pq-timePoint-extension
+      pq-quality-specification-extension
+      pq-additional-info-extension
+    }
+    objinterval *-- objIntEx 
+}
+
+  node "BatchAnalysis" as N2 { 
+      object "**Parent:** DiagnosticReport" as obj2 {
+    }
+        object "**Extensions**" as objQSEx {
+        pq-quality-specification-extension
+    }
+    obj2 *-- objQSEx 
+}
+
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+
+
+
+node "StabilitySubStudy" as NSub { 
+      object "**Parent:** ResearchStudy" as objSub {
+        **ValueSets:**
+        Study Type Terminology
+        Storage Conditions Terminology
+        Container Orientation Terminology
+      }
+
+      object "**Extensions**" as objExsSub  {
+        pq-additional-info-extension
+        pq-condtions-extension
+}
+objExsSub *-- objSub 
+}
+
+
+node "StabilityStudy" as NMain { 
+      object "**Parent:** ResearchStudy" as objMain {
+        **ValueSets:**
+	Stability Study Reason Terminology
+      }
+
+      object "**Extensions**" as objExsMain  {
+pq-protocol-extension named
+pq-additional-info-extension
+}
+objExsMain *-- objMain 
+}
+
+node "StabilitySubStudy" as NSub2 { 
+      object "Another StabilitySubStudy" as objSub2 {
+
+      }
+}
+
+node "ResultObservation" as NNOBS { 
+      object "**Parent:** Observation" as observ3 {
+        **ValueSets:**
+        Conformance Criteria Terminology
+        Units Of Measure Terminology    
+      }
+      object "**Extensions**" as objExsObserv  {
+            pq-pullDate-extension
+            pq-interpretation-code-extension
+            pq-replicate-extension
+    }
+        objExsObserv *-- observ3 
+}
+
+node "MultipleReplicatesResultObservation" as NNstage { 
+      object "**Parent:** Observation" as observS {
+        **ValueSets:**
+ PqcmcConformanceCriteriaTerminology
+ PqcmcUnitsMeasureTerminology
+      }
+      object "**Extensions**" as objExsStageObs  {
+            pq-pullDate-extension
+            pq-interpretation-code-extension
+            pq-replicate-extension
+     }  
+        objExsStageObs *-- observS
+}
+
+node "EctdCompositionSP4151" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+CH --> NN
+CH --> NNS
+CH2 --> NN
+CH2 --> NNS
+CH3 --> NN
+CH3 --> NNS
+N1 --> CH
+N1 --> N2
+N1 --> NSO
+N2 --> CH
+N2 --> CH2
+N2 --> NMFG
+N2 --> NNOBS
+Ninterval --> CH3
+Ninterval --> NMFG
+Ninterval --> NNOBS
+NN --> NMFG
+NNOBS --> NMFG
+NNOBS --> NNstage
+NNS --> NMFG
+NNstage --> NMFG
+NSub --> Ninterval
+N1 --> NMain
+NSub --> NSub2
+NSub --> NMain
+}
+@enduml

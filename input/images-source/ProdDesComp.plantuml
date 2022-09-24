@@ -1,0 +1,88 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Folder 3.2.P.1.0 Bundle" as NODES {
+
+
+  node "DrugProductDescription" as N2 { 
+      object "**Parent:** DrugProduct Profile" as obj2 {
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+    }
+}
+  node "EctdComposition32P10" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }   
+}
+node "DrugProductContainerClosure" as N21 { 
+      object "**Parent:** DrugProduct Profile" as obj22 {
+        **ValueSets:**
+        Container Type Terminology
+        Closure Type Terminology
+    }
+    object "**Extensions**" as objEx {
+        mdpcontainerClosure
+    }
+    obj22 <|-- objEx
+}
+
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+
+node "DrugProductComponent" as NN { 
+      object "**Parent:** Ingredient" as obj3 {
+        **ValueSets:**
+          Drug Product Component Function Category Terminology
+          Excipient Function Terminology
+          Units Of Measure Terminology
+          Strength Operator Terminology
+          Strength Type Terminology
+      }
+      object "**Extensions**" as objExs {
+        Additional-info-extension
+        Strength-type-extension
+        Content-percent-extension
+        Strength-operator-extension
+        Strength-text-extension
+    }
+    obj3 <|-- objExs
+}
+
+node "ComponentSubstance" as NCS { 
+      object "**Parent:** SubstanceDefinition" as objSubDef {
+        **ValueSets:**
+        EVMPDSubstanceClassification
+        Quality Standard Terminology
+        Source Type Terminology
+        GENC Country Codes
+    }
+}
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReferencee"  as obj64  
+}
+
+}
+
+N1 --> N2
+N1 --> NSO
+N1 --> N21
+N1 --> NN
+NN --> N2
+NCS --> NMFG
+NN --> NCS
+NCS --> NB64
+@enduml

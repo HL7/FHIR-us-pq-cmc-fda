@@ -14,6 +14,58 @@
     <a href="index.html">Home</a>
   </li>
   <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">eCTD Profiles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="eCTD32P10.html">eCTD Product Description and Composition of the Drug Product</a>
+      </li>
+      <li>
+        <a href="eCTD32P32.html">eCTD Product Batch Formula</a>
+      </li>
+      <li>
+        <a href="eCTD32P55.html">eCTD Product Characterization of Impurities</a>
+      </li>
+      <li>
+        <a href="eCTD32P70.html">eCTD Product Container Closure System</a>
+      </li>
+      <li>
+        <a href="eCTD32S10.html">eCTD Substance General Information</a>
+      </li>
+      <li>
+        <a href="eCTD32S23.html">eCTD Substance Control of Materials</a>
+      </li>
+      <li>
+        <a href="eCTD32S30.html">eCTD Substance Characterisation</a>
+      </li>
+      <li>
+        <a href="eCTD32S60.html">eCTD Substance Container Closure System</a>
+      </li>
+      <li>
+        <a href="eCTDSP4151.html">eCTD Specification</a>
+      </li>
+      <li>
+        <a href="eCTDSP4454.html">eCTD Batch Analyses</a>
+      </li>
+      <li>
+        <a href="eCTDSP7383.html">eCTD Stability Data</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="instruction.html">General Instructions</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="change_notes.html">Change Notes</a>
   </li>
 </ul>

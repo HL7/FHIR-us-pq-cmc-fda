@@ -28,15 +28,21 @@
         <xsl:value-of select="concat('Unable to find Jira work group defined that corresponds with HL7 website http://', $committeePageBase, $wgWebCode, '.  If that URL resolves, please contact the HL7 webmaster.')"/>
       </xsl:message>
     </xsl:if>
-    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='draft' or @status='ballot' or @status='trial-use' or @status='update' or @status='normative' or status='trial-use+normative')]">
+    <xsl:for-each select="/root/package-list/package[@status='release']">
+      <xsl:message terminate="yes">
+        <xsl:value-of select="concat('Unrecognized package-list status &quot;release&quot; for release ', @version, 
+          ' is not allowed for IGs using the HL7 template.  Use a more specific status (draft, informative, trial-use, normative, trial-use+normative)')"/>
+      </xsl:message>
+    </xsl:for-each>
+    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='draft' or @status='ballot' or @status='informative' or @status='trial-use' or @status='update' or @status='normative' or status='trial-use+normative')]">
       <xsl:message terminate="yes">
         <xsl:value-of select="concat('Unrecognized package-list status: ', @status, ' for release ', @version)"/>
       </xsl:message>
     </xsl:for-each>
     <xsl:variable name="version">
       <xsl:choose>
-        <xsl:when test="/root/package-list/package[@status='trial-use' or @status='update' or @status='normative' or @status='trial-use+normative']">
-          <xsl:value-of select="/root/package-list/package[@status='trial-use' or @status='update' or @status='normative' or @status='trial-use+normative'][1]/@version"/>
+        <xsl:when test="/root/package-list/package[@status='trial-use' or @status='update' or @status='informative' or @status='normative' or @status='trial-use+normative']">
+          <xsl:value-of select="/root/package-list/package[@status='trial-use' or @status='update' or @status='informative' or @status='normative' or @status='trial-use+normative'][1]/@version"/>
         </xsl:when>
         <xsl:when test="/root/package-list/package[@status='ballot']">
           <xsl:value-of select="/root/package-list/package[@status='ballot'][1]/@version"/>

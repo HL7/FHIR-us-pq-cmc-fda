@@ -1,0 +1,62 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "Bundle" as NODES {
+node "Name of Profile" as Nameprofile {
+       object "**Parent:** Name of Resource or 'Profile' name if parent is a profile" as objcs {
+        **ValueSets:**
+          Terminology 1
+          Terminology 2
+          Terminology 3
+      }
+}  
+ node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+} 
+  
+  node "Name of Profile 2" as NN { 
+      object "**Parent:** a Resource" as obj3 {
+        **ValueSets:**
+          Terminology 1
+          Terminology 2
+          Terminology 3
+          ...
+      }
+  object "**Extensions**" as objExs {
+        extension 1
+        extension 2
+        ...
+    }
+ obj3 *-- objExs : Resource supported with extensions
+
+  }
+
+node "Name of profile.  All eCTD bundles have a composition profile" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+      Code system PQCMC Comp Section Types
+    }
+     
+}
+
+diamond CH 
+
+node "Name of Profile 3" as NN3 { 
+      object "**Parent:** a Resource" as obj33 {
+        **ValueSets:**
+          Terminology 1
+          Terminology 2
+          ...
+}
+}
+
+N1 --> NSO
+NN --> CH : A profile can have a choice of reference profiles
+CH --> Nameprofile
+CH --> NN3
+N1 --> NN :  Relationship between profiles.  There can be many profiles and relationships between them.
+}
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "3.2.S.3.0 Characterisation Bundle" as NODES {
+ 
+node "EctdComposition32S30" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+ node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+} 
+  
+  node "DrugSubstanceStructure" as NN { 
+      object "**Parent:** DrugSubstance" as obj3 { 
+
+        **ValueSets:**
+      PqcmcUnitsMeasureTerminology   
+      }
+  }
+
+node "DrugSubstanceImpurities" as N6 { 
+      object "**Parent:** DrugSubstance" as obj2 {
+      **ValueSets:**
+      PqcmcImpurityClassificationTerminology
+      Chemical Structure Data File Type Terminology  
+    }   
+}
+
+N1 --> NSO   
+NN --> N6
+N1 --> NN 
+}
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Folder 3.2.S.6.0 Container Closure System Bundle" as NODES {
+ 
+  node "EctdComposition32S60" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }   
+}
+node "SubstanceContainerClosure" as N21 { 
+      object "**Parent:** DrugSubstance Profile" as obj22 {
+        **ValueSets:**
+        Container Type Terminology
+        Closure Type Terminology
+    }
+    object "**Extensions**" as objEx {
+        mdpcontainerClosure
+    }
+    obj22 <|-- objEx
+}
+
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+}
+
+N1 --> N21
+N1 --> NSO
+
+@enduml

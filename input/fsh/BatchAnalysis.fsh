@@ -41,8 +41,8 @@ Title: "Batch Analysis"
 Description: "Batch or lot release testing  to ensure that pharmaceutical products meet the product specification."	
 	
 * .extension contains pq-quality-specification-extension named qualitySpecification 1..1 MS	
-* identifier 1..1 MS	
-* identifier.value 1..1	
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"			
 * status MS	
 * status ^short = "Status of the batch analysis"	
 * status ^definition = "The status of the batch analysis. Consult the HL7 list of permitted values in http://hl7.org/fhir/ValueSet/diagnostic-report-status"	
@@ -70,7 +70,7 @@ Note: A single release date per batch.
 * result MS	
 * result only Reference(ResultObservation)	
 	
-Profile: AdditionalStageResultObservation	
+Profile: MultipleReplicatesResultObservation	
 Parent: Observation	
 Id: pq-additional-stage-result-observation	
 Title: "Result Observation"	
@@ -153,7 +153,7 @@ Test 8 samples. If any fall above 110%, test an additional 7 samples.  Record al
 * Note: as defined by the sponsor 
 Relative Retention Time (RRT):	The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
 * Example: 1:23 (a ratio) 
-* Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value."""
+* Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value."""
 * component.value[x] 1..1 MS	
 * component.value[x] only Quantity or string	
 * component.valueQuantity.value 0..1 MS	
@@ -285,8 +285,8 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
 Note: This is the text as it appears in the Specification."""
 * referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
-* hasMember MS	
-* hasMember only Reference(AdditionalStageResultObservation)	
+* hasMember 0..1 MS	
+* hasMember only Reference(MultipleReplicatesResultObservation)	
 * hasMember ^comment = "Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition."	
 * component 0..1 MS	
 * component ^short = "Grouped replicates"	

@@ -1,0 +1,97 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Folder 3.2.S P4151 P4151 Specification Bundle" as NODES {
+  
+
+  node "RoutineDrugProduct" as NN { 
+      object "**Parent:** DrugProduct" as obj3 {
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+          
+      }
+}
+node "Excipient" as N21 { 
+      object "**Parent:** SubstanceDefinition" as obj22 {
+        **ValueSets:**
+          GENC Country Codes
+          Source Type Terminology
+    }
+}
+node "MfgTestSiteOrganization" as N21mfg { 
+    object "**Parent:** Organization" as objTS  {
+        **ValueSets:**
+         Manufacturing Site Unique Identifier Type
+         GENC Country Codes
+    }
+}
+
+node "EctdCompositionSP4151" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+ 
+}
+ node "RoutineSubstanceDefinition for API" as NNS { 
+      object "**Parent:** SubstanceDefinition" as obj4 {
+                **ValueSets:**
+                EVMPDSubstanceClassification
+                Quality Benchmark Terminology
+                GENC Country Codes
+                Source Type Terminology
+      }
+}
+node "SponsorOrganization" as NMSpon { 
+      object "**Parent:** Organization" as objDP {
+         **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+node "RoutineDrugProduct" as NN { 
+      object "**Parent:** DrugProduct" as obj3 {
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+          
+      }
+}
+diamond CH
+
+  node "QualitySpecification" as N2 { 
+      object "**Parent:** PlanDefinition" as obj2 {
+        **ValueSets**
+        PqActionRelationTypes
+        PqcmcInterpretationCodeTerminology
+        PqcmcSpecificationStatusTerminology
+        PqcmcSpecificationTypeTerminology
+        PqcmcTestCategoryTerminology
+        PqcmcTestMethodOriginTerminology
+        PqcmcTestUsageTerminology
+        PqcmcUnitsMeasureTerminology
+    }
+        object "**Extensions**" as objQSEx {
+        AdditionalInformationExtension
+        InterpretationCodeExtension
+        SpecificationStatusExtension
+        SpecificationTypeExtension
+        TestMethodOriginExtension
+        TestOrderExtension
+        RRTExtension
+    }
+    obj2 <|-- objQSEx
+}
+
+N1 --> N2
+CH --> N21
+CH --> NNS
+CH --> NN
+N1 --> CH
+N21 --> N21mfg
+N2 --> CH
+N1 --> NMSpon
+NNS --> N21mfg
+}
+@enduml

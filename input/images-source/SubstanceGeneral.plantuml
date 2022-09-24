@@ -1,0 +1,59 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Folder 3.2.S.1.0 Bundle" as NODES {
+  node "DrugSubstanceRepresentationalStructure" as N21 { 
+      object "**Parent:** DrugSubstance Profile" as obj22 {
+        **ValueSets:**
+        Chemical Structure Data File Type Terminology
+        Code System PQCMC Name Types
+    }
+}
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReferencee"  as obj64    
+}
+
+  node "EctdComposition32S10" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+     
+}
+node "PolymorphicForm" as N2 { 
+      object "**Parent:** SubstanceDefinition" as obj2 {
+        **ValueSets:**
+        EVMPDSubstanceClassification
+        Units Of Measure Terminology
+        Chemical Structure Data File Type Terminology
+        Code System PQCMC Name Types
+    }
+     
+}
+ node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+} 
+  node "DrugSubstanceNomenclature" as NN { 
+      object "**Parent:** DrugSubstance Profile" as obj3 {
+        **ValueSets:**
+        EVMPDSubstanceClassification
+        Units Of Measure Terminology
+        Chemical Structure Data File Type Terminology
+        Code System PQCMC Name Types 
+      }
+    
+}
+
+
+N1 --> N21
+N1 --> NN
+NN --> N2
+
+N2 --> NB64
+N21 --> NB64
+N1 --> NSO
+}
+@enduml

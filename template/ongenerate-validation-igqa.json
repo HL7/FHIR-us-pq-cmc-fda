@@ -1,9 +1,0 @@
-
-{"severity":"warning","code":"invariant","details":{"text":"Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/pq-rrt-extension.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list."},"location":["ImplementationGuide.definition.resource[30]"]}
-,
-{"severity":"warning","code":"invariant","details":{"text":"Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/pq-test-method-origin-extension.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list."},"location":["ImplementationGuide.definition.resource[35]"]}
-,
-{"severity":"warning","code":"invariant","details":{"text":"Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/pq-order-extension.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list."},"location":["ImplementationGuide.definition.resource[36]"]}
-,
-{"severity":"warning","code":"invariant","details":{"text":"Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/PqActionRelationTypeVS.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list."},"location":["ImplementationGuide.definition.resource[37]"]}
-,

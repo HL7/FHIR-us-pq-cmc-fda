@@ -1,0 +1,135 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Foldern 3.2.S.4.1 and 3.2.P.5.1 Batch Analysis Bundle" as NODES {
+
+node "DrugProductBatch" as NN { 
+      object "**Parent:** Medication" as obj3 {
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+        Expiration Date Classification Terminology
+        Batch utilization Terminology
+        Units Of Measure Terminology 
+        Container Type Terminology
+        Closure Type Terminology        
+      }
+
+      object "**Extensions**" as objExsBatch  {
+                manufacturingDate
+                manufacturingDateClassification
+                assignedManufacturer
+                expirationDateClassification
+                batchUtilization
+                batchQuantity
+                additionalInformation
+                container.extension.closureSystemDescription
+                container.extension.closureType
+                container.extension.lotNumber
+                container.extension.quantity
+                container.extension.type 
+}
+objExsBatch *-- obj3 
+}
+  node "BatchAnalysis" as N2 { 
+      object "**Parent:** DiagnosticReport" as obj2 {
+    }
+        object "**Extensions**" as objQSEx {
+        pq-quality-specification-extension
+    }
+    obj2 *-- objQSEx 
+}
+
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+node "DrugSubstanceBatch" as NNS { 
+      object "**Parent:** Substance" as obj4 {
+                **ValueSets:**
+                Batch utilization Terminology
+                Units Of Measure Terminology
+                Container Type Terminology
+                Closure Type Terminology
+      }
+  object "**Extensions**" as objExs2 {
+          manufacturingDate
+          manufacturingDateClassification
+          assignedManufacturer
+          batchUtilization
+          batchQuantity
+          additionalInformation
+          container.extension.closureSystemDescription
+          container.extension.closureType
+          container.extension.lotNumber
+          container.extension.quantity
+          container.extension.type
+    }
+
+    objExs2 *-- obj4   
+}
+
+node "ResultObservation" as NNOBS { 
+      object "**Parent:** Observation" as observ3 {
+        **ValueSets:**
+        Conformance Criteria Terminology
+        Units Of Measure Terminology    
+      }
+      object "**Extensions**" as objExsObserv  {
+            pq-pullDate-extension
+            pq-interpretation-code-extension
+            pq-replicate-extension
+    }
+        objExsObserv *-- observ3 
+}
+
+node "MultipleReplicatesResultObservation" as NNstage { 
+      object "**Parent:** Observation" as observS {
+        **ValueSets:**
+ PqcmcConformanceCriteriaTerminology
+ PqcmcUnitsMeasureTerminology
+      }
+      object "**Extensions**" as objExsStageObs  {
+            pq-pullDate-extension
+            pq-interpretation-code-extension
+            pq-replicate-extension
+     }  
+        objExsStageObs *-- observS
+}
+
+node "EctdCompositionSP4151" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+ diamond CH
+
+
+
+N1 --> CH
+N1 --> N2
+N1 --> NSO
+CH --> NNS
+CH --> NN
+CH --> NNS
+NNS --> NMFG
+NN --> NMFG
+CH --> NN
+N2 --> CH
+N2 --> NMFG
+N2 --> NNOBS
+NNOBS --> NMFG
+NNOBS --> NNstage
+NNstage --> NMFG
+}
+@enduml
