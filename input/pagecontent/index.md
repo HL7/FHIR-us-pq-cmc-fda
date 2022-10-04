@@ -36,16 +36,20 @@
 * eCTD Stability Data Composition
 
 
-
 ### Credits
+
+The development of this Implementation Guide is an initiative funded by the FDA. 
+
 Primary authors:
 
-* Enter SMEs with affiliation in parens
-* TBD
-
+* Catherine Hosage Norman (mailto: chn@module3solutions.com)
+* Smita Hastak (mailto: shastak@samvit-solutions.com)
+* Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)  
+* Bill Friggle (mailto: wfriggle@samvit-solutions.com)
 
 Technical support and guidance:
 
-* Enter others
+* FDA PQ/CMC SMEs
+ individuals TBD
 
 This implementation guide was created under the supervision and review of the HL7 [Biomedical Research & Regulation](https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation) work group.
