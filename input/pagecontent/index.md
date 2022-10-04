@@ -1,5 +1,7 @@
 ## PharmaceuticalQualityImplementationGuide
 
+WORK IN PROGESS
+
 <span style="color:  #333333;;">US FDA intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in eCTD Module 3. The impetus for this standardization effort was the provisions from the 2012 Food and Drug Administration Safety and Innovation Act (FDASIA) (Pub. L. 112-144), which authorized the Agency to require certain submissions to be in a specified electronic format. The development of a structured format for PQ/CMC data will enable consistency in the content and format of PQ/CMC data submitted, thus providing a harmonized language for submission content, allowing reviewers to query the data, and, in general, contributing to a more efficient and effective regulatory decision-making process by creating a standardized data dictionary.</span>
 
 <br>
@@ -38,18 +40,18 @@
 
 ### Credits
 
-The development of this Implementation Guide is an initiative funded by the FDA. 
+The development of this Implementation Guide is an initiative funded by the US FDA.
 
-Primary authors:
+Primary IG authors:
 
 * Catherine Hosage Norman (mailto: chn@module3solutions.com)
 * Smita Hastak (mailto: shastak@samvit-solutions.com)
 * Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)  
 * Bill Friggle (mailto: wfriggle@samvit-solutions.com)
 
-Technical support and guidance:
+Domain Experts and Program Management:
 
-* FDA PQ/CMC SMEs
- individuals TBD
+* Program Management – (list of names to be added soon)
+* •	FDA PQ/CMC SMEs --- (list of names to be added soon)
 
-This implementation guide was created under the supervision and review of the HL7 [Biomedical Research & Regulation](https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation) work group.
+The PQ/CMC Projects is Sponsored by the HL7 [Biomedical Research & Regulation](https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation) work group.
