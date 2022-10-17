@@ -92,6 +92,24 @@ Description: "Name types for the name element in SubstanceDefintion."
 * #Company "Company Code"
 * #Substance "Substance Name"
 
+CodeSystem: PqcmcProductCharacteristicCodes
+Id: pqcmc-cs-product-characteristic
+Title: "Code System PQCMC Product Characteristic"
+Description: "Product Characteristic for the characteristic element in MedicinalProductDefintion."
+
+* #OvrRelsProf "Overall Release Profile"
+* #OvrRelsMech "Overall Release Mechanism"
+* #CoatInd "Coating Indicator"
+* #TabLayCnt "Tablet Layer Count"
+* #TabBeaTypCnt "Tablet Bead Type Count"
+* #CapConCnt "Capsule Constituent Count"
+* #Schematic "Schematic "
+* #WgtTyp "Weight Type"
+* #TotWgtNum "Total Weight Numeric Numerator"
+* #TotWgtDen "Total Weight Numeric Denominator"
+* #TotWgtTxt "Total Weight Textual"
+* #TotWgtOper "Total Weight Operator"
+
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
 Title: "eCTD sections Value Set"

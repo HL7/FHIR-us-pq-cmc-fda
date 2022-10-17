@@ -71,6 +71,7 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code ^short = "Route of Administration"
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI EVS C38114]"
 * route.coding.code from SplDrugRouteofAdministrationTerminology
+* comprisedOf only Reference(FinishedProduct)
 * impurity 0..* MS
 * impurity ^short = "Product Impurity"
 * impurity.reference only Reference(ImpuritySubstance)
@@ -85,6 +86,134 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * name.type.text 1..1 MS
 * crossReference.product MS
 * crossReference.product ^short = "Co-Package"
+* characteristic 1..* MS
+* characteristic ^slicing.discriminator.type = #pattern
+* characteristic ^slicing.discriminator.path = "type"
+* characteristic ^slicing.rules = #open
+* characteristic ^slicing.description = "Slice based on value pattern"
+* characteristic contains
+      OvrRelsProf	 1..1 MS and
+      OvrRelsMech	 0..1 MS and
+      CoatInd	 1..1 MS and
+      TabLayCnt	 0..1 MS and
+      TabBeaTypCnt	 0..1 MS and
+      CapConCnt	 0..1 MS and
+      Schematic	 1..* MS and
+      WgtTyp	 1..1 MS and
+      TotWgtNum	 0..1 MS and
+      TotWgtDen	 0..1 MS and
+      TotWgtTxt	 0..1 MS and
+      TotWgtOper	 0..1 MS
+
+* characteristic[OvrRelsProf].type  MS      
+* characteristic[OvrRelsProf].type  = PqcmcProductCharacteristicCodes#OvrRelsProf
+* characteristic[OvrRelsProf].valueCodeableConcept ^definition = """The behavior in which drug substance migrates from a dosage form to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined
+"""
+* characteristic[OvrRelsProf].valueCodeableConcept MS
+* characteristic[OvrRelsProf].valueCodeableConcept ^short = "Drug Product Overall Release Profile"
+
+* characteristic[OvrRelsMech].type  = PqcmcProductCharacteristicCodes#OvrRelsMech
+* characteristic[OvrRelsMech].type  MS
+* characteristic[OvrRelsMech].valueCodeableConcept ^definition = """The method employed in order to realize the specified drug product release type. [Source: SME Defined]
+Example: osmotic pump to achieve extended release
+"""
+* characteristic[OvrRelsMech].valueCodeableConcept ^short = "Drug Product Overall Release Mechanism"
+* characteristic[OvrRelsMech].valueCodeableConcept MS
+* characteristic[CoatInd].type  = PqcmcProductCharacteristicCodes#CoatInd
+* characteristic[CoatInd].type  MS
+* characteristic[CoatInd].valueBoolean ^definition = """The total number of layers in the tablet. [Source: SME Defined]
+Note: Non-layered tablets will be considered as one layer tablets.
+"""
+* characteristic[CoatInd].valueBoolean ^short = "Drug Product Coating Indicator"
+* characteristic[CoatInd].valueBoolean MS
+* characteristic[TabLayCnt].type  = PqcmcProductCharacteristicCodes#TabLayCnt
+* characteristic[TabLayCnt].type  MS
+* characteristic[TabLayCnt].valueInteger ^definition = """The total number of type of beads present in a tablet [Source: SME Defined]
+Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2."""
+* characteristic[TabLayCnt].valueInteger ^short = "Drug Product Tablet Layer Count"
+* characteristic[TabLayCnt].valueInteger MS
+* characteristic[TabBeaTypCnt].type  = PqcmcProductCharacteristicCodes#TabBeaTypCnt
+* characteristic[TabBeaTypCnt].type  MS
+* characteristic[TabBeaTypCnt].valueString ^definition = """The number of distinct constituents contained in the capsule shell of the drug product.  [Source: SME Defined]
+Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2."""
+* characteristic[TabBeaTypCnt].valueString ^short = "Drug Product Tablet Bead Type Count"
+* characteristic[TabBeaTypCnt].valueString MS
+* characteristic[CapConCnt].type  MS
+* characteristic[CapConCnt].type  = PqcmcProductCharacteristicCodes#CapConCnt
+* characteristic[CapConCnt].valueInteger ^definition = """A physical (content) or activity measurement of the weight of the drug product unit. [Source: SME Defined]
+Example: Mass, Activity"""
+* characteristic[CapConCnt].valueInteger ^short = "Drug Product Capsule Constituent Count"
+* characteristic[CapConCnt].valueInteger MS
+* characteristic[Schematic].type  = PqcmcProductCharacteristicCodes#Schematic
+* characteristic[Schematic].type  MS
+* characteristic[Schematic].valueAttachment ^definition = """Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]
+Note: a single unit of a solid oral dose form could be a tablet or a capsuleThe labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]Example: mg"""
+* characteristic[Schematic].valueString ^short = "Drug Product Schematic"
+* characteristic[Schematic].valueString MS
+* characteristic[WgtTyp].type  = PqcmcProductCharacteristicCodes#WgtTyp
+* characteristic[WgtTyp].type  MS
+* characteristic[WgtTyp].valueCodeableConcept ^definition = """Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
+Note: For solid oral dose forms, by definition this is 1
+The labeled unit of measure for the content of an ingredient, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
+Note: For solid oral dose forms, by definition this is 'unit'
+"""
+* characteristic[WgtTyp].valueCodeableConcept ^short = "Drug Product Weight Type"
+* characteristic[WgtTyp].valueCodeableConcept MS
+* characteristic[TotWgtNum].type  = PqcmcProductCharacteristicCodes#TotWgtNum
+* characteristic[TotWgtNum].type  MS
+* characteristic[TotWgtNum].valueString ^definition = """A written description of the weight of the drug product. [Source: SME Defined]
+Note:  This is typically applicable to biologics
+Example: International Units for Enzymes
+"""
+* characteristic[TotWgtNum].valueQuantity ^short = "Drug Product Total Weight Numeric Numerator"
+* characteristic[TotWgtNum].valueQuantity MS
+* characteristic[TotWgtDen].type  = PqcmcProductCharacteristicCodes#TotWgtDen
+* characteristic[TotWgtDen].type  MS
+* characteristic[TotWgtDen].valueQuantity ^definition = """A mathematical symbol that denotes equality or inequality between two values.  [Source: SME Defined] Examples: LT, EQ, NMT.
+Note:  This is typically applicable to biologics"""
+* characteristic[TotWgtDen].valueQuantity ^short = "Drug Product Total Weight Numeric Denominator"
+* characteristic[TotWgtDen].valueQuantity MS
+* characteristic[TotWgtTxt].type  = PqcmcProductCharacteristicCodes#TotWgtTxt
+* characteristic[TotWgtTxt].type  MS
+* characteristic[TotWgtTxt].valueString ^definition = """The method employed in order to realize the specified drug product release type. [Source: SME Defined]
+Example: osmotic pump to achieve extended release
+"""
+* characteristic[TotWgtTxt].valueString ^short = "Drug Product Total Weight Textual"
+* characteristic[TotWgtTxt].valueString MS
+* characteristic[TotWgtOper].type  = PqcmcProductCharacteristicCodes#TotWgtOper
+* characteristic[TotWgtOper].type  MS
+* characteristic[TotWgtOper].valueCodeableConcept ^definition = """The total number of layers in the tablet. [Source: SME Defined]
+Note: Non-layered tablets will be considered as one layer tablets.
+"""
+* characteristic[TotWgtOper].valueCodeableConcept ^short = "Drug Product Total Weight Operator"
+* characteristic[TotWgtOper].valueCodeableConcept MS
+
+Profile: FinishedProduct
+Parent: ManufacturedItemDefinition
+Id: pqcmc-product-part
+Title: "Product Part"
+Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or compoent."
+
+* identifier 0..1 MS
+* status 1..1 MS
+* name 0..1 MS
+* manufacturer 1..1 MS
+* property 1..* MS
+* property.type 1..1 MS
+* property.value[x] 1..1 MS
+* component 0..* MS
+//element(*,ManufacturedItemDefinition)/component/@id
+* component.type 1..1 MS
+//*  funciton will be 
+* component.function 0..* MS
+* component.amount 0..* MS
+* component.constituent 0..* MS
+* component.constituent.amount 0..* MS
+* component.constituent.location 0..* MS
+* component.constituent.function 0..* MS
+* component.constituent.locationForIngredient 0..* MS
+* component.property 0..* MS
+* component.component 0..* MS
 
 Profile: BatchFormula
 Parent: MedicinalProductDefinition
