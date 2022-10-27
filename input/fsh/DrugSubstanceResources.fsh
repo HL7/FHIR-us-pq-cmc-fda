@@ -239,7 +239,7 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
     cas 0..1 MS 
 * name[sub].name  MS
 * name[sub].name ^short = "Drug Substance Impurity Name | Drug Product Impurity Name"
-* name[sub]..name ^definition = """Any component of the drug substance which is not the chemical entity defined as the drug substance. [Source: ICH Q6A]
+* name[sub].name ^definition = """Any component of the drug substance which is not the chemical entity defined as the drug substance. [Source: ICH Q6A]
 Examples: CHO cell protein, QQ201234, Residual DNA, gentamicin.
 Note: For example, this could also be a common name, systematic name or a company code
 

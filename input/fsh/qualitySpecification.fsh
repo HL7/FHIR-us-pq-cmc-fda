@@ -96,7 +96,7 @@ Note: This is different from Application Status"
 //* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
 //element(*,PlanDefinition)/subjectReference/reference/@value
 //* subjectReference only Reference(MedicinalProductDefinition or SubstanceDefinition)
-* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
+//* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
 * date  1..1 MS
 * date ^short = "Specification Version Date"
 * date  ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
