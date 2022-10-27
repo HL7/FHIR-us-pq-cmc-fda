@@ -43,6 +43,28 @@ If it is not already present, install Java as follows:
 
 ·         Open the output in a text editor or browser to check the content.
 
+### Markdown Supported by Stylesheets
+n
+There are many elements defined by the markdown datatype.  The sytlesheets are restricted to GitHub flavor of Markdown. Line feeds must be double spaces.  Not all markdown features are supported.
+#### Supported
+* Headers <h1>, <h2> and <h3>
+* Emphasis
+* Unordered Lists with asterisk only
+* Ordered Lists
+* Links
+* Blockqoutes
+* Backslash Escapses: restricted to asterisk, underscore, curly braces, Parenthesis, plus sign and minus sign
+* Fenced Code Blocks will only be supported for strucuture graphics not markdown fields.
+
+
+#### Not Supported
+* Images
+* Username Mentions
+* Issue References
+* Task Lists
+* Tables
+* Emoji
+
 ### Referencing Bundled Resources
 
 <p>All entries in the bundle must have an identifer if they because they are referenced within the document.  Unless there is a unique identifier and system available, provide a Uniform Resource Identifier (URI): Generic Syntax as the identifer. More information is avabilabe at: [https://datatracker.ietf.org/doc/html/rfc3986/](https://datatracker.ietf.org/doc/html/rfc3986/).  The system should be entered as "urn:ietf:rfc:3986".</p>
@@ -61,3 +83,4 @@ If it is not already present, install Java as follows:
 ### Examples
 <p>
 Bunle examples contain one instance of a profile when the cardinality for that profile is one and two when the cardinaltiy is one to many.  There are many bundles that will contain ten or more entries of the same type of profile, such as product composistion, batch formula, quality specifications and stability reports.  Althogh JSON is supported by FHIR and this IG, bundles will be submitted within the eCTD in XML format.</p>
+

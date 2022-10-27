@@ -3,7 +3,7 @@ allowmixing
 'Mixed model of use case and object
 package "eCTD Folder 3.2.P.5.5 Characterization of Impurities Bundle" as NODES {
 
-node "EctdCompositionSP4151" as N1 { 
+node "EctdComposition32P55" as N1 { 
       object "**Parent:** Composition" as obj1 {
       **ValueSets:**
   Code system PQCMC Comp Section Types

@@ -7,6 +7,7 @@ status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
 version:  0.1.4
 fhirVersion: 5.0.0-ballot
+# fhirVersion: 5.0.0
 copyrightYear: 2021+
 releaseLabel: Build CI
 publisher:
