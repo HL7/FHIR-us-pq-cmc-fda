@@ -1,4 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/pq-cmc/2022Jan" ciUrl="https://build.fhir.org/ig/HL7/FHIR-pq-cmc" defaultVersion="0.1.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-pq-cmc" url="http://hl7.org/fhir/us/pq-cmc">
-	<version code="0.1.0"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="https://hl7.org/fhir/us-pq-cmc" defaultVersion="current" defaultWorkgroup="" gitUrl="https://github.com/HL7/carin-bb" url="http://hl7.org/fhir/us/pq-cmc">
+<version code="current" url="https://hl7.org/fhir/us-pq-cmc"/>
+<version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/us/carin-bb/2020Feb"/>
+<version code="1.0.1" deprecated="true"/>
+<version code="0.1" deprecated="true"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="DocumentReference/5abefb38-4325-4609-bc3f-61fd62c6f90e" key="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e" name="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
+<artifact deprecated="true" id="CodeSystem/ADADentalProcedureCode" key="CodeSystem-ADADentalProcedureCode" name="ADA Code on Dental Procedures and Nomenclature CS"/>
+<artifact deprecated="true" id="ValueSet/ADADentalProcedureCode" key="ValueSet-ADADentalProcedureCode" name="ADA Code on Dental Procedures and Nomenclature VS"/>
+<artifact deprecated="true" id="CodeSystem/AMACPTCodes" key="CodeSystem-AMACPTCodes" name="AMA CPT Codes"/>
+<artifact id="ValueSet/pqcmc-action-relaiton-types" key="ValueSet-pqcmc-action-relaiton-types" name="ActionRelationTypes"/>
+<artifact id="StructureDefinition/pq-additional-info-extension" key="StructureDefinition-pq-additional-info-extension" name="Aditional Information"/>
+<artifact deprecated="true" id="CodeSystem/THREEMAPDRG" key="CodeSystem-THREEMAPDRG" name="All Patient Diagnosis Related Groups (AP-DRGs)"/>
+<artifact deprecated="true" id="CodeSystem/THREEMAPRDRG" key="CodeSystem-THREEMAPRDRG" name="All Patient Refined Diagnosis Related Groups (APR-DRGs)"/>
+<artifact deprecated="true" id="CodeSystem/ADAAreaOfOralCavitySystem" key="CodeSystem-ADAAreaOfOralCavitySystem" name="American Dental Association Area of Oral Cavity System"/>
+<artifact deprecated="true" id="CodeSystem/ADAUniversalNumberingSystem" key="CodeSystem-ADAUniversalNumberingSystem" name="American Dental Association Universal Numbering System"/>
+<artifact deprecated="true" id="ValueSet/ADAUniversalNumberingSystem" key="ValueSet-ADAUniversalNumberingSystem" name="American Dental Association Universal Numbering Value Set"/>
+<artifact id="StructureDefinition/cmc-document-reference" key="StructureDefinition-cmc-document-reference" name="Base64DocumentReference"/>
+<artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
+<artifact id="StructureDefinition/pqcmc-batch-formula" key="StructureDefinition-pqcmc-batch-formula" name="Batch Formula"/>
+<artifact id="StructureDefinition/pqcmc-batch-ingredient" key="StructureDefinition-pqcmc-batch-ingredient" name="Batch Formula Ingredient"/>
+<artifact id="StructureDefinition/pq-quantity-batch-size" key="StructureDefinition-pq-quantity-batch-size" name="Batch Size"/>
+<artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization Terminology"/>
+<artifact deprecated="true" id="ValueSet/C4BBAdjudicationCategoryDiscriminator" key="ValueSet-C4BBAdjudicationCategoryDiscriminator" name="C4BB Adjudication Category Discriminator"/>
+<artifact deprecated="true" id="CodeSystem/C4BBAdjudicationDiscriminator" key="CodeSystem-C4BBAdjudicationDiscriminator" name="C4BB Adjudication Discriminator"/>
+<artifact deprecated="true" id="CodeSystem/C4BBAdjudication" key="CodeSystem-C4BBAdjudication" name="C4BB AdjudicationCS"/>
+<artifact deprecated="true" id="ValueSet/C4BBAdjudication" key="ValueSet-C4BBAdjudication" name="C4BB AdjudicationVS"/>
+<artifact deprecated="true" id="CapabilityStatement/c4bb" key="CapabilityStatement-c4bb" name="C4BB CapabilityStatement"/>
+<artifact deprecated="true" id="CodeSystem/C4BBClaimCareTeamRole" key="CodeSystem-C4BBClaimCareTeamRole" name="C4BB Claim Care Team Role"/>
+<artifact deprecated="true" id="CodeSystem/C4BBClaimDiagnosisType" key="CodeSystem-C4BBClaimDiagnosisType" name="C4BB Claim Diagnosis Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimIdentifierType" key="ValueSet-C4BBClaimIdentifierType" name="C4BB Claim Identifier Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimInpatientInstitutionalDiagnosisType" key="ValueSet-C4BBClaimInpatientInstitutionalDiagnosisType" name="C4BB Claim Inpatient Institutional Diagnosis Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimInstitutionalCareTeamRole" key="ValueSet-C4BBClaimInstitutionalCareTeamRole" name="C4BB Claim Institutional Care Team Role"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimOutpatientInstitutionalDiagnosisType" key="ValueSet-C4BBClaimOutpatientInstitutionalDiagnosisType" name="C4BB Claim Outpatient Institutional Diagnosis Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimPharmacyTeamRole" key="ValueSet-C4BBClaimPharmacyTeamRole" name="C4BB Claim Pharmacy CareTeam Roles"/>
+<artifact deprecated="true" id="CodeSystem/C4BBClaimProcedureType" key="CodeSystem-C4BBClaimProcedureType" name="C4BB Claim Procedure Type CS"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimProcedureType" key="ValueSet-C4BBClaimProcedureType" name="C4BB Claim Procedure Type VS"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimProfessionalAndNonClinicianCareTeamRole" key="ValueSet-C4BBClaimProfessionalAndNonClinicianCareTeamRole" name="C4BB Claim Professional And Non Clinician Care Team Role"/>
+<artifact deprecated="true" id="ValueSet/C4BBClaimProfessionalAndNonClinicianDiagnosisType" key="ValueSet-C4BBClaimProfessionalAndNonClinicianDiagnosisType" name="C4BB Claim Professional And Non Clinician Diagnosis Type"/>
+<artifact deprecated="true" id="CodeSystem/C4BBCompoundLiteral" key="CodeSystem-C4BBCompoundLiteral" name="C4BB Compound Literal"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-Coverage" key="StructureDefinition-C4BB-Coverage" name="C4BB Coverage"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-ExplanationOfBenefit" key="StructureDefinition-C4BB-ExplanationOfBenefit" name="C4BB Explanation Of Benefit"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-ExplanationOfBenefit-Inpatient-Institutional" key="StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional" name="C4BB ExplanationOfBenefit Inpatient Institutional"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-ExplanationOfBenefit-Oral" key="StructureDefinition-C4BB-ExplanationOfBenefit-Oral" name="C4BB ExplanationOfBenefit Oral"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-ExplanationOfBenefit-Outpatient-Institutional" key="StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional" name="C4BB ExplanationOfBenefit Outpatient Institutional"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-ExplanationOfBenefit-Pharmacy" key="StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy" name="C4BB ExplanationOfBenefit Pharmacy"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-ExplanationOfBenefit-Professional-NonClinician" key="StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician" name="C4BB ExplanationOfBenefit Professional NonClinician"/>
+<artifact deprecated="true" id="CodeSystem/C4BBIdentifierType" key="CodeSystem-C4BBIdentifierType" name="C4BB Identifier Type"/>
+<artifact deprecated="true" id="CodeSystem/C4BBInstitutionalClaimSubType" key="CodeSystem-C4BBClaimSubType" name="C4BB Institutional Claim SubType CS"/>
+<artifact deprecated="true" id="ValueSet/C4BBInstitutionalClaimSubType" key="ValueSet-C4BBClaimSubType" name="C4BB Institutional Claim SubType VS"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-Organization" key="StructureDefinition-C4BB-Organization" name="C4BB Organization"/>
+<artifact deprecated="true" id="ValueSet/C4BBOrganizationIdentifierType" key="ValueSet-C4BBOrganizationIdentifierType" name="C4BB Organization Identifier Type"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-Patient" key="StructureDefinition-C4BB-Patient" name="C4BB Patient"/>
+<artifact deprecated="true" id="ValueSet/C4BBPatientIdentifierType" key="ValueSet-C4BBPatientIdentifierType" name="C4BB Patient Identifier Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBPayeeType" key="ValueSet-C4BBPayeeType" name="C4BB Payee Type"/>
+<artifact deprecated="true" id="CodeSystem/C4BBPayeeType" key="CodeSystem-C4BBPayeeType" name="C4BB Payee Type CS"/>
+<artifact deprecated="true" id="CodeSystem/C4BBPayerAdjudicationStatus" key="CodeSystem-C4BBPayerAdjudicationStatus" name="C4BB Payer Adjudication Status CS"/>
+<artifact deprecated="true" id="ValueSet/C4BBPayerBenefitPaymentStatus" key="ValueSet-C4BBPayerBenefitPaymentStatus" name="C4BB Payer Benefit Payment Status"/>
+<artifact deprecated="true" id="ValueSet/C4BBPayerClaimPaymentStatusCode" key="ValueSet-C4BBPayerClaimPaymentStatusCode" name="C4BB Payer Claim Payment Status Code"/>
+<artifact deprecated="true" id="ValueSet/C4BBPayerProviderContractingStatus" key="ValueSet-C4BBPayerProviderContractingStatus" name="C4BB Payer Provider Contracting Status"/>
+<artifact deprecated="true" id="StructureDefinition/C4BB-Practitioner" key="StructureDefinition-C4BB-Practitioner" name="C4BB Practitioner"/>
+<artifact deprecated="true" id="ValueSet/C4BBPractitionerIdentifierType" key="ValueSet-C4BBPractitionerIdentifierType" name="C4BB Practitioner Identifier Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBProfessionalAndNonClinicianClaimSubType" key="ValueSet-C4BBProfessionalAndNonClinicianClaimSubType" name="C4BB Professional And Non Clinician Claim SubType"/>
+<artifact deprecated="true" id="ValueSet/C4BBProfessionalAndNonClinicianClaimType" key="ValueSet-C4BBProfessionalAndNonClinicianClaimType" name="C4BB Professional And Non Clinician Claim Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBRelatedClaimRelationshipCodes" key="ValueSet-C4BBRelatedClaimRelationshipCodes" name="C4BB Related Claim Relationship Codes"/>
+<artifact deprecated="true" id="CodeSystem/C4BBRelatedClaimRelationshipCodes" key="CodeSystem-C4BBRelatedClaimRelationshipCodes" name="C4BB Related Claim Relationship Codes CS"/>
+<artifact deprecated="true" id="CodeSystem/C4BBSupportingInfoType" key="CodeSystem-C4BBSupportingInfoType" name="C4BB Supporting Info Type CS"/>
+<artifact deprecated="true" id="ValueSet/C4BBSupportingInfoType" key="ValueSet-C4BBSupportingInfoType" name="C4BB SupportingInfo Type"/>
+<artifact deprecated="true" id="ValueSet/C4BBTotalCategoryDiscriminator" key="ValueSet-C4BBTotalCategoryDiscriminator" name="C4BB Total Category Discriminator"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32P32" key="StructureDefinition-cmc-ectd-document-32P32" name="CMC eCTD 32P32 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32S10" key="StructureDefinition-cmc-ectd-document-32S10" name="CMC eCTD 32S10 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32p10 Document"/>
+<artifact deprecated="true" id="ValueSet/CMSPlaceofServiceCodes" key="ValueSet-CMSPlaceofServiceCodes" name="CMS Place of Service Codes (POS)"/>
+<artifact deprecated="true" id="CodeSystem/CMSPlaceofServiceCodes" key="CodeSystem-CMSPlaceofServiceCodes" name="CMS Place of Service Codes (POS) CS"/>
+<artifact id="CodeSystem/pqcmc-capsule-classification-category" key="CodeSystem-pqcmc-capsule-classification-category" name="Capsule Classification Category"/>
+<artifact id="ValueSet/pqcmc-chemical-structure-datafile-type-terminology" key="ValueSet-pqcmc-chemical-structure-datafile-type-terminology" name="Chemical Structure Data File Type Terminology"/>
+<artifact id="ValueSet/pqcmc-closure-type-terminology" key="ValueSet-pqcmc-closure-type-terminology" name="Closure Type Terminology"/>
+<artifact id="CodeSystem/pqcmc-coating-purpose" key="CodeSystem-pqcmc-coating-purpose" name="Coating Purpose"/>
+<artifact id="CodeSystem/pqcmc-cs-name-types" key="CodeSystem-pqcmc-cs-name-types" name="Code System PQCMC Name Types"/>
+<artifact id="CodeSystem/pqcmc-cs-product-characteristic" key="CodeSystem-pqcmc-cs-product-characteristic" name="Code System PQCMC Product Characteristic"/>
+<artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code system PQCMC Comp Section Types"/>
+<artifact id="StructureDefinition/pqcmc-ComponentSubstance" key="StructureDefinition-pqcmc-ComponentSubstance" name="Component Substance"/>
+<artifact id="ValueSet/pqcmc-conformance-to-criteria-terminology" key="ValueSet-pqcmc-conformance-to-criteria-terminology" name="Conformance to Criteria Terminology"/>
+<artifact id="StructureDefinition/pq-container-closure-extension" key="StructureDefinition-pq-container-closure-extension" name="Container Closure"/>
+<artifact id="ValueSet/pqcmc-container-orientation-terminology" key="ValueSet-pqcmc-container-orientation-terminology" name="Container Orientation Terminology"/>
+<artifact id="ValueSet/pqcmc-container-type-terminology" key="ValueSet-pqcmc-container-type-terminology" name="Container Type Terminology"/>
+<artifact id="StructureDefinition/pq-content-percent-extension" key="StructureDefinition-pq-content-percent-extension" name="Content (%)"/>
+<artifact deprecated="true" id="Coverage/CoverageEx1" key="Coverage-CoverageEx1" name="Coverage Example 1"/>
+<artifact deprecated="true" id="Coverage/CoverageEx2" key="Coverage-CoverageEx2" name="Coverage Example 2"/>
+<artifact deprecated="true" id="Coverage/Coverage1" key="Coverage-Coverage1" name="Coverage1"/>
+<artifact deprecated="true" id="Coverage/CoverageDental1" key="Coverage-CoverageDental1" name="CoverageDental1"/>
+<artifact deprecated="true" id="SearchParameter/coverage-payor" key="SearchParameter-coverage-payor" name="Coverage_Payor"/>
+<artifact deprecated="true" id="ValueSet/CDCICD910CMDiagnosisCodes" key="ValueSet-CDCICD910CMDiagnosisCodes" name="Diagnosis Codes - International Classification of Diseases, Clinical Modification (ICD-9-CM, ICD-10-CM)"/>
+<artifact id="StructureDefinition/pqcmc-drug-produc" key="StructureDefinition-pqcmc-drug-produc" name="Drug Product"/>
+<artifact id="StructureDefinition/pqcmc-Component" key="StructureDefinition-pqcmc-Component" name="Drug Product Component"/>
+<artifact id="ValueSet/pqcmc-drug-product-component-function-category-terminology" key="ValueSet-pqcmc-drug-product-component-function-category-terminology" name="Drug Product Component Function Category Terminology"/>
+<artifact id="StructureDefinition/pqcmc-druproduct-container-closure" key="StructureDefinition-pqcmc-druproduct-container-closure" name="Drug Product Container Closure"/>
+<artifact id="StructureDefinition/pqcmc-drug-product-description" key="StructureDefinition-pqcmc-drug-product-description" name="Drug Product Description"/>
+<artifact id="StructureDefinition/pqcmc-drug-product-with-impurities" key="StructureDefinition-pqcmc-drug-product-with-impurities" name="Drug Product Impurities"/>
+<artifact id="StructureDefinition/pqcmc-dp-ingredient" key="StructureDefinition-pqcmc-dp-ingredient" name="Drug Product Ingredient"/>
+<artifact id="StructureDefinition/pqcmc-drug-product-instance" key="StructureDefinition-pqcmc-drug-product-instance" name="Drug Product Manufactured Instance"/>
+<artifact id="StructureDefinition/drug-product-manufacturing-batch" key="StructureDefinition-drug-product-manufacturing-batch" name="Drug Product Manufacturing Batch"/>
+<artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
+<artifact id="StructureDefinition/pqcmc-DrugSubstance" key="StructureDefinition-pqcmc-DrugSubstance" name="Drug Substance"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-container-closure" key="StructureDefinition-pqcmc-drug-substance-container-closure" name="Drug Substance Container Closure"/>
+<artifact id="StructureDefinition/pqcmc-DrugSubstanceImpurity" key="StructureDefinition-pqcmc-DrugSubstanceImpurity" name="Drug Substance Impurity"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-batch" key="StructureDefinition-pqcmc-drug-substance-batch" name="Drug Substance Manufactured Batch"/>
+<artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-structure" key="StructureDefinition-pqcmc-drug-substance-structure" name="Drug Substance Molecular Structure"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-structure-represent" key="StructureDefinition-pqcmc-drug-substance-structure-represent" name="Drug Substance Structures"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/InpatientEOBExample1" key="ExplanationOfBenefit-EOBInpatientInstitutionalEx1" name="EOB Inpatient Institutional - Example 1"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/OutpatientEOBExample1" key="ExplanationOfBenefit-EOBOutpatientInstitutionalEx1" name="EOB Outpatient Institutional - Example 1"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/ProfessionalEOBExample1" key="ExplanationOfBenefit-EOBProfessionalEx1" name="EOB Professional - Example 1"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/EOBInpatient1" key="ExplanationOfBenefit-EOBInpatient1" name="EOBInpatient1"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/EOBOral1a" key="ExplanationOfBenefit-EOBOral1a" name="EOBOral1a"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/EOBOral2" key="ExplanationOfBenefit-EOBOral2" name="EOBOral2"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/EOBOutpatientInstitutional1" key="ExplanationOfBenefit-EOBOutpatientInstitutional1" name="EOBOutpatientInstitutional1"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/EOBPharmacy1" key="ExplanationOfBenefit-EOBPharmacy1" name="EOBPharmacy1"/>
+<artifact deprecated="true" id="ExplanationOfBenefit/EOBProfessional1a" key="ExplanationOfBenefit-EOBProfessional1a" name="EOBProfessional1a"/>
+<artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
+<artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
+<artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
+<artifact id="ValueSet/pqcmc-expiration-date-classification-terminology" key="ValueSet-pqcmc-expiration-date-classification-terminology" name="Expiration Date Classification Terminology"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-care-team" key="SearchParameter-explanationofbenefit-care-team" name="ExplanationOfBenefit_Careteam"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-coverage" key="SearchParameter-explanationofbenefit-coverage" name="ExplanationOfBenefit_Coverage"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-identifier" key="SearchParameter-explanationofbenefit-identifier" name="ExplanationOfBenefit_Identifier"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-insurer" key="SearchParameter-explanationofbenefit-insurer" name="ExplanationOfBenefit_Insurer"/>
+<artifact deprecated="true" id="SearchParameter/practitionerrole-organization" key="SearchParameter-practitionerrole-organization" name="ExplanationOfBenefit_Organization"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-patient" key="SearchParameter-explanationofbenefit-patient" name="ExplanationOfBenefit_Patient"/>
+<artifact deprecated="true" id="SearchParameter/practitionerrole-practitioner" key="SearchParameter-practitionerrole-practitioner" name="ExplanationOfBenefit_Practitioner"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-provider" key="SearchParameter-explanationofbenefit-provider" name="ExplanationOfBenefit_Provider"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-service-date" key="SearchParameter-explanationofbenefit-service-date" name="ExplanationOfBenefit_ServiceDate"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-service-start-date" key="SearchParameter-explanationofbenefit-service-start-date" name="ExplanationOfBenefit_ServiceStartDate"/>
+<artifact deprecated="true" id="SearchParameter/explanationofbenefit-type" key="SearchParameter-explanationofbenefit-type" name="ExplanationOfBenefit_Type"/>
+<artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Codes"/>
+<artifact deprecated="true" id="CodeSystem/CMSHIPPSCodes" key="CodeSystem-CMSHIPPSCodes" name="Health Insurance Prospective Payment System (HIPPS)"/>
+<artifact deprecated="true" id="CodeSystem/CMSHCPCSCodes" key="CodeSystem-CMSHCPCSCodes" name="Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes"/>
+<artifact deprecated="true" id="CodeSystem/ICD10PCS" key="CodeSystem-ICD10PCS" name="ICD-10 Procedure Coding System"/>
+<artifact id="ValueSet/pqcmc-impurity-classification-terminology" key="ValueSet-pqcmc-impurity-classification-terminology" name="Impurity Classification Terminology"/>
+<artifact id="ValueSet/pqcmc-impurity-classification-category-terminology" key="ValueSet-pqcmc-impurity-classification-category-terminology" name="Impurity classification Category Terminology"/>
+<artifact id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>
+<artifact id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
+<artifact id="ValueSet/pqcmc-interval-description-code-terminology" key="ValueSet-pqcmc-interval-description-code-terminology" name="Interval Description Code Terminology"/>
+<artifact deprecated="true" id="ValueSet/CMSMS3MAPAPRDRG" key="ValueSet-CMSMS3MAPAPRDRG" name="MS-DRGs - AP-DRGs - APR-DRGs"/>
+<artifact deprecated="true" id="CodeSystem/CMSMSDRG" key="CodeSystem-CMSMSDRG" name="Medicare Severity Diagnosis Related Groups (MS-DRGs)"/>
+<artifact id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="MfgTestSiteOrganization"/>
+<artifact id="StructureDefinition/pq-additional-stage-result-observation" key="StructureDefinition-pq-additional-stage-result-observation" name="Multiple Result Observation"/>
+<artifact deprecated="true" id="ValueSet/NCPDPBrandGenericCode" key="ValueSet-NCPDPBrandGenericCode" name="NCPDP Brand Generic Code"/>
+<artifact deprecated="true" id="CodeSystem/NCPDPBrandGenericIndicator" key="CodeSystem-NCPDPBrandGenericIndicator" name="NCPDP Brand Generic Indicator CS"/>
+<artifact deprecated="true" id="ValueSet/NCPDPBrandGenericIndicator" key="ValueSet-NCPDPBrandGenericIndicator" name="NCPDP Brand Generic Indicator VS"/>
+<artifact deprecated="true" id="CodeSystem/NCPDPCompoundCode" key="CodeSystem-NCPDPCompoundCode" name="NCPDP Compound Code"/>
+<artifact deprecated="true" id="ValueSet/NCPDPCompoundCode" key="ValueSet-NCPDPCompoundCode" name="NCPDP Compound Code CS"/>
+<artifact deprecated="true" id="ValueSet/NCPDPDispensedAsWrittenOrProductSelectionCode" key="ValueSet-NCPDPDispensedAsWrittenOrProductSelectionCode" name="NCPDP Dispense As Written (DAW)/Product Selection Code"/>
+<artifact deprecated="true" id="CodeSystem/NCPDPDispensedAsWrittenOrProductSelectionCode" key="CodeSystem-NCPDPDispensedAsWrittenOrProductSelectionCode" name="NCPDP Dispense As Written (DAW)/Product Selection Code CS"/>
+<artifact deprecated="true" id="ValueSet/NCPDPPrescriptionOriginCode" key="ValueSet-NCPDPPrescriptionOriginCode" name="NCPDP Prescription Origin Code"/>
+<artifact deprecated="true" id="CodeSystem/NCPDPPrescriptionOriginCode" key="CodeSystem-NCPDPPrescriptionOriginCode" name="NCPDP Prescription Origin Code CS"/>
+<artifact deprecated="true" id="ValueSet/NCPDPRejectCode" key="ValueSet-NCPDPRejectCode" name="NCPDP Reject Code"/>
+<artifact deprecated="true" id="CodeSystem/NCPDPRejectCode" key="CodeSystem-NCPDPRejectCode" name="NCPDP Reject Code CS"/>
+<artifact deprecated="true" id="ValueSet/FDANDCOrCompound" key="ValueSet-FDANDCOrCompound" name="NDC or Compound"/>
+<artifact deprecated="true" id="ValueSet/AHANUBCPatientDischargeStatus" key="ValueSet-AHANUBCPatientDischargeStatus" name="NUBC Patient Discharge Status Codes"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCPatientDischargeStatus" key="CodeSystem-AHANUBCPatientDischargeStatus" name="NUBC Patient Discharge Status Codes CS"/>
+<artifact deprecated="true" id="ValueSet/AHANUBCPointOfOriginForAdmissionOrVisit" key="ValueSet-AHANUBCPointOfOriginForAdmissionOrVisit" name="NUBC Point Of Origin"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCPointOfOriginForAdmissionOrVisit" key="CodeSystem-AHANUBCPointOfOriginForAdmissionOrVisit" name="NUBC Point Of Origin CS"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCPointOfOriginForAdmissionOrVisitNewborn" key="CodeSystem-AHANUBCPointOfOriginForAdmissionOrVisitNewborn" name="NUBC Point Of Origin for Newborn"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCPointOfOriginForAdmissionOrVisitNonnewborn" key="CodeSystem-AHANUBCPointOfOriginForAdmissionOrVisitNonnewborn" name="NUBC Point Of Origin for Non-newborn"/>
+<artifact deprecated="true" id="ValueSet/AHANUBCPresentOnAdmission" key="ValueSet-AHANUBCPresentOnAdmission" name="NUBC Present On Admission Indicator Codes"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCPresentOnAdmission" key="CodeSystem-AHANUBCPresentOnAdmission" name="NUBC Present On Admission Indicator Codes CS"/>
+<artifact deprecated="true" id="ValueSet/AHANUBCPriorityTypeOfAdmissionOrVisit" key="ValueSet-AHANUBCPriorityTypeOfAdmissionOrVisit" name="NUBC Priority (Type) of Admission or Visit"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCPriorityTypeOfAdmissionOrVisit" key="CodeSystem-AHANUBCPriorityTypeOfAdmissionOrVisit" name="NUBC Priority (Type) of Admission or Visit CS"/>
+<artifact deprecated="true" id="ValueSet/AHANUBCRevenueCodes" key="ValueSet-AHANUBCRevenueCodes" name="NUBC Revenue Codes"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCRevenueCodes" key="CodeSystem-AHANUBCRevenueCodes" name="NUBC Revenue Codes CS"/>
+<artifact deprecated="true" id="CodeSystem/AHANUBCTypeOfBill" key="CodeSystem-AHANUBCTypeOfBill" name="NUBC Type Of Bill Codes CS"/>
+<artifact deprecated="true" id="ValueSet/AHANUBCTypeOfBill" key="ValueSet-AHANUBCTypeOfBill" name="NUBC Type of Bill Codes"/>
+<artifact deprecated="true" id="ValueSet/FDANationalDrugCode" key="ValueSet-FDANationalDrugCode" name="National Drug Code (NDC)"/>
+<artifact deprecated="true" id="ValueSet/OralBodySite" key="ValueSet-OralBodySite" name="Oral Body Site Value Set"/>
+<artifact deprecated="true" id="Organization/OrganizationDentalPayer1" key="Organization-OrganizationDentalPayer1" name="OrganizationDentalPayer1"/>
+<artifact deprecated="true" id="Organization/Payer1" key="Organization-Payer1" name="OrganizationPayer1"/>
+<artifact deprecated="true" id="Organization/OrganizationProvider1" key="Organization-OrganizationProvider1" name="OrganizationProvider1"/>
+<artifact deprecated="true" id="Patient/ExamplePatient1" key="Patient-PatientEx1" name="Patient Example 1"/>
+<artifact deprecated="true" id="Patient/Patient1" key="Patient-Patient1" name="Patient1"/>
+<artifact deprecated="true" id="Organization/PayerOrganizationExample1" key="Organization-PayerOrgEx1" name="Payer Organization Example 1"/>
+<artifact id="ValueSet/spl-pharmaceutical-dosage-form-terminology" key="ValueSet-spl-pharmaceutical-dosage-form-terminology" name="Pharmaceutical Dosage Form Terminology"/>
+<artifact id="StructureDefinition/pqcmc-PolymorphicForm" key="StructureDefinition-pqcmc-PolymorphicForm" name="Polymorphic Form"/>
+<artifact id="StructureDefinition/pq-cmc-address" key="StructureDefinition-pq-cmc-address" name="PqAddress"/>
+<artifact deprecated="true" id="Practitioner/Practitioner1" key="Practitioner-PractitionerEx1" name="Practitioner Example 1"/>
+<artifact deprecated="true" id="Practitioner/Practitioner2" key="Practitioner-PractitionerEx2" name="Practitioner Example 2"/>
+<artifact deprecated="true" id="Practitioner/Practitioner3" key="Practitioner-PractitionerEx3" name="Practitioner Example 3"/>
+<artifact deprecated="true" id="Practitioner/PractitionerDentalProvider1" key="Practitioner-PractitionerDentalProvider1" name="PractitionerDentalProvider1"/>
+<artifact deprecated="true" id="ValueSet/AMACPTCMSHCPCSProcedureCodes" key="ValueSet-AMACPTCMSHCPCSProcedureCodes" name="Procedure Codes - AMA CPT - CMS HCPCS"/>
+<artifact deprecated="true" id="ValueSet/C4BBEOBInstitutionalProcedureCodes" key="ValueSet-C4BBEOBInstitutionalProcedureCodes" name="Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
+<artifact deprecated="true" id="ValueSet/CMSICD910PCSProcedureCodes" key="ValueSet-CMSICD910PCSProcedureCodes" name="Procedure Codes - International Classification of Diseases, Ninth Revision, Clinical Modification (ICD-9-CM) - ICD-10 Procedure Coding System"/>
+<artifact deprecated="true" id="ValueSet/AMACPTCMSHCPCSModifiers" key="ValueSet-AMACPTCMSHCPCSModifiers" name="Procedure Modifier Codes - AMA CPT - CMS HCPCS"/>
+<artifact id="StructureDefinition/pq-product-batch-ingredient-extension" key="StructureDefinition-pq-product-batch-ingredient-extension" name="Product Batch Ingredient Extension"/>
+<artifact id="CodeSystem/pqcmc-product-ingredient-name-type" key="CodeSystem-pqcmc-product-ingredient-name-type" name="Product Ingredient Name Type"/>
+<artifact id="StructureDefinition/pqcmc-product-part" key="StructureDefinition-pqcmc-product-part" name="Product Part"/>
+<artifact id="CodeSystem/pqcmc-product-part-ingredient-physical-location" key="CodeSystem-pqcmc-product-part-ingredient-physical-location" name="Product Part Ingredient Physical Location"/>
+<artifact id="CodeSystem/pqcmc-product-part-type" key="CodeSystem-pqcmc-product-part-type" name="Product Part Type"/>
+<artifact deprecated="true" id="Organization/ProviderOrganizationEx2" key="Organization-ProviderOrganizationEx2" name="Provider Organizaiton Example 2"/>
+<artifact deprecated="true" id="Organization/ProviderOrganization1" key="Organization-ProviderOrganizationEx1" name="Provider Organization Example 1"/>
+<artifact deprecated="true" id="Organization/ProviderOrganization3" key="Organization-ProviderOrganizationEx3" name="Provider Organization Example 3"/>
+<artifact deprecated="true" id="Organization/ProviderOrganization4" key="Organization-ProviderOrganizationEx4" name="Provider Organization Example 4"/>
+<artifact deprecated="true" id="Organization/ProviderOrganization5" key="Organization-ProviderOrganizationEx5" name="Provider Organization Example 5"/>
+<artifact deprecated="true" id="Organization/ProviderOrganization6" key="Organization-ProviderOrganizationEx6" name="Provider Organization Example 6"/>
+<artifact id="StructureDefinition/pq-pullDate-extension" key="StructureDefinition-pq-pullDate-extension" name="Pull Date"/>
+<artifact id="StructureDefinition/pqcmcQualitySpecification" key="StructureDefinition-pqcmcQualitySpecification" name="Quality Specification"/>
+<artifact id="StructureDefinition/pq-quality-specification-extension" key="StructureDefinition-pq-quality-specification-extension" name="Quality Specification Reference"/>
+<artifact id="ValueSet/pqcmc-quality-benchmark-terminology" key="ValueSet-pqcmc-quality-benchmark-terminology" name="Quality Standard Terminology"/>
+<artifact id="StructureDefinition/pq-rrt-extension" key="StructureDefinition-pq-rrt-extension" name="Relative Retention Time"/>
+<artifact id="CodeSystem/pqcmc-release-mechanism" key="CodeSystem-pqcmc-release-mechanism" name="Release Mechanism"/>
+<artifact id="CodeSystem/pqcmc-release-profile" key="CodeSystem-pqcmc-release-profile" name="Release Profile"/>
+<artifact id="StructureDefinition/pq-replicate-extension" key="StructureDefinition-pq-replicate-extension" name="Replicate Number"/>
+<artifact id="StructureDefinition/pq-result-observation" key="StructureDefinition-pq-result-observation" name="Result Observation"/>
+<artifact id="ValueSet/pqcmc-retest-date-classification-terminology" key="ValueSet-pqcmc-retest-date-classification-terminology" name="Retest Date Classification Terminology"/>
+<artifact id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
+<artifact id="StructureDefinition/pqcmc-routine-drug-substance" key="StructureDefinition-pqcmc-routine-drug-substance" name="Routine Drug Substance"/>
+<artifact id="ValueSet/pqcmc-source-type-terminology" key="ValueSet-pqcmc-source-type-terminology" name="Source Type Terminology"/>
+<artifact id="StructureDefinition/pq-specification-status-extension" key="StructureDefinition-pq-specification-status-extension" name="Specification Status"/>
+<artifact id="ValueSet/pqcmc-specification-status-terminology" key="ValueSet-pqcmc-specification-status-terminology" name="Specification Status Terminology"/>
+<artifact id="StructureDefinition/pq-specification-type-extension" key="StructureDefinition-pq-specification-type-extension" name="Specification Type"/>
+<artifact id="ValueSet/pqcmc-specification-type-terminology" key="ValueSet-pqcmc-specification-type-terminology" name="Specification Type Terminology"/>
+<artifact id="ValueSet/pqcmc-sponsor-identifier-type-terminology" key="ValueSet-pqcmc-sponsor-identifier-type-terminology" name="Sponsor Identifier Type Terminology"/>
+<artifact id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="SponsorOrganization"/>
+<artifact id="StructureDefinition/pq-stability-study" key="StructureDefinition-pq-stability-study" name="Stability Study"/>
+<artifact id="StructureDefinition/pqcmc-stability-study-interval-report" key="StructureDefinition-pqcmc-stability-study-interval-report" name="Stability Study Interval Report"/>
+<artifact id="ValueSet/pqcmc-stability-study-reason-terminology" key="ValueSet-pqcmc-stability-study-reason-terminology" name="Stability Study Reason Terminology"/>
+<artifact id="StructureDefinition/pq-stability-sub-study" key="StructureDefinition-pq-stability-sub-study" name="Stability Sub-Study"/>
+<artifact id="ValueSet/pqcmc-storage-conditions-terminology" key="ValueSet-pqcmc-storage-conditions-terminology" name="Storage Conditions Terminology"/>
+<artifact id="StructureDefinition/pq-strength-operator-extension" key="StructureDefinition-pq-strength-operator-extension" name="Strength Operator"/>
+<artifact id="ValueSet/pqcmc-strength-operator-terminology" key="ValueSet-pqcmc-strength-operator-terminology" name="Strength Operator Terminology"/>
+<artifact id="StructureDefinition/pq-strength-type-extension" key="StructureDefinition-pq-strength-type-extension" name="Strength Type (for API)"/>
+<artifact id="ValueSet/pqcmc-strength-type-terminology" key="ValueSet-pqcmc-strength-type-terminology" name="Strength Type Terminology"/>
+<artifact id="StructureDefinition/pq-timePoint-extension" key="StructureDefinition-pq-timePoint-extension" name="Study Interval"/>
+<artifact id="StructureDefinition/pq-protocol-extension" key="StructureDefinition-pq-protocol-extension" name="Study Protocol"/>
+<artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type Terminology"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-impurities" key="StructureDefinition-pqcmc-drug-substance-impurities" name="Substance Impurities"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature" key="StructureDefinition-pqcmc-drug-substance-nomenclature" name="Substance Nomenclature"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-materials" key="StructureDefinition-pqcmc-drug-substance-materials" name="Substance Raw Materials"/>
+<artifact id="ValueSet/pqcmc-test-category-terminology" key="ValueSet-pqcmc-test-category-terminology" name="Test Category Terminology"/>
+<artifact id="StructureDefinition/pq-test-method-origin-extension" key="StructureDefinition-pq-test-method-origin-extension" name="Test Method Origin"/>
+<artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin Terminology"/>
+<artifact id="StructureDefinition/pq-order-extension" key="StructureDefinition-pq-order-extension" name="Test Order | Stage Sequence Order"/>
+<artifact id="ValueSet/pqcmc-test-usage-terminology" key="ValueSet-pqcmc-test-usage-terminology" name="Test Usage Terminology"/>
+<artifact id="ValueSet/pqcmc-testing-site-unique-identifier-type-terminology" key="ValueSet-pqcmc-testing-site-unique-identifier-type-terminology" name="Testing Site Unique Identifier Type Terminology"/>
+<artifact deprecated="true" id="ValueSet/C4BBSurfaceCodes" key="ValueSet-C4BBSurfaceCodes" name="US Surface Codes Set"/>
+<artifact deprecated="true" id="CodeSystem/C4BBSurfaceCodes" key="CodeSystem-C4BBSurfaceCodes" name="US Surface Codes System"/>
+<artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
+<artifact deprecated="true" id="CodeSystem/X12ClaimAdjustmentReasonCodes" key="CodeSystem-X12ClaimAdjustmentReasonCodes" name="X12 Claim Adjustment Reason Codes"/>
+<artifact deprecated="true" id="ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" key="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" name="X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"/>
+<artifact deprecated="true" id="CodeSystem/CMSRemittanceAdviceRemarkCodes" key="CodeSystem-CMSRemittanceAdviceRemarkCodes" name="X12 Remittance Advice Remark Codes"/>
+<artifact id="DocumentReference/dd6bb623-afbb-4152-b6be-57936c446168" key="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168" name="dd6bb623-afbb-4152-b6be-57936c446168"/>
+<artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
+<artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32p70" key="StructureDefinition-ectd-composition-32p70" name="eCTD Product Container Closure System Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
+<artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
+<artifact id="StructureDefinition/ectd-composition-sp7383" key="StructureDefinition-ectd-composition-sp7383" name="eCTD Stability Data Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterization"/>
+<artifact id="StructureDefinition/ectd-composition-32s60" key="StructureDefinition-ectd-composition-32s60" name="eCTD Substance Container Closure System Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
+<artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Value Set"/>
+<artifact id="DocumentReference/fe3f13c1-b0ac-4x20-8024-f4386c290dfg" key="DocumentReference-fe3f13c1-b0ac-4x20-8024-f4386c290dfg" name="fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
+<artifact id="DocumentReference/fe3f13c1-f0ac-4b40-8024-f4386e290dfc" key="DocumentReference-fe3f13c1-f0ac-4b40-8024-f4386e290dfc" name="fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
+<artifact id="StructureDefinition/pqcmc-NoRefActivity" key="StructureDefinition-pqcmc-NoRefActivity" name="test activit"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page deprecated="true" key="profiles" name="(profiles)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page deprecated="true" key="Authorization_Authentication_and_Registration" name="Authorization Authentication and Registration"/>
+<page deprecated="true" key="Background" name="Background"/>
+<page key="eCTDSP4454" name="Batch Analyses"/>
+<page key="9_change_notes" name="Change Notes"/>
+<page deprecated="true" key="Common_Payer_Consumer_Data_Set" name="Common Payer Consumer Data Set (CPCDS)"/>
+<page key="downloads" name="Downloads"/>
+<page deprecated="true" key="Examples" name="Examples"/>
+<page deprecated="true" key="General_Guidance" name="General Guidance"/>
+<page key="instruction" name="General Instructions"/>
+<page key="index" name="Home"/>
+<page key="eCTD32P32" name="Product Batch Formula"/>
+<page key="eCTD32P55" name="Product Characterization of Impurities"/>
+<page key="eCTD32P70" name="Product Container Closure System"/>
+<page key="eCTD32P10" name="Product Description and Composition of the Drug Product"/>
+<page deprecated="true" key="searchparameters" name="Search Parameters"/>
+<page deprecated="true" key="Security_And_Privacy_Considerations" name="Security and Privacy Considerations"/>
+<page key="eCTDSP4151" name="Specification"/>
+<page key="eCTDSP7383" name="Stability Data"/>
+<page key="eCTD32S60" name="Substance Container Closure System"/>
+<page key="eCTD32S23" name="Substance Control of Materials"/>
+<page key="eCTD32S10" name="Substance General Information"/>
+<page key="toc" name="Table of Contents"/>
+<page deprecated="true" key="Terminology" name="Terminology"/>
+<page deprecated="true" key="5_Terminology_Licensure" name="Terminology Licensure"/>
+<page deprecated="true" key="Use_Case" name="Use Case"/>
+<page key="eCTD32S30" name="eCTD Substance Characterisation"/>
 </specification>

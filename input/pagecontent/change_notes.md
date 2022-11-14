@@ -2,6 +2,20 @@ PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be p
 
 ### Changes and Updates for Version 0.1.4
 The current development IG
+<ul>
+<li>terminology experimental</li>
+<li>OID reference correction</li>
+<li>Corrections to package-list.json</li>
+<li>traced qa.html errors. Non-correctable entered as JIRA tickets.</li>
+<li>added new terminologies as codes. Not in NCIt</li>
+<li>added slices to subtance name and type</li>
+<li>added MID for product Part concept</li>
+<li>added Biopolymer Sequence</li>
+<li>added eCTD Document 32S30 Bundle</li>
+<li>added Analytical Instrument Data File Narrative Text</li>
+<li>updated examples for substance name changes</li>
+</ul>
+### Changes and Updates for Version 0.1.4
 
 <ul>
     <li>corrected the file shown in Substance General Information</li>
