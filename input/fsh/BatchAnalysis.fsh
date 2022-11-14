@@ -73,7 +73,7 @@ Note: A single release date per batch.
 Profile: MultipleReplicatesResultObservation	
 Parent: Observation	
 Id: pq-additional-stage-result-observation	
-Title: "Result Observation"	
+Title: "Multiple Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 	
 * identifier 1..1 MS	
