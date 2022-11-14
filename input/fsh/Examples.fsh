@@ -22,7 +22,7 @@ Title: "Instance of a PolymorphicForm"
 Description: "Example of the  PolymorphicForm of D-Glucose."
 
 * classification = $EMAIDMP#1 "Chemical" 
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)  
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)  
 * molecularWeight.amount.value  = 180.16
 * molecularWeight.amount.unit = "Dalton"
 * molecularWeight.amount.system = $UCUM
@@ -60,10 +60,10 @@ M  END
 //* code.code.coding.system = $UNII
 * code.code = $UNII#02833ISA66 "02833ISA66"
 * name[0].name = "LEVOGLUCOSE"
-//* name[sub].type = PqcmcNameTypesCodes#Substance "Substance Name"	
+//* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"	
 //* name[sub].preferred  = true
 //* name[iupac].name = "(2S,3R,4S,5S)-2,3,4,5,6-PENTAHYDROXYHEXANAL"
-//* name[iupac].type = PqcmcNameTypesCodes#IUPAC "IUPAC Name"	
+//* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"	
 
 Instance: 1c353afe-cfa0-48e0-abba-b4e3ddc66208
 InstanceOf: EctdComposition32P32
@@ -73,10 +73,10 @@ Description: "Drug Product Batch Formula for a biLayer tablet illustratin the us
 
 * status = #final
 * date = "2021-10-29"
-* author = Reference(urn:uuid:uuid:17177734-4328-4f76-9b88-c014a9abc9e3)
+* author = Reference(urn:uuid:17177734-4328-4f76-9b88-c014a9abc9e3)
 * title = "Product x Batch Formula"
 * section.title = "Batch Formula for Nitazoxanide 675mg controlled release tablets"
-* section.entry = Reference(urn:uuid:uuid:fb333dbd-4b8c-4006-8888-5d9849ef1f9b)
+* section.entry = Reference(urn:uuid:fb333dbd-4b8c-4006-8888-5d9849ef1f9b)
 
 Instance: fb333dbd-4b8c-4006-8888-5d9849ef1f9b
 InstanceOf: BatchFormula
@@ -84,26 +84,26 @@ Usage: #example
 Title: "Example Batch Formula"
 Description: "Example Batch Formulation of Bilayer Tablet"
 
-* extension[batch-size].valueQuantity = 100000 '{tbl}' "tablet"
+//* extension[batch-size].valueQuantity = 100000 '{tbl}' "tablet"
 * name.productName = "Nitazoxanide"
 * name.type.text = "Non-proprietary"
-* operation[0].type.reference = Reference(urn:uuid:uuid:367ec3e3-65c6-4358-9ec1-054b669e0c36)
-* operation[+].type.reference = Reference(urn:uuid:uuid:b6cc4cf0-666c-4b17-98b3-303ea87fdd74)
-* operation[+].type.reference = Reference(urn:uuid:uuid:1ebf5cbd-4c34-4d21-8b16-b21e849173ba)
-* operation[+].type.reference = Reference(urn:uuid:uuid:e2714f5f-ae0e-4936-86ac-f3574bfbfd45)
-* operation[+].type.reference = Reference(urn:uuid:uuid:24f96097-e317-4b8f-8267-23a42c9afcd1)
-* operation[+].type.reference = Reference(urn:uuid:uuid:4d611344-0693-44cb-a0a3-cc404463fd34)
-* operation[+].type.reference = Reference(urn:uuid:uuid:e336b548-4ea0-4eb3-9f71-5fd624b60e9f)
-* operation[+].type.reference = Reference(urn:uuid:uuid:ca679c3a-b940-4fe4-b454-ba25986d5567)
-* operation[+].type.reference = Reference(urn:uuid:uuid:f7c69b8a-9c97-480c-b040-9bdba4f8a0d1)
-* operation[+].type.reference = Reference(urn:uuid:uuid:021f7509-feba-49df-9288-f8db04bd6792)
-* operation[+].type.reference = Reference(urn:uuid:uuid:8625a4fe-0484-4da0-8791-8d16997a5cac)
-* operation[+].type.reference = Reference(urn:uuid:uuid:29bb9464-86dd-4293-b2af-e535ec7de830)
-* operation[+].type.reference = Reference(urn:uuid:uuid:b233147f-72ce-446a-abf2-5c01fe09be66)
-* operation[+].type.reference = Reference(urn:uuid:uuid:7528d67d-f15d-4094-baa5-a1d2b73596da)
-* operation[+].type.reference = Reference(urn:uuid:uuid:b58bb8fa-7c7c-42a9-ac27-84978f2c683e)
-* operation[+].type.reference = Reference(urn:uuid:uuid:d842946c-7f37-417b-ab88-ef13038b9bb5)
-* operation[+].type.reference = Reference(urn:uuid:uuid:b3da720c-c063-4afc-a1a1-57bc545dbe1a)
+* operation[0].type.reference = Reference(urn:uuid:367ec3e3-65c6-4358-9ec1-054b669e0c36)
+* operation[+].type.reference = Reference(urn:uuid:b6cc4cf0-666c-4b17-98b3-303ea87fdd74)
+* operation[+].type.reference = Reference(urn:uuid:1ebf5cbd-4c34-4d21-8b16-b21e849173ba)
+* operation[+].type.reference = Reference(urn:uuid:e2714f5f-ae0e-4936-86ac-f3574bfbfd45)
+* operation[+].type.reference = Reference(urn:uuid:24f96097-e317-4b8f-8267-23a42c9afcd1)
+* operation[+].type.reference = Reference(urn:uuid:4d611344-0693-44cb-a0a3-cc404463fd34)
+* operation[+].type.reference = Reference(urn:uuid:e336b548-4ea0-4eb3-9f71-5fd624b60e9f)
+* operation[+].type.reference = Reference(urn:uuid:ca679c3a-b940-4fe4-b454-ba25986d5567)
+* operation[+].type.reference = Reference(urn:uuid:f7c69b8a-9c97-480c-b040-9bdba4f8a0d1)
+* operation[+].type.reference = Reference(urn:uuid:021f7509-feba-49df-9288-f8db04bd6792)
+* operation[+].type.reference = Reference(urn:uuid:8625a4fe-0484-4da0-8791-8d16997a5cac)
+* operation[+].type.reference = Reference(urn:uuid:29bb9464-86dd-4293-b2af-e535ec7de830)
+* operation[+].type.reference = Reference(urn:uuid:b233147f-72ce-446a-abf2-5c01fe09be66)
+* operation[+].type.reference = Reference(urn:uuid:7528d67d-f15d-4094-baa5-a1d2b73596da)
+* operation[+].type.reference = Reference(urn:uuid:b58bb8fa-7c7c-42a9-ac27-84978f2c683e)
+* operation[+].type.reference = Reference(urn:uuid:d842946c-7f37-417b-ab88-ef13038b9bb5)
+* operation[+].type.reference = Reference(urn:uuid:b3da720c-c063-4afc-a1a1-57bc545dbe1a)
 
 Instance: 367ec3e3-65c6-4358-9ec1-054b669e0c36
 InstanceOf: ActivityDefinition
@@ -113,7 +113,7 @@ Description: "Example of Batch Formula Ingredient Imme-Nitaz"
 
 * description = "The form of the solid dosage form provided has this first portion comprising a first quantity of nitazoxanide or analogue thereof in a controlled release of formulation"
 * status = #active
-* productReference = Reference(urn:uuid:uuid:0ee6ed41-894b-492b-bbca-955494fadb94)
+* productReference = Reference(urn:uuid:0ee6ed41-894b-492b-bbca-955494fadb94)
 
 Instance: b6cc4cf0-666c-4b17-98b3-303ea87fdd74
 InstanceOf: ActivityDefinition
@@ -122,7 +122,7 @@ Title: "Batch Formula IngredientExample2"
 Description: "Example of Batch Formula Ingredient Imme-STARC"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:2abd3e0c-96ec-4287-abee-592ab0251018)
+* productReference = Reference(urn:uuid:2abd3e0c-96ec-4287-abee-592ab0251018)
 
 Instance: 1ebf5cbd-4c34-4d21-8b16-b21e849173ba
 InstanceOf: ActivityDefinition
@@ -131,7 +131,7 @@ Title: "Batch Formula IngredientExample3"
 Description: "Example of Batch Formula Ingredient Imme-HYDRO"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:390e8312-1a86-4b6e-af5c-1cc98a1e481d)
+* productReference = Reference(urn:uuid:390e8312-1a86-4b6e-af5c-1cc98a1e481d)
 
 Instance: e2714f5f-ae0e-4936-86ac-f3574bfbfd45
 InstanceOf: ActivityDefinition
@@ -140,7 +140,7 @@ Title: "Batch Formula IngredientExample4"
 Description: "Example of Batch Formula Ingredient Imme-Crosc"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:7a77bed2-3b5e-4722-b442-5aa3f3f64210)
+* productReference = Reference(urn:uuid:7a77bed2-3b5e-4722-b442-5aa3f3f64210)
 
 Instance: 24f96097-e317-4b8f-8267-23a42c9afcd1
 InstanceOf: ActivityDefinition
@@ -149,7 +149,7 @@ Title: "Batch Formula IngredientExample5"
 Description: "Example of Batch Formula Ingredient Imme-Silic"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:0dc2fa8f-89ed-44b2-b835-b4e5d3a8d78a)
+* productReference = Reference(urn:uuid:0dc2fa8f-89ed-44b2-b835-b4e5d3a8d78a)
 
 Instance: 4d611344-0693-44cb-a0a3-cc404463fd34
 InstanceOf: ActivityDefinition
@@ -158,7 +158,7 @@ Title: "Batch Formula IngredientExample6"
 Description: "Example of Batch Formula Ingredient Imme-MICRO"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:88ce020c-846c-463d-8e33-babdfe80c947)
+* productReference = Reference(urn:uuid:88ce020c-846c-463d-8e33-babdfe80c947)
 
 Instance: e336b548-4ea0-4eb3-9f71-5fd624b60e9f
 InstanceOf: ActivityDefinition
@@ -167,7 +167,7 @@ Title: "Batch Formula IngredientExample8"
 Description: "Example of Batch Formula Ingredient Imme-Magne"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:7c310723-134d-425a-9aff-60462e4c567a)
+* productReference = Reference(urn:uuid:7c310723-134d-425a-9aff-60462e4c567a)
 
 Instance: ca679c3a-b940-4fe4-b454-ba25986d5567
 InstanceOf: ActivityDefinition
@@ -176,7 +176,7 @@ Title: "Batch Formula IngredientExample9"
 Description: "Example of Batch Formula Ingredient Imme-Purif"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:54b2180a-ba32-45c4-884b-670ffa28e9af)
+* productReference = Reference(urn:uuid:54b2180a-ba32-45c4-884b-670ffa28e9af)
 
 Instance: f7c69b8a-9c97-480c-b040-9bdba4f8a0d1
 InstanceOf: ActivityDefinition
@@ -186,7 +186,7 @@ Description: "Example of Batch Formula Ingredient Cont-Nitaz"
 
 * description = "The form of the solid dosage form provided has this second portion comprising a second quantity of nitazoxanide or analogue thereof in an immediate release of formulation"
 * status = #active
-* productReference = Reference(urn:uuid:uuid:e30e4e0b-365f-4cf4-b6f8-00c7ca2dc934)
+* productReference = Reference(urn:uuid:e30e4e0b-365f-4cf4-b6f8-00c7ca2dc934)
 
 Instance: 021f7509-feba-49df-9288-f8db04bd6792
 InstanceOf: ActivityDefinition
@@ -195,7 +195,7 @@ Title: "Batch Formula IngredientExample11"
 Description: "Example of Batch Formula Ingredient Cont-HYDRO"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:4ca2742c-416c-465e-916d-fa1990911489)
+* productReference = Reference(urn:uuid:4ca2742c-416c-465e-916d-fa1990911489)
 
 Instance: 8625a4fe-0484-4da0-8791-8d16997a5cac
 InstanceOf: ActivityDefinition
@@ -204,7 +204,7 @@ Title: "Batch Formula IngredientExample12"
 Description: "Example of Batch Formula Ingredient Cont-Silic"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:862ce93d-8743-42ab-84de-be28d8300df8)
+* productReference = Reference(urn:uuid:862ce93d-8743-42ab-84de-be28d8300df8)
 
 Instance: 29bb9464-86dd-4293-b2af-e535ec7de830
 InstanceOf: ActivityDefinition
@@ -213,7 +213,7 @@ Title: "Batch Formula Ingredient Cont-Magne"
 Description: "Example of Batch Formula Ingredient Cont-Magne"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:a5084f22-ffbf-4268-a240-0d203c499cc5)
+* productReference = Reference(urn:uuid:a5084f22-ffbf-4268-a240-0d203c499cc5)
 
 Instance: b233147f-72ce-446a-abf2-5c01fe09be66
 InstanceOf: ActivityDefinition
@@ -222,7 +222,7 @@ Title: "Batch Formula Ingredient Cont-Purif"
 Description: "Example of Batch Formula Ingredient Cont-Purif"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:71a6de11-4229-4228-97c6-68e1d6acb78b)
+* productReference = Reference(urn:uuid:71a6de11-4229-4228-97c6-68e1d6acb78b)
 
 Instance: 7528d67d-f15d-4094-baa5-a1d2b73596da
 InstanceOf: ActivityDefinition
@@ -231,7 +231,7 @@ Title: "Batch Formula Ingredient Cont-HYPRO"
 Description: "Example of Batch Formula Ingredient Cont-HYPRO"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:be37ba6a-f009-4ec0-92f0-2abb8d78a6a1)
+* productReference = Reference(urn:uuid:be37ba6a-f009-4ec0-92f0-2abb8d78a6a1)
 
 Instance: b58bb8fa-7c7c-42a9-ac27-84978f2c683e
 InstanceOf: ActivityDefinition
@@ -240,7 +240,7 @@ Title: "Batch Formula Ingredient Coat-OpadrGreen"
 Description: "Example of Batch Formula Ingredient Coat-OpadrGreen"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:085a514e-b5cb-4e65-b5ab-3180e4aceba0)
+* productReference = Reference(urn:uuid:085a514e-b5cb-4e65-b5ab-3180e4aceba0)
 
 Instance: d842946c-7f37-417b-ab88-ef13038b9bb5
 InstanceOf: ActivityDefinition
@@ -249,7 +249,7 @@ Title: "Batch Formula Ingredient Coat-Opadr"
 Description: "Example of Batch Formula Ingredient Coat-Opadr"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:2ab2018b-f387-48f9-8cd0-0ca9346acf2d)
+* productReference = Reference(urn:uuid:2ab2018b-f387-48f9-8cd0-0ca9346acf2d)
 
 Instance: b3da720c-c063-4afc-a1a1-57bc545dbe1a
 InstanceOf: ActivityDefinition
@@ -258,7 +258,7 @@ Title: "Batch Formula Ingredient Coat-Purif"
 Description: "Example of Batch Formula Ingredient Coat-Purif"
 
 * status = #active
-* productReference = Reference(urn:uuid:uuid:a9f265fe-90ae-4e78-ae81-3dacabe9ae7a)
+* productReference = Reference(urn:uuid:a9f265fe-90ae-4e78-ae81-3dacabe9ae7a)
 
 Instance: 0ee6ed41-894b-492b-bbca-955494fadb94	
 InstanceOf: DrugProductIngredient	
@@ -271,7 +271,7 @@ Description: "Batch Formula Ingredient Amounts Imme-Nitaz with overagePercent an
 * status = #active	
 * role.coding = $NCIT#C82533 "Active Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:363bd671-2817-4778-a3fe-c65b68c63308)	
+* substance.code.reference = Reference(urn:uuid:363bd671-2817-4778-a3fe-c65b68c63308)	
 * substance.strength.concentrationQuantity.value = 17.5	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -286,7 +286,7 @@ Description: "Batch Formula Ingredient Amounts Imme-STARC"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:46667123-2b0f-4dfe-aebe-79f8ddcc58dd)	
+* substance.code.reference = Reference(urn:uuid:46667123-2b0f-4dfe-aebe-79f8ddcc58dd)	
 * substance.strength.concentrationQuantity.value = 3.6	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -301,7 +301,7 @@ Description: "Batch Formula Ingredient Amounts Imme-HYDRO"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:54388f31-3469-4fb4-b7c2-d785cb042d1d)	
+* substance.code.reference = Reference(urn:uuid:54388f31-3469-4fb4-b7c2-d785cb042d1d)	
 * substance.strength.concentrationQuantity.value = 0.5	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -316,7 +316,7 @@ Description: "Batch Formula Ingredient Amounts Imme-Crosc"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:b91053b7-f87c-4baa-9dfd-33619e8c9d72)	
+* substance.code.reference = Reference(urn:uuid:b91053b7-f87c-4baa-9dfd-33619e8c9d72)	
 * substance.strength.concentrationQuantity.value = 0.75	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -331,7 +331,7 @@ Description: "Batch Formula Ingredient Amounts Imme-Silic"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:6a064012-5b43-489d-bd07-4c0cc1da593e)	
+* substance.code.reference = Reference(urn:uuid:6a064012-5b43-489d-bd07-4c0cc1da593e)	
 * substance.strength.concentrationQuantity.value = 0.1	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -346,7 +346,7 @@ Description: "Batch Formula Ingredient Amounts Imme-MICRO"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:4bb4aeb0-47c2-4c90-ac13-041fb6a36ce2)	
+* substance.code.reference = Reference(urn:uuid:4bb4aeb0-47c2-4c90-ac13-041fb6a36ce2)	
 * substance.strength.concentrationQuantity.value = 2.3	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -361,7 +361,7 @@ Description: "Batch Formula Ingredient Amounts Imme-Magne"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:171f0414-6999-47fa-b792-67510f9e33cc)	
+* substance.code.reference = Reference(urn:uuid:171f0414-6999-47fa-b792-67510f9e33cc)	
 * substance.strength.concentrationQuantity.value = 0.25	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -376,7 +376,7 @@ Description: "Batch Formula Ingredient Amounts Imme-Purif"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Immediate Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf)	
+* substance.code.reference = Reference(urn:uuid:a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf)	
 * substance.strength.concentrationQuantity.value = 5	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -393,7 +393,7 @@ Description: "Batch Formula Ingredient Amounts Cont-Nitaz with overage extension
 * status = #active	
 * role.coding = $NCIT#C82533 "Active Ingredient"	
 * group.text = "Controlled Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:363bd671-2817-4778-a3fe-c65b68c63308)	
+* substance.code.reference = Reference(urn:uuid:363bd671-2817-4778-a3fe-c65b68c63308)	
 * substance.strength.concentrationQuantity.value = 50	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -408,7 +408,7 @@ Description: "Batch Formula Ingredient Amounts Cont-HYDRO"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Controlled Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:54388f31-3469-4fb4-b7c2-d785cb042d1d)	
+* substance.code.reference = Reference(urn:uuid:54388f31-3469-4fb4-b7c2-d785cb042d1d)	
 * substance.strength.concentrationQuantity.value = 0.25	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -423,7 +423,7 @@ Description: "Batch Formula Ingredient Amounts Cont-Silic"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Controlled Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:6a064012-5b43-489d-bd07-4c0cc1da593e)	
+* substance.code.reference = Reference(urn:uuid:6a064012-5b43-489d-bd07-4c0cc1da593e)	
 * substance.strength.concentrationQuantity.value = 0.3	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -438,7 +438,7 @@ Description: "Batch Formula Ingredient Amounts Cont-Magne"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Controlled Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:171f0414-6999-47fa-b792-67510f9e33cc)	
+* substance.code.reference = Reference(urn:uuid:171f0414-6999-47fa-b792-67510f9e33cc)	
 * substance.strength.concentrationQuantity.value = 0.7	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -453,7 +453,7 @@ Description: "Batch Formula Ingredient Amounts Cont-Purif"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Controlled Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf)	
+* substance.code.reference = Reference(urn:uuid:a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf)	
 * substance.strength.concentrationQuantity.value = 6	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -468,7 +468,7 @@ Description: "Batch Formula Ingredient Amounts Cont-HYPRO"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Controlled Release Layer"	
-* substance.code.reference = Reference(urn:uuid:uuid:868a2f83-b9ba-4ece-b238-11e0afe222ee)	
+* substance.code.reference = Reference(urn:uuid:868a2f83-b9ba-4ece-b238-11e0afe222ee)	
 * substance.strength.concentrationQuantity.value = 13.5	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -484,7 +484,7 @@ Description: "Batch Formula Ingredient Amounts Coat-OpadrGreen with additional i
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Coating Materials"	
-* substance.code.reference = Reference(urn:uuid:uuid:d4e21b68-6ec4-4ab2-9615-89aceb6de25e)	
+* substance.code.reference = Reference(urn:uuid:d4e21b68-6ec4-4ab2-9615-89aceb6de25e)	
 * substance.strength.concentrationQuantity.value = 4	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -500,7 +500,7 @@ Description: "Batch Formula Ingredient Amounts Coat-Opadr"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Coating Materials"	
-* substance.code.reference = Reference(urn:uuid:uuid:a1ad301f-356b-4010-9d61-8e01af0a3f38)	
+* substance.code.reference = Reference(urn:uuid:a1ad301f-356b-4010-9d61-8e01af0a3f38)	
 * substance.strength.concentrationQuantity.value = 0.5	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
@@ -515,11 +515,11 @@ Description: "Batch Formula Ingredient Amounts Coat-Purif"
 * status = #active	
 * role.coding = $NCIT#C42637 "Inactive Ingredient"	
 * group.text = "Coating Materials"	
-* substance.code.reference = Reference(urn:uuid:uuid:a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf)	
+* substance.code.reference = Reference(urn:uuid:a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf)	
 * substance.strength.concentrationQuantity.value = 326	
 * substance.strength.concentrationQuantity.unit = "kilogram"	
 * substance.strength.concentrationQuantity.code = $UCUM#kg	
-* substance.strength.textConcentration = "326 kg"	
+* substance.strength.textConcentration = "326 kg"
 	
 
 Instance: 942fcdc9-8ab9-4f52-be6d-af549117d462
@@ -529,28 +529,28 @@ Title: "Example Drug Substance Nomenclature"
 Description: "ANHYDROUS DEXTROSE as example of a Drug Substance Nomenclature"
  
 * classification = $EMAIDMP#1"Chemical" 
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735) 
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735) 
 * molecularWeight.amount.value = 180.16
 * molecularWeight.amount.unit = "Dalton"
 * molecularWeight.amount.code = $UCUM#u
 * code.code.coding.system = $UNII
 * code.code.coding.code = $UNII#5SL0G7R0OK "5SL0G7R0OK"
 * name[sub].name = "ANHYDROUS DEXTROSE"
-* name[sub].type = PqcmcNameTypesCodes#Substance "Substance Name"	
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"	
 * name[sub].preferred = true
 * name[cas].name = "9001-37-0"
-* name[cas].type = PqcmcNameTypesCodes#CAS "CAS Number"	
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"	
 * name[inn].name = "Dextrose"
-* name[inn].type = PqcmcNameTypesCodes#INN "INN"	
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"	
 * name[usan].name = "Glucose oxidase"
-* name[usan].type = PqcmcNameTypesCodes#USAN "USAN"	
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"	
 * name[iupac].name = "(2R,3S,4R,5R)-2,3,4,5,6-"
-* name[iupac].type = PqcmcNameTypesCodes#IUPAC "IUPAC Name"	
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"	
 //* name[isbt].name = "-"
-//* type[isbt].type = PqcmcNameTypesCodes#ISBT "ISBT 128"	
+//* type[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"	
 * name[comp].name = "W6578-D-GLUCOSE"
-* name[comp].type = PqcmcNameTypesCodes#Company "Company Code"	
-* relationship.substanceDefinitionReference = Reference(urn:uuid:uuid:54f18826-92fb-4afa-bbc8-fdefabbd027f) 
+* name[comp].type = PqcmcProductIngredientNameType#Company "Company ID/Code"	
+* relationship.substanceDefinitionReference = Reference(urn:uuid:54f18826-92fb-4afa-bbc8-fdefabbd027f) 
 * relationship.type.text = "Polymorph" 
 
 Instance: 4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1
@@ -560,7 +560,7 @@ Title: "Drug Substance Structures - ANHYDROUS DEXTROSE"
 Description: "Example of Drug Substance (Active Ingredient) Representational Structures using ANHYDROUS DEXTROSE. Includes both a SVG file and an image for diagram to illustrate the difference."
  
 * classification = $EMAIDMP#1 "Chemical"
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)  
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)  
 * structure.technique.text = "Rotating Crystal Method" 
 * structure.representation.type.coding.code = $NCIT#C133910 "MOLFILE"
 * structure.representation.representation = """Marvin 01132103212D     
@@ -649,11 +649,11 @@ M END
 </g>
 </svg>
 """
-* structure.representation.document = Reference(urn:uuid:uuid:fe3f13c1-f0ac-4b40-8024-f4386e290dfc) 
+* structure.representation.document = Reference(urn:uuid:fe3f13c1-f0ac-4b40-8024-f4386e290dfc) 
 * code.code.coding.system = $UNII
 * code.code.coding.code = $UNII#5SL0G7R0OK "5SL0G7R0OK"
 * name[sub].name = "ANHYDROUS DEXTROSE"
-* name[sub].type = PqcmcNameTypesCodes#Substance "Substance Name"	
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"	
 * name[sub].preferred = true
 
 
@@ -666,15 +666,15 @@ Description: "Drug substance nomenclature and structure"
 
 * status = #final
 * date = "2021-10-25"
-* author = Reference(urn:uuid:uuid:17177734-4328-4f76-9b88-c014a9abc9e3)
+* author = Reference(urn:uuid:17177734-4328-4f76-9b88-c014a9abc9e3)
 * title = "General Information ([1-^13^C]pyruvic acid)"
 /* 
 	SECTION SLICES  DrugSubstanceNomenclature DrugSubstanceStructure
 */
 * section[SubstanceNomenclature].title = "Nomenclature (ANHYDROUS DEXTROSE)"
-* section[SubstanceNomenclature].entry = Reference(urn:uuid:uuid:942fcdc9-8ab9-4f52-be6d-af549117d462)
+* section[SubstanceNomenclature].entry = Reference(urn:uuid:942fcdc9-8ab9-4f52-be6d-af549117d462)
 * section[SubstanceStructure].title = " Structure (ANHYDROUS DEXTROSE)"
-* section[SubstanceStructure].entry = Reference(urn:uuid:uuid:4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1)
+* section[SubstanceStructure].entry = Reference(urn:uuid:4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1)
 
 Instance: 1a136efa-c66c-42b0-aa08-95bac956b82c	
 InstanceOf: RoutineDrugProduct	
@@ -697,7 +697,7 @@ Description: "Example of Specification Drug Substance (API)"
 * code.code.coding.system = $UNII
 * code.code.coding.code = $UNII#QTG126297Q "QTG126297Q"
 * name.name = "DICLOFENAC SODIUM"
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
 
 Instance: e5021eca-9f23-4ad1-9f06-220f9b0c0453
 InstanceOf: MfgTestSiteOrganization
@@ -801,7 +801,7 @@ Description: "Example of Drug Substance HYPROMELLOSES"
 * code.code.coding.system = $UNII
 * code.code.coding.code = $UNII#SOA12P041N "SOA12P041N"
 * name.name = "NITAZOXANIDE"
-* manufacturer = Reference(urn:uuid:uuid:bf191513-3914-4fbd-8ebe-33decfaff231)
+* manufacturer = Reference(urn:uuid:bf191513-3914-4fbd-8ebe-33decfaff231)
 
 Instance: 54388f31-3469-4fb4-b7c2-d785cb042d1d	
 InstanceOf: RoutineSubstanceDefinition	
@@ -813,7 +813,7 @@ Description: "Example of Drug Substance HYDROXYPROPYL CELLULOSE (110000 WAMW)"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#5Y0974F5PW "5Y0974F5PW"	
 * name.name = "HYDROXYPROPYL CELLULOSE (110000 WAMW)"	
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
 
 Instance: 868a2f83-b9ba-4ece-b238-11e0afe222ee	
 InstanceOf: RoutineSubstanceDefinition	
@@ -825,7 +825,7 @@ Description: "Example of Drug Substance HYPROMELLOSES"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#3NXW29V3WO "3NXW29V3WO"	
 * name.name = "HYPROMELLOSES"	
-* manufacturer = Reference(urn:uuid:uuid:bf191513-3914-4fbd-8ebe-33decfaff231)
+* manufacturer = Reference(urn:uuid:bf191513-3914-4fbd-8ebe-33decfaff231)
 
 Instance: 171f0414-6999-47fa-b792-67510f9e33cc	
 InstanceOf: RoutineSubstanceDefinition	
@@ -837,7 +837,7 @@ Description: "Example of Drug Substance Magnesium sterate"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#70097M6I30 "70097M6I30"	
 * name.name = "Magnesium sterate"	
-* manufacturer = Reference(urn:uuid:uuid:52ddd8a5-010b-4d28-b841-b9c263f53d6d)
+* manufacturer = Reference(urn:uuid:52ddd8a5-010b-4d28-b841-b9c263f53d6d)
 
 Instance: 46667123-2b0f-4dfe-aebe-79f8ddcc58dd	
 InstanceOf: RoutineSubstanceDefinition	
@@ -849,7 +849,7 @@ Description: "Example of Drug Substance STARCH, CORN"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#O8232NY3SJ "O8232NY3SJ"	
 * name.name = "STARCH, CORN"	
-* manufacturer = Reference(urn:uuid:uuid:e5021eca-9f23-4ad1-9f06-220f9b0c0453)
+* manufacturer = Reference(urn:uuid:e5021eca-9f23-4ad1-9f06-220f9b0c0453)
 
 Instance: 4bb4aeb0-47c2-4c90-ac13-041fb6a36ce2
 InstanceOf: RoutineSubstanceDefinition	
@@ -861,7 +861,7 @@ Description: "Example of Drug Substance MICROCRYSTALLINE CELLULOSE"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#OP1R32D61U "OP1R32D61U"	
 * name.name = "MICROCRYSTALLINE CELLULOSE"	
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
 
 Instance: d4e21b68-6ec4-4ab2-9615-89aceb6de25e	
 InstanceOf: RoutineSubstanceDefinition	
@@ -873,7 +873,7 @@ Description: "Example of Drug Substance Opadry II 33G11938 Green"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#B53ZH89YAO "B53ZH89YAO"	
 * name.name = "Opadry II 33G11938 Green"	
-* manufacturer = Reference(urn:uuid:uuid:e5021eca-9f23-4ad1-9f06-220f9b0c0453)
+* manufacturer = Reference(urn:uuid:e5021eca-9f23-4ad1-9f06-220f9b0c0453)
 
 Instance: a1ad301f-356b-4010-9d61-8e01af0a3f38	
 InstanceOf: RoutineSubstanceDefinition	
@@ -885,7 +885,7 @@ Description: "Example of Drug Substance OpadryYS-1-19025-A CLEAR"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#4PQ7L4V6AQ "4PQ7L4V6AQ"	
 * name.name = "OpadryYS-1-19025-A CLEAR"	
-* manufacturer = Reference(urn:uuid:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
+* manufacturer = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
 
 Instance: a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf	
 InstanceOf: RoutineSubstanceDefinition	
@@ -897,7 +897,7 @@ Description: "Example of Drug Substance Purified Water"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#059QF0KO0R "059QF0KO0R"	
 * name.name = "Purified Water"	
-* manufacturer = Reference(urn:uuid:uuid:bf191513-3914-4fbd-8ebe-33decfaff231)
+* manufacturer = Reference(urn:uuid:bf191513-3914-4fbd-8ebe-33decfaff231)
 
 Instance: b91053b7-f87c-4baa-9dfd-33619e8c9d72	
 InstanceOf: RoutineSubstanceDefinition	
@@ -909,7 +909,7 @@ Description: "Example of Drug Substance Croscarmellose Sodium"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#M28OL1HH48 "M28OL1HH48"	
 * name.name = "Croscarmellose Sodium"	
-* manufacturer = Reference(urn:uuid:uuid:52ddd8a5-010b-4d28-b841-b9c263f53d6d)
+* manufacturer = Reference(urn:uuid:52ddd8a5-010b-4d28-b841-b9c263f53d6d)
 
 Instance: 6a064012-5b43-489d-bd07-4c0cc1da593e	
 InstanceOf: RoutineSubstanceDefinition	
@@ -921,7 +921,7 @@ Description: "Example of Drug Substance Silicon Dioxide, Colloidal"
 * code.code.coding.system = $UNII	
 * code.code.coding.code = $UNII#ETJ7Z6XBU4 "ETJ7Z6XBU4"	
 * name.name = "Silicon Dioxide, Colloidal"	
-* manufacturer = Reference(urn:uuid:uuid:e5021eca-9f23-4ad1-9f06-220f9b0c0453)
+* manufacturer = Reference(urn:uuid:e5021eca-9f23-4ad1-9f06-220f9b0c0453)
 
 Instance: 3a1ed58f-77bb-44b0-a24f-75ad7ef64c58
 InstanceOf: EctdComposition32P10
@@ -931,18 +931,18 @@ Description: "Product Description, Container Closure and Product Composition of 
  
 * status = #final
 * date = "2021-10-21"
-* author = Reference(urn:uuid:uuid:17177734-4328-4f76-9b88-c014a9abc9e3)
+* author = Reference(urn:uuid:17177734-4328-4f76-9b88-c014a9abc9e3)
 * title = "Description and Composition of the Drug Product"
 /* 
 	SECTION SLICES contains ProductDescription 1.1 MS and ContainerClosure 1.1 MS and ProductComposition 1.1 MS 
 */
 * section[ProductDescription].title = "Product Description (Sterile Fluid Path Components)"
-* section[ProductDescription].entry = Reference(urn:uuid:uuid:29a5d46d-23b9-476a-991d-67e3bc8676a0)
+* section[ProductDescription].entry = Reference(urn:uuid:29a5d46d-23b9-476a-991d-67e3bc8676a0)
 * section[ContainerClosure].title = "Product Container Closure System (Sterile Fluid Path Components)"
-* section[ContainerClosure].entry = Reference(urn:uuid:uuid:8af426fd-5cea-4908-8dc5-b73f70b0e89f)
+* section[ContainerClosure].entry = Reference(urn:uuid:8af426fd-5cea-4908-8dc5-b73f70b0e89f)
 * section[ProductComposition].title = "Product Composition (Sterile Fluid Path Components)"
-* section[ProductComposition].entry[0] = Reference(urn:uuid:uuid:f5fabcb5-eb22-424e-85f1-9489aa269d39)
-* section[ProductComposition].entry[+] = Reference(urn:uuid:uuid:79a09fd7-04c2-4077-ba45-69e31562b9c3)
+* section[ProductComposition].entry[0] = Reference(urn:uuid:f5fabcb5-eb22-424e-85f1-9489aa269d39)
+* section[ProductComposition].entry[+] = Reference(urn:uuid:79a09fd7-04c2-4077-ba45-69e31562b9c3)
 
 Instance: f5fabcb5-eb22-424e-85f1-9489aa269d39
 InstanceOf: DrugProductComponent
@@ -954,10 +954,10 @@ Description: "Example of Drug Product Component as Drug Substance"
 """
  
 * status = #active
-* for = Reference(urn:uuid:uuid:29a5d46d-23b9-476a-991d-67e3bc8676a0)
+* for = Reference(urn:uuid:29a5d46d-23b9-476a-991d-67e3bc8676a0)
 * role.coding = $NCIT#C82533 "Active Ingredient"
 //* function.coding.code = PqcmcExcipientFunctionTerminology
-* substance.code.reference = Reference(urn:uuid:uuid:01df3194-eef7-4d9f-95f8-21f64ee1d6cb)
+* substance.code.reference = Reference(urn:uuid:01df3194-eef7-4d9f-95f8-21f64ee1d6cb)
 * substance.strength.extension[strengthType].valueCodeableConcept.coding = $NCIT#C168628 "Mass"
 * substance.strength.extension[contentPercent].valueDecimal = 0.98
 * substance.strength.presentationRatio.numerator.value = 1.44 
@@ -978,10 +978,10 @@ Description: "Example of Drug Product Component as Excipient"
 * extension[additional-info].valueMarkdown = """TRIS/EDTA buffer solution is compounded less than 24 hours prior to patient administration. The buffer solution is prepared as a high-risk compounded sterile preparation in compliance with USP <797>. The solution is filtered twice through separate sterilizing (0.2 micron) filters before introduction into the receiving vessel. The receiving vessel is part of the sterile fluid path, the custom-made container closure system (see Section 3.2.P.7 Container Closure System). The quantity of TRIS/EDTA buffer solution aseptically instilled into the receiving vessel is 18 mL.
  """ 
 * status = #active
-* for = Reference(urn:uuid:uuid:29a5d46d-23b9-476a-991d-67e3bc8676a0)
+* for = Reference(urn:uuid:29a5d46d-23b9-476a-991d-67e3bc8676a0)
 * role.coding = $NCIT#C42637 "Inactive Ingredient"
 * function.coding = $NCIT#C176640 "Solubilizing agent"
-* substance.code.reference = Reference(urn:uuid:uuid:6aef96c1-c9c2-4fd5-a3df-a4e66bea7380)
+* substance.code.reference = Reference(urn:uuid:6aef96c1-c9c2-4fd5-a3df-a4e66bea7380)
 * substance.strength.extension[strengthType].valueCodeableConcept.coding = $NCIT#C168628 "Mass"
 * substance.strength.extension[contentPercent].valueDecimal = 0.019
 * substance.strength.presentationRatio.numerator.value = 27.7
@@ -1000,7 +1000,7 @@ Description: "Example of Drug Product Component substance as an Excipient"
  
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USPNF"
-* structure.representation.document = Reference(urn:uuid:uuid:5abefb38-4325-4609-bc3f-61fd62c6f90e) 
+* structure.representation.document = Reference(urn:uuid:5abefb38-4325-4609-bc3f-61fd62c6f90e) 
 * code.code.coding.system = $UNII
 * code.code.coding = $UNII#E6376LTZ8L "E6376LTZ8L"
 * name.name = "Methyl radical, tris(8-carboxy-2,2,6,6-tetrakis(2-methoxyethyl)benzo(1,2-d:4,5-d')bis(1,3)dithiol-4-yl)-, sodium"
@@ -1014,7 +1014,7 @@ Description: "Example of Drug Product Component substance as an active"
 
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USPNF"
-* structure.representation.document = Reference(urn:uuid:uuid:fe3f13c1-f0ac-4b40-8024-f4386e290dfc) 
+* structure.representation.document = Reference(urn:uuid:fe3f13c1-f0ac-4b40-8024-f4386e290dfc) 
 * code.code.coding.system = $UNII
 * code.code.coding. = $UNII#2GIJ84D9UB
 * name.name = "PYRUVIC ACID 1-C-13"

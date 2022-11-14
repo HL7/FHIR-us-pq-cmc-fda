@@ -64,7 +64,7 @@ Note: There are instances when FDA does approve the Specifications in a suppleme
 Note: This is different from Application Status """
 * extension contains pq-specification-type-extension named specificationType 0..1 MS
 * extension[specificationType] ^short = "Specification Type"
-* extension[specificationType]  ^definition = """ A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
+* extension[specificationType] ^definition = """ A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
 Examples: Drug product, Drug substance. """
 * .extension contains pq-additional-info-extension named spec-additional-info 0..* MS
 * .extension[spec-additional-info] ^short = "Specification Additional Information"
@@ -74,55 +74,52 @@ Examples: replaces method ABC, using the XYZ facility.
 * identifier 1..1 MS
 * version 1..1 MS
 * version ^short = "Specification Version"
-* version  ^definition = """ The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined]
+* version ^definition = """ The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined]
 Examples: 2.1, 13.2, ST1, 00001, 00002, <companyname>001, etc.
 Note: This value should be unique across all specifications for a given material, not just those with the same name """
-* title  1..1 MS
+* title 1..1 MS
 * title ^short = "Specification Title"
-* title  ^definition = """ The textual identification for the specification. [Source: SME Defined]
+* title ^definition = """ The textual identification for the specification. [Source: SME Defined]
  Example: <drug name> 75 mg chewable tablets
  Note: This may include the name of the drug substance, product or the raw material/excipients. """
 * subtitle 0..1 MS
 * subtitle ^short = "Specification Subtitle"
-* subtitle  ^definition = "An additional textual identification for the specification [Source: SME Defined]."
+* subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
 * status 1..1 MS
 * status ^short = "Specification Status"
-* status  ^definition = "The current FDA regulatory status of the specification. [Source: SME Defined]
+* status ^definition = "The current FDA regulatory status of the specification. [Source: SME Defined]
 Examples: Approved, Not Approved, Reported in a CBE or AR.
 Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
 Note: This is different from Application Status"
 // not supported until R5
 * subjectReference 1..1 MS
 //* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
-//element(*,PlanDefinition)/subjectReference/reference/@value
-//* subjectReference only Reference(MedicinalProductDefinition or SubstanceDefinition)
-//* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
-* date  1..1 MS
+* date 1..1 MS
 * date ^short = "Specification Version Date"
-* date  ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
+* date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
 Note: This is the date a particular version of the specification was internally accepted by the submitter.
 """
-* approvalDate  1..1 MS
+* approvalDate 1..1 MS
 * approvalDate ^short = "Specification Status Date"
-* approvalDate  ^definition = """ The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
+* approvalDate ^definition = """ The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
 Note: If the application is not yet approved, then this is the date of the current submission OR the date of the complete response (CR).
 Note: This is not the application approval status date. """
-* goal.category  1..1 MS
-* goal.category.coding.code  1..1 MS
-* goal.category.coding.code  ^short = "Aceptacnce Criteria Usage"
-* goal.category.coding.code  ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
+* goal.category 1..1 MS
+* goal.category.coding.code 1..1 MS
+* goal.category.coding.code ^short = "Aceptacnce Criteria Usage"
+* goal.category.coding.code ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
 Note: The concept of  'In-Process' is  subsumed by the Release code. "
 * goal.category.coding.code from PqcmcTestUsageTerminology
 * goal.category.text ^short = ""
-* goal.description  1..1 MS
+* goal.description 1..1 MS
 * goal.description ^short = "Original Text"
-* goal.description  ^definition = """ The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
+* goal.description ^definition = """ The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as it appears in the Specification. """
 * goal.documentation 0..* MS
 * goal.documentation.type = http://hl7.org/fhir/related-artifact-type#comments-on
 * goal.documentation.display 1..1 MS
 * goal.documentation.display ^short = "Acceptance Criteria Additional Information"
-* goal.documentation.display  ^definition = """ A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
+* goal.documentation.display ^definition = """ A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
 * goal.target.detail[x] only Quantity or Range  or string or integer
@@ -130,7 +127,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailQuantity ^short = "Acceptance Criteria (Numeric)"
 * goal.target.detailQuantity.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
 * goal.target.detailQuantity.extension[interpretationCode] ^short = "Interpretation Code"
-* goal.target.detailQuantity.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
+* goal.target.detailQuantity.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
 * goal.target.detailQuantity.value 1..1 MS
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS
@@ -142,7 +139,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.low 1..1
 * goal.target.detailRange.low.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
 * goal.target.detailRange.low.extension[interpretationCode] ^short = "Interpretation Code"
-* goal.target.detailRange.low.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
 * goal.target.detailRange.low.value 1..1 MS
 * goal.target.detailRange.low.unit 1..1 MS
 * goal.target.detailRange.low.code 1..1 MS
@@ -150,7 +147,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.high 1..1
 * goal.target.detailRange.high.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
 * goal.target.detailRange.high.extension[interpretationCode] ^short = "Interpretation Code"
-* goal.target.detailRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailRange.high.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
 * goal.target.detailRange.high.value 1..1 MS
 * goal.target.detailRange.high.unit 1..1 MS
 * goal.target.detailRange.high.code 1..1 MS
@@ -171,7 +168,7 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * action ^short = "Test or Stage"
 * action.extension contains pq-test-method-origin-extension named testMethodOrigin 1..1 MS
 * action.extension[testMethodOrigin] ^short = "Test Method Origin"
-* action.extension[testMethodOrigin]  ^definition = """ A coded value specifying the source of the method. [Source: SME Defined] * Example: Compendial """
+* action.extension[testMethodOrigin] ^definition = """ A coded value specifying the source of the method. [Source: SME Defined] * Example: Compendial """
 * action.extension contains pq-order-extension named testOrder 1..1 MS
 * action.extension[testOrder] ^short = "Test/Stage Order"
 * action.extension[testOrder] ^definition = "The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]"
@@ -194,16 +191,16 @@ If there is more than one comment, include in this element.  Markdown allows for
 """
 * action.description 0..1 MS
 * action.description ^short = "Test Additional Information | Stage Additional Information"
-* action.description  ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
+* action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
 Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
 """
-* action.code  1..1 MS
-* action.code.coding  ^short = "Test Category"
-* action.code.coding  ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* action.code 1..1 MS
+* action.code.coding ^short = "Test Category"
+* action.code.coding ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
 * action.code.coding from PqcmcTestCategoryTerminology
-* action.code.text  1..1 MS
-* action.code.text  ^short = "Analytical Procedure"
-* action.code.text  ^definition = """ The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
+* action.code.text 1..1 MS
+* action.code.text ^short = "Analytical Procedure"
+* action.code.text ^definition = """ The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 Note: The full descriptor of the technique is part of the next data element - Reference to Procedure """
 * action.documentation 0..* MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
