@@ -125,6 +125,41 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * entry[DocumentReference].resource MS
 * entry[DocumentReference].resource only cmc-document-reference
 
+Profile: CMCeCTDDocument32S30
+Parent: Bundle
+Id: cmc-ectd-document-32S30
+Title: "CMC eCTD 32S30 Document"
+Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles."
+* . ^short = "CMC eCTD 32S30 Bundle"
+* . obeys cmc-first-resource
+* identifier 0..1 MS
+* type MS
+* type = #document (exactly)
+* type ^short = "document"
+* timestamp 1..1 MS
+
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Product Description and Composition document."
+* entry contains
+    Composition 1..1 and
+    SubstanceDefinition 1..* and
+    Organization 1..* and
+    DocumentReference 0..*
+* entry[Composition].fullUrl MS
+* entry[Composition].resource MS
+* entry[Composition].resource only EctdComposition32S30
+* entry[SubstanceDefinition].fullUrl MS
+* entry[SubstanceDefinition].resource MS
+* entry[SubstanceDefinition].resource only DrugSubstanceStructure or DrugSubstanceImpurities
+* entry[Organization].fullUrl  MS
+* entry[Organization].resource  MS
+* entry[Organization].resource only cmc-sponsor-organization
+* entry[DocumentReference].fullUrl MS
+* entry[DocumentReference].resource MS
+* entry[DocumentReference].resource only cmc-document-reference
+
 Profile: EctdCompositionSP4151
 Parent: Composition
 Id: ectd-composition-sp4151
