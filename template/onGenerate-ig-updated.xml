@@ -13,11 +13,11 @@
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc"/>
-   <version value="0.1.4"/>
+   <version value="0.1.5"/>
    <name value="FHIR_pqcmc"/>
    <title value="PQ/CMC FHIR Implementation Guide"/>
    <status value="draft"/>
-   <date value="2022-09-24T04:50:07-04:00"/>
+   <date value="2022-11-17T00:37:46-05:00"/>
    <publisher value="HL7 International - Biomedical Research and Regulatory WG"/>
    <contact>
       <name value="HL7 International - Biomedical Research and Regulatory WG"/>
@@ -38,11 +38,228 @@
    <license value="CC0-1.0"/>
    <fhirVersion value="5.0.0-ballot"/>
    <dependsOn id="hl7tx">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+         <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+      </extension>
       <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
       <packageId value="hl7.terminology.r5"/>
-      <version value="4.0.0"/>
+      <version value="5.0.0"/>
    </dependsOn>
    <definition>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="copyrightyear"/>
+         </extension>
+         <extension url="value">
+            <valueString value="2021+"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="releaselabel"/>
+         </extension>
+         <extension url="value">
+            <valueString value="Build CI"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="excludettl"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="excludemap"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-history"/>
+         </extension>
+         <extension url="value">
+            <valueString value="http://hl7.org/fhir/us/pq-cmc/history.html"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="autoload-resources"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-liquid"/>
+         </extension>
+         <extension url="value">
+            <valueString value="template/liquid"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-liquid"/>
+         </extension>
+         <extension url="value">
+            <valueString value="input/liquid"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-qa"/>
+         </extension>
+         <extension url="value">
+            <valueString value="temp/qa"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-temp"/>
+         </extension>
+         <extension url="value">
+            <valueString value="temp/pages"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-output"/>
+         </extension>
+         <extension url="value">
+            <valueString value="output"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="path-suppressed-warnings"/>
+         </extension>
+         <extension url="value">
+            <valueString value="input/ignoreWarnings.txt"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="template-html"/>
+         </extension>
+         <extension url="value">
+            <valueString value="template-page.html"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="template-md"/>
+         </extension>
+         <extension url="value">
+            <valueString value="template-page-md.html"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-contact"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-context"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-copyright"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-jurisdiction"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-license"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-publisher"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="apply-version"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="active-tables"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="fmm-definition"/>
+         </extension>
+         <extension url="value">
+            <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="propagate-status"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="excludelogbinaryformat"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+         <extension url="code">
+            <valueString value="tabbed-snapshots"/>
+         </extension>
+         <extension url="value">
+            <valueString value="true"/>
+         </extension>
+      </extension>
+
+
+
+
+
+
 
 
 
@@ -55,23 +272,23 @@
       </grouping>
       <grouping id="-str-profile">
          <name value="Structures: Resource Profiles"/>
-         <description value="These define constraints on FHIR resources for systems conforming to this implementation guide"/>
+         <description value="These define constraints on FHIR resources for systems conforming to this implementation guide."/>
       </grouping>
       <grouping id="-str-datatype">
          <name value="Structures: Data Type Profiles"/>
-         <description value="These define constraints on FHIR data types for systems conforming to this implementation guide"/>
+         <description value="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
       </grouping>
       <grouping id="-str-extension">
          <name value="Structures: Extension Definitions"/>
-         <description value="These define constraints on FHIR data types for systems conforming to this implementation guide"/>
+         <description value="These define constraints on FHIR data types for systems conforming to this implementation guide."/>
       </grouping>
       <grouping id="-term-valueset">
          <name value="Terminology: Value Sets"/>
-         <description value="These define sets of codes used by systems conforming to this implementation guide"/>
+         <description value="These define sets of codes used by systems conforming to this implementation guide."/>
       </grouping>
       <grouping id="-term-codesystem">
          <name value="Terminology: Code Systems"/>
-         <description value="These define new code systems used by systems conforming to this implementation guide"/>
+         <description value="These define new code systems used by systems conforming to this implementation guide."/>
       </grouping>
 
 
@@ -79,12 +296,6 @@
 
 
 
-
-
-      <grouping id="-ex-example">
-         <name value="Example: Example Instances"/>
-         <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like"/>
-      </grouping>
 
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -173,6 +384,21 @@
          </reference>
          <name value="CMC eCTD 32S10 Document"/>
          <description value="Definition for a document bundle with the CMC eCTD 32S10 profiles."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-cmc-ectd-document-32S30.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/cmc-ectd-document-32S30"/>
+         </reference>
+         <name value="CMC eCTD 32S30 Document"/>
+         <description value="Definition for a document bundle with the CMC eCTD 32S30 profiles."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -601,6 +827,21 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-pqcmc-product-part.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/pqcmc-product-part"/>
+         </reference>
+         <name value="Product Part"/>
+         <description value="The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or compoent."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-pqcmc-DrugSubstanceImpurity.html"/>
          </extension>
          <reference>
@@ -636,7 +877,7 @@
          <reference>
             <reference value="StructureDefinition/pq-additional-stage-result-observation"/>
          </reference>
-         <name value="Result Observation"/>
+         <name value="Multiple Result Observation"/>
          <description value="Profile for an observation in a batch-analysis report or a stability report"/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
@@ -1327,7 +1568,7 @@
             <reference value="ValueSet/pqcmc-interpretation-code-terminology"/>
          </reference>
          <name value="Interpretation Code Terminology"/>
-         <description value="Terminology used to qualify the information pertaining to numeric interpretation codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <description value="Terminology used to qualify the information pertaining to numeric interpretation codes, Weight Operator codes and Amount Operator code in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
       </resource>
@@ -1636,6 +1877,36 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-pqcmc-capsule-classification-category.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/pqcmc-capsule-classification-category"/>
+         </reference>
+         <name value="Capsule Classification Category"/>
+         <description value="TBD after NCIt codes are added for Capsule Classification Category"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-pqcmc-coating-purpose.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/pqcmc-coating-purpose"/>
+         </reference>
+         <name value="Coating Purpose"/>
+         <description value="TBD after NCIt codes are added for Coating Purpose"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="CodeSystem-pqcmc-comp-section-types.html"/>
          </extension>
          <reference>
@@ -1651,1125 +1922,90 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="CodeSystem-pqcmc-cs-name-types.html"/>
+            <valueUri value="CodeSystem-pqcmc-cs-product-characteristic.html"/>
          </extension>
          <reference>
-            <reference value="CodeSystem/pqcmc-cs-name-types"/>
+            <reference value="CodeSystem/pqcmc-cs-product-characteristic"/>
          </reference>
-         <name value="Code System PQCMC Name Types"/>
-         <description value="Name types for the name element in SubstanceDefintion."/>
+         <name value="Code System PQCMC Product Characteristic"/>
+         <description value="Product Characteristic for the characteristic element in MedicinalProductDefintion."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
+            <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-01df3194-eef7-4d9f-95f8-21f64ee1d6cb.html"/>
+            <valueUri value="CodeSystem-pqcmc-product-ingredient-name-type.html"/>
          </extension>
          <reference>
-            <reference value="SubstanceDefinition/01df3194-eef7-4d9f-95f8-21f64ee1d6cb"/>
+            <reference value="CodeSystem/pqcmc-product-ingredient-name-type"/>
          </reference>
-         <name value="Drug Substace Example"/>
-         <description value="Example of Drug Product Component substance as an active"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-ComponentSubstance"/>
-         <groupingId value="-ex-example"/>
+         <name value="Product Ingredient Name Type"/>
+         <description value="TBD after NCIt codes are added for Product Ingredient Name Type"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
+            <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-021f7509-feba-49df-9288-f8db04bd6792.html"/>
+            <valueUri value="CodeSystem-pqcmc-product-part-ingredient-physical-location.html"/>
          </extension>
          <reference>
-            <reference value="ActivityDefinition/021f7509-feba-49df-9288-f8db04bd6792"/>
+            <reference value="CodeSystem/pqcmc-product-part-ingredient-physical-location"/>
          </reference>
-         <name value="Batch Formula IngredientExample11"/>
-         <description value="Example of Batch Formula Ingredient Cont-HYDRO"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
+         <name value="Product Part Ingredient Physical Location"/>
+         <description value="TBD after NCIt codes are added for Product Part Ingredient Physical Location"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
+            <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-085a514e-b5cb-4e65-b5ab-3180e4aceba0.html"/>
+            <valueUri value="CodeSystem-pqcmc-product-part-type.html"/>
          </extension>
          <reference>
-            <reference value="Ingredient/085a514e-b5cb-4e65-b5ab-3180e4aceba0"/>
+            <reference value="CodeSystem/pqcmc-product-part-type"/>
          </reference>
-         <name value="Batch Formula Ingredient Example 15"/>
-         <description value="Batch Formula Ingredient Amounts Coat-OpadrGreen with additional info entension"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
+         <name value="Product Part Type"/>
+         <description value="TBD after NCIt codes are added for Product Part Type"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
+            <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-0dc2fa8f-89ed-44b2-b835-b4e5d3a8d78a.html"/>
+            <valueUri value="CodeSystem-pqcmc-release-mechanism.html"/>
          </extension>
          <reference>
-            <reference value="Ingredient/0dc2fa8f-89ed-44b2-b835-b4e5d3a8d78a"/>
+            <reference value="CodeSystem/pqcmc-release-mechanism"/>
          </reference>
-         <name value="Batch Formula Ingredient Example 5"/>
-         <description value="Batch Formula Ingredient Amounts Imme-Silic"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
+         <name value="Release Mechanism"/>
+         <description value="TBD after NCIt codes are added for Release Mechanism"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
+            <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-0ee6ed41-894b-492b-bbca-955494fadb94.html"/>
+            <valueUri value="CodeSystem-pqcmc-release-profile.html"/>
          </extension>
          <reference>
-            <reference value="Ingredient/0ee6ed41-894b-492b-bbca-955494fadb94"/>
+            <reference value="CodeSystem/pqcmc-release-profile"/>
          </reference>
-         <name value="Batch Formula Ingredient Example 1 "/>
-         <description value="Batch Formula Ingredient Amounts Imme-Nitaz with overagePercent and Justification"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-17177734-4328-4f76-9b88-c014a9abc9e3.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/17177734-4328-4f76-9b88-c014a9abc9e3"/>
-         </reference>
-         <name value="Drug Product Sponsor"/>
-         <description value="Example of sponsor using the SponsorOrganization profle"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-171f0414-6999-47fa-b792-67510f9e33cc.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/171f0414-6999-47fa-b792-67510f9e33cc"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example4"/>
-         <description value="Example of Drug Substance Magnesium sterate"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-18115938-2ee4-4b58-ba2e-24db05c1f04f.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/18115938-2ee4-4b58-ba2e-24db05c1f04f"/>
-         </reference>
-         <name value="Manufactuer mfg3"/>
-         <description value="Example of sponsor using the MfgTestSiteOrganizationprofle"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="MedicinalProductDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="MedicinalProductDefinition-1a136efa-c66c-42b0-aa08-95bac956b82c.html"/>
-         </extension>
-         <reference>
-            <reference value="MedicinalProductDefinition/1a136efa-c66c-42b0-aa08-95bac956b82c"/>
-         </reference>
-         <name value="Quality Specification Drug Product"/>
-         <description value="Example of DrugProductDescription"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-product"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Composition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Composition-1c353afe-cfa0-48e0-abba-b4e3ddc66208.html"/>
-         </extension>
-         <reference>
-            <reference value="Composition/1c353afe-cfa0-48e0-abba-b4e3ddc66208"/>
-         </reference>
-         <name value="Example eCTD Batch Formula"/>
-         <description value="Drug Product Batch Formula for a biLayer tablet illustratin the use of grouop the ingredient resource."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-32p32"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-1ebf5cbd-4c34-4d21-8b16-b21e849173ba.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/1ebf5cbd-4c34-4d21-8b16-b21e849173ba"/>
-         </reference>
-         <name value="Batch Formula IngredientExample3"/>
-         <description value="Example of Batch Formula Ingredient Imme-HYDRO"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-24f96097-e317-4b8f-8267-23a42c9afcd1.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/24f96097-e317-4b8f-8267-23a42c9afcd1"/>
-         </reference>
-         <name value="Batch Formula IngredientExample5"/>
-         <description value="Example of Batch Formula Ingredient Imme-Silic"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="MedicinalProductDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="MedicinalProductDefinition-29a5d46d-23b9-476a-991d-67e3bc8676a0.html"/>
-         </extension>
-         <reference>
-            <reference value="MedicinalProductDefinition/29a5d46d-23b9-476a-991d-67e3bc8676a0"/>
-         </reference>
-         <name value="Drug Product Description"/>
-         <description value="Example of DrugProductDescription"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-description"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-29bb9464-86dd-4293-b2af-e535ec7de830.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/29bb9464-86dd-4293-b2af-e535ec7de830"/>
-         </reference>
-         <name value="Batch Formula Ingredient Cont-Magne"/>
-         <description value="Example of Batch Formula Ingredient Cont-Magne"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-2ab2018b-f387-48f9-8cd0-0ca9346acf2d.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/2ab2018b-f387-48f9-8cd0-0ca9346acf2d"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 16"/>
-         <description value="Batch Formula Ingredient Amounts Coat-Opadr"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-2abd3e0c-96ec-4287-abee-592ab0251018.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/2abd3e0c-96ec-4287-abee-592ab0251018"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 2"/>
-         <description value="Batch Formula Ingredient Amounts Imme-STARC"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-363bd671-2817-4778-a3fe-c65b68c63308.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/363bd671-2817-4778-a3fe-c65b68c63308"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example1"/>
-         <description value="Example of Drug Substance HYPROMELLOSES"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-367ec3e3-65c6-4358-9ec1-054b669e0c36.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/367ec3e3-65c6-4358-9ec1-054b669e0c36"/>
-         </reference>
-         <name value="Batch Formula IngredientExample7"/>
-         <description value="Example of Batch Formula Ingredient Imme-Nitaz"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-390e8312-1a86-4b6e-af5c-1cc98a1e481d.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/390e8312-1a86-4b6e-af5c-1cc98a1e481d"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 3"/>
-         <description value="Batch Formula Ingredient Amounts Imme-HYDRO"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Composition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Composition-3a1ed58f-77bb-44b0-a24f-75ad7ef64c58.html"/>
-         </extension>
-         <reference>
-            <reference value="Composition/3a1ed58f-77bb-44b0-a24f-75ad7ef64c58"/>
-         </reference>
-         <name value="Example eCTD Product Description and Composition"/>
-         <description value="Product Description, Container Closure and Product Composition of the Drug Product to be included in the 3.2.P.1.0. Note: Product Composition lists the ingredients of the product and does not refer to this composision resource."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-32p10"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-46667123-2b0f-4dfe-aebe-79f8ddcc58dd.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/46667123-2b0f-4dfe-aebe-79f8ddcc58dd"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example5"/>
-         <description value="Example of Drug Substance STARCH, CORN"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Bundle"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Bundle-4723af4d-a25f-4dbe-a63b-b0a23305067a.html"/>
-         </extension>
-         <reference>
-            <reference value="Bundle/4723af4d-a25f-4dbe-a63b-b0a23305067a"/>
-         </reference>
-         <name value="FHIR Document example of 32p10"/>
-         <description value="FHIR document bundle with the CMC eCTD 32p10 profiles"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32p10"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-4bb4aeb0-47c2-4c90-ac13-041fb6a36ce2.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/4bb4aeb0-47c2-4c90-ac13-041fb6a36ce2"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example6"/>
-         <description value="Example of Drug Substance MICROCRYSTALLINE CELLULOSE"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-4ca2742c-416c-465e-916d-fa1990911489.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/4ca2742c-416c-465e-916d-fa1990911489"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 10"/>
-         <description value="Batch Formula Ingredient Amounts Cont-HYDRO"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-4d611344-0693-44cb-a0a3-cc404463fd34.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/4d611344-0693-44cb-a0a3-cc404463fd34"/>
-         </reference>
-         <name value="Batch Formula IngredientExample6"/>
-         <description value="Example of Batch Formula Ingredient Imme-MICRO"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1"/>
-         </reference>
-         <name value="Drug Substance Structures - ANHYDROUS DEXTROSE"/>
-         <description value="Example of Drug Substance (Active Ingredient) Representational Structures using ANHYDROUS DEXTROSE. Includes both a SVG file and an image for diagram to illustrate the difference."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-structure"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-52ddd8a5-010b-4d28-b841-b9c263f53d6d.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/52ddd8a5-010b-4d28-b841-b9c263f53d6d"/>
-         </reference>
-         <name value="Manufactuer mfg"/>
-         <description value="Example of sponsor using the MfgTestSiteOrganizationprofle"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-54388f31-3469-4fb4-b7c2-d785cb042d1d.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/54388f31-3469-4fb4-b7c2-d785cb042d1d"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example2"/>
-         <description value="Example of Drug Substance HYDROXYPROPYL CELLULOSE (110000 WAMW)"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-54b2180a-ba32-45c4-884b-670ffa28e9af.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/54b2180a-ba32-45c4-884b-670ffa28e9af"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 8"/>
-         <description value="Batch Formula Ingredient Amounts Imme-Purif"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-54f18826-92fb-4afa-bbc8-fdefabbd027f.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/54f18826-92fb-4afa-bbc8-fdefabbd027f"/>
-         </reference>
-         <name value="Instance of a PolymorphicForm"/>
-         <description value="Example of the  PolymorphicForm of D-Glucose."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-PolymorphicForm"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="DocumentReference"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e.html"/>
-         </extension>
-         <reference>
-            <reference value="DocumentReference/5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
-         </reference>
-         <name value="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
-         <description value="111501-sodium-300 Figure A1 in base64."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Bundle"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Bundle-692a0fa0-cd2c-4ad8-bd6b-7879326103f3.html"/>
-         </extension>
-         <reference>
-            <reference value="Bundle/692a0fa0-cd2c-4ad8-bd6b-7879326103f3"/>
-         </reference>
-         <name value="FHIR Document example of 32S10"/>
-         <description value="FHIR document bundle with the CMC eCTD 32S10 profiles"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32S10"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-6a064012-5b43-489d-bd07-4c0cc1da593e.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/6a064012-5b43-489d-bd07-4c0cc1da593e"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example12"/>
-         <description value="Example of Drug Substance Silicon Dioxide, Colloidal"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-6aef96c1-c9c2-4fd5-a3df-a4e66bea7380.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/6aef96c1-c9c2-4fd5-a3df-a4e66bea7380"/>
-         </reference>
-         <name value="AH-111501 sodium Excipient Example"/>
-         <description value="Example of Drug Product Component substance as an Excipient"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-ComponentSubstance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="DocumentReference"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="DocumentReference-6c65c265-e8e3-4934-8120-993173208ad8.html"/>
-         </extension>
-         <reference>
-            <reference value="DocumentReference/6c65c265-e8e3-4934-8120-993173208ad8"/>
-         </reference>
-         <name value="6c65c265-e8e3-4934-8120-993173208ad8"/>
-         <description value="dextrose in base64"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-71a6de11-4229-4228-97c6-68e1d6acb78b.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/71a6de11-4229-4228-97c6-68e1d6acb78b"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 13"/>
-         <description value="Batch Formula Ingredient Amounts Cont-Purif"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-7528d67d-f15d-4094-baa5-a1d2b73596da.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/7528d67d-f15d-4094-baa5-a1d2b73596da"/>
-         </reference>
-         <name value="Batch Formula Ingredient Cont-HYPRO"/>
-         <description value="Example of Batch Formula Ingredient Cont-HYPRO"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-79a09fd7-04c2-4077-ba45-69e31562b9c3.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/79a09fd7-04c2-4077-ba45-69e31562b9c3"/>
-         </reference>
-         <name value="Drug Product Component: AH111501 sodium salt"/>
-         <description value="Example of Drug Product Component as Excipient"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-Component"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-7a77bed2-3b5e-4722-b442-5aa3f3f64210.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/7a77bed2-3b5e-4722-b442-5aa3f3f64210"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 4"/>
-         <description value="Batch Formula Ingredient Amounts Imme-Crosc"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-7c310723-134d-425a-9aff-60462e4c567a.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/7c310723-134d-425a-9aff-60462e4c567a"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 7"/>
-         <description value="Batch Formula Ingredient Amounts Imme-Magne"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-7e34e5c1-5e95-400f-8f76-332dd096e735.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/7e34e5c1-5e95-400f-8f76-332dd096e735"/>
-         </reference>
-         <name value="Drug Manufacturing Site (Vandechemie)"/>
-         <description value="Example of Manufacturing site using the MfgTestSiteOrganization profle"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-8625a4fe-0484-4da0-8791-8d16997a5cac.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/8625a4fe-0484-4da0-8791-8d16997a5cac"/>
-         </reference>
-         <name value="Batch Formula IngredientExample12"/>
-         <description value="Example of Batch Formula Ingredient Cont-Silic"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-862ce93d-8743-42ab-84de-be28d8300df8.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/862ce93d-8743-42ab-84de-be28d8300df8"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 11"/>
-         <description value="Batch Formula Ingredient Amounts Cont-Silic"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-868a2f83-b9ba-4ece-b238-11e0afe222ee.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/868a2f83-b9ba-4ece-b238-11e0afe222ee"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example3"/>
-         <description value="Example of Drug Substance HYPROMELLOSES"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-88ce020c-846c-463d-8e33-babdfe80c947.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/88ce020c-846c-463d-8e33-babdfe80c947"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 6"/>
-         <description value="Batch Formula Ingredient Amounts Imme-MICRO"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="MedicinalProductDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="MedicinalProductDefinition-8af426fd-5cea-4908-8dc5-b73f70b0e89f.html"/>
-         </extension>
-         <reference>
-            <reference value="MedicinalProductDefinition/8af426fd-5cea-4908-8dc5-b73f70b0e89f"/>
-         </reference>
-         <name value="Example Container Closure System"/>
-         <description value="Example brief description and coding of the container closure system with an image attachment."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-druproduct-container-closure"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-942fcdc9-8ab9-4f52-be6d-af549117d462.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/942fcdc9-8ab9-4f52-be6d-af549117d462"/>
-         </reference>
-         <name value="Example Drug Substance Nomenclature"/>
-         <description value="ANHYDROUS DEXTROSE as example of a Drug Substance Nomenclature"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-nomenclature"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-a1ad301f-356b-4010-9d61-8e01af0a3f38.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/a1ad301f-356b-4010-9d61-8e01af0a3f38"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example9"/>
-         <description value="Example of Drug Substance OpadryYS-1-19025-A CLEAR"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-a5084f22-ffbf-4268-a240-0d203c499cc5.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/a5084f22-ffbf-4268-a240-0d203c499cc5"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 12"/>
-         <description value="Batch Formula Ingredient Amounts Cont-Magne"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example10"/>
-         <description value="Example of Drug Substance Purified Water"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-a9f265fe-90ae-4e78-ae81-3dacabe9ae7a.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/a9f265fe-90ae-4e78-ae81-3dacabe9ae7a"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 17"/>
-         <description value="Batch Formula Ingredient Amounts Coat-Purif"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-b233147f-72ce-446a-abf2-5c01fe09be66.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/b233147f-72ce-446a-abf2-5c01fe09be66"/>
-         </reference>
-         <name value="Batch Formula Ingredient Cont-Purif"/>
-         <description value="Example of Batch Formula Ingredient Cont-Purif"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-b3da720c-c063-4afc-a1a1-57bc545dbe1a.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/b3da720c-c063-4afc-a1a1-57bc545dbe1a"/>
-         </reference>
-         <name value="Batch Formula Ingredient Coat-Purif"/>
-         <description value="Example of Batch Formula Ingredient Coat-Purif"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Composition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Composition-b55b8d97-63c5-433c-95cf-812af58aa5fb.html"/>
-         </extension>
-         <reference>
-            <reference value="Composition/b55b8d97-63c5-433c-95cf-812af58aa5fb"/>
-         </reference>
-         <name value="Example eCTD Substance General Information"/>
-         <description value="Drug substance nomenclature and structure"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-32s10"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-b58bb8fa-7c7c-42a9-ac27-84978f2c683e.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/b58bb8fa-7c7c-42a9-ac27-84978f2c683e"/>
-         </reference>
-         <name value="Batch Formula Ingredient Coat-OpadrGreen"/>
-         <description value="Example of Batch Formula Ingredient Coat-OpadrGreen"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-b6cc4cf0-666c-4b17-98b3-303ea87fdd74.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/b6cc4cf0-666c-4b17-98b3-303ea87fdd74"/>
-         </reference>
-         <name value="Batch Formula IngredientExample2"/>
-         <description value="Example of Batch Formula Ingredient Imme-STARC"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-b91053b7-f87c-4baa-9dfd-33619e8c9d72.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/b91053b7-f87c-4baa-9dfd-33619e8c9d72"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example11"/>
-         <description value="Example of Drug Substance Croscarmellose Sodium"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-be37ba6a-f009-4ec0-92f0-2abb8d78a6a1.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/be37ba6a-f009-4ec0-92f0-2abb8d78a6a1"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 14"/>
-         <description value="Batch Formula Ingredient Amounts Cont-HYPRO"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-bf191513-3914-4fbd-8ebe-33decfaff231.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/bf191513-3914-4fbd-8ebe-33decfaff231"/>
-         </reference>
-         <name value="Manufactuer mfg2"/>
-         <description value="Example of sponsor using the MfgTestSiteOrganizationprofle"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-ca679c3a-b940-4fe4-b454-ba25986d5567.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/ca679c3a-b940-4fe4-b454-ba25986d5567"/>
-         </reference>
-         <name value="Batch Formula IngredientExample9"/>
-         <description value="Example of Batch Formula Ingredient Imme-Purif"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-cfcfcbc9-7849-4328-af33-c43b68742623.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/cfcfcbc9-7849-4328-af33-c43b68742623"/>
-         </reference>
-         <name value="Specification Drug Substance Example"/>
-         <description value="Example of Specification Drug Substance (API)"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="SubstanceDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="SubstanceDefinition-d4e21b68-6ec4-4ab2-9615-89aceb6de25e.html"/>
-         </extension>
-         <reference>
-            <reference value="SubstanceDefinition/d4e21b68-6ec4-4ab2-9615-89aceb6de25e"/>
-         </reference>
-         <name value="Batch Formula Drug Substance Example8"/>
-         <description value="Example of Drug Substance Opadry II 33G11938 Green"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-d842946c-7f37-417b-ab88-ef13038b9bb5.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/d842946c-7f37-417b-ab88-ef13038b9bb5"/>
-         </reference>
-         <name value="Batch Formula Ingredient Coat-Opadr"/>
-         <description value="Example of Batch Formula Ingredient Coat-Opadr"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="DocumentReference"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168.html"/>
-         </extension>
-         <reference>
-            <reference value="DocumentReference/dd6bb623-afbb-4152-b6be-57936c446168"/>
-         </reference>
-         <name value="dd6bb623-afbb-4152-b6be-57936c446168"/>
-         <description value="Figure A1 in base64"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-e2714f5f-ae0e-4936-86ac-f3574bfbfd45.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/e2714f5f-ae0e-4936-86ac-f3574bfbfd45"/>
-         </reference>
-         <name value="Batch Formula IngredientExample4"/>
-         <description value="Example of Batch Formula Ingredient Imme-Crosc"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-e30e4e0b-365f-4cf4-b6f8-00c7ca2dc934.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/e30e4e0b-365f-4cf4-b6f8-00c7ca2dc934"/>
-         </reference>
-         <name value="Batch Formula Ingredient Example 9"/>
-         <description value="Batch Formula Ingredient Amounts Cont-Nitaz with overage extensions"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-e336b548-4ea0-4eb3-9f71-5fd624b60e9f.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/e336b548-4ea0-4eb3-9f71-5fd624b60e9f"/>
-         </reference>
-         <name value="Batch Formula IngredientExample8"/>
-         <description value="Example of Batch Formula Ingredient Imme-Magne"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Bundle"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Bundle-e3618267-93d5-4ace-ba76-6be510e54546.html"/>
-         </extension>
-         <reference>
-            <reference value="Bundle/e3618267-93d5-4ace-ba76-6be510e54546"/>
-         </reference>
-         <name value="FHIR Document example of 32P32"/>
-         <description value="FHIR document bundle with the CMC eCTD 32P32 profiles"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32P32"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-e5021eca-9f23-4ad1-9f06-220f9b0c0453.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/e5021eca-9f23-4ad1-9f06-220f9b0c0453"/>
-         </reference>
-         <name value="Manufacturing Site example FEI only"/>
-         <description value="Example of Manufacturing site using the MfgTestSiteOrganization profle with FEI"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Ingredient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Ingredient-f5fabcb5-eb22-424e-85f1-9489aa269d39.html"/>
-         </extension>
-         <reference>
-            <reference value="Ingredient/f5fabcb5-eb22-424e-85f1-9489aa269d39"/>
-         </reference>
-         <name value="Drug Product Component: (1-13C)PYRUVIC ACID"/>
-         <description value="Example of Drug Product Component as Drug Substance"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-Component"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ActivityDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ActivityDefinition-f7c69b8a-9c97-480c-b040-9bdba4f8a0d1.html"/>
-         </extension>
-         <reference>
-            <reference value="ActivityDefinition/f7c69b8a-9c97-480c-b040-9bdba4f8a0d1"/>
-         </reference>
-         <name value="Batch Formula IngredientExample10"/>
-         <description value="Example of Batch Formula Ingredient Cont-Nitaz"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="MedicinalProductDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="MedicinalProductDefinition-fb333dbd-4b8c-4006-8888-5d9849ef1f9b.html"/>
-         </extension>
-         <reference>
-            <reference value="MedicinalProductDefinition/fb333dbd-4b8c-4006-8888-5d9849ef1f9b"/>
-         </reference>
-         <name value="Example Batch Formula"/>
-         <description value="Example Batch Formulation of Bilayer Tablet"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-formula"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="DocumentReference"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="DocumentReference-fe3f13c1-b0ac-4x20-8024-f4386c290dfg.html"/>
-         </extension>
-         <reference>
-            <reference value="DocumentReference/fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
-         </reference>
-         <name value="fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
-         <description value="dextrose in base64"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="DocumentReference"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="DocumentReference-fe3f13c1-f0ac-4b40-8024-f4386e290dfc.html"/>
-         </extension>
-         <reference>
-            <reference value="DocumentReference/fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
-         </reference>
-         <name value="fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
-         <description value="Pyruvic acid-1-13C 300 in base64"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"/>
-         <groupingId value="-ex-example"/>
+         <name value="Release Profile"/>
+         <description value="TBD after NCIt codes are added for Release Profile"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
       </resource>
       <page>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -2943,6 +2179,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-cmc-ectd-document-32S30.html"/>
+               <title value="CMC eCTD 32S30 Document"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-cmc-ectd-document-32p10.html"/>
                <title value="CMC eCTD 32p10 Document"/>
                <generation value="generated"/>
@@ -3083,13 +2324,18 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-pqcmc-product-part.html"/>
+               <title value="Product Part"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-pqcmc-DrugSubstanceImpurity.html"/>
                <title value="Drug Substance Impurity"/>
                <generation value="generated"/>
             </page>
             <page>
                <nameUrl value="StructureDefinition-pq-additional-stage-result-observation.html"/>
-               <title value="Result Observation"/>
+               <title value="Multiple Result Observation"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -3418,411 +2664,52 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="CodeSystem-pqcmc-capsule-classification-category.html"/>
+               <title value="Capsule Classification Category"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-pqcmc-coating-purpose.html"/>
+               <title value="Coating Purpose"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="CodeSystem-pqcmc-comp-section-types.html"/>
                <title value="Code system PQCMC Comp Section Types"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="CodeSystem-pqcmc-cs-name-types.html"/>
-               <title value="Code System PQCMC Name Types"/>
+               <nameUrl value="CodeSystem-pqcmc-cs-product-characteristic.html"/>
+               <title value="Code System PQCMC Product Characteristic"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="SubstanceDefinition-01df3194-eef7-4d9f-95f8-21f64ee1d6cb.html"/>
-               <title value="Drug Substace Example"/>
+               <nameUrl value="CodeSystem-pqcmc-product-ingredient-name-type.html"/>
+               <title value="Product Ingredient Name Type"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="ActivityDefinition-021f7509-feba-49df-9288-f8db04bd6792.html"/>
-               <title value="Batch Formula IngredientExample11"/>
+               <nameUrl value="CodeSystem-pqcmc-product-part-ingredient-physical-location.html"/>
+               <title value="Product Part Ingredient Physical Location"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="Ingredient-085a514e-b5cb-4e65-b5ab-3180e4aceba0.html"/>
-               <title value="Batch Formula Ingredient Example 15"/>
+               <nameUrl value="CodeSystem-pqcmc-product-part-type.html"/>
+               <title value="Product Part Type"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="Ingredient-0dc2fa8f-89ed-44b2-b835-b4e5d3a8d78a.html"/>
-               <title value="Batch Formula Ingredient Example 5"/>
+               <nameUrl value="CodeSystem-pqcmc-release-mechanism.html"/>
+               <title value="Release Mechanism"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="Ingredient-0ee6ed41-894b-492b-bbca-955494fadb94.html"/>
-               <title value="Batch Formula Ingredient Example 1 "/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-17177734-4328-4f76-9b88-c014a9abc9e3.html"/>
-               <title value="Drug Product Sponsor"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-171f0414-6999-47fa-b792-67510f9e33cc.html"/>
-               <title value="Batch Formula Drug Substance Example4"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-18115938-2ee4-4b58-ba2e-24db05c1f04f.html"/>
-               <title value="Manufactuer mfg3"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="MedicinalProductDefinition-1a136efa-c66c-42b0-aa08-95bac956b82c.html"/>
-               <title value="Quality Specification Drug Product"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Composition-1c353afe-cfa0-48e0-abba-b4e3ddc66208.html"/>
-               <title value="Example eCTD Batch Formula"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-1ebf5cbd-4c34-4d21-8b16-b21e849173ba.html"/>
-               <title value="Batch Formula IngredientExample3"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-24f96097-e317-4b8f-8267-23a42c9afcd1.html"/>
-               <title value="Batch Formula IngredientExample5"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="MedicinalProductDefinition-29a5d46d-23b9-476a-991d-67e3bc8676a0.html"/>
-               <title value="Drug Product Description"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-29bb9464-86dd-4293-b2af-e535ec7de830.html"/>
-               <title value="Batch Formula Ingredient Cont-Magne"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-2ab2018b-f387-48f9-8cd0-0ca9346acf2d.html"/>
-               <title value="Batch Formula Ingredient Example 16"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-2abd3e0c-96ec-4287-abee-592ab0251018.html"/>
-               <title value="Batch Formula Ingredient Example 2"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-363bd671-2817-4778-a3fe-c65b68c63308.html"/>
-               <title value="Batch Formula Drug Substance Example1"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-367ec3e3-65c6-4358-9ec1-054b669e0c36.html"/>
-               <title value="Batch Formula IngredientExample7"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-390e8312-1a86-4b6e-af5c-1cc98a1e481d.html"/>
-               <title value="Batch Formula Ingredient Example 3"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Composition-3a1ed58f-77bb-44b0-a24f-75ad7ef64c58.html"/>
-               <title value="Example eCTD Product Description and Composition"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-46667123-2b0f-4dfe-aebe-79f8ddcc58dd.html"/>
-               <title value="Batch Formula Drug Substance Example5"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Bundle-4723af4d-a25f-4dbe-a63b-b0a23305067a.html"/>
-               <title value="FHIR Document example of 32p10"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-4bb4aeb0-47c2-4c90-ac13-041fb6a36ce2.html"/>
-               <title value="Batch Formula Drug Substance Example6"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-4ca2742c-416c-465e-916d-fa1990911489.html"/>
-               <title value="Batch Formula Ingredient Example 10"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-4d611344-0693-44cb-a0a3-cc404463fd34.html"/>
-               <title value="Batch Formula IngredientExample6"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1.html"/>
-               <title value="Drug Substance Structures - ANHYDROUS DEXTROSE"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-52ddd8a5-010b-4d28-b841-b9c263f53d6d.html"/>
-               <title value="Manufactuer mfg"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-54388f31-3469-4fb4-b7c2-d785cb042d1d.html"/>
-               <title value="Batch Formula Drug Substance Example2"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-54b2180a-ba32-45c4-884b-670ffa28e9af.html"/>
-               <title value="Batch Formula Ingredient Example 8"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-54f18826-92fb-4afa-bbc8-fdefabbd027f.html"/>
-               <title value="Instance of a PolymorphicForm"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e.html"/>
-               <title value="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Bundle-692a0fa0-cd2c-4ad8-bd6b-7879326103f3.html"/>
-               <title value="FHIR Document example of 32S10"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-6a064012-5b43-489d-bd07-4c0cc1da593e.html"/>
-               <title value="Batch Formula Drug Substance Example12"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-6aef96c1-c9c2-4fd5-a3df-a4e66bea7380.html"/>
-               <title value="AH-111501 sodium Excipient Example"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="DocumentReference-6c65c265-e8e3-4934-8120-993173208ad8.html"/>
-               <title value="6c65c265-e8e3-4934-8120-993173208ad8"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-71a6de11-4229-4228-97c6-68e1d6acb78b.html"/>
-               <title value="Batch Formula Ingredient Example 13"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-7528d67d-f15d-4094-baa5-a1d2b73596da.html"/>
-               <title value="Batch Formula Ingredient Cont-HYPRO"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-79a09fd7-04c2-4077-ba45-69e31562b9c3.html"/>
-               <title value="Drug Product Component: AH111501 sodium salt"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-7a77bed2-3b5e-4722-b442-5aa3f3f64210.html"/>
-               <title value="Batch Formula Ingredient Example 4"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-7c310723-134d-425a-9aff-60462e4c567a.html"/>
-               <title value="Batch Formula Ingredient Example 7"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-7e34e5c1-5e95-400f-8f76-332dd096e735.html"/>
-               <title value="Drug Manufacturing Site (Vandechemie)"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-8625a4fe-0484-4da0-8791-8d16997a5cac.html"/>
-               <title value="Batch Formula IngredientExample12"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-862ce93d-8743-42ab-84de-be28d8300df8.html"/>
-               <title value="Batch Formula Ingredient Example 11"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-868a2f83-b9ba-4ece-b238-11e0afe222ee.html"/>
-               <title value="Batch Formula Drug Substance Example3"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-88ce020c-846c-463d-8e33-babdfe80c947.html"/>
-               <title value="Batch Formula Ingredient Example 6"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="MedicinalProductDefinition-8af426fd-5cea-4908-8dc5-b73f70b0e89f.html"/>
-               <title value="Example Container Closure System"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-942fcdc9-8ab9-4f52-be6d-af549117d462.html"/>
-               <title value="Example Drug Substance Nomenclature"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-a1ad301f-356b-4010-9d61-8e01af0a3f38.html"/>
-               <title value="Batch Formula Drug Substance Example9"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-a5084f22-ffbf-4268-a240-0d203c499cc5.html"/>
-               <title value="Batch Formula Ingredient Example 12"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-a54f81ae-e4cd-41a3-a3f1-2a00171e9ccf.html"/>
-               <title value="Batch Formula Drug Substance Example10"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-a9f265fe-90ae-4e78-ae81-3dacabe9ae7a.html"/>
-               <title value="Batch Formula Ingredient Example 17"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-b233147f-72ce-446a-abf2-5c01fe09be66.html"/>
-               <title value="Batch Formula Ingredient Cont-Purif"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-b3da720c-c063-4afc-a1a1-57bc545dbe1a.html"/>
-               <title value="Batch Formula Ingredient Coat-Purif"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Composition-b55b8d97-63c5-433c-95cf-812af58aa5fb.html"/>
-               <title value="Example eCTD Substance General Information"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-b58bb8fa-7c7c-42a9-ac27-84978f2c683e.html"/>
-               <title value="Batch Formula Ingredient Coat-OpadrGreen"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-b6cc4cf0-666c-4b17-98b3-303ea87fdd74.html"/>
-               <title value="Batch Formula IngredientExample2"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-b91053b7-f87c-4baa-9dfd-33619e8c9d72.html"/>
-               <title value="Batch Formula Drug Substance Example11"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-be37ba6a-f009-4ec0-92f0-2abb8d78a6a1.html"/>
-               <title value="Batch Formula Ingredient Example 14"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-bf191513-3914-4fbd-8ebe-33decfaff231.html"/>
-               <title value="Manufactuer mfg2"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-ca679c3a-b940-4fe4-b454-ba25986d5567.html"/>
-               <title value="Batch Formula IngredientExample9"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-cfcfcbc9-7849-4328-af33-c43b68742623.html"/>
-               <title value="Specification Drug Substance Example"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="SubstanceDefinition-d4e21b68-6ec4-4ab2-9615-89aceb6de25e.html"/>
-               <title value="Batch Formula Drug Substance Example8"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-d842946c-7f37-417b-ab88-ef13038b9bb5.html"/>
-               <title value="Batch Formula Ingredient Coat-Opadr"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168.html"/>
-               <title value="dd6bb623-afbb-4152-b6be-57936c446168"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-e2714f5f-ae0e-4936-86ac-f3574bfbfd45.html"/>
-               <title value="Batch Formula IngredientExample4"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-e30e4e0b-365f-4cf4-b6f8-00c7ca2dc934.html"/>
-               <title value="Batch Formula Ingredient Example 9"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-e336b548-4ea0-4eb3-9f71-5fd624b60e9f.html"/>
-               <title value="Batch Formula IngredientExample8"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Bundle-e3618267-93d5-4ace-ba76-6be510e54546.html"/>
-               <title value="FHIR Document example of 32P32"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-e5021eca-9f23-4ad1-9f06-220f9b0c0453.html"/>
-               <title value="Manufacturing Site example FEI only"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Ingredient-f5fabcb5-eb22-424e-85f1-9489aa269d39.html"/>
-               <title value="Drug Product Component: (1-13C)PYRUVIC ACID"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ActivityDefinition-f7c69b8a-9c97-480c-b040-9bdba4f8a0d1.html"/>
-               <title value="Batch Formula IngredientExample10"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="MedicinalProductDefinition-fb333dbd-4b8c-4006-8888-5d9849ef1f9b.html"/>
-               <title value="Example Batch Formula"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="DocumentReference-fe3f13c1-b0ac-4x20-8024-f4386c290dfg.html"/>
-               <title value="fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="DocumentReference-fe3f13c1-f0ac-4b40-8024-f4386e290dfc.html"/>
-               <title value="fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
+               <nameUrl value="CodeSystem-pqcmc-release-profile.html"/>
+               <title value="Release Profile"/>
                <generation value="generated"/>
             </page>
          </page>
       </page>
-      <parameter>
-         <code value="copyrightyear"/>
-         <value value="2021+"/>
-      </parameter>
-      <parameter>
-         <code value="releaselabel"/>
-         <value value="Build CI"/>
-      </parameter>
-      <parameter>
-         <code value="excludettl"/>
-         <value value="true"/>
-      </parameter>
-      <parameter>
-         <code value="excludemap"/>
-         <value value="true"/>
-      </parameter>
-      <parameter>
-         <code value="path-history"/>
-         <value value="http://hl7.org/fhir/us/pq-cmc/history.html"/>
-      </parameter>
-      <parameter>
-         <code value="autoload-resources"/>
-         <value value="true"/>
-      </parameter>
       <parameter>
          <code value="path-resource"/>
          <value value="input/capabilities"/>
@@ -3880,6 +2767,34 @@
          <value value="input/images"/>
       </parameter>
       <parameter>
+         <code value="path-tx-cache"/>
+         <value value="input-cache/txcache"/>
+      </parameter>
+      <parameter>
+         <code value="copyrightyear"/>
+         <value value="2021+"/>
+      </parameter>
+      <parameter>
+         <code value="releaselabel"/>
+         <value value="Build CI"/>
+      </parameter>
+      <parameter>
+         <code value="excludettl"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="excludemap"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="path-history"/>
+         <value value="http://hl7.org/fhir/us/pq-cmc/history.html"/>
+      </parameter>
+      <parameter>
+         <code value="autoload-resources"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
          <code value="path-liquid"/>
          <value value="template/liquid"/>
       </parameter>
@@ -3898,10 +2813,6 @@
       <parameter>
          <code value="path-output"/>
          <value value="output"/>
-      </parameter>
-      <parameter>
-         <code value="path-tx-cache"/>
-         <value value="input-cache/txcache"/>
       </parameter>
       <parameter>
          <code value="path-suppressed-warnings"/>
@@ -3957,6 +2868,10 @@
       </parameter>
       <parameter>
          <code value="excludelogbinaryformat"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="tabbed-snapshots"/>
          <value value="true"/>
       </parameter>
    </definition>

@@ -60,5 +60,6 @@
       <xsl:otherwise>-</xsl:otherwise>
     </xsl:choose>
     <xsl:value-of select="$code"/>
+    <xsl:value-of select="concat('&#x0a;packagelisturl:', substring-before(f:url/@value, 'ImplementationGuide'), 'package-list.json')"/>
   </xsl:template>
 </xsl:stylesheet>

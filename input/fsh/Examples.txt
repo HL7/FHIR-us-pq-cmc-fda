@@ -3,11 +3,10 @@ InstanceOf: MfgTestSiteOrganization
 Usage: #example
 Title: "Drug Manufacturing Site (Vandechemie)"
 Description: "Example of Manufacturing site using the MfgTestSiteOrganization profle"
-* identifier[DUNSNumber].type.coding = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "143265222"
-* identifier[FEINumber].type.coding = $NCIT#C134004 "FEI"
+* identifier[DUNSNumber].system = $DUNS
 * identifier[FEINumber].value = "6981397"
-//* type = "Manufacturing Site Function"
+* identifier[FEINumber].system = $FEINumber
 * name = "Vandechemie"
 * contact.address[+].text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
 * contact.address[=].line = "Ruzettelaan 39234"
@@ -673,7 +672,7 @@ Description: "Drug substance nomenclature and structure"
 */
 * section[SubstanceNomenclature].title = "Nomenclature (ANHYDROUS DEXTROSE)"
 * section[SubstanceNomenclature].entry = Reference(urn:uuid:942fcdc9-8ab9-4f52-be6d-af549117d462)
-* section[SubstanceStructure].title = " Structure (ANHYDROUS DEXTROSE)"
+* section[SubstanceStructure].title = "Structure (ANHYDROUS DEXTROSE)"
 * section[SubstanceStructure].entry = Reference(urn:uuid:4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1)
 
 Instance: 1a136efa-c66c-42b0-aa08-95bac956b82c	

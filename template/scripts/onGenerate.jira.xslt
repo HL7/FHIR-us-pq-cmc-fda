@@ -12,7 +12,7 @@
     <xsl:variable name="url" select="substring-before(f:url/@value, '/ImplementationGuide')"/>
     <xsl:variable name="id" select="substring-after(substring-after(f:id/@value, 'hl7.fhir.'), '.')"/>
     <xsl:variable name="ciUrl" select="/root/package-list/package[@status='ci-build']/@path"/>
-    <xsl:if test="$ciUrl=''">
+    <xsl:if test="$ciUrl='' and root/package-list">
       <xsl:message terminate="yes">Unable to find 'ci-build' release listed in package-list</xsl:message>
     </xsl:if>
     <xsl:variable name="wgUrl" select="f:contact/f:telecom[f:system/@value='url'][1]/f:value/@value"/>
