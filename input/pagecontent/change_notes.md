@@ -1,7 +1,17 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 0.1.4
+### Changes and Updates for Version 0.1.6
 The current development IG
+<ul>
+<li>Added IP Statements, Dependencies and Globals to index page.  Now required for IG</li>
+<li>Corrected molecular formula and molecular weight in proviles</li>
+<li>Impurities now zero or many in composisiton </li>
+<li> </li>
+<li> </li>
+<li> </li>
+</ul>
+
+### Changes and Updates for Version 0.1.5
 <ul>
 <li>terminology experimental</li>
 <li>OID reference correction</li>

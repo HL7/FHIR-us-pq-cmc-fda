@@ -93,7 +93,7 @@ Note: There are instances when FDA does approve the Specifications in a suppleme
 Note: This is different from Application Status"
 // not supported until R5
 * subjectReference 1..1 MS
-//* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
+* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]

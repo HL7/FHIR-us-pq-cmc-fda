@@ -425,7 +425,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 /*
     SECTION SLICES
 */
-* section 1..2 MS
+* section 2..2 MS
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^slicing.discriminator.type = #profile
@@ -500,7 +500,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Impurities] ^definition = "Drug Substance Impurities to be included in the 3.2.S.3.0 eCTD folder."
 * section[Impurities].code = pqcmc-comp-section-types#32S32 "Substance Impurities"
 * section[Impurities].title 1..1 MS
-* section[Impurities].entry  1..1 MS
+* section[Impurities].entry  1..* MS
 * section[Impurities].entry only Reference(DrugSubstanceImpurities)
 
 Invariant: cmc-identifer

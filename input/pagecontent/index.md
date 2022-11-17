@@ -56,3 +56,12 @@ Domain Experts and Program Management:
 * FDA PQ/CMC SMEs --- (list of names to be added soon)
 
 The PQ/CMC Projects is Sponsored by the HL7 [Biomedical Research & Regulation](https://confluence.hl7.org/display/BRR/Biomedical+Research+and+Regulation) work group.
+
+### IP Statements
+{% include ip-statements.xhtml %}
+
+### Dependencies
+{% include dependency-table.xhtml %}
+
+### Globals
+{% include globals-table.xhtml %}

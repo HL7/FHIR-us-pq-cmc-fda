@@ -748,14 +748,14 @@ Id: pqcmc-drug-substance-nomenclature
 Title: "Substance Nomenclature"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
 
-* identifier 0..1
-* classification 1..1 
-* manufacturer 1..1 
-* supplier 0..1 
-* molecularWeight 0..1
+* identifier MS 
+* classification MS 
+* manufacturer MS 
+* supplier MS
+* molecularWeight MS
 * code MS
 * name MS
-* name.preferred 0..1
+* name.type MS
 * relationship.substanceDefinitionReference only Reference( PolymorphicForm )
 * relationship.type.text = "Polymorph"
 
@@ -765,16 +765,14 @@ Id: pqcmc-drug-substance-structure
 Title: "Drug Substance Molecular Structure"
 Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
 
-* identifier 0..1
-* molecularWeight 0..1
-* structure 1..1
-* structure.molecularFormula 0..1
+* identifier 0..1 MS
+* structure 1..1 MS
 * structure.representation.document.display  0..1 MS
 * structure.representation.document.display ^short = "Analytical Instrument Data File Narrative Text"
 * structure.representation.document.display ^definition = "??? TDB ???"
 * code MS
 * name MS
-* name.preferred 0..1
+* name.type MS
 
 Profile: DrugSubstanceMaterials
 Parent: DrugSubstance
@@ -782,10 +780,10 @@ Id: pqcmc-drug-substance-materials
 Title: "Substance Raw Materials"
 Description: "Drug Substance Raw Materials.  Profile on Drug Substance profile."
 
-* identifier 0..1
+* identifier MS
 * code MS
 * name MS
-* name.preferred 0..1
+* name.type MS
 * relationship.substanceDefinitionReference only Reference( ComponentSubstance )
 * relationship.type.text = "Raw Material"
 
@@ -795,12 +793,13 @@ Id: pqcmc-drug-substance-impurities
 Title: "Substance Impurities"
 Description: "Drug Substance Impurities. Profile on Drug Substance profile."
 
-* identifier 0..1
+* identifier MS
 * classification MS
 * structure MS
 * code MS
 * name MS
-* name.preferred MS
+* name.type MS
+* relationship MS
 * relationship.substanceDefinitionReference only Reference( ImpuritySubstance )
 * relationship.type.text = "Impurity"
 
