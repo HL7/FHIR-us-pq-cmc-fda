@@ -21,6 +21,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32p10 profiles.
     Composition 1..1 and
     MedicinalProductDefinition 1..1 and
     MedicinalProductContainer 1..1 and
+    ManufacturedItemDefinition 1..1 and
     Ingredient 1..* and
     SubstanceDefinition 1..* and
     Organization 1..* and
@@ -34,6 +35,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32p10 profiles.
 * entry[MedicinalProductContainer].fullUrl 1..1
 * entry[MedicinalProductContainer].resource 1..1
 * entry[MedicinalProductContainer].resource only  pqcmc-druproduct-container-closure
+* entry[ManufacturedItemDefinition].fullUrl 1..1
+* entry[ManufacturedItemDefinition].resource 1..1
+* entry[ManufacturedItemDefinition].resource only pqcmc-product-part
 * entry[Ingredient].fullUrl 1..1
 * entry[Ingredient].resource 1..1
 * entry[Ingredient].resource only pqcmc-Component
@@ -159,6 +163,43 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * entry[DocumentReference].fullUrl MS
 * entry[DocumentReference].resource MS
 * entry[DocumentReference].resource only cmc-document-reference
+
+Profile: CMCeCTDDocument32S23
+Parent: Bundle
+Id: cmc-ectd-document-32S23
+Title: "CMC eCTD 32S23 Document"
+Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
+* . ^short = "CMC eCTD 32S23 Bundle"
+* . obeys cmc-first-resource
+* identifier 0..1 MS
+* type MS
+* type = #document (exactly)
+* type ^short = "document"
+* timestamp 1..1 MS
+
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Product Description and Composition document."
+* entry contains
+    Composition 1..1 and
+    SubstanceDefinition 1..* and
+    Organization 1..* and
+    PlanDefinition 0..*
+* entry[Composition].fullUrl MS
+* entry[Composition].resource MS
+* entry[Composition].resource only EctdComposition32S23
+* entry[SubstanceDefinition].fullUrl MS
+* entry[SubstanceDefinition].resource MS
+* entry[SubstanceDefinition].resource only ExcipientRaw
+* entry[Organization].fullUrl  MS
+* entry[Organization].resource  MS
+* entry[Organization].resource only cmc-sponsor-organization or MfgTestSiteOrganization
+* entry[PlanDefinition].fullUrl MS
+* entry[PlanDefinition].resource MS
+* entry[PlanDefinition].resource only QualitySpecification
+
+
 
 Profile: EctdCompositionSP4151
 Parent: Composition
@@ -384,7 +425,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * section[ProductComposition] ^definition = "Drug product components to be included in the 3.2.P.1.0 eCTD folder."
 * section[ProductComposition].code = pqcmc-comp-section-types#32P12 "Product Composition"
 * section[ProductComposition].entry 1..* MS
-* section[ProductComposition].entry only Reference(DrugProductComponent)
+* section[ProductComposition].entry only Reference(FinishedProduct)
 
 Profile: EctdComposition32S60
 Parent: Composition
@@ -461,26 +502,28 @@ Description: "The fields needed to represent the Substance Control of Materials 
 /*
     SECTION SLICES - not requried - only one option
 */
-* section 1..1 MS
+* section 1..* MS
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included in the 3.2.S.2.3 eCTD folder."
 * section.code = pqcmc-comp-section-types#32S23 "Substance Control of Materials"
 * section.title 1..1 MS
-* section.entry only Reference(DrugSubstanceMaterials)
+* section.entry 1..* MS
+* section.entry only Reference(ExcipientRaw)
 
 Profile: EctdComposition32S30
 Parent: Composition
 Id: ectd-composition-32s30
 Title: "eCTD Substance Characterization"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included in the 3.2.S.3.0 folder of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
-
+* . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
 * type =  pqcmc-comp-section-types#32S30 "Substance Characterization"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title  1..1 MS
+
 /*
     SECTION SLICES
 */
@@ -502,29 +545,4 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Impurities].title 1..1 MS
 * section[Impurities].entry  1..* MS
 * section[Impurities].entry only Reference(DrugSubstanceImpurities)
-
-Invariant: cmc-identifer
-Description: "A document must have an identifier with a system and a value"
-Expression: "type = 'document' implies (identifier.system.exists() and identifier.value.exists()) "
-Severity: #error
-
-Invariant: cmc-date
-Description: "A document must have a date"
-Expression: "type = 'document' implies (timestamp.hasValue())"
-Severity: #error
-
-Invariant: cmc-first-resource
-Description: "A document must have a Composition as the first resource"
-Expression: "type = 'document' implies entry.first().resource.is(Composition)"
-Severity: #error
-
-Invariant: cmc-ectd-doc-1
-Description: "The fullUrl must be an  URI for UUID/OID"
-Severity: #error
-Expression: "$this.is(FHIR.oid) = true"   //of urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-
-Invariant: cmc-ectd-doc-2
-Description: "The title must start with the PQCMC Comp Section Type display value"
-Expression: "title.value.startsWith(type.coding.display) = true"
-Severity: #error
 

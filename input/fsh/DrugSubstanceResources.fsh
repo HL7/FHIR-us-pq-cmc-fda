@@ -1,26 +1,3 @@
-Extension: StrengthOperatorExtension
-Id: pq-strength-operator-extension
-Title: "Strength Operator"
-Description: "A mathematical symbol that denotes equality or inequality between two values."
-* value[x] 1..1 MS
-* value[x] only CodeableConcept
-* value[x] from PqcmcStrengthOperatorTerminology (required)
-
-Extension: StrengthTypeExtension
-Id: pq-strength-type-extension
-Title: "Strength Type (for API)"
-Description: "A physical (content) of activity measurement of the strength of the active ingredint.."
-* value[x] 1..1 MS
-* value[x] only CodeableConcept
-* value[x] from PqcmcStrengthTypeTerminology (required)
-
-Extension: ContentPercentExtension
-Id: pq-content-percent-extension
-Title: "Content (%)"
-Description: "The percentage of the component in the drug product."
-* value[x] 0..1 MS
-* value[x] only decimal
-
 Extension: ProductBatchIngredientExtension
 Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
@@ -32,7 +9,7 @@ Description: "Extension for measurement properties for ingredients in the batch 
 * extension[overagePercent].value[x] ^short = "Overage Percent"
 * extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
 Note: This is not for stability loss, and generally not permitted.
-Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+Example: 3 percent overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
 """
 * extension[overageJustification].value[x] only markdown
 * extension[overageJustification].value[x] ^short = "Overage Justification"
@@ -46,7 +23,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * . obeys cmc-structure-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
-* classification 0..1 MS
+* classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances  at a relatively high level acording to the Substance and the Substance Preparation Model.
@@ -56,6 +33,19 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(MfgTestSiteOrganization)
+* characterization 0..* MS
+* characterization.technique.text 1..1 MS
+* characterization.form.text 0..1 MS
+* characterization.form.text ^short = "Form"
+* characterization.form.text ^definition = ""
+* characterization.description 0..1 MS
+* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
+* characterization.description ^definition = ""
+* characterization.file 0..1 MS
+* characterization.file ^short = "Anlaysis Graphic"
+* characterization.file ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
+* characterization.file.data 1..1 MS
+* characterization.file.title 1..1 MS
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
 * molecularWeight ^definition = "The average mass of a molecule of a compound compared to ¹/₁₂ the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms. [Source: Merriam Webster]"
@@ -74,8 +64,8 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * structure.molecularFormula ^short = "Molecular Formula"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
 * structure.technique 1..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined]
+* structure.technique ^short = "Substance Structure Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance.  [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
@@ -86,14 +76,14 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 * structure.representation.type.text ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
 Examples: SMILES, MOLFILE, HELM, etc.
 """
-* structure.representation.type from PqcmcChemicalStructureDataFileTypeTerminology
+* structure.representation.type.coding from PqcmcChemicalStructureDataFileTypeTerminology
 * structure.representation.representation 0..1 MS
 * structure.representation.representation ^short = "Drug Substance Structural Representation"
 * structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
 Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
  """
 * structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Anlaysis Graphic"
+* structure.representation.document ^short = "Structure Graphic"
 * structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
 * code 0..1 MS
@@ -212,17 +202,30 @@ Description: "Any component of the drug substance that is not the chemical entit
 * . obeys cmc-structure-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
-* classification 1..* MS
+* classification MS
 * classification ^short = "Impurity Classification"
 * classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
 Examples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.
 """
-* classification from PqcmcImpurityClassificationTerminology
+* classification.coding from PqcmcImpurityClassificationTerminology
+* characterization MS
+* characterization.technique.text 1..1 MS
+* characterization.form.text 0..1 MS
+* characterization.form.text ^short = "Form"
+* characterization.form.text ^definition = ""
+* characterization.description 0..1 MS
+* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
+* characterization.description ^definition = ""
+* characterization.file 0..1 MS
+* characterization.file ^short = "Anlaysis Graphic"
+* characterization.file ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
+* characterization.file.data 1..1 MS
+* characterization.file.title 1..1 MS
 * structure 0..1 MS
 * structure obeys cmc-representation-or-document
 * structure.technique 1..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined]
+* structure.technique ^short = "Substance Structure Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance.  [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
@@ -230,7 +233,7 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 * structure.representation.type 0..1 MS
 * structure.representation.type ^short = "Drug Substance Impurity Method Type| Drug Product Impurity Method Type"
 * structure.representation.type.text ^definition = "The technique used to elucidate the structure or characterization of the impurity. [Source: SME Defined]"
-* structure.representation.type from PqcmcChemicalStructureDataFileTypeTerminology
+* structure.representation.type.coding from PqcmcChemicalStructureDataFileTypeTerminology
 * structure.representation.representation 0..1 MS
 * structure.representation.representation ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File | Impurity Chemical Structure Data File"
 * structure.representation.representation ^definition = """Impurity Chemical Structure Data File: A machine readable representation of the structure of the chemical. [Source: SME Defined]
@@ -298,8 +301,8 @@ Description: "Alternate structure present in the drug substance"
 * structure.molecularFormula ^short = "Molecular Formula"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
 * structure.technique 1..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined]
+* structure.technique ^short = "Substance Structure Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance.  [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
@@ -310,7 +313,7 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 * structure.representation.type.text ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
 Examples: SMILES, MOLFILE, HELM, etc.
 """
-* structure.representation.type from PqcmcChemicalStructureDataFileTypeTerminology
+* structure.representation.type.coding from PqcmcChemicalStructureDataFileTypeTerminology
 * structure.representation.representation 0..1 MS
 * structure.representation.representation ^short = "Drug Substance Structural Representation"
 * structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
@@ -336,7 +339,7 @@ Description: "Any raw material intended for use in the manufacture of a drug sub
 * grade  ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
-* grade from PqcmcQualityBenchmarkTerminology
+* grade.coding from PqcmcQualityBenchmarkTerminology
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
@@ -360,10 +363,13 @@ Example: 362O9ITL9D
 Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
 * name 1..* MS
+* name ^short = "Product Ingredient Name"
+* name ^definition = "Any ingredient intended for use in the manufacture of a drug product, including those that may not appear in such drug product. [Source: (21 CFR 210.3 (b) (3)) PAC-ATLS 1998]"
+
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
-* name ^slicing.description = "Slice based on value pattern"
+* name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
     sub 0..1 MS and
     brand 0..1 MS and
@@ -403,7 +409,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
 Example: cat hair would be an Animal source type """
-* sourceMaterial.type from PqcmcSourceTypeTerminology
+* sourceMaterial.type.coding from PqcmcSourceTypeTerminology
 * sourceMaterial.genus 0..1 MS
 * sourceMaterial.genus.coding 0..0
 * sourceMaterial.genus.text 1..1
@@ -444,83 +450,17 @@ Description: "The amount details about the drug product components to define the
 * .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
 Examples: removed during process, adjusted for loss on drying, etc.
 """
-* .extension contains StrengthTypeExtension named strengthtype 0..1 MS
-* . obeys cmc-ingredient-functions
 * status.code
 * for only Reference(DrugProductDescription)
 * for ^short = "Reference to MedicinalProductDefinition"
-* role.coding MS
-* role.coding ^short = "Drug Product Component Function Category"
-* role.coding ^definition = """A classification that identifies the higher level purpose of that material. [Source: SME Defined]
-Example: Active Ingredient, Inactive Ingredient, Adjuvant.
-"""
-* role.coding from PqcmcDrugProductComponentFunctionCategoryTerminology
-* function 0..1 MS
-* function.coding 0..1 MS
-* function.coding ^short = "Drug Product Component Function"
-* function.coding ^definition = """A sub-classification of components identifying its purpose/role in the drug product. [Source: SME Defined]
-Examples: Filler, Surfactant.
-"""
-* function.coding from PqcmcExcipientFunctionTerminology
-* function.text 0..1 MS // only value = 'NA'
-* group 0..1 MS
-* group ^short = "Component Group"
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only Reference(ComponentSubstance)
-* substance.strength 1..1 MS
-* substance.strength obeys cmc-strength-type-cases
-* substance.strength obeys cmc-arbitrary-unit
-* substance.strength.extension 1..3
-* substance.strength.extension contains pq-strength-type-extension named strengthType 1..1 MS
-* substance.strength.extension[strengthType] ^short = "Strength Type (for API)"
-* substance.strength.extension[strengthType] ^definition = """A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
-Example: Mass, Activity
-"""
-* substance.strength.extension contains pq-content-percent-extension named contentPercent 1..1 MS
-* substance.strength.extension[contentPercent] ^short = "Content (%)"
-* substance.strength.extension[contentPercent] ^definition = "The percentage of the component in the drug product. [Source: SME Defined]"
-* substance.strength.presentation[x] 1..1 MS
-* substance.strength.presentation[x] only Ratio or Quantity
-* substance.strength.presentationRatio 0..1 MS
-* substance.strength.presentationRatio.numerator MS
-* substance.strength.presentationRatio.numerator ^short = "Strength Numeric Numerator"
-* substance.strength.presentationRatio.numerator ^definition = "The content of an ingredient expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dosage form. This should be the strength as listed on the label. [Source: Adapted from NCI EVS C53294]"
-* substance.strength.presentationRatio.numerator 1..1 MS
-* substance.strength.presentationRatio.numerator.value 1..1 MS
-* substance.strength.presentationRatio.numerator.unit 1..1 MS
-* substance.strength.presentationRatio.numerator.code 1..1 MS
-* substance.strength.presentationRatio.numerator.code from  PqcmcUnitsMeasureTerminology
-* substance.strength.presentationRatio.denominator 1..1 MS
-* substance.strength.presentationRatio.denominator ^short = "Strength Numeric Denominator"
-* substance.strength.presentationRatio.denominator ^definition = """ Specifies the quantity of the ingredient(s) consistent with a single unit dose or as expresssed on the label. [Source: SME Defined]
-Note: Kg value is only applicable for veterinary applications.
-Note: This is the denominator value when expressing the strength for APIs
-Example: 5 mg per 100 mL
-Note: For Excipients, this is the amount
-"""
-* substance.strength.presentationRatio.denominator.value 1..1 MS
-* substance.strength.presentationRatio.denominator.unit 1..1 MS
-* substance.strength.presentationRatio.denominator.code 1..1 MS
-* substance.strength.presentationRatio.denominator.code from  PqcmcUnitsMeasureTerminology
-* substance.strength.presentationQuantity 0..1 MS
-* substance.strength.presentationQuantity.value 1..1
-* substance.strength.presentationQuantity.unit 1..1
-* substance.strength.presentationQuantity.code 1..1
-* substance.strength.presentationQuantity.code from  PqcmcUnitsMeasureTerminology
-* substance.strength.presentationQuantity.extension contains pq-strength-operator-extension named strengthOperator 0..1 MS
-* substance.strength.presentationQuantity.extension[strengthOperator] ^short = "Strength Operator"
-* substance.strength.presentationQuantity.extension[strengthOperator] ^definition = """A mathematical symbol that denotes equality or inequality between two values
-Note: This is typically applicable to biologics """
-
-//* substance.strength.textPresentation 1..1 MS
-//* substance.strength.textPresentation ^short = "Strength Textual"
-//* substance.strength.textPresentation ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 
 Profile: DrugProductIngredient
 Parent: Ingredient
 Id: pqcmc-dp-ingredient
-Title: "Drug Product Ingredient"
+Title: "Drug Product Batch Formula Ingredient"
 Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
 
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"
@@ -531,6 +471,12 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
 * .extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
 * identifier 0..1 MS
+* group 0..1 MS
+* group ^short = "Product Part Ingredient Physical Location"
+* group ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
+Examples: Intragranular, Extra granular, Blend  
+"""
+* group.coding from PqcmcProductPartIngredientPhysicalLocationVS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only Reference(pqcmc-routine-drug-substance)
@@ -657,14 +603,20 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * expiry ^definition = "The date after which samples of the drug substance should be examined to ensure compliance with the specification and thus suitable for use in the manufacture of a given drug product [Source: Adapted from Q1A(R2)]"
 * expiry only dateTime
 
-Profile: Excipient
+Profile: ExcipientRaw
 Parent: SubstanceDefinition
 Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
-Description: "Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."
+Description: "Provides sufficient information to identify an inactive substance  and raw materials and its source when stability data is required in the submission."
 
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"	
+* grade 1..1
+* grade ^short = "Quality Standard"
+* grade  ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
+Examples: USP/NF, EP, Company Standard
+"""
+* grade.coding from PqcmcQualityBenchmarkTerminology
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
@@ -683,7 +635,7 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
 Example: cat hair would be an Animal source type """
-* sourceMaterial.type from PqcmcSourceTypeTerminology
+* sourceMaterial.type.coding from PqcmcSourceTypeTerminology
 * sourceMaterial.genus 0..1 MS
 * sourceMaterial.genus.coding 0..0
 * sourceMaterial.genus.text 1..1
@@ -759,21 +711,6 @@ Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug S
 * relationship.substanceDefinitionReference only Reference( PolymorphicForm )
 * relationship.type.text = "Polymorph"
 
-Profile: DrugSubstanceStructure
-Parent: DrugSubstance
-Id: pqcmc-drug-substance-structure
-Title: "Drug Substance Molecular Structure"
-Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
-
-* identifier 0..1 MS
-* structure 1..1 MS
-* structure.representation.document.display  0..1 MS
-* structure.representation.document.display ^short = "Analytical Instrument Data File Narrative Text"
-* structure.representation.document.display ^definition = "??? TDB ???"
-* code MS
-* name MS
-* name.type MS
-
 Profile: DrugSubstanceMaterials
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-materials
@@ -781,9 +718,12 @@ Title: "Substance Raw Materials"
 Description: "Drug Substance Raw Materials.  Profile on Drug Substance profile."
 
 * identifier MS
+* manufacturer 1..1 MS
+* supplier 0..1 MS
 * code MS
 * name MS
 * name.type MS
+* sourceMaterial
 * relationship.substanceDefinitionReference only Reference( ComponentSubstance )
 * relationship.type.text = "Raw Material"
 
@@ -795,6 +735,7 @@ Description: "Drug Substance Impurities. Profile on Drug Substance profile."
 
 * identifier MS
 * classification MS
+* characterization MS
 * structure MS
 * code MS
 * name MS
@@ -821,81 +762,20 @@ Description: "Drug Substance (Active Ingredient) Representational Structures.  P
 * name MS
 * name.preferred 0..1 MS
 
-// Invariants and Rules
+Profile: DrugSubstanceStructure
+Parent: DrugSubstance
+Id: pqcmc-drug-substance-structure
+Title: "Drug Substance Molecular Structure"
+Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
 
-Invariant: cmc-name-preferred
-Description: "Name.preferred: at most one = true"
-Expression: "name.select ( preferred = true).count() < 2"
-Severity: #error
-
-Invariant: cmc-substance-relationship
-Description: "If relationship.type.text is 'Polymorph' then reference is PolymorphicForm, if relationship.type.text is 'Raw Material' then reference is ComponentSubstance, 
-if relationship.type.text is 'Impurity' then reference is DrugSubstanceImpurity."
-Expression: "relationship.where(type.text = 'Polymorph').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is PolymorphicForm)
-or
-relationship.where(type.text = 'Raw Material').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is ComponentSubstance)
-or
-relationship.where(type.text = 'Impurity').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is DrugSubstanceImpurity)"
-Severity: #error
-
-Invariant: cmc-when-unii-required
-Description: "A UNII is required in code for any of theese categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
-Expression: "(classification.where(coding.where(code in ('1' | '17' | '2' | '3' |'4') and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/evmpd-substance-classification').exists()).exists()
-implies code.code.text.exists())"
-Severity: #error
-
-Invariant: cmc-name-isbt
-Description: "Name.type ISBT 128 requried for blood products."
-Expression: "classification.where(coding.where(code = '8' ) and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/evmpd-substance-classification'  ).exists()).exists()
-   implies name[isbt].name.exists()"
-Severity: #error
-
-Invariant: cmc-ingredient-functions
-Description: "If Drug Product Component Function Category is Active Ingredient or Adjuvant THEN Drug Product Component Function will be NA.
-If Drug Product Component Function Category is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "role.coding.where(code in ('C82533' | 'C2140')) implies (function.coding.code.count() = 0 and function.text = 'NA')
-xor
-role.coding.where(code = 'C42637') implies (function.coding.code.count() = 1 and function.text.count() = 0)"
-Severity: #error
-
-Invariant: cmc-substance-structure-graphic-required
-Description: "A Substance Structure Graphic is required Required for Small Molecules. Equivalent to classification  code equals 'Chemical'."
-Expression: "(classification.where(coding.where(code = '1') and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/evmpd-substance-classification').exists()).exists()
-implies structure.representation.exists())"
-Severity: #error
-
-Invariant: cmc-representation-or-document
-Description: "A structure has either a representation or document and supporting types."
-Expression: "structure.representation.document.resolve().content.attachment.data  xor structure.representation.representation.exists() and structure.representation.type.coding exists()"Severity: #error
-
-Invariant: cmc-structure-required
-Description: "A structure is required in code for any of theese categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
-Expression: "(classification.where(coding.system = 'https://www.ema.europa.eu' and coding.code in ('1' | '17' | '2' | '3' | '4')).exists() implies structure.exists())"
-Severity: #error
-
-Invariant: cmc-source-material
-Description: "IF raw material source type equals Microbial, Animal, Plant, Insect or Human THEN the 4 source related attributes are required and the manufacturer and supplier information is highly desirable."
-Expression: "(sourceMaterial.type.where(coding.where(code in ('C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258') and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-source-type-terminology').exists()).exists()
-implies sourceMaterial.genus.exists() and  sourceMaterial.species.exists() and sourceMaterial.part.exists() and sourceMaterial.countryOfOrigin.exists())"
-Severity: #error
-
-Invariant: cmc-strength-type-cases
-Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory
-IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
-Strength Textual and Strength UOM will be Mandatory and Operator will be Optional"
-Expression: "substance.strength.extension[strengthType].where(coding.where(code = 'C168628' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-strength-type-terminology').exists()).exists()
-implies substance.strength.presentationRatio.exists() or substance.strength.presentationQuantity.exists()) and  substance.strength.presentationQuantity.extension[strengthOperator].exists().not()
-and
-substance.strength.extension[strengthType].where(coding.where(code = 'C45420' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-strength-type-terminology').exists().exists()
-implies substance.strength.presentationRatio.exists() and substance.strength.presentationRatio.unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology'
-or substance.strength.presentationQuantity.exists() and substance.strength.presentationQuantity.unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology'"Severity: #error
-
-Invariant: cmc-arbitrary-unit
-Description: "If the UOM is UCUM Arbitrary Unit [arb'U], you need to describe the units in the Strength Text data element."
-Expression: "((substance.strength.presentationRatio.where(unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology').exists()).exists())
-or ((substance.strength.presentationRatio.where(unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology').exists()).exists())
-implies (substance.strength.textPresentation.contains('unit'))"
-Severity: #error
-
+* identifier 0..1 MS
+* characterization 0..* MS
+* structure 1..1 MS
+* structure.representation.document.display  0..1 MS
+* structure.representation.document.display ^short = "Analytical Instrument Data File Narrative Text"
+* structure.representation.document.display ^definition = "??? TDB ???"
+* code MS
+* name MS
+* name.type MS
 
 

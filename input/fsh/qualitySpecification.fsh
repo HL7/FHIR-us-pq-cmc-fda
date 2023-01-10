@@ -26,14 +26,6 @@ Examples: Drug product, drug substance, etc.
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationTypeTerminology (required)
 
-
-Extension: TestMethodOriginExtension
-Id: pq-test-method-origin-extension
-Title: "Test Method Origin"
-Description: "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
-* value[x] only CodeableConcept
-* value[x] from PqcmcTestMethodOriginTerminology (required)
-
 Extension: TestOrderExtension
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
@@ -50,6 +42,7 @@ Description: "The ratio of the retention time of a component relative to that of
 Example: 1:23 (a ratio)
 Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value"
 * value[x] only string
+
 
 Profile: QualitySpecification
 Parent: PlanDefinition
@@ -85,20 +78,20 @@ Note: This value should be unique across all specifications for a given material
 * subtitle 0..1 MS
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
-* status 1..1 MS
-* status ^short = "Specification Status"
-* status ^definition = "The current FDA regulatory status of the specification. [Source: SME Defined]
-Examples: Approved, Not Approved, Reported in a CBE or AR.
-Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-Note: This is different from Application Status"
-// not supported until R5
+* status MS
 * subjectReference 1..1 MS
-* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ComponentSubstance)
+* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
 Note: This is the date a particular version of the specification was internally accepted by the submitter.
 """
+* useContext 1..1 MS
+* useContext ^short = "Specification Status"
+* useContext ^definition = "The current FDA regulatory status of the specification. [Source: SME Defined]
+Examples: Approved, Not Approved, Reported in a CBE or AR.
+Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
+Note: This is different from Application Status"
 * approvalDate 1..1 MS
 * approvalDate ^short = "Specification Status Date"
 * approvalDate ^definition = """ The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
@@ -166,17 +159,10 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * goal.target.detailInteger.value 1..1 MS
 * action MS
 * action ^short = "Test or Stage"
-* action.extension contains pq-test-method-origin-extension named testMethodOrigin 1..1 MS
-* action.extension[testMethodOrigin] ^short = "Test Method Origin"
-* action.extension[testMethodOrigin] ^definition = """ A coded value specifying the source of the method. [Source: SME Defined] * Example: Compendial """
 * action.extension contains pq-order-extension named testOrder 1..1 MS
 * action.extension[testOrder] ^short = "Test/Stage Order"
 * action.extension[testOrder] ^definition = "The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]"
 * action.extension contains pq-rrt-extension named rrt 1..1 MS
-* action.extension[rrt] ^short = "Relative Retention Time"
-* action.extension[rrt] ^definition = """The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP]
-Example: 1:23 (a ratio)
-Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value"""
 * action.title 1.. MS
 * action.title ^short = "Test Name | Stage Name"
 * action.title ^definition = """Stage Name: A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
@@ -189,19 +175,38 @@ Note: as defined by the sponsor
 
 If there is more than one comment, include in this element.  Markdown allows formating for clarity.
 """
+* action.title.extension contains pq-rrt-extension named rrt 1..1 MS
 * action.description 0..1 MS
 * action.description ^short = "Test Additional Information | Stage Additional Information"
 * action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
 Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
 """
-* action.code 1..1 MS
-* action.code.coding ^short = "Test Category"
-* action.code.coding ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* action.code.coding from PqcmcTestCategoryTerminology
+* action.code  MS
+* action.code.coding obeys cmc-sub-test-category
+* action.code.coding ^slicing.discriminator.type = #pattern
+* action.code.coding ^slicing.discriminator.path = "$this"
+* action.code.coding ^slicing.rules = #open
+* action.code.coding contains
+    testCategory 1..1 and
+    testSubCat 0..1 and
+    methodOrigin 1..1
+* action.code.coding[testCategory].code MS
+* action.code.coding[testCategory].code from PqcmcTestCategoryTerminology
+* action.code.coding[testCategory].code ^short = "Test Category"
+* action.code.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* action.code.coding[testSubCat].code MS
+* action.code.coding[testSubCat].code from PqcmcTestSubCategoryTerminology
+* action.code.coding[testSubCat].code ^short = "Test Sub-category"
+
+* action.code.coding[methodOrigin].code MS
+* action.code.coding[methodOrigin].code ^short = "Test Method Origin"
+* action.code.coding[methodOrigin].code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
+* action.code.coding[methodOrigin].code from PqcmcTestMethodOriginTerminology
 * action.code.text 1..1 MS
 * action.code.text ^short = "Analytical Procedure"
 * action.code.text ^definition = """ The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 Note: The full descriptor of the technique is part of the next data element - Reference to Procedure """
+
 * action.documentation 0..* MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
 * action.documentation.document.url 1..1 MS
@@ -213,4 +218,3 @@ Note: This could also be a transferred lab method.
 * action.goalId ^short = "Reference to Acceptance Criteria"
 * action.relatedAction ^short = "Alternate Test or Prior Stage"
 * action.relatedAction.relationship from PqActionRelationTypes (required)
-

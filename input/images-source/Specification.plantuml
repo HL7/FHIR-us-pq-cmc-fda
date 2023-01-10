@@ -12,7 +12,7 @@ package "eCTD Folder 3.2.S P4151 P4151 Specification Bundle" as NODES {
           
       }
 }
-node "Excipient" as N21 { 
+node "ExcipientRaw" as N21 { 
       object "**Parent:** SubstanceDefinition" as obj22 {
         **ValueSets:**
           GENC Country Codes

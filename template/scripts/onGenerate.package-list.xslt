@@ -3,7 +3,7 @@
   - Convert packagelist list of packages into XML so they can be used in the generation of default Jira file
   -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
 	<xsl:template match="/json">
     <package-list>
       <xsl:variable name="safeJson">

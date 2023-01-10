@@ -35,6 +35,22 @@ node "SponsorOrganization" as NSO {
         GENC Country Codes
     }
 }
+node "FinishedProduct"as MID {
+object "**Parent:** ManufacturedItemDefinition" as objMID { 
+      **ValueSets:**
+      PqcmcCoatingPurposeVS
+      PqcmcDrugProductComponentFunctionCategoryTerminology
+      PqcmcExcipientFunctionTerminology
+      PqcmcProductPartIngredientPhysicalLocationVS
+      PqcmcProductPartTypeVS
+      PqcmcReleaseMechanismVS
+      PqcmcReleaseProfileVS
+      PqcmcStrengthOperatorTerminology
+      PqcmcStrengthTypeTerminology
+      PqcmcProductCharacteristicCodes
+      PqcmcUnitsMeasureTerminology
+      }
+}
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
          **ValueSets:**
@@ -45,19 +61,9 @@ node "MfgTestSiteOrganization" as NMFG {
 
 node "DrugProductComponent" as NN { 
       object "**Parent:** Ingredient" as obj3 {
-        **ValueSets:**
-          Drug Product Component Function Category Terminology
-          Excipient Function Terminology
-          Units Of Measure Terminology
-          Strength Operator Terminology
-          Strength Type Terminology
       }
       object "**Extensions**" as objExs {
         Additional-info-extension
-        Strength-type-extension
-        Content-percent-extension
-        Strength-operator-extension
-        Strength-text-extension
     }
     obj3 <|-- objExs
 }
@@ -72,16 +78,16 @@ node "ComponentSubstance" as NCS {
     }
 }
 node "Base64DocumentReference" as NB64 { 
-      object "**Parent:** DocumentReferencee"  as obj64  
+      object "**Parent:** DocumentReferencee"  as obj64    
 }
 
-}
+
 
 N1 --> N2
+N1 --> MID
 N1 --> NSO
 N1 --> N21
-N1 --> NN
-NN --> N2
+MID --> NN
 NCS --> NMFG
 NN --> NCS
 NCS --> NB64

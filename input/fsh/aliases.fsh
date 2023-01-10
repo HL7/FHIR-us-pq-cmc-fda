@@ -13,3 +13,4 @@ Alias: $EMAIDMP = https://www.ema.europa.eu
 Alias: $GENC = https://nsgreg.nga.mil
 Alias: $IDsys = urn:ietf:rfc:3986
 Alias: $SectionTypes = http://hl7.org/fhir/us/pq-cmc/codesystem/SectionType
+Alias: $PQTC = http://hl7.org/fhir/us/pq-cmc/codesystem/PqcmcTestCategoryCodes

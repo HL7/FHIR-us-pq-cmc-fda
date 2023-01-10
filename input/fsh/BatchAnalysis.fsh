@@ -215,10 +215,21 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * identifier ^definition = "A set of discrete sequential steps performed on a given test. [Source: SME Defined]"
 * identifier ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
 * status MS	
-* category  1..1 MS	
-* category ^short = "Test Category"	
-* category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* category from PqcmcTestCategoryTerminology
+* category  MS
+* category.coding obeys cmc-sub-test-category-batch
+* category.coding ^slicing.discriminator.type = #pattern
+* category.coding ^slicing.discriminator.path = "$this"
+* category.coding ^slicing.rules = #open
+* category.coding contains
+    testCategory 1..1 and
+    testSubCat 0..1
+* category.coding[testCategory].code MS
+* category.coding[testCategory].code from PqcmcTestCategoryTerminology
+* category.coding[testCategory].code ^short = "Test Category"
+* category.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding[testSubCat].code MS
+* category.coding[testSubCat].code from PqcmcTestSubCategoryTerminology
+* category.coding[testSubCat].code ^short = "Test Sub-category"
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
 * effective[x] 1..1 MS	

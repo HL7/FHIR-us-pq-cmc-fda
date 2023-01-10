@@ -2,7 +2,7 @@
 <!--
   - Generate a default Jira-Spec-Artifacts XML file for this IG that can be used by Jira to provide the appropriate drop-downs for this IG
   -->
-<xsl:stylesheet version="1.0" xmlns:f="http://hl7.org/fhir" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="f">
+<xsl:stylesheet version="1.0" xmlns:f="http://hl7.org/fhir" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exsl="http://exslt.org/common" exclude-result-prefixes="f exsl">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:variable name="committeePageBase" select="'hl7.org/Special/committees/'"/>
 	<xsl:template match="/">
@@ -21,7 +21,17 @@
         <xsl:value-of select="concat('First &quot;url&quot; contact telecom must start with &quot;http://', $committeePageBase, '&quot;')"/>
       </xsl:message>
     </xsl:if>
-    <xsl:variable name="wgWebCode" select="substring-after($wgUrl, $committeePageBase)"/>
+    <xsl:variable name="wgTail" select="substring-after($wgUrl, $committeePageBase)"/>
+    <xsl:variable name="wgWebCode">
+      <xsl:choose>
+        <xsl:when test="contains($wgTail, '/index.cfm')">
+          <xsl:value-of select="normalize-space(substring-before($wgTail, '/index.cfm'))"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="normalize-space($wgTail)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
     <xsl:variable name="wg" select="/root/workgroups/workgroup[@webcode=$wgWebCode]/@key"/>
     <xsl:if test="$wg=''">
       <xsl:message terminate="yes">
@@ -30,8 +40,8 @@
     </xsl:if>
     <xsl:for-each select="/root/package-list/package[@status='release']">
       <xsl:message terminate="yes">
-        <xsl:value-of select="concat('Unrecognized package-list status &quot;release&quot; for release ', @version, 
-          ' is not allowed for IGs using the HL7 template.  Use a more specific status (draft, informative, trial-use, normative, trial-use+normative)')"/>
+        <xsl:value-of select="concat('Package-list status &quot;release&quot; for release ', @version, 
+          ' is not allowed for IGs using the HL7 template.  Use a more specific status (draft, informative, trial-use, normative, trial-use+normative, etc.)')"/>
       </xsl:message>
     </xsl:for-each>
     <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='draft' or @status='ballot' or @status='informative' or @status='trial-use' or @status='update' or @status='normative' or status='trial-use+normative')]">
@@ -101,33 +111,33 @@
         <xsl:for-each select="/root/f:ImplementationGuide/f:definition/f:resource">
           <xsl:variable name="baseId" select="substring-after(f:reference/f:reference/@value, '/')"/>
           <xsl:variable name="artifactId" select="concat(substring-before(f:reference/f:reference/@value, '/'), '-', $baseId)"/>
-          <xsl:variable name="name" select="f:name/@value"/>
-          <xsl:variable name="ref" select="f:reference/f:reference/@value"/>
+          <xsl:variable name="name" select="normalize-space(f:name/@value)"/>
+          <xsl:variable name="ref" select="normalize-space(f:reference/f:reference/@value)"/>
           <artifact name="{$name}" key="{$artifactId}" id="{$ref}">
             <xsl:variable name="candidates" select="/root/specification/artifact[@id=$ref or @id=$baseId or @name=$name or normalize-space(substring-before(@name, '('))=$name]"/>
             <xsl:choose>
-              <xsl:when test="count($candidates)=1">
-                <xsl:copy-of select="$candidates/@*[not(local-name(.)='id' or local-name(.)='name')]"/>
+              <xsl:when test="count(exsl:node-set($candidates))=1">
+                <xsl:copy-of select="exsl:node-set($candidates)/@*[not(local-name(.)='id' or local-name(.)='name')]"/>
               </xsl:when>
-              <xsl:when test="$candidates[@key=$artifactId]">
-                <xsl:copy-of select="$candidates[@key=$artifactId]/@*[not(local-name(.)='id' or local-name(.)='name')]"/>
+              <xsl:when test="exsl:node-set($candidates)[@key=$artifactId]">
+                <xsl:copy-of select="exsl:node-set($candidates)[@key=$artifactId]/@*[not(local-name(.)='id' or local-name(.)='name')]"/>
               </xsl:when>
-              <xsl:when test="count($candidates)!=0">
+              <xsl:when test="count(exsl:node-set($candidates))!=0">
                 <xsl:message terminate="yes">
                   <xsl:value-of select="concat('Found multiple candidates for artifact ', $artifactId, ' in previous jira-spec-info')"/>
-                  <xsl:copy-of select="$candidates"/>
+                  <xsl:copy-of select="exsl:node-set($candidates)"/>
                 </xsl:message>
               </xsl:when>
             </xsl:choose>
           </artifact>
         </xsl:for-each>
       </xsl:variable>
-      <xsl:copy-of select="$artifacts"/>
+      <xsl:copy-of select="exsl:node-set($artifacts)"/>
       <xsl:for-each select="/root/specification/artifact">
         <xsl:variable name="key" select="@key"/>
         <xsl:variable name="keyName" select="@name"/>
         <xsl:variable name="found">
-          <xsl:if test="$artifacts/*[@key=$key]">yes</xsl:if>
+          <xsl:if test="exsl:node-set($artifacts)/*[@key=$key]">yes</xsl:if>
         </xsl:variable>
         <xsl:if test="$found=''">
           <xsl:copy>

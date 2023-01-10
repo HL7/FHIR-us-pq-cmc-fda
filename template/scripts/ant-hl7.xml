@@ -109,10 +109,10 @@
     <condition property="jiraMatch">
       <filesmatch file1="${file.jira}" file2="${file.jiraspec.tmp}" textfile="true"/>
     </condition>
+    <copy file="${file.jira}" tofile="${ig.root}/${jiraSpecFile}.xml"/>
   </target>
   <target name="onGenerate.jira.check" depends="onGenerate.jira.generate" if="doJira" unless="jiraMatch">
-    <copy file="${file.jira}" tofile="${ig.root}/${jiraSpecFile}.xml"/>
-    <echo file="${ig.template}/ongenerate-validation-jira.json" message='&#x0a;{"severity":"warning","code":"informational","details":{"text":"The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on &apos;template/${name.jiraspec.tmp}&apos; (a normalized view of what is in Github) and &apos;template/${name.jira}&apos; (reflects current IG content)"}}&#x0a;,'/>
+    <echo file="${ig.template}/ongenerate-validation-jira.json" message='&#x0a;{"severity":"warning","code":"informational","details":{"text":"The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on &apos;template/${name.jiraspec.tmp}&apos; (a normalized view of what is in Github) and &apos;template/${name.jira}&apos; (reflects current IG content)"}}&#x0a;'/>
   </target>   
   <target name="onGenerate.jira.skip-offline" depends="onGenerate.jira.setup" if="doJira" unless="online">
     <echo message="Skipped checking for revised jira spec file because running off-line"/>

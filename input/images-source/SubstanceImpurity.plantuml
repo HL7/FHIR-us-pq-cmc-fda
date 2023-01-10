@@ -20,7 +20,7 @@ node "EctdComposition32S30" as N1 {
       object "**Parent:** DrugSubstance" as obj3 { 
 
         **ValueSets:**
-      PqcmcUnitsMeasureTerminology   
+      Chemical Structure Data File Type Terminology  
       }
   }
 

@@ -1,14 +1,27 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
+### Changes and Updates for Version 0.1.7
+The current development IG
+<ul>
+<li>changed bundle headers in ribbon</li>
+<li>added 0 to 32S3 in diagram, removed units added Chemical Structure Data File Type Terminology </li>
+<li>Two-tiered test category code list </li>
+<li>Updated Specification and Observation profiles to reflect the test sub category in slice</li>
+<li>Complete reconstruction on 32P30 to include the parts.  Incldues elements, ectd, bundle and diagram</li>
+<li>Corrections for 32S23 </li>
+<li>Corrections for 32S10 </li>
+<li>New profile for stability summary </li>
+<li>Substance Characterization change against multiple proflles </li>
+</ul>
+
 ### Changes and Updates for Version 0.1.6
 The current development IG
 <ul>
 <li>Added IP Statements, Dependencies and Globals to index page.  Now required for IG</li>
 <li>Corrected molecular formula and molecular weight in proviles</li>
 <li>Impurities now zero or many in composisiton </li>
-<li> </li>
-<li> </li>
-<li> </li>
+<li>Added profile for 3.2.S.3.0 Characterisation Bundle</li>
+<li>Added substanceType </li>
 </ul>
 
 ### Changes and Updates for Version 0.1.5

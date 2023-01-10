@@ -2,19 +2,7 @@
 allowmixing
 'Mixed model of use case and object
 package "eCTD Folder 3.2.S.2.3 Control of Materials Bundle" as NODES {
-  node "DrugSubstanceStructure" as N21 { 
-      object "**Parent:** DrugSubstance Profile" as obj22 {
-        **ValueSets:**
-        EVMPDSubstanceClassification
-        Units Of Measure Terminology
-        Chemical Structure Data File Type Terminology
-        Code System PQCMC Name Types
-    }
-}
-node "Base64DocumentReference" as NB64 { 
-      object "**Parent:** DocumentReferencee"  as obj64    
-}
-
+  
   node "EctdComposition32S23" as N1 { 
       object "**Parent:** Composition" as obj1 {
       **ValueSets:**
@@ -22,38 +10,55 @@ node "Base64DocumentReference" as NB64 {
     }
      
 }
-node "ComponentSubstance" as N2 { 
-      object "**Parent:** SubstanceDefinition" as obj2 {
-        **ValueSets:**
-        EVMPDSubstanceClassification
-        Units Of Measure Terminology
-        Chemical Structure Data File Type Terminology
-        Code System PQCMC Name Types
-    }
-     
-}
+
  node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **ValueSets:**
         GENC Country Codes
     }
 } 
-  node "DrugSubstanceMaterials" as NN { 
-      object "**Parent:** DrugSubstance Profile" as obj3 {
+  node "ExcipientRaw" as N21 { 
+      object "**Parent:** SubstanceDefinition" as obj22 {
         **ValueSets:**
-        EVMPDSubstanceClassification
-        Code System PQCMC Name Types 
-      }
-    
+          GENC Country Codes
+          Source Type Terminology
+    }
+}
+node "MfgTestSiteOrganization" as N21mfg { 
+    object "**Parent:** Organization" as objTS  {
+        **ValueSets:**
+         Manufacturing Site Unique Identifier Type
+         GENC Country Codes
+    }
 }
 
+ node "QualitySpecification" as N2 { 
+      object "**Parent:** PlanDefinition" as obj2 {
+        **ValueSets**
+        PqActionRelationTypes
+        PqcmcInterpretationCodeTerminology
+        PqcmcSpecificationStatusTerminology
+        PqcmcSpecificationTypeTerminology
+        PqcmcTestCategoryTerminology
+        PqcmcTestMethodOriginTerminology
+        PqcmcTestUsageTerminology
+        PqcmcUnitsMeasureTerminology
+    }
+        object "**Extensions**" as objQSEx {
+        AdditionalInformationExtension
+        InterpretationCodeExtension
+        SpecificationStatusExtension
+        SpecificationTypeExtension
+        TestMethodOriginExtension
+        TestOrderExtension
+        RRTExtension
+    }
+    obj2 <|-- objQSEx
+}
 
 N1 --> N21
-N1 --> NN
-NN --> N2
-
-N2 --> NB64
-N21 --> NB64
+N2 --> N21
 N1 --> NSO
+N21 --> N21mfg
 }
 @enduml
