@@ -1,7 +1,7 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-package "eCTD Folder 3.2.S.1.0 Bundle" as NODES {
+package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
   node "DrugSubstanceRepresentationalStructure" as N21 { 
       object "**Parent:** DrugSubstance Profile" as obj22 {
         **ValueSets:**

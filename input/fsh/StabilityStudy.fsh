@@ -183,6 +183,9 @@ Id: pqcmcStabilitySummary
 Title: "Stability Summary"
 Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
 
+* .extension contains pq-additional-info-extension named studysum-additional-info 0..* MS
+* .extension[studysum-additional-info] ^short = "Study Summary Additional"
+* .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
 * identifier 1..1 MS
 * status  MS
 * subjectReference 1..1 MS

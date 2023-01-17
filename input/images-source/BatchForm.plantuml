@@ -1,7 +1,7 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-package "eCTD Folder 3.2.P.3.2 Batch Formula Bundle" as NODES {
+package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
  node "BatchIngredientReference" as NN { 
       object "**Parent:** ActivityDefinition" as obj3 {
        

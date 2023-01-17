@@ -5,7 +5,7 @@ title: "PQ/CMC FHIR Implementation Guide"
 description:  guide to submitting PQ/CMC data for exchanged in FHIR resources.
 status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version:  0.1.7
+version:  0.1.8
 #fhirVersion: 5.0.0-snapshot3
 # fhirVersion: 5.0.0
 fhirVersion: 5.0.0-snapshot3
@@ -29,6 +29,7 @@ menu:
     Substance Container Closure System (3.2.S.6.0): eCTD32S60.html 
     Specification (3.2.S.4.1, 3.2.P.4.1 & 3.2.P.5.1): eCTDSP4151.html 
     Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
+    Stability Summary (3.2.S.7.1 & 3.2.P.8.1): eCTDSP7181.html
     Stability Data (3.2.S.7.3 & 3.2.P.8.3): eCTDSP7383.html
   General Instructions: instruction.html
   Artifacts: artifacts.html
@@ -58,6 +59,8 @@ pages:
      title: Specification
   eCTDSP4454.md:
      title: Batch Analyses
+  eCTDSP7181.md:
+     title: Stability Summary
   eCTDSP7383.md:
      title: Stability Data
   instruction.md:

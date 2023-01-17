@@ -5,7 +5,7 @@ analytical procedures used to generate the data and validation of these procedur
 included. 
 Reference ICH guidances Q1A, Q1B, Q2A, Q2B, and Q5C.</p>
 
-### eCTD Folder 3.2.S.7.3 and 3.2.P.8.3 Profile Map
+### eCTD Heading 3.2.S.7.3 and 3.2.P.8.3 Profile Map
 
 
 <div>{%include Stability.svg%}</div>

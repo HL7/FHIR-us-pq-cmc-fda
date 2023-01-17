@@ -29,7 +29,7 @@ Structure (name, manufacturer) NCE: The structural formula, including relative a
  Biotech: The schematic amino acid sequence indicating glycosylation sites or other post[1]translational modifications and relative molecular mass should be provided, as appropriate.
  </p>
 
-### eCTD Folder 3.2.S.1.0
+### eCTD Heading 3.2.S.1.0
 
 <div>{%include SubstanceGeneral.svg%}</div>
 

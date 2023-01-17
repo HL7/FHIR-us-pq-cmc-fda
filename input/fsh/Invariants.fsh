@@ -16,7 +16,7 @@ relationship.where(type.text = 'Impurity').exists() implies relationship.substan
 Severity: #error
 
 Invariant: cmc-when-unii-required
-Description: "A UNII is required in code for any of theese categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
+Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
 Expression: "(classification.where(coding.where(code in ('1' | '17' | '2' | '3' |'4') and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/evmpd-substance-classification').exists()).exists()
 implies code.code.text.exists())"
 Severity: #error
@@ -46,7 +46,7 @@ Description: "A structure has either a representation or document and supporting
 Expression: "structure.representation.document.resolve().content.attachment.data  xor structure.representation.representation.exists() and structure.representation.type.coding exists()"Severity: #error
 
 Invariant: cmc-structure-required
-Description: "A structure is required in code for any of theese categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
+Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
 Expression: "(classification.where(coding.system = 'https://www.ema.europa.eu' and coding.code in ('1' | '17' | '2' | '3' | '4')).exists() implies structure.exists())"
 Severity: #error
 

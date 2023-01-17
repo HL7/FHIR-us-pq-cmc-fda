@@ -1,7 +1,7 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-package "eCTD Folder 3.2.S P4151 P4151 Specification Bundle" as NODES {
+package "eCTD Heading 3.2.S P4151 P4151 Specification Bundle" as NODES {
   
 
   node "RoutineDrugProduct" as NN { 

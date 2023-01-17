@@ -20,7 +20,7 @@ FHIR resources used in this IG include:
 * ResearchStudy
 * Substance
 * SubstanceDefinition	
-* Comming Soon: ManufacturedItemDefinition
+* ManufacturedItemDefinition
 
 <span style="color:  #333333;;">At HL7, the PQ/CMC Project will create a single IG which will have MANY Profiles. HL7 allows balloting of an IG for specific Profiles. The Composition profiles will refer to other profiles which may or may not refer to other profiles.  An instance of a Composition profile will contain all instances of the cascade of referred profile, creating a complete document.  The Composition Profiles are </span>
 <br>
@@ -36,8 +36,8 @@ FHIR resources used in this IG include:
 
 * eCTD Specification Composition
 * eCTD Batch Analyses Composition
+* eCTD Stability Summary Composition
 * eCTD Stability Data Composition
-
 
 ### Credits
 

@@ -8,7 +8,7 @@ Source, history, and generation of the cell substrate Information on the source 
 <p>
 Cell banking system, characterization, and testing Information on the cell banking system, quality control activities, and cell line stability during production and storage (including procedures used to generate the master and working cell banks) should be provided as described in Q5B and Q5D. Reference ICH guidances Q5A, Q5B, Q5C, and Q5D. 
 </p>
-# eCTD Folder 3.2.S.2.3 Profile Map
+# eCTD Heading 3.2.S.2.3 Profile Map
 
 <div>{%include SubstanceControlMat.svg%}</div>
 

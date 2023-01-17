@@ -4,6 +4,6 @@
 be used in the manufacturing process, their amounts on a per batch basis, including overages, and 
 a reference to their quality standards.</p>
 
-### eCTD Folder 3.2.P.3.2 Profile Map
+### eCTD Heading 3.2.P.3.2 Profile Map
 <div>{%include BatchForm.svg%}</div>
 ### Example 3.2.P.3.2 Bundle

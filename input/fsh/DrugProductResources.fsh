@@ -366,8 +366,6 @@ Example: A bead (Product Part Identifier = B1) has a seal coating (Product Part 
 * component.property[RelsProf].value[x] 1..1 MS
 * component.property[RelsProf].value[x] only CodeableConcept
 * component.property[RelsProf].valueCodeableConcept.coding from PqcmcReleaseProfileVS
-
-
 * component.property[RelsMech].type ^short = "Product Part Release Mechanism"
 * component.property[RelsMech].type ^definition = """The method employed to realize the specified part release profile. [Source: SME Defined] Example: matrix or reservoir"""
 * component.property[RelsMech].type.coding = PqcmcProductCharacteristicCodes#RelsMech "Product Part Release Mechanism"

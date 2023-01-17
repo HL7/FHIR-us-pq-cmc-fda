@@ -13,24 +13,30 @@
 <artifact id="StructureDefinition/pqcmc-batch-ingredient" key="StructureDefinition-pqcmc-batch-ingredient" name="Batch Formula Ingredient"/>
 <artifact id="StructureDefinition/pq-quantity-batch-size" key="StructureDefinition-pq-quantity-batch-size" name="Batch Size"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization Terminology"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p32" key="StructureDefinition-cmc-ectd-document-32p32" name="CMC eCTD 32P32 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p55" key="StructureDefinition-cmc-ectd-document-32p55" name="CMC eCTD 32P55 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p70" key="StructureDefinition-cmc-ectd-document-32p70" name="CMC eCTD 32P70 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32s10" key="StructureDefinition-cmc-ectd-document-32s10" name="CMC eCTD 32S10 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32s23" key="StructureDefinition-cmc-ectd-document-32s23" name="CMC eCTD 32S23 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32s30" key="StructureDefinition-cmc-ectd-document-32s30" name="CMC eCTD 32S30 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32s60" key="StructureDefinition-cmc-ectd-document-32s60" name="CMC eCTD 32S60 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-sp4151" key="StructureDefinition-cmc-ectd-document-sp4151" name="CMC eCTD SP4151 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-sp4454" key="StructureDefinition-cmc-ectd-document-sp4454" name="CMC eCTD SP4454 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-sp7181" key="StructureDefinition-cmc-ectd-document-sp7181" name="CMC eCTD SP7181 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-sp7383" key="StructureDefinition-cmc-ectd-document-sp7383" name="CMC eCTD SP7383 Document"/>
 <artifact id="CodeSystem/pqcmc-capsule-classification-category" key="CodeSystem-pqcmc-capsule-classification-category" name="Capsule Classification Category"/>
 <artifact id="ValueSet/pqcmc-chemical-structure-datafile-type-terminology" key="ValueSet-pqcmc-chemical-structure-datafile-type-terminology" name="Chemical Structure Data File Type Terminology"/>
 <artifact id="ValueSet/pqcmc-closure-type-terminology" key="ValueSet-pqcmc-closure-type-terminology" name="Closure Type Terminology"/>
-<artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32p10 Document"/>
-<artifact id="StructureDefinition/cmc-ectd-document-32P32" key="StructureDefinition-cmc-ectd-document-32P32" name="CMC eCTD 32P32 Document"/>
-<artifact id="StructureDefinition/cmc-ectd-document-32S10" key="StructureDefinition-cmc-ectd-document-32S10" name="CMC eCTD 32S10 Document"/>
-<artifact id="StructureDefinition/cmc-ectd-document-32S23" key="StructureDefinition-cmc-ectd-document-32S23" name="CMC eCTD 32S23 Document"/>
-<artifact id="StructureDefinition/cmc-ectd-document-32S30" key="StructureDefinition-cmc-ectd-document-32S30" name="CMC eCTD 32S30 Document"/>
 <artifact id="CodeSystem/pqcmc-coating-purpose" key="CodeSystem-pqcmc-coating-purpose" name="Coating Purpose"/>
 <artifact id="ValueSet/pqcmc-coating-purpose-vs" key="ValueSet-pqcmc-coating-purpose-vs" name="Coating Purpose value set"/>
-<artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code system PQCMC Comp Section Types"/>
 <artifact id="CodeSystem/pqcmc-cs-product-characteristic" key="CodeSystem-pqcmc-cs-product-characteristic" name="Code System PQCMC Product Characteristic"/>
+<artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code system PQCMC Comp Section Types"/>
 <artifact id="StructureDefinition/pqcmc-ComponentSubstance" key="StructureDefinition-pqcmc-ComponentSubstance" name="Component Substance"/>
 <artifact id="ValueSet/pqcmc-conformance-to-criteria-terminology" key="ValueSet-pqcmc-conformance-to-criteria-terminology" name="Conformance to Criteria Terminology"/>
 <artifact id="StructureDefinition/pq-container-closure-extension" key="StructureDefinition-pq-container-closure-extension" name="Container Closure"/>
 <artifact id="ValueSet/pqcmc-container-orientation-terminology" key="ValueSet-pqcmc-container-orientation-terminology" name="Container Orientation Terminology"/>
 <artifact id="ValueSet/pqcmc-container-type-terminology" key="ValueSet-pqcmc-container-type-terminology" name="Container Type Terminology"/>
-<artifact id="DocumentReference/dd6bb623-afbb-4152-b6be-57936c446168" key="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168" name="dd6bb623-afbb-4152-b6be-57936c446168"/>
 <artifact id="StructureDefinition/pqcmc-drug-produc" key="StructureDefinition-pqcmc-drug-produc" name="Drug Product"/>
 <artifact id="StructureDefinition/pqcmc-dp-ingredient" key="StructureDefinition-pqcmc-dp-ingredient" name="Drug Product Batch Formula Ingredient"/>
 <artifact id="StructureDefinition/pqcmc-Component" key="StructureDefinition-pqcmc-Component" name="Drug Product Component"/>
@@ -48,28 +54,14 @@
 <artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-structure" key="StructureDefinition-pqcmc-drug-substance-structure" name="Drug Substance Molecular Structure"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-structure-represent" key="StructureDefinition-pqcmc-drug-substance-structure-represent" name="Drug Substance Structures"/>
-<artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
-<artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32p70" key="StructureDefinition-ectd-composition-32p70" name="eCTD Product Container Closure System Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
-<artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Value Set"/>
-<artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
-<artifact id="StructureDefinition/ectd-composition-sp7383" key="StructureDefinition-ectd-composition-sp7383" name="eCTD Stability Data Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterization"/>
-<artifact id="StructureDefinition/ectd-composition-32s60" key="StructureDefinition-ectd-composition-32s60" name="eCTD Substance Container Closure System Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
 <artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
 <artifact id="ValueSet/pqcmc-expiration-date-classification-terminology" key="ValueSet-pqcmc-expiration-date-classification-terminology" name="Expiration Date Classification Terminology"/>
-<artifact id="DocumentReference/fe3f13c1-b0ac-4x20-8024-f4386c290dfg" key="DocumentReference-fe3f13c1-b0ac-4x20-8024-f4386c290dfg" name="fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
-<artifact id="DocumentReference/fe3f13c1-f0ac-4b40-8024-f4386e290dfc" key="DocumentReference-fe3f13c1-f0ac-4b40-8024-f4386e290dfc" name="fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
 <artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Codes"/>
 <artifact id="CodeSystem/pqcmc-test-category-codes" key="CodeSystem-pqcmc-test-category-codes" name="Hierarchial Test Category Codes"/>
-<artifact id="ValueSet/pqcmc-impurity-classification-category-terminology" key="ValueSet-pqcmc-impurity-classification-category-terminology" name="Impurity classification Category Terminology"/>
 <artifact id="ValueSet/pqcmc-impurity-classification-terminology" key="ValueSet-pqcmc-impurity-classification-terminology" name="Impurity Classification Terminology"/>
+<artifact id="ValueSet/pqcmc-impurity-classification-category-terminology" key="ValueSet-pqcmc-impurity-classification-category-terminology" name="Impurity classification Category Terminology"/>
 <artifact id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>
 <artifact id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
 <artifact id="ValueSet/pqcmc-interval-description-code-terminology" key="ValueSet-pqcmc-interval-description-code-terminology" name="Interval Description Code Terminology"/>
@@ -123,19 +115,34 @@
 <artifact id="StructureDefinition/pqcmc-drug-substance-materials" key="StructureDefinition-pqcmc-drug-substance-materials" name="Substance Raw Materials"/>
 <artifact id="ValueSet/pqcmc-storage-condition-category-terminology" key="ValueSet-pqcmc-storage-condition-category-terminology" name="Test Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-category-terminology" key="ValueSet-pqcmc-test-category-terminology" name="Test Category Terminology"/>
-<artifact id="ValueSet/pqcmc-testing-site-unique-identifier-type-terminology" key="ValueSet-pqcmc-testing-site-unique-identifier-type-terminology" name="Testing Site Unique Identifier Type Terminology"/>
 <artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin Terminology"/>
 <artifact id="StructureDefinition/pq-order-extension" key="StructureDefinition-pq-order-extension" name="Test Order | Stage Sequence Order"/>
 <artifact id="ValueSet/pqcmc-test-subcategory-terminology" key="ValueSet-pqcmc-test-subcategory-terminology" name="Test Sub-Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-usage-terminology" key="ValueSet-pqcmc-test-usage-terminology" name="Test Usage Terminology"/>
+<artifact id="ValueSet/pqcmc-testing-site-unique-identifier-type-terminology" key="ValueSet-pqcmc-testing-site-unique-identifier-type-terminology" name="Testing Site Unique Identifier Type Terminology"/>
 <artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
-<page key="many" name="(many)"/>
+<artifact id="DocumentReference/dd6bb623-afbb-4152-b6be-57936c446168" key="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168" name="dd6bb623-afbb-4152-b6be-57936c446168"/>
+<artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
+<artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32p70" key="StructureDefinition-ectd-composition-32p70" name="eCTD Product Container Closure System Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32P10" key="StructureDefinition-ectd-composition-32P10" name="eCTD Product Description and Composition"/>
+<artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
+<artifact id="StructureDefinition/ectd-composition-sp7383" key="StructureDefinition-ectd-composition-sp7383" name="eCTD Stability Data Composition"/>
+<artifact id="StructureDefinition/ectd-composition-sp7181" key="StructureDefinition-ectd-composition-sp7181" name="eCTD Stability Stability Summary and Conclusion Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterization"/>
+<artifact id="StructureDefinition/ectd-composition-32s60" key="StructureDefinition-ectd-composition-32s60" name="eCTD Substance Container Closure System Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
+<artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Value Set"/>
+<artifact id="DocumentReference/fe3f13c1-b0ac-4x20-8024-f4386c290dfg" key="DocumentReference-fe3f13c1-b0ac-4x20-8024-f4386c290dfg" name="fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
+<artifact id="DocumentReference/fe3f13c1-f0ac-4b40-8024-f4386e290dfc" key="DocumentReference-fe3f13c1-f0ac-4b40-8024-f4386e290dfc" name="fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
 <page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="eCTDSP4454" name="Batch Analyses"/>
 <page key="change_notes" name="Change Notes"/>
 <page key="downloads" name="Downloads"/>
-<page key="eCTD32S30" name="eCTD Substance Characterisation"/>
 <page key="instruction" name="General Instructions"/>
 <page key="index" name="Home"/>
 <page key="eCTD32P32" name="Product Batch Formula"/>
@@ -144,8 +151,10 @@
 <page key="eCTD32P10" name="Product Description and Composition of the Drug Product"/>
 <page key="eCTDSP4151" name="Specification"/>
 <page key="eCTDSP7383" name="Stability Data"/>
+<page key="eCTDSP7181" name="Stability Summary"/>
 <page key="eCTD32S60" name="Substance Container Closure System"/>
 <page key="eCTD32S23" name="Substance Control of Materials"/>
 <page key="eCTD32S10" name="Substance General Information"/>
 <page key="toc" name="Table of Contents"/>
+<page key="eCTD32S30" name="eCTD Substance Characterisation"/>
 </specification>

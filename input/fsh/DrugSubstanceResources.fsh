@@ -3,8 +3,8 @@ Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
 Description: "Extension for measurement properties for ingredients in the batch formla.."
 * extension contains
-  overagePercent 0..1 MS and
-  overageJustification 0..1 MS
+ overagePercent 0..1 MS and
+ overageJustification 0..1 MS
 * extension[overagePercent].value[x] only decimal
 * extension[overagePercent].value[x] ^short = "Overage Percent"
 * extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
@@ -26,7 +26,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
-* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances  at a relatively high level acording to the Substance and the Substance Preparation Model.
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 1..1 MS
@@ -43,7 +43,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * characterization.description ^definition = ""
 * characterization.file 0..1 MS
 * characterization.file ^short = "Anlaysis Graphic"
-* characterization.file ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
+* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * molecularWeight 0..1 MS
@@ -56,16 +56,16 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * molecularWeight.amount.unit ^definition = """The labeled unit of measure for the molecular weight. [Source: Adapted for NCI EVS C117055]
  """
 * molecularWeight.amount.code 1..1 MS
-* molecularWeight.amount.code from  PqcmcUnitsMeasureTerminology
+* molecularWeight.amount.code from PqcmcUnitsMeasureTerminology
 
 * structure 0..1 MS
 * structure obeys cmc-substance-structure-graphic-required
 * structure.molecularFormula 0..1 MS
-* structure.molecularFormula ^short = "Molecular Formula"
+* structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
 * structure.technique 1..1 MS
 * structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance.  [Source: SME Defined]
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
@@ -84,7 +84,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
  """
 * structure.representation.document 0..1 MS
 * structure.representation.document ^short = "Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
 * code 0..1 MS
 * code obeys cmc-when-unii-required
@@ -102,83 +102,98 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
-    sub 0..1 MS and
-    brand 0..1 MS and
-    comn 0..1 MS and
-    gsrs 0..1 MS and
-    cas 0..1 MS and
-    inn 0..1 MS and
-    usan 0..1 MS and
-    iupac 0..1 MS and
-    isbt 0..1 MS and
-    comp 0..1 MS
-* name[sub].name  MS
+  sys 1..1 MS and
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS and
+  usp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS and
+  comp 0..1 MS
+* name[sys].name  MS
+* name[sys].name ^short = "Systematic"
+* name[sys].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[sys].type  MS
+* name[sys].type  = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sub].name MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
-* name[sub].type  MS
-* name[sub].type  = PqcmcProductIngredientNameType#138 "Generic"
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
 
-* name[brand].name  MS
+* name[brand].name MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
-* name[brand].type  MS
-* name[brand].type  = PqcmcProductIngredientNameType#137 "Brand" 
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
 
-* name[comn].name  MS
+* name[comn].name MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
-* name[comn].type  MS
-* name[comn].type  = PqcmcProductIngredientNameType#139 "Common"
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
-* name[gsrs].name  MS
+* name[gsrs].name MS
 * name[gsrs].name ^short = "GSRS Accepted"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
-* name[gsrs].type  MS
-* name[gsrs].type  = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
 
-* name[cas].name  MS
+* name[usp].name MS
+* name[usp].name ^short = ""USP/NF""
+* name[usp].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usp].type MS
+* name[usp].type = PqcmcProductIngredientNameType#147 "USP/NF"
+
+* name[cas].name MS
 * name[cas].name ^short = "CAS Number"
 * name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
 Example: CAS [103-90-2]
  """
 * name[cas].type MS
-* name[cas].type  = PqcmcProductIngredientNameType#CAS "CAS Number"
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"
 
-* name[inn].name  MS
+* name[inn].name MS
 * name[inn].name ^short = "INN"
 * name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/]
 Example: Paracetamol
 """
 * name[inn].type MS
-* name[inn].type  = PqcmcProductIngredientNameType#INN "INN"
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"
 
-* name[usan].name  MS
+* name[usan].name MS
 * name[usan].name ^short = "USAN"
 * name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
 Example: acetaminophen
  """
-* name[usan].type  = PqcmcProductIngredientNameType#USAN "USAN"
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"
 
 * name[iupac].name MS
 * name[iupac].name ^short = "IUPAC Name"
 * name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined]
 Example: N- (4-hydroxyphenyl)acetamide
 """
-* name[iupac].type  MS
-* name[iupac].type  = PqcmcProductIngredientNameType#IUPAC "IUPAC"
+* name[iupac].type MS
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"
 
-* name[isbt].name  MS
+* name[isbt].name MS
 * name[isbt].name ^short = "ISBT 128"
 * name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
  """
-* name[isbt].type  = PqcmcProductIngredientNameType#ISBT "ISBT 128"
+* name[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"
 
-* name[comp].name  MS
+* name[comp].name MS
 * name[comp].name ^short = "Company Code"
 * name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
@@ -218,14 +233,14 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.description ^definition = ""
 * characterization.file 0..1 MS
 * characterization.file ^short = "Anlaysis Graphic"
-* characterization.file ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
+* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure 0..1 MS
 * structure obeys cmc-representation-or-document
 * structure.technique 1..1 MS
 * structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance.  [Source: SME Defined]
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
@@ -263,30 +278,30 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
-    sub 0..1 MS and
-    comn 0..1 MS and
-    gsrs 0..1 MS 
-* name[sub].name  MS
+  sub 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS 
+* name[sub].name MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
-* name[sub].type  MS
-* name[sub].type  = PqcmcProductIngredientNameType#138 "Generic"
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
 
-* name[comn].name  MS
+* name[comn].name MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
-* name[comn].type  MS
-* name[comn].type  = PqcmcProductIngredientNameType#139 "Common"
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
-* name[gsrs].name  MS
+* name[gsrs].name MS
 * name[gsrs].name ^short = "GSRS Accepted"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
-* name[gsrs].type  MS
-* name[gsrs].type  = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
 
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
@@ -302,7 +317,7 @@ Description: "Alternate structure present in the drug substance"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
 * structure.technique 1..1 MS
 * structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance.  [Source: SME Defined]
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
@@ -321,7 +336,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
  """
 * structure.representation.document 0..1 MS
 * structure.representation.document only Reference(Base64DocumentReference)
-* name.name  MS
+* name.name MS
 * name.name ^short = "Polymorphic Form Identification"
 * name.name ^definition = """The designation of the polymorphs present in the drug substance. [Source: SME Defined]
 Example: Polymorph A
@@ -336,7 +351,7 @@ Description: "Any raw material intended for use in the manufacture of a drug sub
 * identifier ^short = "optional user designated identifier"	
 * grade 1..1
 * grade ^short = "Quality Standard"
-* grade  ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
+* grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
 * grade.coding from PqcmcQualityBenchmarkTerminology
@@ -352,13 +367,13 @@ Examples: USP/NF, EP, Company Standard
 * structure.representation.format.text
 * structure.representation.document 0..1 MS
 * structure.representation.document ^short = "Substance Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance.  Required for Small Molecules.  [Source: SME Defined]"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
 * code 0..1 MS
 * code obeys cmc-when-unii-required
 * code.code 0..1 MS
 * code.code ^short = "UNII"
-* code.code ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+* code.code ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
 Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
@@ -371,38 +386,38 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
-    sub 0..1 MS and
-    brand 0..1 MS and
-    comn 0..1 MS and
-    gsrs 0..1 MS 
-* name[sub].name  MS
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS 
+* name[sub].name MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
-* name[sub].type  MS
-* name[sub].type  = PqcmcProductIngredientNameType#138 "Generic"
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
 
-* name[brand].name  MS
+* name[brand].name MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
-* name[brand].type  MS
-* name[brand].type  = PqcmcProductIngredientNameType#137 "Brand" 
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
 
-* name[comn].name  MS
+* name[comn].name MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
-* name[comn].type  MS
-* name[comn].type  = PqcmcProductIngredientNameType#139 "Common"
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
-* name[gsrs].name  MS
+* name[gsrs].name MS
 * name[gsrs].name ^short = "GSRS Accepted"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
-* name[gsrs].type  MS
-* name[gsrs].type  = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
 
 * sourceMaterial 1..1 MS
 * sourceMaterial.type 0..1
@@ -474,7 +489,7 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 * group 0..1 MS
 * group ^short = "Product Part Ingredient Physical Location"
 * group ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
-Examples: Intragranular, Extra granular, Blend  
+Examples: Intragranular, Extra granular, Blend 
 """
 * group.coding from PqcmcProductPartIngredientPhysicalLocationVS
 * substance.code 1..1 MS
@@ -489,7 +504,7 @@ Quantity UOM: A named quantity in terms of which other quantities are measured o
 * substance.strength.concentrationQuantity.value 1..1
 * substance.strength.concentrationQuantity.unit 1..1
 * substance.strength.concentrationQuantity.code 1..1
-* substance.strength.concentrationQuantity.code from  PqcmcUnitsMeasureTerminology
+* substance.strength.concentrationQuantity.code from PqcmcUnitsMeasureTerminology
 * substance.strength.textConcentration 1..1 MS
 * substance.strength.textConcentration ^short = "Strength Textual"
 * substance.strength.textConcentration ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
@@ -607,13 +622,13 @@ Profile: ExcipientRaw
 Parent: SubstanceDefinition
 Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
-Description: "Provides sufficient information to identify an inactive substance  and raw materials and its source when stability data is required in the submission."
+Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"	
 * grade 1..1
 * grade ^short = "Quality Standard"
-* grade  ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
+* grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
 * grade.coding from PqcmcQualityBenchmarkTerminology
@@ -715,7 +730,7 @@ Profile: DrugSubstanceMaterials
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-materials
 Title: "Substance Raw Materials"
-Description: "Drug Substance Raw Materials.  Profile on Drug Substance profile."
+Description: "Drug Substance Raw Materials. Profile on Drug Substance profile."
 
 * identifier MS
 * manufacturer 1..1 MS
@@ -748,7 +763,7 @@ Profile: DrugSubstanceRepresentationalStructure
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-structure-represent
 Title: "Drug Substance Structures"
-Description: "Drug Substance (Active Ingredient) Representational Structures.  Profile on Drug Substance profile."
+Description: "Drug Substance (Active Ingredient) Representational Structures. Profile on Drug Substance profile."
 
 * identifier 0..1
 * structure 1..1
@@ -771,7 +786,7 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 * identifier 0..1 MS
 * characterization 0..* MS
 * structure 1..1 MS
-* structure.representation.document.display  0..1 MS
+* structure.representation.document.display 0..1 MS
 * structure.representation.document.display ^short = "Analytical Instrument Data File Narrative Text"
 * structure.representation.document.display ^definition = "??? TDB ???"
 * code MS

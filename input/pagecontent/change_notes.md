@@ -1,7 +1,30 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 0.1.7
+### Changes and Updates for Version 0.1.8
 The current development IG
+<ul>
+<li>Changed Folder to Heading</li>
+<li>Corrected errata on 0.1.7 error page </li>
+<li>Added page for stability summary</li>
+<li>Created plantuml for stability summary</li>
+</ul>
+Added the following profiles:
+<ul>
+<li>Profile: EctdCompositionSP7181</li>
+<li>CMCeCTDDocumentSP4151</li>
+<li>CMCeCTDDocumentSP7383</li>
+<li>CMCeCTDDocumentSP4454</li>
+<li>CMCeCTDDocument32P32</li>
+<li>CMCeCTDDocument32P55</li>
+<li>CMCeCTDDocument32P70</li>
+<li>CMCeCTDDocument32P10</li>
+<li>CMCeCTDDocument32S60</li>
+<li>CMCeCTDDocument32S10</li>
+<li>CMCeCTDDocument32S23</li>
+<li>CMCeCTDDocument32S30</li>
+</ul>
+
+### Changes and Updates for Version 0.1.7
 <ul>
 <li>changed bundle headers in ribbon</li>
 <li>added 0 to 32S3 in diagram, removed units added Chemical Structure Data File Type Terminology </li>
@@ -15,7 +38,7 @@ The current development IG
 </ul>
 
 ### Changes and Updates for Version 0.1.6
-The current development IG
+
 <ul>
 <li>Added IP Statements, Dependencies and Globals to index page.  Now required for IG</li>
 <li>Corrected molecular formula and molecular weight in proviles</li>

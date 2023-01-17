@@ -1,0 +1,69 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES {
+
+  node "RoutineDrugProduct" as NN { 
+      object "**Parent:** DrugProduct" as obj3 {
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+          
+      }
+}
+diamond CH
+
+node "RoutineSubstanceDefinition for API" as NNS { 
+      object "**Parent:** SubstanceDefinition" as obj4 {
+                **ValueSets:**
+                EVMPDSubstanceClassification
+                Quality Benchmark Terminology
+                GENC Country Codes
+                Source Type Terminology
+      }
+}
+
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+
+node "StabilitySummary" as NMain { 
+      object "**Parent:** PlanDefinition" as objMain {
+        **ValueSets:**
+	Units Of Measure Terminology
+      Storage Conditions Terminology
+      }  
+      object "**Extensions**" as objExs2 {
+        pq-additional-info-extension
+}
+
+objMain <|-- objExs2  
+}
+
+node "EctdCompositionSP7181" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+CH --> NN
+CH --> NNS
+N1 --> CH
+N1 --> NSO
+NN --> NMFG
+NNS --> NMFG
+N1 --> NMain
+
+}
+@enduml

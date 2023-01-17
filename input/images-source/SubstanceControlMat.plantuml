@@ -1,7 +1,7 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-package "eCTD Folder 3.2.S.2.3 Control of Materials Bundle" as NODES {
+package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
   
   node "EctdComposition32S23" as N1 { 
       object "**Parent:** Composition" as obj1 {

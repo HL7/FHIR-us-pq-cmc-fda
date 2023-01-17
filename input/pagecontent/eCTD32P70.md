@@ -8,7 +8,7 @@ For nonfunctional secondary packaging components (e.g., those that neither provi
 protection nor serve to deliver the product), only a brief description should be provided. For 
 functional secondary packaging components, additional information should be provided. 
 Suitability information should be located in 3.2.P.2.</p>
-### eCTD Folder 3.2.P.7.0 Profile Map
+### eCTD Heading 3.2.P.7.0 Profile Map
 <div>{%include ContainerClosure.svg%}</div>
 
 ### Example 3.2.P.7.0 Bundle

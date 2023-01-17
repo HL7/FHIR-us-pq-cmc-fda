@@ -1,8 +1,8 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-package "3.2.S.3.0 Characterisation Bundle" as NODES {
- 
+package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
+  
 node "EctdComposition32S30" as N1 { 
       object "**Parent:** Composition" as obj1 {
       **ValueSets:**

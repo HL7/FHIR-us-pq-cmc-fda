@@ -586,7 +586,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #32P51 "Product Specification"
 * #32P52 "Product Analytical Procedures"
 * #32P53 "Product Validation of Analytical Procedures"
-* #32P54 "Product Batch Analyses"
+* #32P54 "Product Batch Analyses" 
 * #32P55 "Product Characterization of Impurities"
 * #32P56 "Product Justification of Specifications"
 * #32P60 "Product Reference Standards or Materials"
@@ -598,6 +598,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #SP4151 "Quality Specification"
 * #SP4454 "Batch Analyses"
 * #SP7383 "Stability Data"
+* #SP7181 "Stability Summary and Conclusion"
 
 ValueSet: PqcmcBatchUtilizationTerminology
 Id: pqcmc-batch-utilization-terminology

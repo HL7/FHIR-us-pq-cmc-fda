@@ -11,7 +11,7 @@ Composition is usually provided as a list of all components of the dosage form, 
 Overfill information (Justification for overfill belongs in the  eCTD32P32 FHIR bundle).
 Reference ICH guidances Q6A and Q6B.
 </p>
-### eCTD Folder 3.2.P.1.0 Profile Map
+### eCTD Heading 3.2.P.1.0 Profile Map
 <div>{%include ProdDesComp.svg%}</div>
 ### Example 3.2.P.1.0 Bundle
 
