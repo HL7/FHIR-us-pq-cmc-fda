@@ -114,8 +114,6 @@ node "SponsorOrganization" as NSO {
 }
  diamond CH
 
-
-
 N1 --> CH
 N1 --> N2
 N1 --> NSO

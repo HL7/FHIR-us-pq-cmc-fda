@@ -32,6 +32,7 @@ node "DrugSubstanceImpurities" as N6 {
     }   
 }
 
+
 N1 --> NSO   
 NN --> N6
 N1 --> NN 

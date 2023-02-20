@@ -1,7 +1,26 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 0.1.8
+### Changes and Updates for Version 0.1.9
 The current development IG
+<ul>
+<li>added name parts to all Drug Product profiles.  Used HL7 terminology for parts http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2.  Should add text intro on which of these codes is expected.  Note: PQ/CMC has non-propietary mandatory and propeitary optional.  This is the opposite of SPL.</li>
+<li>The cardinaltiy of ActivityDefiniton changed for Ingredient from * to 1.  This nessitated a rewrite of everything related to 32P32: main profiles, composition profile and bundle</li>
+<li>edit PlantUml Diagram for 32P32</li>
+<li>Added content percent to MID</li>
+<li>Move names and definitions from property types to values for all in Manufactured Drug Product</li>
+<li>Added total type elements for 32P1 for acition requested from Clearnace review.</li>
+<li>remove reference to DrugProductDescription from Profile: DrugProductComponent </li>
+<li>Ensure uml daigrams refresh on CI build site</li>
+</ul>
+
+<ul>
+Added the following examples:
+<li>Example of ExcipientRaw profile </li>
+<li>Example RoutineSubstanceDefinition </li>
+<li>Example of MfgTestSiteOrganization profile on Organization</li>
+</ul>
+
+### Changes and Updates for Version 0.1.8
 <ul>
 <li>Changed Folder to Heading</li>
 <li>Corrected errata on 0.1.7 error page </li>

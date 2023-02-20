@@ -8,7 +8,6 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
-     
 }
 
  node "SponsorOrganization" as NSO { 

@@ -68,8 +68,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles.
 * entry contains
     Composition 1..1 and
     MedicinalProductDefinition 1..1 and
+    ManufacturedItemDefinition 1..1 and
     Organization 1..* and
-    ActivityDefinition 1..* and
     Ingredient 1..* and
     SubstanceDefinition 1..*
 * entry[Composition].fullUrl MS
@@ -77,13 +77,13 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles.
 * entry[Composition].resource only ectd-composition-32p32
 * entry[MedicinalProductDefinition].fullUrl MS
 * entry[MedicinalProductDefinition].resource MS
-* entry[MedicinalProductDefinition].resource only BatchFormula
+* entry[MedicinalProductDefinition].resource only BatchFormulaMedicinalProduct
+* entry[ManufacturedItemDefinition].fullUrl MS
+* entry[ManufacturedItemDefinition].resource MS
+* entry[ManufacturedItemDefinition].resource only BatchFormula
 * entry[Organization].fullUrl MS
 * entry[Organization].resource MS
 * entry[Organization].resource only mfg-test-site-organization or cmc-sponsor-organization
-* entry[ActivityDefinition].fullUrl MS
-* entry[ActivityDefinition].resource MS
-* entry[ActivityDefinition].resource only BatchIngredientReference
 * entry[Ingredient].fullUrl MS
 * entry[Ingredient].resource MS
 * entry[Ingredient].resource only DrugProductIngredient
@@ -602,7 +602,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
 * section.code = pqcmc-comp-section-types#32P32 "Product Batch Formula"
 * section.title 1..1 MS
-* section.entry only Reference(BatchFormula)
+* section.entry only Reference(BatchFormulaMedicinalProduct)
 
 Profile: EctdComposition32P55
 Parent: Composition

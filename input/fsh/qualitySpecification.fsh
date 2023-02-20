@@ -162,24 +162,25 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * action.extension contains pq-order-extension named testOrder 1..1 MS
 * action.extension[testOrder] ^short = "Test/Stage Order"
 * action.extension[testOrder] ^definition = "The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]"
-* action.extension contains pq-rrt-extension named rrt 1..1 MS
-* action.title 1.. MS
-* action.title ^short = "Test Name | Stage Name"
-* action.title ^definition = """Stage Name: A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
+* action.prefix 1.. MS
+* action.prefix ^short = "Stage Name"
+* action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
 Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP <711>)
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP <151>; 21 CFR 610.13(b) Test for pyrogenic substances)
-
-Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+Default 'Single Stage'.
+"""
+* action.title 1.. MS
+* action.title ^short = "Test Name"
+* action.title ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
 Note: as defined by the sponsor
-
-If there is more than one comment, include in this element.  Markdown allows formating for clarity.
 """
 * action.title.extension contains pq-rrt-extension named rrt 1..1 MS
 * action.description 0..1 MS
 * action.description ^short = "Test Additional Information | Stage Additional Information"
 * action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
 Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
+If there is more than one comment, include in this element.  Markdown allows formating for clarity.
 """
 * action.code  MS
 * action.code.coding obeys cmc-sub-test-category
@@ -207,14 +208,19 @@ Stage Additional Information: Placeholder for providing any comments that are re
 * action.code.text ^definition = """ The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 Note: The full descriptor of the technique is part of the next data element - Reference to Procedure """
 
-* action.documentation 0..* MS
+* action.documentation 0..1 MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
-* action.documentation.document.url 1..1 MS
-* action.documentation.document.url ^short = "Refernce to Procedure"
-* action.documentation.document.url ^definition = """A sponsor/applicant provided alphanumeric code that identifies the procedure. [Source: SME Defined]. Example: HP1234-2008
-Note: This could also be a transferred lab method.
+* action.documentation.label 1..1 MS
+* action.documentation.label ^short = "Refernce to Procedure"
+* action.documentation.label ^definition = """The reference to the actual file of the analytical procedure.
+Example: the file path to the procedure document.
 """
 * action.goalId 1..* MS
 * action.goalId ^short = "Reference to Acceptance Criteria"
-* action.relatedAction ^short = "Alternate Test or Prior Stage"
-* action.relatedAction.relationship from PqActionRelationTypes (required)
+* action.relatedAction ^short = "Alternate Test or Subsequent Stage"
+* action.relatedAction.relationship from PqActionRelationTypes (required) 
+* action.relatedAction.relationship ^short = "concurrent for Alternate Test; after for Stage testing"
+* action.cardinalityBehavior MS
+* action.cardinalityBehavior ^short = "Only required when relatedAction is an alternate test. Value will be single"
+* action.action 0..* MS
+* action.action ^short = "Stages of parent test. Use testOrder decimal values to indicate group sequencing."

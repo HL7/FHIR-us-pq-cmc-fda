@@ -2,7 +2,6 @@
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.S P4151 P4151 Specification Bundle" as NODES {
-  
 
   node "RoutineDrugProduct" as NN { 
       object "**Parent:** DrugProduct" as obj3 {

@@ -16,7 +16,7 @@
    <name value="FHIR_pqcmc"/>
    <title value="PQ/CMC FHIR Implementation Guide"/>
    <status value="draft"/>
-   <date value="2023-01-17T00:30:49-05:00"/>
+   <date value="2023-02-19T17:36:45-05:00"/>
    <publisher value="HL7 International - Biomedical Research and Regulatory WG"/>
    <contact>
       <name value="HL7 International - Biomedical Research and Regulatory WG"/>
@@ -334,12 +334,12 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-batch-formula.html"/>
+            <valueUri value="StructureDefinition-pqcmc-product-batch-formula.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-batch-formula"/>
+            <reference value="StructureDefinition/pqcmc-product-batch-formula"/>
          </reference>
-         <name value="Batch Formula"/>
+         <name value="Drug Product Batch Formula"/>
          <description value="Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
@@ -349,13 +349,13 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-batch-ingredient.html"/>
+            <valueUri value="StructureDefinition-pqcmc-batch-formula-product.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-batch-ingredient"/>
+            <reference value="StructureDefinition/pqcmc-batch-formula-product"/>
          </reference>
-         <name value="Batch Formula Ingredient"/>
-         <description value="Identifies the ingredients for the batch formula."/>
+         <name value="Batch Formula Drug Product Identification"/>
+         <description value="The Drug Product produced by the batch formula."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -1234,6 +1234,21 @@
             <valueString value="StructureDefinition:extension"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-pq-content-percent-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/pq-content-percent-extension"/>
+         </reference>
+         <name value="Content (%)"/>
+         <description value="The percentage of the component in the drug product."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-drug-product-manufacturing-batch.html"/>
          </extension>
          <reference>
@@ -1354,21 +1369,6 @@
             <valueString value="StructureDefinition:extension"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pq-quantity-batch-size.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/pq-quantity-batch-size"/>
-         </reference>
-         <name value="Batch Size"/>
-         <description value="The quantity made by the batch formula."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-str-extension"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:extension"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-pq-rrt-extension.html"/>
          </extension>
          <reference>
@@ -1421,6 +1421,36 @@
          </reference>
          <name value="Specification Type"/>
          <description value="A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined]&#xA;Examples: Drug product, drug substance, etc."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-pq-strength-operator-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/pq-strength-operator-extension"/>
+         </reference>
+         <name value="Strength Operator"/>
+         <description value="A mathematical symbol that denotes equality or inequality between two values."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-pq-strength-type-extension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/pq-strength-type-extension"/>
+         </reference>
+         <name value="Strength Type (for API)"/>
+         <description value="A physical (content) of activity measurement of the strength of the active ingredint.."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-extension"/>
       </resource>
@@ -2074,6 +2104,36 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-batch-formula-property-cs.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/batch-formula-property-cs"/>
+         </reference>
+         <name value="Batch Formula Property Type"/>
+         <description value="Batch Formula Property Types"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-medicinal-product-contact-type-cs.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/medicinal-product-contact-type-cs"/>
+         </reference>
+         <name value="Medicinal Product Contact Type"/>
+         <description value="Contact type for a Medicinal Product"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="CodeSystem-pqcmc-capsule-classification-category.html"/>
          </extension>
          <reference>
@@ -2119,13 +2179,13 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="CodeSystem-pqcmc-cs-product-characteristic.html"/>
+            <valueUri value="CodeSystem-pqcmc-product-characteristic.html"/>
          </extension>
          <reference>
-            <reference value="CodeSystem/pqcmc-cs-product-characteristic"/>
+            <reference value="CodeSystem/pqcmc-product-characteristic"/>
          </reference>
          <name value="Code System PQCMC Product Characteristic"/>
-         <description value="Product Characteristic for the characteristic element in MedicinalProductDefintion."/>
+         <description value="Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-codesystem"/>
       </resource>
@@ -2236,6 +2296,36 @@
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Organization"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Organization-029f1cb8-2dc7-4971-8309-55e6dd129918.html"/>
+         </extension>
+         <reference>
+            <reference value="Organization/029f1cb8-2dc7-4971-8309-55e6dd129918"/>
+         </reference>
+         <name value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
+         <description value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="SubstanceDefinition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="SubstanceDefinition-0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b.html"/>
+         </extension>
+         <reference>
+            <reference value="SubstanceDefinition/0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b"/>
+         </reference>
+         <name value="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
+         <description value="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="DocumentReference"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -2251,6 +2341,36 @@
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Organization"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Organization-78f4b797-fbb1-4078-974d-9471bdae7ada.html"/>
+         </extension>
+         <reference>
+            <reference value="Organization/78f4b797-fbb1-4078-974d-9471bdae7ada"/>
+         </reference>
+         <name value="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
+         <description value="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="MedicinalProductDefinition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="MedicinalProductDefinition-8e854cea-f491-471f-b5dc-910f20135658.html"/>
+         </extension>
+         <reference>
+            <reference value="MedicinalProductDefinition/8e854cea-f491-471f-b5dc-910f20135658"/>
+         </reference>
+         <name value="Includes the properties of the drug product, its components and impurities"/>
+         <description value="Includes the properties of the drug product, its components and impurities"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-produc"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="DocumentReference"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -2262,6 +2382,21 @@
          <name value="dd6bb623-afbb-4152-b6be-57936c446168"/>
          <description value="Figure A1 in base64"/>
          <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="SubstanceDefinition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="SubstanceDefinition-f5de5600-7e54-4d2d-b442-7b3366531231.html"/>
+         </extension>
+         <reference>
+            <reference value="SubstanceDefinition/f5de5600-7e54-4d2d-b442-7b3366531231"/>
+         </reference>
+         <name value="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
+         <description value="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -2454,13 +2589,13 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-batch-formula.html"/>
-               <title value="Batch Formula"/>
+               <nameUrl value="StructureDefinition-pqcmc-product-batch-formula.html"/>
+               <title value="Drug Product Batch Formula"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-batch-ingredient.html"/>
-               <title value="Batch Formula Ingredient"/>
+               <nameUrl value="StructureDefinition-pqcmc-batch-formula-product.html"/>
+               <title value="Batch Formula Drug Product Identification"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2744,6 +2879,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-pq-content-percent-extension.html"/>
+               <title value="Content (%)"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-drug-product-manufacturing-batch.html"/>
                <title value="Drug Product Manufacturing Batch"/>
                <generation value="generated"/>
@@ -2784,11 +2924,6 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pq-quantity-batch-size.html"/>
-               <title value="Batch Size"/>
-               <generation value="generated"/>
-            </page>
-            <page>
                <nameUrl value="StructureDefinition-pq-rrt-extension.html"/>
                <title value="Relative Retention Time"/>
                <generation value="generated"/>
@@ -2806,6 +2941,16 @@
             <page>
                <nameUrl value="StructureDefinition-pq-specification-type-extension.html"/>
                <title value="Specification Type"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-pq-strength-operator-extension.html"/>
+               <title value="Strength Operator"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-pq-strength-type-extension.html"/>
+               <title value="Strength Type (for API)"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -3024,6 +3169,16 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="CodeSystem-batch-formula-property-cs.html"/>
+               <title value="Batch Formula Property Type"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-medicinal-product-contact-type-cs.html"/>
+               <title value="Medicinal Product Contact Type"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="CodeSystem-pqcmc-capsule-classification-category.html"/>
                <title value="Capsule Classification Category"/>
                <generation value="generated"/>
@@ -3039,7 +3194,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="CodeSystem-pqcmc-cs-product-characteristic.html"/>
+               <nameUrl value="CodeSystem-pqcmc-product-characteristic.html"/>
                <title value="Code System PQCMC Product Characteristic"/>
                <generation value="generated"/>
             </page>
@@ -3079,13 +3234,38 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="Organization-029f1cb8-2dc7-4971-8309-55e6dd129918.html"/>
+               <title value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="SubstanceDefinition-0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b.html"/>
+               <title value="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e.html"/>
                <title value="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="Organization-78f4b797-fbb1-4078-974d-9471bdae7ada.html"/>
+               <title value="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="MedicinalProductDefinition-8e854cea-f491-471f-b5dc-910f20135658.html"/>
+               <title value="Includes the properties of the drug product, its components and impurities"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168.html"/>
                <title value="dd6bb623-afbb-4152-b6be-57936c446168"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="SubstanceDefinition-f5de5600-7e54-4d2d-b442-7b3366531231.html"/>
+               <title value="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
                <generation value="generated"/>
             </page>
             <page>

@@ -1,19 +1,50 @@
+Extension: StrengthOperatorExtension
+Id: pq-strength-operator-extension
+Title: "Strength Operator"
+Description: "A mathematical symbol that denotes equality or inequality between two values."
+* value[x] 1..1 MS
+* value[x] only CodeableConcept
+* value[x] from PqcmcStrengthOperatorTerminology (required)
+
+Extension: StrengthTypeExtension
+Id: pq-strength-type-extension
+Title: "Strength Type (for API)"
+Description: "A physical (content) of activity measurement of the strength of the active ingredint.."
+* value[x] 1..1 MS
+* value[x] only CodeableConcept
+* value[x] from PqcmcStrengthTypeTerminology (required)
+
+Extension: ContentPercentExtension
+Id: pq-content-percent-extension
+Title: "Content (%)"
+Description: "The percentage of the component in the drug product."
+* value[x] 0..1 MS
+* value[x] only decimal
+
 Extension: ProductBatchIngredientExtension
 Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
 Description: "Extension for measurement properties for ingredients in the batch formla.."
 * extension contains
- overagePercent 0..1 MS and
- overageJustification 0..1 MS
+  overagePercent 0..1 MS and
+  overageJustification 0..1 MS and
+  strengthTextual 1..1 MS
 * extension[overagePercent].value[x] only decimal
 * extension[overagePercent].value[x] ^short = "Overage Percent"
 * extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
 Note: This is not for stability loss, and generally not permitted.
-Example: 3 percent overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
 """
 * extension[overageJustification].value[x] only markdown
 * extension[overageJustification].value[x] ^short = "Overage Justification"
 * extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
+* extension[strengthTextual] 1..1 MS 
+* extension[strengthTextual].value[x] only string
+* extension[strengthTextual].value[x] ^short = "Strength Textual"
+* extension[strengthTextual].value[x] ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+Note: This is typically applicable to biologics
+Example: International Units for Enzymes
+"""
 
 Profile: DrugSubstance
 Parent: SubstanceDefinition
@@ -86,14 +117,15 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * structure.representation.document ^short = "Structure Graphic"
 * structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
-* code 0..1 MS
+* code MS
 * code obeys cmc-when-unii-required
-* code.code 0..1 MS
-* code.code ^short = "UNII"
-* code.code ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+* code.code 1..1 MS
+* code.code.text ^short = "UNII"
+* code.code.text ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
 Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
+//element(*,SubstanceDefinition)/code/code/text/@value
 //BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 //BR: isbt Applicable to blood products.
 * name 1..* MS
@@ -114,12 +146,12 @@ Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/Da
   iupac 0..1 MS and
   isbt 0..1 MS and
   comp 0..1 MS
-* name[sys].name  MS
+* name[sys].name MS
 * name[sys].name ^short = "Systematic"
 * name[sys].name ^definition = """TDB [Source: SME Defined]
 """
-* name[sys].type  MS
-* name[sys].type  = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sys].type MS
+* name[sys].type = pqcmc-product-ingredient-name-type#145 "Systematic"
 * name[sub].name MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
@@ -466,11 +498,63 @@ Description: "The amount details about the drug product components to define the
 Examples: removed during process, adjusted for loss on drying, etc.
 """
 * status.code
-* for only Reference(DrugProductDescription)
 * for ^short = "Reference to MedicinalProductDefinition"
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only Reference(ComponentSubstance)
+* substance.strength 1..1 MS
+* substance.strength obeys cmc-strength-type-cases
+* substance.strength obeys cmc-arbitrary-unit
+* substance.strength.extension 1..3
+* substance.strength.extension contains pq-strength-type-extension named strengthType 1..1 MS
+* substance.strength.extension[strengthType] ^short = "Strength Type (for API)"
+* substance.strength.extension[strengthType] ^definition = """A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
+Example: Mass, Activity
+"""
+* substance.strength.extension contains pq-content-percent-extension named contentPercent 1..1 MS
+* substance.strength.extension[contentPercent] ^short = "Product Ingredient Content Percent"
+* substance.strength.extension[contentPercent] ^definition = """The percentage of the component in the drug product. [Source: SME Defined]
+Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
+"""
+* substance.strength.presentation[x] 1..1 MS
+* substance.strength.presentation[x] only Ratio or Quantity
+* substance.strength.presentationRatio 0..1 MS
+* substance.strength.presentationRatio.numerator 1..1 MS
+* substance.strength.presentationRatio.numerator.value ^short = "Product Ingredient Amount Numeric Numerator"
+* substance.strength.presentationRatio.numerator.value ^definition = "Specifies the quantity of an ingredient in a single unit of the drug product. [Source: SME Defined]"
+* substance.strength.presentationRatio.numerator.value 1..1 MS
+* substance.strength.presentationRatio.numerator.unit 1..1 MS
+* substance.strength.presentationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
+* substance.strength.presentationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
+Example: mg]
+"""
+* substance.strength.presentationRatio.numerator.code 1..1 MS
+* substance.strength.presentationRatio.numerator.code from  PqcmcUnitsMeasureTerminology
+* substance.strength.presentationRatio.denominator 1..1 MS
+* substance.strength.presentationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
+* substance.strength.presentationRatio.denominator.value  ^definition = "Specifies the quantity of the ingredient (s) consistent with this single unit of drug product. [Source: SME Defined]"
+* substance.strength.presentationRatio.denominator.value 1..1 MS
+* substance.strength.presentationRatio.denominator.unit 1..1 MS
+* substance.strength.presentationRatio.denominator.code 1..1 MS
+* substance.strength.presentationRatio.denominator.code from  PqcmcUnitsMeasureTerminology
+
+* substance.strength.presentationQuantity 0..1 MS
+* substance.strength.presentationQuantity.value 1..1 MS
+* substance.strength.presentationQuantity.value ^short = "Product Ingredient Amount Numeric"
+* substance.strength.presentationQuantity.value ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
+Example: mg]
+"""
+* substance.strength.presentationQuantity.unit 1..1
+* substance.strength.presentationQuantity.code 1..1
+* substance.strength.presentationQuantity.code from  PqcmcUnitsMeasureTerminology
+* substance.strength.presentationQuantity.extension contains pq-strength-operator-extension named strengthOperator 0..1 MS
+* substance.strength.presentationQuantity.extension[strengthOperator] ^short = "Strength Operator"
+* substance.strength.presentationQuantity.extension[strengthOperator] ^definition = """A mathematical symbol that denotes equality or inequality between two values
+Note: This is typically applicable to biologics """
+
+//* substance.strength.textPresentation 1..1 MS
+//* substance.strength.textPresentation ^short = "Strength Textual"
+//* substance.strength.textPresentation ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 
 Profile: DrugProductIngredient
 Parent: Ingredient
@@ -479,38 +563,26 @@ Title: "Drug Product Batch Formula Ingredient"
 Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
 
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"
-* .extension contains pq-additional-info-extension named additional-info 0..1 MS
-* .extension[additional-info] ^short = "Drug Product Component Additional Information"
-* .extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the component. [Source: SME Defined]
-Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.
-"""
-* .extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
 * identifier 0..1 MS
-* group 0..1 MS
-* group ^short = "Product Part Ingredient Physical Location"
-* group ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
-Examples: Intragranular, Extra granular, Blend 
-"""
-* group.coding from PqcmcProductPartIngredientPhysicalLocationVS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only Reference(pqcmc-routine-drug-substance)
-* substance.strength.concentration[x] only Quantity
-* substance.strength.concentration[x] ^short = "Ingredient Quanty Per Batch"
-* substance.strength.concentration[x] ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
-Example: 1000 kg
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
-"""
-* substance.strength.concentrationQuantity.value 1..1
-* substance.strength.concentrationQuantity.unit 1..1
-* substance.strength.concentrationQuantity.code 1..1
-* substance.strength.concentrationQuantity.code from PqcmcUnitsMeasureTerminology
-* substance.strength.textConcentration 1..1 MS
-* substance.strength.textConcentration ^short = "Strength Textual"
-* substance.strength.textConcentration ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
-Note: This is typically applicable to biologics
-Example: International Units for Enzymes
-"""
+//* substance.strength.concentration[x] only Quantity
+//* substance.strength.concentration[x] ^short = "Ingredient Quanty Per Batch"
+//* substance.strength.concentration[x] ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
+//Example: 1000 kg
+//Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+//"""
+//* substance.strength.concentrationQuantity.value 1..1
+//* substance.strength.concentrationQuantity.unit 1..1
+//* substance.strength.concentrationQuantity.code 1..1
+//* substance.strength.concentrationQuantity.code from PqcmcUnitsMeasureTerminology
+//* substance.strength.textConcentration 1..1 MS
+//* substance.strength.textConcentration ^short = "Strength Textual"
+//* substance.strength.textConcentration ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+//Note: This is typically applicable to biologics
+//Example: International Units for Enzymes
+//"""
 
 Profile: DrugSubstancemanufacturingBatch
 Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
@@ -643,8 +715,9 @@ Examples: USP/NF, EP, Company Standard
 Example: 362O9ITL9D
 Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
-* name.name 1..1 MS
+* name 1..1 MS
 * name.name ^short = "Excipient Name"
+* name.type = $NCIT#141 "GSRS Accepted"
 * sourceMaterial 1..1 MS
 * sourceMaterial.type 1..1
 * sourceMaterial.type ^short = "Source Type"
@@ -676,9 +749,9 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin 0..1 MS
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-* sourceMaterial.countryOfOrigin.coding 0..0
+* sourceMaterial.countryOfOrigin.coding 1..
 * sourceMaterial.countryOfOrigin.coding from genc-country-codes
-* sourceMaterial.countryOfOrigin.text 1..1 MS
+
 //________________________________________________________________
 /// Profiles on Profiles
 //________________________________________________________________

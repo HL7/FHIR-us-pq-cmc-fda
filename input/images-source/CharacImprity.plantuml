@@ -27,8 +27,7 @@ node "ImpuritySubstance" as N6 {
       EVMPDSubstanceClassification
       PqcmcImpurityClassificationTerminology
       Chemical Structure Data File Type Terminology
-    }
-     
+    }    
 }
 
 N1 --> NSO   
@@ -36,4 +35,3 @@ NN --> N6
 N1 --> NN 
 }
 @enduml
-

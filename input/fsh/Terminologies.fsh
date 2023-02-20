@@ -1,3 +1,24 @@
+CodeSystem: MedicinalProductContactTypeCodeSystem
+Id: medicinal-product-contact-type-cs
+Title: "Medicinal Product Contact Type"
+Description: "Contact type for a Medicinal Product"
+* ^experimental = true
+* #ProposedMAH "Proposed Marketing Authorisation Holder/Person"
+* #ProcedureContactDuring "Person/Company authorised for Communication on behalf of the Applicant during the Procedure"
+* #ProcedureContactAfter "Person/Company authorised for Communication between MAH and Authorities after Authorisation"
+* #QPPV "Qualified Person Responsible for Pharmacovigilance"
+* #PVEnquiries "Pharmacovigilance Enquiry Information"
+
+CodeSystem: BatchFormulaPropertyCodeSystem
+Id: batch-formula-property-cs
+Title: "Batch Formula Property Type"
+Description: "Batch Formula Property Types"
+* ^experimental = true
+* ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/batch-formula-property-cs"
+* #BatchSize "Batch Quantity"
+* #BatchAddInfo "Batch Formula Additional Information"
+* #AddInfo "Product Part Additional Information"
+
 CodeSystem: PqcmcTestCategoryCodes
 Id: pqcmc-test-category-codes
 Title: "Hierarchial Test Category Codes" 
@@ -484,9 +505,9 @@ Description: "subset of http://hl7.org/fhir/action-relationship-type used for qu
 * $ART#after
 
 CodeSystem: PqcmcProductCharacteristicCodes
-Id: pqcmc-cs-product-characteristic
+Id: pqcmc-product-characteristic
 Title: "Code System PQCMC Product Characteristic"
-Description: "Product Characteristic for the characteristic element in MedicinalProductDefintion."
+Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
 * ^caseSensitive = true
 * ^experimental = true
 * #OvrRelsProf "Product Overall Release Profile"

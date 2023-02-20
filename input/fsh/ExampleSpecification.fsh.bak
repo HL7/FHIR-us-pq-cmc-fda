@@ -1,0 +1,455 @@
+//Put your Aliases in aliases.fsh file                             
+
+//Put your CodeSystems in Terminologies.fsh file
+
+//From Resource Profile: eCTD Specification Composition. Refer http://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-ectd-composition-sp4151.html
+Instance: 35040642-6a9b-4331-951d-7d741467e4a4
+InstanceOf: EctdCompositionSP4151
+Title: "The fields needed to represent the Quality Specifications to be included in the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 folders.. References Sponsor Organization and Quality Specification"
+Description: "The fields needed to represent the Quality Specifications to be included in the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 folders.. References Sponsor Organization and Quality Specification"
+Usage: #example
+
+* id = "35040642-6a9b-4331-951d-7d741467e4a4"
+* status = #final
+* type = PqcmcCompSectionTypes#SP4151 "Quality Specification"
+* date = "2022-12-08"
+//Reference to Sponsor organization
+* author = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
+* title = "EctdCompositionSP4151 Title"
+* section[DrugProduct]
+  //* id = "3060c9c3-3600-42d9-8f0d-24f34afac418"
+  * title = "PQCMC Comp Section 32P51 Product Specification"
+  * code = PqcmcCompSectionTypes#32P51 "Product Specification"
+  * entry = Reference(3060c9c3-3600-42d9-8f0d-24f34afac418)
+//Active Pharmaceutical Ingredient
+* section[Api]
+  //* id = "394c19af-062b-49b4-9f8d-f5a3499a8476"
+  * title = "PQCMC Comp Section 32S41 Substance Specification"
+  * code = PqcmcCompSectionTypes#32S41 "Substance Specification"
+  * entry = Reference(394c19af-062b-49b4-9f8d-f5a3499a8476)
+* section[Excipient]
+  //* id = "0baed83c-495e-4129-8e26-537a0ede5e15"
+  * title = "PQCMC Comp Section 32P41 Excipients Specification"
+  * code = PqcmcCompSectionTypes#32P41 "Excipients Specification"
+  * entry = Reference(0baed83c-495e-4129-8e26-537a0ede5e15)
+
+
+//From Resource Profile: Quality Specification. 
+Instance: 3060c9c3-3600-42d9-8f0d-24f34afac418
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug product or drug substance (excipient, API or raw material)"
+Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)"
+Usage: #example
+
+* id = "3060c9c3-3600-42d9-8f0d-24f34afac418"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:3060c9c3-3600-42d9-8f0d-24f34afac418"
+* version = "1.0"
+* title = "Quality Specification for DrugProduct"
+* status = #active
+//Reference a Drug Product
+* subjectReference = Reference(8e854cea-f491-471f-b5dc-910f20135658)
+* date = "2022-12-08"
+* approvalDate = "2022-12-08"
+* goal[0]
+  * id = "goal1"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "Pink round, film-coated tablet scored 99 0T9 one side and plain on the other"
+  * target
+    * measure.text = "test"
+* goal[1]
+  * id = "goal2"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "Pink round, film-coated tablet scored 99 0T9 one side and plain on the other"
+  * target
+    * measure.text = "test"
+    * detailString.extension[interpretationCodeS].valueCodeableConcept.text = "Pass"
+* goal[2]
+  * id = "goal3"
+  * extension
+    * url = "http://fda.gov/cder/fhir/gqcmc/StructureDefinition/ext-comment"
+    * valueString = "Soybean–Casein Digest Agar and Soybean–Casein Digest Broth 30°–35° ≤3 days"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "≤100 cfu"
+  * target
+    * measure.text = "Soybean–Casein Digest Agar and Soybean–Casein Digest Broth 30°–35° ≤3 days"
+    * detailRange
+      * low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT"
+      * low.value = 0
+      * low.unit = "cfu"
+      * low.code = $UCUM#[CFU] "colony forming units"
+      * high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+      * high.value = 100
+      * high.unit = "cfu"
+      * high.code = $UCUM#[CFU] "colony forming units"
+* goal[3]
+  * id = "goal4"
+  * extension
+    * url = "http://fda.gov/cder/fhir/gqcmc/StructureDefinition/ext-comment"
+    * valueString = "Soybean–Casein Digest Agar and Soybean–Casein Digest Broth 30°–35° ≤3 days"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "≤100 cfu"
+  * target
+    * measure.text = "Soybean–Casein Digest Agar and Soybean–Casein Digest Broth 30°–35° ≤3 days"
+    * detailRange
+      * low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT"
+      * low.value = 0
+      * low.unit = "cfu"
+      * low.code = $UCUM#[CFU] "colony forming units"
+      * high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+      * high.value = 100
+      * high.unit = "cfu"
+      * high.code = $UCUM#[CFU] "colony forming units"
+* goal[4]
+  * id = "goal5"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "not present"
+  * target
+    * measure.text = "test"
+* goal[5]
+  * id = "goal6"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "Pink round, film-coated tablet scored 99 0T9 one side and plain on the other"
+  * target
+    * measure.text = "test"
+    * detailString.extension[interpretationCodeS].valueCodeableConcept.text = "Pass"
+* goal[6]
+  * id = "goal7"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "&lt; 100 CFU/g"
+  * target
+    * measure.text = "test"
+    * detailRange
+      * low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT"
+      * low.value = 0
+      * low.unit = "cfu"
+      * low.code = $UCUM#[CFU] "colony forming units"
+      * high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+      * high.value = 100
+      * high.unit = "cfu"
+      * high.code = $UCUM#[CFU] "colony forming units"
+* goal[7]
+  * id = "goal8"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "90.0% - 110.0% of labeled claim (n=3)"
+  * target
+    * measure.text = "test"
+    * detailRange
+      * low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT"
+      * low.value = 90
+      * low.unit = "%_LC"
+      * low.code = $UCUM#% "percent"
+      * high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+      * high.value = 110
+      * high.unit = "%_LC"
+      * high.code = $UCUM#% "percent"
+* goal[8]
+  * id = "goal10"
+  * extension
+    * url = "http://fda.gov/cder/fhir/gqcmc/StructureDefinition/ext-comment"
+    * valueString = "n=6"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "&gt;3.3 and &lt;4.5"
+  * target
+    * measure.text = "n=6"
+    * detailRange
+      * low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT"
+      * low.value = 3.3
+      * low.unit = "pH"
+      * low.code = $UCUM#[pH] "pH"
+      * high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+      * high.value = 4.5
+      * high.unit = "pH"
+      * high.code = $UCUM#[pH] "pH"
+* goal[9]
+  * id = "goal11"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "&gt;3.3 and &lt;4.3"
+  * target
+    * measure.text = "test"
+    * detailRange
+      * low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT"
+      * low.value = 3.3
+      * low.unit = "pH"
+      * low.code = $UCUM#[pH] "pH"
+      * high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+      * high.value = 4.3
+      * high.unit = "pH"
+      * high.code = $UCUM#[pH] "pH"
+* action[0]
+  * id = "stage1"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96103 "Proprietary"
+  * extension[testOrder].valueDecimal = 1.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "Appearance"
+  * code.coding:testCategory
+  * code.coding:testSubCat
+  * code.coding:methodOrigin
+  * code = $NCIT#C138990 "Description"
+  * code.text = "NH401 General appearance method"
+  * reason.text = "Stability; Release"
+  * goalId = "goal1"
+* action[1]
+  * id = "stage2"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 2.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "TBD-Title"
+  * code = $NCIT#C000001 "Sterility"
+  * code.text = "USP &lt;71&gt; Sterility"
+  * reason.text = "Stability; Release"
+  * goalId = "goal2"
+* action[2]
+  * id = "stage3"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 3.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "P. aeruginosa"
+  * code = $NCIT#C000002 "Microbial Limits"
+  * code.text = "USP &lt;61&gt; Microbial Limits"
+  * reason.text = "Stability; Release"
+  * goalId = "goal3"
+* action[3]
+  * id = "stage4"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 4.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "S. aureus"
+  * code = $NCIT#C000002 "Microbial Limits"
+  * code.text = "USP &lt;61&gt; Microbial Limits"
+  * reason.text = "Stability; Release"
+  * goalId = "goal4"
+* action[4]
+  * id = "stage5"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 5.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "Salmonella"
+  * code = $NCIT#C000002 "Microbial Limits"
+  * code.text = "USP &lt;62&gt; Tests for Specified Microorganisms"
+  * reason.text = "Stability; Release"
+  * goalId = "goal5"
+* action[5]
+  * id = "stage6"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96103 "Proprietary"
+  * extension[testOrder].valueDecimal = 6.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "Appearance"
+  * code = $NCIT#C138990 "Description"
+  * code.text = "NH401 General appearance method"
+  * reason.text = "Stability; Release"
+  * goalId = "goal6"
+* action[6]
+  * id = "stage7"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 7.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "Total Viable Aerobic Count"
+  * code = $NCIT#C000001 "Sterility"
+  * code.text = "2.6.12 Ph. Eur. Total Viable Aerobic count"
+  * reason.text = "Stability; Release"
+  * goalId = "goal7"
+* action[7]
+  * id = "stage8"
+  //Cannot use valueUri as was used in the example xml. Hence used the following
+  //* extension[testMethodOrigin].valueUri = "Reference%20Documents/methodnh432.pdf"
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 8.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "Assay"
+  * code = $NCIT#C60819 "Assay"
+  * code.text = "NH432 Assay"
+  * reason.text = "Stability; Release"
+  * goalId = "goal8"
+* action[8]
+  * id = "stage9"
+  //Cannot skip mandatory extension fields as was in the example xml. Hence used the following
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 9.0
+  * extension[rrt].valueString = "TBD-rrt"
+  * title = "pH Measurement Average"
+  * code = $NCIT#C000003 "pH"
+  * code.text = "SP &lt;791&gt; pH Measurement"
+  * reason.text = "Stability; Release"
+  * goalId[0] = "goal10"
+  * goalId[1] = "goal11"
+
+
+//From Resource Profile: Quality Specification. 
+Instance: 0baed83c-495e-4129-8e26-537a0ede5e15
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug product or drug substance (excipient, API or raw material)"
+Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)"
+Usage: #inline
+
+* id = "0baed83c-495e-4129-8e26-537a0ede5e15"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:0baed83c-495e-4129-8e26-537a0ede5e15"
+* version = "1.0"
+* title = "Quality Specification for Excipient"
+* status = #active
+//Reference an Excipient Substance Definition
+* subjectReference = Reference(0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b)
+* date = "2022-12-08"
+* approvalDate = "2022-12-08"
+* goal
+  * id = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "Need to add a proper goal description text here"
+  * target.detailQuantity
+    * extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+    * value = 1.1
+    * unit = "cm"
+    * code = $UCUM#cm "centimeter"
+* action
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 1.0
+  * extension[rrt].valueString = "1"
+  * title = "TBD: Need to get Action title name"
+  * code = $NCIT#C176810 "Microbiological Properties"
+  * code.text = "Analytical procedure for the test"
+  * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+
+
+
+//From Resource Profile: Quality Specification. 
+Instance: 394c19af-062b-49b4-9f8d-f5a3499a8476
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug product or drug substance (excipient, API or raw material)"
+Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)"
+Usage: #inline
+
+* id = "394c19af-062b-49b4-9f8d-f5a3499a8476"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:394c19af-062b-49b4-9f8d-f5a3499a8476"
+* version = "1.0"
+* title = "Quality Specification for API"
+* status = #active
+//Reference an Active Pharmaceutical Ingredient (API)
+* subjectReference = Reference(f5de5600-7e54-4d2d-b442-7b3366531231)
+* date = "2022-12-08"
+* approvalDate = "2022-12-08"
+* goal
+  * id = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"
+  * category = $NCIT#C134029 "Release"
+  * description.text = "Need to add a proper goal description text here"
+  * target.detailQuantity
+    * extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT"
+    * value = 1.1
+    * unit = "cm"
+    * code = $UCUM#cm "centimeter"
+* action
+  * extension[testMethodOrigin].valueCodeableConcept = PqcmcTestMethodOriginTerminologyCodeSystem#C96102 "Compendial"
+  * extension[testOrder].valueDecimal = 1.0
+  * extension[rrt].valueString = "1"
+  * title = "TBD: Need to get Action title name"
+  * code = $NCIT#C176810 "Microbiological Properties"
+  * code.text = "Analytical procedure for the test"
+  * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+
+
+//From Resource Profile: Drug Product. http://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drug-produc.html
+Instance: 8e854cea-f491-471f-b5dc-910f20135658
+InstanceOf: DrugProduct
+Title: "Includes the properties of the drug product, its components and impurities"
+Description: "Includes the properties of the drug product, its components and impurities"
+Usage: #inline
+
+* id = "8e854cea-f491-471f-b5dc-910f20135658"
+* combinedPharmaceuticalDoseForm = CombinedDoseFormCodeSystem#100000073366 "Powder and solvent for oral solution"
+* route = SplDrugRouteofAdministrationTerminologyCodeSystem#C38197 "DENTAL"
+* contact.type = MedicinalProductContactTypeCodeSystem#ProposedMAH "Proposed Marketing Authorisation Holder/Person"
+//Reference to Sponsor Organization's contact
+* contact
+  * contact = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
+* code = MedicationCodeCodeSystem#763158003 "Medicinal product (product)"
+* name.productName = "Product Non Proprietary name"
+* name.type = MedicationProductNameTypeCodeSystem#INN "International Non-Proprietary Name"
+  * text = "TBD: Need to get text for Name type"
+
+//From Resource Profile: Resource Profile: Excipient Drug Substance. 
+Instance: 0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b
+InstanceOf: Excipient
+Title: "Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."
+Description: "Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."
+Usage: #inline
+
+* id = "0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b"
+//Reference MfgTestSiteOrganization
+* manufacturer = Reference(029f1cb8-2dc7-4971-8309-55e6dd129918)
+* name
+  * name = "TBD: Need to get the Excipient name"
+  * type = SubstanceNameTypeCodeSystem#Brand "brand"
+* sourceMaterial
+  * type = PqcmcSourceTypeTerminologyCodeSystem#C14182 "Animal"
+  * countryOfOrigin = $GENC#US "United States of America"
+    * text = "TBD: Need text for Country of Origin"
+
+
+
+//From Resource Profile: Routine Drug Substance. http://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-routine-drug-substance.html
+Instance: f5de5600-7e54-4d2d-b442-7b3366531231
+InstanceOf: RoutineSubstanceDefinition
+Title: "Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."
+Description: "Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."
+Usage: #inline
+
+* id = "f5de5600-7e54-4d2d-b442-7b3366531231"
+* classification = EVMPDSubstanceClassificationCodeSystem#17 "Mixture"
+//Reference MfgTestSiteOrganization
+* manufacturer = Reference(029f1cb8-2dc7-4971-8309-55e6dd129918)
+* name[brand]
+  * name = "TBD: Need to get the Brand name for Routine substance"
+  * type.coding = $IngredientNameTypes#137 "Brand"
+* sourceMaterial
+  * type = PqcmcSourceTypeTerminologyCodeSystem#C14182 "Animal"
+  * countryOfOrigin = $GENC#US "United States of America"
+    * text = "TBD: Need text for Country of Origin"
+
+
+//From Resource Profile: SponsorOrganization
+Instance: 78f4b797-fbb1-4078-974d-9471bdae7ada
+InstanceOf: SponsorOrganization
+Title: "A profile for the data elements required to identify the sponsor of the drug products or substances"
+Description: "A profile for the data elements required to identify the sponsor of the drug products or substances"
+Usage: #example
+
+* id = "78f4b797-fbb1-4078-974d-9471bdae7ada"
+* name = "TBD: Need to get the name of Sponsor organization" 
+//Slicing of Identifier
+//* identifier.system = "urn:ietf:rfc:3986"
+//* identifier.value = "urn:uuid:3517361d-cb89-4163-adeb-1c57f6cdb98d"
+* identifier[DUNSNumber]
+  * system = "urn:oid:1.3.6.1.4.1.519.1"
+  * value = "1111112222"
+//* identifier[FEINumber]
+//  * system = "urn:oid:2.16.840.1.113883.4.82"
+//  * value = "1234444"
+//PqAddress
+* contact.address.line = "TBD: Address line1"
+* contact.address.city = "Princeton"
+* contact.address.postalCode = "12345"
+* contact.address.country = "USA"
+
+
+//From Resource Profile: MfgTestSiteOrganization. http://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-mfg-test-site-organization.html
+Instance: 029f1cb8-2dc7-4971-8309-55e6dd129918
+InstanceOf: MfgTestSiteOrganization
+Title: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
+Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
+Usage: #example
+
+* id = "029f1cb8-2dc7-4971-8309-55e6dd129918"
+* name = "TBD: Need to get the name of Manufacturing Site Org name"
+//Slicing of Identifier
+* identifier[DUNSNumber]
+  * system = "urn:oid:1.3.6.1.4.1.519.1"
+  * value = "123456789"
+* identifier[FEINumber]
+  * system = "urn:oid:2.16.840.1.113883.4.82"
+  * value = "1234567"
+//PqAddress
+* contact.address.line = "Address line1"
+* contact.address.city = "Princeton"
+* contact.address.postalCode = "12345"
+* contact.address.country = "USA"

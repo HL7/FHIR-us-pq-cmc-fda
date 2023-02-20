@@ -27,8 +27,7 @@ node "PolymorphicForm" as N2 {
         Units Of Measure Terminology
         Chemical Structure Data File Type Terminology
         Code System PQCMC Name Types
-    }
-     
+    }    
 }
  node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
@@ -47,11 +46,9 @@ node "PolymorphicForm" as N2 {
     
 }
 
-
 N1 --> N21
 N1 --> NN
 NN --> N2
-
 N2 --> NB64
 N21 --> NB64
 N1 --> NSO

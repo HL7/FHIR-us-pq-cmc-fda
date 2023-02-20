@@ -3,7 +3,6 @@ allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
 
-
   node "DrugProductDescription" as N2 { 
       object "**Parent:** DrugProduct Profile" as obj2 {
         **ValueSets:**

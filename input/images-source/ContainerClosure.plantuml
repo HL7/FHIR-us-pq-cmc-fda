@@ -27,7 +27,6 @@ node "SponsorOrganization" as NSO {
         GENC Country Codes
     }
 }
-
 }
 
 N1 --> N21
