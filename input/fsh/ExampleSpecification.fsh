@@ -5,6 +5,7 @@ Description: "Provides sufficient information to identify an Excipient or Raw ma
 Usage: #example
 
 * id = "0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b"
+* classification = $EMAIDMP#8 "Structurally Diverse Substance - Blood derived"
 * grade.coding = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(029f1cb8-2dc7-4971-8309-55e6dd129918)
 * code.code = $UNII#I26K2QK6G8 "I26K2QK6G8"

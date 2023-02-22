@@ -117,14 +117,30 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * structure.representation.document ^short = "Structure Graphic"
 * structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
+// $UNII  $UNIPROT  //element(*,SubstanceDefinition)/code/code/coding/system
+
 * code MS
 * code obeys cmc-when-unii-required
-* code.code 1..1 MS
-* code.code.text ^short = "UNII"
-* code.code.text ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+* code.code
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
+"""
+
 //element(*,SubstanceDefinition)/code/code/text/@value
 //BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 //BR: isbt Applicable to blood products.
@@ -296,13 +312,26 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * structure.representation.document ^short = "Impurity Structure Graphic"
 * structure.representation.document ^definition = "A pictorial representation of the structure of the impurity. [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
-* code 0..1 MS
-* code obeys cmc-when-unii-required
-* code.code 0..1 MS
-* code.code ^short = "UNII"
-* code.code ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+
+//element(*,SubstanceDefinition)/code/code/coding
+* code MS
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
@@ -381,6 +410,12 @@ Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"	
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
 * grade 1..1
 * grade ^short = "Quality Standard"
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
@@ -401,13 +436,25 @@ Examples: USP/NF, EP, Company Standard
 * structure.representation.document ^short = "Substance Structure Graphic"
 * structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
 * structure.representation.document only Reference(Base64DocumentReference)
-* code 0..1 MS
+* code MS
 * code obeys cmc-when-unii-required
-* code.code 0..1 MS
-* code.code ^short = "UNII"
-* code.code ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^short = "Product Ingredient Name"
@@ -698,6 +745,12 @@ Description: "Provides sufficient information to identify an inactive substance 
 
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"	
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
 * grade 1..1
 * grade ^short = "Quality Standard"
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
@@ -708,12 +761,25 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(MfgTestSiteOrganization)
-* code 0..1 MS
-* code.code 0..1 MS
-* code.code ^short = "UNII"
-* code.code ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+* code MS
+* code obeys cmc-when-unii-required
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
 """
 * name 1..1 MS
 * name.name ^short = "Excipient Name"
