@@ -59,13 +59,7 @@ SME comment -- this is the marketed dosage form.
 * impurity only Reference(ImpuritySubstance)
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.productName ^short = "Product Proprietary name | Product Non-proprietary Name"
-* name.productName ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm]
-Note: Excludes dosage form, route of administration and strength.
-Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
-"""
-* name.type 1..1 MS
+* name.type MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "$this"
 * name ^slicing.rules = #open
@@ -333,7 +327,7 @@ Examples: Filler, Surfactant"""
 * component.constituent.function[Function].coding from PqcmcExcipientFunctionTerminology
 
 * component.constituent.hasIngredient 1..1 MS
-* component.constituent.hasIngredient only Reference(DrugProductIngredient)
+* component.constituent.hasIngredient only Reference(DrugProductComponent)
 // Product part properties
 * component.property 0..* MS
 * component.property 1..* MS
@@ -683,13 +677,27 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code from SplDrugRouteofAdministrationTerminology
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.productName ^short = "Product Proprietary name | Product Non-proprietary Name"
-* name.productName ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm]
-Note: Excludes dosage form, route of administration and strength.
-Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
+* name.type 1..1 MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "$this"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+* name contains Proprietary 0..1 and NonProprietary 1..1
+* name[Proprietary].type.text = "Proprietary"
+* name[NonProprietary].type.text = "Non-Proprietary"
+* name[NonProprietary].part 1..* MS
+* name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product. They separate patterns against which the input name string may be matched. Medicinal product names are typically presented as the scientific name, thhe strength name and form name. However some may include other specific product features. 
+See https://terminology.hl7.org/CodeSystem-v3-EntityNamePartQualifierR2.html for the complete code list.
+Note: The minimum is the scientific name.
 """
-* name.type.text 1..1 MS
+* name[NonProprietary].part.part 1..1 MS
+* name[NonProprietary].part.type 1..1 MS
+* name[NonProprietary].part ^slicing.discriminator.type = #value
+* name[NonProprietary].part ^slicing.discriminator.path = "type"
+* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part.type from http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2
+
 
 //________________________________________________________________
 /// Profiles on Profiles
