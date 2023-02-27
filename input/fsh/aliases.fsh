@@ -19,7 +19,7 @@ Alias: $SubstanceStructureTechnique = http://hl7.org/fhir/substance-structure-te
 Alias: $IDENTIFIER-TYPE = http://hl7.org/fhir/ValueSet/identifier-type
 Alias: $NameType = http://hl7.org/fhir/us/pq-cmc/codesystem/PqcmcProductIngredientNameType
 Alias: $BatchFormulaPropertyType = http://hl7.org/fhir/us/pq-cmc/StructureDefinition/batch-formula-property-cs
-
+// until NCIT is available
 Alias: $NamePartType = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2
 Alias: $SCCC = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-storage-condition-category-codes
 Alias: $PPT = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-type
