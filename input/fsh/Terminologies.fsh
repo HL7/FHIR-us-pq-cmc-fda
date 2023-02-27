@@ -265,6 +265,24 @@ Description: "Terminology used to qualify the information pertaining to test sub
 * $PQTC#SBTC100 "Impurities/Degradation Products/Related Substances"
 * $PQTC#SBTC101 "residual solvent"
 
+ValueSet: PqcmcNamePartTerminology
+Id: pqcmc-name-part--terminology
+Title: "Name Part  Terminology"
+Description: "Terminology used to qualify the information pertaining to Name Part  data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = true
+
+* $NamePartType#CON "container name"
+* $NamePartType#DEV "device name"
+* $NamePartType#FLAV "FlavorName"
+* $NamePartType#FORMUL "FormulationPartName"
+* $NamePartType#FRM "form name"
+* $NamePartType#INV "invented name"
+* $NamePartType#POPUL "TargetPopulationName"
+* $NamePartType#SCI "scientific name"
+* $NamePartType#STR "strength name"
+* $NamePartType#TIME "TimeOrPeriodName"
+* $NamePartType#TMK "trademark name"
+* $NamePartType#USE "intended use name"
 
 CodeSystem: PqcmcStorageConditionCategoryCodes
 Id: pqcmc-storage-condition-category-codes
@@ -280,42 +298,84 @@ Id: pqcmc-storage-condition-category-terminology
 Title: "Test Category Terminology"
 Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-storage-condition-category-codes
+//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-storage-condition-category-codes
+
+* $SCCC#CC201 "Accelerated" 
+* $SCCC#CC202 "Intermediate" 
+* $SCCC#CC203 "Long term" 
 
 ValueSet: PqcmcProductPartTypeVS
 Id: pqcmc-product-part-type-vs
 Title: "Product Part Type Value Set" 
 Description: "TBD after NCIt codes are added for Product Part Type"
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-type
+//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-type
+* include codes from system PqcmcProductPartType
+
+* $PPT#154 "Blend" 
+* $PPT#155 "Bead"
+* $PPT#156 "Capsule Shell"
+* $PPT#157 "Coating"
+* $PPT#158 "Dispersion"
+* $PPT#159 "Granules"
+* $PPT#115 "Layer"
+* $PPT#116 "Minitablet"
+* $PPT#117 "Solution"
+* $PPT#118 "Tablet"
+
 
 ValueSet: PqcmcProductPartIngredientPhysicalLocationVS
 Id: pqcmc-product-part-ingredient-physical-location-vs
 Title: "Product Part Ingredient Physical Location value set"
 Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-ingredient-physical-location
+//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-ingredient-physical-location
+* $PPIPL#148 "Active core/granulate" 
+* $PPIPL#149 "Extragranular"
+* $PPIPL#150 "Intragranular"
 
 ValueSet: PqcmcReleaseProfileVS
 Id: pqcmc-release-profile-vs
 Title: "Release Profile value set" 
 Description: "TBD after NCIt codes are added for Release Profile"
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile
+//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile
+
+* $RP#101 "DR"
+* $RP#102 "ER"
+* $RP#103 "IR"
+* $RP#104 "Not Applicable"
 
 ValueSet: PqcmcReleaseMechanismVS
 Id: pqcmc-release-mechanism-vs
 Title: "Release Mechanism value set" 
 Description: "TBD after NCIt codes are added for Release Mechanism"
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-mechanism
+//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-mechanism
+
+* $RM#106 "Matrix" 
+* $RM#107 "Osmotic Pump"
+* $RM#108 "Reservoir"
 
 ValueSet: PqcmcCoatingPurposeVS
 Id: pqcmc-coating-purpose-vs
 Title: "Coating Purpose value set" 
 Description: "TBD after NCIt codes are added for Coating Purpose"
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-coating-purpose
+//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-coating-purpose
+
+* $CP#119 "Appearance/Identification" 
+* $CP#120 "Consumption Enhancement"
+* $CP#121 "Content Isolation"
+* $CP#122 "Drug Layering"
+* $CP#123 "Irritant Suppression"
+* $CP#124 "Odor Masking"
+* $CP#125 "Protective"
+* $CP#126 "Rate-controlling"
+* $CP#127 "Release Type"
+* $CP#128 "Site of Action"
+* $CP#129 "Seal or Non-functional"
+* $CP#130 "Taste Masking"
 
 CodeSystem: PqcmcReleaseProfile
 Id: pqcmc-release-profile
