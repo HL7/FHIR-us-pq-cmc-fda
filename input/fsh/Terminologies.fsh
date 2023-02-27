@@ -960,7 +960,6 @@ Description: "Terminology used to qualify the information pertaining to process 
 * $NCIT#C134000 "Organic"
 * $NCIT#C176815 "Residual Solvent"
 
-
 //ValueSet: PqcmcProductRelatedImpurityCategoryTerminology
 //Id: pqcmc-product-related-impurity-category-terminology
 //Title: "Product Related Impurity Category Terminology"
