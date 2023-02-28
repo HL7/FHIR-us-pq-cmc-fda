@@ -1,8 +1,25 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
+### Changes and Updates for Version 0.1.11
+The current development IG
+<ul>
+<li>added name parts to RoutineDrugProduct</li>
+<li>Changes to Specification action.title.extension for rrt cardinaly set to 0..1 and support for mandatory useContext.code /li>
+<li>Moved Aceptacnce Criteria Usage from Category to goal.addresses due to cardinality on goal.category</li>
+<li>Error correction!! Set component.constituent.hasIngredient only Reference(DrugProductComponent) Was accidentally chnaged in Batch Formula rewrite.</li>
+<li>Technical correction: corrected Id's of 7 profiles that have upper case letters</li>
+<li>Added NamePartType Value set</li>
+<li>Added values to values sets for code systems that will be replaced by NCI code.  Include Sushi statement not working as expected.</li>
+<li>corrected assignment of  PqcmcProductCharacteristicCodes in Finished product</li>
+</ul>
+<ul>
+Added the following examples:
+<li>"A quality specification is for a drug product or drug substance (excipient, API or raw material)</li>
+<li>A quality specification is for a drug substance </li>
+<li>8e854cea-f491-471f-b5dc-910f20135658 InstanceOf: RoutineDrugProduct</li>
+</ul>
 
 ### Changes and Updates for Version 0.1.10
-The current development IG
 <ul>
 <li>Added Uniprot</li>
 <li>Version 0.1.9 failed to build on build site. This version is being released to trigger the publisher on the build site. /li>

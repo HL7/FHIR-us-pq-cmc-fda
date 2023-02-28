@@ -3,14 +3,19 @@ allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
    
+
   node "EctdComposition32P7" as N1 { 
       object "**Parent:** Composition" as obj1 {
+      **Reference:**
+      [[StructureDefinition-ectd-composition-32p70.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }   
 }
 node "DrugProductContainerClosure" as N21 { 
       object "**Parent:** DrugProduct Profile" as obj22 {
+           **Reference:**
+      [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
         **ValueSets:**
         Container Type Terminology
         Closure Type Terminology
@@ -23,6 +28,8 @@ node "DrugProductContainerClosure" as N21 {
 
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+           **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }

@@ -5,6 +5,8 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
 
   node "DrugProductDescription" as N2 { 
       object "**Parent:** DrugProduct Profile" as obj2 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-description.html]]
         **ValueSets:**
         Drug Route Of Administration Terminology
         Pharmaceutical Dosage Form Terminology
@@ -12,12 +14,16 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
 }
   node "EctdComposition32P10" as N1 { 
       object "**Parent:** Composition" as obj1 {
+         **Reference:**
+      [[StructureDefinition-cmc-ectd-document-32p10.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }   
 }
 node "DrugProductContainerClosure" as N21 { 
       object "**Parent:** DrugProduct Profile" as obj22 {
+        **Reference:**
+      [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
         **ValueSets:**
         Container Type Terminology
         Closure Type Terminology
@@ -30,12 +36,16 @@ node "DrugProductContainerClosure" as N21 {
 
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+         **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }
 }
 node "FinishedProduct"as MID {
 object "**Parent:** ManufacturedItemDefinition" as objMID { 
+         **Reference:**
+      [[StructureDefinition-pqcmc-product-part.html]]
       **ValueSets:**
       PqcmcCoatingPurposeVS
       PqcmcDrugProductComponentFunctionCategoryTerminology
@@ -52,6 +62,8 @@ object "**Parent:** ManufacturedItemDefinition" as objMID {
 }
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
+           **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Manufacturing Site Unique Identifier Type
 	    GENC Country Codes
@@ -60,6 +72,8 @@ node "MfgTestSiteOrganization" as NMFG {
 
 node "DrugProductComponent" as NN { 
       object "**Parent:** Ingredient" as obj3 {
+           **Reference:**
+      [[StructureDefinition-pqcmc-Component.html]]
       }
       object "**Extensions**" as objExs {
         Additional-info-extension
@@ -69,6 +83,8 @@ node "DrugProductComponent" as NN {
 
 node "ComponentSubstance" as NCS { 
       object "**Parent:** SubstanceDefinition" as objSubDef {
+           **Reference:**
+      [[StructureDefinition-pqcmc-ComponentSubstance.html]]
         **ValueSets:**
         EVMPDSubstanceClassification
         Quality Standard Terminology
@@ -77,7 +93,10 @@ node "ComponentSubstance" as NCS {
     }
 }
 node "Base64DocumentReference" as NB64 { 
-      object "**Parent:** DocumentReferencee"  as obj64    
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
 }
 
 

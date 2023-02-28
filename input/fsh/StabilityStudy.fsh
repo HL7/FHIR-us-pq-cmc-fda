@@ -179,7 +179,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 
 Profile: StabilitySummary
 Parent: PlanDefinition
-Id: pqcmcStabilitySummary
+Id: pqcmc-stability-summary
 Title: "Stability Summary"
 Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
 

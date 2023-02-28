@@ -5,6 +5,8 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
 
   node "RoutineDrugProduct" as NN { 
       object "**Parent:** DrugProduct" as obj3 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-product.html]]
         **ValueSets:**
         Drug Route Of Administration Terminology
         Pharmaceutical Dosage Form Terminology
@@ -14,7 +16,9 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
 diamond CH
 
 node "RoutineSubstanceDefinition for API" as NNS { 
-      object "**Parent:** SubstanceDefinition" as obj4 {
+      object "**Parent Profile:** DrugSubstance" as obj4 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                 **ValueSets:**
                 EVMPDSubstanceClassification
                 Quality Benchmark Terminology
@@ -25,6 +29,8 @@ node "RoutineSubstanceDefinition for API" as NNS {
 
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
+             **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Manufacturing Site Unique Identifier Type
 	    GENC Country Codes
@@ -33,6 +39,8 @@ node "MfgTestSiteOrganization" as NMFG {
 
 node "StabilitySummary" as NMain { 
       object "**Parent:** PlanDefinition" as objMain {
+             **Reference:**
+      [[StructureDefinition-pqcmcStabilitySummary.html]]
         **ValueSets:**
 	Units Of Measure Terminology
       Storage Conditions Terminology
@@ -46,12 +54,16 @@ objMain <|-- objExs2
 
 node "EctdCompositionSP7181" as N1 { 
       object "**Parent:** Composition" as obj1 {
+     **Reference:**
+      [[StructureDefinition-cmc-ectd-document-sp7181.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
 }
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+     **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }

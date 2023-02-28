@@ -12,11 +12,11 @@
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/pq-cmc/ImplementationGuide/hl7.fhir.us.pq-cmc"/>
-   <version value="0.1.8"/>
+   <version value="0.1.11"/>
    <name value="FHIR_pqcmc"/>
    <title value="PQ/CMC FHIR Implementation Guide"/>
    <status value="draft"/>
-   <date value="2023-02-19T17:36:45-05:00"/>
+   <date value="2023-02-27T21:56:15-05:00"/>
    <publisher value="HL7 International - Biomedical Research and Regulatory WG"/>
    <contact>
       <name value="HL7 International - Biomedical Research and Regulatory WG"/>
@@ -544,10 +544,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-ComponentSubstance.html"/>
+            <valueUri value="StructureDefinition-pqcmc-component-substance.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-ComponentSubstance"/>
+            <reference value="StructureDefinition/pqcmc-component-substance"/>
          </reference>
          <name value="Component Substance"/>
          <description value="Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."/>
@@ -589,10 +589,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-Component.html"/>
+            <valueUri value="StructureDefinition-pqcmc-component.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-Component"/>
+            <reference value="StructureDefinition/pqcmc-component"/>
          </reference>
          <name value="Drug Product Component"/>
          <description value="The amount details about the drug product components to define the product composition in a product unit. Use composition."/>
@@ -664,10 +664,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-DrugSubstance.html"/>
+            <valueUri value="StructureDefinition-pqcmc-drug-substance.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-DrugSubstance"/>
+            <reference value="StructureDefinition/pqcmc-drug-substance"/>
          </reference>
          <name value="Drug Substance"/>
          <description value="Drug Substance (Active Ingredient) nomenclature and characterization."/>
@@ -979,10 +979,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-DrugSubstanceImpurity.html"/>
+            <valueUri value="StructureDefinition-pqcmc-drug-substance-impurity.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-DrugSubstanceImpurity"/>
+            <reference value="StructureDefinition/pqcmc-drug-substance-impurity"/>
          </reference>
          <name value="Drug Substance Impurity"/>
          <description value="Any component of the drug substance that is not the chemical entity."/>
@@ -999,7 +999,7 @@
          <reference>
             <reference value="StructureDefinition/mfg-test-site-organization"/>
          </reference>
-         <name value="MfgTestSiteOrganization"/>
+         <name value="Manufacturing and/or Test Site Organization"/>
          <description value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-abstractprofile"/>
@@ -1024,10 +1024,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmc-PolymorphicForm.html"/>
+            <valueUri value="StructureDefinition-pqcmc-polymorphic-form.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmc-PolymorphicForm"/>
+            <reference value="StructureDefinition/pqcmc-polymorphic-form"/>
          </reference>
          <name value="Polymorphic Form"/>
          <description value="Alternate structure present in the drug substance"/>
@@ -1054,10 +1054,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmcQualitySpecification.html"/>
+            <valueUri value="StructureDefinition-pqcmc-quality-specification.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmcQualitySpecification"/>
+            <reference value="StructureDefinition/pqcmc-quality-specification"/>
          </reference>
          <name value="Quality Specification"/>
          <description value="A quality specification is for a drug product or drug substance (excipient, API or raw material)."/>
@@ -1119,7 +1119,7 @@
          <reference>
             <reference value="StructureDefinition/cmc-sponsor-organization"/>
          </reference>
-         <name value="SponsorOrganization"/>
+         <name value="Sponsor Organization"/>
          <description value="A profile for the data elements required to identify the sponsor of the drug products or substances."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-abstractprofile"/>
@@ -1174,10 +1174,10 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-pqcmcStabilitySummary.html"/>
+            <valueUri value="StructureDefinition-pqcmc-stability-summary.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/pqcmcStabilitySummary"/>
+            <reference value="StructureDefinition/pqcmc-stability-summary"/>
          </reference>
          <name value="Stability Summary"/>
          <description value="Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"/>
@@ -1721,6 +1721,21 @@
          </reference>
          <name value="Interval Description Code Terminology"/>
          <description value="Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-pqcmc-name-part--terminology.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/pqcmc-name-part--terminology"/>
+         </reference>
+         <name value="Name Part  Terminology"/>
+         <description value="Terminology used to qualify the information pertaining to Name Part  data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
       </resource>
@@ -2304,9 +2319,24 @@
          <reference>
             <reference value="Organization/029f1cb8-2dc7-4971-8309-55e6dd129918"/>
          </reference>
-         <name value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
+         <name value="Example of MfgTestSiteOrganization profile on Organization"/>
          <description value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
          <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="PlanDefinition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="PlanDefinition-0baed83c-495e-4129-8e26-537a0ede5e15.html"/>
+         </extension>
+         <reference>
+            <reference value="PlanDefinition/0baed83c-495e-4129-8e26-537a0ede5e15"/>
+         </reference>
+         <name value="A quality specification is for a drug product or drug substance (excipient, API or raw material)"/>
+         <description value="A quality specification is for an Excipient or Raw material"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -2319,9 +2349,24 @@
          <reference>
             <reference value="SubstanceDefinition/0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b"/>
          </reference>
-         <name value="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
-         <description value="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
+         <name value="Example of ExcipientRaw profile"/>
+         <description value="Provides sufficient information to identify an Excipient or Raw material."/>
          <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="PlanDefinition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="PlanDefinition-394c19af-062b-49b4-9f8d-f5a3499a8476.html"/>
+         </extension>
+         <reference>
+            <reference value="PlanDefinition/394c19af-062b-49b4-9f8d-f5a3499a8476"/>
+         </reference>
+         <name value="A quality specification is for a drug substance "/>
+         <description value="A quality specification is for an API "/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -2341,21 +2386,6 @@
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Organization"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Organization-78f4b797-fbb1-4078-974d-9471bdae7ada.html"/>
-         </extension>
-         <reference>
-            <reference value="Organization/78f4b797-fbb1-4078-974d-9471bdae7ada"/>
-         </reference>
-         <name value="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
-         <description value="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="MedicinalProductDefinition"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -2366,7 +2396,7 @@
          </reference>
          <name value="Includes the properties of the drug product, its components and impurities"/>
          <description value="Includes the properties of the drug product, its components and impurities"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-produc"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-product"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -2394,7 +2424,7 @@
          <reference>
             <reference value="SubstanceDefinition/f5de5600-7e54-4d2d-b442-7b3366531231"/>
          </reference>
-         <name value="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
+         <name value="Example RoutineSubstanceDefinition."/>
          <description value="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
          <exampleCanonical value="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"/>
          <groupingId value="-ex-example"/>
@@ -2570,12 +2600,12 @@
             <generation value="html"/>
             <page>
                <nameUrl value="StructureDefinition-mfg-test-site-organization.html"/>
-               <title value="MfgTestSiteOrganization"/>
+               <title value="Manufacturing and/or Test Site Organization"/>
                <generation value="generated"/>
             </page>
             <page>
                <nameUrl value="StructureDefinition-cmc-sponsor-organization.html"/>
-               <title value="SponsorOrganization"/>
+               <title value="Sponsor Organization"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2659,7 +2689,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-ComponentSubstance.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-component-substance.html"/>
                <title value="Component Substance"/>
                <generation value="generated"/>
             </page>
@@ -2674,7 +2704,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-Component.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-component.html"/>
                <title value="Drug Product Component"/>
                <generation value="generated"/>
             </page>
@@ -2699,7 +2729,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-DrugSubstance.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-drug-substance.html"/>
                <title value="Drug Substance"/>
                <generation value="generated"/>
             </page>
@@ -2804,7 +2834,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-DrugSubstanceImpurity.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-drug-substance-impurity.html"/>
                <title value="Drug Substance Impurity"/>
                <generation value="generated"/>
             </page>
@@ -2814,12 +2844,12 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmc-PolymorphicForm.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-polymorphic-form.html"/>
                <title value="Polymorphic Form"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmcQualitySpecification.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-quality-specification.html"/>
                <title value="Quality Specification"/>
                <generation value="generated"/>
             </page>
@@ -2854,7 +2884,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-pqcmcStabilitySummary.html"/>
+               <nameUrl value="StructureDefinition-pqcmc-stability-summary.html"/>
                <title value="Stability Summary"/>
                <generation value="generated"/>
             </page>
@@ -3041,6 +3071,11 @@
             <page>
                <nameUrl value="ValueSet-pqcmc-interval-description-code-terminology.html"/>
                <title value="Interval Description Code Terminology"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-pqcmc-name-part--terminology.html"/>
+               <title value="Name Part  Terminology"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -3235,22 +3270,27 @@
             </page>
             <page>
                <nameUrl value="Organization-029f1cb8-2dc7-4971-8309-55e6dd129918.html"/>
-               <title value="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
+               <title value="Example of MfgTestSiteOrganization profile on Organization"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="PlanDefinition-0baed83c-495e-4129-8e26-537a0ede5e15.html"/>
+               <title value="A quality specification is for a drug product or drug substance (excipient, API or raw material)"/>
                <generation value="generated"/>
             </page>
             <page>
                <nameUrl value="SubstanceDefinition-0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b.html"/>
-               <title value="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
+               <title value="Example of ExcipientRaw profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="PlanDefinition-394c19af-062b-49b4-9f8d-f5a3499a8476.html"/>
+               <title value="A quality specification is for a drug substance "/>
                <generation value="generated"/>
             </page>
             <page>
                <nameUrl value="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e.html"/>
                <title value="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="Organization-78f4b797-fbb1-4078-974d-9471bdae7ada.html"/>
-               <title value="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -3265,7 +3305,7 @@
             </page>
             <page>
                <nameUrl value="SubstanceDefinition-f5de5600-7e54-4d2d-b442-7b3366531231.html"/>
-               <title value="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
+               <title value="Example RoutineSubstanceDefinition."/>
                <generation value="generated"/>
             </page>
             <page>

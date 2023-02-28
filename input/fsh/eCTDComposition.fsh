@@ -37,10 +37,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * entry[ManufacturedItemDefinition].resource only pqcmc-product-part
 * entry[Ingredient].fullUrl 1..1
 * entry[Ingredient].resource 1..1
-* entry[Ingredient].resource only pqcmc-Component
+* entry[Ingredient].resource only pqcmc-component
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
-* entry[SubstanceDefinition].resource only pqcmc-ComponentSubstance
+* entry[SubstanceDefinition].resource only pqcmc-component-substance
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only mfg-test-site-organization or cmc-sponsor-organization
@@ -228,7 +228,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * entry[MedicinalProductDefinition].resource only pqcmc-drug-product-with-impurities
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
-* entry[SubstanceDefinition].resource only pqcmc-DrugSubstanceImpurity
+* entry[SubstanceDefinition].resource only pqcmc-drug-substance-impurity
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only mfg-test-site-organization or cmc-sponsor-organization
@@ -325,7 +325,7 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry[Composition].resource only ectd-composition-sp4151
 * entry[PlanDefinition].fullUrl 1..1
 * entry[PlanDefinition].resource 1..1
-* entry[PlanDefinition].resource only pqcmcQualitySpecification
+* entry[PlanDefinition].resource only pqcmc-quality-specification
 * entry[MedicinalProductDefinition].fullUrl 1..1
 * entry[MedicinalProductDefinition].resource 1..1
 * entry[MedicinalProductDefinition].resource only pqcmc-routine-drug-product
@@ -454,7 +454,7 @@ Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles
 * entry[Composition].resource only ectd-composition-sp7181
 * entry[PlanDefinition].fullUrl 1..1
 * entry[PlanDefinition].resource 1..1
-* entry[PlanDefinition].resource only pqcmcStabilitySummary
+* entry[PlanDefinition].resource only pqcmc-stability-summary
 * entry[MedicinalProductDefinition].fullUrl 1..1
 * entry[MedicinalProductDefinition].resource 1..1
 * entry[MedicinalProductDefinition].resource only pqcmc-routine-drug-product

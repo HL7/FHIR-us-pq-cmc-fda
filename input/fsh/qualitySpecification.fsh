@@ -12,7 +12,13 @@ Description: """The current FDA regulatory status of the specification. [Source:
 Examples: Approved, Not Approved, etc.
 Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
 """
+
 * value[x] 1..1 MS
+  * ^short = "Specification Status"
+  * ^definition = """ The current FDA regulatory status of the specification. [Source: SME Defined]
+Examples: Approved, Not Approved, etc.
+Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
+Note: This is different from Application Status """
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationStatusTerminology (required)
 
@@ -22,7 +28,12 @@ Title: "Specification Type"
 Description: """A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined]
 Examples: Drug product, drug substance, etc.
 """
+
 * value[x] 1..1 MS
+  * ^short = "Specification Type"
+  * ^definition = """ A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
+Examples: Drug product, Drug substance. 
+"""
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationTypeTerminology (required)
 
@@ -46,22 +57,16 @@ Note: This is the title or name of the impurity (sometimes expressed as a ratio)
 
 Profile: QualitySpecification
 Parent: PlanDefinition
-Id: pqcmcQualitySpecification
+Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
-* extension contains pq-specification-status-extension named specificationStatus 0..1 MS
-* extension[specificationStatus] ^short = "Specification Status"
-* extension[specificationStatus] ^definition = """ The current FDA regulatory status of the specification. [Source: SME Defined]
-Examples: Approved, Not Approved, etc.
-Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-Note: This is different from Application Status """
-* extension contains pq-specification-type-extension named specificationType 0..1 MS
-* extension[specificationType] ^short = "Specification Type"
-* extension[specificationType] ^definition = """ A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
-Examples: Drug product, Drug substance. """
-* .extension contains pq-additional-info-extension named spec-additional-info 0..* MS
-* .extension[spec-additional-info] ^short = "Specification Additional Information"
-* .extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
+
+* extension contains 
+    pq-specification-status-extension named specificationStatus 1..1 MS and
+    pq-specification-type-extension named specificationType 1..1 MS and
+    pq-additional-info-extension named spec-additional-info 0..1 MS
+* extension[spec-additional-info] ^short = "Specification Additional Information"
+* extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
 Examples: replaces method ABC, using the XYZ facility.
 """
 * identifier 1..1 MS
@@ -86,28 +91,31 @@ Note: This value should be unique across all specifications for a given material
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
 Note: This is the date a particular version of the specification was internally accepted by the submitter.
 """
-* useContext 1..1 MS
+* useContext MS
 * useContext ^short = "Specification Status"
-* useContext ^definition = "The current FDA regulatory status of the specification. [Source: SME Defined]
+* useContext ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
 Examples: Approved, Not Approved, Reported in a CBE or AR.
 Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-Note: This is different from Application Status"
-* approvalDate 1..1 MS
+Note: This is different from Application Status"""
+* useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#workflow	"Workflow Setting"
+* useContext.valueCodeableConcept.coding from PqcmcSpecificationStatusTerminology
+* approvalDate  MS
 * approvalDate ^short = "Specification Status Date"
 * approvalDate ^definition = """ The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
 Note: If the application is not yet approved, then this is the date of the current submission OR the date of the complete response (CR).
 Note: This is not the application approval status date. """
-* goal.category 1..1 MS
-* goal.category.coding.code 1..1 MS
-* goal.category.coding.code ^short = "Aceptacnce Criteria Usage"
-* goal.category.coding.code ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
-Note: The concept of  'In-Process' is  subsumed by the Release code. "
-* goal.category.coding.code from PqcmcTestUsageTerminology
-* goal.category.text ^short = ""
 * goal.description 1..1 MS
 * goal.description ^short = "Original Text"
 * goal.description ^definition = """ The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as it appears in the Specification. """
+* goal.addresses 1..* MS
+* goal.addresses.coding.code 1..1 MS
+* goal.addresses.coding.code ^short = "Aceptacnce Criteria Usage"
+* goal.addresses.coding.code ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
+Note: The concept of  'In-Process' is  subsumed by the Release code. "
+* goal.addresses.coding.code from PqcmcTestUsageTerminology
+* goal.addresses.text ^short = ""
+
 * goal.documentation 0..* MS
 * goal.documentation.type = http://hl7.org/fhir/related-artifact-type#comments-on
 * goal.documentation.display 1..1 MS
@@ -145,12 +153,14 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.high.unit 1..1 MS
 * goal.target.detailRange.high.code 1..1 MS
 * goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology
+
 * goal.target.detailString  0..1 MS
 * goal.target.detailString ^short = "Acceptance Criteria (Text)"
 * goal.target.detailString.extension contains pq-interpretation-code-extension named interpretationCodeS 1..1 MS
 * goal.target.detailString.extension[interpretationCodeS] ^short = "Interpretation Code"
 * goal.target.detailString.extension[interpretationCodeS] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
 * goal.target.detailString.extension[interpretationCodeS].valueCodeableConcept.coding.code = #C48660 "Not Applicable"
+
 * goal.target.detailInteger  0..1 MS
 * goal.target.detailInteger ^short = "Replicate Number"
 * goal.target.detailInteger ^definition =  """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
@@ -175,7 +185,7 @@ Default 'Single Stage'.
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
 Note: as defined by the sponsor
 """
-* action.title.extension contains pq-rrt-extension named rrt 1..1 MS
+* action.title.extension contains pq-rrt-extension named rrt 0..1 MS
 * action.description 0..1 MS
 * action.description ^short = "Test Additional Information | Stage Additional Information"
 * action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].

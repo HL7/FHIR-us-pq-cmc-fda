@@ -48,7 +48,7 @@ Example: International Units for Enzymes
 
 Profile: DrugSubstance
 Parent: SubstanceDefinition
-Id: pqcmc-DrugSubstance
+Id: pqcmc-drug-substance
 Title: "Drug Substance"
 Description: "Drug Substance (Active Ingredient) nomenclature and characterization."
 * . obeys cmc-structure-required
@@ -259,7 +259,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 
 Profile: ImpuritySubstance
 Parent: SubstanceDefinition
-Id: pqcmc-DrugSubstanceImpurity
+Id: pqcmc-drug-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity."
 * . obeys cmc-structure-required
@@ -366,7 +366,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
-Id: pqcmc-PolymorphicForm
+Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
@@ -405,7 +405,7 @@ Example: Polymorph A
 
 Profile: ComponentSubstance
 Parent: SubstanceDefinition
-Id: pqcmc-ComponentSubstance
+Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
 * identifier 0..1
@@ -535,7 +535,7 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 
 Profile: DrugProductComponent
 Parent: Ingredient
-Id: pqcmc-Component
+Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 

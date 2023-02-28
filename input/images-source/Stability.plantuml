@@ -4,6 +4,8 @@ allowmixing
 package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle" as NODES {
 node "DrugProductBatch" as NN { 
       object "**Parent:** Medication" as obj3 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-instance.html]]
         **ValueSets:**
         Drug Route Of Administration Terminology
         Pharmaceutical Dosage Form Terminology
@@ -36,6 +38,8 @@ diamond CH3
 
 node "DrugSubstanceBatch" as NNS { 
       object "**Parent:** Substance" as obj4 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
                 **ValueSets:**
                 Batch utilization Terminology
                 Units Of Measure Terminology
@@ -60,6 +64,8 @@ node "DrugSubstanceBatch" as NNS {
 }
 node "StabilityStudyIntervalReport" as Ninterval { 
       object "**Parent:** DiagnosticReport" as objinterval {
+             **Reference:**
+      [[StructureDefinition-pqcmc-stability-study-interval-report.html]]
     }
         object "**Extensions**" as objIntEx {
         pq-timePoint-extension
@@ -71,6 +77,8 @@ node "StabilityStudyIntervalReport" as Ninterval {
 
   node "BatchAnalysis" as N2 { 
       object "**Parent:** DiagnosticReport" as obj2 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-batch-analysis.html]]
     }
         object "**Extensions**" as objQSEx {
         pq-quality-specification-extension
@@ -80,16 +88,18 @@ node "StabilityStudyIntervalReport" as Ninterval {
 
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
+             **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Manufacturing Site Unique Identifier Type
 	    GENC Country Codes
     }
 }
 
-
-
 node "StabilitySubStudy" as NSub { 
       object "**Parent:** ResearchStudy" as objSub {
+             **Reference:**
+      [[StructureDefinition-pq-stability-sub-study.html]]
         **ValueSets:**
         Study Type Terminology
         Storage Conditions Terminology
@@ -106,6 +116,8 @@ objExsSub *-- objSub
 
 node "StabilityStudy" as NMain { 
       object "**Parent:** ResearchStudy" as objMain {
+             **Reference:**
+      [[StructureDefinition-pq-stability-study.html]]
         **ValueSets:**
 	Stability Study Reason Terminology
       }
@@ -119,12 +131,16 @@ objExsMain *-- objMain
 
 node "StabilitySubStudy" as NSub2 { 
       object "Another StabilitySubStudy" as objSub2 {
+             **Reference:**
+      [[StructureDefinition-pq-stability-sub-study.html]]
 
       }
 }
 
 node "ResultObservation" as NNOBS { 
       object "**Parent:** Observation" as observ3 {
+             **Reference:**
+      [[StructureDefinition-pq-result-observation.html]]
         **ValueSets:**
         Conformance Criteria Terminology
         Units Of Measure Terminology    
@@ -139,6 +155,8 @@ node "ResultObservation" as NNOBS {
 
 node "MultipleReplicatesResultObservation" as NNstage { 
       object "**Parent:** Observation" as observS {
+             **Reference:**
+      [[StructureDefinition-pq-result-observation.html]]
         **ValueSets:**
  PqcmcConformanceCriteriaTerminology
  PqcmcUnitsMeasureTerminology
@@ -151,14 +169,18 @@ node "MultipleReplicatesResultObservation" as NNstage {
         objExsStageObs *-- observS
 }
 
-node "EctdCompositionSP4151" as N1 { 
+node "EctdCompositionSP7383" as N1 { 
       object "**Parent:** Composition" as obj1 {
+      **Reference:**
+      [[StructureDefinition-cmc-ectd-document-sp7383.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
 }
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+              **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }

@@ -5,24 +5,31 @@ package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES 
 
 node "EctdComposition32P55" as N1 { 
       object "**Parent:** Composition" as obj1 {
+           **Reference:**
+      [[StructureDefinition-cmc-ectd-document-32p55.html]]   
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
 }
  node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+         **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }
 } 
-  
   node "DrugProductwithImpurites" as NN { 
-      object "**Parent:** MedicationDefinition" as obj3 {      
+      object "**Parent:** MedicationDefinition" as obj3 {  
+         **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-with-impurities.html]]    
       }
   }
 
 node "ImpuritySubstance" as N6 { 
       object "**Parent:** SubstanceDefinition" as obj2 {
+           **Reference:**
+      [[StructureDefinition-pqcmc-DrugSubstanceImpurity.html]]   
       **ValueSets:**
       EVMPDSubstanceClassification
       PqcmcImpurityClassificationTerminology

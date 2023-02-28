@@ -3,36 +3,10 @@ allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
   
-  node "EctdComposition32S23" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-      **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }
-}
-
- node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-        **ValueSets:**
-        GENC Country Codes
-    }
-} 
-  node "ExcipientRaw" as N21 { 
-      object "**Parent:** SubstanceDefinition" as obj22 {
-        **ValueSets:**
-          GENC Country Codes
-          Source Type Terminology
-    }
-}
-node "MfgTestSiteOrganization" as N21mfg { 
-    object "**Parent:** Organization" as objTS  {
-        **ValueSets:**
-         Manufacturing Site Unique Identifier Type
-         GENC Country Codes
-    }
-}
-
- node "QualitySpecification" as N2 { 
+  node "QualitySpecification" as N2 { 
       object "**Parent:** PlanDefinition" as obj2 {
+          **Reference:**
+      [[StructureDefinition-pqcmc-quality-specification.html]]
         **ValueSets**
         PqActionRelationTypes
         PqcmcInterpretationCodeTerminology
@@ -54,6 +28,43 @@ node "MfgTestSiteOrganization" as N21mfg {
     }
     obj2 <|-- objQSEx
 }
+  node "EctdComposition32S23" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+          **Reference:**
+      [[StructureDefinition-cmc-ectd-document-32p32.html]]
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+
+ node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+       **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+        **ValueSets:**
+        GENC Country Codes
+    }
+} 
+  node "ExcipientRaw" as N21 { 
+      object "**Parent:** SubstanceDefinition" as obj22 {
+          **Reference:**
+      [[StructureDefinition-pqcmc-excipient.html]]
+        **ValueSets:**
+          GENC Country Codes
+          Source Type Terminology
+    }
+}
+node "MfgTestSiteOrganization" as N21mfg { 
+    object "**Parent:** Organization" as objTS  {
+        **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+        **ValueSets:**
+         Manufacturing Site Unique Identifier Type
+         GENC Country Codes
+    }
+}
+
+ 
 
 N1 --> N21
 N2 --> N21

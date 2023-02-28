@@ -5,8 +5,8 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="DocumentReference/5abefb38-4325-4609-bc3f-61fd62c6f90e" key="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e" name="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
-<artifact id="Organization/029f1cb8-2dc7-4971-8309-55e6dd129918" key="Organization-029f1cb8-2dc7-4971-8309-55e6dd129918" name="A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."/>
-<artifact id="Organization/78f4b797-fbb1-4078-974d-9471bdae7ada" key="Organization-78f4b797-fbb1-4078-974d-9471bdae7ada" name="A profile for the data elements required to identify the sponsor of the drug products or substances"/>
+<artifact id="PlanDefinition/0baed83c-495e-4129-8e26-537a0ede5e15" key="PlanDefinition-0baed83c-495e-4129-8e26-537a0ede5e15" name="A quality specification is for a drug product or drug substance (excipient, API or raw material)"/>
+<artifact id="PlanDefinition/394c19af-062b-49b4-9f8d-f5a3499a8476" key="PlanDefinition-394c19af-062b-49b4-9f8d-f5a3499a8476" name="A quality specification is for a drug substance"/>
 <artifact id="ValueSet/pqcmc-action-relaiton-types" key="ValueSet-pqcmc-action-relaiton-types" name="ActionRelationTypes"/>
 <artifact id="StructureDefinition/pq-additional-info-extension" key="StructureDefinition-pq-additional-info-extension" name="Aditional Information"/>
 <artifact id="StructureDefinition/cmc-document-reference" key="StructureDefinition-cmc-document-reference" name="Base64DocumentReference"/>
@@ -33,7 +33,7 @@
 <artifact id="ValueSet/pqcmc-coating-purpose-vs" key="ValueSet-pqcmc-coating-purpose-vs" name="Coating Purpose value set"/>
 <artifact id="CodeSystem/pqcmc-product-characteristic" key="CodeSystem-pqcmc-product-characteristic" name="Code System PQCMC Product Characteristic"/>
 <artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code system PQCMC Comp Section Types"/>
-<artifact id="StructureDefinition/pqcmc-ComponentSubstance" key="StructureDefinition-pqcmc-ComponentSubstance" name="Component Substance"/>
+<artifact id="StructureDefinition/pqcmc-component-substance" key="StructureDefinition-pqcmc-component-substance" name="Component Substance"/>
 <artifact id="ValueSet/pqcmc-conformance-to-criteria-terminology" key="ValueSet-pqcmc-conformance-to-criteria-terminology" name="Conformance to Criteria Terminology"/>
 <artifact id="StructureDefinition/pq-container-closure-extension" key="StructureDefinition-pq-container-closure-extension" name="Container Closure"/>
 <artifact id="ValueSet/pqcmc-container-orientation-terminology" key="ValueSet-pqcmc-container-orientation-terminology" name="Container Orientation Terminology"/>
@@ -42,7 +42,7 @@
 <artifact id="StructureDefinition/pqcmc-drug-produc" key="StructureDefinition-pqcmc-drug-produc" name="Drug Product"/>
 <artifact id="StructureDefinition/pqcmc-product-batch-formula" key="StructureDefinition-pqcmc-product-batch-formula" name="Drug Product Batch Formula"/>
 <artifact id="StructureDefinition/pqcmc-dp-ingredient" key="StructureDefinition-pqcmc-dp-ingredient" name="Drug Product Batch Formula Ingredient"/>
-<artifact id="StructureDefinition/pqcmc-Component" key="StructureDefinition-pqcmc-Component" name="Drug Product Component"/>
+<artifact id="StructureDefinition/pqcmc-component" key="StructureDefinition-pqcmc-component" name="Drug Product Component"/>
 <artifact id="ValueSet/pqcmc-drug-product-component-function-category-terminology" key="ValueSet-pqcmc-drug-product-component-function-category-terminology" name="Drug Product Component Function Category Terminology"/>
 <artifact id="StructureDefinition/pqcmc-druproduct-container-closure" key="StructureDefinition-pqcmc-druproduct-container-closure" name="Drug Product Container Closure"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-description" key="StructureDefinition-pqcmc-drug-product-description" name="Drug Product Description"/>
@@ -50,14 +50,17 @@
 <artifact id="StructureDefinition/pqcmc-drug-product-instance" key="StructureDefinition-pqcmc-drug-product-instance" name="Drug Product Manufactured Instance"/>
 <artifact id="StructureDefinition/drug-product-manufacturing-batch" key="StructureDefinition-drug-product-manufacturing-batch" name="Drug Product Manufacturing Batch"/>
 <artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
-<artifact id="StructureDefinition/pqcmc-DrugSubstance" key="StructureDefinition-pqcmc-DrugSubstance" name="Drug Substance"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance" key="StructureDefinition-pqcmc-drug-substance" name="Drug Substance"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-container-closure" key="StructureDefinition-pqcmc-drug-substance-container-closure" name="Drug Substance Container Closure"/>
-<artifact id="StructureDefinition/pqcmc-DrugSubstanceImpurity" key="StructureDefinition-pqcmc-DrugSubstanceImpurity" name="Drug Substance Impurity"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-impurity" key="StructureDefinition-pqcmc-drug-substance-impurity" name="Drug Substance Impurity"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-batch" key="StructureDefinition-pqcmc-drug-substance-batch" name="Drug Substance Manufactured Batch"/>
 <artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-structure" key="StructureDefinition-pqcmc-drug-substance-structure" name="Drug Substance Molecular Structure"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-structure-represent" key="StructureDefinition-pqcmc-drug-substance-structure-represent" name="Drug Substance Structures"/>
 <artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
+<artifact id="SubstanceDefinition/f5de5600-7e54-4d2d-b442-7b3366531231" key="SubstanceDefinition-f5de5600-7e54-4d2d-b442-7b3366531231" name="Example RoutineSubstanceDefinition."/>
+<artifact id="SubstanceDefinition/0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b" key="SubstanceDefinition-0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b" name="Example of ExcipientRaw profile"/>
+<artifact id="Organization/029f1cb8-2dc7-4971-8309-55e6dd129918" key="Organization-029f1cb8-2dc7-4971-8309-55e6dd129918" name="Example of MfgTestSiteOrganization profile on Organization"/>
 <artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
 <artifact id="ValueSet/pqcmc-expiration-date-classification-terminology" key="ValueSet-pqcmc-expiration-date-classification-terminology" name="Expiration Date Classification Terminology"/>
@@ -70,11 +73,12 @@
 <artifact id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
 <artifact id="ValueSet/pqcmc-interval-description-code-terminology" key="ValueSet-pqcmc-interval-description-code-terminology" name="Interval Description Code Terminology"/>
 <artifact id="StructureDefinition/pqcmc-product-part" key="StructureDefinition-pqcmc-product-part" name="Manufactured Drug Product"/>
+<artifact id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="Manufacturing and/or Test Site Organization"/>
 <artifact id="CodeSystem/medicinal-product-contact-type-cs" key="CodeSystem-medicinal-product-contact-type-cs" name="Medicinal Product Contact Type"/>
-<artifact id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="MfgTestSiteOrganization"/>
 <artifact id="StructureDefinition/pq-additional-stage-result-observation" key="StructureDefinition-pq-additional-stage-result-observation" name="Multiple Result Observation"/>
+<artifact id="ValueSet/pqcmc-name-part--terminology" key="ValueSet-pqcmc-name-part--terminology" name="Name Part Terminology"/>
 <artifact id="ValueSet/spl-pharmaceutical-dosage-form-terminology" key="ValueSet-spl-pharmaceutical-dosage-form-terminology" name="Pharmaceutical Dosage Form Terminology"/>
-<artifact id="StructureDefinition/pqcmc-PolymorphicForm" key="StructureDefinition-pqcmc-PolymorphicForm" name="Polymorphic Form"/>
+<artifact id="StructureDefinition/pqcmc-polymorphic-form" key="StructureDefinition-pqcmc-polymorphic-form" name="Polymorphic Form"/>
 <artifact id="StructureDefinition/pq-cmc-address" key="StructureDefinition-pq-cmc-address" name="PqAddress"/>
 <artifact id="StructureDefinition/pq-product-batch-ingredient-extension" key="StructureDefinition-pq-product-batch-ingredient-extension" name="Product Batch Ingredient Extension"/>
 <artifact id="CodeSystem/pqcmc-product-ingredient-name-type" key="CodeSystem-pqcmc-product-ingredient-name-type" name="Product Ingredient Name Type"/>
@@ -82,10 +86,8 @@
 <artifact id="ValueSet/pqcmc-product-part-ingredient-physical-location-vs" key="ValueSet-pqcmc-product-part-ingredient-physical-location-vs" name="Product Part Ingredient Physical Location value set"/>
 <artifact id="CodeSystem/pqcmc-product-part-type" key="CodeSystem-pqcmc-product-part-type" name="Product Part Type"/>
 <artifact id="ValueSet/pqcmc-product-part-type-vs" key="ValueSet-pqcmc-product-part-type-vs" name="Product Part Type Value Set"/>
-<artifact id="SubstanceDefinition/f5de5600-7e54-4d2d-b442-7b3366531231" key="SubstanceDefinition-f5de5600-7e54-4d2d-b442-7b3366531231" name="Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."/>
-<artifact id="SubstanceDefinition/0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b" key="SubstanceDefinition-0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b" name="Provides sufficient information to identify an inactive substance and its source when stability data is required in the submission."/>
 <artifact id="StructureDefinition/pq-pullDate-extension" key="StructureDefinition-pq-pullDate-extension" name="Pull Date"/>
-<artifact id="StructureDefinition/pqcmcQualitySpecification" key="StructureDefinition-pqcmcQualitySpecification" name="Quality Specification"/>
+<artifact id="StructureDefinition/pqcmc-quality-specification" key="StructureDefinition-pqcmc-quality-specification" name="Quality Specification"/>
 <artifact id="StructureDefinition/pq-quality-specification-extension" key="StructureDefinition-pq-quality-specification-extension" name="Quality Specification Reference"/>
 <artifact id="ValueSet/pqcmc-quality-benchmark-terminology" key="ValueSet-pqcmc-quality-benchmark-terminology" name="Quality Standard Terminology"/>
 <artifact id="StructureDefinition/pq-rrt-extension" key="StructureDefinition-pq-rrt-extension" name="Relative Retention Time"/>
@@ -104,12 +106,12 @@
 <artifact id="StructureDefinition/pq-specification-type-extension" key="StructureDefinition-pq-specification-type-extension" name="Specification Type"/>
 <artifact id="ValueSet/pqcmc-specification-type-terminology" key="ValueSet-pqcmc-specification-type-terminology" name="Specification Type Terminology"/>
 <artifact id="ValueSet/pqcmc-sponsor-identifier-type-terminology" key="ValueSet-pqcmc-sponsor-identifier-type-terminology" name="Sponsor Identifier Type Terminology"/>
-<artifact id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="SponsorOrganization"/>
+<artifact id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="Sponsor Organization"/>
 <artifact id="StructureDefinition/pq-stability-study" key="StructureDefinition-pq-stability-study" name="Stability Study"/>
 <artifact id="StructureDefinition/pqcmc-stability-study-interval-report" key="StructureDefinition-pqcmc-stability-study-interval-report" name="Stability Study Interval Report"/>
 <artifact id="ValueSet/pqcmc-stability-study-reason-terminology" key="ValueSet-pqcmc-stability-study-reason-terminology" name="Stability Study Reason Terminology"/>
 <artifact id="StructureDefinition/pq-stability-sub-study" key="StructureDefinition-pq-stability-sub-study" name="Stability Sub-Study"/>
-<artifact id="StructureDefinition/pqcmcStabilitySummary" key="StructureDefinition-pqcmcStabilitySummary" name="Stability Summary"/>
+<artifact id="StructureDefinition/pqcmc-stability-summary" key="StructureDefinition-pqcmc-stability-summary" name="Stability Summary"/>
 <artifact id="CodeSystem/pqcmc-storage-condition-category-codes" key="CodeSystem-pqcmc-storage-condition-category-codes" name="Storage Condition Category Codes"/>
 <artifact id="ValueSet/pqcmc-storage-conditions-terminology" key="ValueSet-pqcmc-storage-conditions-terminology" name="Storage Conditions Terminology"/>
 <artifact id="StructureDefinition/pq-strength-operator-extension" key="StructureDefinition-pq-strength-operator-extension" name="Strength Operator"/>

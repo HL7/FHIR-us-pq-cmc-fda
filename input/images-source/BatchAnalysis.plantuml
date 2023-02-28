@@ -5,6 +5,8 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.5.1 Batch Analysis Bundle" as NODES {
 
 node "DrugProductBatch" as NN { 
       object "**Parent:** Medication" as obj3 {
+        **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-instance.html]]
         **ValueSets:**
         Drug Route Of Administration Terminology
         Pharmaceutical Dosage Form Terminology
@@ -33,6 +35,8 @@ objExsBatch *-- obj3
 }
   node "BatchAnalysis" as N2 { 
       object "**Parent:** DiagnosticReport" as obj2 {
+        **Reference:**
+      [[StructureDefinition-pqcmc-batch-analysis.html]]
     }
         object "**Extensions**" as objQSEx {
         pq-quality-specification-extension
@@ -42,6 +46,8 @@ objExsBatch *-- obj3
 
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
+       **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Manufacturing Site Unique Identifier Type
 	    GENC Country Codes
@@ -49,6 +55,8 @@ node "MfgTestSiteOrganization" as NMFG {
 }
 node "DrugSubstanceBatch" as NNS { 
       object "**Parent:** Substance" as obj4 {
+        **Reference:**
+      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
                 **ValueSets:**
                 Batch utilization Terminology
                 Units Of Measure Terminology
@@ -74,6 +82,8 @@ node "DrugSubstanceBatch" as NNS {
 
 node "ResultObservation" as NNOBS { 
       object "**Parent:** Observation" as observ3 {
+        **Reference:**
+      [[StructureDefinition-pq-result-observation.html]]
         **ValueSets:**
         Conformance Criteria Terminology
         Units Of Measure Terminology    
@@ -88,6 +98,8 @@ node "ResultObservation" as NNOBS {
 
 node "MultipleReplicatesResultObservation" as NNstage { 
       object "**Parent:** Observation" as observS {
+        **Reference:**
+      [[StructureDefinition-pq-additional-stage-result-observation.html]]
         **ValueSets:**
  PqcmcConformanceCriteriaTerminology
  PqcmcUnitsMeasureTerminology
@@ -102,12 +114,16 @@ node "MultipleReplicatesResultObservation" as NNstage {
 
 node "EctdCompositionSP4151" as N1 { 
       object "**Parent:** Composition" as obj1 {
+        **Reference:**
+      [[StructureDefinition-cmc-ectd-document-sp4151.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
 }
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+        **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }

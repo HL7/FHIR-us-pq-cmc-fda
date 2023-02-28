@@ -2,8 +2,11 @@
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
+
  node "BatchFormula" as NN { 
       object "**Parent:** ManufacturedItemDefinition" as obj3 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-product-batch-formula.html]]
         **ValueSets:**
         Units of Measure Terminology
       } 
@@ -17,6 +20,8 @@ package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
 
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
+        **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }
@@ -24,6 +29,8 @@ node "SponsorOrganization" as NSO {
 
 node "DrugProductIngredient" as NNgred { 
       object "**Parent:** Ingredient" as obj10 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-dp-ingredient.html]]
         '**ValueSets:**
         'Units of Measure Terminology
           
@@ -32,6 +39,8 @@ node "DrugProductIngredient" as NNgred {
 }
  node "EctdComposition32P32" as N1 { 
       object "**Parent:** Composition" as obj1 {
+                   **Reference:**
+      [[StructureDefinition-cmc-ectd-document-32p32.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
@@ -39,6 +48,8 @@ node "DrugProductIngredient" as NNgred {
 }
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
+                   **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Manufacturing Site Unique Identifier Type
 	    GENC Country Codes
@@ -47,6 +58,8 @@ node "MfgTestSiteOrganization" as NMFG {
 
 node "RoutineSubstanceDefinition" as NNS { 
       object "**Parent:** SubstanceDefinition" as obj4 {
+                   **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                 **ValueSets:**
                 EVMPDSubstanceClassification
                 Quality Benchmark Terminology
@@ -56,6 +69,8 @@ node "RoutineSubstanceDefinition" as NNS {
 }
 node "BatchFormulaMedicinalProduct" as NN2 { 
       object "**Parent:** DrugProduct" as obj32 {
+                   **Reference:**
+      [[StructureDefinition-pqcmc-batch-formula-product.html]]
           
       }
 }

@@ -5,6 +5,8 @@ package "eCTD Heading 3.2.S P4151 P4151 Specification Bundle" as NODES {
 
   node "RoutineDrugProduct" as NN { 
       object "**Parent:** DrugProduct" as obj3 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-product.html]]
         **ValueSets:**
         Drug Route Of Administration Terminology
         Pharmaceutical Dosage Form Terminology
@@ -13,6 +15,8 @@ package "eCTD Heading 3.2.S P4151 P4151 Specification Bundle" as NODES {
 }
 node "ExcipientRaw" as N21 { 
       object "**Parent:** SubstanceDefinition" as obj22 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-excipient.html]]
         **ValueSets:**
           GENC Country Codes
           Source Type Terminology
@@ -20,6 +24,8 @@ node "ExcipientRaw" as N21 {
 }
 node "MfgTestSiteOrganization" as N21mfg { 
     object "**Parent:** Organization" as objTS  {
+       **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
         **ValueSets:**
          Manufacturing Site Unique Identifier Type
          GENC Country Codes
@@ -28,6 +34,8 @@ node "MfgTestSiteOrganization" as N21mfg {
 
 node "EctdCompositionSP4151" as N1 { 
       object "**Parent:** Composition" as obj1 {
+         **Reference:**
+      [[StructureDefinition-cmc-ectd-document-sp4151.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
@@ -35,6 +43,8 @@ node "EctdCompositionSP4151" as N1 {
 }
  node "RoutineSubstanceDefinition for API" as NNS { 
       object "**Parent:** SubstanceDefinition" as obj4 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                 **ValueSets:**
                 EVMPDSubstanceClassification
                 Quality Benchmark Terminology
@@ -44,23 +54,20 @@ node "EctdCompositionSP4151" as N1 {
 }
 node "SponsorOrganization" as NMSpon { 
       object "**Parent:** Organization" as objDP {
+        **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
          **ValueSets:**
         GENC Country Codes
     }
 }
 
-node "RoutineDrugProduct" as NN { 
-      object "**Parent:** DrugProduct" as obj3 {
-        **ValueSets:**
-        Drug Route Of Administration Terminology
-        Pharmaceutical Dosage Form Terminology
-          
-      }
-}
+
 diamond CH
 
   node "QualitySpecification" as N2 { 
       object "**Parent:** PlanDefinition" as obj2 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-quality-specification.html]]
         **ValueSets**
         PqActionRelationTypes
         PqcmcInterpretationCodeTerminology

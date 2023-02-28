@@ -3,6 +3,7 @@ Id: medicinal-product-contact-type-cs
 Title: "Medicinal Product Contact Type"
 Description: "Contact type for a Medicinal Product"
 * ^experimental = true
+
 * #ProposedMAH "Proposed Marketing Authorisation Holder/Person"
 * #ProcedureContactDuring "Person/Company authorised for Communication on behalf of the Applicant during the Procedure"
 * #ProcedureContactAfter "Person/Company authorised for Communication between MAH and Authorities after Authorisation"
@@ -15,6 +16,7 @@ Title: "Batch Formula Property Type"
 Description: "Batch Formula Property Types"
 * ^experimental = true
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/batch-formula-property-cs"
+
 * #BatchSize "Batch Quantity"
 * #BatchAddInfo "Batch Formula Additional Information"
 * #AddInfo "Product Part Additional Information"

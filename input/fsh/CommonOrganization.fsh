@@ -18,6 +18,7 @@ RuleSet: DUNSandFEINumber
 Profile: SponsorOrganization
 Parent: Organization
 Id: cmc-sponsor-organization
+Title: "Sponsor Organization"
 Description: "A profile for the data elements required to identify the sponsor of the drug products or substances."
 * ^abstract = true
 * insert DUNSandFEINumber
@@ -38,6 +39,7 @@ Severity: #error
 Profile: MfgTestSiteOrganization
 Parent: Organization
 Id: mfg-test-site-organization 
+Title: "Manufacturing and/or Test Site Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 * ^abstract = true
 
