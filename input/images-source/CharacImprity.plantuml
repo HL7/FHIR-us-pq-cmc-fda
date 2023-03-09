@@ -19,7 +19,7 @@ node "EctdComposition32P55" as N1 {
         GENC Country Codes
     }
 } 
-  node "DrugProductwithImpurites" as NN { 
+  node "DrugProductwithImpurities" as NN { 
       object "**Parent:** MedicationDefinition" as obj3 {  
          **Reference:**
       [[StructureDefinition-pqcmc-drug-product-with-impurities.html]]    

@@ -31,7 +31,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
   node "EctdComposition32S23" as N1 { 
       object "**Parent:** Composition" as obj1 {
           **Reference:**
-      [[StructureDefinition-cmc-ectd-document-32p32.html]]
+      [[StructureDefinition-cmc-ectd-document-32p23.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }

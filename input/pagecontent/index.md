@@ -167,25 +167,31 @@ As mentioned above, the Phase 1 structured data requirements of PQ/CMC project h
 </table>
 
 
-Credits
+###Credits
 
 The development of this Implementation Guide is an initiative funded by the US FDA.
 
-Primary IG authors:
+<ul>
+<ul>Primary IG authors: 
+   <li>Catherine Hosage Norman (mailto: chn@module3solutions.com)</li>
+	<li>Smita Hastak (mailto: shastak@samvit-solutions.com)</li>
+	<li>Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)</li>
+	<li>Bill Friggle (mailto: wfriggle@samvit-solutions.com)</li>
+</ul>
+<ul>Domain Experts and Program Management:
+	<li>Program Management – (list of names to be added soon)
+		<ul>
+		<li/>
+		</ul>
+	</li>
+<li>FDA PQ/CMC SMEs — (list of names to be added soon)
+	<ul>
+	<li/>
+	</ul>
+	</li>
+	</ul>
+</ul>
 
-Catherine Hosage Norman (mailto: chn@module3solutions.com)
-
-Smita Hastak (mailto: shastak@samvit-solutions.com)
-
-Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
-
-Bill Friggle (mailto: wfriggle@samvit-solutions.com)
-
-Domain Experts and Program Management:
-
-Program Management – (list of names to be added soon)
-
-FDA PQ/CMC SMEs — (list of names to be added soon)
 
 The PQ/CMC Projects is Sponsored by the HL7 Biomedical Research & Regulation work group.
 

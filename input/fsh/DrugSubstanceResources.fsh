@@ -89,12 +89,12 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * molecularWeight.amount.code 1..1 MS
 * molecularWeight.amount.code from PqcmcUnitsMeasureTerminology
 
-* structure 0..1 MS
+* structure 1..1 MS
 * structure obeys cmc-substance-structure-graphic-required
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
-* structure.technique 1..1 MS
+* structure.technique 1..* MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
@@ -191,11 +191,11 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
 * name[gsrs].name MS
-* name[gsrs].name ^short = "GSRS Accepted"
+* name[gsrs].name ^short = "GSRS Preferred"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type MS
-* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
 
 * name[usp].name MS
 * name[usp].name ^short = ""USP/NF""
@@ -286,12 +286,13 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.file.title 1..1 MS
 * structure 0..1 MS
 * structure obeys cmc-representation-or-document
-* structure.technique 1..1 MS
+* structure.technique 1..* MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
 * structure.technique.text 1..1 MS
+* structure.representation  MS
 * structure.representation obeys cmc-representation-or-document
 * structure.representation.type 0..1 MS
 * structure.representation.type ^short = "Drug Substance Impurity Method Type| Drug Product Impurity Method Type"
@@ -339,9 +340,16 @@ It is accessible at https://www.uniprot.org/
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
-  sub 0..1 MS and
+  gsrs 0..1 MS and
   comn 0..1 MS and
-  gsrs 0..1 MS 
+  sub 0..1 MS 
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred" 
 * name[sub].name MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
@@ -357,12 +365,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comn].type MS
 * name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
-* name[gsrs].name MS
-* name[gsrs].name ^short = "GSRS Accepted"
-* name[gsrs].name ^definition = """TDB [Source: SME Defined]
-"""
-* name[gsrs].type MS
-* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+
 
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
@@ -492,11 +495,11 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
 * name[gsrs].name MS
-* name[gsrs].name ^short = "GSRS Accepted"
+* name[gsrs].name ^short = "GSRS Preferred"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type MS
-* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
 
 * sourceMaterial 1..1 MS
 * sourceMaterial.type 0..1
@@ -546,7 +549,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 """
 * status.code
 * for ^short = "Reference to MedicinalProductDefinition"
-* substance.code 1..1 MS
+* substance.code  MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only Reference(ComponentSubstance)
 * substance.strength 1..1 MS
@@ -781,9 +784,9 @@ Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/Data
 * code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
 It is accessible at https://www.uniprot.org/
 """
-* name 1..1 MS
+* name 1..* MS
 * name.name ^short = "Excipient Name"
-* name.type = $NCIT#141 "GSRS Accepted"
+* name.type = $NCIT#141 "GSRS Preferred"
 * sourceMaterial 1..1 MS
 * sourceMaterial.type 1..1
 * sourceMaterial.type ^short = "Source Type"
@@ -818,28 +821,61 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin.coding 1..
 * sourceMaterial.countryOfOrigin.coding from genc-country-codes
 
-//________________________________________________________________
-/// Profiles on Profiles
-//________________________________________________________________
-
 Profile: RoutineSubstanceDefinition
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-routine-drug-substance
 Title: "Routine Drug Substance"
 Description: "Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."
 
-* identifier MS
-* classification MS
-* manufacturer MS
-* supplier MS
-* code MS
-* name MS
-* name.preferred 0..1 MS
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+"""
+* manufacturer 1..1 MS
+* manufacturer only Reference(MfgTestSiteOrganization)
+* supplier 0..1 MS
+* supplier only Reference(MfgTestSiteOrganization)
+* name 1..* MS
+* name ^short = "Product Ingredient Name"
+* name ^definition = "Any ingredient intended for use in the manufacture of a drug product, including those that may not appear in such drug product. [Source: (21 CFR 210.3 (b) (3)) PAC-ATLS 1998]"
+
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
+* name contains
+  gsrs 0..1 MS and
+  sub 0..1 MS and
+  comn 0..1 MS
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred" 
+* name[sub].name MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
+
+* name[comn].name MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
 
 Profile: SubstanceContainerClosure
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-container-closure
-Title: "Drug Substance Container Closure"
+Title: "Drug Substance Container Closure  do no routine with extension"
 Description: "Description and coding of the container closure system. Profile on Drug Substance profile."
 * extension contains pq-container-closure-extension named containerClosure 1..1 MS
 * identifier 0..1
@@ -848,10 +884,17 @@ Description: "Description and coding of the container closure system. Profile on
 * name MS
 * name.preferred MS
 
+
+//________________________________________________________________
+/// Profiles on Profiles
+//________________________________________________________________
+
+
+
 Profile: DrugSubstanceNomenclature
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-nomenclature
-Title: "Substance Nomenclature"
+Title: "Substance Nomenclature  on routine - MAKE spedific"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
 
 * identifier MS 
@@ -868,7 +911,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug S
 Profile: DrugSubstanceMaterials
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-materials
-Title: "Substance Raw Materials"
+Title: "Substance Raw Materials on routine - MAKE spedific"
 Description: "Drug Substance Raw Materials. Profile on Drug Substance profile."
 
 * identifier MS
@@ -884,7 +927,7 @@ Description: "Drug Substance Raw Materials. Profile on Drug Substance profile."
 Profile: DrugSubstanceImpurities
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-impurities
-Title: "Substance Impurities"
+Title: "Substance Impurities   redo structure optional"
 Description: "Drug Substance Impurities. Profile on Drug Substance profile."
 
 * identifier MS
@@ -902,7 +945,7 @@ Profile: DrugSubstanceRepresentationalStructure
 Parent: DrugSubstance
 Id: pqcmc-drug-substance-structure-represent
 Title: "Drug Substance Structures"
-Description: "Drug Substance (Active Ingredient) Representational Structures. Profile on Drug Substance profile."
+Description: "Drug Substance (Active Ingredient) Representational Structures. Profile on Drug Substance profile (32S10)."
 
 * identifier 0..1
 * structure 1..1

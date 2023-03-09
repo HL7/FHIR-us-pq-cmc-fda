@@ -624,7 +624,7 @@ Description: "The fields needed to represent the Product Characterization of Imp
 * section ^definition = "Product Characterization of Impurities to be included under the 3.2.P.5.5 eCTD heading."
 * section.code = pqcmc-comp-section-types#32P55 "Product Characterization of Impurities"
 * section.title 1..1 MS
-* section.entry only Reference(DrugProductwithImpurites)
+* section.entry only Reference(DrugProductwithImpurities)
 
 Profile: EctdComposition32P70
 Parent: Composition

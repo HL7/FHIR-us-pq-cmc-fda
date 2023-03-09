@@ -1,15 +1,3 @@
-CodeSystem: MedicinalProductContactTypeCodeSystem
-Id: medicinal-product-contact-type-cs
-Title: "Medicinal Product Contact Type"
-Description: "Contact type for a Medicinal Product"
-* ^experimental = true
-
-* #ProposedMAH "Proposed Marketing Authorisation Holder/Person"
-* #ProcedureContactDuring "Person/Company authorised for Communication on behalf of the Applicant during the Procedure"
-* #ProcedureContactAfter "Person/Company authorised for Communication between MAH and Authorities after Authorisation"
-* #QPPV "Qualified Person Responsible for Pharmacovigilance"
-* #PVEnquiries "Pharmacovigilance Enquiry Information"
-
 CodeSystem: BatchFormulaPropertyCodeSystem
 Id: batch-formula-property-cs
 Title: "Batch Formula Property Type"
@@ -20,6 +8,13 @@ Description: "Batch Formula Property Types"
 * #BatchSize "Batch Quantity"
 * #BatchAddInfo "Batch Formula Additional Information"
 * #AddInfo "Product Part Additional Information"
+
+ValueSet: BatchFormulaPropertyVS
+Id: batch-formula-property-vs
+Title: "Batch Formula Property Type Value Set" 
+Description: "TBD after NCIt codes are added for Batch Formula Property Type"
+* ^experimental = true
+* include codes from system BatchFormulaPropertyCodeSystem
 
 CodeSystem: PqcmcTestCategoryCodes
 Id: pqcmc-test-category-codes
@@ -311,7 +306,6 @@ Id: pqcmc-product-part-type-vs
 Title: "Product Part Type Value Set" 
 Description: "TBD after NCIt codes are added for Product Part Type"
 * ^experimental = true
-//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-type
 * include codes from system PqcmcProductPartType
 
 * $PPT#154 "Blend" 
@@ -449,6 +443,13 @@ Description: "TBD after NCIt codes are added for Capsule Classification Category
 * #135 "Hard PVA Capsule"
 * #136 "Soft Gelatin Capsule"
 
+ValueSet: PqcmcCapsuleClassificationCategoryVS
+Id: capsule-classification-category-vs
+Title: "Capsule Classification Category Value Set" 
+Description: "TBD after NCIt codes are added for Capsule Classification Category"
+* ^experimental = true
+* include codes from system PqcmcCapsuleClassificationCategory
+
 CodeSystem: PqcmcProductIngredientNameType
 Id: pqcmc-product-ingredient-name-type
 Title: "Product Ingredient Name Type" 
@@ -578,6 +579,7 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 * #TabLayCnt "Tablet Layer Count"
 * #BeaTypCnt "Tablet Bead Type Count"
 * #CapConCnt "Capsule Constituent Count"
+* #CapClass "Capsule Classification Category"
 * #Schematic "Schematic"
 * #WgtTyp "Weight Type"
 * #TotWgtNum "Total Weight Numeric Numerator"
@@ -598,16 +600,10 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
-Title: "eCTD sections Value Set"
+Title: "eCTD sections Value Set" 
 Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a valueset instead of the code systme."
 * ^experimental = true
-* include codes from system http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-comp-section-types
-
-//ValueSet: PqcmcNameTypes
-//Id: pqcmc-name-types
-//Title: "Name Types"
-//Description: "Value set of all the values in PqcmcNameTypesCodes."
-//* include codes from system http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-name-types
+* include codes from system PqcmcCompSectionTypes
 
 CodeSystem: PqcmcCompSectionTypes
 Id: pqcmc-comp-section-types
@@ -616,6 +612,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 //* ^url = http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-comp-section-types
 * ^caseSensitive = true
 * ^experimental = false
+
 * #32S10 "Substance General Information"
 * #32S11 "Substance Nomenclature"
 * #32S12 "Substance Structure"
