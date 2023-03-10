@@ -1,7 +1,7 @@
-# WORK IN PROGRESS
+## WORK IN PROGRESS
 
 
-# Background
+## Background
 
 The US Food and Drug Administration (FDA) intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in eCTD Module 3.  Module 3 (M3) of ICH eCTD is commonly referred to as the Chemistry, Manufacturing and Controls (CMC) module.   At the FDA, this ICH eCTD M3 data standardization effort is referred to as the Pharmaceutical Quality/Chemistry, Manufacturing and Controls (PQ/CMC).  For more information on the PQ/CMC Project, please visit [https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc](https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc)
 
@@ -12,17 +12,16 @@ The PQ/CMC Project is an evolving project and FDA is structuring the various sec
 The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG).  At HL7, this project is referred to as Pharmaceutical Quality.  BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
 
 
-# Status:
+## Status:
 
 FDA plans to represent all the Phase 1 data elements and supporting terminology in FHIR Profiles defined here.  These data elements and controlled terminology have been published to the industry for comment through the Federal Register Notices (FRN).  These industry comments and suggestions have been incorporated in the data element standards, as applicable.  
 
 Note: See FDA PQ/CMC website for the scope of Phase 1 of PQ/CMC. In the near future, as FDA develops new structured data elements and terminology for Phase 2 sections of eCTD Module 3, they will solicit industry feedback and then represent the requirements in FHIR. These new requirements will result in additional FHIR profiles that will be added to this IG. 
 
 
-# IG Overview
+## IG Overview
 
-
-## FHIR Resources and Profiles
+### FHIR Resources and Profiles
 
 Phase 1 version of the IG consists of approximately 11 FHIR Profiles. These 11 Profiles are scoped to Phase 1 requirements of the PQ/CMC Project and are aligned with various sections of Module 3 of ICH eCTD version 4.0.  This IG is bound to FHIR R5. The resources leveraged to represent PQ/CMC Phase 1 requirements are listed below and represented in Figure 1
 
@@ -30,8 +29,8 @@ Note: The first 2 FHIR Profiles – Bundle and Composition are organizational pr
 
 
 
-1. _Bundle_
-2. _Composition_
+1. Bundle
+2. Composition
 3. DiagnosticReport
 4. Ingredient
 5. Medication
@@ -54,14 +53,14 @@ Note: The first 2 FHIR Profiles – Bundle and Composition are organizational pr
 {::options parse_block_html="true" /}
 
 
-## PQ/CMC Phase 1 Profiles
+### PQ/CMC Phase 1 Profiles
 
 As mentioned above, the Phase 1 structured data requirements of PQ/CMC project have been represented in FHIR and the Profiles have been designed at boundary of the leaf-level sections of eCTD v 4.0. The table below shows the FHIR Profiles in support of Phase 1 requirements.  These profiles can be accessed through the “eCTD Profiles” menu in the main bar at top of this page.
 
 
 <table>
   <tr>
-   <td><strong>#</strong>
+   <td><strong>No.</strong>
    </td>
    <td><strong>PQ/CMC FHIR Profile Name</strong>
    </td>
@@ -171,27 +170,16 @@ As mentioned above, the Phase 1 structured data requirements of PQ/CMC project h
 
 The development of this Implementation Guide is an initiative funded by the US FDA.
 
-<ul>
-<ul>Primary IG authors: 
-   <li>Catherine Hosage Norman (mailto: chn@module3solutions.com)</li>
-	<li>Smita Hastak (mailto: shastak@samvit-solutions.com)</li>
-	<li>Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)</li>
-	<li>Bill Friggle (mailto: wfriggle@samvit-solutions.com)</li>
-</ul>
-<ul>Domain Experts and Program Management:
-	<li>Program Management – (list of names to be added soon)
-		<ul>
-		<li/>
-		</ul>
-	</li>
-<li>FDA PQ/CMC SMEs — (list of names to be added soon)
-	<ul>
-	<li/>
-	</ul>
-	</li>
-	</ul>
-</ul>
+*Primary IG authors: 
+   *Catherine Hosage Norman (mailto: chn@module3solutions.com)
+	*Smita Hastak (mailto: shastak@samvit-solutions.com)
+	*Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
+	*Bill Friggle (mailto: wfriggle@samvit-solutions.com)
 
+*Domain Experts and Program Management:
+	*Program Management – (list of names to be added soon)
+	
+*FDA PQ/CMC SMEs — (list of names to be added soon)
 
 The PQ/CMC Projects is Sponsored by the HL7 Biomedical Research & Regulation work group.
 

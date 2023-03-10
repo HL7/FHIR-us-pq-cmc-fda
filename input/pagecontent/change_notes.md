@@ -56,15 +56,13 @@ Resolved 38 Errors from R5 draft-final version:
 <li>Changed profiles on DrugSubstance to SubstanceDefinition because the profile on profile was requiring too many optional elements</li>
 <li>Updated plantUMLs: hyperlink to Substance Control</li>
 <li>Updated plantUMLs: Parent refernece to SubstanceDefinition</li>
+<li>Reviewed an updated broken links in all plantUMLs</li>
 <li>Changed DrugProductwithImpurites to DrugProductwithImpurities in sushi and plantUML</li>
 <li>14	eCTD Profiles dropdown	Substance Characterisation (3.2.S.30.)	should be Substance Characterisation (3.2.S.3)</li>
-<li>15	Substance Characterisation [8]	page header is eCTD Substance Characterisation	should it be "Substance Characterisation?
-			
-			For all other pages linked to the eCTD Profiles dropdown, the heading matches the label in the dropdown</li>
-<li>16	Substance Characterisation [8]	8.1 header: eCTD Folder 3.2.S.3.2 Profile Map	8.1 header should be: eCTD Folder 3.2.S.3 Profile Map
-			
-		8.2 header: Example 3.2.S.3.2 Bundle	8.2 header should be: Example 3.2.S.3 Bundle</li>
-
+<li>15	Substance Characterisation [8]	page header is eCTD Substance Characterisation	should it be "Substance Characterisation?</li>
+<li>edits to all profile pages to remove html p marks</li>
+<li>edits to index page to correct numbering and indentation</li>
+<li>edit Substance Impurities to set structure optional</li>
 
 <ul>
 Added the following examples:

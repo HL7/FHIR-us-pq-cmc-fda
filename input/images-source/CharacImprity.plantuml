@@ -29,7 +29,7 @@ node "EctdComposition32P55" as N1 {
 node "ImpuritySubstance" as N6 { 
       object "**Parent:** SubstanceDefinition" as obj2 {
            **Reference:**
-      [[StructureDefinition-pqcmc-DrugSubstanceImpurity.html]]   
+      [[StructureDefinition-pqcmc-substance-impurity.html]]   
       **ValueSets:**
       EVMPDSubstanceClassification
       PqcmcImpurityClassificationTerminology

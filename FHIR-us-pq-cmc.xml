@@ -30,6 +30,7 @@
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
 <artifact id="CodeSystem/batch-formula-property-cs" key="CodeSystem-batch-formula-property-cs" name="Batch Formula Property Type"/>
+<artifact id="ValueSet/batch-formula-property-vs" key="ValueSet-batch-formula-property-vs" name="Batch Formula Property Type Value Set"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization Terminology"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p32" key="StructureDefinition-cmc-ectd-document-32p32" name="CMC eCTD 32P32 Document"/>
@@ -44,6 +45,7 @@
 <artifact id="StructureDefinition/cmc-ectd-document-sp7181" key="StructureDefinition-cmc-ectd-document-sp7181" name="CMC eCTD SP7181 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-sp7383" key="StructureDefinition-cmc-ectd-document-sp7383" name="CMC eCTD SP7383 Document"/>
 <artifact id="CodeSystem/pqcmc-capsule-classification-category" key="CodeSystem-pqcmc-capsule-classification-category" name="Capsule Classification Category"/>
+<artifact id="ValueSet/capsule-classification-category-vs" key="ValueSet-capsule-classification-category-vs" name="Capsule Classification Category Value Set"/>
 <artifact id="ValueSet/pqcmc-chemical-structure-datafile-type-terminology" key="ValueSet-pqcmc-chemical-structure-datafile-type-terminology" name="Chemical Structure Data File Type Terminology"/>
 <artifact id="ValueSet/pqcmc-closure-type-terminology" key="ValueSet-pqcmc-closure-type-terminology" name="Closure Type Terminology"/>
 <artifact id="CodeSystem/pqcmc-coating-purpose" key="CodeSystem-pqcmc-coating-purpose" name="Coating Purpose"/>
@@ -68,7 +70,7 @@
 <artifact id="StructureDefinition/drug-product-manufacturing-batch" key="StructureDefinition-drug-product-manufacturing-batch" name="Drug Product Manufacturing Batch"/>
 <artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance" key="StructureDefinition-pqcmc-drug-substance" name="Drug Substance"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-container-closure" key="StructureDefinition-pqcmc-drug-substance-container-closure" name="Drug Substance Container Closure"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-container-closure" key="StructureDefinition-pqcmc-drug-substance-container-closure" name="Drug Substance Container Closure do no routine with extension"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-impurity" key="StructureDefinition-pqcmc-drug-substance-impurity" name="Drug Substance Impurity"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-batch" key="StructureDefinition-pqcmc-drug-substance-batch" name="Drug Substance Manufactured Batch"/>
 <artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
@@ -141,8 +143,8 @@
 <artifact id="StructureDefinition/pq-protocol-extension" key="StructureDefinition-pq-protocol-extension" name="Study Protocol"/>
 <artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-impurities" key="StructureDefinition-pqcmc-drug-substance-impurities" name="Substance Impurities"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature" key="StructureDefinition-pqcmc-drug-substance-nomenclature" name="Substance Nomenclature"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-materials" key="StructureDefinition-pqcmc-drug-substance-materials" name="Substance Raw Materials"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature" key="StructureDefinition-pqcmc-drug-substance-nomenclature" name="Substance Nomenclature on routine - MAKE spedific"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-materials" key="StructureDefinition-pqcmc-drug-substance-materials" name="Substance Raw Materials on routine - MAKE spedific"/>
 <artifact id="ValueSet/pqcmc-storage-condition-category-terminology" key="ValueSet-pqcmc-storage-condition-category-terminology" name="Test Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-category-terminology" key="ValueSet-pqcmc-test-category-terminology" name="Test Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin Terminology"/>

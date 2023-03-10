@@ -94,7 +94,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
-* structure.technique 1..* MS
+* structure.technique MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
@@ -286,7 +286,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.file.title 1..1 MS
 * structure 0..1 MS
 * structure obeys cmc-representation-or-document
-* structure.technique 1..* MS
+* structure.technique MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
@@ -884,95 +884,889 @@ Description: "Description and coding of the container closure system. Profile on
 * name MS
 * name.preferred MS
 
-
-//________________________________________________________________
-/// Profiles on Profiles
-//________________________________________________________________
-
-
-
 Profile: DrugSubstanceNomenclature
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature
 Title: "Substance Nomenclature  on routine - MAKE spedific"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
 
-* identifier MS 
-* classification MS 
-* manufacturer MS 
-* supplier MS
-* molecularWeight MS
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
+* manufacturer 1..1 MS
+* manufacturer only Reference(MfgTestSiteOrganization)
+* supplier 0..1 MS
+* supplier only Reference(MfgTestSiteOrganization)
+* molecularWeight 0..1 MS
+* molecularWeight ^short = "Molecular Weight"
+* molecularWeight ^definition = "The average mass of a molecule of a compound compared to ¹/₁₂ the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms. [Source: Merriam Webster]"
+* molecularWeight.amount 1..1 MS
+* molecularWeight.amount.value 1..1 MS
+* molecularWeight.amount.unit 1..1 MS
+* molecularWeight.amount.unit ^short = "Molecular Weight UOM"
+* molecularWeight.amount.unit ^definition = """The labeled unit of measure for the molecular weight. [Source: Adapted for NCI EVS C117055]
+ """
+* molecularWeight.amount.code 1..1 MS
+* molecularWeight.amount.code from PqcmcUnitsMeasureTerminology
+
 * code MS
-* name MS
-* name.type MS
+* code obeys cmc-when-unii-required
+* code.code
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+Example: 362O9ITL9D
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
+"""
+* name 1..* MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern"
+* name contains
+  sys 1..1 MS and
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS and
+  usp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS and
+  comp 0..1 MS
+* name[sys].name MS
+* name[sys].name ^short = "Systematic"
+* name[sys].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[sys].type MS
+* name[sys].type = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sub].name MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
+
+* name[brand].name MS
+* name[brand].name ^short = "Brand"
+* name[brand].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
+
+* name[comn].name MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
+
+* name[usp].name MS
+* name[usp].name ^short = ""USP/NF""
+* name[usp].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usp].type MS
+* name[usp].type = PqcmcProductIngredientNameType#147 "USP/NF"
+
+* name[cas].name MS
+* name[cas].name ^short = "CAS Number"
+* name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
+Example: CAS [103-90-2]
+ """
+* name[cas].type MS
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"
+
+* name[inn].name MS
+* name[inn].name ^short = "INN"
+* name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/]
+Example: Paracetamol
+"""
+* name[inn].type MS
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"
+
+* name[usan].name MS
+* name[usan].name ^short = "USAN"
+* name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
+Example: acetaminophen
+ """
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"
+
+* name[iupac].name MS
+* name[iupac].name ^short = "IUPAC Name"
+* name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined]
+Example: N- (4-hydroxyphenyl)acetamide
+"""
+* name[iupac].type MS
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"
+
+* name[isbt].name MS
+* name[isbt].name ^short = "ISBT 128"
+* name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
+ """
+* name[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"
+
+* name[comp].name MS
+* name[comp].name ^short = "Company Code"
+* name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type = PqcmcProductIngredientNameType#Company "Company ID/Code"
+
+* name.preferred 0..1 MS
+* name.preferred ^short = "???True when the name type is Substance Name???"
+* name.preferred obeys cmc-name-preferred
+* relationship 0..* MS
+* relationship obeys cmc-substance-relationship
 * relationship.substanceDefinitionReference only Reference( PolymorphicForm )
 * relationship.type.text = "Polymorph"
+* relationship.type.text ^short = "Polymorph"
+
 
 Profile: DrugSubstanceMaterials
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-materials
 Title: "Substance Raw Materials on routine - MAKE spedific"
 Description: "Drug Substance Raw Materials. Profile on Drug Substance profile."
 
-* identifier MS
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
 * manufacturer 1..1 MS
+* manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
+* supplier only Reference(MfgTestSiteOrganization)
 * code MS
-* name MS
-* name.type MS
-* sourceMaterial
+* code obeys cmc-when-unii-required
+* code.code
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+Example: 362O9ITL9D
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
+"""
+* name 1..* MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern"
+* name contains
+  sys 1..1 MS and
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS and
+  usp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS and
+  comp 0..1 MS
+* name[sys].name MS
+* name[sys].name ^short = "Systematic"
+* name[sys].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[sys].type MS
+* name[sys].type = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sub].name MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
+
+* name[brand].name MS
+* name[brand].name ^short = "Brand"
+* name[brand].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
+
+* name[comn].name MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
+
+* name[usp].name MS
+* name[usp].name ^short = ""USP/NF""
+* name[usp].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usp].type MS
+* name[usp].type = PqcmcProductIngredientNameType#147 "USP/NF"
+
+* name[cas].name MS
+* name[cas].name ^short = "CAS Number"
+* name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
+Example: CAS [103-90-2]
+ """
+* name[cas].type MS
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"
+
+* name[inn].name MS
+* name[inn].name ^short = "INN"
+* name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/]
+Example: Paracetamol
+"""
+* name[inn].type MS
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"
+
+* name[usan].name MS
+* name[usan].name ^short = "USAN"
+* name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
+Example: acetaminophen
+ """
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"
+
+* name[iupac].name MS
+* name[iupac].name ^short = "IUPAC Name"
+* name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined]
+Example: N- (4-hydroxyphenyl)acetamide
+"""
+* name[iupac].type MS
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"
+
+* name[isbt].name MS
+* name[isbt].name ^short = "ISBT 128"
+* name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
+ """
+* name[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"
+
+* name[comp].name MS
+* name[comp].name ^short = "Company Code"
+* name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type = PqcmcProductIngredientNameType#Company "Company ID/Code"
+
+* name.preferred 0..1 MS
+* name.preferred ^short = "???True when the name type is Substance Name???"
+* name.preferred obeys cmc-name-preferred
+
+* sourceMaterial 1..1 MS
+* sourceMaterial.type 0..1
+* sourceMaterial.type ^short = "Source Type"
+* sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
+Example: cat hair would be an Animal source type """
+* sourceMaterial.type.coding from PqcmcSourceTypeTerminology
+* sourceMaterial.genus 0..1 MS
+* sourceMaterial.genus.coding 0..0
+* sourceMaterial.genus.text 1..1
+* sourceMaterial.genus.text ^short = "Source Organism"
+* sourceMaterial.genus.text ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+"""
+* sourceMaterial.species 0..1 MS
+* sourceMaterial.species ^short = "Source Organism"
+* sourceMaterial.species ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+"""
+* sourceMaterial.species.coding 0..0
+* sourceMaterial.species.text 1..1
+* sourceMaterial.part 0..1 MS
+* sourceMaterial.part ^short = "Source Organism Part"
+* sourceMaterial.part ^definition = """A fragment of the source organism. [Source: SME Defined]
+Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
+IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
+Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
+* sourceMaterial.part.coding 0..0
+* sourceMaterial.part.text 1..1
+* sourceMaterial.countryOfOrigin 0..1 MS
+* sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
+* sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
+* sourceMaterial.countryOfOrigin.coding 0..0
+* sourceMaterial.countryOfOrigin.coding from genc-country-codes
+* sourceMaterial.countryOfOrigin.text 1..1 MS
+* relationship 0..* MS
+* relationship obeys cmc-substance-relationship
 * relationship.substanceDefinitionReference only Reference( ComponentSubstance )
 * relationship.type.text = "Raw Material"
+* relationship.type.text ^short = "Raw Material"
+
 
 Profile: DrugSubstanceImpurities
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-impurities
-Title: "Substance Impurities   redo structure optional"
+Title: "Substance Impurities"
 Description: "Drug Substance Impurities. Profile on Drug Substance profile."
 
-* identifier MS
-* classification MS
-* characterization MS
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
+* characterization 0..* MS
+* characterization.technique.text 1..1 MS
+* characterization.form.text 0..1 MS
+* characterization.form.text ^short = "Form"
+* characterization.form.text ^definition = ""
+* characterization.description 0..1 MS
+* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
+* characterization.description ^definition = ""
+* characterization.file 0..1 MS
+* characterization.file ^short = "Anlaysis Graphic"
+* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* characterization.file.data 1..1 MS
+* characterization.file.title 1..1 MS
 * structure MS
+* structure obeys cmc-substance-structure-graphic-required
+* structure.molecularFormula 0..1 MS
+* structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
+* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
+* structure.technique MS
+* structure.technique ^short = "Substance Structure Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
+* structure.technique.text 1..1 MS
+* structure.representation 1..* MS
+* structure.representation obeys cmc-representation-or-document
+* structure.representation.type 0..1 MS
+* structure.representation.type ^short = "Structural Representation Type"
+* structure.representation.type.text ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
+Examples: SMILES, MOLFILE, HELM, etc.
+"""
+* structure.representation.type.coding from PqcmcChemicalStructureDataFileTypeTerminology
+* structure.representation.representation 0..1 MS
+* structure.representation.representation ^short = "Drug Substance Structural Representation"
+* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+ """
+* structure.representation.document 0..1 MS
+* structure.representation.document ^short = "Structure Graphic"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document only Reference(Base64DocumentReference)
 * code MS
-* name MS
-* name.type MS
-* relationship MS
+* code obeys cmc-when-unii-required
+* code.code
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+Example: 362O9ITL9D
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
+"""
+* name 1..* MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern"
+* name contains
+  sys 1..1 MS and
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS and
+  usp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS and
+  comp 0..1 MS
+* name[sys].name MS
+* name[sys].name ^short = "Systematic"
+* name[sys].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[sys].type MS
+* name[sys].type = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sub].name MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
+
+* name[brand].name MS
+* name[brand].name ^short = "Brand"
+* name[brand].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
+
+* name[comn].name MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
+
+* name[usp].name MS
+* name[usp].name ^short = ""USP/NF""
+* name[usp].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usp].type MS
+* name[usp].type = PqcmcProductIngredientNameType#147 "USP/NF"
+
+* name[cas].name MS
+* name[cas].name ^short = "CAS Number"
+* name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
+Example: CAS [103-90-2]
+ """
+* name[cas].type MS
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"
+
+* name[inn].name MS
+* name[inn].name ^short = "INN"
+* name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/]
+Example: Paracetamol
+"""
+* name[inn].type MS
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"
+
+* name[usan].name MS
+* name[usan].name ^short = "USAN"
+* name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
+Example: acetaminophen
+ """
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"
+
+* name[iupac].name MS
+* name[iupac].name ^short = "IUPAC Name"
+* name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined]
+Example: N- (4-hydroxyphenyl)acetamide
+"""
+* name[iupac].type MS
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"
+
+* name[isbt].name MS
+* name[isbt].name ^short = "ISBT 128"
+* name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
+ """
+* name[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"
+
+* name[comp].name MS
+* name[comp].name ^short = "Company Code"
+* name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type = PqcmcProductIngredientNameType#Company "Company ID/Code"
+
+* name.preferred 0..1 MS
+* name.preferred ^short = "???True when the name type is Substance Name???"
+* name.preferred obeys cmc-name-preferred
+
+* relationship 0..* MS
+* relationship obeys cmc-substance-relationship
 * relationship.substanceDefinitionReference only Reference( ImpuritySubstance )
 * relationship.type.text = "Impurity"
+* relationship.type.text ^short = "Impurity"
 
 Profile: DrugSubstanceRepresentationalStructure
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-structure-represent
 Title: "Drug Substance Structures"
 Description: "Drug Substance (Active Ingredient) Representational Structures. Profile on Drug Substance profile (32S10)."
 
-* identifier 0..1
-* structure 1..1
-* structure.technique 1..1
-* structure.technique.text 1..1
-* structure.representation 1..*
-* structure.representation.representation 0..1
-* structure.representation.format 0..1
-* structure.representation.document 0..1
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
+* structure 1..1 MS
+* structure obeys cmc-substance-structure-graphic-required
+* structure.technique MS
+* structure.technique ^short = "Substance Structure Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
+* structure.technique.text 1..1 MS
+* structure.representation 1..* MS
+* structure.representation obeys cmc-representation-or-document
+* structure.representation.type 0..1 MS
+* structure.representation.type ^short = "Structural Representation Type"
+* structure.representation.type.text ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
+Examples: SMILES, MOLFILE, HELM, etc.
+"""
+* structure.representation.type.coding from PqcmcChemicalStructureDataFileTypeTerminology
+* structure.representation.representation 0..1 MS
+* structure.representation.representation ^short = "Drug Substance Structural Representation"
+* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+ """
+* structure.representation.document 0..1 MS
+* structure.representation.document ^short = "Structure Graphic"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document only Reference(Base64DocumentReference)
 * code MS
-* name MS
+* code obeys cmc-when-unii-required
+* code.code
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+Example: 362O9ITL9D
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
+"""
+* name 1..* MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern"
+* name contains
+  sys 1..1 MS and
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS and
+  usp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS and
+  comp 0..1 MS
+* name[sys].name MS
+* name[sys].name ^short = "Systematic"
+* name[sys].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[sys].type MS
+* name[sys].type = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sub].name MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
+
+* name[brand].name MS
+* name[brand].name ^short = "Brand"
+* name[brand].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
+
+* name[comn].name MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
+
+* name[usp].name MS
+* name[usp].name ^short = ""USP/NF""
+* name[usp].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usp].type MS
+* name[usp].type = PqcmcProductIngredientNameType#147 "USP/NF"
+
+* name[cas].name MS
+* name[cas].name ^short = "CAS Number"
+* name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
+Example: CAS [103-90-2]
+ """
+* name[cas].type MS
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"
+
+* name[inn].name MS
+* name[inn].name ^short = "INN"
+* name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/]
+Example: Paracetamol
+"""
+* name[inn].type MS
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"
+
+* name[usan].name MS
+* name[usan].name ^short = "USAN"
+* name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
+Example: acetaminophen
+ """
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"
+
+* name[iupac].name MS
+* name[iupac].name ^short = "IUPAC Name"
+* name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined]
+Example: N- (4-hydroxyphenyl)acetamide
+"""
+* name[iupac].type MS
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"
+
+* name[isbt].name MS
+* name[isbt].name ^short = "ISBT 128"
+* name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
+ """
+* name[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"
+
+* name[comp].name MS
+* name[comp].name ^short = "Company Code"
+* name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type = PqcmcProductIngredientNameType#Company "Company ID/Code"
+
+* name.preferred 0..1 MS
+* name.preferred ^short = "???True when the name type is Substance Name???"
+* name.preferred obeys cmc-name-preferred
 * name.preferred 0..1 MS
 
+
 Profile: DrugSubstanceStructure
-Parent: DrugSubstance
+Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-structure
 Title: "Drug Substance Molecular Structure"
 Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
 
+* . obeys cmc-structure-required
 * identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
 * characterization 0..* MS
+* characterization.technique.text 1..1 MS
+* characterization.form.text 0..1 MS
+* characterization.form.text ^short = "Form"
+* characterization.form.text ^definition = ""
+* characterization.description 0..1 MS
+* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
+* characterization.description ^definition = ""
+* characterization.file 0..1 MS
+* characterization.file ^short = "Anlaysis Graphic"
+* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* characterization.file.data 1..1 MS
+* characterization.file.title 1..1 MS
+* classification 1..* MS
+* classification from EVMPDSubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
 * structure 1..1 MS
-* structure.representation.document.display 0..1 MS
-* structure.representation.document.display ^short = "Analytical Instrument Data File Narrative Text"
-* structure.representation.document.display ^definition = "??? TDB ???"
+* structure obeys cmc-substance-structure-graphic-required
+* structure.molecularFormula 0..1 MS
+* structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
+* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
+* structure.technique MS
+* structure.technique ^short = "Substance Structure Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
+* structure.technique.text 1..1 MS
+* structure.representation 1..* MS
+* structure.representation obeys cmc-representation-or-document
+* structure.representation.type 0..1 MS
+* structure.representation.type ^short = "Structural Representation Type"
+* structure.representation.type.text ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
+Examples: SMILES, MOLFILE, HELM, etc.
+"""
+* structure.representation.type.coding from PqcmcChemicalStructureDataFileTypeTerminology
+* structure.representation.representation 0..1 MS
+* structure.representation.representation ^short = "Drug Substance Structural Representation"
+* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+ """
+* structure.representation.document 0..1 MS
+* structure.representation.document ^short = "Structure Graphic"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document only Reference(Base64DocumentReference)
 * code MS
-* name MS
-* name.type MS
+* code obeys cmc-when-unii-required
+* code.code
+* code.code.coding
+* code.code.coding ^slicing.discriminator.type = #pattern
+* code.code.coding ^slicing.discriminator.path = "system"
+* code.code.coding ^slicing.rules = #open
+* code.code.coding contains
+    unii 0..1 and
+    uniProt 0..1
+* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii] ^short = "UNII"
+* code.code.coding[unii] ^definition =  """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+Example: 362O9ITL9D
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+* code.code.coding[uniProt].system = $UNIPROT
+* code.code.coding[uniProt] ^short = "UniProt ID"
+* code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+It is accessible at https://www.uniprot.org/
+"""
+* name 1..* MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern"
+* name contains
+  sys 1..1 MS and
+  sub 0..1 MS and
+  brand 0..1 MS and
+  comn 0..1 MS and
+  gsrs 0..1 MS and
+  usp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS and
+  comp 0..1 MS
+* name[sys].name MS
+* name[sys].name ^short = "Systematic"
+* name[sys].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[sys].type MS
+* name[sys].type = pqcmc-product-ingredient-name-type#145 "Systematic"
+* name[sub].name MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type MS
+* name[sub].type = PqcmcProductIngredientNameType#138 "Generic"
 
+* name[brand].name MS
+* name[brand].name ^short = "Brand"
+* name[brand].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[brand].type MS
+* name[brand].type = PqcmcProductIngredientNameType#137 "Brand" 
 
+* name[comn].name MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type MS
+* name[comn].type = PqcmcProductIngredientNameType#139 "Common"
+
+* name[gsrs].name MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type MS
+* name[gsrs].type = PqcmcProductIngredientNameType#141 "GSRS Preferred"
+
+* name[usp].name MS
+* name[usp].name ^short = ""USP/NF""
+* name[usp].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usp].type MS
+* name[usp].type = PqcmcProductIngredientNameType#147 "USP/NF"
+
+* name[cas].name MS
+* name[cas].name ^short = "CAS Number"
+* name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
+Example: CAS [103-90-2]
+ """
+* name[cas].type MS
+* name[cas].type = PqcmcProductIngredientNameType#CAS "CAS Number"
+
+* name[inn].name MS
+* name[inn].name ^short = "INN"
+* name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/]
+Example: Paracetamol
+"""
+* name[inn].type MS
+* name[inn].type = PqcmcProductIngredientNameType#INN "INN"
+
+* name[usan].name MS
+* name[usan].name ^short = "USAN"
+* name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
+Example: acetaminophen
+ """
+* name[usan].type = PqcmcProductIngredientNameType#USAN "USAN"
+
+* name[iupac].name MS
+* name[iupac].name ^short = "IUPAC Name"
+* name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined]
+Example: N- (4-hydroxyphenyl)acetamide
+"""
+* name[iupac].type MS
+* name[iupac].type = PqcmcProductIngredientNameType#IUPAC "IUPAC"
+
+* name[isbt].name MS
+* name[isbt].name ^short = "ISBT 128"
+* name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
+ """
+* name[isbt].type = PqcmcProductIngredientNameType#ISBT "ISBT 128"
+
+* name[comp].name MS
+* name[comp].name ^short = "Company Code"
+* name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type = PqcmcProductIngredientNameType#Company "Company ID/Code"
+
+* name.preferred 0..1 MS
+* name.preferred ^short = "???True when the name type is Substance Name???"
+* name.preferred obeys cmc-name-preferred
