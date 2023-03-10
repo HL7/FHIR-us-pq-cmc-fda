@@ -2,13 +2,12 @@ id: hl7.fhir.us.pq-cmc
 canonical: http://hl7.org/fhir/us/pq-cmc
 name: FHIR_pqcmc
 title: "PQ/CMC FHIR Implementation Guide"
-description:  guide to submitting PQ/CMC data for exchanged in FHIR resources.
+description: guide to submitting PQ/CMC data for exchanged in FHIR resources.
 status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version:  0.1.11
-#fhirVersion: 5.0.0-snapshot4
-#fhirVersion: 5.0.0
-fhirVersion: 5.0.0-snapshot3
+version: 0.1.12
+fhirVersion: 5.0.0-draft-final
+#fhirVersion: current
 copyrightYear: 2021+
 releaseLabel: Build CI
 publisher:
@@ -25,7 +24,7 @@ menu:
     Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
     Substance General Information (3.2.S.1.0): eCTD32S10.html 
     Substance Control of Materials (3.2.S.2.3): eCTD32S23.html 
-    Substance Characterisation (3.2.S.30.): eCTD32S30.html 
+    Substance Characterization (3.2.S.3.0): eCTD32S30.html 
     Substance Container Closure System (3.2.S.6.0): eCTD32S60.html 
     Specification (3.2.S.4.1, 3.2.P.4.1 & 3.2.P.5.1): eCTDSP4151.html 
     Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
@@ -73,3 +72,6 @@ parameters:
  excludettl: true
  excludemap: 'true'
 #   validation: [allow-any-extensions, no-broken-links]
+dependencies:
+  hl7.fhir.uv.sdc: 3.0.0
+  hl7.fhir.uv.extensions: current

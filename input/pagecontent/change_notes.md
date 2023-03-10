@@ -1,7 +1,108 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
+### Changes and Updates for Version 0.1.12
+The current development IG - !!R5 draft-final version!!
+
+<ul>
+Resolved 38 Errors from R5 draft-final version:
+<li> The type "string" does not match any of the allowed types: Quantity or CodeableConcept or markdown or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period or Attachment or Reference(http://hl7.org/fhir/StructureDefinition/MolecularSequence) or Canonical() in BatchAnalysis</li>
+<li> No element found at path valueString for CardRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> No element found at path valueString for FlagRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> No element found at path valueString for CaretValueRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> No element found at path valueString for CaretValueRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> The type "string" does not match any of the allowed types: Quantity or CodeableConcept or markdown or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period or Attachment or Reference(http://hl7.org/fhir/StructureDefinition/MolecularSequence) or Canonical() in BatchAnalysis</li>
+<li> No element found at path component.valueString for CardRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> No element found at path component.valueString for FlagRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> No element found at path component.valueString for CaretValueRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> No element found at path component.valueString for CaretValueRule in MultipleReplicatesResultObservation in BatchAnalysis</li>
+<li> The type "string" does not match any of the allowed types: Quantity or CodeableConcept or markdown or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period or Attachment or Reference(http://hl7.org/fhir/StructureDefinition/MolecularSequence) or Canonical() in BatchAnalysis</li>
+<li> No element found at path valueString for CardRule in ResultObservation in BatchAnalysis</li>
+<li> No element found at path valueString for FlagRule in ResultObservation in BatchAnalysis</li>
+<li> No element found at path valueString for CaretValueRule in ResultObservation in BatchAnalysis</li>
+<li> No element found at path valueString for CaretValueRule in ResultObservation in BatchAnalysis</li>
+<li> The type "string" does not match any of the allowed types: Quantity or CodeableConcept or markdown or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period or Attachment or Reference(http://hl7.org/fhir/StructureDefinition/MolecularSequence) or Canonical() in BatchAnalysis</li>
+<li> No element found at path component.valueString for CardRule in ResultObservation in BatchAnalysis</li>
+<li> No element found at path component.valueString for FlagRule in ResultObservation in BatchAnalysis</li>
+<li> No element found at path component.valueString for CaretValueRule in ResultObservation in BatchAnalysis</li>
+<li> No element found at path component.valueString for CaretValueRule in ResultObservation in BatchAnalysis</li>
+<li> Parent http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch not found for DrugProductmanufacturingBatch in DrugProductResources</li>
+<li> No element found at path batch.extension[medication-batch] for CardRule in DrugProductBatch in DrugProductResources</li>
+<li> No element found at path batch.extension[medication-batch] for FlagRule in DrugProductBatch in DrugProductResources</li>
+<li> Parent http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch not found for DrugProductmanufacturingBatch in DrugProductResources</li>
+<li> Parent http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch not found for DrugSubstancemanufacturingBatch in DrugSubstanceResources</li>
+<li> Parent http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch not found for DrugSubstancemanufacturingBatch in DrugSubstanceResources</li>
+<li> No element found at path extension[api-batch] for CardRule in DrugSubstanceBatch in DrugSubstanceResources</li>
+<li> No element found at path extension[api-batch] for FlagRule in DrugSubstanceBatch in DrugSubstanceResources</li>
+<li> The element or path you referenced does not exist: component.property[PPiD].valueCodeableConcept.text in Example32p10Bundle</li>
+<li> The element or path you referenced does not exist: component[1].property[PPiD].valueCodeableConcept.text in Example32p10Bundle</li>
+<li> The element or path you referenced does not exist: component[1].property[Color].valueCodeableConcept.text in Example32p10Bundle</li>
+<li> The element or path you referenced does not exist: component[2].property[PPiD].valueCodeableConcept.text in Example32p10Bundle</li>
+<li> Element ManufacturedItemDefinition.component.property:PPiD.value[x] has minimum cardinality 1 but occurs 0 time(s). in Example32p10Bundle</li>
+<li> Element ManufacturedItemDefinition.component.property:PPiD.value[x]:valueMarkdown has minimum cardinality 1 but occurs 0 time(s). in Example32p10Bundle</li>
+<li> Element ManufacturedItemDefinition.component.property:PPiD.value[x] has minimum cardinality 1 but occurs 0 time(s). in Example32p10Bundle</li>
+<li> Element ManufacturedItemDefinition.component.property:PPiD.value[x]:valueMarkdown has minimum cardinality 1 but occurs 0 time(s). in Example32p10Bundle</li>
+<li> Element ManufacturedItemDefinition.component.property:PPiD.value[x] has minimum cardinality 1 but occurs 0 time(s). in Example32p10Bundle</li>
+<li> Element ManufacturedItemDefinition.component.property:PPiD.value[x]:valueMarkdown has minimum cardinality 1 but occurs 0 time(s). in Example32p10Bundle</li>
+</ul>
+
+<ul>
+<li>#Terminologies added the value sets and aliases  </li>
+<li>$CP = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-coating-purpose </li>
+<li>$BATCHFORMPROP = http://hl7.org/fhir/us/pq-cmc/StructureDefinition/batch-formula-property-cs </li>
+<li>$CAPCLASS = http://hl7.org/fhir/us/pq-cmc/codesystem/qcmc-capsule-classification-category </li>
+<li>$INGREDNAMETYPE = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-ingredient-name-type </li>
+<li>$PRODCHARS = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-characteristic</li>
+<li>updated references to vlauesets</li>
+<li>Changed profiles on DrugSubstance to SubstanceDefinition because the profile on profile was requiring too many optional elements</li>
+<li>Updated plantUMLs: hyperlink to Substance Control</li>
+<li>Updated plantUMLs: Parent refernece to SubstanceDefinition</li>
+<li>Reviewed an updated broken links in all plantUMLs</li>
+<li>Changed DrugProductwithImpurites to DrugProductwithImpurities in sushi and plantUML</li>
+<li>14	eCTD Profiles dropdown	Substance Characterisation (3.2.S.30.)	should be Substance Characterisation (3.2.S.3)</li>
+<li>15	Substance Characterisation [8]	page header is eCTD Substance Characterisation	should it be "Substance Characterisation?</li>
+<li>edits to all profile pages to remove html p marks</li>
+<li>edits to index page to correct numbering and indentation</li>
+<li>edit Substance Impurities to set structure optional</li>
+
+<ul>
+Added the following examples:
+<li>Instance</li>: 4f25eb50-6763-44c6-b4f4-def04382918e is an example of: MfgTestSiteOrganization</li>
+<li>Instance</li>: 28629bd0-7744-4c57-abba-e138196f82fa is an example of: MfgTestSiteOrganization</li>
+<li>Instance</li>: 9949f8af-99c9-4930-a766-752d7d65b1ab is an example of: MfgTestSiteOrganization</li>
+<li>Instance</li>: d860b368-2de7-40e9-9f8a-1dd2b5c75ca6 is an example of: Component</li>Substance</li>
+<li>Instance</li>: a8b37824-6be3-4519-9cbf-3651ef8f0af9 is an example of: DrugProductComponent</li>
+<li>Instance</li>: 0c5bfc1f-c1e3-4e41-ac36-2cdc7e89ee7a is an example of: Component</li>Substance</li>
+<li>Instance</li>: c737cca8-d8d7-42ba-8eea-cc4c13b2b279 is an example of: DrugProductComponent</li>
+<li>Instance</li>: f201f024-e53c-43cd-bfc9-2b5cbb7f79da is an example of: Component</li>Substance</li>
+<li>Instance</li>: 0b39649a-9e43-48f8-8c92-5bf289409714 is an example of: DrugProductComponent</li>
+<li>Instance</li>: aa200c60-3cf4-47e0-9afc-a3693f0d0a08 is an example of: Component</li>Substance</li>
+<li>Instance</li>: 646f1115-2aad-4f0f-b7bc-a690a3d30b5b is an example of: DrugProductComponent</li>
+<li>Instance</li>: adfe47f8-afc6-4e38-8bc5-473b6d40fdc9 is an example of: Component</li>Substance</li>
+<li>Instance</li>: 1f8abd13-b06a-4b28-b5de-4d5680be805d is an example of: DrugProductComponent</li>
+<li>Instance</li>: 25a9214e-c913-4935-a794-3646793530ed is an example of: Component</li>Substance</li>
+<li>Instance</li>: 1019ae87-0010-4cd0-b6e9-13e581009b43 is an example of: DrugProductComponent</li>
+<li>Instance</li>: a200db80-d7bb-46fa-b6c1-049c2d1ed07b is an example of: Component</li>Substance</li>
+<li>Instance</li>: e9042a05-de7e-4674-9a2d-0cac4a7144c1 is an example of: DrugProductComponent</li>
+<li>Instance</li>: 7d9aadeb-096a-4685-b234-774aedb0bdd7 is an example of: Component</li>Substance</li>
+<li>Instance</li>: 54d2699b-0efa-46e6-ac47-c92ff890b422 is an example of: DrugProductComponent</li>
+<li>Instance</li>: e35cbed2-cc09-4e15-a1c2-a71c8989297e is an example of: Component</li>Substance</li>
+<li>Instance</li>: 25de86cc-fbab-47d4-b410-c8e6bdf53ebb is an example of: DrugProductComponent</li>
+<li>Instance</li>: 29c88a54-f014-4bd1-9a6a-2da0e033b8da is an example of: Component</li>Substance</li>
+<li>Instance</li>: b69f8d81-2a78-48e5-b190-fbd916285af1 is an example of: DrugProductComponent</li>
+<li>Instance</li>: 5863a14d-6589-484b-8ad4-939a050071b3 is an example of: Component</li>Substance</li>
+<li>Instance</li>: 9b7c6fed-ca72-41bb-bc8e-6eff32662e40 is an example of: DrugProductComponent</li>
+<li>Instance</li>: bd41540d-0799-4999-a020-4b8e478bd81a is an example of: Component</li>Substance</li>
+<li>Instance</li>: 6c7187af-c9d8-4ca5-80b9-b3af9d444658 is an example of: DrugProductComponent</li>
+<li>Instance</li>: 533904dc-c2ec-4974-9cf9-874e17fd9f3e is an example of: DrugProductDescription</li>
+<li>Instance</li>: 0582135b-87a4-4076-8293-e61215f63374 is an example of: DrugProductContainerClosure</li>
+<li>Instance</li>: 15d09c40-0d0c-4f6a-a6f6-585bd21b01f3 is an example of: FinishedProduct</li>
+<li>Instance</li>: c494852b-41c0-4b50-880d-7c7a36fe4b6e is an example of: SponsorOrganization</li>
+<li>Instance</li>: c0ed7a77-88c2-4afc-9ace-11bf19fba5ee is an example of: EctdComposition32P10</li>
+<li>Instance</li>: 6929592c-228f-4e98-9ed7-ffe9d11f2d03 is an example of: CMCeCTDDocument32P10</li>
+</ul>
+
 ### Changes and Updates for Version 0.1.11
-The current development IG
+
 <ul>
 <li>added name parts to RoutineDrugProduct</li>
 <li>Changes to Specification action.title.extension for rrt cardinaly set to 0..1 and support for mandatory useContext.code /li>

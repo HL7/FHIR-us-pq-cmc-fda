@@ -4,7 +4,24 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="MedicinalProductDefinition/0582135b-87a4-4076-8293-e61215f63374" key="MedicinalProductDefinition-0582135b-87a4-4076-8293-e61215f63374" name="0582135b-87a4-4076-8293-e61215f63374"/>
+<artifact id="Ingredient/0b39649a-9e43-48f8-8c92-5bf289409714" key="Ingredient-0b39649a-9e43-48f8-8c92-5bf289409714" name="0b39649a-9e43-48f8-8c92-5bf289409714"/>
+<artifact id="SubstanceDefinition/0c5bfc1f-c1e3-4e41-ac36-2cdc7e89ee7a" key="SubstanceDefinition-0c5bfc1f-c1e3-4e41-ac36-2cdc7e89ee7a" name="0c5bfc1f-c1e3-4e41-ac36-2cdc7e89ee7a"/>
+<artifact id="Ingredient/1019ae87-0010-4cd0-b6e9-13e581009b43" key="Ingredient-1019ae87-0010-4cd0-b6e9-13e581009b43" name="1019ae87-0010-4cd0-b6e9-13e581009b43"/>
+<artifact id="ManufacturedItemDefinition/15d09c40-0d0c-4f6a-a6f6-585bd21b01f3" key="ManufacturedItemDefinition-15d09c40-0d0c-4f6a-a6f6-585bd21b01f3" name="15d09c40-0d0c-4f6a-a6f6-585bd21b01f3"/>
+<artifact id="Ingredient/1f8abd13-b06a-4b28-b5de-4d5680be805d" key="Ingredient-1f8abd13-b06a-4b28-b5de-4d5680be805d" name="1f8abd13-b06a-4b28-b5de-4d5680be805d"/>
+<artifact id="SubstanceDefinition/25a9214e-c913-4935-a794-3646793530ed" key="SubstanceDefinition-25a9214e-c913-4935-a794-3646793530ed" name="25a9214e-c913-4935-a794-3646793530ed"/>
+<artifact id="Ingredient/25de86cc-fbab-47d4-b410-c8e6bdf53ebb" key="Ingredient-25de86cc-fbab-47d4-b410-c8e6bdf53ebb" name="25de86cc-fbab-47d4-b410-c8e6bdf53ebb"/>
+<artifact id="SubstanceDefinition/29c88a54-f014-4bd1-9a6a-2da0e033b8da" key="SubstanceDefinition-29c88a54-f014-4bd1-9a6a-2da0e033b8da" name="29c88a54-f014-4bd1-9a6a-2da0e033b8da"/>
+<artifact id="MedicinalProductDefinition/533904dc-c2ec-4974-9cf9-874e17fd9f3e" key="MedicinalProductDefinition-533904dc-c2ec-4974-9cf9-874e17fd9f3e" name="533904dc-c2ec-4974-9cf9-874e17fd9f3e"/>
+<artifact id="Ingredient/54d2699b-0efa-46e6-ac47-c92ff890b422" key="Ingredient-54d2699b-0efa-46e6-ac47-c92ff890b422" name="54d2699b-0efa-46e6-ac47-c92ff890b422"/>
+<artifact id="SubstanceDefinition/5863a14d-6589-484b-8ad4-939a050071b3" key="SubstanceDefinition-5863a14d-6589-484b-8ad4-939a050071b3" name="5863a14d-6589-484b-8ad4-939a050071b3"/>
 <artifact id="DocumentReference/5abefb38-4325-4609-bc3f-61fd62c6f90e" key="DocumentReference-5abefb38-4325-4609-bc3f-61fd62c6f90e" name="5abefb38-4325-4609-bc3f-61fd62c6f90e"/>
+<artifact id="Ingredient/646f1115-2aad-4f0f-b7bc-a690a3d30b5b" key="Ingredient-646f1115-2aad-4f0f-b7bc-a690a3d30b5b" name="646f1115-2aad-4f0f-b7bc-a690a3d30b5b"/>
+<artifact id="Bundle/6929592c-228f-4e98-9ed7-ffe9d11f2d03" key="Bundle-6929592c-228f-4e98-9ed7-ffe9d11f2d03" name="6929592c-228f-4e98-9ed7-ffe9d11f2d03"/>
+<artifact id="Ingredient/6c7187af-c9d8-4ca5-80b9-b3af9d444658" key="Ingredient-6c7187af-c9d8-4ca5-80b9-b3af9d444658" name="6c7187af-c9d8-4ca5-80b9-b3af9d444658"/>
+<artifact id="SubstanceDefinition/7d9aadeb-096a-4685-b234-774aedb0bdd7" key="SubstanceDefinition-7d9aadeb-096a-4685-b234-774aedb0bdd7" name="7d9aadeb-096a-4685-b234-774aedb0bdd7"/>
+<artifact id="Ingredient/9b7c6fed-ca72-41bb-bc8e-6eff32662e40" key="Ingredient-9b7c6fed-ca72-41bb-bc8e-6eff32662e40" name="9b7c6fed-ca72-41bb-bc8e-6eff32662e40"/>
 <artifact id="PlanDefinition/0baed83c-495e-4129-8e26-537a0ede5e15" key="PlanDefinition-0baed83c-495e-4129-8e26-537a0ede5e15" name="A quality specification is for a drug product or drug substance (excipient, API or raw material)"/>
 <artifact id="PlanDefinition/394c19af-062b-49b4-9f8d-f5a3499a8476" key="PlanDefinition-394c19af-062b-49b4-9f8d-f5a3499a8476" name="A quality specification is for a drug substance"/>
 <artifact id="ValueSet/pqcmc-action-relaiton-types" key="ValueSet-pqcmc-action-relaiton-types" name="ActionRelationTypes"/>
@@ -13,6 +30,7 @@
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
 <artifact id="CodeSystem/batch-formula-property-cs" key="CodeSystem-batch-formula-property-cs" name="Batch Formula Property Type"/>
+<artifact id="ValueSet/batch-formula-property-vs" key="ValueSet-batch-formula-property-vs" name="Batch Formula Property Type Value Set"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization Terminology"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p32" key="StructureDefinition-cmc-ectd-document-32p32" name="CMC eCTD 32P32 Document"/>
@@ -27,6 +45,7 @@
 <artifact id="StructureDefinition/cmc-ectd-document-sp7181" key="StructureDefinition-cmc-ectd-document-sp7181" name="CMC eCTD SP7181 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-sp7383" key="StructureDefinition-cmc-ectd-document-sp7383" name="CMC eCTD SP7383 Document"/>
 <artifact id="CodeSystem/pqcmc-capsule-classification-category" key="CodeSystem-pqcmc-capsule-classification-category" name="Capsule Classification Category"/>
+<artifact id="ValueSet/capsule-classification-category-vs" key="ValueSet-capsule-classification-category-vs" name="Capsule Classification Category Value Set"/>
 <artifact id="ValueSet/pqcmc-chemical-structure-datafile-type-terminology" key="ValueSet-pqcmc-chemical-structure-datafile-type-terminology" name="Chemical Structure Data File Type Terminology"/>
 <artifact id="ValueSet/pqcmc-closure-type-terminology" key="ValueSet-pqcmc-closure-type-terminology" name="Closure Type Terminology"/>
 <artifact id="CodeSystem/pqcmc-coating-purpose" key="CodeSystem-pqcmc-coating-purpose" name="Coating Purpose"/>
@@ -51,7 +70,7 @@
 <artifact id="StructureDefinition/drug-product-manufacturing-batch" key="StructureDefinition-drug-product-manufacturing-batch" name="Drug Product Manufacturing Batch"/>
 <artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance" key="StructureDefinition-pqcmc-drug-substance" name="Drug Substance"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-container-closure" key="StructureDefinition-pqcmc-drug-substance-container-closure" name="Drug Substance Container Closure"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-container-closure" key="StructureDefinition-pqcmc-drug-substance-container-closure" name="Drug Substance Container Closure do no routine with extension"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-impurity" key="StructureDefinition-pqcmc-drug-substance-impurity" name="Drug Substance Impurity"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-batch" key="StructureDefinition-pqcmc-drug-substance-batch" name="Drug Substance Manufactured Batch"/>
 <artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
@@ -73,8 +92,10 @@
 <artifact id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
 <artifact id="ValueSet/pqcmc-interval-description-code-terminology" key="ValueSet-pqcmc-interval-description-code-terminology" name="Interval Description Code Terminology"/>
 <artifact id="StructureDefinition/pqcmc-product-part" key="StructureDefinition-pqcmc-product-part" name="Manufactured Drug Product"/>
+<artifact id="Organization/28629bd0-7744-4c57-abba-e138196f82fa" key="Organization-28629bd0-7744-4c57-abba-e138196f82fa" name="Manufacturing Test Site (test site A)"/>
+<artifact id="Organization/9949f8af-99c9-4930-a766-752d7d65b1ab" key="Organization-9949f8af-99c9-4930-a766-752d7d65b1ab" name="Manufacturing Test Site (test site B)"/>
+<artifact id="Organization/4f25eb50-6763-44c6-b4f4-def04382918e" key="Organization-4f25eb50-6763-44c6-b4f4-def04382918e" name="Manufacturing Test Site (test site C)"/>
 <artifact id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="Manufacturing and/or Test Site Organization"/>
-<artifact id="CodeSystem/medicinal-product-contact-type-cs" key="CodeSystem-medicinal-product-contact-type-cs" name="Medicinal Product Contact Type"/>
 <artifact id="StructureDefinition/pq-additional-stage-result-observation" key="StructureDefinition-pq-additional-stage-result-observation" name="Multiple Result Observation"/>
 <artifact id="ValueSet/pqcmc-name-part--terminology" key="ValueSet-pqcmc-name-part--terminology" name="Name Part Terminology"/>
 <artifact id="ValueSet/spl-pharmaceutical-dosage-form-terminology" key="ValueSet-spl-pharmaceutical-dosage-form-terminology" name="Pharmaceutical Dosage Form Terminology"/>
@@ -122,8 +143,8 @@
 <artifact id="StructureDefinition/pq-protocol-extension" key="StructureDefinition-pq-protocol-extension" name="Study Protocol"/>
 <artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-impurities" key="StructureDefinition-pqcmc-drug-substance-impurities" name="Substance Impurities"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature" key="StructureDefinition-pqcmc-drug-substance-nomenclature" name="Substance Nomenclature"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-materials" key="StructureDefinition-pqcmc-drug-substance-materials" name="Substance Raw Materials"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature" key="StructureDefinition-pqcmc-drug-substance-nomenclature" name="Substance Nomenclature on routine - MAKE spedific"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-materials" key="StructureDefinition-pqcmc-drug-substance-materials" name="Substance Raw Materials on routine - MAKE spedific"/>
 <artifact id="ValueSet/pqcmc-storage-condition-category-terminology" key="ValueSet-pqcmc-storage-condition-category-terminology" name="Test Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-category-terminology" key="ValueSet-pqcmc-test-category-terminology" name="Test Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin Terminology"/>
@@ -132,7 +153,19 @@
 <artifact id="ValueSet/pqcmc-test-usage-terminology" key="ValueSet-pqcmc-test-usage-terminology" name="Test Usage Terminology"/>
 <artifact id="ValueSet/pqcmc-testing-site-unique-identifier-type-terminology" key="ValueSet-pqcmc-testing-site-unique-identifier-type-terminology" name="Testing Site Unique Identifier Type Terminology"/>
 <artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
+<artifact id="SubstanceDefinition/a200db80-d7bb-46fa-b6c1-049c2d1ed07b" key="SubstanceDefinition-a200db80-d7bb-46fa-b6c1-049c2d1ed07b" name="a200db80-d7bb-46fa-b6c1-049c2d1ed07b"/>
+<artifact id="Ingredient/a8b37824-6be3-4519-9cbf-3651ef8f0af9" key="Ingredient-a8b37824-6be3-4519-9cbf-3651ef8f0af9" name="a8b37824-6be3-4519-9cbf-3651ef8f0af9"/>
+<artifact id="SubstanceDefinition/aa200c60-3cf4-47e0-9afc-a3693f0d0a08" key="SubstanceDefinition-aa200c60-3cf4-47e0-9afc-a3693f0d0a08" name="aa200c60-3cf4-47e0-9afc-a3693f0d0a08"/>
+<artifact id="SubstanceDefinition/adfe47f8-afc6-4e38-8bc5-473b6d40fdc9" key="SubstanceDefinition-adfe47f8-afc6-4e38-8bc5-473b6d40fdc9" name="adfe47f8-afc6-4e38-8bc5-473b6d40fdc9"/>
+<artifact id="Ingredient/b69f8d81-2a78-48e5-b190-fbd916285af1" key="Ingredient-b69f8d81-2a78-48e5-b190-fbd916285af1" name="b69f8d81-2a78-48e5-b190-fbd916285af1"/>
+<artifact id="SubstanceDefinition/bd41540d-0799-4999-a020-4b8e478bd81a" key="SubstanceDefinition-bd41540d-0799-4999-a020-4b8e478bd81a" name="bd41540d-0799-4999-a020-4b8e478bd81a"/>
+<artifact id="Composition/c0ed7a77-88c2-4afc-9ace-11bf19fba5ee" key="Composition-c0ed7a77-88c2-4afc-9ace-11bf19fba5ee" name="c0ed7a77-88c2-4afc-9ace-11bf19fba5ee"/>
+<artifact id="Organization/c494852b-41c0-4b50-880d-7c7a36fe4b6e" key="Organization-c494852b-41c0-4b50-880d-7c7a36fe4b6e" name="c494852b-41c0-4b50-880d-7c7a36fe4b6e"/>
+<artifact id="Ingredient/c737cca8-d8d7-42ba-8eea-cc4c13b2b279" key="Ingredient-c737cca8-d8d7-42ba-8eea-cc4c13b2b279" name="c737cca8-d8d7-42ba-8eea-cc4c13b2b279"/>
+<artifact id="SubstanceDefinition/d860b368-2de7-40e9-9f8a-1dd2b5c75ca6" key="SubstanceDefinition-d860b368-2de7-40e9-9f8a-1dd2b5c75ca6" name="d860b368-2de7-40e9-9f8a-1dd2b5c75ca6"/>
 <artifact id="DocumentReference/dd6bb623-afbb-4152-b6be-57936c446168" key="DocumentReference-dd6bb623-afbb-4152-b6be-57936c446168" name="dd6bb623-afbb-4152-b6be-57936c446168"/>
+<artifact id="SubstanceDefinition/e35cbed2-cc09-4e15-a1c2-a71c8989297e" key="SubstanceDefinition-e35cbed2-cc09-4e15-a1c2-a71c8989297e" name="e35cbed2-cc09-4e15-a1c2-a71c8989297e"/>
+<artifact id="Ingredient/e9042a05-de7e-4674-9a2d-0cac4a7144c1" key="Ingredient-e9042a05-de7e-4674-9a2d-0cac4a7144c1" name="e9042a05-de7e-4674-9a2d-0cac4a7144c1"/>
 <artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
 <artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
@@ -146,6 +179,7 @@
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Value Set"/>
+<artifact id="SubstanceDefinition/f201f024-e53c-43cd-bfc9-2b5cbb7f79da" key="SubstanceDefinition-f201f024-e53c-43cd-bfc9-2b5cbb7f79da" name="f201f024-e53c-43cd-bfc9-2b5cbb7f79da"/>
 <artifact id="DocumentReference/fe3f13c1-b0ac-4x20-8024-f4386c290dfg" key="DocumentReference-fe3f13c1-b0ac-4x20-8024-f4386c290dfg" name="fe3f13c1-b0ac-4x20-8024-f4386c290dfg"/>
 <artifact id="DocumentReference/fe3f13c1-f0ac-4b40-8024-f4386e290dfc" key="DocumentReference-fe3f13c1-f0ac-4b40-8024-f4386e290dfc" name="fe3f13c1-f0ac-4b40-8024-f4386e290dfc"/>
 <page key="NA" name="(NA)"/>

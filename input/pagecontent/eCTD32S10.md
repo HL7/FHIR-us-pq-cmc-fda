@@ -1,33 +1,23 @@
 ### Bundle Overview
 
-<p> Nomenclature (name, manufacturer) Information on the nomenclature of the drug substance should be provided. For example:
-<ul>
-<li>GSRS preferred name</li>
+ Nomenclature (name, manufacturer) Information on the nomenclature of the drug substance should be provided. For example:
 
-<li>Recommended International Nonproprietary Name (INN)</li>
+*GSRS preferred name
+*Recommended International Nonproprietary Name (INN)
+*Compendial name if relevant
+*Chemical name(s)
+*Company or laboratory code
+*Other non-proprietary name(s), e.g., national name
+*Chemical Abstracts Service (CAS) registry number
+*IUPAC Name
+*ISBT 128
 
-<li>Compendial name if relevant</li>
-
-<li>Chemical name(s)</li>
-
-<li>Company or laboratory code</li>
-
-<li>Other non-proprietary name(s), e.g., national name</li>
-
-<li>Chemical Abstracts Service (CAS) registry number</li>
-
-<li>IUPAC Name</li>
-
-<li>ISBT 128</li>
-</ul>
-</p>
-<p>
 For a drug product containing more than one drug substance, the information requested for part “S” should be provided in its entirety for each drug substance
-</p><p>
+
 Structure (name, manufacturer) NCE: The structural formula, including relative and absolute stereochemistry, the molecular formula, and the relative molecular mass should be provided.
-</p><p>
- Biotech: The schematic amino acid sequence indicating glycosylation sites or other post[1]translational modifications and relative molecular mass should be provided, as appropriate.
- </p>
+
+Biotech: The schematic amino acid sequence indicating glycosylation sites or other post[1]translational modifications and relative molecular mass should be provided, as appropriate.
+ 
 
 ### eCTD Heading 3.2.S.1.0
 

@@ -1,15 +1,15 @@
-<p>tbd intro to page</p>
+tbd intro to page
 ### Document Bundle Graphs
-<p>
-The PQ/CMC Profile design and development of IG is being bound to the FHIR Build definition at [https://build.fhir.org/](https://build.fhir.org/) and NOT to the FHIR Release 4.5.0. </p>
+
+The PQ/CMC Profile design and development of IG is being bound to the FHIR Build definition at [https://build.fhir.org/](https://build.fhir.org/) and NOT to the FHIR Release 4.5.0. 
 
 ###  Diagrams and General Notes on Bundles
 
-<p>Each of the Comopistion profiles is contained in a specified bundle of the document type. They each have a page under the eCTD Pofiles tab. The example bundles are not specific to any particuar product and should not be examined for any sense of chemical or biological science. Some examples are derived from an example of an acceptable FDA submission by Dr. Marcus Ferrone from Hyperpolarized MRI Technology Resource Center at the University of California at San Francisco, Patent application WO 2010/093854 and re-use data from the eStabilty Implementation Guide data. All sources were augmented with values required by this standard or altered with more current names or completely additional data to illustrate a profile feature. All attempts were made to produce realistic content and challenge formating within XML.  Some element examples have been added into the mix to demonstrate their syntax. This is a legend for those diagrams</p>
+Each of the Comopistion profiles is contained in a specified bundle of the document type. They each have a page under the eCTD Pofiles tab. The example bundles are not specific to any particuar product and should not be examined for any sense of chemical or biological science. Some examples are derived from an example of an acceptable FDA submission by Dr. Marcus Ferrone from Hyperpolarized MRI Technology Resource Center at the University of California at San Francisco, Patent application WO 2010/093854 and re-use data from the eStabilty Implementation Guide data. All sources were augmented with values required by this standard or altered with more current names or completely additional data to illustrate a profile feature. All attempts were made to produce realistic content and challenge formating within XML.  Some element examples have been added into the mix to demonstrate their syntax. This is a legend for those diagrams
 
 <div>{%include legend.svg%}</div>
 
-<p>For more information about the profiles found in any of the diagrams, look on the [Artifacts page](Artifacts.html) for details about the specific requirements. </p>
+For more information about the profiles found in any of the diagrams, look on the [Artifacts page](Artifacts.html) for details about the specific requirements. 
 
 ### Narrative Generation
 
@@ -67,20 +67,20 @@ There are many elements defined by the markdown datatype.  The sytlesheets are r
 
 ### Referencing Bundled Resources
 
-<p>All entries in the bundle must have an identifer if they because they are referenced within the document.  Unless there is a unique identifier and system available, provide a Uniform Resource Identifier (URI): Generic Syntax as the identifer. More information is avabilabe at: [https://datatracker.ietf.org/doc/html/rfc3986/](https://datatracker.ietf.org/doc/html/rfc3986/).  The system should be entered as "urn:ietf:rfc:3986".</p>
+All entries in the bundle must have an identifer if they because they are referenced within the document.  Unless there is a unique identifier and system available, provide a Uniform Resource Identifier (URI): Generic Syntax as the identifer. More information is avabilabe at: [https://datatracker.ietf.org/doc/html/rfc3986/](https://datatracker.ietf.org/doc/html/rfc3986/).  The system should be entered as "urn:ietf:rfc:3986".
 
-<p>Althought FHIR allows for multiple ways to reference other resources, they are not all appropriate for the PQ/CMC use case because the receiving endpoint is not a FHIR server. Resources cannot be referenced using a URL to a server. They must be added in a bundle together with the other resources required by the composition to have everything available in one XML file.
-</p>
+Althought FHIR allows for multiple ways to reference other resources, they are not all appropriate for the PQ/CMC use case because the receiving endpoint is not a FHIR server. Resources cannot be referenced using a URL to a server. They must be added in a bundle together with the other resources required by the composition to have everything available in one XML file.
+
 
 ### Versioning of Bundles
-<p>tbd write about eCTD and replace and versioning</p>
+tbd write about eCTD and replace and versioning
 
 ### Images and Diagrams
 
-<p>tbd write about attachements vs inclusion of imaage in  markdown.  Also SVG prefered for 2d chem structure</p>
+tbd write about attachements vs inclusion of imaage in  markdown.  Also SVG prefered for 2d chem structure
 
 
 ### Examples
-<p>
-Bunle examples contain one instance of a profile when the cardinality for that profile is one and two when the cardinaltiy is one to many.  There are many bundles that will contain ten or more entries of the same type of profile, such as product composistion, batch formula, quality specifications and stability reports.  Althogh JSON is supported by FHIR and this IG, bundles will be submitted within the eCTD in XML format.</p>
+
+Bunle examples contain one instance of a profile when the cardinality for that profile is one and two when the cardinaltiy is one to many.  There are many bundles that will contain ten or more entries of the same type of profile, such as product composistion, batch formula, quality specifications and stability reports.  Althogh JSON is supported by FHIR and this IG, bundles will be submitted within the eCTD in XML format.
 

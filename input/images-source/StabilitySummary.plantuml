@@ -40,7 +40,7 @@ node "MfgTestSiteOrganization" as NMFG {
 node "StabilitySummary" as NMain { 
       object "**Parent:** PlanDefinition" as objMain {
              **Reference:**
-      [[StructureDefinition-pqcmcStabilitySummary.html]]
+      [[StructureDefinition-pqcmc-stability-summary.html]]
         **ValueSets:**
 	Units Of Measure Terminology
       Storage Conditions Terminology

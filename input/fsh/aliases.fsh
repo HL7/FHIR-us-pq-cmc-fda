@@ -27,3 +27,7 @@ Alias: $PPIPL = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-ingr
 Alias: $RP = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile
 Alias: $RM = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-mechanism
 Alias: $CP = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-coating-purpose
+Alias: $BATCHFORMPROP = http://hl7.org/fhir/us/pq-cmc/StructureDefinition/batch-formula-property-cs
+Alias: $CAPCLASS = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-capsule-classification-category
+Alias: $INGREDNAMETYPE = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-ingredient-name-type
+Alias: $PRODCHARS = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-characteristic

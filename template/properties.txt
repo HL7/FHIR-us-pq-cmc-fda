@@ -1,2 +1,0 @@
-jiraSpecFile:FHIR-us-pq-cmc
-packagelisturl:http://hl7.org/fhir/us/pq-cmc/package-list.json

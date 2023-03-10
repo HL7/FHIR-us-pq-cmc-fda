@@ -81,7 +81,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * identifier ^definition = """A set of discrete sequential steps performed on a given test. [Source: SME Defined]"""
 * identifier ^comment = "Note: This can be named or numbered.  This will never be 'Single Stage'."	
 * status MS	
-* value[x] only Quantity or string	
+* value[x] only Quantity or markdown	
 * valueQuantity.value 0..1 MS	
 * valueQuantity.value ^short = "ValueNumeric"	
 * valueQuantity. ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
@@ -89,16 +89,18 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * valueQuantity.unit ^short = "ValueNumeric UOM"	
 * valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
-* valueQuantity.code from  PqcmcUnitsMeasureTerminology
-* valueString 0..1 MS
-* valueString ^short = "Value"	
-* valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
+* valueQuantity.code from PqcmcUnitsMeasureTerminology
+* valueMarkdown 0..1 MS
+* valueMarkdown ^short = "Value"	
+* valueMarkdown ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
 * interpretation ^short = "Conformance to Criteria"	
 * interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined]
  Examples: Conforms, Does not Conform"""
 * interpretation from PqcmcConformanceCriteriaTerminology	
+* interpretation.coding.code 1..1
+* interpretation.coding.display 1..1
 * note MS	
 * note ^short = "Additional Information"	
 * note ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
@@ -119,8 +121,9 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
 """
 * referenceRange.low.extension[interpretationCode] 1..1 MS	
-* referenceRange.low.unit 1..1 MS	
-* referenceRange.low.unit from  PqcmcUnitsMeasureTerminology	
+* referenceRange.low.code 1..1 MS	
+* referenceRange.low.code from PqcmcUnitsMeasureTerminology	
+* referenceRange.low.unit 1..1 MS
 * referenceRange.high MS	
 * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
@@ -129,8 +132,9 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 """
 * referenceRange.high.extension[interpretationCode] 1..1 MS	
 * referenceRange.high.value 1..1 MS	
-* referenceRange.high.unit 1..1 MS	
-* referenceRange.high.unit from PqcmcUnitsMeasureTerminology
+* referenceRange.high.code 1..1 MS	
+* referenceRange.high.code from PqcmcUnitsMeasureTerminology	
+* referenceRange.high.unit 1..1 MS
 * referenceRange.text ^short = "Original Text"	
 * referenceRange.text  
 * referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -155,7 +159,7 @@ Relative Retention Time (RRT):	The ratio of the retention time of a component re
 * Example: 1:23 (a ratio) 
 * Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value."""
 * component.value[x] 1..1 MS	
-* component.value[x] only Quantity or string	
+* component.value[x] only Quantity or markdown	
 * component.valueQuantity.value 0..1 MS	
 * component.valueQuantity.value ^short = "ValueNumeric"	
 * component.valueQuantity.value ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
@@ -164,15 +168,17 @@ Relative Retention Time (RRT):	The ratio of the retention time of a component re
 * component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
 * component.valueQuantity.code from PqcmcUnitsMeasureTerminology
-* component.valueString 0..1 MS
-* component.valueString ^short = "Value"	
-* component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
+* component.valueMarkdown 0..1 MS
+* component.valueMarkdown ^short = "Value"	
+* component.valueMarkdown ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
 * component.dataAbsentReason MS	
 * component.interpretation 1..1 MS	
 * component.interpretation ^short = "Conformance to Criteria"	
 * component.interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
 Examples: Conforms, Does not Conform"""
 * component.interpretation from PqcmcConformanceCriteriaTerminology	
+* component.interpretation.coding.code 1..1
+* component.interpretation.coding.display 1..1
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * component.referenceRange 1..1 MS	
 * component.referenceRange ^comment = "Note: Correpsonds to  Acceptance Criteria in Quality Specification"	
@@ -186,8 +192,9 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 * component.referenceRange.low.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * component.referenceRange.low.value 1..1 MS	
-* component.referenceRange.low.unit 1..1 MS	
-* component.referenceRange.low.unit from  PqcmcUnitsMeasureTerminology
+* component.referenceRange.low.code 1..1 MS	
+* component.referenceRange.low.code from PqcmcUnitsMeasureTerminology	
+* component.referenceRange.low.unit 1..1 MS
 * component.referenceRange.high MS	
 * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
@@ -195,8 +202,9 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * component.referenceRange.high.extension[interpretationCode] 1..1 MS	
 * component.referenceRange.high.value 1..1 MS	
-* component.referenceRange.high.unit 1..1 MS	
-* component.referenceRange.high.unit from  PqcmcUnitsMeasureTerminology
+* component.referenceRange.high.code 1..1 MS	
+* component.referenceRange.high.code from PqcmcUnitsMeasureTerminology	
+* component.referenceRange.high.unit 1..1 MS
 * component.referenceRange.text ^short = "Original Text"	
 * component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
  Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -225,11 +233,15 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     testSubCat 0..1
 * category.coding[testCategory].code MS
 * category.coding[testCategory].code from PqcmcTestCategoryTerminology
+* category.coding[testCategory].code  1..1
+* category.coding[testCategory].display  1..1
 * category.coding[testCategory].code ^short = "Test Category"
 * category.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
 * category.coding[testSubCat].code MS
 * category.coding[testSubCat].code from PqcmcTestSubCategoryTerminology
 * category.coding[testSubCat].code ^short = "Test Sub-category"
+* category.coding[testSubCat].code 1..1
+* category.coding[testSubCat].display 1..1
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
 * effective[x] 1..1 MS	
@@ -242,7 +254,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * performer ^definition = "A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]."
 * performer only Reference(MfgTestSiteOrganization)	
 * value[x] 1..1 MS	
-* value[x]  only Quantity or string	
+* value[x]  only Quantity or markdown
 * valueQuantity.value 0..1 MS	
 * valueQuantity.value ^short = "ValueNumeric"	
 * valueQuantity. ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
@@ -251,15 +263,17 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
 * valueQuantity.code from PqcmcUnitsMeasureTerminology
-* valueString 0..1 MS
-* valueString ^short = "Value"	
-* valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
+* valueMarkdown 0..1 MS
+* valueMarkdown ^short = "Value"	
+* valueMarkdown ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
 * interpretation ^short = "Conformance to Criteria"	
 * interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
 Examples: Conforms, Does not Conform"""
-* interpretation from PqcmcConformanceCriteriaTerminology	
+* interpretation.coding.code from PqcmcConformanceCriteriaTerminology	
+* interpretation.coding.code 1..1
+* interpretation.coding.display 1..1
 * note MS	
 * note ^short = "Additional Information"	
 * note ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
@@ -281,16 +295,18 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 * referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * referenceRange.low.value 1..1 MS	
-* referenceRange.low.unit 1..1 MS	
-* referenceRange.low.unit from  PqcmcUnitsMeasureTerminology
+* referenceRange.low.code 1..1 MS	
+* referenceRange.low.code from PqcmcUnitsMeasureTerminology	
+* referenceRange.low.unit 1..1 MS
 * referenceRange.high MS	
 * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
 * referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * referenceRange.high.value 1..1 MS	
-* referenceRange.high.unit 1..1 MS	
-* referenceRange.high.unit from  PqcmcUnitsMeasureTerminology
+* referenceRange.high.code 1..1 MS	
+* referenceRange.high.code from PqcmcUnitsMeasureTerminology	
+* referenceRange.high.unit 1..1 MS
 * referenceRange.text ^short = "Original Text"	
 * referenceRange.text  ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -317,7 +333,7 @@ Example: 1:23 (a ratio)
 Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
 """	
 * component.value[x] 1..1 MS	
-* component.value[x]  only Quantity or string	
+* component.value[x]  only Quantity or markdown
 * component.valueQuantity.value 0..1 MS	
 * component.valueQuantity.value ^short = "ValueNumeric"	
 * component.valueQuantity.value ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
@@ -326,15 +342,17 @@ Note: This is the title or name of the impurity (sometimes expressed as a ratio)
 * component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
 * component.valueQuantity.code from PqcmcUnitsMeasureTerminology
-* component.valueString 0..1 MS
-* component.valueString ^short = "Value"	
-* component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
+* component.valueMarkdown 0..1 MS
+* component.valueMarkdown ^short = "Value"	
+* component.valueMarkdown ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
 * component.dataAbsentReason MS	
 * component.interpretation 1..1 MS	
 * component.interpretation ^short = "Conformance to Criteria"	
 * component.interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
 Examples: Conforms, Does not Conform"""
 * component.interpretation from PqcmcConformanceCriteriaTerminology	
+* component.interpretation.coding.code 1..1
+* component.interpretation.coding.display 1..1
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * component.referenceRange 1..1 MS	
 * component.referenceRange ^comment = "Note: Correpsonds to  Acceptance Criteria in Quality Specification"	
@@ -350,15 +368,17 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail.
 """
 * component.referenceRange.low.value 1..1 MS	
-* component.referenceRange.low.unit 1..1 MS	
-* component.referenceRange.low.unit from PqcmcUnitsMeasureTerminology
+* component.referenceRange.low.code 1..1 MS	
+* component.referenceRange.low.code from PqcmcUnitsMeasureTerminology	
+* component.referenceRange.low.unit 1..1 MS
 * component.referenceRange.high MS	
 * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
 * component.referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
 Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * component.referenceRange.high.value 1..1 MS	
-* component.referenceRange.high.unit 1..1 MS	
-* component.referenceRange.high.unit from PqcmcUnitsMeasureTerminology
+* component.referenceRange.high.code 1..1 MS	
+* component.referenceRange.high.code from PqcmcUnitsMeasureTerminology	
+* component.referenceRange.high.unit 1..1 MS
 * component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
 	

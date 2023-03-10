@@ -84,7 +84,7 @@ node "DrugProductComponent" as NN {
 node "ComponentSubstance" as NCS { 
       object "**Parent:** SubstanceDefinition" as objSubDef {
            **Reference:**
-      [[StructureDefinition-pqcmc-ComponentSubstance.html]]
+      [[StructureDefinition-pqcmc-component-substance.html]]
         **ValueSets:**
         EVMPDSubstanceClassification
         Quality Standard Terminology

@@ -11,7 +11,7 @@ Usage: #example
 
 * id = "35040642-6a9b-4331-951d-7d741467e4a4"
 * status = #final
-* type = PqcmcCompSectionTypes#SP4151 "Quality Specification"
+* type = CmcCompSectionTypesVS#SP4151 "Quality Specification"
 * date = "2022-12-08"
 //Reference to Sponsor organization
 * author = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
@@ -19,18 +19,18 @@ Usage: #example
 * section[DrugProduct]
   //* id = "3060c9c3-3600-42d9-8f0d-24f34afac418"
   * title = "PQCMC Comp Section 32P51 Product Specification"
-  * code = PqcmcCompSectionTypes#32P51 "Product Specification"
+  * code = CmcCompSectionTypesVS#32P51 "Product Specification"
   * entry = Reference(3060c9c3-3600-42d9-8f0d-24f34afac418)
 //Active Pharmaceutical Ingredient
 * section[Api]
   //* id = "394c19af-062b-49b4-9f8d-f5a3499a8476"
   * title = "PQCMC Comp Section 32S41 Substance Specification"
-  * code = PqcmcCompSectionTypes#32S41 "Substance Specification"
+  * code = CmcCompSectionTypesVS#32S41 "Substance Specification"
   * entry = Reference(394c19af-062b-49b4-9f8d-f5a3499a8476)
 * section[Excipient]
   //* id = "0baed83c-495e-4129-8e26-537a0ede5e15"
   * title = "PQCMC Comp Section 32P41 Excipients Specification"
-  * code = PqcmcCompSectionTypes#32P41 "Excipients Specification"
+  * code = CmcCompSectionTypesVS#32P41 "Excipients Specification"
   * entry = Reference(0baed83c-495e-4129-8e26-537a0ede5e15)
 
 

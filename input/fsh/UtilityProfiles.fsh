@@ -2,7 +2,7 @@ Profile: Base64DocumentReference
 Parent: DocumentReference
 Id: cmc-document-reference
 Description: "A profile that represents the document or diagram in base64."
-* status from 	http://hl7.org/fhir/ValueSet/document-reference-status
+* status from http://hl7.org/fhir/ValueSet/document-reference-status
 * status = #current (exactly)
 * content MS
 * content.attachment MS

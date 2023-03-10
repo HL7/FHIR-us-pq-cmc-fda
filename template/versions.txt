@@ -1,2 +1,0 @@
-R5=Y
-igVersion=0.1.11
