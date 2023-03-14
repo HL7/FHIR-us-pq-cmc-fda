@@ -1,10 +1,8 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-
 package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
    
-
   node "EctdComposition32P7" as N1 { 
       object "**Parent:** Composition" as obj1 {
       **Reference:**
@@ -14,7 +12,7 @@ package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
     }   
 }
 node "DrugProductContainerClosure" as N21 { 
-      object "**Parent:** DrugProduct Profile" as obj22 {
+      object "**Parent:** MedicinalProductDefinition" as obj22 {
            **Reference:**
       [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
         **ValueSets:**

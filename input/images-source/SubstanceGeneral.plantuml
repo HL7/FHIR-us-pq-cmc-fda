@@ -1,11 +1,10 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-
 package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
 
   node "DrugSubstanceNomenclature" as NN { 
-      object "**Parent Profile:** DrugSubstance" as obj3 {
+      object "**Parent Profile:** SubstanceDefinition" as obj3 {
           **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-nomenclature.html]]
         **ValueSets:**
@@ -15,10 +14,10 @@ package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
         Code System PQCMC Name Types 
       }  
 }
-  node "DrugSubstanceRepresentationalStructure" as N21 { 
-      object "**Parent Profile:** DrugSubstance" as obj22 {
+  node "DrugSubstanceMolecularStructure" as N21 { 
+      object "**Parent Profile:** SubstanceDefinition" as obj22 {
           **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-structure-represent.html]]
+      [[StructureDefinition-pqcmc-drug-substance-molecular-structure.html]]
         **ValueSets:**
         Chemical Structure Data File Type Terminology
         Code System PQCMC Name Types
@@ -36,8 +35,7 @@ node "Base64DocumentReference" as NB64 {
       [[StructureDefinition-cmc-ectd-document-32s10.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
-    }
-     
+    }    
 }
 node "PolymorphicForm" as N2 { 
       object "**Parent:** SubstanceDefinition" as obj2 {

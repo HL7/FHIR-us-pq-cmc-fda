@@ -3,6 +3,7 @@ Parent: Bundle
 Id: cmc-ectd-document-32p10
 Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles."
+
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-first-resource
 * identifier 0..1 MS
@@ -117,7 +118,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * entry[Composition].resource only EctdComposition32S10
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
-* entry[SubstanceDefinition].resource only DrugSubstanceNomenclature or DrugSubstanceRepresentationalStructure or PolymorphicForm
+* entry[SubstanceDefinition].resource only DrugSubstanceNomenclature or DrugSubstanceMolecularStructure or PolymorphicForm
 * entry[Organization].fullUrl  MS
 * entry[Organization].resource  MS
 * entry[Organization].resource only cmc-sponsor-organization
@@ -137,6 +138,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
+
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -151,7 +153,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * entry[Composition].resource only EctdComposition32S30
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
-* entry[SubstanceDefinition].resource only DrugSubstanceStructure or DrugSubstanceImpurities
+* entry[SubstanceDefinition].resource only DrugSubstance
 * entry[Organization].fullUrl  MS
 * entry[Organization].resource  MS
 * entry[Organization].resource only cmc-sponsor-organization
@@ -746,7 +748,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section[SubstanceStructure].title 1..1 MS
 * section[SubstanceStructure].title obeys cmc-ectd-doc-2
 * section[SubstanceStructure].entry 1..1 MS
-* section[SubstanceStructure].entry only Reference(DrugSubstanceRepresentationalStructure)
+* section[SubstanceStructure].entry only Reference(DrugSubstanceMolecularStructure)
 
 Profile: EctdComposition32S23
 Parent: Composition
@@ -799,12 +801,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Structure].code = pqcmc-comp-section-types#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry  1..1 MS
-* section[Structure].entry only Reference(DrugSubstanceStructure)
-* section[Impurities] ^definition = "Drug Substance Impurities to be included under the 3.2.S.3.0 eCTD heading."
-* section[Impurities].code = pqcmc-comp-section-types#32S32 "Substance Impurities"
-* section[Impurities].title 1..1 MS
-* section[Impurities].entry  1..* MS
-* section[Impurities].entry only Reference(DrugSubstanceImpurities)
+* section[Structure].entry only Reference(DrugSubstance)
 
 Profile: EctdCompositionSP7181
 Parent: Composition
