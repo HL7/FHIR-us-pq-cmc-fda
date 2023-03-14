@@ -19,7 +19,6 @@ node "EctdComposition32S30" as N1 {
         GENC Country Codes
     }
 } 
-  
   node "DrugSubstanceStructure" as NN { 
       object "**Parent:** DrugSubstance" as obj3 { 
   **Reference:**

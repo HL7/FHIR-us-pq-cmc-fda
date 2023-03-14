@@ -137,7 +137,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
-
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open

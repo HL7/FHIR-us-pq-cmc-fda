@@ -523,7 +523,6 @@ Quantity UOM: A named quantity in terms of which other quantities are measured o
 
 * component.component 0..* MS
 
-
 Profile: DrugProductBatch
 Parent: Medication
 Id: pqcmc-drug-product-instance

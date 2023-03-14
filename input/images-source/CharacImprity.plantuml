@@ -36,7 +36,6 @@ node "ImpuritySubstance" as N6 {
       Chemical Structure Data File Type Terminology
     }    
 }
-
 N1 --> NSO   
 NN --> N6
 N1 --> NN 

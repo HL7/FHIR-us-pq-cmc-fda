@@ -140,7 +140,6 @@ Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/Data
 * code.code.coding[uniProt] ^definition =  """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
 It is accessible at https://www.uniprot.org/
 """
-
 //element(*,SubstanceDefinition)/code/code/text/@value
 //BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 //BR: isbt Applicable to blood products.
