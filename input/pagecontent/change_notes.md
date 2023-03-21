@@ -3,6 +3,9 @@ PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be p
 ### Changes and Updates for Version 0.1.12
 The current development IG - !!R5 draft-final version!!
 
+* Added vs for action cardinality in Specification and bound element
+
+
 <ul>
 Resolved 38 Errors from R5 draft-final version:
 <li> The type "string" does not match any of the allowed types: Quantity or CodeableConcept or markdown or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period or Attachment or Reference(http://hl7.org/fhir/StructureDefinition/MolecularSequence) or Canonical() in BatchAnalysis</li>

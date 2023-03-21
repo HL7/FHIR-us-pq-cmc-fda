@@ -559,14 +559,6 @@ Description: "Terminology used to qualify the information pertaining to retest d
 * $NCIT#C48660 "Not Applicable"
 * $NCIT#C185188 "Proposed"
 
-ValueSet: PqActionRelationTypes
-Id: pqcmc-action-relaiton-types
-Title: "ActionRelationTypes"
-Description: "subset of http://hl7.org/fhir/action-relationship-type used for quality specification stage relationshps"
-* ^experimental = true
-* $ART#concurrent
-* $ART#after
-
 CodeSystem: PqcmcProductCharacteristicCodes
 Id: pqcmc-product-characteristic
 Title: "Code System PQCMC Product Characteristic"

@@ -876,7 +876,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 Profile: SubstanceContainerClosure
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-container-closure
-Title: "Drug Substance Container Closure  do no routine with extension"
+Title: "Drug Substance Container Closure"
 Description: "Description and coding of the container closure system. Profile on Drug Substance profile."
 * extension contains pq-container-closure-extension named containerClosure 1..1 MS
 * identifier 0..1
@@ -888,7 +888,7 @@ Description: "Description and coding of the container closure system. Profile on
 Profile: DrugSubstanceNomenclature
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature
-Title: "Substance Nomenclature  on routine - MAKE spedific"
+Title: "Substance Nomenclature  on routine"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
 
 * identifier 0..1 MS

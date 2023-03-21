@@ -802,7 +802,9 @@ SME comment -- this is the marketed dosage form.
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
+* name[Proprietary].productName
 * name[Proprietary].type.text = "Proprietary"
+* name[NonProprietary].productName
 * name[NonProprietary].type.text = "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
