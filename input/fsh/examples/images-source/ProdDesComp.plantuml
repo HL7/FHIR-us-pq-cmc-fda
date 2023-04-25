@@ -1,0 +1,114 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32p10.html]]
+    }  
+  node "DrugProductDescription" as N2 { 
+      object "**Parent:** DrugProduct Profile" as obj2 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-description.html]]
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+    }
+}
+  node "EctdComposition32P10" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+         **Reference:**
+      [[StructureDefinition-ectd-composition-32P10.html]]
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }   
+}
+node "DrugProductContainerClosure" as N21 { 
+      object "**Parent:** DrugProduct Profile" as obj22 {
+        **Reference:**
+      [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
+        **ValueSets:**
+        Container Type Terminology
+        Closure Type Terminology
+    }
+    object "**Extensions**" as objEx {
+        mdpcontainerClosure
+    }
+    obj22 <|-- objEx
+}
+
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+         **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+node "FinishedProduct"as MID {
+object "**Parent:** ManufacturedItemDefinition" as objMID { 
+         **Reference:**
+      [[StructureDefinition-pqcmc-product-part.html]]
+      **ValueSets:**
+      PqcmcCoatingPurposeVS
+      PqcmcDrugProductComponentFunctionCategoryTerminology
+      PqcmcExcipientFunctionTerminology
+      PqcmcProductPartIngredientPhysicalLocationVS
+      PqcmcProductPartTypeVS
+      PqcmcReleaseMechanismVS
+      PqcmcReleaseProfileVS
+      PqcmcStrengthOperatorTerminology
+      PqcmcStrengthTypeTerminology
+      PqcmcProductCharacteristicCodes
+      PqcmcUnitsMeasureTerminology
+      }
+}
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+           **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+
+node "DrugProductComponent" as NN { 
+      object "**Parent:** Ingredient" as obj3 {
+           **Reference:**
+      [[StructureDefinition-pqcmc-Component.html]]
+      }
+      object "**Extensions**" as objExs {
+        Additional-info-extension
+    }
+    obj3 <|-- objExs
+}
+
+node "ComponentSubstance" as NCS { 
+      object "**Parent:** SubstanceDefinition" as objSubDef {
+           **Reference:**
+      [[StructureDefinition-pqcmc-component-substance.html]]
+        **ValueSets:**
+        EVMPDSubstanceClassification
+        Quality Standard Terminology
+        Source Type Terminology
+        GENC Country Codes
+    }
+}
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
+}
+
+
+
+N1 --> N2
+N1 --> MID
+N1 --> NSO
+N1 --> N21
+MID --> NN
+NCS --> NMFG
+NN --> NCS
+NCS --> NB64
+@enduml
