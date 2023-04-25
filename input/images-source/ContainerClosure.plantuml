@@ -2,7 +2,9 @@
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
-   
+    object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32p70.html]]
+    }   
   node "EctdComposition32P7" as N1 { 
       object "**Parent:** Composition" as obj1 {
       **Reference:**

@@ -3,11 +3,15 @@ allowmixing
 'Mixed model of use case and object
 
 package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES {
+ 
+   object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32p55.html]]
+    }  
 
 node "EctdComposition32P55" as N1 { 
       object "**Parent:** Composition" as obj1 {
            **Reference:**
-      [[StructureDefinition-cmc-ectd-document-32p55.html]]   
+      [[StructureDefinition-ectd-composition-32p55.html]]   
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
@@ -30,7 +34,7 @@ node "EctdComposition32P55" as N1 {
 node "ImpuritySubstance" as N6 { 
       object "**Parent:** SubstanceDefinition" as obj2 {
            **Reference:**
-      [[StructureDefinition-pqcmc-substance-impurity.html]]   
+      [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]   
       **ValueSets:**
       EVMPDSubstanceClassification
       PqcmcImpurityClassificationTerminology

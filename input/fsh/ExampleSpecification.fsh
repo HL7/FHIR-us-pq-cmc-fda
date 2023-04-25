@@ -6,8 +6,8 @@ Usage: #example
 
 * extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:0baed83c-495e-4129-8e26-537a0ede5e15"
+
+* id = "0baed83c-495e-4129-8e26-537a0ede5e15"
 * version = "1.0"
 * title = "Quality Specification for Excipient"
 * status = #active
@@ -24,19 +24,11 @@ Usage: #example
 * goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal.target.detailQuantity.value = 100
 * goal.target.detailQuantity.unit = "cfu"
-* goal.target.detailQuantity.code = $UCUM#[CFU] "colony forming units"
-//----------------------------Guide--------------------------------------------------------
-// goal.target.detailQuantity ^short = "Acceptance Criteria (Numeric)"
-//* goal.target.detailQuantity.extension[interpretationCode] ^short = "Interpretation Code"
-//* goal.target.detailRange ^short = "Acceptance Criteria (Numeric range)"
-//* goal.target.detailRange.low.extension[interpretationCode] ^short = "Interpretation Code"
-//* goal.target.detailRange.high.extension[interpretationCode] ^short = "Interpretation Code"
-//* goal.target.detailString ^short = "Acceptance Criteria (Text)"
-//* goal.target.detailString.extension[interpretationCode] ^short = "Interpretation Code"
-//* goal.target.detailInteger ^short = "Replicate Number"
+* goal.target.detailQuantity.code = $NCIT#C68742 "[CFU]"
+
 * action
   * .extension[testOrder].valueDecimal = 1.0
-* action.prefix  = "Single Stage"
+* action.prefix = "Single Stage"
 * action.title = "Microbial Limits"
 * action.code.coding[testCategory] = $PQTC#TC13 "Microbial Limits"
 // action[=].code.coding[testSubCat] = "Test Sub-category"
@@ -53,8 +45,8 @@ Usage: #example
 
 * extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C134022 "Drug Substance"
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:394c19af-062b-49b4-9f8d-f5a3499a8476"
+
+* id = "394c19af-062b-49b4-9f8d-f5a3499a8476"
 * version = "1.0"
 * title = "Quality Specification for API"
 * status = #active
@@ -68,20 +60,20 @@ Usage: #example
 * goal.addresses = $NCIT#C134029 "Release"
 * goal.addresses = $NCIT#C134030 "Stability"
 * goal.target.detailRange.low
-* goal.target.detailRange.low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal.target.detailRange.low.value = 20
 * goal.target.detailRange.low.unit = "pH"
-* goal.target.detailRange.low.code = $UCUM#[pH] "pH"
+* goal.target.detailRange.low.code = $NCIT#C45997 "[pH]"
 * goal.target.detailRange.high
-* goal.target.detailRange.high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+* goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal.target.detailRange.high.value = 3.0
 * goal.target.detailRange.high.unit = "pH"
-* goal.target.detailRange.high.code = $UCUM#[pH] "pH"
+* goal.target.detailRange.high.code = $NCIT#C45997 "[pH]"
 * goal.target.detailIntegergoal[19].
 * goal.target.detailRange.high.value = 10
 * action
   * .extension[testOrder].valueDecimal = 1.0
-* action.prefix  = "Single Stage"
+* action.prefix = "Single Stage"
 * action.title = "pH Average"
 * action.code.coding[testCategory] = $PQTC#TC23 "pH"
 // action.code.coding[testSubCat] = "Test Sub-category"
@@ -97,8 +89,8 @@ Title: "drug product for specification "
 Description: "Includes the identifier of the drug product"
 Usage: #example
 
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:8e854cea-f491-471f-b5dc-910f20135658"
+
+* id = "8e854cea-f491-471f-b5dc-910f20135658"
 * combinedPharmaceuticalDoseForm = $NCIT#C42897 "TABLET, COATED"
 * route = $NCIT#C38288 "ORAL"
 * name[NonProprietary].productName = "Buffered Asprin"
@@ -115,8 +107,8 @@ Usage: #example
 * extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C134022 "Drug Substance"
 
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:6EB934CF-94AA-4646-9346-93FC9A7A4558"
+
+* id = "6EB934CF-94AA-4646-9346-93FC9A7A4558"
 * version = "1.0"
 * title = "Quality Specification for Buffer Asprin"
 * status = #active
@@ -141,7 +133,7 @@ Usage: #example
 * goal[1].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[1].target.detailQuantity.value = 5
 * goal[1].target.detailQuantity.unit = "%"
-* goal[1].target.detailQuantity.code = $UCUM#% "percent"
+* goal[1].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[2]
 * goal[2].id = "7787D376-3DC1-423A-B0C6-0F21ADD5DEE7"
@@ -160,7 +152,7 @@ Usage: #example
 * goal[3].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[3].target.detailQuantity.value = 0.05
 * goal[3].target.detailQuantity.unit = "%"
-* goal[3].target.detailQuantity.code = $UCUM#% "percent"
+* goal[3].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[4]
 * goal[4].id = "238D5E12-30A1-469C-B795-E9C6E247422E"
@@ -179,7 +171,7 @@ Usage: #example
 * goal[5].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[5].target.detailQuantity.value = 0.014
 * goal[5].target.detailQuantity.unit = "%"
-* goal[5].target.detailQuantity.code = $UCUM#% "percent"
+* goal[5].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[6]
 * goal[6].id = "D59B0728-B53A-4C52-8870-7831602EB5EE"
@@ -190,7 +182,7 @@ Usage: #example
 * goal[6].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[6].target.detailQuantity.value = 0.04
 * goal[6].target.detailQuantity.unit = "%"
-* goal[6].target.detailQuantity.code = $UCUM#% "percent"
+* goal[6].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[7]
 * goal[7].id = "2B6C7C8A-EA23-4B84-9BEA-1E1FACBD5673"
@@ -201,7 +193,7 @@ Usage: #example
 * goal[7].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[7].target.detailQuantity.value = 0.001
 * goal[7].target.detailQuantity.unit = "%"
-* goal[7].target.detailQuantity.code = $UCUM#% "percent"
+* goal[7].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[8]
 * goal[8].id = "EC7DCBA0-F8D0-41DD-AC1C-DB0A269D5A32"
@@ -221,7 +213,7 @@ Usage: #example
 * goal[9].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[9].target.detailQuantity.value = 0.2
 * goal[9].target.detailQuantity.unit = "%"
-* goal[9].target.detailQuantity.code = $UCUM#% "percent"
+* goal[9].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[10]
 * goal[10].id = "79B136E3-0396-4441-8146-C4ACFD2CA435"
@@ -232,7 +224,7 @@ Usage: #example
 * goal[10].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[10].target.detailQuantity.value = 0.1
 * goal[10].target.detailQuantity.unit = "%"
-* goal[10].target.detailQuantity.code = $UCUM#% "percent"
+* goal[10].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[11]
 * goal[11].id = "C11B6C87-1A59-435E-87F3-609A9474534F"
@@ -243,7 +235,7 @@ Usage: #example
 * goal[11].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[11].target.detailQuantity.value = 0.15
 * goal[11].target.detailQuantity.unit = "%"
-* goal[11].target.detailQuantity.code = $UCUM#% "percent"
+* goal[11].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[12]
 * goal[12].id = "A886F079-B6DB-41AB-ABD1-5E8AEE0B07A6"
@@ -251,15 +243,15 @@ Usage: #example
 * goal[12].addresses = $NCIT#C134029 "Release"
 * goal[12].addresses = $NCIT#C134030 "Stability"
 * goal[12].target.detailRange.low
-* goal[12].target.detailRange.low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
+* goal[12].target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
 * goal[12].target.detailRange.low.value = 99.5
 * goal[12].target.detailRange.low.unit = "%"
-* goal[12].target.detailRange.low.code = $UCUM#% "percent"
+* goal[12].target.detailRange.low.code =  $NCIT#C48570 "%"
 * goal[12].target.detailRange.high
-* goal[12].target.detailRange.high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal[12].target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[12].target.detailRange.high.value = 100.5
 * goal[12].target.detailRange.high.unit = "%"
-* goal[12].target.detailRange.high.code = $UCUM#% "percent"
+* goal[12].target.detailRange.high.code =  $NCIT#C48570 "%"
 
 * goal[13]
 * goal[13].id = "1C85A597-61EB-4549-BADF-DE84EAE3BA56"
@@ -269,7 +261,7 @@ Usage: #example
 * goal[13].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
 * goal[13].target.detailQuantity.value = 85
 * goal[13].target.detailQuantity.unit = "%"
-* goal[13].target.detailQuantity.code = $UCUM#% "percent"
+* goal[13].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[14]
 * goal[14].id = "2D313CA8-7C74-4862-8406-17E4269FB524"
@@ -286,13 +278,13 @@ Usage: #example
 * goal[15].target[0].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
 * goal[15].target[0].detailQuantity.value = 0.80
 * goal[15].target[0].detailQuantity.unit = "%"
-* goal[15].target[0].detailQuantity.code = $UCUM#% "percent"
+* goal[15].target[0].detailQuantity.code =  $NCIT#C48570 "%"
 * goal[15].target[+].measure.text = "unit"
 * goal[15].target[=].detailQuantity
 * goal[15].target[=].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[15].target[=].detailQuantity.value = 0.65
 * goal[15].target[=].detailQuantity.unit = "%"
-* goal[15].target[=].detailQuantity.code = $UCUM#% "percent"
+* goal[15].target[=].detailQuantity.code =  $NCIT#C48570 "%"
 
 * goal[16]
 * goal[16].id = "26E89541-D1DF-402E-AC82-6E370D7C4C69"
@@ -303,19 +295,19 @@ Usage: #example
 * goal[16].target[0].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
 * goal[16].target[0].detailQuantity.value = 0.80
 * goal[16].target[0].detailQuantity.unit = "%"
-* goal[16].target[0].detailQuantity.code = $UCUM#% "percent"
+* goal[16].target[0].detailQuantity.code =  $NCIT#C48570 "%"
 * goal[16].target[+].measure.text = "units less than Q – 15%"
 * goal[16].target[=].detailQuantity
 * goal[16].target[=].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
 * goal[16].target[=].detailQuantity.value = 2
 * goal[16].target[=].detailQuantity.unit = "unit"
-* goal[16].target[=].detailQuantity.code = $UCUM#[Amb'a'1'U] "amb a 1 units"
+* goal[16].target[=].detailQuantity.code =  $NCIT#C92953 "[Amb'a'1'U]"
 * goal[16].target[+].measure.text = "units less than Q – 25%"
 * goal[16].target[=].detailQuantity
 * goal[16].target[=].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[16].target[=].detailQuantity.value = 0
 * goal[16].target[=].detailQuantity.unit = "unit"
-* goal[16].target[=].detailQuantity.code = $UCUM#[Amb'a'1'U] "amb a 1 units"
+* goal[16].target[=].detailQuantity.code =  $NCIT#C92953 "[Amb'a'1'U]"
 
 * goal[17]
 * goal[17].id = "A2CE10F0-B511-44D5-9A9C-6D08A9EE9C66"
@@ -329,15 +321,15 @@ Usage: #example
 * goal[18].addresses = $NCIT#C134029 "Release" 
 * goal[18].addresses = $NCIT#C134030 "Stability"
 * goal[18].target.detailRange.low
-* goal[18].target.detailRange.low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal[18].target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
 * goal[18].target.detailRange.low.value = 2
 * goal[18].target.detailRange.low.unit = "pH"
-* goal[18].target.detailRange.low.code = $UCUM#[pH] "pH"
+* goal[18].target.detailRange.low.code = $NCIT#C45997 "[pH]"
 * goal[18].target.detailRange.high
-* goal[18].target.detailRange.high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+* goal[18].target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[18].target.detailRange.high.value = 3
 * goal[18].target.detailRange.high.unit = "pH"
-* goal[18].target.detailRange.high.code = $UCUM#[pH] "pH"
+* goal[18].target.detailRange.high.code = $NCIT#C45997 "[pH]"
 
 * goal[19]
 * goal[19].id = "4B42D3D0-CC58-4986-A7C5-24B885D05D49"
@@ -348,7 +340,7 @@ Usage: #example
 * goal[19].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
 * goal[19].target.detailQuantity.value = 0.5
 * goal[19].target.detailQuantity.unit = "%"
-* goal[19].target.detailQuantity.code = $UCUM#% "percent"
+* goal[19].target.detailQuantity.code =  $NCIT#C48570 "%"
 
 * action[0] 
   * .extension[testOrder].valueDecimal = 1.1
@@ -546,11 +538,12 @@ Usage: #example
 
 * id = "f5de5600-7e54-4d2d-b442-7b3366531231"
 * classification = $EMAIDMP#17 "Mixture"
+* grade.coding =  $NCIT#C134006 "USPNF"
 //Reference MfgTestSiteOrganization
 * manufacturer = Reference(029f1cb8-2dc7-4971-8309-55e6dd129918)
 * code.code = $UNII#RT9P9S09QI "RT9P9S09QI"
 * name.name = "PROPYLENE GLYCOL MONOCAPRYLATE"
-* name.type = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* name.type.coding = PqcmcProductIngredientNameType#141 "GSRS Accepted"
 * name.preferred = true
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
@@ -563,7 +556,7 @@ Description: "A profile for the data elements required to identify an organizati
 Usage: #example
 
 * id = "029f1cb8-2dc7-4971-8309-55e6dd129918"
-* name = "Sams BioPharm"
+
 //Slicing of Identifier
 * identifier[DUNSNumber]
   * system = "urn:oid:1.3.6.1.4.1.519.1"
@@ -571,98 +564,10 @@ Usage: #example
 * identifier[FEINumber]
   * system = "urn:oid:2.16.840.1.113883.4.82"
   * value = "1234567"
-//PqAddress
+* name = "Sams BioPharm"
+  //PqAddress
 * contact.address.line = "2752 Main Street"
 * contact.address.city = "Princeton"
 * contact.address.postalCode = "12345"
 * contact.address.country = "USA"
 
-Instance: DocumentstionOnly
-InstanceOf: QualitySpecificationTemp
-Title: "A quality specification documentation"
-Description: "A goals"
-Usage: #example
-
-* status = #active
-* goal[0]
-* goal[0].id = "Acceptance-Criteria-Text"
-* goal[0].description.text = "Clear, colorless solution free of visible particulates."
-* goal[0].addresses = $NCIT#C134029 "Release"
-* goal[0].addresses = $NCIT#C134030 "Stability"
-* goal[0].target.detailString.extension[interpretationCode].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
-* goal[0].target.detailString.value = "Conforms"
-
-* goal[1]
-* goal[1].id = "Acceptance-Criteria-Numeric-EQ"
-* goal[1].description.text = "&lt;= 0.05 %"
-* goal[1].addresses = $NCIT#C134029 "Release"
-* goal[1].addresses = $NCIT#C134030 "Stability"
-* goal[1].target.detailQuantity
-* goal[1].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C48793 "EQ"
-* goal[1].target.detailQuantity.value = 0.05
-* goal[1].target.detailQuantity.unit = "%"
-* goal[1].target.detailQuantity.code = $UCUM#% "percent"
-
-* goal[2]
-* goal[2].id = "Acceptance-Criteria-Numeric-LT"
-* goal[2].description.text = "&lt; 0.05 %"
-* goal[2].addresses = $NCIT#C134030 "Stability"
-* goal[2].target.detailQuantity
-* goal[2].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
-* goal[2].target.detailQuantity.value = 0.05
-* goal[2].target.detailQuantity.unit = "%"
-* goal[2].target.detailQuantity.code = $UCUM#% "percent"
-
-* goal[3]
-* goal[3].id = "Acceptance-Criteria-Numeric-MT"
-* goal[3].description.text = "&gt; 0.27 %"
-* goal[3].addresses = $NCIT#C134029 "Release"
-* goal[3].target.detailQuantity
-* goal[3].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61584 "MT (more than)"
-* goal[3].target.detailQuantity.value = 0.27
-* goal[3].target.detailQuantity.unit = "%"
-* goal[3].target.detailQuantity.code = $UCUM#% "percent"
-
-* goal[4]
-* goal[4].id = "Acceptance-Criteria-Numeric-NLT"
-* goal[4].description.text = "Each unit is NLT Q + 5%"
-* goal[4].addresses = $NCIT#C44029 "Release"
-* goal[4].target.detailQuantity
-* goal[4].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-* goal[4].target.detailQuantity.value = 85
-* goal[4].target.detailQuantity.unit = "%"
-* goal[4].target.detailQuantity.code = $UCUM#% "percent"
-
-* goal[5]
-* goal[5].id = "Acceptance-Criteria-Numeric-NMT"
-* goal[5].description.text = "NMT 450 ppm at time of release"
-* goal[5].addresses = $NCIT#C44029 "Release"
-* goal[5].target.detailQuantity
-* goal[5].target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-* goal[5].target.detailQuantity.value = 450
-* goal[5].target.detailQuantity.unit = "[ppm]"
-* goal[5].target.detailQuantity.code = $UCUM#[ppm] "parts per million"
-
-* goal[6]
-* goal[6].id = "Acceptance-Criteria-Numeric-range"
-* goal[6].description.text = "85.0% to 115.0% Label Claim"
-* goal[6].addresses = $NCIT#C134029 "Release"
-* goal[6].addresses = $NCIT#C134030 "Stability"
-* goal[6].target[0].measure.text = "Average of 12 units"
-* goal[6].target[0].detailQuantity
-* goal[6].target[0].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-* goal[6].target[0].detailQuantity.value = 85.0
-* goal[6].target[0].detailQuantity.unit = "%"
-* goal[6].target[0].detailQuantity.code = $UCUM#% "percent"
-* goal[6].target[+].measure.text = "unit"
-* goal[6].target[=].detailQuantity
-* goal[6].target[=].detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
-* goal[6].target[=].detailQuantity.value = 115.0
-* goal[6].target[=].detailQuantity.unit = "%"
-* goal[6].target[=].detailQuantity.code = $UCUM#% "percent"
-
-* goal[7]
-* goal[7].id = "Replicate-Number"
-* goal[7].description.text = "n=10"
-* goal[7].addresses = $NCIT#C134029 "Release"
-* goal[7].target.detailInteger.value = 10

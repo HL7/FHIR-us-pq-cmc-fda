@@ -1,0 +1,311 @@
+// Example for #32S23 "Substance Control of Materials"
+Instance: 1e965274-1a0b-4554-B136-7591ecfa4011
+InstanceOf: ExcipientRaw
+Title: "Example of ExcipientRaw profile - N-TERT-BUTYLGLYCINE"
+Description: "Provides sufficient information to identify an Excipient or Raw material - N-TERT-BUTYLGLYCINE"
+Usage: #example
+
+* id = “1e965274-1a0b-4554-B136-7591ecfa4011”
+* classification = $EMAIDMP#1 "Chemical"
+* grade.coding =  $NCIT#C134006 "USPNF"
+* manufacturer = Reference(029f1cb8-2dc7-4971-8309-55e6dd129918)
+* code.code = $UNII#C38H031Q86 "C38H031Q86"
+* name.name = "N-TERT-BUTYLGLYCINE"
+* name.type.coding = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* sourceMaterial.type = $NCIT#C48807 "Chemical"
+
+Instance: 088eebeb-493a-4843-91b2-F6ad83f42661
+InstanceOf: ExcipientRaw
+Title: "Example of ExcipientRaw profile - Alcohol"
+Description: "Provides sufficient information to identify an Excipient or Raw material - Alcohol"
+Usage: #example
+
+
+* id = “088eebeb-493a-4843-91b2-F6ad83f42661”
+* classification = $EMAIDMP#1 "Chemical"
+* grade.coding =  $NCIT#C134006 "USPNF"
+* manufacturer = Reference(8407B53D-B797-4020-823B-65F40A5F1473)
+* code.code = $UNII#3K9958V90M "3K9958V90M"
+* name.name = "Alcohol"
+* name.type.coding = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* sourceMaterial.type = $NCIT#C48807 "Chemical"
+
+Instance: d79e6d26-2739-498a-B395-699eebb460db
+InstanceOf: ExcipientRaw
+Title: "Example of ExcipientRaw profile - Potassium Carbonate"
+Description: "Provides sufficient information to identify an Excipient or Raw material - Potassium Carbonate"
+Usage: #example
+
+
+* id = “d79e6d26-2739-498a-B395-699eebb460db”
+* classification = $EMAIDMP#1 "Chemical"
+* grade.coding =  $NCIT#C134006 "USPNF"
+* manufacturer = Reference(04FE386E-350C-44E5-8FA7-49E0CE5C7859)
+* code.code = $UNII#BQN1B9B9HA "BQN1B9B9HA"
+* name.name = "Potassium Carbonate"
+* name.type.coding = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* sourceMaterial.type = $NCIT#C48807 "Chemical"
+
+Instance: 20aa786f-5dbd-400b-Ac11-71fb14e12b6b
+InstanceOf: ExcipientRaw
+Title: "Example of ExcipientRaw profile - Purified Water"
+Description: "Provides sufficient information to identify an Excipient or Raw material - Purified Water"
+Usage: #example
+
+
+* id = “20aa786f-5dbd-400b-Ac11-71fb14e12b6b”
+* classification = $EMAIDMP#1 "Chemical"
+* grade.coding =  $NCIT#C134006 "USPNF"
+* manufacturer = Reference(029f1cb8-2dc7-4971-8309-55e6dd129918)
+* code.code = $UNII#059QF0KO0R "059QF0KO0R"
+* name.name = "Purified Water"
+* name.type.coding = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* sourceMaterial.type = $NCIT#C48807 "Chemical"
+
+Instance: a52496c6-34f0-4d9f-B802-6f082237e3cb
+InstanceOf: ExcipientRaw
+Title: "Example of ExcipientRaw profile - Sodium chloride"
+Description: "Provides sufficient information to identify an Excipient or Raw material - Sodium chloride"
+Usage: #example
+
+
+* id = “a52496c6-34f0-4d9f-B802-6f082237e3cb”
+* classification = $EMAIDMP#1 "Chemical"
+* grade.coding =  $NCIT#C134006 "USPNF"
+* manufacturer = Reference(8407B53D-B797-4020-823B-65F40A5F1473)
+* code.code = $UNII#451W47IQ8X "451W47IQ8X"
+* name.name = "Sodium chloride"
+* name.type.coding = PqcmcProductIngredientNameType#141 "GSRS Accepted"
+* sourceMaterial.type = $NCIT#C48807 
+
+Instance: 8407B53D-B797-4020-823B-65F40A5F1473
+InstanceOf: MfgTestSiteOrganization
+Title: "Example 1 of MfgTestSiteOrganization profile on Organization"
+Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."Usage: #example
+
+* id = "8407B53D-B797-4020-823B-65F40A5F1473"
+* identifier[DUNSNumber]  
+* system = "urn:oid:1.3.6.1.4.1.519.1"  
+* value = "567894321"
+* identifier[FEINumber]  
+* system = "urn:oid:2.16.840.1.113883.4.82"  
+* value = "7894321"
+* name = "D K Jones Bio Co. Ltd."
+* contact.address.line = "25 Madison Lane"
+* contact.address.state = "PA"
+* contact.address.city = "Center Point"
+* contact.address.postalCode = "03022"
+* contact.address.country = "USA"
+
+Instance: 04FE386E-350C-44E5-8FA7-49E0CE5C7859
+InstanceOf: MfgTestSiteOrganization
+Title: "Example 2 of MfgTestSiteOrganization profile on Organization"
+Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."Usage: #example
+
+* id = "04FE386E-350C-44E5-8FA7-49E0CE5C7859"
+* name = "Alpha Beta Chemical Supplier"
+* identifier[DUNSNumber]  
+* system = "urn:oid:1.3.6.1.4.1.519.1"  
+* value = "456704567"
+* identifier[FEINumber]  
+* system = "urn:oid:2.16.840.1.113883.4.82"  
+* value = "7045671"
+* contact.address.line = "1234 First Street"
+* contact.address.state = "VA"
+* contact.address.city = "Somewhere"
+* contact.address.postalCode = "12321"
+* contact.address.country = "USA"
+
+
+Instance: 0f931b06-c7fd-4fcb-9bac-76fffd710804
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug substance -  N-TERT-BUTYLGLYCINE"
+Description: "A quality specification is for an raw material"
+Usage: #example
+* extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C25425 "Approved"
+* extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+* id = "urn:uuid:0f931b06-c7fd-4fcb-9bac-76fffd710804"
+* version = "1.0"
+* title = "Quality Specification for N-TERT-BUTYLGLYCINE"
+* status = #active
+* subjectReference = Reference(1e965274-1a0b-4554-B136-7591ecfa4011)
+* date = "2021-13-09"
+* useContext.valueCodeableConcept.coding = $NCIT#C25425 "Approved"
+* goal
+* goal.id = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"
+* goal.description.text = " Averge of 10 between 2-3  pH "
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailRange.low
+* goal.target.detailRange.low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailRange.low.value = 20
+* goal.target.detailRange.low.code = $NCIT#C45997 "[pH]"
+* goal.target.detailRange.high
+* goal.target.detailRange.high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+* goal.target.detailRange.high.value = 3.0
+* goal.target.detailRange.high.code = $NCIT#C45997 "[pH]"
+* goal
+* goal.id = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+* goal.description.text = "White solid"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailString.extension[interpretationCode].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
+* goal.target.detailString.value = "Conforms"
+
+* goal
+* goal.id = "5c16389f-2997-499e-9016-c8bad3291067"
+* goal.description.text = "IR spectrum conforms to reference standard"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailString.extension[interpretationCode].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
+* goal.target.detailString.value = "Conforms"
+
+* goal
+* goal.id = "8e8fc73b-22d4-4e52-a03c-b4134bbd02a0"
+* goal.description.text = "pH: 3.4-4.3"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailRange.low
+* goal.target.detailRange.low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailRange.low.value = 3.4
+* goal.target.detailRange.low.code = $NCIT#C45997 "[pH]"
+* goal.target.detailRange.high
+* goal.target.detailRange.high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+* goal.target.detailRange.high.value = 4.3
+* goal.target.detailRange.high.code = $NCIT#C45997 "[pH]"
+* goal
+* goal.id = "3f5cd4e5-5fe0-4803-bc41-2e5a5e1301a5"
+* goal.description.text = "Water: 4.8%-7.0%"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailRange.low
+* goal.target.detailRange.low.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailRange.low = 4.8 $NCIT#C48570 "%"
+* goal.target.detailRange.high
+* goal.target.detailRange.high.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+* goal.target.detailRange.high.value = 7.0
+* goal.target.detailRange.high.code = $NCIT#C48570 "%"
+* goal
+* goal.id = "07d323ee-f275-4e8c-9a73-88a78a931032"
+* goal.description.text = "Residue on Ignition: ≤0.21%"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailQuantity
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailQuantity.value = 0.21 $NCIT#C48570 "%"
+* goal
+* goal.id = "63bca2f4-8850-492e-81a1-08c2c644a5e8"
+* goal.description.text = "NLT 97%"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
+* goal.target.detailQuantity.value = 97 $NCIT#C48570 "%"
+* action
+* .extension[testOrder].valueDecimal = 1.0
+* action.prefix = "Single Stage"
+* action.title = "Appearance - Visual 001"
+* action.code.coding[testCategory] = #TC6 "Organoleptic"
+* action.code.coding[testSubCat] = #SBTC20 "Description/Appearance"
+* action.code.coding[methodOrigin] = $NCIT#C96102 "Compendial"
+* action.code.text = "According to compendial analytical procedure"
+* action.goalId = "89f-2997-499e-9016-c8bad3291067"
+* action
+* .extension[testOrder].valueDecimal = 2.0
+* action.prefix = "Single Stage"
+* action.title = "Identification - IR 001"
+* action.code.coding[testCategory] = #TC7 "Identification"
+* action.code.coding[methodOrigin] = $NCIT#C96102 "Compendial"
+* action.code.text = "According to compendial analytical procedure"
+* action.goalId = "8e8fc73b-22d4-4e52-a03c-b4134bbd02a0"
+* action
+* .extension[testOrder].valueDecimal = 3.0
+* action.prefix = "Single Stage"
+* action.title = "pH - pH meter"
+* action.code.coding[testCategory] = $PQTC#TC23 "pH"
+* action.code.coding[methodOrigin] = $NCIT#C96102 "Compendial"
+* action.code.text = "According to compendial analytical procedure"
+* action.goalId = "3f5cd4e5-5fe0-4803-bc41-2e5a5e1301a5"
+* action
+* .extension[testOrder].valueDecimal = 4.0
+* action.prefix = "Single Stage"
+* action.title = "Water - Karl Fisher"
+* action.code.coding[testCategory] = #TC1 "Assay"
+* action.code.coding[testSubCat] = #SBTC6 "excipient"
+* action.code.coding[methodOrigin] = $NCIT#C96102 "Compendial"
+* action.code.text = "According to compendial analytical procedure"
+* action.goalId = "07d323ee-f275-4e8c-9a73-88a78a931032"
+* action
+* .extension[testOrder].valueDecimal = 5.0
+* action.prefix = "Single Stage"
+* action.title = "Residue on Ignition"
+* action.code.coding[testCategory] = #TC38 "Residue on Ignition"
+* action.code.coding[methodOrigin] = $NCIT#C96102 "Compendial"
+* action.code.text = "USP <281>"
+* action.documentation.label = "https://www.usp.org/sites/default/files/usp/document/harmonization/gen-method/q10_pf_ira_29_2_2003.pdf"
+* action.goalId = "63bca2f4-8850-492e-81a1-08c2c644a5e8"
+* action
+* .extension[testOrder].valueDecimal = 6.0
+* action.prefix = "Single Stage"
+* action.title = "Assay (w/w %) by HPLC - Concentration 001"
+* action.code.coding[testCategory] =  #TC1 "Assay"
+* action.code.coding[testSubCat] = #SBTC6 "excipient"
+* action.code.coding[methodOrigin] = $NCIT#C96102 "Compendial"
+* action.code.text = "According to compendial analytical procedure"
+* action.goalId = "84db528b-c75e-4d75-b9dd-93a49b2d3628"
+
+Instance: b3495532-1121-4010-ac1f-4a51dfca283d
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug substance -  Alcohol"
+Description: "A quality specification is for an raw material"
+Usage: #example
+
+* extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C25425 "Approved"
+* extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+* id = "urn:uuid:b3495532-1121-4010-ac1f-4a51dfca283d"
+* version = "2.0"
+* title = "Quality Specification for Alcohol"
+* status = #active
+* subjectReference = Reference(088eebeb-493a-4843-91b2-F6ad83f42661)
+* date = "2020-22-18"
+* useContext.valueCodeableConcept.coding = $NCIT#C25425 "Approved"
+
+Instance: c194175b-6008-4c23-b208-025074573c36
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug substance -  Potassium Carbonate"
+Description: "A quality specification is for an raw material"
+Usage: #example
+
+* extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C25425 "Approved"
+* extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+* id = "urn:uuid:c194175b-6008-4c23-b208-025074573c36"
+* version = "1.0"
+* title = "Quality Specification for Potassium Carbonate"
+* status = #active
+* subjectReference = Reference(d79e6d26-2739-498a-B395-699eebb460db)
+* date = "2022-17-19"
+* useContext.valueCodeableConcept.coding = $NCIT#C25425 "Approved"
+
+Instance: 41731baa-5f4c-4e8c-8cfc-39cd1353c6c5
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug substance -  Purified Water"
+Description: "A quality specification is for an raw material"
+Usage: #example
+
+* extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C25425 "Approved"
+* extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+* id = "urn:uuid:41731baa-5f4c-4e8c-8cfc-39cd1353c6c5"
+* version = "4.5"
+* title = "Quality Specification for Purified Water"
+* status = #active
+* subjectReference = Reference(20aa786f-5dbd-400b-Ac11-71fb14e12b6b)
+* date = "2020-18-20"
+* useContext.valueCodeableConcept.coding = $NCIT#C25425 "Approved"
+
+Instance: 0d456292-bfa1-4864-b7a0-cedd3d85f1bc
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug substance -  Sodium chloride"
+Description: "A quality specification is for an raw material"
+Usage: #example
+
+* extension[pq-specification-status-extension].valueCodeableConcept = $NCIT#C25425 "Approved"
+* extension[pq-specification-type-extension].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+* id = "urn:uuid:0d456292-bfa1-4864-b7a0-cedd3d85f1bc"
+* version = "1.0"
+* title = "Quality Specification for Sodium chloride"
+* status = #active
+* subjectReference = Reference(a52496c6-34f0-4d9f-B802-6f082237e3cb)
+* date = "2021-10-12"
+* useContext.valueCodeableConcept.coding = $NCIT#C25425 "Approved"

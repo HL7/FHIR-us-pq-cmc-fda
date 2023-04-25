@@ -1,6 +1,6 @@
 Instance: c849d5ca-f521-49a7-99f9-c8426bfbbc54
 InstanceOf: ImpuritySubstance
-Title: "Example Impurity substance"
+Title: "Example Impurity substance - Hy"
 Description: "Impurity substance hydroxyApatite"
 * identifier.value = "hydroxyApatite"
 * classification = $NCIT#C176816 "Degradation Product"
@@ -36,7 +36,7 @@ Description: "Impurity substance - Tizoxanide"
 
 Instance: a807ccfb-57b7-4041-8895-3b7089006435
 InstanceOf: ImpuritySubstance
-Title: "Example Impurity substance"
+Title: "Example Impurity substance SS"
 Description: "Impurity substance - Sodium Stearate"
 * identifier.value = "sodiumStearateImpurity"
 * classification = $NCIT#C176812 "Process Related/Process"
@@ -54,7 +54,7 @@ Description: "Impurity substance - Sodium Stearate"
 
 Instance: 9684a441-ce1c-48ad-b447-56ddc5a9cf52
 InstanceOf: ImpuritySubstance
-Title: "Example Impurity substance"
+Title: "Example Impurity substance MS"
 Description: "Impurity substance - Magnesium Sulphate"
 * identifier.value = "magnesiumSulphateImpurity"
 * classification = $NCIT#C176812 "Process Related/Process"
@@ -86,12 +86,12 @@ Description: "Drug Product with four impurities"
 
 Instance: e7e5b4d1-2853-4299-8615-803550d9f20e
 InstanceOf: EctdComposition32P55
-Title: "eCTD Product Characterization of Impurities Composition"
+Title: "eCTD Product Characterization of Impurities Composition 32P55"
 Description: "Compositionion 32P55 for NitazoXanide"
 * date = 2023-03-21T01:46:18.333Z
-* author = Reference(urn:uuid:f202eec3-f460-4bb8-9e6a-d09e12c5f16a)
+* author = Reference(urn:uuid:78f4b797-fbb1-4078-974d-9471bdae7ada)
 * title = "eCTD Product Characterization of Impurities Composition for NitazoXanideProduct"
-* section.title = "Impurities for NitazoXanideProduct"
+* section.title = "Impurities for NitazoXanide Product"
 * section.entry[+] = Reference(urn:uuid:c849d5ca-f521-49a7-99f9-c8426bfbbc54)
 * section.entry[+] = Reference(urn:uuid:993f3239-c6ae-4994-b55c-486b27725cee)
 * section.entry[+] = Reference(urn:uuid:a807ccfb-57b7-4041-8895-3b7089006435)
@@ -107,8 +107,8 @@ Description: "Document bundle for 32P55"
 * entry[Composition].fullUrl = "urn:uuid:e7e5b4d1-2853-4299-8615-803550d9f20e"
 * entry[MedicinalProductDefinition].resource = a6ca86e0-95b4-4d4e-b4eb-7c3259e8d3bb
 * entry[MedicinalProductDefinition].fullUrl = "urn:uuid:a6ca86e0-95b4-4d4e-b4eb-7c3259e8d3bb"
-* entry[Organization].resource = f202eec3-f460-4bb8-9e6a-d09e12c5f16a
-* entry[Organization].fullUrl = "urn:uuid:f202eec3-f460-4bb8-9e6a-d09e12c5f16a"
+* entry[Organization].resource = 78f4b797-fbb1-4078-974d-9471bdae7ada
+* entry[Organization].fullUrl = "urn:uuid:78f4b797-fbb1-4078-974d-9471bdae7ada"
 * entry[SubstanceDefinition][+].resource = c849d5ca-f521-49a7-99f9-c8426bfbbc54
 * entry[SubstanceDefinition][=].fullUrl = "urn:uuid:c849d5ca-f521-49a7-99f9-c8426bfbbc54"
 * entry[SubstanceDefinition][+].resource = 993f3239-c6ae-4994-b55c-486b27725cee

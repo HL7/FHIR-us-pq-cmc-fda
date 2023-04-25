@@ -2,6 +2,8 @@ Extension: ProtocolExtension
 Id: pq-protocol-extension
 Title: "Study Protocol"
 Description: """Study protocol identification"""
+//* ^context[+].type = #element
+//* ^context[=].expression = "ResearchStudy"
 * extension contains
     protocolIdentifier 1..1 MS and
     protocolVersion 1..1 MS
@@ -17,6 +19,8 @@ Extension: PullIntervalExtension
 Id: pq-timePoint-extension
 Title: "Study Interval"
 Description: "Contains elements related to the intervals of the stability study."
+//* ^context[+].type = #element
+//* ^context[=].expression = "DiagnosticReport"
 * extension contains
     timePoint 1..1 MS and
     timePointDescription 1..1 MS
@@ -28,7 +32,7 @@ Description: "Contains elements related to the intervals of the stability study.
 * extension[timePoint].valueQuantity.unit ^short = "Interval Unit"
 * extension[timePoint].valueQuantity.unit ^definition = "The partitions of the study pause. [Source: eStability Implementation Guide]"
 * extension[timePoint].valueQuantity.code 1..1 MS
-* extension[timePoint].valueQuantity.code from  PqcmcUnitsMeasureTerminology
+* extension[timePoint].valueQuantity.code from PqcmcUnitsMeasureTerminology
 * extension[timePointDescription].value[x] only CodeableConcept
 * extension[timePointDescription].value[x] from PqcmcIntervalDescriptionCodeTerminology (required)
 * extension[timePointDescription].value[x] ^short = "Interval Description Code"
@@ -50,14 +54,14 @@ Description: "Profile for the main stability study."
 * identifier ^definition = """An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
 Example: Study Number- 565758
 """
-//* version  0..1 MS
+//* version 0..1 MS
 //* version ^short = "Study Identifier Version (optional)"
 * title 1..1 MS
 * title ^short = "Study Name"
 * title ^definition = "A non-unique textual identifier given to the drug stability study by the sponsoring organization. [Source: SME Defined]"
 //* protocol Reference (PlanDefinition)
 //* protocol ^short = ""
-* primaryPurposeType  1..1 MS
+* primaryPurposeType 1..1 MS
 * primaryPurposeType ^short = "Study Reason"
 * primaryPurposeType ^definition = """The rationale for submitting the stability data. [Source: SME Defined]
 Examples: Annual Report, NDA, Pre-market approval."""
@@ -73,7 +77,7 @@ Examples: Annual Report, NDA, Pre-market approval."""
 * period.end 0..1 MS
 * period.end ^short = "Study End Date"
 * period.end ^definition = "The date the study or sub-study completes or terminates. [Source: SME Defined]"
-* whyStopped  0..1 MS
+* whyStopped 0..1 MS
 * whyStopped.coding 0..0
 * whyStopped.text 1..1 MS
 * whyStopped.text ^short = "Reason Stopped"
@@ -96,7 +100,7 @@ Description: "Profile for the a stability sub-study."
 * identifier ^definition = """An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
 Example: Study Number- 565758
 """
-* version  0..1 MS
+* version 0..1 MS
 * version ^short = "Sub-Study Identifier Version (optional)"
 * title 1..1 MS
 * title ^short = "Sub-Study Name"
@@ -106,7 +110,7 @@ Example: Study Number- 565758
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference(StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
-* condition  2..3 MS
+* condition 2..3 MS
 
 
 * condition ^slicing.discriminator.type = #value
@@ -132,7 +136,7 @@ Example: Study Number- 565758
 * period.end 0..1 MS
 * period.end ^short = "Sub-Study End Date"
 * period.end ^definition = "The date the study or sub-study completes or terminates. [Source: SME Defined]"
-* whyStopped  0..1 MS
+* whyStopped 0..1 MS
 * whyStopped.coding 0..0
 * whyStopped.text 1..1 MS
 * whyStopped.text ^short = "Reason Stopped"
@@ -163,7 +167,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * status MS
 * status ^short = "Status of the batch analysis"
 * status ^definition = "The status of the batch analysis. Consult the HL7 list of permitted values in http://hl7.org/fhir/ValueSet/diagnostic-report-status."
-* code  1..1 MS
+* code 1..1 MS
 * code ^short = "Name for this study interval analysis."
 * code.coding 0..0
 * code.text 1..1 MS
@@ -187,16 +191,16 @@ Description: "Summary of the types of studies conducted (forced degradation, pho
 * .extension[studysum-additional-info] ^short = "Study Summary Additional"
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
 * identifier 1..1 MS
-* status  MS
+* status MS
 * subjectReference 1..1 MS
 * subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
 * goal.target 1..1 MS
 * goal.target.detail[x] only Quantity
-* goal.target.detailQuantity  0..1 MS
+* goal.target.detailQuantity 0..1 MS
 * goal.target.detailQuantity ^short = "Expiry Period | Retest Period"
-* goal.target.detailQuantity ^definition = """Expiry Period: The time period during which a drug product is expected to remain within the specification, provided that it is stored under the conditions defined on the container label.  [Source: Adapted from ICH Q1A(R2)]
+* goal.target.detailQuantity ^definition = """Expiry Period: The time period during which a drug product is expected to remain within the specification, provided that it is stored under the conditions defined on the container label. [Source: Adapted from ICH Q1A(R2)]
 
-Retest Period: The period of time during which the drug substance is expected to remain within its specification and, therefore, can be used in the manufacture of a given drug product, provided that the drug substance has been stored under the defined conditions.  [Source: Adapted from ICH Q1A(R2)]
+Retest Period: The period of time during which the drug substance is expected to remain within its specification and, therefore, can be used in the manufacture of a given drug product, provided that the drug substance has been stored under the defined conditions. [Source: Adapted from ICH Q1A(R2)]
 """
 * goal.target.detailQuantity.value 1..1 MS
 * goal.target.detailQuantity.unit 1..1 MS 
@@ -208,18 +212,18 @@ Retest Period Unit of Measure: The unit of measure for the retest period. [Sourc
 Note: this is typically months.
 """
 * goal.target.detailQuantity.code 1..1 MS
-* goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology
+* goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology
 * action 1..1 MS
 * action ^short = "Expiry or Retest per storage condidtion"
 //* action.description 0..1 MS
 //* action.description ^short = "Stability Summary of storage conditions and intervals"
 * action.code MS
 * action.code.coding.code ^short = "Storage Condition for Expiry Period| Storage Condition for Retest Period"
-* action.code.coding.code ^definition = """***Storage Condition for Expiry Period:*** The storage condition associated with the expiry period. [Source: SME defined]  
+* action.code.coding.code ^definition = """***Storage Condition for Expiry Period:*** The storage condition associated with the expiry period. [Source: SME defined] 
 For example: Control room temperature, refrigerated
 Note: for drug products and most drug substances the storage conditions are provided on the container label (drug substance), prescribing label (drug product), label is n/a for biologics
 
-Storage Condition for Retest Period: The storage condition associated with the retest period. [Source: SME defined]  
+Storage Condition for Retest Period: The storage condition associated with the retest period. [Source: SME defined] 
 For example: Control room temperature, refrigerated
 
 Note: for most drug substances the storage conditions are provided on the container label, label is n/a for biologics

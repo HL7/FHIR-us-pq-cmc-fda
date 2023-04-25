@@ -1,94 +1,121 @@
-Instance: f202eec3-f460-4bb8-9e6a-d09e12c5f16a
-InstanceOf: SponsorOrganization
-Title: "Example Sponsor"
-Description: "Sponsor name and address"
-
-* name = "Mega Corp"
-* contact.address.line[0] = "100 James Avenue"
-* contact.address.line[1] = "Suite #1"
-* contact.address.state = "MA"
-* contact.address.city = "Springfield"
-* contact.address.country = "United States"
-* contact.address.postalCode = "01103"
-* contact.address.text = "100 James Avenue, Suite #1, Springfield MA United States"
-* identifier[DUNSNumber].value = "143265222"
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* identifier[DUNSNumber].system = $DUNS
-
-Instance: 43495594-b5b5-4c7f-b37a-8274b6ffe512
-InstanceOf: MfgTestSiteOrganization
-Title: "Manufacturing Test Site (test site A)"
-Description: "manufacturing site instance generated programatically"
-* identifier[DUNSNumber].value = "143265222"
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* identifier[DUNSNumber].system = $DUNS
-* name = "test site A"
-* identifier[FEINumber].type = $NCIT#C134004 "FEI"
-* identifier[FEINumber].value = "6981397"
-* identifier[FEINumber].system = $FEINumber
-* contact.address.line[0] = "123 Broad Way"
-* contact.address.city = "new york"
-* contact.address.country = "United States"
-* contact.address.postalCode = "100000"
-* contact.address.text = "test site A, 123 Broad Way, new york, ny, United States"
-* contact.address.state = "ny"
-
-Instance: 6c0d83db-4a11-47ad-8cc1-047f9de426e4
-InstanceOf: DrugSubstanceMolecularStructure
-Title: "Drug Substance Structures - Nitazoxanide"
-Description: "Drug Substance Structure for Nitazoxanide"
-* identifier.value = "Nitazoxanide"
-* classification = $NCIT#1 "Chemical"
-* manufacturer = Reference(urn:uuid:43495594-b5b5-4c7f-b37a-8274b6ffe512)
-* structure.representation[+].representation = """YQNQNVDNTFHQSW-UHFFFAOYSA-N"""
-* structure.representation[=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[+].representation = """CC(=O)OC1=CC=CC=C1C(=O)NC2=NC=C(S2)[N+](=O)[O-]"""
-* structure.representation[=].type = $NCIT#C54684 "SMILES"
-* name[sys].name = "NITAZOXANIDE"
-
-Instance: 3132d49f-75c5-46ff-b58f-689f5459070f
-InstanceOf: DrugSubstanceNomenclature
-Title: "Drug Substance Nomenclature - Nitazoxanide"
-Description: "Drug Substance Nomenclature for Nitazoxanide"
-
-* identifier.value = "Nitazoxanide"
-* classification = $NCIT#1 "Chemical"
-* molecularWeight.amount = $UCUM#C64559 "u"
-* molecularWeight.amount.value = 307.28
-* manufacturer = Reference(urn:uuid:43495594-b5b5-4c7f-b37a-8274b6ffe512)
-* supplier = Reference(urn:uuid:f202eec3-f460-4bb8-9e6a-d09e12c5f16a)
-* code.code = $UNII#SOA12P041N
-* name[gsrs].name = "NITAZOXANIDE"
-* name[gsrs].preferred = true
-* name[sys].name = "NITAZOXANIDE"
-
-
-Instance: 824aedcb-6825-4c77-ad2b-5bb431d353d1
-InstanceOf: EctdComposition32S10
-Title: "Example Composistion for 32S10"
-Description: "Substance General Information for Nitazoxanide"
-
-* author = Reference(urn:uuid:f202eec3-f460-4bb8-9e6a-d09e12c5f16a)
-* date = 2023-03-21T01:52:47.652Z
-* title = "eCTD Substance General Information for Nitazoxanide"
-* section[SubstanceNomenclature].title = "Drug Substance Nomeclature for Nitazoxanide"
-* section[SubstanceNomenclature].entry = Reference(3132d49f-75c5-46ff-b58f-689f5459070f)
-* section[SubstanceStructure].title = "Drug Substance Structure for Nitazoxanide"
-* section[SubstanceStructure].entry = Reference(6c0d83db-4a11-47ad-8cc1-047f9de426e4)
-
-Instance: 6bf425c4-4b71-43fd-9ac0-cd096fb0bbcf
+Instance: 692a0fa0-cd2c-4ad8-bd6b-7879326103f3
 InstanceOf: CMCeCTDDocument32S10
-Title: "Exmaple Bundle for 32S10"
-Description: "eCTD Section 3.2.S.1.0."
+Title: "FHIR Document example of 32S10"
+Description: "FHIR document bundle with the CMC eCTD 32S10 profiles"
+Usage: #example
 
-* timestamp = 2023-03-21T01:52:47.653Z
-* entry[Composition].resource = 824aedcb-6825-4c77-ad2b-5bb431d353d1
-* entry[Composition].fullUrl = "urn:uuid:824aedcb-6825-4c77-ad2b-5bb431d353d1"
-* entry[SubstanceDefinition][+].resource = 6c0d83db-4a11-47ad-8cc1-047f9de426e4
-* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:6c0d83db-4a11-47ad-8cc1-047f9de426e4"
-* entry[SubstanceDefinition][+].resource = 3132d49f-75c5-46ff-b58f-689f5459070f
-* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:3132d49f-75c5-46ff-b58f-689f5459070f"
-* entry[Organization][+].resource = f202eec3-f460-4bb8-9e6a-d09e12c5f16a
-* entry[Organization][=].fullUrl = "urn:uuid:f202eec3-f460-4bb8-9e6a-d09e12c5f16a"
-* entry[Organization][+].resource = 43495594-b5b5-4c7f-b37a-8274b6ffe512
-* entry[Organization][=].fullUrl = "urn:uuid:43495594-b5b5-4c7f-b37a-8274b6ffe512"
+* type = #document
+* timestamp = "2022-07-06T22:30:21Z"
+//Composition 1
+* entry[Composition].resource =  b55b8d97-63c5-433c-95cf-812af58aa5fb
+* entry[Composition].fullUrl = "urn:uuid:b55b8d97-63c5-433c-95cf-812af58aa5fb"
+//  SubstanceDefinition 1..*
+* entry[SubstanceDefinition][+].resource = 942fcdc9-8ab9-4f52-be6d-af549117d462
+* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:942fcdc9-8ab9-4f52-be6d-af549117d462"
+* entry[SubstanceDefinition][+].resource = 4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1
+* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1"
+//  Organization 1..*
+* entry[Organization].resource = 78f4b797-fbb1-4078-974d-9471bdae7ada
+* entry[Organization].fullUrl = "urn:uuid:78f4b797-fbb1-4078-974d-9471bdae7ada"
+//  DocumentReference 0..*
+* entry[DocumentReference].resource = fe3f13c1-f0ac-4b40-8024-f4386e290dfc
+* entry[DocumentReference].fullUrl = "urn:uuid:DocumentReference/fe3f13c1-f0ac-4b40-8024-f4386e290dfc"
+
+//From Resource profile: eCTD Substance General Information
+Instance: b55b8d97-63c5-433c-95cf-812af58aa5fb
+InstanceOf: EctdComposition32S10
+Title: "The fields needed to represent the Substance Nomenclature and Structure to be included in the 3.2.S.1.0 folder of the eCTD"
+Description: "The fields needed to represent the Substance Nomenclature and Structure to be included in the 3.2.S.1.0 folder of the eCTD"
+Usage: #inline
+
+* status = #final
+* type = $SectionTypes#32S10 "Substance General Information"
+
+* date = "2022-11-18"
+* author = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
+* title = "EctdComposition32S10 Title"
+* section[SubstanceNomenclature]
+  //* id = "02462ee3-80e6-4f73-ae2b-b42befaaf4d4"
+  * title = "PQCMC Comp Section 32S11 Substance nomenclature"
+  * code = $SectionTypes#32S11 "Substance Nomenclature"
+  * entry = Reference(942fcdc9-8ab9-4f52-be6d-af549117d462)
+* section[SubstanceStructure]
+  //* id = "b51d35de-8a39-4710-84f4-4f7a413fa06b"
+  * title = "PQCMC Comp Section 32S12 Substance Representational Structure"
+  * code = $SectionTypes#32S12 "Substance Structure"
+  * entry = Reference(4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1)
+
+//From Resource Profile: Substance Nomenclature
+Instance: 942fcdc9-8ab9-4f52-be6d-af549117d462
+InstanceOf: DrugSubstanceNomenclature
+Title: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile"
+Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile"
+Usage: #inline
+
+* classification = $EMAIDMP#1 "Chemical"
+* manufacturer = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
+* code.code = $UNII#DE08037SAB
+* name[gsrs].name = "MAGNESIUM SULFATE, UNSPECIFIED FORM"
+* name[comp].name = "ABC-25-MAGSUF"
+* structure.technique = $SubstanceStructureTechnique#HPLC "HPLC"
+* structure.technique.text = "Substance Nomenclature Technique text"
+* structure.representation.type = $NCIT#C133910 "MOLFILE"
+* relationship.substanceDefinitionReference = Reference(7cdbd2af-235c-40e2-934e-9e60598a4156)
+* relationship.type = $NCIT##Salt "Salt to parent"
+
+Instance: 4dd0bb7a-6507-4df5-b2a1-f0d78ee6bba1
+InstanceOf: DrugSubstanceMolecularStructure
+Title: "Drug Substance (Active Ingredient) Representational Structures. Profile on Drug Substance profile"
+Description: "Drug Substance (Active Ingredient) Representational Structures. Profile on Drug Substance profile"
+Usage: #inline
+
+* classification = $EMAIDMP#1 "Chemical"
+* manufacturer = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
+//Structure
+* structure.molecularFormula = "C21H12"
+* structure.technique = $SubstanceStructureTechnique#X-Ray "X-Ray"
+* structure.technique.text = "1S/C21H12/c1-2-11-8-13-5-6-15-9-14-4-3-12-7-10(1)16-17(11)19(13)21(15)20(14)18(12)16/h1-6H,7-9H2"
+* structure.representation.type = $NCIT#C54683 "InChI File (small molecule)"
+* code.code = $UNII#TX2KR8MQM9 "TX2KR8MQM9"
+* name[gsrs].name = "SUMANENE"
+
+//From Resource Profile: SponsorOrganization
+Instance: 78f4b797-fbb1-4078-974d-9471bdae7ada
+InstanceOf: SponsorOrganization
+Title: "A profile for the data elements required to identify the sponsor of the drug products or substances"
+Description: "A profile for the data elements required to identify the sponsor of the drug products or substances"
+Usage: #inline
+
+* name = "ABC Sponsor organization" 
+//Slicing of Identifier
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:3517361d-cb89-4163-adeb-1c57f6cdb98d"
+//PqAddress
+* contact.address.line = "3452 Smithfield Avenue"
+* contact.address.city = "Princeton"
+* contact.address.postalCode = "12345"
+* contact.address.country = "USA"
+
+//From Resource Profile: Base64DocumentReference
+Instance: fe3f13c1-f0ac-4b40-8024-f4386e290dfc
+InstanceOf: Base64DocumentReference
+Title: "A profile that represents the document or diagram in base64"
+Description: "A profile that represents the document or diagram in base64"
+Usage: #inline
+
+* status = #current
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "PHNhbXBsZT48L3NhbXBsZT4="
+* content.attachment.title = "Base64DocumentReference Title"
+
+//From Resource Profile: Polymorphic Form 
+Instance: 7cdbd2af-235c-40e2-934e-9e60598a4156
+InstanceOf: PolymorphicForm
+Title: "Alternate structure present in the drug substance"
+Description: "Alternate structure present in the drug substance"
+Usage: #example
+
+//Structure
+* structure.technique = $SubstanceStructureTechnique#HPLC "HPLC"
+* structure.technique.text = "Polymorphic Form Technique text"
+* structure.representation.type.coding = $NCIT#C49039 "PDB"

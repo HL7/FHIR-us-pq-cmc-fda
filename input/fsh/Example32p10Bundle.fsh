@@ -2,13 +2,14 @@ Instance: 4f25eb50-6763-44c6-b4f4-def04382918e
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Test Site (test site C)"
 Description: "manufacturing site instance generated programatically"
+
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "test site C"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "test site C"
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.city = "bangor"
 * contact.address.country = "United States"
@@ -19,33 +20,33 @@ Description: "manufacturing site instance generated programatically"
 
 Instance: 28629bd0-7744-4c57-abba-e138196f82fa
 InstanceOf: MfgTestSiteOrganization
-Title: "Manufacturing Test Site (test site A)"
+Title: "Manufacturing Test Site - test site C"
 Description: "manufacturing site instance generated programatically"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "test site A"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "test site A"
 * contact.address.line[0] = "123 Broad Way"
 * contact.address.city = "new york"
 * contact.address.country = "United States"
 * contact.address.postalCode = "100000"
-* contact.address.text = "test site A, 123 Broad Way, new york, ny, United States"
-* contact.address.state = "ny"
+* contact.address.text = "test site C, 123 Broad Way, New York, NY, United States"
+* contact.address.state = "NY"
 
 Instance: 9949f8af-99c9-4930-a766-752d7d65b1ab
 InstanceOf: MfgTestSiteOrganization
-Title: "Manufacturing Test Site (test site B)"
+Title: "Manufacturing Test Site - test site B"
 Description: "manufacturing site instance generated programatically"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "test site B"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "test site B"
 * contact.address.line[0] = "350 W Main Street"
 * contact.address.city = "Rochester"
 * contact.address.country = "United States"
@@ -384,11 +385,12 @@ Description: "Example Drug Product Description for 32P10"
 
 Instance: 0582135b-87a4-4076-8293-e61215f63374
 InstanceOf: DrugProductContainerClosure
-Title: "Drug Product Container Closure"
+Title: "Drug Product Container Closure Nitazoxanide"
 Description: "Example of a Drug Product Container Closure for 32P10"
 * name.productName = "Nowstopthego 500 mg"
 * name.type.text = "Proprietary"
-* extension[mdpcontainerClosure].extension[description].valueMarkdown = """"""
+* extension[mdpcontainerClosure].extension[description].valueMarkdown = """The container closure system should protect the drug product from moisture due to the potential for degradative hydrolysis of Nitazoxanide. The proposed container/closure system complies with the 
+applicable USP <671> requirements for tight containers"""
 * extension[mdpcontainerClosure].extension[containerType].valueCodeableConcept = $NCIT#C43168 "BLISTER PACK"
 * extension[mdpcontainerClosure].extension[closureType].valueCodeableConcept = $NCIT#C96114 "Child-resistant, Plastic"
 * name[NonProprietary].part[+].part = "NITAZOXANIDE"
@@ -593,7 +595,7 @@ Instance: c0ed7a77-88c2-4afc-9ace-11bf19fba5ee
 InstanceOf: EctdComposition32P10
 Title: "Composition for 32P10 "
 Description: "Example of 32P10 with Product description, container closure and product composition"
-* author = Reference(f202eec3-f460-4bb8-9e6a-d09e12c5f16a)
+* author = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
 * date = 2023-03-03T03:53:03.743Z
 * title = "eCTD Product Description and Composition for NitazoXanideProduct"
 * section[ProductDescription].code = pqcmc-comp-section-types#32P11 "Product Description"
@@ -673,5 +675,5 @@ Description: "Example of 32P10 with layered tablet"
 * entry[Organization][=].fullUrl = "urn:uuid:28629bd0-7744-4c57-abba-e138196f82fa"
 * entry[Organization][+].resource = 9949f8af-99c9-4930-a766-752d7d65b1ab
 * entry[Organization][=].fullUrl = "urn:uuid:9949f8af-99c9-4930-a766-752d7d65b1ab"
-* entry[Organization][+].resource = f202eec3-f460-4bb8-9e6a-d09e12c5f16a
-* entry[Organization][=].fullUrl = "urn:uuid:f202eec3-f460-4bb8-9e6a-d09e12c5f16a"
+* entry[Organization][+].resource = 78f4b797-fbb1-4078-974d-9471bdae7ada
+* entry[Organization][=].fullUrl = "urn:uuid:78f4b797-fbb1-4078-974d-9471bdae7ada"

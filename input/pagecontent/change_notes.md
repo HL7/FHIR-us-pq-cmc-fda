@@ -1,10 +1,43 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 0.1.12
-The current development IG - !!R5 draft-final version!!
+### Changes and Updates for Version 0.1.13
+The current development IG -  R5 Initial Release
+Triage all Warnings (214) Resolved 38.  Others either US Common Core or Terminology not supported by server
+
+Errors: 118, Warnings: 220, Info: 3, Broken Links: 10 (19:46.380)
+Errors: 114, Warnings: 182, Info: 3, Broken Links: 5 (21:38.333)
 
 * Added vs for action cardinality in Specification and bound element
+* Corrected duplicate title for instances
+* Added related action requirements to Quality Specification profile
+* Created profile for all permutations of goals 
+* created ignoreWarnings file
+* added goal examples to specification webpage
+* corrected 20 errors in Batch Analysis profiles due to illimination of valueMarkdown in results
+* added nodes for bundle references in all diagrams; changed reference to composition profile for all diagrams.
+* added context element to structure defintions for all extensions.  Not previously enforced by publisher
+* created FHIR-us-pq-cmc.xml for https://github.com/HL7/JIRA-Spec-Artifacts/tree/master/xml
+* corrected intrepretation codes in DiagnosticReport
+* corrected UCUM codes. Remmoved warning messages from IgnoreWanrnings.
+* added location, grade to batchformula 
+* moved pq-product-batch-ingredient-extension to component.constituent
+* added slices Weight, VolumeToVolume,  WeightToVolume and  WeightToWeight to component.constituent.amount in batch formula
+* added batch utilization to Batch Formula
+* changed from UCUM to NCIT for units
+* corrected examples for all changes from R5 release
+* added titles and descriptions to all examples to support the Artifacts table of examples
 
+Added the following examples:
+*A quality specification is for a drug product
+*Example Sponsor
+*Manufacturing Test Site (test site A)
+*Drug Substance Structures - Nitazoxanide
+*Drug Substance Nomenclature - Nitazoxanide
+*Example Composistion for 32S10
+*Exmaple Bundle for 32S10
+
+### Changes and Updates for Version 0.1.12
+ !!R5 draft-final version testing!!
 
 <ul>
 Resolved 38 Errors from R5 draft-final version:
