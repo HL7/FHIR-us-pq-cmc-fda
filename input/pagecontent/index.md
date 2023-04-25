@@ -43,20 +43,17 @@ Note: The first 2 FHIR Profiles – Bundle and Composition are organizational pr
 12. SubstanceDefinition
 13. ManufacturedItemDefinition
 
- 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="1200px" src="FHIRresources.jpg" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
   <figcaption>Figure 1:  FHIR Resources leveraged in PQ/CMC Phase 1 Scope</figcaption>
 </figure>
-</p>
-{::options parse_block_html="true" /}
 
+{::options parse_block_html="true" /}
 
 ### PQ/CMC Phase 1 Profiles
 
 As mentioned above, the Phase 1 structured data requirements of PQ/CMC project have been represented in FHIR and the Profiles have been designed at boundary of the leaf-level sections of eCTD v 4.0. The table below shows the FHIR Profiles in support of Phase 1 requirements.  These profiles can be accessed through the “eCTD Profiles” menu in the main bar at top of this page.
-
 
 <table>
   <tr>
@@ -166,20 +163,20 @@ As mentioned above, the Phase 1 structured data requirements of PQ/CMC project h
 </table>
 
 
-###Credits
+### Credits
 
 The development of this Implementation Guide is an initiative funded by the US FDA.
 
-*Primary IG authors: 
-   *Catherine Hosage Norman (mailto: chn@module3solutions.com)
-	*Smita Hastak (mailto: shastak@samvit-solutions.com)
-	*Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
-	*Bill Friggle (mailto: wfriggle@samvit-solutions.com)
+* Primary IG authors: 
+   * Catherine Hosage Norman (mailto: chn@module3solutions.com)
+	* Smita Hastak (mailto: shastak@samvit-solutions.com)
+	* Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
+	* Bill Friggle (mailto: wfriggle@samvit-solutions.com)
 
-*Domain Experts and Program Management:
-	*Program Management – (list of names to be added soon)
+* Domain Experts and Program Management:
+	* Program Management – (list of names to be added soon)
 	
-*FDA PQ/CMC SMEs — (list of names to be added soon)
+* FDA PQ/CMC SMEs — (list of names to be added soon)
 
 The PQ/CMC Projects is Sponsored by the HL7 Biomedical Research & Regulation work group.
 

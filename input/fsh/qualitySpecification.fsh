@@ -2,36 +2,50 @@ Extension: InterpretationCodeExtension
 Id: pq-interpretation-code-extension
 Title: "Interpretation Code"
 Description: "A code that describes how to relate the given value to an acceptance value."
+
+//* ^context[+].type = #element
+//* ^context[=].expression = "Observation.referenceRange.low"
+//* ^context[+].type = #element
+//* ^context[=].expression = "Observation.referenceRange.high"
+//* ^context[+].type = #element
+//* ^context[=].expression = "Observation.component.referenceRange.low"
+//* ^context[+].type = #element
+//* ^context[=].expression = "Observation.component.referenceRange.high"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition.goal.target.detailQuantity"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition.goal.target.detailRange.low"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition.goal.target.detailRange.high"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition.goal.target.detailString"
 * value[x] only CodeableConcept
 * value[x] from PqcmcInterpretationCodeTerminology (required)
 
 Extension: SpecificationStatusExtension
 Id: pq-specification-status-extension
 Title: "Specification Status"
-Description: """The current FDA regulatory status of the specification. [Source: SME Defined]
-Examples: Approved, Not Approved, etc.
-Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-"""
-
+Description: "The current FDA regulatory status of the specification"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition"
 * value[x] 1..1 MS
   * ^short = "Specification Status"
-  * ^definition = """ The current FDA regulatory status of the specification. [Source: SME Defined]
+  * ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
 Examples: Approved, Not Approved, etc.
 Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-Note: This is different from Application Status """
+Note: This is different from Application Status"""
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationStatusTerminology (required)
 
 Extension: SpecificationTypeExtension
 Id: pq-specification-type-extension
 Title: "Specification Type"
-Description: """A classification of specification related to the kind of the entity it is referencing. [Source: SME Defined]
-Examples: Drug product, drug substance, etc.
-"""
-
+Description: "A classification of specification related to the kind of the entity it is referencing"
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition"
 * value[x] 1..1 MS
   * ^short = "Specification Type"
-  * ^definition = """ A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
+  * ^definition = """A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
 Examples: Drug product, Drug substance. 
 """
 * value[x] only CodeableConcept
@@ -40,20 +54,18 @@ Examples: Drug product, Drug substance.
 Extension: TestOrderExtension
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
-Description: """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
-Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
-Examples: 1, 2, 3.
-"""
+Description: "The sequential number assigned to each Test or Stabe to specify the order of display on the Quality Specification."
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition.action"
 * value[x] only decimal
 
 Extension: RRTExtension
 Id: pq-rrt-extension
 Title: "Relative Retention Time"
-Description: "The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP]
-Example: 1:23 (a ratio)
-Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value"
+Description: "An alternative for test name when the RRT is used as an identifier for a substance, usually unknown."
+//* ^context[+].type = #element
+//* ^context[=].expression = "PlanDefinition.action.title"
 * value[x] only string
-
 
 Profile: QualitySpecification
 Parent: PlanDefinition
@@ -69,17 +81,17 @@ Description: "A quality specification is for a drug product or drug substance (e
 * extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
 Examples: replaces method ABC, using the XYZ facility.
 """
-* identifier 1..1 MS
+* identifier 0..1 MS
 * version 1..1 MS
 * version ^short = "Specification Version"
-* version ^definition = """ The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined]
-Examples: 2.1, 13.2, ST1, 00001, 00002, <companyname>001, etc.
-Note: This value should be unique across all specifications for a given material, not just those with the same name """
+* version ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined]
+Examples: 2.1, 13.2, ST1, 00001, 00002, &lt;companyname&gt;001, etc.
+Note: This value should be unique across all specifications for a given material, not just those with the same name"""
 * title 1..1 MS
 * title ^short = "Specification Title"
-* title ^definition = """ The textual identification for the specification. [Source: SME Defined]
- Example: <drug name> 75 mg chewable tablets
- Note: This may include the name of the drug substance, product or the raw material/excipients. """
+* title ^definition = """The textual identification for the specification. [Source: SME Defined]
+ Example: &lt;drug name&gt; 75 mg chewable tablets
+ Note: This may include the name of the drug substance, product or the raw material/excipients."""
 * subtitle 0..1 MS
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
@@ -101,82 +113,91 @@ Note: This is different from Application Status"""
 * useContext.valueCodeableConcept.coding from PqcmcSpecificationStatusTerminology
 * approvalDate  MS
 * approvalDate ^short = "Specification Status Date"
-* approvalDate ^definition = """ The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
+* approvalDate ^definition = """The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
 Note: If the application is not yet approved, then this is the date of the current submission OR the date of the complete response (CR).
-Note: This is not the application approval status date. """
+Note: This is not the application approval status date."""
 * goal.description 1..1 MS
 * goal.description ^short = "Original Text"
-* goal.description ^definition = """ The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
-Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as it appears in the Specification. """
+* goal.description ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
+Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as it appears in the Specification."""
 * goal.addresses 1..* MS
 * goal.addresses.coding.code 1..1 MS
 * goal.addresses.coding.code ^short = "Aceptacnce Criteria Usage"
 * goal.addresses.coding.code ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
-Note: The concept of  'In-Process' is  subsumed by the Release code. "
+Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.addresses.coding.code from PqcmcTestUsageTerminology
-* goal.addresses.text ^short = ""
+* goal.addresses.text ^short = "Accpetance Criteria Usage"
 
 * goal.documentation 0..* MS
 * goal.documentation.type = http://hl7.org/fhir/related-artifact-type#comments-on
 * goal.documentation.display 1..1 MS
 * goal.documentation.display ^short = "Acceptance Criteria Additional Information"
-* goal.documentation.display ^definition = """ A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
+* goal.documentation.display ^definition = """A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
+* goal.target.measure MS 
+* goal.target.measure.text 1..1 MS
 * goal.target.detail[x] only Quantity or Range  or string or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "Acceptance Criteria (Numeric)"
+* goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
 * goal.target.detailQuantity.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
-* goal.target.detailQuantity.extension[interpretationCode] ^short = "Interpretation Code"
-* goal.target.detailQuantity.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept ^short = "Interpretation Code"
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
 * goal.target.detailQuantity.value 1..1 MS
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS
 * goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology
-
 * goal.target.detailRange  0..1 MS
 * goal.target.detailRange ^short = "Acceptance Criteria (Numeric range)"
+* goal.target.detailRange ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
 * goal.target.detailRange
 * goal.target.detailRange.low 1..1
-* goal.target.detailRange.low.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
-* goal.target.detailRange.low.extension[interpretationCode] ^short = "Interpretation Code"
-* goal.target.detailRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailRange.low.extension contains pq-interpretation-code-extension named interpretationCodeLow 1..1 MS
+* goal.target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept ^short = "Interpretation Code"
+* goal.target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * goal.target.detailRange.low.value 1..1 MS
 * goal.target.detailRange.low.unit 1..1 MS
 * goal.target.detailRange.low.code 1..1 MS
 * goal.target.detailRange.low.code from  PqcmcUnitsMeasureTerminology
 * goal.target.detailRange.high 1..1
-* goal.target.detailRange.high.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
-* goal.target.detailRange.high.extension[interpretationCode] ^short = "Interpretation Code"
-* goal.target.detailRange.high.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. """
+* goal.target.detailRange.high.extension contains pq-interpretation-code-extension named interpretationCodeHigh 1..1 MS
+* goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept ^short = "Interpretation Code"
+* goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
 * goal.target.detailRange.high.value 1..1 MS
 * goal.target.detailRange.high.unit 1..1 MS
 * goal.target.detailRange.high.code 1..1 MS
 * goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology
-
 * goal.target.detailString  0..1 MS
 * goal.target.detailString ^short = "Acceptance Criteria (Text)"
-* goal.target.detailString.extension contains pq-interpretation-code-extension named interpretationCodeS 1..1 MS
-* goal.target.detailString.extension[interpretationCodeS] ^short = "Interpretation Code"
-* goal.target.detailString.extension[interpretationCodeS] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
-* goal.target.detailString.extension[interpretationCodeS].valueCodeableConcept.coding.code = #C48660 "Not Applicable"
+* goal.target.detailString ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
+* goal.target.detailString.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
+* goal.target.detailString.extension[interpretationCode].valueCodeableConcept ^short = "Interpretation Code"
+* goal.target.detailString.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
+* goal.target.detailString.extension[interpretationCode].valueCodeableConcept.coding = #C48660 "Not Applicable"
 
 * goal.target.detailInteger  0..1 MS
 * goal.target.detailInteger ^short = "Replicate Number"
-* goal.target.detailInteger ^definition =  """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
+* goal.target.detailInteger ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
 * goal.target.detailInteger.value 1..1 MS
 * action MS
 * action ^short = "Test or Stage"
-* action.extension contains pq-order-extension named testOrder 1..1 MS
+* action.extension contains pq-order-extension named testOrder 1..1 MS  
 * action.extension[testOrder] ^short = "Test/Stage Order"
-* action.extension[testOrder] ^definition = "The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]"
+* action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
+Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
+Examples: 1, 2, 3.
+"""
+* action.extension[testOrder].valueDecimal 1..1 MS 
+* action.linkId MS
+* action.linkId ^short = "only required for staged test and alternate test"
 * action.prefix 1.. MS
 * action.prefix ^short = "Stage Name"
 * action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
-Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP <711>)
-Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP <151>; 21 CFR 610.13(b) Test for pyrogenic substances)
+Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711&gt;)
+Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
 Default 'Single Stage'.
 """
 * action.title 1.. MS
@@ -193,6 +214,7 @@ Stage Additional Information: Placeholder for providing any comments that are re
 If there is more than one comment, include in this element.  Markdown allows formating for clarity.
 """
 * action.code  MS
+* action.code ^short = "Not requried if test has stages and action is not first stage"
 * action.code.coding obeys cmc-sub-test-category
 * action.code.coding ^slicing.discriminator.type = #pattern
 * action.code.coding ^slicing.discriminator.path = "$this"
@@ -208,29 +230,33 @@ If there is more than one comment, include in this element.  Markdown allows for
 * action.code.coding[testSubCat].code MS
 * action.code.coding[testSubCat].code from PqcmcTestSubCategoryTerminology
 * action.code.coding[testSubCat].code ^short = "Test Sub-category"
-
 * action.code.coding[methodOrigin].code MS
 * action.code.coding[methodOrigin].code ^short = "Test Method Origin"
-* action.code.coding[methodOrigin].code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
 * action.code.coding[methodOrigin].code from PqcmcTestMethodOriginTerminology
+* action.code.coding[methodOrigin].code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
 * action.code.text 1..1 MS
 * action.code.text ^short = "Analytical Procedure"
-* action.code.text ^definition = """ The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
+* action.code.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 Note: The full descriptor of the technique is part of the next data element - Reference to Procedure """
 
 * action.documentation 0..1 MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
 * action.documentation.label 1..1 MS
-* action.documentation.label ^short = "Refernce to Procedure"
+* action.documentation.label ^short = "Reference to Procedure"
 * action.documentation.label ^definition = """The reference to the actual file of the analytical procedure.
 Example: the file path to the procedure document.
 """
 * action.goalId 1..* MS
 * action.goalId ^short = "Reference to Acceptance Criteria"
+* action.relatedAction MS
 * action.relatedAction ^short = "Alternate Test or Subsequent Stage"
-* action.relatedAction.relationship from PqActionRelationTypes (required) 
-* action.relatedAction.relationship ^short = "concurrent for Alternate Test; after for Stage testing"
-* action.cardinalityBehavior MS
-* action.cardinalityBehavior ^short = "Only required when relatedAction is an alternate test. Value will be single"
+* action.relatedAction.targetId MS
+* action.relatedAction.relationship MS
+* action.relatedAction.relationship ^short = "concurrent for Alternate Test; after-end for Stage testing"
+* action.selectionBehavior MS
+* action.selectionBehavior ^short = "Only required when relatedAction is an alternate test. Value will be exactly-one"
+//* //element(*,PlanDefinition)/action/selectionBehavior/@value
 * action.action 0..* MS
-* action.action ^short = "Stages of parent test. Use testOrder decimal values to indicate group sequencing."
+* action.action ^short = "Alternate if required for elaborate testing.  Use testOrder decimal values to indicate group sequencing."
+
+

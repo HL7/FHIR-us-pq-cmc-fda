@@ -2,24 +2,25 @@ CodeSystem: BatchFormulaPropertyCodeSystem
 Id: batch-formula-property-cs
 Title: "Batch Formula Property Type"
 Description: "Batch Formula Property Types"
+* ^caseSensitive = true
 * ^experimental = true
-* ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/batch-formula-property-cs"
 
-* #BatchSize "Batch Quantity"
-* #BatchAddInfo "Batch Formula Additional Information"
-* #AddInfo "Product Part Additional Information"
+* #batchsize "Batch Quantity"
+* #batchinfo "Batch Formula Additional Information"
+* #BatchUtil "Batch Utilization"
+* #info "Product Part Additional Information"
 
-ValueSet: BatchFormulaPropertyVS
-Id: batch-formula-property-vs
-Title: "Batch Formula Property Type Value Set" 
-Description: "TBD after NCIt codes are added for Batch Formula Property Type"
-* ^experimental = true
-* include codes from system BatchFormulaPropertyCodeSystem
+//ValueSet: BatchFormulaPropertyVS
+//Id: batch-formula-property-vs
+//Title: "Batch Formula Property Type Value Set" 
+//Description: "TBD after NCIt codes are added for Batch Formula Property Type"
+//* ^experimental = true
+//* include codes from system BatchFormulaPropertyCodeSystem
 
 CodeSystem: PqcmcTestCategoryCodes
 Id: pqcmc-test-category-codes
 Title: "Hierarchial Test Category Codes" 
-Description: "TBD after NCIt codes are added this may be deleted"
+Description: "Waiting for NCIt codes are added this may be deleted"
 * ^caseSensitive = true
 * ^experimental = true
 * ^hierarchyMeaning = #is-a
@@ -150,7 +151,6 @@ Id: pqcmc-test-category-terminology
 Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-test-category-codes
 
 * $PQTC#TC1 "Assay"
 * $PQTC#TC3 "Container Closure Integrity"
@@ -206,7 +206,6 @@ Id: pqcmc-test-subcategory-terminology
 Title: "Test Sub-Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test sub-categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * ^experimental = true
-* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-test-category-codes
 
 * $PQTC#SBTC2 "active ingredient"
 * $PQTC#SBTC3 "amino acid content"
@@ -286,16 +285,17 @@ Id: pqcmc-storage-condition-category-codes
 Title: "Storage Condition Category Codes"
 Description: "Codes for the classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
 * ^experimental = true
+* ^caseSensitive = true
+
 * #CC201 "Accelerated" "Studies designed to increase the rate of chemical degradation or physical change of a drug substance or drug product by using exaggerated storage conditions as part of the formal stability studies. [Source: ICH Q1A]"
 * #CC202 "Intermediate" "Studies conducted and designed to moderately increase the rate of chemical degradation or physical changes for a drug substance or drug product relative to storage at long term conditions.  For example at  30°C/65% RH for a long term storage condition of 25°C. [Source: Adapted from ICH Q1A glossary]"
 * #CC203 "Long term" "Studies under the recommended storage condition for the re-test period or shelf life proposed (or approved) for labeling. [Source: ICH Q1A]"
 
 ValueSet: PqcmcStorageConditionCategoryTerminology
 Id: pqcmc-storage-condition-category-terminology
-Title: "Test Category Terminology"
+Title: "Storage Condition Category Terminology"
 Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
 * ^experimental = true
-//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-storage-condition-category-codes
 
 * $SCCC#CC201 "Accelerated" 
 * $SCCC#CC202 "Intermediate" 
@@ -306,7 +306,6 @@ Id: pqcmc-product-part-type-vs
 Title: "Product Part Type Value Set" 
 Description: "TBD after NCIt codes are added for Product Part Type"
 * ^experimental = true
-* include codes from system PqcmcProductPartType
 
 * $PPT#154 "Blend" 
 * $PPT#155 "Bead"
@@ -319,13 +318,12 @@ Description: "TBD after NCIt codes are added for Product Part Type"
 * $PPT#117 "Solution"
 * $PPT#118 "Tablet"
 
-
 ValueSet: PqcmcProductPartIngredientPhysicalLocationVS
 Id: pqcmc-product-part-ingredient-physical-location-vs
 Title: "Product Part Ingredient Physical Location value set"
 Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
 * ^experimental = true
-//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-part-ingredient-physical-location
+
 * $PPIPL#148 "Active core/granulate" 
 * $PPIPL#149 "Extragranular"
 * $PPIPL#150 "Intragranular"
@@ -335,7 +333,6 @@ Id: pqcmc-release-profile-vs
 Title: "Release Profile value set" 
 Description: "TBD after NCIt codes are added for Release Profile"
 * ^experimental = true
-//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile
 
 * $RP#101 "DR"
 * $RP#102 "ER"
@@ -347,7 +344,6 @@ Id: pqcmc-release-mechanism-vs
 Title: "Release Mechanism value set" 
 Description: "TBD after NCIt codes are added for Release Mechanism"
 * ^experimental = true
-//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-mechanism
 
 * $RM#106 "Matrix" 
 * $RM#107 "Osmotic Pump"
@@ -358,7 +354,6 @@ Id: pqcmc-coating-purpose-vs
 Title: "Coating Purpose value set" 
 Description: "TBD after NCIt codes are added for Coating Purpose"
 * ^experimental = true
-//* ^compose.include.system = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-coating-purpose
 
 * $CP#119 "Appearance/Identification" 
 * $CP#120 "Consumption Enhancement"
@@ -376,7 +371,7 @@ Description: "TBD after NCIt codes are added for Coating Purpose"
 CodeSystem: PqcmcReleaseProfile
 Id: pqcmc-release-profile
 Title: "Release Profile" 
-Description: "TBD after NCIt codes are added for Release Profile"
+Description: "Waiting for NCIt codes are added for Release Profile"
 * ^caseSensitive = true
 * ^experimental = true
 * #101 "DR"
@@ -387,7 +382,7 @@ Description: "TBD after NCIt codes are added for Release Profile"
 CodeSystem: PqcmcReleaseMechanism
 Id: pqcmc-release-mechanism
 Title: "Release Mechanism" 
-Description: "TBD after NCIt codes are added for Release Mechanism"
+Description: "Waiting for NCIt codes are added for Release Mechanism"
 * ^caseSensitive = true
 * ^experimental = true
 * #106 "Matrix" 
@@ -397,7 +392,7 @@ Description: "TBD after NCIt codes are added for Release Mechanism"
 CodeSystem: PqcmcProductPartType
 Id: pqcmc-product-part-type
 Title: "Product Part Type" 
-Description: "TBD after NCIt codes are added for Product Part Type"
+Description: "Waiting for NCIt codes are added for Product Part Type"
 * ^caseSensitive = true
 * ^experimental = true
 * #154 "Blend" 
@@ -414,7 +409,7 @@ Description: "TBD after NCIt codes are added for Product Part Type"
 CodeSystem: PqcmcCoatingPurpose
 Id: pqcmc-coating-purpose
 Title: "Coating Purpose" 
-Description: "TBD after NCIt codes are added for Coating Purpose"
+Description: "Waiting for NCIt codes are added for Coating Purpose"
 * ^caseSensitive = true
 * ^experimental = true
 * #119 "Appearance/Identification" 
@@ -433,7 +428,7 @@ Description: "TBD after NCIt codes are added for Coating Purpose"
 CodeSystem: PqcmcCapsuleClassificationCategory
 Id: pqcmc-capsule-classification-category
 Title: "Capsule Classification Category" 
-Description: "TBD after NCIt codes are added for Capsule Classification Category"
+Description: "Waiting for NCIt codes are added for Capsule Classification Category"
 * ^caseSensitive = true
 * ^experimental = true
 * #131 "Hard Gelatin Capsule" 
@@ -450,16 +445,24 @@ Description: "TBD after NCIt codes are added for Capsule Classification Category
 * ^experimental = true
 * include codes from system PqcmcCapsuleClassificationCategory
 
+ValueSet: PqcmcProductIngredientNameTypeVS
+Id: pqcmc-product-ingredient-name-type-vs
+Title: "Product Ingredient Name Type Value Set" 
+Description: "will be updatee after NCIt codes are available"
+* ^experimental = true
+* include codes from system PqcmcProductIngredientNameType
+
+
 CodeSystem: PqcmcProductIngredientNameType
 Id: pqcmc-product-ingredient-name-type
 Title: "Product Ingredient Name Type" 
-Description: "TBD after NCIt codes are added for Product Ingredient Name Type"
+Description: "Waiting for NCIt codes are added for Product Ingredient Name Type"
 * ^caseSensitive = true
 * ^experimental = true
 * #137 "Brand" 
 * #138 "Generic"
 * #139 "Common"
-* #141 "GSRS Accepted"
+* #141 "GSRS Preferred"
 * #145 "Systematic"
 * #147 "USP/NF"
 * #CAS "CAS Number"
@@ -472,7 +475,7 @@ Description: "TBD after NCIt codes are added for Product Ingredient Name Type"
 CodeSystem: PqcmcProductPartIngredientPhysicalLocation
 Id: pqcmc-product-part-ingredient-physical-location
 Title: "Product Part Ingredient Physical Location" 
-Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
+Description: "Waiting for NCIt codes are added for Product Part Ingredient Physical Location"
 * ^caseSensitive = true
 * ^experimental = true
 * #148 "Active core/granulate" 
@@ -559,14 +562,6 @@ Description: "Terminology used to qualify the information pertaining to retest d
 * $NCIT#C48660 "Not Applicable"
 * $NCIT#C185188 "Proposed"
 
-ValueSet: PqActionRelationTypes
-Id: pqcmc-action-relaiton-types
-Title: "ActionRelationTypes"
-Description: "subset of http://hl7.org/fhir/action-relationship-type used for quality specification stage relationshps"
-* ^experimental = true
-* $ART#concurrent
-* $ART#after
-
 CodeSystem: PqcmcProductCharacteristicCodes
 Id: pqcmc-product-characteristic
 Title: "Code System PQCMC Product Characteristic"
@@ -580,10 +575,10 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 * #BeaTypCnt "Tablet Bead Type Count"
 * #CapConCnt "Capsule Constituent Count"
 * #CapClass "Capsule Classification Category"
-* #Schematic "Schematic"
-* #WgtTyp "Weight Type"
-* #TotWgtNum "Total Weight Numeric Numerator"
-* #TotWgtDen "Total Weight Numeric Denominator"
+* #Schematic "Product Schematic"
+* #WgtTyp "Product Weight Type"
+* #TotWgtNum "Product Total Weight Numeric Numerator"
+* #TotWgtDen "Product Total Weight Numeric Denominator"
 * #TotWgtTxt "Total Weight Textual"
 * #TotWgtOper "Total Weight Operator"
 * #PPiD "Product Part Identifier"
@@ -611,7 +606,7 @@ Title: "Code system PQCMC Comp Section Types"
 Description: "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
 //* ^url = http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-comp-section-types
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 
 * #32S10 "Substance General Information"
 * #32S11 "Substance Nomenclature"
@@ -1262,87 +1257,79 @@ Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
 Note: Inlcudes SPL Unit of Presentation Terminology"
 * ^experimental = true
-* $UCUM#% "percent"
-* $UCUM#%{VolumeToVolume} "percent volume per volume"
-* $UCUM#%{WeightToVolume} "percent weight per volume"
-* $UCUM#%{WeightToWeight} "percent weight/weight"
-* $UCUM#(m2.d) "meter squared in 24 hours"
-* $UCUM#[Amb'a'1'U] "amb a 1 units"
-* $UCUM#[arb'U] "arbitrary units"
-* $UCUM#[AU] "allergy units"
-* $UCUM#[BAU] "bioequivalent allergy units"
-* $UCUM#[Btu] "British Thermal Unit"
-* $UCUM#[CCID_50] "cell culture infectious dose 50%"
-* $UCUM#[CFU] "colony forming units"
-* $UCUM#[degF] "degree Fahrenheit"
-* $UCUM#[EU] "Ehrlich unit"
-* $UCUM#[FFU] "focus-forming units"
-* $UCUM#[in-i] "inch"
-* $UCUM#[IU] "international unit"
-* $UCUM#[lb-av] "pound"
-* $UCUM#[lbf-av] "pound foot"
-* $UCUM#[Lf] "limit of flocculation"
-* $UCUM#[oz-av] "ounce"
-* $UCUM#[PFU] "plaque-forming units"
-* $UCUM#[pH] "pH"
-* $UCUM#[PNU] "protein nitrogen units"
-* $UCUM#[ppb] "parts per billion"
-* $UCUM#[ppm] "parts per million"
-* $UCUM#[ppth] "parts per thousand"
-* $UCUM#[pptr] "parts per trillion"
-* $UCUM#[psi] "pounds per square inch"
-* $UCUM#[pt-us] "pints (US Dry)"
-* $UCUM#[qt-us] "quarts (US Dry)"
-* $UCUM#[TCID_50] "tissue culture infectious dose 50%"
-* $UCUM#[USP'U] "United States Pharmacopeia unit"
-* $UCUM#{actuation} "actuation"
-* $UCUM#{can} "can"
-* $UCUM#{tbl} "tablet"
-* $UCUM#{tot} "particles"
-* $UCUM#{vial} "vial"
-* $UCUM#{VP} "viral particles"
-* $UCUM#1 "1*"
-* $UCUM#a "year"
-* $UCUM#Cel "degree Celsius"
-* $UCUM#cm "centimeter"
-* $UCUM#cm3 "mL"
-* $UCUM#d "day"
-* $UCUM#deg "degrees to rotation"
-* $UCUM#g "gram"
-* $UCUM#gal "gallon"
-* $UCUM#h "hour"
-* $UCUM#K "degree Kelvin"
-* $UCUM#kg "kilogram"
-* $UCUM#kgf "kilopond"
-* $UCUM#ku "kiloDalton"
-* $UCUM#L "liter"
-* $UCUM#m "meter"
-* $UCUM#m2 "square meter"
-* $UCUM#m3 "cubic meter"
-* $UCUM#mg "milligram"
-* $UCUM#mg% "milligram per 100 milliliters of solution"
-* $UCUM#min "minute"
-* $UCUM#mm "millimeter"
-* $UCUM#mmol "millimole"
-* $UCUM#mo "month"
-* $UCUM#mol "mole"
-* $UCUM#mosm "milliosmole"
-* $UCUM#ms "millisiemens"
-* $UCUM#N "Newton"
-* $UCUM#ng "nanogram"
-* $UCUM#nm "nanometer"
-* $UCUM#nmol "nanomole"
-* $UCUM#pg "picogram"
-* $UCUM#pmol "picomole"
-* $UCUM#rad "radian"
-* $UCUM#s "second"
-* $UCUM#u "Dalton"
-* $UCUM#ug "microgram"
-* $UCUM#uL "microliter"
-* $UCUM#um "micrometer || micron"
-* $UCUM#umho "micromhos"
-* $UCUM#umol "micromole"
-* $UCUM#wk "week"
+
+* $NCIT#C75765 "[arb'U]"
+* $NCIT#C92953 "[Amb'a'1'U]"
+* $NCIT#C105491 "ku"
+* $NCIT#C122629 "{actuation}"
+* $NCIT#C139134 "[lbf_av]"
+* $NCIT#C154859 "umho"
+* $NCIT#C171022 "{tot}"
+* $NCIT#C176690 "ms"
+* $NCIT#C25301 "d"
+* $NCIT#C25529 "h"
+* $NCIT#C28251 "mm"
+* $NCIT#C28252 "kg"
+* $NCIT#C28253 "mg"
+* $NCIT#C28254 "cm3 || mL"
+* $NCIT#C29844 "wk"
+* $NCIT#C29846 "mo"
+* $NCIT#C29848 "a"
+* $NCIT#C41127 "u"
+* $NCIT#C41139 "m"
+* $NCIT#C42535 "s"
+* $NCIT#C42537 "K"
+* $NCIT#C42539 "mol"
+* $NCIT#C42543 "rad"
+* $NCIT#C42546 "N"
+* $NCIT#C42559 "Cel"
+* $NCIT#C42569 "m2"
+* $NCIT#C42570 "m3"
+* $NCIT#C44277 "[degF]"
+* $NCIT#C45997 "[pH]"
+* $NCIT#C48152 "ug"
+* $NCIT#C48153 "uL"
+* $NCIT#C48154 "min"
+* $NCIT#C48155 "g"
+* $NCIT#C48479 "{can}"
+* $NCIT#C48500 "[in_i]"
+* $NCIT#C48505 "L"
+* $NCIT#C48509 "umol"
+* $NCIT#C48510 "um"
+* $NCIT#C48513 "mmol"
+* $NCIT#C48516 "ng"
+* $NCIT#C48517 "nmol"
+* $NCIT#C48519 "[oz_av]"
+* $NCIT#C48523 "[ppm]"
+* $NCIT#C48527 "%{WeightToVolume}"
+* $NCIT#C48528 "%{WeightToWeight}"
+* $NCIT#C48529 "[pt_us]"
+* $NCIT#C48531 "[lb_av]"
+* $NCIT#C48542 "{tbl}"
+* $NCIT#C48551 "{vial}"
+* $NCIT#C48570 "%"
+* $NCIT#C48571 "%{VolumeToVolume}"
+* $NCIT#C48579 "[IU]"
+* $NCIT#C48580 "gal"
+* $NCIT#C49668 "cm"
+* $NCIT#C64551 "pg"
+* $NCIT#C64559 "u"
+* $NCIT#C64778 "U"
+* $NCIT#C65045 "pmol"
+* $NCIT#C67015 "mg%"
+* $NCIT#C67196 "[Btu]"
+* $NCIT#C67318 "mosm"
+* $NCIT#C67328 "nm"
+* $NCIT#C67334 "[psi]"
+* $NCIT#C68667 "deg"
+* $NCIT#C68742 "[CFU]"
+* $NCIT#C69112 "[ppth]"
+* $NCIT#C69118 "[qt_us]"
+* $NCIT#C70471 "kgf"
+* $NCIT#C70565 "[ppb]"
+* $NCIT#C70566 "[pptr]"
+* $NCIT#C73783 "(m2.d)"
+* $NCIT#C96599 "[EU]"
 
 ValueSet: SplDrugRouteofAdministrationTerminology
 Id: spl-drug-route-of-administration-terminology

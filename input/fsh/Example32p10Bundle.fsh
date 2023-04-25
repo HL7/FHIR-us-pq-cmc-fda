@@ -2,13 +2,14 @@ Instance: 4f25eb50-6763-44c6-b4f4-def04382918e
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Test Site (test site C)"
 Description: "manufacturing site instance generated programatically"
+
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "test site C"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "test site C"
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.city = "bangor"
 * contact.address.country = "United States"
@@ -19,33 +20,33 @@ Description: "manufacturing site instance generated programatically"
 
 Instance: 28629bd0-7744-4c57-abba-e138196f82fa
 InstanceOf: MfgTestSiteOrganization
-Title: "Manufacturing Test Site (test site A)"
+Title: "Manufacturing Test Site - test site C"
 Description: "manufacturing site instance generated programatically"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "test site A"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "test site A"
 * contact.address.line[0] = "123 Broad Way"
 * contact.address.city = "new york"
 * contact.address.country = "United States"
 * contact.address.postalCode = "100000"
-* contact.address.text = "test site A, 123 Broad Way, new york, ny, United States"
-* contact.address.state = "ny"
+* contact.address.text = "test site C, 123 Broad Way, New York, NY, United States"
+* contact.address.state = "NY"
 
 Instance: 9949f8af-99c9-4930-a766-752d7d65b1ab
 InstanceOf: MfgTestSiteOrganization
-Title: "Manufacturing Test Site (test site B)"
+Title: "Manufacturing Test Site - test site B"
 Description: "manufacturing site instance generated programatically"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "test site B"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "test site B"
 * contact.address.line[0] = "350 W Main Street"
 * contact.address.city = "Rochester"
 * contact.address.country = "United States"
@@ -55,6 +56,9 @@ Description: "manufacturing site instance generated programatically"
 
 Instance: d860b368-2de7-40e9-9f8a-1dd2b5c75ca6
 InstanceOf: ComponentSubstance
+Title: "Substance in role of product substance"
+Description: "Product component substanceNitazoxanide"
+
 * identifier.value = "Nitazoxanide"
 * classification = $NCIT#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -67,6 +71,8 @@ InstanceOf: ComponentSubstance
 
 Instance: a8b37824-6be3-4519-9cbf-3651ef8f0af9
 InstanceOf: DrugProductComponent
+Title: "Example drug product component"
+Description: "ilustrates presentation strength"
 * substance.code.reference = Reference(urn:uuid:d860b368-2de7-40e9-9f8a-1dd2b5c75ca6)
 * role = http://hl7.org/fhir/ingredient-role#100000072072 "Active"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -79,6 +85,8 @@ InstanceOf: DrugProductComponent
 
 Instance: 0c5bfc1f-c1e3-4e41-ac36-2cdc7e89ee7a
 InstanceOf: ComponentSubstance
+Title: "Component Substace - Maize starch"
+Description: "Exmple of plant source"
 * identifier.value = "Maize starch"
 * classification = $NCIT#17 "Mixture"
 * grade = $NCIT#C176793 "BP"
@@ -92,6 +100,8 @@ InstanceOf: ComponentSubstance
 
 Instance: c737cca8-d8d7-42ba-8eea-cc4c13b2b279
 InstanceOf: DrugProductComponent
+Title: "Drug product component - Excipient"
+Description: "Example Excipient dDrug product component"
 * substance.code.reference = Reference(urn:uuid:0c5bfc1f-c1e3-4e41-ac36-2cdc7e89ee7a)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -104,6 +114,8 @@ InstanceOf: DrugProductComponent
 
 Instance: f201f024-e53c-43cd-bfc9-2b5cbb7f79da
 InstanceOf: ComponentSubstance
+Title: "Component Substance - hydroxypropylcellulose"
+Description: "Component Substance for 32P10"
 * identifier.value = "hydroxypropylcellulose"
 * classification = $NCIT#3 "Polymer"
 * grade = $NCIT#C176793 "BP"
@@ -114,6 +126,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 0b39649a-9e43-48f8-8c92-5bf289409714
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component Excipient"
+Description: "Example Drug Product Component excipient for 32P10"
 * substance.code.reference = Reference(urn:uuid:f201f024-e53c-43cd-bfc9-2b5cbb7f79da)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -126,6 +140,8 @@ InstanceOf: DrugProductComponent
 
 Instance: aa200c60-3cf4-47e0-9afc-a3693f0d0a08
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Sodium croscarmellose"
+Description: "Component Substance for 32P10"
 * identifier.value = "Sodium croscarmellose"
 * classification = $NCIT#3 "Polymer"
 * grade = $NCIT#C176793 "BP"
@@ -136,6 +152,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 646f1115-2aad-4f0f-b7bc-a690a3d30b5b
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - 32P10 excipient"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:aa200c60-3cf4-47e0-9afc-a3693f0d0a08)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -148,6 +166,8 @@ InstanceOf: DrugProductComponent
 
 Instance: adfe47f8-afc6-4e38-8bc5-473b6d40fdc9
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Colloidal anhydrous silica"
+Description: "Component Substance for 32P10"
 * identifier.value = "Colloidal anhydrous silica"
 * classification = $NCIT#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -158,6 +178,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 1f8abd13-b06a-4b28-b5de-4d5680be805d
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - Colloidal anhydrous silica"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:adfe47f8-afc6-4e38-8bc5-473b6d40fdc9)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -170,6 +192,8 @@ InstanceOf: DrugProductComponent
 
 Instance: 25a9214e-c913-4935-a794-3646793530ed
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Magnesium stearate"
+Description: "Component Substance for 32P10"
 * identifier.value = "Magnesium stearate"
 * classification = $NCIT#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -180,6 +204,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 1019ae87-0010-4cd0-b6e9-13e581009b43
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - Magnesium stearate"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:25a9214e-c913-4935-a794-3646793530ed)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -192,6 +218,8 @@ InstanceOf: DrugProductComponent
 
 Instance: a200db80-d7bb-46fa-b6c1-049c2d1ed07b
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Microcrystalline cellulose"
+Description: "Component Substance for 32P10"
 * identifier.value = "Microcrystalline cellulose"
 * classification = $NCIT#3 "Polymer"
 * grade = $NCIT#C176793 "BP"
@@ -202,6 +230,8 @@ InstanceOf: ComponentSubstance
 
 Instance: e9042a05-de7e-4674-9a2d-0cac4a7144c1
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - Microcrystalline cellulose"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:a200db80-d7bb-46fa-b6c1-049c2d1ed07b)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -214,6 +244,8 @@ InstanceOf: DrugProductComponent
 
 Instance: 7d9aadeb-096a-4685-b234-774aedb0bdd7
 InstanceOf: ComponentSubstance
+Title: "Component Substance - water"
+Description: "Component Substance for 32P10"
 * identifier.value = "water"
 * classification = $NCIT#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -224,6 +256,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 54d2699b-0efa-46e6-ac47-c92ff890b422
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - water"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:7d9aadeb-096a-4685-b234-774aedb0bdd7)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -236,6 +270,8 @@ InstanceOf: DrugProductComponent
 
 Instance: e35cbed2-cc09-4e15-a1c2-a71c8989297e
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Opadry AMB 80W91416 Green"
+Description: "Component Substance for 32P10"
 * identifier.value = "Opadry AMB 80W91416 Green"
 * classification = $NCIT#17 "Mixture"
 * grade = $NCIT#C176793 "BP"
@@ -245,6 +281,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 25de86cc-fbab-47d4-b410-c8e6bdf53ebb
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - Opadry AMB 80W91416 Green"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:e35cbed2-cc09-4e15-a1c2-a71c8989297e)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -257,6 +295,8 @@ InstanceOf: DrugProductComponent
 
 Instance: 29c88a54-f014-4bd1-9a6a-2da0e033b8da
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Opadry FX 63F97546 Gloss"
+Description: "Component Substance for 32P10"
 * identifier.value = "Opadry FX 63F97546 Gloss"
 * classification = $NCIT#17 "Mixture"
 * grade = $NCIT#C176793 "BP"
@@ -266,6 +306,8 @@ InstanceOf: ComponentSubstance
 
 Instance: b69f8d81-2a78-48e5-b190-fbd916285af1
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - Opadry FX 63F97546 Gloss"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:29c88a54-f014-4bd1-9a6a-2da0e033b8da)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -278,6 +320,8 @@ InstanceOf: DrugProductComponent
 
 Instance: 5863a14d-6589-484b-8ad4-939a050071b3
 InstanceOf: ComponentSubstance
+Title: "Component Substance - hydroxypropyl-methylcellulose"
+Description: "Component Substance for 32P10"
 * identifier.value = "hydroxypropyl-methylcellulose"
 * classification = $NCIT#3 "Polymer"
 * grade = $NCIT#C176793 "BP"
@@ -288,6 +332,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 9b7c6fed-ca72-41bb-bc8e-6eff32662e40
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - hydroxypropyl-methylcellulose"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:5863a14d-6589-484b-8ad4-939a050071b3)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -300,6 +346,8 @@ InstanceOf: DrugProductComponent
 
 Instance: bd41540d-0799-4999-a020-4b8e478bd81a
 InstanceOf: ComponentSubstance
+Title: "Component Substance - Dicalciumphosphate dyhydrate"
+Description: "Component Substance for 32P10"
 * identifier.value = "Dicalciumphosphate dyhydrate"
 * classification = $NCIT#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -310,6 +358,8 @@ InstanceOf: ComponentSubstance
 
 Instance: 6c7187af-c9d8-4ca5-80b9-b3af9d444658
 InstanceOf: DrugProductComponent
+Title: "Drug Product Component - Dicalciumphosphate dyhydrate"
+Description: "Example Drug Product Component for a section 32P10 excipient"
 * substance.code.reference = Reference(urn:uuid:bd41540d-0799-4999-a020-4b8e478bd81a)
 * role = http://hl7.org/fhir/ingredient-role#100000072082 "Excipient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
@@ -322,33 +372,39 @@ InstanceOf: DrugProductComponent
 
 Instance: 533904dc-c2ec-4974-9cf9-874e17fd9f3e
 InstanceOf: DrugProductDescription
+Title: "Drug Product Description - NITAZOXANIDE"
+Description: "Example Drug Product Description for 32P10" 
 * description = """a drug product which contains nitazoxanide as its active ingredient"""
 * combinedPharmaceuticalDoseForm = $NCIT#C42998 "TABLET"
 * route = $NCIT#C38288 "ORAL"
-* name.productName = "Nitazo"
+* name[Proprietary].productName = "Nowstopthego 500 mg"
+* name[NonProprietary].productName = "NITAZOXANIDE 500 mg"
 * name[NonProprietary].part[+].part = "NITAZOXANIDE"
 * name[NonProprietary].part[=].type = http://hl7.org/fhir/medicinal-product-name-part-type#ScientificNamePart "Scientific name part"
-* name[NonProprietary].productName = "NITAZOXANIDE"
-* name[NonProprietary].type.text = "Non-Proprietary"
+//* name[NonProprietary].type.text = "Non-Proprietary"
 
 Instance: 0582135b-87a4-4076-8293-e61215f63374
 InstanceOf: DrugProductContainerClosure
-* name.productName = "Nitazo"
+Title: "Drug Product Container Closure Nitazoxanide"
+Description: "Example of a Drug Product Container Closure for 32P10"
+* name.productName = "Nowstopthego 500 mg"
 * name.type.text = "Proprietary"
-* extension[mdpcontainerClosure].extension[description].valueMarkdown = """"""
+* extension[mdpcontainerClosure].extension[description].valueMarkdown = """The container closure system should protect the drug product from moisture due to the potential for degradative hydrolysis of Nitazoxanide. The proposed container/closure system complies with the 
+applicable USP <671> requirements for tight containers"""
 * extension[mdpcontainerClosure].extension[containerType].valueCodeableConcept = $NCIT#C43168 "BLISTER PACK"
 * extension[mdpcontainerClosure].extension[closureType].valueCodeableConcept = $NCIT#C96114 "Child-resistant, Plastic"
 * name[NonProprietary].part[+].part = "NITAZOXANIDE"
 * name[NonProprietary].part[=].type = http://hl7.org/fhir/medicinal-product-name-part-type#ScientificNamePart "Scientific name part"
-
 * name[NonProprietary].productName = "NITAZOXANIDE"
 * name[NonProprietary].type.text = "Non-Proprietary"
 
 Instance: 15d09c40-0d0c-4f6a-a6f6-585bd21b01f3
 InstanceOf: FinishedProduct
+Title: "Manufactured Item deninition with parts"
+Description: "Example of a drug product with parts for 32P10"
 * identifier.value = "NitazoXanideProduct"
 * status = 	http://hl7.org/fhir/publication-status#draft "Draft"
-* name = "Nitazo"
+* name = "Nowstopthego 500 mg"
 * property[OvrRelsProf].valueCodeableConcept.text = $RP#102 "ER"
 * property[OvrRelsMech].valueCodeableConcept.text = $RM#106 "Matrix"
 * property[CoatInd].valueBoolean = false
@@ -535,23 +591,11 @@ InstanceOf: FinishedProduct
 * component[=].constituent[=].location.text = "Controlled Release Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 
-Instance: c494852b-41c0-4b50-880d-7c7a36fe4b6e
-InstanceOf: SponsorOrganization
-* name = "test site C"
-* contact.address.line[0] = "100 Stillwater Avenue"
-* contact.address.line[1] = "Building #2"
-* contact.address.state = "me"
-* contact.address.city = "bangor"
-* contact.address.country = "United States"
-* contact.address.postalCode = "04401"
-* contact.address.text = "test site C, 100 Stillwater Avenue, Building #2, bangor, me, United States"
-* identifier[DUNSNumber].value = "143265222"
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* identifier[DUNSNumber].system = $DUNS
-
 Instance: c0ed7a77-88c2-4afc-9ace-11bf19fba5ee
 InstanceOf: EctdComposition32P10
-* author = Reference(c494852b-41c0-4b50-880d-7c7a36fe4b6e)
+Title: "Composition for 32P10 "
+Description: "Example of 32P10 with Product description, container closure and product composition"
+* author = Reference(78f4b797-fbb1-4078-974d-9471bdae7ada)
 * date = 2023-03-03T03:53:03.743Z
 * title = "eCTD Product Description and Composition for NitazoXanideProduct"
 * section[ProductDescription].code = pqcmc-comp-section-types#32P11 "Product Description"
@@ -566,6 +610,8 @@ InstanceOf: EctdComposition32P10
 
 Instance: 6929592c-228f-4e98-9ed7-ffe9d11f2d03
 InstanceOf: CMCeCTDDocument32P10
+Title: "eCTD Document 32P10 Bundle"
+Description: "Example of 32P10 with layered tablet"
 * timestamp = 2023-03-03T03:53:03.743Z
 * entry[Composition].resource = c0ed7a77-88c2-4afc-9ace-11bf19fba5ee
 * entry[Composition].fullUrl = "urn:uuid:c0ed7a77-88c2-4afc-9ace-11bf19fba5ee"
@@ -629,5 +675,5 @@ InstanceOf: CMCeCTDDocument32P10
 * entry[Organization][=].fullUrl = "urn:uuid:28629bd0-7744-4c57-abba-e138196f82fa"
 * entry[Organization][+].resource = 9949f8af-99c9-4930-a766-752d7d65b1ab
 * entry[Organization][=].fullUrl = "urn:uuid:9949f8af-99c9-4930-a766-752d7d65b1ab"
-* entry[Organization][+].resource = c494852b-41c0-4b50-880d-7c7a36fe4b6e
-* entry[Organization][=].fullUrl = "urn:uuid:c494852b-41c0-4b50-880d-7c7a36fe4b6e"
+* entry[Organization][+].resource = 78f4b797-fbb1-4078-974d-9471bdae7ada
+* entry[Organization][=].fullUrl = "urn:uuid:78f4b797-fbb1-4078-974d-9471bdae7ada"

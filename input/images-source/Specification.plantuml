@@ -1,8 +1,10 @@
 @startuml
 allowmixing
 'Mixed model of use case and object
-package "eCTD Heading 3.2.S P4151 P4151 Specification Bundle" as NODES {
-
+package "eCTD Heading 3.2.S41 and 3.2.P4151 Specification Bundle" as NODES {
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-SP4151.html]]
+    }  
   node "RoutineDrugProduct" as NN { 
       object "**Parent:** DrugProduct" as obj3 {
          **Reference:**
@@ -35,7 +37,7 @@ node "MfgTestSiteOrganization" as N21mfg {
 node "EctdCompositionSP4151" as N1 { 
       object "**Parent:** Composition" as obj1 {
          **Reference:**
-      [[StructureDefinition-cmc-ectd-document-sp4151.html]]
+      [[StructureDefinition-ectd-composition-sp4151.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }

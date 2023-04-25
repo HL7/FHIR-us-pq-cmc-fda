@@ -5,8 +5,8 @@ title: "PQ/CMC FHIR Implementation Guide"
 description: guide to submitting PQ/CMC data for exchanged in FHIR resources.
 status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 0.1.12
-fhirVersion: 5.0.0-draft-final
+version: 0.1.13
+fhirVersion: 5.0.0
 #fhirVersion: current
 copyrightYear: 2021+
 releaseLabel: Build CI
@@ -74,4 +74,4 @@ parameters:
 #   validation: [allow-any-extensions, no-broken-links]
 dependencies:
   hl7.fhir.uv.sdc: 3.0.0
-  hl7.fhir.uv.extensions: current
+  hl7.fhir.uv.extensions: 1.0.0

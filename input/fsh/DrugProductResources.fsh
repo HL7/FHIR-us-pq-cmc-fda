@@ -1,9 +1,40 @@
+Extension: ProductBatchIngredientExtension
+Id: pq-product-batch-ingredient-extension
+Title: "Product Batch Ingredient Extension"
+Description: "Extension for measurement properties for ingredients in the batch formla.."
+//* ^context[+].type = #element
+//* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* extension contains
+  overagePercent 0..1 MS and
+  overageJustification 0..1 MS and
+  strengthTextual 1..1 MS
+* extension[overagePercent].value[x] only decimal
+* extension[overagePercent].value[x] ^short = "Overage Percent"
+* extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
+Note: This is not for stability loss, and generally not permitted.
+Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+"""
+* extension[overageJustification].value[x] only markdown
+* extension[overageJustification].value[x] ^short = "Overage Justification"
+* extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
+* extension[strengthTextual] 1..1 MS 
+* extension[strengthTextual].value[x] only string
+* extension[strengthTextual].value[x] ^short = "Strength Textual"
+* extension[strengthTextual].value[x] ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+Note: This is typically applicable to biologics
+Example: International Units for Enzymes
+"""
+
 Extension: ContainerClosureExtension
 Id: pq-container-closure-extension
 Title: "Container Closure"
 Description: "The packaging information including a brief description of the components, the assembled
 packaging system and any precautions needed to ensure the protection and preservation of the drug substance and drug product during their use in the clinical trials"
 * . ^short = "Container Closure System Information"
+//* ^context[+].type = #element
+//* ^context[=].expression = "MedicinalProductDefinition"
+//* ^context[+].type = #element
+//* ^context[=].expression = "SubstanceDefinition"
 * extension contains
     description 1..1 MS and
     containerType 1..1 MS and
@@ -53,6 +84,7 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code ^short = "Route of Administration"
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI EVS C38114]"
 * route.coding.code from SplDrugRouteofAdministrationTerminology
+* comprisedOf 0..* MS
 * comprisedOf only Reference(FinishedProduct or BatchFormula)
 * impurity 0..* MS
 * impurity ^short = "Product Impurity"
@@ -203,17 +235,14 @@ Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 Note: For solid oral dose forms, by definition this is 1
 """
 * property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
-
 * property[TotWgtTxt].type MS
 * property[TotWgtTxt].type = PqcmcProductCharacteristicCodes#TotWgtTxt "Total Weight Textual"
 * property[TotWgtTxt].value[x] 1..1 MS
-* property[TotWgtTxt].value[x] only Quantity
-* property[TotWgtTxt].valueQuantity.value ^short = "Total Weight Textual"
-* property[TotWgtTxt].valueQuantity.value ^definition = """A written description of the weight of the drug product. [Source: SME Defined]
+* property[TotWgtTxt].value[x] only markdown
+* property[TotWgtTxt].valueMarkdown.value ^short = "Total Weight Textual"
+* property[TotWgtTxt].valueMarkdown.value ^definition = """A written description of the weight of the drug product. [Source: SME Defined]
 Note: This is typically applicable to biologics
 Example: International Units for Enzymes"""
-* property[TotWgtTxt].valueQuantity.code from PqcmcUnitsMeasureTerminology
-
 * property[TotWgtOper].type MS
 * property[TotWgtOper].type = PqcmcProductCharacteristicCodes#TotWgtOper "Total Weight Operator"
 * property[TotWgtOper].valueCodeableConcept 1..1 MS
@@ -236,7 +265,6 @@ Example: Push, Target."""
 * component.amount ^slicing.discriminator.type = #exists
 * component.amount ^slicing.discriminator.path = amount
 * component.amount ^slicing.rules = #closed
-* component.amount ^slicing.ordered = true
 * component.amount ^slicing.description = "Slice based on the component.amounts."
 * component.amount contains
   Numerator 1..1 MS and
@@ -274,7 +302,6 @@ Note: For solid oral dose forms, by definition this is '1*'
 * component.constituent.amount ^slicing.discriminator.type = #exists
 * component.constituent.amount ^slicing.discriminator.path = amount
 * component.constituent.amount ^slicing.rules = #closed
-* component.constituent.amount ^slicing.ordered = true
 * component.constituent.amount ^slicing.description = "Slice based on the component.amounts."
 * component.constituent.amount contains
     Numerator 1..1 MS and
@@ -319,7 +346,6 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.function ^slicing.discriminator.type = #exists
 * component.constituent.function ^slicing.discriminator.path = function
 * component.constituent.function ^slicing.rules = #closed
-* component.constituent.function ^slicing.ordered = true
 * component.constituent.function ^slicing.description = "Slice based on the component.functions."
 * component.constituent.function contains
     Category 0..1 MS and
@@ -465,13 +491,14 @@ Description: "Listing of all components of the dosage form to be used in the man
 * property ^slicing.description = "Slice based on value"
 * property contains
       BatchSize 1..1 MS and
+      BatchUtil 1..1 MS and
       AddInfo 0..1 MS
 * property[BatchSize].type 1..1 MS
 * property[BatchSize].type ^short = "Batch Quantity"
 * property[BatchSize].type ^definition = """The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
 """
-* property[BatchSize].type = $BATCHFORMPROP#BatchSize "Batch Quantity"
+* property[BatchSize].type = $BATCHFORMPROP#batchsize "Batch Quantity"
 * property[BatchSize].value[x] only Quantity
 * property[BatchSize].valueQuantity.unit 1..1 MS
 * property[BatchSize].valueQuantity.unit ^short = "Quantity UOM"
@@ -480,8 +507,15 @@ Example: 1000 kg
 * property[BatchSize].valueQuantity.code 1..1 MS
 * property[BatchSize].valueQuantity.code from  PqcmcUnitsMeasureTerminology
 
+* property[BatchUtil].type = $BATCHFORMPROP#BatchUtil "Batch Utilization"
+* property[BatchUtil].value[x] only CodeableConcept
+* property[BatchUtil].valueCodeableConcept 1..1 MS
+* property[BatchUtil].valueCodeableConcept ^short = "Batch Utilization"
+* property[BatchUtil].valueCodeableConcept ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
+Examples: commercial, development. """
+* property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
 * property[AddInfo].type 1..1 MS
-* property[AddInfo].type = $BATCHFORMPROP#BatchAddInfo "Batch Formula Additional Information"
+* property[AddInfo].type = $BATCHFORMPROP#batchinfo "Batch Formula Additional Information"
 * property[AddInfo].value[x] only markdown
 * property[AddInfo].valueMarkdown ^short = "Batch Formula Additional Information"
 * property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the batch formula. [Source: SME Defined]
@@ -496,33 +530,71 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 """
 // ingredient
 * component.constituent 1..* MS
-* .extension contains pq-additional-info-extension named additional-info 0..1 MS
-* .extension[additional-info] ^short = "Drug Product Constituent Additional Information"
-* .extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
+* component.constituent.extension contains pq-additional-info-extension named additional-info 0..1 MS
+* component.constituent.extension[additional-info] ^short = "Drug Product Constituent Additional Information"
+* component.constituent.extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
 Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
 """
-* .extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
-* component.constituent.amount 1..1 MS
-* component.constituent.amount.value ^short = "Ingredient Quanty Per Batch"
-* component.constituent.amount.value ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
+* component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
+* component.constituent.amount obeys cmc-percent-quantity
+* component.constituent.amount 1..2 MS
+* component.constituent.amount ^slicing.discriminator.type = #value
+* component.constituent.amount ^slicing.discriminator.path = "code"
+* component.constituent.amount ^slicing.rules = #closed
+* component.constituent.amount ^slicing.description = "Slice based on value of unit"
+* component.constituent.amount contains
+      Weight 1..1 MS and
+      VolumeToVolume 0..1 MS and
+      WeightToVolume 0..1 MS and 
+      WeightToWeight 0..1 MS
+* component.constituent.amount[Weight].value 1..1 MS
+* component.constituent.amount[Weight].value ^short = "Ingredient Quanty Per Batch Product Part"
+* component.constituent.amount[Weight].value ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
 """
-* component.constituent.amount.unit 1..1 MS
-* component.constituent.amount.code 1..1 MS
-* component.constituent.amount.code from PqcmcUnitsMeasureTerminology
+* component.constituent.amount[Weight].unit 1..1 MS
+* component.constituent.amount[Weight].code 1..1 MS
+* component.constituent.amount[Weight].code from PqcmcUnitsMeasureTerminology
+* component.constituent.amount[VolumeToVolume].value 1..1 MS
+* component.constituent.amount[VolumeToVolume].value ^short = "Percent Ingredient Quanty Per Batch Product Part"
+* component.constituent.amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The amount of material in a specific batch size [Source: SME Defined]
+Example: 1000 kg
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* component.constituent.amount[VolumeToVolume].code = $NCIT#C48571 "%{VolumeToVolume}"
+
+* component.constituent.amount[WeightToVolume].value 1..1 MS
+* component.constituent.amount[WeightToVolume].value ^short = "Percent Ingredient Quanty Per Batch Product Part"
+* component.constituent.amount[WeightToVolume].value ^definition = """Quantity expressed as Weight To Volume: The amount of material in a specific batch size [Source: SME Defined]
+Example: 1000 kg
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* component.constituent.amount[WeightToVolume].code = $NCIT#C48527 "%{WeightToVolume}"
+* component.constituent.amount[WeightToWeight].value 1..1 MS
+* component.constituent.amount[WeightToWeight].value ^short = "Percent Ingredient Quanty Per Batch Product Part"
+* component.constituent.amount[WeightToWeight].value ^definition = """Quantity expressed as Weight To Weight: The amount of material in a specific batch size [Source: SME Defined]
+Example: 1000 kg
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* component.constituent.amount[WeightToWeight].code = $NCIT#C48528 "%{WeightToWeight}"
+
+* component.constituent.location 0..* MS
+* component.constituent.location ^short = "Percent Product Part Ingredient Physical Location"
+* component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
+Examples: Intragranular, Extra granular, Blend
+"""
+* component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocationVS
 * component.constituent.hasIngredient 1..1 MS
 * component.constituent.hasIngredient only Reference(DrugProductIngredient)
 // Product part
 * component.property 0..1 MS
-* component.property.type.coding = $BATCHFORMPROP#AddInfo "Product Part Additional Information"
+* component.property.type = BatchFormulaPropertyCodeSystem#info "Product Part Additional Information"
 * component.property.value[x] only markdown
 * component.property.valueMarkdown ^short = "Drug Product Component Additional Information"
 * component.property.valueMarkdown ^definition = """A placeholder for providing any comments relevant to the component. [Source: SME Defined]
  Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.."""
-
 * component.component 0..* MS
-
 
 Profile: DrugProductBatch
 Parent: Medication
@@ -803,7 +875,9 @@ SME comment -- this is the marketed dosage form.
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
+* name[Proprietary].productName
 * name[Proprietary].type.text = "Proprietary"
+* name[NonProprietary].productName
 * name[NonProprietary].type.text = "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -826,6 +900,7 @@ Description: "The Drug Product produced by the batch formula."
 
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
+* comprisedOf 1..* MS
 * comprisedOf only Reference(BatchFormula)
 * name 1..2 MS
 * name.productName 1..1 MS

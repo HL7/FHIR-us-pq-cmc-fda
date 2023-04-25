@@ -121,3 +121,13 @@ Invariant: cmc-ectd-doc-3
 Description: "The title must start with the PQCMC Composition.Type display value"
 Expression: "title.value.startsWith(type.coding.display) = true"
 Severity: #error
+
+Invariant: cmc-percent-quantity
+Description: "The component.constituent.amount[Weight].code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+Expression: "component.constituent.amount[Weight].where(code in ('VolumeToVolume'|'WeightToVolume'|'WeightToWeight').count() = 0"
+Severity: #error
+
+Invariant: cmc-percent-quantity-ingredient
+Description: "The substance.strength[Weight]concentrationQuantity.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+Expression: "substance.strength[Weight]concentrationQuantity.where(code in ('VolumeToVolume'|'WeightToVolume'|'WeightToWeight').count() = 0"
+Severity: #error

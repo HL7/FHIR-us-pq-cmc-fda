@@ -2,11 +2,13 @@
 allowmixing
 'Mixed model of use case and object
 package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
-  
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32s30.html]]
+    }   
 node "EctdComposition32S30" as N1 { 
       object "**Parent:** Composition" as obj1 {
           **Reference:**
-      [[StructureDefinition-cmc-ectd-document-32s30.html]]
+      [[StructureDefinition-ectd-composition-32s30.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
@@ -20,10 +22,10 @@ node "EctdComposition32S30" as N1 {
     }
 } 
   
-  node "DrugSubstanceStructure" as NN { 
-      object "**Parent:** DrugSubstance" as obj3 { 
+  node "DrugSubstance" as NN { 
+      object "**Parent:** SubstanceDefintion" as obj3 { 
   **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-structure.html]]
+      [[StructureDefinition-pqcmc-drug-substance.html]]
         **ValueSets:**
       Chemical Structure Data File Type Terminology  
       }
@@ -32,13 +34,12 @@ node "EctdComposition32S30" as N1 {
 node "DrugSubstanceImpurities" as N6 { 
       object "**Parent:** DrugSubstance" as obj2 {
      **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-impurities.html]]
+      [[StructureDefinition-pqcmc-drug-substance-impurities.html]]   
       **ValueSets:**
       PqcmcImpurityClassificationTerminology
       Chemical Structure Data File Type Terminology  
     }   
 }
-
 
 N1 --> NSO   
 NN --> N6

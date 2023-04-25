@@ -3,6 +3,7 @@ Parent: Bundle
 Id: cmc-ectd-document-32p10
 Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles."
+
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-first-resource
 * identifier 0..1 MS
@@ -31,7 +32,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * entry[MedicinalProductDefinition].resource only pqcmc-drug-product-description
 * entry[MedicinalProductContainer].fullUrl 1..1
 * entry[MedicinalProductContainer].resource 1..1
-* entry[MedicinalProductContainer].resource only  pqcmc-druproduct-container-closure
+* entry[MedicinalProductContainer].resource only pqcmc-druproduct-container-closure
 * entry[ManufacturedItemDefinition].fullUrl 1..1
 * entry[ManufacturedItemDefinition].resource 1..1
 * entry[ManufacturedItemDefinition].resource only pqcmc-product-part
@@ -117,13 +118,13 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * entry[Composition].resource only EctdComposition32S10
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
-* entry[SubstanceDefinition].resource only DrugSubstanceNomenclature or DrugSubstanceRepresentationalStructure or PolymorphicForm
-* entry[Organization].fullUrl  MS
-* entry[Organization].resource  MS
+* entry[SubstanceDefinition].resource only DrugSubstanceNomenclature or DrugSubstanceMolecularStructure or PolymorphicForm
+* entry[Organization].fullUrl MS
+* entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
 * entry[DocumentReference].fullUrl MS
 * entry[DocumentReference].resource MS
-* entry[DocumentReference].resource only cmc-document-reference
+* entry[DocumentReference].resource only Base64DocumentReference
 
 Profile: CMCeCTDDocument32S30
 Parent: Bundle
@@ -152,13 +153,13 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * entry[Composition].resource only EctdComposition32S30
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
-* entry[SubstanceDefinition].resource only DrugSubstanceStructure or DrugSubstanceImpurities
-* entry[Organization].fullUrl  MS
-* entry[Organization].resource  MS
+* entry[SubstanceDefinition].resource only DrugSubstance
+* entry[Organization].fullUrl MS
+* entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
 * entry[DocumentReference].fullUrl MS
 * entry[DocumentReference].resource MS
-* entry[DocumentReference].resource only cmc-document-reference
+* entry[DocumentReference].resource only Base64DocumentReference
 
 Profile: CMCeCTDDocument32S23
 Parent: Bundle
@@ -188,8 +189,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles.
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
 * entry[SubstanceDefinition].resource only ExcipientRaw
-* entry[Organization].fullUrl  MS
-* entry[Organization].resource  MS
+* entry[Organization].fullUrl MS
+* entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization or MfgTestSiteOrganization
 * entry[PlanDefinition].fullUrl MS
 * entry[PlanDefinition].resource MS
@@ -228,7 +229,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * entry[MedicinalProductDefinition].resource only pqcmc-drug-product-with-impurities
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
-* entry[SubstanceDefinition].resource only pqcmc-drug-substance-impurity
+* entry[SubstanceDefinition].resource only pqcmc-drug-product-substance-impurity
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only mfg-test-site-organization or cmc-sponsor-organization
@@ -263,8 +264,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles.
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
 * entry[SubstanceDefinition].resource only pqcmc-drug-substance-container-closure
-* entry[Organization].fullUrl  MS
-* entry[Organization].resource  MS
+* entry[Organization].fullUrl MS
+* entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
 
 Profile: CMCeCTDDocument32P70
@@ -293,8 +294,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles.
 * entry[MedicinalProductDefinition].fullUrl MS
 * entry[MedicinalProductDefinition].resource MS
 * entry[MedicinalProductDefinition].resource only pqcmc-druproduct-container-closure
-* entry[Organization].fullUrl  MS
-* entry[Organization].resource  MS
+* entry[Organization].fullUrl MS
+* entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
 
 Profile: CMCeCTDDocumentSP4151
@@ -313,7 +314,7 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #closed
-* entry ^slicing.description = "The specific bundle entries that are needed for a Quality Specification document.  "
+* entry ^slicing.description = "The specific bundle entries that are needed for a Quality Specification document."
 * entry contains
     Composition 1..1 and
     PlanDefinition 1..1 and
@@ -398,7 +399,7 @@ Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles
 * entry ^slicing.description = "The specific bundle entries that are needed for a stability report document."
 * entry contains
     Composition 1..1 and
-    ResearchStudy  1..* and
+    ResearchStudy 1..* and
     BatchAnalysis 1..1 and
     Medication 1..1 and
     Substance 1..1 and
@@ -442,7 +443,7 @@ Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #closed
-* entry ^slicing.description = "The specific bundle entries that are needed for a Stability Summary document.  "
+* entry ^slicing.description = "The specific bundle entries that are needed for a Stability Summary document."
 * entry contains
     Composition 1..1 and
     PlanDefinition 1..1 and
@@ -475,7 +476,7 @@ Description: "The fields needed to represent the Quality Specifications to be in
 
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#SP4151 "Quality Specification"
+* type = pqcmc-comp-section-types#SP4151 "Quality Specification"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -517,7 +518,7 @@ Description: "The fields needed to represent the Stability Data to be included u
 
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#SP7383 "Stability Data"
+* type = pqcmc-comp-section-types#SP7383 "Stability Data"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -553,7 +554,7 @@ Description: "The fields needed to represent the Batch Analyses to be included u
 
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#SP4454 "Batch Analyses"
+* type = pqcmc-comp-section-types#SP4454 "Batch Analyses"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -586,11 +587,11 @@ Profile: EctdComposition32P32
 Parent: Composition
 Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
-Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD.   References Sponsor Organization and Batch Formula"
+Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD.  References Sponsor Organization and Batch Formula"
 
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32P32 "Product Batch Formula"
+* type = pqcmc-comp-section-types#32P32 "Product Batch Formula"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -608,11 +609,11 @@ Profile: EctdComposition32P55
 Parent: Composition
 Id: ectd-composition-32p55
 Title: "eCTD Product Characterization of Impurities Composition"
-Description: "The fields needed to represent the Product Characterization of Impurities in a to be included under the eCTD.   References Sponsor Organization and Product Characterization of Impurities"
+Description: "The fields needed to represent the Product Characterization of Impurities in a to be included under the eCTD.  References Sponsor Organization and Product Characterization of Impurities"
 
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32P55 "Product Characterization of Impurities"
+* type = pqcmc-comp-section-types#32P55 "Product Characterization of Impurities"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -635,10 +636,10 @@ Description: "The fields needed to represent the Product Container Closure Syste
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32P70 "Product Container Closure System"
+* type = pqcmc-comp-section-types#32P70 "Product Container Closure System"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
-* title  1..1 MS
+* title 1..1 MS
 /*
     SECTION SLICES - not requried - only one option
 */
@@ -660,7 +661,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32P10 "Product Description and Composition of the Drug Product"
+* type = pqcmc-comp-section-types#32P10 "Product Description and Composition of the Drug Product"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
@@ -696,10 +697,10 @@ Description: "The fields needed to represent the Substance Container Closure Sys
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32S60 "Substance Container Closure System"
+* type = pqcmc-comp-section-types#32S60 "Substance Container Closure System"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
-* title  1..1 MS
+* title 1..1 MS
 /*
     SECTION SLICES - not requried - only one option
 */
@@ -721,10 +722,10 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32S10 "Substance General Information"
+* type = pqcmc-comp-section-types#32S10 "Substance General Information"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
-* title  1..1 MS
+* title 1..1 MS
 /*
     SECTION SLICES
 */
@@ -747,7 +748,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section[SubstanceStructure].title 1..1 MS
 * section[SubstanceStructure].title obeys cmc-ectd-doc-2
 * section[SubstanceStructure].entry 1..1 MS
-* section[SubstanceStructure].entry only Reference(DrugSubstanceRepresentationalStructure)
+* section[SubstanceStructure].entry only Reference(DrugSubstanceMolecularStructure)
 
 Profile: EctdComposition32S23
 Parent: Composition
@@ -757,7 +758,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
  
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32S23 "Substance Control of Materials"
+* type = pqcmc-comp-section-types#32S23 "Substance Control of Materials"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -780,10 +781,10 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type =  pqcmc-comp-section-types#32S30 "Substance Characterization"
+* type = pqcmc-comp-section-types#32S30 "Substance Characterization"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
-* title  1..1 MS
+* title 1..1 MS
 
 /*
     SECTION SLICES
@@ -799,24 +800,19 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Structure] ^definition = "Substance Characterization to be included under the 3.2.S.3.0 eCTD heading."
 * section[Structure].code = pqcmc-comp-section-types#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
-* section[Structure].entry  1..1 MS
-* section[Structure].entry only Reference(DrugSubstanceStructure)
-* section[Impurities] ^definition = "Drug Substance Impurities to be included under the 3.2.S.3.0 eCTD heading."
-* section[Impurities].code = pqcmc-comp-section-types#32S32 "Substance Impurities"
-* section[Impurities].title 1..1 MS
-* section[Impurities].entry  1..* MS
-* section[Impurities].entry only Reference(DrugSubstanceImpurities)
+* section[Structure].entry 1..1 MS
+* section[Structure].entry only Reference(DrugSubstance)
 
 Profile: EctdCompositionSP7181
 Parent: Composition
 Id: ectd-composition-sp7181
-Title: "eCTD Stability Stability Summary and Conclusion Composition"
-Description: "The fields needed to represent the Stability Stability Summary and Conclusion to be included in the 3.2.P.8.3 and 3.2.S.7.3 eCTD headings. References Sponsor Organization and Stability Study."
+Title: "eCTD Stability Summary and Conclusion Composition"
+Description: "The fields needed to represent the Stability Summary and Conclusion to be included in the 3.2.P.8.3 and 3.2.S.7.3 eCTD headings. References Sponsor Organization and Stability Study."
 
 * status = #final
 * identifier 0..1 MS
 /* do or on type code*/
-* type =  pqcmc-comp-section-types#SP7181 "Stability Stability Summary and Conclusion"
+* type = pqcmc-comp-section-types#SP7181 "Stability Summary and Conclusion"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -828,17 +824,17 @@ Description: "The fields needed to represent the Stability Stability Summary and
 * section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
-* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Stability Summary and Conclusion profile."
+* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Summary and Conclusion profile."
 * section contains
     DrugProduct 0..1 MS and
     Api 0..1 MS
-* section[DrugProduct] ^definition = "Product Stability Stability Summary and Conclusion to be included under the 3.2.P.8.3 eCTD heading."
-* section[DrugProduct].code = pqcmc-comp-section-types#32P83 "Product Stability Stability Summary and Conclusion"
+* section[DrugProduct] ^definition = "Product Stability Summary and Conclusion to be included under the 3.2.P.8.3 eCTD heading."
+* section[DrugProduct].code = pqcmc-comp-section-types#32P83 "Product Stability Data"
 * section[DrugProduct].title 1..1 MS
 * section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(StabilitySummary)
-* section[Api] ^definition = "Substance Stability Stability Summary and Conclusion to be included under the 3.2.S.7.3 eCTD heading."
-* section[Api].code = pqcmc-comp-section-types#32S73 "Substance Stability Stability Summary and Conclusion"
+* section[Api] ^definition = "Substance Stability Summary and Conclusion to be included under the 3.2.S.7.3 eCTD heading."
+* section[Api].code = pqcmc-comp-section-types#32S73 "Substance Stability Data"
 * section[Api].title 1..1 MS
 * section[Api].entry 1..1 MS
 * section[Api].entry only Reference(StabilitySummary)

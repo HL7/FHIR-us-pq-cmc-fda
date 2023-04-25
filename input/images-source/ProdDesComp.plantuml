@@ -2,7 +2,9 @@
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
-
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32p10.html]]
+    }  
   node "DrugProductDescription" as N2 { 
       object "**Parent:** DrugProduct Profile" as obj2 {
          **Reference:**
@@ -15,7 +17,7 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
   node "EctdComposition32P10" as N1 { 
       object "**Parent:** Composition" as obj1 {
          **Reference:**
-      [[StructureDefinition-cmc-ectd-document-32p10.html]]
+      [[StructureDefinition-ectd-composition-32P10.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }   
