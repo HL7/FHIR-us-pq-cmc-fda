@@ -3,8 +3,8 @@ Id: pq-quality-specification-extension
 Title: "Quality Specification Reference"	
 Description: "The product specification used in the batch release or stability testing."	
 * . ^short = "Specification and Specification Version"	
-//* ^context[+].type = #element
-//* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
 
 * extension contains	
     specification 1..1 MS and	
@@ -26,16 +26,16 @@ Extension: ReplicateExtension
 Id: pq-replicate-extension	
 Title: "Replicate Number"	
 Description: """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method."""	
-//* ^context[+].type = #element
-//* ^context[=].expression = "Observation.component"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"
 * value[x] only integer	
 
 Extension: PullDateExtension
 Id: pq-pullDate-extension
 Title: "Pull Date"
 Description: "Contains elements related to the pull date of the study samples in a stability study."
-//* ^context[+].type = #element
-//* ^context[=].expression = "Observation.effectiveDateTime"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.effectiveDateTime"
 * extension.value[x] only dateTime
 * extension.value[x] ^short = "Pull Date"
 * extension.value[x] ^definition = "The date when a particular sample of the batch lot was pulled from the stability chamber. [Source: SME Defined]"
