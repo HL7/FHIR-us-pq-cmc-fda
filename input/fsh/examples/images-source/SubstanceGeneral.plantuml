@@ -1,0 +1,69 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32s10.html]]
+    }  
+  node "DrugSubstanceNomenclature" as NN { 
+      object "**Parent Profile:** SubstanceDefinition" as obj3 {
+          **Reference:**
+      [[StructureDefinition-pqcmc-drug-substance-nomenclature.html]]
+        **ValueSets:**
+        EVMPDSubstanceClassification
+        Units Of Measure Terminology
+        Chemical Structure Data File Type Terminology
+        Code System PQCMC Name Types 
+      }  
+}
+  node "DrugSubstanceMolecularStructure" as N21 { 
+      object "**Parent Profile:** SubstanceDefinition" as obj22 {
+          **Reference:**
+      [[StructureDefinition-pqcmc-drug-substance-molecular-structure.html]]
+        **ValueSets:**
+        Chemical Structure Data File Type Terminology
+        Code System PQCMC Name Types
+    }
+}
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReferencee"  as obj64 {  
+            **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]]
+}
+}
+  node "EctdComposition32S10" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+            **Reference:**
+      [[StructureDefinition-ectd-composition-32s10.html]]
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }    
+}
+node "PolymorphicForm" as N2 { 
+      object "**Parent:** SubstanceDefinition" as obj2 {
+          **Reference:**
+      [[StructureDefinition-pqcmc-polymorphic-form.html]]
+        **ValueSets:**
+        EVMPDSubstanceClassification
+        Units Of Measure Terminology
+        Chemical Structure Data File Type Terminology
+        Code System PQCMC Name Types
+    }    
+}
+ node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+    **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+        GENC Country Codes
+    }
+} 
+
+
+N1 --> N21
+N1 --> NN
+NN --> N2
+N2 --> NB64
+N21 --> NB64
+N1 --> NSO
+}
+@enduml

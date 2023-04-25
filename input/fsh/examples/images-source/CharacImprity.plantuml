@@ -1,0 +1,49 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+
+package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES {
+ 
+   object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-32p55.html]]
+    }  
+
+node "EctdComposition32P55" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+           **Reference:**
+      [[StructureDefinition-ectd-composition-32p55.html]]   
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+ node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+         **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+        **ValueSets:**
+        GENC Country Codes
+    }
+} 
+  node "DrugProductwithImpurities" as NN { 
+      object "**Parent:** MedicationDefinition" as obj3 {  
+         **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-with-impurities.html]]    
+      }
+  }
+
+node "ImpuritySubstance" as N6 { 
+      object "**Parent:** SubstanceDefinition" as obj2 {
+           **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]   
+      **ValueSets:**
+      EVMPDSubstanceClassification
+      PqcmcImpurityClassificationTerminology
+      Chemical Structure Data File Type Terminology
+    }    
+}
+
+N1 --> NSO   
+NN --> N6
+N1 --> NN 
+}
+@enduml

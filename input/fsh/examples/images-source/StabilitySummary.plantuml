@@ -1,0 +1,84 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES {
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-sp7181.html]]
+    }  
+  node "RoutineDrugProduct" as NN { 
+      object "**Parent:** DrugProduct" as obj3 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-product.html]]
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+          
+      }
+}
+diamond CH
+
+node "RoutineSubstanceDefinition for API" as NNS { 
+      object "**Parent Profile:** DrugSubstance" as obj4 {
+             **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+                **ValueSets:**
+                EVMPDSubstanceClassification
+                Quality Benchmark Terminology
+                GENC Country Codes
+                Source Type Terminology
+      }
+}
+
+node "MfgTestSiteOrganization" as NMFG { 
+      object "**Parent:** Organization" as objDP {
+             **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+         **ValueSets:**
+        Manufacturing Site Unique Identifier Type
+	    GENC Country Codes
+    }
+}
+
+node "StabilitySummary" as NMain { 
+      object "**Parent:** PlanDefinition" as objMain {
+             **Reference:**
+      [[StructureDefinition-pqcmc-stability-summary.html]]
+        **ValueSets:**
+	Units Of Measure Terminology
+      Storage Conditions Terminology
+      }  
+      object "**Extensions**" as objExs2 {
+        pq-additional-info-extension
+}
+
+objMain <|-- objExs2  
+}
+
+node "EctdCompositionSP7181" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+     **Reference:**
+      [[StructureDefinition-ectd-composition-sp7181.html]]
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+}
+node "SponsorOrganization" as NSO { 
+      object "**Parent:** Organization" as objAu {
+     **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+        **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+CH --> NN
+CH --> NNS
+N1 --> CH
+N1 --> NSO
+NN --> NMFG
+NNS --> NMFG
+N1 --> NMain
+
+
+}
+@enduml

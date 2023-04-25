@@ -1,0 +1,105 @@
+@startuml
+allowmixing
+'Mixed model of use case and object
+package "eCTD Heading 3.2.S41 and 3.2.P4151 Specification Bundle" as NODES {
+object "**Bundle Reference:**" as objbun {
+              [[StructureDefinition-cmc-ectd-document-SP4151.html]]
+    }  
+  node "RoutineDrugProduct" as NN { 
+      object "**Parent:** DrugProduct" as obj3 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-product.html]]
+        **ValueSets:**
+        Drug Route Of Administration Terminology
+        Pharmaceutical Dosage Form Terminology
+          
+      }
+}
+node "ExcipientRaw" as N21 { 
+      object "**Parent:** SubstanceDefinition" as obj22 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-excipient.html]]
+        **ValueSets:**
+          GENC Country Codes
+          Source Type Terminology
+    }
+}
+node "MfgTestSiteOrganization" as N21mfg { 
+    object "**Parent:** Organization" as objTS  {
+       **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+        **ValueSets:**
+         Manufacturing Site Unique Identifier Type
+         GENC Country Codes
+    }
+}
+
+node "EctdCompositionSP4151" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+         **Reference:**
+      [[StructureDefinition-ectd-composition-sp4151.html]]
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+ 
+}
+ node "RoutineSubstanceDefinition for API" as NNS { 
+      object "**Parent:** SubstanceDefinition" as obj4 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+                **ValueSets:**
+                EVMPDSubstanceClassification
+                Quality Benchmark Terminology
+                GENC Country Codes
+                Source Type Terminology
+      }
+}
+node "SponsorOrganization" as NMSpon { 
+      object "**Parent:** Organization" as objDP {
+        **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+         **ValueSets:**
+        GENC Country Codes
+    }
+}
+
+
+diamond CH
+
+  node "QualitySpecification" as N2 { 
+      object "**Parent:** PlanDefinition" as obj2 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-quality-specification.html]]
+        **ValueSets**
+        PqActionRelationTypes
+        PqcmcInterpretationCodeTerminology
+        PqcmcSpecificationStatusTerminology
+        PqcmcSpecificationTypeTerminology
+        PqcmcTestCategoryTerminology
+        PqcmcTestMethodOriginTerminology
+        PqcmcTestUsageTerminology
+        PqcmcUnitsMeasureTerminology
+    }
+        object "**Extensions**" as objQSEx {
+        AdditionalInformationExtension
+        InterpretationCodeExtension
+        SpecificationStatusExtension
+        SpecificationTypeExtension
+        TestMethodOriginExtension
+        TestOrderExtension
+        RRTExtension
+    }
+    obj2 <|-- objQSEx
+}
+
+N1 --> N2
+CH --> N21
+CH --> NNS
+CH --> NN
+N1 --> CH
+N21 --> N21mfg
+N2 --> CH
+N1 --> NMSpon
+NNS --> N21mfg
+}
+@enduml
