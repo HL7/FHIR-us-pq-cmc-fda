@@ -1,4 +1,4 @@
-@startuml
+@startuml Specification
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.S41 and 3.2.P4151 Specification Bundle" as NODES {
@@ -41,8 +41,16 @@ node "EctdCompositionSP4151" as N1 {
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
- 
 }
+node "SponsorOrganization" as NMSpon { 
+      object "**Parent:** Organization" as objDP {
+        **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+         **ValueSets:**
+        GENC Country Codes
+    }
+}
+
  node "RoutineSubstanceDefinition for API" as NNS { 
       object "**Parent:** SubstanceDefinition" as obj4 {
          **Reference:**
@@ -54,15 +62,6 @@ node "EctdCompositionSP4151" as N1 {
                 Source Type Terminology
       }
 }
-node "SponsorOrganization" as NMSpon { 
-      object "**Parent:** Organization" as objDP {
-        **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-         **ValueSets:**
-        GENC Country Codes
-    }
-}
-
 
 diamond CH
 
@@ -92,14 +91,13 @@ diamond CH
     obj2 <|-- objQSEx
 }
 
+N1 --> NMSpon
 N1 --> N2
+N2 --> CH
 CH --> N21
 CH --> NNS
 CH --> NN
-N1 --> CH
-N21 --> N21mfg
-N2 --> CH
-N1 --> NMSpon
 NNS --> N21mfg
+N21 --> N21mfg
 }
 @enduml

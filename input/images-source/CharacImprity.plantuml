@@ -1,4 +1,4 @@
-@startuml
+@startuml CharacImprity
 allowmixing
 'Mixed model of use case and object
 
@@ -16,6 +16,12 @@ node "EctdComposition32P55" as N1 {
   Code system PQCMC Comp Section Types
     }
 }
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
+}
  node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
          **Reference:**
@@ -24,6 +30,7 @@ node "EctdComposition32P55" as N1 {
         GENC Country Codes
     }
 } 
+
   node "DrugProductwithImpurities" as NN { 
       object "**Parent:** MedicationDefinition" as obj3 {  
          **Reference:**
@@ -42,8 +49,10 @@ node "ImpuritySubstance" as N6 {
     }    
 }
 
-N1 --> NSO   
+N1 --> NSO  
 NN --> N6
-N1 --> NN 
+N1 --> NN
+N6 --> NB64 
+
 }
 @enduml

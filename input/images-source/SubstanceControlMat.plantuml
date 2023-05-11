@@ -1,4 +1,4 @@
-@startuml
+@startuml SubstanceControlMat
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {

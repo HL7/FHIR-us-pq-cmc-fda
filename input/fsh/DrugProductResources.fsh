@@ -2,8 +2,8 @@ Extension: ProductBatchIngredientExtension
 Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
 Description: "Extension for measurement properties for ingredients in the batch formla.."
-//* ^context[+].type = #element
-//* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* ^context[+].type = #extension
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * extension contains
   overagePercent 0..1 MS and
   overageJustification 0..1 MS and
@@ -31,10 +31,10 @@ Title: "Container Closure"
 Description: "The packaging information including a brief description of the components, the assembled
 packaging system and any precautions needed to ensure the protection and preservation of the drug substance and drug product during their use in the clinical trials"
 * . ^short = "Container Closure System Information"
-//* ^context[+].type = #element
-//* ^context[=].expression = "MedicinalProductDefinition"
-//* ^context[+].type = #element
-//* ^context[=].expression = "SubstanceDefinition"
+* ^context[+].type = #extension
+* ^context[=].expression = "MedicinalProductDefinition"
+* ^context[+].type = #extension
+* ^context[=].expression = "SubstanceDefinition"
 * extension contains
     description 1..1 MS and
     containerType 1..1 MS and
@@ -91,14 +91,14 @@ SME comment -- this is the marketed dosage form.
 * impurity only Reference(ImpuritySubstance)
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#PROP "Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -491,14 +491,14 @@ Description: "Listing of all components of the dosage form to be used in the man
 * property ^slicing.description = "Slice based on value"
 * property contains
       BatchSize 1..1 MS and
-      BatchUtil 1..1 MS and
+      BatchUtil 1..* MS and
       AddInfo 0..1 MS
 * property[BatchSize].type 1..1 MS
 * property[BatchSize].type ^short = "Batch Quantity"
 * property[BatchSize].type ^definition = """The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
 """
-* property[BatchSize].type = $BATCHFORMPROP#batchsize "Batch Quantity"
+* property[BatchSize].type = BatchFormulaPropertyCodeSystem#batchsize "Batch Quantity"
 * property[BatchSize].value[x] only Quantity
 * property[BatchSize].valueQuantity.unit 1..1 MS
 * property[BatchSize].valueQuantity.unit ^short = "Quantity UOM"
@@ -507,7 +507,7 @@ Example: 1000 kg
 * property[BatchSize].valueQuantity.code 1..1 MS
 * property[BatchSize].valueQuantity.code from  PqcmcUnitsMeasureTerminology
 
-* property[BatchUtil].type = $BATCHFORMPROP#BatchUtil "Batch Utilization"
+* property[BatchUtil].type = BatchFormulaPropertyCodeSystem#BatchUtil "Batch Utilization"
 * property[BatchUtil].value[x] only CodeableConcept
 * property[BatchUtil].valueCodeableConcept 1..1 MS
 * property[BatchUtil].valueCodeableConcept ^short = "Batch Utilization"
@@ -515,7 +515,7 @@ Example: 1000 kg
 Examples: commercial, development. """
 * property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
 * property[AddInfo].type 1..1 MS
-* property[AddInfo].type = $BATCHFORMPROP#batchinfo "Batch Formula Additional Information"
+* property[AddInfo].type = BatchFormulaPropertyCodeSystem#batchinfo "Batch Formula Additional Information"
 * property[AddInfo].value[x] only markdown
 * property[AddInfo].valueMarkdown ^short = "Batch Formula Additional Information"
 * property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the batch formula. [Source: SME Defined]
@@ -659,7 +659,7 @@ Description: "This profile defines the details of a batch of medicine."
 
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/drug-product-manufacturing-batch"
 * ^context.type = #extension
-* ^context.expression = "extension to the batch in Medication"
+* ^context.expression = "Medication.batch"
 * extension[manufacturingDate] 1..1 MS
 * extension[manufacturingDate] ^short = "Manufacturing Date"
 * extension[manufacturingDate] ^definition = """The date associated with manufacturing a batch. [Source: SME Defined]
@@ -736,7 +736,7 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 
 Profile: RoutineDrugProduct
 Parent: MedicinalProductDefinition
-Id: pqcmc-routine-drug-product
+Id: pqcmc-routine-drug-product 
 Title: "Routine Drug Product"
 Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."
 
@@ -758,14 +758,14 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code from SplDrugRouteofAdministrationTerminology
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#PROP "Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -791,14 +791,14 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * impurity only Reference(ImpuritySubstance)	
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#PROP "Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -822,20 +822,20 @@ Description: "Description and coding of the container closure system. Profile of
 * identifier ^short = "optional user designated identifier"	
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
 """
 * name[NonProprietary].part.part 1..1 MS
-* name[NonProprietary].part.type 1..1 MS
+* name[NonProprietary].part.type 1..1 MS 
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
 * name[NonProprietary].part ^slicing.rules = #open
@@ -869,14 +869,14 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code from SplDrugRouteofAdministrationTerminology
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].productName
-* name[Proprietary].type.text = "Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#PROP "Proprietary"
 * name[NonProprietary].productName
 * name[NonProprietary].type.text = "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
@@ -904,14 +904,14 @@ Description: "The Drug Product produced by the batch formula."
 * comprisedOf only Reference(BatchFormula)
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#PROP "Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.

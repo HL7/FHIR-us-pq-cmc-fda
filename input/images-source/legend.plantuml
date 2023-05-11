@@ -1,4 +1,4 @@
-@startuml
+@startuml legend
 allowmixing
 'Mixed model of use case and object
 package "Bundle" as NODES {

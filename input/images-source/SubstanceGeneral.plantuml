@@ -1,4 +1,4 @@
-@startuml
+@startuml SubstanceGeneral
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {

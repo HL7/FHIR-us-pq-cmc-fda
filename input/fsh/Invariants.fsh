@@ -113,13 +113,13 @@ Severity: #error
 Expression: "$this.is(FHIR.oid) = true"   //of urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 
 Invariant: cmc-ectd-doc-2
-Description: "The title must start with the PQCMC Comp Section Type display value"
+Description: "The document title must start with the PQCMC Composition.Type display value"
 Expression: "title.value.startsWith(type.coding.display) = true"
 Severity: #error
 
 Invariant: cmc-ectd-doc-3
-Description: "The title must start with the PQCMC Composition.Type display value"
-Expression: "title.value.startsWith(type.coding.display) = true"
+Description: "The section title must start with the PQCMC Comp Section Type display value"
+Expression: "section.title.value.startsWith(type.coding.display) = true"
 Severity: #error
 
 Invariant: cmc-percent-quantity

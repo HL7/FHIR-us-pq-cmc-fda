@@ -1,4 +1,4 @@
-@startuml
+@startuml SubstanceContainer
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.S.6.0 Container Closure System Bundle" as NODES {
@@ -28,7 +28,12 @@ node "SubstanceContainerClosure" as N21 {
     }
     obj22 <|-- objEx
 }
-
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
+}
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **Reference:**
@@ -41,5 +46,5 @@ node "SponsorOrganization" as NSO {
 
 N1 --> N21
 N1 --> NSO
-
+objEx --> NB64 
 @enduml

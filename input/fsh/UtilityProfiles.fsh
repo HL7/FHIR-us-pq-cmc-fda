@@ -18,14 +18,16 @@ Extension: AditionalInformationExtension
 Id: pq-additional-info-extension
 Title: "Aditional Information"
 Description: "Any additional information"
-//* ^context[+].type = #element
-//* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
-//* ^context[+].type = #element
-//* ^context[=].expression = "Ingredient"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition"
-//* ^context[+].type = #element
-//* ^context[=].expression = "ResearchStudy"
-//* ^context[+].type = #element
-//* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.property.valueMarkdown"
+* ^context[+].type = #element
+* ^context[=].expression = "Ingredient"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "ResearchStudy"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
 * value[x] only markdown

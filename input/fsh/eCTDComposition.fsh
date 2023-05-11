@@ -318,8 +318,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry contains
     Composition 1..1 and
     PlanDefinition 1..1 and
-    MedicinalProductDefinition 1..1 and
-    SubstanceDefinition 1..1 and
+    MedicinalProductDefinition 0..1 and
+    SubstanceDefinition 0..1 and
     Organization 1..* 
 * entry[Composition].fullUrl 1..1
 * entry[Composition].resource 1..1
@@ -447,8 +447,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles
 * entry contains
     Composition 1..1 and
     PlanDefinition 1..1 and
-    MedicinalProductDefinition 1..1 and
-    SubstanceDefinition 1..1 and
+    MedicinalProductDefinition 0..1 and
+    SubstanceDefinition 0..1 and
     Organization 1..* 
 * entry[Composition].fullUrl 1..1
 * entry[Composition].resource 1..1
@@ -474,17 +474,24 @@ Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent the Quality Specifications to be included under the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 headings.. References Sponsor Organization and Quality Specification."
 
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = pqcmc-comp-section-types#SP4151 "Quality Specification"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
-/*
-    SECTION SLICES
-*/
-* section 1.. MS
+* title 1..1 MS
 * section obeys cmc-ectd-doc-2
+* section 1..1 MS
+* section.code 1..1 MS
+* section.code from cmc-comp-section-types-vs (required)
+* section.title 1..1 MS
+/*
+    SECTION SLICESProduct
+*/
+* section 1..1 MS
 * section.entry MS
+* section obeys cmc-ectd-doc-3
 * section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
@@ -496,18 +503,18 @@ Description: "The fields needed to represent the Quality Specifications to be in
 * section[DrugProduct] ^definition = "Product Specification to be included under the 3.2.P.5.1 eCTD heading."
 * section[DrugProduct].code = pqcmc-comp-section-types#32P51 "Product Specification"
 * section[DrugProduct].title 1..1 MS
-* section[DrugProduct].entry 1..1 MS
-* section[DrugProduct].entry only Reference(QualitySpecification)
+* section[DrugProduct].entry 2..2 MS
+* section[DrugProduct].entry only Reference(QualitySpecification or RoutineDrugProduct)
 * section[Api] ^definition = "Drug Substance Specification to be included under the 3.2.S.4.1 eCTD heading."
 * section[Api].code = pqcmc-comp-section-types#32S41 "Substance Specification"
 * section[Api].title 1..1 MS
-* section[Api].entry 1..1 MS
-* section[Api].entry only Reference(QualitySpecification)
+* section[Api].entry 2..2 MS
+* section[Api].entry only Reference(QualitySpecification or RoutineSubstanceDefinition)
 * section[Excipient] ^definition = "Excipient Specification to be included under the 3.2.P.4.1 eCTD heading."
 * section[Excipient].code = pqcmc-comp-section-types#32P41 "Excipients Specification"
 * section[Excipient].title 1..1 MS
-* section[Excipient].entry 1..1 MS
-* section[Excipient].entry only Reference(QualitySpecification)
+* section[Excipient].entry 2..2 MS
+* section[Excipient].entry only Reference(QualitySpecification or ExcipientRaw)
 // need check that Specification type in instance matches the seciton selected.
 
 Profile: EctdCompositionSP7383
@@ -778,7 +785,7 @@ Parent: Composition
 Id: ectd-composition-32s30
 Title: "eCTD Substance Characterization"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3.0 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
-* . obeys cmc-ectd-doc-3
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = pqcmc-comp-section-types#32S30 "Substance Characterization"
@@ -791,7 +798,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 */
 * section 1..* MS
 * section.entry MS
-* section obeys cmc-ectd-doc-2
+* section obeys cmc-ectd-doc-3
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
@@ -831,10 +838,10 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 * section[DrugProduct] ^definition = "Product Stability Summary and Conclusion to be included under the 3.2.P.8.3 eCTD heading."
 * section[DrugProduct].code = pqcmc-comp-section-types#32P83 "Product Stability Data"
 * section[DrugProduct].title 1..1 MS
-* section[DrugProduct].entry 1..1 MS
-* section[DrugProduct].entry only Reference(StabilitySummary)
+* section[DrugProduct].entry 2..2 MS
+* section[DrugProduct].entry only Reference(StabilitySummary or RoutineDrugProduct)
 * section[Api] ^definition = "Substance Stability Summary and Conclusion to be included under the 3.2.S.7.3 eCTD heading."
 * section[Api].code = pqcmc-comp-section-types#32S73 "Substance Stability Data"
 * section[Api].title 1..1 MS
-* section[Api].entry 1..1 MS
-* section[Api].entry only Reference(StabilitySummary)
+* section[Api].entry 2..2 MS
+* section[Api].entry only Reference(StabilitySummary or RoutineSubstanceDefinition)

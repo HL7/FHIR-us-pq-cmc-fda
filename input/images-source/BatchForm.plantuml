@@ -1,4 +1,4 @@
-@startuml
+@startuml BatchForm
 allowmixing
 'Mixed model of use case and object
 package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
@@ -7,21 +7,7 @@ package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
               [[StructureDefinition-cmc-ectd-document-sp4151.html]]
     }  
 
- node "BatchFormula" as NN { 
-      object "**Parent:** ManufacturedItemDefinition" as obj3 {
-         **Reference:**
-      [[StructureDefinition-pqcmc-product-batch-formula.html]]
-        **ValueSets:**
-        Units of Measure Terminology
-      } 
-      object "**Extensions**" as objExs2 {
-        pq-additional-info-extension
-        pq-product-batch-ingredient-extension
-}
-
- obj3 <|-- objExs2     
-}
-
+ 
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **Reference:**
@@ -35,9 +21,8 @@ node "DrugProductIngredient" as NNgred {
       object "**Parent:** Ingredient" as obj10 {
              **Reference:**
       [[StructureDefinition-pqcmc-dp-ingredient.html]]
-        '**ValueSets:**
-        'Units of Measure Terminology
-          
+        **ValueSets:**
+        Units of Measure Terminology    
       }      
 
 }
@@ -79,13 +64,30 @@ node "BatchFormulaMedicinalProduct" as NN2 {
       }
 }
 
+node "BatchFormula" as NN { 
+      object "**Parent:** ManufacturedItemDefinition" as obj3 {
+         **Reference:**
+      [[StructureDefinition-pqcmc-product-batch-formula.html]]
+        **ValueSets:**
+        Product Part Ingredient Physical Location value set        
+        Batch utilization Terminology
+        Units Of Measure Terminology
+      } 
+      object "**Extensions**" as objExs2 {
+        pq-additional-info-extension
+        pq-product-batch-ingredient-extension
+}
 
-N1 --> NN2
-N1 --> NSO
+ obj3 <|-- objExs2     
+}
+
+NN --> NMFG
 NN --> NNgred
 NN2 --> NN
-NNgred --> NNS
+N1 --> NN2
+N1 --> NSO        
 NNS --> NMFG
-NN --> NMFG
+NNgred --> NNS
+
 }
 @enduml

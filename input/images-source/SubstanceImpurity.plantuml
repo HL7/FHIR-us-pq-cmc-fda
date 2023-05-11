@@ -1,4 +1,4 @@
-@startuml
+@startuml SubstanceImpurity
 allowmixing
 'Mixed model of use case and object
 package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
@@ -40,9 +40,15 @@ node "DrugSubstanceImpurities" as N6 {
       Chemical Structure Data File Type Terminology  
     }   
 }
-
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
+}
 N1 --> NSO   
 NN --> N6
 N1 --> NN 
+N6 --> obj64
 }
 @enduml
