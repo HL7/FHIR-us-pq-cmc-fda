@@ -32,7 +32,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * entry[MedicinalProductDefinition].resource only pqcmc-drug-product-description
 * entry[MedicinalProductContainer].fullUrl 1..1
 * entry[MedicinalProductContainer].resource 1..1
-* entry[MedicinalProductContainer].resource only pqcmc-druproduct-container-closure
+* entry[MedicinalProductContainer].resource only pqcmc-drugproduct-container-closure
 * entry[ManufacturedItemDefinition].fullUrl 1..1
 * entry[ManufacturedItemDefinition].resource 1..1
 * entry[ManufacturedItemDefinition].resource only pqcmc-product-part
@@ -293,7 +293,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles.
 * entry[Composition].resource only EctdComposition32P70
 * entry[MedicinalProductDefinition].fullUrl MS
 * entry[MedicinalProductDefinition].resource MS
-* entry[MedicinalProductDefinition].resource only pqcmc-druproduct-container-closure
+* entry[MedicinalProductDefinition].resource only pqcmc-drugproduct-container-closure
 * entry[Organization].fullUrl MS
 * entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
@@ -503,18 +503,18 @@ Description: "The fields needed to represent the Quality Specifications to be in
 * section[DrugProduct] ^definition = "Product Specification to be included under the 3.2.P.5.1 eCTD heading."
 * section[DrugProduct].code = pqcmc-comp-section-types#32P51 "Product Specification"
 * section[DrugProduct].title 1..1 MS
-* section[DrugProduct].entry 2..2 MS
-* section[DrugProduct].entry only Reference(QualitySpecification or RoutineDrugProduct)
+* section[DrugProduct].entry 1..1 MS
+* section[DrugProduct].entry only Reference(QualitySpecification)
 * section[Api] ^definition = "Drug Substance Specification to be included under the 3.2.S.4.1 eCTD heading."
 * section[Api].code = pqcmc-comp-section-types#32S41 "Substance Specification"
 * section[Api].title 1..1 MS
-* section[Api].entry 2..2 MS
-* section[Api].entry only Reference(QualitySpecification or RoutineSubstanceDefinition)
+* section[Api].entry 1..1 MS
+* section[Api].entry only Reference(QualitySpecification)
 * section[Excipient] ^definition = "Excipient Specification to be included under the 3.2.P.4.1 eCTD heading."
 * section[Excipient].code = pqcmc-comp-section-types#32P41 "Excipients Specification"
 * section[Excipient].title 1..1 MS
-* section[Excipient].entry 2..2 MS
-* section[Excipient].entry only Reference(QualitySpecification or ExcipientRaw)
+* section[Excipient].entry 1..1 MS
+* section[Excipient].entry only Reference(QualitySpecification)
 // need check that Specification type in instance matches the seciton selected.
 
 Profile: EctdCompositionSP7383

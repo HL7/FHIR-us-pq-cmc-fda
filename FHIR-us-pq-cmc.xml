@@ -4,9 +4,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="DocumentReference/6c65c265-e8e3-4934-8120-993173208ad8" key="DocumentReference-6c65c265-e8e3-4934-8120-993173208ad8" name="6c65c265-e8e3-4934-8120-993173208ad8"/>
 <artifact id="StructureDefinition/pq-additional-info-extension" key="StructureDefinition-pq-additional-info-extension" name="Aditional Information"/>
-<artifact id="SubstanceDefinition/7cdbd2af-235c-40e2-934e-9e60598a4156" key="SubstanceDefinition-7cdbd2af-235c-40e2-934e-9e60598a4156" name="Alternate structure present in the drug substance"/>
 <artifact id="StructureDefinition/cmc-document-reference" key="StructureDefinition-cmc-document-reference" name="Base64DocumentReference"/>
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
@@ -34,7 +32,9 @@
 <artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code system PQCMC Comp Section Types"/>
 <artifact id="StructureDefinition/pqcmc-component-substance" key="StructureDefinition-pqcmc-component-substance" name="Component Substance"/>
 <artifact id="ValueSet/pqcmc-conformance-to-criteria-terminology" key="ValueSet-pqcmc-conformance-to-criteria-terminology" name="Conformance to Criteria Terminology"/>
+<artifact id="StructureDefinition/pq-container-closure-description-extension" key="StructureDefinition-pq-container-closure-description-extension" name="Container Closure"/>
 <artifact id="StructureDefinition/pq-container-closure-extension" key="StructureDefinition-pq-container-closure-extension" name="Container Closure"/>
+<artifact id="StructureDefinition/pq-container-closure-depiction-extension" key="StructureDefinition-pq-container-closure-depiction-extension" name="Container Closure Depiction"/>
 <artifact id="ValueSet/pqcmc-container-orientation-terminology" key="ValueSet-pqcmc-container-orientation-terminology" name="Container Orientation Terminology"/>
 <artifact id="ValueSet/pqcmc-container-type-terminology" key="ValueSet-pqcmc-container-type-terminology" name="Container Type Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drug-produc" key="StructureDefinition-pqcmc-drug-produc" name="Drug Product"/>
@@ -42,7 +42,7 @@
 <artifact id="StructureDefinition/pqcmc-dp-ingredient" key="StructureDefinition-pqcmc-dp-ingredient" name="Drug Product Batch Formula Ingredient"/>
 <artifact id="StructureDefinition/pqcmc-component" key="StructureDefinition-pqcmc-component" name="Drug Product Component"/>
 <artifact id="ValueSet/pqcmc-drug-product-component-function-category-terminology" key="ValueSet-pqcmc-drug-product-component-function-category-terminology" name="Drug Product Component Function Category Terminology"/>
-<artifact id="StructureDefinition/pqcmc-druproduct-container-closure" key="StructureDefinition-pqcmc-druproduct-container-closure" name="Drug Product Container Closure"/>
+<artifact id="StructureDefinition/pqcmc-drugproduct-container-closure" key="StructureDefinition-pqcmc-drugproduct-container-closure" name="Drug Product Container Closure"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-description" key="StructureDefinition-pqcmc-drug-product-description" name="Drug Product Description"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-with-impurities" key="StructureDefinition-pqcmc-drug-product-with-impurities" name="Drug Product Impurities"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-instance" key="StructureDefinition-pqcmc-drug-product-instance" name="Drug Product Manufactured Instance"/>
@@ -55,11 +55,9 @@
 <artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-molecular-structure" key="StructureDefinition-pqcmc-drug-substance-molecular-structure" name="Drug Substance Molecular Structure"/>
 <artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
-<artifact id="MedicinalProductDefinition/8af426fd-5cea-4908-8dc5-b73f70b0e89f" key="MedicinalProductDefinition-8af426fd-5cea-4908-8dc5-b73f70b0e89f" name="Example Container Closure System"/>
 <artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
 <artifact id="ValueSet/pqcmc-expiration-date-classification-terminology" key="ValueSet-pqcmc-expiration-date-classification-terminology" name="Expiration Date Classification Terminology"/>
-<artifact id="Bundle/692a0fa0-cd2c-4ad8-bd6b-7879326103f3" key="Bundle-692a0fa0-cd2c-4ad8-bd6b-7879326103f3" name="FHIR Document example of 32S10"/>
 <artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Codes"/>
 <artifact id="ValueSet/pqcmc-impurity-classification-terminology" key="ValueSet-pqcmc-impurity-classification-terminology" name="Impurity Classification Terminology"/>
 <artifact id="ValueSet/pqcmc-impurity-classification-category-terminology" key="ValueSet-pqcmc-impurity-classification-category-terminology" name="Impurity classification Category Terminology"/>

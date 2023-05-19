@@ -43,7 +43,9 @@ Severity: #error
 
 Invariant: cmc-representation-or-document
 Description: "A structure has either a representation or document and supporting types."
-Expression: "structure.representation.document.resolve().content.attachment.data  xor structure.representation.representation.exists() and structure.representation.type.coding exists()"Severity: #error
+Expression: "structure.representation.document.resolve().content.attachment.data xor (structure.representation.representation.exists() 
+and structure.representation.type.coding.exists())"
+Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."

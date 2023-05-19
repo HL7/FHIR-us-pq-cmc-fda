@@ -2,7 +2,7 @@ Extension: ProtocolExtension
 Id: pq-protocol-extension
 Title: "Study Protocol"
 Description: """Study protocol identification"""
-* ^context[+].type = #extension
+* ^context[+].type = #element
 * ^context[=].expression = "ResearchStudy"
 * extension contains
     protocolIdentifier 1..1 MS and
@@ -19,7 +19,7 @@ Extension: PullIntervalExtension
 Id: pq-timePoint-extension
 Title: "Study Interval"
 Description: "Contains elements related to the intervals of the stability study."
-* ^context[+].type = #extension
+* ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 * extension contains
     timePoint 1..1 MS and

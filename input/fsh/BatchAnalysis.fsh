@@ -3,7 +3,7 @@ Id: pq-quality-specification-extension
 Title: "Quality Specification Reference"	
 Description: "The product specification used in the batch release or stability testing."	
 * . ^short = "Specification and Specification Version"	
-* ^context[+].type = #extension
+* ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 
 * extension contains	

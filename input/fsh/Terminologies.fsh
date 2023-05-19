@@ -24,6 +24,7 @@ ValueSet: CmcProductNameTypesVS
 Id: cmc-product-name-types-vs
 Title: "Product name types Value Set" 
 Description: "Local value set of all codes in Code system."
+
 * ^experimental = true
 
 * include codes from system ProductNameTypes
@@ -161,8 +162,8 @@ ValueSet: PqcmcTestCategoryTerminology
 Id: pqcmc-test-category-terminology
 Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
 
+* ^experimental = true
 * $NCIT#TC1 "Assay"
 * $NCIT#TC3 "Container Closure Integrity"
 * $NCIT#TC4 "Uniformity"
@@ -216,6 +217,7 @@ ValueSet: PqcmcTestSubCategoryTerminology
 Id: pqcmc-test-subcategory-terminology
 Title: "Test Sub-Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test sub-categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 
 * $NCIT#SUBC2 "active ingredient"
@@ -276,8 +278,8 @@ ValueSet: PqcmcNamePartTerminology
 Id: pqcmc-name-part-terminology
 Title: "Name Part Terminology"
 Description: "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
 
+* ^experimental = true
 * $NamePartType#CON "container name"
 * $NamePartType#DEV "device name"
 * $NamePartType#FLAV "FlavorName"
@@ -306,6 +308,7 @@ ValueSet: PqcmcStorageConditionCategoryTerminology
 Id: pqcmc-storage-condition-category-terminology
 Title: "Storage Condition Category Terminology"
 Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
+
 * ^experimental = true
 * include codes from system PqcmcStorageConditionCategoryCodes
 
@@ -313,6 +316,7 @@ ValueSet: PqcmcProductPartTypeVS
 Id: pqcmc-product-part-type-vs
 Title: "Product Part Type Value Set" 
 Description: "TBD after NCIt codes are added for Product Part Type"
+
 * ^experimental = true
 * include codes from system pqcmc-product-part-type
 
@@ -320,6 +324,7 @@ ValueSet: PqcmcProductPartIngredientPhysicalLocationVS
 Id: pqcmc-product-part-ingredient-physical-location-vs
 Title: "Product Part Ingredient Physical Location value set"
 Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
+
 * ^experimental = true
 * include codes from system pqcmc-product-part-ingredient-physical-location
 
@@ -327,6 +332,7 @@ ValueSet: PqcmcReleaseProfileVS
 Id: pqcmc-release-profile-vs
 Title: "Release Profile value set" 
 Description: "TBD after NCIt codes are added for Release Profile"
+
 * ^experimental = true
 * include codes from system pqcmc-release-profile
 
@@ -334,6 +340,7 @@ ValueSet: PqcmcReleaseMechanismVS
 Id: pqcmc-release-mechanism-vs
 Title: "Release Mechanism value set" 
 Description: "TBD after NCIt codes are added for Release Mechanism"
+
 * ^experimental = true
 * include codes from system pqcmc-release-mechanism
 
@@ -418,6 +425,7 @@ ValueSet: PqcmcCapsuleClassificationCategoryVS
 Id: capsule-classification-category-vs
 Title: "Capsule Classification Category Value Set" 
 Description: "TBD after NCIt codes are added for Capsule Classification Category"
+
 * ^experimental = true
 * include codes from system PqcmcCapsuleClassificationCategory
 
@@ -454,6 +462,7 @@ ValueSet: EVMPDSubstanceClassification
 Id: evmpd-substance-classification
 Title: "EVMPD Substance Classification"
 Description: "EudraVigilance eXtended Medicinal Product Dictionary (XEVMPD) substance classes"
+
 * ^experimental = true
 * $EMAIDMP#1 "Chemical"
 * $EMAIDMP#17 "Mixture"
@@ -473,6 +482,7 @@ ValueSet: PqcmcStabilityStudyReasonTerminology
 Id: pqcmc-stability-study-reason-terminology
 Title: "Stability Study Reason Terminology"
 Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C115123 "Abbreviated New Animal Drug Application"
 * $NCIT#C73113 "Abbreviated New Drug Application"
@@ -495,6 +505,7 @@ ValueSet: PqcmcIntervalDescriptionCodeTerminology
 Id: pqcmc-interval-description-code-terminology
 Title: "Interval Description Code Terminology"
 Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C96154 "Ambient Delayed Testing"
 * $NCIT#C96151 "Delayed Testing"
@@ -506,6 +517,7 @@ ValueSet: PqcmcStudyTypeTerminology
 Id: pqcmc-study-type-terminology
 Title: "Study Type Terminology"
 Description: "Terminology used to qualify the information pertaining to study types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134028 "Complex"
 * $NCIT#C134027 "Cycled-Simple"
@@ -516,6 +528,7 @@ ValueSet: PqcmcExpirationDateClassificationTerminology
 Id: pqcmc-expiration-date-classification-terminology
 Title: "Expiration Date Classification Terminology"
 Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C185182 "Approved"
 * $NCIT#C48660 "Not Applicable"
@@ -525,6 +538,7 @@ ValueSet: PqcmcRetestDateClassificationTerminology
 Id: pqcmc-retest-date-classification-terminology
 Title: "Retest Date Classification Terminology"
 Description: "Terminology used to qualify the information pertaining to retest date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C185186 "Adequate"
 * $NCIT#C48660 "Not Applicable"
@@ -565,6 +579,7 @@ ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
 Title: "eCTD sections Value Set" 
 Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a valueset instead of the code systme."
+
 * ^experimental = true
 * include codes from system PqcmcCompSectionTypes
 
@@ -646,6 +661,7 @@ ValueSet: PqcmcBatchUtilizationTerminology
 Id: pqcmc-batch-utilization-terminology
 Title: "Batch utilization Terminology"
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C133994 "Bioequivalence"
 * $NCIT#C133992 "Clinical"
@@ -665,6 +681,7 @@ ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
 Id: pqcmc-chemical-structure-datafile-type-terminology
 Title: "Chemical Structure Data File Type Terminology"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C54683 "InChI File (small molecule)"
 * $NCIT#C133997 "mmCIF (large molecules)"
@@ -678,35 +695,36 @@ ValueSet: PqcmcClosureTypeTerminology
 Id: pqcmc-closure-type-terminology
 Title: "Closure Type Terminology"
 Description: "Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
-* $NCIT#C96113 "Childresistant, Metal"
-* $NCIT#C96114 "Childresistant, Plastic"
+* $NCIT#C96113 "Child-resistant, Metal"
+* $NCIT#C96114 "Child-resistant, Plastic"
 * $NCIT#C96115 "Continuous Thread, Metal"
 * $NCIT#C96116 "Continuous Thread, Plastic"
+* $NCIT#C96117 "Tamper-evident, Metal"
+* $NCIT#C96118 "Tamper-evident, Plastic"
+* $NCIT#C96119 "Vacuum, Metal"
+* $NCIT#C96120 "Tamper-evident, Composite"
+* $NCIT#C96121 "Vacuum, Plastic"
+* $NCIT#C96122 "Vacuum, Composite"
+* $NCIT#C96123 "Press-on/twist-off, Metal"
+* $NCIT#C96124 "Press-on, Composite"
 * $NCIT#C96125 "Crown, Metal"
-* $NCIT#C96128 "FlipTop (Dispensing), Plastic"
+* $NCIT#C96126 "Lug, Metal"
+* $NCIT#C96127 "Roll-on, Metal"
+* $NCIT#C96128 "Flip-Top (Dispensing), Plastic"
 * $NCIT#C96129 "Hinged (Dispensing), Plastic"
 * $NCIT#C96130 "Linerless, Plastic"
-* $NCIT#C96126 "Lug, Metal"
-* $NCIT#C96124 "Presson, Composite"
-* $NCIT#C96123 "Presson/twistoff, Metal"
 * $NCIT#C96131 "Pump (Dispensing), Plastic"
-* $NCIT#C96132 "Pushpull (Dispensing), Plastic"
-* $NCIT#C96127 "Rollon, Metal"
-* $NCIT#C96133 "Snapon Cap, Plastic"
-* $NCIT#C96134 "Sniptip (Dispensing), Plastic"
-* $NCIT#C96139 "Stopper"
-* $NCIT#C96120 "Tamperevident, Composite"
-* $NCIT#C96117 "Tamperevident, Metal"
-* $NCIT#C96118 "Tamperevident, Plastic"
-* $NCIT#C96140 "Tie"
-* $NCIT#C96135 "Toggleswing (Dispensing), Plastic"
+* $NCIT#C96132 "Push-pull (Dispensing), Plastic"
+* $NCIT#C96133 "Snap-on Cap, Plastic"
+* $NCIT#C96134 "Snip-tip (Dispensing), Plastic"
+* $NCIT#C96135 "Toggle-swing (Dispensing), Plastic"
 * $NCIT#C96136 "Trigger Sprayer (Dispensing), Plastic"
 * $NCIT#C96137 "Twist Open/Close (Dispensing), Plastic"
-* $NCIT#C96122 "Vacuum, Composite"
-* $NCIT#C96119 "Vacuum, Metal"
-* $NCIT#C96121 "Vacuum, Plastic"
 * $NCIT#C96138 "Valved (Dispensing), Plastic"
+* $NCIT#C96139 "Stopper"
+* $NCIT#C96140 "Tie"
 
 ValueSet: PqcmcConformanceCriteriaTerminology
 Id: pqcmc-conformance-to-criteria-terminology
@@ -720,6 +738,7 @@ ValueSet: PqcmcContainerOrientationTerminology
 Id: pqcmc-container-orientation-terminology
 Title: "Container Orientation Terminology"
 Description: "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C25241 "Horizontal"
 * $NCIT#C133999 "Inverted"
@@ -731,6 +750,7 @@ ValueSet: PqcmcContainerTypeTerminology
 Id: pqcmc-container-type-terminology
 Title: "Container Type Terminology"
 Description: "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C43165 "AMPULE"
 * $NCIT#C43166 "APPLICATOR"
@@ -810,6 +830,7 @@ ValueSet: PqcmcDrugProductComponentFunctionCategoryTerminology
 Id: pqcmc-drug-product-component-function-category-terminology
 Title: "Drug Product Component Function Category Terminology"
 Description: "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C82533 "Active Ingredient"
 * $NCIT#C2140 "Adjuvant"
@@ -826,6 +847,7 @@ ValueSet: PqcmcExcipientFunctionTerminology
 Id: pqcmc-excipient-function-terminology
 Title: "Excipient Function Terminology"
 Description: "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C176637 "Absorption modifier"
 * $NCIT#C89528 "Adhesive"
@@ -904,6 +926,7 @@ ValueSet: PqcmcInterpretationCodeTerminology
 Id: pqcmc-interpretation-code-terminology
 Title: "Interpretation Code Terminology"
 Description: "Terminology used to qualify the information pertaining to numeric interpretation codes, Weight Operator codes and Amount Operator code in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
@@ -932,6 +955,7 @@ ValueSet: PqcmcQualityBenchmarkTerminology
 Id: pqcmc-quality-benchmark-terminology
 Title: "Quality Standard Terminology"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C176793 "BP"
 * $NCIT#C134009 "Company Standard"
@@ -943,6 +967,7 @@ ValueSet: PqcmcSourceTypeTerminology
 Id: pqcmc-source-type-terminology
 Title: "Source Type Terminology"
 Description: "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C14182 "Animal"
 * $NCIT#C18634 "Animalderived indirectly"
@@ -956,6 +981,7 @@ ValueSet: PqcmcSpecificationStatusTerminology
 Id: pqcmc-specification-status-terminology
 Title: "Specification Status Terminology"
 Description: "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C25425 "Approved"
 * $NCIT#C48660 "Not Applicable"
@@ -967,6 +993,7 @@ ValueSet: PqcmcSpecificationTypeTerminology
 Id: pqcmc-specification-type-terminology
 Title: "Specification Type Terminology"
 Description: "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134021 "Drug Product"
 * $NCIT#C134022 "Drug Substance"
@@ -976,6 +1003,7 @@ ValueSet: PqcmcSponsorIdentifierTypeTerminology
 Id: pqcmc-sponsor-identifier-type-terminology
 Title: "Sponsor Identifier Type Terminology"
 Description: "Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
@@ -986,6 +1014,7 @@ ValueSet: PqcmcStorageConditionsTerminology
 Id: pqcmc-storage-conditions-terminology
 Title: "Storage Conditions Terminology"
 Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C133936 "20 +/ 5 degrees C"
 * $NCIT#C134018 "25 +/ 2 degrees C/40% +/ 5%RH"
@@ -1002,6 +1031,7 @@ ValueSet: PqcmcStrengthOperatorTerminology
 Id: pqcmc-strength-operator-terminology
 Title: "Strength Operator Terminology"
 Description: "Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
@@ -1014,6 +1044,7 @@ ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
 Title: "Strength Type Terminology"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C45420 "Activity"
 * $NCIT#C168628 "Mass"
@@ -1022,6 +1053,7 @@ ValueSet: PqcmcTestMethodOriginTerminology
 Id: pqcmc-test-method-origin-terminology
 Title: "Test Method Origin Terminology"
 Description: "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C96164 "CFR"
 * $NCIT#C96102 "Compendial"
@@ -1031,6 +1063,7 @@ ValueSet: PqcmcTestUsageTerminology
 Id: pqcmc-test-usage-terminology
 Title: "Test Usage Terminology"
 Description: "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134029 "Release"
 * $NCIT#C134030 "Stability"
@@ -1039,6 +1072,7 @@ ValueSet: PqcmcTestingSiteUniqueIdentifierTypeTerminology
 Id: pqcmc-testing-site-unique-identifier-type-terminology
 Title: "Testing Site Unique Identifier Type Terminology"
 Description: "Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
@@ -1049,6 +1083,7 @@ ValueSet: SplPharmaceuticalDosageFormTerminology
 Id: spl-pharmaceutical-dosage-form-terminology
 Title: "Pharmaceutical Dosage Form Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."
+
 * ^experimental = true
 * $NCIT#C100103 "CELLULAR SHEET"
 * $NCIT#C113106 "INJECTABLE FOAM"
@@ -1223,6 +1258,7 @@ Id: pqcmc-units-of-measure-terminology
 Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
 Note: Inlcudes SPL Unit of Presentation Terminology"
+
 * ^experimental = true
 
 * $NCIT#C75765 "[arb'U]"
@@ -1302,6 +1338,7 @@ ValueSet: SplDrugRouteofAdministrationTerminology
 Id: spl-drug-route-of-administration-terminology
 Title: "Drug Route Of Administration Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product route of administration in the framework of the Structured Product Labeling documents."
+
 * ^experimental = true
 * $NCIT#C132737 "Intracanalicular"
 * $NCIT#C28161 "INTRAMUSCULAR"
@@ -1432,6 +1469,7 @@ ValueSet: GENCcountryCodes
 Id: genc-country-codes
 Title: "GENC Country Codes"
 Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
+
 * ^experimental = true
 * $GENC#AFG "AFGHANISTAN"
 * $GENC#XQZ "AKROTIRI"
