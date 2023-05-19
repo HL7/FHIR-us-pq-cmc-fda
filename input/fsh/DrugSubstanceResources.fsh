@@ -154,7 +154,7 @@ It is accessible at https://www.uniprot.org/
 //BR: isbt Applicable to blood products.
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.code"
+* name ^slicing.discriminator.path = "type.coding.code"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -346,7 +346,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.code"
+* name ^slicing.discriminator.path = "type.coding.code"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -474,7 +474,7 @@ It is accessible at https://www.uniprot.org/
 * name ^definition = "Any ingredient intended for use in the manufacture of a drug product, including those that may not appear in such drug product. [Source: (21 CFR 210.3 (b) (3)) PAC-ATLS 1998]"
 
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.code"
+* name ^slicing.discriminator.path = "type..code"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
@@ -880,7 +880,7 @@ Examples: USP/NF, EP, Company Standard
 * name ^definition = "Any ingredient intended for use in the manufacture of a drug product, including those that may not appear in such drug product. [Source: (21 CFR 210.3 (b) (3)) PAC-ATLS 1998]"
 
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.code"
+* name ^slicing.discriminator.path = "type.coding.code"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
@@ -995,7 +995,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.code"
+* name ^slicing.discriminator.path = "type.coding.code"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -1185,7 +1185,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.code"
+* name ^slicing.discriminator.path = "type.coding.code"
 * name ^slicing.rules = #open
 * name contains
   sys 1..1 MS and
