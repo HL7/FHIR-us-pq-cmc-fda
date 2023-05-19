@@ -860,6 +860,7 @@ SME comment -- this is the marketed dosage form.
 * name 1..2 MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
+* name.type from ProductNameTypes
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
