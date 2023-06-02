@@ -1,6 +1,13 @@
 @startuml legend
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "Bundle" as NODES {
 node "Name of Profile" as Nameprofile {
        object "**Parent:** Name of Resource or 'Profile' name if parent is a profile" as objcs {
@@ -19,7 +26,9 @@ node "Name of Profile" as Nameprofile {
     }
 } 
   
-  node "Name of Profile 2" as NN { 
+diamond CH 
+
+ node "Name of Profile 2" as NN { 
       object "**Parent:** a Resource" as obj3 {
         **ValueSets:**
           Terminology 1
@@ -44,8 +53,6 @@ node "Name of profile.  All eCTD bundles have a composition profile" as N1 {
      
 }
 
-diamond CH 
-
 node "Name of Profile 3" as NN3 { 
       object "**Parent:** a Resource" as obj33 {
         **ValueSets:**
@@ -55,10 +62,10 @@ node "Name of Profile 3" as NN3 {
 }
 }
 
-N1 --> NSO
-NN --> CH : A profile can have a choice of reference profiles
-CH --> Nameprofile
-CH --> NN3
-N1 --> NN :  Relationship between profiles.  There can be many profiles and relationships between them.
+N1 -[#darkred]-> NSO
+NN -[#darkred]-> CH : A profile can have a choice of reference profiles
+CH -[#green]-> Nameprofile
+CH -[#green]-> NN3
+N1 -[#darkred]-> NN :  Relationship between profiles.  There can be many profiles and relationships between them.
 }
 @enduml

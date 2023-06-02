@@ -1,6 +1,13 @@
 @startuml BatchForm
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
 
    object "**Bundle Reference:**" as objbun {
@@ -78,16 +85,16 @@ node "BatchFormula" as NN {
         pq-product-batch-ingredient-extension
 }
 
- obj3 <|-- objExs2     
+ obj3 *-- objExs2     
 }
 
-NN --> NMFG
-NN --> NNgred
-NN2 --> NN
-N1 --> NN2
-N1 --> NSO        
-NNS --> NMFG
-NNgred --> NNS
+NN -[#darkred]-> NMFG
+NN -[#darkred]-> NNgred
+NN2 -[#darkred]-> NN
+N1 -[#darkred]-> NN2
+N1 -[#darkred]-> NSO        
+NNS -[#darkred]-> NMFG
+NNgred -[#darkred]-> NNS
 
 }
 @enduml

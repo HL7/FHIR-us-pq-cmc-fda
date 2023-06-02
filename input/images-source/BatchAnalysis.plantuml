@@ -1,17 +1,24 @@
 @startuml BatchAnalysis
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
  
    object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-sp4151.html]]
+              [[Structudarkredefinition-cmc-ectd-document-sp4151.html]]
     }       
 
 
 node "DrugProductBatch" as NN { 
       object "**Parent:** Medication" as obj3 {
         **Reference:**
-      [[StructureDefinition-pqcmc-drug-product-instance.html]]
+      [[Structudarkredefinition-pqcmc-drug-product-instance.html]]
         **ValueSets:**
         Drug Route Of Administration Terminology
         Pharmaceutical Dosage Form Terminology
@@ -41,7 +48,7 @@ objExsBatch *-- obj3
   node "BatchAnalysis" as N2 { 
       object "**Parent:** DiagnosticReport" as obj2 {
         **Reference:**
-      [[StructureDefinition-pqcmc-batch-analysis.html]]
+      [[Structudarkredefinition-pqcmc-batch-analysis.html]]
     }
         object "**Extensions**" as objQSEx {
         pq-quality-specification-extension
@@ -52,7 +59,7 @@ objExsBatch *-- obj3
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
        **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
+      [[Structudarkredefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Manufacturing Site Unique Identifier Type
 	    GENC Country Codes
@@ -61,7 +68,7 @@ node "MfgTestSiteOrganization" as NMFG {
 node "DrugSubstanceBatch" as NNS { 
       object "**Parent:** Substance" as obj4 {
         **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
+      [[Structudarkredefinition-pqcmc-drug-substance-batch.html]]
                 **ValueSets:**
                 Batch utilization Terminology
                 Units Of Measure Terminology
@@ -88,7 +95,7 @@ node "DrugSubstanceBatch" as NNS {
 node "ResultObservation" as NNOBS { 
       object "**Parent:** Observation" as observ3 {
         **Reference:**
-      [[StructureDefinition-pq-result-observation.html]]
+      [[Structudarkredefinition-pq-result-observation.html]]
         **ValueSets:**
         Conformance Criteria Terminology
         Units Of Measure Terminology    
@@ -104,7 +111,7 @@ node "ResultObservation" as NNOBS {
 node "MultipleReplicatesResultObservation" as NNstage { 
       object "**Parent:** Observation" as observS {
         **Reference:**
-      [[StructureDefinition-pq-additional-stage-result-observation.html]]
+      [[Structudarkredefinition-pq-additional-stage-result-observation.html]]
         **ValueSets:**
  PqcmcConformanceCriteriaTerminology
  PqcmcUnitsMeasureTerminology
@@ -120,7 +127,7 @@ node "MultipleReplicatesResultObservation" as NNstage {
 node "EctdCompositionSP4151" as N1 { 
       object "**Parent:** Composition" as obj1 {
         **Reference:**
-      [[StructureDefinition-ectd-composition-sp4454.html]]
+      [[Structudarkredefinition-ectd-composition-sp4454.html]]
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
@@ -128,27 +135,27 @@ node "EctdCompositionSP4151" as N1 {
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
+      [[Structudarkredefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
     }
 }
  diamond CH
 
-N1 --> CH
-N1 --> N2
-N1 --> NSO
-CH --> NNS
-CH --> NN
-CH --> NNS
-NNS --> NMFG
-NN --> NMFG
-CH --> NN
-N2 --> CH
-N2 --> NMFG
-N2 --> NNOBS
-NNOBS --> NMFG
-NNOBS --> NNstage
-NNstage --> NMFG
+N1 -[#darkred]-> CH
+N1 -[#darkred]-> N2
+N1 -[#darkred]-> NSO
+CH -[#green]-> NNS
+CH -[#green]-> NN
+CH -[#green]-> NNS
+NNS -[#darkred]-> NMFG
+NN -[#darkred]-> NMFG
+CH -[#green]-> NN
+N2 -[#darkred]-> CH
+N2 -[#darkred]-> NMFG
+N2 -[#darkred]-> NNOBS
+NNOBS -[#darkred]-> NMFG
+NNOBS -[#darkred]-> NNstage
+NNstage -[#darkred]-> NMFG
 }
 @enduml

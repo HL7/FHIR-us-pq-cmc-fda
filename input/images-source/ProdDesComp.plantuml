@@ -1,6 +1,13 @@
 @startuml ProdDesComp
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
 object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-32p10.html]]
@@ -33,7 +40,7 @@ node "DrugProductContainerClosure" as N21 {
     object "**Extensions**" as objEx {
         mdpcontainerClosure
     }
-    obj22 <|-- objEx
+    obj22 *-- objEx
 }
 
 node "SponsorOrganization" as NSO { 
@@ -80,7 +87,7 @@ node "DrugProductComponent" as NN {
       object "**Extensions**" as objExs {
         Additional-info-extension
     }
-    obj3 <|-- objExs
+    obj3 *-- objExs
 }
 
 node "ComponentSubstance" as NCS { 
@@ -103,12 +110,12 @@ node "Base64DocumentReference" as NB64 {
 
 
 
-N1 --> N2
-N1 --> MID
-N1 --> NSO
-N1 --> N21
-MID --> NN
-NCS --> NMFG
-NN --> NCS
-NCS --> NB64
+N1 -[#darkred]-> N2
+N1 -[#darkred]-> MID
+N1 -[#darkred]-> NSO
+N1 -[#darkred]-> N21
+MID -[#darkred]-> NN
+NCS -[#darkred]-> NMFG
+NN -[#darkred]-> NCS
+NCS -[#darkred]-> NB64
 @enduml

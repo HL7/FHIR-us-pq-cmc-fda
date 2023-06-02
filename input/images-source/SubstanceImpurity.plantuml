@@ -1,6 +1,13 @@
 @startuml SubstanceImpurity
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
 object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-32s30.html]]
@@ -46,9 +53,9 @@ node "Base64DocumentReference" as NB64 {
       [[StructureDefinition-cmc-document-reference.html]] 
     }   
 }
-N1 --> NSO   
-NN --> N6
-N1 --> NN 
-N6 --> obj64
+N1 -[#darkred]-> NSO   
+NN -[#darkred]-> N6
+N1 -[#darkred]-> NN 
+N6 -[#darkred]-> NB64
 }
 @enduml
