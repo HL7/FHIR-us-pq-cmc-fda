@@ -95,8 +95,8 @@ Note: This value should be unique across all specifications for a given material
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
 * status MS
-* subjectReference 1..1 MS
-* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
+//* subject 1..1 MS
+//* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
@@ -136,6 +136,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
 * goal.target.measure MS 
 * goal.target.measure.text 1..1 MS
+* goal.target.detail[x] MS
 * goal.target.detail[x] only Quantity or Range  or string or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "Acceptance Criteria (Numeric)"
@@ -181,6 +182,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
 * goal.target.detailInteger.value 1..1 MS
+* goal.target.due 0..0
 * action MS
 * action ^short = "Test or Stage"
 * action.extension contains pq-order-extension named testOrder 1..1 MS  

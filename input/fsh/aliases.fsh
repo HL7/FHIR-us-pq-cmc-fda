@@ -27,3 +27,4 @@ Alias: $BATCHFORMPROP = http://hl7.org/fhir/us/pq-cmc/CodeSystem/batch-formula-p
 Alias: $CAPCLASS = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-capsule-classification-category
 Alias: $INGREDNAMETYPE = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-ingredient-name-type
 Alias: $PRODCHARS = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-product-characteristic
+Alias: $DOCREF =http://hl7.org/fhir/document-reference-status 

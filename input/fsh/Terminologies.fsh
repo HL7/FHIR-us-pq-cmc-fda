@@ -10,6 +10,7 @@ Description: "Batch Formula Property Types"
 * #BatchUtil "Batch Utilization"
 * #info "Product Part Additional Information"
 
+
 CodeSystem: ProductNameTypes
 Id: pqcmc-product-name-types
 Title: "Product Name Types Code System"
@@ -429,9 +430,9 @@ Description: "TBD after NCIt codes are added for Capsule Classification Category
 * ^experimental = true
 * include codes from system PqcmcCapsuleClassificationCategory
 
-CodeSystem: PqcmcProductIngredientNameType
-Id: pqcmc-product-ingredient-name-type
-Title: "Product Ingredient Name Type" 
+CodeSystem: PqcmcSubstanceNameType
+Id: pqcmc-substance-name-type
+Title: "Substance Name Type"
 Description: "Waiting for NCIt codes are added for Product Ingredient Name Type"
 * ^caseSensitive = true
 * ^experimental = true
@@ -935,21 +936,6 @@ Description: "Terminology used to qualify the information pertaining to numeric 
 * $NCIT#C61586 "NMT (not more than)"
 * $NCIT#C48660 "Not Applicable"
 
-ValueSet: PqcmcProcessRelatedImpurityCategoryTerminology
-Id: pqcmc-impurity-classification-category-terminology
-Title: "Impurity classification Category Terminology"
-Description: "Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
-* $NCIT#C134001 "Inorganic"
-* $NCIT#C134000 "Organic"
-* $NCIT#C176815 "Residual Solvent"
-
-//ValueSet: PqcmcProductRelatedImpurityCategoryTerminology
-//Id: pqcmc-product-related-impurity-category-terminology
-//Title: "Product Related Impurity Category Terminology"
-//Description: "Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//* $NCIT#C176816 "Degradants"
-//* $NCIT#C176813 "Product Related"
 
 ValueSet: PqcmcQualityBenchmarkTerminology
 Id: pqcmc-quality-benchmark-terminology
