@@ -1,3 +1,21 @@
+CodeSystem: RelationshipTypes
+Id: pqcmc-relationship-types
+Title: "Relationship Types Code System"
+Description: "Designation of relationship for product parts"
+* ^caseSensitive = true
+* ^experimental = true
+
+* #parent "Parent"
+* #child "Child"
+
+ValueSet: CmcRelationshipTypesVS
+Id: cmc-relationship-types-vs
+Title: "Relationship types Value Set" 
+Description: "Local value set of all codes in Relationship Types system."
+
+* ^experimental = true
+
+* include codes from system RelationshipTypes
 CodeSystem: BatchFormulaPropertyCodeSystem
 Id: batch-formula-property-cs
 Title: "Batch Formula Property Type"
