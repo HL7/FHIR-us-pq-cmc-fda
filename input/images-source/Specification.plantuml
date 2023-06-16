@@ -13,7 +13,7 @@ object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-SP4151.html]]
     }  
   node "RoutineDrugProduct" as NN { 
-      object "**Parent:** DrugProduct" as obj3 {
+      object "**Parent:** MedicinalProductDefinition" as obj3 {
          **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-product.html]]
         **ValueSets:**

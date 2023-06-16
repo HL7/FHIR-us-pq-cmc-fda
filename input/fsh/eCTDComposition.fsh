@@ -31,33 +31,35 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * entry[MedicinalProductDefinition].fullUrl 1..1
 * entry[MedicinalProductDefinition].resource 1..1
 * entry[MedicinalProductDefinition].resource only pqcmc-drug-product-description
-* entry[MedicinalProductDefinition].resource.meta.profile 1..1 MS
+* entry[MedicinalProductDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-description"
 * entry[MedicinalProductContainer].fullUrl 1..1
 * entry[MedicinalProductContainer].resource 1..1
 * entry[MedicinalProductContainer].resource only pqcmc-drugproduct-container-closure
-* entry[MedicinalProductContainer].resource.meta.profile 1..1 MS
+* entry[MedicinalProductContainer].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drugproduct-container-closure"
 * entry[ManufacturedItemDefinition].fullUrl 1..1
 * entry[ManufacturedItemDefinition].resource 1..1
 * entry[ManufacturedItemDefinition].resource only pqcmc-product-part
-* entry[ManufacturedItemDefinition].resource.meta.profile 1..1 MS
+* entry[ManufacturedItemDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-product-part"
 * entry[Ingredient].fullUrl 1..1
 * entry[Ingredient].resource 1..1
 * entry[Ingredient].resource only pqcmc-component
-* entry[Ingredient].resource.meta.profile 1..1 MS
+* entry[Ingredient].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-component"
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
 * entry[SubstanceDefinition].resource only pqcmc-component-substance
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-component-substance"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 * entry[DocumentReference].fullUrl 1..1
 * entry[DocumentReference].resource 1..1
 * entry[DocumentReference].resource only Base64DocumentReference
-* entry[DocumentReference].resource.meta.profile 1..1 MS
+* entry[DocumentReference].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"
 
 Profile: CMCeCTDDocument32P32
 Parent: Bundle
@@ -90,25 +92,27 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles.
 * entry[MedicinalProductDefinition].fullUrl MS
 * entry[MedicinalProductDefinition].resource MS
 * entry[MedicinalProductDefinition].resource only BatchFormulaMedicinalProduct
-* entry[MedicinalProductDefinition].resource.meta.profile 1..1 MS
+* entry[MedicinalProductDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-formula-product"
 * entry[ManufacturedItemDefinition].fullUrl MS
 * entry[ManufacturedItemDefinition].resource MS
 * entry[ManufacturedItemDefinition].resource only BatchFormula
-* entry[ManufacturedItemDefinition].resource.meta.profile 1..1 MS
+* entry[ManufacturedItemDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-product-batch-formula"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 * entry[Ingredient].fullUrl MS
 * entry[Ingredient].resource MS
 * entry[Ingredient].resource only DrugProductIngredient
-* entry[Ingredient].resource.meta.profile 1..1 MS
+* entry[Ingredient].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
 * entry[SubstanceDefinition].resource only RoutineSubstanceDefinition
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"
 
 Profile: CMCeCTDDocument32S10
 Parent: Bundle
@@ -139,23 +143,23 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * entry[Nomenclature].fullUrl MS
 * entry[Nomenclature].resource MS
 * entry[Nomenclature].resource only DrugSubstanceNomenclature
-* entry[Nomenclature].resource.meta.profile 1..1 MS
+* entry[Nomenclature].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-nomenclature"
 * entry[MolecularStructure].fullUrl MS
 * entry[MolecularStructure].resource MS
 * entry[MolecularStructure].resource only DrugSubstanceMolecularStructure 
-* entry[MolecularStructure].resource.meta.profile 1..1 MS
+* entry[MolecularStructure].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-molecular-structure"
 * entry[Polymorph].fullUrl MS
 * entry[Polymorph].resource MS
 * entry[Polymorph].resource only PolymorphicForm
-* entry[Polymorph].resource.meta.profile 1..1 MS
+* entry[Polymorph].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-polymorphic-form"
 * entry[Organization].fullUrl MS
 * entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
-* entry[Organization].resource.meta.profile 1..1 MS
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[DocumentReference].fullUrl MS
 * entry[DocumentReference].resource MS
 * entry[DocumentReference].resource only Base64DocumentReference
-* entry[DocumentReference].resource.meta.profile 1..1 MS
+* entry[DocumentReference].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"
 
 Profile: CMCeCTDDocument32S30
 Parent: Bundle
@@ -182,19 +186,18 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * entry[Composition].fullUrl MS
 * entry[Composition].resource MS
 * entry[Composition].resource only EctdComposition32S30
-* entry[Composition].resource.meta.profile 1..1 MS
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
 * entry[SubstanceDefinition].resource only DrugSubstance
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance"
 * entry[Organization].fullUrl MS
 * entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
-* entry[Organization].resource.meta.profile 1..1 MS
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[DocumentReference].fullUrl MS
 * entry[DocumentReference].resource MS
 * entry[DocumentReference].resource only Base64DocumentReference
-* entry[DocumentReference].resource.meta.profile 1..1 MS
+* entry[DocumentReference].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"
 
 Profile: CMCeCTDDocument32S23
 Parent: Bundle
@@ -225,17 +228,19 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles.
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
 * entry[SubstanceDefinition].resource only ExcipientRaw
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 * entry[PlanDefinition].fullUrl MS
 * entry[PlanDefinition].resource MS
 * entry[PlanDefinition].resource only QualitySpecification
-* entry[PlanDefinition].resource.meta.profile 1..1 MS
+* entry[PlanDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"
 
 Profile: CMCeCTDDocument32P55
 Parent: Bundle
@@ -268,21 +273,23 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * entry[MedicinalProductDefinition].fullUrl 1..1
 * entry[MedicinalProductDefinition].resource 1..1
 * entry[MedicinalProductDefinition].resource only pqcmc-drug-product-with-impurities
-* entry[MedicinalProductDefinition].resource.meta.profile 1..1 MS
+* entry[MedicinalProductDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-with-impurities"
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
 * entry[SubstanceDefinition].resource only pqcmc-drug-product-substance-impurity
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-substance-impurity"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 * entry[DocumentReference].fullUrl 1..1
 * entry[DocumentReference].resource 1..1
 * entry[DocumentReference].resource only Base64DocumentReference
-* entry[DocumentReference].resource.meta.profile 1..1 MS
+* entry[DocumentReference].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-document-reference"
 
 Profile: CMCeCTDDocument32S60
 Parent: Bundle
@@ -311,11 +318,11 @@ Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles.
 * entry[SubstanceDefinition].fullUrl MS
 * entry[SubstanceDefinition].resource MS
 * entry[SubstanceDefinition].resource only pqcmc-drug-substance-container-closure
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-container-closure"
 * entry[Organization].fullUrl MS
 * entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
-* entry[Organization].resource.meta.profile 1..1 MS
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 
 Profile: CMCeCTDDocument32P70
 Parent: Bundle
@@ -343,11 +350,11 @@ Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles.
 * entry[MedicinalProductDefinition].fullUrl MS
 * entry[MedicinalProductDefinition].resource MS
 * entry[MedicinalProductDefinition].resource only pqcmc-drugproduct-container-closure
-* entry[MedicinalProductDefinition].resource.meta.profile 1..1 MS
+* entry[MedicinalProductDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drugproduct-container-closure"
 * entry[Organization].fullUrl MS
 * entry[Organization].resource MS
 * entry[Organization].resource only cmc-sponsor-organization
-* entry[Organization].resource.meta.profile 1..1 MS
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 
 Profile: CMCeCTDDocumentSP4151
 Parent: Bundle
@@ -380,25 +387,27 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry[PlanDefinition].fullUrl 1..1
 * entry[PlanDefinition].resource 1..1
 * entry[PlanDefinition].resource only pqcmc-quality-specification
-* entry[PlanDefinition].resource.meta.profile 1..1 MS
+* entry[PlanDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"
 * entry[MedicinalProductDefinition].fullUrl 1..1
 * entry[MedicinalProductDefinition].resource 1..1
 * entry[MedicinalProductDefinition].resource only pqcmc-routine-drug-product
-* entry[MedicinalProductDefinition].resource.meta.profile 1..1 MS
+* entry[MedicinalProductDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-product"
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
 * entry[SubstanceDefinition].resource only pqcmc-routine-drug-substance
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"
 * entry[Excipient].fullUrl 1..1
 * entry[Excipient].resource 1..1
 * entry[Excipient].resource only pqcmc-excipient
-* entry[Excipient].resource.meta.profile 1..1 MS
+* entry[Excipient].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 
 Profile: CMCeCTDDocumentSP4454
 Parent: Bundle
@@ -420,8 +429,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles
 * entry contains
     Composition 1..1 and
     DiagnosticReport 1..1 and
-    Medication 1..1 and
-    Substance 1..1 and
+    Medication 0..1 and
+    Substance 0..1 and
     Organization 1..1 and
     OrganizationMfg 1..* and
     Observation 1..* and
@@ -432,29 +441,31 @@ Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles
 * entry[DiagnosticReport].fullUrl 1..1
 * entry[DiagnosticReport].resource 1..1
 * entry[DiagnosticReport].resource only pqcmc-batch-analysis
-* entry[DiagnosticReport].resource.meta.profile 1..1 MS
+* entry[DiagnosticReport].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-analysis"
 * entry[Medication].fullUrl 1..1
 * entry[Medication].resource 1..1
 * entry[Medication].resource only pqcmc-drug-product-instance
-* entry[Medication]..resource.meta.profile 1..1 MS
+* entry[Medication].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-instance"
 * entry[Substance].fullUrl 1..1
 * entry[Substance].resource 1..1
 * entry[Substance].resource only pqcmc-drug-substance-batch
-* entry[Substance].resource.meta.profile 1..1 MS
+* entry[Substance].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-batch"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 * entry[Observation].fullUrl 1..1
 * entry[Observation].resource 1..1
 * entry[Observation].resource only pq-result-observation
-* entry[Observation].resource.meta.profile 1..1 MS
+* entry[Observation].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-result-observation"
 * entry[ObservationPlus].fullUrl 1..1
 * entry[ObservationPlus].resource 1..1
 * entry[ObservationPlus].resource only pq-additional-stage-result-observation
-* entry[ObservationPlus].resource.meta.profile 1..1 MS
+* entry[ObservationPlus].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-additional-stage-result-observation"
 
 Profile: CMCeCTDDocumentSP7383
 Parent: Bundle
@@ -490,37 +501,39 @@ Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles
 * entry[ResearchStudy].fullUrl 1..1
 * entry[ResearchStudy].resource 1..1
 * entry[ResearchStudy].resource only pqcmc-stability-study-interval-report
-* entry[ResearchStudy].resource.meta.profile 1..1 MS
+* entry[ResearchStudy].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-stability-study-interval-report"
 * entry[ResearchSubStudy].fullUrl 1..1
 * entry[ResearchSubStudy].resource 1..1
 * entry[ResearchSubStudy].resource only pq-stability-sub-study
-* entry[ResearchSubStudy].resource.meta.profile 1..1 MS
+* entry[ResearchSubStudy].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-stability-sub-study"
 * entry[BatchAnalysis].fullUrl 1..1
 * entry[BatchAnalysis].resource 1..1
 * entry[BatchAnalysis].resource only pqcmc-batch-analysis
-* entry[BatchAnalysis].resource.meta.profile 1..1 MS
+* entry[BatchAnalysis].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-batch-analysis"
 * entry[Medication].fullUrl 1..1
 * entry[Medication].resource 1..1
 * entry[Medication].resource only pqcmc-drug-product-instance
-* entry[Medication].resource.meta.profile 1..1 MS
+* entry[Medication].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-product-instance"
 * entry[Substance].fullUrl 1..1
 * entry[Substance].resource 1..1
 * entry[Substance].resource only pqcmc-drug-substance-batch
-* entry[Substance].resource.meta.profile 1..1 MS
+* entry[Substance].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-drug-substance-batch"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 * entry[Observation].fullUrl 1..1
 * entry[Observation].resource 1..1
 * entry[Observation].resource only pq-result-observation
-* entry[Observation].resource.meta.profile 1..1 MS
+* entry[Observation].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-result-observation"
 * entry[ObservationPlus].fullUrl 1..1
 * entry[ObservationPlus].resource 1..1
 * entry[ObservationPlus].resource only pq-additional-stage-result-observation
-* entry[ObservationPlus].resource.meta.profile 1..1 MS
+* entry[ObservationPlus].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-additional-stage-result-observation"
 
 Profile: CMCeCTDDocumentSP7181
 Parent: Bundle
@@ -552,21 +565,23 @@ Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles
 * entry[PlanDefinition].fullUrl 1..1
 * entry[PlanDefinition].resource 1..1
 * entry[PlanDefinition].resource only pqcmc-stability-summary
-* entry[PlanDefinition].resource.meta.profile 1..1 MS
+* entry[PlanDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-stability-summary"
 * entry[MedicinalProductDefinition].fullUrl 1..1
 * entry[MedicinalProductDefinition].resource 1..1
 * entry[MedicinalProductDefinition].resource only pqcmc-routine-drug-product
-* entry[MedicinalProductDefinition].resource.meta.profile 1..1 MS
+* entry[MedicinalProductDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-product"
 * entry[SubstanceDefinition].fullUrl 1..1
 * entry[SubstanceDefinition].resource 1..1
 * entry[SubstanceDefinition].resource only pqcmc-routine-drug-substance
-* entry[SubstanceDefinition].resource.meta.profile 1..1 MS
+* entry[SubstanceDefinition].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-substance"
 * entry[Organization].fullUrl 1..1
 * entry[Organization].resource 1..1
 * entry[Organization].resource only cmc-sponsor-organization
+* entry[Organization].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-sponsor-organization"
 * entry[OrganizationMfg].fullUrl 1..1
 * entry[OrganizationMfg].resource 1..1
 * entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry[OrganizationMfg].resource.meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/mfg-test-site-organization"
 
 /*Compositions---------------------------------------------------------------------------------------*/
 

@@ -147,10 +147,8 @@ N1 -[#darkred]-> N2
 N1 -[#darkred]-> NSO
 CH -[#green]-> NNS
 CH -[#green]-> NN
-CH -[#green]-> NNS
 NNS -[#darkred]-> NMFG
 NN -[#darkred]-> NMFG
-CH -[#green]-> NN
 N2 -[#darkred]-> CH
 N2 -[#darkred]-> NMFG
 N2 -[#darkred]-> NNOBS

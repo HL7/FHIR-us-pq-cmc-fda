@@ -377,11 +377,48 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
  """
 * structure.representation.document 0..1 MS
 * structure.representation.document only Reference(Base64DocumentReference)
-* name.name MS
-* name.name ^short = "Polymorphic Form Identification"
-* name.name ^definition = """The designation of the polymorphs present in the drug substance. [Source: SME Defined]
+* code 0..1 MS
+* code.code.coding.system = $UNII 
+* code.code.coding ^short = "UNII"
+* code.code.coding ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+Example: 362O9ITL9D
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+"""
+
+* name 1..* MS
+* name ^short = "Polymorphic Form Identification"
+* name ^definition = """The designation of the polymorphs present in the drug substance. [Source: SME Defined]
 Example: Polymorph A
 """
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Slice based on value pattern"
+* name contains
+  gsrs 0..1 MS and
+  comn 0..1 MS and
+  sub 0..1 MS 
+
+* name[gsrs].name 1..1 MS
+* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[gsrs].type 1..1 MS
+* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred" 
+* name[sub].name 1..1 MS
+* name[sub].name ^short = "Generic"
+* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
+Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
+"""
+* name[sub].type 1..1 MS
+* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+
+* name[comn].name 1..1 MS
+* name[comn].name ^short = "Common"
+* name[comn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[comn].type 1..1 MS
+* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 Profile: ComponentSubstance
 Parent: SubstanceDefinition

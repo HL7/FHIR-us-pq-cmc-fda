@@ -44,7 +44,7 @@ node "DrugProductBatch" as NN {
 objExsBatch *-- obj3 
 }
 diamond CH
-diamond CH2
+
 diamond CH3
 
 node "DrugSubstanceBatch" as NNS { 
@@ -199,15 +199,12 @@ node "SponsorOrganization" as NSO {
 
 CH -[#green]-> NN
 CH -[#green]-> NNS
-CH2 -[#green]-> NN
-CH2 -[#green]-> NNS
 CH3 -[#green]-> NN
 CH3 -[#green]-> NNS
 N1 -[#darkred]-> CH
 N1 -[#darkred]-> N2
 N1 -[#darkred]-> NSO
 N2 -[#darkred]-> CH
-N2 -[#darkred]-> CH2
 N2 -[#darkred]-> NMFG
 N2 -[#darkred]-> NNOBS
 Ninterval -[#darkred]-> CH3

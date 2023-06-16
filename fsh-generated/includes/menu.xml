@@ -17,13 +17,29 @@
     <a href="toc.html">Table of Contents</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">eCTD Profiles
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">eCTD Profiles (Stage 1)
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
         <a href="eCTD32P10.html">Product Description and Composition of the Drug Product (3.2.P.1.0)</a>
       </li>
+      <li>
+        <a href="eCTD32S10.html">Substance General Information (3.2.S.1.0)</a>
+      </li>
+      <li>
+        <a href="eCTD32S23.html">Substance Control of Materials (3.2.S.2.3)</a>
+      </li>
+      <li>
+        <a href="eCTDSP4151.html">Specification (3.2.S.4.1, 3.2.P.4.1 &amp; 3.2.P.5.1)</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">eCTD Profiles (Stage 2)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
         <a href="eCTD32P32.html">Product Batch Formula (3.2.P.3.2)</a>
       </li>
@@ -34,19 +50,10 @@
         <a href="eCTD32P70.html">Product Container Closure System (3.2.P.7.0)</a>
       </li>
       <li>
-        <a href="eCTD32S10.html">Substance General Information (3.2.S.1.0)</a>
-      </li>
-      <li>
-        <a href="eCTD32S23.html">Substance Control of Materials (3.2.S.2.3)</a>
-      </li>
-      <li>
         <a href="eCTD32S30.html">Substance Characterization (3.2.S.3.0)</a>
       </li>
       <li>
         <a href="eCTD32S60.html">Substance Container Closure System (3.2.S.6.0)</a>
-      </li>
-      <li>
-        <a href="eCTDSP4151.html">Specification (3.2.S.4.1, 3.2.P.4.1 &amp; 3.2.P.5.1)</a>
       </li>
       <li>
         <a href="eCTDSP4454.html">Batch Analyses (3.2.S.4.4 &amp; 3.2.P.5.4)</a>

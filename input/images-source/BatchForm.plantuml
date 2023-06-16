@@ -64,7 +64,7 @@ node "RoutineSubstanceDefinition" as NNS {
       }  
 }
 node "BatchFormulaMedicinalProduct" as NN2 { 
-      object "**Parent:** DrugProduct" as obj32 {
+      object "**Parent:** MedicinalProductDefinition" as obj32 {
                    **Reference:**
       [[StructureDefinition-pqcmc-batch-formula-product.html]]
           
