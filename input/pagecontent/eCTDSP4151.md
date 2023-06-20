@@ -4,24 +4,19 @@ Specification means the quality standard (i.e., tests, analytical procedures, an
 
 For PQ/CMC effort, a Specification or Quality Specification can be stated for a Drug Product, or an Active Pharmaceutical Ingredient (API) or an Excipient/Raw Material.  A Quality Specification is composed of Tests and Acceptance Criteria.  Certain kinds of quality Tests have Stages, e.g., Dissolution.  The bullets below define how the major domain concepts are related to each other.
 
-         * A Quality Specification has one or more Tests. Each Test has one or more Stages. And each Stage has one or more Acceptance Criteria.
-
-         * A Quality Specification is stated for either a Drug Product or an Active Pharmaceutical
-
-         * Ingredient (API) or an Excipient/Raw Material.
+* A Quality Specification has one or more Tests. Each Test has one or more Stages. And each Stage has one or more Acceptance Criteria.
+* A Quality Specification is stated for either a Drug Product or an Active Pharmaceutical
+* Ingredient (API) or an Excipient/Raw Material.
 
 
 ### Representation in FHIR
 
 The domain concepts of Quality Specification are represented in FHIR in this IG.  Below is a high-level FHIR resource mapping to guide understanding of how the domain concepts are represented in the FHIR Resources.  Detail study of the profile and each of the resources will be needed for developing a deeper understanding of this Quality Specification FHIR Profile. 
 
-         * Specification, Test, Acceptance Criteria –[ PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) Resource
-
-         * Drug Product – Drug Product Profile on[ MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) Resource
-
-         * API –[ SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) Resource
-
-         * Excipient/Raw Material –[ SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) Resource
+* Specification, Test, Acceptance Criteria –[ PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) Resource
+* Drug Product – Drug Product Profile on[ MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) Resource
+* API –[ SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) Resource
+* Excipient/Raw Material –[ SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) Resource
 
 #### eCTD Heading 3.2.S.4.1, 3.2.P.4.1 and 3.2.P.5.1 Profile Map
 <div>{%include Specification.svg%}</div>

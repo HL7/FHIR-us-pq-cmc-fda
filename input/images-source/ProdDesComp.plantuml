@@ -32,7 +32,7 @@ object "**Bundle Reference:**" as objbun {
 node "DrugProductContainerClosure" as N21 { 
       object "**Parent:** MedicinalProductDefinition" as obj22 {
         **Reference:**
-      [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
+      [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
         **ValueSets:**
         Container Type Terminology
         Closure Type Terminology
@@ -107,8 +107,6 @@ node "Base64DocumentReference" as NB64 {
       [[StructureDefinition-cmc-document-reference.html]] 
     }   
 }
-
-
 
 N1 -[#darkred]-> N2
 N1 -[#darkred]-> MID

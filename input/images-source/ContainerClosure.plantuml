@@ -23,7 +23,7 @@ package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
 node "DrugProductContainerClosure" as N21 { 
       object "**Parent:** MedicinalProductDefinition" as obj22 {
            **Reference:**
-      [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
+      [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
         **ValueSets:**
         Container Type Terminology
         Closure Type Terminology

@@ -829,6 +829,24 @@ Description: "Description and coding of the container closure system. Profile of
 * name 1..2 MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
+* name ^slicing.discriminator.type = #value
+* name ^slicing.discriminator.path = "type"
+* name ^slicing.rules = #open
+* name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+* name contains Proprietary 0..1 and NonProprietary 1..1
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
+* name[NonProprietary].part 1..* MS
+* name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
+Note: The minimum is the scientific name.
+"""
+* name[NonProprietary].part.part 1..1 MS
+* name[NonProprietary].part.type 1..1 MS
+* name[NonProprietary].part ^slicing.discriminator.type = #value
+* name[NonProprietary].part ^slicing.discriminator.path = "type"
+* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part.type from PqcmcNamePartTerminology
 
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition

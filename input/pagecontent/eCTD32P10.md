@@ -6,7 +6,7 @@ The information provided should include a narative description the product, its 
 
 For a drug product supplied with reconstitution diluent(s), the information on the diluent(s) should be provided in a separate part “P” section. Accordingly, the information on the diluent(s) should be provided in a separate FHIR bundle file to be included.  
 
-Composition is usually provided as a list of all components of the dosage form, and their amount on a perunit basis (including overages, if any) the function of the components, and a reference to their quality standards (e.g., compendial monographs or manufacturer’s specifications) per M4Q(R1).  Each of these components will be an Ingredient resource conforming to the requirements of the DrugProductCompoent profile. The diagram in section 2.2 illustates the profiles required in this bundle. Section 2.3 provides an example Description and Composition bundle.
+Composition is usually provided as a list of all components of the dosage form, and their amount on a per unit basis (including overages, if any) the function of the components, and a reference to their quality standards (e.g., compendial monographs or manufacturer’s specifications) per M4Q(R1).  Each of these components will be an Ingredient resource conforming to the requirements of the DrugProductCompoent profile. The diagram in section 2.2 illustates the profiles required in this bundle. Section 2.3 provides an example Description and Composition bundle.
 
 Overfill information (Justification for overfill belongs in the  eCTD32P32 FHIR bundle).
 Reference ICH guidances Q6A and Q6B.
