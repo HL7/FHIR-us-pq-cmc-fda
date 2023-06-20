@@ -1,3 +1,21 @@
+CodeSystem: RelationshipTypes
+Id: pqcmc-relationship-types
+Title: "Relationship Types Code System"
+Description: "Designation of relationship for product parts"
+* ^caseSensitive = true
+* ^experimental = true
+
+* #parent "Parent"
+* #child "Child"
+
+ValueSet: CmcRelationshipTypesVS
+Id: cmc-relationship-types-vs
+Title: "Relationship types Value Set" 
+Description: "Local value set of all codes in Relationship Types system."
+
+* ^experimental = true
+
+* include codes from system RelationshipTypes
 CodeSystem: BatchFormulaPropertyCodeSystem
 Id: batch-formula-property-cs
 Title: "Batch Formula Property Type"
@@ -10,263 +28,277 @@ Description: "Batch Formula Property Types"
 * #BatchUtil "Batch Utilization"
 * #info "Product Part Additional Information"
 
-//ValueSet: BatchFormulaPropertyVS
-//Id: batch-formula-property-vs
-//Title: "Batch Formula Property Type Value Set" 
-//Description: "TBD after NCIt codes are added for Batch Formula Property Type"
-//* ^experimental = true
-//* include codes from system BatchFormulaPropertyCodeSystem
 
-CodeSystem: PqcmcTestCategoryCodes
-Id: pqcmc-test-category-codes
-Title: "Hierarchial Test Category Codes" 
-Description: "Waiting for NCIt codes are added this may be deleted"
+CodeSystem: ProductNameTypes
+Id: pqcmc-product-name-types
+Title: "Product Name Types Code System"
+Description: "designation of product name"
 * ^caseSensitive = true
 * ^experimental = true
-* ^hierarchyMeaning = #is-a
 
-* #TC1 "Assay" "Tests which measure the content of the active ingredient in the drug substance or drug product.of a substance. Synonymous with strength or purity which is commonly used of define the content of the active ingredient in a drug product. Note: chiral purity, preservative content, Anti-Oxidant Concentration, Chelate Concentration, isomeric ratio"
-* #TC1 #SBTC2 "active ingredient" "Tests that verify the content and potency of a pharmaceutical substance that is intended effect in the diagnosis, cure, mitigation, treatment, or prevention of disease, or to affect the structure or any function of the body."
-* #TC1 #SBTC3 "amino acid content" "Methodology used to determine the amino acid composition or content of proteins, peptides, and other pharmaceutical preparations"
-* #TC1 #SBTC4 "bioburden" "Test that screens for aerobic mesophilic bacteria and fungi."
-* #TC1 #SBTC5 "counterion content" "Tests that measures the secondardy ion of a drug salt."
-* #TC1 #SBTC6 "excipient" "Testing of the amount of material other than the active or adjuvant."
-* #TC1 #SBTC7 "host cell dna" "Measurement of DNA that comes from cell substrate used to make the viral particles."
-* #TC1 #SBTC8 "percent conjugate" "Test to determine the percentage of total protein that functions in interaction with other (non-polypeptide) chemical groups attached by covalent bonding."
-* #TC1 #SBTC9 "purity" "Testing methods to identify actives and indirectly measure impurities that may be present in a medicine. Examples of analytical procedures for this test subcategory include SDS-page and HPLC."
-* #TC1 #SBTC10 "nucleic acid content" "Tests designed to reveal the presence of a particular nucleic acid from a test sample."
-* #TC1 #SBTC11 "solvate content" "Identifcation of hydrates or solvates by the assay of water of crystallization or solvent found in the crystal."
-* #TC1 #SBTC12 "total protein" "Test to determine total protein concentration in the product"
-* #TC1 #SBTC13 "Cell and Gene therapy product characterization assay" """Tests to determine Cell and Gene therapy product properties.
-Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted molecules, Gene expression, Genetic stability, percent recovery, gene expression, cell surface marker expression, proliferation capacity, total cell number, cell morphology, cell distribution in scaffold, total volume of scaffold, cellular pattern, vector genome concentration, vector infectious titer assay, replication competence assay, DNA homogeneity, transduction efficiency, vector genome concentration, vector infectious titer assay, Replication competence assay [Source: SME Defined]"""
-* #TC3 "Container Closure Integrity" "Tests for the adequacy of pharmaceutical packaging and closures."
-* #TC4 "Uniformity" "Tests to ensure the consistency of the API in the formulation. Test may be done as an IPC, release or stability test."
-* #TC4 #SBTC16 "Uniformity of dosage unit" "Tests of the variability of the dosage unit including dispensed dose."
-* #TC4 #SBTC17 "Uniformity in containers" "Content Uniformity based for multi-use containers, tubes and jars."
-* #TC5 "Deliverable Volume/Fill Volume" "Tests designed to provide assurance that oral liquids will, when transferred from the original container, deliver the volume of dosage form that is declared on the label of the article."
-* #TC6 "Organoleptic" "Evaluation via the senses—including taste, sight, smell, and touch."
-* #TC6 #SBTC20 "Description/Appearance" "Tests using visual inspection to assess the physical state and color of the drug substance or product."
-* #TC6 #SBTC21 "Odor" "Testing via the sense of smell."
-* #TC6 #SBTC22 "Color of solution" "The use of visual perception to indicate of purity and/or a means to identify contamination."
-* #TC6 #SBTC23 "Clarity of Solution" "Measurement of the turbidity of the solution or; Qualitative or quantitative measurement of degree of opalescence of a solution. Instrumental measurement of the light reflected by the solution."
-* #TC7 "Identification" "Tests that establishes the characteristic and uniqueness of the substance of interest and should be able to discriminate between compounds of closely related structures which are likely to be present. [Source: ICH Q6A]"
-* #TC8 "Disintegration" "Test to determine whether tablets capsules disintegrate within the prescribed time when placed in a liquid medium at the experimental conditions."
-* #TC9 "Dissolution" "Test to determine compliance with the requirements of the material of interest dissolving into solution. A dosage unit is defined as 1 tablet or 1 capsule or the amount specified."
-* #TC10 "Droplet Size" "Tests that determine the size of the liquid drop [Source: SME Defined]"
-* #TC11 "Foreign and Particulate Matter" "Tests for injections or infusions to check for insoluble particles to confirm that they are not present in excess of specified levels in the solutions [Source: Adapted from ICH Q4B]."
-* #TC11 #SBTC29 "Metal detection" "Tests for metallic particles to confirm that they are not present in excess of specified levels. [Source: SME Defined]"
-* #TC12 "Loss on Drying" "Analytical procedures to determine the amount of volatile matter of any kind that is driven off under the conditions specified."
-* #TC13 "Microbial Limits" "Tests for the estimation of the number of viable aerobic microorganisms present and for the freedom from designated microbial species in the pharmaceutical articles of all kinds, from raw materials to the finished forms."
-* #TC14 "Osmolality/ Osmolarity" "Osmolality and osmolarity are measurements of the solute concentration of a solution. Osmolality is expressed in terms of the weight of the solvent and osmolarity is expressed in terms of solvent volume. [Source: SME Defined]"
-* #TC15 "Particle Size Distribution" "Analytical procedures that utilize mechanical sieving for deducing the particle-size distribution of a powdered solid."
-* #TC16 "Bulk Density" "Tests that determine the ratio of the mass of an untapped powder sample and its volume including the contribution of the interparticulate void volume."
-* #TC17 "Conductivity" "Electrical conductivity is a measure of the ion-facilitated electron flow through it."
-* #TC18 "Crystallinity" "The detection and/or quantification of the amount of amorphous material within a highly crystalline substance."
-* #TC19 "Friability" "The percent loss of a tablet due to mechanical action that results in fracture or breaking during the test"
-* #TC20 "Hardness" "A test used to identify the ability of a material to resist mechanical deformation such as scratching or penetration by other substances."
-* #TC21 "Melting Point" "The temperature at the which a substance changes from solid to a liquid state at atmospheric pressure."
-* #TC22 "Optical Rotation" "A property of many pharmaceutical substances to rotate an incident plane of polarized light so that the transmitted light emerges at a measurable angle to the plane of the incident light. [Source: Adapted from USP <781>]"
-* #TC23 "pH" "The measure of acidity or alkalinity of an aqueous solution."
-* #TC24 "Solubility" "A chemical property referring to the ability for a given substance, the solute, to dissolve in a solvent. It is measured in terms of the maximum amount of solute dissolved in a solvent at equilibrium"
-* #TC25 "Specific Gravity" "The ratio of the density of any substance to the density of some other substance taken as standard, water being the standard for liquids and solids, and hydrogen or air being the standard for gases."
-* #TC26 "Material Properties/Measurements" "Dimensions and physical properties of the material of interest including tablets, capsule, soft gel capsule, granulate or pellet, etc."
-* #TC26 #SBTC45 "Individual Weight" "The weight of a single unit of the material of interest. Examples: 800 mg (a tablet) [Source: SME Defined]"
-* #TC26 #SBTC46 "Group/Average Weight" """The sum total weights of the material of interest units or sum total of the material of interest divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (per 10), 10 mg (per tablet)
-note: for a QS or IPC this is likely a range but as a result it would be a single value
-note: the unit would indicate if the value represents a total weight of the group or the average weight across the group - both values could be provided [Source: SME Defined]"""
-* #TC26 #SBTC47 "Weight variation" """The difference in weights of the material of interest. Examples: 2%, 5 mg, 2.5 %
-note: may be a percent, a value or a percent relative standard deviation [Source: SME Defined]"""
-* #TC26 #SBTC48 "ndividual Fill Weight" """The weight of material of interest within a single unit. Example: 1 gram (in each vial), 200 mg (in each capsule)
-note: could be a capsule, vial or bottle
-note: for a QS or IPC this is likely a range but as a result it would be a single value [Source: SME Defined]"""
-* #TC26 #SBTC49 "Group/Average Fill Weight" """The sum total weights of material of interest across multiple units divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (weight of 10 tablets), 10 mg (per tablet)
-note: for a QS or IPC this is likely a range but as a result it would be a single value
-note: the unit would indicate if the value represents a total weight of the group or the average weight across the group - both values could be provided [Source: SME Defined]"""
-* #TC26 #SBTC50 "Target group weight gain %" """A predetermined percentage weight increase for a set of units resulting from of an action such as coating. Example: 3% (weight gain after coating)
-note: this can be associated with a bulk material or a single unit [Source: SME Defined]"""
-* #TC26 #SBTC51 "Shell weight" "The weight of outer casing ('shell') into which material of interest is filled. Example: 20 mg [Source: SME Defined]"
-* #TC26 #SBTC52 "Orifice location" "The position of hole drilled in the unit dose. [Source: SME Defined]"
-* #TC26 #SBTC53 "Orifice diameter" "The length of a straight line measurement across the center of the hole drilled in the unit dose. [Source: SME Defined]"
-* #TC26 #SBTC54 "Orifice depth" "The measurement of the penetration of the hole drilled in the unit dose as measured from the outer edge to the deepest point of penetration. [Source: SME Defined]"
-* #TC26 #SBTC55 "Drilled side (single or double)" "An observation if one or both sides of the unit dose has been drilled. [Source: SME Defined]"
-* #TC26 #SBTC56 "Number of orifices" "The total count of holes drilled in the unit dose [Source: SME Defined]"
-* #TC26 #SBTC57 "Ribbon thickness" "The dimension between two surfaces of a continuous sheet of compressed material in preparation for subsequent processing. [Source: adapted from NCIt Thickness]"
-* #TC26 #SBTC58 "Ribbon density" "The compactness of a continuous sheet of compressed material in preparation for subsequent processing [Source: adapted from NCIt Density]"
-* #TC26 #SBTC59 "Seam thickness" "The measurement of overlap common to two edges of the same material joined together. Example: 1 mm [Source: SME Defined]"
-* #TC26 #SBTC60 "Lock length" "The length of a straight line measurement from the longest edge-to-edge distance through a Capsule body and cap that have been coupled such that the locking rings are sealed as designed. [Source: SME Defined]"
-* #TC26 #SBTC61 "Tablet/Capsule length" "The length of a straight line measurement from the longest edge-to-edge distance through the Tablet/Capsule. [Source: SME Defined]"
-* #TC26 #SBTC62 "Tablet/Capsule diameter" "The length of a straight line measurement across the circular center of a Tablet/Capsule. [Source: SME Defined]"
-* #TC26 #SBTC63 "Tablet thickness" "The length of a straight line measurement from the shortest edge-to-edge distance through a Tablet. [Source: SME Defined]"
-* #TC27 "Tap Density" "An increased bulk density attained after mechanically tapping the container containing the powder sample. (aka - tapped density)"
-* #TC28 "Transdermal Properties" """Tests that determine the physical properties of transdermal systems [Source: SME Defined]
-Example, Peel adhesion test, Tack test, Cold Flow test, etc."""
-* #TC29 "Viscosity/ Rheological Properties" "A property of liquids that is closely related to the resistance to flow."
-* #TC30 "Plume Geometry" "A test that measures the spray pattern characteristics, including shape and size of the evolving spray cloud under defined experimental and instrumental test conditions [Source: Adapted from USP-NF]"
-* #TC31 "Polymorphism" """Tests to determine the different crystalline forms of a given drug substance [Source: Adapted from ICH Q6A].
-BACKGROUND
-Polymorphism -- The occurrence of different crystalline forms of the same drug substance. This may include solvation or hydration products (also known as pseudopolymorphs) and amorphous forms."""
-* #TC32 "Porosity" "Tests that measure the empty spaces/voids in the material. [Source: SME Defined]"
-* #TC33 "Potency" "Tests to measure the biological activity using a suitably quantitative biological assay (also called potency assay or bioassay), based on the attribute of the product which is linked to the relevant biological properties [Source: Adapted from ICH Q6B]"
-* #TC34 "Pyrogenicity/Endotoxin (test example – rabbit test name)" "Tests designed to limit to an acceptable level the risks of febrile reaction in the patient to the administration, by injection, of the product concerned. The test involves measuring the rise in temperature of rabbits following the intravenous injection of a test solution and is designed for products that can be tolerated by the test rabbit in a dose not to exceed 10 mL/kg injected intravenously within a period of NMT 10 min."
-* #TC35 "Reconstitution Time" "Measurement of how long it takes to restore something dried to its original state of liquid."
-* #TC36 "Redispersibility" "Testing of oral suspensions that settle on storage (produce sediment) to measure the time required to achieve resuspension."
-* #TC37 "Refractive Index" "Tests performed to determine the ratio of velocity of light in air to the velocity of light in the substance. [Source: Adapted from USP <831>]"
-* #TC38 "Residue on Ignition" "Tests to measure the amount of residual substance not volatilized from a sample when the sample is ignited in the presence of sulfuric acid. This test is usually used for determining the content of inorganic impurities in an organic substance. [Source: Adapted from USP <281>]"
-* #TC39 "Spray Pattern" "Tests to determine the size of the mist formed by spraying. The measurement is made for the longest axis (x axis), and the ratio of longest to shortest axes (x/y ratio).[Source: Adapted from USP-NF]"
-* #TC40 "Sterility" "Tests done under aseptic conditions to ensure that there are no contaminating micro-organism present in the sample [Source: Adapted from USP <71>]"
-* #TC41 "Syringe Functionality" "Tests performed on syringes to ensure that It operates as specified []"
-* #TC42 "Total Organic Carbon" "An indirect measure of organic molecules present in pharmaceutical waters measured as carbon [Source: USP <643>]."
-* #TC46 "Mechanical Integrity" "Test that measures what amount of force is needed to alter the mechanical integrity of a construct."
-* #TC47 "Surface Area" "Total surface area of a 2D or 3D materials"
-* #TC48 "Post-translational modifications" "Test to measure if the protein undergoing post translational modification which include glycocylation etc."
-* #TC48 #SBTC83 "Glycosylation" "Post translation modification due to addition of sugar"
-* #TC48 #SBTC84 "Thrombin Peptide Map" "Map of peptides derived from digestion of protein with thrombin"
-* #TC48 #SBTC85 "Sialylation" "Post translational modification of proteins by sialylation"
-* #TC48 #SBTC86 "Amidation" "Testing for and acid containing residue conversion to an amide."
-* #TC48 #SBTC87 "Deamidation" "Testing for an amide residue conversion to an acid."
-* #TC49 "Functional Assays" "Functional assay used to quantify functioning of an active substance rather than just its quantity. Common uses are: showing that a drug target fits the desired functionality and quality profile before moving on to the next stage of development; and comparison of biosimilars with innovator products."
-* #TC50 "Elemental Analysis" "The relative proportion of elements present"
-* #TC51 "Turbidity" "Measurement of the clarity and degree of opalescence of liquids by comparison of the solutions in diffused daylight after preparation of the reference suspension."
-* #TC53 "Impurity" "Analytical procedures to establish material purity by determining the presence of a material or component of a material that is not defined as the material."
-* #TC53 #SBTC92 "Specified identified impurity" "Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and for which a structured characterization has been achieved. 
-Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"
-* #TC53 #SBTC93 "Specified unidentified impurity" """Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and that is defined solely by qualitative analytical properties (e.g., chromatographic retention time) due to the lack of achieving a structured characterization.
-Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
-* #TC53 #SBTC94 "Unspecified impurity" """Testing for an impurity that is limited by a general acceptance criterion, but not individually listed with its own specific acceptance criterion, in the new drug substance or drug product specification.
-Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
-* #TC53 #SBTC95 "Total impurities" """The sum of all impurities at a level greater than (>) the reporting threshold.
-Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
-* #TC53 #SBTC96 "Total Unknown Impurities" """The sum of unknown (unidentified) impurities in a new drug substance or drug product specification.
-Note: Total impurities includes all impurities while Total Unknown impurities only includes all the unknown impurities. [Source: SME Defined]"""
-* #TC53 #SBTC97 "Identified impurity under IT that is monitored as unspecified" """Identification (chemical name and/or UNII code) of all the identified (known) impurities that are being controlled as “unspecified impurities” rather than “Specified Identified Impurity” due to the level being consistently below the ICH identification threshold (IT) value.
-Note: this includes degradation products for tests conducted on drug products. [Source: SME Defined]"""
-* #TC53 #SBTC98 "elemental impurity" "Analytical procedures that determine the amount of single elements in drug products or drug product components."
-* #TC53 #SBTC99 "impurity chemical" "Analytical procedures to establish chemical purity by determining the presence of a component of the material that is not the chemical entity defined as the material."
-* #TC53 #SBTC100 "Impurities/Degradation Products/Related Substances" "Tests that establishes the characteristic and uniqueness of the the substance of interest and should be able to discriminate between compounds of closely related structures which are likely to be present. Includes leachables and extractables."
-* #TC53 #SBTC101 "residual solvent" """Tests performed to determine if organic volatile chemicals that are used or produced in manufacture of drug substance or excipients, or in the preparation of drug products are present in the pharmaceuticals. [Source: Adapted from USP <467>]
-BACKGROUND: For pharmacopeial purposes, residual solvents in pharmaceuticals are defined as organic volatile chemicals that are used or produced in the manufacture of drug substances or excipients, or in the preparation of drug products."""
+* #PROP "Proprietary"
+* #NON "Non-Proprietary"
+
+ValueSet: CmcProductNameTypesVS
+Id: cmc-product-name-types-vs
+Title: "Product name types Value Set" 
+Description: "Local value set of all codes in Code system."
+
+* ^experimental = true
+
+* include codes from system ProductNameTypes
+
+//CodeSystem: PqcmcTestCategoryCodes
+//Id: pqcmc-test-category-codes
+//Title: "Hierarchial Test Category Codes"
+//Description: "Waiting for NCIt codes are added this may be deleted"
+//* ^caseSensitive = true
+//* ^experimental = true
+//* ^hierarchyMeaning = #is-a
+
+//* TC1 "Assay" "Tests which measure the content of the active ingredient in the drug substance or drug product.of a substance. Synonymous with strength or purity which is commonly used of define the content of the active ingredient in a drug product. Note: chiral purity, preservative content, Anti-Oxidant Concentration, Chelate Concentration, isomeric ratio"
+//* TC1 SUBC2 "active ingredient" "Tests that verify the content and potency of a pharmaceutical substance that is intended effect in the diagnosis, cure, mitigation, treatment, or prevention of disease, or to affect the structure or any function of the body."
+//* TC1 SUBC3 "amino acid content" "Methodology used to determine the amino acid composition or content of proteins, peptides, and other pharmaceutical preparations"
+//* TC1 SUBC4 "bioburden" "Test that screens for aerobic mesophilic bacteria and fungi."
+//* TC1 SUBC5 "counterion content" "Tests that measures the secondardy ion of a drug salt."
+//* TC1 SUBC6 "excipient" "Testing of the amount of material other than the active or adjuvant."
+//* TC1 SUBC7 "host cell dna" "Measurement of DNA that comes from cell substrate used to make the viral particles."
+//* TC1 SUBC8 "percent conjugate" "Test to determine the percentage of total protein that functions in interaction with other (non-polypeptide) chemical groups attached by covalent bonding."
+//* TC1 SUBC9 "purity" "Testing methods to identify actives and indirectly measure impurities that may be present in a medicine. Examples of analytical procedures for this test subcategory include SDS-page and HPLC."
+//* TC1 SUBC10 "nucleic acid content" "Tests designed to reveal the presence of a particular nucleic acid from a test sample."
+//* TC1 SUBC11 "solvate content" "Identifcation of hydrates or solvates by the assay of water of crystallization or solvent found in the crystal."
+//* TC1 SUBC12 "total protein" "Test to determine total protein concentration in the product"
+//* TC1 SUBC13 "Cell and Gene therapy product characterization assay" """Tests to determine Cell and Gene therapy product properties.
+//Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted molecules, Gene expression, Genetic stability, percent recovery, gene expression, cell surface marker expression, proliferation capacity, total cell number, cell morphology, cell distribution in scaffold, total volume of scaffold, cellular pattern, vector genome concentration, vector infectious titer assay, replication competence assay, DNA homogeneity, transduction efficiency, vector genome concentration, vector infectious titer assay, Replication competence assay [Source: SME Defined]"""
+//* TC3 "Container Closure Integrity" "Tests for the adequacy of pharmaceutical packaging and closures."
+//* TC4 "Uniformity" "Tests to ensure the consistency of the API in the formulation. Test may be done as an IPC, release or stability test."
+//* TC4 SUBC16 "Uniformity of dosage unit" "Tests of the variability of the dosage unit including dispensed dose."
+//* TC4 SUBC17 "Uniformity in containers" "Content Uniformity based for multi-use containers, tubes and jars."
+//* TC5 "Deliverable Volume/Fill Volume" "Tests designed to provide assurance that oral liquids will, when transferred from the original container, deliver the volume of dosage form that is declared on the label of the article."
+//* TC6 "Organoleptic" "Evaluation via the senses—including taste, sight, smell, and touch."
+//* TC6 SUBC20 "Description/Appearance" "Tests using visual inspection to assess the physical state and color of the drug substance or product."
+//* TC6 SUBC21 "Odor" "Testing via the sense of smell."
+//* TC6 SUBC22 "Color of solution" "The use of visual perception to indicate of purity and/or a means to identify contamination."
+//* TC6 SUBC23 "Clarity of Solution" "Measurement of the turbidity of the solution or; Qualitative or quantitative measurement of degree of opalescence of a solution. Instrumental measurement of the light reflected by the solution."
+//* TC7 "Identification" "Tests that establishes the characteristic and uniqueness of the substance of interest and should be able to discriminate between compounds of closely related structures which are likely to be present. [Source: ICH Q6A]"
+//* TC8 "Disintegration" "Test to determine whether tablets capsules disintegrate within the prescribed time when placed in a liquid medium at the experimental conditions."
+//* TC9 "Dissolution" "Test to determine compliance with the requirements of the material of interest dissolving into solution. A dosage unit is defined as 1 tablet or 1 capsule or the amount specified."
+//* TC10 "Droplet Size" "Tests that determine the size of the liquid drop [Source: SME Defined]"
+//* TC11 "Foreign and Particulate Matter" "Tests for injections or infusions to check for insoluble particles to confirm that they are not present in excess of specified levels in the solutions [Source: Adapted from ICH Q4B]."
+//* TC11 SUBC29 "Metal detection" "Tests for metallic particles to confirm that they are not present in excess of specified levels. [Source: SME Defined]"
+//* TC12 "Loss on Drying" "Analytical procedures to determine the amount of volatile matter of any kind that is driven off under the conditions specified."
+//* TC13 "Microbial Limits" "Tests for the estimation of the number of viable aerobic microorganisms present and for the freedom from designated microbial species in the pharmaceutical articles of all kinds, from raw materials to the finished forms."
+//* TC14 "Osmolality/ Osmolarity" "Osmolality and osmolarity are measurements of the solute concentration of a solution. Osmolality is expressed in terms of the weight of the solvent and osmolarity is expressed in terms of solvent volume. [Source: SME Defined]"
+//* TC15 "Particle Size Distribution" "Analytical procedures that utilize mechanical sieving for deducing the particle-size distribution of a powdered solid."
+//* TC16 "Bulk Density" "Tests that determine the ratio of the mass of an untapped powder sample and its volume including the contribution of the interparticulate void volume."
+//* TC17 "Conductivity" "Electrical conductivity is a measure of the ion-facilitated electron flow through it."
+//* TC18 "Crystallinity" "The detection and/or quantification of the amount of amorphous material within a highly crystalline substance."
+//* TC19 "Friability" "The percent loss of a tablet due to mechanical action that results in fracture or breaking during the test"
+//* TC20 "Hardness" "A test used to identify the ability of a material to resist mechanical deformation such as scratching or penetration by other substances."
+//* TC21 "Melting Point" "The temperature at the which a substance changes from solid to a liquid state at atmospheric pressure."
+//* TC22 "Optical Rotation" "A property of many pharmaceutical substances to rotate an incident plane of polarized light so that the transmitted light emerges at a measurable angle to the plane of the incident light. [Source: Adapted from USP <781>]"
+//* TC23 "pH" "The measure of acidity or alkalinity of an aqueous solution."
+//* TC24 "Solubility" "A chemical property referring to the ability for a given substance, the solute, to dissolve in a solvent. It is measured in terms of the maximum amount of solute dissolved in a solvent at equilibrium"
+//* TC25 "Specific Gravity" "The ratio of the density of any substance to the density of some other substance taken as standard, water being the standard for liquids and solids, and hydrogen or air being the standard for gases."
+//* TC26 "Material Properties/Measurements" "Dimensions and physical properties of the material of interest including tablets, capsule, soft gel capsule, granulate or pellet, etc."
+//* TC26 SUBC45 "Individual Weight" "The weight of a single unit of the material of interest. Examples: 800 mg (a tablet) [Source: SME Defined]"
+//* TC26 SUBC46 "Group/Average Weight" """The sum total weights of the material of interest units or sum total of the material of interest divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (per 10), 10 mg (per tablet)
+//note: for a QS or IPC this is likely a range but as a result it would be a single value
+//note: the unit would indicate if the value represents a total weight of the group or the average weight across the group - both values could be provided [Source: SME Defined]"""
+//* TC26 SUBC47 "Weight variation" """The difference in weights of the material of interest. Examples: 2%, 5 mg, 2.5 %
+//note: may be a percent, a value or a percent relative standard deviation [Source: SME Defined]"""
+//* TC26 SUBC48 "ndividual Fill Weight" """The weight of material of interest within a single unit. Example: 1 gram (in each vial), 200 mg (in each capsule)
+//note: could be a capsule, vial or bottle
+//ote: for a QS or IPC this is likely a range but as a result it would be a single value [Source: SME Defined]"""
+//* TC26 SUBC49 "Group/Average Fill Weight" """The sum total weights of material of interest across multiple units divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (weight of 10 tablets), 10 mg (per tablet)
+//note: for a QS or IPC this is likely a range but as a result it would be a single value
+//note: the unit would indicate if the value represents a total weight of the group or the average weight across the group - both values could be provided [Source: SME Defined]"""
+//* TC26 SUBC50 "Target group weight gain %" """A predetermined percentage weight increase for a set of units resulting from of an action such as coating. Example: 3% (weight gain after coating)
+//note: this can be associated with a bulk material or a single unit [Source: SME Defined]"""
+//* TC26 SUBC51 "Shell weight" "The weight of outer casing ('shell') into which material of interest is filled. Example: 20 mg [Source: SME Defined]"
+//* TC26 SUBC52 "Orifice location" "The position of hole drilled in the unit dose. [Source: SME Defined]"
+//* TC26 SUBC53 "Orifice diameter" "The length of a straight line measurement across the center of the hole drilled in the unit dose. [Source: SME Defined]"
+//* TC26 SUBC54 "Orifice depth" "The measurement of the penetration of the hole drilled in the unit dose as measured from the outer edge to the deepest point of penetration. [Source: SME Defined]"
+//* TC26 SUBC55 "Drilled side (single or double)" "An observation if one or both sides of the unit dose has been drilled. [Source: SME Defined]"
+//* TC26 SUBC56 "Number of orifices" "The total count of holes drilled in the unit dose [Source: SME Defined]"
+//* TC26 SUBC57 "Ribbon thickness" "The dimension between two surfaces of a continuous sheet of compressed material in preparation for subsequent processing. [Source: adapted from  Thickness]"
+//* TC26 SUBC58 "Ribbon density" "The compactness of a continuous sheet of compressed material in preparation for subsequent processing [Source: adapted from  Density]"
+//* TC26 SUBC59 "Seam thickness" "The measurement of overlap common to two edges of the same material joined together. Example: 1 mm [Source: SME Defined]"
+//* TC26 SUBC60 "Lock length" "The length of a straight line measurement from the longest edge-to-edge distance through a Capsule body and cap that have been coupled such that the locking rings are sealed as designed. [Source: SME Defined]"
+//* TC26 SUBC61 "Tablet/Capsule length" "The length of a straight line measurement from the longest edge-to-edge distance through the Tablet/Capsule. [Source: SME Defined]"
+//* TC26 SUBC62 "Tablet/Capsule diameter" "The length of a straight line measurement across the circular center of a Tablet/Capsule. [Source: SME Defined]"
+//* TC26 SUBC63 "Tablet thickness" "The length of a straight line measurement from the shortest edge-to-edge distance through a Tablet. [Source: SME Defined]"
+//* TC27 "Tap Density" "An increased bulk density attained after mechanically tapping the container containing the powder sample. (aka - tapped density)"
+//* TC28 "Transdermal Properties" """Tests that determine the physical properties of transdermal systems [Source: SME Defined]
+//Example, Peel adhesion test, Tack test, Cold Flow test, etc."""
+//* TC29 "Viscosity/ Rheological Properties" "A property of liquids that is closely related to the resistance to flow."
+//* TC30 "Plume Geometry" "A test that measures the spray pattern characteristics, including shape and size of the evolving spray cloud under defined experimental and instrumental test conditions [Source: Adapted from USP-NF]"
+//* TC31 "Polymorphism" """Tests to determine the different crystalline forms of a given drug substance [Source: Adapted from ICH Q6A].
+//BACKGROUND
+//Polymorphism -- The occurrence of different crystalline forms of the same drug substance. This may include solvation or hydration products (also known as pseudopolymorphs) and amorphous forms."""
+//* TC32 "Porosity" "Tests that measure the empty spaces/voids in the material. [Source: SME Defined]"
+//* TC33 "Potency" "Tests to measure the biological activity using a suitably quantitative biological assay (also called potency assay or bioassay), based on the attribute of the product which is linked to the relevant biological properties [Source: Adapted from ICH Q6B]"
+//* TC34 "Pyrogenicity/Endotoxin (test example – rabbit test name)" "Tests designed to limit to an acceptable level the risks of febrile reaction in the patient to the administration, by injection, of the product concerned. The test involves measuring the rise in temperature of rabbits following the intravenous injection of a test solution and is designed for products that can be tolerated by the test rabbit in a dose not to exceed 10 mL/kg injected intravenously within a period of NMT 10 min."
+//* TC35 "Reconstitution Time" "Measurement of how long it takes to restore something dried to its original state of liquid."
+//* TC36 "Redispersibility" "Testing of oral suspensions that settle on storage (produce sediment) to measure the time required to achieve resuspension."
+//* TC37 "Refractive Index" "Tests performed to determine the ratio of velocity of light in air to the velocity of light in the substance. [Source: Adapted from USP <831>]"
+//* TC38 "Residue on Ignition" "Tests to measure the amount of residual substance not volatilized from a sample when the sample is ignited in the presence of sulfuric acid. This test is usually used for determining the content of inorganic impurities in an organic substance. [Source: Adapted from USP <281>]"
+//* TC39 "Spray Pattern" "Tests to determine the size of the mist formed by spraying. The measurement is made for the longest axis (x axis), and the ratio of longest to shortest axes (x/y ratio).[Source: Adapted from USP-NF]"
+//* TC40 "Sterility" "Tests done under aseptic conditions to ensure that there are no contaminating micro-organism present in the sample [Source: Adapted from USP <71>]"
+//* TC41 "Syringe Functionality" "Tests performed on syringes to ensure that It operates as specified []"
+//* TC42 "Total Organic Carbon" "An indirect measure of organic molecules present in pharmaceutical waters measured as carbon [Source: USP <643>]."
+//* TC46 "Mechanical Integrity" "Test that measures what amount of force is needed to alter the mechanical integrity of a construct."
+//* TC47 "Surface Area" "Total surface area of a 2D or 3D materials"
+//* TC48 "Post-translational modifications" "Test to measure if the protein undergoing post translational modification which include glycocylation etc."
+//* TC48 SUBC83 "Glycosylation" "Post translation modification due to addition of sugar"
+//* TC48 SUBC84 "Thrombin Peptide Map" "Map of peptides derived from digestion of protein with thrombin"
+//* TC48 SUBC85 "Sialylation" "Post translational modification of proteins by sialylation"
+//* TC48 SUBC86 "Amidation" "Testing for and acid containing residue conversion to an amide."
+//* TC48 SUBC87 "Deamidation" "Testing for an amide residue conversion to an acid."
+//* TC49 "Functional Assays" "Functional assay used to quantify functioning of an active substance rather than just its quantity. Common uses are: showing that a drug target fits the desired functionality and quality profile before moving on to the next stage of development; and comparison of biosimilars with innovator products."
+//* TC50 "Elemental Analysis" "The relative proportion of elements present"
+//* TC51 "Turbidity" "Measurement of the clarity and degree of opalescence of liquids by comparison of the solutions in diffused daylight after preparation of the reference suspension."
+//* TC53 "Impurity" "Analytical procedures to establish material purity by determining the presence of a material or component of a material that is not defined as the material."
+//* TC53 SUBC92 "Specified identified impurity" "Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and for which a structured characterization has been achieved. 
+//Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"
+//* TC53 SUBC93 "Specified unidentified impurity" """Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and that is defined solely by qualitative analytical properties (e.g., chromatographic retention time) due to the lack of achieving a structured characterization.
+//Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
+//* TC53 SUBC94 "Unspecified impurity" """Testing for an impurity that is limited by a general acceptance criterion, but not individually listed with its own specific acceptance criterion, in the new drug substance or drug product specification.
+//Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
+//* TC53 SUBC95 "Total impurities" """The sum of all impurities at a level greater than (>) the reporting threshold.
+//Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
+//* TC53 SUBC96 "Total Unknown Impurities" """The sum of unknown (unidentified) impurities in a new drug substance or drug product specification.
+//Note: Total impurities includes all impurities while Total Unknown impurities only includes all the unknown impurities. [Source: SME Defined]"""
+//* TC53 SUBC97 "Identified impurity under IT that is monitored as unspecified" """Identification (chemical name and/or UNII code) of all the identified (known) impurities that are being controlled as “unspecified impurities” rather than “Specified Identified Impurity” due to the level being consistently below the ICH identification threshold (IT) value.
+//Note: this includes degradation products for tests conducted on drug products. [Source: SME Defined]"""
+//* TC53 SUBC98 "elemental impurity" "Analytical procedures that determine the amount of single elements in drug products or drug product components."
+//* TC53 SUBC99 "impurity chemical" "Analytical procedures to establish chemical purity by determining the presence of a component of the material that is not the chemical entity defined as the material."
+//* TC53 SUBC100 "Impurities/Degradation Products/Related Substances" "Tests that establishes the characteristic and uniqueness of the the substance of interest and should be able to discriminate between compounds of closely related structures which are likely to be present. Includes leachables and extractables."
+//* TC53 SUBC101 "residual solvent" """Tests performed to determine if organic volatile chemicals that are used or produced in manufacture of drug substance or excipients, or in the preparation of drug products are present in the pharmaceuticals. [Source: Adapted from USP <467>]
+//BACKGROUND: For pharmacopeial purposes, residual solvents in pharmaceuticals are defined as organic volatile chemicals that are used or produced in the manufacture of drug substances or excipients, or in the preparation of drug products."""
 
 ValueSet: PqcmcTestCategoryTerminology
 Id: pqcmc-test-category-terminology
 Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
 
-* $PQTC#TC1 "Assay"
-* $PQTC#TC3 "Container Closure Integrity"
-* $PQTC#TC4 "Uniformity"
-* $PQTC#TC5 "Deliverable Volume/Fill Volume"
-* $PQTC#TC6 "Organoleptic"
-* $PQTC#TC7 "Identification"
-* $PQTC#TC8 "Disintegration"
-* $PQTC#TC9 "Dissolution"
-* $PQTC#TC10 "Droplet Size"
-* $PQTC#TC11 "Foreign and Particulate Matter"
-* $PQTC#TC12 "Loss on Drying"
-* $PQTC#TC13 "Microbial Limits"
-* $PQTC#TC14 "Osmolality/ Osmolarity"
-* $PQTC#TC15 "Particle Size Distribution"
-* $PQTC#TC16 "Bulk Density"
-* $PQTC#TC17 "Conductivity"
-* $PQTC#TC18 "Crystallinity"
-* $PQTC#TC19 "Friability"
-* $PQTC#TC20 "Hardness"
-* $PQTC#TC21 "Melting Point"
-* $PQTC#TC22 "Optical Rotation"
-* $PQTC#TC23 "pH"
-* $PQTC#TC24 "Solubility"
-* $PQTC#TC25 "Specific Gravity"
-* $PQTC#TC26 "Material Properties/Measurements"
-* $PQTC#TC27 "Tap Density"
-* $PQTC#TC28 "Transdermal Properties"
-* $PQTC#TC29 "Viscosity/ Rheological Properties"
-* $PQTC#TC30 "Plume Geometry"
-* $PQTC#TC31 "Polymorphism"
-* $PQTC#TC32 "Porosity"
-* $PQTC#TC33 "Potency"
-* $PQTC#TC34 "Pyrogenicity/Endotoxin (test example – rabbit test name)"
-* $PQTC#TC35 "Reconstitution Time"
-* $PQTC#TC36 "Redispersibility"
-* $PQTC#TC37 "Refractive Index"
-* $PQTC#TC38 "Residue on Ignition"
-* $PQTC#TC39 "Spray Pattern"
-* $PQTC#TC40 "Sterility"
-* $PQTC#TC41 "Syringe Functionality"
-* $PQTC#TC42 "Total Organic Carbon"
-* $PQTC#TC46 "Mechanical Integrity"
-* $PQTC#TC47 "Surface Area"
-* $PQTC#TC48 "Post-translational modifications"
-* $PQTC#TC49 "Functional Assays"
-* $PQTC#TC50 "Elemental Analysis"
-* $PQTC#TC51 "Turbidity"
-* $PQTC#TC53 "Impurity"
+* ^experimental = true
+* $NCIT#TC1 "Assay"
+* $NCIT#TC3 "Container Closure Integrity"
+* $NCIT#TC4 "Uniformity"
+* $NCIT#TC5 "Deliverable Volume/Fill Volume"
+* $NCIT#TC6 "Organoleptic"
+* $NCIT#TC7 "Identification"
+* $NCIT#TC8 "Disintegration"
+* $NCIT#TC9 "Dissolution"
+* $NCIT#TC10 "Droplet Size"
+* $NCIT#TC11 "Foreign and Particulate Matter"
+* $NCIT#TC12 "Loss on Drying"
+* $NCIT#TC13 "Microbial Limits"
+* $NCIT#TC14 "Osmolality/ Osmolarity"
+* $NCIT#TC15 "Particle Size Distribution"
+* $NCIT#TC16 "Bulk Density"
+* $NCIT#TC17 "Conductivity"
+* $NCIT#TC18 "Crystallinity"
+* $NCIT#TC19 "Friability"
+* $NCIT#TC20 "Hardness"
+* $NCIT#TC21 "Melting Point"
+* $NCIT#TC22 "Optical Rotation"
+* $NCIT#TC23 "pH"
+* $NCIT#TC24 "Solubility"
+* $NCIT#TC25 "Specific Gravity"
+* $NCIT#TC26 "Material Properties/Measurements"
+* $NCIT#TC27 "Tap Density"
+* $NCIT#TC28 "Transdermal Properties"
+* $NCIT#TC29 "Viscosity/ Rheological Properties"
+* $NCIT#TC30 "Plume Geometry"
+* $NCIT#TC31 "Polymorphism"
+* $NCIT#TC32 "Porosity"
+* $NCIT#TC33 "Potency"
+* $NCIT#TC34 "Pyrogenicity/Endotoxin (test example – rabbit test name)"
+* $NCIT#TC35 "Reconstitution Time"
+* $NCIT#TC36 "Redispersibility"
+* $NCIT#TC37 "Refractive Index"
+* $NCIT#TC38 "Residue on Ignition"
+* $NCIT#TC39 "Spray Pattern"
+* $NCIT#TC40 "Sterility"
+* $NCIT#TC41 "Syringe Functionality"
+* $NCIT#TC42 "Total Organic Carbon"
+* $NCIT#TC46 "Mechanical Integrity"
+* $NCIT#TC47 "Surface Area"
+* $NCIT#TC48 "Post-translational modifications"
+* $NCIT#TC49 "Functional Assays"
+* $NCIT#TC50 "Elemental Analysis"
+* $NCIT#TC51 "Turbidity"
+* $NCIT#TC53 "Impurity"
 
 ValueSet: PqcmcTestSubCategoryTerminology
 Id: pqcmc-test-subcategory-terminology
 Title: "Test Sub-Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test sub-categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 
-* $PQTC#SBTC2 "active ingredient"
-* $PQTC#SBTC3 "amino acid content"
-* $PQTC#SBTC4 "bioburden"
-* $PQTC#SBTC5 "counterion content"
-* $PQTC#SBTC6 "excipient"
-* $PQTC#SBTC7 "host cell dna"
-* $PQTC#SBTC8 "percent conjugate"
-* $PQTC#SBTC9 "purity"
-* $PQTC#SBTC10 "nucleic acid content"
-* $PQTC#SBTC11 "solvate content"
-* $PQTC#SBTC12 "total protein"
-* $PQTC#SBTC13 "Cell and Gene therapy product characterization assay"
-* $PQTC#SBTC16 "Uniformity of dosage unit"
-* $PQTC#SBTC17 "Uniformity in containers"
-* $PQTC#SBTC20 "Description/Appearance"
-* $PQTC#SBTC21 "Odor"
-* $PQTC#SBTC22 "Color of solution"
-* $PQTC#SBTC23 "Clarity of Solution"
-* $PQTC#SBTC29 "Metal detection"
-* $PQTC#SBTC45 "Individual Weight"
-* $PQTC#SBTC46 "Group/Average Weight"
-* $PQTC#SBTC47 "Weight variation"
-* $PQTC#SBTC48 "Individual Fill Weight"
-* $PQTC#SBTC49 "Group/Average Fill Weight"
-* $PQTC#SBTC50 "Target group weight gain %"
-* $PQTC#SBTC51 "Shell weight"
-* $PQTC#SBTC52 "Orifice location"
-* $PQTC#SBTC53 "Orifice diameter"
-* $PQTC#SBTC54 "Orifice depth"
-* $PQTC#SBTC55 "Drilled side (single or double)"
-* $PQTC#SBTC56 "Number of orifices"
-* $PQTC#SBTC57 "Ribbon thickness"
-* $PQTC#SBTC58 "Ribbon density"
-* $PQTC#SBTC59 "Seam thickness"
-* $PQTC#SBTC60 "Lock length"
-* $PQTC#SBTC61 "Tablet/Capsule length"
-* $PQTC#SBTC62 "Tablet/Capsule diameter"
-* $PQTC#SBTC63 "Tablet thickness"
-* $PQTC#SBTC83 "Glycosylation"
-* $PQTC#SBTC84 "Thrombin Peptide Map"
-* $PQTC#SBTC85 "Sialylation"
-* $PQTC#SBTC86 "Amidation"
-* $PQTC#SBTC87 "Deamidation"
-* $PQTC#SBTC92 "Specified identified impurity"
-* $PQTC#SBTC93 "Specified unidentified impurity"
-* $PQTC#SBTC94 "Unspecified impurity"
-* $PQTC#SBTC95 "Total impurities"
-* $PQTC#SBTC96 "Total Unknown Impurities"
-* $PQTC#SBTC97 "Identified impurity under IT that is monitored as unspecified"
-* $PQTC#SBTC98 "elemental impurity"
-* $PQTC#SBTC99 "impurity chemical"
-* $PQTC#SBTC100 "Impurities/Degradation Products/Related Substances"
-* $PQTC#SBTC101 "residual solvent"
+* $NCIT#SUBC2 "active ingredient"
+* $NCIT#SUBC3 "amino acid content"
+* $NCIT#SUBC4 "bioburden"
+* $NCIT#SUBC5 "counterion content"
+* $NCIT#SUBC6 "excipient"
+* $NCIT#SUBC7 "host cell dna"
+* $NCIT#SUBC8 "percent conjugate"
+* $NCIT#SUBC9 "purity"
+* $NCIT#SUBC10 "nucleic acid content"
+* $NCIT#SUBC11 "solvate content"
+* $NCIT#SUBC12 "total protein"
+* $NCIT#SUBC13 "Cell and Gene therapy product characterization assay"
+* $NCIT#SUBC16 "Uniformity of dosage unit"
+* $NCIT#SUBC17 "Uniformity in containers"
+* $NCIT#SUBC20 "Description/Appearance"
+* $NCIT#SUBC21 "Odor"
+* $NCIT#SUBC22 "Color of solution"
+* $NCIT#SUBC23 "Clarity of Solution"
+* $NCIT#SUBC29 "Metal detection"
+* $NCIT#SUBC45 "Individual Weight"
+* $NCIT#SUBC46 "Group/Average Weight"
+* $NCIT#SUBC47 "Weight variation"
+* $NCIT#SUBC48 "Individual Fill Weight"
+* $NCIT#SUBC49 "Group/Average Fill Weight"
+* $NCIT#SUBC50 "Target group weight gain %"
+* $NCIT#SUBC51 "Shell weight"
+* $NCIT#SUBC52 "Orifice location"
+* $NCIT#SUBC53 "Orifice diameter"
+* $NCIT#SUBC54 "Orifice depth"
+* $NCIT#SUBC55 "Drilled side (single or double)"
+* $NCIT#SUBC56 "Number of orifices"
+* $NCIT#SUBC57 "Ribbon thickness"
+* $NCIT#SUBC58 "Ribbon density"
+* $NCIT#SUBC59 "Seam thickness"
+* $NCIT#SUBC60 "Lock length"
+* $NCIT#SUBC61 "Tablet/Capsule length"
+* $NCIT#SUBC62 "Tablet/Capsule diameter"
+* $NCIT#SUBC63 "Tablet thickness"
+* $NCIT#SUBC83 "Glycosylation"
+* $NCIT#SUBC84 "Thrombin Peptide Map"
+* $NCIT#SUBC85 "Sialylation"
+* $NCIT#SUBC86 "Amidation"
+* $NCIT#SUBC87 "Deamidation"
+* $NCIT#SUBC92 "Specified identified impurity"
+* $NCIT#SUBC93 "Specified unidentified impurity"
+* $NCIT#SUBC94 "Unspecified impurity"
+* $NCIT#SUBC95 "Total impurities"
+* $NCIT#SUBC96 "Total Unknown Impurities"
+* $NCIT#SUBC97 "Identified impurity under IT that is monitored as unspecified"
+* $NCIT#SUBC98 "elemental impurity"
+* $NCIT#SUBC99 "impurity chemical"
+* $NCIT#SUBC100 "Impurities/Degradation Products/Related Substances"
+* $NCIT#SUBC101 "residual solvent"
 
 ValueSet: PqcmcNamePartTerminology
-Id: pqcmc-name-part--terminology
-Title: "Name Part  Terminology"
-Description: "Terminology used to qualify the information pertaining to Name Part  data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
+Id: pqcmc-name-part-terminology
+Title: "Name Part Terminology"
+Description: "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
+* ^experimental = true
 * $NamePartType#CON "container name"
 * $NamePartType#DEV "device name"
 * $NamePartType#FLAV "FlavorName"
@@ -295,78 +327,48 @@ ValueSet: PqcmcStorageConditionCategoryTerminology
 Id: pqcmc-storage-condition-category-terminology
 Title: "Storage Condition Category Terminology"
 Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
-* ^experimental = true
 
-* $SCCC#CC201 "Accelerated" 
-* $SCCC#CC202 "Intermediate" 
-* $SCCC#CC203 "Long term" 
+* ^experimental = true
+* include codes from system PqcmcStorageConditionCategoryCodes
 
 ValueSet: PqcmcProductPartTypeVS
 Id: pqcmc-product-part-type-vs
 Title: "Product Part Type Value Set" 
 Description: "TBD after NCIt codes are added for Product Part Type"
-* ^experimental = true
 
-* $PPT#154 "Blend" 
-* $PPT#155 "Bead"
-* $PPT#156 "Capsule Shell"
-* $PPT#157 "Coating"
-* $PPT#158 "Dispersion"
-* $PPT#159 "Granules"
-* $PPT#115 "Layer"
-* $PPT#116 "Minitablet"
-* $PPT#117 "Solution"
-* $PPT#118 "Tablet"
+* ^experimental = true
+* include codes from system pqcmc-product-part-type
 
 ValueSet: PqcmcProductPartIngredientPhysicalLocationVS
 Id: pqcmc-product-part-ingredient-physical-location-vs
 Title: "Product Part Ingredient Physical Location value set"
 Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
-* ^experimental = true
 
-* $PPIPL#148 "Active core/granulate" 
-* $PPIPL#149 "Extragranular"
-* $PPIPL#150 "Intragranular"
+* ^experimental = true
+* include codes from system pqcmc-product-part-ingredient-physical-location
 
 ValueSet: PqcmcReleaseProfileVS
 Id: pqcmc-release-profile-vs
 Title: "Release Profile value set" 
 Description: "TBD after NCIt codes are added for Release Profile"
-* ^experimental = true
 
-* $RP#101 "DR"
-* $RP#102 "ER"
-* $RP#103 "IR"
-* $RP#104 "Not Applicable"
+* ^experimental = true
+* include codes from system pqcmc-release-profile
 
 ValueSet: PqcmcReleaseMechanismVS
 Id: pqcmc-release-mechanism-vs
 Title: "Release Mechanism value set" 
 Description: "TBD after NCIt codes are added for Release Mechanism"
-* ^experimental = true
 
-* $RM#106 "Matrix" 
-* $RM#107 "Osmotic Pump"
-* $RM#108 "Reservoir"
+* ^experimental = true
+* include codes from system pqcmc-release-mechanism
 
 ValueSet: PqcmcCoatingPurposeVS
 Id: pqcmc-coating-purpose-vs
 Title: "Coating Purpose value set" 
 Description: "TBD after NCIt codes are added for Coating Purpose"
 * ^experimental = true
-
-* $CP#119 "Appearance/Identification" 
-* $CP#120 "Consumption Enhancement"
-* $CP#121 "Content Isolation"
-* $CP#122 "Drug Layering"
-* $CP#123 "Irritant Suppression"
-* $CP#124 "Odor Masking"
-* $CP#125 "Protective"
-* $CP#126 "Rate-controlling"
-* $CP#127 "Release Type"
-* $CP#128 "Site of Action"
-* $CP#129 "Seal or Non-functional"
-* $CP#130 "Taste Masking"
+* include codes from system PqcmcCoatingPurpose
 
 CodeSystem: PqcmcReleaseProfile
 Id: pqcmc-release-profile
@@ -442,20 +444,13 @@ ValueSet: PqcmcCapsuleClassificationCategoryVS
 Id: capsule-classification-category-vs
 Title: "Capsule Classification Category Value Set" 
 Description: "TBD after NCIt codes are added for Capsule Classification Category"
+
 * ^experimental = true
 * include codes from system PqcmcCapsuleClassificationCategory
 
-ValueSet: PqcmcProductIngredientNameTypeVS
-Id: pqcmc-product-ingredient-name-type-vs
-Title: "Product Ingredient Name Type Value Set" 
-Description: "will be updatee after NCIt codes are available"
-* ^experimental = true
-* include codes from system PqcmcProductIngredientNameType
-
-
-CodeSystem: PqcmcProductIngredientNameType
-Id: pqcmc-product-ingredient-name-type
-Title: "Product Ingredient Name Type" 
+CodeSystem: PqcmcSubstanceNameType
+Id: pqcmc-substance-name-type
+Title: "Substance Name Type"
 Description: "Waiting for NCIt codes are added for Product Ingredient Name Type"
 * ^caseSensitive = true
 * ^experimental = true
@@ -486,6 +481,7 @@ ValueSet: EVMPDSubstanceClassification
 Id: evmpd-substance-classification
 Title: "EVMPD Substance Classification"
 Description: "EudraVigilance eXtended Medicinal Product Dictionary (XEVMPD) substance classes"
+
 * ^experimental = true
 * $EMAIDMP#1 "Chemical"
 * $EMAIDMP#17 "Mixture"
@@ -505,6 +501,7 @@ ValueSet: PqcmcStabilityStudyReasonTerminology
 Id: pqcmc-stability-study-reason-terminology
 Title: "Stability Study Reason Terminology"
 Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C115123 "Abbreviated New Animal Drug Application"
 * $NCIT#C73113 "Abbreviated New Drug Application"
@@ -527,6 +524,7 @@ ValueSet: PqcmcIntervalDescriptionCodeTerminology
 Id: pqcmc-interval-description-code-terminology
 Title: "Interval Description Code Terminology"
 Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C96154 "Ambient Delayed Testing"
 * $NCIT#C96151 "Delayed Testing"
@@ -538,6 +536,7 @@ ValueSet: PqcmcStudyTypeTerminology
 Id: pqcmc-study-type-terminology
 Title: "Study Type Terminology"
 Description: "Terminology used to qualify the information pertaining to study types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134028 "Complex"
 * $NCIT#C134027 "Cycled-Simple"
@@ -548,6 +547,7 @@ ValueSet: PqcmcExpirationDateClassificationTerminology
 Id: pqcmc-expiration-date-classification-terminology
 Title: "Expiration Date Classification Terminology"
 Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C185182 "Approved"
 * $NCIT#C48660 "Not Applicable"
@@ -557,6 +557,7 @@ ValueSet: PqcmcRetestDateClassificationTerminology
 Id: pqcmc-retest-date-classification-terminology
 Title: "Retest Date Classification Terminology"
 Description: "Terminology used to qualify the information pertaining to retest date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C185186 "Adequate"
 * $NCIT#C48660 "Not Applicable"
@@ -597,6 +598,7 @@ ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
 Title: "eCTD sections Value Set" 
 Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a valueset instead of the code systme."
+
 * ^experimental = true
 * include codes from system PqcmcCompSectionTypes
 
@@ -604,7 +606,6 @@ CodeSystem: PqcmcCompSectionTypes
 Id: pqcmc-comp-section-types
 Title: "Code system PQCMC Comp Section Types"
 Description: "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
-//* ^url = http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-comp-section-types
 * ^caseSensitive = true
 * ^experimental = true
 
@@ -679,6 +680,7 @@ ValueSet: PqcmcBatchUtilizationTerminology
 Id: pqcmc-batch-utilization-terminology
 Title: "Batch utilization Terminology"
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C133994 "Bioequivalence"
 * $NCIT#C133992 "Clinical"
@@ -698,6 +700,7 @@ ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
 Id: pqcmc-chemical-structure-datafile-type-terminology
 Title: "Chemical Structure Data File Type Terminology"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C54683 "InChI File (small molecule)"
 * $NCIT#C133997 "mmCIF (large molecules)"
@@ -711,35 +714,36 @@ ValueSet: PqcmcClosureTypeTerminology
 Id: pqcmc-closure-type-terminology
 Title: "Closure Type Terminology"
 Description: "Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
-* $NCIT#C96113 "Childresistant, Metal"
-* $NCIT#C96114 "Childresistant, Plastic"
+* $NCIT#C96113 "Child-resistant, Metal"
+* $NCIT#C96114 "Child-resistant, Plastic"
 * $NCIT#C96115 "Continuous Thread, Metal"
 * $NCIT#C96116 "Continuous Thread, Plastic"
+* $NCIT#C96117 "Tamper-evident, Metal"
+* $NCIT#C96118 "Tamper-evident, Plastic"
+* $NCIT#C96119 "Vacuum, Metal"
+* $NCIT#C96120 "Tamper-evident, Composite"
+* $NCIT#C96121 "Vacuum, Plastic"
+* $NCIT#C96122 "Vacuum, Composite"
+* $NCIT#C96123 "Press-on/twist-off, Metal"
+* $NCIT#C96124 "Press-on, Composite"
 * $NCIT#C96125 "Crown, Metal"
-* $NCIT#C96128 "FlipTop (Dispensing), Plastic"
+* $NCIT#C96126 "Lug, Metal"
+* $NCIT#C96127 "Roll-on, Metal"
+* $NCIT#C96128 "Flip-Top (Dispensing), Plastic"
 * $NCIT#C96129 "Hinged (Dispensing), Plastic"
 * $NCIT#C96130 "Linerless, Plastic"
-* $NCIT#C96126 "Lug, Metal"
-* $NCIT#C96124 "Presson, Composite"
-* $NCIT#C96123 "Presson/twistoff, Metal"
 * $NCIT#C96131 "Pump (Dispensing), Plastic"
-* $NCIT#C96132 "Pushpull (Dispensing), Plastic"
-* $NCIT#C96127 "Rollon, Metal"
-* $NCIT#C96133 "Snapon Cap, Plastic"
-* $NCIT#C96134 "Sniptip (Dispensing), Plastic"
-* $NCIT#C96139 "Stopper"
-* $NCIT#C96120 "Tamperevident, Composite"
-* $NCIT#C96117 "Tamperevident, Metal"
-* $NCIT#C96118 "Tamperevident, Plastic"
-* $NCIT#C96140 "Tie"
-* $NCIT#C96135 "Toggleswing (Dispensing), Plastic"
+* $NCIT#C96132 "Push-pull (Dispensing), Plastic"
+* $NCIT#C96133 "Snap-on Cap, Plastic"
+* $NCIT#C96134 "Snip-tip (Dispensing), Plastic"
+* $NCIT#C96135 "Toggle-swing (Dispensing), Plastic"
 * $NCIT#C96136 "Trigger Sprayer (Dispensing), Plastic"
 * $NCIT#C96137 "Twist Open/Close (Dispensing), Plastic"
-* $NCIT#C96122 "Vacuum, Composite"
-* $NCIT#C96119 "Vacuum, Metal"
-* $NCIT#C96121 "Vacuum, Plastic"
 * $NCIT#C96138 "Valved (Dispensing), Plastic"
+* $NCIT#C96139 "Stopper"
+* $NCIT#C96140 "Tie"
 
 ValueSet: PqcmcConformanceCriteriaTerminology
 Id: pqcmc-conformance-to-criteria-terminology
@@ -753,6 +757,7 @@ ValueSet: PqcmcContainerOrientationTerminology
 Id: pqcmc-container-orientation-terminology
 Title: "Container Orientation Terminology"
 Description: "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C25241 "Horizontal"
 * $NCIT#C133999 "Inverted"
@@ -764,6 +769,7 @@ ValueSet: PqcmcContainerTypeTerminology
 Id: pqcmc-container-type-terminology
 Title: "Container Type Terminology"
 Description: "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C43165 "AMPULE"
 * $NCIT#C43166 "APPLICATOR"
@@ -843,6 +849,7 @@ ValueSet: PqcmcDrugProductComponentFunctionCategoryTerminology
 Id: pqcmc-drug-product-component-function-category-terminology
 Title: "Drug Product Component Function Category Terminology"
 Description: "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C82533 "Active Ingredient"
 * $NCIT#C2140 "Adjuvant"
@@ -859,6 +866,7 @@ ValueSet: PqcmcExcipientFunctionTerminology
 Id: pqcmc-excipient-function-terminology
 Title: "Excipient Function Terminology"
 Description: "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C176637 "Absorption modifier"
 * $NCIT#C89528 "Adhesive"
@@ -937,6 +945,7 @@ ValueSet: PqcmcInterpretationCodeTerminology
 Id: pqcmc-interpretation-code-terminology
 Title: "Interpretation Code Terminology"
 Description: "Terminology used to qualify the information pertaining to numeric interpretation codes, Weight Operator codes and Amount Operator code in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
@@ -945,26 +954,12 @@ Description: "Terminology used to qualify the information pertaining to numeric 
 * $NCIT#C61586 "NMT (not more than)"
 * $NCIT#C48660 "Not Applicable"
 
-ValueSet: PqcmcProcessRelatedImpurityCategoryTerminology
-Id: pqcmc-impurity-classification-category-terminology
-Title: "Impurity classification Category Terminology"
-Description: "Terminology used to qualify the information pertaining to process related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
-* $NCIT#C134001 "Inorganic"
-* $NCIT#C134000 "Organic"
-* $NCIT#C176815 "Residual Solvent"
-
-//ValueSet: PqcmcProductRelatedImpurityCategoryTerminology
-//Id: pqcmc-product-related-impurity-category-terminology
-//Title: "Product Related Impurity Category Terminology"
-//Description: "Terminology used to qualify the information pertaining to product related impurity categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//* $NCIT#C176816 "Degradants"
-//* $NCIT#C176813 "Product Related"
 
 ValueSet: PqcmcQualityBenchmarkTerminology
 Id: pqcmc-quality-benchmark-terminology
 Title: "Quality Standard Terminology"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C176793 "BP"
 * $NCIT#C134009 "Company Standard"
@@ -976,6 +971,7 @@ ValueSet: PqcmcSourceTypeTerminology
 Id: pqcmc-source-type-terminology
 Title: "Source Type Terminology"
 Description: "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C14182 "Animal"
 * $NCIT#C18634 "Animalderived indirectly"
@@ -989,6 +985,7 @@ ValueSet: PqcmcSpecificationStatusTerminology
 Id: pqcmc-specification-status-terminology
 Title: "Specification Status Terminology"
 Description: "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C25425 "Approved"
 * $NCIT#C48660 "Not Applicable"
@@ -1000,6 +997,7 @@ ValueSet: PqcmcSpecificationTypeTerminology
 Id: pqcmc-specification-type-terminology
 Title: "Specification Type Terminology"
 Description: "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134021 "Drug Product"
 * $NCIT#C134022 "Drug Substance"
@@ -1009,6 +1007,7 @@ ValueSet: PqcmcSponsorIdentifierTypeTerminology
 Id: pqcmc-sponsor-identifier-type-terminology
 Title: "Sponsor Identifier Type Terminology"
 Description: "Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
@@ -1019,6 +1018,7 @@ ValueSet: PqcmcStorageConditionsTerminology
 Id: pqcmc-storage-conditions-terminology
 Title: "Storage Conditions Terminology"
 Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C133936 "20 +/ 5 degrees C"
 * $NCIT#C134018 "25 +/ 2 degrees C/40% +/ 5%RH"
@@ -1035,6 +1035,7 @@ ValueSet: PqcmcStrengthOperatorTerminology
 Id: pqcmc-strength-operator-terminology
 Title: "Strength Operator Terminology"
 Description: "Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
@@ -1047,6 +1048,7 @@ ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
 Title: "Strength Type Terminology"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C45420 "Activity"
 * $NCIT#C168628 "Mass"
@@ -1055,6 +1057,7 @@ ValueSet: PqcmcTestMethodOriginTerminology
 Id: pqcmc-test-method-origin-terminology
 Title: "Test Method Origin Terminology"
 Description: "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C96164 "CFR"
 * $NCIT#C96102 "Compendial"
@@ -1064,6 +1067,7 @@ ValueSet: PqcmcTestUsageTerminology
 Id: pqcmc-test-usage-terminology
 Title: "Test Usage Terminology"
 Description: "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134029 "Release"
 * $NCIT#C134030 "Stability"
@@ -1072,6 +1076,7 @@ ValueSet: PqcmcTestingSiteUniqueIdentifierTypeTerminology
 Id: pqcmc-testing-site-unique-identifier-type-terminology
 Title: "Testing Site Unique Identifier Type Terminology"
 Description: "Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+
 * ^experimental = true
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
@@ -1082,6 +1087,7 @@ ValueSet: SplPharmaceuticalDosageFormTerminology
 Id: spl-pharmaceutical-dosage-form-terminology
 Title: "Pharmaceutical Dosage Form Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."
+
 * ^experimental = true
 * $NCIT#C100103 "CELLULAR SHEET"
 * $NCIT#C113106 "INJECTABLE FOAM"
@@ -1256,6 +1262,7 @@ Id: pqcmc-units-of-measure-terminology
 Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
 Note: Inlcudes SPL Unit of Presentation Terminology"
+
 * ^experimental = true
 
 * $NCIT#C75765 "[arb'U]"
@@ -1335,6 +1342,7 @@ ValueSet: SplDrugRouteofAdministrationTerminology
 Id: spl-drug-route-of-administration-terminology
 Title: "Drug Route Of Administration Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product route of administration in the framework of the Structured Product Labeling documents."
+
 * ^experimental = true
 * $NCIT#C132737 "Intracanalicular"
 * $NCIT#C28161 "INTRAMUSCULAR"
@@ -1465,6 +1473,7 @@ ValueSet: GENCcountryCodes
 Id: genc-country-codes
 Title: "GENC Country Codes"
 Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
+
 * ^experimental = true
 * $GENC#AFG "AFGHANISTAN"
 * $GENC#XQZ "AKROTIRI"

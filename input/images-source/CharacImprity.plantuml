@@ -1,6 +1,12 @@
-@startuml
+@startuml CharacImprity
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES {
  
@@ -16,6 +22,12 @@ node "EctdComposition32P55" as N1 {
   Code system PQCMC Comp Section Types
     }
 }
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
+}
  node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
          **Reference:**
@@ -24,6 +36,7 @@ node "EctdComposition32P55" as N1 {
         GENC Country Codes
     }
 } 
+
   node "DrugProductwithImpurities" as NN { 
       object "**Parent:** MedicationDefinition" as obj3 {  
          **Reference:**
@@ -42,8 +55,10 @@ node "ImpuritySubstance" as N6 {
     }    
 }
 
-N1 --> NSO   
-NN --> N6
-N1 --> NN 
+N1 -[#darkred]-> NSO  
+NN -[#darkred]-> N6
+N1 -[#darkred]-> NN
+N6 -[#darkred]-> NB64 
+
 }
 @enduml

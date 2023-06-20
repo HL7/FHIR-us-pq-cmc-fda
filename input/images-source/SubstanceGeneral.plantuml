@@ -1,6 +1,13 @@
-@startuml
+@startuml SubstanceGeneral
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
 object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-32s10.html]]
@@ -59,11 +66,11 @@ node "PolymorphicForm" as N2 {
 } 
 
 
-N1 --> N21
-N1 --> NN
-NN --> N2
-N2 --> NB64
-N21 --> NB64
-N1 --> NSO
+N1 -[#darkred]-> N21
+N1 -[#darkred]-> NN
+NN -[#darkred]-> N2
+N2 -[#darkred]-> NB64
+N21 -[#darkred]-> NB64
+N1 -[#darkred]-> NSO
 }
 @enduml

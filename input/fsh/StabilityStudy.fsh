@@ -2,8 +2,8 @@ Extension: ProtocolExtension
 Id: pq-protocol-extension
 Title: "Study Protocol"
 Description: """Study protocol identification"""
-//* ^context[+].type = #element
-//* ^context[=].expression = "ResearchStudy"
+* ^context[+].type = #element
+* ^context[=].expression = "ResearchStudy"
 * extension contains
     protocolIdentifier 1..1 MS and
     protocolVersion 1..1 MS
@@ -19,8 +19,8 @@ Extension: PullIntervalExtension
 Id: pq-timePoint-extension
 Title: "Study Interval"
 Description: "Contains elements related to the intervals of the stability study."
-//* ^context[+].type = #element
-//* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
 * extension contains
     timePoint 1..1 MS and
     timePointDescription 1..1 MS
@@ -192,8 +192,8 @@ Description: "Summary of the types of studies conducted (forced degradation, pho
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
 * identifier 1..1 MS
 * status MS
-* subjectReference 1..1 MS
-* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
+//* subjectReference 1..1 MS
+//* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
 * goal.target 1..1 MS
 * goal.target.detail[x] only Quantity
 * goal.target.detailQuantity 0..1 MS

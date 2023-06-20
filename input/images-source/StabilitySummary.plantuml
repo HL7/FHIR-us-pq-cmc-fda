@@ -1,12 +1,19 @@
-@startuml
+@startuml StabilitySummary
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES {
 object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-sp7181.html]]
     }  
   node "RoutineDrugProduct" as NN { 
-      object "**Parent:** DrugProduct" as obj3 {
+      object "**Parent:** MedicinalProductDefinition" as obj3 {
              **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-product.html]]
         **ValueSets:**
@@ -51,7 +58,7 @@ node "StabilitySummary" as NMain {
         pq-additional-info-extension
 }
 
-objMain <|-- objExs2  
+objMain *-- objExs2  
 }
 
 node "EctdCompositionSP7181" as N1 { 
@@ -71,13 +78,13 @@ node "SponsorOrganization" as NSO {
     }
 }
 
-CH --> NN
-CH --> NNS
-N1 --> CH
-N1 --> NSO
-NN --> NMFG
-NNS --> NMFG
-N1 --> NMain
+CH -[#green]-> NN
+CH -[#green]-> NNS
+N1 -[#darkred]-> CH
+N1 -[#darkred]-> NSO
+NN -[#darkred]-> NMFG
+NNS -[#darkred]-> NMFG
+N1 -[#darkred]-> NMain
 
 
 }

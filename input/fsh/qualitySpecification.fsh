@@ -2,23 +2,22 @@ Extension: InterpretationCodeExtension
 Id: pq-interpretation-code-extension
 Title: "Interpretation Code"
 Description: "A code that describes how to relate the given value to an acceptance value."
-
-//* ^context[+].type = #element
-//* ^context[=].expression = "Observation.referenceRange.low"
-//* ^context[+].type = #element
-//* ^context[=].expression = "Observation.referenceRange.high"
-//* ^context[+].type = #element
-//* ^context[=].expression = "Observation.component.referenceRange.low"
-//* ^context[+].type = #element
-//* ^context[=].expression = "Observation.component.referenceRange.high"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition.goal.target.detailQuantity"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition.goal.target.detailRange.low"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition.goal.target.detailRange.high"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition.goal.target.detailString"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.referenceRange.low"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.referenceRange.high"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component.referenceRange.low"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component.referenceRange.high"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.goal.target.detailQuantity"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.goal.target.detailRange.low"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.goal.target.detailRange.high"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.goal.target.detailString"
 * value[x] only CodeableConcept
 * value[x] from PqcmcInterpretationCodeTerminology (required)
 
@@ -26,8 +25,8 @@ Extension: SpecificationStatusExtension
 Id: pq-specification-status-extension
 Title: "Specification Status"
 Description: "The current FDA regulatory status of the specification"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition"
 * value[x] 1..1 MS
   * ^short = "Specification Status"
   * ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
@@ -41,8 +40,8 @@ Extension: SpecificationTypeExtension
 Id: pq-specification-type-extension
 Title: "Specification Type"
 Description: "A classification of specification related to the kind of the entity it is referencing"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition"
 * value[x] 1..1 MS
   * ^short = "Specification Type"
   * ^definition = """A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
@@ -55,16 +54,16 @@ Extension: TestOrderExtension
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
 Description: "The sequential number assigned to each Test or Stabe to specify the order of display on the Quality Specification."
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition.action"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.action"
 * value[x] only decimal
 
 Extension: RRTExtension
 Id: pq-rrt-extension
 Title: "Relative Retention Time"
 Description: "An alternative for test name when the RRT is used as an identifier for a substance, usually unknown."
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition.action.title"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.action.title"
 * value[x] only string
 
 Profile: QualitySpecification
@@ -96,8 +95,8 @@ Note: This value should be unique across all specifications for a given material
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
 * status MS
-* subjectReference 1..1 MS
-* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
+//* subject 1..1 MS
+//* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
@@ -137,6 +136,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
 * goal.target.measure MS 
 * goal.target.measure.text 1..1 MS
+* goal.target.detail[x] MS
 * goal.target.detail[x] only Quantity or Range  or string or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "Acceptance Criteria (Numeric)"
@@ -182,6 +182,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
 * goal.target.detailInteger.value 1..1 MS
+* goal.target.due 0..0
 * action MS
 * action ^short = "Test or Stage"
 * action.extension contains pq-order-extension named testOrder 1..1 MS  
@@ -258,5 +259,3 @@ Example: the file path to the procedure document.
 //* //element(*,PlanDefinition)/action/selectionBehavior/@value
 * action.action 0..* MS
 * action.action ^short = "Alternate if required for elaborate testing.  Use testOrder decimal values to indicate group sequencing."
-
-

@@ -43,7 +43,9 @@ Severity: #error
 
 Invariant: cmc-representation-or-document
 Description: "A structure has either a representation or document and supporting types."
-Expression: "structure.representation.document.resolve().content.attachment.data  xor structure.representation.representation.exists() and structure.representation.type.coding exists()"Severity: #error
+Expression: "structure.representation.document.resolve().content.attachment.data xor (structure.representation.representation.exists() 
+and structure.representation.type.coding.exists())"
+Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
@@ -113,13 +115,13 @@ Severity: #error
 Expression: "$this.is(FHIR.oid) = true"   //of urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 
 Invariant: cmc-ectd-doc-2
-Description: "The title must start with the PQCMC Comp Section Type display value"
+Description: "The document title must start with the PQCMC Composition.Type display value"
 Expression: "title.value.startsWith(type.coding.display) = true"
 Severity: #error
 
 Invariant: cmc-ectd-doc-3
-Description: "The title must start with the PQCMC Composition.Type display value"
-Expression: "title.value.startsWith(type.coding.display) = true"
+Description: "The section title must start with the PQCMC Comp Section Type display value"
+Expression: "section.title.value.startsWith(type.coding.display) = true"
 Severity: #error
 
 Invariant: cmc-percent-quantity

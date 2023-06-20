@@ -1,9 +1,40 @@
+Extension: ContainerClosureExtension
+Id: pq-container-closure-extension
+Title: "Container Closure"
+Description: "The packaging information including a brief description of the components, the assembled
+packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials"
+* . ^short = "Container Closure System Information"
+* ^context[+].type = #element
+* ^context[=].expression = "MedicinalProductDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "SubstanceDefinition"
+* extension contains
+    containerType 1..1 MS and
+    closureType 1..1 MS and  
+    description 1..1 MS and
+    depiction 0..* MS 
+* extension[containerType].value[x] only CodeableConcept
+* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
+* extension[containerType].value[x] ^short = "Container Type"
+* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]"
+* extension[closureType].value[x] only CodeableConcept
+* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
+* extension[closureType].value[x] ^short = "Closure Type"
+* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+* extension[description].value[x] only markdown
+* extension[description].value[x] ^short = "Container Closure System Description"
+* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+"""
+* extension[depiction].value[x] only Reference(Base64DocumentReference)
+
 Extension: ProductBatchIngredientExtension
 Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
-Description: "Extension for measurement properties for ingredients in the batch formla.."
-//* ^context[+].type = #element
-//* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+Description: "Extension for measurement properties for ingredients in the batch formla."
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * extension contains
   overagePercent 0..1 MS and
   overageJustification 0..1 MS and
@@ -25,51 +56,19 @@ Note: This is typically applicable to biologics
 Example: International Units for Enzymes
 """
 
-Extension: ContainerClosureExtension
-Id: pq-container-closure-extension
-Title: "Container Closure"
-Description: "The packaging information including a brief description of the components, the assembled
-packaging system and any precautions needed to ensure the protection and preservation of the drug substance and drug product during their use in the clinical trials"
-* . ^short = "Container Closure System Information"
-//* ^context[+].type = #element
-//* ^context[=].expression = "MedicinalProductDefinition"
-//* ^context[+].type = #element
-//* ^context[=].expression = "SubstanceDefinition"
-* extension contains
-    description 1..1 MS and
-    containerType 1..1 MS and
-    closureType 1..1 MS and
-    depiction 0..* MS 
-* extension[description].value[x] only markdown
-* extension[description].value[x] ^short = "Container Closure System Description"
-* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
-Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
-Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
-"""
-* extension[description].value[x] ^definition = "Any textual comments that describe the sum of container closure systems(CCS) components that together contain and protect the dosage form or drug substance."
-* extension[containerType].value[x] only CodeableConcept
-* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
-* extension[containerType].value[x] ^short = "Container Type"
-* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]"
-* extension[closureType].value[x] only CodeableConcept
-* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
-* extension[closureType].value[x] ^short = "Closure Type"
-* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
-* extension[depiction].value[x] only Reference
-
 Profile: DrugProduct
 Parent: MedicinalProductDefinition
-Id: pqcmc-drug-produc
+Id: pqcmc-drug-product
 Title: "Drug Product"
-Description: "Includes the properties of the drug product, its components and impurities"
+Description: "This profile is not used in any bundles. It is a reference profile of MedicinalProductDefinition if not divided into eCTD sections. Includes the properties of the drug product, its components and impurities"
 
-* extension contains pq-container-closure-extension named mdpcontainerClosure 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
-* description 0..1 MS
+* description 1..1 MS
 * description ^short = "Drug Product Description"
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose, etc. """
+
 * combinedPharmaceuticalDoseForm 0..1 MS
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
 * combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"
@@ -91,14 +90,14 @@ SME comment -- this is the marketed dosage form.
 * impurity only Reference(ImpuritySubstance)
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -112,6 +111,7 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
 * crossReference.product MS
 * crossReference.product ^short = "Co-Package"
+
 
 Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
@@ -128,6 +128,7 @@ Note: Excludes dosage form, route of administration and strength.
 Example: Tylenol
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
 """
+* manufacturedDoseForm.coding from SplPharmaceuticalDosageFormTerminology
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
@@ -384,6 +385,11 @@ Examples: Filler, Surfactant"""
 * component.property[PPiD].type = PqcmcProductCharacteristicCodes#PPiD "Product Part Identifier"
 * component.property[PPiD].value[x] 1..1 MS
 * component.property[PPiD].value[x] only CodeableConcept
+* component.property[PPiD].valueCodeableConcept.coding from CmcRelationshipTypesVS
+* component.property[PPiD].valueCodeableConcept.coding  ^short = "Product Part Role"
+* component.property[PPiD].valueCodeableConcept.coding ^definition = """If the Product Part does not have a  Product Part Identifier Reference then it is a parent.  
+If there is a Product Part Identifier Reference it is a child.
+"""
 * component.property[PPiD].valueCodeableConcept.text 1..1 MS
 * component.property[PPiD].valueCodeableConcept.text ^short = "Product Part Identifier"
 * component.property[PPiD].valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
@@ -491,14 +497,14 @@ Description: "Listing of all components of the dosage form to be used in the man
 * property ^slicing.description = "Slice based on value"
 * property contains
       BatchSize 1..1 MS and
-      BatchUtil 1..1 MS and
+      BatchUtil 1..* MS and
       AddInfo 0..1 MS
 * property[BatchSize].type 1..1 MS
 * property[BatchSize].type ^short = "Batch Quantity"
 * property[BatchSize].type ^definition = """The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
 """
-* property[BatchSize].type = $BATCHFORMPROP#batchsize "Batch Quantity"
+* property[BatchSize].type = BatchFormulaPropertyCodeSystem#batchsize "Batch Quantity"
 * property[BatchSize].value[x] only Quantity
 * property[BatchSize].valueQuantity.unit 1..1 MS
 * property[BatchSize].valueQuantity.unit ^short = "Quantity UOM"
@@ -507,7 +513,7 @@ Example: 1000 kg
 * property[BatchSize].valueQuantity.code 1..1 MS
 * property[BatchSize].valueQuantity.code from  PqcmcUnitsMeasureTerminology
 
-* property[BatchUtil].type = $BATCHFORMPROP#BatchUtil "Batch Utilization"
+* property[BatchUtil].type = BatchFormulaPropertyCodeSystem#BatchUtil "Batch Utilization"
 * property[BatchUtil].value[x] only CodeableConcept
 * property[BatchUtil].valueCodeableConcept 1..1 MS
 * property[BatchUtil].valueCodeableConcept ^short = "Batch Utilization"
@@ -515,7 +521,7 @@ Example: 1000 kg
 Examples: commercial, development. """
 * property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
 * property[AddInfo].type 1..1 MS
-* property[AddInfo].type = $BATCHFORMPROP#batchinfo "Batch Formula Additional Information"
+* property[AddInfo].type = BatchFormulaPropertyCodeSystem#batchinfo "Batch Formula Additional Information"
 * property[AddInfo].value[x] only markdown
 * property[AddInfo].valueMarkdown ^short = "Batch Formula Additional Information"
 * property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the batch formula. [Source: SME Defined]
@@ -658,8 +664,8 @@ Title: "Drug Product Manufacturing Batch"
 Description: "This profile defines the details of a batch of medicine."
 
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/drug-product-manufacturing-batch"
-* ^context.type = #extension
-* ^context.expression = "extension to the batch in Medication"
+* ^context.type = #element
+* ^context.expression = "Medication.batch"
 * extension[manufacturingDate] 1..1 MS
 * extension[manufacturingDate] ^short = "Manufacturing Date"
 * extension[manufacturingDate] ^definition = """The date associated with manufacturing a batch. [Source: SME Defined]
@@ -736,7 +742,7 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 
 Profile: RoutineDrugProduct
 Parent: MedicinalProductDefinition
-Id: pqcmc-routine-drug-product
+Id: pqcmc-routine-drug-product 
 Title: "Routine Drug Product"
 Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."
 
@@ -758,14 +764,14 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code from SplDrugRouteofAdministrationTerminology
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -791,14 +797,14 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * impurity only Reference(ImpuritySubstance)	
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -811,25 +817,25 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
 
+
 Profile: DrugProductContainerClosure
 Parent: MedicinalProductDefinition
-Id: pqcmc-druproduct-container-closure
+Id: pqcmc-drugproduct-container-closure
 Title: "Drug Product Container Closure"
 Description: "Description and coding of the container closure system. Profile of Drug Product profile."
-
-* extension contains pq-container-closure-extension named mdpcontainerClosure 0..1 MS
+* .extension contains  pq-container-closure-extension named containerClosure 1..1 MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -869,14 +875,15 @@ SME comment -- this is the marketed dosage form.
 * route.coding.code from SplDrugRouteofAdministrationTerminology
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
+* name.type from CmcProductNameTypesVS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].productName
-* name[Proprietary].type.text = "Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].productName
 * name[NonProprietary].type.text = "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
@@ -890,7 +897,9 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part ^slicing.rules = #open
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
-
+* crossReference.product MS
+* crossReference.product ^short = "Co-Packaged Product"
+* crossReference.product only Reference(DrugProductDescription)
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition
@@ -904,14 +913,14 @@ Description: "The Drug Product produced by the batch formula."
 * comprisedOf only Reference(BatchFormula)
 * name 1..2 MS
 * name.productName 1..1 MS
-* name.type MS
+* name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "$this"
+* name ^slicing.discriminator.path = "type"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type.text = "Proprietary"
-* name[NonProprietary].type.text = "Non-Proprietary"
+* name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.

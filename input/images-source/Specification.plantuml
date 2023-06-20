@@ -1,12 +1,19 @@
-@startuml
+@startuml Specification
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.S41 and 3.2.P4151 Specification Bundle" as NODES {
 object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-SP4151.html]]
     }  
   node "RoutineDrugProduct" as NN { 
-      object "**Parent:** DrugProduct" as obj3 {
+      object "**Parent:** MedicinalProductDefinition" as obj3 {
          **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-product.html]]
         **ValueSets:**
@@ -41,8 +48,16 @@ node "EctdCompositionSP4151" as N1 {
       **ValueSets:**
   Code system PQCMC Comp Section Types
     }
- 
 }
+node "SponsorOrganization" as NMSpon { 
+      object "**Parent:** Organization" as objDP {
+        **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+         **ValueSets:**
+        GENC Country Codes
+    }
+}
+
  node "RoutineSubstanceDefinition for API" as NNS { 
       object "**Parent:** SubstanceDefinition" as obj4 {
          **Reference:**
@@ -54,15 +69,6 @@ node "EctdCompositionSP4151" as N1 {
                 Source Type Terminology
       }
 }
-node "SponsorOrganization" as NMSpon { 
-      object "**Parent:** Organization" as objDP {
-        **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-         **ValueSets:**
-        GENC Country Codes
-    }
-}
-
 
 diamond CH
 
@@ -89,17 +95,16 @@ diamond CH
         TestOrderExtension
         RRTExtension
     }
-    obj2 <|-- objQSEx
+    obj2 *-- objQSEx
 }
 
-N1 --> N2
-CH --> N21
-CH --> NNS
-CH --> NN
-N1 --> CH
-N21 --> N21mfg
-N2 --> CH
-N1 --> NMSpon
-NNS --> N21mfg
+N1 -[#darkred]-> NMSpon
+N1 -[#darkred]-> N2
+N2 -[#darkred]-> CH
+CH -[#green]-> N21
+CH -[#green]-> NNS
+CH -[#green]-> NN
+NNS -[#darkred]-> N21mfg
+N21 -[#darkred]-> N21mfg
 }
 @enduml

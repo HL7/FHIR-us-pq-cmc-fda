@@ -1,7 +1,20 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
+### Changes and Updates for Version 0.1.14
+The current development IG -  Stage 1A
+
+- Removed recusive on backbone in MID.  Not supported in FHIR  Added coded value to PPID to idenify parent/child status
+- nomenclature changes to substance and product
+- changes to container clousure.  Added descrition and depiction
+- many small changes throughout IG
+- removed examples if there were errors
+- Specification modified for reference error - pending publisher release of fix
+- Update of all PlantUML diagrams to reflect changes to bundles link corrections and formating for PlantUML version change in publisher
+- ribbon updated for stages
+- Specfication page updated with new text
+
 ### Changes and Updates for Version 0.1.13
-The current development IG -  R5 Initial Release
+
 Triage all Warnings (214) Resolved 38.  Others either US Common Core or Terminology not supported by server
 
 Errors: 118, Warnings: 220, Info: 3, Broken Links: 10 (19:46.380)

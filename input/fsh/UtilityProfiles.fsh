@@ -1,8 +1,9 @@
 Profile: Base64DocumentReference
 Parent: DocumentReference
 Id: cmc-document-reference
+Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64"
-* status from http://hl7.org/fhir/ValueSet/document-reference-status
+
 * status = #current (exactly)
 * content MS
 * content.attachment MS
@@ -18,14 +19,16 @@ Extension: AditionalInformationExtension
 Id: pq-additional-info-extension
 Title: "Aditional Information"
 Description: "Any additional information"
-//* ^context[+].type = #element
-//* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
-//* ^context[+].type = #element
-//* ^context[=].expression = "Ingredient"
-//* ^context[+].type = #element
-//* ^context[=].expression = "PlanDefinition"
-//* ^context[+].type = #element
-//* ^context[=].expression = "ResearchStudy"
-//* ^context[+].type = #element
-//* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.property.valueMarkdown"
+* ^context[+].type = #element
+* ^context[=].expression = "Ingredient"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "ResearchStudy"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
 * value[x] only markdown

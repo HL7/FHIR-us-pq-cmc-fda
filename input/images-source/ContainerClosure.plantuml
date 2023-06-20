@@ -1,6 +1,13 @@
-@startuml
+@startuml ContainerClosure
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
     object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-32p70.html]]
@@ -16,7 +23,7 @@ package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
 node "DrugProductContainerClosure" as N21 { 
       object "**Parent:** MedicinalProductDefinition" as obj22 {
            **Reference:**
-      [[StructureDefinition-pqcmc-druproduct-container-closure.html]]
+      [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
         **ValueSets:**
         Container Type Terminology
         Closure Type Terminology
@@ -24,9 +31,14 @@ node "DrugProductContainerClosure" as N21 {
     object "**Extensions**" as objEx {
         mdpcontainerClosure
     }
-    obj22 <|-- objEx
+    obj22 *-- objEx
 }
-
+node "Base64DocumentReference" as NB64 { 
+      object "**Parent:** DocumentReference"  as obj64 {  
+       **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]] 
+    }   
+}
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
            **Reference:**
@@ -37,7 +49,7 @@ node "SponsorOrganization" as NSO {
 }
 }
 
-N1 --> N21
-N1 --> NSO
-
+N1 -[#darkred]-> N21
+N1 -[#darkred]-> NSO
+objEx -[#darkred]-> NB64 
 @enduml

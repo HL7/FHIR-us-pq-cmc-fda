@@ -1,6 +1,13 @@
-@startuml
+@startuml SubstanceControlMat
 allowmixing
 'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
 package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
 object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-32s23.html]]
@@ -68,9 +75,9 @@ node "MfgTestSiteOrganization" as N21mfg {
 
  
 
-N1 --> N21
-N2 --> N21
-N1 --> NSO
-N21 --> N21mfg
+N1 -[#darkred]-> N21
+N2 -[#darkred]-> N21
+N1 -[#darkred]-> NSO
+N21 -[#darkred]-> N21mfg
 }
 @enduml
