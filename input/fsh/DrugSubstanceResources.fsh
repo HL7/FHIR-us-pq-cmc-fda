@@ -124,7 +124,7 @@ It is accessible at https://www.uniprot.org/
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   sys 0..1 MS and
@@ -325,7 +325,7 @@ It is accessible at https://www.uniprot.org/
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   gsrs 0..1 MS and
@@ -404,7 +404,7 @@ Example: Polymorph A
 """
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   gsrs 0..1 MS and
@@ -494,7 +494,7 @@ It is accessible at https://www.uniprot.org/
 
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
   sub 0..1 MS and
@@ -902,7 +902,7 @@ Examples: USP/NF, EP, Company Standard
 
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
   gsrs 0..1 MS and
@@ -1141,7 +1141,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 * name.preferred ^short = "rue when the name type is GSRS preferred is Substance Name???"
 * name.preferred obeys cmc-name-preferred
 * relationship 0..* MS
-* relationship obeys cmc-substance-relationship
+* relationship.substanceDefinitionReference ^short = "The substance definition of a polyphorm of the Drug Substance"
 * relationship.substanceDefinitionReference only Reference( PolymorphicForm )
 * relationship.type.text = "Polymorph"
 * relationship.type.text ^short = "Polymorph"
@@ -1208,6 +1208,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * code.code.coding ^slicing.discriminator.type = #pattern
 * code.code.coding ^slicing.discriminator.path = "system"
 * code.code.coding ^slicing.rules = #open
+// specifically left open in case there is some other codes not considered.  Information gathering.
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
@@ -1225,7 +1226,7 @@ It is accessible at https://www.uniprot.org/
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name contains
   sys 1..1 MS and
   sub 0..1 MS and
@@ -1345,7 +1346,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 * name.preferred obeys cmc-name-preferred
 
 * relationship 0..* MS
-* relationship obeys cmc-substance-relationship
+* relationship.substanceDefinitionReference ^short = "The substance definition of an impurity of the Drug Substance"
 * relationship.substanceDefinitionReference only Reference( ImpuritySubstance )
 * relationship.type.text = "Impurity"
 * relationship.type.text ^short = "Impurity"
@@ -1400,7 +1401,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * code.code.coding
 * code.code.coding ^slicing.discriminator.type = #pattern
 * code.code.coding ^slicing.discriminator.path = "system"
-* code.code.coding ^slicing.rules = #open
+* code.code.coding ^slicing.rules = #closed
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
@@ -1419,7 +1420,7 @@ It is accessible at https://www.uniprot.org/
 * name ^short = "Only one name required"
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding" //element(*,SubstanceDefinition)/name/type/coding/code
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   sys 0..1 MS and

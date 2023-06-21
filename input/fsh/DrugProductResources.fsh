@@ -93,7 +93,7 @@ SME comment -- this is the marketed dosage form.
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
@@ -106,7 +106,7 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.rules = #closed
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
 * crossReference.product MS
@@ -132,7 +132,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
-* property ^slicing.rules = #open
+* property ^slicing.rules = #closed
 * property ^slicing.description = "Slice based on value"
 * property contains
       OvrRelsProf 1..1 MS and
@@ -266,6 +266,7 @@ Example: Push, Target."""
 * component.amount ^slicing.discriminator.type = #exists
 * component.amount ^slicing.discriminator.path = amount
 * component.amount ^slicing.rules = #closed
+* component.amount ^slicing.ordered = true
 * component.amount ^slicing.description = "Slice based on the component.amounts."
 * component.amount contains
   Numerator 1..1 MS and
@@ -367,7 +368,7 @@ Examples: Filler, Surfactant"""
 * component.property 1..* MS
 * component.property ^slicing.discriminator.type = #value
 * component.property ^slicing.discriminator.path = "type"
-* component.property ^slicing.rules = #open
+* component.property ^slicing.rules = #closed
 * component.property ^slicing.description = "Slice based on value"
 * component.property contains
     PPiD 1..1 MS and
@@ -469,7 +470,7 @@ Description: "Listing of all components of the dosage form to be used in the man
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
-* property ^slicing.rules = #open
+* property ^slicing.rules = #closed
 * property ^slicing.description = "Slice based on value"
 * property contains
       BatchSize 1..1 MS and
@@ -743,7 +744,7 @@ SME comment -- this is the marketed dosage form.
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
@@ -756,7 +757,7 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.rules = #closed
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
 
@@ -776,7 +777,7 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
@@ -789,7 +790,7 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.rules = #closed
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
 
@@ -807,7 +808,7 @@ Description: "Description and coding of the container closure system. Profile of
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
@@ -855,7 +856,7 @@ SME comment -- this is the marketed dosage form.
 * name.type from CmcProductNameTypesVS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
@@ -870,7 +871,7 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.rules = #closed
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
 * crossReference.product MS
@@ -892,7 +893,7 @@ Description: "The Drug Product produced by the batch formula."
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
+* name ^slicing.rules = #closed
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
@@ -905,6 +906,6 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.rules = #closed
 * name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
