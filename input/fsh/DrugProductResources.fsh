@@ -377,18 +377,16 @@ Examples: Filler, Surfactant"""
     CoatPurpose 0..* MS and
     Color 0..1 MS and
     ContPercent 1..1 MS and
-    AddInfo 0..1 MS and
-    StrnType 0..1 MS and
-    AmtOper 0..1 MS and
-    AmtText 0..1 MS
+    AddInfo 0..1 MS 
 * component.property[PPiD].type MS
 * component.property[PPiD].type = PqcmcProductCharacteristicCodes#PPiD "Product Part Identifier"
 * component.property[PPiD].value[x] 1..1 MS
 * component.property[PPiD].value[x] only CodeableConcept
 * component.property[PPiD].valueCodeableConcept.coding from CmcRelationshipTypesVS
 * component.property[PPiD].valueCodeableConcept.coding  ^short = "Product Part Role"
-* component.property[PPiD].valueCodeableConcept.coding ^definition = """If the Product Part does not have a  Product Part Identifier Reference then it is a parent.  
-If there is a Product Part Identifier Reference it is a child.
+* component.property[PPiD].valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
+If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
+If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
 """
 * component.property[PPiD].valueCodeableConcept.text 1..1 MS
 * component.property[PPiD].valueCodeableConcept.text ^short = "Product Part Identifier"
@@ -451,28 +449,6 @@ Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Cont
 * component.property[AddInfo].valueMarkdown ^short = "Product Part Additional Information"
 * component.property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined]
 //Examples: removed during process, adjusted for loss on drying."""
-
-* component.property[StrnType].type MS
-* component.property[StrnType].type = PqcmcProductCharacteristicCodes#StrnType "Strength Type (for API)"
-* component.property[StrnType].value[x] only CodeableConcept
-* component.property[StrnType].valueCodeableConcept ^short = "Strength Type (for API)"
-* component.property[StrnType].valueCodeableConcept ^definition = "A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
-Example: Mass, Activity"
-* component.property[StrnType].valueCodeableConcept from PqcmcStrengthTypeTerminology
-
-* component.property[AmtOper].type MS
-* component.property[AmtOper].type = PqcmcProductCharacteristicCodes#AmtOper "Product Part Ingredient Amount Operator"
-* component.property[AmtOper].value[x] only CodeableConcept
-* component.property[AmtOper].valueCodeableConcept ^short = "Product Part Ingredient Amount Operator"
-* component.property[AmtOper].valueCodeableConcept ^definition = "A mathematical symbol that denotes equality or inequality between two values. Note: This is typically applicable to biologics"
-* component.property[AmtOper].valueCodeableConcept from PqcmcStrengthOperatorTerminology
-
-* component.property[AmtText].type MS
-* component.property[AmtText].type = PqcmcProductCharacteristicCodes#AmtText "Product Part Ingredient Amount Textual"
-* component.property[AmtText].value[x] only markdown
-* component.property[AmtText].valueMarkdown ^short = "Product Part Ingredient Amount Textual"
-* component.property[AmtText].valueMarkdown ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
-
 * component.component 0..* MS
 
 Profile: BatchFormula

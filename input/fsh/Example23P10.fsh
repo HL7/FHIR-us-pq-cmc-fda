@@ -1,7 +1,7 @@
 Instance: 942af593-ac88-4e28-816a-5c0c1e7315be
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Test Site (test site A)"
-Description: "manufacturing site instance generated programatically"
+Description: "manufacturing site"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -19,7 +19,7 @@ Description: "manufacturing site instance generated programatically"
 Instance: 2a0de050-5654-4956-8021-0f618546c267
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Test Site (test site B)"
-Description: "manufacturing site instance generated programatically"
+Description: "test site B manufacturing site"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -37,7 +37,7 @@ Description: "manufacturing site instance generated programatically"
 Instance: c3101f44-f16b-490e-b5bd-a409399db05c
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Test Site (test site C)"
-Description: "manufacturing site instance generated programatically"
+Description: "test site Cmanufacturing site"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -76,6 +76,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 30
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "30 mg"
 
 Instance: 619fc67b-11f7-4370-a04e-ab0a3f474758
 InstanceOf: ComponentSubstance
@@ -100,6 +101,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 60
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "60 mg"
 
 Instance: b85b77f7-1e05-4674-bdef-0e6f516194f5
 InstanceOf: ComponentSubstance
@@ -124,6 +126,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 70
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "70 mg"
 
 Instance: 08adbc3b-71d2-4b9e-b0be-8c74322c7238
 InstanceOf: ComponentSubstance
@@ -148,6 +151,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 15
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "15 mg"
 
 Instance: b3c8e7cf-6ded-4a92-8b7b-eddc484b34f8
 InstanceOf: ComponentSubstance
@@ -175,6 +179,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 47
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "47 mg"
 
 Instance: 2d7fea87-9f13-4515-91e5-7ac470475be2
 InstanceOf: ComponentSubstance
@@ -199,6 +204,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 1
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "1 mg"
 
 Instance: 6ec1288a-b7ca-497e-b4dc-ca8437b366a8
 InstanceOf: ComponentSubstance
@@ -223,6 +229,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 1
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "1 mg"
 
 Instance: 81ebb90d-67b7-41ff-ab0d-235d08152468
 InstanceOf: ComponentSubstance
@@ -247,6 +254,7 @@ InstanceOf: DrugProductComponent
 * substance.strength.presentationRatio.numerator.value = 1
 * substance.strength.presentationRatio.denominator = $NCIT#C66832 "1"
 * substance.strength.presentationRatio.denominator.value = 1
+* substance.strength.textPresentation = "1 mg"
 
 Instance: 839fadac-3fad-4679-9f90-c523c3db2811
 InstanceOf: DrugProductDescription
@@ -336,10 +344,9 @@ InstanceOf: FinishedProduct
 * component[=].amount[Denominator] = $UCUM#1 "1*"
 * component[=].amount[Denominator].value = 1
 * component[=].property[PPiD].valueCodeableConcept.text = "Example2BeadDrug_Capsule"
-* component[=].property[RelsProf].valueCodeableConcept = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = PqcmcReleaseProfile#101 "DR"
 * component[=].property[ContPercent].valueQuantity.value = 0.3778
 * component[=].property[Color].valueCodeableConcept.text = "Clear"
-* component[=].property[StrnType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * component[=].constituent[+].hasIngredient.reference = Reference(95db9419-c813-4003-a2b6-212eac86fbd3)
 * component[=].constituent[=].amount[Numerator] = $UCUM#mg "milligram"
 * component[=].constituent[=].amount[Numerator].value = 70
@@ -362,10 +369,9 @@ InstanceOf: FinishedProduct
 * component[=].amount[Denominator] = $UCUM#1 "1*"
 * component[=].amount[Denominator].value = 1
 * component[=].property[PPiD].valueCodeableConcept.text = "Example2BeadDrug_Bead1"
-* component[=].property[RelsProf].valueCodeableConcept = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = PqcmcReleaseProfile#101 "DR"
 * component[=].property[ContPercent].valueQuantity.value = 0.2089
 * component[=].property[Color].valueCodeableConcept.text = "Pink"
-* component[=].property[StrnType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * component[=].constituent[+].hasIngredient.reference = Reference(068cbb54-8883-482e-898b-7d5f37349c3f)
 * component[=].constituent[=].amount[Numerator] = $UCUM#mg "milligram"
 * component[=].constituent[=].amount[Numerator].value = 30
@@ -404,10 +410,9 @@ InstanceOf: FinishedProduct
 * component[=].amount[Denominator] = $UCUM#1 "1*"
 * component[=].amount[Denominator].value = 1
 * component[=].property[PPiD].valueCodeableConcept.text = "Example2BeadDrug_Bead2"
-* component[=].property[RelsProf].valueCodeableConcept = http://hl7.org/fhir/us/pq-cmc/codesystem/pqcmc-release-profile#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = PqcmcReleaseProfile#101 "DR"
 * component[=].property[ContPercent].valueQuantity.value = 0.4133
 * component[=].property[Color].valueCodeableConcept.text = "Blue"
-* component[=].property[StrnType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * component[=].constituent[+].hasIngredient.reference = Reference(79fe73b6-3597-4daa-a98e-9d45ef403437)
 * component[=].constituent[=].amount[Numerator] = $UCUM#mg "milligram"
 * component[=].constituent[=].amount[Numerator].value = 60

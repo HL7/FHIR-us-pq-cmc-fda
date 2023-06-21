@@ -1,7 +1,7 @@
 @startuml Stability
 allowmixing
 'Mixed model of use case and object
-skinparam svgDimensionStyle false
+skinparam svgDimensionStyle true
 skinparam ObjectBackgroundColor LightYellow
 skinparam ObjectBorderColor #A80036
 skinparam activityDiamondBorderColor #A80036

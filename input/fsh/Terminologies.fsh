@@ -7,6 +7,7 @@ Description: "Designation of relationship for product parts"
 
 * #parent "Parent"
 * #child "Child"
+* #primary "Primary"
 
 ValueSet: CmcRelationshipTypesVS
 Id: cmc-relationship-types-vs

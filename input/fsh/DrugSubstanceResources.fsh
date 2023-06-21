@@ -4,9 +4,9 @@ Title: "Strength Extension"
 Description: "Values required in Ingredient.substance.strength"
 * ^context[+].type = #element
 * ^context[=].expression = "Ingredient.substance.strength"
-* extension contains	
-    strengthType 1..1 MS and	
-    contentPercent 1..1 MS and	
+* extension contains
+    strengthType 1..1 MS and
+    contentPercent 1..1 MS and
     strengthOperator 0..1 MS
 * extension[strengthType].value[x] only CodeableConcept
 * extension[strengthType].value[x] from PqcmcStrengthTypeTerminology (required)
@@ -32,7 +32,7 @@ Title: "Drug Substance"
 Description: "Drug Substance (Active Ingredient) nomenclature and characterization."
 * . obeys cmc-structure-required
 * identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
@@ -106,7 +106,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -123,7 +123,7 @@ It is accessible at https://www.uniprot.org/
 //BR: isbt Applicable to blood products.
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -144,7 +144,8 @@ It is accessible at https://www.uniprot.org/
 * name[sys].name ^definition = """TDB [Source: SME Defined]
 """
 * name[sys].type 1..1 MS
-* name[sys].type.coding 1..1 
+* name[sys].type.coding 1..1 MS
+* name[sys].type.coding 1..1
 * name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
@@ -152,18 +153,21 @@ It is accessible at https://www.uniprot.org/
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
 * name[brand].type 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand" 
+* name[brand].type.coding 1..1 MS
+* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 * name[gsrs].name 1..1 MS
@@ -171,6 +175,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
+* name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
@@ -178,6 +183,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[usp].name ^definition = """TDB [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
+* name[usp].type.coding 1..1 MS
 * name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
 
 * name[cas].name 1..1 MS
@@ -186,6 +192,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 Example: CAS [103-90-2]
  """
 * name[cas].type 1..1 MS
+* name[cas].type.coding 1..1 MS
 * name[cas].type.coding = PqcmcSubstanceNameType#CAS "CAS Number"
 
 * name[inn].name 1..1 MS
@@ -194,6 +201,7 @@ Example: CAS [103-90-2]
 Example: Paracetamol
 """
 * name[inn].type 1..1 MS
+* name[inn].type.coding 1..1 MS
 * name[inn].type.coding = PqcmcSubstanceNameType#INN "INN"
 
 * name[usan].name 1..1 MS
@@ -210,6 +218,7 @@ Example: acetaminophen
 Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
+* name[iupac].type.coding 1..1 MS
 * name[iupac].type.coding = PqcmcSubstanceNameType#IUPAC "IUPAC"
 
 * name[isbt].name 1..1 MS
@@ -243,7 +252,7 @@ Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
 * . obeys cmc-structure-required
 * identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification MS
 * classification ^short = "Impurity Classification"
 * classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
@@ -302,7 +311,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -315,26 +324,28 @@ It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   gsrs 0..1 MS and
   comn 0..1 MS and
-  sub 0..1 MS 
+  sub 0..1 MS
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred" 
+* name[gsrs].type.coding 1..1 MS
+* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
 
 * name[comn].name 1..1 MS
@@ -342,6 +353,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 Profile: PolymorphicForm
@@ -351,7 +363,7 @@ Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
 * identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula"
@@ -378,7 +390,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * structure.representation.document 0..1 MS
 * structure.representation.document only Reference(Base64DocumentReference)
 * code 0..1 MS
-* code.code.coding.system = $UNII 
+* code.code.coding.system = $UNII
 * code.code.coding ^short = "UNII"
 * code.code.coding ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -391,26 +403,28 @@ Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/Data
 Example: Polymorph A
 """
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   gsrs 0..1 MS and
   comn 0..1 MS and
-  sub 0..1 MS 
+  sub 0..1 MS
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred" 
+* name[gsrs].type.coding 1..1 MS
+* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
 
 * name[comn].name 1..1 MS
@@ -418,6 +432,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 Profile: ComponentSubstance
@@ -426,7 +441,7 @@ Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
 * identifier 0..1
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
@@ -462,7 +477,7 @@ Examples: USP/NF, EP, Company Standard
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -478,20 +493,21 @@ It is accessible at https://www.uniprot.org/
 * name ^definition = "Any ingredient intended for use in the manufacture of a drug product, including those that may not appear in such drug product. [Source: (21 CFR 210.3 (b) (3)) PAC-ATLS 1998]"
 
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type..code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
   sub 0..1 MS and
   brand 0..1 MS and
   comn 0..1 MS and
-  gsrs 0..1 MS 
+  gsrs 0..1 MS
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
 
 * name[brand].name 1..1 MS
@@ -499,13 +515,15 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
 * name[brand].type 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand" 
+* name[brand].type.coding 1..1 MS
+* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 * name[gsrs].name 1..1 MS
@@ -513,6 +531,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
+* name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 
 * sourceMaterial 1..1 MS
@@ -601,11 +620,9 @@ Example: mg]
 * substance.strength.presentationQuantity.unit 1..1
 * substance.strength.presentationQuantity.code 1..1
 * substance.strength.presentationQuantity.code from  PqcmcUnitsMeasureTerminology
-
-
-//* substance.strength.textPresentation 1..1 MS
-//* substance.strength.textPresentation ^short = "Strength Textual"
-//* substance.strength.textPresentation ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+* substance.strength.textPresentation 1..1 MS
+* substance.strength.textPresentation ^short = "Strength Textual"
+* substance.strength.textPresentation ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 
 Profile: DrugProductIngredient
 Parent: Ingredient
@@ -628,7 +645,7 @@ Description: "The amount details about the drug product ingredients in the batch
 * substance.strength contains
       Weight 1..1 MS and
       VolumeToVolume 0..1 MS and
-      WeightToVolume 0..1 MS and 
+      WeightToVolume 0..1 MS and
       WeightToWeight 0..1 MS
 * substance.strength[Weight].concentrationQuantity.value 1..1 MS
 * substance.strength[Weight].concentrationQuantity.value ^short = "Ingredient Quanty Per Product Batch"
@@ -782,7 +799,7 @@ Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 
 * identifier 0..1
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
@@ -808,7 +825,7 @@ Examples: USP/NF, EP, Company Standard
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -884,7 +901,7 @@ Examples: USP/NF, EP, Company Standard
 * name ^definition = "Any ingredient intended for use in the manufacture of a drug product, including those that may not appear in such drug product. [Source: (21 CFR 210.3 (b) (3)) PAC-ATLS 1998]"
 
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern of Product Ingredient Name Type"
 * name contains
@@ -897,13 +914,16 @@ Examples: USP/NF, EP, Company Standard
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred" 
+* name[gsrs].type.coding 1..1 MS
+* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
 
 * name[comn].name 1..1 MS
@@ -911,6 +931,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 Profile: SubstanceContainerClosure
@@ -955,7 +976,7 @@ Title: "Substance Nomenclature "
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
 
 * identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
@@ -986,7 +1007,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug S
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -999,7 +1020,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -1020,26 +1041,32 @@ It is accessible at https://www.uniprot.org/
 * name[sys].name ^definition = """TDB [Source: SME Defined]
 """
 * name[sys].type 1..1 MS
-* name[sys].type.coding 1..1 
+* name[sys].type.coding 1..1 MS
 * name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
 * name[brand].type 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand" 
+* name[brand].type.coding 1..1 MS
+* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 * name[gsrs].name 1..1 MS
@@ -1047,6 +1074,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
+* name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
@@ -1054,6 +1082,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[usp].name ^definition = """TDB [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
+* name[usp].type.coding 1..1 MS
 * name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
 
 * name[cas].name 1..1 MS
@@ -1062,6 +1091,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 Example: CAS [103-90-2]
  """
 * name[cas].type 1..1 MS
+* name[cas].type.coding 1..1 MS
 * name[cas].type.coding = PqcmcSubstanceNameType#CAS "CAS Number"
 
 * name[inn].name 1..1 MS
@@ -1070,6 +1100,7 @@ Example: CAS [103-90-2]
 Example: Paracetamol
 """
 * name[inn].type 1..1 MS
+* name[inn].type.coding 1..1 MS
 * name[inn].type.coding = PqcmcSubstanceNameType#INN "INN"
 
 * name[usan].name 1..1 MS
@@ -1077,6 +1108,7 @@ Example: Paracetamol
 * name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
 Example: acetaminophen
  """
+* name[usan].type 1..1 MS
 * name[usan].type.coding 1..1
 * name[usan].type.coding = PqcmcSubstanceNameType#USAN "USAN"
 
@@ -1086,12 +1118,14 @@ Example: acetaminophen
 Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
+* name[iupac].type.coding 1..1 MS
 * name[iupac].type.coding = PqcmcSubstanceNameType#IUPAC "IUPAC"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128"
 * name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
  """
+* name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1
 * name[isbt].type.coding = PqcmcSubstanceNameType#ISBT "ISBT 128"
 
@@ -1099,6 +1133,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 * name[comp].name ^short = "Company Code"
 * name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
+* name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
 * name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
 
@@ -1118,7 +1153,7 @@ Title: "Substance Impurities"
 Description: "Drug Substance Impurities"
 
 * identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
@@ -1176,7 +1211,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -1189,7 +1224,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name 1..* MS
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code"
+* name ^slicing.discriminator.path = "type.coding"
 * name ^slicing.rules = #open
 * name contains
   sys 1..1 MS and
@@ -1209,26 +1244,32 @@ It is accessible at https://www.uniprot.org/
 * name[sys].name ^definition = """TDB [Source: SME Defined]
 """
 * name[sys].type 1..1 MS
-* name[sys].type.coding 1..1 
+* name[sys].type.coding 1..1 MS
 * name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
 * name[brand].type 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand" 
+* name[brand].type.coding 1..1 MS
+* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 * name[gsrs].name 1..1 MS
@@ -1236,6 +1277,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
+* name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
@@ -1243,6 +1285,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[usp].name ^definition = """TDB [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
+* name[usp].type.coding 1..1 MS
 * name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
 
 * name[cas].name 1..1 MS
@@ -1251,6 +1294,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 Example: CAS [103-90-2]
  """
 * name[cas].type 1..1 MS
+* name[cas].type.coding 1..1 MS
 * name[cas].type.coding = PqcmcSubstanceNameType#CAS "CAS Number"
 
 * name[inn].name 1..1 MS
@@ -1259,6 +1303,7 @@ Example: CAS [103-90-2]
 Example: Paracetamol
 """
 * name[inn].type 1..1 MS
+* name[inn].type.coding 1..1 MS
 * name[inn].type.coding = PqcmcSubstanceNameType#INN "INN"
 
 * name[usan].name 1..1 MS
@@ -1266,6 +1311,7 @@ Example: Paracetamol
 * name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined]
 Example: acetaminophen
  """
+* name[usan].type 1..1 MS
 * name[usan].type.coding 1..1
 * name[usan].type.coding = PqcmcSubstanceNameType#USAN "USAN"
 
@@ -1275,12 +1321,14 @@ Example: acetaminophen
 Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
+* name[iupac].type.coding 1..1 MS
 * name[iupac].type.coding = PqcmcSubstanceNameType#IUPAC "IUPAC"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128"
 * name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
  """
+* name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1
 * name[isbt].type.coding = PqcmcSubstanceNameType#ISBT "ISBT 128"
 
@@ -1288,6 +1336,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 * name[comp].name ^short = "Company Code"
 * name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
+* name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
 * name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
 
@@ -1310,7 +1359,7 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 
 * . obeys cmc-structure-required
 * identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"	
+* identifier ^short = "optional user designated identifier"
 * classification 1..* MS
 * classification from EVMPDSubstanceClassification
 * classification ^short = "Substance Type"
@@ -1355,7 +1404,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * code.code.coding contains
     unii 0..1 and
     uniProt 0..1
-* code.code.coding[unii].system = $UNII 
+* code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
@@ -1369,7 +1418,7 @@ It is accessible at https://www.uniprot.org/
 * name 1..* MS
 * name ^short = "Only one name required"
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding.code" //element(*,SubstanceDefinition)/name/type/coding/code
+* name ^slicing.discriminator.path = "type.coding" //element(*,SubstanceDefinition)/name/type/coding/code
 * name ^slicing.rules = #open
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -1385,26 +1434,32 @@ It is accessible at https://www.uniprot.org/
 * name[sys].name ^definition = """TDB [Source: SME Defined]
 """
 * name[sys].type 1..1 MS
-* name[sys].type.coding 1..1 
+* name[sys].type.coding 1..1 MS
 * name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
 Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
 """
 * name[sub].type 1..1 MS
+* name[sub].type.coding 1..1 MS
 * name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
 * name[brand].type 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand" 
+* name[brand].type.coding 1..1 MS
+* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
+* name[comn].type.coding 1..1 MS
 * name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
 
 * name[gsrs].name 1..1 MS
@@ -1412,6 +1467,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[gsrs].name ^definition = """TDB [Source: SME Defined]
 """
 * name[gsrs].type 1..1 MS
+* name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
@@ -1419,12 +1475,14 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[usp].name ^definition = """TDB [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
+* name[usp].type.coding 1..1 MS
 * name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
 
 * name[comp].name 1..1 MS
 * name[comp].name ^short = "Company Code"
 * name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
+* name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
 * name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
 
