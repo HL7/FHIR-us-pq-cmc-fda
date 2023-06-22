@@ -61,7 +61,7 @@ InstanceOf: ComponentSubstance
 * manufacturer = Reference(942af593-ac88-4e28-816a-5c0c1e7315be)
 * code.code = $UNII#6GOW6DWN2A
 * name[gsrs].name = "OXAZEPAM"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -86,7 +86,7 @@ InstanceOf: ComponentSubstance
 * manufacturer = Reference(942af593-ac88-4e28-816a-5c0c1e7315be)
 * code.code = $UNII#F8A3652H1V
 * name[gsrs].name = "PROPRANOLOL HYDROCHLORIDE"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -111,7 +111,7 @@ InstanceOf: ComponentSubstance
 * supplier = Reference(2a0de050-5654-4956-8021-0f618546c267)
 * code.code = $UNII#1IVH67816N
 * name[gsrs].name = "HYPROMELLOSE 2910 (50 MPA.S)"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -136,7 +136,7 @@ InstanceOf: ComponentSubstance
 * supplier = Reference(2a0de050-5654-4956-8021-0f618546c267)
 * code.code = $UNII#4ELV7Z65AP
 * name[gsrs].name = "STEARIC ACID"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -161,9 +161,8 @@ InstanceOf: ComponentSubstance
 * supplier = Reference(2a0de050-5654-4956-8021-0f618546c267)
 * code.code = $UNII#O8232NY3SJ
 * name[comn].name = "Maize starch"
-* name.type.coding = PqcmcSubstanceNameType#139 "Common"
+//* name.type.coding = PqcmcSubstanceNameType#139 "Common"
 * sourceMaterial.type = $NCIT#C14258 "Plant"
-
 * sourceMaterial.genus.text = "zea"
 * sourceMaterial.species.text = "mays"
 * sourceMaterial.countryOfOrigin.text = "Argentina"
@@ -189,7 +188,7 @@ InstanceOf: ComponentSubstance
 * supplier = Reference(2a0de050-5654-4956-8021-0f618546c267)
 * code.code = $UNII#WZB9127XOA
 * name[gsrs].name = "FD&C RED NO. 40"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -214,7 +213,7 @@ InstanceOf: ComponentSubstance
 * supplier = Reference(2a0de050-5654-4956-8021-0f618546c267)
 * code.code = $UNII#15FIX9V2JP
 * name[gsrs].name = "TITANIUM DIOXIDE"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -239,7 +238,7 @@ InstanceOf: ComponentSubstance
 * supplier = Reference(2a0de050-5654-4956-8021-0f618546c267)
 * code.code = $UNII#H3R47K3TBD
 * name[gsrs].name = "FD&C BLUE NO. 1"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
 
@@ -261,6 +260,7 @@ InstanceOf: DrugProductDescription
 * description = """an example drug with two different beads containing propranolol HCl and oxazepam."""
 * combinedPharmaceuticalDoseForm = $NCIT#C25158 "CAPSULE"
 * route = $NCIT#C38288 "ORAL"
+* name[NonProprietary].productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
 * name[NonProprietary].part[+].part = "OXAZEPAM"
 * name[NonProprietary].part[=].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI "scientific name"
 * name[NonProprietary].part[+].part = "30mg"
@@ -269,7 +269,7 @@ InstanceOf: DrugProductDescription
 * name[NonProprietary].part[=].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI "scientific name"
 * name[NonProprietary].part[+].part = "60mg"
 * name[NonProprietary].part[=].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR "strength name"
-* name[NonProprietary].productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
+
 * name[NonProprietary].type.text = "Non-Proprietary"
 
 Instance: e56e33a7-46fd-4d2e-8c41-39a84f4ee717

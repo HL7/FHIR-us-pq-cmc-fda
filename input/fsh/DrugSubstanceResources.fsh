@@ -368,7 +368,7 @@ Description: "Alternate structure present in the drug substance"
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
-* structure.technique 1..1 MS
+* structure.technique 0..1 MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
@@ -1372,7 +1372,7 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
-* structure.technique MS
+* structure.technique 1..1 MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.

@@ -57,7 +57,7 @@ Usage: #inline
 * structure.representation.type = $NCIT#C54683 "InChI File (small molecule)"
 * code.code = $UNII#TX2KR8MQM9 "TX2KR8MQM9"
 * name[gsrs].name = "SUMANENE"
-* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+//* name.type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
 
 
 Instance: 78f4b797-fbb1-4078-974d-9471bdae7ada
@@ -137,10 +137,9 @@ M  END
 * structure.representation.representation = """InChI=1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h1,3-6,8-12H,2H2/t3-,4+,5+,6+/m0/s1
 """
 * structure.representation.document = Reference(fe3f13c1-f0ac-4b40-8024-f4386e290dfc)  
-* code.code.coding.system = $UNII
-* code.code.coding.code = $UNII#5SL0G7R0OK  "5SL0G7R0OK"
+* code.code.coding[unii] = $UNII#5SL0G7R0OK  "5SL0G7R0OK"
 * name[sub].name = "ANHYDROUS DEXTROSE"
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+//* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
 * name[sub].preferred  = true
 
 //From Resource Profile: Polymorphic Form 
@@ -186,7 +185,7 @@ M  END
 """
 * code.code.coding.system = $UNII
 * code.code.coding.code = $UNII#02833ISA66  "02833ISA66"
-* name.name = "LEVOGLUCOSE"
+* name[gsrs].name = "LEVOGLUCOSE"
 
 Instance: 7e34e5c1-5e95-400f-8f76-332dd096e735
 InstanceOf: MfgTestSiteOrganization 

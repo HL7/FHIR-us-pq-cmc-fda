@@ -93,10 +93,18 @@ SME comment -- this is the marketed dosage form.
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #closed
+* name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Optional name parts"
+* name[Proprietary].part.type from  from PqcmcNamePartTerminology
 * name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -106,12 +114,20 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #closed
-* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
+* name[NonProprietary].part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
-* crossReference.product MS
-* crossReference.product ^short = "Co-Package"
+* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
 
+* crossReference.product MS
+* crossReference.product ^short = "Co-Packaged drug product"
 
 Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
@@ -744,10 +760,18 @@ SME comment -- this is the marketed dosage form.
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #closed
+* name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Optional name parts"
+* name[Proprietary].part.type from  from PqcmcNamePartTerminology
 * name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -757,9 +781,17 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #closed
-* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
+* name[NonProprietary].part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
+* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
 
 Profile: DrugProductwithImpurities
 Parent: MedicinalProductDefinition
@@ -777,10 +809,18 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #closed
+* name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Optional name parts"
+* name[Proprietary].part.type from  from PqcmcNamePartTerminology
 * name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -790,10 +830,17 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #closed
-* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
+* name[NonProprietary].part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
-
+* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
 
 Profile: DrugProductContainerClosure
 Parent: MedicinalProductDefinition
@@ -808,10 +855,18 @@ Description: "Description and coding of the container closure system. Profile of
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #closed
+* name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Optional name parts"
+* name[Proprietary].part.type from  from PqcmcNamePartTerminology
 * name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -822,8 +877,17 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
 * name[NonProprietary].part ^slicing.rules = #open
-* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
+* name[NonProprietary].part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
+* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
+
 
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
@@ -853,16 +917,21 @@ SME comment -- this is the marketed dosage form.
 * name 1..2 MS
 * name.productName 1..1 MS
 * name.type 1..1 MS
-* name.type from CmcProductNameTypesVS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #closed
+* name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Optional name parts"
+* name[Proprietary].part.type from  from PqcmcNamePartTerminology
 * name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
-* name[NonProprietary].productName
-* name[NonProprietary].type.text = "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -872,8 +941,11 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
 * name[NonProprietary].part ^slicing.rules = #closed
-* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
+* name[NonProprietary].part contains Scientific 1..1
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
+* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+
 * crossReference.product MS
 * crossReference.product ^short = "Co-Packaged Product"
 * crossReference.product only Reference(DrugProductDescription)
@@ -893,10 +965,18 @@ Description: "The Drug Product produced by the batch formula."
 * name.type 1..1 MS
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #closed
+* name ^slicing.rules = #open
 * name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary].type = ProductNameTypes#PROP "Proprietary"
+* name[Proprietary].part 0..* MS
+* name[Proprietary].part.part 1..1 MS
+* name[Proprietary].part.type 1..1 MS
+* name[Proprietary].part ^slicing.discriminator.type = #value
+* name[Proprietary].part ^slicing.discriminator.path = "type"
+* name[Proprietary].part ^slicing.rules = #open
+* name[Proprietary].part ^slicing.description = "Optional name parts"
+* name[Proprietary].part.type from  from PqcmcNamePartTerminology
 * name[NonProprietary].type = ProductNameTypes#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -906,6 +986,15 @@ Note: The minimum is the scientific name.
 * name[NonProprietary].part.type 1..1 MS
 * name[NonProprietary].part ^slicing.discriminator.type = #value
 * name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #closed
-* name[NonProprietary].part ^slicing.description = "Break out all name parts if present"
+* name[NonProprietary].part ^slicing.rules = #open
+* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
+* name[NonProprietary].part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
 * name[NonProprietary].part.type from PqcmcNamePartTerminology
+* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
+
