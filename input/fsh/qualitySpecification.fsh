@@ -95,8 +95,8 @@ Note: This value should be unique across all specifications for a given material
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
 * status MS
-//* subject 1..1 MS
-//* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
+* subject 1..1 MS
+* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
