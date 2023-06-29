@@ -8,11 +8,11 @@ Severity: #error
 Invariant: cmc-substance-relationship
 Description: "If relationship.type.text is 'Polymorph' then reference is PolymorphicForm, if relationship.type.text is 'Raw Material' then reference is ComponentSubstance, 
 if relationship.type.text is 'Impurity' then reference is DrugSubstanceImpurity."
-Expression: "relationship.where(type.text = 'Polymorph').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is PolymorphicForm)
+Expression: "relationship.where(type.text.getValue() = 'Polymorph').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is PolymorphicForm)
 or
-relationship.where(type.text = 'Raw Material').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is ComponentSubstance)
+relationship.where(type.text.getValue() = 'Raw Material').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is ComponentSubstance)
 or
-relationship.where(type.text = 'Impurity').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is DrugSubstanceImpurity)"
+relationship.where(type.text.getValue() = 'Impurity').exists() implies relationship.substanceDefinitionReference.reference.resolve().exists($this is DrugSubstanceImpurity)"
 Severity: #error
 
 Invariant: cmc-when-unii-required
@@ -62,32 +62,29 @@ Invariant: cmc-strength-type-cases
 Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory
 IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional"
-Expression: "substance.strength.extension[strengthType].where(coding.where(code = 'C168628' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-strength-type-terminology').exists()).exists()
-implies substance.strength.presentationRatio.exists() or substance.strength.presentationQuantity.exists()) and  substance.strength.presentationQuantity.extension[strengthOperator].exists().not()
+Expression: "substance.strength.extension[strengthFactors].extension[strengthType].where(coding.where(code = 'C168628' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-strength-type-terminology').exists()).exists()
+implies substance.strength.presentationRatio.exists() or substance.strength.presentationQuantity.exists()) and  substance.strength.presentationQuantity.extension[strengthFactors].extension[strengthOperator].exists().not()
 and
-substance.strength.extension[strengthType].where(coding.where(code = 'C45420' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-strength-type-terminology').exists().exists()
+substance.strength.extension[strengthFactors].extension[strengthType].where(coding.where(code = 'C45420' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-strength-type-terminology').exists().exists()
 implies substance.strength.presentationRatio.exists() and substance.strength.presentationRatio.unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology'
 or substance.strength.presentationQuantity.exists() and substance.strength.presentationQuantity.unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology'"Severity: #error
 
 Invariant: cmc-arbitrary-unit
-Description: "If the UOM is UCUM Arbitrary Unit [arb'U], you need to describe the units in the Strength Text data element."
-Expression: "((substance.strength.presentationRatio.where(unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology').exists()).exists())
-or ((substance.strength.presentationRatio.where(unit = 'ARBITRARY UNITS' and system = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology').exists()).exists())
-implies (substance.strength.textPresentation.contains('unit'))"
+Description: "If the UOM is UCUM Arbitrary Unit [arb'U], the units must described in the Strength Text data element."
+Expression: "((substance.strength.presentationRatio.where(unit.getValue() = 'ARBITRARY UNITS' and system.getValue() = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology').exists()).exists())
+or ((substance.strength.presentationRatio.where(unit.getValue() = 'ARBITRARY UNITS' and system.getValue() = 'http://hl7.org/fhir/us/pq-cmc/ValueSet/pqcmc-units-of-measure-terminology').exists()).exists())
+implies (substance.strength.textPresentation.getValue().contains('unit'))"
 Severity: #error
-
 
 Invariant: cmc-sub-test-category-batch
 Description: "The sub test category must match the parent test category in PqcmcTestCategoryCodes"
 Expression: "category.coding[testSubCat].code.exists() implies  %terminologies.subsumes(category.coding[testCategory].code, category.coding[testSubCat].code) = 'subsumes'"
 Severity: #error
 
-
 Invariant: cmc-name-type
 Description: "Name.type values are proprietary an non-proprietary"
-Expression: "(name.productName.exists() implies name.type.text = 'Proprietary' or 'Non-proprietary')"
+Expression: "(name.productName.exists() implies name.type.text.getValue() in ('Proprietary' | 'Non-proprietary'))"
 Severity: #error
-
 
 Invariant: cmc-sub-test-category
 Description: "The sub test category must match the parent test category in PqcmcTestCategoryCodes"
@@ -116,12 +113,12 @@ Expression: "$this.is(FHIR.oid) = true"   //of urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-
 
 Invariant: cmc-ectd-doc-2
 Description: "The document title must start with the PQCMC Composition.Type display value"
-Expression: "title.value.startsWith(type.coding.display) = true"
+Expression: "Composition.title.value.as(FHIR.String).startsWith(Composition.type.coding.display.as(FHIR.String)) = true"
 Severity: #error
 
 Invariant: cmc-ectd-doc-3
 Description: "The section title must start with the PQCMC Comp Section Type display value"
-Expression: "section.title.value.startsWith(type.coding.display) = true"
+Expression: "section.title.value.as(FHIR.String).startsWith(Composition.type.coding.display.as(FHIR.String)) = true"
 Severity: #error
 
 Invariant: cmc-percent-quantity

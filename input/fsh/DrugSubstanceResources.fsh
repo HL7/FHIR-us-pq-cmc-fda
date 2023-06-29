@@ -146,7 +146,7 @@ It is accessible at https://www.uniprot.org/
 * name[sys].type 1..1 MS
 * name[sys].type.coding 1..1 MS
 * name[sys].type.coding 1..1
-* name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+* name[sys].type.coding = $tempNCIt#145 "Systematic"
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
@@ -154,21 +154,21 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """TDB [Source: SME Defined]
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+* name[brand].type.coding = $tempNCIt#137 "Brand"
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
 * name[comn].name ^definition = """TDB [Source: SME Defined]
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
@@ -176,7 +176,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
 * name[usp].name ^short = "USP/NF"
@@ -184,7 +184,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[usp].type 1..1 MS
 * name[usp].type.coding 1..1 MS
-* name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
+* name[usp].type.coding = $tempNCIt#147 "USP/NF"
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
@@ -193,7 +193,7 @@ Example: CAS [103-90-2]
  """
 * name[cas].type 1..1 MS
 * name[cas].type.coding 1..1 MS
-* name[cas].type.coding = PqcmcSubstanceNameType#CAS "CAS Number"
+* name[cas].type.coding = $tempNCIt#CAS "CAS Number"
 
 * name[inn].name 1..1 MS
 * name[inn].name ^short = "INN"
@@ -202,7 +202,7 @@ Example: Paracetamol
 """
 * name[inn].type 1..1 MS
 * name[inn].type.coding 1..1 MS
-* name[inn].type.coding = PqcmcSubstanceNameType#INN "INN"
+* name[inn].type.coding = $tempNCIt#INN "INN"
 
 * name[usan].name 1..1 MS
 * name[usan].name ^short = "USAN"
@@ -210,7 +210,7 @@ Example: Paracetamol
 Example: acetaminophen
  """
 * name[usan].type.coding 1..1
-* name[usan].type.coding = PqcmcSubstanceNameType#USAN "USAN"
+* name[usan].type.coding = $tempNCIt#USAN "USAN"
 
 * name[iupac].name 1..1 MS
 * name[iupac].name ^short = "IUPAC Name"
@@ -219,21 +219,21 @@ Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
 * name[iupac].type.coding 1..1 MS
-* name[iupac].type.coding = PqcmcSubstanceNameType#IUPAC "IUPAC"
+* name[iupac].type.coding = $tempNCIt#IUPAC "IUPAC"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128"
 * name[isbt].name ^definition = """ISBT 128: It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
  """
 * name[isbt].type.coding 1..1
-* name[isbt].type.coding = PqcmcSubstanceNameType#ISBT "ISBT 128"
+* name[isbt].type.coding = $tempNCIt#ISBT "ISBT 128"
 
 * name[comp].name 1..1 MS
 * name[comp].name ^short = "Company Code"
 * name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
 * name[comp].type.coding 1..1
-* name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
+* name[comp].type.coding = $tempNCIt#Company "Company ID/Code"
 
 * name.preferred 0..1 MS
 * name.preferred ^short = "???True when the name type is Substance Name???"
@@ -338,7 +338,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
@@ -346,7 +346,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -354,7 +354,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
@@ -417,7 +417,7 @@ Example: Polymorph A
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
@@ -425,7 +425,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -433,7 +433,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 Profile: ComponentSubstance
 Parent: SubstanceDefinition
@@ -508,7 +508,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
@@ -516,7 +516,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+* name[brand].type.coding = $tempNCIt#137 "Brand"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -524,7 +524,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
@@ -532,7 +532,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
 * sourceMaterial 1..1 MS
 * sourceMaterial.type 0..1
@@ -915,7 +915,7 @@ Examples: USP/NF, EP, Company Standard
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
@@ -924,7 +924,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -932,7 +932,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 Profile: SubstanceContainerClosure
 Parent: SubstanceDefinition
@@ -1042,7 +1042,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name[sys].type 1..1 MS
 * name[sys].type.coding 1..1 MS
-* name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+* name[sys].type.coding = $tempNCIt#145 "Systematic"
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
@@ -1051,7 +1051,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
@@ -1059,7 +1059,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+* name[brand].type.coding = $tempNCIt#137 "Brand"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -1067,7 +1067,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
@@ -1075,7 +1075,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
 * name[usp].name ^short = "USP/NF"
@@ -1083,7 +1083,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[usp].type 1..1 MS
 * name[usp].type.coding 1..1 MS
-* name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
+* name[usp].type.coding = $tempNCIt#147 "USP/NF"
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
@@ -1092,7 +1092,7 @@ Example: CAS [103-90-2]
  """
 * name[cas].type 1..1 MS
 * name[cas].type.coding 1..1 MS
-* name[cas].type.coding = PqcmcSubstanceNameType#CAS "CAS Number"
+* name[cas].type.coding = $tempNCIt#CAS "CAS Number"
 
 * name[inn].name 1..1 MS
 * name[inn].name ^short = "INN"
@@ -1101,7 +1101,7 @@ Example: Paracetamol
 """
 * name[inn].type 1..1 MS
 * name[inn].type.coding 1..1 MS
-* name[inn].type.coding = PqcmcSubstanceNameType#INN "INN"
+* name[inn].type.coding = $tempNCIt#INN "INN"
 
 * name[usan].name 1..1 MS
 * name[usan].name ^short = "USAN"
@@ -1110,7 +1110,7 @@ Example: acetaminophen
  """
 * name[usan].type 1..1 MS
 * name[usan].type.coding 1..1
-* name[usan].type.coding = PqcmcSubstanceNameType#USAN "USAN"
+* name[usan].type.coding = $tempNCIt#USAN "USAN"
 
 * name[iupac].name 1..1 MS
 * name[iupac].name ^short = "IUPAC Name"
@@ -1119,7 +1119,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
 * name[iupac].type.coding 1..1 MS
-* name[iupac].type.coding = PqcmcSubstanceNameType#IUPAC "IUPAC"
+* name[iupac].type.coding = $tempNCIt#IUPAC "IUPAC"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128"
@@ -1127,7 +1127,7 @@ Example: N- (4-hydroxyphenyl)acetamide
  """
 * name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1
-* name[isbt].type.coding = PqcmcSubstanceNameType#ISBT "ISBT 128"
+* name[isbt].type.coding = $tempNCIt#ISBT "ISBT 128"
 
 * name[comp].name 1..1 MS
 * name[comp].name ^short = "Company Code"
@@ -1135,7 +1135,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
-* name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
+* name[comp].type.coding = $tempNCIt#Company "Company ID/Code"
 
 * name.preferred 0..1 MS
 * name.preferred ^short = "rue when the name type is GSRS preferred is Substance Name???"
@@ -1246,7 +1246,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name[sys].type 1..1 MS
 * name[sys].type.coding 1..1 MS
-* name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+* name[sys].type.coding = $tempNCIt#145 "Systematic"
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
@@ -1255,7 +1255,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
@@ -1263,7 +1263,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+* name[brand].type.coding = $tempNCIt#137 "Brand"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -1271,7 +1271,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
@@ -1279,7 +1279,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
 * name[usp].name ^short = "USP/NF"
@@ -1287,7 +1287,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[usp].type 1..1 MS
 * name[usp].type.coding 1..1 MS
-* name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
+* name[usp].type.coding = $tempNCIt#147 "USP/NF"
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
@@ -1296,7 +1296,7 @@ Example: CAS [103-90-2]
  """
 * name[cas].type 1..1 MS
 * name[cas].type.coding 1..1 MS
-* name[cas].type.coding = PqcmcSubstanceNameType#CAS "CAS Number"
+* name[cas].type.coding = $tempNCIt#CAS "CAS Number"
 
 * name[inn].name 1..1 MS
 * name[inn].name ^short = "INN"
@@ -1305,7 +1305,7 @@ Example: Paracetamol
 """
 * name[inn].type 1..1 MS
 * name[inn].type.coding 1..1 MS
-* name[inn].type.coding = PqcmcSubstanceNameType#INN "INN"
+* name[inn].type.coding = $tempNCIt#INN "INN"
 
 * name[usan].name 1..1 MS
 * name[usan].name ^short = "USAN"
@@ -1314,7 +1314,7 @@ Example: acetaminophen
  """
 * name[usan].type 1..1 MS
 * name[usan].type.coding 1..1
-* name[usan].type.coding = PqcmcSubstanceNameType#USAN "USAN"
+* name[usan].type.coding = $tempNCIt#USAN "USAN"
 
 * name[iupac].name 1..1 MS
 * name[iupac].name ^short = "IUPAC Name"
@@ -1323,7 +1323,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
 * name[iupac].type.coding 1..1 MS
-* name[iupac].type.coding = PqcmcSubstanceNameType#IUPAC "IUPAC"
+* name[iupac].type.coding = $tempNCIt#IUPAC "IUPAC"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128"
@@ -1331,7 +1331,7 @@ Example: N- (4-hydroxyphenyl)acetamide
  """
 * name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1
-* name[isbt].type.coding = PqcmcSubstanceNameType#ISBT "ISBT 128"
+* name[isbt].type.coding = $tempNCIt#ISBT "ISBT 128"
 
 * name[comp].name 1..1 MS
 * name[comp].name ^short = "Company Code"
@@ -1339,7 +1339,7 @@ Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
-* name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
+* name[comp].type.coding = $tempNCIt#Company "Company ID/Code"
 
 * name.preferred 0..1 MS
 * name.preferred ^short = "???True when the name type is Substance Name???"
@@ -1436,7 +1436,7 @@ It is accessible at https://www.uniprot.org/
 """
 * name[sys].type 1..1 MS
 * name[sys].type.coding 1..1 MS
-* name[sys].type.coding = PqcmcSubstanceNameType#145 "Systematic"
+* name[sys].type.coding = $tempNCIt#145 "Systematic"
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
@@ -1445,7 +1445,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = PqcmcSubstanceNameType#138 "Generic"
+* name[sub].type.coding = $tempNCIt#138 "Generic"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
@@ -1453,7 +1453,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
-* name[brand].type.coding = PqcmcSubstanceNameType#137 "Brand"
+* name[brand].type.coding = $tempNCIt#137 "Brand"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
@@ -1461,7 +1461,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
-* name[comn].type.coding = PqcmcSubstanceNameType#139 "Common"
+* name[comn].type.coding = $tempNCIt#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
@@ -1469,7 +1469,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = PqcmcSubstanceNameType#141 "GSRS Preferred"
+* name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
 * name[usp].name ^short = "USP/NF"
@@ -1477,7 +1477,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[usp].type 1..1 MS
 * name[usp].type.coding 1..1 MS
-* name[usp].type.coding = PqcmcSubstanceNameType#147 "USP/NF"
+* name[usp].type.coding = $tempNCIt#147 "USP/NF"
 
 * name[comp].name 1..1 MS
 * name[comp].name ^short = "Company Code"
@@ -1485,7 +1485,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 """
 * name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
-* name[comp].type.coding = PqcmcSubstanceNameType#Company "Company ID/Code"
+* name[comp].type.coding = $tempNCIt#Company "Company ID/Code"
 
 * name.preferred 0..1 MS
 * name.preferred ^short = "???True when the name type is Substance Name???"

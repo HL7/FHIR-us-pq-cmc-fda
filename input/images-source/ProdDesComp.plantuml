@@ -82,7 +82,7 @@ node "MfgTestSiteOrganization" as NMFG {
 node "DrugProductComponent" as NN { 
       object "**Parent:** Ingredient" as obj3 {
            **Reference:**
-      [[StructureDefinition-pqcmc-Component.html]]
+      [[StructureDefinition-pqcmc-component.html]]
       }
       object "**Extensions**" as objExs {
         Additional-info-extension

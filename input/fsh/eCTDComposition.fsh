@@ -6,6 +6,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -68,6 +69,7 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles."
 * . ^short = "CMC eCTD 32P32 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -121,6 +123,7 @@ Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
 * . ^short = "CMC eCTD 32S10 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -168,6 +171,7 @@ Title: "CMC eCTD 32S30 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles."
 * . ^short = "CMC eCTD 32S30 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -206,6 +210,7 @@ Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -249,6 +254,7 @@ Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * . ^short = "CMC eCTD 32P55 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -298,6 +304,7 @@ Title: "CMC eCTD 32S60 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles."
 * . ^short = "CMC eCTD 32S60 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -331,6 +338,7 @@ Title: "CMC eCTD 32P70 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles."
 * . ^short = "CMC eCTD 32P70 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -363,6 +371,7 @@ Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -416,6 +425,7 @@ Title: "CMC eCTD SP4454 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles."
 * . ^short = "CMC eCTD SP4454 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -474,6 +484,7 @@ Title: "CMC eCTD SP7383 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles."
 * . ^short = "CMC eCTD SP7383 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -542,6 +553,7 @@ Title: "CMC eCTD SP7181 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles."
 * . ^short = "CMC eCTD SP7181 Bundle"
 * . obeys cmc-first-resource
+* meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
 * type = #document (exactly)
@@ -594,14 +606,14 @@ Description: "The fields needed to represent the Quality Specifications to be in
 * . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#SP4151 "Quality Specification"
+* type = $SectionTypes#SP4151 "Quality Specification"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
 * section obeys cmc-ectd-doc-2
 * section 1..1 MS
 * section.code 1..1 MS
-* section.code from cmc-comp-section-types-vs (required)
+* section.code from CmcCompSectionTypesVS (required)
 * section.title 1..1 MS
 /*
     SECTION SLICESProduct
@@ -618,17 +630,17 @@ Description: "The fields needed to represent the Quality Specifications to be in
     Api 0..1 MS and
     Excipient 0..1 MS
 * section[DrugProduct] ^definition = "Product Specification to be included under the 3.2.P.5.1 eCTD heading."
-* section[DrugProduct].code = pqcmc-comp-section-types#32P51 "Product Specification"
+* section[DrugProduct].code = $SectionTypes#32P51 "Product Specification"
 * section[DrugProduct].title 1..1 MS
 * section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(QualitySpecification)
 * section[Api] ^definition = "Drug Substance Specification to be included under the 3.2.S.4.1 eCTD heading."
-* section[Api].code = pqcmc-comp-section-types#32S41 "Substance Specification"
+* section[Api].code = $SectionTypes#32S41 "Substance Specification"
 * section[Api].title 1..1 MS
 * section[Api].entry 1..1 MS
 * section[Api].entry only Reference(QualitySpecification)
 * section[Excipient] ^definition = "Excipient Specification to be included under the 3.2.P.4.1 eCTD heading."
-* section[Excipient].code = pqcmc-comp-section-types#32P41 "Excipients Specification"
+* section[Excipient].code = $SectionTypes#32P41 "Excipients Specification"
 * section[Excipient].title 1..1 MS
 * section[Excipient].entry 1..1 MS
 * section[Excipient].entry only Reference(QualitySpecification)
@@ -642,7 +654,7 @@ Description: "The fields needed to represent the Stability Data to be included u
 
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#SP7383 "Stability Data"
+* type = $SectionTypes#SP7383 "Stability Data"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -659,12 +671,12 @@ Description: "The fields needed to represent the Stability Data to be included u
     DrugProduct 0..1 MS and
     Api 0..1 MS
 * section[DrugProduct] ^definition = "Product Stability Data to be included under the 3.2.P.8.3 eCTD heading."
-* section[DrugProduct].code = pqcmc-comp-section-types#32P83 "Product Stability Data"
+* section[DrugProduct].code = $SectionTypes#32P83 "Product Stability Data"
 * section[DrugProduct].title 1..1 MS
 * section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(StabilityStudy)
 * section[Api] ^definition = "Drug Substance Stability Data to be included under the 3.2.S.7.3 eCTD heading."
-* section[Api].code = pqcmc-comp-section-types#32S73 "Substance Stability Data"
+* section[Api].code = $SectionTypes#32S73 "Substance Stability Data"
 * section[Api].title 1..1 MS
 * section[Api].entry 1..1 MS
 * section[Api].entry only Reference(StabilityStudy)
@@ -678,7 +690,7 @@ Description: "The fields needed to represent the Batch Analyses to be included u
 
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#SP4454 "Batch Analyses"
+* type = $SectionTypes#SP4454 "Batch Analyses"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -696,12 +708,12 @@ Description: "The fields needed to represent the Batch Analyses to be included u
     DrugProduct 0..1 MS and
     Api 0..1 MS
 * section[DrugProduct] ^definition = "Product Batch Analyses to be included under the 3.2.P.5.4 eCTD heading."
-* section[DrugProduct].code = pqcmc-comp-section-types#32P54 "Product Batch Analyses"
+* section[DrugProduct].code = $SectionTypes#32P54 "Product Batch Analyses"
 * section[DrugProduct].title 1..1 MS
 * section[DrugProduct].entry 1..1 MS
 * section[DrugProduct].entry only Reference(BatchAnalysis)
 * section[Api] ^definition = "Substance Batch Analyses to be included under the 3.2.S.4.4 eCTD heading."
-* section[Api].code = pqcmc-comp-section-types#32S44 "Substance Batch Analyses"
+* section[Api].code = $SectionTypes#32S44 "Substance Batch Analyses"
 * section[Api].title 1..1 MS
 * section[Api].entry 1..1 MS
 * section[Api].entry only Reference(BatchAnalysis)
@@ -715,7 +727,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32P32 "Product Batch Formula"
+* type = $SectionTypes#32P32 "Product Batch Formula"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -725,7 +737,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
-* section.code = pqcmc-comp-section-types#32P32 "Product Batch Formula"
+* section.code = $SectionTypes#32P32 "Product Batch Formula"
 * section.title 1..1 MS
 * section.entry only Reference(BatchFormulaMedicinalProduct)
 
@@ -737,7 +749,7 @@ Description: "The fields needed to represent the Product Characterization of Imp
 
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32P55 "Product Characterization of Impurities"
+* type = $SectionTypes#32P55 "Product Characterization of Impurities"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -747,7 +759,7 @@ Description: "The fields needed to represent the Product Characterization of Imp
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Product Characterization of Impurities to be included under the 3.2.P.5.5 eCTD heading."
-* section.code = pqcmc-comp-section-types#32P55 "Product Characterization of Impurities"
+* section.code = $SectionTypes#32P55 "Product Characterization of Impurities"
 * section.title 1..1 MS
 * section.entry only Reference(DrugProductwithImpurities)
 
@@ -760,7 +772,7 @@ Description: "The fields needed to represent the Product Container Closure Syste
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32P70 "Product Container Closure System"
+* type = $SectionTypes#32P70 "Product Container Closure System"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
@@ -771,7 +783,7 @@ Description: "The fields needed to represent the Product Container Closure Syste
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Product Container Closure System to be included under the 3.2.P.7.0 eCTD heading."
-* section.code = pqcmc-comp-section-types#32P70 "Product Container Closure System"
+* section.code = $SectionTypes#32P70 "Product Container Closure System"
 * section.title 1..1 MS
 * section.entry 1..1 MS
 * section.entry only Reference(DrugProductContainerClosure)
@@ -785,14 +797,14 @@ Description: "The fields needed to represent the Product Description, Container 
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32P10 "Product Description and Composition of the Drug Product"
+* type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
 * section obeys cmc-ectd-doc-2
 * section 3..3 MS
 * section.code 1..1 MS
-* section.code from cmc-comp-section-types-vs (required)
+* section.code from CmcCompSectionTypesVS (required)
 * section.title 1..1 MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
@@ -800,15 +812,15 @@ Description: "The fields needed to represent the Product Description, Container 
 * section ^slicing.description = "Slice based on the ectd document sections."
 * section contains ProductDescription 1..1 MS and ContainerClosure 1..1 MS and ProductComposition 1..1 MS
 * section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1.0 eCTD heading."
-* section[ProductDescription].code = pqcmc-comp-section-types#32P11 "Product Description"
+* section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ProductDescription].entry 1..1 MS
 * section[ProductDescription].entry only Reference(DrugProductDescription)
-* section[ContainerClosure] ^definition = "Product Container Closure System to be included under the 3.2.P.1.0 eCTD heading."
-* section[ContainerClosure].code = pqcmc-comp-section-types#32P11 "Product Description"
+* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1.0 eCTD heading."
+* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ContainerClosure].entry 1..1 MS
 * section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
 * section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1.0 eCTD heading."
-* section[ProductComposition].code = pqcmc-comp-section-types#32P12 "Product Composition"
+* section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
 * section[ProductComposition].entry 1..* MS
 * section[ProductComposition].entry only Reference(FinishedProduct)
 
@@ -821,7 +833,7 @@ Description: "The fields needed to represent the Substance Container Closure Sys
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32S60 "Substance Container Closure System"
+* type = $SectionTypes#32S60 "Substance Container Closure System"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
@@ -832,7 +844,7 @@ Description: "The fields needed to represent the Substance Container Closure Sys
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Substance Container Closure System to be included under the 3.2.S.6.0 eCTD heading."
-* section.code = pqcmc-comp-section-types#32S60 "Substance Container Closure System"
+* section.code = $SectionTypes#32S60 "Substance Container Closure System"
 * section.title 1..1 MS
 * section.entry 1..1 MS
 * section.entry only Reference(SubstanceContainerClosure)
@@ -846,7 +858,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32S10 "Substance General Information"
+* type = $SectionTypes#32S10 "Substance General Information"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
@@ -862,13 +874,13 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section ^slicing.description = "Slice based on the different sections that are needed in this document."
 * section contains SubstanceNomenclature 1..1 MS and SubstanceStructure 1..1 MS
 * section[SubstanceNomenclature] ^definition = "Substance Nomenclature to be included under the 3.2.S.1.0 eCTD heading."
-* section[SubstanceNomenclature].code = pqcmc-comp-section-types#32S11 "Substance Nomenclature"
+* section[SubstanceNomenclature].code = $SectionTypes#32S11 "Substance Nomenclature"
 * section[SubstanceNomenclature].title 1..1 MS
 * section[SubstanceNomenclature].title obeys cmc-ectd-doc-2
 * section[SubstanceNomenclature].entry 1..1 MS
 * section[SubstanceNomenclature].entry only Reference(DrugSubstanceNomenclature)
 * section[SubstanceStructure] ^definition = "Substance raw materials to be included under the 3.2.S.1.0 eCTD heading."
-* section[SubstanceStructure].code = pqcmc-comp-section-types#32S12 "Substance Structure"
+* section[SubstanceStructure].code = $SectionTypes#32S12 "Substance Structure"
 * section[SubstanceStructure].title 1..1 MS
 * section[SubstanceStructure].title obeys cmc-ectd-doc-2
 * section[SubstanceStructure].entry 1..1 MS
@@ -882,7 +894,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32S23 "Substance Control of Materials"
+* type = $SectionTypes#32S23 "Substance Control of Materials"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -892,7 +904,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included under the 3.2.S.2.3 eCTD heading."
-* section.code = pqcmc-comp-section-types#32S23 "Substance Control of Materials"
+* section.code = $SectionTypes#32S23 "Substance Control of Materials"
 * section.title 1..1 MS
 * section.entry 1..* MS
 * section.entry only Reference(ExcipientRaw)
@@ -905,7 +917,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
-* type = pqcmc-comp-section-types#32S30 "Substance Characterization"
+* type = $SectionTypes#32S30 "Substance Characterization"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
@@ -922,7 +934,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document."
 * section contains Structure 1..1 MS and Impurities 0..* MS
 * section[Structure] ^definition = "Substance Characterization to be included under the 3.2.S.3.0 eCTD heading."
-* section[Structure].code = pqcmc-comp-section-types#32S31 "Substance Elucidation of Structure and other Characteristics"
+* section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry 1..1 MS
 * section[Structure].entry only Reference(DrugSubstance)
@@ -936,7 +948,7 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 * status = #final
 * identifier 0..1 MS
 /* do or on type code*/
-* type = pqcmc-comp-section-types#SP7181 "Stability Summary and Conclusion"
+* type = $SectionTypes#SP7181 "Stability Summary and Conclusion"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 /*
@@ -953,12 +965,12 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
     DrugProduct 0..1 MS and
     Api 0..1 MS
 * section[DrugProduct] ^definition = "Product Stability Summary and Conclusion to be included under the 3.2.P.8.3 eCTD heading."
-* section[DrugProduct].code = pqcmc-comp-section-types#32P83 "Product Stability Data"
+* section[DrugProduct].code = $SectionTypes#32P83 "Product Stability Data"
 * section[DrugProduct].title 1..1 MS
 * section[DrugProduct].entry 2..2 MS
 * section[DrugProduct].entry only Reference(StabilitySummary or RoutineDrugProduct)
 * section[Api] ^definition = "Substance Stability Summary and Conclusion to be included under the 3.2.S.7.3 eCTD heading."
-* section[Api].code = pqcmc-comp-section-types#32S73 "Substance Stability Data"
+* section[Api].code = $SectionTypes#32S73 "Substance Stability Data"
 * section[Api].title 1..1 MS
 * section[Api].entry 2..2 MS
 * section[Api].entry only Reference(StabilitySummary or RoutineSubstanceDefinition)
