@@ -2,10 +2,9 @@ CodeSystem: CmcRelationshipTypes
 Id: cmc-relationship-types	
 Title: "Relationship types codes"	
 Description: "Local value set of all codes in Relationship Types system"
-
 * ^caseSensitive = true
 * ^experimental = false	
-	
+
 * #parent "Parent"	
 * #child "Child"	
 * #primary "Primary"	
