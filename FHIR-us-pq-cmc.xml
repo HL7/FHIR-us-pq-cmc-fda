@@ -75,7 +75,8 @@
 <artifact id="StructureDefinition/pqcmc-quality-specification" key="StructureDefinition-pqcmc-quality-specification" name="Quality Specification"/>
 <artifact id="StructureDefinition/pq-quality-specification-extension" key="StructureDefinition-pq-quality-specification-extension" name="Quality Specification Reference"/>
 <artifact id="ValueSet/pqcmc-quality-benchmark-terminology" key="ValueSet-pqcmc-quality-benchmark-terminology" name="Quality Standard Terminology"/>
-<artifact id="CodeSystem/cmc-relationship-types" key="CodeSystem-cmc-relationship-types" name="Relationship types Value Set"/>
+<artifact id="ValueSet/cmc-relationship-types-vs" key="ValueSet-cmc-relationship-types-vs" name="Relationship types Value Set"/>
+<artifact id="CodeSystem/cmc-relationship-types" key="CodeSystem-cmc-relationship-types" name="Relationship types codes"/>
 <artifact id="StructureDefinition/pq-rrt-extension" key="StructureDefinition-pq-rrt-extension" name="Relative Retention Time"/>
 <artifact id="ValueSet/pqcmc-release-mechanism" key="ValueSet-pqcmc-release-mechanism" name="Release Mechanism value set"/>
 <artifact id="ValueSet/pqcmc-release-profile" key="ValueSet-pqcmc-release-profile" name="Release Profile value set"/>

@@ -32,7 +32,7 @@ Description: "Contains elements related to the intervals of the stability study.
 * extension[timePoint].valueQuantity.unit ^short = "Interval Unit"
 * extension[timePoint].valueQuantity.unit ^definition = "The partitions of the study pause. [Source: eStability Implementation Guide]"
 * extension[timePoint].valueQuantity.code 1..1 MS
-* extension[timePoint].valueQuantity.code from PqcmcUnitsMeasureTerminology
+* extension[timePoint].valueQuantity.code from PqcmcUnitsMeasureTerminology (required)
 * extension[timePointDescription].value[x] only CodeableConcept
 * extension[timePointDescription].value[x] from PqcmcIntervalDescriptionCodeTerminology (required)
 * extension[timePointDescription].value[x] ^short = "Interval Description Code"
@@ -65,7 +65,7 @@ Example: Study Number- 565758
 * primaryPurposeType ^short = "Study Reason"
 * primaryPurposeType ^definition = """The rationale for submitting the stability data. [Source: SME Defined]
 Examples: Annual Report, NDA, Pre-market approval."""
-* primaryPurposeType from PqcmcStabilityStudyReasonTerminology
+* primaryPurposeType from PqcmcStabilityStudyReasonTerminology (required)
 * description 0..1 MS
 * description ^short = "Study Design"
 * description ^definition = """A textual description providing the details of the study plan which includes tests, time points, storage conditions, method. [Source: SME Defined]
@@ -122,13 +122,13 @@ Example: Study Number- 565758
     storagecategory 1..1 and
     orientation 0..1
 * condition[substudytype] ^short = "Sub-Study Type"
-* condition[substudytype] from PqcmcStudyTypeTerminology
+* condition[substudytype] from PqcmcStudyTypeTerminology (required)
 * condition[storage] ^short = "Storage Conditions Temp.RH"
-* condition[storage] from PqcmcStorageConditionsTerminology
+* condition[storage] from PqcmcStorageConditionsTerminology (required)
 * condition[storagecategory] ^short = "Storage Condition Category"
-* condition[storagecategory] from PqcmcStorageConditionCategoryTerminology
+* condition[storagecategory] from PqcmcStorageConditionCategoryTerminology (required)
 * condition[orientation] ^short = "Container Orientation"
-* condition[orientation] from PqcmcContainerOrientationTerminology
+* condition[orientation] from PqcmcContainerOrientationTerminology (required)
 * period 1..1 MS
 * period.start 1..1 MS
 * period.start ^short = "Sub-study Start Date"
@@ -212,7 +212,7 @@ Retest Period Unit of Measure: The unit of measure for the retest period. [Sourc
 Note: this is typically months.
 """
 * goal.target.detailQuantity.code 1..1 MS
-* goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology
+* goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology (required)
 * action 1..1 MS
 * action ^short = "Expiry or Retest per storage condidtion"
 //* action.description 0..1 MS
@@ -228,7 +228,7 @@ For example: Control room temperature, refrigerated
 
 Note: for most drug substances the storage conditions are provided on the container label, label is n/a for biologics
 """
-* action.code.coding.code from PqcmcStorageConditionsTerminology
+* action.code.coding.code from PqcmcStorageConditionsTerminology (required)
 * action.documentation 0..* MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
 // this will be replaced with uri if moved to upper folder

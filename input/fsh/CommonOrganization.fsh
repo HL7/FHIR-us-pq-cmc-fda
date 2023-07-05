@@ -78,13 +78,14 @@ Id: pq-cmc-address
 Description: "pq-specific Constraints on the Address datatype dealing with US addresses."
 * obeys addr-state
 * obeys addr-zip
+* obeys CMC-county
 * line 1..2
 * city 1..1 MS
 * state 0..1 MS
 * postalCode 1..1 MS
 * country 1..1 MS
 * country ^short = "Country can either be the ISO 3-letter country code or the full country name matching the code. The codes and full names are in the value set: GENC 3 Letter Codes"
-* country obeys CMC-county
+
 
 Invariant: addr-state
 Description: "If the country is USA, then the state and postal code exist"
@@ -100,7 +101,8 @@ Invariant: CMC-county
 Description: "Countrys are from GENC Country Codes Value Set"
 Expression: "(
 country.exists() implies
-country.exists().memberOf('http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes')
+country.memberOf('http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes').exists()
 )"
+
 Severity: #error
 

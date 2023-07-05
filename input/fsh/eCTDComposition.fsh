@@ -602,15 +602,15 @@ Parent: Composition
 Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent the Quality Specifications to be included under the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 headings.. References Sponsor Organization and Quality Specification."
-
 * . obeys cmc-ectd-doc-2
+* . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#SP4151 "Quality Specification"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
-* section obeys cmc-ectd-doc-2
+
 * section 1..1 MS
 * section.code 1..1 MS
 * section.code from CmcCompSectionTypesVS (required)
@@ -620,7 +620,7 @@ Description: "The fields needed to represent the Quality Specifications to be in
 */
 * section 1..1 MS
 * section.entry MS
-* section obeys cmc-ectd-doc-3
+
 * section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
@@ -652,6 +652,7 @@ Id: ectd-composition-sp7383
 Title: "eCTD Stability Data Composition"
 Description: "The fields needed to represent the Stability Data to be included under the 3.2.P.8.3 , 3.2.S.7.3 and 3.2.P.4.5 eCTD headings. References Sponsor Organization and Stability Study."
 
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#SP7383 "Stability Data"
@@ -661,7 +662,6 @@ Description: "The fields needed to represent the Stability Data to be included u
     SECTION SLICES
 */
 * section 1.. MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"
@@ -687,7 +687,7 @@ Parent: Composition
 Id: ectd-composition-sp4454
 Title: "eCTD Batch Analyses Composition"
 Description: "The fields needed to represent the Batch Analyses to be included under the 3.2.P.5.4 and 3.2.S.4.4 eCTD headings.  References Sponsor Organization and Batch Analysis"
-
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#SP4454 "Batch Analyses"
@@ -698,7 +698,6 @@ Description: "The fields needed to represent the Batch Analyses to be included u
 */
 // need check that subject only Reference(DrugProductInstance or DrugSubstanceInstance) matches section selected.
 * section 1.. MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"
@@ -724,7 +723,7 @@ Parent: Composition
 Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
 Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD.  References Sponsor Organization and Batch Formula"
-
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
@@ -734,7 +733,6 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
     SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
 * section.code = $SectionTypes#32P32 "Product Batch Formula"
@@ -746,7 +744,7 @@ Parent: Composition
 Id: ectd-composition-32p55
 Title: "eCTD Product Characterization of Impurities Composition"
 Description: "The fields needed to represent the Product Characterization of Impurities in a to be included under the eCTD.  References Sponsor Organization and Product Characterization of Impurities"
-
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterization of Impurities"
@@ -756,7 +754,6 @@ Description: "The fields needed to represent the Product Characterization of Imp
     SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Product Characterization of Impurities to be included under the 3.2.P.5.5 eCTD heading."
 * section.code = $SectionTypes#32P55 "Product Characterization of Impurities"
@@ -768,7 +765,7 @@ Parent: Composition
 Id: ectd-composition-32p70
 Title: "eCTD Product Container Closure System Composition"
 Description: "The fields needed to represent the Product Container Closure Systems to be included under the eCTD p.7.0"
-
+* . obeys cmc-ectd-doc-2
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
@@ -780,7 +777,6 @@ Description: "The fields needed to represent the Product Container Closure Syste
     SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Product Container Closure System to be included under the 3.2.P.7.0 eCTD heading."
 * section.code = $SectionTypes#32P70 "Product Container Closure System"
@@ -793,7 +789,7 @@ Parent: Composition
 Id: ectd-composition-32P10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1.0 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
-
+* . obeys cmc-ectd-doc-2
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
@@ -801,7 +797,6 @@ Description: "The fields needed to represent the Product Description, Container 
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
-* section obeys cmc-ectd-doc-2
 * section 3..3 MS
 * section.code 1..1 MS
 * section.code from CmcCompSectionTypesVS (required)
@@ -829,7 +824,7 @@ Parent: Composition
 Id: ectd-composition-32s60
 Title: "eCTD Substance Container Closure System Composition"
 Description: "The fields needed to represent the Substance Container Closure Systems to be included under the eCTD 3.2.S.6.0 eCTD heading. References Sponsor Organization and Substance Container Closure"
-
+* . obeys cmc-ectd-doc-2
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
@@ -841,7 +836,6 @@ Description: "The fields needed to represent the Substance Container Closure Sys
     SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Substance Container Closure System to be included under the 3.2.S.6.0 eCTD heading."
 * section.code = $SectionTypes#32S60 "Substance Container Closure System"
@@ -854,7 +848,7 @@ Parent: Composition
 Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
 Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1.0 heading of the eCTD. References Sponsor Organization."
-
+* . obeys cmc-ectd-doc-2
 * . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
@@ -866,7 +860,6 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
     SECTION SLICES
 */
 * section 2..2 MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^slicing.discriminator.type = #profile
 * section ^slicing.discriminator.path = "resource"
@@ -876,13 +869,11 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section[SubstanceNomenclature] ^definition = "Substance Nomenclature to be included under the 3.2.S.1.0 eCTD heading."
 * section[SubstanceNomenclature].code = $SectionTypes#32S11 "Substance Nomenclature"
 * section[SubstanceNomenclature].title 1..1 MS
-* section[SubstanceNomenclature].title obeys cmc-ectd-doc-2
 * section[SubstanceNomenclature].entry 1..1 MS
 * section[SubstanceNomenclature].entry only Reference(DrugSubstanceNomenclature)
 * section[SubstanceStructure] ^definition = "Substance raw materials to be included under the 3.2.S.1.0 eCTD heading."
 * section[SubstanceStructure].code = $SectionTypes#32S12 "Substance Structure"
 * section[SubstanceStructure].title 1..1 MS
-* section[SubstanceStructure].title obeys cmc-ectd-doc-2
 * section[SubstanceStructure].entry 1..1 MS
 * section[SubstanceStructure].entry only Reference(DrugSubstanceMolecularStructure)
 
@@ -891,7 +882,7 @@ Parent: Composition
 Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
 Description: "The fields needed to represent the Substance Control of Materials in a to be included under the eCTD. References Sponsor Organization and Drug Substance Materials."
-
+* obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
@@ -901,7 +892,6 @@ Description: "The fields needed to represent the Substance Control of Materials 
     SECTION SLICES - not requried - only one option
 */
 * section 1..* MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included under the 3.2.S.2.3 eCTD heading."
 * section.code = $SectionTypes#32S23 "Substance Control of Materials"
@@ -915,6 +905,7 @@ Id: ectd-composition-32s30
 Title: "eCTD Substance Characterization"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3.0 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 * . obeys cmc-ectd-doc-2
+* . obeys cmc-ectd-doc-3
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S30 "Substance Characterization"
@@ -927,7 +918,6 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 */
 * section 1..* MS
 * section.entry MS
-* section obeys cmc-ectd-doc-3
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
@@ -944,7 +934,7 @@ Parent: Composition
 Id: ectd-composition-sp7181
 Title: "eCTD Stability Summary and Conclusion Composition"
 Description: "The fields needed to represent the Stability Summary and Conclusion to be included in the 3.2.P.8.3 and 3.2.S.7.3 eCTD headings. References Sponsor Organization and Stability Study."
-
+* . obeys cmc-ectd-doc-2
 * status = #final
 * identifier 0..1 MS
 /* do or on type code*/
@@ -955,7 +945,6 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
     SECTION SLICES
 */
 * section 1.. MS
-* section obeys cmc-ectd-doc-2
 * section.entry MS
 * section ^slicing.discriminator.type = #pattern
 * section ^slicing.discriminator.path = "code"

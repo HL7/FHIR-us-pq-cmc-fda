@@ -232,6 +232,7 @@ Example: International Units for Enzymes"""
 * property[TotWgtOper].valueCodeableConcept from PqcmcStrengthOperatorTerminology
 // Product parts
 * component 1..* MS
+* component obeys cmc-ppidref-required
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -499,7 +500,6 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
 """
 * component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
-* component.constituent.amount obeys cmc-percent-quantity
 * component.constituent.amount 1..2 MS
 * component.constituent.amount ^slicing.discriminator.type = #value
 * component.constituent.amount ^slicing.discriminator.path = "code"
@@ -511,6 +511,7 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
       WeightToVolume 0..1 MS and 
       WeightToWeight 0..1 MS
 * component.constituent.amount[Weight].value 1..1 MS
+* component.constituent.amount[Weight] obeys cmc-percent-quantity
 * component.constituent.amount[Weight].value ^short = "Ingredient Quanty Per Batch Product Part"
 * component.constituent.amount[Weight].value ^definition = """Quantity: The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
@@ -518,7 +519,7 @@ Quantity UOM: A named quantity in terms of which other quantities are measured o
 """
 * component.constituent.amount[Weight].unit 1..1 MS
 * component.constituent.amount[Weight].code 1..1 MS
-* component.constituent.amount[Weight].code from PqcmcUnitsMeasureTerminology
+* component.constituent.amount[Weight].code from PqcmcUnitsMeasureTerminology (required)
 * component.constituent.amount[VolumeToVolume].value 1..1 MS
 * component.constituent.amount[VolumeToVolume].value ^short = "Percent Ingredient Quanty Per Batch Product Part"
 * component.constituent.amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The amount of material in a specific batch size [Source: SME Defined]
@@ -582,7 +583,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 Examples: tablet, capsule, solution, cream that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 """
-* doseForm.coding from SplPharmaceuticalDosageFormTerminology
+* doseForm.coding from SplPharmaceuticalDosageFormTerminology (required)
 * ingredient 1..* MS
 * ingredient.item ^short = "UNII"
 * ingredient.item ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
@@ -605,7 +606,7 @@ Note: For Excipients, this is the amount
 * ingredient.strengthRatio.denominator 1..1 MS
 * ingredient.strengthRatio.denominator ^short = "Strength Numeric Denominator"
 * ingredient.strengthRatio.denominator ^definition = "The content of an ingredient expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dosage form. This should be the strength as listed on the label. [Source: Adapted from NCI E C53294]"
-* ingredient.strengthRatio.denominator.code from PqcmcUnitsMeasureTerminology
+* ingredient.strengthRatio.denominator.code from PqcmcUnitsMeasureTerminology (required)
 * batch 1..1 MS
 * batch.extension contains drug-product-manufacturing-batch named medication-batch 1..1 MS
 * batch.lotNumber 1..1 MS
@@ -645,19 +646,19 @@ This classification applies to ALL products.
  For products that do not have an Expiration Date, the Expiration Date Classification will be 'NA'.
 """
 * extension[expirationDateClassification].valueCodeableConcept MS
-* extension[expirationDateClassification].valueCodeableConcept from PqcmcExpirationDateClassificationTerminology
+* extension[expirationDateClassification].valueCodeableConcept from PqcmcExpirationDateClassificationTerminology (required)
 * extension[batchUtilization] 1..1 MS
 * extension[batchUtilization] ^short = "Batch Utilization"
 * extension[batchUtilization] ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
 Examples: commercial, development. """
 * extension[batchUtilization].valueCodeableConcept MS
-* extension[batchUtilization].valueCodeableConcept from PqcmcBatchUtilizationTerminology
+* extension[batchUtilization].valueCodeableConcept from PqcmcBatchUtilizationTerminology (required)
 * extension[batchQuantity] 1..1 MS
 * extension[batchQuantity] ^short = "Batch Size"
 * extension[batchQuantity] ^definition = "The batch size can be defined either by a fixed quantity or by the amount produced in a fixed time interval. [Source: ICH Q7 - Part of the definition of Batch]"
 * extension[batchQuantity].value[x] 1..1 MS
 * extension[batchQuantity].value[x] only Quantity
-* extension[batchQuantity].value[x].code from PqcmcUnitsMeasureTerminology
+* extension[batchQuantity].value[x].code from PqcmcUnitsMeasureTerminology (required)
 * extension[additionalInformation] MS
 * extension[additionalInformation] ^short = "Additional Information"
 * extension[additionalInformation] ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
@@ -675,7 +676,7 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 * extension[container].extension[type] ^short = "Container Type"
 * extension[container].extension[type] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]"
 * extension[container].extension[type].valueCodeableConcept 1..1 MS
-* extension[container].extension[type].valueCodeableConcept from PqcmcContainerTypeTerminology
+* extension[container].extension[type].valueCodeableConcept from PqcmcContainerTypeTerminology (required)
 * extension[container].extension[quantity] 1..1 MS
 * extension[container].extension[quantity] ^short = "Container Fill per Container Size"
 * extension[container].extension[quantity] ^definition = """Container Fill: Amount or volume of the drug product in the container. [Source: SME Defined]. Examples: 100 tablets; 10 mL, 1 transdermal system, 1 sachet, etc. Note: the examples include both the Container Fill and the Container Fill Unit
@@ -695,7 +696,7 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 * extension[container].extension[closureType] ^short = "Closure Type"
 * extension[container].extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
 * extension[container].extension[closureType].valueCodeableConcept 1..1 MS
-* extension[container].extension[closureType].valueCodeableConcept from PqcmcClosureTypeTerminology
+* extension[container].extension[closureType].valueCodeableConcept from PqcmcClosureTypeTerminology (required)
 
 Profile: RoutineDrugProduct
 Parent: MedicinalProductDefinition
@@ -713,12 +714,12 @@ Examples: tablet, capsule, solution, cream, etc. that contains a drug substance 
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 SME comment -- this is the marketed dosage form.
 """
-* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology
+* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
 * route 0..1 MS
 * route.coding.code 1..1 MS
 * route.coding.code ^short = "Route of Administration"
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-* route.coding.code from SplDrugRouteofAdministrationTerminology
+* route.coding.code from SplDrugRouteofAdministrationTerminology (required)
 * insert ProprietaryAndNonProprietaryNames
 
 Profile: DrugProductwithImpurities
@@ -764,11 +765,11 @@ Examples: tablet, capsule, solution, cream, etc. that contains a drug substance 
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 SME comment -- this is the marketed dosage form.
 """
-* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology
+* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
 * route.coding.code 1..1 MS
 * route.coding.code ^short = "Route of Administration"
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-* route.coding.code from SplDrugRouteofAdministrationTerminology
+* route.coding.code from SplDrugRouteofAdministrationTerminology (required)
 * insert ProprietaryAndNonProprietaryNames
 
 * crossReference.product MS
@@ -804,7 +805,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
 * name[Proprietary].part ^slicing.discriminator.path = "type"
 * name[Proprietary].part ^slicing.rules = #open
 * name[Proprietary].part ^slicing.description = "Optional name parts"
-* name[Proprietary].part.type from PqcmcNamePartTerminology
+* name[Proprietary].part.type from PqcmcNamePartTerminology (required)
 * name[NonProprietary].type = $NameType#NON "Non-Proprietary"
 * name[NonProprietary].part 1..* MS
 * name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
@@ -825,7 +826,7 @@ Note: The minimum is the scientific name.
   Container 0..* and
   Form 0..* and 
   Device 0..*
-* name[NonProprietary].part.type from PqcmcNamePartTerminology
+* name[NonProprietary].part.type from PqcmcNamePartTerminology (required)
 * name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
 * name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
 * name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
