@@ -33,6 +33,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * . obeys cmc-structure-required
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
+* . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -256,6 +257,8 @@ Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
 * . obeys cmc-when-unii-required
+* . obeys cmc-name-isbt
+* . obeys cmc-source-material
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -570,6 +573,8 @@ Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 * . obeys cmc-when-unii-required
+* . obeys cmc-name-isbt
+* . obeys cmc-source-material
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -648,7 +653,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-routine-drug-substance
 Title: "Routine Drug Substance"
 Description: "Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."
-
+* . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -704,9 +709,10 @@ It is accessible at https://www.uniprot.org/
 Profile: DrugSubstanceNomenclature
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature
-Title: "Substance Nomenclature "
+Title: "Substance Nomenclature"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
 * . obeys cmc-when-unii-required
+* . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -764,6 +770,7 @@ Title: "Substance Impurities"
 Description: "Drug Substance Impurities"
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
+* . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -851,6 +858,7 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 * . obeys cmc-structure-required
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
+* . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -923,7 +931,13 @@ RuleSet: SubstanceNames
   comn 0..1 MS and
   gsrs 0..1 MS and
   usp 0..1 MS and
-  comp 0..1 MS
+  comp 0..1 MS and
+  cas 0..1 MS and
+  inn 0..1 MS and
+  usan 0..1 MS and
+  iupac 0..1 MS and
+  isbt 0..1 MS
+
 * name[sys].name 1..1 MS
 * name[sys].name ^short = "Systematic"
 * name[sys].name ^definition = """TDB [Source: SME Defined]
@@ -981,6 +995,46 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[comp].type.coding 1..1
 * name[comp].type.coding = $tempNCIt#Company "Company ID/Code"
 
+* name[cas].name 1..1 MS
+* name[cas].name ^short = "CAS Number"
+* name[cas].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[cas].type 1..1 MS
+* name[cas].type.coding 1..1 MS
+* name[cas].type.coding = $tempNCIt#222 "CAS Number"	
+
+* name[inn].name 1..1 MS
+* name[inn].name ^short = "INN" 
+* name[inn].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[inn].type 1..1 MS
+* name[inn].type.coding 1..1 MS
+* name[inn].type.coding = $tempNCIt#223 "INN"	
+
+* name[usan].name 1..1 MS
+* name[usan].name ^short = "USAN"
+* name[usan].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[usan].type 1..1 MS
+* name[usan].type.coding 1..1 MS
+* name[usan].type.coding = $tempNCIt#224 "USAN"
+
+* name[iupac].name 1..1 MS
+* name[iupac].name ^short = "IUPAC" 
+* name[iupac].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[iupac].type 1..1 MS
+* name[iupac].type.coding 1..1 MS
+* name[iupac].type.coding = $tempNCIt#225 "IUPAC"
+
+* name[isbt].name 1..1 MS
+* name[isbt].name ^short = "ISBT 128" 
+* name[isbt].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[isbt].type 1..1 MS
+* name[isbt].type.coding 1..1 MS
+* name[isbt].type.coding = $tempNCIt#226 "ISBT 128"
+
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
 
@@ -995,8 +1049,8 @@ RuleSet: ShortSetSubstanceNames
 * name contains
   sub 0..1 MS and
   comn 0..1 MS and
-  gsrs 0..1 MS 
-
+  gsrs 0..1 MS and
+  isbt 0..1 MS
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
@@ -1022,5 +1076,12 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 * name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = $tempNCIt#141 "GSRS Preferred"
 
+* name[isbt].name 1..1 MS
+* name[isbt].name ^short = "ISBT 128" 
+* name[isbt].name ^definition = """TDB [Source: SME Defined]
+"""
+* name[isbt].type 1..1 MS
+* name[isbt].type.coding 1..1 MS
+* name[isbt].type.coding = $tempNCIt#226 "ISBT 128"
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"

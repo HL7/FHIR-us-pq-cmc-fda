@@ -156,7 +156,7 @@ Example: an osmotic pump to achieve extended release"""
 * property[LayCnt].valueQuantity.value ^short = "Tablet Layer Count"
 * property[LayCnt].valueQuantity.value ^definition = """The total number of layers in the tablet. [Source: SME Defined]
 Note: Non-layered tablets will be considered as one layer tablets."""
-* property[LayCnt].valueQuantity.code = $UCUM#1 "1*"
+* property[LayCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[BeaTypCnt].type MS
 * property[BeaTypCnt].type = $tempNCIt#BeaTypCnt "Tablet Bead Type Count"
@@ -166,7 +166,7 @@ Note: Non-layered tablets will be considered as one layer tablets."""
 * property[BeaTypCnt].valueQuantity.value ^definition = """TThe total number of type of beads present in a tablet [Source: SME Defined]
 Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
 """
-* property[BeaTypCnt].valueQuantity.code = $UCUM#1 "1*"
+* property[BeaTypCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[CapClass].type MS
 * property[CapClass].type = $tempNCIt#CapClass "Capsule Classification Category"
@@ -182,7 +182,7 @@ Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet B
 * property[CapConCnt].valueQuantity.value ^short = "Capsule Constituent Count"
 * property[CapConCnt].valueQuantity.value ^definition = """The number of distinct constituents in the capsule drug product. [Source: SME Defined]
 Example: A capsule filled with a bead and a minitablet will have 2 constituents; a capsule filled with liquid will have 1 constituent."""
-* property[CapConCnt].valueQuantity.code = $UCUM#1 "1*"
+* property[CapConCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[Schematic].type MS
 * property[Schematic].type = $tempNCIt#Schematic "Product Schematic"
@@ -233,6 +233,7 @@ Example: International Units for Enzymes"""
 // Product parts
 * component 1..* MS
 * component obeys cmc-ppidref-required
+* component obeys cmc-ingredient-functions
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -245,9 +246,8 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 Example: Push, Target."""
 * component.amount 0..2 MS
 * component.amount ^slicing.discriminator.type = #exists
-* component.amount ^slicing.discriminator.path = "$this"
+* component.amount ^slicing.discriminator.path = .unit
 * component.amount ^slicing.rules = #closed
-* component.amount ^slicing.ordered = true
 * component.amount ^slicing.description = "Slice based on the component.amounts."
 * component.amount contains
   Numerator 1..1 MS and
@@ -266,6 +266,7 @@ Example: mg
 * component.amount[Numerator].code 1..1 MS
 * component.amount[Numerator].code from PqcmcUnitsMeasureTerminology
 * component.amount[Denominator] 1..1 MS
+* component.amount[Denominator] obeys cmc-denominator-unit
 * component.amount[Denominator].value 0..1 MS
 * component.amount[Denominator].value 1..1 MS
 * component.amount[Denominator].value ^short = "Product Part Total Weight Numeric Denominator"
@@ -313,12 +314,14 @@ Note: For solid oral dose forms, by definition this the product part
 * component.constituent.amount[Denominator].unit ^definition = """The labeled unit of measure for the content of an ingredient, expressed quantitatively per drug product part. [Source: Adapted for NCI E C117055]
 Note: For solid oral dose forms, by definition this the product part
  """
-* component.constituent.amount[Denominator].code 1..1 MS
-* component.constituent.amount[Denominator].code from PqcmcUnitsMeasureTerminology
-* component.constituent.amount[ContPercent] 1..1 MS
+* component.constituent.amount[Denominator].unit = "[arb'U]"
+* component.constituent.amount[Denominator].code = $NCIT#C75765 
+
 * component.constituent.amount[ContPercent].value 1..1 MS
 * component.constituent.amount[ContPercent].value ^short = "Content (%)"
 * component.constituent.amount[ContPercent].value ^definition = "The percentage of the component in the drug product. [Source: SME Defined]"
+* component.constituent.amount[ContPercent].unit = "%"	
+* component.constituent.amount[ContPercent].code = $NCIT#C48570
 * component.constituent.location 0..* MS
 * component.constituent.location ^short = "Product Part Ingredient Physical Location"
 * component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
@@ -326,8 +329,8 @@ Examples: Intragranular, Extra granular, Blend
 """
 * component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocation
 * component.constituent.function 0..2 MS
-* component.constituent.function ^slicing.discriminator.type = #exists
-* component.constituent.function ^slicing.discriminator.path = function
+* component.constituent.function ^slicing.discriminator.type = #value
+* component.constituent.function ^slicing.discriminator.path = coding.system
 * component.constituent.function ^slicing.rules = #closed
 * component.constituent.function ^slicing.description = "Slice based on the component.functions."
 * component.constituent.function contains
@@ -337,6 +340,7 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.function[Category] ^definition = """A classification that identifies the higher level purpose of that material. [Source: SME Defined]
 Example: Active Ingredient, Inactive Ingredient, Adjuvant."""
 * component.constituent.function[Category].coding from PqcmcDrugProductComponentFunctionCategoryTerminology
+
 * component.constituent.function[Function] ^short = "Product Part Ingredient Function"
 * component.constituent.function[Function] ^definition = """A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]
 Examples: Filler, Surfactant"""

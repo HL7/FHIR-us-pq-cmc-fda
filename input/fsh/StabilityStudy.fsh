@@ -114,8 +114,8 @@ Example: Study Number- 565758
 
 
 * condition ^slicing.discriminator.type = #value
-* condition ^slicing.discriminator.path = "$this"
-* condition ^slicing.rules = #open // or #closed if you don't want other concepts
+* condition ^slicing.discriminator.path = coding.system
+* condition ^slicing.rules = #closed // or #closed if you don't want other concepts
 * condition contains
     substudytype 1..1 and
     storage 1..1 and

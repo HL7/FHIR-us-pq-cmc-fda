@@ -6,6 +6,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
+
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -69,6 +71,7 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles."
 * . ^short = "CMC eCTD 32P32 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -123,6 +126,7 @@ Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
 * . ^short = "CMC eCTD 32S10 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -171,6 +175,7 @@ Title: "CMC eCTD 32S30 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles."
 * . ^short = "CMC eCTD 32S30 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -210,6 +215,7 @@ Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -254,6 +260,7 @@ Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * . ^short = "CMC eCTD 32P55 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -304,6 +311,7 @@ Title: "CMC eCTD 32S60 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles."
 * . ^short = "CMC eCTD 32S60 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -338,6 +346,7 @@ Title: "CMC eCTD 32P70 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles."
 * . ^short = "CMC eCTD 32P70 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -371,6 +380,7 @@ Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -425,6 +435,7 @@ Title: "CMC eCTD SP4454 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles."
 * . ^short = "CMC eCTD SP4454 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -484,6 +495,7 @@ Title: "CMC eCTD SP7383 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles."
 * . ^short = "CMC eCTD SP7383 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS
@@ -553,6 +565,7 @@ Title: "CMC eCTD SP7181 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles."
 * . ^short = "CMC eCTD SP7181 Bundle"
 * . obeys cmc-first-resource
+* . obeys cmc-identifer
 * meta.versionId 1..1 MS
 * identifier 0..1 MS
 * type MS

@@ -87,7 +87,13 @@ parameters:
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-comp-section-types
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-relationship-types
-    -  http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-product-name-types
+    - http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-product-name-types
+    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C176676
+    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C176675
+    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133866
+    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133865
+    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCCT
+    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCOT
 #   validation: [allow-any-extensions, no-broken-links]
 dependencies:
   hl7.fhir.uv.sdc:

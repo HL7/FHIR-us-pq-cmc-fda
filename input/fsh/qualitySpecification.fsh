@@ -183,7 +183,9 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 """	
 * goal.target.detailInteger.value 1..1 MS
 * goal.target.due 0..0
+
 * action MS
+* action obeys cmc-action-code-required
 * action ^short = "Test or Stage"
 * action.extension contains pq-order-extension named testOrder 1..1 MS  
 * action.extension[testOrder] ^short = "Test/Stage Order"
