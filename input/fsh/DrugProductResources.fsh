@@ -314,8 +314,8 @@ Note: For solid oral dose forms, by definition this the product part
 * component.constituent.amount[Denominator].unit ^definition = """The labeled unit of measure for the content of an ingredient, expressed quantitatively per drug product part. [Source: Adapted for NCI E C117055]
 Note: For solid oral dose forms, by definition this the product part
  """
-* component.constituent.amount[Denominator].unit = "[arb'U]"
-* component.constituent.amount[Denominator].code = $NCIT#C75765 
+* component.constituent.amount[Denominator].unit =  "1*"
+* component.constituent.amount[Denominator].code =  $NCIT#C66832 
 
 * component.constituent.amount[ContPercent].value 1..1 MS
 * component.constituent.amount[ContPercent].value ^short = "Content (%)"
