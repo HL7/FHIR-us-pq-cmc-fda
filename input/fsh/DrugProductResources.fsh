@@ -87,7 +87,7 @@ SME comment -- this is the marketed dosage form.
 * comprisedOf only Reference(FinishedProduct or BatchFormula)
 * impurity 0..* MS
 * impurity ^short = "Product Impurity"
-* impurity only Reference(ImpuritySubstance)
+* impurity only CodeableReference(ImpuritySubstance)
 * insert ProprietaryAndNonProprietaryNames
 * crossReference MS
 * crossReference.product MS
@@ -347,7 +347,7 @@ Examples: Filler, Surfactant"""
 * component.constituent.function[Function].coding from PqcmcExcipientFunctionTerminology
 
 * component.constituent.hasIngredient 1..1 MS
-* component.constituent.hasIngredient only Reference(DrugProductComponent)
+* component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
 * component.property 0..* MS
 * component.property 1..* MS
@@ -554,7 +554,7 @@ Examples: Intragranular, Extra granular, Blend
 """
 * component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocation
 * component.constituent.hasIngredient 1..1 MS
-* component.constituent.hasIngredient only Reference(DrugProductIngredient)
+* component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
 // Product part
 * component.property 0..1 MS
 * component.property.type = $tempNCIt#info "Product Part Additional Information"
@@ -736,7 +736,7 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * identifier ^short = "optional user designated identifier"	
 * impurity 0..* MS	
 * impurity ^short = "Product Impurity"	
-* impurity only Reference(ImpuritySubstance)	
+* impurity only CodeableReference(ImpuritySubstance)	
 * insert ProprietaryAndNonProprietaryNames
 
 Profile: DrugProductContainerClosure
@@ -778,7 +778,7 @@ SME comment -- this is the marketed dosage form.
 
 * crossReference.product MS
 * crossReference.product ^short = "Co-Packaged Product"
-* crossReference.product only Reference(DrugProductDescription)
+* crossReference.product only CodeableReference(DrugProductDescription)
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition

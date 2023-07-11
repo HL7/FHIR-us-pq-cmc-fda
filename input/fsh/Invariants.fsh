@@ -17,8 +17,8 @@ Severity: #error
 
 Invariant: cmc-when-unii-required
 Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
-Expression: "(classification.where(coding.where(code in ('1' | '17' | '2' | '3' |'4') and system = 'https://www.ema.europa.eu').exists()).exists()
-implies code.code.text.exists())"
+Expression: "classification.coding.where(system = 'https://www.ema.europa.eu' and code in ('1' | '17' | '2' | '3' |'4') ).exists()
+implies code.code.text.exists()"
 Severity: #error
 
 Invariant: cmc-name-isbt
@@ -44,25 +44,26 @@ Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
-Expression: "(classification.where(coding.system = 'https://www.ema.europa.eu' and coding.code in ('1' | '17' | '2' | '3' | '4')).exists() implies structure.exists())"
+Expression: "classification.coding.where(system = 'https://www.ema.europa.eu' and code in ('1' | '17' | '2' | '3' |'4') ).exists() implies structure.exists()"
 Severity: #error
 
 Invariant: cmc-source-material
 Description: "IF raw material source type equals Microbial, Animal, Plant, Insect or Human THEN the 4 source related attributes are required and the manufacturer and supplier information is highly desirable."
-Expression: "(sourceMaterial.type.where(coding.where(code in ('C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258') and system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').exists()).exists()
-implies sourceMaterial.genus.exists() and  sourceMaterial.species.exists() and sourceMaterial.part.exists() and sourceMaterial.countryOfOrigin.exists())"
+Expression: "sourceMaterial.type.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and code in ('C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258')).exists() 
+implies (sourceMaterial.genus.exists() and  sourceMaterial.species.exists() and sourceMaterial.part.exists() and sourceMaterial.countryOfOrigin.exists())"
 Severity: #error
 
 Invariant: cmc-strength-type-cases
 Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory
 IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
-Expression: "(strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C168628')
+Expression: "strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C168628').exists()
 implies (strength.ofType(Ratio).exists() or (strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('strengthFactors').extension('strengthOperator').exists().not())))
 and
-(strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C45420').exists()
+strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C45420').exists()
 implies ((strength.ofType(Ratio).exists() and strength.ofType(Ratio).numerator.code = 'C75765').exists()
-or (strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists()))"
+or (strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists())
+"
 Severity: #error  
 
 Invariant: cmc-arbitrary-unit  
@@ -113,15 +114,15 @@ Description: "The fullUrl must be an  URI for UUID/OID"
 Severity: #error
 Expression: "$this.is(FHIR.oid) = true"   //of urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 
-Invariant: cmc-ectd-doc-2
-Description: "The document title must start with the PQCMC Composition.Type display value"
-Expression: "title.value.startsWith(type.coding.display.value) = true"
-Severity: #error
+//Invariant: cmc-ectd-doc-2
+//Description: "The document title must start with the PQCMC Composition.Type display value"
+//Expression: "title.value.startsWith(type.coding.display.value) = true"
+//Severity: #error
 
-Invariant: cmc-ectd-doc-3
-Description: "The section title must start with the PQCMC Comp Section Type display value"
-Expression: "section.title.value.startsWith(type.coding.display.value) = true"
-Severity: #error
+//nvariant: cmc-ectd-doc-3
+//Description: "The section title must start with the PQCMC Comp Section Type display value"
+//xpression: "section.title.value.startsWith(type.coding.display.value) = true"
+//Severity: #error
 
 Invariant: cmc-percent-quantity
 Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"

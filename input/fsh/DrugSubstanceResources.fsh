@@ -340,7 +340,6 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
 * sourceMaterial.countryOfOrigin.coding 0..0
-* sourceMaterial.countryOfOrigin.coding from genc-country-codes
 * sourceMaterial.countryOfOrigin.text 1..1 MS
 
 Profile: DrugProductComponent
@@ -360,7 +359,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance obeys cmc-arbitrary-unit
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
-* substance.code only Reference(ComponentSubstance)
+* substance.code only CodeableReference(ComponentSubstance)
 * substance.strength 1..1 MS
 * substance.strength.extension contains strength-extension named strengthFactors 1..1 MS
 * substance.strength.presentation[x] 1..1 MS
@@ -408,7 +407,7 @@ Description: "The amount details about the drug product ingredients in the batch
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
-* substance.code only Reference(pqcmc-routine-drug-substance)
+* substance.code only CodeableReference(pqcmc-routine-drug-substance)
 * substance.strength 1..* MS
 
 * substance.strength 1..2 MS
@@ -644,9 +643,9 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.part.text 1..1
 * sourceMaterial.countryOfOrigin 0..1 MS
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
-* sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism wagrademas reared. [Source: SME Defined]"
-* sourceMaterial.countryOfOrigin.coding 1..
-* sourceMaterial.countryOfOrigin.coding from genc-country-codes
+* sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
+* sourceMaterial.countryOfOrigin.coding 0..0
+* sourceMaterial.countryOfOrigin.text 1..1 MS
 
 Profile: RoutineSubstanceDefinition
 Parent: SubstanceDefinition
