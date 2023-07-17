@@ -32,7 +32,7 @@ Description: "Contains elements related to the intervals of the stability study.
 * extension[timePoint].valueQuantity.unit ^short = "Interval Unit"
 * extension[timePoint].valueQuantity.unit ^definition = "The partitions of the study pause. [Source: eStability Implementation Guide]"
 * extension[timePoint].valueQuantity.code 1..1 MS
-* extension[timePoint].valueQuantity.code from PqcmcUnitsMeasureTerminology
+* extension[timePoint].valueQuantity.code from PqcmcUnitsMeasureTerminology (required)
 * extension[timePointDescription].value[x] only CodeableConcept
 * extension[timePointDescription].value[x] from PqcmcIntervalDescriptionCodeTerminology (required)
 * extension[timePointDescription].value[x] ^short = "Interval Description Code"
@@ -44,6 +44,7 @@ Id: pq-stability-study
 Title: "Stability Study"
 Description: "Profile for the main stability study."
 
+* .meta.profile 0..1 MS
 * .extension contains pq-protocol-extension named protocolExtension 1..1 MS
 * .extension contains pq-additional-info-extension named study-additional-info 0..* MS
 * .extension[study-additional-info] ^short = "Study Additional"
@@ -65,7 +66,7 @@ Example: Study Number- 565758
 * primaryPurposeType ^short = "Study Reason"
 * primaryPurposeType ^definition = """The rationale for submitting the stability data. [Source: SME Defined]
 Examples: Annual Report, NDA, Pre-market approval."""
-* primaryPurposeType from PqcmcStabilityStudyReasonTerminology
+* primaryPurposeType from PqcmcStabilityStudyReasonTerminology (required)
 * description 0..1 MS
 * description ^short = "Study Design"
 * description ^definition = """A textual description providing the details of the study plan which includes tests, time points, storage conditions, method. [Source: SME Defined]
@@ -95,6 +96,7 @@ Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
 Description: "Profile for the a stability sub-study."
 
+* .meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
 * identifier 1..1 MS
 * identifier ^definition = """An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
@@ -114,21 +116,21 @@ Example: Study Number- 565758
 
 
 * condition ^slicing.discriminator.type = #value
-* condition ^slicing.discriminator.path = "$this"
-* condition ^slicing.rules = #open // or #closed if you don't want other concepts
+* condition ^slicing.discriminator.path = coding.system
+* condition ^slicing.rules = #closed // or #closed if you don't want other concepts
 * condition contains
     substudytype 1..1 and
     storage 1..1 and
     storagecategory 1..1 and
     orientation 0..1
 * condition[substudytype] ^short = "Sub-Study Type"
-* condition[substudytype] from PqcmcStudyTypeTerminology
+* condition[substudytype] from PqcmcStudyTypeTerminology (required)
 * condition[storage] ^short = "Storage Conditions Temp.RH"
-* condition[storage] from PqcmcStorageConditionsTerminology
+* condition[storage] from PqcmcStorageConditionsTerminology (required)
 * condition[storagecategory] ^short = "Storage Condition Category"
-* condition[storagecategory] from PqcmcStorageConditionCategoryTerminology
+* condition[storagecategory] from PqcmcStorageConditionCategoryTerminology (required)
 * condition[orientation] ^short = "Container Orientation"
-* condition[orientation] from PqcmcContainerOrientationTerminology
+* condition[orientation] from PqcmcContainerOrientationTerminology (required)
 * period 1..1 MS
 * period.start 1..1 MS
 * period.start ^short = "Sub-study Start Date"
@@ -156,6 +158,7 @@ Id: pqcmc-stability-study-interval-report
 Title: "Stability Study Interval Report"
 Description: "Batch or lot stability testing to ensure that pharmaceutical products continue to meet the product specification or determine the expiry period."
 
+* .meta.profile 0..1 MS
 * .extension contains pq-timePoint-extension named studyInterval 1..1 MS
 * .extension contains pq-quality-specification-extension named qualitySpecification 1..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
@@ -187,6 +190,7 @@ Id: pqcmc-stability-summary
 Title: "Stability Summary"
 Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
 
+* .meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named studysum-additional-info 0..* MS
 * .extension[studysum-additional-info] ^short = "Study Summary Additional"
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
@@ -212,7 +216,7 @@ Retest Period Unit of Measure: The unit of measure for the retest period. [Sourc
 Note: this is typically months.
 """
 * goal.target.detailQuantity.code 1..1 MS
-* goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology
+* goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology (required)
 * action 1..1 MS
 * action ^short = "Expiry or Retest per storage condidtion"
 //* action.description 0..1 MS
@@ -228,7 +232,7 @@ For example: Control room temperature, refrigerated
 
 Note: for most drug substances the storage conditions are provided on the container label, label is n/a for biologics
 """
-* action.code.coding.code from PqcmcStorageConditionsTerminology
+* action.code.coding.code from PqcmcStorageConditionsTerminology (required)
 * action.documentation 0..* MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
 // this will be replaced with uri if moved to upper folder

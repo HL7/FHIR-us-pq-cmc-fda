@@ -72,6 +72,7 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
+* .meta.profile 0..1 MS
 * extension contains 
     pq-specification-status-extension named specificationStatus 1..1 MS and
     pq-specification-type-extension named specificationType 1..1 MS and
@@ -95,8 +96,8 @@ Note: This value should be unique across all specifications for a given material
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
 * status MS
-//* subject 1..1 MS
-//* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
+* subject[x] 1..1 MS
+* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
@@ -109,7 +110,7 @@ Examples: Approved, Not Approved, Reported in a CBE or AR.
 Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
 Note: This is different from Application Status"""
 * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#workflow	"Workflow Setting"
-* useContext.valueCodeableConcept.coding from PqcmcSpecificationStatusTerminology
+* useContext.valueCodeableConcept.coding from PqcmcSpecificationStatusTerminology (required)
 * approvalDate  MS
 * approvalDate ^short = "Specification Status Date"
 * approvalDate ^definition = """The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
@@ -124,7 +125,7 @@ Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as i
 * goal.addresses.coding.code ^short = "Aceptacnce Criteria Usage"
 * goal.addresses.coding.code ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
 Note: The concept of  'In-Process' is  subsumed by the Release code."
-* goal.addresses.coding.code from PqcmcTestUsageTerminology
+* goal.addresses.coding.code from PqcmcTestUsageTerminology (required)
 * goal.addresses.text ^short = "Accpetance Criteria Usage"
 
 * goal.documentation 0..* MS
@@ -147,7 +148,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailQuantity.value 1..1 MS
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS
-* goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology
+* goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology (required)
 * goal.target.detailRange  0..1 MS
 * goal.target.detailRange ^short = "Acceptance Criteria (Numeric range)"
 * goal.target.detailRange ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
@@ -159,7 +160,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.low.value 1..1 MS
 * goal.target.detailRange.low.unit 1..1 MS
 * goal.target.detailRange.low.code 1..1 MS
-* goal.target.detailRange.low.code from  PqcmcUnitsMeasureTerminology
+* goal.target.detailRange.low.code from  PqcmcUnitsMeasureTerminology (required)
 * goal.target.detailRange.high 1..1
 * goal.target.detailRange.high.extension contains pq-interpretation-code-extension named interpretationCodeHigh 1..1 MS
 * goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept ^short = "Interpretation Code"
@@ -167,7 +168,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.high.value 1..1 MS
 * goal.target.detailRange.high.unit 1..1 MS
 * goal.target.detailRange.high.code 1..1 MS
-* goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology
+* goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology (required)
 * goal.target.detailString  0..1 MS
 * goal.target.detailString ^short = "Acceptance Criteria (Text)"
 * goal.target.detailString ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
@@ -183,7 +184,9 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 """	
 * goal.target.detailInteger.value 1..1 MS
 * goal.target.due 0..0
+
 * action MS
+* action obeys cmc-action-code-required
 * action ^short = "Test or Stage"
 * action.extension contains pq-order-extension named testOrder 1..1 MS  
 * action.extension[testOrder] ^short = "Test/Stage Order"
@@ -216,7 +219,7 @@ If there is more than one comment, include in this element.  Markdown allows for
 """
 * action.code  MS
 * action.code ^short = "Not requried if test has stages and action is not first stage"
-* action.code.coding obeys cmc-sub-test-category
+//* action.code.coding obeys cmc-sub-test-category
 * action.code.coding ^slicing.discriminator.type = #pattern
 * action.code.coding ^slicing.discriminator.path = "$this"
 * action.code.coding ^slicing.rules = #open
@@ -225,15 +228,15 @@ If there is more than one comment, include in this element.  Markdown allows for
     testSubCat 0..1 and
     methodOrigin 1..1
 * action.code.coding[testCategory].code MS
-* action.code.coding[testCategory].code from PqcmcTestCategoryTerminology
+* action.code.coding[testCategory].code from PqcmcTestCategoryTerminology (required)
 * action.code.coding[testCategory].code ^short = "Test Category"
 * action.code.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
 * action.code.coding[testSubCat].code MS
-* action.code.coding[testSubCat].code from PqcmcTestSubCategoryTerminology
+* action.code.coding[testSubCat].code from PqcmcTestSubCategoryTerminology (required)
 * action.code.coding[testSubCat].code ^short = "Test Sub-category"
 * action.code.coding[methodOrigin].code MS
 * action.code.coding[methodOrigin].code ^short = "Test Method Origin"
-* action.code.coding[methodOrigin].code from PqcmcTestMethodOriginTerminology
+* action.code.coding[methodOrigin].code from PqcmcTestMethodOriginTerminology (required)
 * action.code.coding[methodOrigin].code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
 * action.code.text 1..1 MS
 * action.code.text ^short = "Analytical Procedure"

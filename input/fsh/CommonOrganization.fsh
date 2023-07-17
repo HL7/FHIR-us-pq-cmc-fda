@@ -21,6 +21,7 @@ Id: cmc-sponsor-organization
 Title: "Sponsor Organization"
 Description: "A profile for the data elements required to identify the sponsor of the drug products or substances."
 * ^abstract = true
+* .meta.profile 1..1 MS
 * insert DUNSandFEINumber
 * name 1..1 MS
 * contact.address 1..1 MS
@@ -42,7 +43,7 @@ Id: mfg-test-site-organization
 Title: "Manufacturing and/or Test Site Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 * ^abstract = true
-
+* .meta.profile 1..1 MS
 * insert DUNSandFEINumber
 * identifier ^short = "Manufacturing Site Unique Identifier | Testing Site Unique Identifier"
 * identifier ^definition = """Manufacturing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which manufactures, prepares, propagates, compounds or processes drugs. [Source: Adapted from FDA Drug Establishment Current Registration Site]
@@ -72,19 +73,50 @@ Testing Site Address: The complete address for the testing site. [Source: SME de
 """
 * contact.address only PqAddress
 
+Profile: SupplierOrganization
+Parent: Organization
+Id: supplier-organization 
+Title: "Supplier Organization"
+Description: "A profile for the data elements required to identify an organization that supplies drug products or substances."
+* ^abstract = true
+* .meta.profile 1..1 MS
+* insert DUNSandFEINumber
+* identifier ^short = "Supplier Unique Identifier"
+* identifier ^definition = """Supplier Unique Identifier: A unique identifier assigned to the establishment (facility) which supplies drugs. 
+"""
+* identifier.type ^short = "Supplier Unique Identifier Type"
+* identifier.type ^definition = """A value that identifies the source of the unique identifier. [Source: SME Defined]
+Examples: Data Universal Number System (DUNS), Facility Establishment Identifiers (FEI), etc.
+"""
+//* type 1..* MS
+//* type ^short = "Supplier Function"
+//* type ^definition = """v 1.5
+//"""
+//* type from pqcmc(required)
+* name 1..1 MS
+* name ^short = "Supplier Name"
+* name ^definition = """Supplier Name: The name of the establishment (facilities) which supplies or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
+"""
+* contact.address 1..1 MS
+* contact.address ^short = "Supplier Physical Address"
+* contact.address ^definition = """Supplier Physical Address: The complete address for the supplier.
+"""
+* contact.address only PqAddress
+
 Profile: PqAddress
 Parent: Address
 Id: pq-cmc-address
 Description: "pq-specific Constraints on the Address datatype dealing with US addresses."
 * obeys addr-state
 * obeys addr-zip
+* obeys CMC-county
 * line 1..2
 * city 1..1 MS
 * state 0..1 MS
 * postalCode 1..1 MS
 * country 1..1 MS
 * country ^short = "Country can either be the ISO 3-letter country code or the full country name matching the code. The codes and full names are in the value set: GENC 3 Letter Codes"
-* country obeys CMC-county
+
 
 Invariant: addr-state
 Description: "If the country is USA, then the state and postal code exist"
@@ -100,7 +132,8 @@ Invariant: CMC-county
 Description: "Countrys are from GENC Country Codes Value Set"
 Expression: "(
 country.exists() implies
-country.exists().memberOf('http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes')
+country.memberOf('http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes').exists()
 )"
+
 Severity: #error
 
