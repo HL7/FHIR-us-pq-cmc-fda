@@ -29,7 +29,7 @@ Severity: #error
 Invariant: cmc-ingredient-functions
 Description: "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.
 If Drug Product Component Function Category onstituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "(function.where(coding.where(code = 'C42637') and coding.system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C176675').exists()).exists() implies function.coding.code.count() = 2"
+Expression: "function.coding.where(code = 'C42637' and version = 'function').exists() implies function.coding.code.count() = 2"
 Severity: #error
 
 Invariant: cmc-substance-structure-graphic-required
@@ -37,10 +37,10 @@ Description: "A Substance Structure Graphic is required Required for Small Molec
 Expression: "(classification.where(coding.where(code = '1' and system = 'https://www.ema.europa.eu').exists()).exists()) implies structure.representation.exists()"
 Severity: #error
 
-Invariant: cmc-representation-or-document
-Description: "A structure has either a representation or document and supporting format."
-Expression: "representation.document.ofType(Reference).resolve().exists() xor (representation.representation.exists() and representation.format.coding.exists())"
-Severity: #error
+//Invariant: cmc-representation-or-document
+//Description: "A structure has either a representation or document and supporting format."
+//Expression: "representation.document.ofType(Reference).resolve().exists() xor (representation.representation.exists() and representation.format.coding.exists())"
+//Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
@@ -53,24 +53,26 @@ Expression: "sourceMaterial.type.coding.where(system = 'http://ncicb.nci.nih.gov
 implies (sourceMaterial.genus.exists() and  sourceMaterial.species.exists() and sourceMaterial.part.exists() and sourceMaterial.countryOfOrigin.exists())"
 Severity: #error
 
-Invariant: cmc-strength-type-cases
-Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory
-IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
-Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
+Invariant: cmc-strength-type-cases1
+Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory"
 Expression: "strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C168628').exists()
-implies (strength.ofType(Ratio).exists() or (strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('strengthFactors').extension('strengthOperator').exists().not())))
-and
-strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C45420').exists()
-implies ((strength.ofType(Ratio).exists() and strength.ofType(Ratio).numerator.code = 'C75765').exists()
-or (strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists())
-"
+implies strength.ofType(Ratio).exists() or ((strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('strengthFactors').extension('strengthOperator').exists().not()))"
 Severity: #error  
 
-Invariant: cmc-arbitrary-unit  
-Description: "If the UOM is UCUM Arbitrary Unit [arb'U], the units must described in the Strength Text data element."
-Expression: "((strength.ofType(Ratio).numerator.code = 'C168628' ) or (strength.ofType(Ratio).denominator.code = 'C168628' ))
-implies strength.textPresentation.value.contains('unit')"
-Severity: #error
+Invariant: cmc-strength-type-cases2
+Description: "IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
+Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
+Expression: "strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C45420').exists()
+implies ((strength.ofType(Ratio).exists() and strength.ofType(Ratio).numerator.code = 'C75765').exists())
+or ((strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists())"
+Severity: #error 
+
+
+//Invariant: cmc-arbitrary-unit  
+//Description: "If the UOM is UCUM Arbitrary Unit [arb'U], the units must described in the Strength Text data element."
+//Expression: "((strength.ofType(Ratio).numerator.code = 'C168628' ) or (strength.ofType(Ratio).denominator.code = 'C168628' ))
+//implies strength.textPresentation.value.contains('unit')"
+//Severity: #error
 
 Invariant: cmc-ppidref-required
 Description: "A PPiDref is required when the PPiD is designated a child."
@@ -134,10 +136,10 @@ Description: "The Ingredient.substance.strength.concentration.code from PqcmcUni
 Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
 Severity: #error
 
-Invariant: cmc-denominator-unit
-Description: "The denominator is either 1*  or [arb'U]"
-Expression: "code in ( 'C75765' | 'C66832' ).count() = 1"
-Severity: #error
+//Invariant: cmc-denominator-unit
+//Description: "The denominator is either 1*  or [arb'U]"
+//Expression: "code in ( 'C75765' | 'C66832' ).count() = 1"
+//Severity: #error
 
 Invariant: cmc-test-order-limit
 Description: "Action test order is greater than or equal to 1"

@@ -1,5 +1,8 @@
 ## WORK IN PROGRESS
 
+Known errors:  
+- '(any number) profiles found for entry resource. More than one is not supported at this time.' The IG publisher does not distinguish between different profiles on the same Resource in one bundle.  The 3.2.S.1.0 and 3.2.P.1.0 bundles are technically correct. This error can be ignored in validation of the file. When this feauture is supported, a later version will be released. The feature is recognized as necessary for the publisher, but a release date is unscheduled.
+- 'None of the codings provided are in the value set 'Country ValueSet'. GENC country codes not suported in SubtanceDefinition. Requires a change to the FHIR specification, therefore a Jira ticket submission. Igore this error.
 
 ## Background
 

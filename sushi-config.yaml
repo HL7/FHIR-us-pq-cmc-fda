@@ -72,6 +72,11 @@ parameters:
  releaselabel: true
  excludettl: true
  excludemap: true
+ no-narrative: DocumentReference/9e08d53c-fb60-42ea-a19a-71a1af3dcc83
+    - DocumentReference/fd006e04-8764-4d83-b6ee-bbf8f35847e0
+    - DocumentReference/ff0e6432-2f8b-43cc-a3b3-462981a2d929
+    - SubstanceDefinition/0e036d9c-acb2-4f51-abcb-664f56c57191
+    - Organization/3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
  special-url: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - https://gsrs.ncats.nih.gov
     - https://www.uniprot.org

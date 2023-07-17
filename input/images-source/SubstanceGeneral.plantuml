@@ -64,7 +64,15 @@ node "PolymorphicForm" as N2 {
         GENC Country Codes
     }
 } 
-
+node "MfgTestSiteOrganization" as N21mfg { 
+    object "**Parent:** Organization" as objTS  {
+        **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+        **ValueSets:**
+         Manufacturing Site Unique Identifier Type
+         GENC Country Codes
+    }
+}
 
 N1 -[#darkred]-> N21
 N1 -[#darkred]-> NN
@@ -72,5 +80,6 @@ NN -[#darkred]-> N2
 N2 -[#darkred]-> NB64
 N21 -[#darkred]-> NB64
 N1 -[#darkred]-> NSO
+NN -[#darkred]-> N21mfg
 }
 @enduml
