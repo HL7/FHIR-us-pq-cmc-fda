@@ -44,6 +44,7 @@ Id: pq-stability-study
 Title: "Stability Study"
 Description: "Profile for the main stability study."
 
+* meta.profile 0..1 MS
 * .extension contains pq-protocol-extension named protocolExtension 1..1 MS
 * .extension contains pq-additional-info-extension named study-additional-info 0..* MS
 * .extension[study-additional-info] ^short = "Study Additional"
@@ -95,6 +96,7 @@ Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
 Description: "Profile for the a stability sub-study."
 
+* meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
 * identifier 1..1 MS
 * identifier ^definition = """An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
@@ -156,6 +158,7 @@ Id: pqcmc-stability-study-interval-report
 Title: "Stability Study Interval Report"
 Description: "Batch or lot stability testing to ensure that pharmaceutical products continue to meet the product specification or determine the expiry period."
 
+* meta.profile 0..1 MS
 * .extension contains pq-timePoint-extension named studyInterval 1..1 MS
 * .extension contains pq-quality-specification-extension named qualitySpecification 1..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
@@ -187,6 +190,7 @@ Id: pqcmc-stability-summary
 Title: "Stability Summary"
 Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
 
+* meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named studysum-additional-info 0..* MS
 * .extension[studysum-additional-info] ^short = "Study Summary Additional"
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."

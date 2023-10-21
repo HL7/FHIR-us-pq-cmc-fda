@@ -21,21 +21,6 @@ Description: "A code that describes how to relate the given value to an acceptan
 * value[x] only CodeableConcept
 * value[x] from PqcmcInterpretationCodeTerminology (required)
 
-Extension: SpecificationStatusExtension
-Id: pq-specification-status-extension
-Title: "Specification Status"
-Description: "The current FDA regulatory status of the specification"
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition"
-* value[x] 1..1 MS
-  * ^short = "Specification Status"
-  * ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
-Examples: Approved, Not Approved, etc.
-Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-Note: This is different from Application Status"""
-* value[x] only CodeableConcept
-* value[x] from PqcmcSpecificationStatusTerminology (required)
-
 Extension: SpecificationTypeExtension
 Id: pq-specification-type-extension
 Title: "Specification Type"
@@ -72,8 +57,8 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
+* meta.profile 0..1 MS
 * extension contains 
-    pq-specification-status-extension named specificationStatus 1..1 MS and
     pq-specification-type-extension named specificationType 1..1 MS and
     pq-additional-info-extension named spec-additional-info 0..1 MS
 * extension[spec-additional-info] ^short = "Specification Additional Information"
@@ -102,13 +87,14 @@ Note: This value should be unique across all specifications for a given material
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
 Note: This is the date a particular version of the specification was internally accepted by the submitter.
 """
-* useContext MS
+* useContext 1..1 MS
 * useContext ^short = "Specification Status"
 * useContext ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
 Examples: Approved, Not Approved, Reported in a CBE or AR.
 Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
 Note: This is different from Application Status"""
 * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#workflow	"Workflow Setting"
+* useContext.valueCodeableConcept 1..1 MS
 * useContext.valueCodeableConcept.coding from PqcmcSpecificationStatusTerminology (required)
 * approvalDate  MS
 * approvalDate ^short = "Specification Status Date"
@@ -126,7 +112,6 @@ Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as i
 Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.addresses.coding.code from PqcmcTestUsageTerminology (required)
 * goal.addresses.text ^short = "Accpetance Criteria Usage"
-
 * goal.documentation 0..* MS
 * goal.documentation.type = http://hl7.org/fhir/related-artifact-type#comments-on
 * goal.documentation.display 1..1 MS
@@ -134,8 +119,6 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.documentation.display ^definition = """A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
-* goal.target.measure MS 
-* goal.target.measure.text 1..1 MS
 * goal.target.detail[x] MS
 * goal.target.detail[x] only Quantity or Range  or string or integer
 * goal.target.detailQuantity  0..1 MS
@@ -175,34 +158,25 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailString.extension[interpretationCode].valueCodeableConcept ^short = "Interpretation Code"
 * goal.target.detailString.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
 * goal.target.detailString.extension[interpretationCode].valueCodeableConcept.coding = #C48660 "Not Applicable"
-
 * goal.target.detailInteger  0..1 MS
-* goal.target.detailInteger ^short = "Replicate Number"
+* goal.target.detailInteger ^short = "Number of Replicates"
 * goal.target.detailInteger ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
 * goal.target.detailInteger.value 1..1 MS
 * goal.target.due 0..0
-
-* action MS
-* action obeys cmc-action-code-required
-* action ^short = "Test or Stage"
-* action.extension contains pq-order-extension named testOrder 1..1 MS  
-* action.extension[testOrder] ^short = "Test/Stage Order"
+* action 1..* MS
+* action obeys cmc-linkId-required
+* action ^short = "Test"
+* action.extension contains pq-order-extension named testOrder 1..1 MS
+* action.extension[testOrder] ^short = "Test Order"
 * action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
-Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
+[Source: SME Defined]
 Examples: 1, 2, 3.
 """
-* action.extension[testOrder].valueDecimal 1..1 MS 
+* action.extension[testOrder].valueDecimal 1..1 MS
 * action.linkId MS
-* action.linkId ^short = "only required for staged test and alternate test"
-* action.prefix 1.. MS
-* action.prefix ^short = "Stage Name"
-* action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
-Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711&gt;)
-Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
-Default 'Single Stage'.
-"""
+* action.linkId ^short = "only required for alternate tests"
 * action.title 1.. MS
 * action.title ^short = "Test Name"
 * action.title ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
@@ -211,9 +185,8 @@ Note: as defined by the sponsor
 """
 * action.title.extension contains pq-rrt-extension named rrt 0..1 MS
 * action.description 0..1 MS
-* action.description ^short = "Test Additional Information | Stage Additional Information"
+* action.description ^short = "Test Additional Information"
 * action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
-Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
 If there is more than one comment, include in this element.  Markdown allows formating for clarity.
 """
 * action.code  MS
@@ -249,15 +222,44 @@ Note: The full descriptor of the technique is part of the next data element - Re
 * action.documentation.label ^definition = """The reference to the actual file of the analytical procedure.
 Example: the file path to the procedure document.
 """
-* action.goalId 1..* MS
-* action.goalId ^short = "Reference to Acceptance Criteria"
-* action.relatedAction MS
-* action.relatedAction ^short = "Alternate Test or Subsequent Stage"
+* action.relatedAction 0..* MS
+* action.relatedAction ^short = "Alternate Test"
+* action.relatedAction ^definition = "Alternate Tests are one or more test that are equivalent often using differnt method or equipment. The tests are used interchangeably and only one is used to satisfy the drug product specificaion."
 * action.relatedAction.targetId MS
 * action.relatedAction.relationship MS
-* action.relatedAction.relationship ^short = "concurrent for Alternate Test; after-end for Stage testing"
+* action.relatedAction.relationship ^short = "Code is concurrent"
+* action.relatedAction.relationship = $ActRelationType#concurent "Concurrent"
 * action.selectionBehavior MS
-* action.selectionBehavior ^short = "Only required when relatedAction is an alternate test. Value will be exactly-one"
-//* //element(*,PlanDefinition)/action/selectionBehavior/@value
-* action.action 0..* MS
-* action.action ^short = "Alternate if required for elaborate testing.  Use testOrder decimal values to indicate group sequencing."
+* action.selectionBehavior ^short = "Code is exactly-one"
+* action.selectionBehavior = $ActSelection#exactly-one "Exactly One"
+* action.action 1..* MS
+* action.action ^short = "Stage"
+* action.action.extension contains pq-order-extension named testOrder 1..1 MS
+* action.action.extension[testOrder] ^short = "Stage Order"
+* action.action.extension[testOrder] ^definition = """Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
+Examples: 1, 2, 3.
+"""
+* action.action.extension[testOrder].valueDecimal 1..1 MS
+* action.action.prefix 1.. MS
+* action.action.prefix ^short = "Stage Name"
+* action.action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
+Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711&gt;)
+Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
+Default 'Single Stage'.
+"""
+* action.action.title 1.. MS
+* action.action.title ^short = "Test Name"
+* action.action.title ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
+Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+Note: as defined by the sponsor
+Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
+"""
+* action.action.title.extension contains pq-rrt-extension named rrt 0..1 MS
+* action.action.description 0..1 MS
+* action.action.description ^short = "Test Additional Information | Stage Additional Information"
+* action.action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
+Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
+If there is more than one comment, include in this element.  Markdown allows formating for clarity.  If both types are present, indicate type.
+"""
+* action.action.goalId 1..* MS
+* action.action.goalId ^short = "Reference to Acceptance Criteria"

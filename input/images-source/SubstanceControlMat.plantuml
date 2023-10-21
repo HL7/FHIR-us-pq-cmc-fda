@@ -9,75 +9,83 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
-object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-32s23.html]]
-    }  
-  node "QualitySpecification" as N2 { 
-      object "**Parent:** PlanDefinition" as obj2 {
-          **Reference:**
-      [[StructureDefinition-pqcmc-quality-specification.html]]
-        **ValueSets**
-        PqActionRelationTypes
-        PqcmcInterpretationCodeTerminology
-        PqcmcSpecificationStatusTerminology
-        PqcmcSpecificationTypeTerminology
-        PqcmcTestCategoryTerminology
-        PqcmcTestMethodOriginTerminology
-        PqcmcTestUsageTerminology
-        PqcmcUnitsMeasureTerminology
+    object "**Bundle Reference:**" as objbun {
+        [[StructureDefinition-cmc-ectd-document-32s23.html]]
     }
+
+    node "QualitySpecification" as N2 {
+
+        object "**Parent:** PlanDefinition" as obj2 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-quality-specification.html]]
+            **ValueSets**
+            Interpretation Code Terminology
+            Specification Status Terminology
+            Specification Type Terminology
+            Test Category Terminology
+            Test Method Origin Terminology
+            Test Sub-Category Terminology
+            Test Usage Terminology
+            Units Of Measure Terminology
+        }
         object "**Extensions**" as objQSEx {
-        AdditionalInformationExtension
-        InterpretationCodeExtension
-        SpecificationStatusExtension
-        SpecificationTypeExtension
-        TestMethodOriginExtension
-        TestOrderExtension
-        RRTExtension
+            Interpretation Code
+            Specification Status
+            Specification Type
+            Aditional Information
+            Test Order
+        }
+        obj2 <|-- objQSEx
     }
-    obj2 <|-- objQSEx
-}
-  node "EctdComposition32S23" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-          **Reference:**
-      [[StructureDefinition-ectd-composition-32s23.html]]
-      **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }
-}
+    node "EctdComposition32S23" as N1 {
 
- node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-       **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
+        object "**Parent:** Composition" as obj1 {
+            **Reference:**
+            [[StructureDefinition-ectd-composition-32s23.html]]
+            **ValueSets:**
+            eCTD sections Value Set
+        }
     }
-} 
-  node "ExcipientRaw" as N21 { 
-      object "**Parent:** SubstanceDefinition" as obj22 {
-          **Reference:**
-      [[StructureDefinition-pqcmc-excipient.html]]
-        **ValueSets:**
-          GENC Country Codes
-          Source Type Terminology
-    }
-}
-node "MfgTestSiteOrganization" as N21mfg { 
-    object "**Parent:** Organization" as objTS  {
-        **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-        **ValueSets:**
-         Manufacturing Site Unique Identifier Type
-         GENC Country Codes
-    }
-}
 
- 
+    node "SponsorOrganization" as NSO {
 
-N1 -[#darkred]-> N21
-N2 -[#darkred]-> N21
-N1 -[#darkred]-> NSO
-N21 -[#darkred]-> N21mfg
+        object "**Parent:** Organization" as objAu {
+            **Reference:**
+            [[StructureDefinition-cmc-sponsor-organization.html]]
+            **ValueSets:**
+            GENC Country Codes
+            Organization Identifier Type Terminology
+        }
+    }
+
+    node "ExcipientRaw" as N21 {
+
+        object "**Parent:** SubstanceDefinition" as obj22 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-excipient.html]]
+            **ValueSets:**
+            GENC Country Codes
+            Source Type Terminology
+            EVMPD Substance Classification
+            Quality Standard Terminology
+        }
+    }
+    node "MfgTestSiteOrganization" as N21mfg {
+
+        object "**Parent:** Organization" as objTS  {
+            **Reference:**
+            [[StructureDefinition-mfg-test-site-organization.html]]
+            **ValueSets:**
+            Organization Unique Identifier Type
+            GENC Country Codes
+        }
+    }
+
+
+
+    N1 -[#darkred]-> N21
+    N2 -[#darkred]-> N21
+    N1 -[#darkred]-> NSO
+    N21 -[#darkred]-> N21mfg
 }
 @enduml

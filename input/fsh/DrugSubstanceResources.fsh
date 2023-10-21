@@ -30,6 +30,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance
 Title: "Drug Substance"
 Description: "Drug Substance (Active Ingredient) nomenclature and characterization."
+* meta.profile 0..1 MS
 * . obeys cmc-structure-required
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
@@ -45,7 +46,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * manufacturer 1..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(MfgTestSiteOrganization)
+* supplier only Reference(SupplierOrganization)
 * characterization 0..* MS
 * characterization.technique.text 1..1 MS
 * characterization.form.text 0..1 MS
@@ -70,7 +71,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * molecularWeight.amount.code from PqcmcUnitsMeasureTerminology (required)
 
 * structure 1..1 MS
-* structure obeys cmc-representation-or-document
+//* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
@@ -136,6 +137,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+* meta.profile 0..1 MS
 * . obeys cmc-structure-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
@@ -159,7 +161,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure 0..1 MS
-* structure obeys cmc-representation-or-document
+//* structure obeys cmc-representation-or-document
 * structure.technique MS
 * structure.technique ^short = "Substance Structure Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
@@ -215,10 +217,10 @@ Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
+* meta.profile 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
-* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
@@ -256,6 +258,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
+* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -276,9 +279,9 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(MfgTestSiteOrganization)
+* supplier only Reference(SupplierOrganization)
 * structure MS
-* structure obeys cmc-representation-or-document
+//* structure obeys cmc-representation-or-document
 * structure.representation 1..*
 * structure.representation.representation 0..1 MS
 * structure.representation.format 0..1
@@ -308,7 +311,7 @@ It is accessible at https://www.uniprot.org/
 """
 * insert ShortSetSubstanceNames
 
-* sourceMaterial 1..1 MS
+* sourceMaterial 0..1 MS
 * sourceMaterial.type 0..1
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
@@ -339,8 +342,8 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin 0..1 MS
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-* sourceMaterial.countryOfOrigin.coding 0..0
-* sourceMaterial.countryOfOrigin.text 1..1 MS
+* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
+* sourceMaterial.countryOfOrigin.coding 1..1 MS
 
 Profile: DrugProductComponent
 Parent: Ingredient
@@ -348,15 +351,17 @@ Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
+* meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
 * .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
 Examples: removed during process, adjusted for loss on drying, etc.
 """
 * status.code
+* role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
 * for ^short = "Reference to MedicinalProductDefinition"
-* substance obeys cmc-strength-type-cases
-* substance obeys cmc-arbitrary-unit
+* substance obeys cmc-strength-type-cases1
+* substance obeys cmc-strength-type-cases2
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(ComponentSubstance)
@@ -404,6 +409,7 @@ Title: "Drug Product Batch Formula Ingredient"
 Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
 
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"
+* meta.profile 0..1 MS
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
@@ -547,6 +553,7 @@ Id: pqcmc-drug-substance-batch
 Title: "Drug Substance Manufactured Batch"
 Description: "Includes the properties of the drug substance as manufactured."
 
+* meta.profile 0..1 MS
 * extension contains drug-substance-manufacturing-batch named api-batch 1..1 MS
 * identifier.value 1..1 MS
 * identifier.value ^short = "Drug Substance Lot Number"
@@ -571,6 +578,8 @@ Parent: SubstanceDefinition
 Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
+
+* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -591,7 +600,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(MfgTestSiteOrganization)
+* supplier only Reference(SupplierOrganization)
 * code MS
 * code.code.coding
 * code.code.coding ^slicing.discriminator.type = #pattern
@@ -613,7 +622,7 @@ It is accessible at https://www.uniprot.org/
 """
 * insert ShortSetSubstanceNames
 
-* sourceMaterial 1..1 MS
+* sourceMaterial 0..1 MS
 * sourceMaterial.type 1..1
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
@@ -644,8 +653,8 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin 0..1 MS
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-* sourceMaterial.countryOfOrigin.coding 0..0
-* sourceMaterial.countryOfOrigin.text 1..1 MS
+* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
+* sourceMaterial.countryOfOrigin.coding 1..1 MS
 
 Profile: RoutineSubstanceDefinition
 Parent: SubstanceDefinition
@@ -669,7 +678,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer 1..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(MfgTestSiteOrganization)
+* supplier only Reference(SupplierOrganization)
 * insert ShortSetSubstanceNames
 
 Profile: SubstanceContainerClosure
@@ -677,6 +686,8 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-container-closure
 Title: "Drug Substance Container Closure"
 Description: "Description and coding of the container closure system. Profile on Drug Substance profile."
+
+* meta.profile 0..1 MS
 * extension contains  pq-container-closure-extension named containerClosure 1..1 MS
 * . obeys cmc-when-unii-required
 * identifier 0..1 MS
@@ -710,6 +721,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature
 Title: "Substance Nomenclature"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
+* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -723,7 +735,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug S
 * manufacturer 1..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(MfgTestSiteOrganization)
+* supplier only Reference(SupplierOrganization)
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
 * molecularWeight ^definition = "The average mass of a molecule of a compound compared to ¹/₁₂ the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms. [Source: Merriam Webster]"
@@ -767,6 +779,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-impurities
 Title: "Substance Impurities"
 Description: "Drug Substance Impurities"
+* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
 * . obeys cmc-name-isbt
@@ -792,7 +805,7 @@ Description: "Drug Substance Impurities"
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure MS
-* structure obeys cmc-representation-or-document
+//* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
@@ -854,6 +867,7 @@ Id: pqcmc-drug-substance-molecular-structure
 Title: "Drug Substance Molecular Structure"
 Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
 
+* meta.profile 0..1 MS
 * . obeys cmc-structure-required
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
@@ -867,7 +881,7 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * structure 1..1 MS
-* structure obeys cmc-representation-or-document
+//* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"

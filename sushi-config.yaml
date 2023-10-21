@@ -5,7 +5,7 @@ title: "PQ/CMC FHIR Implementation Guide"
 description: guide to submitting PQ/CMC data for exchanged in FHIR resources.
 status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 0.1.15
+version: 0.1.16
 fhirVersion: 5.0.0
 copyrightYear: 2021+
 releaseLabel: Build CI
@@ -21,7 +21,7 @@ menu:
     Substance General Information (3.2.S.1.0): eCTD32S10.html 
     Substance Control of Materials (3.2.S.2.3): eCTD32S23.html 
     Specification (3.2.S.4.1, 3.2.P.4.1 & 3.2.P.5.1): eCTDSP4151.html 
-  eCTD Profiles (Stage 2):
+  DRAFT eCTD Profiles:
     Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
     Product Characterization of Impurities (3.2.P.5.5): eCTD32P55.html 
     Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
@@ -72,6 +72,11 @@ parameters:
  releaselabel: true
  excludettl: true
  excludemap: true
+ no-narrative: DocumentReference/9e08d53c-fb60-42ea-a19a-71a1af3dcc83
+    - DocumentReference/fd006e04-8764-4d83-b6ee-bbf8f35847e0
+    - DocumentReference/ff0e6432-2f8b-43cc-a3b3-462981a2d929
+    - SubstanceDefinition/0e036d9c-acb2-4f51-abcb-664f56c57191
+    - Organization/3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
  special-url: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - https://gsrs.ncats.nih.gov
     - https://www.uniprot.org
@@ -94,6 +99,9 @@ parameters:
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133865
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCCT
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCOT
+    - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-part-type
+    - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-release-profile
+# apply-version: true
 #   validation: [allow-any-extensions, no-broken-links]
 dependencies:
   hl7.fhir.uv.sdc:

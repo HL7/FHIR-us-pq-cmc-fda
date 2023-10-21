@@ -47,6 +47,7 @@ Title: "Batch Analysis"
 Description: "Batch or lot release testing  to ensure that pharmaceutical products meet the product specification."	
 	
 * .extension contains pq-quality-specification-extension named qualitySpecification 1..1 MS	
+* meta.profile 1..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"			
 * status MS	
@@ -81,7 +82,7 @@ Parent: Observation
 Id: pq-additional-stage-result-observation	
 Title: "Multiple Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
-	
+* meta.profile 1..1 MS	
 * identifier 1..1 MS	
 * identifier ^short = "Stage"	
 * identifier ^definition = """A set of discrete sequential steps performed on a given test. [Source: SME Defined]"""
@@ -210,7 +211,7 @@ Parent: Observation
 Id: pq-result-observation	
 Title: "Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
-	
+* meta.profile 1..1 MS	
 * identifier 1..1 MS	
 * identifier ^short = "Stage"	
 * identifier ^definition = "A set of discrete sequential steps performed on a given test. [Source: SME Defined]"

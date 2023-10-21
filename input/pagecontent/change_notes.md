@@ -1,7 +1,32 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
+### Changes and Updates for Version 0.1.15
+The current development IG -  Stage 1A - PoP edition
+
+- Enhanced content examples for 3.2.S.1.0 nad 3.2.P.1.0.  Errors addressed. Change requests provided to Zulip.
+- Testing and edits to invariants
+- Additional invariants for Action in Specification
+- relaxed constraint cmc-representation-or-document
+- added missing nomenclatures
+- split function and function category
+- removed slice for numerator and denominator on components and constituents in FinishedProduct.  
+- Added location codes and kept text for actual location name to support the notion of 1* in the extant denominator
+- Updated Specification examples to current profiles.  NOT VALIDATED
+- blocked narrative generation in: 
+    - DocumentReference/9e08d53c-fb60-42ea-a19a-71a1af3dcc83,
+    - DocumentReference/fd006e04-8764-4d83-b6ee-bbf8f35847e0
+    - DocumentReference/ff0e6432-2f8b-43cc-a3b3-462981a2d929
+    - SubstanceDefinition/0e036d9c-acb2-4f51-abcb-664f56c57191
+    - Organization/3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
+- Rebuilt warnings ignore file.  Specification related messages not addressed
+- corrected slicing on 32S10 composition
+- corrected slicing on all bundles
+- added  role = to  Ingredient profile.  Required by Resource  
+- added missing nomenclatures to SubstanceDefinition resources
+- created extension ConstituentPercent for Finished Product constituents
+- updated SubstanceGeneral.plantuml
+
 ### Changes and Updates for Version 0.1.14
-The current development IG -  Stage 1A
 
 - Removed recusive on backbone in MID.  Not supported in FHIR  Added coded value to PPID to idenify parent/child status
 - nomenclature changes to substance and product

@@ -953,10 +953,11 @@ Description: "Terminology used to qualify the information pertaining to specific
 * $NCIT#C134022 "Drug Substance"	
 * $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"	
 	
-ValueSet: PqcmcSponsorIdentifierTypeTerminology	
-Id: pqcmc-sponsor-identifier-type-terminology	
-Title: "Sponsor Identifier Type Terminology"	
-Description: "Terminology used to qualify the information pertaining to sponsor identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+ValueSet: PqcmcOrgIdentifierTypeTerminology	
+Id: pqcmc-org-identifier-type-terminology	
+Title: "Organization Identifier Type Terminology"	
+Title: "Testing Site Unique Identifier Type Terminology"	
+Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = true	
 * $NCIT#C134005 "CFN"	
@@ -1021,18 +1022,7 @@ Description: "Terminology used to qualify the information pertaining to test usa
 * ^experimental = true	
 * $NCIT#C134029 "Release"	
 * $NCIT#C134030 "Stability"	
-	
-ValueSet: PqcmcTestingSiteUniqueIdentifierTypeTerminology	
-Id: pqcmc-testing-site-unique-identifier-type-terminology	
-Title: "Testing Site Unique Identifier Type Terminology"	
-Description: "Terminology used to qualify the information pertaining to testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
-	
-* ^experimental = true	
-* $NCIT#C134005 "CFN"	
-* $NCIT#C134003 "DUNS"	
-* $NCIT#C134004 "FEI"	
-* $NCIT#C17998 "Unknown"	
-	
+		
 ValueSet: SplPharmaceuticalDosageFormTerminology	
 Id: spl-pharmaceutical-dosage-form-terminology	
 Title: "Pharmaceutical Dosage Form Terminology"	

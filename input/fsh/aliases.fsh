@@ -25,3 +25,5 @@ Alias: $NCItStdyTyp = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133866
 Alias: $NCItStorCond = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133865
 Alias: $NCItStorCondCat = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCCT
 Alias: $NCItContainOrient = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCOT
+Alias: $ActRelationType = http://hl7.org/fhir/action-relationship-type
+Alias: $ActSelection = http://hl7.org/fhir/action-selection-behavior
