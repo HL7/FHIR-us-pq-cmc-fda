@@ -11,7 +11,7 @@ skinparam ClassBorderThickness 4
 package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
  
    object "**Bundle Reference:**" as objbun {
-              [[Structuredefinition-cmc-ectd-document-sp4151.html]]
+              [[Structuredefinition-cmc-ectd-document-sp4454.html]]
     }       
 
 
