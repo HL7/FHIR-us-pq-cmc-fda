@@ -1,4 +1,5 @@
 Instance: 3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6   
+Instance: 3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6   
 InstanceOf: SponsorOrganization
 Title: "Sponsor"
 Description: "SponsorOrganization - Large Life"
@@ -138,31 +139,21 @@ Usage: #example
 
 Instance: b2ba5a21-7b54-4674-828f-e071f16ca707
 InstanceOf: CMCeCTDDocument32S10
-Title: "Bundle for 32S10"
-Description: "Bundle containng nomenclature and molecular Structure"
-Usage: #example 
-* meta.profile = Canonical(CMCeCTDDocument32S10)
-* meta.profile.extension[version].valueString = "0.1.16"
-* identifier.system = $IDsys
-* identifier.value = "urn:uuid:b2ba5a21-7b54-4674-828f-e071f16ca707"
 * timestamp = 2023-07-11T00:47:41.776Z
-* entry[0].resource = e23e1f1e-8ac2-49d6-afaa-7ad876a85979
-* entry[=].fullUrl = "urn:uuid:e23e1f1e-8ac2-49d6-afaa-7ad876a85979"
-* entry[+].resource = fccef1cd-71e7-4323-962b-c966b6f7a455
-* entry[=].fullUrl = "urn:uuid:fccef1cd-71e7-4323-962b-c966b6f7a455"
-* entry[+].resource = 2f238f40-359b-4125-a94d-68fb187efc22
-* entry[=].fullUrl = "urn:uuid:2f238f40-359b-4125-a94d-68fb187efc22"
-* entry[+].resource = 037a4e03-a2d5-41da-a55f-2854b3edec36
-* entry[=].fullUrl = "urn:uuid:037a4e03-a2d5-41da-a55f-2854b3edec36"
-* entry[+].resource = 3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
-* entry[=].fullUrl = "urn:uuid:3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6"
-* entry[+].resource = 276457ea-9268-42c5-aeb9-3c3a95ba2277
-* entry[=].fullUrl = "urn:uuid:276457ea-9268-42c5-aeb9-3c3a95ba2277"
-* entry[+].resource = 7e34e5c1-5e95-400f-8f76-332dd096e735
-* entry[=].fullUrl = "urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735"
-* entry[+].resource = fd006e04-8764-4d83-b6ee-bbf8f35847e0
-* entry[=].fullUrl = "urn:uuid:fd006e04-8764-4d83-b6ee-bbf8f35847e0"
-* entry[+].resource = ff0e6432-2f8b-43cc-a3b3-462981a2d929
-* entry[=].fullUrl = "urn:uuid:ff0e6432-2f8b-43cc-a3b3-462981a2d929"
-
-
+* meta.versionId = "0.1.15"
+* entry[Composition].resource = e23e1f1e-8ac2-49d6-afaa-7ad876a85979
+* entry[Composition].fullUrl = "urn:uuid:e23e1f1e-8ac2-49d6-afaa-7ad876a85979"
+* entry[Nomenclature].resource = fccef1cd-71e7-4323-962b-c966b6f7a455
+* entry[Nomenclature].fullUrl = "urn:uuid:fccef1cd-71e7-4323-962b-c966b6f7a455"
+* entry[MolecularStructure].resource = 2f238f40-359b-4125-a94d-68fb187efc22
+* entry[MolecularStructure].fullUrl = "urn:uuid:2f238f40-359b-4125-a94d-68fb187efc22"
+* entry[Organization][+].resource = 3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
+* entry[Organization][=].fullUrl = "urn:uuid:3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6"
+* entry[Organization][+].resource = 276457ea-9268-42c5-aeb9-3c3a95ba2277
+* entry[Organization][=].fullUrl = "urn:uuid:276457ea-9268-42c5-aeb9-3c3a95ba2277"
+* entry[DocumentReference][+].resource = fd006e04-8764-4d83-b6ee-bbf8f35847e0
+* entry[DocumentReference][=].fullUrl = "urn:uuid:fd006e04-8764-4d83-b6ee-bbf8f35847e0"
+* entry[DocumentReference][+].resource = ff0e6432-2f8b-43cc-a3b3-462981a2d929
+* entry[DocumentReference][=].fullUrl = "urn:uuid:ff0e6432-2f8b-43cc-a3b3-462981a2d929"
+* entry[Polymorph][+].resource = 037a4e03-a2d5-41da-a55f-2854b3edec36
+* entry[Polymorph][=].fullUrl = "urn:uuid:037a4e03-a2d5-41da-a55f-2854b3edec36"

@@ -137,7 +137,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
-* meta.profile 0..1 MS
 * . obeys cmc-structure-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
@@ -217,7 +216,6 @@ Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
-* meta.profile 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
@@ -258,7 +256,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
-* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -351,7 +348,6 @@ Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
-* meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
 * .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
@@ -409,7 +405,6 @@ Title: "Drug Product Batch Formula Ingredient"
 Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
 
 * ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-dp-ingredient"
-* meta.profile 0..1 MS
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
@@ -553,7 +548,6 @@ Id: pqcmc-drug-substance-batch
 Title: "Drug Substance Manufactured Batch"
 Description: "Includes the properties of the drug substance as manufactured."
 
-* meta.profile 0..1 MS
 * extension contains drug-substance-manufacturing-batch named api-batch 1..1 MS
 * identifier.value 1..1 MS
 * identifier.value ^short = "Drug Substance Lot Number"
@@ -578,8 +572,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
-
-* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -686,8 +678,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-container-closure
 Title: "Drug Substance Container Closure"
 Description: "Description and coding of the container closure system. Profile on Drug Substance profile."
-
-* meta.profile 0..1 MS
 * extension contains  pq-container-closure-extension named containerClosure 1..1 MS
 * . obeys cmc-when-unii-required
 * identifier 0..1 MS
@@ -721,7 +711,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature
 Title: "Substance Nomenclature"
 Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
-* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -779,7 +768,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-impurities
 Title: "Substance Impurities"
 Description: "Drug Substance Impurities"
-* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required
 * . obeys cmc-name-isbt
@@ -867,7 +855,6 @@ Id: pqcmc-drug-substance-molecular-structure
 Title: "Drug Substance Molecular Structure"
 Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
 
-* meta.profile 0..1 MS
 * . obeys cmc-structure-required
 * . obeys cmc-when-unii-required
 * . obeys cmc-substance-structure-graphic-required

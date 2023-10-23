@@ -57,8 +57,8 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
-* meta.profile 0..1 MS
 * extension contains 
+    pq-specification-status-extension named specificationStatus 1..1 MS and
     pq-specification-type-extension named specificationType 1..1 MS and
     pq-additional-info-extension named spec-additional-info 0..1 MS
 * extension[spec-additional-info] ^short = "Specification Additional Information"
@@ -230,36 +230,7 @@ Example: the file path to the procedure document.
 * action.relatedAction.relationship ^short = "Code is concurrent"
 * action.relatedAction.relationship = $ActRelationType#concurent "Concurrent"
 * action.selectionBehavior MS
-* action.selectionBehavior ^short = "Code is exactly-one"
-* action.selectionBehavior = $ActSelection#exactly-one "Exactly One"
-* action.action 1..* MS
-* action.action ^short = "Stage"
-* action.action.extension contains pq-order-extension named testOrder 1..1 MS
-* action.action.extension[testOrder] ^short = "Stage Order"
-* action.action.extension[testOrder] ^definition = """Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
-Examples: 1, 2, 3.
-"""
-* action.action.extension[testOrder].valueDecimal 1..1 MS
-* action.action.prefix 1.. MS
-* action.action.prefix ^short = "Stage Name"
-* action.action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
-Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711&gt;)
-Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
-Default 'Single Stage'.
-"""
-* action.action.title 1.. MS
-* action.action.title ^short = "Test Name"
-* action.action.title ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
-Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
-Note: as defined by the sponsor
-Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
-"""
-* action.action.title.extension contains pq-rrt-extension named rrt 0..1 MS
-* action.action.description 0..1 MS
-* action.action.description ^short = "Test Additional Information | Stage Additional Information"
-* action.action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
-Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
-If there is more than one comment, include in this element.  Markdown allows formating for clarity.  If both types are present, indicate type.
-"""
-* action.action.goalId 1..* MS
-* action.action.goalId ^short = "Reference to Acceptance Criteria"
+* action.selectionBehavior ^short = "Only required when relatedAction is an alternate test. Value will be exactly-one"
+//* //element(*,PlanDefinition)/action/selectionBehavior/@value
+* action.action 0..* MS
+* action.action ^short = "Alternate if required for elaborate testing.  Use testOrder decimal values to indicate group sequencing."

@@ -43,7 +43,7 @@ Id: mfg-test-site-organization
 Title: "Manufacturing and/or Test Site Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 * ^abstract = true
-* meta.profile 1..1 MS
+
 * insert DUNSandFEINumber
 * identifier ^short = "Manufacturing Site Unique Identifier | Testing Site Unique Identifier"
 * identifier ^definition = """Manufacturing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which manufactures, prepares, propagates, compounds or processes drugs. [Source: Adapted from FDA Drug Establishment Current Registration Site]
@@ -70,36 +70,6 @@ Testing Site Name: The name of the establishment (facility) which tests the raw 
 * contact.address ^definition = """Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
 
 Testing Site Address: The complete address for the testing site. [Source: SME defined]
-"""
-* contact.address only PqAddress
-
-Profile: SupplierOrganization
-Parent: Organization
-Id: supplier-organization 
-Title: "Supplier Organization"
-Description: "A profile for the data elements required to identify an organization that supplies drug products or substances."
-* ^abstract = true
-* meta.profile 1..1 MS
-* insert DUNSandFEINumber
-* identifier ^short = "Supplier Unique Identifier"
-* identifier ^definition = """Supplier Unique Identifier: A unique identifier assigned to the establishment (facility) which supplies drugs. 
-"""
-* identifier.type ^short = "Supplier Unique Identifier Type"
-* identifier.type ^definition = """A value that identifies the source of the unique identifier. [Source: SME Defined]
-Examples: Data Universal Number System (DUNS), Facility Establishment Identifiers (FEI), etc.
-"""
-//* type 1..* MS
-//* type ^short = "Supplier Function"
-//* type ^definition = """v 1.5
-//"""
-//* type from pqcmc(required)
-* name 1..1 MS
-* name ^short = "Supplier Name"
-* name ^definition = """Supplier Name: The name of the establishment (facilities) which supplies or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
-"""
-* contact.address 1..1 MS
-* contact.address ^short = "Supplier Physical Address"
-* contact.address ^definition = """Supplier Physical Address: The complete address for the supplier.
 """
 * contact.address only PqAddress
 

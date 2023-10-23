@@ -79,7 +79,11 @@ Id: pqcmc-drug-product
 Title: "Drug Product"
 Description: "This profile is not used in any bundles. It is a reference profile of MedicinalProductDefinition if not divided into eCTD sections. Includes the properties of the drug product, its components and impurities"
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
 * description 1..1 MS
@@ -118,7 +122,11 @@ Id: pqcmc-product-part
 Title: "Manufactured Drug Product"
 Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or compoent."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 MS
 * status 1..1 MS
 * name MS
@@ -271,7 +279,11 @@ Example: Push, Target."""
 Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
 """
 * component.amount.unit 1..1 MS
+<<<<<<< HEAD
 * component.amount.unit ^short = "Product Part Total Weight Numeric Numerator UOM"
+=======
+* component.amount.unit ^short = "Product Total Weight Numeric Numerator UOM"
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * component.amount.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
 Example: mg
 """
@@ -418,7 +430,11 @@ Id: pqcmc-product-batch-formula
 Title: "Drug Product Batch Formula"
 Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * status 1..1 MS
@@ -546,7 +562,11 @@ Id: pqcmc-drug-product-instance
 Title: "Drug Product Manufactured Instance"
 Description: "Includes the properties of the drug product as manufactured."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 1..* MS
 * identifier ^short = "Product Proprietary Name | Product Non-Proprietary Name"
 * identifier ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm]
@@ -685,7 +705,11 @@ Id: pqcmc-routine-drug-product
 Title: "Routine Drug Product"
 Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * combinedPharmaceuticalDoseForm 0..1 MS
@@ -710,7 +734,11 @@ Id: pqcmc-drug-product-with-impurities
 Title: "Drug Product Impurities"
 Description: "List of drug product impurities. Profile of Drug Product profile."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * impurity 0..* MS	
@@ -724,7 +752,11 @@ Id: pqcmc-drugproduct-container-closure
 Title: "Drug Product Container Closure"
 Description: "Description and coding of the container closure system. Profile of Drug Product profile."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * .extension contains pq-container-closure-extension named containerClosure 1..1 MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
@@ -736,7 +768,11 @@ Id: pqcmc-drug-product-description
 Title: "Drug Product Description"
 Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * description 0..1 MS
@@ -767,7 +803,11 @@ Id: pqcmc-batch-formula-product
 Title: "Batch Formula Drug Product Identification"
 Description: "The Drug Product produced by the batch formula."
 
+<<<<<<< HEAD
 * meta.profile 1..1 MS
+=======
+* .meta.profile 1..1 MS
+>>>>>>> 55708ce2a4405b9930e04a3504f0f1302893e60f
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
 * comprisedOf 1..* MS
