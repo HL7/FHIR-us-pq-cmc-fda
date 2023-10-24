@@ -28,6 +28,7 @@
         <xsl:when test="contains(substring-after($id, concat($basefamily, '.')), '.')">
           <xsl:value-of select="substring-before(substring-after($id, concat($basefamily, '.')), '.')"/>
         </xsl:when>
+        <xsl:otherwise>uv</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:variable name="code">
@@ -64,8 +65,10 @@
     <xsl:text>jiraSpecFile:</xsl:text>
     <xsl:value-of select="translate($family, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
     <xsl:choose>
-      <xsl:when test="$realm='us'">-us-</xsl:when>
-      <xsl:otherwise>-</xsl:otherwise>
+      <xsl:when test="$realm='uv'">-</xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="concat('-', $realm, '-')"/>
+      </xsl:otherwise>
     </xsl:choose>
     <xsl:value-of select="$code"/>
     <xsl:value-of select="concat('&#x0a;packagelisturl:', substring-before(f:url/@value, 'ImplementationGuide'), 'package-list.json')"/>

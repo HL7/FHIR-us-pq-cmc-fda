@@ -230,7 +230,7 @@ Example: the file path to the procedure document.
 * action.relatedAction.targetId MS
 * action.relatedAction.relationship MS
 * action.relatedAction.relationship ^short = "Code is concurrent"
-* action.relatedAction.relationship = $ActRelationType#concurent "Concurrent"
+* action.relatedAction.relationship = $ActRelationType#concurrent "Concurrent"
 * action.selectionBehavior MS
 * action.selectionBehavior ^short = "Code is exactly-one"
 * action.selectionBehavior = $ActSelection#exactly-one "Exactly One"
