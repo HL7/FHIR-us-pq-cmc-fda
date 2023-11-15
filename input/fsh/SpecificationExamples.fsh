@@ -447,6 +447,7 @@ InstanceOf: QualitySpecification
     * title = "Dissolution"
     * goalId = "0fe45619-c331-4a93-beca-83216f87a4cf"
     * goalId = "ec0fe6a2-0927-4d56-93c6-f6d1d5c8c2e7"
+
 Instance: ae407644-5e23-4187-bf70-dcc7a5846af6
 InstanceOf: EctdCompositionSP4151
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-sp4151"
@@ -460,6 +461,7 @@ InstanceOf: EctdCompositionSP4151
   * code = $SectionTypes#32P51 "Product Specification"
   * title = "32P51"
   * entry = Reference(2a6df33f-4e92-41cd-b31b-2eb8428f1d9e)
+  
 Instance: ce9e0234-5b40-49b0-8c6c-dd4797dd08ce
 InstanceOf: CMCeCTDDocumentSP4151
 * meta.profile.extension[version].valueString = "0.1.15"

@@ -121,7 +121,7 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
 * goal.target.detail[x] MS
-* goal.target.detail[x] only Quantity or Range  or string or integer
+* goal.target.detail[x] only Quantity or Range  or CodeableConcept or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "Acceptance Criteria (Numeric)"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
@@ -152,13 +152,15 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.high.unit 1..1 MS
 * goal.target.detailRange.high.code 1..1 MS
 * goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology (required)
-* goal.target.detailString  0..1 MS
-* goal.target.detailString ^short = "Acceptance Criteria (Text)"
-* goal.target.detailString ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
-* goal.target.detailString.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
-* goal.target.detailString.extension[interpretationCode].valueCodeableConcept ^short = "Interpretation Code"
-* goal.target.detailString.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
-
+* goal.target.detailCodeableConcept 0..1 MS
+  * text 1..1 MS 
+    * ^short = "Acceptance Criteria (Text)"
+    * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
+  * coding 1..1 MS
+  * coding from PqcmcInterpretationCodeTerminology (required)
+  * coding ^short = "Interpretation Code"
+  * coding ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
+  * coding = $NCIT#C48660 "Not Applicable"
 * goal.target.detailInteger  0..1 MS
 * goal.target.detailInteger ^short = "Number of Replicates"
 * goal.target.detailInteger ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
