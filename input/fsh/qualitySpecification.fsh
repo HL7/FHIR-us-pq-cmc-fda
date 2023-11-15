@@ -158,14 +158,12 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailString.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
 * goal.target.detailString.extension[interpretationCode].valueCodeableConcept ^short = "Interpretation Code"
 * goal.target.detailString.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
-* goal.target.detailString.extension[interpretationCode].valueCodeableConcept.coding = #C48660 "Not Applicable"
 
 * goal.target.detailInteger  0..1 MS
 * goal.target.detailInteger ^short = "Number of Replicates"
 * goal.target.detailInteger ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
-* goal.target.detailInteger.value 1..1 MS
 * goal.target.due 0..0
 * action 1..* MS
 * action obeys cmc-linkId-required

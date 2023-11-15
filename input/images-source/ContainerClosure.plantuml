@@ -10,46 +10,56 @@ skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
     object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-32p70.html]]
-    }   
-  node "EctdComposition32P7" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-      **Reference:**
-      [[StructureDefinition-ectd-composition-32p70.html]]
-      **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }   
-}
-node "DrugProductContainerClosure" as N21 { 
-      object "**Parent:** MedicinalProductDefinition" as obj22 {
-           **Reference:**
-      [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
-        **ValueSets:**
-        Container Type Terminology
-        Closure Type Terminology
+        [[StructureDefinition-cmc-ectd-document-32p70.html]]
     }
-    object "**Extensions**" as objEx {
-        mdpcontainerClosure
+
+    node "EctdComposition32P7" as N1 {
+
+        object "**Parent:** Composition" as obj1 {
+            **Reference:**
+            [[StructureDefinition-ectd-composition-32p70.html]]
+            **ValueSets:**
+            Code system PQCMC Comp Section Types
+        }
+
     }
-    obj22 *-- objEx
-}
-node "Base64DocumentReference" as NB64 { 
-      object "**Parent:** DocumentReference"  as obj64 {  
-       **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]] 
-    }   
-}
-node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-           **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
+    node "DrugProductContainerClosure" as N21 {
+
+        object "**Parent:** MedicinalProductDefinition" as obj22 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
+            **ValueSets:**
+            Container Type Terminology
+            Closure Type Terminology
+            Name Part Terminology
+        }
+        object "**Extensions**" as objEx {
+            containerClosure
+        }
+        obj22 *-- objEx
     }
-}
+    node "Base64DocumentReference" as NB64 {
+
+        object "**Parent:** DocumentReference" as obj64 {
+
+            **Reference:**
+            [[StructureDefinition-cmc-document-reference.html]]
+        }
+
+    }
+    node "SponsorOrganization" as NSO {
+
+        object "**Parent:** Organization" as objAu {
+            **Reference:**
+            [[StructureDefinition-cmc-sponsor-organization.html]]
+            **ValueSets:**
+            GENC Country Codes
+            Testing Site and Organization Identifier Type Terminology
+        }
+    }
 }
 
 N1 -[#darkred]-> N21
 N1 -[#darkred]-> NSO
-objEx -[#darkred]-> NB64 
+objEx -[#darkred]-> NB64
 @enduml

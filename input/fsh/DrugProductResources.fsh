@@ -85,15 +85,14 @@ Description: "This profile is not used in any bundles. It is a reference profile
 * description 1..1 MS
 * description ^short = "Drug Product Description"
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
-Examples: dosage form, container closure system, purpose, etc. """
+Examples: dosage form, container closure system, purpose."""
 
 * combinedPharmaceuticalDoseForm 0..1 MS
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"
-* combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI E - C42636]
-Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]
+* combinedPharmaceuticalDoseForm.coding.code ^short = "Product Dosage Form"
+* combinedPharmaceuticalDoseForm.coding.code ^definition = """TThe form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
-SME comment -- this is the marketed dosage form.
 """
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology
 * route 0..1 MS
@@ -122,11 +121,11 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * identifier 0..1 MS
 * status 1..1 MS
 * name MS
-* name ^short = "Product Proprietary name | Product Non-proprietary Name"
-* name ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm]
-Note: Excludes dosage form, route of administration and strength.
+* name ^short = "Product Proprietary Name | Product Non-proprietary Name"
+* name ^definition = """Product Proprietary Name: The exclusive name of a drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: SME Defined] 
+Note: Excludes dosage form, route of administration and strength. 
 Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
+Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
 """
 * manufacturedDoseForm.coding from SplPharmaceuticalDosageFormTerminology
 * property 1..* MS
@@ -261,9 +260,9 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 """
 * component.type.coding from PqcmcProductPartType
 * component.function.text 0..1 MS
-* component.function.text ^short = "Tablet Product Part Function Description"
-* component.function.text ^definition = """The main purpose for the part in the solid oral dosage tablet. [Source: SME Defined]
-Example: Push, Target."""
+* component.function.text ^short = "Product Part Function Description"
+* component.function.text ^definition = """The main purpose for the part in the dosage form. [Source: SME Defined]
+Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2"""
 * component.amount.value 0..1 MS
 * component.amount.value 1..1 MS
 * component.amount.value ^short = "Product Part Total Weight Numeric Numerator"
@@ -549,19 +548,19 @@ Description: "Includes the properties of the drug product as manufactured."
 * meta.profile 1..1 MS
 * identifier 1..* MS
 * identifier ^short = "Product Proprietary Name | Product Non-Proprietary Name"
-* identifier ^definition = """Product Proprietary Name: The exclusive name of a drug substance or drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071683.htm]
-Note: Excludes dosage form, route of administration and strength.
+* identifier ^definition = """Product Proprietary Name: The exclusive name of a drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: SME Defined] 
+Note: Excludes dosage form, route of administration and strength. 
 Example: Tylenol
-Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: http://www.fda.gov/Drugs/DevelopmentApprovalProcess/FormsSubmissionRequirements/ElectronicSubmissions/DataStandardsManualmonographs/ucm071638.htm ]
+Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
 """
 // hold authroization for eStability
 * marketingAuthorizationHolder 0..1 MS
 * marketingAuthorizationHolder ^short = ""
 * marketingAuthorizationHolder only Reference(SponsorOrganization)
 * doseForm 0..1 MS
-* doseForm ^short = "Dosage Form"
-* doseForm ^definition = """The form in which active and/or inert ingredient (s) are physically present. [Source: NCI E - C42636]
-Examples: tablet, capsule, solution, cream that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]
+* doseForm 
+* doseForm ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 """
 * doseForm.coding from SplPharmaceuticalDosageFormTerminology (required)
@@ -690,11 +689,10 @@ Description: "Includes the identifying information of the drug product. Profile 
 * identifier ^short = "optional user designated identifier"
 * combinedPharmaceuticalDoseForm 0..1 MS
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"
+* combinedPharmaceuticalDoseForm.coding.code ^short = "Product Dosage Form"
 * combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI E - C42636]
 Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
-SME comment -- this is the marketed dosage form.
 """
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
 * route 0..1 MS
@@ -725,7 +723,7 @@ Title: "Drug Product Container Closure"
 Description: "Description and coding of the container closure system. Profile of Drug Product profile."
 
 * meta.profile 1..1 MS
-* .extension contains pq-container-closure-extension named containerClosure 1..1 MS
+* .extension contains pq-container-closure-extension named containerClosure 1..* MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * insert ProprietaryAndNonProprietaryNames
@@ -742,14 +740,13 @@ Description: "Includes the properties of the drug product and components. Profil
 * description 0..1 MS
 * description ^short = "Drug Product Description"
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
-Examples: dosage form, container closure system, purpose, etc. """
+Examples: dosage form, container closure system, purpose."""
 * combinedPharmaceuticalDoseForm 0..1 MS
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code ^short = "Dosage Form"
+* combinedPharmaceuticalDoseForm.coding.code ^short = "Product Dosage Form"
 * combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented. [Source: NCI E - C42636]
 Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)]
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
-SME comment -- this is the marketed dosage form.
 """
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
 * route.coding.code 1..1 MS

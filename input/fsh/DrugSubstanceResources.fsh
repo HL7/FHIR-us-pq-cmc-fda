@@ -200,7 +200,8 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
     uniProt 0..1
 * code.code.coding[unii].system = $UNII
 * code.code.coding[unii] ^short = "UNII"
-* code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+* code.code.coding[unii] ^definition = """
+The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
 Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
@@ -288,7 +289,9 @@ Examples: USP/NF, EP, Company Standard
 * structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
 * structure.representation.document 0..1 MS
 * structure.representation.document ^short = "Substance Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the "Acceptable File Formats for use in eCTD"
+Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG.
+"""
 * structure.representation.document only Reference(Base64DocumentReference)
 * code MS
 * code.code.coding
@@ -566,7 +569,7 @@ CAS: Number Chemical Abstract Service (CAS) Registry Numbers (often referred to 
 
 UNII: The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
 """
 * expiry 0..1 MS
 * expiry ^short = "Retest Date"

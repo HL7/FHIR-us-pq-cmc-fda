@@ -9,82 +9,89 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES {
-object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-sp7181.html]]
-    }  
-  node "RoutineDrugProduct" as NN { 
-      object "**Parent:** MedicinalProductDefinition" as obj3 {
-             **Reference:**
-      [[StructureDefinition-pqcmc-routine-drug-product.html]]
-        **ValueSets:**
-        Drug Route Of Administration Terminology
-        Pharmaceutical Dosage Form Terminology
-          
+      object "**Bundle Reference:**" as objbun {
+            [[StructureDefinition-cmc-ectd-document-sp7181.html]]
       }
-}
-diamond CH
 
-node "RoutineSubstanceDefinition for API" as NNS { 
-      object "**Parent Profile:** DrugSubstance" as obj4 {
-             **Reference:**
-      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
-                **ValueSets:**
-                EVMPDSubstanceClassification
-                Quality Benchmark Terminology
-                GENC Country Codes
-                Source Type Terminology
+      node "RoutineDrugProduct" as NN {
+
+            object "**Parent:** MedicinalProductDefinition" as obj3 {
+                  **Reference:**
+                  [[StructureDefinition-pqcmc-routine-drug-product.html]]
+                  **ValueSets:**
+                  Drug Route Of Administration Terminology
+                  Pharmaceutical Dosage Form Terminology
+                  Name Part Terminology
+            }
       }
-}
+      diamond CH
 
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-             **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-         **ValueSets:**
-        Manufacturing Site Unique Identifier Type
-	    GENC Country Codes
-    }
-}
+      node "RoutineSubstanceDefinition for API" as NNS {
 
-node "StabilitySummary" as NMain { 
-      object "**Parent:** PlanDefinition" as objMain {
-             **Reference:**
-      [[StructureDefinition-pqcmc-stability-summary.html]]
-        **ValueSets:**
-	Units Of Measure Terminology
-      Storage Conditions Terminology
-      }  
-      object "**Extensions**" as objExs2 {
-        pq-additional-info-extension
-}
+            object "**Parent Profile:** DrugSubstance" as obj4 {
+                  **Reference:**
+                  [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+                  **ValueSets:**
+                  EVMPD Substance Classification
+                  Quality Benchmark Terminology
+            }
+      }
 
-objMain *-- objExs2  
-}
+      node "MfgTestSiteOrganization" as NMFG {
 
-node "EctdCompositionSP7181" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-     **Reference:**
-      [[StructureDefinition-ectd-composition-sp7181.html]]
-      **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }
-}
-node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-     **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
-    }
-}
+            object "**Parent:** Organization" as objDP {
+                  **Reference:**
+                  [[StructureDefinition-mfg-test-site-organization.html]]
+                  **ValueSets:**
+                  Testing Site and Organization Identifier Type Terminology
+                  GENC Country Codes
+            }
+      }
 
-CH -[#green]-> NN
-CH -[#green]-> NNS
-N1 -[#darkred]-> CH
-N1 -[#darkred]-> NSO
-NN -[#darkred]-> NMFG
-NNS -[#darkred]-> NMFG
-N1 -[#darkred]-> NMain
+      node "StabilitySummary" as NMain {
+
+            object "**Parent:** PlanDefinition" as objMain {
+                  **Reference:**
+                  [[StructureDefinition-pqcmc-stability-summary.html]]
+                  **ValueSets:**
+                  Units Of Measure Terminology
+                  Storage Conditions Terminology
+            }
+
+            object "**Extensions**" as objExs2 {
+                  Aditional Information
+            }
+
+            objMain *-- objExs2
+      }
+
+      node "EctdCompositionSP7181" as N1 {
+
+            object "**Parent:** Composition" as obj1 {
+                  **Reference:**
+                  [[StructureDefinition-ectd-composition-sp7181.html]]
+                  **ValueSets:**
+                  Code system PQCMC Comp Section Types
+            }
+      }
+      node "SponsorOrganization" as NSO {
+
+            object "**Parent:** Organization" as objAu {
+                  **Reference:**
+                  [[StructureDefinition-cmc-sponsor-organization.html]]
+                  **ValueSets:**
+                  GENC Country Codes
+                  Testing Site and Organization Identifier Type Terminology
+            }
+      }
+
+      CH -[#green]-> NN
+      CH -[#green]-> NNS
+      N1 -[#darkred]-> CH
+      N1 -[#darkred]-> NSO
+      NN -[#darkred]-> NMFG
+      NNS -[#darkred]-> NMFG
+      N1 -[#darkred]-> NMain
 
 
 }

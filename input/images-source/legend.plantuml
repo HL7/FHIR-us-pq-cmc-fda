@@ -9,63 +9,70 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "Bundle" as NODES {
-node "Name of Profile" as Nameprofile {
-       object "**Parent:** Name of Resource or 'Profile' name if parent is a profile" as objcs {
-        **ValueSets:**
-          Terminology 1
-          Terminology 2
-          Terminology 3
-      }
-}  
- node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-         **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
+  node "Name of Profile" as Nameprofile {
+    object "**Parent:** Name of Resource or 'Profile' name if parent is a profile" as objcs {
+      **ValueSets:**
+      Terminology 1
+      Terminology 2
+      Terminology 3
     }
-} 
-  
-diamond CH 
+  }
 
- node "Name of Profile 2" as NN { 
-      object "**Parent:** a Resource" as obj3 {
-        **ValueSets:**
-          Terminology 1
-          Terminology 2
-          Terminology 3
-          ...
-      }
-  object "**Extensions**" as objExs {
-        extension 1
-        extension 2
-        ...
+  node "SponsorOrganization" as NSO {
+
+    object "**Parent:** Organization" as objAu {
+      **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+      **ValueSets:**
+      GENC Country Codes
+      Testing Site and Organization Identifier Type Terminology
     }
- obj3 *-- objExs : Resource supported with extensions
+  }
+
+
+  diamond CH
+
+  node "Name of Profile 2" as NN {
+
+    object "**Parent:** a Resource" as obj3 {
+      **ValueSets:**
+      Terminology 1
+      Terminology 2
+      Terminology 3
+      ...
+    }
+    object "**Extensions**" as objExs {
+      extension 1
+      extension 2
+      ...
+    }
+    obj3 *-- objExs : Resource supported with extensions
 
   }
 
-node "Name of profile.  All eCTD bundles have a composition profile" as N1 { 
-      object "**Parent:** Composition" as obj1 {
+  node "Name of profile.  All eCTD bundles have a composition profile" as N1 {
+
+    object "**Parent:** Composition" as obj1 {
       **ValueSets:**
       Code system PQCMC Comp Section Types
     }
-     
-}
 
-node "Name of Profile 3" as NN3 { 
-      object "**Parent:** a Resource" as obj33 {
-        **ValueSets:**
-          Terminology 1
-          Terminology 2
-          ...
-}
-}
+  }
 
-N1 -[#darkred]-> NSO
-NN -[#darkred]-> CH : A profile can have a choice of reference profiles
-CH -[#green]-> Nameprofile
-CH -[#green]-> NN3
-N1 -[#darkred]-> NN :  Relationship between profiles.  There can be many profiles and relationships between them.
+  node "Name of Profile 3" as NN3 {
+
+    object "**Parent:** a Resource" as obj33 {
+      **ValueSets:**
+      Terminology 1
+      Terminology 2
+      ...
+    }
+  }
+
+  N1 -[#darkred]-> NSO
+  NN -[#darkred]-> CH : A profile can have a choice of reference profiles
+  CH -[#green]-> Nameprofile
+  CH -[#green]-> NN3
+  N1 -[#darkred]-> NN :  Relationship between profiles.  There can be many profiles and relationships between them.
 }
 @enduml

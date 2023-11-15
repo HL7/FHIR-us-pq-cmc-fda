@@ -16,11 +16,19 @@
       <xsl:message terminate="yes">Unable to find 'ci-build' release listed in package-list</xsl:message>
     </xsl:if>
     <xsl:variable name="wgUrl" select="f:contact/f:telecom[f:system/@value='url'][1]/f:value/@value"/>
-    <xsl:if test="not(contains($wgUrl, $committeePageBase))">
-      <xsl:message terminate="yes">
-        <xsl:value-of select="concat('First &quot;url&quot; contact telecom must start with &quot;http://', $committeePageBase, '&quot;')"/>
-      </xsl:message>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="contains($wgUrl, 'hl7.eu') and contains($id, '.eu.')">
+        <!-- EU ok -->
+      </xsl:when>
+      <xsl:when test="contains($wgUrl, $committeePageBase)">
+        <!-- HL7 Int'l ok -->
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:message terminate="yes">
+          <xsl:value-of select="concat('First &quot;url&quot; contact telecom must start with &quot;http://', $committeePageBase, '&quot;')"/>
+        </xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:variable name="wgTail" select="substring-after($wgUrl, $committeePageBase)"/>
     <xsl:variable name="wgWebCode">
       <xsl:choose>

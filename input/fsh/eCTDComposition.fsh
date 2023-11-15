@@ -517,7 +517,7 @@ Description: "The fields needed to represent the Product Container Closure Syste
 
 Profile: EctdComposition32P10
 Parent: Composition
-Id: ectd-composition-32P10
+Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1.0 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 

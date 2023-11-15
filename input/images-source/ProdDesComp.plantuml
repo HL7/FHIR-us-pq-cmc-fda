@@ -28,7 +28,7 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
 
     object "**Parent:** Composition" as obj1 {
       **Reference:**
-      [[StructureDefinition-ectd-composition-32P10.html]]
+      [[StructureDefinition-ectd-composition-32p10.html]]
       **ValueSets:**
       eCTD sections Value Set
     }
@@ -85,7 +85,7 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-mfg-test-site-organization.html]]
       **ValueSets:**
-      rganization Identifier Type Terminology
+      Testing Site and Organization Identifier Type Terminology
       GENC Country Codes
     }
   }

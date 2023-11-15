@@ -58,7 +58,7 @@ package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-polymorphic-form.html]]
       **ValueSets:**
-      EVMPDSubstanceClassification
+      EVMPD Substance Classification
       Units Of Measure Terminology
       Chemical Structure Data File Type Terminology
 
@@ -70,7 +70,7 @@ package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
-      Organization Identifier Type Terminology
+      Testing Site and Organization Identifier Type Terminology
 
       GENC Country Codes
     }
@@ -82,7 +82,7 @@ package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-mfg-test-site-organization.html]]
       **ValueSets:**
-      Organization Identifier Type Terminology
+      Testing Site and Organization Identifier Type Terminology
       GENC Country Codes
     }
   }

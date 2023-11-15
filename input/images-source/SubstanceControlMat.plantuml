@@ -54,7 +54,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             [[StructureDefinition-cmc-sponsor-organization.html]]
             **ValueSets:**
             GENC Country Codes
-            Organization Identifier Type Terminology
+            Testing Site and Organization Identifier Type Terminology
         }
     }
 
