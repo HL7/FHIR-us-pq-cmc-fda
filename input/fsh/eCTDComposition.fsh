@@ -346,7 +346,6 @@ Description: "The fields needed to represent the Quality Specifications to be in
 /*
     SECTION SLICESProduct
 */
-* section 1..1 MS
 * section.entry MS
 
 * section ^slicing.discriminator.type = #pattern

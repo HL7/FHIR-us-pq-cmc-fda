@@ -47,7 +47,6 @@ Title: "Batch Analysis"
 Description: "Batch or lot release testing  to ensure that pharmaceutical products meet the product specification."	
 	
 * .extension contains pq-quality-specification-extension named qualitySpecification 1..1 MS	
-* meta.profile 1..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"			
 * status MS	
@@ -82,7 +81,7 @@ Parent: Observation
 Id: pq-additional-stage-result-observation	
 Title: "Multiple Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
-* meta.profile 1..1 MS	
+	
 * identifier 1..1 MS	
 * identifier ^short = "Stage"	
 * identifier ^definition = """A set of discrete sequential steps performed on a given test. [Source: SME Defined]"""
@@ -211,31 +210,20 @@ Parent: Observation
 Id: pq-result-observation	
 Title: "Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
-* meta.profile 1..1 MS	
+	
 * identifier 1..1 MS	
 * identifier ^short = "Stage"	
 * identifier ^definition = "A set of discrete sequential steps performed on a given test. [Source: SME Defined]"
 * identifier ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
 * status MS	
-* category  MS
+* category 1..1 MS
 //* category.coding obeys cmc-sub-test-category-batch
-* category.coding ^slicing.discriminator.type = #pattern
-* category.coding ^slicing.discriminator.path = "$this"
-* category.coding ^slicing.rules = #open
-* category.coding contains
-    testCategory 1..1 and
-    testSubCat 0..1
-* category.coding[testCategory].code MS
-* category.coding[testCategory].code from PqcmcTestCategoryTerminology (required)
-* category.coding[testCategory].code  1..1
-* category.coding[testCategory].display  1..1
-* category.coding[testCategory].code ^short = "Test Category"
-* category.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* category.coding[testSubCat].code MS
-* category.coding[testSubCat].code from PqcmcTestSubCategoryTerminology (required)
-* category.coding[testSubCat].code ^short = "Test Sub-category"
-* category.coding[testSubCat].code 1..1
-* category.coding[testSubCat].display 1..1
+* category.coding 1..2 MS
+* category.coding ^short = "Test Category | Test Subcategory"
+* category.coding ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding.code 1..1 MS
+* category.coding.code from PqcmcTestCategoryTerminology (required)
+* category.coding.display  1..1
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
 * effective[x] 1..1 MS	
@@ -368,4 +356,3 @@ Examples: Conforms, Does not Conform"""
 * component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
 Note: This is the text as it appears in the Specification."""
-	

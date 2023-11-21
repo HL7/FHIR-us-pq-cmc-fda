@@ -9,9 +9,13 @@ version: 0.1.16
 fhirVersion: 5.0.0
 copyrightYear: 2021+
 releaseLabel: Build CI
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
+    valueCode: brr
 publisher:
-  name: HL7 International    - Biomedical Research and Regulatory WG
-  url: http://www.hl7.org/Special/committees/rcrim/index.cfm
+  name: HL7 International / Biomedical Research and Regulation 
+  url: 'http://www.hl7.org/Special/committees/rcrim/index.cfm'  
+  email: brr@lists.HL7.org
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 menu:
   Home: index.html
@@ -72,11 +76,7 @@ parameters:
  releaselabel: true
  excludettl: true
  excludemap: true
- no-narrative: DocumentReference/9e08d53c-fb60-42ea-a19a-71a1af3dcc83
-    - DocumentReference/fd006e04-8764-4d83-b6ee-bbf8f35847e0
-    - DocumentReference/ff0e6432-2f8b-43cc-a3b3-462981a2d929
-    - SubstanceDefinition/0e036d9c-acb2-4f51-abcb-664f56c57191
-    - Organization/3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
+ apply-wg: true
  special-url: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - https://gsrs.ncats.nih.gov
     - https://www.uniprot.org
@@ -93,22 +93,14 @@ parameters:
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-relationship-types
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-product-name-types
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C176676
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C176675
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133866
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/C133865
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCCT
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCOT
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-part-type
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-release-profile
 # apply-version: true
 #   validation: [allow-any-extensions, no-broken-links]
 dependencies:
-  hl7.fhir.uv.sdc:
-    version: 3.0.0
-    uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc
-#  hl7.fhir.uv.extensions: 1.0.0
   fhir.dicom:
-    version: 2023.1.20230123
-    uri: http://fhir.org/packages/fhir.dicom
+    version: 2023.4.20230907
+
+
 

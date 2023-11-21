@@ -56,7 +56,7 @@ InstanceOf: ComponentSubstance
 Instance: 2d2be7d5-f716-4656-b026-104d67f70fa1
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(fffdad09-1ddd-4ef2-a177-1b0794b85d7d)
-* role = $NCItFunctionCategory#C82533 "Active Ingredient"
+* role = $NCIT#C82533 "Active Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.1333
@@ -81,7 +81,7 @@ InstanceOf: ComponentSubstance
 Instance: ab24f46a-5ecf-45a8-a18b-cc98edefb1a0
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(2a38af6b-6468-4656-ae57-4ccdb922f94b)
-* role = $NCItFunctionCategory#C82533 "Active Ingredient"
+* role = $NCIT#C82533 "Active Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.2667
@@ -106,7 +106,7 @@ InstanceOf: ComponentSubstance
 Instance: 56d61b9d-8669-457f-bf58-f11af0599340
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(0e036d9c-acb2-4f51-abcb-664f56c57191)
-* role = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.3111
@@ -131,7 +131,7 @@ InstanceOf: ComponentSubstance
 Instance: 41e8891f-6692-4ed7-9b57-70144c2ba053
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(48de76a8-6c42-4145-a68f-76f240d40566)
-* role = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.0667
@@ -157,7 +157,7 @@ InstanceOf: ComponentSubstance
 Instance: 831a057e-f90c-479f-8ba7-6b51c23e028e
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(21828009-2913-48a0-b95c-a2519a3805c5)
-* role = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.2089
@@ -182,7 +182,7 @@ InstanceOf: ComponentSubstance
 Instance: 41310ed4-beea-4f1f-9c84-c8d2c78be52b
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(19af8f73-6199-45ba-b463-aae1c7989fa3)
-* role = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.0044
@@ -207,7 +207,7 @@ InstanceOf: ComponentSubstance
 Instance: 87d879b9-1e1d-4ccc-a1b0-707891399aa7
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(bb506218-12e5-466d-94a6-12395f51cc87)
-* role = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.0044
@@ -232,7 +232,7 @@ InstanceOf: ComponentSubstance
 Instance: 1e5a36d1-2f23-40b8-998d-ec7dcaa18c43
 InstanceOf: DrugProductComponent
 * substance.code.reference = Reference(b8b3b7e6-60d2-422a-806e-d7e246ee9cb7)
-* role = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * status = http://hl7.org/fhir/publication-status#draft "Draft"
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.0044
@@ -268,8 +268,8 @@ Instance: 19aadea1-b4e1-4022-af01-135df9890f27
 InstanceOf: FinishedProduct
 * identifier.value = "Example2BeadDrug"
 * status = 	http://hl7.org/fhir/publication-status#draft "Draft"
-* property[OvrRelsProf].valueCodeableConcept = $tempNCIt#102 "ER"
-* property[OvrRelsMech].valueCodeableConcept = $tempNCIt#106 "Matrix"
+* property[OvrRelsProf].valueCodeableConcept = $NCIT#102 "ER"
+* property[OvrRelsMech].valueCodeableConcept = $NCIT#106 "Matrix"
 * property[CoatInd].valueBoolean = false
 * property[WgtTyp].valueCodeableConcept = $NCIT#C168628 "Mass"
 * manufacturedDoseForm = $NCIT#C25158 "CAPSULE"
@@ -285,108 +285,108 @@ InstanceOf: FinishedProduct
 * property[TotWgtDen].valueQuantity = $NCIT#C66832 "1*"
 * property[TotWgtDen].valueQuantity.value = 1
 
-* component[+].type = $tempNCIt#156 "Capsule Shell"
+* component[+].type = $NCIT#156 "Capsule Shell"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 85
 * component[=].property[PPiD].valueCodeableConcept.text = "Example2BeadDrug_Capsule"
-* component[=].property[RelsProf].valueCodeableConcept = $tempNCIt#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = $NCIT#101 "DR"
 * component[=].property[ContPercent].valueQuantity.value = 0.3778
 * component[=].property[Color].valueCodeableConcept.text = "Clear"
 
 * component[=].constituent[+].extension[ConstituentPercent].valueDecimal = 0.3111
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 70
-* component[=].constituent[=].location.coding = $tempNCIt#149 "Extragranular"	
+* component[=].constituent[=].location.coding = $NCIT#149 "Extragranular"	
 * component[=].constituent[=].location.text = "Capsule"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"    
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"    
 * component[=].constituent[=].hasIngredient.reference = Reference(56d61b9d-8669-457f-bf58-f11af0599340)
 
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0667
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 15
-* component[=].constituent[=].location.coding = $tempNCIt#149 "Extragranular"	
+* component[=].constituent[=].location.coding = $NCIT#149 "Extragranular"	
 * component[=].constituent[=].location.text = "Capsule"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCItExcipientFunction#C176646 "Complexing agent"	
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
+* component[=].constituent[=].function[Function] = $NCIT#C176646 "Complexing agent"	
 * component[=].constituent[=].hasIngredient.reference = Reference(41e8891f-6692-4ed7-9b57-70144c2ba053)
-* component[+].type = $tempNCIt#155 "Bead"
+* component[+].type = $NCIT#155 "Bead"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 47
 * component[=].property[PPiD].valueCodeableConcept.text = "Example2BeadDrug_Bead1"
-* component[=].property[RelsProf].valueCodeableConcept = $tempNCIt#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = $NCIT#101 "DR"
 * component[=].property[ContPercent].valueQuantity.value = 0.2089
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal =  0.1333
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 30
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 1"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C82533 "Active Ingredient"
+* component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[=].hasIngredient.reference = Reference(2d2be7d5-f716-4656-b026-104d67f70fa1)
 
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0667
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 15
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 1"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 * component[=].constituent[=].hasIngredient.reference = Reference(831a057e-f90c-479f-8ba7-6b51c23e028e)
 
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0044
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 1
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 1"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 * component[=].constituent[=].hasIngredient.reference = Reference(41310ed4-beea-4f1f-9c84-c8d2c78be52b)
 
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal =  0.0044
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 1
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 1"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCItExcipientFunction#C275 "Antioxidant"	
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
+* component[=].constituent[=].function[Function] = $NCIT#C275 "Antioxidant"	
 * component[=].constituent[=].hasIngredient.reference = Reference(87d879b9-1e1d-4ccc-a1b0-707891399aa7)
 
-* component[+].type = $tempNCIt#155 "Bead"
+* component[+].type = $NCIT#155 "Bead"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 93
 * component[=].property[PPiD].valueCodeableConcept.text = "Example2BeadDrug_Bead2"
-* component[=].property[RelsProf].valueCodeableConcept = $tempNCIt#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = $NCIT#101 "DR"
 * component[=].property[ContPercent].valueQuantity.value = 0.4133
 * component[=].property[Color].valueCodeableConcept.text = "Blue"
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.2667
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 60
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 2"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C82533 "Active Ingredient"
+* component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[=].hasIngredient.reference = Reference(ab24f46a-5ecf-45a8-a18b-cc98edefb1a0)
 
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0044
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 1
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 2"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCItExcipientFunction#C176648 "Film coating agent"
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
+* component[=].constituent[=].function[Function] = $NCIT#C176648 "Film coating agent"
 * component[=].constituent[=].hasIngredient.reference = Reference(1e5a36d1-2f23-40b8-998d-ec7dcaa18c43)
 
 * component[=].constituent[+]
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.1422
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 32
-* component[=].constituent[=].location.coding = $tempNCIt#150 "Intragranular"	
+* component[=].constituent[=].location.coding = $NCIT#150 "Intragranular"	
 * component[=].constituent[=].location.text = "Bead 2"
-* component[=].constituent[=].function[Category] = $NCItFunctionCategory#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCItExcipientFunction#C42656 "Coloring agent"	
+* component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
+* component[=].constituent[=].function[Function] = $NCIT#C42656 "Coloring agent"	
 * component[=].constituent[=].hasIngredient.reference = Reference(831a057e-f90c-479f-8ba7-6b51c23e028e)
 
 Instance: 6cb2813b-3128-4fa6-86ea-daa09dcca680  

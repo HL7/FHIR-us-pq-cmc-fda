@@ -128,6 +128,8 @@ Title: "eCTD Composition for 3.2.S.1.0"
 Description: "Composistion containing eCTD Substance General Information "
 Usage: #example 
 * identifier.value = "Substance General - levoThyroxine"
+* status = #final
+* type.coding = $SectionTypes#32S10 "Substance General Information"	
 * author = Reference(3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6)
 * date = 2023-07-11T00:47:41.768Z
 * title = "eCTD Substance General Information for levoThyroxine"

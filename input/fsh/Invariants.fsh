@@ -89,9 +89,14 @@ Description: "Action test order is greater than or equal to 1"
 Expression: "strength.extension('testOrder').value >= 1"
 Severity: #error
 
-Invariant: cmc-linkId-required
+Invariant: cmc-link-required
 Description: "Action linkId is required for alternate tests"
-Expression: "(relatedAction.count() > 0) implies linkId.exists()"
+Expression: "(action.relatedAction.count() > 0) implies action.linkId.exists()" 
+Severity: #error
+
+Invariant: cmc-decimal-format
+Description: "Content percent must be in the format of leading zero, decimal point, any number of digits up to 17 places."
+Expression: "value.toString().matches('^(1([.]0{1,17})?|0([.][0-9]{1,17})?)$') = true"
 Severity: #error
 
 

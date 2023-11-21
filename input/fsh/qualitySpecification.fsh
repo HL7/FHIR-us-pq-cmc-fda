@@ -11,13 +11,12 @@ Description: "A code that describes how to relate the given value to an acceptan
 * ^context[+].type = #element
 * ^context[=].expression = "Observation.component.referenceRange.high"
 * ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detailQuantity"
+* ^context[=].expression = "PlanDefinition.goal.target.detail.ofType(Quantity)"
 * ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detailRange.low"
+* ^context[=].expression = "PlanDefinition.goal.target.detail.ofType(Range).low"
 * ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detailRange.high"
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detailString"
+* ^context[=].expression = "PlanDefinition.goal.target.detail.ofType(Range).high"
+
 * value[x] only CodeableConcept
 * value[x] from PqcmcInterpretationCodeTerminology (required)
 
@@ -41,15 +40,9 @@ Title: "Test Order | Stage Sequence Order"
 Description: "The sequential number assigned to each Test or Stabe to specify the order of display on the Quality Specification."
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action"
-* value[x] only decimal
-
-Extension: RRTExtension
-Id: pq-rrt-extension
-Title: "Relative Retention Time"
-Description: "An alternative for test name when the RRT is used as an identifier for a substance, usually unknown."
 * ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.action.title"
-* value[x] only string
+* ^context[=].expression = "PlanDefinition.action.action"
+* value[x] only decimal
 
 Profile: QualitySpecification
 Parent: PlanDefinition
@@ -120,6 +113,8 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.documentation.display ^definition = """A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
+* goal.target.measure.text 0..1 MS
+* goal.target.measure.text ^short = "Detailed parameter being measured if more granular than action.action.title"
 * goal.target.detail[x] MS
 * goal.target.detail[x] only Quantity or Range  or CodeableConcept or integer
 * goal.target.detailQuantity  0..1 MS
@@ -153,22 +148,22 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailRange.high.code 1..1 MS
 * goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology (required)
 * goal.target.detailCodeableConcept 0..1 MS
-  * text 1..1 MS 
-    * ^short = "Acceptance Criteria (Text)"
-    * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
   * coding 1..1 MS
   * coding from PqcmcInterpretationCodeTerminology (required)
   * coding ^short = "Interpretation Code"
   * coding ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
   * coding = $NCIT#C48660 "Not Applicable"
+  * text 1..1 MS 
+    * ^short = "Acceptance Criteria (Text)"
+    * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
 * goal.target.detailInteger  0..1 MS
 * goal.target.detailInteger ^short = "Number of Replicates"
 * goal.target.detailInteger ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual tests are executed on multiple samples to give greater validity to the findings. [Source SME Defined] 
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
 * goal.target.due 0..0
+* action obeys cmc-link-required
 * action 1..* MS
-* action obeys cmc-linkId-required
 * action ^short = "Test"
 * action.extension contains pq-order-extension named testOrder 1..1 MS
 * action.extension[testOrder] ^short = "Test Order"
@@ -179,44 +174,34 @@ Examples: 1, 2, 3.
 * action.extension[testOrder].valueDecimal 1..1 MS
 * action.linkId MS
 * action.linkId ^short = "only required for alternate tests"
-* action.title 1.. MS
+* action.title 1..1 MS
 * action.title ^short = "Test Name"
 * action.title ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
 Note: as defined by the sponsor
 """
-* action.title.extension contains pq-rrt-extension named rrt 0..1 MS
 * action.description 0..1 MS
 * action.description ^short = "Test Additional Information"
 * action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
 If there is more than one comment, include in this element.  Markdown allows formating for clarity.
 """
-* action.code  MS
-* action.code ^short = "Not requried if test has stages and action is not first stage"
+* action.code 1..1 MS
+* action.code ^short = "Test Method Origin"
+* action.code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
 //* action.code.coding obeys cmc-sub-test-category
-* action.code.coding ^slicing.discriminator.type = #pattern
-* action.code.coding ^slicing.discriminator.path = "$this"
-* action.code.coding ^slicing.rules = #open
-* action.code.coding contains
-    testCategory 1..1 and
-    testSubCat 0..1 and
-    methodOrigin 1..1
-* action.code.coding[testCategory].code MS
-* action.code.coding[testCategory].code from PqcmcTestCategoryTerminology (required)
-* action.code.coding[testCategory].code ^short = "Test Category"
-* action.code.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* action.code.coding[testSubCat].code MS
-* action.code.coding[testSubCat].code from PqcmcTestSubCategoryTerminology (required)
-* action.code.coding[testSubCat].code ^short = "Test Sub-category"
-* action.code.coding[methodOrigin].code MS
-* action.code.coding[methodOrigin].code ^short = "Test Method Origin"
-* action.code.coding[methodOrigin].code from PqcmcTestMethodOriginTerminology (required)
-* action.code.coding[methodOrigin].code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
-* action.code.text 1..1 MS
+//element(*,PlanDefinition)/action/code/coding
+* action.code.coding.code 1..1 MS
+* action.code.coding.code from PqcmcTestMethodOriginTerminology (required)
 * action.code.text ^short = "Analytical Procedure"
 * action.code.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 Note: The full descriptor of the technique is part of the next data element - Reference to Procedure """
-
+//* coding obeys cmc-sub-test-category-batch
+* action.reason 1..2 MS
+* action.reason ^short = "Test Category | Test Subcategory"
+* action.reason. ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* action.reason.coding.code 1..1 MS
+* action.reason.coding.code from PqcmcTestCategoryTerminology (required)
+* action.reason.coding.display  1..1
 * action.documentation 0..1 MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
 * action.documentation.label 1..1 MS
@@ -249,14 +234,15 @@ Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
 Default 'Single Stage'.
 """
-* action.action.title 1.. MS
-* action.action.title ^short = "Test Name"
-* action.action.title ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
+* action.action.title 0..1 MS
+* action.action.title ^short = "Test Name if different than action.title | RRT"
+* action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
 Note: as defined by the sponsor
 Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
+
+RRT: An alternative for test name when the RRT is used as an identifier for a substance, usually unknown.
 """
-* action.action.title.extension contains pq-rrt-extension named rrt 0..1 MS
 * action.action.description 0..1 MS
 * action.action.description ^short = "Test Additional Information | Stage Additional Information"
 * action.action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].

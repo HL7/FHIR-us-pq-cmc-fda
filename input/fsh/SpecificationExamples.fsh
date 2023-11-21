@@ -1,4 +1,4 @@
-Instance: aa40b203-8f89-4e21-b328-161ec3c4cb03
+Instance: 6ceaa627-02a3-4f81-a840-25ecc5a2adf7
 InstanceOf: SponsorOrganization
 * name = "test site A"
 * contact.address.line[0] = "123 Broad Way"
@@ -10,11 +10,11 @@ InstanceOf: SponsorOrganization
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-Instance: f28f6bf7-1ae7-47e9-9450-3ddf8d0683ba
+Instance: e448eeab-b0e6-4ce5-bf0e-b77ca63ce774
 InstanceOf: RoutineDrugProduct
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-routine-drug-product"
 * identifier.value = "Example2BeadDrug"
-* combinedPharmaceuticalDoseForm = $NCIT#C25158 "CAPSULE"
+* combinedPharmaceuticalDoseForm = $NCIT#C25158 "CAPSULE"	
 * route = $NCIT#C38288 "ORAL"
 * name[NonProprietary].part[Scientific][+].part = "OXAZEPAM"
 * name[NonProprietary].part[Strength][+].part = "30mg"
@@ -22,7 +22,7 @@ InstanceOf: RoutineDrugProduct
 * name[NonProprietary].part[Strength][+].part = "60mg"
 * name[NonProprietary].productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
 * name[NonProprietary].type.text = "Non-Proprietary"
-Instance: 2a6df33f-4e92-41cd-b31b-2eb8428f1d9e
+Instance: 26046654-c10d-4ac4-a097-07f2cd3ca560
 InstanceOf: QualitySpecification
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"
 * extension[specificationType].valueCodeableConcept = $NCIT#C134021 "Drug Product"
@@ -30,11 +30,11 @@ InstanceOf: QualitySpecification
 * version = "1.0"
 * title = "Quality Specification for Buffered Asprin"
 * status = #active
-* subjectReference = Reference(f28f6bf7-1ae7-47e9-9450-3ddf8d0683ba)
+* subjectReference = Reference(e448eeab-b0e6-4ce5-bf0e-b77ca63ce774)
 * date = 2022-12-08
 * useContext.valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * goal[+]
-  * id = "4729db38-68a4-4352-a46c-8b76b7983c1e"
+  * id = "de05a9be-419b-429e-b2f1-1b786c7d55be"
 * goal[=].description.text = "Average of 10 between 2-3 pH"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -45,15 +45,15 @@ InstanceOf: QualitySpecification
     * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailRange.high = 3 $NCIT#C45997 "pH"
 * goal[+]
-  * id = "f523ede3-5560-4e12-b5be-4d953b141f68"
+  * id = "702b5147-d86f-416e-b4d5-582c326c890d"
 * goal[=].description.text = "Maxima only at the same wavelengths compared to reference standard"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
 * goal[=]
   * target[+]
-    * detailString = "Conforms"
+    * detailCodeableConcept.text = "Conforms"
 * goal[+]
-  * id = "09096d99-82dd-4ce0-835c-c9223da4b9d7"
+  * id = "50bf6449-f14e-4a5f-8f9a-ebcff5bea10f"
 * goal[=].description.text = "<= 0.5 %"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -62,15 +62,15 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.5 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "7202bb73-0164-434a-b3e8-77786bbb5ba7"
+  * id = "1f19860e-e764-4802-b8be-1420161ae952"
 * goal[=].description.text = "Color of solution is clear"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
 * goal[=]
   * target[+]
-    * detailString = "Conforms"
+    * detailCodeableConcept.text = "Conforms"
 * goal[+]
-  * id = "4dfbb5da-7556-4897-91a2-91b0a47b0110"
+  * id = "f43ed61a-a4a3-421d-9b44-f9477e0aa48e"
 * goal[=].description.text = "<= 0.05 %"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -79,15 +79,15 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.05 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "41f593fc-8cb9-4e0c-a846-fc8920b91261"
+  * id = "6124d267-4977-4037-965a-70ccaf442e56"
 * goal[=].description.text = "No Particulate Matter detected"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
 * goal[=]
   * target[+]
-    * detailString = "pass"
+    * detailCodeableConcept.text = "pass"
 * goal[+]
-  * id = "c3f93e0e-2e0f-4d6d-b39c-16ae60e22fd5"
+  * id = "5a3e4427-3df0-43f5-b2e9-819f6ad38ac8"
 * goal[=].description.text = "<= 0.014 %"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -96,7 +96,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.014 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "4fc82267-5ad8-4859-93c0-935b1627a0a5"
+  * id = "3a4272bb-f5d2-4730-86d1-21afbab871f3"
 * goal[=].description.text = "<= 0.04 %"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -105,7 +105,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.04 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "a1b3ef4b-092d-431e-82f1-75030290a2c0"
+  * id = "460ffa9b-e439-4cc6-9a49-1547d8c738c2"
 * goal[=].description.text = "<= 0.001 %"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -114,15 +114,15 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.001 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "263cc7e1-8716-4b6e-a26e-127cfa9e9fe9"
+  * id = "8227253e-a2a9-4a39-a199-53e2eca7d404"
 * goal[=].description.text = "Color intenssity of feriric ammonium sulfate TS is not less that than salicylic acid (0.1%) solution"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
 * goal[=]
   * target[+]
-    * detailString = "pass"
+    * detailCodeableConcept.text = "pass"
 * goal[+]
-  * id = "7924a08c-0d39-4857-81c8-6d100013cd2b"
+  * id = "44e30387-ddbc-45d7-a5c2-0e334e6093b8"
 * goal[=].description.text = "Ethanol < 0.2%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -132,7 +132,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.2 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "226bfd90-9d36-422f-b12e-9454ed3b8360"
+  * id = "1c80f56d-2fb0-421a-84eb-f16ee98d9034"
 * goal[=].description.text = "Ethyl Ether < 0.1%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
@@ -141,7 +141,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.1 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "1f43bb51-aed8-42c2-9710-7319d5eba1f4"
+  * id = "691fac26-8bcb-45fb-a5ba-cbd04a00a778"
 * goal[=].description.text = "1—propanol < 0.15%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
@@ -150,7 +150,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.15 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "54dd182b-6968-4919-8756-95ce4c599543"
+  * id = "fca2fd64-7f55-47bb-8bb4-454118e73221"
 * goal[=].description.text = "Total < 0.5%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
@@ -159,7 +159,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.5 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "d13abea5-7e0b-4b44-9790-9fdeb430a2e7"
+  * id = "da997e5d-6023-4be1-b402-59eb713fae9c"
 * goal[=].description.text = "99.5 - 100.5 %"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=].addresses[+] = $NCIT#Stability
@@ -170,14 +170,14 @@ InstanceOf: QualitySpecification
     * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailRange.high = 100.5 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "a802e1da-0008-4002-82c9-62d258f8f9d4"
+  * id = "7d457f96-a24b-436c-8791-7b65420f350d"
 * goal[=].description.text = "n=6"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
   * target[+]
     * detailInteger = 6
 * goal[+]
-  * id = "73ff7356-ae9e-4d50-804c-7f475aafcc21"
+  * id = "1afdf893-a076-413b-aadf-46f799aead55"
 * goal[=].description.text = "Each unit is NLT Q + 5%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
@@ -185,14 +185,14 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
     * detailQuantity = 85 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "40111dd1-720e-4b9b-af18-d8002ffc7a25"
+  * id = "bc8dd4af-c1f8-43b2-a00b-20361a66d575"
 * goal[=].description.text = "n=6"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
   * target[+]
     * detailInteger = 6
 * goal[+]
-  * id = "6a96d60f-201a-4151-9ec9-73502674d434"
+  * id = "c59aad9c-3380-4b58-8609-8aeb27adb91d"
 * goal[=].description.text = "Average of 12 units (S1 + S2) is equal to or greater than Q and no unit is less than Q – 15%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
@@ -205,7 +205,7 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 65 $NCIT#C48570 "percent"
 * goal[+]
-  * id = "0fe45619-c331-4a93-beca-83216f87a4cf"
+  * id = "dbb30bcc-8c49-479d-8051-dec94c9d4511"
 * goal[=].description.text = "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
@@ -222,257 +222,432 @@ InstanceOf: QualitySpecification
     * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0 $NCIT#C92953  "amb a 1 units"
 * goal[+]
-  * id = "ec0fe6a2-0927-4d56-93c6-f6d1d5c8c2e7"
+  * id = "2b82142e-ebd1-41b8-b252-b214a23eca72"
 * goal[=].description.text = "n=12"
 * goal[=].addresses[+] = $NCIT#Release
 * goal[=]
   * target[+]
     * detailInteger = 12
 * action[+]
-  * id = "57e3b420-d587-4cca-9e7b-761a69a98bb3"
+  * id = "6c93d469-378c-4370-81a2-e67602f28b6a"
   * extension[testOrder].valueDecimal = 1.1
   * title = "Identity"
   * code
-    * coding[testCategory] = $NCIT#730
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <197> Spectrophotometric Identification Tests"
+  * reason
+    * coding = $TestCats#TC7 "Identification"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/identity.pdf"
-  * relatedAction[+].targetId = "6a1f3e31-5e82-43f6-900c-1c8d2f29c1cc"
+  * relatedAction[+].targetId = "cbcf54fa-59f4-4400-afb1-3ffabb423b38"
+  * relatedAction[=].relationship = #concurrent
   * selectionBehavior = #exactly-one
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Identity"
-    * goalId[+] = "4729db38-68a4-4352-a46c-8b76b7983c1e"
+    * goalId[+] = "de05a9be-419b-429e-b2f1-1b786c7d55be"
 * action[+]
-  * id = "6a1f3e31-5e82-43f6-900c-1c8d2f29c1cc"
+  * id = "cbcf54fa-59f4-4400-afb1-3ffabb423b38"
   * extension[testOrder].valueDecimal = 1.2
-  * linkId = "57e3b420-d587-4cca-9e7b-761a69a98bb3"
+  * linkId = "6c93d469-378c-4370-81a2-e67602f28b6a"
   * title = "Identity"
-  * code
-    * coding[testCategory] = $NCIT#730
-    * coding[methodOrigin] = $NCIT#113
+  * code 
+    * coding = $NCIT#C96103 "Proprietary"
     * text = "Ferric Chloride"
+  * reason
+    * coding = $TestCats#TC7 "Identification"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/identity-FC.pdf"
-  * relatedAction[+].targetId = "57e3b420-d587-4cca-9e7b-761a69a98bb3"
+  * relatedAction[+].targetId = "6c93d469-378c-4370-81a2-e67602f28b6a"
+  * relatedAction[=].relationship = #concurrent
   * selectionBehavior = #exactly-one
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Identity"
-    * goalId[+] = "f523ede3-5560-4e12-b5be-4d953b141f68"
+    * goalId[+] = "702b5147-d86f-416e-b4d5-582c326c890d"
 * action[+]
-  * id = "06e51e0f-a0d7-42ad-a245-80974424116d"
+  * id = "9c2fabfc-0149-4d08-adc3-ea1d34c4e21f"
   * extension[testOrder].valueDecimal = 2
   * title = "Loss on Drying"
   * code
-    * coding[testCategory] = $NCIT#735
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <731> Loss on Drying"
+  * reason
+    * coding = $TestCats#TC12 "Loss on Drying"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/loss-on-drying.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Loss on Drying"
-    * goalId[+] = "09096d99-82dd-4ce0-835c-c9223da4b9d7"
+    * goalId[+] = "50bf6449-f14e-4a5f-8f9a-ebcff5bea10f"
 * action[+]
-  * id = "53dfbdca-d32f-4676-bb07-811ef6953214"
+  * id = "0227aa39-84e5-4f8b-988b-88f64b84934d"
   * extension[testOrder].valueDecimal = 3
   * title = "Readily Carbonizable Sub"
   * code
-    * coding[testCategory] = $NCIT#729
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <271> Readily Carbonizable Substances Test"
+  * reason
+    * coding = $TestCats#TC6 "Organoleptic"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/readily-carbonizable-substances.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Readily Carbonizable Sub"
-    * goalId[+] = "7202bb73-0164-434a-b3e8-77786bbb5ba7"
+    * goalId[+] = "1f19860e-e764-4802-b8be-1420161ae952"
 * action[+]
-  * id = "67dd3610-39f9-40c4-b295-f5e81e49d1e3"
+  * id = "8cfb4077-f127-4e30-9eda-de9324c41ce8"
   * extension[testOrder].valueDecimal = 4
   * title = "Residue on ignition (Ash)"
   * code
-    * coding[testCategory] = $NCIT#761
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"   
     * text = "USP <281> Residue on Igition"
+  * reason
+    * coding = $TestCats#TC38 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/residue-on-ignition.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Residue on ignition (Ash)"
-    * goalId[+] = "4dfbb5da-7556-4897-91a2-91b0a47b0110"
+    * goalId[+] = "f43ed61a-a4a3-421d-9b44-f9477e0aa48e"
 * action[+]
-  * id = "2b2de153-cb10-4ba5-8b74-16bf61ff39b2"
+  * id = "cec9cc79-fae5-45de-a08c-618fa52f63e3"
   * extension[testOrder].valueDecimal = 5
   * title = "Insoluble Matter"
   * code
-    * coding[testCategory] = $NCIT#734
-    * coding[methodOrigin] = $NCIT#113
+    * coding = $NCIT##C96103 "Proprietary"
     * text = "Substances insoluble in sodium carbonate TS"
+  * reason
+    * coding = $TestCats#TC11 "Foreign and Particulate Matter"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/insoluble-matter.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Insoluble Matter"
-    * goalId[+] = "41f593fc-8cb9-4e0c-a846-fc8920b91261"
+    * goalId[+] = "6124d267-4977-4037-965a-70ccaf442e56"
 * action[+]
-  * id = "f6d3899a-013b-4e82-bf1b-e68c7364aed6"
+  * id = "27f51d24-e95c-4850-8646-c2e183fabb95"
   * extension[testOrder].valueDecimal = 6
   * title = "Impurities - Chloride (Cl)"
   * code
-    * coding[testCategory] = $NCIT#772
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <221> Chloride and Sulfate"
+  * reason
+    * coding = $TestCats#TC53 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/impurities-chloride.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Impurities - Chloride (Cl)"
-    * goalId[+] = "c3f93e0e-2e0f-4d6d-b39c-16ae60e22fd5"
+    * goalId[+] = "5a3e4427-3df0-43f5-b2e9-819f6ad38ac8"
 * action[+]
-  * id = "7733283a-8796-4184-af0a-557f2097f4e7"
+  * id = "8348df1f-6f05-4e68-a330-4aa0b2dcab0d"
   * extension[testOrder].valueDecimal = 7
   * title = "Impurities - Sulfate (SO4)"
   * code
-    * coding[testCategory] = $NCIT#772
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <221> Chloride and Sulfate"
+  * reason
+    * coding = $TestCats#TC53 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/impurities-sulfate.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Impurities - Sulfate (SO4)"
-    * goalId[+] = "4fc82267-5ad8-4859-93c0-935b1627a0a5"
+    * goalId[+] = "3a4272bb-f5d2-4730-86d1-21afbab871f3"
 * action[+]
-  * id = "9326fc26-42ce-4888-a734-e6df55df05c8"
+  * id = "c0423457-97eb-4c81-a2d4-59b9d2e052a5"
   * extension[testOrder].valueDecimal = 8
   * title = "Elemental Impurities - Limits"
   * code
-    * coding[testCategory] = $NCIT#772
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <231> Heavy Metals"
+  * reason
+    * coding = $TestCats#TC53 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/elemental-impurities-limits.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Elemental Impurities - Limits"
-    * goalId[+] = "a1b3ef4b-092d-431e-82f1-75030290a2c0"
+    * goalId[+] = "460ffa9b-e439-4cc6-9a49-1547d8c738c2"
 * action[+]
-  * id = "0ec89f5d-32f9-4f15-bb9c-da890cc232cf"
+  * id = "ce5d3dca-1704-4495-9a2d-588de7a0a491"
   * extension[testOrder].valueDecimal = 9
   * title = "Limit of Free Salicylic Acid"
   * code
-    * coding[testCategory] = $NCIT#772
-    * coding[methodOrigin] = $NCIT#113
+    * coding = $NCIT#C96103 "Proprietary"
     * text = "Limit of free salicylic acid"
+  * reason
+    * coding = $TestCats#TC53 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/limit-of-free-salicylic-acid.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Limit of Free Salicylic Acid"
-    * goalId[+] = "263cc7e1-8716-4b6e-a26e-127cfa9e9fe9"
+    * goalId[+] = "8227253e-a2a9-4a39-a199-53e2eca7d404"
 * action[+]
-  * id = "e3874a5f-f8a1-4e23-87c2-944f33431acc"
+  * id = "b98b73c6-122a-4c95-a39a-8fe34639cfe9"
   * extension[testOrder].valueDecimal = 10
   * title = "Residual Solvents"
   * code
-    * coding[testCategory] = $NCIT#772
-    * coding[methodOrigin] = $NCIT#112
+    * coding = $NCIT#C96102 "Compendial"
     * text = "USP <467> Organic Volatile Impurities"
+  * reason
+    * coding = $TestCats#TC53 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/residual-solvents.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Residual Solvents"
-    * goalId[+] = "7924a08c-0d39-4857-81c8-6d100013cd2b"
-    * goalId[+] = "226bfd90-9d36-422f-b12e-9454ed3b8360"
-    * goalId[+] = "1f43bb51-aed8-42c2-9710-7319d5eba1f4"
-    * goalId[+] = "54dd182b-6968-4919-8756-95ce4c599543"
+    * goalId[+] = "44e30387-ddbc-45d7-a5c2-0e334e6093b8"
+    * goalId[+] = "1c80f56d-2fb0-421a-84eb-f16ee98d9034"
+    * goalId[+] = "691fac26-8bcb-45fb-a5ba-cbd04a00a778"
+    * goalId[+] = "fca2fd64-7f55-47bb-8bb4-454118e73221"
 * action[+]
-  * id = "72cea072-a474-4f94-93d8-3ba59727cc68"
+  * id = "1d164b26-d865-40a3-a83f-00a7bfe4134c"
   * extension[testOrder].valueDecimal = 11
   * title = "Assay"
   * code
-    * coding[testCategory] = $NCIT#725
-    * coding[methodOrigin] = $NCIT#113
+    * coding = $NCIT#C96103 "Proprietary" 
     * text = "Assay Dry Basis"
+  * reason[+]
+    * coding = $TestCats#TC1 "Assay" 
+  * reason[+]
+    * coding = $TestCats#SUBC2 "active ingredient"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/assay.pdf"
   * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Assay"
-    * goalId[+] = "d13abea5-7e0b-4b44-9790-9fdeb430a2e7"
+    * goalId[+] = "da997e5d-6023-4be1-b402-59eb713fae9c"
 * action[+]
-  * id = "5584697f-c569-4465-ab11-d6f2f70c9d00"
+  * id = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
   * extension[testOrder].valueDecimal = 12
   * title = "Dissolution"
   * code
-    * coding[testCategory] = $NCIT#732
-    * coding[methodOrigin] = $NCIT#113
+    * coding = $NCIT#C96103 "Proprietary"
     * text = "Dissolution - 30 minute"
+  * reason
+    * coding = $TestCats#TC9 "Dissolution"
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/dissolution.pdf"
   * action[+]
     * extension[testOrder].valueDecimal = 1
-    * linkId = "5584697f-c569-4465-ab11-d6f2f70c9d00"
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
     * prefix = "Stage 1"
     * title = "Dissolution"
-    * goalId = "a802e1da-0008-4002-82c9-62d258f8f9d4"
-    * goalId = "73ff7356-ae9e-4d50-804c-7f475aafcc21"
+    * goalId = "7d457f96-a24b-436c-8791-7b65420f350d"
+    * goalId = "1afdf893-a076-413b-aadf-46f799aead55"
   * action[+]
     * extension[testOrder].valueDecimal = 2
-    * linkId = "5584697f-c569-4465-ab11-d6f2f70c9d00"
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
     * prefix = "Stage 2"
     * title = "Dissolution"
-    * goalId = "40111dd1-720e-4b9b-af18-d8002ffc7a25"
-    * goalId = "6a96d60f-201a-4151-9ec9-73502674d434"
+    * goalId = "bc8dd4af-c1f8-43b2-a00b-20361a66d575"
+    * goalId = "c59aad9c-3380-4b58-8609-8aeb27adb91d"
   * action[+]
     * extension[testOrder].valueDecimal = 3
-    * linkId = "5584697f-c569-4465-ab11-d6f2f70c9d00"
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
     * prefix = "Stage 3"
     * title = "Dissolution"
-    * goalId = "0fe45619-c331-4a93-beca-83216f87a4cf"
-    * goalId = "ec0fe6a2-0927-4d56-93c6-f6d1d5c8c2e7"
+    * goalId = "dbb30bcc-8c49-479d-8051-dec94c9d4511"
+    * goalId = "2b82142e-ebd1-41b8-b252-b214a23eca72"
 
-Instance: ae407644-5e23-4187-bf70-dcc7a5846af6
+
+Instance: 455314e7-4679-49f5-b7ca-0a4532e8c7c9
 InstanceOf: EctdCompositionSP4151
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-sp4151"
+//* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-sp4151"
 * identifier.value = "ExampleSpecification"
 * status = #final
 * type.coding = $SectionTypes#SP4151 "Quality Specification"
-* author = Reference(aa40b203-8f89-4e21-b328-161ec3c4cb03)
-* date = 2023-11-15T15:50:45.841Z
+* author = Reference(6ceaa627-02a3-4f81-a840-25ecc5a2adf7)
+* date = 2023-11-16T18:23:54.515Z
 * title = """Quality Specification for Buffered Asprin"""
 * section[DrugProduct]
   * code = $SectionTypes#32P51 "Product Specification"
   * title = "32P51"
-  * entry = Reference(2a6df33f-4e92-41cd-b31b-2eb8428f1d9e)
-  
-Instance: ce9e0234-5b40-49b0-8c6c-dd4797dd08ce
+  * entry = Reference(26046654-c10d-4ac4-a097-07f2cd3ca560)
+
+Instance: 5a33aea1-1a3d-4db7-8ba3-d5b0d7395d70
 InstanceOf: CMCeCTDDocumentSP4151
 * meta.profile.extension[version].valueString = "0.1.15"
 * identifier.system = $IDsys
-* identifier.value = "urn:uuid:d4ea4fa0-67d9-4f26-adb8-f00e9d896b09"
-* timestamp = 2023-11-15T15:50:45.842Z
-* entry[0].resource = ae407644-5e23-4187-bf70-dcc7a5846af6
-* entry[=].fullUrl = "urn:uuid:ae407644-5e23-4187-bf70-dcc7a5846af6"
-* entry[+].resource = 2a6df33f-4e92-41cd-b31b-2eb8428f1d9e
-* entry[=].fullUrl = "urn:uuid:2a6df33f-4e92-41cd-b31b-2eb8428f1d9e"
-* entry[+].resource = f28f6bf7-1ae7-47e9-9450-3ddf8d0683ba
-* entry[=].fullUrl = "urn:uuid:f28f6bf7-1ae7-47e9-9450-3ddf8d0683ba"
-* entry[+].resource = aa40b203-8f89-4e21-b328-161ec3c4cb03
-* entry[=].fullUrl = "urn:uuid:aa40b203-8f89-4e21-b328-161ec3c4cb03"
+* identifier.value = "urn:uuid:80c383db-06e3-4d84-a1a5-024d81465e1f"
+* timestamp = 2023-11-16T18:23:54.515Z
+* entry[0].resource = 455314e7-4679-49f5-b7ca-0a4532e8c7c9
+* entry[=].fullUrl = "urn:uuid:455314e7-4679-49f5-b7ca-0a4532e8c7c9"
+* entry[+].resource = 26046654-c10d-4ac4-a097-07f2cd3ca560
+* entry[=].fullUrl = "urn:uuid:26046654-c10d-4ac4-a097-07f2cd3ca560"
+* entry[+].resource = e448eeab-b0e6-4ce5-bf0e-b77ca63ce774
+* entry[=].fullUrl = "urn:uuid:e448eeab-b0e6-4ce5-bf0e-b77ca63ce774"
+* entry[+].resource = 6ceaa627-02a3-4f81-a840-25ecc5a2adf7
+* entry[=].fullUrl = "urn:uuid:6ceaa627-02a3-4f81-a840-25ecc5a2adf7"
+
+Instance: 0baed83c-495e-4129-8e26-537a0ede5e15
+InstanceOf: QualitySpecification
+Title: "A quality specification is for an Excipient or Raw material"
+Description: "Indtifiying information for an Excipient or Raw material including source information"
+Usage: #example
+
+* id = "0baed83c-495e-4129-8e26-537a0ede5e15"
+* version = "1.0"
+* title = "Quality Specification for Excipient"
+* status = #active
+//Reference an Excipient Substance Definition
+* subjectReference = Reference(0e2ca9e4-bb2a-48ec-8cbb-d2aaf6a4432b)
+* date = "2022-12-08"
+* useContext.valueCodeableConcept.coding = $NCIT#C134010 "Tentatively Approved"
+* approvalDate = "2022-12-08"
+* goal
+* goal.id = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+* goal.description.text = "Negative"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.addresses = $NCIT#C134030 "Stability"
+* goal.target.detailQuantity
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailQuantity.value = 100
+* goal.target.detailQuantity.unit = "cfu"
+* goal.target.detailQuantity.code = $NCIT#C68742 "[CFU]"
+* goal.id = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+* goal.description.text = "Negative"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.addresses = $NCIT#C134030 "Stability"
+* goal.target.detailQuantity
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailQuantity.value = 100
+* goal.target.detailQuantity.unit = "cfu"
+* goal.target.detailQuantity.code = $NCIT#C68742 "[CFU]"
+
+* goal.id = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+* goal.description.text = "NMT 100 colony-forming units"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.addresses = $NCIT#C134030 "Stability"
+* goal.target.detailQuantity
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailQuantity.value = 100
+* goal.target.detailQuantity.unit = "cfu"
+* goal.target.detailQuantity.code = $NCIT#C68742 "[CFU]"
+* goal.id = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+* goal.description.text = "NMT 10 colony-forming units"
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.addresses = $NCIT#C134030 "Stability"
+* goal.target.detailQuantity
+* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailQuantity.value = 10
+* goal.target.detailQuantity.unit = "cfu"
+* goal.target.detailQuantity.code = $NCIT#C68742 "[CFU]"
+
+* action[+]
+  * extension[testOrder].valueDecimal = 9
+  * title = "Microbial Limits"
+  * code
+    * coding = $NCIT#C96102 "Compendial"
+    * text = "Microbiological Examination of Nonsterile Products"
+  * reason
+    * coding = $TestCats#TC13 "Microbial Limits"
+  * documentation.type = #documentation
+  * documentation.label = "USP.org <61> MICROBIOLOGICAL EXAMINATION OF NONSTERILE PRODUCTS: MICROBIAL ENUMERATION TESTS"
+  * action[+]
+    * extension[testOrder].valueDecimal = 1
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
+    * prefix = "Stage 1"
+    * title =  "Staphylococcus aureus"
+    * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+
+  * action[+]
+    * extension[testOrder].valueDecimal = 2
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
+    * prefix = "Stage 1"
+    * title =  "Pseudomonas aeruginosa"
+    * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+
+  * action[+]
+    * extension[testOrder].valueDecimal = 3
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
+    * prefix = "Stage 1"
+    * title = "Bacillus subtilis"
+    * goalId = "dbb30bzz-8z47-477d-8061-dez74z7d4611"
+
+  * action[+]
+    * extension[testOrder].valueDecimal = 4
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
+    * prefix = "Stage 1"
+    * title = "Total Aerobic Microbial Count (TAMC) i"
+    * goalId = "kbb30bcc-8c49-479k-8061-kec94c9k4611"
+
+    * action[+]
+    * extension[testOrder].valueDecimal = 
+    * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
+    * prefix = "Stage 1"
+    * title = "Total Yeasts and Nolds Count (TYMC)"
+    * goalId = "13fg7cd2-132a-414c-81c9-1d0g6g6a8216"
+
+Instance: 394c19af-062b-49b4-9f8d-f5a3499a8476
+InstanceOf: QualitySpecification
+Title: "A quality specification is for a drug substance "
+Description: "A quality specification is for an API "
+Usage: #example
+
+* id = "394c19af-062b-49b4-9f8d-f5a3499a8476"
+* version = "1.0"
+* title = "Quality Specification for API"
+* status = #active
+//Reference an Active Pharmaceutical Ingredient (API)
+* subjectReference = Reference(f5de5600-7e54-4d2d-b442-7b3366531231)
+* date = "2022-12-08"
+* useContext.valueCodeableConcept.coding = $NCIT#C134011 "Not Approved"
+* goal
+* goal.id = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"
+* goal.description.text = " Averge of 10 between 2-3  pH "
+* goal.addresses = $NCIT#C134029 "Release"
+* goal.addresses = $NCIT#C134030 "Stability"
+* goal.target.detailRange.low
+* goal.target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+* goal.target.detailRange.low.value = 2.0
+* goal.target.detailRange.low.unit = "pH"
+* goal.target.detailRange.low.code = $NCIT#C45997 "[pH]"
+* goal.target.detailRange.high
+* goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+* goal.target.detailRange.high.value = 3.0
+* goal.target.detailRange.high.unit = "pH"
+* goal.target.detailRange.high.code = $NCIT#C45997 "[pH]"
+* goal.target.detailInteger.value = 10
+* action
+  * .extension[testOrder].valueDecimal = 1.0
+* action.prefix = "Single Stage"
+* action.title = "pH Average"
+* action.code.coding[testCategory] = $NCIT#TC23 "pH"
+// action.code.coding[testSubCat] = "Test Sub-category"
+* action.code.coding[methodOrigin] = $NCIT#C96103 "Proprietary"
+* action.code.text = "pH method - ipid50"
+* action.documentation.label = "m3/32-body-data/32p-drug-prod/wonder-acetate-400-600-800mg/32p5-contr-drug-prod/32p52-analyt-proc/pHall.pdf"
+* action.goalId = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"
+
+//From Resource Profile: Drug Product. http://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drug-produc.html
+Instance: 8e854cea-f491-471f-b5dc-910f20135658
+InstanceOf: RoutineDrugProduct
+Title: "drug product for specification "
+Description: "Includes the identifier of the drug product"
+Usage: #example
+* id = "8e854cea-f491-471f-b5dc-910f20135658"
+* combinedPharmaceuticalDoseForm = $NCIT#C42897 "TABLET, COATED"
+* route = $NCIT#C38288 "ORAL"
+* name[NonProprietary].productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
+* name[NonProprietary].productName = "Buffered Asprin"
+* name[NonProprietary].part[Scientific][+].part = "Asprin"
+// * name[NonProprietary].part[+][Scientific].part = "OXAZEPAM"
+//* name[NonProprietary].part[+][Strength].part = "30mg"
+// * name[NonProprietary].part[Scientific][+].part = "PROPRANOLOL HYDROCHLORIDE"
+// * name[NonProprietary].part[Strength][+].part = "60mg"
