@@ -645,3 +645,20 @@ Usage: #example
     * goalId[+] = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"
 
 
+
+//From Resource Profile: Drug Product. http://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drug-produc.html
+Instance: 8e854cea-f491-471f-b5dc-910f20135658
+InstanceOf: RoutineDrugProduct
+Title: "drug product for specification "
+Description: "Includes the identifier of the drug product"
+Usage: #example
+* id = "8e854cea-f491-471f-b5dc-910f20135658"
+* combinedPharmaceuticalDoseForm = $NCIT#C42897 "TABLET, COATED"
+* route = $NCIT#C38288 "ORAL"
+* name[NonProprietary].productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
+* name[NonProprietary].productName = "Buffered Asprin"
+* name[NonProprietary].part[Scientific][+].part = "Asprin"
+// * name[NonProprietary].part[+][Scientific].part = "OXAZEPAM"
+//* name[NonProprietary].part[+][Strength].part = "30mg"
+// * name[NonProprietary].part[Scientific][+].part = "PROPRANOLOL HYDROCHLORIDE"
+// * name[NonProprietary].part[Strength][+].part = "60mg"

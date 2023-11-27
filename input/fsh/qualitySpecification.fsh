@@ -164,7 +164,7 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * goal.target.due 0..0
 * action obeys cmc-link-required
 * action 1..* MS
-* action ^short = "Test"
+* action ^short = "Method"
 * action.extension contains pq-order-extension named testOrder 1..1 MS
 * action.extension[testOrder] ^short = "Test Order"
 * action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
@@ -221,27 +221,18 @@ Example: the file path to the procedure document.
 * action.selectionBehavior = $ActSelection#exactly-one "Exactly One"
 * action.action 1..* MS
 * action.action ^short = "Stage"
-* action.action.extension contains pq-order-extension named testOrder 1..1 MS
-* action.action.extension[testOrder] ^short = "Stage Order"
-* action.action.extension[testOrder] ^definition = """Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
+* action.action.extension contains pq-order-extension named stageOrder 1..1 MS
+* action.action.extension[stageOrder] ^short = "Stage Order"
+* action.action.extension[stageOrder] ^definition = """Stage Sequence Order: The order of the stages in regular succession. [Source: SME Defined]
 Examples: 1, 2, 3.
 """
-* action.action.extension[testOrder].valueDecimal 1..1 MS
+* action.action.extension[stageOrder].valueDecimal 1..1 MS
 * action.action.prefix 1.. MS
 * action.action.prefix ^short = "Stage Name"
 * action.action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined]
 Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711&gt;)
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
 Default 'Single Stage'.
-"""
-* action.action.title 0..1 MS
-* action.action.title ^short = "Test Name if different than action.title | RRT"
-* action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
-Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
-Note: as defined by the sponsor
-Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
-
-RRT: An alternative for test name when the RRT is used as an identifier for a substance, usually unknown.
 """
 * action.action.description 0..1 MS
 * action.action.description ^short = "Test Additional Information | Stage Additional Information"
@@ -251,3 +242,30 @@ If there is more than one comment, include in this element.  Markdown allows for
 """
 * action.action.goalId 1..* MS
 * action.action.goalId ^short = "Reference to Acceptance Criteria"
+
+* action.action.action 0..* MS
+* action.action.action ^short = "Test"
+* action.action.action.extension contains pq-order-extension named testOrder 1..1 MS
+* action..action.action.extension[testOrder] ^short = "Test Order"
+* action..action.action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
+[Source: SME Defined]
+Examples: 1, 2, 3.
+"""
+* action..action.action.extension[testOrder].valueDecimal 1..1 MS
+* action.action.action.title 0..1 MS
+* action.action.action.title ^short = "Test Name  | RRT (complex testing)"
+* action.action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+Note: as defined by the sponsor
+Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
+
+RRT: An alternative for test name when the RRT is used as an identifier for a substance, usually unknown.
+"""
+* action.action.action.description 0..1 MS
+* action.action.action.description ^short = "Test Additional Information | Stage Additional Information"
+* action.action.action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
+Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
+If there is more than one comment, include in this element.  Markdown allows formating for clarity.  If both types are present, indicate type.
+"""
+* action.action.action.goalId 1..* MS
+* action.action.action.goalId ^short = "Reference to Acceptance Criteria"

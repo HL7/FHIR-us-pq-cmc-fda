@@ -16,9 +16,7 @@
 <artifact id="Ingredient/41e8891f-6692-4ed7-9b57-70144c2ba053" key="Ingredient-41e8891f-6692-4ed7-9b57-70144c2ba053" name="41e8891f-6692-4ed7-9b57-70144c2ba053"/>
 <artifact id="SubstanceDefinition/48de76a8-6c42-4145-a68f-76f240d40566" key="SubstanceDefinition-48de76a8-6c42-4145-a68f-76f240d40566" name="48de76a8-6c42-4145-a68f-76f240d40566"/>
 <artifact id="Ingredient/56d61b9d-8669-457f-bf58-f11af0599340" key="Ingredient-56d61b9d-8669-457f-bf58-f11af0599340" name="56d61b9d-8669-457f-bf58-f11af0599340"/>
-<artifact id="Bundle/5a33aea1-1a3d-4db7-8ba3-d5b0d7395d70" key="Bundle-5a33aea1-1a3d-4db7-8ba3-d5b0d7395d70" name="5a33aea1-1a3d-4db7-8ba3-d5b0d7395d70"/>
 <artifact id="Organization/6cb2813b-3128-4fa6-86ea-daa09dcca680" key="Organization-6cb2813b-3128-4fa6-86ea-daa09dcca680" name="6cb2813b-3128-4fa6-86ea-daa09dcca680"/>
-<artifact id="Organization/6ceaa627-02a3-4f81-a840-25ecc5a2adf7" key="Organization-6ceaa627-02a3-4f81-a840-25ecc5a2adf7" name="6ceaa627-02a3-4f81-a840-25ecc5a2adf7"/>
 <artifact id="Bundle/6f700327-3797-46f5-bd9f-8d43c6924b40" key="Bundle-6f700327-3797-46f5-bd9f-8d43c6924b40" name="6f700327-3797-46f5-bd9f-8d43c6924b40"/>
 <artifact id="Ingredient/831a057e-f90c-479f-8ba7-6b51c23e028e" key="Ingredient-831a057e-f90c-479f-8ba7-6b51c23e028e" name="831a057e-f90c-479f-8ba7-6b51c23e028e"/>
 <artifact id="Ingredient/87d879b9-1e1d-4ccc-a1b0-707891399aa7" key="Ingredient-87d879b9-1e1d-4ccc-a1b0-707891399aa7" name="87d879b9-1e1d-4ccc-a1b0-707891399aa7"/>
@@ -106,8 +104,6 @@
 <artifact id="StructureDefinition/pq-pullDate-extension" key="StructureDefinition-pq-pullDate-extension" name="Pull Date"/>
 <artifact id="StructureDefinition/pqcmc-quality-specification" key="StructureDefinition-pqcmc-quality-specification" name="Quality Specification"/>
 <artifact id="StructureDefinition/pq-quality-specification-extension" key="StructureDefinition-pq-quality-specification-extension" name="Quality Specification Reference"/>
-<artifact id="Composition/455314e7-4679-49f5-b7ca-0a4532e8c7c9" key="Composition-455314e7-4679-49f5-b7ca-0a4532e8c7c9" name="Quality Specification for Buffered Asprin"/>
-<artifact id="PlanDefinition/26046654-c10d-4ac4-a097-07f2cd3ca560" key="PlanDefinition-26046654-c10d-4ac4-a097-07f2cd3ca560" name="Quality Specification for Buffered Asprin"/>
 <artifact id="ValueSet/pqcmc-quality-benchmark-terminology" key="ValueSet-pqcmc-quality-benchmark-terminology" name="Quality Standard Terminology"/>
 <artifact id="ValueSet/cmc-relationship-types-vs" key="ValueSet-cmc-relationship-types-vs" name="Relationship types Value Set"/>
 <artifact id="CodeSystem/cmc-relationship-types" key="CodeSystem-cmc-relationship-types" name="Relationship types codes"/>
@@ -151,7 +147,6 @@
 <artifact id="SubstanceDefinition/b8b3b7e6-60d2-422a-806e-d7e246ee9cb7" key="SubstanceDefinition-b8b3b7e6-60d2-422a-806e-d7e246ee9cb7" name="b8b3b7e6-60d2-422a-806e-d7e246ee9cb7"/>
 <artifact id="SubstanceDefinition/bb506218-12e5-466d-94a6-12395f51cc87" key="SubstanceDefinition-bb506218-12e5-466d-94a6-12395f51cc87" name="bb506218-12e5-466d-94a6-12395f51cc87"/>
 <artifact id="MedicinalProductDefinition/ca32c88a-115f-42ff-b020-9661fadc733d" key="MedicinalProductDefinition-ca32c88a-115f-42ff-b020-9661fadc733d" name="ca32c88a-115f-42ff-b020-9661fadc733d"/>
-<artifact id="MedicinalProductDefinition/e448eeab-b0e6-4ce5-bf0e-b77ca63ce774" key="MedicinalProductDefinition-e448eeab-b0e6-4ce5-bf0e-b77ca63ce774" name="e448eeab-b0e6-4ce5-bf0e-b77ca63ce774"/>
 <artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
 <artifact id="Composition/e23e1f1e-8ac2-49d6-afaa-7ad876a85979" key="Composition-e23e1f1e-8ac2-49d6-afaa-7ad876a85979" name="eCTD Composition for 3.2.S.1.0"/>
