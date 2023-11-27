@@ -240,18 +240,18 @@ Default 'Single Stage'.
 Stage Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined]
 If there is more than one comment, include in this element.  Markdown allows formating for clarity.  If both types are present, indicate type.
 """
-* action.action.goalId 1..* MS
+* action.action.goalId 0..* MS
 * action.action.goalId ^short = "Reference to Acceptance Criteria"
 
 * action.action.action 0..* MS
-* action.action.action ^short = "Test"
+* action.action.action ^short = "Sub-Test"
 * action.action.action.extension contains pq-order-extension named testOrder 1..1 MS
-* action..action.action.extension[testOrder] ^short = "Test Order"
-* action..action.action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
+* action.action.action.extension[testOrder] ^short = "Test Order"
+* action.action.action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
 [Source: SME Defined]
 Examples: 1, 2, 3.
 """
-* action..action.action.extension[testOrder].valueDecimal 1..1 MS
+* action.action.action.extension[testOrder].valueDecimal 1..1 MS
 * action.action.action.title 0..1 MS
 * action.action.action.title ^short = "Test Name  | RRT (complex testing)"
 * action.action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]

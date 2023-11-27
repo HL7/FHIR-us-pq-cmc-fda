@@ -84,11 +84,6 @@ Description: "The Ingredient.substance.strength.concentration.code from PqcmcUni
 Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
 Severity: #error
 
-Invariant: cmc-test-order-limit
-Description: "Action test order is greater than or equal to 1"
-Expression: "strength.extension('testOrder').value >= 1"
-Severity: #error
-
 Invariant: cmc-link-required
 Description: "Action linkId is required for alternate tests"
 Expression: "(action.relatedAction.count() > 0) implies action.linkId.exists()" 
