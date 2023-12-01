@@ -94,4 +94,8 @@ Description: "Content percent must be in the format of leading zero, decimal poi
 Expression: "value.toString().matches('^(1([.]0{1,17})?|0([.][0-9]{1,17})?)$') = true"
 Severity: #error
 
+Invariant: cmc-at-least-one
+Description: "Stages must have a least one acceptance critia"
+Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
+Severity: #error
 

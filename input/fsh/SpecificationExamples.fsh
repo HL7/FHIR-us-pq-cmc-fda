@@ -46,7 +46,21 @@ Description: "A quality specification is for a drug product with various test ty
 * goal[=]
   * target[+]
     * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 2 $NCIT#C45997 "pH"
+    * detailRange.low = 2 $NCIT#C45997 * action[+]
+  * extension[testOrder].valueDecimal = 1.0
+  * title = "pH  Tests"
+  * code
+    * coding = $NCIT#C96103 "Proprietary"
+    * text = "potential of hydrogen"
+  * reason
+    * coding = $TestCats#TC23 "pH"
+  * documentation.type = #documentation
+  * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-acetate-400-600-800mg/32p5-contr-drug-prod/32p52-analyt-proc/pHall.pdf"
+  * action
+    * extension[testOrder].valueDecimal = 1.0
+    * prefix = "Single Stage"
+    * title = "pH Average"
+    * goalId[+] = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"
     * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailRange.high = 3 $NCIT#C45997 "pH"
 * goal[+]
@@ -248,7 +262,7 @@ Description: "A quality specification is for a drug product with various test ty
   * relatedAction[=].relationship = #concurrent
   * selectionBehavior = #exactly-one
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Identity"
     * goalId[+] = "de05a9be-419b-429e-b2f1-1b786c7d55be"
@@ -268,7 +282,7 @@ Description: "A quality specification is for a drug product with various test ty
   * relatedAction[=].relationship = #concurrent
   * selectionBehavior = #exactly-one
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Identity"
     * goalId[+] = "702b5147-d86f-416e-b4d5-582c326c890d"
@@ -284,10 +298,25 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/loss-on-drying.pdf"
   * action
+    * extension[stageOrder].valueDecimal = 1.0
+    * prefix = "Single Stage"
+    * title = "Loss on Drying Average"
+    * goalId[+] = "50bf6449-f14e-4a5f-8f9a-ebcff5bea10f"
+* action[+]
+  * extension[testOrder].valueDecimal = 1.0
+  * title = "pH  Tests"
+  * code
+    * coding = $NCIT#C96103 "Proprietary"
+    * text = "potential of hydrogen"
+  * reason
+    * coding = $TestCats#TC23 "pH"
+  * documentation.type = #documentation
+  * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-acetate-400-600-800mg/32p5-contr-drug-prod/32p52-analyt-proc/pHall.pdf"
+  * action
     * extension[testOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
-    * title = "Loss on Drying"
-    * goalId[+] = "50bf6449-f14e-4a5f-8f9a-ebcff5bea10f"
+    * title = "pH Average"
+    * goalId[+] = "85154af5-e3fd-4d9a-9a43-f4d1703c06e7"    
 * action[+]
   * id = "0227aa39-84e5-4f8b-988b-88f64b84934d"
   * extension[testOrder].valueDecimal = 3
@@ -300,7 +329,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/readily-carbonizable-substances.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Readily Carbonizable Sub"
     * goalId[+] = "1f19860e-e764-4802-b8be-1420161ae952"
@@ -316,7 +345,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/residue-on-ignition.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Residue on ignition (Ash)"
     * goalId[+] = "f43ed61a-a4a3-421d-9b44-f9477e0aa48e"
@@ -332,7 +361,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/insoluble-matter.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Insoluble Matter"
     * goalId[+] = "6124d267-4977-4037-965a-70ccaf442e56"
@@ -348,7 +377,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/impurities-chloride.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Impurities - Chloride (Cl)"
     * goalId[+] = "5a3e4427-3df0-43f5-b2e9-819f6ad38ac8"
@@ -364,7 +393,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/impurities-sulfate.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Impurities - Sulfate (SO4)"
     * goalId[+] = "3a4272bb-f5d2-4730-86d1-21afbab871f3"
@@ -380,7 +409,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/elemental-impurities-limits.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Elemental Impurities - Limits"
     * goalId[+] = "460ffa9b-e439-4cc6-9a49-1547d8c738c2"
@@ -396,7 +425,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/limit-of-free-salicylic-acid.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Limit of Free Salicylic Acid"
     * goalId[+] = "8227253e-a2a9-4a39-a199-53e2eca7d404"
@@ -412,7 +441,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/residual-solvents.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Individual Residual Solvents and Total Residual Solvents"
     * goalId[+] = "44e30387-ddbc-45d7-a5c2-0e334e6093b8"
@@ -433,7 +462,7 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/assay.pdf"
   * action
-    * extension[testOrder].valueDecimal = 1.0
+    * extension[stageOrder].valueDecimal = 1.0
     * prefix = "Single Stage"
     * title = "Assay"
     * goalId[+] = "da997e5d-6023-4be1-b402-59eb713fae9c"
@@ -449,21 +478,21 @@ Description: "A quality specification is for a drug product with various test ty
   * documentation.type = #documentation
   * documentation.label = "m3/32-body-data/32p-drug-prod/wonder-asprin/32p5-contr-drug-prod/32p52-analyt-proc/dissolution.pdf"
   * action[+]
-    * extension[testOrder].valueDecimal = 1
+    * extension[stageOrder].valueDecimal = 1
     * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
     * prefix = "Stage 1"
     * title = "Dissolution"
     * goalId = "7d457f96-a24b-436c-8791-7b65420f350d"
     * goalId = "1afdf893-a076-413b-aadf-46f799aead55"
   * action[+]
-    * extension[testOrder].valueDecimal = 2
+    * extension[stageOrder].valueDecimal = 2
     * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
     * prefix = "Stage 2"
     * title = "Dissolution"
     * goalId = "bc8dd4af-c1f8-43b2-a00b-20361a66d575"
     * goalId = "c59aad9c-3380-4b58-8609-8aeb27adb91d"
   * action[+]
-    * extension[testOrder].valueDecimal = 3
+    * extension[stageOrder].valueDecimal = 3
     * linkId = "71041ef3-0064-48fe-b16a-b346ddd1b80d"
     * prefix = "Stage 3"
     * title = "Dissolution"
@@ -539,7 +568,6 @@ Usage: #example
 * goal[=]
   * target[+]
     * detailCodeableConcept.text = "Negative"
-
 * goal[+]
 * goal[=].id = "13fg7cd2-132a-414c-81c9-1d0g6g6a8216"
 * goal[=].description.text = "NMT 100 colony-forming units"
@@ -573,36 +601,28 @@ Usage: #example
   * documentation.type = #documentation
   * documentation.label = "USP.org <61> MICROBIOLOGICAL EXAMINATION OF NONSTERILE PRODUCTS: MICROBIAL ENUMERATION TESTS"
   * action[+]
-    * extension[testOrder].valueDecimal = 1
+    * extension[stageOrder].valueDecimal = 1
     * prefix = "Stage 1"
-    * title =  "Staphylococcus aureus"
-    * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
-
-  * action[+]
-    * extension[testOrder].valueDecimal = 2
-    * prefix = "Stage 1"
-    * title =  "Pseudomonas aeruginosa"
-    * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
-
-  * action[+]
-    * extension[testOrder].valueDecimal = 3
-    * prefix = "Stage 1"
-    * title = "Bacillus subtilis"
-    * goalId = "dbb30bzz-8z47-477d-8061-dez74z7d4611"
-
-  * action[+]
-    * extension[testOrder].valueDecimal = 4
-    * prefix = "Stage 1"
-    * title = "Total Aerobic Microbial Count (TAMC) i"
-    * goalId = "kbb30bcc-8c49-479k-8061-kec94c9k4611"
-
     * action[+]
-    * extension[testOrder].valueDecimal = 5
-    * prefix = "Stage 1"
-    * title = "Total Yeasts and Nolds Count (TYMC)"
-    * goalId = "13fg7cd2-132a-414c-81c9-1d0g6g6a8216"
-
-
+      * extension[stageOrder].valueDecimal = 1
+      * title =  "Staphylococcus aureus"
+      * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+    * action[+]
+      * extension[stageOrder].valueDecimal = 2
+      * title =  "Pseudomonas aeruginosa"
+      * goalId = "53ee7cd2-532a-454c-85c9-5d0b6b6a8216"
+    * action[+]
+      * extension[stageOrder].valueDecimal = 3
+      * title = "Bacillus subtilis"
+      * goalId = "dbb30bzz-8z47-477d-8061-dez74z7d4611"
+    * action[+]
+      * extension[stageOrder].valueDecimal = 4
+      * title = "Total Aerobic Microbial Count (TAMC) i"
+      * goalId = "kbb30bcc-8c49-479k-8061-kec94c9k4611"
+    * action[+]
+      * extension[stageOrder].valueDecimal = 5
+      * title = "Total Yeasts and Nolds Count (TYMC)"
+      * goalId = "13fg7cd2-132a-414c-81c9-1d0g6g6a8216"
 
 Instance: 0baed83c-495e-4129-8e26-537a0ede5e15
 InstanceOf: QualitySpecification

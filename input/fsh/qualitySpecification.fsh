@@ -34,6 +34,18 @@ Examples: Drug product, Drug substance.
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationTypeTerminology (required)
 
+Extension: TestCategoryLevelExtension
+Id: pq-test-category-level-extension
+Title: "Test Category Level"
+Description: "Numeric level in the test category value-set"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.action.reason"
+
+* value[x] 1..1 MS
+  * ^short = "TestCategory  Level"
+  * ^definition = """Level within the hierarchical TestCategory value-set."""
+* value[x] only integer
+
 Extension: TestOrderExtension
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
@@ -152,7 +164,8 @@ Example: value changed from 4% to 5% on 01/01/2010) """
   * coding from PqcmcInterpretationCodeTerminology (required)
   * coding ^short = "Interpretation Code"
   * coding ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
-  * coding = $NCIT#C48660 "Not Applicable"
+  //* coding = $NCIT#C48660 "Not Applicable"
+  * coding = $NCIT#C48793 "EQ"	
   * text 1..1 MS 
     * ^short = "Acceptance Criteria (Text)"
     * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"""
@@ -198,7 +211,8 @@ Note: The full descriptor of the technique is part of the next data element - Re
 //* coding obeys cmc-sub-test-category-batch
 * action.reason 1..2 MS
 * action.reason ^short = "Test Category | Test Subcategory"
-* action.reason. ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* action.extension contains pq-test-category-level-extension named categoryLevel 1..1 MS
 * action.reason.coding.code 1..1 MS
 * action.reason.coding.code from PqcmcTestCategoryTerminology (required)
 * action.reason.coding.display  1..1
@@ -219,6 +233,7 @@ Example: the file path to the procedure document.
 * action.selectionBehavior MS
 * action.selectionBehavior ^short = "Code is exactly-one"
 * action.selectionBehavior = $ActSelection#exactly-one "Exactly One"
+* action.action obeys cmc-at-least-one
 * action.action 1..* MS
 * action.action ^short = "Stage"
 * action.action.extension contains pq-order-extension named stageOrder 1..1 MS
