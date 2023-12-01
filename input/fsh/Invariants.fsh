@@ -99,3 +99,8 @@ Description: "Stages must have a least one acceptance critia"
 Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
 Severity: #error
 
+Invariant: cmc-greater-than-zero
+Description: "Hierachial levels are greater than 0"
+Expression: "(detailInteger.count() > 0)  = true" 
+Severity: #error
+

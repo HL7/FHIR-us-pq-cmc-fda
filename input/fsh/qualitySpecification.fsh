@@ -34,19 +34,20 @@ Examples: Drug product, Drug substance.
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationTypeTerminology (required)
 
-Extension: TestCategoryLevelExtension
-Id: pq-test-category-level-extension
-Title: "Test Category Level"
-Description: "Numeric level in the test category value-set"
+Extension: HierarchicalLevelExtension
+Id: pq-hierarchical-level-extension
+Title: "Hierarchical Level"
+Description: "Numeric level in the hierarchical value-set"
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action.reason"
 
 * value[x] 1..1 MS
+  * obeys cmc-greater-than-zero
   * ^short = "TestCategory  Level"
-  * ^definition = """Level within the hierarchical TestCategory value-set."""
+  * ^definition = """Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2."""
 * value[x] only integer
 
-Extension: TestOrderExtension
+Extension: TestOrderExtension 
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
 Description: "The sequential number assigned to each Test or Stabe to specify the order of display on the Quality Specification."
@@ -212,7 +213,7 @@ Note: The full descriptor of the technique is part of the next data element - Re
 * action.reason 1..2 MS
 * action.reason ^short = "Test Category | Test Subcategory"
 * action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* action.extension contains pq-test-category-level-extension named categoryLevel 1..1 MS
+* action.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
 * action.reason.coding.code 1..1 MS
 * action.reason.coding.code from PqcmcTestCategoryTerminology (required)
 * action.reason.coding.display  1..1
