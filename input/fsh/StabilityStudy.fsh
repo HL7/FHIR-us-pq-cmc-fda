@@ -106,15 +106,13 @@ Example: Study Number- 565758
 * version ^short = "Sub-Study Identifier Version (optional)"
 * title 1..1 MS
 * title ^short = "Sub-Study Name"
-* title ^definition = "A non-unique textual identifier given to the drug stability study by the sponsoring organization. [Source: SME Defined]"
+* title ^definition = "A non-unique textual identifier given to the drug stability sub-study by the sponsoring organization. [Source: SME Defined]"
 //* protocol Reference (PlanDefinition)
 //* protocol ^short = "x"
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference(StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
 * condition 2..3 MS
-
-
 * condition ^slicing.discriminator.type = #value
 * condition ^slicing.discriminator.path = coding.system
 * condition ^slicing.rules = #closed // or #closed if you don't want other concepts
@@ -124,12 +122,16 @@ Example: Study Number- 565758
     storagecategory 1..1 and
     orientation 0..1
 * condition[substudytype] ^short = "Sub-Study Type"
+* condition[substudytype] ^definition = "A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined] Examples: Standard, Cycled-simple."
 * condition[substudytype] from PqcmcStudyTypeTerminology (required)
 * condition[storage] ^short = "Storage Conditions Temp.RH"
+* condition[storage] ^definition = "The temperature and the relative humidity under which the study was performed. [Source: SME Defined] "
 * condition[storage] from PqcmcStorageConditionsTerminology (required)
 * condition[storagecategory] ^short = "Storage Condition Category"
+* condition[storagecategory] ^definition = "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
 * condition[storagecategory] from PqcmcStorageConditionCategoryTerminology (required)
 * condition[orientation] ^short = "Container Orientation"
+* condition[orientation] ^definition = "The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined] Examples: horizontal, upright."
 * condition[orientation] from PqcmcContainerOrientationTerminology (required)
 * period 1..1 MS
 * period.start 1..1 MS
@@ -176,7 +178,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * code.text 1..1 MS
 * subject 1..1 MS
 * subject only Reference(DrugProductBatch or DrugSubstanceBatch)
-* subject ^short = "A single medication batch-lot or a single subtance batch-lot"
+* subject ^short = "A batch placed under study to determine the maintained performance parameters over time."
 * performer 1..1 MS
 * performer only Reference(MfgTestSiteOrganization)
 * performer ^short = "Test Site"
@@ -196,8 +198,8 @@ Description: "Summary of the types of studies conducted (forced degradation, pho
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
 * identifier 1..1 MS
 * status MS
-//* subjectReference 1..1 MS
-//* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
+* subjectReference 1..1 MS
+* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
 * goal.target 1..1 MS
 * goal.target.detail[x] only Quantity
 * goal.target.detailQuantity 0..1 MS
@@ -219,8 +221,8 @@ Note: this is typically months.
 * goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology (required)
 * action 1..1 MS
 * action ^short = "Expiry or Retest per storage condidtion"
-//* action.description 0..1 MS
-//* action.description ^short = "Stability Summary of storage conditions and intervals"
+* action.description 0..1 MS
+* action.description ^short = "Stability Summary of storage conditions and intervals"
 * action.code MS
 * action.code.coding.code ^short = "Storage Condition for Expiry Period| Storage Condition for Retest Period"
 * action.code.coding.code ^definition = """***Storage Condition for Expiry Period:*** The storage condition associated with the expiry period. [Source: SME defined] 

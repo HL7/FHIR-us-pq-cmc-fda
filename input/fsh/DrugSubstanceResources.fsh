@@ -56,8 +56,11 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
 * characterization.file 0..1 MS
-* characterization.file ^short = "Anlaysis Graphic"
-* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* characterization.file ^short = "Analysis Graphic"
+* characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OH
+"""
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * molecularWeight 0..1 MS
@@ -74,11 +77,12 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 //* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
-* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
+* structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]
+Biopolymer Sequence: TBD
+"""
 * structure.technique MS
-* structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+* structure.technique ^short = "Substance Characterization Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -89,13 +93,16 @@ Examples: SMILES, MOLFILE, HELM, etc.
 """
 * structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
 * structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Drug Substance Structural Representation"
-* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
- """
+* structure.representation.representation ^short = "Structural Representation"
+* structure.representation.representation ^definition = """A machine readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM, etc.
+Note: If the UNII for the substa is submitted (i.e., the substance exists in GSRS), then this does not have to be included in the submission.
+NOTE: SDF files are now accepted thru eCTD."""
 * structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document ^short = "Substance Structure Graphic"
+* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG.
+"""
 * structure.representation.document only Reference(Base64DocumentReference)
 // $UNII  $UNIPROT  //element(*,SubstanceDefinition)/code/code/coding/system
 
@@ -156,16 +163,18 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
 * characterization.file 0..1 MS
-* characterization.file ^short = "Anlaysis Graphic"
-* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* characterization.file ^short = "Analysis Graphic"
+* characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+"""
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure 0..1 MS
 //* structure obeys cmc-representation-or-document
 * structure.technique MS
-* structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+* structure.technique ^short = "Impurity Substance Characterization Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation MS
@@ -186,7 +195,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 """
 * structure.representation.document 0..1 MS
 * structure.representation.document ^short = "Impurity Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the impurity. [Source: SME Defined]"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the impurity substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD' Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."
 * structure.representation.document only Reference(Base64DocumentReference)
 
 //element(*,SubstanceDefinition)/code/code/coding
@@ -224,11 +233,10 @@ Description: "Alternate structure present in the drug substance"
 * structure 0..1 MS
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula"
-* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
+* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]"
 * structure.technique 0..1 MS
-* structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+* structure.technique ^short = "Substance Characterization Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -239,10 +247,14 @@ Examples: SMILES, MOLFILE, HELM, etc.
 """
 * structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
 * structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Drug Substance Structural Representation"
-* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
- """
+* structure.representation.representation ^short = "Structural Representation"
+* structure.representation.representation ^definition = """A machine readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM, etc.
+
+Note: If the UNII for the substa is submitted (i.e., the substance exists in GSRS), then this does not have to be included in the submission.
+
+NOTE: SDF files are now accepted thru eCTD. 
+"""
 * structure.representation.document 0..1 MS
 * structure.representation.document only Reference(Base64DocumentReference)
 * code 0..1 MS
@@ -289,7 +301,7 @@ Examples: USP/NF, EP, Company Standard
 * structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
 * structure.representation.document 0..1 MS
 * structure.representation.document ^short = "Substance Structure Graphic"
-* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the "Acceptable File Formats for use in eCTD"
+* structure.representation.document ^definition = """A pictorial representation of the structure of the substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
 Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG.
 """
 * structure.representation.document only Reference(Base64DocumentReference)
@@ -305,8 +317,7 @@ Example: This is the representation of the molecule CH3OH, or the sequence SHLVE
 * code.code.coding[unii] ^short = "UNII"
 * code.code.coding[unii] ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
 Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
-"""
+Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/"""
 * code.code.coding[uniProt].system = $UNIPROT
 * code.code.coding[uniProt] ^short = "UniProt ID"
 * code.code.coding[uniProt] ^definition = """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
@@ -317,15 +328,14 @@ It is accessible at https://www.uniprot.org/
 * sourceMaterial 0..1 MS
 * sourceMaterial.type 0..1
 * sourceMaterial.type ^short = "Source Type"
-* sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
-Example: cat hair would be an Animal source type """
+* sourceMaterial.type ^definition = "A classification that provides the origin of the raw material. [Source: SME Defined]"
 * sourceMaterial.type.coding from PqcmcSourceTypeTerminology (required)
 * sourceMaterial.genus 0..1 MS
 * sourceMaterial.genus.coding 0..0
 * sourceMaterial.genus.text 1..1
 * sourceMaterial.genus.text ^short = "Source Organism"
 * sourceMaterial.genus.text ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
 """
 * sourceMaterial.species 0..1 MS
 * sourceMaterial.species ^short = "Source Organism"
@@ -375,18 +385,21 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength.presentationRatio 0..1 MS
 * substance.strength.presentationRatio.numerator 1..1 MS
 * substance.strength.presentationRatio.numerator.value ^short = "Product Ingredient Amount Numeric Numerator"
-* substance.strength.presentationRatio.numerator.value ^definition = "Specifies the quantity of an ingredient in a single unit of the drug product. [Source: SME Defined]"
+* substance.strength.presentationRatio.numerator.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
+Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
+"""
 * substance.strength.presentationRatio.numerator.value 1..1 MS
 * substance.strength.presentationRatio.numerator.unit 1..1 MS
 * substance.strength.presentationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
 * substance.strength.presentationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
-Example: mg]
-"""
+Example: mg"""
 * substance.strength.presentationRatio.numerator.code 1..1 MS
 * substance.strength.presentationRatio.numerator.code from  PqcmcUnitsMeasureTerminology (required)
 * substance.strength.presentationRatio.denominator 1..1 MS
 * substance.strength.presentationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
-* substance.strength.presentationRatio.denominator.value  ^definition = "Specifies the quantity of the ingredient (s) consistent with this single unit of drug product. [Source: SME Defined]"
+* substance.strength.presentationRatio.denominator.value  ^definition = """Specifies the quantity of the ingredient(s) consistent with this single dose unit (e.g., one tablet, capsule) of drug product. [Source: SME Defined]
+Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Denominator = 1
+"""
 * substance.strength.presentationRatio.denominator.value 1..1 MS
 * substance.strength.presentationRatio.denominator.unit 1..1 MS
 * substance.strength.presentationRatio.denominator.code 1..1 MS
@@ -395,8 +408,8 @@ Example: mg]
 * substance.strength.presentationQuantity 0..1 MS
 * substance.strength.presentationQuantity.value 1..1 MS
 * substance.strength.presentationQuantity.value ^short = "Product Ingredient Amount Numeric"
-* substance.strength.presentationQuantity.value ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
-Example: mg]
+* substance.strength.presentationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
+Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
 """
 * substance.strength.presentationQuantity.unit 1..1
 * substance.strength.presentationQuantity.code 1..1
@@ -431,9 +444,9 @@ Description: "The amount details about the drug product ingredients in the batch
       WeightToWeight 0..1 MS
 * substance.strength[Weight] obeys cmc-percent-quantity-ingredient      
 * substance.strength[Weight].concentrationQuantity.value 1..1 MS
-* substance.strength[Weight].concentrationQuantity.value ^short = "Ingredient Quanty Per Product Batch"
-* substance.strength[Weight].concentrationQuantity.value ^definition = """Quantity: The concentration of material in a specific batch size [Source: SME Defined]
-Example: 1000 kg
+* substance.strength[Weight].concentrationQuantity.value ^short = "Component Quantity Per Batch"
+* substance.strength[Weight].concentrationQuantity.value ^definition = """Component Quantity Per Batch: Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
+
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
 """
 * substance.strength[Weight].concentrationQuantity.unit 1..1 MS
@@ -441,24 +454,24 @@ Quantity UOM: A named quantity in terms of which other quantities are measured o
 * substance.strength[Weight].concentrationQuantity.code from PqcmcUnitsMeasureTerminology (required)
 
 * substance.strength[VolumeToVolume].concentrationQuantity.value 1..1 MS
-* substance.strength[VolumeToVolume].concentrationQuantity.value ^short = "Percent Ingredient Quanty Per Product Batch"
-* substance.strength[VolumeToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Volume To Volume: The concentration of material in a specific batch size [Source: SME Defined]
-Example: 1000 kg
+* substance.strength[VolumeToVolume].concentrationQuantity.value ^short = "Quantity Percent"
+* substance.strength[VolumeToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
+
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
 """
 * substance.strength[VolumeToVolume].concentrationQuantity.code = $NCIT#C48571 "%{VolumeToVolume}"
 
 * substance.strength[WeightToVolume].concentrationQuantity.value 1..1 MS
-* substance.strength[WeightToVolume].concentrationQuantity.value ^short = "Percent Ingredient Quanty Per Product Batch"
-* substance.strength[WeightToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Volume: The concentration of material in a specific batch size [Source: SME Defined]
-Example: 1000 kg
+* substance.strength[WeightToVolume].concentrationQuantity.value ^short = "Quantity Percent"
+* substance.strength[WeightToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Volume: TThe percentage of the component in the batch [Source: SME Defined]
+
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
 """
 * substance.strength[WeightToVolume].concentrationQuantity.code =  $NCIT#C48527 "%{WeightToVolume}"
 * substance.strength[WeightToWeight].concentrationQuantity.value 1..1 MS
-* substance.strength[WeightToWeight].concentrationQuantity.value ^short = "Percent Ingredient Quanty Per Product Batch"
-* substance.strength[WeightToWeight].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Weight: The concentration of material in a specific batch size [Source: SME Defined]
-Example: 1000 kg
+* substance.strength[WeightToWeight].concentrationQuantity.value ^short = "Quantity Percent"
+* substance.strength[WeightToWeight].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined]
+
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
 """
 * substance.strength[WeightToWeight].concentrationQuantity.code = $NCIT#C48528 "%{WeightToWeight}"
@@ -800,22 +813,28 @@ Description: "Drug Substance Impurities"
 * characterization.form.text ^short = "Form"
 * characterization.form.text ^definition = ""
 * characterization.description 0..1 MS
-* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
-* characterization.description ^definition = ""
+* characterization.description ^short = "Analytical Instrument Data File Type Narrative Text"
+* characterization.description ^definition = "The description or justification in support of the interpretation of the data file. [Source: SME Defined]."
 * characterization.file 0..1 MS
-* characterization.file ^short = "Anlaysis Graphic"
-* characterization.file ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* characterization.file ^short = "Analysis Graphic"
+* characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OH
+"""
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure MS
 //* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
-* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
+* structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]
+Biopolymer Sequence: TBD
+"""
 * structure.technique MS
-* structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+* structure.technique ^short = " 	
+
+Substance Characterization Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -831,8 +850,9 @@ Examples: SMILES, MOLFILE, HELM, etc.
 Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
  """
 * structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document ^short = "Substance Structure Graphic"
+* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
+ Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
 * structure.representation.document only Reference(Base64DocumentReference)
 * code MS
 * code.code
@@ -887,11 +907,14 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 //* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
-* structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance. [Source: SME Defined]"
+* structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]
+Biopolymer Sequence: TBD
+"""
 * structure.technique 1..1 MS
-* structure.technique ^short = "Substance Structure Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+* structure.technique ^short = " 	
+
+Substance Characterization Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -907,8 +930,9 @@ Examples: SMILES, MOLFILE, HELM, etc.
 Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
  """
 * structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"
+* structure.representation.document ^short = "Substance Structure Graphic"
+* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
+ Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
 * structure.representation.document only Reference(Base64DocumentReference)
 * code MS
 * code.code
@@ -934,7 +958,10 @@ It is accessible at https://www.uniprot.org/
 
 RuleSet: SubstanceNames
 * name 1..* MS
-* name ^short = "Only one name required"
+* name ^short = "Subtance Name"
+* name ^definition = """Substance Name is identified by its Substance Type. Substance Type: Identifies the source that assigned the product ingredient name. [Source: SME Defined]
+Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
+"""
 * name obeys cmc-name-preferred
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding" //element(*,SubstanceDefinition)/name/type/coding/code
@@ -956,7 +983,7 @@ RuleSet: SubstanceNames
 
 * name[sys].name 1..1 MS
 * name[sys].name ^short = "Systematic"
-* name[sys].name ^definition = """TDB [Source: SME Defined]
+* name[sys].name ^definition = """A name derived directly from the chemical structure. [Source: SME Defined]
 """
 * name[sys].type 1..1 MS
 * name[sys].type.coding 1..1 MS
@@ -964,16 +991,14 @@ RuleSet: SubstanceNames
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
-* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
-Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
-"""
+* name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
 * name[sub].type.coding = $NCIT#138 "Generic"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
-* name[brand].name ^definition = """TDB [Source: SME Defined]
+* name[brand].name ^definition = """The part of the name or logo associated with a specific product or service identifying and distinguishing it from varieties of the same product or service marketed by competing companies.
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
@@ -981,23 +1006,21 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
-* name[comn].name ^definition = """TDB [Source: SME Defined]
-"""
+* name[comn].name ^definition = """The generally used, literal identifier of the entity."""
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
 * name[comn].type.coding = $NCIT#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
-* name[gsrs].name ^definition = """TDB [Source: SME Defined]
-"""
+* name[gsrs].name ^definition = """Default display name identified within FDA Global Substance Registration System (GSRS)."""
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
 * name[gsrs].type.coding = $NCIT#141 "GSRS Preferred"
 
 * name[usp].name 1..1 MS
 * name[usp].name ^short = "USP/NF"
-* name[usp].name ^definition = """TDB [Source: SME Defined]
+* name[usp].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Pharmacopeia (USP) and excipients by the National Formulary (NF). [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
 * name[usp].type.coding 1..1 MS
@@ -1005,7 +1028,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[comp].name 1..1 MS
 * name[comp].name ^short = "Company Code"
-* name[comp].name ^definition = """Company Code An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+* name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
 * name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
@@ -1013,7 +1036,8 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
-* name[cas].name ^definition = """TDB [Source: SME Defined]
+* name[cas].name ^definition = """Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org]
+Example: CAS [103-90-2]
 """
 * name[cas].type 1..1 MS
 * name[cas].type.coding 1..1 MS
@@ -1021,7 +1045,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[inn].name 1..1 MS
 * name[inn].name ^short = "INN" 
-* name[inn].name ^definition = """TDB [Source: SME Defined]
+* name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/] Example: Paracetamol
 """
 * name[inn].type 1..1 MS
 * name[inn].type.coding 1..1 MS
@@ -1029,15 +1053,16 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[usan].name 1..1 MS
 * name[usan].name ^short = "USAN"
-* name[usan].name ^definition = """TDB [Source: SME Defined]
+* name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined] Example: acetaminophen
 """
 * name[usan].type 1..1 MS
 * name[usan].type.coding 1..1 MS
 * name[usan].type.coding = $NCIT#224 "USAN"
 
 * name[iupac].name 1..1 MS
-* name[iupac].name ^short = "IUPAC" 
-* name[iupac].name ^definition = """TDB [Source: SME Defined]
+* name[iupac].name ^short = "IUPAC Name" 
+* name[iupac].name ^definition = """A name assigned to a chemical substance according to the systematic nomenclature rules defined by the International Union of Pure and Applied Chemistry (IUPAC) [Source: SME Defined] 
+Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
 * name[iupac].type.coding 1..1 MS
@@ -1045,7 +1070,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128" 
-* name[isbt].name ^definition = """TDB [Source: SME Defined]
+* name[isbt].name ^definition = """It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
 """
 * name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1 MS
@@ -1056,7 +1081,11 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 RuleSet: ShortSetSubstanceNames
 * name 1..* MS
-* name ^short = "Only one name required"
+* name ^short = "Substance Name"
+* name ^definition = """Substance Name is identified by its Substance Type.
+Substance Type | Product Part Ingredient Name Type: Identifies the source that assigned the product ingredient name. [Source: SME Defined]
+Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
+"""
 * name obeys cmc-name-preferred
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type.coding" //element(*,SubstanceDefinition)/name/type/coding/code
@@ -1069,24 +1098,21 @@ RuleSet: ShortSetSubstanceNames
   isbt 0..1 MS
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
-* name[sub].name ^definition = """A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined]
-Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT BR: Substance Name and the following identifiers (CAS, INN, USAN, IUPAC) collectively are providing the name, depending on the Substance Type (in IDMP), one of these identifiers is mandatory.
-"""
+* name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
 * name[sub].type.coding = $NCIT#138 "Generic"
 
 * name[comn].name 1..1 MS
 * name[comn].name ^short = "Common"
-* name[comn].name ^definition = """TDB [Source: SME Defined]
-"""
+* name[comn].name ^definition = """TThe generally used, literal identifier of the entity."""
 * name[comn].type 1..1 MS
 * name[comn].type.coding 1..1 MS
 * name[comn].type.coding = $NCIT#139 "Common"
 
 * name[gsrs].name 1..1 MS
 * name[gsrs].name ^short = "GSRS Preferred"
-* name[gsrs].name ^definition = """TDB [Source: SME Defined]
+* name[gsrs].name ^definition = """Default display name identified within FDA Global Substance Registration System (GSRS).
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
@@ -1094,7 +1120,7 @@ Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT 128" 
-* name[isbt].name ^definition = """TDB [Source: SME Defined]
+* name[isbt].name ^definition = """It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
 """
 * name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1 MS
