@@ -250,6 +250,15 @@ Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151&gt;; 21 CFR 610.13(b) Test for pyrogenic substances)
 Default 'Single Stage'.
 """
+* action.action.title 0..1 MS
+* action.action.title ^short = "Test Name | RRT (only reqired if different than above)"
+* action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+Note: as defined by the sponsor
+Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
+
+RRT: An alternative for test name when the RRT is used as an identifier for a substance, usually unknown.
+"""
 * action.action.description 0..1 MS
 * action.action.description ^short = "Test Additional Information | Stage Additional Information"
 * action.action.description ^definition = """Test Additional Information: Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
@@ -268,7 +277,7 @@ If there is more than one comment, include in this element.  Markdown allows for
 Examples: 1, 2, 3.
 """
 * action.action.action.extension[testOrder].valueDecimal 1..1 MS
-* action.action.action.title 0..1 MS
+* action.action.action.title 1..1 MS
 * action.action.action.title ^short = "Test Name  | RRT (complex testing)"
 * action.action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
