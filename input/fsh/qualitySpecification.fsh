@@ -213,7 +213,7 @@ Note: The full descriptor of the technique is part of the next data element - Re
 * action.reason 1..2 MS
 * action.reason ^short = "Test Category | Test Subcategory"
 * action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* action.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
+* action.reason.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
 * action.reason.coding.code 1..1 MS
 * action.reason.coding.code from PqcmcTestCategoryTerminology (required)
 * action.reason.coding.display  1..1
