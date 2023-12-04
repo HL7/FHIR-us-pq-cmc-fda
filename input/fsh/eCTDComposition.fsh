@@ -628,7 +628,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section.code = $SectionTypes#32S23 "Substance Control of Materials"
 * section.title 1..1 MS
 * section.entry 1..* MS
-* section.entry only Reference(ExcipientRaw)
+* section.entry only Reference(ectd-composition-sp4151)
 
 Profile: EctdComposition32S30
 Parent: Composition

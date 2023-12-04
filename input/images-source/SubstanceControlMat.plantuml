@@ -83,7 +83,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
 
 
 
-    N1 -[#darkred]-> N21
+    N1 -[#darkred]-> N2
     N2 -[#darkred]-> N21
     N1 -[#darkred]-> NSO
     N21 -[#darkred]-> N21mfg
