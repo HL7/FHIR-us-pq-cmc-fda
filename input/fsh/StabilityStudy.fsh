@@ -151,6 +151,7 @@ Example: Study Number- 565758
 Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film
 Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
 """
+* result MS
 * result ^short = "Link to stability study results"
 * result only Reference(StabilityStudyIntervalReport)
 

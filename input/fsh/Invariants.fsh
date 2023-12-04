@@ -104,3 +104,12 @@ Description: "Hierachial levels are greater than 0"
 Expression: "(detailInteger.count() > 0)  = true" 
 Severity: #error
 
+//Description: "unii or uniprot must exist or a code"
+
+//action.action.action.prefix  = "RRT"
+
+// action.prefix only "Single Stage or null"
+
+//if action.prefix = "Single Stage no action.action.prefix
+
+//if action.action.prefix != "Single Stage" and more than 1

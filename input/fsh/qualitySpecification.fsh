@@ -106,6 +106,8 @@ Note: This is different from Application Status"""
 * approvalDate ^definition = """The date on which the FDA approval status for a specification became effective. [Source: SME Defined]
 Note: If the application is not yet approved, then this is the date of the current submission OR the date of the complete response (CR).
 Note: This is not the application approval status date."""
+* goal MS
+* goal ^short = "Acceptance Criteria"
 * goal.description 1..1 MS
 * goal.description ^short = "Original Text"
 * goal.description ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
@@ -125,11 +127,11 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.documentation.display ^definition = """A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
-* goal.target ^short = "Acceptance Criteria"
+* goal.target ^short = "Acceptance Criteron"
 * goal.target.measure.text 0..1 MS
 * goal.target.measure.text ^short = "Detailed parameter being measured if more granular than Sub-Test"
 * goal.target.detail[x] MS
-* goal.target.detail[x] only Quantity or Range  or CodeableConcept or integer
+* goal.target.detail[x] only Quantity or Range or CodeableConcept or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "ValueNumeric"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
@@ -264,15 +266,11 @@ Note: A Stage may or may not provide a conditional sequence with associated acce
 Implememtation Note: not requried if action.prefix is 'Single Stage'
 """
 * action.action.title 0..1 MS
-* action.action.title ^short = "Test Name | RRT (only reqired if different than above)"
+* action.action.title ^short = "Test Name (only reqired if different than above)"
 * action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
 Note: as defined by the sponsor
 Note: The test name of the action.action can be different than the action.  Example,  the action test is Microbial Limits and the action.action test is Staphylococcus aureus.
-
-RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
-Example: 1:23 (a ratio)
-Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
 """
 * action.action.description 0..1 MS
 * action.action.description ^short = "Test Additional Information | Stage Additional Information"
@@ -291,6 +289,13 @@ Implementation Note: If there is more than one comment, include in this element.
 Implementation note: This is a decimaal value. Number the nested test by inheriting the value action.extension[testOrder]. For example, if the action.extension[testOrder] equals 3, then the first action.action.action.extension[testOrder] would be 3.1.
 """
 * action.action.action.extension[testOrder].valueDecimal 1..1 MS
+* action.action.action.prefix 0..1 MS
+* action.action.action.prefix ^short = "RRT"
+* action.action.action.prefix ^definition = """RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+Example: 1:23 (a ratio)
+Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
+
+Implementation Note:  This value can only be 'RRT'. It is used to desinate that RRT value(s) expressed in action.action.action.title are relative retention times."""
 * action.action.action.title 1..1 MS
 * action.action.action.title ^short = "Test Name | RRT (complex testing)"
 * action.action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
@@ -301,6 +306,8 @@ Note: The test name of the action.action can be different than the action.  Exam
 RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
 Example: 1:23 (a ratio)
 Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
+
+Implementation Note: For RRT, if there is a range associated with the unidentified peak then the range can be entered instead of indivual values.  E.g.:  0.4 – 0.8.
 """
 * action.action.action.description 0..1 MS
 * action.action.action.description ^short = "Test Additional Information | Stage Additional Information"

@@ -53,6 +53,7 @@
 <artifact id="ValueSet/pqcmc-container-orientation-terminology" key="ValueSet-pqcmc-container-orientation-terminology" name="Container Orientation Terminology"/>
 <artifact id="ValueSet/pqcmc-container-type-terminology" key="ValueSet-pqcmc-container-type-terminology" name="Container Type Terminology"/>
 <artifact id="StructureDefinition/content-percent" key="StructureDefinition-content-percent" name="Content Percent"/>
+<artifact id="StructureDefinition/optional-denominator" key="StructureDefinition-optional-denominator" name="Content Percent"/>
 <artifact id="StructureDefinition/cmc-document-reference" key="StructureDefinition-cmc-document-reference" name="Document Reference Attachment"/>
 <artifact id="Organization/7e34e5c1-5e95-400f-8f76-332dd096e735" key="Organization-7e34e5c1-5e95-400f-8f76-332dd096e735" name="Drug Manufacturing Site - Vandechemie"/>
 <artifact id="StructureDefinition/pqcmc-drug-product" key="StructureDefinition-pqcmc-drug-product" name="Drug Product"/>

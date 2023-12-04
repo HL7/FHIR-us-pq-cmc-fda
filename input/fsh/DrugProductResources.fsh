@@ -12,6 +12,22 @@ Description: "constituent content percent"
 Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
 """
 
+Extension: OptionalDenominator
+Id:  optional-denominator
+Title: "Content Percent"
+Description: "constituent content percent"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.amount"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent.amount"
+* value[x] 1..1
+* value[x] only Quantity
+
+* . ^short = "Product Part Total Weight Numeric Denominator | Product Part Ingredient Amount Numeric Denominator"
+* . ^definition = """Specifies the quantity of the ingredient(s) consistent with this single dose unit (e.g., one tablet, capsule) of drug product. [Source: SME Defined]
+Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Denominator = 1
+"""
+
 Extension: ContainerClosureExtension
 Id: pq-container-closure-extension
 Title: "Container Closure"
@@ -144,10 +160,11 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       CapConCnt 0..1 MS and
       Schematic 1..* MS and
       WgtTyp 1..1 MS and
-      TotWgtNum 0..1 MS and
+      TotWgtNum 1..1 MS and
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
-      TotWgtOper 0..1 MS
+      TotWgtOper 0..1 MS and
+      QualStd 0..1 MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].valueCodeableConcept 1..1 MS
@@ -255,6 +272,15 @@ Example: International Units for Enzymes"""
 Note: This is typically applicable to biologics.
 """
 * property[TotWgtOper].valueCodeableConcept from PqcmcStrengthOperatorTerminology
+* property[QualStd].type MS
+* property[QualStd].type = $NCIT#QualStd "Quality Standard"
+* property[QualStd].valueCodeableConcept 1..1 MS
+* property[QualStd].valueCodeableConcept ^short = "Product Total Weight Operator"
+* property[QualStd].valueCodeableConcept ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
+Examples: USP/NF, EP, Company Standard
+"""
+* property[QualStd].valueCodeableConcept from PqcmcQualityBenchmarkTerminology (required)
+
 
 // Product parts
 * component 1..* MS
@@ -271,8 +297,8 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 * component.function.text ^definition = """The main purpose for the part in the dosage form. [Source: SME Defined]
 Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
 """
-* component.amount.value 0..1 MS
 * component.amount.value 1..1 MS
+* component.amount.extension contains optional-denominator named WghtlDenom  0..1 MS	
 * component.amount.value ^short = "Product Part Total Weight Numeric Numerator"
 * component.amount.value ^definition = """Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
 Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
@@ -288,7 +314,8 @@ Example: mg
 // ingredient
 * component.constituent 1..* MS
 * component.constituent.extension contains content-percent named ConstituentPercent  1..1 MS	
-* component.constituent.amount 0..3  MS
+* component.constituent.amount 1..1  MS
+* component.constituent.amount.extension contains optional-denominator named OptionalDenom  0..1 MS	
 * component.constituent.amount.value 1..1 MS
 * component.constituent.amount.value ^short = "Product Part Ingredient Amount Numeric Numerator"
 * component.constituent.amount.value ^definition = """Specifies the quantity of an ingredient in a single part of the drug product. [Source: SME Defined]
@@ -419,6 +446,7 @@ Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Cont
 * component.property[AddInfo].value[x] only markdown
 * component.property[AddInfo].valueMarkdown ^short = "Product Part Additional Information"
 * component.property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
+Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
 * component.component 0..* MS
 
@@ -705,7 +733,7 @@ Note: If there is a new dosage form that does not exist in the controlled termin
 SME comment -- this is the marketed dosage form
 """
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
-* route 0..1 MS
+* route 1..* MS
 * route.coding.code 1..1 MS
 * route.coding.code ^short = "Product Route of Administration"
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
@@ -751,7 +779,7 @@ Description: "Includes the properties of the drug product and components. Profil
 * description ^short = "Drug Product Description"
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose."""
-* combinedPharmaceuticalDoseForm 0..1 MS
+* combinedPharmaceuticalDoseForm 1..1 MS
 * combinedPharmaceuticalDoseForm.coding.code 1..1 MS
 * combinedPharmaceuticalDoseForm.coding.code ^short = "Product Dosage Form"
 * combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
@@ -760,12 +788,14 @@ Note: If there is a new dosage form that does not exist in the controlled termin
 
 SME comment -- this is the marketed dosage form"""
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
+* route 0..1 MS
+* route ^short = "Route of Administration"
+* route ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
 * route.coding.code 1..1 MS
-* route.coding.code ^short = "Route of Administration"
-* route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
 * route.coding.code from SplDrugRouteofAdministrationTerminology (required)
 * insert ProprietaryAndNonProprietaryNames
-* crossReference.product MS
+* crossReference MS
+* crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"
 * crossReference.product only CodeableReference(DrugProductDescription)
 
