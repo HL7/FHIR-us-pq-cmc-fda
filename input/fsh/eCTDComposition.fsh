@@ -625,7 +625,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section 1..* MS
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included under the 3.2.S.2.3 eCTD heading."
-* section.code = $SectionTypes#32S23 "Substance Control of Materials"
+* section.code = $SectionTypes#32S231 "Raw Material Specification"
 * section.entry 1..* MS
 * section.entry only Reference(QualitySpecification)
 

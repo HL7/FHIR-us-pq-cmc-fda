@@ -459,6 +459,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #32S21 "Substance Manufacturers"	
 * #32S22 "Substance Description of Manufacturing Process and Process Controls"	
 * #32S23 "Substance Control of Materials"	
+* #32S231 "Raw Material Specification"
 * #32S24 "Substance Controls of Critical Steps and Intermediates"	
 * #32S25 "Substance Process Validation and/or Evaluation"	
 * #32S26 "Substance Manufacturing Process Development"	
