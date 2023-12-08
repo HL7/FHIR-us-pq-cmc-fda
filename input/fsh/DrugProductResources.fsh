@@ -167,6 +167,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       QualStd 0..1 MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
+* property[OvrRelsProf].type from pqcmc-product-characteristic
 * property[OvrRelsProf].valueCodeableConcept 1..1 MS
 * property[OvrRelsProf].valueCodeableConcept ^short = "Product Overall Release Profile"
 * property[OvrRelsProf].valueCodeableConcept ^definition = """The overall release profile is the drug release profile (e.g., IR, DR, or ER-USP nomenclature) that is achieved by the drug delivery system used in the dosage form design as evident from the pharmacokinetic plasma drug concentration versus time curve (this is currently focused on solids).
@@ -176,6 +177,7 @@ For example, a capsule filled with IR and DR beads will exhibit an ER release pr
 
 * property[OvrRelsMech].type MS
 * property[OvrRelsMech].type = $NCIT#OvrRelsMech "Product Overall Release Mechanism"
+* property[OvrRelsMech].type from pqcmc-product-characteristic
 * property[OvrRelsMech].valueCodeableConcept 1..1 MS
 * property[OvrRelsMech].valueCodeableConcept ^short = "Product Overall Release Mechanism"
 * property[OvrRelsMech].valueCodeableConcept ^definition = """TThe dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
@@ -183,12 +185,14 @@ For example, a capsule filled with IR and DR beads will exhibit an ER release pr
 * property[OvrRelsMech].valueCodeableConcept.coding from PqcmcReleaseMechanism
 
 * property[CoatInd].type MS
+* property[CoatInd].type from pqcmc-product-characteristic
 * property[CoatInd].type = $NCIT#CoatInd "Coating Indicator"
 * property[CoatInd].valueBoolean 1..1 MS
 * property[CoatInd].valueBoolean ^short = "Product Coating Indicator"
 * property[CoatInd].valueBoolean ^definition = "A property that identifies whether the drug product contains any coatings. [Source: SME Defined]"
 
 * property[LayCnt].type MS
+* property[LayCnt].type from pqcmc-product-characteristic
 * property[LayCnt].type = $NCIT#TabLayCnt "Tablet Layer Count"
 * property[LayCnt].value[x] 1..1 MS
 * property[LayCnt].value[x] only Quantity
@@ -198,6 +202,7 @@ Note: Non-layered tablets will be considered as one layer tablets."""
 * property[LayCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[BeaTypCnt].type MS
+* property[BeaTypCnt].type from pqcmc-product-characteristic
 * property[BeaTypCnt].type = $NCIT#BeaTypCnt "Product Tablet Bead Type Count"
 * property[BeaTypCnt].value[x] 1..1 MS
 * property[BeaTypCnt].value[x] only Quantity
@@ -208,13 +213,15 @@ Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet B
 * property[BeaTypCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[CapClass].type MS
+* property[CapClass].type from pqcmc-product-characteristic
 * property[CapClass].type = $NCIT#CapClass "Capsule Classification Category"
 * property[CapClass].valueCodeableConcept 1..1 MS
-* property[CapClass].valueCodeableConcept ^short = " Capsule Shell Part Classification Category"
+* property[CapClass].valueCodeableConcept ^short = "Capsule Shell Part Classification Category"
 * property[CapClass].valueCodeableConcept ^definition = "Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]"
 * property[CapClass].valueCodeableConcept.coding from PqcmcCapsuleClassificationCategory
 
 * property[CapConCnt].type MS
+* property[CapConCnt].type from pqcmc-product-characteristic
 * property[CapConCnt].type = $NCIT#CapConCnt "Capsule Constituent Count"
 * property[CapConCnt].value[x] 1..1 MS
 * property[CapConCnt].value[x] only Quantity
@@ -225,12 +232,14 @@ Example: For the case of a capsule shell filled with one type of bead and a mini
 * property[CapConCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[Schematic].type MS
+* property[Schematic].type from pqcmc-product-characteristic
 * property[Schematic].type = $NCIT#Schematic "Product Schematic"
 * property[Schematic].valueAttachment 1..1 MS
 * property[Schematic].valueAttachment ^short = "Product Schematic"
 * property[Schematic].valueAttachment ^definition = "The pictorial representation of the drug product. [Source: SME Defined]"
 
 * property[WgtTyp].type MS
+* property[WgtTyp].type from pqcmc-product-characteristic
 * property[WgtTyp].type = $NCIT#WgtTyp "Product Weight Type"
 * property[WgtTyp].valueCodeableConcept 1..1 MS
 * property[WgtTyp].valueCodeableConcept ^short = "Product Weight Type"
@@ -239,6 +248,7 @@ Example: Mass, Activity"""
 * property[WgtTyp].valueCodeableConcept.coding from PqcmcStrengthTypeTerminology
 
 * property[TotWgtNum].type MS
+* property[TotWgtNum].type from pqcmc-product-characteristic
 * property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
 * property[TotWgtNum].value[x] 1..1 MS
 * property[TotWgtNum].value[x] only Quantity
@@ -248,6 +258,7 @@ Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 * property[TotWgtNum].valueQuantity.code from PqcmcUnitsMeasureTerminology
 
 * property[TotWgtDen].type MS
+* property[TotWgtDen].type from pqcmc-product-characteristic
 * property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].value[x] 1..1 MS
 * property[TotWgtDen].value[x] only Quantity
@@ -257,6 +268,7 @@ Note: For solid oral dose forms, by definition this is 1
 """
 * property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
 * property[TotWgtTxt].type MS
+* property[TotWgtTxt].type from pqcmc-product-characteristic
 * property[TotWgtTxt].type = $NCIT#TotWgtTxt "Total Weight Textual"
 * property[TotWgtTxt].value[x] 1..1 MS
 * property[TotWgtTxt].value[x] only markdown
@@ -265,6 +277,7 @@ Note: For solid oral dose forms, by definition this is 1
 Note: This is typically applicable to biologics
 Example: International Units for Enzymes"""
 * property[TotWgtOper].type MS
+* property[TotWgtOper].type from pqcmc-product-characteristic
 * property[TotWgtOper].type = $NCIT#TotWgtOper "Total Weight Operator"
 * property[TotWgtOper].valueCodeableConcept 1..1 MS
 * property[TotWgtOper].valueCodeableConcept ^short = "Product Total Weight Operator"
@@ -273,14 +286,14 @@ Note: This is typically applicable to biologics.
 """
 * property[TotWgtOper].valueCodeableConcept from PqcmcStrengthOperatorTerminology
 * property[QualStd].type MS
+* property[QualStd].type from pqcmc-product-characteristic
 * property[QualStd].type = $NCIT#QualStd "Quality Standard"
 * property[QualStd].valueCodeableConcept 1..1 MS
-* property[QualStd].valueCodeableConcept ^short = "Product Total Weight Operator"
+* property[QualStd].valueCodeableConcept ^short = "Product Quality Standard"
 * property[QualStd].valueCodeableConcept ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
 * property[QualStd].valueCodeableConcept from PqcmcQualityBenchmarkTerminology (required)
-
 
 // Product parts
 * component 1..* MS

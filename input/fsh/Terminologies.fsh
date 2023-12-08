@@ -465,7 +465,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 * #32S26 "Substance Manufacturing Process Development"	
 * #32S30 "Substance Characterization"	
 * #32S31 "Substance Elucidation of Structure and other Characteristics"	
-* #32S32 "Substance Impurities"	
+* #32S32 "Substance Impurities"
 * #32S40 "Substance Control of Drug Substance"	
 * #32S41 "Substance Specification"	
 * #32S42 "Substance Analytical Procedures"	

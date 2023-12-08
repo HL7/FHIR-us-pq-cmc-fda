@@ -14,7 +14,7 @@ extension:
     valueCode: brr
 publisher:
   name: HL7 International / Biomedical Research and Regulation 
-  url: 'http://www.hl7.org/Special/committees/rcrim/index.cfm'  
+  url:  'http://www.hl7.org/Special/committees/rcrim' 
   email: brr@lists.HL7.org
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 menu:
@@ -92,8 +92,6 @@ parameters:
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-comp-section-types
     - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-relationship-types
-    - http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-product-name-types
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl/TempCCT
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-part-type
     - http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-release-profile
 # apply-version: true

@@ -219,6 +219,7 @@ If there is more than one comment, include in this element.  Markdown allows for
 //element(*,PlanDefinition)/action/code/coding
 * action.code.coding.code 1..1 MS
 * action.code.coding.code from PqcmcTestMethodOriginTerminology (required)
+* action.code.text 1..1 MS
 * action.code.text ^short = "Analytical Procedure"
 * action.code.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 """
@@ -265,7 +266,7 @@ Note: A Stage may or may not provide a conditional sequence with associated acce
 
 Implememtation Note: not requried if action.prefix is 'Single Stage'
 """
-* action.action.title 0..1 MS
+* action.action.title 0..1 MS 
 * action.action.title ^short = "Test Name (only reqired if different than above)"
 * action.action.title ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
@@ -277,6 +278,18 @@ Note: The test name of the action.action can be different than the action.  Exam
 * action.action.description ^definition = """Placeholder for providing any comments that are relevant to the Test. [Source: SME Defined].
 
 Implementation Note: If there is more than one comment, include in this element.  Markdown allows formating for clarity.
+"""
+* action.action.documentation 0..* MS
+* action.action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
+* action.action.documentation.document  1..1 MS
+* action.action.documentation.document ^short = "Test or Stage Additional Information Visual Attachments"
+* action.action.documentation.document ^definition = """Any visual data described andor referenced in additional informatation"""
+* action.action.documentation.document.contentType 1..1 MS
+* action.action.documentation.document.data 1..1 MS
+* action.action.documentation.document.title 1..1 MS 
+* action.action.documentation.document.title ^short = "Document file name including the file extension"
+* action.action.documentation.document.title ^definition = """A format or abbreviation name that identifies a file structure. [Source: SME Defined]
+Used for the following: Analytical Instrument Data File Type, Impurity Analysis Graphic, Impurity Analytical Instrument Data File, Impurity Chemical Structure Data File, and Substance Structure Graphic.
 """
 * action.action.goalId 0..* MS
 * action.action.goalId ^short = "Reference to Acceptance Criteria"

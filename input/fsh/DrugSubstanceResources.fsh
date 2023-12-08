@@ -831,9 +831,7 @@ Example: This is the representation of the instrumental output for the molecule 
 Biopolymer Sequence: TBD
 """
 * structure.technique MS
-* structure.technique ^short = " 	
-
-Substance Characterization Technique"
+* structure.technique ^short = "Substance Characterization Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
@@ -911,9 +909,7 @@ Description: "Drug Substance (Active Ingredient) molecular structure. Profile on
 Biopolymer Sequence: TBD
 """
 * structure.technique 1..1 MS
-* structure.technique ^short = " 	
-
-Substance Characterization Technique"
+* structure.technique ^short = "Substance Characterization Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
