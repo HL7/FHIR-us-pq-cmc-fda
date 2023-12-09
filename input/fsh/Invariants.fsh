@@ -12,16 +12,19 @@ implies code.code.text.exists()"
 Severity: #error
 
 Invariant: cmc-name-isbt
-Description: "Name.type ISBT 128 requried for blood products."
-Expression: "(classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists()) implies ((name.type.coding.code = '226').exists())"
+Description: "Name.type ISBT 128 required for blood products."
+Expression: "classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://examples.com')"
 Severity: #error
-
+// Note: 8 is the code for for "Structurally Diverse Subtsance - Blood derived"
+// and 226 is the code for "ISBT 128" in substance name type. $NCIT is currently 
+// examples.com so that's the system it checks for
 Invariant: cmc-ingredient-functions
 Description: "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.
 If Drug Product Component Function Category onstituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "function.coding.where(code = 'C42637' and version = 'function').exists() implies function.coding.code.count() = 2"
+Expression: "constituent.function.coding.where(code = 'C42637' and version = 'function' and system = 'http://examples.com').exists() implies constituent.function.coding.code.count() = 2"
 Severity: #error
-
+// Note: coding.version is being used do differentiate between the two function
+// slices: function and category
 Invariant: cmc-substance-structure-graphic-required
 Description: "A Substance Structure Graphic is required Required for Small Molecules. Equivalent to classification  code equals 'Chemical'."
 Expression: "(classification.where(coding.where(code = '1' and system = 'https://www.ema.europa.eu').exists()).exists()) implies structure.representation.exists()"
@@ -40,39 +43,38 @@ Severity: #error
 
 Invariant: cmc-strength-type-cases1
 Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory"
-Expression: "strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C168628').exists()
-implies strength.ofType(Ratio).exists() or ((strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('strengthFactors').extension('strengthOperator').exists().not()))"
+Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C168628').exists()
+implies strength.ofType(Ratio).exists() or ((strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/strength-extension').extension('strengthOperator').exists().not()))"
 Severity: #error
 
 Invariant: cmc-strength-type-cases2
 Description: "IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
-Expression: "strength.extension('strengthFactors').extension('strengthType').value.where(value = 'C45420').exists()
+Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C45420').exists()
 implies ((strength.ofType(Ratio).exists() and strength.ofType(Ratio).numerator.code = 'C75765').exists())
 or ((strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists())"
 Severity: #error
 
 Invariant: cmc-ppidref-required
 Description: "A PPiDref is required when the PPiD is designated a child."
-Expression: "(property.where(type.coding.system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-characteristic' and type.coding.code = 'PPiD').exists() and
-property.where(value.coding.system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-relationship-types' and value.coding.code = 'child').exists()
-) implies property.where(type.coding.system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-characteristic' and type.coding.code = 'PPiDref').exists()"
+Expression: "
+    property.where(
+        type.coding.exists(system = 'http://examples.com' and code = 'PPiD') and    
+        value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-relationship-types' and code = 'child')
+    ).exists()
+    implies 
+        property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-characteristic' and code = 'PPiDref')).exists()"
 Severity: #error
 
 Invariant: cmc-identifer
 Description: "A document must have an identifier with a system and a value"
-Expression: "type = 'document' implies (identifier.system.exists() and identifier.value.exists())"
+Expression: "type = 'document' implies (identifier.exists(system.exists() and value.exists()))"
 Severity: #error
 
 Invariant: cmc-first-resource
 Description: "A document must have a Composition as the first resource"
 Expression: "type = 'document' implies entry.first().resource.is(Composition)"
 Severity: #error
-
-Invariant: cmc-ectd-doc-1
-Description: "The fullUrl must be an  URI for UUID/OID"
-Severity: #error
-Expression: "$this.is(FHIR.oid) = true"   //of urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 
 Invariant: cmc-percent-quantity
 Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
@@ -101,15 +103,32 @@ Severity: #error
 
 Invariant: cmc-greater-than-zero
 Description: "Hierachial levels are greater than 0"
-Expression: "(detailInteger.count() > 0)  = true" 
+Expression: "(value > 0)  = true" 
 Severity: #error
 
-//Description: "unii or uniprot must exist or a code"
+Invariant: cmc-subtest-rrt 
+Description: "a subtest's prefix represents relative retention time, should it exist"
+Expression: "prefix.exists() implies prefix = 'RRT'"
+Severity: #error
 
-//action.action.action.prefix  = "RRT"
 
-// action.prefix only "Single Stage or null"
-
-//if action.prefix = "Single Stage no action.action.prefix
-
-//if action.action.prefix != "Single Stage" and more than 1
+Invariant: cmc-single-or-multistage
+Description: "if a test is multi-stage, the test can't have a prefix and its stages must have a name and can't be named 'Single Stage' and must be unique. If it's single stage its prefix is 'Single Stage' and its groups can't have prefixes"
+Expression: "(
+    prefix.exists() implies 
+        action.prefix.empty() and prefix = 'Single Stage'    
+) and (
+    prefix.empty() implies (
+        (action.where(
+            prefix.exists() and 
+            prefix != 'Single Stage'
+        ).count() = action.count()) and 
+        action.prefix.isDistinct()
+    )
+)"
+Severity: #error
+// Note: cmc-single-or-multistage gets evaluated on Plandefinition.action,
+// so action.prefix is a collection of all the nodes under a single test at 
+// that path. The number of actions where its prefix exists and isn't 
+// 'single stage' needs to be the total number of actions; otherwise one of 
+// them was 'single stage' or wasn't defined.

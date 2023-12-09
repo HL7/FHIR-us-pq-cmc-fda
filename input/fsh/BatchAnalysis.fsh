@@ -216,13 +216,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * identifier ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
 * status MS	
 * category 1..1 MS
-//* category.coding obeys cmc-sub-test-category-batch
+* category.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
 * category.coding 1..2 MS
 * category.coding ^short = "Test Category | Test Subcategory"
 * category.coding ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding from PqcmcTestCategoryTerminology (required)
 * category.coding.code 1..1 MS
-* category.coding.code from PqcmcTestCategoryTerminology (required)
-* category.coding.display  1..1
+* category.coding.display 1..1
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
 * code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]

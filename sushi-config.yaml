@@ -20,10 +20,11 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 menu:
   Home: index.html
   Table of Contents: toc.html
+  General Instructions: instruction.html
   eCTD Profiles (Stage 1):
-    Product Description and Composition of the Drug Product (3.2.P.1.0): eCTD32P10.html 
-    Substance General Information (3.2.S.1.0): eCTD32S10.html 
-    Substance Control of Materials (3.2.S.2.3): eCTD32S23.html 
+    Description and Composition of the Drug Product (3.2.P.1.0): eCTD32P10.html 
+    General Information (3.2.S.1.0): eCTD32S10.html 
+    Control of Materials (3.2.S.2.3): eCTD32S23.html 
     Specification (3.2.S.4.1, 3.2.P.4.1 & 3.2.P.5.1): eCTDSP4151.html 
   DRAFT eCTD Profiles:
     Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
@@ -34,7 +35,6 @@ menu:
     Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
     Stability Summary (3.2.S.7.1 & 3.2.P.8.1): eCTDSP7181.html
     Stability Data (3.2.S.7.3 & 3.2.P.8.3): eCTDSP7383.html
-  General Instructions: instruction.html
   Artifacts: artifacts.html
   Downloads: downloads.html
   Change Notes: change_notes.html
@@ -79,6 +79,7 @@ parameters:
  apply-wg: true
  special-url: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - https://gsrs.ncats.nih.gov
+    - https://example.org
     - https://www.uniprot.org
     - urn:oid:1.3.6.1.4.1.5193
     - http://unitsofmeasure.org

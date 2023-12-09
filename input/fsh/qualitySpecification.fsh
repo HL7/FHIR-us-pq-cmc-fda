@@ -55,7 +55,8 @@ Description: "The sequential number assigned to each Test or Stabe to specify th
 * ^context[=].expression = "PlanDefinition.action"
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action.action"
-* value[x] only decimal
+* value[x] obeys cmc-greater-than-zero
+* value[x] only decimal 
 
 Profile: QualitySpecification
 Parent: PlanDefinition
@@ -182,7 +183,7 @@ Note: A Stage may or may not provide a conditional sequence with associated acce
 Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
 """	
 * goal.target.due 0..0
-* action obeys cmc-link-required
+* action obeys cmc-link-required and cmc-single-or-multistage
 * action 1..* MS
 * action ^short = "Method"
 * action.extension contains pq-order-extension named testOrder 1..1 MS
@@ -228,8 +229,9 @@ If there is more than one comment, include in this element.  Markdown allows for
 * action.reason ^short = "Test Category | Test Subcategory"
 * action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
 * action.reason.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
+* action.reason.coding MS
+* action.reason.coding from PqcmcTestCategoryTerminology (required)
 * action.reason.coding.code 1..1 MS
-* action.reason.coding.code from PqcmcTestCategoryTerminology (required)
 * action.reason.coding.display  1..1
 * action.documentation 0..1 MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
@@ -295,6 +297,7 @@ Used for the following: Analytical Instrument Data File Type, Impurity Analysis 
 * action.action.goalId ^short = "Reference to Acceptance Criteria"
 
 * action.action.action 0..* MS
+* action.action.action obeys cmc-subtest-rrt
 * action.action.action ^short = "Sub-Test"
 * action.action.action.extension contains pq-order-extension named testOrder 1..1 MS
 * action.action.action.extension[testOrder] ^short = "Test Order"

@@ -14,13 +14,11 @@ The PQ/CMC Project is an evolving project and FDA is structuring the various sec
 
 The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG).  At HL7, this project is referred to as Pharmaceutical Quality.  BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
 
-
 ## Status:
 
 FDA plans to represent all the Phase 1 data elements and supporting terminology in FHIR Profiles defined here.  These data elements and controlled terminology have been published to the industry for comment through the Federal Register Notices (FRN).  These industry comments and suggestions have been incorporated in the data element standards, as applicable.  
 
 Note: See FDA PQ/CMC website for the scope of Phase 1 of PQ/CMC. In the near future, as FDA develops new structured data elements and terminology for Phase 2 sections of eCTD Module 3, they will solicit industry feedback and then represent the requirements in FHIR. These new requirements will result in additional FHIR profiles that will be added to this IG. 
-
 
 ## IG Overview
 

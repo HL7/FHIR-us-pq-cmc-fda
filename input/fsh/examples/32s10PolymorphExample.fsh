@@ -113,6 +113,7 @@ Usage: #example
 * identifier.value = "levoThyroxine"
 * classification = $EMAIDMP#1 "Chemical"	
 * manufacturer = Reference(276457ea-9268-42c5-aeb9-3c3a95ba2277)
+* code.code = $UNII#054I36CPMN
 * structure.technique.text = """NMR Spectroscopy"""
 * structure.representation[+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
 * structure.representation[=].type = $NCIT#C54683 "InChI File (small molecule)"
