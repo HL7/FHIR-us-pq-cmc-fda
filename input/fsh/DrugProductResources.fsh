@@ -134,7 +134,7 @@ Parent: ManufacturedItemDefinition
 Id: pqcmc-product-part
 Title: "Manufactured Drug Product"
 Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or compoent."
-
+* obeys cmc-capsule-count-required
 * meta.profile 1..1 MS
 * identifier 0..1 MS
 * status 1..1 MS
