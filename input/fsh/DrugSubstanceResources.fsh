@@ -86,6 +86,7 @@ Biopolymer Sequence: TBD
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
+* structure.representation obeys cmc-format-required
 * structure.representation.format 0..1 MS
 * structure.representation.format ^short = "Structural Representation Type"
 * structure.representation.format ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
@@ -158,6 +159,7 @@ Example: This is the representation of the instrumental output for the molecule 
 """
 * structure.technique.text 1..1 MS
 * structure.representation MS
+* structure.representation obeys cmc-format-required
 * structure.representation.format 0..1 MS
 * structure.representation.format ^short = "Drug Substance Impurity Method Type| Drug Product Impurity Method Type"
 * structure.representation.format ^definition = "The technique used to elucidate the structure or characterization of the impurity. [Source: SME Defined]"

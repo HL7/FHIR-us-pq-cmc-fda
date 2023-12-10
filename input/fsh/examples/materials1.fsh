@@ -222,7 +222,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC7 "Identification"
+  * reason[=].coding = $TestCats#TC7 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-001"
   * action[+]
@@ -250,7 +250,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC13 "Microbial Limits"
+  * reason[=].coding = $TestCats#TC13 "Microbial Limits"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-002"
   * action[+]
@@ -274,9 +274,9 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "UV"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC53 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#SUBC98 "elemental impurity"
+  * reason[=].coding = $TestCats#SUBC98 "elemental impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-003"
   * action[+]
@@ -304,9 +304,9 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC53 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#SUBC101 "residual solvent"
+  * reason[=].coding = $TestCats#SUBC101 "residual solvent"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-004"
   * goalId[+] = "28aba010-126e-4c47-8611-367cdacdd87e"
@@ -319,7 +319,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC53 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-005"
   * goalId[+] = "4b3aa353-3bc7-463f-b4c2-defd041da2c7"
@@ -332,7 +332,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC24 "Solubility"
+  * reason[=].coding = $TestCats#TC24 "Solubility"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-006"
   * goalId[+] = "8125f603-96e7-4f3e-8b13-c15c5870e6e6"
@@ -388,9 +388,9 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC6 "Organoleptic"
+  * reason[=].coding = $TestCats#TC6 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#SUBC20 "Description/Appearance"
+  * reason[=].coding = $TestCats#SUBC20 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
   * goalId[+] = "9bc2bfdf-c9b1-440a-bafe-89f2674341d4"
@@ -403,7 +403,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC7 "Identification"
+  * reason[=].coding = $TestCats#TC7 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
   * goalId[+] = "59e2c94a-d383-4776-9b00-3b97b0741c9a"
@@ -416,7 +416,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC23 "pH"
+  * reason[=].coding = $TestCats#TC23 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "a2ed2d13-e96a-4d7b-b825-c69afd334cf7"
@@ -429,7 +429,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC38 "Residue on Ignition"
+  * reason[=].coding = $TestCats#TC38 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "e046aab8-b10f-4e13-89e6-bfa869a90b38"
@@ -479,9 +479,9 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Colorimetry"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC6 "Organoleptic"
+  * reason[=].coding = $TestCats#TC6 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#SUBC22 "Color of solution"
+  * reason[=].coding = $TestCats#SUBC22 "Color of solution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-201"
   * goalId[+] = "1779ee35-8725-4322-ae82-89ed499f6864"
@@ -494,7 +494,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Spectrophotometer"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC51 "Turbidity"
+  * reason[=].coding = $TestCats#TC51 "Turbidity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-202"
   * goalId[+] = "2897e150-8465-48c7-9269-1cda86dc3075"
@@ -507,9 +507,9 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Smell"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC6 "Organoleptic"
+  * reason[=].coding = $TestCats#TC6 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#SUBC21 "Odor"
+  * reason[=].coding = $TestCats#SUBC21 "Odor"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-203"
   * goalId[+] = "9c86ccba-a210-4ce5-9a23-b145d9f123c6"
@@ -522,7 +522,7 @@ InstanceOf: QualitySpecification
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#TC20 "Hardness"
+  * reason[=].coding = $TestCats#TC20 "Hardness"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-204"
   * goalId[+] = "de0f0d85-5617-4b07-98fc-9976b2dbf216"
