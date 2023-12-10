@@ -24,6 +24,7 @@ Description: "A profile for the data elements required to identify the sponsor o
 * meta.profile 1..1 MS
 * insert DUNSandFEINumber
 * name 1..1 MS
+* contact 1..1
 * contact.address 1..1 MS
 * contact.address only PqAddress
 
@@ -65,6 +66,7 @@ Examples: Data Universal Number System (DUNS), Facility Establishment Identifier
 
 Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
 """
+* contact 1..1
 * contact.address 1..1 MS
 * contact.address ^short = "Manufacturing Site Physical Address | Testing Site Address"
 * contact.address ^definition = """Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
@@ -97,6 +99,7 @@ Examples: Data Universal Number System (DUNS), Facility Establishment Identifier
 * name ^short = "Supplier Name"
 * name ^definition = """Supplier Name: The name of the establishment (facilities) which supplies or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
 """
+* contact 1..1 MS
 * contact.address 1..1 MS
 * contact.address ^short = "Supplier Physical Address"
 * contact.address ^definition = """Supplier Physical Address: The complete address for the supplier.
