@@ -16,11 +16,19 @@
       <xsl:message terminate="yes">Unable to find 'ci-build' release listed in package-list</xsl:message>
     </xsl:if>
     <xsl:variable name="wgUrl" select="f:contact/f:telecom[f:system/@value='url'][1]/f:value/@value"/>
-    <xsl:if test="not(contains($wgUrl, $committeePageBase))">
-      <xsl:message terminate="yes">
-        <xsl:value-of select="concat('First &quot;url&quot; contact telecom must start with &quot;http://', $committeePageBase, '&quot;')"/>
-      </xsl:message>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="contains($wgUrl, 'hl7.eu') and contains($id, '.eu.')">
+        <!-- EU ok -->
+      </xsl:when>
+      <xsl:when test="contains($wgUrl, $committeePageBase)">
+        <!-- HL7 Int'l ok -->
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:message terminate="yes">
+          <xsl:value-of select="concat('First &quot;url&quot; contact telecom must start with &quot;http://www.', $committeePageBase, '&quot;')"/>
+        </xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:variable name="wgTail" select="substring-after($wgUrl, $committeePageBase)"/>
     <xsl:variable name="wgWebCode">
       <xsl:choose>
@@ -35,7 +43,7 @@
     <xsl:variable name="wg" select="/root/workgroups/workgroup[@webcode=$wgWebCode]/@key"/>
     <xsl:if test="$wg=''">
       <xsl:message terminate="yes">
-        <xsl:value-of select="concat('Unable to find Jira work group defined that corresponds with HL7 website http://', $committeePageBase, $wgWebCode, '.  If that URL resolves, please contact the HL7 webmaster.')"/>
+        <xsl:value-of select="concat('Unable to find Jira work group defined that corresponds with HL7 website http://www.', $committeePageBase, $wgWebCode, '.  If that URL resolves, please contact the HL7 webmaster.')"/>
       </xsl:message>
     </xsl:if>
     <xsl:for-each select="/root/package-list/package[@status='release']">
@@ -149,22 +157,58 @@
       <page name="(NA)" key="NA"/>
       <page name="(many)" key="many"/>
       <xsl:for-each select="/root/f:ImplementationGuide/f:definition//f:page[f:generation/@value[.='html' or .='markdown']]">
-        <xsl:variable name="pageId" select="substring-before(f:nameUrl/@value, '.html')"/>
+        <xsl:variable name="pageId">
+          <xsl:choose>
+            <xsl:when test="f:nameUrl">
+              <xsl:value-of select="substring-before(f:nameUrl/@value, '.html')"/>
+            </xsl:when>
+            <xsl:when test="f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/ig-page-name']">
+              <xsl:value-of select="substring-before(f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/ig-page-name']/f:valueUrl/@value, '.html')"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:message>
+                <xsl:copy-of select="."/>
+              </xsl:message>
+              <xsl:message terminate="yes">No page nameUrl or ig-pageName</xsl:message>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="name" select="f:title/@value"/>
-        <page name="{$name}" key="{$pageId}">
-          <xsl:for-each select="/root/specification/page[@id=$pageId or @name=$name or normalize-space(substring-before(@name, '('))=$name]">
-            <xsl:copy-of select="@*"/>
-          </xsl:for-each>
-        </page>
+        <xsl:if test="not(/root/specification/page/otherpage[@url=$pageId])">
+          <page name="{$name}" key="{$pageId}">
+<xsl:if test="$pageId='identification_rend_p1'">
+<xsl:message>Got here</xsl:message>
+</xsl:if>
+            <xsl:for-each select="/root/specification/page[@id=$pageId or @name=$name or normalize-space(substring-before(@name, '('))=$name]">
+              <xsl:copy-of select="@*|*"/>
+            </xsl:for-each>
+          </page>
+        </xsl:if>
       </xsl:for-each>
       <xsl:for-each select="/root/specification/page[not(@key='NA' or @key='many')]">
         <xsl:variable name="key" select="@key"/>
         <xsl:variable name="keyName" select="@name"/>
         <xsl:variable name="found">
           <xsl:for-each select="/root/f:ImplementationGuide/f:definition//f:page[f:generation/@value[.='html' or .='markdown']]">
-            <xsl:variable name="pageId" select="substring-before(f:nameUrl/@value, '.html')"/>
+            <xsl:variable name="pageId">
+              <xsl:choose>
+                <xsl:when test="f:nameUrl">
+                  <xsl:value-of select="substring-before(f:nameUrl/@value, '.html')"/>
+                </xsl:when>
+                <xsl:when test="f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/ig-page-name']">
+                  <xsl:value-of select="substring-before(f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/ig-page-name']/f:valueUrl/@value, '.html')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:message>
+                    <xsl:copy-of select="."/>
+                  </xsl:message>
+                  <xsl:message terminate="yes">No page nameUrl or ig-pageName</xsl:message>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
             <xsl:variable name="name" select="f:title/@value"/>
             <xsl:if test="$key=$pageId or $keyName=$name or normalize-space(substring-before($keyName, '('))=$name">yes</xsl:if>
+            <xsl:if test="/root/specification/page/otherpage[@url=$pageId]">yes</xsl:if>
           </xsl:for-each>
         </xsl:variable>
         <xsl:if test="$found=''">

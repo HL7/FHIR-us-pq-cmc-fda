@@ -1,5 +1,4 @@
 ### Bundle Overview
-**NOTE:** Strength Textual is commneted out until IG tooling supports the change to the elemenet.  Undetermined if the error was corrected in R4B. This profile will undergo major revision when part is added to ManufacturedItemDefintion.
 
 A batch formula should be provided that includes a list of all components of the dosage form to 
 be used in the manufacturing process, their amounts on a per batch basis, including overages, and 

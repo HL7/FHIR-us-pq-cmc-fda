@@ -9,77 +9,90 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.S.1.0 Bundle" as NODES {
-object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-32s10.html]]
-    }  
-  node "DrugSubstanceNomenclature" as NN { 
-      object "**Parent Profile:** SubstanceDefinition" as obj3 {
-          **Reference:**
+  object "**Bundle Reference:**" as objbun {
+    [[StructureDefinition-cmc-ectd-document-32s10.html]]
+  }
+
+  node "DrugSubstanceNomenclature" as NN {
+
+    object "**Parent Profile:** SubstanceDefinition" as obj3 {
+      **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-nomenclature.html]]
-        **ValueSets:**
-        EVMPDSubstanceClassification
-        Units Of Measure Terminology
-        Chemical Structure Data File Type Terminology
-        Code System PQCMC Name Types 
-      }  
-}
-  node "DrugSubstanceMolecularStructure" as N21 { 
-      object "**Parent Profile:** SubstanceDefinition" as obj22 {
-          **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-molecular-structure.html]]
-        **ValueSets:**
-        Chemical Structure Data File Type Terminology
-        Code System PQCMC Name Types
+      **ValueSets:**
+      EVMPD Substance Classification
+      Units Of Measure Terminology
+      Chemical Structure Data File Type Terminology
+      Substance Name Type
     }
-}
-node "Base64DocumentReference" as NB64 { 
-      object "**Parent:** DocumentReferencee"  as obj64 {  
-            **Reference:**
+  }
+  node "DrugSubstanceMolecularStructure" as N21 {
+
+    object "**Parent Profile:** SubstanceDefinition" as obj22 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-drug-substance-molecular-structure.html]]
+      **ValueSets:**
+      Chemical Structure Data File Type Terminology
+      Substance Name Type
+    }
+  }
+  node "Base64DocumentReference" as NB64 {
+
+    object "**Parent:** DocumentReferencee"  as obj64 {
+      **Reference:**
       [[StructureDefinition-cmc-document-reference.html]]
-}
-}
-  node "EctdComposition32S10" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-            **Reference:**
+    }
+  }
+  node "EctdComposition32S10" as N1 {
+
+    object "**Parent:** Composition" as obj1 {
+      **Reference:**
       [[StructureDefinition-ectd-composition-32s10.html]]
       **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }    
-}
-node "PolymorphicForm" as N2 { 
-      object "**Parent:** SubstanceDefinition" as obj2 {
-          **Reference:**
-      [[StructureDefinition-pqcmc-polymorphic-form.html]]
-        **ValueSets:**
-        EVMPDSubstanceClassification
-        Units Of Measure Terminology
-        Chemical Structure Data File Type Terminology
-        Code System PQCMC Name Types
-    }    
-}
- node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-    **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        GENC Country Codes
+      Code system PQCMC Comp Section Types
     }
-} 
-node "MfgTestSiteOrganization" as N21mfg { 
-    object "**Parent:** Organization" as objTS  {
-        **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-        **ValueSets:**
-         Manufacturing Site Unique Identifier Type
-         GENC Country Codes
-    }
-}
 
-N1 -[#darkred]-> N21
-N1 -[#darkred]-> NN
-NN -[#darkred]-> N2
-N2 -[#darkred]-> NB64
-N21 -[#darkred]-> NB64
-N1 -[#darkred]-> NSO
-NN -[#darkred]-> N21mfg
+  }
+  node "PolymorphicForm" as N2 {
+
+    object "**Parent:** SubstanceDefinition" as obj2 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-polymorphic-form.html]]
+      **ValueSets:**
+      EVMPD Substance Classification
+      Units Of Measure Terminology
+      Chemical Structure Data File Type Terminology
+
+    }
+
+  }
+  node "SponsorOrganization" as NSO {
+
+    object "**Parent:** Organization" as objAu {
+      **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+      Testing Site and Organization Identifier Type Terminology
+
+      GENC Country Codes
+    }
+  }
+
+  node "MfgTestSiteOrganization" as N21mfg {
+
+    object "**Parent:** Organization" as objTS  {
+      **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+      **ValueSets:**
+      Testing Site and Organization Identifier Type Terminology
+      GENC Country Codes
+    }
+  }
+
+  N1 -[#darkred]-> N21
+  N1 -[#darkred]-> NN
+  NN -[#darkred]-> N2
+  N2 -[#darkred]-> NB64
+  N21 -[#darkred]-> NB64
+  N1 -[#darkred]-> NSO
+  NN -[#darkred]-> N21mfg
 }
 @enduml

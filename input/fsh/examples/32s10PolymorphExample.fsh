@@ -5,19 +5,19 @@ Description: "SponsorOrganization - Large Life"
 Usage: #example 
 * name = "Large Life"
 * contact.address.line[0] = "123 Broad Way"
-* contact.address.state = "ny"
-* contact.address.city = "new york"
+* contact.address.state = "NY"
+* contact.address.city = "New York"
 * contact.address.country = "United States"
-* contact.address.postalCode = "100000"
-* contact.address.text = "test site A, 123 Broad Way, new york, ny, United States"
+* contact.address.postalCode = "100020"
+* contact.address.text = "123 Broad Way, New York, NY, United States"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
 
 Instance: 276457ea-9268-42c5-aeb9-3c3a95ba2277
 InstanceOf: MfgTestSiteOrganization
-Title: "Manufacturing Test Site (mfg site C)"
-Description: "Manufacture "
+Title: "East-West Manufacturing"
+Description: "Manufacture of Chemicals"
 Usage: #example 
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
@@ -27,12 +27,12 @@ Usage: #example
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
 * contact.address.line[0] = "100 Stillwater Avenue"
+* contact.address.state = "ME"
 * contact.address.city = "Bangor"
 * contact.address.country = "United States"
 * contact.address.postalCode = "04401"
-* contact.address.text = "MFG site C, 100 Stillwater Avenue, Building #2, bangor, me, United States"
+* contact.address.text = "East-West Manufacturing, 100 Stillwater Avenue, Building #2, Bangor, ME, United States"
 * contact.address.line[1] = "Building #2"
-* contact.address.state = "ME"
 
 Instance: 7e34e5c1-5e95-400f-8f76-332dd096e735
 InstanceOf: SupplierOrganization
@@ -72,7 +72,7 @@ Usage: #example
 * structure.representation[=].type = $NCIT#C54683 "InChI File (small molecule)"
 * structure.representation[+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
 * structure.representation[=].type = $NCIT#C54684 "SMILES"
-* structure.representation[+].document = Reference(fd006e04-8764-4d83-b6ee-bbf8f35847e0)
+* structure.representation[+].document = Reference(urn:uuid:fd006e04-8764-4d83-b6ee-bbf8f35847e0)
 * code.code = $UNII#0H00N2AHSP
 * name[gsrs].name = "DEXTROTHYROXINE SODIUM"
 * name[gsrs].preferred = true
@@ -92,17 +92,17 @@ Title: "Drug Substance Nomenclature"
 Description: "LEVOTHYROXINE SODIUM ANHYDROUS"
 Usage: #example 
 * identifier.value = "levoThyroxine"
-* classification = $EMAIDMP#1 "Chemical"	
-* manufacturer = Reference(276457ea-9268-42c5-aeb9-3c3a95ba2277)
-* molecularWeight.amount = $NCIT#C64559 "u"
+* classification = $EMAIDMP#1 "Chemical"
+* manufacturer = Reference(urn:uuid:276457ea-9268-42c5-aeb9-3c3a95ba2277)
+* molecularWeight.amount = $NCIT#C41127 "u"
 * molecularWeight.amount.value = 798.85
-* supplier = Reference(7e34e5c1-5e95-400f-8f76-332dd096e735)
+* supplier = Reference(urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735)
 * code.code = $UNII#054I36CPMN
 * name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[gsrs].preferred = true
 * name[iupac].name = "sodium;(2S)-2-amino-3-[4-(4-hydroxy-3,5-diiodophenoxy)-3,5-diiodophenyl]propanoate"
 * name[cas].name = "55-03-8"
-* relationship[+].substanceDefinitionReference = Reference(037a4e03-a2d5-41da-a55f-2854b3edec36)
+* relationship[+].substanceDefinitionReference = Reference(urn:uuid:037a4e03-a2d5-41da-a55f-2854b3edec36)
 * relationship[=].type.text = "Polymorph"
 
 Instance: 2f238f40-359b-4125-a94d-68fb187efc22
@@ -112,13 +112,14 @@ Description: "Drug Substance Structure for levoThyroxine"
 Usage: #example 
 * identifier.value = "levoThyroxine"
 * classification = $EMAIDMP#1 "Chemical"	
-* manufacturer = Reference(276457ea-9268-42c5-aeb9-3c3a95ba2277)
+* manufacturer = Reference(urn:uuid:276457ea-9268-42c5-aeb9-3c3a95ba2277)
+* code.code = $UNII#054I36CPMN
 * structure.technique.text = """NMR Spectroscopy"""
 * structure.representation[+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
 * structure.representation[=].type = $NCIT#C54683 "InChI File (small molecule)"
 * structure.representation[+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
 * structure.representation[=].type = $NCIT#C54684 "SMILES"
-* structure.representation[+].document = Reference(ff0e6432-2f8b-43cc-a3b3-462981a2d929)
+* structure.representation[+].document = Reference(urn:uuid:ff0e6432-2f8b-43cc-a3b3-462981a2d929)
 * name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[gsrs].preferred = true
 
@@ -128,40 +129,41 @@ Title: "eCTD Composition for 3.2.S.1.0"
 Description: "Composistion containing eCTD Substance General Information "
 Usage: #example 
 * identifier.value = "Substance General - levoThyroxine"
-* author = Reference(3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6)
+* status = #final
+* type.coding = $SectionTypes#32S10 "Substance General Information"	
+* author = Reference(urn:uuid:3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6)
 * date = 2023-07-11T00:47:41.768Z
 * title = "eCTD Substance General Information for levoThyroxine"
 * section[SubstanceNomenclature].title = "Drug Substance Nomeclature for levoThyroxine"
-* section[SubstanceNomenclature].entry = Reference(fccef1cd-71e7-4323-962b-c966b6f7a455)
+* section[SubstanceNomenclature].entry = Reference(urn:uuid:fccef1cd-71e7-4323-962b-c966b6f7a455)
 * section[SubstanceStructure].title = "Drug Substance Structure for levoThyroxine"
-* section[SubstanceStructure].entry = Reference(2f238f40-359b-4125-a94d-68fb187efc22)
+* section[SubstanceStructure].entry = Reference(urn:uuid:2f238f40-359b-4125-a94d-68fb187efc22)
 
 Instance: b2ba5a21-7b54-4674-828f-e071f16ca707
 InstanceOf: CMCeCTDDocument32S10
 Title: "Bundle for 32S10"
 Description: "Bundle containng nomenclature and molecular Structure"
 Usage: #example 
+* meta.profile = Canonical(CMCeCTDDocument32S10)
+* meta.profile.extension[version].valueString = "0.1.16"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:b2ba5a21-7b54-4674-828f-e071f16ca707"
 * timestamp = 2023-07-11T00:47:41.776Z
-* meta.versionId = "0.1.15"
-* entry[Composition][+].resource = e23e1f1e-8ac2-49d6-afaa-7ad876a85979
-* entry[Composition][=].fullUrl = "urn:uuid:e23e1f1e-8ac2-49d6-afaa-7ad876a85979"
-* entry[SubstanceDefinition][+].resource = fccef1cd-71e7-4323-962b-c966b6f7a455
-* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:fccef1cd-71e7-4323-962b-c966b6f7a455"
-* entry[SubstanceDefinition][+].resource = 2f238f40-359b-4125-a94d-68fb187efc22
-* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:2f238f40-359b-4125-a94d-68fb187efc22"
-* entry[SubstanceDefinition][+].resource = 037a4e03-a2d5-41da-a55f-2854b3edec36
-* entry[SubstanceDefinition][=].fullUrl = "urn:uuid:037a4e03-a2d5-41da-a55f-2854b3edec36"
-* entry[Organization][+].resource = 3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
-* entry[Organization][=].fullUrl = "urn:uuid:3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6"
-* entry[Organization][+].resource = 276457ea-9268-42c5-aeb9-3c3a95ba2277
-* entry[Organization][=].fullUrl = "urn:uuid:276457ea-9268-42c5-aeb9-3c3a95ba2277"
-* entry[Organization][+].resource = 7e34e5c1-5e95-400f-8f76-332dd096e735
-* entry[Organization][=].fullUrl = "urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735"
-* entry[DocumentReference][+].resource = fd006e04-8764-4d83-b6ee-bbf8f35847e0
-* entry[DocumentReference][=].fullUrl = "urn:uuid:fd006e04-8764-4d83-b6ee-bbf8f35847e0"
-* entry[DocumentReference][+].resource = ff0e6432-2f8b-43cc-a3b3-462981a2d929
-* entry[DocumentReference][=].fullUrl = "urn:uuid:ff0e6432-2f8b-43cc-a3b3-462981a2d929"
-
-
+* entry[0].resource = e23e1f1e-8ac2-49d6-afaa-7ad876a85979
+* entry[=].fullUrl = "urn:uuid:e23e1f1e-8ac2-49d6-afaa-7ad876a85979"
+* entry[+].resource = fccef1cd-71e7-4323-962b-c966b6f7a455
+* entry[=].fullUrl = "urn:uuid:fccef1cd-71e7-4323-962b-c966b6f7a455"
+* entry[+].resource = 2f238f40-359b-4125-a94d-68fb187efc22
+* entry[=].fullUrl = "urn:uuid:2f238f40-359b-4125-a94d-68fb187efc22"
+* entry[+].resource = 037a4e03-a2d5-41da-a55f-2854b3edec36
+* entry[=].fullUrl = "urn:uuid:037a4e03-a2d5-41da-a55f-2854b3edec36"
+* entry[+].resource = 3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6
+* entry[=].fullUrl = "urn:uuid:3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6"
+* entry[+].resource = 276457ea-9268-42c5-aeb9-3c3a95ba2277
+* entry[=].fullUrl = "urn:uuid:276457ea-9268-42c5-aeb9-3c3a95ba2277"
+* entry[+].resource = 7e34e5c1-5e95-400f-8f76-332dd096e735
+* entry[=].fullUrl = "urn:uuid:7e34e5c1-5e95-400f-8f76-332dd096e735"
+* entry[+].resource = fd006e04-8764-4d83-b6ee-bbf8f35847e0
+* entry[=].fullUrl = "urn:uuid:fd006e04-8764-4d83-b6ee-bbf8f35847e0"
+* entry[+].resource = ff0e6432-2f8b-43cc-a3b3-462981a2d929
+* entry[=].fullUrl = "urn:uuid:ff0e6432-2f8b-43cc-a3b3-462981a2d929"

@@ -21,6 +21,7 @@ node "SponsorOrganization" as NSO {
       [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         GENC Country Codes
+        Sponsor Identifier Type Terminology 
     }
 }
 
@@ -47,7 +48,7 @@ node "MfgTestSiteOrganization" as NMFG {
                    **Reference:**
       [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
-        Manufacturing Site Unique Identifier Type
+        Testing Site and Organization Identifier Type Terminology
 	    GENC Country Codes
     }
 }
@@ -57,10 +58,8 @@ node "RoutineSubstanceDefinition" as NNS {
                    **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                 **ValueSets:**
-                EVMPDSubstanceClassification
+                EVMPD Substance Classification
                 Quality Benchmark Terminology
-                GENC Country Codes
-                Source Type Terminology
       }  
 }
 node "BatchFormulaMedicinalProduct" as NN2 { 
@@ -81,8 +80,8 @@ node "BatchFormula" as NN {
         Units Of Measure Terminology
       } 
       object "**Extensions**" as objExs2 {
-        pq-additional-info-extension
-        pq-product-batch-ingredient-extension
+        Aditional Information
+        Product Batch Ingredient Extension
 }
 
  obj3 *-- objExs2     

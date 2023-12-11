@@ -27,13 +27,14 @@
   <xsl:template match="f:definition">
     <!-- If we've defined the groups, then we sort based on the groups, then alphabetically -->
     <xsl:choose>
-      <xsl:when test="f:group[starts-with(@id, '-')]">
+      <xsl:when test="f:grouping[starts-with(@id, '-')] or groups/f:grouping[starts-with(@id, '-')]">
         <xsl:copy>
-          <xsl:apply-templates select="@*|f:extension|f:modifierExtension|f:grouping|comment()[not(preceding-sibling::f:resource)]"/>
+          <xsl:apply-templates select="node()[not(self::f:resource or self::f:page or self::f:parameter or self::f:template)]"/>
           <xsl:for-each select="f:grouping">
             <xsl:choose>
               <xsl:when test="starts-with(@id, '-')">
                 <xsl:for-each select="parent::f:definition/f:resource[f:groupingId/@value=current()/@id]">
+                  <xsl:sort select="f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/resource-sort']/f:valueInteger/@value"/>
                   <xsl:sort select="f:name/@value"/>
                   <xsl:sort select="f:reference/f:reference/@value"/>
                   <xsl:apply-templates select="."/>
@@ -46,6 +47,8 @@
               </xsl:otherwise>
             </xsl:choose>
           </xsl:for-each>
+          <xsl:apply-templates select="f:resource[not(f:groupingId)]"/>
+          <xsl:apply-templates select="f:page|f:parameter|f:template"/>
         </xsl:copy>
       </xsl:when>
       <xsl:otherwise>
@@ -98,24 +101,26 @@
   </xsl:template>
   <xsl:template name="artifactPages">
     <xsl:for-each select="/f:ImplementationGuide/f:definition/f:grouping">
-      <xsl:for-each select="parent::f:definition/f:resource[f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']][f:groupingId/@value=current()/@id]">
-        <xsl:variable name="id" select="substring-after(f:reference/f:reference/@value, '/')"/>
-        <page xmlns="http://hl7.org/fhir">
-          <nameUrl value="{f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']/f:valueUri/@value}"/>
-          <title value="{f:name/@value}"/>
-          <generation value="generated"/>
-          <xsl:for-each select="f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/contained-resource-information']">
-            <page xmlns="http://hl7.org/fhir">
-              <xsl:variable name="url" select="concat(f:extension[@url='type']/f:valueCode/@value, '-', $id, '_', f:extension[@url='id']/f:valueId/@value, '.html')"/>
-              <nameUrl value="{$url}"/>
-              <xsl:for-each select="f:extension[@url='title']/f:valueString">
-                <title value="{@value}"/>
-              </xsl:for-each>
-              <generation value="generated"/>
-            </page>
-          </xsl:for-each>
-        </page>      
-      </xsl:for-each>
+      <xsl:if test="not(following-sibling::f:grouping[@id=current()/@id])">
+        <xsl:for-each select="parent::f:definition/f:resource[f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']][f:groupingId/@value=current()/@id]">
+          <xsl:variable name="id" select="substring-after(f:reference/f:reference/@value, '/')"/>
+          <page xmlns="http://hl7.org/fhir">
+            <nameUrl value="{f:extension[@url='http://hl7.org/fhir/StructureDefinition/implementationguide-page']/f:valueUri/@value}"/>
+            <title value="{f:name/@value}"/>
+            <generation value="generated"/>
+            <xsl:for-each select="f:extension[@url='http://hl7.org/fhir/tools/StructureDefinition/contained-resource-information']">
+              <page xmlns="http://hl7.org/fhir">
+                <xsl:variable name="url" select="concat(f:extension[@url='type']/f:valueCode/@value, '-', $id, '_', f:extension[@url='id']/f:valueId/@value, '.html')"/>
+                <nameUrl value="{$url}"/>
+                <xsl:for-each select="f:extension[@url='title']/f:valueString">
+                  <title value="{@value}"/>
+                </xsl:for-each>
+                <generation value="generated"/>
+              </page>
+            </xsl:for-each>
+          </page>      
+        </xsl:for-each>
+      </xsl:if>
     </xsl:for-each>
   </xsl:template>
-</xsl:stylesheet>  
+</xsl:stylesheet>

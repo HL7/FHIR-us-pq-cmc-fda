@@ -5,43 +5,19 @@ Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles."
 
 * . ^short = "CMC eCTD 32P10 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+//* obeys cmc-32P10
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
-* entry.fullUrl 1..1 MS // each entry must have a fullUrl
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile"
-* entry contains
-    Composition 1..1 and
-    MedicinalProductDefinition 2..2 and
-    ManufacturedItemDefinition 1..1 and
-    Ingredient 1..* and
-    SubstanceDefinition 1..* and
-    Organization 1..* and
-    DocumentReference 0..*
-* entry[Composition].resource only ectd-composition-32P10
-* entry[MedicinalProductDefinition].resource only
-    pqcmc-drug-product-description or
-    pqcmc-drugproduct-container-closure
-* entry[ManufacturedItemDefinition].resource only pqcmc-product-part
-* entry[Ingredient].resource only pqcmc-component
-* entry[SubstanceDefinition].resource only pqcmc-component-substance
-* entry[Organization] ^short = "Organization Resources"
-* entry[Organization].resource only
-    cmc-sponsor-organization or
-    mfg-test-site-organization
-* entry[DocumentReference].fullUrl 1..1
-* entry[DocumentReference].resource 1..1
-* entry[DocumentReference].resource only Base64DocumentReference
 
 Profile: CMCeCTDDocument32P32
 Parent: Bundle
@@ -50,50 +26,25 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles."
 
 * . ^short = "CMC eCTD 32P32 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
-* entry.fullUrl 1..1 MS // each entry must have a fullUrl
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile"
 * entry contains
-    Composition 1..1 and
-    MedicinalProductDefinition 1..1 and
-    ManufacturedItemDefinition 1..1 and
-    Organization 1..1 and
-    OrganizationMfg 1..* and
-    Ingredient 1..* and
-    SubstanceDefinition 1..*
-* entry[Composition].fullUrl MS
-* entry[Composition].resource MS
-* entry[Composition].resource only ectd-composition-32p32
-* entry[MedicinalProductDefinition].fullUrl MS
-* entry[MedicinalProductDefinition].resource MS
-* entry[MedicinalProductDefinition].resource only BatchFormulaMedicinalProduct
-* entry[ManufacturedItemDefinition].fullUrl MS
-* entry[ManufacturedItemDefinition].resource MS
-* entry[ManufacturedItemDefinition].resource only BatchFormula
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
-* entry[Ingredient].fullUrl MS
-* entry[Ingredient].resource MS
-* entry[Ingredient].resource only DrugProductIngredient
-* entry[SubstanceDefinition].fullUrl MS
-* entry[SubstanceDefinition].resource MS
-* entry[SubstanceDefinition].resource only RoutineSubstanceDefinition
+    Composition 1..1
+* entry[Composition].resource only  ectd-composition-32p32
+
 
 Profile: CMCeCTDDocument32S10
 Parent: Bundle
@@ -101,57 +52,34 @@ Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
 * . ^short = "CMC eCTD 32S10 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+//* obeys cmc-32S10
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
-* entry.fullUrl 1..1 MS // each entry must have a fullUrl
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile"
-* entry contains
-    Composition 1..1 and
-    SubstanceDefinition 2..* and
-    Organization 1..* and
-    DocumentReference 0..*
-* entry[Composition].resource only
-    EctdComposition32S10
-* entry[SubstanceDefinition] ^short = "32S10 SubstanceDefinition Resources"
-* entry[SubstanceDefinition].resource only
-    DrugSubstanceNomenclature or
-    DrugSubstanceMolecularStructure or
-    PolymorphicForm
-* entry[Organization] ^short = "Organization Resources"
-* entry[Organization].resource only
-    cmc-sponsor-organization or
-    mfg-test-site-organization or
-    SupplierOrganization
-* entry[DocumentReference] ^short = "Resources containing Base64 data"
-* entry[DocumentReference].resource only
-    Base64DocumentReference
-
+//* entry[0].resource only EctdComposition32S10
+ 
 Profile: CMCeCTDDocument32S30
 Parent: Bundle
 Id: cmc-ectd-document-32s30
 Title: "CMC eCTD 32S30 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles."
 * . ^short = "CMC eCTD 32S30 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
-* entry 1..* MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS // each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
@@ -175,40 +103,19 @@ Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+//* obeys cmc-32S23
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a Substance Control of Materials Composition document."
-* entry contains
-    Composition 1..1 and
-    SubstanceDefinition 1..* and
-    Organization 1..1 and
-    OrganizationMfg 1..* and
-    PlanDefinition 0..*
-* entry[Composition].fullUrl MS
-* entry[Composition].resource MS
-* entry[Composition].resource only EctdComposition32S23
-* entry[SubstanceDefinition].fullUrl MS
-* entry[SubstanceDefinition].resource MS
-* entry[SubstanceDefinition].resource only ExcipientRaw
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
-* entry[PlanDefinition].fullUrl MS
-* entry[PlanDefinition].resource MS
-* entry[PlanDefinition].resource only QualitySpecification
+
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
 
 Profile: CMCeCTDDocument32P55
 Parent: Bundle
@@ -216,44 +123,24 @@ Id: cmc-ectd-document-32p55
 Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * . ^short = "CMC eCTD 32P55 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a Product Characterization of Impurities Composition document."
 * entry contains
-    Composition 1..1 and
-    MedicinalProductDefinition 1..1 and
-    SubstanceDefinition 1..* and
-    Organization 1..1 and
-    OrganizationMfg 1..* and
-    DocumentReference 0..*
-* entry[Composition].fullUrl 1..1
-* entry[Composition].resource 1..1
+    Composition 1..1
 * entry[Composition].resource only ectd-composition-32p55
-* entry[MedicinalProductDefinition].fullUrl 1..1
-* entry[MedicinalProductDefinition].resource 1..1
-* entry[MedicinalProductDefinition].resource only pqcmc-drug-product-with-impurities
-* entry[SubstanceDefinition].fullUrl 1..1
-* entry[SubstanceDefinition].resource 1..1
-* entry[SubstanceDefinition].resource only pqcmc-drug-product-substance-impurity
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
-* entry[DocumentReference].fullUrl 1..1
-* entry[DocumentReference].resource 1..1
-* entry[DocumentReference].resource only Base64DocumentReference
+
 
 Profile: CMCeCTDDocument32S60
 Parent: Bundle
@@ -261,9 +148,10 @@ Id: cmc-ectd-document-32s60
 Title: "CMC eCTD 32S60 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles."
 * . ^short = "CMC eCTD 32S60 Bundle"
-* . obeys cmc-first-resource
+
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
@@ -294,9 +182,10 @@ Id: cmc-ectd-document-32p70
 Title: "CMC eCTD 32P70 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles."
 * . ^short = "CMC eCTD 32P70 Bundle"
-* . obeys cmc-first-resource
+
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
@@ -327,48 +216,18 @@ Id: cmc-ectd-document-sp4151
 Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* obeys cmc-SP4151
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a Quality Specification document."
-* entry contains
-    Composition 1..1 and
-    PlanDefinition 1..1 and
-    MedicinalProductDefinition 0..1 and
-    SubstanceDefinition 0..1 and
-    Excipient 0..1 and
-    Organization 1..1 and
-    OrganizationMfg 0..*
-* entry[Composition].fullUrl 1..1
-* entry[Composition].resource 1..1
-* entry[Composition].resource only ectd-composition-sp4151
-* entry[PlanDefinition].fullUrl 1..1
-* entry[PlanDefinition].resource 1..1
-* entry[PlanDefinition].resource only pqcmc-quality-specification
-* entry[MedicinalProductDefinition].fullUrl 1..1
-* entry[MedicinalProductDefinition].resource 1..1
-* entry[MedicinalProductDefinition].resource only pqcmc-routine-drug-product
-* entry[SubstanceDefinition].fullUrl 1..1
-* entry[SubstanceDefinition].resource 1..1
-* entry[SubstanceDefinition].resource only pqcmc-routine-drug-substance
-* entry[Excipient].fullUrl 1..1
-* entry[Excipient].resource 1..1
-* entry[Excipient].resource only pqcmc-excipient
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
 
 Profile: CMCeCTDDocumentSP4454
 Parent: Bundle
@@ -376,52 +235,23 @@ Id: cmc-ectd-document-sp4454
 Title: "CMC eCTD SP4454 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles."
 * . ^short = "CMC eCTD SP4454 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a batch analysis document."
 * entry contains
-    Composition 1..1 and
-    DiagnosticReport 1..1 and
-    Medication 0..1 and
-    Substance 0..1 and
-    Organization 1..1 and
-    OrganizationMfg 1..* and
-    Observation 1..* and
-    ObservationPlus 1..*
-* entry[Composition].fullUrl 1..1
-* entry[Composition].resource 1..1
+    Composition 1..1
 * entry[Composition].resource only ectd-composition-sp4454
-* entry[DiagnosticReport].fullUrl 1..1
-* entry[DiagnosticReport].resource 1..1
-* entry[DiagnosticReport].resource only pqcmc-batch-analysis
-* entry[Medication].fullUrl 1..1
-* entry[Medication].resource 1..1
-* entry[Medication].resource only pqcmc-drug-product-instance
-* entry[Substance].fullUrl 1..1
-* entry[Substance].resource 1..1
-* entry[Substance].resource only pqcmc-drug-substance-batch
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
-* entry[Observation].fullUrl 1..1
-* entry[Observation].resource 1..1
-* entry[Observation].resource only pq-result-observation
-* entry[ObservationPlus].fullUrl 1..1
-* entry[ObservationPlus].resource 1..1
-* entry[ObservationPlus].resource only pq-additional-stage-result-observation
 
 Profile: CMCeCTDDocumentSP7383
 Parent: Bundle
@@ -429,60 +259,24 @@ Id: cmc-ectd-document-sp7383
 Title: "CMC eCTD SP7383 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles."
 * . ^short = "CMC eCTD SP7383 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a stability report document."
 * entry contains
-    Composition 1..1 and
-    ResearchStudy 1..* and
-    ResearchSubStudy 1..* and
-    BatchAnalysis 1..1 and
-    Medication 1..1 and
-    Substance 1..1 and
-    Organization 1..1 and
-    OrganizationMfg 1..* and
-    Observation 1..* and
-    ObservationPlus 1..*
-* entry[Composition].fullUrl 1..1
-* entry[Composition].resource 1..1
+    Composition 1..1
 * entry[Composition].resource only ectd-composition-sp7383
-* entry[ResearchStudy].fullUrl 1..1
-* entry[ResearchStudy].resource 1..1
-* entry[ResearchStudy].resource only pqcmc-stability-study-interval-report
-* entry[ResearchSubStudy].fullUrl 1..1
-* entry[ResearchSubStudy].resource 1..1
-* entry[ResearchSubStudy].resource only pq-stability-sub-study
-* entry[BatchAnalysis].fullUrl 1..1
-* entry[BatchAnalysis].resource 1..1
-* entry[BatchAnalysis].resource only pqcmc-batch-analysis
-* entry[Medication].fullUrl 1..1
-* entry[Medication].resource 1..1
-* entry[Medication].resource only pqcmc-drug-product-instance
-* entry[Substance].fullUrl 1..1
-* entry[Substance].resource 1..1
-* entry[Substance].resource only pqcmc-drug-substance-batch
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
-* entry[Observation].fullUrl 1..1
-* entry[Observation].resource 1..1
-* entry[Observation].resource only pq-result-observation
-* entry[ObservationPlus].fullUrl 1..1
-* entry[ObservationPlus].resource 1..1
-* entry[ObservationPlus].resource only pq-additional-stage-result-observation
 
 Profile: CMCeCTDDocumentSP7181
 Parent: Bundle
@@ -490,44 +284,23 @@ Id: cmc-ectd-document-sp7181
 Title: "CMC eCTD SP7181 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles."
 * . ^short = "CMC eCTD SP7181 Bundle"
-* . obeys cmc-first-resource
 * . obeys cmc-identifer
-* meta.versionId 1..1 MS
+* meta.profile 1..1 MS  
+* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a Stability Summary document."
 * entry contains
-    Composition 1..1 and
-    PlanDefinition 1..1 and
-    MedicinalProductDefinition 0..1 and
-    SubstanceDefinition 0..1 and
-    Organization 1..1 and
-    OrganizationMfg 1..*
-* entry[Composition].fullUrl 1..1
-* entry[Composition].resource 1..1
+    Composition 1..1
 * entry[Composition].resource only ectd-composition-sp7181
-* entry[PlanDefinition].fullUrl 1..1
-* entry[PlanDefinition].resource 1..1
-* entry[PlanDefinition].resource only pqcmc-stability-summary
-* entry[MedicinalProductDefinition].fullUrl 1..1
-* entry[MedicinalProductDefinition].resource 1..1
-* entry[MedicinalProductDefinition].resource only pqcmc-routine-drug-product
-* entry[SubstanceDefinition].fullUrl 1..1
-* entry[SubstanceDefinition].resource 1..1
-* entry[SubstanceDefinition].resource only pqcmc-routine-drug-substance
-* entry[Organization].fullUrl 1..1
-* entry[Organization].resource 1..1
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[OrganizationMfg].fullUrl 1..1
-* entry[OrganizationMfg].resource 1..1
-* entry[OrganizationMfg].resource only mfg-test-site-organization
 
 /*Compositions---------------------------------------------------------------------------------------*/
 
@@ -537,7 +310,7 @@ Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent the Quality Specifications to be included under the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 headings.. References Sponsor Organization and Quality Specification."
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#SP4151 "Quality Specification"
@@ -552,7 +325,6 @@ Description: "The fields needed to represent the Quality Specifications to be in
 /*
     SECTION SLICESProduct
 */
-* section 1..1 MS
 * section.entry MS
 
 * section ^slicing.discriminator.type = #pattern
@@ -586,7 +358,7 @@ Id: ectd-composition-sp7383
 Title: "eCTD Stability Data Composition"
 Description: "The fields needed to represent the Stability Data to be included under the 3.2.P.8.3 , 3.2.S.7.3 and 3.2.P.4.5 eCTD headings. References Sponsor Organization and Stability Study."
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#SP7383 "Stability Data"
@@ -622,7 +394,7 @@ Id: ectd-composition-sp4454
 Title: "eCTD Batch Analyses Composition"
 Description: "The fields needed to represent the Batch Analyses to be included under the 3.2.P.5.4 and 3.2.S.4.4 eCTD headings.  References Sponsor Organization and Batch Analysis"
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#SP4454 "Batch Analyses"
@@ -659,7 +431,7 @@ Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
 Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD.  References Sponsor Organization and Batch Formula"
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
@@ -681,7 +453,7 @@ Id: ectd-composition-32p55
 Title: "eCTD Product Characterization of Impurities Composition"
 Description: "The fields needed to represent the Product Characterization of Impurities in a to be included under the eCTD.  References Sponsor Organization and Product Characterization of Impurities"
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterization of Impurities"
@@ -703,7 +475,7 @@ Id: ectd-composition-32p70
 Title: "eCTD Product Container Closure System Composition"
 Description: "The fields needed to represent the Product Container Closure Systems to be included under the eCTD p.7.0"
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P70 "Product Container Closure System"
@@ -723,11 +495,11 @@ Description: "The fields needed to represent the Product Container Closure Syste
 
 Profile: EctdComposition32P10
 Parent: Composition
-Id: ectd-composition-32P10
+Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1.0 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
@@ -762,7 +534,7 @@ Id: ectd-composition-32s60
 Title: "eCTD Substance Container Closure System Composition"
 Description: "The fields needed to represent the Substance Container Closure Systems to be included under the eCTD 3.2.S.6.0 eCTD heading. References Sponsor Organization and Substance Container Closure"
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S60 "Substance Container Closure System"
@@ -786,7 +558,7 @@ Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
 Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1.0 heading of the eCTD. References Sponsor Organization."
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
@@ -820,7 +592,7 @@ Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
 Description: "The fields needed to represent the Substance Control of Materials in a to be included under the eCTD. References Sponsor Organization and Drug Substance Materials."
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
@@ -832,10 +604,9 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section 1..* MS
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included under the 3.2.S.2.3 eCTD heading."
-* section.code = $SectionTypes#32S23 "Substance Control of Materials"
-* section.title 1..1 MS
+* section.code = $SectionTypes#32S231 "Raw Material Specification"
 * section.entry 1..* MS
-* section.entry only Reference(ExcipientRaw)
+* section.entry only Reference(QualitySpecification)
 
 Profile: EctdComposition32S30
 Parent: Composition
@@ -843,7 +614,7 @@ Id: ectd-composition-32s30
 Title: "eCTD Substance Characterization"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3.0 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S30 "Substance Characterization"
@@ -873,7 +644,7 @@ Id: ectd-composition-sp7181
 Title: "eCTD Stability Summary and Conclusion Composition"
 Description: "The fields needed to represent the Stability Summary and Conclusion to be included in the 3.2.P.8.3 and 3.2.S.7.3 eCTD headings. References Sponsor Organization and Stability Study."
 
-* .meta.profile 0..1 MS
+* meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
 /* do or on type code*/

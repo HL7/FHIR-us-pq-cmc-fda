@@ -1,5 +1,9 @@
 ### Bundle Overview
 
+-   **--------------------------------------------------------------------**
+-   **DRAFT PROFILE - NOT PART OF BALLOT**
+-   **--------------------------------------------------------------------**
+
 Characterisation includes both Information on the characterization of impurities . 
 Reference ICH guidances Q3B, Q5C, Q6A, and Q6B.
 
@@ -7,4 +11,5 @@ Reference ICH guidances Q3B, Q5C, Q6A, and Q6B.
 <div>{%include CharacImprity.svg%}</div>
 
 ### Example 3.2.P.5.5 Bundle
+
 

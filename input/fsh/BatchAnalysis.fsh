@@ -141,13 +141,12 @@ Examples: White to off-white cake; 22.5 - 27.5 mg/ml
 Note: This is the text as it appears in the Specification."""
 * referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
 * component 0..1 MS	
-* component ^short = "Grouped replicates"	
+* component ^short = "Replicates"	
 * component.extension contains pq-replicate-extension named replicate  1..1 MS	
 * component.extension[replicate] ^short = "Replicate Number"	
-* component.extension[replicate]  
-* component.extension[replicate] ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed.  Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined] 
-Examples: Prepare six aliquots from the sample. Record the individual  values.
-Test 8 samples. If any fall above 110%, test an additional 7 samples.  Record all replicate values"""
+* component.extension[replicate] ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
+Examples: Prepare six aliquots from the sample.
+Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method."""
 //* component.extension[replicate] only integer	
 * component.code.text 1..1 MS	
 * component.code.text ^short = "Test Name | Relative Retention Time (RRT)"	
@@ -216,27 +215,24 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * identifier ^definition = "A set of discrete sequential steps performed on a given test. [Source: SME Defined]"
 * identifier ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
 * status MS	
-* category  MS
-//* category.coding obeys cmc-sub-test-category-batch
-* category.coding ^slicing.discriminator.type = #pattern
-* category.coding ^slicing.discriminator.path = "$this"
-* category.coding ^slicing.rules = #open
-* category.coding contains
-    testCategory 1..1 and
-    testSubCat 0..1
-* category.coding[testCategory].code MS
-* category.coding[testCategory].code from PqcmcTestCategoryTerminology (required)
-* category.coding[testCategory].code  1..1
-* category.coding[testCategory].display  1..1
-* category.coding[testCategory].code ^short = "Test Category"
-* category.coding[testCategory].code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* category.coding[testSubCat].code MS
-* category.coding[testSubCat].code from PqcmcTestSubCategoryTerminology (required)
-* category.coding[testSubCat].code ^short = "Test Sub-category"
-* category.coding[testSubCat].code 1..1
-* category.coding[testSubCat].display 1..1
+* category 1..1 MS
+* category.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
+* category.coding 1..2 MS
+* category.coding ^short = "Test Category | Test Subcategory"
+* category.coding ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding from PqcmcTestCategoryTerminology (required)
+* category.coding.code 1..1 MS
+* category.coding.display 1..1
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
+* code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+Note: as defined by the sponsor
+
+RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+Example: 1:23 (a ratio)
+Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
+"""
 * effective[x] 1..1 MS	
 * effective[x].extension contains pq-pullDate-extension named actualpulldate 1..1 MS	
 * effective[x] ^short = "Test Date"	
@@ -269,8 +265,9 @@ Examples: Conforms, Does not Conform"""
 * interpretation.coding.display 1..1
 * note MS	
 * note ^short = "Additional Information"	
-* note ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
-Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc."""
+* note ^definition = """AA placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
+Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
+"""
 * method.text 1..1 MS	
 * method.text ^short = "Analytical Procedure"	
 * method.text  ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined] . 
@@ -281,8 +278,9 @@ Note: The full descriptor of the technique is part of the next data element - Re
 * referenceRange.low MS	
 * referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
-* referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
+* referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
+Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
+"""
 * referenceRange.low.value 1..1 MS	
 * referenceRange.low.code 1..1 MS	
 * referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
@@ -290,8 +288,9 @@ Note: When result value is numeric there is a controlled vocabulary; when result
 * referenceRange.high MS	
 * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
 * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
-* referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
+* referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
+Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
+"""
 * referenceRange.high.value 1..1 MS	
 * referenceRange.high.code 1..1 MS	
 * referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
@@ -305,15 +304,15 @@ Note: This is the text as it appears in the Specification."""
 * hasMember only Reference(MultipleReplicatesResultObservation)	
 * hasMember ^comment = "Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition."	
 * component 0..1 MS	
-* component ^short = "Grouped replicates"	
+* component ^short = "Replicates"	
 * component.extension contains pq-replicate-extension named replicate  1..1 MS	
 * component.extension[replicate] ^short = "Replicate Number"	
-* component.extension[replicate] ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed.  Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined] 
-Examples: Prepare six aliquots from the sample. Record the individual  values. 
-Test 8 samples. If any fall above 110%, test an additional 7 samples.  Record all replicate values"""
+* component.extension[replicate] ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
+Examples: Prepare six aliquots from the sample.
+Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method. """
 //* component.extension[replicate] only integer	
 * component.code.text 1..1 MS	
-* component.code.text ^short = "Test Name | Relative Retention Time (RRT)"
+* component.code.text ^short = "Test Name | Relative Retention Time"
 * component.code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
 Note: as defined by the sponsor.
@@ -367,4 +366,3 @@ Examples: Conforms, Does not Conform"""
 * component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
 Note: This is the text as it appears in the Specification."""
-	

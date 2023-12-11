@@ -44,7 +44,7 @@ Id: pq-stability-study
 Title: "Stability Study"
 Description: "Profile for the main stability study."
 
-* .meta.profile 0..1 MS
+* meta.profile 0..1 MS
 * .extension contains pq-protocol-extension named protocolExtension 1..1 MS
 * .extension contains pq-additional-info-extension named study-additional-info 0..* MS
 * .extension[study-additional-info] ^short = "Study Additional"
@@ -96,7 +96,7 @@ Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
 Description: "Profile for the a stability sub-study."
 
-* .meta.profile 0..1 MS
+* meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
 * identifier 1..1 MS
 * identifier ^definition = """An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
@@ -106,15 +106,13 @@ Example: Study Number- 565758
 * version ^short = "Sub-Study Identifier Version (optional)"
 * title 1..1 MS
 * title ^short = "Sub-Study Name"
-* title ^definition = "A non-unique textual identifier given to the drug stability study by the sponsoring organization. [Source: SME Defined]"
+* title ^definition = "A non-unique textual identifier given to the drug stability sub-study by the sponsoring organization. [Source: SME Defined]"
 //* protocol Reference (PlanDefinition)
 //* protocol ^short = "x"
 * partOf ^short = "Reference to main study or associated study"
 * partOf only Reference(StabilityStudy or StabilitySubStudy)
 //* will need rule to set cardinalty*/
 * condition 2..3 MS
-
-
 * condition ^slicing.discriminator.type = #value
 * condition ^slicing.discriminator.path = coding.system
 * condition ^slicing.rules = #closed // or #closed if you don't want other concepts
@@ -124,12 +122,16 @@ Example: Study Number- 565758
     storagecategory 1..1 and
     orientation 0..1
 * condition[substudytype] ^short = "Sub-Study Type"
+* condition[substudytype] ^definition = "A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined] Examples: Standard, Cycled-simple."
 * condition[substudytype] from PqcmcStudyTypeTerminology (required)
 * condition[storage] ^short = "Storage Conditions Temp.RH"
+* condition[storage] ^definition = "The temperature and the relative humidity under which the study was performed. [Source: SME Defined] "
 * condition[storage] from PqcmcStorageConditionsTerminology (required)
 * condition[storagecategory] ^short = "Storage Condition Category"
+* condition[storagecategory] ^definition = "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
 * condition[storagecategory] from PqcmcStorageConditionCategoryTerminology (required)
 * condition[orientation] ^short = "Container Orientation"
+* condition[orientation] ^definition = "The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined] Examples: horizontal, upright."
 * condition[orientation] from PqcmcContainerOrientationTerminology (required)
 * period 1..1 MS
 * period.start 1..1 MS
@@ -149,6 +151,7 @@ Example: Study Number- 565758
 Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film
 Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
 """
+* result MS
 * result ^short = "Link to stability study results"
 * result only Reference(StabilityStudyIntervalReport)
 
@@ -158,7 +161,7 @@ Id: pqcmc-stability-study-interval-report
 Title: "Stability Study Interval Report"
 Description: "Batch or lot stability testing to ensure that pharmaceutical products continue to meet the product specification or determine the expiry period."
 
-* .meta.profile 0..1 MS
+* meta.profile 0..1 MS
 * .extension contains pq-timePoint-extension named studyInterval 1..1 MS
 * .extension contains pq-quality-specification-extension named qualitySpecification 1..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
@@ -176,7 +179,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * code.text 1..1 MS
 * subject 1..1 MS
 * subject only Reference(DrugProductBatch or DrugSubstanceBatch)
-* subject ^short = "A single medication batch-lot or a single subtance batch-lot"
+* subject ^short = "A batch placed under study to determine the maintained performance parameters over time."
 * performer 1..1 MS
 * performer only Reference(MfgTestSiteOrganization)
 * performer ^short = "Test Site"
@@ -190,14 +193,14 @@ Id: pqcmc-stability-summary
 Title: "Stability Summary"
 Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
 
-* .meta.profile 0..1 MS
+* meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named studysum-additional-info 0..* MS
 * .extension[studysum-additional-info] ^short = "Study Summary Additional"
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
 * identifier 1..1 MS
 * status MS
-//* subjectReference 1..1 MS
-//* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
+* subject[x] 1..1 MS
+* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
 * goal.target 1..1 MS
 * goal.target.detail[x] only Quantity
 * goal.target.detailQuantity 0..1 MS
@@ -219,8 +222,8 @@ Note: this is typically months.
 * goal.target.detailQuantity.code from PqcmcUnitsMeasureTerminology (required)
 * action 1..1 MS
 * action ^short = "Expiry or Retest per storage condidtion"
-//* action.description 0..1 MS
-//* action.description ^short = "Stability Summary of storage conditions and intervals"
+* action.description 0..1 MS
+* action.description ^short = "Stability Summary of storage conditions and intervals"
 * action.code MS
 * action.code.coding.code ^short = "Storage Condition for Expiry Period| Storage Condition for Retest Period"
 * action.code.coding.code ^definition = """***Storage Condition for Expiry Period:*** The storage condition associated with the expiry period. [Source: SME defined] 

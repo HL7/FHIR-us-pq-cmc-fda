@@ -10,214 +10,233 @@ skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle" as NODES {
 
-object "**Bundle Reference:**" as objbun {
+       object "**Bundle Reference:**" as objbun {
               [[StructureDefinition-cmc-ectd-document-sp7383.html]]
-    }  
-node "DrugProductBatch" as NN { 
-      object "**Parent:** Medication" as obj3 {
-         **Reference:**
-      [[StructureDefinition-pqcmc-drug-product-instance.html]]
-        **ValueSets:**
-        Drug Route Of Administration Terminology
-        Pharmaceutical Dosage Form Terminology
-        Expiration Date Classification Terminology
-        Batch utilization Terminology
-        Units Of Measure Terminology 
-        Container Type Terminology
-        Closure Type Terminology        
-      }
+       }
 
-      object "**Extensions**" as objExsBatch  {
-                manufacturingDate
-                manufacturingDateClassification
-                assignedManufacturer
-                expirationDateClassification
-                batchUtilization
-                batchQuantity
-                additionalInformation
-                container.extension.closureSystemDescription
-                container.extension.closureType
-                container.extension.lotNumber
-                container.extension.quantity
-                container.extension.type 
-}
-objExsBatch *-- obj3 
-}
-diamond CH
+       node "DrugProductBatch" as NN {
 
-diamond CH3
+              object "**Parent:** Medication" as obj3 {
+                     **Reference:**
+                     [[StructureDefinition-pqcmc-drug-product-instance.html]]
+                     **ValueSets:**
+                     Pharmaceutical Dosage Form Terminology
+                     Expiration Date Classification Terminology
+                     Batch utilization Terminology
+                     Units Of Measure Terminology
+                     Container Type Terminology
+                     Closure Type Terminology
+              }
 
-node "DrugSubstanceBatch" as NNS { 
-      object "**Parent:** Substance" as obj4 {
-             **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
-                **ValueSets:**
-                Batch utilization Terminology
-                Units Of Measure Terminology
-                Container Type Terminology
-                Closure Type Terminology
-      }
-  object "**Extensions**" as objExs2 {
-          manufacturingDate
-          manufacturingDateClassification
-          assignedManufacturer
-          batchUtilization
-          batchQuantity
-          additionalInformation
-          container.extension.closureSystemDescription
-          container.extension.closureType
-          container.extension.lotNumber
-          container.extension.quantity
-          container.extension.type
-    }
+              object "**Extensions**" as objExsBatch  {
+                     Manufacturing Date
+                     Manufacturing Date Description
+                     Assigned Manufacturer
+                     Expiration Date Classification
+                     Batch Utilization
+                     Batch Size
+                     Additional Information
+                     Container Closure System Description
+                     Container Type
+                     Container Lot Number
+                     Container Fill per Container Size
+                     Container
+              }
+              objExsBatch *-- obj3
+       }
+       diamond CH
 
-    objExs2 *-- obj4   
-}
-node "StabilityStudyIntervalReport" as Ninterval { 
-      object "**Parent:** DiagnosticReport" as objinterval {
-             **Reference:**
-      [[StructureDefinition-pqcmc-stability-study-interval-report.html]]
-    }
-        object "**Extensions**" as objIntEx {
-        pq-timePoint-extension
-      pq-quality-specification-extension
-      pq-additional-info-extension
-    }
-    objinterval *-- objIntEx 
-}
+       diamond CH3
 
-  node "BatchAnalysis" as N2 { 
-      object "**Parent:** DiagnosticReport" as obj2 {
-             **Reference:**
-      [[StructureDefinition-pqcmc-batch-analysis.html]]
-    }
-        object "**Extensions**" as objQSEx {
-        pq-quality-specification-extension
-    }
-    obj2 *-- objQSEx 
-}
+       node "DrugSubstanceBatch" as NNS {
 
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-             **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-         **ValueSets:**
-        Manufacturing Site Unique Identifier Type
-	    GENC Country Codes
-    }
-}
+              object "**Parent:** Substance" as obj4 {
+                     **Reference:**
+                     [[StructureDefinition-pqcmc-drug-substance-batch.html]]
+                     **ValueSets:**
+                     Batch utilization Terminology
+                     Units Of Measure Terminology
+                     Container Type Terminology
+                     Closure Type Terminology
+              }
+              object "**Extensions**" as objExs2 {
+                     Manufacturing Date
+                     Manufacturing Date Description
+                     Assigned Manufacturer
+                     Batch Utilization
+                     Batch Size
+                     Additional Information
+                     Retest Date Classification
+                     Container Closure System Description
+                     Container Type
+                     Container Lot Number
+                     Container Fill per Container Size
+                     Container
+              }
 
-node "StabilitySubStudy" as NSub { 
-      object "**Parent:** ResearchStudy" as objSub {
-             **Reference:**
-      [[StructureDefinition-pq-stability-sub-study.html]]
-        **ValueSets:**
-        Study Type Terminology
-        Storage Conditions Terminology
-        Container Orientation Terminology
-      }
+              objExs2 *-- obj4
+       }
+       node "StabilityStudyIntervalReport" as Ninterval {
 
-      object "**Extensions**" as objExsSub  {
-        pq-additional-info-extension
-        pq-condtions-extension
-}
-objExsSub *-- objSub 
-}
+              object "**Parent:** DiagnosticReport" as objinterval {
+                     **Reference:**
+                     [[StructureDefinition-pqcmc-stability-study-interval-report.html]]
+              }
+              object "**Extensions**" as objIntEx {
+                     studyInterval
+                     Quality Specification Reference
+                     Aditional Information
+              }
+              objinterval *-- objIntEx
+       }
+
+       node "BatchAnalysis" as N2 {
+
+              object "**Parent:** DiagnosticReport" as obj2 {
+                     **Reference:**
+                     [[StructureDefinition-pqcmc-batch-analysis.html]]
+              }
+              object "**Extensions**" as objQSEx {
+                     Quality Specification Reference
+              }
+              obj2 *-- objQSEx
+       }
+
+       node "MfgTestSiteOrganization" as NMFG {
+
+              object "**Parent:** Organization" as objDP {
+                     **Reference:**
+                     [[StructureDefinition-mfg-test-site-organization.html]]
+                     **ValueSets:**
+                     Testing Site and Organization Identifier Type Terminology
+                     GENC Country Codes
+              }
+       }
+
+       node "StabilitySubStudy" as NSub {
+
+              object "**Parent:** ResearchStudy" as objSub {
+                     **Reference:**
+                     [[StructureDefinition-pq-stability-sub-study.html]]
+                     **ValueSets:**
+                     Study Type Terminology
+                     Storage Conditions Terminology
+                     Storage Condition Category Terminology
+                     Container Orientation Terminology
+              }
+
+              object "**Extensions**" as objExsSub  {
+                     Aditional Information
+              }
+              objExsSub *-- objSub
+       }
 
 
-node "StabilityStudy" as NMain { 
-      object "**Parent:** ResearchStudy" as objMain {
-             **Reference:**
-      [[StructureDefinition-pq-stability-study.html]]
-        **ValueSets:**
-	Stability Study Reason Terminology
-      }
+       node "StabilityStudy" as NMain {
 
-      object "**Extensions**" as objExsMain  {
-pq-protocol-extension named
-pq-additional-info-extension
-}
-objExsMain *-- objMain 
-}
+              object "**Parent:** ResearchStudy" as objMain {
+                     **Reference:**
+                     [[StructureDefinition-pq-stability-study.html]]
+                     **ValueSets:**
+                     Stability Study Reason Terminology
+              }
 
-node "StabilitySubStudy" as NSub2 { 
-      object "Another StabilitySubStudy" as objSub2 {
-             **Reference:**
-      [[StructureDefinition-pq-stability-sub-study.html]]
+              object "**Extensions**" as objExsMain  {
+                     Study Protocol
+                     Aditional Information
+              }
+              objExsMain *-- objMain
+       }
 
-      }
-}
+       node "StabilitySubStudy" as NSub2 {
 
-node "ResultObservation" as NNOBS { 
-      object "**Parent:** Observation" as observ3 {
-             **Reference:**
-      [[StructureDefinition-pq-result-observation.html]]
-        **ValueSets:**
-        Conformance Criteria Terminology
-        Units Of Measure Terminology    
-      }
-      object "**Extensions**" as objExsObserv  {
-            pq-pullDate-extension
-            pq-interpretation-code-extension
-            pq-replicate-extension
-    }
-        objExsObserv *-- observ3 
-}
+              object "Another StabilitySubStudy" as objSub2 {
+                     **Reference:**
+                     [[StructureDefinition-pq-stability-sub-study.html]]
 
-node "MultipleReplicatesResultObservation" as NNstage { 
-      object "**Parent:** Observation" as observS {
-             **Reference:**
-      [[StructureDefinition-pq-result-observation.html]]
-        **ValueSets:**
- PqcmcConformanceCriteriaTerminology
- PqcmcUnitsMeasureTerminology
-      }
-      object "**Extensions**" as objExsStageObs  {
-            pq-pullDate-extension
-            pq-interpretation-code-extension
-            pq-replicate-extension
-     }  
-        objExsStageObs *-- observS
-}
+              }
+       }
 
-node "EctdCompositionSP7383" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-      **Reference:**
-      [[StructureDefinition-ectd-composition-sp7383.html]]
-      **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }
-}
-node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-              **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
-    }
-}
+       node "ResultObservation" as NNOBS {
 
-CH -[#green]-> NN
-CH -[#green]-> NNS
-CH3 -[#green]-> NN
-CH3 -[#green]-> NNS
-N1 -[#darkred]-> CH
-N1 -[#darkred]-> N2
-N1 -[#darkred]-> NSO
-N2 -[#darkred]-> CH
-N2 -[#darkred]-> NMFG
-N2 -[#darkred]-> NNOBS
-Ninterval -[#darkred]-> CH3
-Ninterval -[#darkred]-> NMFG
-Ninterval -[#darkred]-> NNOBS
-NN -[#darkred]-> NMFG
-NNOBS -[#darkred]-> NMFG
-NNOBS -[#darkred]-> NNstage
-NNS -[#darkred]-> NMFG
-NNstage -[#darkred]-> NMFG
-NSub -[#darkred]-> Ninterval
-N1 -[#darkred]-> NMain
-NSub -[#darkred]-> NSub2
-NSub -[#darkred]-> NMain
+              object "**Parent:** Observation" as observ3 {
+                     **Reference:**
+                     [[StructureDefinition-pq-result-observation.html]]
+                     **ValueSets:**
+                     Conformance Criteria Terminology
+                     Units Of Measure Terminology
+                     Test Category Terminology
+                     Test Sub-Category Terminology
+                     Interpretation Code Terminology
+              }
+              object "**Extensions**" as objExsObserv  {
+                     actualpulldate
+                     interpretationCode
+                     replicate
+              }
+              objExsObserv *-- observ3
+       }
+
+       node "MultipleReplicatesResultObservation" as NNstage {
+
+              object "**Parent:** Observation" as observS {
+                     **Reference:**
+                     [[StructureDefinition-pq-result-observation.html]]
+                     **ValueSets:**
+                     Conformance Criteria Terminology
+                     Units Of Measure Terminology
+                     Interpretation Code Terminology
+              }
+              object "**Extensions**" as objExsStageObs  {
+                     actualpulldate
+                     interpretationCode
+                     replicate
+              }
+
+              objExsStageObs *-- observS
+       }
+
+       node "EctdCompositionSP7383" as N1 {
+
+              object "**Parent:** Composition" as obj1 {
+                     **Reference:**
+                     [[StructureDefinition-ectd-composition-sp7383.html]]
+                     **ValueSets:**
+                     Code system PQCMC Comp Section Types
+              }
+       }
+       node "SponsorOrganization" as NSO {
+
+              object "**Parent:** Organization" as objAu {
+                     **Reference:**
+                     [[StructureDefinition-cmc-sponsor-organization.html]]
+                     **ValueSets:**
+                     GENC Country Codes
+                     Testing Site and Organization Identifier Type Terminology
+              }
+       }
+
+       CH -[#green]-> NN
+       CH -[#green]-> NNS
+       CH3 -[#green]-> NN
+       CH3 -[#green]-> NNS
+       N1 -[#darkred]-> CH
+       N1 -[#darkred]-> N2
+       N1 -[#darkred]-> NSO
+       N2 -[#darkred]-> CH
+       N2 -[#darkred]-> NMFG
+       N2 -[#darkred]-> NNOBS
+       Ninterval -[#darkred]-> CH3
+       Ninterval -[#darkred]-> NMFG
+       Ninterval -[#darkred]-> NNOBS
+       NN -[#darkred]-> NMFG
+       NNOBS -[#darkred]-> NMFG
+       NNOBS -[#darkred]-> NNstage
+       NNS -[#darkred]-> NMFG
+       NNstage -[#darkred]-> NMFG
+       NSub -[#darkred]-> Ninterval
+       N1 -[#darkred]-> NMain
+       NSub -[#darkred]-> NSub2
+       NSub -[#darkred]-> NMain
 }
 @enduml

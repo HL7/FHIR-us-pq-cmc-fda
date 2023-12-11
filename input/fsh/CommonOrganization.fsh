@@ -1,7 +1,7 @@
 RuleSet: DUNSandFEINumber
 * identifier 1..* MS
 * identifier.type 0..1 MS
-* identifier.type from PqcmcSponsorIdentifierTypeTerminology (required)
+* identifier.type from PqcmcOrgIdentifierTypeTerminology (required)
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
@@ -21,9 +21,10 @@ Id: cmc-sponsor-organization
 Title: "Sponsor Organization"
 Description: "A profile for the data elements required to identify the sponsor of the drug products or substances."
 * ^abstract = true
-* .meta.profile 1..1 MS
+* meta.profile 1..1 MS
 * insert DUNSandFEINumber
 * name 1..1 MS
+* contact 1..1
 * contact.address 1..1 MS
 * contact.address only PqAddress
 
@@ -43,7 +44,7 @@ Id: mfg-test-site-organization
 Title: "Manufacturing and/or Test Site Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 * ^abstract = true
-* .meta.profile 1..1 MS
+* meta.profile 1..1 MS
 * insert DUNSandFEINumber
 * identifier ^short = "Manufacturing Site Unique Identifier | Testing Site Unique Identifier"
 * identifier ^definition = """Manufacturing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which manufactures, prepares, propagates, compounds or processes drugs. [Source: Adapted from FDA Drug Establishment Current Registration Site]
@@ -65,6 +66,7 @@ Examples: Data Universal Number System (DUNS), Facility Establishment Identifier
 
 Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
 """
+* contact 1..1
 * contact.address 1..1 MS
 * contact.address ^short = "Manufacturing Site Physical Address | Testing Site Address"
 * contact.address ^definition = """Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
@@ -79,7 +81,7 @@ Id: supplier-organization
 Title: "Supplier Organization"
 Description: "A profile for the data elements required to identify an organization that supplies drug products or substances."
 * ^abstract = true
-* .meta.profile 1..1 MS
+* meta.profile 1..1 MS
 * insert DUNSandFEINumber
 * identifier ^short = "Supplier Unique Identifier"
 * identifier ^definition = """Supplier Unique Identifier: A unique identifier assigned to the establishment (facility) which supplies drugs. 
@@ -97,6 +99,7 @@ Examples: Data Universal Number System (DUNS), Facility Establishment Identifier
 * name ^short = "Supplier Name"
 * name ^definition = """Supplier Name: The name of the establishment (facilities) which supplies or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
 """
+* contact 1..1 MS
 * contact.address 1..1 MS
 * contact.address ^short = "Supplier Physical Address"
 * contact.address ^definition = """Supplier Physical Address: The complete address for the supplier.
@@ -109,7 +112,7 @@ Id: pq-cmc-address
 Description: "pq-specific Constraints on the Address datatype dealing with US addresses."
 * obeys addr-state
 * obeys addr-zip
-* obeys CMC-county
+//* obeys CMC-county
 * line 1..2
 * city 1..1 MS
 * state 0..1 MS

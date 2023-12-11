@@ -9,111 +9,129 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
-object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-32p10.html]]
-    }  
-  node "DrugProductDescription" as N2 { 
-      object "**Parent:** MedicinalProductDefinition" as obj2 {
-         **Reference:**
+  object "**Bundle Reference:**" as objbun {
+    [[StructureDefinition-cmc-ectd-document-32p10.html]]
+  }
+
+  node "DrugProductDescription" as N2 {
+
+    object "**Parent:** MedicinalProductDefinition" as obj2 {
+      **Reference:**
       [[StructureDefinition-pqcmc-drug-product-description.html]]
-        **ValueSets:**
-        Drug Route Of Administration Terminology
-        Pharmaceutical Dosage Form Terminology
-    }
-}
-  node "EctdComposition32P10" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-         **Reference:**
-      [[StructureDefinition-ectd-composition-32P10.html]]
       **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }   
-}
-node "DrugProductContainerClosure" as N21 { 
-      object "**Parent:** MedicinalProductDefinition" as obj22 {
-        **Reference:**
+      Drug Route Of Administration Terminology
+      Pharmaceutical Dosage Form Terminology
+      Name Part Terminology
+    }
+  }
+  node "EctdComposition32P10" as N1 {
+
+    object "**Parent:** Composition" as obj1 {
+      **Reference:**
+      [[StructureDefinition-ectd-composition-32p10.html]]
+      **ValueSets:**
+      eCTD sections Value Set
+    }
+
+  }
+  node "DrugProductContainerClosure" as N21 {
+
+    object "**Parent:** MedicinalProductDefinition" as obj22 {
+      **Reference:**
       [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
-        **ValueSets:**
-        Container Type Terminology
-        Closure Type Terminology
+      **ValueSets:**
+      Container Type Terminology
+      Closure Type Terminology
     }
     object "**Extensions**" as objEx {
-        mdpcontainerClosure
+      ContainerClosureExtension
     }
     obj22 *-- objEx
-}
+  }
 
-node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-         **Reference:**
+  node "SponsorOrganization" as NSO {
+
+    object "**Parent:** Organization" as objAu {
+      **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
+      **ValueSets:**
+      Sponsor Identifier Type Terminology
+      GENC Country Codes
     }
-}
-node "FinishedProduct"as MID {
-object "**Parent:** ManufacturedItemDefinition" as objMID { 
-         **Reference:**
+  }
+  node "FinishedProduct"as MID {
+    object "**Parent:** ManufacturedItemDefinition" as objMID {
+
+      **Reference:**
       [[StructureDefinition-pqcmc-product-part.html]]
       **ValueSets:**
-      PqcmcCoatingPurposeVS
-      PqcmcDrugProductComponentFunctionCategoryTerminology
-      PqcmcExcipientFunctionTerminology
-      PqcmcProductPartIngredientPhysicalLocationVS
-      PqcmcProductPartTypeVS
-      PqcmcReleaseMechanismVS
-      PqcmcReleaseProfileVS
-      PqcmcStrengthOperatorTerminology
-      PqcmcStrengthTypeTerminology
-      PqcmcProductCharacteristicCodes
-      PqcmcUnitsMeasureTerminology
-      }
-}
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-           **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-         **ValueSets:**
-        Manufacturing Site Unique Identifier Type
-	    GENC Country Codes
+      Capsule Classification Category Value Set
+      Coating Purpose value set
+      Drug Product Component Function Category Terminology
+      Excipient Function Terminology
+      Product Part Ingredient Physical Location value set
+      Product Part Type Value Set
+      Relationship types Value Set
+      Release Mechanism value set
+      Release Profile value set
+      Strength Operator Terminology
+      Strength Type Terminology
+      Units Of Measure Terminology
     }
-}
+  }
+  node "MfgTestSiteOrganization" as NMFG {
 
-node "DrugProductComponent" as NN { 
-      object "**Parent:** Ingredient" as obj3 {
-           **Reference:**
+    object "**Parent:** Organization" as objDP {
+      **Reference:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+      **ValueSets:**
+      Testing Site and Organization Identifier Type Terminology
+      GENC Country Codes
+    }
+  }
+
+  node "DrugProductComponent" as NN {
+
+    object "**Parent:** Ingredient" as obj3 {
+      **Reference:**
       [[StructureDefinition-pqcmc-component.html]]
-      }
-      object "**Extensions**" as objExs {
-        Additional-info-extension
+    }
+    object "**Extensions**" as objExs {
+      Aditional Information
+      Strength Extension
     }
     obj3 *-- objExs
-}
+  }
 
-node "ComponentSubstance" as NCS { 
-      object "**Parent:** SubstanceDefinition" as objSubDef {
-           **Reference:**
+  node "ComponentSubstance" as NCS {
+
+    object "**Parent:** SubstanceDefinition" as objSubDef {
+      **Reference:**
       [[StructureDefinition-pqcmc-component-substance.html]]
-        **ValueSets:**
-        EVMPDSubstanceClassification
-        Quality Standard Terminology
-        Source Type Terminology
-        GENC Country Codes
+      **ValueSets:**
+      EVMPD Substance Classification
+      Quality Standard Terminology
+      Source Type Terminology
+      GENC Country Codes
+      Chemical Structure Data File Type Terminology
     }
-}
-node "Base64DocumentReference" as NB64 { 
-      object "**Parent:** DocumentReference"  as obj64 {  
-       **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]] 
-    }   
-}
+  }
+  node "Base64DocumentReference" as NB64 {
 
-N1 -[#darkred]-> N2
-N1 -[#darkred]-> MID
-N1 -[#darkred]-> NSO
-N1 -[#darkred]-> N21
-MID -[#darkred]-> NN
-NCS -[#darkred]-> NMFG
-NN -[#darkred]-> NCS
-NCS -[#darkred]-> NB64
-@enduml
+    object "**Parent:** DocumentReference"  as obj64 {
+
+      **Reference:**
+      [[StructureDefinition-cmc-document-reference.html]]
+    }
+
+  }
+
+  N1 -[#darkred]-> N2
+  N1 -[#darkred]-> MID
+  N1 -[#darkred]-> NSO
+  N1 -[#darkred]-> N21
+  MID -[#darkred]-> NN
+  NCS -[#darkred]-> NMFG
+  NN -[#darkred]-> NCS
+  NCS -[#darkred]-> NB64
+  @enduml

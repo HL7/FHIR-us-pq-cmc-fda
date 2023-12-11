@@ -9,151 +9,169 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
- 
-   object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-sp4454.html]]
-    }       
+
+  object "**Bundle Reference:**" as objbun {
+    [[StructureDefinition-cmc-ectd-document-sp4454.html]]
+  }
 
 
-node "DrugProductBatch" as NN { 
-      object "**Parent:** Medication" as obj3 {
-        **Reference:**
+
+  node "DrugProductBatch" as NN {
+
+    object "**Parent:** Medication" as obj3 {
+      **Reference:**
       [[StructureDefinition-pqcmc-drug-product-instance.html]]
-        **ValueSets:**
-        Drug Route Of Administration Terminology
-        Pharmaceutical Dosage Form Terminology
-        Expiration Date Classification Terminology
-        Batch utilization Terminology
-        Units Of Measure Terminology 
-        Container Type Terminology
-        Closure Type Terminology        
-      }
+      **ValueSets:**
+      Pharmaceutical Dosage Form Terminology
+      Expiration Date Classification Terminology
+      Batch utilization Terminology
+      Units Of Measure Terminology
+      Container Type Terminology
+      Closure Type Terminology
 
-      object "**Extensions**" as objExsBatch  {
-                manufacturingDate
-                manufacturingDateClassification
-                assignedManufacturer
-                expirationDateClassification
-                batchUtilization
-                batchQuantity
-                additionalInformation
-                container.extension.closureSystemDescription
-                container.extension.closureType
-                container.extension.lotNumber
-                container.extension.quantity
-                container.extension.type 
-}
-objExsBatch *-- obj3 
-}
-  node "BatchAnalysis" as N2 { 
-      object "**Parent:** DiagnosticReport" as obj2 {
-        **Reference:**
+    }
+
+    object "**Extensions**" as objExsBatch  {
+      Manufacturing Date
+      Manufacturing Date Description
+      Assigned Manufacturer
+      Expiration Date Classification
+      Batch Utilization
+      Batch Size
+      Additional Information
+      Container Closure System Description
+      Container Type
+      Container Lot Number
+      Container Fill per Container Size
+      Container
+    }
+    objExsBatch *-- obj3
+  }
+  node "BatchAnalysis" as N2 {
+
+
+    object "**Parent:** DiagnosticReport" as obj2 {
+      **Reference:**
       [[StructureDefinition-pqcmc-batch-analysis.html]]
     }
-        object "**Extensions**" as objQSEx {
-        pq-quality-specification-extension
-    }
-    obj2 *-- objQSEx 
-}
+    object "**Extensions**" as objQSEx {
+      Quality Specification Reference
 
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-       **Reference:**
+    }
+    obj2 *-- objQSEx
+  }
+
+  node "MfgTestSiteOrganization" as NMFG {
+
+    object "**Parent:** Organization" as objDP {
+      **Reference:**
       [[StructureDefinition-mfg-test-site-organization.html]]
-         **ValueSets:**
-        Manufacturing Site Unique Identifier Type
-	    GENC Country Codes
+      **ValueSets:**
+      Testing Site and Organization Identifier Type Terminology
+      GENC Country Codes
     }
-}
-node "DrugSubstanceBatch" as NNS { 
-      object "**Parent:** Substance" as obj4 {
-        **Reference:**
+  }
+  node "DrugSubstanceBatch" as NNS {
+
+    object "**Parent:** Substance" as obj4 {
+      **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-batch.html]]
-                **ValueSets:**
-                Batch utilization Terminology
-                Units Of Measure Terminology
-                Container Type Terminology
-                Closure Type Terminology
-      }
-  object "**Extensions**" as objExs2 {
-          manufacturingDate
-          manufacturingDateClassification
-          assignedManufacturer
-          batchUtilization
-          batchQuantity
-          additionalInformation
-          container.extension.closureSystemDescription
-          container.extension.closureType
-          container.extension.lotNumber
-          container.extension.quantity
-          container.extension.type
+      **ValueSets:**
+      Batch utilization Terminology
+      Units Of Measure Terminology
+      Container Type Terminology
+      Closure Type Terminology
+    }
+    object "**Extensions**" as objExs2 {
+      Manufacturing Date
+      Manufacturing Date Description
+      Assigned Manufacturer
+      Batch Utilization
+      Batch Size
+      Additional Information
+      Retest Date Classification
+      Container Closure System Description
+      Container Type
+      Container Lot Number
+      Container Fill per Container Size
+      Container
     }
 
-    objExs2 *-- obj4   
-}
+    objExs2 *-- obj4
+  }
 
-node "ResultObservation" as NNOBS { 
-      object "**Parent:** Observation" as observ3 {
-        **Reference:**
+  node "ResultObservation" as NNOBS {
+
+    object "**Parent:** Observation" as observ3 {
+      **Reference:**
       [[StructureDefinition-pq-result-observation.html]]
-        **ValueSets:**
-        Conformance Criteria Terminology
-        Units Of Measure Terminology    
-      }
-      object "**Extensions**" as objExsObserv  {
-            pq-pullDate-extension
-            pq-interpretation-code-extension
-            pq-replicate-extension
+      **ValueSets:**
+      Conformance Criteria Terminology
+      Units Of Measure Terminology
+      Interpretation Code Terminology
+      Test Category Terminology
+      Test Sub-Category Terminology
     }
-        objExsObserv *-- observ3 
-}
+    object "**Extensions**" as objExsObserv  {
+      actualpulldate
+      interpretationCode
+      replicate
+    }
+    objExsObserv *-- observ3
+  }
 
-node "MultipleReplicatesResultObservation" as NNstage { 
-      object "**Parent:** Observation" as observS {
-        **Reference:**
+  node "MultipleReplicatesResultObservation" as NNstage {
+
+    object "**Parent:** Observation" as observS {
+      **Reference:**
       [[StructureDefinition-pq-additional-stage-result-observation.html]]
-        **ValueSets:**
- PqcmcConformanceCriteriaTerminology
- PqcmcUnitsMeasureTerminology
-      }
-      object "**Extensions**" as objExsStageObs  {
-            pq-pullDate-extension
-            pq-interpretation-code-extension
-            pq-replicate-extension
-     }  
-        objExsStageObs *-- observS
-}
+      **ValueSets:**
+      Conformance Criteria Terminology
+      Units Of Measure Terminology
+      Interpretation Code Terminology
+    }
+    object "**Extensions**" as objExsStageObs  {
+      actualpulldate
+      interpretationCode
+      replicate
+    }
 
-node "EctdCompositionSP4151" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-        **Reference:**
+    objExsStageObs *-- observS
+  }
+
+  node "EctdCompositionSP4151" as N1 {
+
+    object "**Parent:** Composition" as obj1 {
+      **Reference:**
       [[StructureDefinition-ectd-composition-sp4454.html]]
       **ValueSets:**
-  Code system PQCMC Comp Section Types
+      Code system PQCMC Comp Section Types
     }
-}
-node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-        **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
-    }
-}
- diamond CH
+  }
+  node "SponsorOrganization" as NSO {
 
-N1 -[#darkred]-> CH
-N1 -[#darkred]-> N2
-N1 -[#darkred]-> NSO
-CH -[#green]-> NNS
-CH -[#green]-> NN
-NNS -[#darkred]-> NMFG
-NN -[#darkred]-> NMFG
-N2 -[#darkred]-> CH
-N2 -[#darkred]-> NMFG
-N2 -[#darkred]-> NNOBS
-NNOBS -[#darkred]-> NMFG
-NNOBS -[#darkred]-> NNstage
-NNstage -[#darkred]-> NMFG
+    object "**Parent:** Organization" as objAu {
+      **Reference:**
+      [[StructureDefinition-cmc-sponsor-organization.html]]
+      **ValueSets:**
+      GENC Country Codes
+      Testing Site and Organization Identifier Type Terminology
+    }
+  }
+  diamond CH
+
+  N1 -[#darkred]-> CH
+  N1 -[#darkred]-> N2
+  N1 -[#darkred]-> NSO
+  CH -[#green]-> NNS
+  CH -[#green]-> NN
+  NNS -[#darkred]-> NMFG
+  NN -[#darkred]-> NMFG
+  N2 -[#darkred]-> CH
+  N2 -[#darkred]-> NMFG
+  N2 -[#darkred]-> NNOBS
+  NNOBS -[#darkred]-> NMFG
+  NNOBS -[#darkred]-> NNstage
+  NNstage -[#darkred]-> NMFG
 }
 @enduml

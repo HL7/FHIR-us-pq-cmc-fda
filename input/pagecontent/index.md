@@ -1,9 +1,3 @@
-## WORK IN PROGRESS
-
-Known errors:  
-- '(any number) profiles found for entry resource. More than one is not supported at this time.' The IG publisher does not distinguish between different profiles on the same Resource in one bundle.  The 3.2.S.1.0 and 3.2.P.1.0 bundles are technically correct. This error can be ignored in validation of the file. When this feauture is supported, a later version will be released. The feature is recognized as necessary for the publisher, but a release date is unscheduled.
-- 'None of the codings provided are in the value set 'Country ValueSet'. GENC country codes not suported in SubtanceDefinition. Requires a change to the FHIR specification, therefore a Jira ticket submission. Igore this error.
-
 ## Background
 
 The US Food and Drug Administration (FDA) intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in eCTD Module 3.  Module 3 (M3) of ICH eCTD is commonly referred to as the Chemistry, Manufacturing and Controls (CMC) module.   At the FDA, this ICH eCTD M3 data standardization effort is referred to as the Pharmaceutical Quality/Chemistry, Manufacturing and Controls (PQ/CMC).  For more information on the PQ/CMC Project, please visit [https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc](https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc)
@@ -14,13 +8,11 @@ The PQ/CMC Project is an evolving project and FDA is structuring the various sec
 
 The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG).  At HL7, this project is referred to as Pharmaceutical Quality.  BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
 
-
 ## Status:
 
 FDA plans to represent all the Phase 1 data elements and supporting terminology in FHIR Profiles defined here.  These data elements and controlled terminology have been published to the industry for comment through the Federal Register Notices (FRN).  These industry comments and suggestions have been incorporated in the data element standards, as applicable.  
 
 Note: See FDA PQ/CMC website for the scope of Phase 1 of PQ/CMC. In the near future, as FDA develops new structured data elements and terminology for Phase 2 sections of eCTD Module 3, they will solicit industry feedback and then represent the requirements in FHIR. These new requirements will result in additional FHIR profiles that will be added to this IG. 
-
 
 ## IG Overview
 
@@ -171,21 +163,20 @@ As mentioned above, the Phase 1 structured data requirements of PQ/CMC project h
 The development of this Implementation Guide is an initiative funded by the US FDA.
 
 * Primary IG authors: 
-   * Catherine Hosage Norman (mailto: chn@module3solutions.com)
+  * Catherine Hosage Norman (mailto: chn@module3solutions.com)
 	* Smita Hastak (mailto: shastak@samvit-solutions.com)
 	* Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
 	* Bill Friggle (mailto: wfriggle@samvit-solutions.com)
 
-* Domain Experts and Program Management:
-	* Program Management – (list of names to be added soon)
-	
-* FDA PQ/CMC SMEs — (list of names to be added soon)
-
+* Program Management:
+	* Scott Gordon (mailto: pq-cmc@fda.hhs.gov)
+  
 The PQ/CMC Projects is Sponsored by the HL7 Biomedical Research & Regulation work group.
 
 ### IP Statements
 {% include ip-statements.xhtml %}
 
+This IP is temporary based on required bindings in some resources. The country codes from https://nsgreg.nga.mil will be used after the technical corrections to R5 are released.  The examples use the country codes from https://nsgreg.nga.mil.
 ### Dependencies
 {% include dependency-table.xhtml %}
 
