@@ -14,8 +14,8 @@ Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, 
 
 Extension: OptionalDenominator
 Id:  optional-denominator
-Title: "Content Percent"
-Description: "constituent content percent"
+Title: "Optional Denominator"
+Description: "The constituent optional denominator is used then the unit it other than 1 per product part."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.amount"
 * ^context[+].type = #element
@@ -134,7 +134,7 @@ Parent: ManufacturedItemDefinition
 Id: pqcmc-product-part
 Title: "Manufactured Drug Product"
 Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or compoent."
-
+* obeys cmc-arbitrary-unit-text-required
 * meta.profile 1..1 MS
 * identifier 0..1 MS
 * status 1..1 MS

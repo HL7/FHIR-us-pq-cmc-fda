@@ -109,7 +109,7 @@ Id: pq-cmc-address
 Description: "pq-specific Constraints on the Address datatype dealing with US addresses."
 * obeys addr-state
 * obeys addr-zip
-* obeys CMC-county
+//* obeys CMC-county
 * line 1..2
 * city 1..1 MS
 * state 0..1 MS

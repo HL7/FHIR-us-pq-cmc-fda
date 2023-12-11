@@ -103,12 +103,32 @@ Severity: #error
 
 Invariant: cmc-greater-than-zero
 Description: "Hierachial levels are greater than 0"
-Expression: "(value > 0)  = true" 
+Expression: "($this > 0)  = true" 
 Severity: #error
 
 Invariant: cmc-subtest-rrt 
 Description: "a subtest's prefix represents relative retention time, should it exist"
 Expression: "prefix.exists() implies prefix = 'RRT'"
+Severity: #error
+
+Invariant: cmc-32S23
+Description: "The composition must be EctdComposition32S23"
+Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s23'))"
+Severity: #error
+
+Invariant: cmc-32S10
+Description: "The composition must be EctdComposition32S10"
+Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s10'))"
+Severity: #error
+
+Invariant: cmc-32P10
+Description: "The composition must be EctdComposition32P10"
+Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32p10'))"
+Severity: #error
+
+Invariant: cmc-SP4151
+Description: "The composition must be EctdCompositionSP4151"
+Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-sp4151'))"
 Severity: #error
 
 
@@ -132,3 +152,25 @@ Severity: #error
 // that path. The number of actions where its prefix exists and isn't 
 // 'single stage' needs to be the total number of actions; otherwise one of 
 // them was 'single stage' or wasn't defined.
+
+Invariant: cmc-arbitrary-unit-text-required
+Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
+Expression: "property.where(
+    type.coding.exists(
+        system = 'http://examples.com' and (
+            code = 'TotWgtNum' or 
+            code = 'TotWgtDen'
+        )
+    ) and
+    value.code.coding.exists(system = 'http://examples.com' and code = 'C75765')
+).exists() implies property.where(
+    type.coding.exists(
+        code = 'TotWgtTxt' and
+        system = 'http://examples.com'
+    )
+).exists()"
+Severity: #error
+// Note: checks if a property for the numerator or denominator exists. if it
+// does and it has an arbitrary unit, then there needs to be a slice for 
+// weight textual
+

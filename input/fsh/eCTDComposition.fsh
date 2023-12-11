@@ -6,24 +6,18 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-identifer
+* obeys cmc-32P10
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
-
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry contains
-    Composition 1..1
-* entry[Composition].resource only EctdComposition32P10
-
 
 Profile: CMCeCTDDocument32P32
 Parent: Bundle
@@ -59,6 +53,7 @@ Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
 * . ^short = "CMC eCTD 32S10 Bundle"
 * . obeys cmc-identifer
+* obeys cmc-32S10
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -69,12 +64,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry contains
-    Composition 1..1
-* entry[Composition].resource only EctdComposition32S10
+//* entry[0].resource only EctdComposition32S10
  
 Profile: CMCeCTDDocument32S30
 Parent: Bundle
@@ -114,23 +104,18 @@ Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
 * . obeys cmc-identifer
+* obeys cmc-32S23
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
-
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
+
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry contains
-    Composition 1..1
-* entry[Composition].resource only EctdComposition32S23
 
 Profile: CMCeCTDDocument32P55
 Parent: Bundle
@@ -142,7 +127,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
-
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -233,6 +217,7 @@ Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
 * . obeys cmc-identifer
+* obeys cmc-SP4151
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -243,12 +228,6 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry contains
-    Composition 1..1
-* entry[Composition].resource only ectd-composition-sp4151
 
 Profile: CMCeCTDDocumentSP4454
 Parent: Bundle

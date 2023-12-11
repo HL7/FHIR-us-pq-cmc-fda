@@ -4,13 +4,9 @@ The Description and Composition of the Drug Product bundle profile provides a me
 
 For the purposes of the PQ/CMC IG, the Example 1 below of a two-layer Tablet provides description of the terms used to explain the 2-layer tablet.
 
-<table style="margin: 0px auto;"><tr><td><img src="image1.png" /></td></tr></table>
+<table ><tr><td><img src="image1.png" /></td></tr></table>
 
-<span style="text-align:center">
-
-***Example 1: A 2 layer tablet with 1 purple layer and 1 white layer***
-
-</span>
+<p style="font-weight: bold"> Example 1: A 2 layer tablet with 1 purple layer and 1 white layer </p>
 
 - A <span style="text-decoration:underline;">Drug Product</span> is the dose unit, i.e., the whole tablet.
 - <span style="text-decoration:underline;">Components</span> are the “parts” of the Drug Product, i.e., each of the two layers in the tablet is considered a Component. If the tablet was coated, the coating would be another (third) Component.
@@ -23,11 +19,12 @@ The additional example illustrations below of drug products are included as an a
 
 <table style="margin: 0px auto;"><tr><td><img src="image2.png" /></td></tr></table>
 
-***Example 2: Capsule with 3 components: capsule shell, one type of beads, and a minitablet*** 
+<p style="text-align: center; font-weight: bold">Example 2: Capsule with 3 components: capsule shell, one type of beads, and a minitablet</p>
 
 <table style="margin: 0px auto;"><tr><td><img src="image3.png" /></td></tr></table>
 
-***Example 3: Tablet with two coatings***
+<p style="text-align: center; font-weight: bold"> Example 3: Tablet with two coatings </p>
+
 
 Drug Product content includes information such as: the dosage form, routes of administration, a narrative description of the product, a schematic, the type of container and container closure used for the dosage form, quality standard and release profile of the dose unit, and the amount of each constituent (both active and inactive ingredients) contained in the drug product.
 
