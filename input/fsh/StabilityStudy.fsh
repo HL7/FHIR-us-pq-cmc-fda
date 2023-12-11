@@ -199,8 +199,8 @@ Description: "Summary of the types of studies conducted (forced degradation, pho
 * .extension[studysum-additional-info] ^definition = "A placeholder for providing comments about the stability summary."
 * identifier 1..1 MS
 * status MS
-* subjectReference 1..1 MS
-* subjectReference only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
+* subject[x] 1..1 MS
+* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition)
 * goal.target 1..1 MS
 * goal.target.detail[x] only Quantity
 * goal.target.detailQuantity 0..1 MS

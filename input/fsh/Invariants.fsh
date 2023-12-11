@@ -134,7 +134,7 @@ Severity: #error
 
 Invariant: cmc-single-or-multistage
 Description: "if a test is multi-stage, the test can't have a prefix and its stages must have a name and can't be named 'Single Stage' and must be unique. If it's single stage its prefix is 'Single Stage' and its groups can't have prefixes"
-Expression: "(
+Expression: "((
     prefix.exists() implies 
         action.prefix.empty() and prefix = 'Single Stage'    
 ) and (
@@ -145,13 +145,15 @@ Expression: "(
         ).count() = action.count()) and 
         action.prefix.isDistinct()
     )
-)"
+)) = true"
 Severity: #error
 // Note: cmc-single-or-multistage gets evaluated on Plandefinition.action,
 // so action.prefix is a collection of all the nodes under a single test at 
 // that path. The number of actions where its prefix exists and isn't 
 // 'single stage' needs to be the total number of actions; otherwise one of 
 // them was 'single stage' or wasn't defined.
+
+
 
 Invariant: cmc-arbitrary-unit-text-required
 Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
@@ -174,3 +176,15 @@ Severity: #error
 // does and it has an arbitrary unit, then there needs to be a slice for 
 // weight textual
 
+
+Invariant: cmc-format-required
+Severity: #error
+Description: "Format is required when a representation is provided"
+Expression: "representation.exists() implies format.exists()"
+
+Invariant: cmc-capsule-count-required
+Severity: #error
+Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
+Expression: "manufacturedDoseForm.coding.exists(system = 'http://examples.com' and code in ('C25158' | 'C42895' | 'C42896' | 'C42902' | 'C42904' | 'C42916' | 'C42917' | 'C42928' | 'C42936' | 'C42954'))
+implies property.where(type.coding.exists(system = 'http://examples.com' and code = 'CapConCnt')).exists()
+"
