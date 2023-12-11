@@ -1,7 +1,19 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
+### Changes and Updates for Version 0.1.16
+The current development IG -  Pre-connectathon
+
+- Examples
+- FRN element names, cardinality and definition changes
+- Updates to PlantUML diagrams
+- Updates to pull down pages
+- Invariants added
+- Stlye applied to XML files
+- Temp replacement of GENC and NCIT
+- Corrections throughtout
+
 ### Changes and Updates for Version 0.1.15
-The current development IG -  Stage 1A - PoP edition
+Stage 1A - PoP edition
 
 - Enhanced content examples for 3.2.S.1.0 nad 3.2.P.1.0.  Errors addressed. Change requests provided to Zulip.
 - Testing and edits to invariants

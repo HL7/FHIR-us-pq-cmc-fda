@@ -85,7 +85,7 @@ Description: "Identification of the subject of the specification which is a sour
 * sourceMaterial.type = $NCIT#C14258 "Plant"
 * sourceMaterial.genus.text = "palmaria"
 * sourceMaterial.species.text = "palmata"
-* sourceMaterial.countryOfOrigin = $GENC#USA "UNITED STATES"
+* sourceMaterial.countryOfOrigin =  $Country#USA "United States of America"  // $GENC#USA "UNITED STATES"
 
 Instance: fd84a8b5-9e96-451c-a5c6-097c943eb38a
 InstanceOf: ExcipientRaw

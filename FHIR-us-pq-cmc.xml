@@ -4,6 +4,14 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="SubstanceDefinition/2d70d504-8cc6-4282-81d4-b20b0a98b78b" key="SubstanceDefinition-2d70d504-8cc6-4282-81d4-b20b0a98b78b" name="2d70d504-8cc6-4282-81d4-b20b0a98b78b"/>
+<artifact id="Ingredient/3791c4ce-2b43-4d7b-b195-0e5f88f28dab" key="Ingredient-3791c4ce-2b43-4d7b-b195-0e5f88f28dab" name="3791c4ce-2b43-4d7b-b195-0e5f88f28dab"/>
+<artifact id="SubstanceDefinition/393a14e7-3edc-4373-bbe5-9e569d504a1c" key="SubstanceDefinition-393a14e7-3edc-4373-bbe5-9e569d504a1c" name="393a14e7-3edc-4373-bbe5-9e569d504a1c"/>
+<artifact id="SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67" key="SubstanceDefinition-496f83ad-2365-4b12-8672-a349d99f7d67" name="496f83ad-2365-4b12-8672-a349d99f7d67"/>
+<artifact id="Organization/4f3e9af1-306b-4fad-bf04-7881400b266a" key="Organization-4f3e9af1-306b-4fad-bf04-7881400b266a" name="4f3e9af1-306b-4fad-bf04-7881400b266a"/>
+<artifact id="MedicinalProductDefinition/5772a6f2-cde1-4903-bfcf-1639340205cc" key="MedicinalProductDefinition-5772a6f2-cde1-4903-bfcf-1639340205cc" name="5772a6f2-cde1-4903-bfcf-1639340205cc"/>
+<artifact id="MedicinalProductDefinition/77ad6922-9c59-43d1-93cb-29d063cc2e8c" key="MedicinalProductDefinition-77ad6922-9c59-43d1-93cb-29d063cc2e8c" name="77ad6922-9c59-43d1-93cb-29d063cc2e8c"/>
+<artifact id="Ingredient/7f10a35e-228d-42db-8918-6ccada78454d" key="Ingredient-7f10a35e-228d-42db-8918-6ccada78454d" name="7f10a35e-228d-42db-8918-6ccada78454d"/>
 <artifact id="StructureDefinition/pq-additional-info-extension" key="StructureDefinition-pq-additional-info-extension" name="Aditional Information"/>
 <artifact id="DocumentReference/ff0e6432-2f8b-43cc-a3b3-462981a2d929" key="DocumentReference-ff0e6432-2f8b-43cc-a3b3-462981a2d929" name="Base64 Document Reference - Levothyroid.png"/>
 <artifact id="DocumentReference/fd006e04-8764-4d83-b6ee-bbf8f35847e0" key="DocumentReference-fd006e04-8764-4d83-b6ee-bbf8f35847e0" name="Base64 Document Reference - Monosodium D-thyroxine hydrate.png"/>
@@ -65,6 +73,7 @@
 <artifact id="SubstanceDefinition/d8242262-2187-4ea2-907f-b66752202b46" key="SubstanceDefinition-d8242262-2187-4ea2-907f-b66752202b46" name="Example SubstanceDefinition for Carrageenan"/>
 <artifact id="SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a" key="SubstanceDefinition-fd84a8b5-9e96-451c-a5c6-097c943eb38a" name="Example SubstanceDefinition for anhydrous citric acid"/>
 <artifact id="SubstanceDefinition/d3a11b25-e160-4688-b807-6383364096fd" key="SubstanceDefinition-d3a11b25-e160-4688-b807-6383364096fd" name="Example SubstanceDefinition for water"/>
+<artifact id="Organization/8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" key="Organization-8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" name="Example of MfgTestSiteOrganization profile on Organization"/>
 <artifact id="Organization/7ed6b2bf-b967-490b-be49-f9facec3f04b" key="Organization-7ed6b2bf-b967-490b-be49-f9facec3f04b" name="Example of a Supplier Organization"/>
 <artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
@@ -137,6 +146,9 @@
 <artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
 <artifact id="Organization/e99bddfa-c1b5-435b-bbe8-24816b4e23e5" key="Organization-e99bddfa-c1b5-435b-bbe8-24816b4e23e5" name="Vidinaid"/>
 <artifact id="PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89" key="PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89" name="Water Specification Example"/>
+<artifact id="ManufacturedItemDefinition/a8316fc9-8ca8-4115-81c1-9f8f84c99149" key="ManufacturedItemDefinition-a8316fc9-8ca8-4115-81c1-9f8f84c99149" name="a8316fc9-8ca8-4115-81c1-9f8f84c99149"/>
+<artifact id="Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888" key="Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888" name="bd0f0a7a-27ea-4884-801d-bd0546e80888"/>
+<artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="d01421cc-6488-468b-a676-d3e7281875e2"/>
 <artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
 <artifact id="Composition/e23e1f1e-8ac2-49d6-afaa-7ad876a85979" key="Composition-e23e1f1e-8ac2-49d6-afaa-7ad876a85979" name="eCTD Composition for 3.2.S.1.0"/>
@@ -144,6 +156,7 @@
 <artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p70" key="StructureDefinition-ectd-composition-32p70" name="eCTD Product Container Closure System Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
+<artifact id="Composition/5dfbbf17-05c0-441d-af66-7a66072f4ae4" key="Composition-5dfbbf17-05c0-441d-af66-7a66072f4ae4" name="eCTD Product Description and Composition for Example1Drug"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
 <artifact id="StructureDefinition/ectd-composition-sp7383" key="StructureDefinition-ectd-composition-sp7383" name="eCTD Stability Data Composition"/>
 <artifact id="StructureDefinition/ectd-composition-sp7181" key="StructureDefinition-ectd-composition-sp7181" name="eCTD Stability Summary and Conclusion Composition"/>
@@ -152,6 +165,8 @@
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Value Set"/>
+<artifact id="Ingredient/fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" key="Ingredient-fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" name="fc09842a-8f71-48f2-9f9f-ff2441b2eb6f"/>
+<artifact id="SubstanceDefinition/fc878c4f-a98c-427c-816b-e03ccdf0e712" key="SubstanceDefinition-fc878c4f-a98c-427c-816b-e03ccdf0e712" name="fc878c4f-a98c-427c-816b-e03ccdf0e712"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

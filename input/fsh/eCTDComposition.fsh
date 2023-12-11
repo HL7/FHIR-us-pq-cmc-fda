@@ -6,7 +6,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-identifer
-* obeys cmc-32P10
+//* obeys cmc-32P10
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -53,7 +53,7 @@ Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
 * . ^short = "CMC eCTD 32S10 Bundle"
 * . obeys cmc-identifer
-* obeys cmc-32S10
+//* obeys cmc-32S10
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -104,7 +104,7 @@ Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
 * . obeys cmc-identifer
-* obeys cmc-32S23
+//* obeys cmc-32S23
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS

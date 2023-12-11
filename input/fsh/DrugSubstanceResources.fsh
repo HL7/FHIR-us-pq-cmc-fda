@@ -301,7 +301,7 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin 0..1 MS
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
+//* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
 * sourceMaterial.countryOfOrigin.coding 1..1 MS
 
 Profile: DrugProductComponent
@@ -597,7 +597,7 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.countryOfOrigin 0..1 MS
 * sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
 * sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
+//* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
 * sourceMaterial.countryOfOrigin.coding 1..1 MS
 
 Profile: RoutineSubstanceDefinition

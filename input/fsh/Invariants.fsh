@@ -113,22 +113,25 @@ Severity: #error
 
 Invariant: cmc-32S23
 Description: "The composition must be EctdComposition32S23"
-Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s23'))"
+Expression: "entry.resource.ofType(Composition).all(Composition.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s23'))"
 Severity: #error
 
 Invariant: cmc-32S10
 Description: "The composition must be EctdComposition32S10"
-Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s10'))"
+Expression: "entry.resource.ofType(Composition).all($this.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s10'))"
+// Expression: "entry.ofType(Composition).where(
+//     Composition.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s10')
+// ).count() = entry.ofType(Composition).count()"
 Severity: #error
 
 Invariant: cmc-32P10
 Description: "The composition must be EctdComposition32P10"
-Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32p10'))"
+Expression: "entry.resource.ofType(Composition).all($this.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32p10'))"
 Severity: #error
 
 Invariant: cmc-SP4151
 Description: "The composition must be EctdCompositionSP4151"
-Expression: "entry.ofType(Composition).all(resource.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-sp4151'))"
+Expression: "entry.resource.ofType(Composition).all($this.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-sp4151'))"
 Severity: #error
 
 
@@ -164,7 +167,7 @@ Expression: "property.where(
             code = 'TotWgtDen'
         )
     ) and
-    value.code.coding.exists(system = 'http://examples.com' and code = 'C75765')
+    value.exists(system = 'http://examples.com' and code = 'C75765')
 ).exists() implies property.where(
     type.coding.exists(
         code = 'TotWgtTxt' and
