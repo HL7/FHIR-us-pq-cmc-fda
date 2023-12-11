@@ -28,6 +28,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       Units Of Measure Terminology
       Container Type Terminology
       Closure Type Terminology
+
     }
 
     object "**Extensions**" as objExsBatch  {
@@ -48,12 +49,14 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
   }
   node "BatchAnalysis" as N2 {
 
+
     object "**Parent:** DiagnosticReport" as obj2 {
       **Reference:**
       [[StructureDefinition-pqcmc-batch-analysis.html]]
     }
     object "**Extensions**" as objQSEx {
       Quality Specification Reference
+
     }
     obj2 *-- objQSEx
   }
