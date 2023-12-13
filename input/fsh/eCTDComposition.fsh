@@ -512,21 +512,23 @@ Description: "The fields needed to represent the Product Description, Container 
 * section.title 1..1 MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #open
+* section ^slicing.rules = #closed
+* section ^slicing.ordered = true
 * section ^slicing.description = "Slice based on the ectd document sections."
-* section contains ProductDescription 1..1 MS and ContainerClosure 1..1 MS and ProductComposition 1..1 MS
+// the contains line determines the order, not the section profiling
+* section contains ProductDescription 1..1 MS and ProductComposition 1..1 MS and ContainerClosure 1..1 MS
 * section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1.0 eCTD heading."
 * section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ProductDescription].entry 1..1 MS
 * section[ProductDescription].entry only Reference(DrugProductDescription)
-* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1.0 eCTD heading."
-* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
-* section[ContainerClosure].entry 1..1 MS
-* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
 * section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1.0 eCTD heading."
 * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
-* section[ProductComposition].entry 1..* MS
+* section[ProductComposition].entry 1..1 MS
 * section[ProductComposition].entry only Reference(FinishedProduct)
+* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1.0 eCTD heading."
+* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
+* section[ContainerClosure].entry 1..* MS
+* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
 
 Profile: EctdComposition32S60
 Parent: Composition
