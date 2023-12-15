@@ -51,10 +51,7 @@ Extension: TestOrderExtension
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
 Description: "The sequential number assigned to each Test or Stabe to specify the order of display on the Quality Specification."
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.action"
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.action.action"
+Context: "PlanDefinition.repeat(action)"
 * value[x] obeys cmc-greater-than-zero
 * value[x] only decimal 
 
