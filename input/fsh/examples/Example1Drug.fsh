@@ -20,6 +20,10 @@ Usage: #example
 
 Instance: 2d70d504-8cc6-4282-81d4-b20b0a98b78b
 InstanceOf: ComponentSubstance
+Title: "Composition ingredient substance indenifying information - aspirin"
+Description: "API used in two layer table example"
+Usage: #example 
+
 * identifier.value = "aspirin"
 * classification =  $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
@@ -33,6 +37,10 @@ InstanceOf: ComponentSubstance
 
 Instance: fc09842a-8f71-48f2-9f9f-ff2441b2eb6f
 InstanceOf: DrugProductComponent
+Title: "Strength info for the Active Ingredient"
+Description: "one of the active ingredients in the two layer table example - aspirin"
+Usage: #example 
+
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C82533 "Active Ingredient"
 * substance.code.reference = Reference(urn:uuid:2d70d504-8cc6-4282-81d4-b20b0a98b78b)
@@ -46,6 +54,10 @@ InstanceOf: DrugProductComponent
 
 Instance: fc878c4f-a98c-427c-816b-e03ccdf0e712
 InstanceOf: ComponentSubstance
+Title: "Composition ingredient substance indenifying information - acetaminophen"
+Description: "An API used in two layer table example."
+Usage: #example 
+
 * identifier.value = "acetaminophen"
 * classification =  $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
@@ -58,6 +70,10 @@ InstanceOf: ComponentSubstance
 
 Instance: 7f10a35e-228d-42db-8918-6ccada78454d
 InstanceOf: DrugProductComponent
+Title: "Strength information for the Active Ingredient - acetaminophen"
+Description: "An active ingredient in the two layer table example -  acetaminophen"
+Usage: #example 
+
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C82533 "Active Ingredient"
 * substance.code.reference = Reference(urn:uuid:fc878c4f-a98c-427c-816b-e03ccdf0e712)
@@ -71,6 +87,10 @@ InstanceOf: DrugProductComponent
 
 Instance: 393a14e7-3edc-4373-bbe5-9e569d504a1c
 InstanceOf: ComponentSubstance
+Title: "Composition ingredient substance indenifying information - Maize starch"
+Description: "An excipient in the two layer tablet"
+Usage: #example 
+
 * identifier.value = "Maize starch"
 * classification =  $EMAIDMP#17 "Mixture"
 * grade = $NCIT#C134009 "Company Standard"
@@ -80,13 +100,16 @@ InstanceOf: ComponentSubstance
 * name[gsrs].name = "STARCH, CORN"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C14258 "Plant"
-
 * sourceMaterial.genus.text = "zea"
 * sourceMaterial.species.text = "mays"
 * sourceMaterial.countryOfOrigin = $Country#ARG "Argentina"    //$GENC#ARG "ARGENTINA"
 
 Instance: d01421cc-6488-468b-a676-d3e7281875e2
 InstanceOf: DrugProductComponent
+Title: "DrugProductComponent example for an excipient - Maize starch"
+Description: "Strength is captured for all excipients"
+Usage: #example 
+
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C42637 "Inactive Ingredient"
 * substance.code.reference = Reference(urn:uuid:393a14e7-3edc-4373-bbe5-9e569d504a1c)
@@ -100,6 +123,10 @@ InstanceOf: DrugProductComponent
 
 Instance: 496f83ad-2365-4b12-8672-a349d99f7d67
 InstanceOf: ComponentSubstance
+Title: "Ingredient substance indenifying information - Grape skin extract"
+Description: "ComponentSubstance example showing the use use of the sourceMaterial backbone element"
+Usage: #example 
+
 * identifier.value = "Grape skin extract"
 * classification =  $EMAIDMP#17 "Mixture"
 * grade = $NCIT#C176793 "BP"
@@ -109,7 +136,6 @@ InstanceOf: ComponentSubstance
 * name[gsrs].name = "WINE GRAPE"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C14258 "Plant"
-
 * sourceMaterial.genus.text = "Vitis"
 * sourceMaterial.species.text = "vinifera"
 * sourceMaterial.part.text = "skin" 
@@ -117,6 +143,10 @@ InstanceOf: ComponentSubstance
 
 Instance: 3791c4ce-2b43-4d7b-b195-0e5f88f28dab
 InstanceOf: DrugProductComponent
+Title: "Strength information - Grape skin extract"
+Description: "Example of a DrugProductComponent for an Inactive Ingredient"
+Usage: #example 
+
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C42637 "Inactive Ingredient"
 * substance.code.reference = Reference(urn:uuid:496f83ad-2365-4b12-8672-a349d99f7d67)
@@ -130,7 +160,11 @@ InstanceOf: DrugProductComponent
 
 Instance: 5772a6f2-cde1-4903-bfcf-1639340205cc
 InstanceOf: DrugProductDescription
-* description = """a tablet composed of two Product Parts and has 2 APIs"""
+Title: "A DrugProductDescription for a multilayer product"
+Description: "An example of section 3.2.P.1.1"
+Usage: #example 
+
+* description = """A tablet consisting of two layers where one provides immediate release and  of the two drugs (Figure in 3.2.P.1.3). Both immediate-release layers are composed of granules with a matrix layer for the modified release of the drug."""
 * combinedPharmaceuticalDoseForm = $NCIT#C42964 "TABLET, MULTILAYER"
 * route = $NCIT#C38288 "ORAL"
 * name[NonProprietary].part[Scientific][+].part = "ASPIRIN"
@@ -142,6 +176,10 @@ InstanceOf: DrugProductDescription
 
 Instance: 77ad6922-9c59-43d1-93cb-29d063cc2e8c
 InstanceOf: DrugProductContainerClosure
+Title: "A DrugProductContainerClosure"
+Description: "An example of section 3.2.P.1.2 for a multilayer product"
+Usage: #example 
+
 * extension[containerClosure].extension[containerType].valueCodeableConcept = $NCIT#C43169 "BOTTLE"
 * extension[containerClosure].extension[closureType].valueCodeableConcept = $NCIT#C96114 "Child-resistant, Plastic"
 * extension[containerClosure].extension[description].valueMarkdown = """a plastic bottle with a child-proof cap"""
@@ -154,6 +192,10 @@ InstanceOf: DrugProductContainerClosure
 
 Instance: a8316fc9-8ca8-4115-81c1-9f8f84c99149
 InstanceOf: FinishedProduct
+Title: "A FinishedProduct profile based on ManufacturedItemDefinition"
+Description:  "An example of section 3.2.P.1.3 for a multilayer product"
+Usage: #example 
+
 * identifier.value = "Example1Drug"
 * status = $PubStatus#draft	"Draft"
 * property[OvrRelsProf].valueCodeableConcept = $NCIT#102 "ER"
@@ -170,6 +212,7 @@ InstanceOf: FinishedProduct
 * property[TotWgtNum].valueQuantity.value = 1201
 * property[TotWgtDen].valueQuantity = $NCIT#C66832 "1"
 * property[TotWgtDen].valueQuantity.value = 1
+* property[QualStd].valueCodeableConcept = $NCIT#C134006 "USPNF"
 * component[+].type = $NCIT#115 "Layer"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 463
@@ -233,6 +276,10 @@ InstanceOf: FinishedProduct
 
 Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
 InstanceOf: SponsorOrganization
+Title: "SponsorOrganization - Wunderwerke"
+Description: "A company sponsor of a drug application"
+Usage: #example 
+
 * name = "Wunderwerke"
 * contact.address.line[0] = "123 Scenic Road"
 * contact.address.state = "CT"
@@ -246,6 +293,10 @@ InstanceOf: SponsorOrganization
 
 Instance: 5dfbbf17-05c0-441d-af66-7a66072f4ae4
 InstanceOf: EctdComposition32P10
+Title: "EctdComposition32P10 for 2 layer tablet"
+Description: "eCTD Product Description and Composition for the two layer tablet example"
+Usage: #example 
+
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-09T07:12:23.537Z
 * title = "eCTD Product Description and Composition for Example1Drug"
@@ -261,7 +312,11 @@ InstanceOf: EctdComposition32P10
 
 Instance: bd0f0a7a-27ea-4884-801d-bd0546e80888
 InstanceOf: CMCeCTDDocument32P10
-* meta.profile.extension[version].valueString = "trial"
+Title: "CMCeCTDDocument32P10 bundle"
+Description: "A bundle for 3.2.P.1.0"
+Usage: #example 
+
+* meta.profile.extension[version].valueString = "0.1.17"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:8a5a9684-f8fb-4f21-a397-a1a0996b2b7f"
 * timestamp = 2023-12-09T07:12:23.538Z

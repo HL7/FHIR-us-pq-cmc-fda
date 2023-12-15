@@ -4,14 +4,9 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="SubstanceDefinition/2d70d504-8cc6-4282-81d4-b20b0a98b78b" key="SubstanceDefinition-2d70d504-8cc6-4282-81d4-b20b0a98b78b" name="2d70d504-8cc6-4282-81d4-b20b0a98b78b"/>
-<artifact id="Ingredient/3791c4ce-2b43-4d7b-b195-0e5f88f28dab" key="Ingredient-3791c4ce-2b43-4d7b-b195-0e5f88f28dab" name="3791c4ce-2b43-4d7b-b195-0e5f88f28dab"/>
-<artifact id="SubstanceDefinition/393a14e7-3edc-4373-bbe5-9e569d504a1c" key="SubstanceDefinition-393a14e7-3edc-4373-bbe5-9e569d504a1c" name="393a14e7-3edc-4373-bbe5-9e569d504a1c"/>
-<artifact id="SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67" key="SubstanceDefinition-496f83ad-2365-4b12-8672-a349d99f7d67" name="496f83ad-2365-4b12-8672-a349d99f7d67"/>
-<artifact id="Organization/4f3e9af1-306b-4fad-bf04-7881400b266a" key="Organization-4f3e9af1-306b-4fad-bf04-7881400b266a" name="4f3e9af1-306b-4fad-bf04-7881400b266a"/>
-<artifact id="MedicinalProductDefinition/5772a6f2-cde1-4903-bfcf-1639340205cc" key="MedicinalProductDefinition-5772a6f2-cde1-4903-bfcf-1639340205cc" name="5772a6f2-cde1-4903-bfcf-1639340205cc"/>
-<artifact id="MedicinalProductDefinition/77ad6922-9c59-43d1-93cb-29d063cc2e8c" key="MedicinalProductDefinition-77ad6922-9c59-43d1-93cb-29d063cc2e8c" name="77ad6922-9c59-43d1-93cb-29d063cc2e8c"/>
-<artifact id="Ingredient/7f10a35e-228d-42db-8918-6ccada78454d" key="Ingredient-7f10a35e-228d-42db-8918-6ccada78454d" name="7f10a35e-228d-42db-8918-6ccada78454d"/>
+<artifact id="MedicinalProductDefinition/77ad6922-9c59-43d1-93cb-29d063cc2e8c" key="MedicinalProductDefinition-77ad6922-9c59-43d1-93cb-29d063cc2e8c" name="A DrugProductContainerClosure"/>
+<artifact id="MedicinalProductDefinition/5772a6f2-cde1-4903-bfcf-1639340205cc" key="MedicinalProductDefinition-5772a6f2-cde1-4903-bfcf-1639340205cc" name="A DrugProductDescription for a multilayer product"/>
+<artifact id="ManufacturedItemDefinition/a8316fc9-8ca8-4115-81c1-9f8f84c99149" key="ManufacturedItemDefinition-a8316fc9-8ca8-4115-81c1-9f8f84c99149" name="A FinishedProduct profile based on ManufacturedItemDefinition"/>
 <artifact id="StructureDefinition/pq-additional-info-extension" key="StructureDefinition-pq-additional-info-extension" name="Aditional Information"/>
 <artifact id="DocumentReference/ff0e6432-2f8b-43cc-a3b3-462981a2d929" key="DocumentReference-ff0e6432-2f8b-43cc-a3b3-462981a2d929" name="Base64 Document Reference - Levothyroid.png"/>
 <artifact id="DocumentReference/fd006e04-8764-4d83-b6ee-bbf8f35847e0" key="DocumentReference-fd006e04-8764-4d83-b6ee-bbf8f35847e0" name="Base64 Document Reference - Monosodium D-thyroxine hydrate.png"/>
@@ -32,6 +27,7 @@
 <artifact id="StructureDefinition/cmc-ectd-document-sp4454" key="StructureDefinition-cmc-ectd-document-sp4454" name="CMC eCTD SP4454 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-sp7181" key="StructureDefinition-cmc-ectd-document-sp7181" name="CMC eCTD SP7181 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-sp7383" key="StructureDefinition-cmc-ectd-document-sp7383" name="CMC eCTD SP7383 Document"/>
+<artifact id="Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888" key="Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888" name="CMCeCTDDocument32P10 bundle"/>
 <artifact id="ValueSet/capsule-classification-category" key="ValueSet-capsule-classification-category" name="Capsule Classification Category Value Set"/>
 <artifact id="ValueSet/pqcmc-chemical-structure-datafile-type-terminology" key="ValueSet-pqcmc-chemical-structure-datafile-type-terminology" name="Chemical Structure Data File Type Terminology"/>
 <artifact id="PlanDefinition/a2cba634-a481-4b07-9bd4-62c7ada31e1b" key="PlanDefinition-a2cba634-a481-4b07-9bd4-62c7ada31e1b" name="Citric acid specification Example"/>
@@ -41,6 +37,9 @@
 <artifact id="ValueSet/pqcmc-product-characteristic" key="ValueSet-pqcmc-product-characteristic" name="Code System PQCMC Product Characteristic"/>
 <artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code system PQCMC Comp Section Types"/>
 <artifact id="StructureDefinition/pqcmc-component-substance" key="StructureDefinition-pqcmc-component-substance" name="Component Substance"/>
+<artifact id="SubstanceDefinition/393a14e7-3edc-4373-bbe5-9e569d504a1c" key="SubstanceDefinition-393a14e7-3edc-4373-bbe5-9e569d504a1c" name="Composition ingredient substance indenifying information - Maize starch"/>
+<artifact id="SubstanceDefinition/fc878c4f-a98c-427c-816b-e03ccdf0e712" key="SubstanceDefinition-fc878c4f-a98c-427c-816b-e03ccdf0e712" name="Composition ingredient substance indenifying information - acetaminophen"/>
+<artifact id="SubstanceDefinition/2d70d504-8cc6-4282-81d4-b20b0a98b78b" key="SubstanceDefinition-2d70d504-8cc6-4282-81d4-b20b0a98b78b" name="Composition ingredient substance indenifying information - aspirin"/>
 <artifact id="ValueSet/pqcmc-conformance-to-criteria-terminology" key="ValueSet-pqcmc-conformance-to-criteria-terminology" name="Conformance to Criteria Terminology"/>
 <artifact id="StructureDefinition/pq-container-closure-extension" key="StructureDefinition-pq-container-closure-extension" name="Container Closure"/>
 <artifact id="ValueSet/pqcmc-container-orientation-terminology" key="ValueSet-pqcmc-container-orientation-terminology" name="Container Orientation Terminology"/>
@@ -67,8 +66,10 @@
 <artifact id="StructureDefinition/pqcmc-drug-substance-molecular-structure" key="StructureDefinition-pqcmc-drug-substance-molecular-structure" name="Drug Substance Molecular Structure"/>
 <artifact id="SubstanceDefinition/2f238f40-359b-4125-a94d-68fb187efc22" key="SubstanceDefinition-2f238f40-359b-4125-a94d-68fb187efc22" name="Drug Substance Molecular Structure - levoThyroxine"/>
 <artifact id="SubstanceDefinition/fccef1cd-71e7-4323-962b-c966b6f7a455" key="SubstanceDefinition-fccef1cd-71e7-4323-962b-c966b6f7a455" name="Drug Substance Nomenclature"/>
+<artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="DrugProductComponent example for an excipient - Maize starch"/>
 <artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
 <artifact id="Organization/276457ea-9268-42c5-aeb9-3c3a95ba2277" key="Organization-276457ea-9268-42c5-aeb9-3c3a95ba2277" name="East-West Manufacturing"/>
+<artifact id="Composition/5dfbbf17-05c0-441d-af66-7a66072f4ae4" key="Composition-5dfbbf17-05c0-441d-af66-7a66072f4ae4" name="EctdComposition32P10 for 2 layer tablet"/>
 <artifact id="Composition/5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" key="Composition-5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" name="Example Composition for CTD 3.2.S.2.3"/>
 <artifact id="SubstanceDefinition/d8242262-2187-4ea2-907f-b66752202b46" key="SubstanceDefinition-d8242262-2187-4ea2-907f-b66752202b46" name="Example SubstanceDefinition for Carrageenan"/>
 <artifact id="SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a" key="SubstanceDefinition-fd84a8b5-9e96-451c-a5c6-097c943eb38a" name="Example SubstanceDefinition for anhydrous citric acid"/>
@@ -81,7 +82,9 @@
 <artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Codes"/>
 <artifact id="CodeSystem/pqcmc-test-category-codes" key="CodeSystem-pqcmc-test-category-codes" name="Hierarchial Test Category Codes"/>
 <artifact id="StructureDefinition/pq-hierarchical-level-extension" key="StructureDefinition-pq-hierarchical-level-extension" name="Hierarchical Level"/>
+<artifact id="ConceptMap/ISOtoGENC" key="ConceptMap-ISOtoGENC" name="ISO to GENC Country Code Mapping"/>
 <artifact id="ValueSet/pqcmc-impurity-classification-terminology" key="ValueSet-pqcmc-impurity-classification-terminology" name="Impurity Classification Terminology"/>
+<artifact id="SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67" key="SubstanceDefinition-496f83ad-2365-4b12-8672-a349d99f7d67" name="Ingredient substance indenifying information - Grape skin extract"/>
 <artifact id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>
 <artifact id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
 <artifact id="ValueSet/pqcmc-interval-description-code-terminology" key="ValueSet-pqcmc-interval-description-code-terminology" name="Interval Description Code Terminology"/>
@@ -120,6 +123,7 @@
 <artifact id="ValueSet/pqcmc-specification-type-terminology" key="ValueSet-pqcmc-specification-type-terminology" name="Specification Type Terminology"/>
 <artifact id="Organization/3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6" key="Organization-3a8f866b-4cb1-44c7-b6d0-126e2d9b39b6" name="Sponsor"/>
 <artifact id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="Sponsor Organization"/>
+<artifact id="Organization/4f3e9af1-306b-4fad-bf04-7881400b266a" key="Organization-4f3e9af1-306b-4fad-bf04-7881400b266a" name="SponsorOrganization - Wunderwerke"/>
 <artifact id="Organization/c5dfa559-db8c-4c3c-b96a-06f33dff6dae" key="Organization-c5dfa559-db8c-4c3c-b96a-06f33dff6dae" name="SponsorOrganization J. Jones Research"/>
 <artifact id="StructureDefinition/pq-stability-study" key="StructureDefinition-pq-stability-study" name="Stability Study"/>
 <artifact id="StructureDefinition/pqcmc-stability-study-interval-report" key="StructureDefinition-pqcmc-stability-study-interval-report" name="Stability Study Interval Report"/>
@@ -131,6 +135,9 @@
 <artifact id="StructureDefinition/strength-extension" key="StructureDefinition-strength-extension" name="Strength Extension"/>
 <artifact id="ValueSet/pqcmc-strength-operator-terminology" key="ValueSet-pqcmc-strength-operator-terminology" name="Strength Operator Terminology"/>
 <artifact id="ValueSet/pqcmc-strength-type-terminology" key="ValueSet-pqcmc-strength-type-terminology" name="Strength Type Terminology"/>
+<artifact id="Ingredient/fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" key="Ingredient-fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" name="Strength info for the Active Ingredient"/>
+<artifact id="Ingredient/3791c4ce-2b43-4d7b-b195-0e5f88f28dab" key="Ingredient-3791c4ce-2b43-4d7b-b195-0e5f88f28dab" name="Strength information - Grape skin extract"/>
+<artifact id="Ingredient/7f10a35e-228d-42db-8918-6ccada78454d" key="Ingredient-7f10a35e-228d-42db-8918-6ccada78454d" name="Strength information for the Active Ingredient - acetaminophen"/>
 <artifact id="StructureDefinition/pq-timePoint-extension" key="StructureDefinition-pq-timePoint-extension" name="Study Interval"/>
 <artifact id="StructureDefinition/pq-protocol-extension" key="StructureDefinition-pq-protocol-extension" name="Study Protocol"/>
 <artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type Terminology"/>
@@ -146,9 +153,6 @@
 <artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
 <artifact id="Organization/e99bddfa-c1b5-435b-bbe8-24816b4e23e5" key="Organization-e99bddfa-c1b5-435b-bbe8-24816b4e23e5" name="Vidinaid"/>
 <artifact id="PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89" key="PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89" name="Water Specification Example"/>
-<artifact id="ManufacturedItemDefinition/a8316fc9-8ca8-4115-81c1-9f8f84c99149" key="ManufacturedItemDefinition-a8316fc9-8ca8-4115-81c1-9f8f84c99149" name="a8316fc9-8ca8-4115-81c1-9f8f84c99149"/>
-<artifact id="Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888" key="Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888" name="bd0f0a7a-27ea-4884-801d-bd0546e80888"/>
-<artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="d01421cc-6488-468b-a676-d3e7281875e2"/>
 <artifact id="StructureDefinition/ectd-composition-sp4454" key="StructureDefinition-ectd-composition-sp4454" name="eCTD Batch Analyses Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
 <artifact id="Composition/e23e1f1e-8ac2-49d6-afaa-7ad876a85979" key="Composition-e23e1f1e-8ac2-49d6-afaa-7ad876a85979" name="eCTD Composition for 3.2.S.1.0"/>
@@ -156,7 +160,6 @@
 <artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p70" key="StructureDefinition-ectd-composition-32p70" name="eCTD Product Container Closure System Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
-<artifact id="Composition/5dfbbf17-05c0-441d-af66-7a66072f4ae4" key="Composition-5dfbbf17-05c0-441d-af66-7a66072f4ae4" name="eCTD Product Description and Composition for Example1Drug"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
 <artifact id="StructureDefinition/ectd-composition-sp7383" key="StructureDefinition-ectd-composition-sp7383" name="eCTD Stability Data Composition"/>
 <artifact id="StructureDefinition/ectd-composition-sp7181" key="StructureDefinition-ectd-composition-sp7181" name="eCTD Stability Summary and Conclusion Composition"/>
@@ -165,8 +168,6 @@
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Value Set"/>
-<artifact id="Ingredient/fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" key="Ingredient-fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" name="fc09842a-8f71-48f2-9f9f-ff2441b2eb6f"/>
-<artifact id="SubstanceDefinition/fc878c4f-a98c-427c-816b-e03ccdf0e712" key="SubstanceDefinition-fc878c4f-a98c-427c-816b-e03ccdf0e712" name="fc878c4f-a98c-427c-816b-e03ccdf0e712"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

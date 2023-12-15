@@ -145,7 +145,7 @@ Title: "Bundle for 32S10"
 Description: "Bundle containng nomenclature and molecular Structure"
 Usage: #example 
 * meta.profile = Canonical(CMCeCTDDocument32S10)
-* meta.profile.extension[version].valueString = "0.1.16"
+* meta.profile.extension[version].valueString = "0.1.17"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:b2ba5a21-7b54-4674-828f-e071f16ca707"
 * timestamp = 2023-07-11T00:47:41.776Z

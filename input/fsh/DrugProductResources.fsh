@@ -165,7 +165,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
       TotWgtOper 0..1 MS and
-      QualStd 0..1 MS
+      QualStd 1..* MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].type from pqcmc-product-characteristic
@@ -289,7 +289,7 @@ Note: This is typically applicable to biologics.
 * property[QualStd].type MS
 * property[QualStd].type from pqcmc-product-characteristic
 * property[QualStd].type = $NCIT#QualStd "Quality Standard"
-* property[QualStd].valueCodeableConcept 1..1 MS
+* property[QualStd].valueCodeableConcept 1..1 MS  
 * property[QualStd].valueCodeableConcept ^short = "Product Quality Standard"
 * property[QualStd].valueCodeableConcept ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
