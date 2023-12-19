@@ -124,7 +124,7 @@ Profile: ImpuritySubstance
 Parent: SubstanceDefinition
 Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
-Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+Description: "Any component of the drug substance that is not the chemical entity for product composition."
 * meta.profile 0..1 MS
 * . obeys cmc-structure-required
 * identifier 0..1 MS
@@ -298,11 +298,7 @@ IDMP 11238 definition & examples: Entity of anatomical origin of source material
 Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
 * sourceMaterial.part.coding 0..0
 * sourceMaterial.part.text 1..1
-* sourceMaterial.countryOfOrigin 0..1 MS
-* sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
-* sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-//* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
-* sourceMaterial.countryOfOrigin.coding 1..1 MS
+* insert CountryOfOrigin
 
 Profile: DrugProductComponent
 Parent: Ingredient
@@ -594,11 +590,7 @@ IDMP 11238 definition & examples: Entity of anatomical origin of source material
 Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
 * sourceMaterial.part.coding 0..0
 * sourceMaterial.part.text 1..1
-* sourceMaterial.countryOfOrigin 0..1 MS
-* sourceMaterial.countryOfOrigin ^short = "Source Organism Country of Origin"
-* sourceMaterial.countryOfOrigin ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-//* sourceMaterial.countryOfOrigin.coding from GENCcountryCodes	
-* sourceMaterial.countryOfOrigin.coding 1..1 MS
+* insert CountryOfOrigin
 
 Profile: RoutineSubstanceDefinition
 Parent: SubstanceDefinition
@@ -1003,3 +995,11 @@ Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/Data
       * ^definition = """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
 It is accessible at https://www.uniprot.org/
 """
+
+RuleSet: CountryOfOrigin
+* sourceMaterial.countryOfOrigin 0..1 MS 
+  * obeys cmc-only-ISO-3166-1-alpha-3
+  * ^short = "Source Organism Country of Origin"
+  * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
+//  * coding from GENCcountryCodes	
+  * coding 1..1 MS

@@ -7,3 +7,5 @@ a reference to their quality standards.
 ### eCTD Heading 3.2.P.3.2 Profile Map
 <div>{%include BatchForm.svg%}</div>
 ### Example 3.2.P.3.2 Bundle
+
+<div><img src="materials.png" /></div>

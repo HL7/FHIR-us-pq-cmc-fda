@@ -80,7 +80,7 @@ Profile: MultipleReplicatesResultObservation
 Parent: Observation	
 Id: pq-additional-stage-result-observation	
 Title: "Multiple Result Observation"	
-Description: "Profile for an observation in a batch-analysis report or a stability report"	
+Description: "Profile for an observation in a batch-analysis report or a stability report."	
 	
 * identifier 1..1 MS	
 * identifier ^short = "Stage"	

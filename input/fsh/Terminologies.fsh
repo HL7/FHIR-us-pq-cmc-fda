@@ -1,7 +1,7 @@
 CodeSystem: CmcRelationshipTypes	
 Id: cmc-relationship-types	
-Title: "Relationship types codes"
-Description: "Local value set of all codes in Relationship Types system"
+Title: "Relationship Types Codes"
+Description: "Local value set of all codes in the Relationship Types code system."
 * ^caseSensitive = true
 * ^experimental = false	
 
@@ -11,8 +11,8 @@ Description: "Local value set of all codes in Relationship Types system"
 
 ValueSet: CmcRelationshipTypesVS	
 Id: cmc-relationship-types-vs	
-Title: "Relationship types Value Set"
-Description: "Local value set of all codes in Relationship types codes"
+Title: "Relationship Types Value Set"
+Description: "Local value set of all codes in Relationship Types codes"
 
 * ^experimental = false	
 * include codes from system CmcRelationshipTypes
@@ -20,7 +20,7 @@ Description: "Local value set of all codes in Relationship types codes"
 ValueSet: BatchFormulaProperty	
 Id: batch-formula-property	
 Title: "Batch Formula Property Type"
-Description: "Batch Formula Property Types"
+Description: "A classification of batch formula properties to specify the kind of property referenced."
 
 * ^experimental = true	
 	
@@ -31,15 +31,15 @@ Description: "Batch Formula Property Types"
 	
 ValueSet: CmcProductNameTypesVS	
 Id: cmc-product-name-types-vs	
-Title: "Product name types Value Set"
-Description: "Local value set of all codes in Code system."
+Title: "Product Name Types Value Set"
+Description: "Local value set of all codes in the Code system."
 
 * ^experimental = false	
 * include codes from system CmcProductNameTypes
 
 CodeSystem: CmcProductNameTypes	
 Id: cmc-product-name-types	
-Title: "Product name types code types"
+Title: "Product Name Types Code Types"
 Description: "IG only code system of all codes in Code system."
 
 * ^caseSensitive = true
@@ -50,8 +50,8 @@ Description: "IG only code system of all codes in Code system."
 
 CodeSystem: PqcmcTestCategoryCodes	
 Id: pqcmc-test-category-codes	
-Title: "Hierarchial Test Category Codes"
-Description: "Waiting for NCIt codes are added this may be deleted"
+Title: "Hierarchical Test Category Codes"
+Description: "Waiting for NCIt codes to be added; then this may be deleted."
 * ^caseSensitive = true
 * ^experimental = true	
 * ^hierarchyMeaning = #is-a	
@@ -235,7 +235,7 @@ Description: "TBD after NCIt codes are added for Product Part Type"
 	
 ValueSet: PqcmcProductPartIngredientPhysicalLocation	
 Id: pqcmc-product-part-ingredient-physical-location	
-Title: "Product Part Ingredient Physical Location value set"
+Title: "Product Part Ingredient Physical Location Value Set"
 Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
 
 * ^experimental = true	
@@ -246,7 +246,7 @@ Description: "TBD after NCIt codes are added for Product Part Ingredient Physica
 	
 ValueSet: PqcmcReleaseProfile	
 Id: pqcmc-release-profile	
-Title: "Release Profile value set"
+Title: "Release Profile Value Set"
 Description: "TBD after NCIt codes are added for Release Profile"
 
 * ^experimental = true	
@@ -258,7 +258,7 @@ Description: "TBD after NCIt codes are added for Release Profile"
 	
 ValueSet: PqcmcReleaseMechanism	
 Id: pqcmc-release-mechanism	
-Title: "Release Mechanism value set"
+Title: "Release Mechanism Value Set"
 Description: "TBD after NCIt codes are added for Release Mechanism"
 	
 * ^experimental = true	
@@ -268,7 +268,7 @@ Description: "TBD after NCIt codes are added for Release Mechanism"
 	
 ValueSet: PqcmcCoatingPurpose	
 Id: pqcmc-coating-purpose	
-Title: "Coating Purpose value set"
+Title: "Coating Purpose Value Set"
 Description: "TBD after NCIt codes are added for Coating Purpose"
 	
 * ^experimental = true	
@@ -445,8 +445,8 @@ Description: "Value set of all codes in Code system PQCMC Comp Section Types for
 
 CodeSystem: PqcmcCompSectionTypes	
 Id: pqcmc-comp-section-types	
-Title: "Code system PQCMC Comp Section Types"
-Description: "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
+Title: "Code System PQCMC Comp Section Types"
+Description: "Classification of a section of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
 
 * ^caseSensitive = true
 * ^experimental = false	
@@ -522,7 +522,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 	
 ValueSet: PqcmcBatchUtilizationTerminology	
 Id: pqcmc-batch-utilization-terminology	
-Title: "Batch utilization Terminology"
+Title: "Batch Utilization Terminology"
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 	
 * ^experimental = true	
@@ -1093,7 +1093,7 @@ ValueSet: PqcmcUnitsMeasureTerminology
 Id: pqcmc-units-of-measure-terminology	
 Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.	
-Note: Inlcudes SPL Unit of Presentation Terminology"
+Note: Includes SPL Unit of Presentation Terminology"
 	
 * ^experimental = true	
 	
@@ -1588,3 +1588,269 @@ Description: "The GENC Standard specifies an information model for representing 
 * $GENC#YEM "YEMEN"
 * $GENC#ZMB "ZAMBIA"
 * $GENC#ZWE "ZIMBABWE"
+
+RuleSet: ISOtoGENCMapping(ISOcode, ISOdisplay, GENCcode, GENCdisplay)
+* group.element[+].code = #{ISOcode} "{ISOdisplay}"
+* group.element[=].target.code = #{GENCcode} "{GENCdisplay}"
+* group.element[=].target.relationship = #equivalent
+
+Instance: ISOtoGENC
+InstanceOf: ConceptMap
+Usage: #definition
+* name = "IsoToGencMap"
+* title = "ISO to GENC Country Code Mapping"
+* status = #draft
+* experimental = false
+* description = """Maps between ISO 3166-1-3 and GENC. In 6.0.0, [SubstanceDefinition.sourceMaterial.countryOfOrigin](https://build.fhir.org/substancedefinition-definitions.html#SubstanceDefinition.sourceMaterial.countryOfOrigin)
+is bound to <https://build.fhir.org/valueset-country.html> which is all of ISO 3166 including both 2 and 3 letter codes
+but should only be GENC."""
+* sourceScopeCanonical = "https://build.fhir.org/valueset-country.html"
+* targetScopeCanonical = "http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes"
+* group.source = $Country
+* group.target = $GENC
+* insert ISOtoGENCMapping(ABW, Aruba, ABW, Aruba)
+* insert ISOtoGENCMapping(AFG, Afghanistan, AFG, Afghanistan)
+* insert ISOtoGENCMapping(AGO, Angola, AGO, Angola)
+* insert ISOtoGENCMapping(AIA, Anguilla, AIA, Anguilla)
+* insert ISOtoGENCMapping(ALB, Albania, ALB, Albania)
+* insert ISOtoGENCMapping(AND, Andorra, AND, Andorra)
+* insert ISOtoGENCMapping(ARE, United Arab Emirates, ARE, United Arab Emirates)
+* insert ISOtoGENCMapping(ARG, Argentina, ARG, Argentina)
+* insert ISOtoGENCMapping(ARM, Armenia, ARM, Armenia)
+* insert ISOtoGENCMapping(ASM, American Samoa, ASM, American Samoa)
+* insert ISOtoGENCMapping(ATA, Antarctica, ATA, Antarctica)
+* insert ISOtoGENCMapping(ATF, French Southern Territories, ATF, French Southern and Antarctic Lands)
+* insert ISOtoGENCMapping(ATG, Antigua and Barbuda, ATG, Antigua and Barbuda)
+* insert ISOtoGENCMapping(AUS, Australia, AUS, Australia)
+* insert ISOtoGENCMapping(AUT, Austria, AUT, Austria)
+* insert ISOtoGENCMapping(AZE, Azerbaijan, AZE, Azerbaijan)
+* insert ISOtoGENCMapping(BDI, Burundi, BDI, Burundi)
+* insert ISOtoGENCMapping(BEL, Belgium, BEL, Belgium)
+* insert ISOtoGENCMapping(BEN, Benin, BEN, Benin)
+* insert ISOtoGENCMapping(BES, Bonaire\, Sint Eustatius and Saba, BES, Bonaire\, Sint Eustatius\, and Saba)
+* insert ISOtoGENCMapping(BFA, Burkina Faso, BFA, Burkina Faso)
+* insert ISOtoGENCMapping(BGD, Bangladesh, BGD, Bangladesh)
+* insert ISOtoGENCMapping(BGR, Bulgaria, BGR, Bulgaria)
+* insert ISOtoGENCMapping(BHR, Bahrain, BHR, Bahrain)
+* insert ISOtoGENCMapping(BHS, Bahamas, BHS, Bahamas\, The)
+* insert ISOtoGENCMapping(BIH, Bosnia and Herzegovina, BIH, Bosnia and Herzegovina)
+* insert ISOtoGENCMapping(BLM, Saint Barthélemy, BLM, Saint Barthelemy)
+* insert ISOtoGENCMapping(BLR, Belarus, BLR, Belarus)
+* insert ISOtoGENCMapping(BLZ, Belize, BLZ, Belize)
+* insert ISOtoGENCMapping(BMU, Bermuda, BMU, Bermuda)
+* insert ISOtoGENCMapping(BOL, Bolivia\, Plurinational State of, BOL, Bolivia)
+* insert ISOtoGENCMapping(BRA, Brazil, BRA, Brazil)
+* insert ISOtoGENCMapping(BRB, Barbados, BRB, Barbados)
+* insert ISOtoGENCMapping(BRN, Brunei Darussalam, BRN, Brunei)
+* insert ISOtoGENCMapping(BTN, Bhutan, BTN, Bhutan)
+* insert ISOtoGENCMapping(BVT, Bouvet Island, BVT, Bouvet Island)
+* insert ISOtoGENCMapping(BWA, Botswana, BWA, Botswana)
+* insert ISOtoGENCMapping(CAF, Central African Republic, CAF, Central African Republic)
+* insert ISOtoGENCMapping(CAN, Canada, CAN, Canada)
+* insert ISOtoGENCMapping(CCK, Cocos (Keeling\) Islands, CCK, Cocos (Keeling\) Islands)
+* insert ISOtoGENCMapping(CHE, Switzerland, CHE, Switzerland)
+* insert ISOtoGENCMapping(CHL, Chile, CHL, Chile)
+* insert ISOtoGENCMapping(CHN, China, CHN, China)
+* insert ISOtoGENCMapping(CIV, Côte d'Ivoire, CIV, Côte d'Ivoire)
+* insert ISOtoGENCMapping(CMR, Cameroon, CMR, Cameroon)
+* insert ISOtoGENCMapping(COD, Congo\, the Democratic Republic of the, COD, Congo (Kinshasa\))
+* insert ISOtoGENCMapping(COG, Congo, COG, Congo (Brazzaville\))
+* insert ISOtoGENCMapping(COK, Cook Islands, COK, Cook Islands (the\))
+* insert ISOtoGENCMapping(COL, Colombia, COL, Colombia)
+* insert ISOtoGENCMapping(COM, Comoros, COM, Comoros)
+* insert ISOtoGENCMapping(CPV, Cabo Verde, CPV, Cape Verde)
+* insert ISOtoGENCMapping(CRI, Costa Rica, CRI, Costa Rica)
+* insert ISOtoGENCMapping(CUB, Cuba, CUB, Cuba)
+* insert ISOtoGENCMapping(CUW, Curaçao, CUW, Curaçao)
+* insert ISOtoGENCMapping(CXR, Christmas Island, CXR, Christmas Island)
+* insert ISOtoGENCMapping(CYM, Cayman Islands, CYM, Cayman Islands (the\))
+* insert ISOtoGENCMapping(CYP, Cyprus, CYP, Cyprus)
+* insert ISOtoGENCMapping(CZE, Czechia, CZE, Czech Republic)
+* insert ISOtoGENCMapping(DEU, Germany, DEU, Germany)
+* insert ISOtoGENCMapping(DJI, Djibouti, DJI, Djibouti)
+* insert ISOtoGENCMapping(DMA, Dominica, DMA, Dominica)
+* insert ISOtoGENCMapping(DNK, Denmark, DNK, Denmark)
+* insert ISOtoGENCMapping(DOM, Dominican Republic, DOM, Dominican Republic (the\))
+* insert ISOtoGENCMapping(DZA, Algeria, DZA, Algeria)
+* insert ISOtoGENCMapping(ECU, Ecuador, ECU, Ecuador)
+* insert ISOtoGENCMapping(EGY, Egypt, EGY, Egypt)
+* insert ISOtoGENCMapping(ERI, Eritrea, ERI, Eritrea)
+* insert ISOtoGENCMapping(ESH, Western Sahara, ESH, Western Sahara)
+* insert ISOtoGENCMapping(ESP, Spain, ESP, Spain)
+* insert ISOtoGENCMapping(EST, Estonia, EST, Estonia)
+* insert ISOtoGENCMapping(ETH, Ethiopia, ETH, Ethiopia)
+* insert ISOtoGENCMapping(FIN, Finland, FIN, Finland)
+* insert ISOtoGENCMapping(FJI, Fiji, FJI, Fiji)
+* insert ISOtoGENCMapping(FLK, Falkland Islands (Malvinas\), FLK, Falkland Islands (Islas Malvinas\))
+* insert ISOtoGENCMapping(FRA, France, FRA, France)
+* insert ISOtoGENCMapping(FRO, Faroe Islands, FRO, Faroe Islands (the\))
+* insert ISOtoGENCMapping(FSM, Micronesia\, Federated States of, FSM, Micronesia\, Federated States of)
+* insert ISOtoGENCMapping(GAB, Gabon, GAB, Gabon)
+* insert ISOtoGENCMapping(GBR, United Kingdom, GBR, United Kingdom (the\))
+* insert ISOtoGENCMapping(GEO, Georgia, GEO, Georgia)
+* insert ISOtoGENCMapping(GGY, Guernsey, GGY, Guernsey)
+* insert ISOtoGENCMapping(GHA, Ghana, GHA, Ghana)
+* insert ISOtoGENCMapping(GIB, Gibraltar, GIB, Gibraltar)
+* insert ISOtoGENCMapping(GIN, Guinea, GIN, Guinea)
+* insert ISOtoGENCMapping(GLP, Guadeloupe, GLP, Guadeloupe)
+* insert ISOtoGENCMapping(GMB, Gambia, GMB, Gambia\, The)
+* insert ISOtoGENCMapping(GNB, Guinea-Bissau, GNB, Guinea-Bissau)
+* insert ISOtoGENCMapping(GNQ, Equatorial Guinea, GNQ, Equatorial Guinea)
+* insert ISOtoGENCMapping(GRC, Greece, GRC, Greece)
+* insert ISOtoGENCMapping(GRD, Grenada, GRD, Grenada)
+* insert ISOtoGENCMapping(GRL, Greenland, GRL, Greenland)
+* insert ISOtoGENCMapping(GTM, Guatemala, GTM, Guatemala)
+* insert ISOtoGENCMapping(GUF, French Guiana, GUF, French Guiana)
+* insert ISOtoGENCMapping(GUM, Guam, GUM, Guam)
+* insert ISOtoGENCMapping(GUY, Guyana, GUY, Guyana)
+* insert ISOtoGENCMapping(HKG, Hong Kong, HKG, Hong Kong)
+* insert ISOtoGENCMapping(HMD, Heard Island and McDonald Islands, HMD, Heard Island and McDonald Islands)
+* insert ISOtoGENCMapping(HND, Honduras, HND, Honduras)
+* insert ISOtoGENCMapping(HRV, Croatia, HRV, Croatia)
+* insert ISOtoGENCMapping(HTI, Haiti, HTI, Haiti)
+* insert ISOtoGENCMapping(HUN, Hungary, HUN, Hungary)
+* insert ISOtoGENCMapping(IDN, Indonesia, IDN, Indonesia)
+* insert ISOtoGENCMapping(IMN, Isle of Man, IMN, Isle of Man)
+* insert ISOtoGENCMapping(IND, India, IND, India)
+* insert ISOtoGENCMapping(IOT, British Indian Ocean Territory, IOT, British Indian Ocean Territory)
+* insert ISOtoGENCMapping(IRL, Ireland, IRL, Ireland)
+* insert ISOtoGENCMapping(IRN, Iran\, Islamic Republic of, IRN, Iran)
+* insert ISOtoGENCMapping(IRQ, Iraq, IRQ, Iraq)
+* insert ISOtoGENCMapping(ISL, Iceland, ISL, Iceland)
+* insert ISOtoGENCMapping(ISR, Israel, ISR, Israel)
+* insert ISOtoGENCMapping(ITA, Italy, ITA, Italy)
+* insert ISOtoGENCMapping(JAM, Jamaica, JAM, Jamaica)
+* insert ISOtoGENCMapping(JEY, Jersey, JEY, Jersey)
+* insert ISOtoGENCMapping(JOR, Jordan, JOR, Jordan)
+* insert ISOtoGENCMapping(JPN, Japan, JPN, Japan)
+* insert ISOtoGENCMapping(KAZ, Kazakhstan, KAZ, Kazakhstan)
+* insert ISOtoGENCMapping(KEN, Kenya, KEN, Kenya)
+* insert ISOtoGENCMapping(KGZ, Kyrgyzstan, KGZ, Kyrgyzstan)
+* insert ISOtoGENCMapping(KHM, Cambodia, KHM, Cambodia)
+* insert ISOtoGENCMapping(KIR, Kiribati, KIR, Kiribati)
+* insert ISOtoGENCMapping(KNA, Saint Kitts and Nevis, KNA, Saint Kitts and Nevis)
+* insert ISOtoGENCMapping(KOR, Korea\, Republic of, KOR, Korea\, South)
+* insert ISOtoGENCMapping(KWT, Kuwait, KWT, Kuwait)
+* insert ISOtoGENCMapping(LAO, Lao People's Democratic Republic, LAO, Laos)
+* insert ISOtoGENCMapping(LBN, Lebanon, LBN, Lebanon)
+* insert ISOtoGENCMapping(LBR, Liberia, LBR, Liberia)
+* insert ISOtoGENCMapping(LBY, Libya, LBY, Libya)
+* insert ISOtoGENCMapping(LCA, Saint Lucia, LCA, Saint Lucia)
+* insert ISOtoGENCMapping(LIE, Liechtenstein, LIE, Liechtenstein)
+* insert ISOtoGENCMapping(LKA, Sri Lanka, LKA, Sri Lanka)
+* insert ISOtoGENCMapping(LSO, Lesotho, LSO, Lesotho)
+* insert ISOtoGENCMapping(LTU, Lithuania, LTU, Lithuania)
+* insert ISOtoGENCMapping(LUX, Luxembourg, LUX, Luxembourg)
+* insert ISOtoGENCMapping(LVA, Latvia, LVA, Latvia)
+* insert ISOtoGENCMapping(MAC, Macao, MAC, Macau)
+* insert ISOtoGENCMapping(MAF, Saint Martin (French part\), MAF, Saint Martin)
+* insert ISOtoGENCMapping(MAR, Morocco, MAR, Morocco)
+* insert ISOtoGENCMapping(MCO, Monaco, MCO, Monaco)
+* insert ISOtoGENCMapping(MDA, Moldova\, Republic of, MDA, Moldova)
+* insert ISOtoGENCMapping(MDG, Madagascar, MDG, Madagascar)
+* insert ISOtoGENCMapping(MDV, Maldives, MDV, Maldives)
+* insert ISOtoGENCMapping(MEX, Mexico, MEX, Mexico)
+* insert ISOtoGENCMapping(MHL, Marshall Islands, MHL, Marshall Islands)
+* insert ISOtoGENCMapping(MKD, Macedonia\, the former Yugoslav Republic of, MKD, Macedonia)
+* insert ISOtoGENCMapping(MLI, Mali, MLI, Mali)
+* insert ISOtoGENCMapping(MLT, Malta, MLT, Malta)
+* insert ISOtoGENCMapping(MMR, Myanmar, MMR, Burma)
+* insert ISOtoGENCMapping(MNE, Montenegro, MNE, Montenegro)
+* insert ISOtoGENCMapping(MNG, Mongolia, MNG, Mongolia)
+* insert ISOtoGENCMapping(MNP, Northern Mariana Islands, MNP, Northern Mariana Islands)
+* insert ISOtoGENCMapping(MOZ, Mozambique, MOZ, Mozambique)
+* insert ISOtoGENCMapping(MRT, Mauritania, MRT, Mauritania)
+* insert ISOtoGENCMapping(MSR, Montserrat, MSR, Montserrat)
+* insert ISOtoGENCMapping(MTQ, Martinique, MTQ, Martinique)
+* insert ISOtoGENCMapping(MUS, Mauritius, MUS, Mauritius)
+* insert ISOtoGENCMapping(MWI, Malawi, MWI, Malawi)
+* insert ISOtoGENCMapping(MYS, Malaysia, MYS, Malaysia)
+* insert ISOtoGENCMapping(MYT, Mayotte, MYT, Mayotte)
+* insert ISOtoGENCMapping(NAM, Namibia, NAM, Namibia)
+* insert ISOtoGENCMapping(NCL, New Caledonia, NCL, New Caledonia)
+* insert ISOtoGENCMapping(NER, Niger, NER, Niger (the\))
+* insert ISOtoGENCMapping(NFK, Norfolk Island, NFK, Norfolk Island)
+* insert ISOtoGENCMapping(NGA, Nigeria, NGA, Nigeria)
+* insert ISOtoGENCMapping(NIC, Nicaragua, NIC, Nicaragua)
+* insert ISOtoGENCMapping(NIU, Niue, NIU, Niue)
+* insert ISOtoGENCMapping(NLD, Netherlands, NLD, Netherlands)
+* insert ISOtoGENCMapping(NOR, Norway, NOR, Norway)
+* insert ISOtoGENCMapping(NPL, Nepal, NPL, Nepal)
+* insert ISOtoGENCMapping(NRU, Nauru, NRU, Nauru)
+* insert ISOtoGENCMapping(NZL, New Zealand, NZL, New Zealand)
+* insert ISOtoGENCMapping(OMN, Oman, OMN, Oman)
+* insert ISOtoGENCMapping(PAK, Pakistan, PAK, Pakistan)
+* insert ISOtoGENCMapping(PAN, Panama, PAN, Panama)
+* insert ISOtoGENCMapping(PCN, Pitcairn, PCN, Pitcairn Islands)
+* insert ISOtoGENCMapping(PER, Peru, PER, Peru)
+* insert ISOtoGENCMapping(PHL, Philippines, PHL, Philippines)
+* insert ISOtoGENCMapping(PLW, Palau, PLW, Palau)
+* insert ISOtoGENCMapping(PNG, Papua New Guinea, PNG, Papua New Guinea)
+* insert ISOtoGENCMapping(POL, Poland, POL, Poland)
+* insert ISOtoGENCMapping(PRI, Puerto Rico, PRI, Puerto Rico)
+* insert ISOtoGENCMapping(PRK, Korea\, Democratic People's Republic of, PRK, Korea\, North)
+* insert ISOtoGENCMapping(PRT, Portugal, PRT, Portugal)
+* insert ISOtoGENCMapping(PRY, Paraguay, PRY, Paraguay)
+* insert ISOtoGENCMapping(PSE, Palestine\, State of, PSE, Palestinian Territory)
+* insert ISOtoGENCMapping(PYF, French Polynesia, PYF, French Polynesia)
+* insert ISOtoGENCMapping(QAT, Qatar, QAT, Qatar)
+* insert ISOtoGENCMapping(REU, Réunion, REU, Reunion)
+* insert ISOtoGENCMapping(ROU, Romania, ROU, Romania)
+* insert ISOtoGENCMapping(RUS, Russian Federation, RUS, Russia)
+* insert ISOtoGENCMapping(RWA, Rwanda, RWA, Rwanda)
+* insert ISOtoGENCMapping(SAU, Saudi Arabia, SAU, Saudi Arabia)
+* insert ISOtoGENCMapping(SDN, Sudan, SDN, Sudan (the\))
+* insert ISOtoGENCMapping(SEN, Senegal, SEN, Senegal)
+* insert ISOtoGENCMapping(SGP, Singapore, SGP, Singapore)
+* insert ISOtoGENCMapping(SGS, South Georgia and the South Sandwich Islands, SGS, South Georgia and South Sandwich Islands)
+* insert ISOtoGENCMapping(SHN, Saint Helena\, Ascension and Tristan da Cunha, SHN, Saint Helena\, Ascension\, and Tristan da Cunha)
+* insert ISOtoGENCMapping(SLB, Solomon Islands, SLB, Solomon Islands (the\))
+* insert ISOtoGENCMapping(SLE, Sierra Leone, SLE, Sierra Leone)
+* insert ISOtoGENCMapping(SLV, El Salvador, SLV, El Salvador)
+* insert ISOtoGENCMapping(SMR, San Marino, SMR, San Marino)
+* insert ISOtoGENCMapping(SOM, Somalia, SOM, Somalia)
+* insert ISOtoGENCMapping(SPM, Saint Pierre and Miquelon, SPM, Saint Pierre and Miquelon)
+* insert ISOtoGENCMapping(SRB, Serbia, SRB, Serbia)
+* insert ISOtoGENCMapping(SSD, South Sudan, SSD, South Sudan)
+* insert ISOtoGENCMapping(STP, Sao Tome and Principe, STP, Sao Tome and Principe)
+* insert ISOtoGENCMapping(SUR, Suriname, SUR, Suriname)
+* insert ISOtoGENCMapping(SVK, Slovakia, SVK, Slovakia)
+* insert ISOtoGENCMapping(SVN, Slovenia, SVN, Slovenia)
+* insert ISOtoGENCMapping(SWE, Sweden, SWE, Sweden)
+* insert ISOtoGENCMapping(SWZ, Swaziland, SWZ, Swaziland)
+* insert ISOtoGENCMapping(SXM, Sint Maarten (Dutch part\), SXM, Sint Maarten)
+* insert ISOtoGENCMapping(SYC, Seychelles, SYC, Seychelles)
+* insert ISOtoGENCMapping(SYR, Syrian Arab Republic, SYR, Syria)
+* insert ISOtoGENCMapping(TCA, Turks and Caicos Islands, TCA, Turks and Caicos Islands (the\))
+* insert ISOtoGENCMapping(TCD, Chad, TCD, Chad)
+* insert ISOtoGENCMapping(TGO, Togo, TGO, Togo)
+* insert ISOtoGENCMapping(THA, Thailand, THA, Thailand)
+* insert ISOtoGENCMapping(TJK, Tajikistan, TJK, Tajikistan)
+* insert ISOtoGENCMapping(TKL, Tokelau, TKL, Tokelau)
+* insert ISOtoGENCMapping(TKM, Turkmenistan, TKM, Turkmenistan)
+* insert ISOtoGENCMapping(TLS, Timor-Leste, TLS, Timor-Leste)
+* insert ISOtoGENCMapping(TON, Tonga, TON, Tonga)
+* insert ISOtoGENCMapping(TTO, Trinidad and Tobago, TTO, Trinidad and Tobago)
+* insert ISOtoGENCMapping(TUN, Tunisia, TUN, Tunisia)
+* insert ISOtoGENCMapping(TUR, Turkey, TUR, Turkey)
+* insert ISOtoGENCMapping(TUV, Tuvalu, TUV, Tuvalu)
+* insert ISOtoGENCMapping(TWN, Taiwan\, Province of China, TWN, Taiwan)
+* insert ISOtoGENCMapping(TZA, Tanzania\, United Republic of, TZA, Tanzania)
+* insert ISOtoGENCMapping(UGA, Uganda, UGA, Uganda)
+* insert ISOtoGENCMapping(UKR, Ukraine, UKR, Ukraine)
+* insert ISOtoGENCMapping(URY, Uruguay, URY, Uruguay)
+* insert ISOtoGENCMapping(USA, United States of America, USA, United States)
+* insert ISOtoGENCMapping(UZB, Uzbekistan, UZB, Uzbekistan)
+* insert ISOtoGENCMapping(VAT, Holy See, VAT, Vatican City)
+* insert ISOtoGENCMapping(VCT, Saint Vincent and the Grenadines, VCT, Saint Vincent and the Grenadines)
+* insert ISOtoGENCMapping(VEN, Venezuela\, Bolivarian Republic of, VEN, Venezuela)
+* insert ISOtoGENCMapping(VGB, Virgin Islands\, British, VGB, Virgin Islands\, British)
+* insert ISOtoGENCMapping(VIR, Virgin Islands\, U.S., VIR, Virgin Islands\, U.S.)
+* insert ISOtoGENCMapping(VNM, Viet Nam, VNM, Vietnam)
+* insert ISOtoGENCMapping(VUT, Vanuatu, VUT, Vanuatu)
+* insert ISOtoGENCMapping(WLF, Wallis and Futuna, WLF, Wallis and Futuna)
+* insert ISOtoGENCMapping(WSM, Samoa, WSM, Samoa)
+* insert ISOtoGENCMapping(YEM, Yemen, YEM, Yemen)
+* insert ISOtoGENCMapping(ZAF, South Africa, ZAF, South Africa)
+* insert ISOtoGENCMapping(ZMB, Zambia, ZMB, Zambia)
+* insert ISOtoGENCMapping(ZWE, Zimbabwe, ZWE, Zimbabwe)

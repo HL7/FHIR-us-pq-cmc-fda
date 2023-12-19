@@ -15,7 +15,7 @@ Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, 
 Extension: OptionalDenominator
 Id:  optional-denominator
 Title: "Optional Denominator"
-Description: "The constituent optional denominator is used then the unit it other than 1 per product part."
+Description: "The constituent optional denominator is used then the unit is other than 1 per product part."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.amount"
 * ^context[+].type = #element
@@ -31,8 +31,7 @@ Example: if the tablet contains 325 mg of the ingredient in each unit dose, then
 Extension: ContainerClosureExtension
 Id: pq-container-closure-extension
 Title: "Container Closure"
-Description: "The packaging information including a brief description of the components, the assembled
-packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials"
+Description: "The packaging information including a brief description of the components, the assembled packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials."
 * . ^short = "Container Closure System Information"
 * ^context[+].type = #element
 * ^context[=].expression = "MedicinalProductDefinition"
@@ -66,7 +65,7 @@ Note: This includes primary packaging components and secondary packaging compone
 Extension: ProductBatchIngredientExtension
 Id: pq-product-batch-ingredient-extension
 Title: "Product Batch Ingredient Extension"
-Description: "Extension for measurement properties for ingredients in the batch formla."
+Description: "Extension for measurement properties for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * extension contains
@@ -94,7 +93,7 @@ Profile: DrugProduct
 Parent: MedicinalProductDefinition
 Id: pqcmc-drug-product
 Title: "Drug Product"
-Description: "This profile is not used in any bundles. It is a reference profile of MedicinalProductDefinition if not divided into eCTD sections. Includes the properties of the drug product, its components and impurities"
+Description: "This profile is not used in any bundles. It is a reference profile of MedicinalProductDefinition if not divided into eCTD sections. It includes the properties of the drug product, its components and impurities"
 
 * meta.profile 1..1 MS
 * identifier 0..1 MS
@@ -133,7 +132,7 @@ Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
 Id: pqcmc-product-part
 Title: "Manufactured Drug Product"
-Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or compoent."
+Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or component."
 * obeys cmc-capsule-count-required
 * obeys cmc-arbitrary-unit-text-required
 * meta.profile 1..1 MS
@@ -165,7 +164,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
       TotWgtOper 0..1 MS and
-      QualStd 0..1 MS
+      QualStd 1..* MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].type from pqcmc-product-characteristic
@@ -289,7 +288,7 @@ Note: This is typically applicable to biologics.
 * property[QualStd].type MS
 * property[QualStd].type from pqcmc-product-characteristic
 * property[QualStd].type = $NCIT#QualStd "Quality Standard"
-* property[QualStd].valueCodeableConcept 1..1 MS
+* property[QualStd].valueCodeableConcept 1..1 MS  
 * property[QualStd].valueCodeableConcept ^short = "Product Quality Standard"
 * property[QualStd].valueCodeableConcept ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard

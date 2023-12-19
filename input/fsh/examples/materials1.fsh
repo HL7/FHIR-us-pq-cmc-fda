@@ -1,8 +1,11 @@
-Instance: c5dfa559-db8c-4c3c-b96a-06f33dff6dae
+Instance: 49438799-e286-432c-b8d8-68ac77e7f519
 InstanceOf: SponsorOrganization
 Title: "SponsorOrganization J. Jones Research"
 Description: "Example of a Sponsor type of Organization"
 
+* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
+* identifier[DUNSNumber].value = "143265625"
+* identifier[DUNSNumber].system = $DUNS
 * name = "J. Jones Research"
 * contact.address.line[0] = "123 Broad Way"
 * contact.address.state = "NY"
@@ -10,27 +13,24 @@ Description: "Example of a Sponsor type of Organization"
 * contact.address.country = "USA"   //* contact.address.country = "United States""
 * contact.address.postalCode = "00062"
 * contact.address.text = "J. Jones Research, 123 Broad Way, New York, NY, United States"
-* identifier[DUNSNumber].value = "143265625"
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* identifier[DUNSNumber].system = $DUNS
 
 Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Site (J. Jones Research)"
-Description: "Mmanufacturing site instance of an Organization Example.  There appears to be no difference between this and Sponsor Organization, there will be in the future."
-* identifier[DUNSNumber].value = "783452221"
+Description: "Mmanufacturing site instance of an Organization Example. There will be a type code in future"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
+* identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
-* name = "Manufacturing Site (J. Jones Research)"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6913973"
 * identifier[FEINumber].system = $FEINumber
-* contact.address.line[0] = "123 Broad Way"
-* contact.address.city = "New York"
-* contact.address.country = "USA"   //* contact.address.country = "United States""
-* contact.address.postalCode = "10000"
-* contact.address.text = "Manufacturing Site (J. Jones Research), 123 Broad Way, New York, NY, United States"
+* name = "Manufacturing Site (J. Jones Research)"
+* contact.address.line[0] = "444 Grant Street"
+* contact.address.city = "Bedford"
 * contact.address.state = "NY"
+* contact.address.country = "USA"   //* contact.address.country = "United States""
+* contact.address.postalCode = "15600"
+* contact.address.text = "Manufacturing Site (J. Jones Research), 444 Grant Street, Bedford, NY, United States"
 
 Instance: e99bddfa-c1b5-435b-bbe8-24816b4e23e5
 InstanceOf: MfgTestSiteOrganization
@@ -39,42 +39,23 @@ Description: "Manufacturing site (Vidinaid) instance with second address line"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
-* name = "Vidinaid"
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+* name = "Vidinaid"
 * contact.address.line[0] = "100 Stillwater Avenue"
+* contact.address.line[1] = "Building #2"
 * contact.address.city = "Bangor"
 * contact.address.country = "USA"   //* contact.address.country = "United States""
 * contact.address.postalCode = "04401"
-* contact.address.text = "Vidinaid, 100 Stillwater Avenue, Building #2, bangor, me, United States"
-* contact.address.line[1] = "Building #2"
+* contact.address.text = "Vidinaid, 100 Stillwater Avenue, Building #2, Bangor, ME, USA"
 * contact.address.state = "ME"
-
-Instance: 7ed6b2bf-b967-490b-be49-f9facec3f04b
-InstanceOf: SupplierOrganization
-Title: "Example of a Supplier Organization"
-Description: "This example if for a Supplier Organization"
-
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/supplier-organization"
-* name = "Mega Chem Supply"
-* identifier[DUNSNumber].value = "173265332"
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* identifier[DUNSNumber].system = $DUNS
-* contact.address.line[0] = "350 W Main Street"
-* contact.address.state = "NY"
-* contact.address.city = "Rochester"
-* contact.address.country = "USA"   //* contact.address.country = "United States""
-* contact.address.postalCode = "14608"
-* contact.address.text = "Mega Chem Supply, 350 W Main Street, Rochester, NY, United States"
 
 Instance: d8242262-2187-4ea2-907f-b66752202b46
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"
 * identifier.value = "Carrageenan"
 * classification = $EMAIDMP#9 "Structurally Diverse Substance - Herbal"
 * grade = $NCIT#C134009 "Company Standard"
@@ -92,12 +73,11 @@ InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for anhydrous citric acid"
 Description: "Identification of the subject of the specification. It is commonly used in the pharmaceutical industry as a stabilizer and preservative."
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"
 * identifier.value = "Citric acid"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
-* supplier = Reference(urn:uuid:7ed6b2bf-b967-490b-be49-f9facec3f04b)
+* supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
 * code.code.coding[unii] = $UNII#XF417D3PSL
 * name[gsrs].name = "ANHYDROUS CITRIC ACID"
 * name[gsrs].preferred = true
@@ -108,12 +88,11 @@ InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for water"
 Description: "Identification of the subject of the specification"
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-excipient"
 * identifier.value = "water"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
-* supplier = Reference(urn:uuid:7ed6b2bf-b967-490b-be49-f9facec3f04b)
+* supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
 * code.code.coding[unii] = $UNII#059QF0KO0R
 * name[gsrs].name = "WATER"
 * name[gsrs].preferred = true
@@ -121,14 +100,13 @@ Description: "Identification of the subject of the specification"
 
 Instance: ab241f8c-d21e-4382-a70a-52190dbdf07e
 InstanceOf: QualitySpecification
-Title: "Citric acid specification Example"
-Description: "Example raw material (Citric acid) specification for CTD 3.2.S.2.3.  Raw matrials and Excipients share the same profile but are in different bundles."
+Title: "Carrageenan specification Example"
+Description: "Example raw material (Carrageenan) specification for CTD 3.2.S.2.3.  Raw matrials and Excipients share the same profile but are in different bundles."
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "RawCitricacid"
 * version = "1.0"
-* title = "Raw Material (Citric acid) Specification Example"
+* title = "Raw Material (Carrageenan) Specification Example"
 * status = #active
 * subjectReference = Reference(urn:uuid:d8242262-2187-4ea2-907f-b66752202b46)
 * date = 2023-11-28
@@ -368,7 +346,6 @@ InstanceOf: QualitySpecification
 Title: "Citric acid specification Example"
 Description: "Example raw material (Citric acid) specification for CTD 3.2.S.2.3"
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "CitricAcidSpecification"
 * version = "1.0"
@@ -469,7 +446,6 @@ InstanceOf: QualitySpecification
 Title: "Water Specification Example"
 Description: "Example raw material (water) specification for CTD 3.2.S.2.3"
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pqcmc-quality-specification"
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "WaterSpecification"
 * version = "1.0"
@@ -566,11 +542,10 @@ InstanceOf: EctdComposition32S23
 Title: "Example Composition for CTD 3.2.S.2.3"
 Description: "This composition contains one secection with refernce to each raw material specification for the drug substance."
 
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/ectd-composition-32s23"
 * identifier.value = "materials1"
 * status = #final
 * type.coding = $SectionTypes#32S23 "Substance Control of Materials"
-* author = Reference(urn:uuid:c5dfa559-db8c-4c3c-b96a-06f33dff6dae)
+* author = Reference(urn:uuid:49438799-e286-432c-b8d8-68ac77e7f519)
 * date = 2023-12-05T01:34:39.502Z
 * title = """Control of Materials Example"""
 * section[+]
@@ -589,7 +564,7 @@ InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
 Description: "This is an exmaple of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
 
-* meta.profile.extension[version].valueString = "0.1.16"
+* meta.profile.extension[version].valueString = "0.1.17"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:7ce2088d-d281-4e2f-9a25-120a1f9805d1"
 * timestamp = 2023-12-05T01:34:39.503Z
@@ -599,8 +574,8 @@ Description: "This is an exmaple of the Substance Control of Materials bundle pr
 * entry[=].fullUrl = "urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579"
 * entry[+].resource = e99bddfa-c1b5-435b-bbe8-24816b4e23e5
 * entry[=].fullUrl = "urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5"
-* entry[+].resource = 7ed6b2bf-b967-490b-be49-f9facec3f04b
-* entry[=].fullUrl = "urn:uuid:7ed6b2bf-b967-490b-be49-f9facec3f04b"
+* entry[+].resource = d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
+* entry[=].fullUrl = "urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049"
 * entry[+].resource = d8242262-2187-4ea2-907f-b66752202b46
 * entry[=].fullUrl = "urn:uuid:d8242262-2187-4ea2-907f-b66752202b46"
 * entry[+].resource = fd84a8b5-9e96-451c-a5c6-097c943eb38a
@@ -613,5 +588,5 @@ Description: "This is an exmaple of the Substance Control of Materials bundle pr
 * entry[=].fullUrl = "urn:uuid:a2cba634-a481-4b07-9bd4-62c7ada31e1b"
 * entry[+].resource = 5819b223-d3d2-419f-b617-b3a9a3625b89
 * entry[=].fullUrl = "urn:uuid:5819b223-d3d2-419f-b617-b3a9a3625b89"
-* entry[+].resource = c5dfa559-db8c-4c3c-b96a-06f33dff6dae
-* entry[=].fullUrl = "urn:uuid:c5dfa559-db8c-4c3c-b96a-06f33dff6dae"
+* entry[+].resource = 49438799-e286-432c-b8d8-68ac77e7f519  
+* entry[=].fullUrl = "urn:uuid:49438799-e286-432c-b8d8-68ac77e7f519"

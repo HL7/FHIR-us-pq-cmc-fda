@@ -110,28 +110,27 @@ Invariant: cmc-subtest-rrt
 Description: "a subtest's prefix represents relative retention time, should it exist"
 Expression: "prefix.exists() implies prefix = 'RRT'"
 Severity: #error
-
+// ---- Composition Invariants ----
+// checks if there is a composition which has a type
+// code for its respective section type.
 Invariant: cmc-32S23
 Description: "The composition must be EctdComposition32S23"
-Expression: "entry.resource.ofType(Composition).all(Composition.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s23'))"
+Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32S23'))).exists()"
 Severity: #error
 
 Invariant: cmc-32S10
 Description: "The composition must be EctdComposition32S10"
-Expression: "entry.resource.ofType(Composition).all($this.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s10'))"
-// Expression: "entry.ofType(Composition).where(
-//     Composition.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32s10')
-// ).count() = entry.ofType(Composition).count()"
+Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32S10'))).exists()"
 Severity: #error
 
 Invariant: cmc-32P10
 Description: "The composition must be EctdComposition32P10"
-Expression: "entry.resource.ofType(Composition).all($this.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-32p10'))"
+Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32P10'))).exists()"
 Severity: #error
 
 Invariant: cmc-SP4151
 Description: "The composition must be EctdCompositionSP4151"
-Expression: "entry.resource.ofType(Composition).all($this.conformsTo('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/cmc-ectd-document-sp4151'))"
+Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='SP4151'))).exists()"
 Severity: #error
 
 
@@ -191,3 +190,7 @@ Description: "Capsule constituent count is required when the dosage form is 'Cap
 Expression: "manufacturedDoseForm.coding.exists(system = 'http://examples.com' and code in ('C25158' | 'C42895' | 'C42896' | 'C42902' | 'C42904' | 'C42916' | 'C42917' | 'C42928' | 'C42936' | 'C42954'))
 implies property.where(type.coding.exists(system = 'http://examples.com' and code = 'CapConCnt')).exists()
 "
+Invariant: cmc-only-ISO-3166-1-alpha-3
+Severity: #error
+Description: "Country of origin must be a 3 letter country code"
+Expression: "coding.code.length() = 3"

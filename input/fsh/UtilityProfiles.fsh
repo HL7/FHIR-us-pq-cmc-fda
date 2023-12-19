@@ -2,7 +2,7 @@ Profile: Base64DocumentReference
 Parent: DocumentReference
 Id: cmc-document-reference
 Title: "Document Reference Attachment"
-Description: "A profile that represents the document or diagram in base64"
+Description: "A profile that represents the document or diagram in base64."
 
 * meta.profile 0..1 MS
 * status = #current (exactly)
@@ -18,7 +18,7 @@ Used for the following: Analytical Instrument Data File Type, Impurity Analysis 
  
 Extension: AditionalInformationExtension
 Id: pq-additional-info-extension
-Title: "Aditional Information"
+Title: "Additional Information"
 Description: "Any additional information"
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"

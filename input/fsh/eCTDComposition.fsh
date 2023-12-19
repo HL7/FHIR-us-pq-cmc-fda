@@ -6,7 +6,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 
 * . ^short = "CMC eCTD 32P10 Bundle"
 * . obeys cmc-identifer
-//* obeys cmc-32P10
+* obeys cmc-32P10
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -53,7 +53,7 @@ Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
 * . ^short = "CMC eCTD 32S10 Bundle"
 * . obeys cmc-identifer
-//* obeys cmc-32S10
+* obeys cmc-32S10
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -104,7 +104,7 @@ Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
 * . obeys cmc-identifer
-//* obeys cmc-32S23
+* obeys cmc-32S23
 * meta.profile 1..1 MS  
 * meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
@@ -308,7 +308,7 @@ Profile: EctdCompositionSP4151
 Parent: Composition
 Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
-Description: "The fields needed to represent the Quality Specifications to be included under the eCTD 3.2.P.5.1, 3.2.S.4.1, and 3.2.P.4.1 headings.. References Sponsor Organization and Quality Specification."
+Description: "The fields needed to represent the Product Container Closure Systems to be included under the eCTD 3.2.P.7.0 heading."
 
 * meta.profile 1..1 MS 
 * status = #final
@@ -473,7 +473,7 @@ Profile: EctdComposition32P70
 Parent: Composition
 Id: ectd-composition-32p70
 Title: "eCTD Product Container Closure System Composition"
-Description: "The fields needed to represent the Product Container Closure Systems to be included under the eCTD p.7.0"
+Description: "The fields needed to represent the Product Container Closure Systems to be included under the eCTD 3.2.P.7.0 heading."
 
 * meta.profile 1..1 MS 
 * status = #final
@@ -512,27 +512,29 @@ Description: "The fields needed to represent the Product Description, Container 
 * section.title 1..1 MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #open
+* section ^slicing.rules = #closed
+* section ^slicing.ordered = true
 * section ^slicing.description = "Slice based on the ectd document sections."
-* section contains ProductDescription 1..1 MS and ContainerClosure 1..1 MS and ProductComposition 1..1 MS
+// the contains line determines the order, not the section profiling
+* section contains ProductDescription 1..1 MS and ProductComposition 1..1 MS and ContainerClosure 1..1 MS
 * section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1.0 eCTD heading."
 * section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ProductDescription].entry 1..1 MS
 * section[ProductDescription].entry only Reference(DrugProductDescription)
-* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1.0 eCTD heading."
-* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
-* section[ContainerClosure].entry 1..1 MS
-* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
 * section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1.0 eCTD heading."
 * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
-* section[ProductComposition].entry 1..* MS
+* section[ProductComposition].entry 1..1 MS
 * section[ProductComposition].entry only Reference(FinishedProduct)
+* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1.0 eCTD heading."
+* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
+* section[ContainerClosure].entry 1..* MS
+* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
 
 Profile: EctdComposition32S60
 Parent: Composition
 Id: ectd-composition-32s60
 Title: "eCTD Substance Container Closure System Composition"
-Description: "The fields needed to represent the Substance Container Closure Systems to be included under the eCTD 3.2.S.6.0 eCTD heading. References Sponsor Organization and Substance Container Closure"
+Description: "The fields needed to represent the Substance Container Closure Systems to be included under the eCTD 3.2.S.6.0 heading. References Sponsor Organization and Substance Container Closure."
 
 * meta.profile 1..1 MS 
 * status = #final
@@ -590,7 +592,7 @@ Profile: EctdComposition32S23
 Parent: Composition
 Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
-Description: "The fields needed to represent the Substance Control of Materials in a to be included under the eCTD. References Sponsor Organization and Drug Substance Materials."
+Description: "The fields needed to represent the Substance Control of Materials to be included under the eCTD 3.2.S.2.3 heading. References Sponsor Organization and Drug Substance Materials."
 
 * meta.profile 1..1 MS 
 * status = #final
