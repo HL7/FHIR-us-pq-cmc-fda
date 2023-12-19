@@ -1,7 +1,7 @@
 CodeSystem: CmcRelationshipTypes	
 Id: cmc-relationship-types	
-Title: "Relationship types codes"
-Description: "Local value set of all codes in Relationship Types system"
+Title: "Relationship Types Codes"
+Description: "Local value set of all codes in the Relationship Types code system."
 * ^caseSensitive = true
 * ^experimental = false	
 
@@ -11,8 +11,8 @@ Description: "Local value set of all codes in Relationship Types system"
 
 ValueSet: CmcRelationshipTypesVS	
 Id: cmc-relationship-types-vs	
-Title: "Relationship types Value Set"
-Description: "Local value set of all codes in Relationship types codes"
+Title: "Relationship Types Value Set"
+Description: "Local value set of all codes in Relationship Types codes"
 
 * ^experimental = false	
 * include codes from system CmcRelationshipTypes
@@ -20,7 +20,7 @@ Description: "Local value set of all codes in Relationship types codes"
 ValueSet: BatchFormulaProperty	
 Id: batch-formula-property	
 Title: "Batch Formula Property Type"
-Description: "Batch Formula Property Types"
+Description: "A classification of batch formula properties to specify the kind of property referenced."
 
 * ^experimental = true	
 	
@@ -31,15 +31,15 @@ Description: "Batch Formula Property Types"
 	
 ValueSet: CmcProductNameTypesVS	
 Id: cmc-product-name-types-vs	
-Title: "Product name types Value Set"
-Description: "Local value set of all codes in Code system."
+Title: "Product Name Types Value Set"
+Description: "Local value set of all codes in the Code system."
 
 * ^experimental = false	
 * include codes from system CmcProductNameTypes
 
 CodeSystem: CmcProductNameTypes	
 Id: cmc-product-name-types	
-Title: "Product name types code types"
+Title: "Product Name Types Code Types"
 Description: "IG only code system of all codes in Code system."
 
 * ^caseSensitive = true
@@ -50,8 +50,8 @@ Description: "IG only code system of all codes in Code system."
 
 CodeSystem: PqcmcTestCategoryCodes	
 Id: pqcmc-test-category-codes	
-Title: "Hierarchial Test Category Codes"
-Description: "Waiting for NCIt codes are added this may be deleted"
+Title: "Hierarchical Test Category Codes"
+Description: "Waiting for NCIt codes to be added; then this may be deleted."
 * ^caseSensitive = true
 * ^experimental = true	
 * ^hierarchyMeaning = #is-a	
@@ -235,7 +235,7 @@ Description: "TBD after NCIt codes are added for Product Part Type"
 	
 ValueSet: PqcmcProductPartIngredientPhysicalLocation	
 Id: pqcmc-product-part-ingredient-physical-location	
-Title: "Product Part Ingredient Physical Location value set"
+Title: "Product Part Ingredient Physical Location Value Set"
 Description: "TBD after NCIt codes are added for Product Part Ingredient Physical Location"
 
 * ^experimental = true	
@@ -246,7 +246,7 @@ Description: "TBD after NCIt codes are added for Product Part Ingredient Physica
 	
 ValueSet: PqcmcReleaseProfile	
 Id: pqcmc-release-profile	
-Title: "Release Profile value set"
+Title: "Release Profile Value Set"
 Description: "TBD after NCIt codes are added for Release Profile"
 
 * ^experimental = true	
@@ -258,7 +258,7 @@ Description: "TBD after NCIt codes are added for Release Profile"
 	
 ValueSet: PqcmcReleaseMechanism	
 Id: pqcmc-release-mechanism	
-Title: "Release Mechanism value set"
+Title: "Release Mechanism Value Set"
 Description: "TBD after NCIt codes are added for Release Mechanism"
 	
 * ^experimental = true	
@@ -268,7 +268,7 @@ Description: "TBD after NCIt codes are added for Release Mechanism"
 	
 ValueSet: PqcmcCoatingPurpose	
 Id: pqcmc-coating-purpose	
-Title: "Coating Purpose value set"
+Title: "Coating Purpose Value Set"
 Description: "TBD after NCIt codes are added for Coating Purpose"
 	
 * ^experimental = true	
@@ -445,8 +445,8 @@ Description: "Value set of all codes in Code system PQCMC Comp Section Types for
 
 CodeSystem: PqcmcCompSectionTypes	
 Id: pqcmc-comp-section-types	
-Title: "Code system PQCMC Comp Section Types"
-Description: "Classification of a sections of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
+Title: "Code System PQCMC Comp Section Types"
+Description: "Classification of a section of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
 
 * ^caseSensitive = true
 * ^experimental = false	
@@ -522,7 +522,7 @@ Description: "Classification of a sections of a PQ/CMC composition/document gene
 	
 ValueSet: PqcmcBatchUtilizationTerminology	
 Id: pqcmc-batch-utilization-terminology	
-Title: "Batch utilization Terminology"
+Title: "Batch Utilization Terminology"
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 	
 * ^experimental = true	
@@ -1093,7 +1093,7 @@ ValueSet: PqcmcUnitsMeasureTerminology
 Id: pqcmc-units-of-measure-terminology	
 Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.	
-Note: Inlcudes SPL Unit of Presentation Terminology"
+Note: Includes SPL Unit of Presentation Terminology"
 	
 * ^experimental = true	
 	
@@ -1597,6 +1597,7 @@ RuleSet: ISOtoGENCMapping(ISOcode, ISOdisplay, GENCcode, GENCdisplay)
 Instance: ISOtoGENC
 InstanceOf: ConceptMap
 Usage: #definition
+* name = "IsoToGencMap"
 * title = "ISO to GENC Country Code Mapping"
 * status = #draft
 * experimental = false

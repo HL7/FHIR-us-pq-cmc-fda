@@ -23,7 +23,7 @@ Description: "A code that describes how to relate the given value to an acceptan
 Extension: SpecificationTypeExtension
 Id: pq-specification-type-extension
 Title: "Specification Type"
-Description: "A classification of specification related to the kind of the entity it is referencing"
+Description: "A classification of specification related to the kind of the entity it is referencing."
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"
 * value[x] 1..1 MS
@@ -50,7 +50,7 @@ Description: "Numeric level in the hierarchical value-set"
 Extension: TestOrderExtension 
 Id: pq-order-extension
 Title: "Test Order | Stage Sequence Order"
-Description: "The sequential number assigned to each Test or Stabe to specify the order of display on the Quality Specification."
+Description: "The sequential number assigned to each Test or Stage to specify the order of display on the Quality Specification."
 Context: "PlanDefinition.repeat(action)"
 * value[x] obeys cmc-greater-than-zero
 * value[x] only decimal 

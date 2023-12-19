@@ -2,21 +2,33 @@
 
 Specification means the quality standard (i.e., tests, analytical procedures, and acceptance criteria) provided in an approved application to confirm the quality of drug substances, drug products, intermediates, raw materials, reagents, components, in-process materials, container closure systems, and other materials used in the production of a drug substance or drug product. For the purpose of this definition, the term “acceptance criteria” means numerical limits, ranges, or other criteria for the tests described [21 CFR 314.3].
 
+The Quality Specification_ _bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.4.1, 3.2.P.4.1, and 3.2.P.5.1 folder content to the FDA. These sections provide evidence demonstrating that the material meets the standards appropriate for their intended use, where the material is an API (3.2.S.4.1), Excipient (3.2.P.4.1), or Drug Product (3.2.P.5.1).
+
 ### Implementer Instructions
 
-- A Quality Specification has one or more Tests.
-- Each Test has one or more Stages.
--  Each Stage has one or more Acceptance Criteria.
-- A Quality Specification is stated for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material.
+* A Quality Specification has one or more Tests. 
+* Each Test has one or more Stages. 
+* Each Stage has one or more Acceptance Criteria.
+* A Quality Specification is stated for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material.
+    * Refer to [Substance Control of Materials](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/eCTD32S23.html) for Quality Specification for a Raw Material. 
 
 ### Representation in FHIR
 
-The domain concepts of _Quality Specification_ are represented in FHIR in this IG. Below is a high-level FHIR resource mapping to guide understanding of how the domain concepts are represented in the FHIR Resources. Detail study of the profile and each of the resources will be needed for developing a deeper understanding of this _Quality Specification_ FHIR Profile. Concepts that are key to this domain include the following:
+The domain concepts of Quality Specification are represented in FHIR in this IG. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR Resources. Detail study of the profiles and each of the resources will be needed for developing a deeper understanding of this Quality Specification FHIR Bundle Profile. Concepts that are key to this domain include the following:
 
-- Specification, Test, Acceptance Criteria –[ PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) Resource
-- Drug Product – Drug Product Profile on[ MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) Resource
-- API –[ SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) Resource
-- Excipient/Raw Material –[ SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) Resource
+* Specification, Test, Acceptance Criteria
+    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
+* Drug Product
+    * [Routine Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-routine-drug-product.html) (RoutineDrugProduct) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
+* API 
+    * [Routine Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
+* Excipient/Raw Material 
+    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
+* Related Organizations
+    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+
+Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
 ### eCTD Heading 3.2.S.4.1, 3.2.P.4.1 and 3.2.P.5.1 Profile Map
 <div>{%include Specification.svg%}</div>
@@ -24,11 +36,13 @@ The domain concepts of _Quality Specification_ are represented in FHIR in this I
 ### Usage Patterns
 
 #### Acceptance Criteria as Goals
-Both the acceptable qualitative or text value and the acceptable quantitative or numeric value for the result of the tests are expressed with goal as a target. The numeric values have mutiple structures to capture the detail of the acceptance criteria Original Text.
-A single scpeification may not use all the possible acceptance criteria types so a realistic example would fail in the objective of elucidating all the perumtations.  The following XML snippets illustrate how to implement the various acceptance criteria types;
+
+Both the acceptable qualitative or text value and the acceptable quantitative or numeric value for the result of the tests are expressed with goal as a target. The numeric values have multiple structures to capture the detail of the acceptance criteria Original Text. A single specification may not use all the possible acceptance criteria types so a realistic example would fail in the objective of elucidating all the permutations. The following XML snippets illustrate how to implement the various acceptance criteria types.
+
 ##### Representing Acceptance Criteria (Numeric EQ)
    
-Acceptance-Criteria-Numeric-EQ may on may not have an = sign. Often it is stated as a single value.  An examples orignal text: 0.05 %
+A numeric EQ acceptance criteria may or may not use an = sign in the text. Often it is stated as a single value. An examples original text: 0.05 %
+
           
        <detailQuantity>
         <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
@@ -46,7 +60,7 @@ Acceptance-Criteria-Numeric-EQ may on may not have an = sign. Often it is stated
        </detailQuantity>
           
 ##### Representing Acceptance Criteria (Numeric LT)
-A numeric LT acceptance criteria, may use LT in the text or a &amp;lt; symbol. An example orignal text: &amp;lt; 0.05 % 
+A numeric LT acceptance criteria may use LT in the text or the &lt; the escaped form of the character. An example original text: &lt; 0.05 %
            
             <detailQuantity>
                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
@@ -64,7 +78,8 @@ A numeric LT acceptance criteria, may use LT in the text or a &amp;lt; symbol. A
             </detailQuantity>
             
 ##### Representing Acceptance Criteria (Numeric MT)
-A numeric MT acceptance criteria, may use MT in the text or a &amp;gt; symbol. An example orignal text: &amp;gt; 0.27 percent
+A numeric MT acceptance criteria may use MT in the text or the &gt; the escaped form of the character. An example original text: &gt; 0.27 percent
+
             
             <detailQuantity>
                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
@@ -83,7 +98,7 @@ A numeric MT acceptance criteria, may use MT in the text or a &amp;gt; symbol. A
             
 
 ##### Representing Acceptance Criteria (Numeric NLT)
-The Not Less Than (NLT) is used when the maximum limit includes the limit value as acceptable.  In this example, each unit is NLT Q + 5% the value must be calculated to be structured.  According to the method, Q = 85.   The structured acceptance criterion must be transformed into a single value (85 + 4.25 = 89.25).  The maximum accptable value is 89.25%.
+The Not Less Than (NLT) is used when the maximum limit includes the limit value as acceptable. In this example, each unit is NLT Q + 5% the value must be calculated to be structured. According to the method, Q = 85. The structured acceptance criterion must be transformed into a single value (85 + 4.25 = 89.25). The maximum acceptable value is 89.25%.
     
             <detailQuantity>
                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
@@ -102,7 +117,7 @@ The Not Less Than (NLT) is used when the maximum limit includes the limit value 
 
 ##### Representing Acceptance Criteria (Numeric NMT)
     
-The Not More Than (NMT) is used when the minimum limit includes the limit value as acceptable.  In this example, NMT 450 ppm at time of release, the phrase , "at time of release" is not inclueded in the target. The information is caputured in the Aceptacnce Criteria Usage as the coded value "Release".
+The Not More Than (NMT) is used when the minimum limit includes the limit value as acceptable. In this example, NMT 450 ppm at time of release, the phrase , “at time of release” is not included in the target. That information is captured in the Acceptance Criteria Usage as the coded value “Release”.
             
             <detailQuantity>
                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
@@ -121,7 +136,7 @@ The Not More Than (NMT) is used when the minimum limit includes the limit value 
             
 
 ##### Representing Acceptance Criteria (Numeric Range)
-The Numeric Range is used when method specifies an upper and lower limit. The limits can be inclusive or exclusive limit values.  The structure this Acceptance Criteria, carefully read the original text.  Words such as "to" and "between" usually mean exclusive of the limit values.  Original text with the interpretation codes is not ambiguous.  Consult the method text when in doubt.   Example original texts: "85.0% to 115.0% Label Claim" - use MT and LT; “between 85.0% and 115.0% Label Claim" - use MT and LT; and “NLT 85.0% and NMT 115.0% Label Claim" - use NLT and NMT;     
+The Numeric Range is used when the method specifies an upper and lower limit. The limits can be inclusive or exclusive limit values. To structure this Acceptance Criteria, carefully read the original text. Words such as “to” and “between” usually mean exclusive of the limit values. Original text with the interpretation codes is not ambiguous. Consult the method text when in doubt. Examples of original text: “85.0% to 115.0% Label Claim” - use MT and LT; “between 85.0% and 115.0% Label Claim” - use MT and LT; and “NLT 85.0% and NMT 115.0% Label Claim” - use NLT and NMT.  
     
     <detailRange>
         <low>
@@ -155,7 +170,7 @@ The Numeric Range is used when method specifies an upper and lower limit. The li
     </detailRange>
     
 ##### Representing Acceptance Criteria (Text)
-Acceptance Criteria (Text) is strictly for qualitative constraints. These will typically have a descriptive phrase. An example orignal text is, "Clear, colorless solution free of visible particulates".  Because is it not numeric, the relative intreprestation codes not not apply.  Always code the pq-interpretation-code-extension as "Not Applicable". 
+Acceptance Criteria (Text) is strictly for qualitative constraints. These will typically have a descriptive phrase. An example original text is, “Clear, colorless solution free of visible particulates”. Because it is not numeric, the relative interpretation codes do not apply. Always code the pq-interpretation-code-extension as “Not Applicable”.
              
             <detailString>
                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
@@ -175,22 +190,384 @@ When the number of replicates is specified in the test, enter it as an integer. 
 
     <detailInteger value="10">
     </detailInteger>
+
+#### Report only Acceptance Criteria
+If the analytic procedure only requires that the results be reported, use the interpretation code “EQ” with a text result.
+
+
+        <goal id="b843d27a-3f07-4ea2-a670-05d16db3320a">
+          <description>
+            <text value="Record result"/>
+          </description>
+          <addresses>
+            <coding>
+              <system value="http://example.org/NCIt"/>
+              <code value="C134030"/>
+              <display value="Stability"/>
+            </coding>
+          </addresses>
+          <target>
+            <detailCodeableConcept>
+              <coding>
+                <system value="http://example.org/NCIt"/>
+                <code value="C48793"/>
+                <display value="EQ"/>
+              </coding>
+              <text value="As Reported"/>
+            </detailCodeableConcept>
+          </target>
+        </goal>
+
+
+#### Complex Acceptance Criteria
+Acceptace Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses.  When this occurs, the modeling in the goal backbone element requries multiple targets.  Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%" becomes three targets: Average of 24 units, units less than Q – 15%, and units less than Q – 25%.  Each has a detailQuantity to express the acceptable amount. 
+
+
+          <goal id="1f5530b9-5d21-46ef-80f3-1ae6121c88f9">
+             <description>
+               <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"/>
+             </description>
+             <addresses>
+               <coding>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C134029"/>
+                 <display value="Release"/>
+               </coding>
+             </addresses>
+             <target>
+               <measure>
+                 <text value="Average of 24 units"/>
+               </measure>
+               <detailQuantity>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                   <valueCodeableConcept>
+                     <coding>
+                       <system value="http://example.org/NCIt"/>
+                       <code value="C61583"/>
+                       <display value="NLT (not less than)"/>
+                     </coding>
+                   </valueCodeableConcept>
+                 </extension>
+                 <value value="80"/>
+                 <unit value="percent"/>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C48570"/>
+               </detailQuantity>
+             </target>
+             <target>
+               <measure>
+                 <text value="units less than Q – 15%"/>
+               </measure>
+               <detailQuantity>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                   <valueCodeableConcept>
+                     <coding>
+                       <system value="http://example.org/NCIt"/>
+                       <code value="C61583"/>
+                       <display value="NLT (not less than)"/>
+                     </coding>
+                   </valueCodeableConcept>
+                 </extension>
+                 <value value="2"/>
+                 <unit value="amb a 1 units"/>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C92953"/>
+               </detailQuantity>
+             </target>
+             <target>
+               <measure>
+                 <text value="units less than Q – 25%"/>
+               </measure>
+               <detailQuantity>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                   <valueCodeableConcept>
+                     <coding>
+                       <system value="http://example.org/NCIt"/>
+                       <code value="C61585"/>
+                       <display value="LT (less than)"/>
+                     </coding>
+                   </valueCodeableConcept>
+                 </extension>
+                 <value value="0"/>
+                 <unit value="amb a 1 units"/>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C92953"/>
+               </detailQuantity>
+             </target>
+           </goal>
+
  
 #### Special Cases for Method Representation
 
 ##### Representing Alternate Test Methods
-Some specification
-##### Representing Staged Tests
-##### Representing Acceptance Criteria of Averaged Replicate Tests
-##### Representing Methods with many test measures
+Some specifications accept equivalent tests as in this example the Identity test can be performed with either Spectrophotometry or HPLC. The alternate relationship is expressed as a relatedAction.  Alternate tests can be in groups of more than two. The alternate test must have a linkId. Other tests within the same Alternate test group will point to each other's linkIDs through the relatedAction element relatedAction.targetId.  The relationship ia always concurrent and the selectionBehavior is alwayas exactly-one. This example uses the decimal form for the test order to keep them together in the layout.  This will be helpful when modifying a specification to add an alternate test without having to renumber subsequent tests.
 
+Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
+
+
+    <action>
+       <extension
+               url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+         <valueDecimal value="1.1"/>
+       </extension>
+       <linkId value="2047a6b6-e3fc-4071-8989-526297579091"/>
+       <prefix value="Single Stage"/>
+       <title value="Spectrophotometry Identification"/>
+       <code>
+      ...
+         <text value="Spectrophotometry"/>
+       </code>
+       <reason>
+      ...
+       </reason>
+       <documentation>
+      ...
+       </documentation>
+       <goalId value="32649771-1290-4386-9cf7-7a72274f22b4"/>
+       <relatedAction>
+         <targetId value="84d64dd8-b799-418a-a713-a854c4d3c2b9"/>
+         <relationship value="concurrent"/>
+       </relatedAction>
+       <selectionBehavior value="exactly-one"/>
+     </action>
+     <action>
+       <extension
+               url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+         <valueDecimal value="1.2"/>
+       </extension>
+       <linkId value="84d64dd8-b799-418a-a713-a854c4d3c2b9"/>
+       <prefix value="Single Stage"/>
+       <title value="Identity - Ferric Chloride"/>
+       <code>
+      ...
+         <text value="HPLC"/>
+       </code>
+       <reason>
+      ...
+       </reason>
+       <documentation>
+      ...
+       </documentation>
+       <goalId value="59a4ca76-858e-4d58-8e5f-88e75f51ec33"/>
+       <relatedAction>
+         <targetId value="2047a6b6-e3fc-4071-8989-526297579091"/>
+         <relationship value="concurrent"/>
+       </relatedAction>
+       <selectionBehavior value="exactly-one"/>
+     </action>
+ 
+##### Representing Staged Tests
+Staged tests are a sequence of steps.  Use the Action.Action element and identify the stages with the prefix element.  Feedback on the necessity of adding the relatedAction backbone element at Action.Action is requested. If the conditional nature of the stages must be expressed, then it will be added.
+
+Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
+
+
+           <action>
+             <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <valueDecimal value="12"/>
+             </extension>
+             <linkId value="1fc4361a-52d9-46f1-acff-7969b10e8dfd"/>
+             <title value="Dissolution - 30 minute"/>
+      ...
+             <reason>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-hierarchical-level-extension">
+                 <valueInteger value="1"/>
+               </extension>
+               <coding>
+                 <system value="http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-test-category-codes"/>
+                 <code value="TC9"/>
+                 <display value="Dissolution"/>
+               </coding>
+             </reason>
+      ...
+             <action>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <valueDecimal value="1"/>
+               </extension>
+               <linkId value="1fc4361a-52d9-46f1-acff-7969b10e8dfd"/>
+               <prefix value="Stage 1"/>
+               <goalId value="489bb798-477b-4d68-8189-ed58b388f25e"/>
+               <goalId value="0f191b79-ea6c-4480-9bb2-2c5501fa461e"/>
+             </action>
+             <action>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <valueDecimal value="2"/>
+               </extension>
+               <linkId value="1fc4361a-52d9-46f1-acff-7969b10e8dfd"/>
+               <prefix value="Stage 2"/>
+               <goalId value="cbe267a3-bcbe-4ffc-bf2e-843760f50249"/>
+               <goalId value="3b385840-ad9c-478f-8d94-e6610f2458f9"/>
+             </action>
+             <action>
+
+##### Representing Acceptance Criteria of Averaged Replicate Tests
+There are two scenarios for averages.  The acceptance criteria of the average is the same as the individual test or they are different.  If they are the same the test can be encoded in the top level Action backbone element.  Its title is “Single Stage” and there are one or many goalIDs.  If the acceptance criteria are different then either use the Action for the average and Action.Action for the individual acceptance criteria or move down a level to Action.Action and Action.Action.Action. This is to provide flexibility to implementers. The acceptance criteria should indicate the number of replicates in the referenced analyitc procedure.
+
+
+
+##### Representing Methods with many test measures
+The Action backbone is profiled to three levels.  The first level represents the method (analytic procedure) concepts and a simple tests. The second level represents test groups and stages. In the simplest case is _Single Stage_ and two tests. A _Single Stage_ , one test is accomplished at the highest Action level. The third level represents sub-tests. The middle Action level can have Acceptance Criteria.  These are typically calculations on the values obtained from the sub-tests.  Methods using Cascade Impactors typically have Acceptance Criteria for the plates and group the plates and assign Acceptance Criteria to the groups.  The exmaple below shows three Groups and their associated plates.  Both the Groups and their sub-test each have their own goalIDs that link to their respective Acceptance Criteria.  The word "Stage" for the sub-tests has no association with _Stage_ as mapped to the PlanDefinition resource.  In this case it referring to the stage of the cascade impactor modelling inhalation.
+
+Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
+
+         <action>
+             <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <valueDecimal value="1"/>
+             </extension>
+             <prefix value="Single Stage"/>
+             <title value="Cascade Impactor"/>
+             <code>
+               <coding>
+		...
+             </code>
+             <reason>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-hierarchical-level-extension">
+                 <valueInteger value="1"/>
+               </extension>
+               <coding>
+                 <system value="http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-test-category-codes"/>
+                 <code value="TC15"/>
+                 <display value="Particle Size Distribution"/>
+               </coding>
+             </reason>
+             <documentation>
+		...
+             </documentation>
+             <action>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <valueDecimal value="1.1"/>
+               </extension>
+               <title value="Group 1"/>
+               <goalId value="d7afe834-a9a7-45ae-9213-52c8fd8505bd"/>
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.11"/>
+                 </extension>
+                 <title value="Stem"/>
+                 <goalId value="fc10d71c-86e9-4c52-a3df-9a5cde26f031"/>
+               </action>
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.12"/>
+                 </extension>
+                 <title value="Actuator"/>
+                 <goalId value="ce759246-bbd4-4713-8836-6dbb10e5fefe"/>
+               </action>
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.13"/>
+                 </extension>
+                 <title value="Throat"/>
+                 <goalId value="abf5db8b-8d7e-471e-8047-98afe93f07d4"/>
+               </action>
+             </action>
+             <action>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <valueDecimal value="1.2"/>
+               </extension>
+               <title value="Group 2"/>
+               <goalId value="a515beb5-dc2b-4c36-bf0a-f6b70582c354"/>
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.21"/>
+                 </extension>
+                 <title value="Stage 0"/>
+                 <goalId value="fbd96100-3881-493c-adaf-808fe08331a1"/>
+               </action>
+		...
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.24"/>
+                 </extension>
+                 <title value="Stage 3"/>
+                 <goalId value="569399c3-e5af-4449-a636-6ebe34174056"/>
+               </action>
+             </action>
+             <action>
+               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <valueDecimal value="1.3"/>
+               </extension>
+               <title value="Group 3"/>
+               <goalId value="552eef1e-2918-4fa9-8603-3df2284454b9"/>
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.31"/>
+                 </extension>
+                 <title value="Stage 4"/>
+                 <goalId value="4adb336d-21cd-4792-98dd-e265532c533f"/>
+               </action>
+		...
+               <action>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                   <valueDecimal value="1.35"/>
+                 </extension>
+                 <title value="Filter"/>
+                 <goalId value="6559f4e2-5134-4637-a587-421b4095a961"/>
+               </action>
+             </action>
+           </action>
+
+
+##### Representing Unidentified RRT Tests
+
+The Action.Action.Action.prefix element is reserved for RRT specifications.  Enter "RRT" in the value for Action.Action.Action.prefix. The Action.Action.Action.title stores the actual RRT value. The goalID references the acceptance criteria.
+
+Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
+
+    <action>
+	<extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+		<valueDecimal value="5"/>
+	</extension>
+	<prefix value="Single Stage"/>
+	<title value="Impurities"/>
+    ...
+        <action>
+            <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                <valueDecimal value="5.1"/>
+            </extension>
+            <title value="Unidentified Impurities"/>
+            <action>
+                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                    <valueDecimal value="5.11"/>
+                </extension>
+                <prefix value="RRT"/>
+                <title value="2.2"/>
+                <goalId value="f832168b-d0a4-4637-91cd-183629494d59"/>
+            </action>
+            <action>
+                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                    <valueDecimal value="5.12"/>
+                </extension>
+                <prefix value="RRT"/>
+                <title value="2.4"/>
+                <goalId value="cc06912d-0aca-4083-a7ce-bb57b4dfc4a6"/>
+            </action>
+            <action>
+                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                    <valueDecimal value="5.13"/>
+                </extension>
+                <prefix value="RRT"/>
+                <title value="3.41"/>
+                <goalId value="5ff35fae-2843-4180-b509-b3c6254871f4"/>
+            </action>
+        </action>
+    </action>
 
 ### Example 3.2.S.4.1, 3.2.P.4.1 and 3.2.P.5.1 Bundle
 
-This example demonstrates a quality specification for a Drug Product.  The narrative transformation has been applied. The XML can be found on the Artifacts page. TBD.  Additionally, there are single test examples to show the references to drug substances and excipients respectively.  TBD
+This example demonstrates a quality specification for a Drug Product. The first images displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [4a7e17c1-a611-4cc7-9a71-8005a8b427ab](Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab.html)  
 
-{::options parse_block_html="false" /}
+Additionally, there is an example specification to show the reference to a Drug Substance [6004e36e-7df9-469d-9b29-8e9f9bd7e95f](Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f.html). Its [narrative layout](#drug-substance-specification-example) is show below the Drug Product specification.
 
-<div xmlns="http://www.w3.org/1999/xhtml" id="narrative"><html xmlns="http://www.w3.org/1999/xhtml"><head/><body><header><p>Sponsor: test site A, new york, ny</p><hr/></header><style>td {padding-left:1em;padding-bottom: 0.5em;}div.polymorph{padding-left:1em;}div#narrative{margin-left: 8px;}header p{color: black;padding-left: 1em;font-size: small;}table.specificationTable,table.specificationTable th,table.specificationTable td{border: 1px solid black;border-collapse: collapse;padding: 0.5em;}</style><h2>3.2.P.5.1 Quality Specification for Buffered Asprin</h2><table style="margin-bottom: 1em"><tbody><tr><th colspan="2">Product Details</th></tr><tr><td>Non-Proprietary Name:</td><td>OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg</td></tr><tr><td>Dose Form:</td><td>CAPSULE</td></tr><tr><td>Route of Administration:</td><td>ORAL</td></tr></tbody></table><table style="margin-bottom: 1em"><tbody><tr><th colspan="2">Specification Details</th></tr><tr><td>Version:</td><td>1.0</td></tr><tr><td>Version Date:</td><td>2022-12-08</td></tr><tr><td>Approval Status:</td><td>Not Approved</td></tr><tr><td>Type:</td><td>Drug Product</td></tr></tbody></table><table class="specificationTable"><tbody><tr><th>Category</th><th>Test Name</th><th>Acceptance Criteria (Usage *)</th><th>Analytical Procedure</th><th>Procedure Name</th><th>Type</th><th>Comments</th></tr><tr><td>Identification</td><td>Spectrophotometry Identification</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Average of 10 between 2-3 pH</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Spectrophotometry</td><td>USP &lt;197&gt;</td><td>Compendial</td><td/></tr><tr><td>Identification</td><td>Identity - Ferric Chloride</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Maxima only at the same wavelengths compared to reference standard</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>HPLC</td><td>EX-TEST-01</td><td>Proprietary</td><td/></tr><tr><td>Loss on Drying</td><td>Loss on Drying</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">&lt;= 0.5 %</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Visual</td><td>USP &lt;731&gt;</td><td>Compendial</td><td/></tr><tr><td>Organoleptic<br/>Color of solution</td><td>Readily Carbonizable Sub</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Color of solution is clear</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Visual</td><td>USP &lt;271&gt;</td><td>Compendial</td><td/></tr><tr><td>Residue on Ignition</td><td>Residue on ignition (Ash)</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">&lt;= 0.05 %</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Visual</td><td>USP &lt;281&gt;</td><td>Compendial</td><td/></tr><tr><td>Foreign and Particulate Matter</td><td>Substances insoluble in sodium carbonate TS</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">No Particulate Matter detected</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Visual</td><td>EX-TEST-02</td><td>Proprietary</td><td/></tr><tr><td>Impurity<br/>Specified identified impurity</td><td>Impurities - Chloride (Cl)</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">&lt;= 0.014 %</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>FTIR</td><td>USP &lt;221&gt;</td><td>Compendial</td><td/></tr><tr><td>Impurity<br/>Specified identified impurity</td><td>Impurities - Sulfate (SO4)</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">&lt;= 0.04 %</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>FTIR</td><td>USP &lt;221&gt;</td><td>Compendial</td><td/></tr><tr><td>Impurity<br/>elemental impurity</td><td>Elemental Impurities - Limits</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">&lt;= 0.001 %</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>UV</td><td>USP &lt;231&gt;</td><td>Compendial</td><td/></tr><tr><td>Impurity<br/>Impurities/Degradation Products/Related Substances</td><td>Limit of Free Salicylic Acid</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Color intenssity of feriric ammonium sulfate TS is not less that than salicylic acid (0.1%) solution</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Titration</td><td>EX-TEST-03</td><td>Proprietary</td><td/></tr><tr><td>Impurity<br/>residual solvent</td><td>Organic Volatile Impurities</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Ethanol &lt; 0.2%</div><div style="flex-shrink:0">(R S)</div></div></li><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Ethyl Ether &lt; 0.1%</div><div style="flex-shrink:0">(R)</div></div></li><li><div style="display:flex"><div style="flex: 9; margin-right:1em">1—propanol &lt; 0.15%</div><div style="flex-shrink:0">(R)</div></div></li><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Total &lt; 0.5%</div><div style="flex-shrink:0">(R)</div></div></li></ul></td><td>Visual</td><td>USP &lt;467&gt;</td><td>Compendial</td><td/></tr><tr><td>Assay<br/>active ingredient</td><td>Assay Dry Basis</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li><div style="display:flex"><div style="flex: 9; margin-right:1em">99.5 - 100.5 %</div><div style="flex-shrink:0">(R S)</div></div></li></ul></td><td>Visual</td><td>EX-TEST-04</td><td>Proprietary</td><td/></tr><tr><td>Dissolution</td><td>Dissolution - 30 minute</td><td><ul style="list-style-type: none;margin:0;padding:0;"><li>Stage 1<ul><li><div style="display:flex"><div style="flex: 9; margin-right:1em">n=6</div><div style="flex-shrink:0">(R)</div></div></li><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Each unit is NLT Q + 5%</div><div style="flex-shrink:0">(R)</div></div></li></ul></li><li>Stage 2<ul><li><div style="display:flex"><div style="flex: 9; margin-right:1em">n=6</div><div style="flex-shrink:0">(R)</div></div></li><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Average of 12 units (S1 + S2) is equal to or greater than Q and no unit is less than Q – 15%</div><div style="flex-shrink:0">(R)</div></div></li></ul></li><li>Stage 3<ul><li><div style="display:flex"><div style="flex: 9; margin-right:1em">Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%</div><div style="flex-shrink:0">(R)</div></div></li><li><div style="display:flex"><div style="flex: 9; margin-right:1em">n=12</div><div style="flex-shrink:0">(R)</div></div></li></ul></li></ul></td><td>Visual</td><td>EX-TEST-05</td><td>Proprietary</td><td/></tr></tbody></table><p class="footer">* R = Release, S = Stability</p></body></html></div>
+For examples of specifications referencing excipients see: 
+- [5819b223-d3d2-419f-b617-b3a9a3625b89.html](PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89.html)
+- [ab241f8c-d21e-4382-a70a-52190dbdf07e.html](PlanDefinition-ab241f8c-d21e-4382-a70a-52190dbdf07e.html)
+- [a-2cba634-a481-4b07-9bd4-62c7ada31e1b.html](PlanDefinition-a2cba634-a481-4b07-9bd4-62c7ada31e1b.html)
 
-{::options parse_block_html="true" /}
+#### Drug Product Specification Example
+<div><img src="ProdSpec.png" /></div>
+
+#### Drug Substance Specification Example
+  This is an example showing a drug substance as the subject of the specification. 
+
+<div><img src="APIspec.png" /></div>

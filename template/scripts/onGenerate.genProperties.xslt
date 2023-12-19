@@ -65,7 +65,7 @@
     <xsl:text>jiraSpecFile:</xsl:text>
     <xsl:value-of select="translate($family, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
     <xsl:choose>
-      <xsl:when test="$realm='uv'">-</xsl:when>
+      <xsl:when test="$realm='uv' or $code='ccda'">-</xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="concat('-', $realm, '-')"/>
       </xsl:otherwise>

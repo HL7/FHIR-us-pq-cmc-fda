@@ -94,7 +94,7 @@ Profile: StabilitySubStudy
 Parent: ResearchStudy
 Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
-Description: "Profile for the a stability sub-study."
+Description: "Profile for a stability sub-study."
 
 * meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named substudy-additional-info 0..* MS
@@ -191,7 +191,7 @@ Profile: StabilitySummary
 Parent: PlanDefinition
 Id: pqcmc-stability-summary
 Title: "Stability Summary"
-Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
+Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies."
 
 * meta.profile 0..1 MS
 * .extension contains pq-additional-info-extension named studysum-additional-info 0..* MS

@@ -5,9 +5,11 @@ Description: "A profile for the data elements required to identify an organizati
 Usage: #example
 
 * identifier[DUNSNumber]
+  * type.coding = $NCIT#C134003 "DUNS"
   * system = "urn:oid:1.3.6.1.4.1.519.1"
   * value = "123456789"
 * identifier[FEINumber]
+  * type.coding = $NCIT#C134003 "DUNS"
   * system = "urn:oid:2.16.840.1.113883.4.82"
   * value = "1234567"
 * name = "Sams BioPharm"
@@ -95,7 +97,7 @@ Usage: #example
 * classification =  $EMAIDMP#17 "Mixture"
 * grade = $NCIT#C134009 "Company Standard"
 * supplier = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
-* manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
+* manufacturer = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
 * code.code = $UNII#O8232NY3SJ
 * name[gsrs].name = "STARCH, CORN"
 * name[gsrs].preferred = true
@@ -131,7 +133,7 @@ Usage: #example
 * classification =  $EMAIDMP#17 "Mixture"
 * grade = $NCIT#C176793 "BP"
 * supplier = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
-* manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
+* manufacturer = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
 * code.code = $UNII#3GOV20705G
 * name[gsrs].name = "WINE GRAPE"
 * name[gsrs].preferred = true
@@ -350,5 +352,5 @@ Usage: #example
 * entry[=].fullUrl = "urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9"
 * entry[+].resource = 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 * entry[=].fullUrl = "urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579"
-* entry[+].resource = e99bddfa-c1b5-435b-bbe8-24816b4e23e5
-* entry[=].fullUrl = "urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5"
+* entry[+].resource = d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
+* entry[=].fullUrl = "urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049"

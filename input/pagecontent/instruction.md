@@ -15,36 +15,10 @@ For more information about the profiles found in any of the diagrams, look on th
 
 Human readable representation or visualization of the content of the PQ/CMC Bundles is required.   The location for this in the narrative element of the text element for the domainResource of the Composition which is required for document type Bundle resources.   Some PQ/CMC bundles involve complex data and relies on many resources to convey meaningful content.  Because the Composition resource provides the context for all the other resources in the Bundle it is preferred to enter all the human readable content in the Narrative of Composition.   The Composition Narrative will embody the whole (including the Resources in the Bundle it refers to), so that it represents the full document. All other resources shall have the status value="empty". 
 
-The div element within the narrative is limited to XHTML content.  This is a restricted set of formatting directions.  Style sheets have been developed that format appropriate documents for each of the Bundle profiles.  They can be downloaded on the Downloads page.  Their use is not required, however all content that they display is required.   If the data is displayed in a table, and an alternative representation is used, it must present those elements in a table.  The stylesheets are free software and can be redistributed and/or modified under the terms of the GNU Lesser General Public License.  The examples of the Bundle resources are displayed with their respective styles.  The downloadable examplesand those accessible from the Artifacts page have the IG default build style applied.  They open in any browser to view the content; (Firefox and Chrome are best).
+The div element within the narrative is limited to XHTML content.  This is a restricted set of formatting directions.  A narrative transform has been developed that formats valid XML file for each of the Bundle profiles.  The narrative transform can be downloaded on the Downloads page.  Its use is not required, however all content that is displayed for each bundle is required.   If the data is displayed in a table, and an alternative representation is used, it must present those elements in a table.  The narrative transform is an HTML page with javaSripts. It reads the file, diplays its process and previews the inserted human readable XHTML.  After review a user can save the file.  It only saves to the download directory. The narrative transform  are free software and can be redistributed and/or modified under the terms of the GNU Lesser General Public License.  The examples of the Bundle resources are displayed with their respective styles.  The downloadable examples and those accessible from the Artifacts page have the IG default build style applied.  They open in any browser to view the content; (Firefox and Chrome are best).
 
-FHIR disallows links to XSL style sheets.  To interpret and run XSLT code requires an XSLT processor to transform the original XML Bundle file into one with the formatted Narrative.  A simple processor is the Saxon XSLT processor.  It is also free.  Directions for obtaining and running the Saxon processor follow.   Disregard if another processor is available for use.  All files submitted to the FDA must be in XML format.
+### Markdown Supported by Narrative Transform
 
-#### **Installing an XSLT processor**
-
-. The steps below will install the Saxon XSLT processor on Windows.
-
-If it is not already present, install Java as follows:
-
-·         Go to [https://www.oracle.com/java](https://www.oracle.com/java)  and choose Java for Developers / Java SE.
-
-·         Download the JDK or JRE .exe for windows (x64 for 64 bit) and run it.
-
-·         Go to [http://sourceforge.net/projects/saxon/files/](http://sourceforge.net/projects/saxon/files) , download the latest SaxonHE .zip file by clicking the download button
-
-·         Unblock the zip file and unzip it to the c:\saxon folder.
-
-#### **Run the XSLT code**
-
-·         Open a command prompt in the data folder and use Saxon to process the XML with the XSLT code by envoking the jar file. This example is using the 11.3 version:
-
-·         C:\>java -jar C:\Saxon\saxon-he-11.3.jar -s:C:\FHIR_files\Bundle-eCTD32p10Document.xml -xsl:C:\FHIR_files\pqcmcTemplate.xsl -o:C:\FHIR_files\formatedfile.xml    
-
-·         Parameters: -s source (xml), -xsl transform file (xsl), -o output file (xml)
-
-·         Open the output in a text editor or browser to check the content.
-
-### Markdown Supported by Stylesheets
-n
 There are many elements defined by the markdown datatype.  The sytlesheets are restricted to GitHub flavor of Markdown. Line feeds must be double spaces.  Not all markdown features are supported.
 #### Supported
 * Headers <h1>, <h2> and <h3>
@@ -54,31 +28,45 @@ There are many elements defined by the markdown datatype.  The sytlesheets are r
 * Links
 * Blockqoutes
 * Backslash Escapses: restricted to asterisk, underscore, curly braces, Parenthesis, plus sign and minus sign
-* Fenced Code Blocks will only be supported for strucuture graphics not markdown fields.
-
 
 #### Not Supported
-* Images
-* Username Mentions
+* Emoji
+* Fenced Code Blocks
+* Images -  Images should be entered according to the profile Base64DocumentReference.  The text associated with the image can refer to it.
 * Issue References
 * Task Lists
-* Tables
-* Emoji
+* Tables - These have not been tested. Use at your own risk and test with the narrative transform
+* Username Mentions
 
+#### Narrative Transform Steps
+
+* Download from the [Downloads page](downloads.html).  Repond "Keep" if the file system objects to saving. Unblock the zipfile.
+* UnZip the file.
+* Open Transform.html in a browser.  The page displays as below.
+
+<table style="margin: 0px auto;"><tr><td><img src="emptyxmlStyler_Transform.png" /></td></tr></table>
+
+<p style="text-align: center; font-weight: bold"> Narrative Transform HTML Page </p>
+
+* Click on "Choose file" then select at file.  The Narrative Transform detects the bundle type. All bundles in this IG are supported.
+* File data will display.  The Narrative Transform does not validate.  If nothing displays, check the XML file.
+* The tranformed XML file will show in the text area.  Verrify that this the file and save the updated file by clicking the "Save XML Button file" at the bottom of the page. Scroll down if necessary to see the button.  Tranformed file seen in text area with "Save XML Button file" button are shown below.
+* Enter a new file name.
+* Confirm by clicking "OK".  Note: Due to Cross-Origin Resource Sharing (CORS), the phrase "This page says" cannot be changed.
+
+<table style="margin: 0px auto;"><tr><td><img src="fill_Transform.png" /></td></tr></table>
+
+<p style="text-align: center; font-weight: bold">  Narrative Transform Text Area and Save Button  </p>
+
+* To process another file, click Refresh at the top of the page.
 ### Referencing Bundled Resources
 
 All entries in the bundle must have an identifer if they because they are referenced within the document.  Unless there is a unique identifier and system available, provide a Uniform Resource Identifier (URI): Generic Syntax as the identifer. More information is avabilabe at: [https://datatracker.ietf.org/doc/html/rfc3986/](https://datatracker.ietf.org/doc/html/rfc3986/).  The system should be entered as "urn:ietf:rfc:3986".
 
 Althought FHIR allows for multiple ways to reference other resources, they are not all appropriate for the PQ/CMC use case because the receiving endpoint is not a FHIR server. Resources cannot be referenced using a URL to a server. They must be added in a bundle together with the other resources required by the composition to have everything available in one XML file.
 
-
 ### Versioning of Bundles
 tbd write about eCTD and replace and versioning
-
-### Images and Diagrams
-
-tbd write about attachements vs inclusion of imaage in  markdown.  Also SVG prefered for 2d chem structure
-
 
 ### Examples
 

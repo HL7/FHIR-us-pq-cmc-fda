@@ -1,28 +1,36 @@
 ## Background
 
-The US Food and Drug Administration (FDA) intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in eCTD Module 3.  Module 3 (M3) of ICH eCTD is commonly referred to as the Chemistry, Manufacturing and Controls (CMC) module.   At the FDA, this ICH eCTD M3 data standardization effort is referred to as the Pharmaceutical Quality/Chemistry, Manufacturing and Controls (PQ/CMC).  For more information on the PQ/CMC Project, please visit [https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc](https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc)
+The US Food and Drug Administration (FDA) intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in Module 3 (M3) of ICH eCTD. M3 is commonly referred to as the Chemistry, Manufacturing and Controls (CMC) module. At the FDA, this ICH eCTD M3 data standardization effort is referred to as the Pharmaceutical Quality/Chemistry, Manufacturing and Controls (PQ/CMC). For more information on the PQ/CMC Project, please visit [https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc](https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc)
 
-The impetus for this standardization effort was the provisions from the 2012 Food and Drug Administration Safety and Innovation Act (FDASIA) (Pub. L. 112-144), which authorized the Agency to require certain submissions to be in a specified electronic format. The development of a structured format for PQ/CMC data will enable consistency in the content and format of PQ/CMC data submitted, thus providing a harmonized language for submission content, allowing reviewers to query the data, and, in general, contributing to a more efficient and effective regulatory decision-making process by creating a standardized data dictionary.
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="400px" src="triangle.png" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
+</figure>
 
-The PQ/CMC Project is an evolving project and FDA is structuring the various sections of eCTD module 3 in a phased approach. Therefore, this FHIR IG which is representing the PQ/CMC data standards will also follow a phased approach. There will be this single PQ/CMC IG with many profiles.  This IG should be considered a rolling IG, meaning that as new sections of eCTD M3 are structured and represented in FHIR this IG will continue to grow with new FHIR Profiles that represent the content of those new eCTD M3 sections.  The FHIR Profiles defined in this IG are aligned with eCTD v 4.0.
+<p> </p>
+The PQ/CMC Project is evolving and FDA is structuring sections of eCTD M3 in a phased approach.
 
-The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG).  At HL7, this project is referred to as Pharmaceutical Quality.  BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
+<table style="margin: 0px auto;"><tr><td><img src="phases.png" /></td></tr></table>
+
+<p style="text-align: center; font-weight: bold"> FDA PQ/CMC Project Phases </p>
+
+
+The PQ/CMC FHIR IG represents the PQ/CMC data standards. Therefore, implementation of this FHIR IG will follow a rolling approach; as new sections of eCTD M3 are structured and represented in FHIR, new FHIR profiles will be added to this IG to represent the content of those added eCTD M3 sections. The FHIR Profiles defined in this IG are aligned with eCTD v 4.0. 
+
+The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG). At HL7, this project is referred to as Pharmaceutical Quality. BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
 
 ## Status:
 
-FDA plans to represent all the Phase 1 data elements and supporting terminology in FHIR Profiles defined here.  These data elements and controlled terminology have been published to the industry for comment through the Federal Register Notices (FRN).  These industry comments and suggestions have been incorporated in the data element standards, as applicable.  
+As part of the PQ/CMC project, the data elements and controlled terminology represented in the profiles contained in the PQ/CMC FHIR IG have been published to the industry for comment through Federal Register Notices (FRN). The industry comments and suggestions received have been incorporated in the standards and are represented here in the IG, as applicable.
 
-Note: See FDA PQ/CMC website for the scope of Phase 1 of PQ/CMC. In the near future, as FDA develops new structured data elements and terminology for Phase 2 sections of eCTD Module 3, they will solicit industry feedback and then represent the requirements in FHIR. These new requirements will result in additional FHIR profiles that will be added to this IG. 
+Note: See FDA PQ/CMC website for more information about the Federal Register Notices (FRN). In the future, as FDA develops new structured data elements and terminology for additional eCTD M3 sections, they will solicit industry feedback, and then represent the requirements in FHIR. These new requirements will result in additional FHIR profiles that will be added to this IG.
 
 ## IG Overview
 
 ### FHIR Resources and Profiles
 
-Phase 1 version of the IG consists of approximately 11 FHIR Profiles. These 11 Profiles are scoped to Phase 1 requirements of the PQ/CMC Project and are aligned with various sections of Module 3 of ICH eCTD version 4.0.  This IG is bound to FHIR R5. The resources leveraged to represent PQ/CMC Phase 1 requirements are listed below and represented in Figure 1
+Version 0.1.17 of the PQ/CMC IG is bound to FHIR R5. It consists of 12 FHIR bundle profiles that are scoped to the FDA PQ/CMC Phase 1 requirements, and are aligned with sections of Module 3 of ICH eCTD version 4.0 as indicated by the profile name. These 12 FHIR bundle profiles are composed from 11 domain FHIR Profiles. The FHIR resources leveraged are listed below and represented in Figure 2.
 
 Note: The first 2 FHIR Profiles – Bundle and Composition are organizational profiles used to package the content/domain resources.
-
-
 
 1. Bundle
 2. Composition
@@ -41,14 +49,14 @@ Note: The first 2 FHIR Profiles – Bundle and Composition are organizational pr
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="1200px" src="FHIRresources.jpg" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
-  <figcaption>Figure 1:  FHIR Resources leveraged in PQ/CMC Phase 1 Scope</figcaption>
+  <figcaption>Figure 2:  FHIR Resources leveraged in PQ/CMC Phase 1 Scope</figcaption>
 </figure>
 
 {::options parse_block_html="true" /}
 
-### PQ/CMC Phase 1 Profiles
+### PQ/CMC FHIR Profiles
 
-As mentioned above, the Phase 1 structured data requirements of PQ/CMC project have been represented in FHIR and the Profiles have been designed at boundary of the leaf-level sections of eCTD v 4.0. The table below shows the FHIR Profiles in support of Phase 1 requirements.  These profiles can be accessed through the “eCTD Profiles” menu in the main bar at top of this page.
+As mentioned above, the PQ/CMC project Phase 1 structured data requirements are represented in the PQ/CMC FHIR IG.  These Profiles have been designed at the boundary of the leaf-level sections of Module 3 of eCTD v 4.0. The table below contains a mapping of the FHIR Profiles to the Phase 1 requirements. The PQ/CMC FHIR profiles can be accessed through the “eCTD Profiles” menu in the main bar at the top of this page.
 
 <table>
   <tr>
@@ -169,9 +177,9 @@ The development of this Implementation Guide is an initiative funded by the US F
 	* Bill Friggle (mailto: wfriggle@samvit-solutions.com)
 
 * Program Management:
-	* Scott Gordon (mailto: pq-cmc@fda.hhs.gov)
+	* Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
   
-The PQ/CMC Projects is Sponsored by the HL7 Biomedical Research & Regulation work group.
+At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
 
 ### IP Statements
 {% include ip-statements.xhtml %}
