@@ -57,8 +57,7 @@ Severity: #error
 
 Invariant: cmc-ppidref-required
 Description: "A PPiDref is required when the PPiD is designated a child."
-Expression: "
-    property.where(
+Expression: "property.where(
         type.coding.exists(system = 'http://examples.com' and code = 'PPiD') and    
         value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-relationship-types' and code = 'child')
     ).exists()
@@ -188,8 +187,8 @@ Invariant: cmc-capsule-count-required
 Severity: #error
 Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
 Expression: "manufacturedDoseForm.coding.exists(system = 'http://examples.com' and code in ('C25158' | 'C42895' | 'C42896' | 'C42902' | 'C42904' | 'C42916' | 'C42917' | 'C42928' | 'C42936' | 'C42954'))
-implies property.where(type.coding.exists(system = 'http://examples.com' and code = 'CapConCnt')).exists()
-"
+implies property.where(type.coding.exists(system = 'http://examples.com' and code = 'CapConCnt')).exists()"
+
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
 Description: "Country of origin must be a 3 letter country code"
