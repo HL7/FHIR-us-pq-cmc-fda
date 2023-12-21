@@ -203,7 +203,7 @@ Note: Non-layered tablets will be considered as one layer tablets."""
 
 * property[BeaTypCnt].type MS
 * property[BeaTypCnt].type from pqcmc-product-characteristic
-* property[BeaTypCnt].type = $NCIT#BeaTypCnt "Product Tablet Bead Type Count"
+* property[BeaTypCnt].type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
 * property[BeaTypCnt].value[x] 1..1 MS
 * property[BeaTypCnt].value[x] only Quantity
 * property[BeaTypCnt].valueQuantity.value ^short = "Tablet Bead Type Count"
@@ -352,7 +352,7 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.function 1..2 MS
 * component.constituent.function.coding 1..1 MS
 * component.constituent.function ^slicing.discriminator.type = #value
-* component.constituent.function ^slicing.discriminator.path = coding.version
+* component.constituent.function ^slicing.discriminator.path = "text" 
 * component.constituent.function ^slicing.rules = #closed
 * component.constituent.function ^slicing.description = "Slice based on the component.functions."
 * component.constituent.function contains
@@ -362,12 +362,12 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.function[Category] ^definition = """A classification that identifies the higher level purpose of that material. [Source: SME Defined]
 Example: Active Ingredient, Inactive Ingredient, Adjuvant."""
 * component.constituent.function[Category].coding from PqcmcDrugProductComponentFunctionCategoryTerminology
-* component.constituent.function[Category].coding.version = "category"
+* component.constituent.function[Category].text = "category"
 * component.constituent.function[Function] ^short = "Product Part Ingredient Function"
 * component.constituent.function[Function] ^definition = """A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]
 Examples: Filler, Surfactant"""
 * component.constituent.function[Function].coding from PqcmcExcipientFunctionTerminology
-* component.constituent.function[Function].coding.version = "function"
+* component.constituent.function[Function].text = "function"
 * component.constituent.hasIngredient 1..1 MS
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
@@ -493,7 +493,7 @@ Description: "Listing of all components of the dosage form to be used in the man
 * property[BatchSize].type ^definition = """The amount of material in a specific batch size [Source: SME Defined]
 Example: 1000 kg
 """
-* property[BatchSize].type = $NCIT#batchsize "Quantity"
+* property[BatchSize].type = $NCIT#batchsize "Batch Quantity"
 * property[BatchSize].value[x] only Quantity
 * property[BatchSize].valueQuantity.unit 1..1 MS
 * property[BatchSize].valueQuantity.unit ^short = "Quantity UOM"
