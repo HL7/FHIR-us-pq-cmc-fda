@@ -8,8 +8,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * . obeys cmc-identifer
 * obeys cmc-32P10
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -28,8 +28,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles.
 * . ^short = "CMC eCTD 32P32 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 
 * type MS
 * type = #document (exactly)
@@ -55,8 +55,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * . obeys cmc-identifer
 * obeys cmc-32S10
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -74,8 +74,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * . ^short = "CMC eCTD 32S30 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -106,8 +106,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles.
 * . obeys cmc-identifer
 * obeys cmc-32S23
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -125,8 +125,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * . ^short = "CMC eCTD 32P55 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -151,8 +151,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles.
 
 * . obeys cmc-identifer
 * meta.profile 1..1 MS
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -185,8 +185,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles.
 
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -219,8 +219,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * . obeys cmc-identifer
 * obeys cmc-SP4151
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -237,8 +237,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles
 * . ^short = "CMC eCTD SP4454 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"
@@ -261,8 +261,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles
 * . ^short = "CMC eCTD SP7383 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 
 * type MS
 * type = #document (exactly)
@@ -286,8 +286,8 @@ Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles
 * . ^short = "CMC eCTD SP7181 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
 * type = #document (exactly)
 * type ^short = "document"

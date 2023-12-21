@@ -39,7 +39,7 @@ Id: pq-ig-version
 Title: "Profile IG Version"
 Description: "The IG version number of the bundle profile to which the instance conforms.  Additionally, all the profiles of the resources in the bundle must conform to this version."
 * ^context[+].type = #element
-* ^context[=].expression = "Bundle.meta.profile"
+* ^context[=].expression = "Bundle.identifier"
 
 * value[x] 1..1
 * value[x] only string
