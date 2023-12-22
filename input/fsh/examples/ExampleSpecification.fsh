@@ -425,7 +425,7 @@ Usage: #example
 * type.coding = $SectionTypes#SP4151 "Quality Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:33:13.089Z
-* title = """Quality Specification for Buffered Asprin"""
+* title = """Quality Specification for an example Drug Product"""
 * section[DrugProduct]
   * code = $SectionTypes#32P51 "Product Specification"
   * title = "32P51"
