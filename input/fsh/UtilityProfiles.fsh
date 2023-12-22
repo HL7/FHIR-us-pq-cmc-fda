@@ -5,7 +5,7 @@ Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64."
 
 * meta.profile 0..1 MS
-* status = #current (exactly)
+* status = #current
 * content MS
 * content.attachment MS
 * content.attachment.contentType 1..1 MS
@@ -38,8 +38,8 @@ Extension: IgVersion
 Id: pq-ig-version
 Title: "Profile IG Version"
 Description: "The IG version number of the bundle profile to which the instance conforms.  Additionally, all the profiles of the resources in the bundle must conform to this version."
-* ^context[+].type = #element
-* ^context[=].expression = "Bundle.meta.profile"
+* ^context.type = #element
+* ^context.expression = "Bundle.identifier"
 
 * value[x] 1..1
 * value[x] only string

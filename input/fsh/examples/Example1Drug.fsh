@@ -214,7 +214,7 @@ Usage: #example
 * property[TotWgtNum].valueQuantity.value = 1201
 * property[TotWgtDen].valueQuantity = $NCIT#C66832 "1"
 * property[TotWgtDen].valueQuantity.value = 1
-* property[QualStd].valueCodeableConcept = $NCIT#C134006 "USPNF"
+* property[QualStd].valueCodeableConcept = $NCIT#C134006 "USP-NF"
 * component[+].type = $NCIT#115 "Layer"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 463
@@ -229,27 +229,27 @@ Usage: #example
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].location = $NCIT#148 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
-* component[=].constituent[=].function[Category].coding.version = "category"
+* component[=].constituent[=].function[Category].text = "category"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 262
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5659
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
-* component[=].constituent[=].function[Function].coding.version = "function"
+* component[=].constituent[=].function[Function].text = "function"
 * component[=].constituent[=].location = $NCIT#150 "Intragranular"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Category].coding.version = "category"
+* component[=].constituent[=].function[Category].text = "category"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:3791c4ce-2b43-4d7b-b195-0e5f88f28dab)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 1
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0022
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Function] = $NCIT#C42656 "Coloring agent"
-* component[=].constituent[=].function[Function].coding.version = "function"
+* component[=].constituent[=].function[Function].text = "function"
 * component[=].constituent[=].location = $NCIT#150 "Intragranular"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Category].coding.version = "category"
+* component[=].constituent[=].function[Category].text = "category"
 * component[+].type = $NCIT#115 "Layer"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 738
@@ -264,17 +264,17 @@ Usage: #example
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].location = $NCIT#148 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
-* component[=].constituent[=].function[Category].coding.version = "category"
+* component[=].constituent[=].function[Category].text = "category"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 438
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5935
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
-* component[=].constituent[=].function[Function].coding.version = "function"
+* component[=].constituent[=].function[Function].text = "function"
 * component[=].constituent[=].location = $NCIT#150 "Intragranular"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Category].coding.version = "category"
+* component[=].constituent[=].function[Category].text = "category"
 
 Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
 InstanceOf: SponsorOrganization
@@ -318,7 +318,7 @@ Title: "CMCeCTDDocument32P10 bundle"
 Description: "A bundle for 3.2.P.1.0"
 Usage: #example 
 
-* meta.profile.extension[version].valueString = "0.1.17"
+* identifier.extension[version].valueString = "0.1.17"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:8a5a9684-f8fb-4f21-a397-a1a0996b2b7f"
 * timestamp = 2023-12-09T07:12:23.538Z

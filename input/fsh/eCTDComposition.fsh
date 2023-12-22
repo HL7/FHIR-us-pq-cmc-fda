@@ -8,10 +8,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * . obeys cmc-identifer
 * obeys cmc-32P10
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -28,11 +28,11 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles.
 * . ^short = "CMC eCTD 32P32 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -55,10 +55,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * . obeys cmc-identifer
 * obeys cmc-32S10
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -74,10 +74,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
 * . ^short = "CMC eCTD 32S30 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -106,10 +106,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles.
 * . obeys cmc-identifer
 * obeys cmc-32S23
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -125,10 +125,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile."
 * . ^short = "CMC eCTD 32P55 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -151,10 +151,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles.
 
 * . obeys cmc-identifer
 * meta.profile 1..1 MS
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -185,10 +185,10 @@ Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles.
 
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -219,10 +219,10 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * . obeys cmc-identifer
 * obeys cmc-SP4151
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -237,10 +237,10 @@ Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles
 * . ^short = "CMC eCTD SP4454 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -261,11 +261,11 @@ Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles
 * . ^short = "CMC eCTD SP7383 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -286,10 +286,10 @@ Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles
 * . ^short = "CMC eCTD SP7181 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
+* identifier.extension contains pq-ig-version named version 1..1 MS
 * type MS
-* type = #document (exactly)
+* type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
@@ -327,7 +327,7 @@ Description: "The fields needed to represent the Product Container Closure Syste
 */
 * section.entry MS
 
-* section ^slicing.discriminator.type = #pattern
+* section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
 * section ^slicing.description = "There is only one section in the profile. The slice the code must correpond to the subject of the Quality Specification profile: RoutineDrugProduct or Routine Api or Excipient"
@@ -369,7 +369,7 @@ Description: "The fields needed to represent the Stability Data to be included u
 */
 * section 1.. MS
 * section.entry MS
-* section ^slicing.discriminator.type = #pattern
+* section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Data profile: RoutineDrugProduct or Routine Api"
@@ -406,7 +406,7 @@ Description: "The fields needed to represent the Batch Analyses to be included u
 // need check that subject only Reference(DrugProductInstance or DrugSubstanceInstance) matches section selected.
 * section 1.. MS
 * section.entry MS
-* section ^slicing.discriminator.type = #pattern
+* section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
 * section ^slicing.description = "Slice based on the different sections that are needed in the ectd document. The code must correpond to the subject of the Batch Analyses profile."
@@ -658,7 +658,7 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 */
 * section 1.. MS
 * section.entry MS
-* section ^slicing.discriminator.type = #pattern
+* section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Summary and Conclusion profile."
