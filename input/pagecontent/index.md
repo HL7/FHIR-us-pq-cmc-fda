@@ -170,14 +170,15 @@ As mentioned above, the PQ/CMC project Phase 1 structured data requirements are 
 
 The development of this Implementation Guide is an initiative funded by the US FDA.
 
-* Primary IG authors: 
-  * Catherine Hosage Norman (mailto: chn@module3solutions.com)
-	* Smita Hastak (mailto: shastak@samvit-solutions.com)
-	* Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
-	* Bill Friggle (mailto: wfriggle@samvit-solutions.com)
+- Primary IG authors: 
+    - Catherine Hosage Norman (mailto: chn@module3solutions.com)
+    - Smita Hastak (mailto: shastak@samvit-solutions.com)
+    - Lisa-Marie Schick (mailto: lschick@samvit-solutions.com)
+    - Bill Friggle (mailto: wfriggle@samvit-solutions.com)
+    - Christopher Norman (mailto: chris@module3solutions.com)
 
-* Program Management:
-	* Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
+- Program Management:
+	- Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
   
 At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
 
