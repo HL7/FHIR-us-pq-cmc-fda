@@ -1,7 +1,22 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 0.1.17
+### Changes and Updates for Version 0.1.19
 The current development IG -   Pre-Jan 2024 connectathon
+
+- Updated downloads page
+- Updated narrative transform sripts for changes made to release 0.1.18.  Minimization of JavaScript files for optimal usage in a browsers.
+- Updated instructions for narrative transform use
+- Included new zip for narrative transform
+
+### Changes and Updates for Version 0.1.18
+
+- Temporary Code system created and in its own file until a terminology server is up
+- Alias and example updates for temporary code system
+- Fixed codes, constituent function slicing on text
+- IG Version extension moved from meta to identifier
+- NCIt as local codesystem - includes those waiting for approval
+
+### Changes and Updates for Version 0.1.17
 
 - Edits to examples
 - Updates to pull down pages

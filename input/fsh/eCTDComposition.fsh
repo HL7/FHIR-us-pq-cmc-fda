@@ -16,7 +16,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles.
 * timestamp 1..1 MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
-* entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
 
 Profile: CMCeCTDDocument32P32
@@ -513,7 +512,6 @@ Description: "The fields needed to represent the Product Description, Container 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed
-* section ^slicing.ordered = true
 * section ^slicing.description = "Slice based on the ectd document sections."
 // the contains line determines the order, not the section profiling
 * section contains ProductDescription 1..1 MS and ProductComposition 1..1 MS and ContainerClosure 1..1 MS

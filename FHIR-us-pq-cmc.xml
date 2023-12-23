@@ -70,6 +70,7 @@
 <artifact id="SubstanceDefinition/ff8ef305-1210-4ac0-9142-1bcbcacae586" key="SubstanceDefinition-ff8ef305-1210-4ac0-9142-1bcbcacae586" name="Drug Substance Molecular Structure - levoThyroxine"/>
 <artifact id="SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166" key="SubstanceDefinition-21b6b724-507e-4cf4-a462-93334b98d166" name="Drug Substance Nomenclature"/>
 <artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="DrugProductComponent example for an excipient - Maize starch"/>
+<artifact id="CodeSystem/cmc-ncit-dummy" key="CodeSystem-cmc-ncit-dummy" name="Dummy NCIT Codesystem"/>
 <artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
 <artifact id="Organization/e875ef93-a730-4c44-bead-53663ae7f501" key="Organization-e875ef93-a730-4c44-bead-53663ae7f501" name="East-West Manufacturing"/>
 <artifact id="Composition/5dfbbf17-05c0-441d-af66-7a66072f4ae4" key="Composition-5dfbbf17-05c0-441d-af66-7a66072f4ae4" name="EctdComposition32P10 for 2 layer tablet"/>
@@ -86,6 +87,7 @@
 <artifact id="Bundle/6004e36e-7df9-469d-9b29-8e9f9bd7e95f" key="Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f" name="FHIR Document example of 3.2.P.4.1."/>
 <artifact id="Bundle/4a7e17c1-a611-4cc7-9a71-8005a8b427ab" key="Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab" name="FHIR Document example of 3.2.P.5.1."/>
 <artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Codes"/>
+<artifact id="CodeSystem/genc-country-codes-cs" key="CodeSystem-genc-country-codes-cs" name="GENC Country Codes"/>
 <artifact id="StructureDefinition/pq-hierarchical-level-extension" key="StructureDefinition-pq-hierarchical-level-extension" name="Hierarchical Level"/>
 <artifact id="CodeSystem/pqcmc-test-category-codes" key="CodeSystem-pqcmc-test-category-codes" name="Hierarchical Test Category Codes"/>
 <artifact id="ConceptMap/ISOtoGENC" key="ConceptMap-ISOtoGENC" name="ISO to GENC Country Code Mapping"/>
