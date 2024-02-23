@@ -4,7 +4,7 @@ Id: cmc-ectd-document-32p10
 Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles."
 
-* . ^short = "CMC eCTD 32P10 Bundle"
+* . ^short = "CMC eCTD 32P1 Bundle"
 * . obeys cmc-identifer
 * obeys cmc-32P10
 * meta.profile 1..1 MS  
@@ -49,8 +49,8 @@ Profile: CMCeCTDDocument32S10
 Parent: Bundle
 Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles."
-* . ^short = "CMC eCTD 32S10 Bundle"
+Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
+* . ^short = "CMC eCTD 32S1 Bundle"
 * . obeys cmc-identifer
 * obeys cmc-32S10
 * meta.profile 1..1 MS  
@@ -63,7 +63,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S10 profiles.
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-//* entry[0].resource only EctdComposition32S10
+//* entry[0].resource only EctdComposition32S1
  
 Profile: CMCeCTDDocument32S30
 Parent: Bundle
@@ -345,7 +345,7 @@ Description: "The fields needed to represent the Product Container Closure Syste
 * section[Api].entry 1..1 MS
 * section[Api].entry only Reference(QualitySpecification)
 * section[Excipient] ^definition = "Excipient Specification to be included under the 3.2.P.4.1 eCTD heading."
-* section[Excipient].code = $SectionTypes#32P41 "Excipients Specification"
+* section[Excipient].code = $SectionTypes#32P40 "Excipients Specification"
 * section[Excipient].title 1..1 MS
 * section[Excipient].entry 1..1 MS
 * section[Excipient].entry only Reference(QualitySpecification)
@@ -440,7 +440,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
     SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section.entry MS
+* section.entry 1..1 MS
 * section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
 * section.code = $SectionTypes#32P32 "Product Batch Formula"
 * section.title 1..1 MS
@@ -568,23 +568,12 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 /*
     SECTION SLICES
 */
-* section 2..2 MS
-* section.entry MS
-* section ^slicing.discriminator.type = #value
-* section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #closed
-* section ^slicing.description = "Slice based on the ectd document sections."
-* section contains SubstanceNomenclature 1..1 MS and SubstanceStructure 1..1 MS
-* section[SubstanceNomenclature] ^definition = "Substance Nomenclature to be included under the 3.2.S.1.0 eCTD heading."
-* section[SubstanceNomenclature].code = $SectionTypes#32S11 "Substance Nomenclature"
-* section[SubstanceNomenclature].title 1..1 MS
-* section[SubstanceNomenclature].entry 1..1 MS
-* section[SubstanceNomenclature].entry only Reference(DrugSubstanceNomenclature)
-* section[SubstanceStructure] ^definition = "Substance raw materials to be included under the 3.2.S.1.0 eCTD heading."
-* section[SubstanceStructure].code = $SectionTypes#32S12 "Substance Structure"
-* section[SubstanceStructure].title 1..1 MS
-* section[SubstanceStructure].entry 1..1 MS
-* section[SubstanceStructure].entry only Reference(DrugSubstanceMolecularStructure)
+* section 1..1 MS
+* section.entry 1..1 MS
+* section ^definition = "Substance General Information the 3.2.S.1 eCTD heading."
+* section.code = $SectionTypes#32S10 "Substance General Information"
+* section.title 1..1 MS
+* section.entry only Reference(DrugSubstanceNomenclatureStructure)
 
 Profile: EctdComposition32S23
 Parent: Composition
@@ -596,8 +585,11 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
+* subject 1..1 MS
+* subject only Reference(RoutineSubstanceDefinition)
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
+* title 1..1 MS
 /*
     SECTION SLICES - not requried - only one option
 */

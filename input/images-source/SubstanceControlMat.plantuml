@@ -81,11 +81,22 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
         }
     }
 
+      node "RoutineDrugProduct" as NN {
 
+    object "**Parent:** MedicinalProductDefinition" as obj3 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-routine-drug-product.html]]
+      **ValueSets:**
+      Drug Route Of Administration Terminology
+      Pharmaceutical Dosage Form Terminology
+      Name Part Terminology
+    }
+  }
 
     N1 -[#darkred]-> N2
     N2 -[#darkred]-> N21
     N1 -[#darkred]-> NSO
+    N1 -[#darkred]-> NN
     N21 -[#darkred]-> N21mfg
 }
 @enduml

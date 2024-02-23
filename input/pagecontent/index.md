@@ -16,7 +16,7 @@ The PQ/CMC Project is evolving and FDA is structuring sections of eCTD M3 in a p
 
 The PQ/CMC FHIR IG represents the PQ/CMC data standards. Therefore, implementation of this FHIR IG will follow a rolling approach; as new sections of eCTD M3 are structured and represented in FHIR, new FHIR profiles will be added to this IG to represent the content of those added eCTD M3 sections. The FHIR Profiles defined in this IG are aligned with eCTD v 4.0. 
 
-The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG). At HL7, this project is referred to as Pharmaceutical Quality. BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
+The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG). At HL7, the PQ/CMC project is sponsored by the HL7 Biomedical Research & Regulation (BR&R) Work Group. BR&R WG maintains a Confluence page for this project here [https://confluence.hl7.org/pages/viewpage.action?pageId=58656205](https://confluence.hl7.org/pages/viewpage.action?pageId=58656205)
 
 ## Status:
 

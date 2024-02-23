@@ -66,9 +66,7 @@
 <artifact id="StructureDefinition/pqcmc-drug-product-substance-impurity" key="StructureDefinition-pqcmc-drug-product-substance-impurity" name="Drug Substance Impurity"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-batch" key="StructureDefinition-pqcmc-drug-substance-batch" name="Drug Substance Manufactured Batch"/>
 <artifact id="StructureDefinition/drug-substance-manufacturing-batch" key="StructureDefinition-drug-substance-manufacturing-batch" name="Drug Substance Manufacturing Batch"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-molecular-structure" key="StructureDefinition-pqcmc-drug-substance-molecular-structure" name="Drug Substance Molecular Structure"/>
-<artifact id="SubstanceDefinition/ff8ef305-1210-4ac0-9142-1bcbcacae586" key="SubstanceDefinition-ff8ef305-1210-4ac0-9142-1bcbcacae586" name="Drug Substance Molecular Structure - levoThyroxine"/>
-<artifact id="SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166" key="SubstanceDefinition-21b6b724-507e-4cf4-a462-93334b98d166" name="Drug Substance Nomenclature"/>
+<artifact id="SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166" key="SubstanceDefinition-21b6b724-507e-4cf4-a462-93334b98d166" name="Drug Substance Nomenclature and Structure"/>
 <artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="DrugProductComponent example for an excipient - Maize starch"/>
 <artifact id="CodeSystem/cmc-ncit-dummy" key="CodeSystem-cmc-ncit-dummy" name="Dummy NCIT Codesystem"/>
 <artifact id="ValueSet/evmpd-substance-classification" key="ValueSet-evmpd-substance-classification" name="EVMPD Substance Classification"/>
@@ -76,6 +74,7 @@
 <artifact id="Composition/5dfbbf17-05c0-441d-af66-7a66072f4ae4" key="Composition-5dfbbf17-05c0-441d-af66-7a66072f4ae4" name="EctdComposition32P10 for 2 layer tablet"/>
 <artifact id="Composition/5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" key="Composition-5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" name="Example Composition for CTD 3.2.S.2.3"/>
 <artifact id="SubstanceDefinition/5f66b17e-e3c0-4ee4-8106-59faa34d70f7" key="SubstanceDefinition-5f66b17e-e3c0-4ee4-8106-59faa34d70f7" name="Example RoutineSubstanceDefinition"/>
+<artifact id="SubstanceDefinition/cd84a8b5-4e96-551c-15c6-c97c943eb38a" key="SubstanceDefinition-cd84a8b5-4e96-551c-15c6-c97c943eb38a" name="Example RoutineSubstanceDefinition for Asprin"/>
 <artifact id="SubstanceDefinition/d8242262-2187-4ea2-907f-b66752202b46" key="SubstanceDefinition-d8242262-2187-4ea2-907f-b66752202b46" name="Example SubstanceDefinition for Carrageenan"/>
 <artifact id="SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a" key="SubstanceDefinition-fd84a8b5-9e96-451c-a5c6-097c943eb38a" name="Example SubstanceDefinition for anhydrous citric acid"/>
 <artifact id="SubstanceDefinition/d3a11b25-e160-4688-b807-6383364096fd" key="SubstanceDefinition-d3a11b25-e160-4688-b807-6383364096fd" name="Example SubstanceDefinition for water"/>
@@ -149,9 +148,9 @@
 <artifact id="StructureDefinition/pq-timePoint-extension" key="StructureDefinition-pq-timePoint-extension" name="Study Interval"/>
 <artifact id="StructureDefinition/pq-protocol-extension" key="StructureDefinition-pq-protocol-extension" name="Study Protocol"/>
 <artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type Terminology"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature-structure" key="StructureDefinition-pqcmc-drug-substance-nomenclature-structure" name="Substance General Information"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-impurities" key="StructureDefinition-pqcmc-drug-substance-impurities" name="Substance Impurities"/>
 <artifact id="ValueSet/pqcmc-substance-name-type" key="ValueSet-pqcmc-substance-name-type" name="Substance Name Type"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature" key="StructureDefinition-pqcmc-drug-substance-nomenclature" name="Substance Nomenclature"/>
 <artifact id="StructureDefinition/supplier-organization" key="StructureDefinition-supplier-organization" name="Supplier Organization"/>
 <artifact id="ValueSet/pqcmc-test-category-terminology" key="ValueSet-pqcmc-test-category-terminology" name="Test Category Terminology"/>
 <artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin Terminology"/>

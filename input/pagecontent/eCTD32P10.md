@@ -1,6 +1,6 @@
 ### Domain Overview
 
-The Description and Composition of the Drug Product bundle profile provides a mechanism for the industry to submit Module 3 of CTD 3.2.P.1 folder content to the FDA. The contents of this section include a description of the drug product, its container closure, and its components and constituents.
+The Description and Composition of the Drug Product bundle profile provides a mechanism for the industry to submit Module 3 of CTD 3.2.P.1 folder content to the FDA. The contents of this section include a description of the drug product, its container closure, and its components and constituents. At this time, the profile is scoped to support only products that have a solid oral dose form; other dose forms will be supported in future iterations of the profile.
 
 For the purposes of the PQ/CMC IG, the Example 1 below of a two-layer Tablet provides description of the terms used to explain the 2-layer tablet.
 
@@ -31,9 +31,9 @@ Drug Product content includes information such as: the dosage form, routes of ad
 Component content includes information such as: a component identifier, component type, and release profile of the component and the amount of each constituent (both active and inactive ingredients) contained in the component as well as the function of the constituent in the component.
 
 ### Implementer Instructions
-- Each 32P10 XML bundle is for a single Drug Product and specific dosage form.
-- Multiple dosage forms of a drug product must be submitted via distinct separate 32P10 bundles.
-- For drug products that are co-packaged with additional items, e.g., a reconstitution diluent, the additional items must be provided in a separate 32P10 bundle.
+- Each 32P1 XML bundle is for a single Drug Product and specific dosage form.
+- Multiple dosage forms of a drug product must be submitted via distinct separate 32P1 bundles.
+- For drug products that are co-packaged with additional items, e.g., a reconstitution diluent, the additional items must be provided in a separate 32P1 bundle.
 
 ### Representation in FHIR
 
@@ -64,6 +64,6 @@ Not Applicable
 
 ### Examples
 
-This images demonstrates a multilayer tablet displayed with narrative inserted in the composition text element.  It has two parts. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [bd0f0a7a-27ea-4884-801d-bd0546e80888](Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888.html)
+This images demonstrates a multilayer tablet displayed with narrative inserted in the composition text element.  It has two parts. The XML can be found on the Artifacts page and does not contain the narrative in the image, rather it contains the narrative generated for all examples by the IG publisher program. It is on the artifacts page and in the Bundle profile. [bd0f0a7a-27ea-4884-801d-bd0546e80888](Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888.html)
 
 <div><img src="32P102layers.png" /></div>

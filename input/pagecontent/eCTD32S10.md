@@ -5,7 +5,7 @@ The General Information bundle profile provides a mechanism for the industry to 
 - 3.2.S.1.2 - Structure
     - In the case of a New Chemical Entity (NCE), the structural formula, including relative and absolute stereochemistry, the molecular formula, and the relative molecular mass should be provided.
     -  For Biotech products, the schematic amino acid sequence indicating glycosylation sites or other post-translational modifications and relative molecular mass should be provided, as appropriate.
-- Note: 3.2.S.1.3 is Not in scope of this bundle profile at this time.
+- Note: 3.2.S.1.3 is NOT in scope of this bundle profile at this time.
 
 ### Implementer Instructions
 
@@ -18,10 +18,9 @@ The General Information bundle profile provides a mechanism for the industry to 
 The domain concepts of Substance Nomenclature and Structure are represented in FHIR in this IG section. Below is a high-level FHIR resource mapping to guide understanding of how the domain concepts are represented using profiles on FHIR resources. Detail study of the profiles and each of the resources will be needed to develop a deeper understanding of this Substance General Information FHIR Profile. Concepts that are key to this domain include the following:
 
 * Drug Substance Nomenclature
-    * [Substance Nomenclature](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drug-substance-nomenclature.html) (DrugSubstanceNomenclature) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Substance General Information](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinitionpqcmc-drug-substance-nomenclature-structure.html) (DrugSubstanceNomenclatureStructure) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
     * [Polymorphic Form](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-polymorphic-form.html) (PolymorphicForm) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
-* Drug Substance Structure
-    * [Drug Substance Molecular Structure](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drug-substance-molecular-structure.html) (DrugSubstanceMolecularStructure) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
+
 * Related Organizations
     * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html)</span> resource
     * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource

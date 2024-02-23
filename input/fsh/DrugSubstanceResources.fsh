@@ -615,6 +615,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
+* insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
 
 Profile: SubstanceContainerClosure
@@ -633,11 +634,11 @@ Description: "Description and coding of the container closure system. Profile on
 * insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
 
-Profile: DrugSubstanceNomenclature
+Profile: DrugSubstanceNomenclatureStructure
 Parent: SubstanceDefinition
-Id: pqcmc-drug-substance-nomenclature
-Title: "Substance Nomenclature"
-Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug Substance profile."
+Id: pqcmc-drug-substance-nomenclature-structure
+Title: "Substance General Information"
+Description: "Substance General Information containting Drug Substance (Active Ingredient) nomenclature (2.3.S.1.1) and Substance Structure (2.3.S.1.2) profile."
 * meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
@@ -662,7 +663,37 @@ Description: "Drug Substance (Active Ingredient) nomenclature. Profile on Drug S
  """
 * molecularWeight.amount.code 1..1 MS
 * molecularWeight.amount.code from PqcmcUnitsMeasureTerminology (required)
-
+* . obeys cmc-structure-required
+* . obeys cmc-substance-structure-graphic-required
+* structure 1..1 MS
+//* structure obeys cmc-representation-or-document
+* structure.molecularFormula 0..1 MS
+* structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
+* structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]
+Biopolymer Sequence: TBD
+"""
+* structure.technique 1..1 MS
+* structure.technique ^short = "Substance Characterization Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+"""
+* structure.technique.text 1..1 MS
+* structure.representation 1..* MS
+* structure.representation.format 0..1 MS
+* structure.representation.format ^short = "Structural Representation Type"
+* structure.representation.format ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
+Examples: SMILES, MOLFILE, HELM, etc.
+"""
+* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
+* structure.representation.representation 0..1 MS
+* structure.representation.representation ^short = "Drug Substance Structural Representation"
+* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+ """
+* structure.representation.document 0..1 MS
+* structure.representation.document ^short = "Substance Structure Graphic"
+* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
+ Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
+* structure.representation.document only Reference(Base64DocumentReference)
 * insert UniiAndUniProtCodes
 * insert SubstanceNames
 
@@ -742,58 +773,6 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * relationship.substanceDefinitionReference only Reference( ImpuritySubstance )
 * relationship.type.text = "Impurity"
 * relationship.type.text ^short = "Impurity"
-
-
-Profile: DrugSubstanceMolecularStructure
-Parent: SubstanceDefinition
-Id: pqcmc-drug-substance-molecular-structure
-Title: "Drug Substance Molecular Structure"
-Description: "Drug Substance (Active Ingredient) molecular structure. Profile on Drug Substance profile."
-
-* meta.profile 0..1 MS
-* . obeys cmc-structure-required
-* . obeys cmc-when-unii-required
-* . obeys cmc-substance-structure-graphic-required
-* . obeys cmc-name-isbt
-* identifier 0..1 MS
-* identifier ^short = "optional user designated identifier"
-* classification 1..* MS
-* classification from EVMPDSubstanceClassification
-* classification ^short = "Substance Type"
-* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
-[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
-"""
-* structure 1..1 MS
-//* structure obeys cmc-representation-or-document
-* structure.molecularFormula 0..1 MS
-* structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
-* structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]
-Biopolymer Sequence: TBD
-"""
-* structure.technique 1..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
-"""
-* structure.technique.text 1..1 MS
-* structure.representation 1..* MS
-* structure.representation.format 0..1 MS
-* structure.representation.format ^short = "Structural Representation Type"
-* structure.representation.format ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
-Examples: SMILES, MOLFILE, HELM, etc.
-"""
-* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
-* structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Drug Substance Structural Representation"
-* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
- """
-* structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Substance Structure Graphic"
-* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
- Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
-* structure.representation.document only Reference(Base64DocumentReference)
-* insert UniiAndUniProtCodes
-* insert SubstanceNames
 
 RuleSet: SubstanceNames
 * name 1..* MS

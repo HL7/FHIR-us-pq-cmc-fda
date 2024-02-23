@@ -95,8 +95,8 @@ Usage: #example
 * content.attachment.title = "L-thyroxine-3D-structure-CT1000583834.sdf"
 
 Instance: 21b6b724-507e-4cf4-a462-93334b98d166
-InstanceOf: DrugSubstanceNomenclature
-Title: "Drug Substance Nomenclature"
+InstanceOf: DrugSubstanceNomenclatureStructure
+Title: "Drug Substance Nomenclature and Structure"
 Description: "LEVOTHYROXINE SODIUM ANHYDROUS"
 Usage: #example 
 * identifier.value = "levoThyroxine"
@@ -105,22 +105,6 @@ Usage: #example
 * molecularWeight.amount = $NCIT#C64559 "u"
 * molecularWeight.amount.value = 798.85
 * supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
-* code.code = $UNII#054I36CPMN
-* name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
-* name[gsrs].preferred = true
-* name[iupac].name = "sodium;(2S)-2-amino-3-[4-(4-hydroxy-3,5-diiodophenoxy)-3,5-diiodophenyl]propanoate"
-* name[cas].name = "55-03-8"
-* relationship[+].substanceDefinitionReference = Reference(urn:uuid:832f22b4-6f0c-41f8-9b7d-f26f55e9973c)
-* relationship[=].type.text = "Polymorph"
-
-Instance: ff8ef305-1210-4ac0-9142-1bcbcacae586
-InstanceOf: DrugSubstanceMolecularStructure
-Title: "Drug Substance Molecular Structure - levoThyroxine"
-Description: "Drug Substance Structure for levoThyroxine"
-Usage: #example 
-* identifier.value = "levoThyroxine"
-* classification = $EMAIDMP#1 "Chemical"
-* manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
 * code.code = $UNII#054I36CPMN
 * structure.technique.text = """NMR Spectroscopy"""
 * structure.representation[+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
@@ -131,6 +115,10 @@ Usage: #example
 * structure.representation[+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
 * name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[gsrs].preferred = true
+* name[iupac].name = "sodium;(2S)-2-amino-3-[4-(4-hydroxy-3,5-diiodophenoxy)-3,5-diiodophenyl]propanoate"
+* name[cas].name = "55-03-8"
+* relationship[+].substanceDefinitionReference = Reference(urn:uuid:832f22b4-6f0c-41f8-9b7d-f26f55e9973c)
+* relationship[=].type.text = "Polymorph"
 
 Instance: 260f5aa3-23d2-4999-8e5f-70f247390ee5
 InstanceOf: EctdComposition32S10
@@ -143,10 +131,8 @@ Usage: #example
 * author = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)
 * date = 2023-12-15T22:19:47.022Z
 * title = "eCTD Substance General Information for levoThyroxine"
-* section[SubstanceNomenclature].title = "Drug Substance Nomeclature for levoThyroxine"
-* section[SubstanceNomenclature].entry = Reference(urn:uuid:21b6b724-507e-4cf4-a462-93334b98d166)
-* section[SubstanceStructure].title = "Drug Substance Structure for levoThyroxine"
-* section[SubstanceStructure].entry = Reference(urn:uuid:ff8ef305-1210-4ac0-9142-1bcbcacae586)
+* section.title = "Drug Substance Nomeclature and Structure for levoThyroxine"
+* section.entry = Reference(urn:uuid:21b6b724-507e-4cf4-a462-93334b98d166)
 
 Instance: 30536c0e-456c-4f90-9f02-da7be1d289e9
 InstanceOf: CMCeCTDDocument32S10
@@ -161,8 +147,6 @@ Usage: #example
 * entry[=].fullUrl = "urn:uuid:260f5aa3-23d2-4999-8e5f-70f247390ee5"
 * entry[+].resource = 21b6b724-507e-4cf4-a462-93334b98d166
 * entry[=].fullUrl = "urn:uuid:21b6b724-507e-4cf4-a462-93334b98d166"
-* entry[+].resource = ff8ef305-1210-4ac0-9142-1bcbcacae586
-* entry[=].fullUrl = "urn:uuid:ff8ef305-1210-4ac0-9142-1bcbcacae586"
 * entry[+].resource = 832f22b4-6f0c-41f8-9b7d-f26f55e9973c
 * entry[=].fullUrl = "urn:uuid:832f22b4-6f0c-41f8-9b7d-f26f55e9973c"
 * entry[+].resource = b69435a0-45c6-4d44-9fde-b354e17408d7
