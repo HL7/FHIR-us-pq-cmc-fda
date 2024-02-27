@@ -200,8 +200,8 @@ Usage: #example
 
 * identifier.value = "Example1Drug"
 * status = $PubStatus#draft	"Draft"
-* property[OvrRelsProf].valueCodeableConcept = $NCIT#102 "ER"
-* property[OvrRelsMech].valueCodeableConcept = $NCIT#106 "Matrix"
+* property[OvrRelsProf].valueCodeableConcept = $NCIT#C42713 "Extended-Release Profile"
+* property[OvrRelsMech].valueCodeableConcept = $NCIT#C203359 "Matrix"
 * property[CoatInd].valueBoolean = false
 * property[WgtTyp].valueCodeableConcept = $NCIT#C168628 "Mass"
 * manufacturedDoseForm = $NCIT#C42964 "TABLET, MULTILAYER"
@@ -215,11 +215,11 @@ Usage: #example
 * property[TotWgtDen].valueQuantity = $NCIT#C66832 "1"
 * property[TotWgtDen].valueQuantity.value = 1
 * property[QualStd].valueCodeableConcept = $NCIT#C134006 "USP-NF"
-* component[+].type = $NCIT#115 "Layer"
+* component[+].type = $NCIT#C66831 "Layer"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 463
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerA"
-* component[=].property[RelsProf].valueCodeableConcept = $NCIT#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
 * component[=].property[ContPercent].valueQuantity.value = 0.3855
 * component[=].property[Color].valueCodeableConcept.text = "Purple"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f)
@@ -227,7 +227,7 @@ Usage: #example
 * component[=].constituent[=].amount.value = 200
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.4319
 * component[=].constituent[=].location.text = "Purple Layer"
-* component[=].constituent[=].location = $NCIT#148 "Active core/granulate"
+* component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
@@ -235,21 +235,21 @@ Usage: #example
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5659
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
-* component[=].constituent[=].location = $NCIT#150 "Intragranular"
+* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler Excipient"
+* component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:3791c4ce-2b43-4d7b-b195-0e5f88f28dab)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount.value = 1
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0022
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42656 "Coloring agent"
-* component[=].constituent[=].location = $NCIT#150 "Intragranular"
-* component[+].type = $NCIT#115 "Layer"
+* component[=].constituent[=].function[Function] = $NCIT#C42656 "Color Excipient"
+* component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
+* component[+].type = $NCIT#C66831 "Layer"
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 738
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerB"
-* component[=].property[RelsProf].valueCodeableConcept = $NCIT#101 "DR"
+* component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
 * component[=].property[ContPercent].valueQuantity.value = 0.6145
 * component[=].property[Color].valueCodeableConcept.text = "White"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:7f10a35e-228d-42db-8918-6ccada78454d)
@@ -257,7 +257,7 @@ Usage: #example
 * component[=].constituent[=].amount.value = 300
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.4065
 * component[=].constituent[=].location.text = "White Layer"
-* component[=].constituent[=].location = $NCIT#148 "Active core/granulate"
+* component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
@@ -265,8 +265,8 @@ Usage: #example
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5935
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
-* component[=].constituent[=].location = $NCIT#150 "Intragranular"
+* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler Excipient"
+* component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 
 Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
 InstanceOf: SponsorOrganization
