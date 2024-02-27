@@ -709,3 +709,26 @@ not allowed by the validator."
 * #C79143 "SUBRETINAL"
 * #C79144 "INTRAEPICARDIAL"
 * #C79145 "TRANSENDOCARDIAL"
+
+CodeSystem: EMADummy
+Id: cmc-ema-dummy
+Title: "Dummy EMA Codesystem"
+Description: "This is a dummy codesystem representing EMA. It contains all the codes that are usable within the IG.
+It exists because the publisher previously allowed using value sets from codesystems that it could not find (e.g.
+https://www.ema.europa.eu). This is no longer the case, so a temp code system must be defined in the IG."
+* ^caseSensitive = true
+* ^experimental = true	
+
+* #1 "Chemical"
+* #17 "Mixture"
+* #2 "Nucleic Acid"
+* #3 "Polymer"
+* #4 "Protein - Other"
+* #5 "Protein - Vaccine"
+* #7 "Structurally Diverse Substance - Immunoglobulin"
+* #6 "Structurally Diverse Substance - Vaccine"
+* #10 "Structurally Diverse Substance - Allergen"
+* #11 "Structurally Diverse Substance - Cell therapy"
+* #9 "Structurally Diverse Substance - Herbal"
+* #12 "Structurally Diverse Substance - Other"
+* #8 "Structurally Diverse Substance - Blood derived"
