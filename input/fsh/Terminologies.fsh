@@ -1298,7 +1298,17 @@ Description: "Terminology used for representation of the information on pharmace
 * $NCIT#C79143 "SUBRETINAL"
 * $NCIT#C79144 "INTRAEPICARDIAL"
 * $NCIT#C79145 "TRANSENDOCARDIAL"
-	
+
+ValueSet: PqcmcManufacturedDoseFormTerminology
+Id: pqcmc-manufactured-dose-form-terminology	
+Title: "Manufactured Dose Form Terminology"
+Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
+* ^experimental = true	
+* $NCIT#C48623 "NOT APPLICABLE"
+* $NCIT#C154554 "Lozenge Dosage Form Category"
+* $NCIT#C154433 "Capsule Dose Form Category"
+* $NCIT#C154605 "Tablet Dosage Form Category"
+
 CodeSystem: GENCcountryCodesCS	
 Id: genc-country-codes-cs	
 Title: "GENC Country Codes"

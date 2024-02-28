@@ -144,7 +144,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 Example: Tylenol
 
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]"""
-* manufacturedDoseForm.coding from SplPharmaceuticalDosageFormTerminology
+* manufacturedDoseForm.coding from PqcmcManufacturedDoseFormTerminology
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"

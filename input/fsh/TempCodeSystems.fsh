@@ -709,6 +709,9 @@ not allowed by the validator."
 * #C79143 "SUBRETINAL"
 * #C79144 "INTRAEPICARDIAL"
 * #C79145 "TRANSENDOCARDIAL"
+* #C154554 "Lozenge Dosage Form Category"
+* #C154433 "Capsule Dose Form Category"
+* #C154605 "Tablet Dosage Form Category"
 
 CodeSystem: EMADummy
 Id: cmc-ema-dummy
