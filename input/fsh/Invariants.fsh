@@ -13,7 +13,7 @@ Severity: #error
 
 Invariant: cmc-name-isbt
 Description: "Name.type ISBT 128 required for blood products."
-Expression: "classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://examples.com')"
+Expression: "classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy')"
 Severity: #error
 // Note: 8 is the code for for "Structurally Diverse Subtsance - Blood derived"
 // and 226 is the code for "ISBT 128" in substance name type. $NCIT is currently 
@@ -21,7 +21,7 @@ Severity: #error
 Invariant: cmc-ingredient-functions
 Description: "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.
 If Drug Product Component Function Category onstituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "constituent.function.coding.where(code = 'C42637' and version = 'function' and system = 'http://examples.com').exists() implies constituent.function.coding.code.count() = 2"
+Expression: "constituent.function.coding.where(code = 'C42637' and version = 'function' and system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy').exists() implies constituent.function.coding.code.count() = 2"
 Severity: #error
 // Note: coding.version is being used do differentiate between the two function
 // slices: function and category
@@ -58,7 +58,7 @@ Severity: #error
 Invariant: cmc-ppidref-required
 Description: "A PPiDref is required when the PPiD is designated a child."
 Expression: "property.where(
-        type.coding.exists(system = 'http://examples.com' and code = 'PPiD') and    
+        type.coding.exists(system = '' and code = 'PPiD') and    
         value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-relationship-types' and code = 'child')
     ).exists()
     implies 
@@ -160,16 +160,16 @@ Invariant: cmc-arbitrary-unit-text-required
 Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
 Expression: "property.where(
     type.coding.exists(
-        system = 'http://examples.com' and (
+        system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and (
             code = 'TotWgtNum' or 
             code = 'TotWgtDen'
         )
     ) and
-    value.exists(system = 'http://examples.com' and code = 'C75765')
+    value.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and code = 'C75765')
 ).exists() implies property.where(
     type.coding.exists(
         code = 'TotWgtTxt' and
-        system = 'http://examples.com'
+        system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy'
     )
 ).exists()"
 Severity: #error
@@ -186,10 +186,23 @@ Expression: "representation.exists() implies format.exists()"
 Invariant: cmc-capsule-count-required
 Severity: #error
 Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
-Expression: "manufacturedDoseForm.coding.exists(system = 'http://examples.com' and code in ('C25158' | 'C42895' | 'C42896' | 'C42902' | 'C42904' | 'C42916' | 'C42917' | 'C42928' | 'C42936' | 'C42954'))
-implies property.where(type.coding.exists(system = 'http://examples.com' and code = 'CapConCnt')).exists()"
+Expression: "manufacturedDoseForm.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and code = 'C154433')
+implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and code = 'CapConCnt')).exists()"
 
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
 Description: "Country of origin must be a 3 letter country code"
 Expression: "coding.code.length() = 3"
+
+Invariant: cmc-coating-indication-required
+Severity: #error
+Description: "Coating indication is required when the dosage form is a tablet, lozenge or capsule"
+Expression: "manufacturedDoseForm.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and (
+    code = 'C154605' or
+    code = 'C154433' or
+    code = 'C154554'
+))
+implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and code = 'CoatInd')).exists()"
+// Note: Currently checks if manufacturedDoseForm is any of the solid oral
+// dose forms (lozenge, capsule, tablet). Can capsules and lozenges have
+// coatings?

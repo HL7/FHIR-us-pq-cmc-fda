@@ -789,7 +789,7 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
   sys 0..1 MS and
   sub 0..1 MS and
   brand 0..1 MS and
-  comn 0..1 MS and
+  // comn 0..1 MS and
   gsrs 0..1 MS and
   usp 0..1 MS and
   comp 0..1 MS and
@@ -805,14 +805,14 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 """
 * name[sys].type 1..1 MS
 * name[sys].type.coding 1..1 MS
-* name[sys].type.coding = $NCIT#145 "Systematic"
+* name[sys].type.coding = $NCIT#C203357	"Systematic Name"
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = $NCIT#138 "Generic"
+* name[sub].type.coding = $NCIT#C97054	"Generic Name"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
@@ -820,37 +820,37 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 """
 * name[brand].type 1..1 MS
 * name[brand].type.coding 1..1 MS
-* name[brand].type.coding = $NCIT#137 "Brand"
+* name[brand].type.coding = $NCIT#C71898	"Brand"
 
-* name[comn].name 1..1 MS
-* name[comn].name ^short = "Common"
-* name[comn].name ^definition = """The generally used, literal identifier of the entity."""
-* name[comn].type 1..1 MS
-* name[comn].type.coding 1..1 MS
-* name[comn].type.coding = $NCIT#139 "Common"
+// * name[comn].name 1..1 MS
+// * name[comn].name ^short = "Common"
+// * name[comn].name ^definition = """The generally used, literal identifier of the entity."""
+// * name[comn].type 1..1 MS
+// * name[comn].type.coding 1..1 MS
+// * name[comn].type.coding = $NCIT#139 "Common"
 
 * name[gsrs].name 1..1 MS
-* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^short = "GSRS Preferred Term"
 * name[gsrs].name ^definition = """Default display name identified within FDA Global Substance Registration System (GSRS)."""
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = $NCIT#141 "GSRS Preferred"
+* name[gsrs].type.coding = $NCIT#C203355 "GSRS Preferred Term"
 
 * name[usp].name 1..1 MS
-* name[usp].name ^short = "USP/NF"
+* name[usp].name ^short = "USP-NF Established Name"
 * name[usp].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Pharmacopeia (USP) and excipients by the National Formulary (NF). [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
 * name[usp].type.coding 1..1 MS
-* name[usp].type.coding = $NCIT#147 "USP/NF"
+* name[usp].type.coding = $NCIT#C203358	"USP-NF Established Name"
 
 * name[comp].name 1..1 MS
-* name[comp].name ^short = "Company Code"
+* name[comp].name ^short = "Company ID/Code"
 * name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
 * name[comp].type 1..1 MS
 * name[comp].type.coding 1..1
-* name[comp].type.coding = $NCIT#Company "Company ID/Code"
+* name[comp].type.coding = $NCIT#C203354	"Company ID/Code"
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
@@ -859,7 +859,7 @@ Example: CAS [103-90-2]
 """
 * name[cas].type 1..1 MS
 * name[cas].type.coding 1..1 MS
-* name[cas].type.coding = $NCIT#222 "CAS Number"	
+* name[cas].type.coding = $NCIT#C54682	"CAS Number"
 
 * name[inn].name 1..1 MS
 * name[inn].name ^short = "INN" 
@@ -867,7 +867,7 @@ Example: CAS [103-90-2]
 """
 * name[inn].type 1..1 MS
 * name[inn].type.coding 1..1 MS
-* name[inn].type.coding = $NCIT#223 "INN"	
+* name[inn].type.coding = $NCIT#C142585	"INN"
 
 * name[usan].name 1..1 MS
 * name[usan].name ^short = "USAN"
@@ -875,7 +875,7 @@ Example: CAS [103-90-2]
 """
 * name[usan].type 1..1 MS
 * name[usan].type.coding 1..1 MS
-* name[usan].type.coding = $NCIT#224 "USAN"
+* name[usan].type.coding = $NCIT#C96973	"USAN"
 
 * name[iupac].name 1..1 MS
 * name[iupac].name ^short = "IUPAC Name" 
@@ -884,15 +884,15 @@ Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
 * name[iupac].type.coding 1..1 MS
-* name[iupac].type.coding = $NCIT#225 "IUPAC"
+* name[iupac].type.coding = $NCIT#C203356	"IUPAC Name"
 
 * name[isbt].name 1..1 MS
-* name[isbt].name ^short = "ISBT 128" 
+* name[isbt].name ^short = "ISBT-128 DIN"
 * name[isbt].name ^definition = """It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
 """
 * name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1 MS
-* name[isbt].type.coding = $NCIT#226 "ISBT 128"
+* name[isbt].type.coding = $NCIT#C95517	"ISBT-128 DIN"
 
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
@@ -911,38 +911,38 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
   sub 0..1 MS and
-  comn 0..1 MS and
+  // comn 0..1 MS and
   gsrs 0..1 MS and
   isbt 0..1 MS
 * name[sub].name 1..1 MS
-* name[sub].name ^short = "Generic"
+* name[sub].name ^short = "Generic Name"
 * name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
 * name[sub].type.coding 1..1 MS
-* name[sub].type.coding = $NCIT#138 "Generic"
+* name[sub].type.coding = $NCIT#C97054	"Generic Name"
 
-* name[comn].name 1..1 MS
-* name[comn].name ^short = "Common"
-* name[comn].name ^definition = """TThe generally used, literal identifier of the entity."""
-* name[comn].type 1..1 MS
-* name[comn].type.coding 1..1 MS
-* name[comn].type.coding = $NCIT#139 "Common"
+// * name[comn].name 1..1 MS
+// * name[comn].name ^short = "Common"
+// * name[comn].name ^definition = """TThe generally used, literal identifier of the entity."""
+// * name[comn].type 1..1 MS
+// * name[comn].type.coding 1..1 MS
+// * name[comn].type.coding = $NCIT#139 "Common"
 
 * name[gsrs].name 1..1 MS
-* name[gsrs].name ^short = "GSRS Preferred"
+* name[gsrs].name ^short = "GSRS Preferred Term"
 * name[gsrs].name ^definition = """Default display name identified within FDA Global Substance Registration System (GSRS).
 """
 * name[gsrs].type 1..1 MS
 * name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = $NCIT#141 "GSRS Preferred"
+* name[gsrs].type.coding = $NCIT#C203355 "GSRS Preferred Term"
 
 * name[isbt].name 1..1 MS
-* name[isbt].name ^short = "ISBT 128" 
+* name[isbt].name ^short = "ISBT-128 DIN" 
 * name[isbt].name ^definition = """It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
 """
 * name[isbt].type 1..1 MS
 * name[isbt].type.coding 1..1 MS
-* name[isbt].type.coding = $NCIT#226 "ISBT 128"
+* name[isbt].type.coding = $NCIT#C95517	"ISBT-128 DIN"
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
 

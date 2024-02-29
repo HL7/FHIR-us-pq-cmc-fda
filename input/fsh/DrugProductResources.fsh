@@ -135,6 +135,7 @@ Title: "Manufactured Drug Product"
 Description: "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or component."
 * obeys cmc-capsule-count-required
 * obeys cmc-arbitrary-unit-text-required
+* obeys cmc-coating-indication-required
 * meta.profile 1..1 MS
 * identifier 0..1 MS
 * status 1..1 MS
@@ -144,7 +145,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 Example: Tylenol
 
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]"""
-* manufacturedDoseForm.coding from SplPharmaceuticalDosageFormTerminology
+* manufacturedDoseForm.coding from PqcmcManufacturedDoseFormTerminology
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
@@ -153,7 +154,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * property contains
       OvrRelsProf 1..1 MS and
       OvrRelsMech 0..1 MS and
-      CoatInd 1..1 MS and
+      CoatInd 0..1 MS and
       LayCnt 0..1 MS and
       BeaTypCnt 0..1 MS and
       CapClass 0..1 MS and
