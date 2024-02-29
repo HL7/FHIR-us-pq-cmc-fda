@@ -136,10 +136,10 @@ Usage: #example
 
 Instance: 30536c0e-456c-4f90-9f02-da7be1d289e9
 InstanceOf: CMCeCTDDocument32S10
-Title: "Bundle for 32S10"
-Description: "Bundle containng nomenclature and molecular Structure"
+Title: "Bundle for 3.2.S.1"
+Description: "Bundle containng nomenclature and molecular structure"
 Usage: #example 
-* identifier.extension[version].valueString = "0.1.17"
+* identifier.extension[version].valueString = "0.1.20"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:1bf43677-1c61-41dd-93c2-8ec7f327d0f1"
 * timestamp = 2023-12-15T22:19:47.022Z

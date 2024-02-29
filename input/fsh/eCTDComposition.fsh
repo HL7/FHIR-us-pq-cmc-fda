@@ -345,7 +345,7 @@ Description: "The fields needed to represent the Product Container Closure Syste
 * section[Api].entry 1..1 MS
 * section[Api].entry only Reference(QualitySpecification)
 * section[Excipient] ^definition = "Excipient Specification to be included under the 3.2.P.4.1 eCTD heading."
-* section[Excipient].code = $SectionTypes#32P40 "Excipients Specification"
+* section[Excipient].code = $SectionTypes#32P40 "Product Control of Excipients"
 * section[Excipient].title 1..1 MS
 * section[Excipient].entry 1..1 MS
 * section[Excipient].entry only Reference(QualitySpecification)

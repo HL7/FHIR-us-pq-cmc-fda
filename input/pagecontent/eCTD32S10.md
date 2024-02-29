@@ -10,8 +10,8 @@ The General Information bundle profile provides a mechanism for the industry to 
 ### Implementer Instructions
 
 - For a drug product containing more than one active drug substance, the _CMC eCTD 32S10 Document_ should be provided in its entirety for each drug substance.
-    -  _CMC eCTD 32S10 Document_ – profile on[ Bundle](http://hl7.org/fhir/R5/bundle.html) Resource (representing the FHIR XML content as a collection of content in a single “document” and which should be repeated for each active substance)
-    - For the details of the requirements of this bundle see _eCTD Substance General Information_ – profile on[ Composition](http://hl7.org/fhir/R5/composition.html) Resource.         
+    -  _CMC eCTD 32S10 Document_ – profile on[ Bundle](http://hl7.org/fhir/R5/bundle.html) Resource (representing the FHIR XML content as a collection of content in a single “document” and which should be repeated for each active substance).
+       
 
 ### Representation in FHIR
 
@@ -37,7 +37,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 Not Applicable
 ### Examples
 
-This images demonstrates a Drug Substance with a polymorph displayed with narrative inserted in the composition text element.  The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [30536c0e-456c-4f90-9f02-da7be1d289e9](Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9.html)
+This image demonstrates a Drug Substance with a polymorph displayed with narrative inserted in the composition text element.  The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [30536c0e-456c-4f90-9f02-da7be1d289e9](Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9.html)
 
 The file includes a SDF file as an attachment.  After processing with the narrative tranform available on the [Downloads page](downloads.html), clink on the file link at the bottom.
 

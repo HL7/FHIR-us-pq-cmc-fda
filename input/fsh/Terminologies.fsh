@@ -436,8 +436,7 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
 Title: "eCTD sections Value Set" 
-Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a valueset instead of the code systme."
-
+Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a value set instead of the code system."
 * ^experimental = true
 * include codes from system PqcmcCompSectionTypes
 
@@ -1149,7 +1148,6 @@ Note: Includes SPL Unit of Presentation Terminology"
 * $NCIT#C48580 "gal"
 * $NCIT#C49668 "cm"
 * $NCIT#C64551 "pg"
-* $NCIT#C64559 "u"
 * $NCIT#C64778 "U"
 * $NCIT#C65045 "pmol"
 * $NCIT#C67015 "mg%"

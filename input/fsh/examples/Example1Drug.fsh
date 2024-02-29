@@ -310,7 +310,7 @@ Title: "CMCeCTDDocument32P10 bundle"
 Description: "A bundle for 3.2.P.1.0"
 Usage: #example 
 
-* identifier.extension[version].valueString = "0.1.17"
+* identifier.extension[version].valueString = "0.1.20"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:8a5a9684-f8fb-4f21-a397-a1a0996b2b7f"
 * timestamp = 2023-12-09T07:12:23.538Z
