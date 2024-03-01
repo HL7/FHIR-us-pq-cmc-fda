@@ -556,7 +556,7 @@ Profile: EctdComposition32S10
 Parent: Composition
 Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
-Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1.0 heading of the eCTD. References Sponsor Organization."
+Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1 heading of the eCTD. References Sponsor Organization."
 
 * meta.profile 1..1 MS 
 * status = #final

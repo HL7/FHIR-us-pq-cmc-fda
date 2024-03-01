@@ -18,7 +18,7 @@ Usage: #example
 Instance: e165f057-5eed-4e64-8328-4438fc88fb1b
 InstanceOf: SupplierOrganization
 Title: "Drug Manufacturing Site - Vandechemie"
-Description: "Example of Manufacturing site using the MfgTestSiteOrganization profle - Vandechemie"
+Description: "Example of Manufacturing site using the MfgTestSiteOrganization profile - Vandechemie"
 Usage: #example 
 * name = "Vandechemie"
 * contact.address[+].text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
@@ -102,7 +102,7 @@ Usage: #example
 * identifier.value = "levoThyroxine"
 * classification = $EMAIDMP#1 "Chemical"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
-* molecularWeight.amount = $NCIT#C64559 "u"
+* molecularWeight.amount = $NCIT#C41127 "u"
 * molecularWeight.amount.value = 798.85
 * supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
 * code.code = $UNII#054I36CPMN
@@ -122,7 +122,7 @@ Usage: #example
 
 Instance: 260f5aa3-23d2-4999-8e5f-70f247390ee5
 InstanceOf: EctdComposition32S10
-Title: "eCTD Composition for 3.2.S.1.0"
+Title: "eCTD Composition for 3.2.S.1"
 Description: "Composistion containing eCTD Substance General Information "
 Usage: #example 
 * identifier.value = "Substance General - levoThyroxine"

@@ -22,7 +22,7 @@ Usage: #example
 
 Instance: 2d70d504-8cc6-4282-81d4-b20b0a98b78b
 InstanceOf: ComponentSubstance
-Title: "Composition ingredient substance indenifying information - aspirin"
+Title: "Composition ingredient substance indentifying information - aspirin"
 Description: "API used in two layer table example"
 Usage: #example 
 
@@ -56,7 +56,7 @@ Usage: #example
 
 Instance: fc878c4f-a98c-427c-816b-e03ccdf0e712
 InstanceOf: ComponentSubstance
-Title: "Composition ingredient substance indenifying information - acetaminophen"
+Title: "Composition ingredient substance indentifying information - acetaminophen"
 Description: "An API used in two layer table example."
 Usage: #example 
 
@@ -89,7 +89,7 @@ Usage: #example
 
 Instance: 393a14e7-3edc-4373-bbe5-9e569d504a1c
 InstanceOf: ComponentSubstance
-Title: "Composition ingredient substance indenifying information - Maize starch"
+Title: "Composition ingredient substance indentifying information - Maize starch"
 Description: "An excipient in the two layer tablet"
 Usage: #example 
 
@@ -113,7 +113,7 @@ Description: "Strength is captured for all excipients"
 Usage: #example 
 
 * status = $PubStatus#draft	"Draft"
-* role = $NCIT#C42637 "Inactive Ingredient"
+* role = $NCIT#C42637 "Inactive Composition ingredient substance indentifying information - Maize starch"
 * substance.code.reference = Reference(urn:uuid:393a14e7-3edc-4373-bbe5-9e569d504a1c)
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.5828
@@ -125,7 +125,7 @@ Usage: #example
 
 Instance: 496f83ad-2365-4b12-8672-a349d99f7d67
 InstanceOf: ComponentSubstance
-Title: "Ingredient substance indenifying information - Grape skin extract"
+Title: "IngredComponentSubstance example showing the use of the sourceMaterial backbone element"
 Description: "ComponentSubstance example showing the use use of the sourceMaterial backbone element"
 Usage: #example 
 

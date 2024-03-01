@@ -17,7 +17,7 @@ Description: "Example of a Sponsor type of Organization"
 Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Site (J. Jones Research)"
-Description: "Mmanufacturing site instance of an Organization Example. There will be a type code in future"
+Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
@@ -555,7 +555,7 @@ Description: "Example raw material (water) specification for CTD 3.2.S.2.3"
 Instance: 5c0d341e-6e4f-457c-811d-cfaf3eb62ecd
 InstanceOf: EctdComposition32S23
 Title: "Example Composition for CTD 3.2.S.2.3"
-Description: "This composition contains one secection with refernce to each raw material specification for the drug substance."
+Description: "This composition contains one section with reference to each raw material specification for the drug substance."
 
 * identifier.value = "materials1"
 * status = #final
@@ -577,7 +577,7 @@ Description: "This composition contains one secection with refernce to each raw 
 Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
 InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
-Description: "This is an exmaple of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
+Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
 
 * identifier.extension[version].valueString = "0.1.20"
 * identifier.system = $IDsys
