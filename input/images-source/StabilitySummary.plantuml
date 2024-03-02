@@ -59,7 +59,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
             }
 
             object "**Extensions**" as objExs2 {
-                  Aditional Information
+                  Additional Information
             }
 
             objMain *-- objExs2

@@ -32,7 +32,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             Interpretation Code
             Specification Status
             Specification Type
-            Aditional Information
+            Additional Information
             Test Order
         }
         obj2 <|-- objQSEx

@@ -4,18 +4,19 @@ The US Food and Drug Administration (FDA) intends to identify and standardize da
 
 Figure 1 below shows the high-level data flow of Module 3 and 2.3 of ICH CTD CMC/Quality data from a pharmaceutical company to the US FDA.  This FHIR IG is scoped to Module 3 and 2.3.
 
-<table style="margin: 0px auto;"><tr><td><img src="figure1.png" /></td></tr></table>
-
-<p style="text-align: center; font-weight: bold">Figure 1: High-level data flow for submission of CTD Module 3 and 2.3 Quality data in FHIR to the US FDA</p>
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1100px" src="figure1.png" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
+  <figcaption>Figure 1: High-level data flow for submission of CTD Module 3 and 2.3 Quality data in FHIR to the US FDA</figcaption>
+</figure>
 
 ## Project Scope
 
 The scope of FDA’s PQ/CMC project is to develop structured data standards for Module 3 and 2.3 when the content is amenable to structuring.  The data standards development process is a phased approach, and the subdomains of CMC are grouped into Phases. Each subdomain the 2 phases roughly aligns with a particular CTD section.  Figure 2 below shows the Phases of FDA’s standards development effort.  As the data standards are developed, FDA publishes the draft standards to the industry through the Federal Register Notice (FRN) process to solicit industry feedback and enhance the data standards.
 
-
-<table style="margin: 0px auto;"><tr><td><img src="figure2.png" /></td></tr></table>
-
-<p style="text-align: center; font-weight: bold">Figure 2: Data Standards development Phases</p>
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="900px" src="figure2.png" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
+  <figcaption>Figure 2: Data Standards development Phases</figcaption>
+</figure>
 
 ### IG Scope
 

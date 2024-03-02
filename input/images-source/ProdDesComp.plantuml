@@ -97,7 +97,7 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
       [[StructureDefinition-pqcmc-component.html]]
     }
     object "**Extensions**" as objExs {
-      Aditional Information
+      Additional Information
       Strength Extension
     }
     obj3 *-- objExs
