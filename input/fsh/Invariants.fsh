@@ -232,3 +232,20 @@ Expression: "manufacturedDoseForm.coding.exists(
         code = 'BeaTypCnt'
     )
 ).exists()"
+
+Invariant: cmc-capsule-classification-required
+Severity: #error
+Description: "when the the dosage form is 'capsule' and a 'capsule shell' part
+exists, a capsule shell part classification is mandatory"
+Expression: "manufacturedDoseForm.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+    code = 'C154433'
+) and component.type.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+    code = 'C203897'
+) implies property.where(
+    type.coding.exists(
+        system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+        code = 'CapClass'
+    )
+).exists()"

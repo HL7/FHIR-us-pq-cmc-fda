@@ -138,6 +138,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * obeys cmc-coating-indication-required
 * obeys cmc-tablet-layer-count-required
 * obeys cmc-tablet-bead-count-required
+* obeys cmc-capsule-classification-required
 * meta.profile 1..1 MS
 * identifier 0..1 MS
 * status 1..1 MS
