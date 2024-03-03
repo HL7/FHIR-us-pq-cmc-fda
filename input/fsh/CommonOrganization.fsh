@@ -135,7 +135,7 @@ Invariant: CMC-county
 Description: "Countrys are from GENC Country Codes Value Set"
 Expression: "(
 country.exists() implies
-country.memberOf('http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes').exists()
+country.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/genc-country-codes').exists()
 )"
 
 Severity: #error

@@ -40,16 +40,16 @@ Component content includes information such as: a component identifier, componen
 The domain concepts of Description and Composition of the Drug Product are represented in FHIR in this IG section. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR resources. Detail study of the profiles and each of the resources will be needed to develop a deeper understanding of this Description and Composition of the Drug Product FHIR bundle profile. Concepts that are key to this domain include the following:
 
 * Drug Product
-    * [Drug Product Description](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drug-product-description.html) (DrugProductDescription) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
+    * [Drug Product Description](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-drug-product-description.html) (DrugProductDescription) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
 * Container Closure
-    * [Drug Product Container Closure](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-drugproduct-container-closure.html) (DrugProductContainerClosure) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
+    * [Drug Product Container Closure](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-drugproduct-container-closure.html) (DrugProductContainerClosure) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
 * Product Composition
-    * [Manufactured Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-product-part.html) (FinishedProduct) profile on the [ManufacturedItemDefinition](https://hl7.org/fhir/R5/manufactureditemdefinition.html) Resource
-    * [Drug Product Component](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-component.html) (DrugProductComponent) profile on the [Ingredient](https://hl7.org/fhir/R5/ingredient.html) Resource
-    * [Component Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-component-substance.html) (ComponentSubstance) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) Resource
+    * [Manufactured Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-product-part.html) (FinishedProduct) profile on the [ManufacturedItemDefinition](https://hl7.org/fhir/R5/manufactureditemdefinition.html) Resource
+    * [Drug Product Component](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-component.html) (DrugProductComponent) profile on the [Ingredient](https://hl7.org/fhir/R5/ingredient.html) Resource
+    * [Component Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-component-substance.html) (ComponentSubstance) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) Resource
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
-    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html)<span style="text-decoration:underline;"> Resource</span>
+    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
+    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html)<span style="text-decoration:underline;"> Resource</span>
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 

@@ -18,17 +18,6 @@ Description: "Local value set of all codes in Relationship Types codes"
 * ^experimental = false
 * include codes from system CmcRelationshipTypes
 
-ValueSet: BatchFormulaProperty
-Id: batch-formula-property
-Title: "Batch Formula Property Type"
-Description: "A classification of batch formula properties to specify the kind of property referenced."
-
-* ^experimental = true
-
-* $NCIT#batchsize "Batch Quantity"
-* $NCIT#batchinfo "Batch Formula Additional Information"
-* $NCIT#BatchUtil "Batch Utilization"
-* $NCIT#info "Product Part Additional Information"
 
 ValueSet: CmcProductNameTypesVS
 Id: cmc-product-name-types-vs
@@ -206,16 +195,6 @@ Description: "Terminology used to qualify the information pertaining to Name Par
 * $NamePartType#TMK "trademark name"
 * $NamePartType#USE "intended use name"
 
-ValueSet: PqcmcStorageConditionCategoryTerminology
-Id: pqcmc-storage-condition-category-terminology
-Title: "Storage Condition Category Terminology"
-Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
-* ^experimental = true
-
-* $NCIT#CC201 "Accelerated"
-* $NCIT#CC202 "Intermediate"
-* $NCIT#CC203 "Long term"
-
 ValueSet: PqcmcProductPartType
 Id: pqcmc-product-part-type
 Title: "Product Part Type Terminology"
@@ -334,71 +313,7 @@ Description: "EudraVigilance eXtended Medicinal Product Dictionary (XEVMPD) subs
 * $EMAIDMP#12 "Structurally Diverse Substance - Other"
 * $EMAIDMP#8 "Structurally Diverse Substance - Blood derived"
 
-ValueSet: PqcmcStabilityStudyReasonTerminology
-Id: pqcmc-stability-study-reason-terminology
-Title: "Stability Study Reason Terminology"
-Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
-* $NCIT#C115123 "Abbreviated New Animal Drug Application"
-* $NCIT#C73113 "Abbreviated New Drug Application"
-* $NCIT#C96089 "Annual Report"
-* $NCIT#C96094 "Supplement to an Approved Application"
-* $NCIT#C71778 "Biologics License Application"
-* $NCIT#C70877 "Master File"
-* $NCIT#C115122 "Generic Investigational New Animal Drug File"
-* $NCIT#C80440 "Humanitarian Device Exemption (HDE)"
-* $NCIT#C82667 "Investigational Device Exemption"
-* $NCIT#C96091 "Investigational New Animal Drug File"
-* $NCIT#C96090 "Investigational New Drug Application"
-* $NCIT#C96092 "New Active Ingredient"
-* $NCIT#C72901 "New Animal Drug Application"
-* $NCIT#C72899 "New Drug Application"
-* $NCIT#C70880 "Premarket Approval"
-* $NCIT#C80442 "Premarket Notification 510(K)"
-
-ValueSet: PqcmcIntervalDescriptionCodeTerminology
-Id: pqcmc-interval-description-code-terminology
-Title: "Interval Description Code Terminology"
-Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C96154 "Ambient Delayed Testing"
-* $NCIT#C96151 "Delayed Testing"
-* $NCIT#C96153 "Frozen Delayed Testing"
-* $NCIT#C96150 "Immediate Testing"
-* $NCIT#C96155 "Refrigerated Delayed Testing"
-
-ValueSet: PqcmcStudyTypeTerminology
-Id: pqcmc-study-type-terminology
-Title: "Study Type Terminology"
-Description: "Terminology used to qualify the information pertaining to study types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C134028 "Complex"
-* $NCIT#C134027 "Cycled-Simple"
-* $NCIT#C96087 "Photostability"
-* $NCIT#C134026 "Standard"
-
-ValueSet: PqcmcExpirationDateClassificationTerminology
-Id: pqcmc-expiration-date-classification-terminology
-Title: "Expiration Date Classification Terminology"
-Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C185182 "Approved"
-* $NCIT#C48660 "Not Applicable"
-* $NCIT#C185188 "Proposed"
-
-ValueSet: PqcmcRetestDateClassificationTerminology
-Id: pqcmc-retest-date-classification-terminology
-Title: "Retest Date Classification Terminology"
-Description: "Terminology used to qualify the information pertaining to retest date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C185186 "Adequate"
-* $NCIT#C48660 "Not Applicable"
-* $NCIT#C185188 "Proposed"
 
 ValueSet: PqcmcProductCharacteristic
 Id: pqcmc-product-characteristic
@@ -517,19 +432,6 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 * #SP7383 "Stability Data"
 * #SP7181 "Stability Summary and Conclusion"
 
-ValueSet: PqcmcBatchUtilizationTerminology
-Id: pqcmc-batch-utilization-terminology
-Title: "Batch Utilization Terminology"
-Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C133994 "Bioequivalence"
-* $NCIT#C133992 "Clinical"
-* $NCIT#C133990 "Commercial"
-* $NCIT#C133991 "Development"
-* $NCIT#C133993 "Validation"
-* $NCIT#C185328 "Stability Study"
-
 //ValueSet: PqcmcChemicalStructureDataFileOriginTerminology
 //Id: pqcmc-chemical-structure-datafile-origin-terminology
 //Title: "Chemical Structure Datafile Origin Terminology"
@@ -593,18 +495,6 @@ Description: "Terminology used to qualify the information pertaining to conforma
 * ^experimental = true
 * $NCIT#C80262 "Conforms"
 * $NCIT#C133998 "Does not conform"
-
-ValueSet: PqcmcContainerOrientationTerminology
-Id: pqcmc-container-orientation-terminology
-Title: "Container Orientation Terminology"
-Description: "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C25241 "Horizontal"
-* $NCIT#C133999 "Inverted"
-* $NCIT#C86043 "Upright"
-* $NCIT#C133915 "Valve-down"
-* $NCIT#C133914 "Valve-up"
 
 ValueSet: PqcmcContainerTypeTerminology
 Id: pqcmc-container-type-terminology
@@ -767,20 +657,6 @@ Description: "Terminology used to qualify the information pertaining to excipien
 * $NCIT#C176668 "Wetting Excipient"
 * $NCIT#C176658 "pH Modifying Excipient"
 
-ValueSet: PqcmcImpurityClassificationTerminology
-Id: pqcmc-impurity-classification-terminology
-Title: "Impurity Classification Terminology"
-Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
-* $NCIT#C176816 "Degradation Product"
-* $NCIT#C185190 "Elemental Impurities"
-* $NCIT#C176815 "Residual Solvent"
-* $NCIT#C134001 "Inorganic"
-* $NCIT#C176812 "Process Related/Process"
-* $NCIT#C185192 "Leachables"
-* $NCIT#C176813 "Product Related"
-* $NCIT#C92081 "Microbiological"
-
 ValueSet: PqcmcInterpretationCodeTerminology
 Id: pqcmc-interpretation-code-terminology
 Title: "Interpretation Code Terminology"
@@ -852,23 +728,6 @@ Description: "Terminology used to qualify the information pertaining to the spon
 * $NCIT#C134003 "DUNS"
 * $NCIT#C134004 "FEI"
 * $NCIT#C17998 "Unknown"
-
-ValueSet: PqcmcStorageConditionsTerminology
-Id: pqcmc-storage-conditions-terminology
-Title: "Storage Conditions Terminology"
-Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C133936 "20 +/- 5 degrees C"
-* $NCIT#C134018 "25 +/- 2 degrees C/40% +/- 5%RH"
-* $NCIT#C134014 "25 +/- 2 degrees C/60% +/- 5%RH"
-* $NCIT#C134015 "30 +/- 2 degrees C/65% +/- 5%RH"
-* $NCIT#C134017 "30 +/- 2 degrees C/75% +/- 5%RH"
-* $NCIT#C134019 "30 degrees C +/- 2 degrees C/35%RH +/- 5%RH"
-* $NCIT#C134016 "40 +/- 2 degrees C/75% +/- 5%RH"
-* $NCIT#C133940 "40 degrees C +/- 2 degrees C/not more than (NMT) 25%RH"
-* $NCIT#C133935 "5 +/- 3 degrees C"
-* $NCIT#C96148 "Proprietary"
 
 ValueSet: PqcmcStrengthOperatorTerminology
 Id: pqcmc-strength-operator-terminology
@@ -1619,7 +1478,7 @@ Usage: #definition
 is bound to <https://build.fhir.org/valueset-country.html> which is all of ISO 3166 including both 2 and 3 letter codes
 but should only be GENC."""
 * sourceScopeCanonical = "https://build.fhir.org/valueset-country.html"
-* targetScopeCanonical = "http://hl7.org/fhir/us/pq-cmc/ValueSet/genc-country-codes"
+* targetScopeCanonical = "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/genc-country-codes"
 * group.source = $Country
 * group.target = $GENC
 * insert ISOtoGENCMapping(ABW, Aruba, ABW, Aruba)

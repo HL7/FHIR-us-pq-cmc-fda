@@ -8,19 +8,19 @@ In addition to identifying the raw material by name (e.g., GSRS Preferred, Gener
 
 - Each 32S23 bundle is for a single active substance.
 -  All raw materials for one active substance are contained in a single bundle.
-- Refer to[ Quality Specification Profile](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/eCTDSP4151.html)
+- Refer to[ Quality Specification Profile](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fdaeCTDSP4151.html)
 
 ### Representation in FHIR
 
 The domain concepts of Substance Control of Materials are represented in FHIR in this IG. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR Resources. Detail study of the profiles and each of the resources will be needed for developing a deeper understanding of this Substance Control of Materials FHIR Bundle Profile. Concepts that are key to this domain include the following:
 
 * Raw Material
-    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Quality Specification
-    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
+    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
-    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
@@ -30,7 +30,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### Usage Patterns
 
-See Usage Patterns on[ Quality Specification Profile](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/eCTDSP4151.html)
+See Usage Patterns on[ Quality Specification Profile](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/eCTDSP4151.html)
 
 ### Examples
 
