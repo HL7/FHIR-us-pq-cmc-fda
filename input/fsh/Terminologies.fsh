@@ -289,12 +289,12 @@ Title: "PQ/CMC Capsule Shell Classification  Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the classification of a capsule in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
-* $NCIT#C203348
-* $NCIT#C203349
-* $NCIT#C203351
-* $NCIT#C203350
-* $NCIT#C203352
-* $NCIT#C203353
+* $NCIT#C203348 "Hard Gelatin Capsule Shell"
+* $NCIT#C203349 "Hard HPMC Capsule Shell"
+* $NCIT#C203350 "Hard Pullulan Capsule Shell"
+* $NCIT#C203351 "Hard PVA Capsule Shell"
+* $NCIT#C203352 "Hard Starch Capsule Shell"
+* $NCIT#C203353 "Soft Gelatin Capsule Shell"
 
 ValueSet: PqcmcSubstanceNameType
 Id: pqcmc-substance-name-type
@@ -302,17 +302,17 @@ Title: "Substance Name Type"
 Description: "Waiting for NCIt codes are added for Product Ingredient Name Type"
 
 * ^experimental = true
-* $NCIT#C71898
-* $NCIT#C97054
+* $NCIT#C71898 "Brand"
+* $NCIT#C97054 "Generic Name"
 * $NCIT#C203355 "GSRS Preferred Term"
-* $NCIT#C203357
-* $NCIT#C203358
-* $NCIT#C54682
-* $NCIT#C142585
-* $NCIT#C96973
-* $NCIT#C203356
-* $NCIT#C95517
-* $NCIT#C203354
+* $NCIT#C203357 "Systematic Name"
+* $NCIT#C203358 "USP-NF Established Name"
+* $NCIT#C54682 "CAS Number"
+* $NCIT#C142585 "INN"
+* $NCIT#C96973 "USAN"
+* $NCIT#C203356 "IUPAC Name"
+* $NCIT#C95517 "ISBT-128 DIN"
+* $NCIT#C203354 "Company ID/Code"
 
 ValueSet: EVMPDSubstanceClassification
 Id: evmpd-substance-classification
