@@ -113,7 +113,7 @@ Description: "Strength is captured for all excipients"
 Usage: #example 
 
 * status = $PubStatus#draft	"Draft"
-* role = $NCIT#C42637 "Inactive Composition ingredient substance indentifying information - Maize starch"
+* role = $NCIT#C42637 "Inactive Ingredient"
 * substance.code.reference = Reference(urn:uuid:393a14e7-3edc-4373-bbe5-9e569d504a1c)
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.5828
