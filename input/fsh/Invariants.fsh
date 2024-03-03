@@ -219,3 +219,16 @@ Expression: "manufacturedDoseForm.coding.exists(
         code = 'TabLayCnt'
     )
 ).exists()"
+
+Invariant: cmc-tablet-bead-count-required
+Severity: #error
+Description: "Tablet bead count is required when the dosage form is a tablet"
+Expression: "manufacturedDoseForm.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+    code = 'C154605'
+) implies property.where(
+    type.coding.exists(
+        system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+        code = 'BeaTypCnt'
+    )
+).exists()"
