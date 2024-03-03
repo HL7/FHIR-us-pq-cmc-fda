@@ -206,3 +206,16 @@ implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cm
 // Note: Currently checks if manufacturedDoseForm is any of the solid oral
 // dose forms (lozenge, capsule, tablet). Can capsules and lozenges have
 // coatings?
+
+Invariant: cmc-tablet-layer-count-required
+Severity: #error
+Description: "Tablet layer count is required when the dosage form is a tablet"
+Expression: "manufacturedDoseForm.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+    code = 'C154605'
+) implies property.where(
+    type.coding.exists(
+        system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/cmc-ncit-dummy' and
+        code = 'TabLayCnt'
+    )
+).exists()"
