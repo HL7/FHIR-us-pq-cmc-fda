@@ -47,7 +47,6 @@ Example: This is the representation of the instrumental output for the molecule 
 * molecularWeight.amount.code from PqcmcUnitsMeasureTerminology (required)
 
 * structure 1..1 MS
-//* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]
@@ -125,7 +124,6 @@ Example: This is the representation of the instrumental output for the molecule 
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure 0..1 MS
-//* structure obeys cmc-representation-or-document
 * structure.technique MS
 * structure.technique ^short = "Impurity Substance Characterization Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
@@ -379,7 +377,6 @@ Example: This is the representation of the instrumental output for the molecule 
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
 * structure MS
-//* structure obeys cmc-representation-or-document
 * structure.molecularFormula 0..1 MS
 * structure.molecularFormula ^short = "Molecular Formula | Biopolymer Sequence"
 * structure.molecularFormula ^definition = """Molecular Formula: An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]

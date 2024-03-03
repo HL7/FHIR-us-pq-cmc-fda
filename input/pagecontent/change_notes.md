@@ -2,12 +2,12 @@ PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be p
 
 ### Changes and Updates for Version 0.1.20
 The current development IG -   Post-Jan 2024 connectathon corrections
+Note: This list will be cleared for the ballot version
 
 - Sliced MID.function on value sets
-- 
-- 
-- 
-- 
+- Changes from the Excel file
+- Split of stage 1
+- Realm code change
 
 ### Changes and Updates for Version 0.1.19
 

@@ -70,20 +70,15 @@ Description: "A document must have an identifier with a system and a value"
 Expression: "type = 'document' implies (identifier.exists(system.exists() and value.exists()))"
 Severity: #error
 
-Invariant: cmc-first-resource
-Description: "A document must have a Composition as the first resource"
-Expression: "type = 'document' implies entry.first().resource.is(Composition)"
-Severity: #error
+//Invariant: cmc-percent-quantity
+//Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+//Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
+//Severity: #error
 
-Invariant: cmc-percent-quantity
-Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
-Severity: #error
-
-Invariant: cmc-percent-quantity-ingredient
-Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
-Severity: #error
+//Invariant: cmc-percent-quantity-ingredient
+//Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+//Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
+//Severity: #error
 
 Invariant: cmc-link-required
 Description: "Action linkId is required for alternate tests"
@@ -95,10 +90,10 @@ Description: "Content percent must be in the format of leading zero, decimal poi
 Expression: "value.toString().matches('^(1([.]0{1,17})?|0([.][0-9]{1,17})?)$') = true"
 Severity: #error
 
-Invariant: cmc-at-least-one
-Description: "Stages must have a least one acceptance critia"
-Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
-Severity: #error
+//Invariant: cmc-at-least-one
+//Description: "Stages must have a least one acceptance critia"
+//Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
+//Severity: #error
 
 Invariant: cmc-greater-than-zero
 Description: "Hierachial levels are greater than 0"

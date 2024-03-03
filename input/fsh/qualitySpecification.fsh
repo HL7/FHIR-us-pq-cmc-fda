@@ -213,15 +213,12 @@ If there is more than one comment, include in this element.  Markdown allows for
 * action.code 1..1 MS
 * action.code ^short = "Test Method Origin"
 * action.code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
-//* action.code.coding obeys cmc-sub-test-category
-//element(*,PlanDefinition)/action/code/coding
 * action.code.coding.code 1..1 MS
 * action.code.coding.code from PqcmcTestMethodOriginTerminology (required)
 * action.code.text 1..1 MS
 * action.code.text ^short = "Analytical Procedure"
 * action.code.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 """
-//* coding obeys cmc-sub-test-category-batch
 * action.reason 1..2 MS
 * action.reason ^short = "Test Category | Test Subcategory"
 * action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
