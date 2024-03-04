@@ -102,7 +102,7 @@ Severity: #error
 
 Invariant: cmc-subtest-rrt 
 Description: "a subtest's prefix represents relative retention time, should it exist"
-Expression: "prefix.exists() implies prefix = 'RRT'"
+Expression: "prefix.exists() implies prefix.single() = 'RRT'"
 Severity: #error
 // ---- Composition Invariants ----
 // checks if there is a composition which has a type
