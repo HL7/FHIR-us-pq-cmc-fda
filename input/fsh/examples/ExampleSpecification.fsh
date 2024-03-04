@@ -1,6 +1,6 @@
 Instance: 89676a69-1fe7-422c-ab00-92abe4ef6ea9
 InstanceOf: RoutineDrugProduct
-Title: "drug product for specification "
+Title: "drug product for specification"
 Description: "Includes the identifier of the drug product"
 Usage: #example
 

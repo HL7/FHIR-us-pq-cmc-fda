@@ -17,7 +17,7 @@ Description: "Example of a Sponsor type of Organization"
 Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Site (J. Jones Research)"
-Description: "Mmanufacturing site instance of an Organization Example. There will be a type code in future"
+Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
@@ -80,6 +80,21 @@ Description: "Identification of the subject of the specification. It is commonly
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
 * code.code.coding[unii] = $UNII#XF417D3PSL
 * name[gsrs].name = "ANHYDROUS CITRIC ACID"
+* name[gsrs].preferred = true
+* sourceMaterial.type = $NCIT#C48807 "Chemical"
+
+Instance: cd84a8b5-4e96-551c-15c6-c97c943eb38a
+InstanceOf: RoutineSubstanceDefinition
+Title: "Example RoutineSubstanceDefinition for Asprin"
+Description: "Identification of the Drug Substance of the raw materials whose specifications are "
+
+* identifier.value = "C9H8O4"
+* classification = $EMAIDMP#1 "Chemical"
+* grade = $NCIT#C134006 "USP-NF"
+* manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
+* code.code.coding[unii] = $UNII#R16CO5Y76E
+* name[sub].name =  "ACETYLSALICYLIC ACID"
+* name[gsrs].name = "ASPIRIN"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 
@@ -540,11 +555,11 @@ Description: "Example raw material (water) specification for CTD 3.2.S.2.3"
 Instance: 5c0d341e-6e4f-457c-811d-cfaf3eb62ecd
 InstanceOf: EctdComposition32S23
 Title: "Example Composition for CTD 3.2.S.2.3"
-Description: "This composition contains one secection with refernce to each raw material specification for the drug substance."
+Description: "This composition contains one section with reference to each raw material specification for the drug substance."
 
 * identifier.value = "materials1"
 * status = #final
-* type.coding = $SectionTypes#32S23 "Substance Control of Materials"
+* subject = Reference(urn:uuid:cd84a8b5-4e96-551c-15c6-c97c943eb38a)
 * author = Reference(urn:uuid:49438799-e286-432c-b8d8-68ac77e7f519)
 * date = 2023-12-05T01:34:39.502Z
 * title = """Control of Materials Example"""
@@ -562,14 +577,16 @@ Description: "This composition contains one secection with refernce to each raw 
 Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
 InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
-Description: "This is an exmaple of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
+Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
 
-* identifier.extension[version].valueString = "0.1.17"
+* identifier.extension[version].valueString = "0.1.20"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:7ce2088d-d281-4e2f-9a25-120a1f9805d1"
 * timestamp = 2023-12-05T01:34:39.503Z
 * entry[0].resource = 5c0d341e-6e4f-457c-811d-cfaf3eb62ecd
 * entry[=].fullUrl = "urn:uuid:5c0d341e-6e4f-457c-811d-cfaf3eb62ecd"
+* entry[+].resource = cd84a8b5-4e96-551c-15c6-c97c943eb38a
+* entry[=].fullUrl = "urn:uuid:cd84a8b5-4e96-551c-15c6-c97c943eb38a"
 * entry[+].resource = 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 * entry[=].fullUrl = "urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579"
 * entry[+].resource = e99bddfa-c1b5-435b-bbe8-24816b4e23e5

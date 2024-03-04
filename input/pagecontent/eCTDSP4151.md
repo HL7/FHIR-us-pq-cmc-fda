@@ -2,31 +2,31 @@
 
 Specification means the quality standard (i.e., tests, analytical procedures, and acceptance criteria) provided in an approved application to confirm the quality of drug substances, drug products, intermediates, raw materials, reagents, components, in-process materials, container closure systems, and other materials used in the production of a drug substance or drug product. For the purpose of this definition, the term “acceptance criteria” means numerical limits, ranges, or other criteria for the tests described [21 CFR 314.3].
 
-The Quality Specification_ _bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.4.1, 3.2.P.4.1, and 3.2.P.5.1 folder content to the FDA. These sections provide evidence demonstrating that the material meets the standards appropriate for their intended use, where the material is an API (3.2.S.4.1), Excipient (3.2.P.4.1), or Drug Product (3.2.P.5.1).
+The Quality Specification bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.4.1, 3.2.P.4.1, and 3.2.P.5.1 folder content to the FDA. These sections provide evidence demonstrating that the material meets the standards appropriate for their intended use, where the material is an API (3.2.S.4.1), Excipient (3.2.P.4.1), or Drug Product (3.2.P.5.1).
 
 ### Implementer Instructions
 
 * A Quality Specification has one or more Tests. 
 * Each Test has one or more Stages. 
 * Each Stage has one or more Acceptance Criteria.
-* A Quality Specification is stated for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material.
-    * Refer to [Substance Control of Materials](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/eCTD32S23.html) for Quality Specification for a Raw Material. 
+* A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
+    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/eCTD32S23.html) for Quality Specification for a Raw Material. 
 
 ### Representation in FHIR
 
 The domain concepts of Quality Specification are represented in FHIR in this IG. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR Resources. Detail study of the profiles and each of the resources will be needed for developing a deeper understanding of this Quality Specification FHIR Bundle Profile. Concepts that are key to this domain include the following:
 
 * Specification, Test, Acceptance Criteria
-    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
+    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
 * Drug Product
-    * [Routine Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-routine-drug-product.html) (RoutineDrugProduct) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
+    * [Routine Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-routine-drug-product.html) (RoutineDrugProduct) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
-    * [Routine Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Routine Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Excipient/Raw Material 
-    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
+    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
-    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
@@ -45,7 +45,7 @@ A numeric EQ acceptance criteria may or may not use an = sign in the text. Often
 
           
        <detailQuantity>
-        <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+        <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
             <valueCodeableConcept>
              <coding>
               <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -63,7 +63,7 @@ A numeric EQ acceptance criteria may or may not use an = sign in the text. Often
 A numeric LT acceptance criteria may use LT in the text or the &lt; the escaped form of the character. An example original text: &lt; 0.05 %
            
             <detailQuantity>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                     <valueCodeableConcept>
                         <coding>
                             <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -82,7 +82,7 @@ A numeric MT acceptance criteria may use MT in the text or the &gt; the escaped 
 
             
             <detailQuantity>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                     <valueCodeableConcept>
                         <coding>
                             <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -101,7 +101,7 @@ A numeric MT acceptance criteria may use MT in the text or the &gt; the escaped 
 The Not Less Than (NLT) is used when the maximum limit includes the limit value as acceptable. In this example, each unit is NLT Q + 5% the value must be calculated to be structured. According to the method, Q = 85. The structured acceptance criterion must be transformed into a single value (85 + 4.25 = 89.25). The maximum acceptable value is 89.25%.
     
             <detailQuantity>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                     <valueCodeableConcept>
                         <coding>
                             <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -120,7 +120,7 @@ The Not Less Than (NLT) is used when the maximum limit includes the limit value 
 The Not More Than (NMT) is used when the minimum limit includes the limit value as acceptable. In this example, NMT 450 ppm at time of release, the phrase , “at time of release” is not included in the target. That information is captured in the Acceptance Criteria Usage as the coded value “Release”.
             
             <detailQuantity>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                     <valueCodeableConcept>
                         <coding>
                             <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -140,7 +140,7 @@ The Numeric Range is used when the method specifies an upper and lower limit. Th
     
     <detailRange>
         <low>
-            <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+            <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                 <valueCodeableConcept>
                     <coding>
                         <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -154,7 +154,7 @@ The Numeric Range is used when the method specifies an upper and lower limit. Th
             <code value="%"/>
         </low>
         <high>
-            <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+            <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                 <valueCodeableConcept>
                     <coding>
                         <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -173,7 +173,7 @@ The Numeric Range is used when the method specifies an upper and lower limit. Th
 Acceptance Criteria (Text) is strictly for qualitative constraints. These will typically have a descriptive phrase. An example original text is, “Clear, colorless solution free of visible particulates”. Because it is not numeric, the relative interpretation codes do not apply. Always code the pq-interpretation-code-extension as “Not Applicable”.
              
             <detailString>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                     <valueCodeableConcept>
                         <coding>
                             <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
@@ -239,7 +239,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
                  <text value="Average of 24 units"/>
                </measure>
                <detailQuantity>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                    <valueCodeableConcept>
                      <coding>
                        <system value="http://example.org/NCIt"/>
@@ -259,7 +259,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
                  <text value="units less than Q – 15%"/>
                </measure>
                <detailQuantity>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                    <valueCodeableConcept>
                      <coding>
                        <system value="http://example.org/NCIt"/>
@@ -279,7 +279,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
                  <text value="units less than Q – 25%"/>
                </measure>
                <detailQuantity>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-interpretation-code-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
                    <valueCodeableConcept>
                      <coding>
                        <system value="http://example.org/NCIt"/>
@@ -307,7 +307,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 
     <action>
        <extension
-               url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
          <valueDecimal value="1.1"/>
        </extension>
        <linkId value="2047a6b6-e3fc-4071-8989-526297579091"/>
@@ -332,7 +332,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
      </action>
      <action>
        <extension
-               url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
          <valueDecimal value="1.2"/>
        </extension>
        <linkId value="84d64dd8-b799-418a-a713-a854c4d3c2b9"/>
@@ -363,25 +363,25 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 
 
            <action>
-             <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+             <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                <valueDecimal value="12"/>
              </extension>
              <linkId value="1fc4361a-52d9-46f1-acff-7969b10e8dfd"/>
              <title value="Dissolution - 30 minute"/>
       ...
              <reason>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-hierarchical-level-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-hierarchical-level-extension">
                  <valueInteger value="1"/>
                </extension>
                <coding>
-                 <system value="http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-test-category-codes"/>
+                 <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-test-category-codes"/>
                  <code value="TC9"/>
                  <display value="Dissolution"/>
                </coding>
              </reason>
       ...
              <action>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                  <valueDecimal value="1"/>
                </extension>
                <linkId value="1fc4361a-52d9-46f1-acff-7969b10e8dfd"/>
@@ -390,7 +390,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                <goalId value="0f191b79-ea6c-4480-9bb2-2c5501fa461e"/>
              </action>
              <action>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                  <valueDecimal value="2"/>
                </extension>
                <linkId value="1fc4361a-52d9-46f1-acff-7969b10e8dfd"/>
@@ -401,17 +401,17 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
              <action>
 
 ##### Representing Acceptance Criteria of Averaged Replicate Tests
-There are two scenarios for averages.  The acceptance criteria of the average is the same as the individual test or they are different.  If they are the same the test can be encoded in the top level Action backbone element.  Its title is “Single Stage” and there are one or many goalIDs.  If the acceptance criteria are different then either use the Action for the average and Action.Action for the individual acceptance criteria or move down a level to Action.Action and Action.Action.Action. This is to provide flexibility to implementers. The acceptance criteria should indicate the number of replicates in the referenced analyitc procedure.
+There are two scenarios for averages. The acceptance criteria of the average is the same as the individual test, in which case the same test can be encoded in the top level Action backbone element. Its title is “Single Stage” and there are one or many goalIDs. Or the acceptance criteria of the average is different than the individual test, in which case either use the Action for the average and Action.Action for the individual acceptance criteria or move down a level to Action.Action and Action.Action.Action. The profile was designed this way to provide flexibility to implementers. The acceptance criteria should indicate the number of replicates in the referenced analytic procedure.
 
 
 
-##### Representing Methods with many test measures
-The Action backbone is profiled to three levels.  The first level represents the method (analytic procedure) concepts and a simple tests. The second level represents test groups and stages. In the simplest case is _Single Stage_ and two tests. A _Single Stage_ , one test is accomplished at the highest Action level. The third level represents sub-tests. The middle Action level can have Acceptance Criteria.  These are typically calculations on the values obtained from the sub-tests.  Methods using Cascade Impactors typically have Acceptance Criteria for the plates and group the plates and assign Acceptance Criteria to the groups.  The exmaple below shows three Groups and their associated plates.  Both the Groups and their sub-test each have their own goalIDs that link to their respective Acceptance Criteria.  The word "Stage" for the sub-tests has no association with _Stage_ as mapped to the PlanDefinition resource.  In this case it referring to the stage of the cascade impactor modelling inhalation.
+##### Representing Methods with Many Test Measures
+The Action backbone is profiled to three levels.  The first level represents the method (analytic procedure) concepts and a simple tests. The second level represents test groups and stages. In the simplest case is _Single Stage_ and two tests. A _Single Stage_ , one test is accomplished at the highest Action level. The third level represents sub-tests. The middle Action level can have Acceptance Criteria.  These are typically calculations on the values obtained from the sub-tests.  Methods using Cascade Impactors typically have Acceptance Criteria for the plates and group the plates and assign Acceptance Criteria to the groups.  The example below shows three Groups and their associated plates.  Both the Groups and their sub-test each have their own goalIDs that link to their respective Acceptance Criteria.  The word "Stage" for the sub-tests has no association with _Stage_ as mapped to the PlanDefinition resource.  In this case it referring to the stage of the cascade impactor modelling inhalation.
 
 Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
 
          <action>
-             <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+             <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                <valueDecimal value="1"/>
              </extension>
              <prefix value="Single Stage"/>
@@ -421,11 +421,11 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 		...
              </code>
              <reason>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-hierarchical-level-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-hierarchical-level-extension">
                  <valueInteger value="1"/>
                </extension>
                <coding>
-                 <system value="http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-test-category-codes"/>
+                 <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-test-category-codes"/>
                  <code value="TC15"/>
                  <display value="Particle Size Distribution"/>
                </coding>
@@ -434,27 +434,27 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 		...
              </documentation>
              <action>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                  <valueDecimal value="1.1"/>
                </extension>
                <title value="Group 1"/>
                <goalId value="d7afe834-a9a7-45ae-9213-52c8fd8505bd"/>
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.11"/>
                  </extension>
                  <title value="Stem"/>
                  <goalId value="fc10d71c-86e9-4c52-a3df-9a5cde26f031"/>
                </action>
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.12"/>
                  </extension>
                  <title value="Actuator"/>
                  <goalId value="ce759246-bbd4-4713-8836-6dbb10e5fefe"/>
                </action>
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.13"/>
                  </extension>
                  <title value="Throat"/>
@@ -462,13 +462,13 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                </action>
              </action>
              <action>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                  <valueDecimal value="1.2"/>
                </extension>
                <title value="Group 2"/>
                <goalId value="a515beb5-dc2b-4c36-bf0a-f6b70582c354"/>
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.21"/>
                  </extension>
                  <title value="Stage 0"/>
@@ -476,7 +476,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                </action>
 		...
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.24"/>
                  </extension>
                  <title value="Stage 3"/>
@@ -484,13 +484,13 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                </action>
              </action>
              <action>
-               <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+               <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                  <valueDecimal value="1.3"/>
                </extension>
                <title value="Group 3"/>
                <goalId value="552eef1e-2918-4fa9-8603-3df2284454b9"/>
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.31"/>
                  </extension>
                  <title value="Stage 4"/>
@@ -498,7 +498,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                </action>
 		...
                <action>
-                 <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                    <valueDecimal value="1.35"/>
                  </extension>
                  <title value="Filter"/>
@@ -515,19 +515,19 @@ The Action.Action.Action.prefix element is reserved for RRT specifications.  Ent
 Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
 
     <action>
-	<extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+	<extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
 		<valueDecimal value="5"/>
 	</extension>
 	<prefix value="Single Stage"/>
 	<title value="Impurities"/>
     ...
         <action>
-            <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+            <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                 <valueDecimal value="5.1"/>
             </extension>
             <title value="Unidentified Impurities"/>
             <action>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                     <valueDecimal value="5.11"/>
                 </extension>
                 <prefix value="RRT"/>
@@ -535,7 +535,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                 <goalId value="f832168b-d0a4-4637-91cd-183629494d59"/>
             </action>
             <action>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                     <valueDecimal value="5.12"/>
                 </extension>
                 <prefix value="RRT"/>
@@ -543,7 +543,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
                 <goalId value="cc06912d-0aca-4083-a7ce-bb57b4dfc4a6"/>
             </action>
             <action>
-                <extension url="http://hl7.org/fhir/us/pq-cmc/StructureDefinition/pq-order-extension">
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-order-extension">
                     <valueDecimal value="5.13"/>
                 </extension>
                 <prefix value="RRT"/>
@@ -555,7 +555,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 
 ### Example 3.2.S.4.1, 3.2.P.4.1 and 3.2.P.5.1 Bundle
 
-This example demonstrates a quality specification for a Drug Product. The first images displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [4a7e17c1-a611-4cc7-9a71-8005a8b427ab](Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab.html)  
+This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [4a7e17c1-a611-4cc7-9a71-8005a8b427ab](Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab.html)  
 
 Additionally, there is an example specification to show the reference to a Drug Substance [6004e36e-7df9-469d-9b29-8e9f9bd7e95f](Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f.html). Its [narrative layout](#drug-substance-specification-example) is show below the Drug Product specification.
 

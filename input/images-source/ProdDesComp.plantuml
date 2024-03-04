@@ -44,7 +44,7 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
       Closure Type Terminology
     }
     object "**Extensions**" as objEx {
-      ContainerClosureExtension
+      Container Closure
     }
     obj22 *-- objEx
   }
@@ -78,6 +78,11 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
       Strength Type Terminology
       Units Of Measure Terminology
     }
+        object "**Extensions**" as objMIDExs {
+      Content Percent
+      Optional Denominator
+    }
+    objMID *-- objMIDExs
   }
   node "MfgTestSiteOrganization" as NMFG {
 
@@ -97,7 +102,7 @@ package "eCTD Heading 3.2.P.1.0 Bundle" as NODES {
       [[StructureDefinition-pqcmc-component.html]]
     }
     object "**Extensions**" as objExs {
-      Aditional Information
+      Additional Information
       Strength Extension
     }
     obj3 *-- objExs

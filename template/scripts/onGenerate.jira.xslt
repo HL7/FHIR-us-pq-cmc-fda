@@ -17,7 +17,7 @@
     </xsl:if>
     <xsl:variable name="wgUrl" select="f:contact/f:telecom[f:system/@value='url'][1]/f:value/@value"/>
     <xsl:choose>
-      <xsl:when test="contains($wgUrl, 'hl7.eu') and contains($id, '.eu.')">
+      <xsl:when test="contains($wgUrl, 'hl7.eu') and contains(f:id/@value, '.eu.')">
         <!-- EU ok -->
       </xsl:when>
       <xsl:when test="contains($wgUrl, $committeePageBase)">
@@ -29,7 +29,14 @@
         </xsl:message>
       </xsl:otherwise>
     </xsl:choose>
-    <xsl:variable name="wgTail" select="substring-after($wgUrl, $committeePageBase)"/>
+    <xsl:variable name="wgTail">
+      <xsl:choose>
+        <xsl:when test="contains($wgUrl, 'hl7.eu')">eu</xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="substring-after($wgUrl, $committeePageBase)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
     <xsl:variable name="wgWebCode">
       <xsl:choose>
         <xsl:when test="contains($wgTail, '/index.cfm')">

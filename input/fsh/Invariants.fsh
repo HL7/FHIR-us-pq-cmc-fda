@@ -13,7 +13,7 @@ Severity: #error
 
 Invariant: cmc-name-isbt
 Description: "Name.type ISBT 128 required for blood products."
-Expression: "classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://examples.com')"
+Expression: "classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy')"
 Severity: #error
 // Note: 8 is the code for for "Structurally Diverse Subtsance - Blood derived"
 // and 226 is the code for "ISBT 128" in substance name type. $NCIT is currently 
@@ -21,7 +21,7 @@ Severity: #error
 Invariant: cmc-ingredient-functions
 Description: "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.
 If Drug Product Component Function Category onstituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "constituent.function.coding.where(code = 'C42637' and version = 'function' and system = 'http://examples.com').exists() implies constituent.function.coding.code.count() = 2"
+Expression: "constituent.function.coding.where(code = 'C42637' and version = 'function' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists() implies constituent.function.coding.code.count() = 2"
 Severity: #error
 // Note: coding.version is being used do differentiate between the two function
 // slices: function and category
@@ -43,14 +43,14 @@ Severity: #error
 
 Invariant: cmc-strength-type-cases1
 Description: "IF Strength Type = Mass THEN Strength Numeric and Strength UOM are Mandatory"
-Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C168628').exists()
-implies strength.ofType(Ratio).exists() or ((strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/strength-extension').extension('strengthOperator').exists().not()))"
+Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C168628').exists()
+implies strength.ofType(Ratio).exists() or ((strength.ofType(Quantity).exists() and  strength.ofType(Quantity).extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension').extension('strengthOperator').exists().not()))"
 Severity: #error
 
 Invariant: cmc-strength-type-cases2
 Description: "IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
-Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C45420').exists()
+Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C45420').exists()
 implies ((strength.ofType(Ratio).exists() and strength.ofType(Ratio).numerator.code = 'C75765').exists())
 or ((strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists())"
 Severity: #error
@@ -58,11 +58,11 @@ Severity: #error
 Invariant: cmc-ppidref-required
 Description: "A PPiDref is required when the PPiD is designated a child."
 Expression: "property.where(
-        type.coding.exists(system = 'http://examples.com' and code = 'PPiD') and    
-        value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-relationship-types' and code = 'child')
+        type.coding.exists(system = '' and code = 'PPiD') and    
+        value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-relationship-types' and code = 'child')
     ).exists()
     implies 
-        property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc/CodeSystem/pqcmc-product-characteristic' and code = 'PPiDref')).exists()"
+        property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-product-characteristic' and code = 'PPiDref')).exists()"
 Severity: #error
 
 Invariant: cmc-identifer
@@ -70,20 +70,15 @@ Description: "A document must have an identifier with a system and a value"
 Expression: "type = 'document' implies (identifier.exists(system.exists() and value.exists()))"
 Severity: #error
 
-Invariant: cmc-first-resource
-Description: "A document must have a Composition as the first resource"
-Expression: "type = 'document' implies entry.first().resource.is(Composition)"
-Severity: #error
+//Invariant: cmc-percent-quantity
+//Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+//Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
+//Severity: #error
 
-Invariant: cmc-percent-quantity
-Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
-Severity: #error
-
-Invariant: cmc-percent-quantity-ingredient
-Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
-Severity: #error
+//Invariant: cmc-percent-quantity-ingredient
+//Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+//Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
+//Severity: #error
 
 Invariant: cmc-link-required
 Description: "Action linkId is required for alternate tests"
@@ -95,10 +90,10 @@ Description: "Content percent must be in the format of leading zero, decimal poi
 Expression: "value.toString().matches('^(1([.]0{1,17})?|0([.][0-9]{1,17})?)$') = true"
 Severity: #error
 
-Invariant: cmc-at-least-one
-Description: "Stages must have a least one acceptance critia"
-Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
-Severity: #error
+//Invariant: cmc-at-least-one
+//Description: "Stages must have a least one acceptance critia"
+//Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
+//Severity: #error
 
 Invariant: cmc-greater-than-zero
 Description: "Hierachial levels are greater than 0"
@@ -107,7 +102,7 @@ Severity: #error
 
 Invariant: cmc-subtest-rrt 
 Description: "a subtest's prefix represents relative retention time, should it exist"
-Expression: "prefix.exists() implies prefix = 'RRT'"
+Expression: "prefix.exists() implies prefix.single() = 'RRT'"
 Severity: #error
 // ---- Composition Invariants ----
 // checks if there is a composition which has a type
@@ -160,16 +155,16 @@ Invariant: cmc-arbitrary-unit-text-required
 Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
 Expression: "property.where(
     type.coding.exists(
-        system = 'http://examples.com' and (
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (
             code = 'TotWgtNum' or 
             code = 'TotWgtDen'
         )
     ) and
-    value.exists(system = 'http://examples.com' and code = 'C75765')
+    value.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'C75765')
 ).exists() implies property.where(
     type.coding.exists(
         code = 'TotWgtTxt' and
-        system = 'http://examples.com'
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
     )
 ).exists()"
 Severity: #error
@@ -186,10 +181,66 @@ Expression: "representation.exists() implies format.exists()"
 Invariant: cmc-capsule-count-required
 Severity: #error
 Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
-Expression: "manufacturedDoseForm.coding.exists(system = 'http://examples.com' and code in ('C25158' | 'C42895' | 'C42896' | 'C42902' | 'C42904' | 'C42916' | 'C42917' | 'C42928' | 'C42936' | 'C42954'))
-implies property.where(type.coding.exists(system = 'http://examples.com' and code = 'CapConCnt')).exists()"
+Expression: "manufacturedDoseForm.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'C154433')
+implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'CapConCnt')).exists()"
 
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
 Description: "Country of origin must be a 3 letter country code"
 Expression: "coding.code.length() = 3"
+
+Invariant: cmc-coating-indication-required
+Severity: #error
+Description: "Coating indication is required when the dosage form is a tablet, lozenge or capsule"
+Expression: "manufacturedDoseForm.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (
+    code = 'C154605' or
+    code = 'C154433' or
+    code = 'C154554'
+))
+implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'CoatInd')).exists()"
+// Note: Currently checks if manufacturedDoseForm is any of the solid oral
+// dose forms (lozenge, capsule, tablet). Can capsules and lozenges have
+// coatings?
+
+Invariant: cmc-tablet-layer-count-required
+Severity: #error
+Description: "Tablet layer count is required when the dosage form is a tablet"
+Expression: "manufacturedDoseForm.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+    code = 'C154605'
+) implies property.where(
+    type.coding.exists(
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+        code = 'TabLayCnt'
+    )
+).exists()"
+
+Invariant: cmc-tablet-bead-count-required
+Severity: #error
+Description: "Tablet bead count is required when the dosage form is a tablet"
+Expression: "manufacturedDoseForm.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+    code = 'C154605'
+) implies property.where(
+    type.coding.exists(
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+        code = 'BeaTypCnt'
+    )
+).exists()"
+
+Invariant: cmc-capsule-classification-required
+Severity: #error
+Description: "when the the dosage form is 'capsule' and a 'capsule shell' part
+exists, a capsule shell part classification is mandatory"
+Expression: "manufacturedDoseForm.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+    code = 'C154433'
+) and component.type.coding.exists(
+    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+    code = 'C203897'
+) implies property.where(
+    type.coding.exists(
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+        code = 'CapClass'
+    )
+).exists()"

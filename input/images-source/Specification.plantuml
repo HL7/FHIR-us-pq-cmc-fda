@@ -100,7 +100,7 @@ package "eCTD Heading 3.2.S41 and 3.2.P4151 Specification Bundle" as NODES {
       Interpretation Code
       Specification Status
       Specification Type
-      Aditional Information
+      Additional Information
       Test Order
     }
     obj2 *-- objQSEx

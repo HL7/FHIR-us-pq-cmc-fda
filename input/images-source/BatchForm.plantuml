@@ -80,7 +80,7 @@ node "BatchFormula" as NN {
         Units Of Measure Terminology
       } 
       object "**Extensions**" as objExs2 {
-        Aditional Information
+        Additional Information
         Product Batch Ingredient Extension
 }
 
