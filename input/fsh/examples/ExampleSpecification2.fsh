@@ -31,7 +31,7 @@ Usage: #example
 
 Instance: cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93
 InstanceOf: QualitySpecification
-Title: "A quality specification is for a drug substance "
+Title: "A quality specification is for a drug substance"
 Description: "A quality specification is for an API "
 Usage: #example
 
