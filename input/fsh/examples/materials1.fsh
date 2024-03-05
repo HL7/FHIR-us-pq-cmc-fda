@@ -578,7 +578,6 @@ Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
 InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
 Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
-
 * identifier.extension[version].valueString = "0.1.20"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:7ce2088d-d281-4e2f-9a25-120a1f9805d1"

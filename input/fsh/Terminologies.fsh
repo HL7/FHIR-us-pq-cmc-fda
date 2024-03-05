@@ -720,7 +720,7 @@ Description: "Terminology used to qualify the information pertaining to specific
 
 ValueSet: PqcmcOrgIdentifierTypeTerminology
 Id: pqcmc-org-identifier-type-terminology
-Title: "Testing Site and Organization Identifier Type Terminology"
+Title: "PQ/CMC Ingredient Location Terminology"
 Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
