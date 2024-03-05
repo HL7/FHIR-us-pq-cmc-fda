@@ -1,13 +1,13 @@
 {
 	"package-id": "hl7.fhir.us.pq-cmc-fda",
-	"canonical": "https://hl7.org/fhir/us-pq-cmc-fda",
+	"canonical": "https://hl7.org/fhir/us/pq-cmc-fda",
 	"title": "Pharmaceutical Quality Submissions to Food & Drug Administration (PQ/CMC)",
 	"introduction": "The Pharmaceutical Quality/Chemistry, Manufacturing and Controls  specification is an Implementation Guide of the FHIR Specification that provides guidance on the creation of FHIR documents and subsequent submission of XML files in Module 3 of the eCTD.",
 	"list": [
 		{
 			"version": "current",
 			"desc": "Continuous Integration Build (latest in version control)",
-			"path": "https://hl7.org/fhir/us-pq-cmc-fda",
+			"path": "https://hl7.org/fhir/us/pq-cmc-fda",
 			"status": "ci-build",
 			"current": true
 		}
