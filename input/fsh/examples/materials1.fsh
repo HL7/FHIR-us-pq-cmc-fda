@@ -88,7 +88,7 @@ InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition for Asprin"
 Description: "Identification of the Drug Substance of the raw materials whose specifications are "
 
-* identifier.value = "C9H8O4"
+* identifier.value = "aspirin"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
