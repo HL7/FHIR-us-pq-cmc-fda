@@ -5,7 +5,7 @@ title: "Pharmaceutical Quality Submissions to Food & Drug Administration (PQ/CMC
 description: The scope of this effort covers the domain of Pharmaceutical Quality/ Chemistry, Manufacturing and Controls (PQ/CMC), e.g., Specification, Stability, Method Validation, Batch, Batch Analysis result, etc. The objective is to develop HL7 FHIR data exchange standard for the PQ/CMC domain that covers Pharmaceutical Quality in Module 3 (Quality Section) of eCTD submissions to the US FDA. Currently the baseline requirements are specific to the US, but this may expand to be global.  The target audience of this IG is the Pharmaceutical Industry and the Software vendors that support the pharmaceutical industry by providing tooling solutions to exchange data with the regulators.   The IG is planned to be an iterative IG, meaning that FDA plans to ballot and publish in Stages.  Each new Stage will cover a particular set of subdomains of the PQ/CMC larger domain.   For example, this first ballot is planned for May 2024 and is referred to as Stage 1. This Stage will cover  Description and Composition of the Drug Product; General Substance Information, Control of Materials and Specification.  Each of these subdomains of PQ/CMC are aligned with specific ICH defined CTD section numbers.  In the future, FDA will add Stage 2 subdomains to this IG and will take Stage 2 subdomains to HL7 ballot, and so on.  Ballot dates for future Stages have not yet been finalized.
 status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 0.1.20
+version: 0.1.21
 fhirVersion: 5.0.0
 copyrightYear: 2021+
 releaseLabel: Build CI
