@@ -57,6 +57,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 ### eCTD 3.2.P.1.0 Profile Map
 
 <div>{%include ProdDesComp.svg%}</div>
+Use the zoom feature in the browser to enlarge the profile map for reading.
 
 ### Usage Patterns
 

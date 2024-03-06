@@ -436,7 +436,7 @@ InstanceOf: CMCeCTDDocumentSP4151
 Title: "FHIR Document example of 3.2.P.5.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Product"
 Usage: #example
-* identifier.extension[version].valueString = "0.1.17"
+* identifier.extension[version].valueString = "0.1.21"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:34a0748d-b199-4a2e-a5bc-0f880886fef7"
 * timestamp = 2023-12-15T22:33:13.089Z

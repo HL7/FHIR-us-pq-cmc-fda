@@ -271,6 +271,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-routine-drug-substance
 Title: "Routine Drug Substance"
 Description: "Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."
+* . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"

@@ -88,7 +88,7 @@ InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition for Asprin"
 Description: "Identification of the Drug Substance of the raw materials whose specifications are "
 
-* identifier.value = "C9H8O4"
+* identifier.value = "aspirin"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
@@ -578,8 +578,7 @@ Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
 InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
 Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
-
-* identifier.extension[version].valueString = "0.1.20"
+* identifier.extension[version].valueString = "0.1.21"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:7ce2088d-d281-4e2f-9a25-120a1f9805d1"
 * timestamp = 2023-12-05T01:34:39.503Z

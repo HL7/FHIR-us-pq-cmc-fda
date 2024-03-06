@@ -2,7 +2,7 @@ Profile: CMCeCTDDocument32P10
 Parent: Bundle
 Id: cmc-ectd-document-32p10
 Title: "CMC eCTD 32P10 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32P10 profiles."
+Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
 * . obeys cmc-identifer
@@ -132,7 +132,7 @@ Profile: EctdComposition32P10
 Parent: Composition
 Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
-Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1.0 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
+Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
 * meta.profile 1..1 MS 
 * status = #final
@@ -151,15 +151,15 @@ Description: "The fields needed to represent the Product Description, Container 
 * section ^slicing.description = "Slice based on the ectd document sections."
 // the contains line determines the order, not the section profiling
 * section contains ProductDescription 1..1 MS and ProductComposition 1..1 MS and ContainerClosure 1..1 MS
-* section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1.0 eCTD heading."
+* section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1 eCTD heading."
 * section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ProductDescription].entry 1..1 MS
 * section[ProductDescription].entry only Reference(DrugProductDescription)
-* section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1.0 eCTD heading."
+* section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1 eCTD heading."
 * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
 * section[ProductComposition].entry 1..1 MS
 * section[ProductComposition].entry only Reference(FinishedProduct)
-* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1.0 eCTD heading."
+* section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1 eCTD heading."
 * section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ContainerClosure].entry 1..* MS
 * section[ContainerClosure].entry only Reference(DrugProductContainerClosure)

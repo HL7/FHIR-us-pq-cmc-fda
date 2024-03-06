@@ -1,6 +1,6 @@
-## Background
+### Background
 
-The US Food and Drug Administration (FDA) intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in Module 3 (M3) of ICH eCTD. M3 is commonly referred to as the Chemistry, Manufacturing and Controls (CMC) module. At the FDA, this ICH eCTD M3 data standardization effort is referred to as the Pharmaceutical Quality/Chemistry, Manufacturing and Controls (PQ/CMC). For more information on the PQ/CMC Project, please visit[ https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc](https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc)
+The US Food and Drug Administration (FDA) intends to identify and standardize data elements and terminologies for information commonly used and submitted in support of drug product applications in Module 3 (M3) of ICH eCTD. M3 is commonly referred to as the Chemistry, Manufacturing and Controls (CMC) module. At the FDA, this ICH eCTD M3 data standardization effort is referred to as the Pharmaceutical Quality/Chemistry, Manufacturing and Controls (PQ/CMC). For more information on the PQ/CMC Project, please visit [https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc](https://www.fda.gov/industry/fda-data-standards-advisory-board/pharmaceutical-qualitychemistry-manufacturing-controls-pqcmc)
 
 Figure 1 below shows the high-level data flow of Module 3 and 2.3 of ICH CTD CMC/Quality data from a pharmaceutical company to the US FDA.  This FHIR IG is scoped to Module 3 and 2.3.
 
@@ -9,9 +9,9 @@ Figure 1 below shows the high-level data flow of Module 3 and 2.3 of ICH CTD CMC
   <figcaption style="text-align: center">Figure 1: High-level data flow for submission of CTD Module 3 and 2.3 Quality data in FHIR to the US FDA</figcaption>
 </figure>
 
-## Project Scope
+### Project Scope
 
-The scope of FDA’s PQ/CMC project is to develop structured data standards for Module 3 and 2.3 when the content is amenable to structuring.  The data standards development process is a phased approach, and the subdomains of CMC are grouped into Phases. Each subdomain the 2 phases roughly aligns with a particular CTD section.  Figure 2 below shows the Phases of FDA’s standards development effort.  As the data standards are developed, FDA publishes the draft standards to the industry through the Federal Register Notice (FRN) process to solicit industry feedback and enhance the data standards.
+The scope of FDA’s PQ/CMC project is to develop structured data standards for Module 3 and 2.3 when the content is amenable to structuring.  The data standards development process is a phased approach, and the subdomains of CMC are grouped into Phases. Each subdomain the two phases roughly aligns with a particular CTD section.  Figure 2 below shows the Phases of FDA’s standards development effort.  As the data standards are developed, FDA publishes the draft standards to the industry through the Federal Register Notice (FRN) process to solicit industry feedback and enhance the data standards.
 
 
 <figure>
@@ -19,7 +19,7 @@ The scope of FDA’s PQ/CMC project is to develop structured data standards for 
   <figcaption style="text-align: center">Figure 2: Data Standards development Phases</figcaption>
 </figure>
 
-### IG Scope
+#### IG Scope
 
 This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CMC data standards developed across all Phases.
 
@@ -27,22 +27,30 @@ This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CM
 
 -  In support of an iterative PQ/CMC IG approach, the Phases have been further grouped into implementable smaller groups called “Stages”.  For each iteration of this IG, FDA plans to ballot and publish in Stages.  Each new Stage will cover a particular set of subdomains/eCTD sections of the larger PQ/CMC domain.   For example, this first ballot is planned for HL7 **May 2024 ballot cycle** and is referred to as Stage 1.  This Stage 1 covers the following CTD sections:
 
-    - Description and Composition of the Drug Product (eCTD 3.2.P.1.0)
-    - General Substance Information (eCTD 3.2.S.1.0)
+    - Description and Composition of the Drug Product (eCTD 3.2.P.1)
+    - General Substance Information (eCTD 3.2.S.1)
     - Control of Materials (eCTD 3.2.S.2.3)
-    - Specification (eCTD 3.2.S.4.1; 3.2.P.4.2; 3.2.P.5.1)
+    - Specification (eCTD 3.2.S.4.1; 3.2.P.4.1; 3.2.P.5.1)
 
 -  In the future, FDA will add Stage 2 subdomains to this IG and will take Stage 2 subdomains to HL7 ballot, and so on.  Ballot dates for future Stages have not yet been finalized.
 
 -  The FHIR Profiles defined in this IG are aligned with eCTD v 4.0.
 
 -  The Stage 1 eCTD sections and FHIR Profiles are currently limited to the Solid Oral Dosage Form (SODF).
+-  All co-packaged products that include Diluents are out of scope at this time.
 
 **NOTE:** _When formally announced by FDA, the version(s) of this Implementation Guide specified by FDA will define the instructions for FHIR-based submissions of Pharmaceutical Quality, Chemistry, Manufacturing & Controls data to FDA._
 
-## IG Overview
+#### HL7 Biomedical Research & Regulation (BR&R) Work Group 
 
-### FHIR Resources and Profiles
+The PQ/CMC Project is sponsored by the HL7 Biomedical Research and Regulation (BR&R) Work Group (WG). At HL7, this project is referred to as Pharmaceutical Quality. BR&R WG maintains a Confluence page for this project is here [https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Regulatory+Use+Case](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Regulatory+Use+Case)
+
+There is another project in HL7 BR&R that covers the same domain of Pharmaceutical Quality.  That project’s focus is on data exchanges of CMC data that is internal to biopharmaceutical companies.  It is often referred to as Pharmaceutical Quality (Industry).  BR&R WG Confluence page for this Industry project is here [https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Industry+Use+Case](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Industry+Use+Case)
+
+
+### IG Overview
+
+#### FHIR Resources and Profiles
 
 Version 1.0.0 of the PQ/CMC IG is bound to FHIR R5. It consists of four FHIR bundle profiles that are scoped to the FDA PQ/CMC Phase 1, Stage 1 requirements and are aligned with sections of Module 3 of ICH eCTD version 4.0 as indicated by the profile name. Phase 1, Stage 1 is based on these four FHIR bundle profiles are composed from eight Resources in FHIR followed by a asterisk. The FHIR resources leveraged in all of Phase 1 are listed below and represented in Figure 3 below.
 
@@ -70,7 +78,7 @@ Note: The first 2 FHIR Resources – Bundle and Composition are organizational p
 
 {::options parse_block_html="true" /}
 
-### PQ/CMC FHIR Profiles
+#### PQ/CMC FHIR Profiles
 
 As mentioned above, the PQ/CMC project Phase 1 structured data requirements are represented in the PQ/CMC FHIR IG. These Profiles have been designed at the boundary of the leaf-level sections of Module 3 of eCTD v 4.0. The table below contains a mapping of the FHIR Profiles to the Phase 1 requirements. The PQ/CMC FHIR profiles can be accessed through the “eCTD Profiles” menu in the main bar at the top of this page.
 
@@ -182,7 +190,7 @@ As mentioned above, the PQ/CMC project Phase 1 structured data requirements are 
 </table>
 
 
-### Credits
+#### Credits
 
 The development of this Implementation Guide is an initiative funded by the US FDA.
 
@@ -198,12 +206,12 @@ The development of this Implementation Guide is an initiative funded by the US F
   
 At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
 
-### IP Statements
+#### IP Statements
 {% include ip-statements.xhtml %}
 
 This IP is temporary based on required bindings in some resources. The country codes from https://nsgreg.nga.mil will be used after the technical corrections to R5 are released.  The examples use the country codes from https://nsgreg.nga.mil.
-### Dependencies
+#### Dependencies
 {% include dependency-table.xhtml %}
 
-### Globals
+#### Globals
 {% include globals-table.xhtml %}
