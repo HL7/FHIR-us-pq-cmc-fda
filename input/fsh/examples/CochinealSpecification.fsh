@@ -1,24 +1,28 @@
 Instance: 278736ef-2ddf-49e4-895c-3a9f34db36cf
 InstanceOf: ExcipientRaw
-Description: "The Excipient Raw representing Citric Acid"
+Description: "The Excipient Raw representing Cochineal"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"
-* identifier.value = "Citric acid"
+* identifier.value = "Cochineal"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134009 "Company Standard"
 // * manufacturer = Reference(urn:uuid:310aa241-52ff-4e7b-b956-7642f75fc18b)
 // * supplier = Reference(urn:uuid:fa889ced-1b1d-4467-a37b-112dc354a59e)
-* code.code.coding[unii] = $UNII#XF417D3PSL
-* name[gsrs].name = "ANHYDROUS CITRIC ACID"
+* code.code.coding[unii] = $UNII#TZ8Z31B35M
+* name[gsrs].name = "Cochineal"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
+* sourceMaterial.genus.text = "Dactylopius"
+* sourceMaterial.species.text = "cochineal"
+* sourceMaterial.countryOfOrigin =  $Country#TUR "TURKEY" 
+
 Instance: 37bf5cc0-33bf-478b-b84e-ccb35143ef6e
 InstanceOf: QualitySpecification
-Description: "Quality Specification for Citric Acid"
+Description: "Quality Specification for Cochineal"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-quality-specification"
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "CitricAcidSpecification"
 * version = "1.0"
-* title = "Citric acid specification Example"
+* title = "Cochineal specification Example"
 * status = #active
 * subjectReference = Reference(urn:uuid:278736ef-2ddf-49e4-895c-3a9f34db36cf)
 * date = 2023-12-01
@@ -212,12 +216,12 @@ Instance: 4bd1ed57-852b-42be-a9b0-355f8a2aa7d4
 InstanceOf: EctdCompositionSP4151
 Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
-* identifier.value = "CitricAcidSpecification"
+* identifier.value = "CochinealSpecification"
 * status = #final
 * type.coding = $SectionTypes#SP4151 "Quality Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2024-01-01T19:42:35.254Z
-* title = """Citric acid specification Example"""
+* title = """Cochineal specification Example"""
 * section[Excipient]
   * code = $SectionTypes#32P40 "Product Control of Excipients"
   * title = "32P40"
@@ -225,7 +229,7 @@ Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 Instance: 7cdbb042-9275-4599-a1fe-08877846bf94
 InstanceOf: CMCeCTDDocumentSP4151
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient"
-* identifier.extension[version].valueString = "0.1.17"
+* identifier.extension[version].valueString = "0.1.21"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:813b4312-8b6d-42cc-9b8c-8bb6463388cc"
 * timestamp = 2024-01-01T19:42:35.255Z

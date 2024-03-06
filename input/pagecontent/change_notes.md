@@ -5,7 +5,8 @@ The current development IG -   Pre-ballot
 Note: This list will be cleared for the ballot version
 
 - path name correction in package list json file
-- corrections from 
+- corrections from review of 0.1.20
+- Added example of 2.3.P.4.
 
 ### Changes and Updates for Version 0.1.20
 - Sliced MID.function on value sets

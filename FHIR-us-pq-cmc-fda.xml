@@ -4,6 +4,8 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="SubstanceDefinition/278736ef-2ddf-49e4-895c-3a9f34db36cf" key="SubstanceDefinition-278736ef-2ddf-49e4-895c-3a9f34db36cf" name="278736ef-2ddf-49e4-895c-3a9f34db36cf"/>
+<artifact id="Bundle/7cdbb042-9275-4599-a1fe-08877846bf94" key="Bundle-7cdbb042-9275-4599-a1fe-08877846bf94" name="7cdbb042-9275-4599-a1fe-08877846bf94"/>
 <artifact id="MedicinalProductDefinition/77ad6922-9c59-43d1-93cb-29d063cc2e8c" key="MedicinalProductDefinition-77ad6922-9c59-43d1-93cb-29d063cc2e8c" name="A DrugProductContainerClosure"/>
 <artifact id="MedicinalProductDefinition/5772a6f2-cde1-4903-bfcf-1639340205cc" key="MedicinalProductDefinition-5772a6f2-cde1-4903-bfcf-1639340205cc" name="A DrugProductDescription for a multilayer product"/>
 <artifact id="ManufacturedItemDefinition/a8316fc9-8ca8-4115-81c1-9f8f84c99149" key="ManufacturedItemDefinition-a8316fc9-8ca8-4115-81c1-9f8f84c99149" name="A FinishedProduct profile based on ManufacturedItemDefinition"/>
@@ -24,6 +26,8 @@
 <artifact id="PlanDefinition/a2cba634-a481-4b07-9bd4-62c7ada31e1b" key="PlanDefinition-a2cba634-a481-4b07-9bd4-62c7ada31e1b" name="Citric acid specification Example"/>
 <artifact id="ValueSet/pqcmc-closure-type-terminology" key="ValueSet-pqcmc-closure-type-terminology" name="Closure Type Terminology"/>
 <artifact id="ValueSet/pqcmc-coating-purpose" key="ValueSet-pqcmc-coating-purpose" name="Coating Purpose Terminology"/>
+<artifact id="Composition/4bd1ed57-852b-42be-a9b0-355f8a2aa7d4" key="Composition-4bd1ed57-852b-42be-a9b0-355f8a2aa7d4" name="Cochineal specification Example"/>
+<artifact id="PlanDefinition/37bf5cc0-33bf-478b-b84e-ccb35143ef6e" key="PlanDefinition-37bf5cc0-33bf-478b-b84e-ccb35143ef6e" name="Cochineal specification Example"/>
 <artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code System PQCMC Comp Section Types"/>
 <artifact id="ValueSet/pqcmc-product-characteristic" key="ValueSet-pqcmc-product-characteristic" name="Code System PQCMC Product Characteristic"/>
 <artifact id="StructureDefinition/pqcmc-component-substance" key="StructureDefinition-pqcmc-component-substance" name="Component Substance"/>
@@ -76,13 +80,13 @@
 <artifact id="StructureDefinition/optional-denominator" key="StructureDefinition-optional-denominator" name="Optional Denominator"/>
 <artifact id="ValueSet/capsule-classification-category" key="ValueSet-capsule-classification-category" name="PQ/CMC Capsule Shell Classification Terminology"/>
 <artifact id="ValueSet/pqcmc-org-identifier-type-terminology" key="ValueSet-pqcmc-org-identifier-type-terminology" name="PQ/CMC Ingredient Location Terminology"/>
+<artifact id="ValueSet/pqcmc-product-part-ingredient-physical-location" key="ValueSet-pqcmc-product-part-ingredient-physical-location" name="PQ/CMC Ingredient Location Terminology"/>
 <artifact id="ValueSet/spl-pharmaceutical-dosage-form-terminology" key="ValueSet-spl-pharmaceutical-dosage-form-terminology" name="Pharmaceutical Dosage Form Terminology"/>
 <artifact id="StructureDefinition/pqcmc-polymorphic-form" key="StructureDefinition-pqcmc-polymorphic-form" name="Polymorphic Form"/>
 <artifact id="SubstanceDefinition/832f22b4-6f0c-41f8-9b7d-f26f55e9973c" key="SubstanceDefinition-832f22b4-6f0c-41f8-9b7d-f26f55e9973c" name="Polymorphic Form Example"/>
 <artifact id="StructureDefinition/pq-cmc-address" key="StructureDefinition-pq-cmc-address" name="PqAddress"/>
 <artifact id="CodeSystem/cmc-product-name-types" key="CodeSystem-cmc-product-name-types" name="Product Name Types Code Types"/>
 <artifact id="ValueSet/cmc-product-name-types-vs" key="ValueSet-cmc-product-name-types-vs" name="Product Name Types Terminology"/>
-<artifact id="ValueSet/pqcmc-product-part-ingredient-physical-location" key="ValueSet-pqcmc-product-part-ingredient-physical-location" name="Product Part Ingredient Physical Location Terminology"/>
 <artifact id="ValueSet/pqcmc-product-part-type" key="ValueSet-pqcmc-product-part-type" name="Product Part Type Terminology"/>
 <artifact id="StructureDefinition/pq-ig-version" key="StructureDefinition-pq-ig-version" name="Profile IG Version"/>
 <artifact id="StructureDefinition/pqcmc-quality-specification" key="StructureDefinition-pqcmc-quality-specification" name="Quality Specification"/>
