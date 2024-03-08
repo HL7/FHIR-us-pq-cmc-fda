@@ -18,12 +18,12 @@ The General Information bundle profile provides a mechanism for the industry to 
 The domain concepts of Substance Nomenclature and Structure are represented in FHIR in this IG section. Below is a high-level FHIR resource mapping to guide understanding of how the domain concepts are represented using profiles on FHIR resources. Detail study of the profiles and each of the resources will be needed to develop a deeper understanding of this Substance General Information FHIR Profile. Concepts that are key to this domain include the following:
 
 * Drug Substance Nomenclature
-    * [Substance General Information](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fdaStructureDefinitionpqcmc-drug-substance-nomenclature-structure.html) (DrugSubstanceNomenclatureStructure) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
-    * [Polymorphic Form](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fdaStructureDefinition-pqcmc-polymorphic-form.html) (PolymorphicForm) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Substance General Information](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html) (DrugSubstanceNomenclatureStructure) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Polymorphic Form](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-polymorphic-form.html) (PolymorphicForm) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) resource
 
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fdaStructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html)</span> resource
-    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fdaStructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html)</span> resource
+    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below. 
 

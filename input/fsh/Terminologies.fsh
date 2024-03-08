@@ -214,7 +214,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcProductPartIngredientPhysicalLocation
 Id: pqcmc-product-part-ingredient-physical-location
-Title: "PQ/CMC Ingredient Location Terminology"
+Title: "Ingredient Location Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the location of an ingredient within a product in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
@@ -264,7 +264,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcCapsuleClassificationCategory
 Id: capsule-classification-category
-Title: "PQ/CMC Capsule Shell Classification  Terminology"
+Title: "Capsule Shell Classification  Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the classification of a capsule in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
@@ -278,7 +278,7 @@ Description: "A category of terminology used to qualify the information pertaini
 ValueSet: PqcmcSubstanceNameType
 Id: pqcmc-substance-name-type
 Title: "Substance Name Type"
-Description: "Waiting for NCIt codes are added for Product Ingredient Name Type"
+Description: "A category of terminology used to quality the information pertaining to the type of substance name in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
 * $NCIT#C71898 "Brand"
@@ -672,7 +672,7 @@ Description: "Terminology used to qualify the information pertaining to numeric 
 
 ValueSet: PqcmcQualityBenchmarkTerminology
 Id: pqcmc-quality-benchmark-terminology
-Title: "Quality Standard Terminology"
+Title: "Quality Benchmark Terminology"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
@@ -720,7 +720,7 @@ Description: "Terminology used to qualify the information pertaining to specific
 
 ValueSet: PqcmcOrgIdentifierTypeTerminology
 Id: pqcmc-org-identifier-type-terminology
-Title: "PQ/CMC Ingredient Location Terminology"
+Title: "Organization-Site Identifier Terminology"
 Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = true
