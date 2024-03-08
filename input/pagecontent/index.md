@@ -203,6 +203,7 @@ The development of this Implementation Guide is an initiative funded by the US F
 
 - Program Management:
 	- Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
+  - Josiah Tindor (IBM PM)
   
 At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
 

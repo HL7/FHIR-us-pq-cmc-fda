@@ -1,4 +1,4 @@
-﻿{
+{
   "package-id" : "hl7.fhir.template",
   "title" : "Base template for FHIR IGs published by HL7",
   "canonical" : "http://fhir.org/templates/hl7.fhir.template",
@@ -12,14 +12,23 @@
       "current" : true
     },
     {
+      "version" : "0.9.0",
+      "path" : "http://fhir.org/templates/hl7.fhir.template/0.9.0",
+      "status" : "release",
+      "sequence" : "Publications",
+      "fhirversion" : "4.0.1",
+      "desc" : "Upgrade for dependency on fhir.base.template",
+      "date" : "2024-03-07",
+      "current" : true
+    },
+    {
       "version" : "0.8.0",
       "path" : "http://fhir.org/templates/hl7.fhir.template/0.8.0",
       "status" : "release",
       "sequence" : "Publications",
       "fhirversion" : "4.0.1",
       "desc" : "Upgrade for dependency on fhir.base.template",
-      "date" : "2023-09-21",
-      "current" : true
+      "date" : "2023-09-21"
     },
     {
       "version" : "0.7.0",
