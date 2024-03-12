@@ -54,7 +54,7 @@ The domain concepts of Description and Composition of the Drug Product are repre
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
 
-### eCTD 3.2.P.1.0 Profile Map
+### eCTD 3.2.P.1 Profile Map
 
 <div>{%include ProdDesComp.svg%}</div>
 Use the zoom feature in the browser to enlarge the profile map for reading.
