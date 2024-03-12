@@ -2,7 +2,7 @@
 
 Specification means the quality standard (i.e., tests, analytical procedures, and acceptance criteria) provided in an approved application to confirm the quality of drug substances, drug products, intermediates, raw materials, reagents, components, in-process materials, container closure systems, and other materials used in the production of a drug substance or drug product. For the purpose of this definition, the term “acceptance criteria” means numerical limits, ranges, or other criteria for the tests described [21 CFR 314.3].
 
-The Quality Specification bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.4.1, 3.2.P.4.1, and 3.2.P.5.1 folder content to the FDA. These sections provide evidence demonstrating that the material meets the standards appropriate for their intended use, where the material is an API (3.2.S.4.1), Excipient (3.2.P.4.1), or Drug Product (3.2.P.5.1).
+The Quality Specification bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.4.1, 3.2.P.4, and 3.2.P.5.1 folder content to the FDA. These sections provide evidence demonstrating that the material meets the standards appropriate for their intended use, where the material is an API (3.2.S.4.1), Excipient (3.2.P.4), or Drug Product (3.2.P.5.1).
 
 ### Implementer Instructions
 
@@ -30,7 +30,7 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
-### eCTD Heading 3.2.S.4.1, 3.2.P.4.1 and 3.2.P.5.1 Profile Map
+### eCTD Heading 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Profile Map
 <div>{%include Specification.svg%}</div>
 
 ### Usage Patterns
@@ -553,7 +553,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
         </action>
     </action>
 
-### Example 3.2.S.4.1, 3.2.P.4.1 and 3.2.P.5.1 Bundle
+### Example 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Bundle
 
 This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [4a7e17c1-a611-4cc7-9a71-8005a8b427ab](Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab.html)  
 

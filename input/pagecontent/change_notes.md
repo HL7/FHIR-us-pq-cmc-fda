@@ -1,11 +1,19 @@
 PQ/CMC FHIR Implementation Guide is underdevelopement.  Minor releases will be posted for feedback. These release notes will be retained until the next major release which will be numbered 0.5.0 and and correspond to the project's 1.5 release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 0.1.22
-The current development IG -   Pre-ballot
+### Changes and Updates for Version 0.1.23
+The current development IG - WG review
 Note: This list will be cleared for the ballot version
 
-- Corrections from FHIR IG Bugs.xlsx 
-- changes to yaml file for realm change and title
+- Corrections from FHIR IG Bugs.xlsx for IG v0.1.22
+- changes to yaml file to correct the numbering in the table of contents for chapters
+- more fda suffix addtions in support files
+- deletion of old FHIR-us-FHIR....xml files
+
+## Changes and Updates for Version 0.1.22
+Pre-ballot
+- Corrections from FHIR IG Bugs.xlsx for IG v0.1.22
+- changes to yaml file to correct the realm code change.
+
 
 ### Changes and Updates for Version 0.1.21
 

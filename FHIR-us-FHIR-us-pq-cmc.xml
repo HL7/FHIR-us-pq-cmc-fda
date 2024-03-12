@@ -134,14 +134,14 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>
-<page key="artifacts" name="Artifacts Summary"/>
+<page key="artifacts" name="Artifact List"/>
 <page key="change_notes" name="Change Notes"/>
+<page key="eCTD32P10" name="Description and Composition of the Drug Product (3.2.P.1)"/>
 <page key="downloads" name="Downloads"/>
+<page key="eCTD32S10" name="General Information (3.2.S.1)"/>
 <page key="instruction" name="General Instructions"/>
 <page key="index" name="Home"/>
-<page key="eCTD32P10" name="Product Description and Composition of the Drug Product"/>
-<page key="eCTDSP4151" name="Quality Specification"/>
-<page key="eCTD32S23" name="Substance Control of Materials"/>
-<page key="eCTD32S10" name="Substance General Information"/>
+<page key="eCTDSP4151" name="Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"/>
+<page key="eCTD32S23" name="Substance Control of Materials (3.2.S.2.3)"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

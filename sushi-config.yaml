@@ -6,7 +6,7 @@ description: "The FDA PQ-CMC FHIR IG  is for submission of structured and stand
 
 status: draft
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 0.1.22
+version: 0.1.23
 fhirVersion: 5.0.0
 copyrightYear: 2021+
 releaseLabel: Build CI
@@ -18,14 +18,15 @@ publisher:
   url:  'http://www.hl7.org/Special/committees/rcrim' 
   email: brr@lists.HL7.org
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+
 menu:
-  Home: index.html
   Table of Contents: toc.html
+  Home: index.html
   General Instructions: instruction.html
   eCTD Profiles (Stage 1):
     Description and Composition of the Drug Product (3.2.P.1): eCTD32P10.html 
     General Information (3.2.S.1): eCTD32S10.html 
-    Control of Materials (3.2.S.2.3): eCTD32S23.html 
+    Control of Materials (3.2.S.2.3): eCTD32S23.html
     Specification (3.2.S.4.1, 3.2.P.4 & 3.2.P.5.1): eCTDSP4151.html 
 #  DRAFT eCTD Profiles:
 #    Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
@@ -41,38 +42,34 @@ menu:
   Change Notes: change_notes.html
 
 pages:
-  index.md:
-    title: Home
-  eCTD32P10.md:
-     title: Product Description and Composition of the Drug Product
-#  eCTD32P32.md:
-#     title: Product Batch Formula
-#  eCTD32P55.md:
-#     title: Product Characterization of Impurities
-#  eCTD32P70.md:
-#    title: Product Container Closure System
-  eCTD32S10.md:
-     title: Substance General Information
-  eCTD32S23.md:
-     title: Substance Control of Materials
-#  eCTD32S30.md: 
-#    title: eCTD Substance Characterisation
-#  eCTD32S60.md:
-#     title: Substance Container Closure System
-  eCTDSP4151.md:
-     title: Quality Specification
-#  eCTDSP4454.md:
-#     title: Batch Analyses
-#  eCTDSP7181.md:
-#     title: Stability Summary
-#  eCTDSP7383.md:
-#     title: Stability Data
-  instruction.md:
-    title: General Instructions
-  downloads.md:
-    title: Downloads
-  change_notes.md:
-    title: Change Notes
+  index.html:
+    title: "Home"
+    generation: markdown
+  instruction.html:
+    title: "General Instructions"
+    generation: markdown
+  eCTD32P10.html:
+    title: "Description and Composition of the Drug Product (3.2.P.1)"
+    generation: markdown
+  eCTD32S10.html:
+    title: "General Information (3.2.S.1)"
+    generation: markdown
+  eCTD32S23.html:
+    title: "Substance Control of Materials (3.2.S.2.3)"
+    generation: markdown
+  eCTDSP4151.html:
+    title: "Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"
+    generation: markdown
+  artifacts.html:
+    title: "Artifact List"
+  downloads.html:
+    title: "Downloads"
+    generation: markdown
+  change_notes.html:
+    title: "Change Notes"
+    generation: markdown
+
+
 parameters:
  releaselabel: true
  excludettl: true
