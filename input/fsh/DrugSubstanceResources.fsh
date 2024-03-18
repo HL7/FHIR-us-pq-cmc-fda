@@ -159,7 +159,6 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * status.code
 * role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
 * for ^short = "Reference to MedicinalProductDefinition"
-* substance obeys cmc-strength-type-cases1
 * substance obeys cmc-strength-type-cases2
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
