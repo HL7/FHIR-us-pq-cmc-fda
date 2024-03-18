@@ -236,7 +236,6 @@ Examples: USP/NF, EP, Company Standard
 // Product parts
 * component 1..* MS
 * component obeys cmc-ppidref-required
-* component obeys cmc-ingredient-functions
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -264,6 +263,7 @@ Example: mg
 
 // ingredient
 * component.constituent 1..* MS
+* component.constituent obeys cmc-ingredient-functions
 * component.constituent.extension contains content-percent named ConstituentPercent  1..1 MS	
 * component.constituent.amount 1..1  MS
 * component.constituent.amount.extension contains optional-denominator named OptionalDenom  0..1 MS	

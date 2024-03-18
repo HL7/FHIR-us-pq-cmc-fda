@@ -21,10 +21,9 @@ Severity: #error
 Invariant: cmc-ingredient-functions
 Description: "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.
 If Drug Product Component Function Category constituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "constituent.function.coding.where(code = 'C42637' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists() implies constituent.function.coding.code.count() = 2"
+Expression: "function.coding.where(code = 'C42637' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists() implies function.coding.code.count() = 2"
 Severity: #error
-// Note: coding.version is being used do differentiate between the two function
-// slices: function and category
+
 Invariant: cmc-substance-structure-graphic-required
 Description: "A Substance Structure Graphic is required Required for Small Molecules. Equivalent to classification  code equals 'Chemical'."
 Expression: "(classification.where(coding.where(code = '1' and system = 'https://www.ema.europa.eu').exists()).exists()) implies structure.representation.exists()"
