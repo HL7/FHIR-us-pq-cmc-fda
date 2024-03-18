@@ -251,7 +251,7 @@ Description: "A category of terminology used to qualify the information pertaini
 * ^experimental = true
 * $NCIT#C203884 "Appearance/Identification"
 * $NCIT#C203885 "Consumption Enhancement"
-* $NCIT#C203887 "Extended Release Coating"
+* $NCIT#C203887 "Delayed Release"
 * $NCIT#C203888 "Drug Layering"
 * $NCIT#C203889 "Extended Release"
 * $NCIT#C203890 "Irritant Suppression"
