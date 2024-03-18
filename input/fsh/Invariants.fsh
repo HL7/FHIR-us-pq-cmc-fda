@@ -44,9 +44,27 @@ Severity: #error
 Invariant: cmc-strength-type-cases2
 Description: "IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
-Expression: "strength.extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension').extension('strengthType').value.where(value = 'C45420').exists()
-implies ((strength.ofType(Ratio).exists() and strength.ofType(Ratio).numerator.code = 'C75765').exists())
-or ((strength.ofType(Quantity).exists() and strength.ofType(Quantity).code = 'C75765' ).exists())"
+Expression: "strength
+.extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension')
+.extension.where(
+    value.coding.where(
+        code = 'C45420' and 
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+    ).exists()
+).exists()
+implies (
+    strength.presentation.ofType(Ratio).exists() and
+    strength.presentation.numerator.where(
+        code = 'C75765' and
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+    )
+) or (
+    strength.presentation.ofType(Quantity).exists() and
+    strength.presentation.where(
+        code = 'C75765' and
+        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+    )
+)"
 Severity: #error
 
 Invariant: cmc-ppidref-required
