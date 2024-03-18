@@ -258,7 +258,7 @@ Description: "A category of terminology used to qualify the information pertaini
 * $NCIT#C203886 "Content Isolation"
 * $NCIT#C203891 "Odor Masking"
 * $NCIT#C203892 "Protective"
-* $NCIT#C203893 "Seal Coating"
+* $NCIT#C203893 "Seal"
 * $NCIT#C203894 "Site of Action"
 * $NCIT#C203895 "Taste Masking"
 
