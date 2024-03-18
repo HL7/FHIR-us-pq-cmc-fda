@@ -454,19 +454,19 @@ Description: "Includes the properties of the drug product and components. Profil
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose."""
 * combinedPharmaceuticalDoseForm 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code ^short = "Product Dosage Form"
-* combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+  * coding 1..1 MS
+  * coding ^short = "Product Dosage Form"
+  * coding ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
 Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
 Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 
 SME comment -- this is the marketed dosage form"""
-* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
+  * coding  from SplPharmaceuticalDosageFormTerminology (required)
 * route 0..1 MS
 * route ^short = "Route of Administration"
 * route ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-* route.coding.code 1..1 MS
-* route.coding.code from SplDrugRouteofAdministrationTerminology (required)
+  * coding 1..1 MS
+  * coding from SplDrugRouteofAdministrationTerminology (required)
 * insert ProprietaryAndNonProprietaryNames
 * crossReference MS
 * crossReference.product 
