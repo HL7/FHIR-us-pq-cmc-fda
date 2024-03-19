@@ -20,7 +20,7 @@ InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition"
 Description: "Provides sufficient information to identify a drug substance"
 Usage: #example
-* identifier.value = "aspirin"
+* identifier.value = "salicylate"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)

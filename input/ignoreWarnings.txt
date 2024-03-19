@@ -1,30 +1,23 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
-# (And include comments like this justifying why)
+# Dependencies are on US Core. This IG does not comply with US Core. See US Core Ticket FHIR-44842
+WARNING: ImplementationGuide.dependency[2].url: The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
 
-# Waiting for FHIR terminology server which will support all PQ/CMC NCIt codes.  - they're not expected to be checked
-Code System URI 'http://example.org/NCIt' could not be found so the code cannot be validated
-Reference to draft item http://hl7.org/fhir/hl7-work-group
-Reference to draft item http://hl7.org/fhir/hl7-work-group|1.0.0
+# Waiting for pull request in https://github.com/HL7/JIRA-Spec-Artifacts/pulls #949
+WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jira-current.xml' (a normalized view of what is in Github) and 'template/jira-new.xml' (reflects current IG content)
 
-Code System URI 'https://gsrs.ncats.nih.gov' could not be found so the code cannot be validated
-Unknown System 'http://example.org/NCIt' specified, so Concepts and Filters can't be checked (Details: Code System URI 'http://example.org/NCIt' could not be found so the code cannot be validated)
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://examples.com
-Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# Loinc codes are all irrelevant to Drug Substances and Drug Products.  This IG does not comply with US Core. See US Core Ticket FHIR-44844
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference').baseDefinition: US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# Waiting for technical update to R5 to remove biding to Country ValueSet
-None of the codings provided are in the value set 'Country ValueSet' (http://hl7.org/fhir/ValueSet/country|5.0.0), and a coding from this value set is required) (codes = https://nsgreg.nga.mil#ARG)
+# National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug sponsors. See US Core Ticket FHIR-44845
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-sponsor-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# GENC country codes and EMA are not supported on a server
-Code System URI 'https://nsgreg.nga.mil' could not be found so the code cannot be validated
-Code System URI 'https://www.ema.europa.eu' could not be found so the code cannot be validated
+# Drug manufactures and testing sites are identified by FEI number and DUNS numbers. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used. See US Core Ticket FHIR-44846
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/mfg-test-site-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# US_CORE_DERIVATION not relevant to this IG. Same region different use case
-US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile.
-US FHIR Usage rules require that all profiles on Organization derive from the core US profile.
-US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles.the core US profile.
-US FHIR Usage rules require that all profiles on DiagnosticReport derive from one of the base US profiles.
-US FHIR Usage rules require that all profiles on Medication derive from the core US profile.
+# Supplier Organization conflicts with US Core Organization Profile on identifier codes. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug suppliers. See US Core Ticket FHIR-44853
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/supplier-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
+
+
+# Not all codes obtained from NCIt. They are experimental. Waiting to implement as complete set in THO. 
