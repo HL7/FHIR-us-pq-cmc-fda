@@ -23,7 +23,7 @@ Usage: #example
 * extension[specificationType].valueCodeableConcept = $NCIT#C134021 "Drug Product"
 * identifier.value = "ExampleSpecification"
 * version = "1.0"
-* title = "Quality Specification for Buffered Asprin"
+* title = "Quality Specification for OXAZEPAM"
 * status = #active
 * subjectReference = Reference(urn:uuid:89676a69-1fe7-422c-ab00-92abe4ef6ea9)
 * date = 2022-12-08

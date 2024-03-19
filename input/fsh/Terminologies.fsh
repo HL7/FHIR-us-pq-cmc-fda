@@ -251,14 +251,14 @@ Description: "A category of terminology used to qualify the information pertaini
 * ^experimental = true
 * $NCIT#C203884 "Appearance/Identification"
 * $NCIT#C203885 "Consumption Enhancement"
-* $NCIT#C203887 "Extended Release Coating"
+* $NCIT#C203887 "Delayed Release"
 * $NCIT#C203888 "Drug Layering"
 * $NCIT#C203889 "Extended Release"
 * $NCIT#C203890 "Irritant Suppression"
 * $NCIT#C203886 "Content Isolation"
 * $NCIT#C203891 "Odor Masking"
 * $NCIT#C203892 "Protective"
-* $NCIT#C203893 "Seal Coating"
+* $NCIT#C203893 "Seal"
 * $NCIT#C203894 "Site of Action"
 * $NCIT#C203895 "Taste Masking"
 
@@ -1456,7 +1456,7 @@ Description: "The GENC Standard specifies an information model for representing 
 
 ValueSet: GENCcountryCodes
 Id: genc-country-codes
-Title: "GENC Country Codes"
+Title: "GENC Country Code Values"
 Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
 * ^experimental = true
 * include codes from system GENCcountryCodesCS

@@ -15,18 +15,18 @@ Description: "This example if for a Supplier Organization"
 * contact.address.postalCode = "14608"
 * contact.address.text = "Mega Chem Supply, 350 W Main Street, Rochester, NY, United States"
 
-Instance: 5f66b17e-e3c0-4ee4-8106-59faa34d70f7
+Instance: 580c28ac-1a2c-49fa-9be3-de997da5edcf
 InstanceOf: RoutineSubstanceDefinition
-Title: "Example RoutineSubstanceDefinition"
+Title: "Example RoutineSubstanceDefinition - IBUPROFEN"
 Description: "Provides sufficient information to identify a drug substance"
 Usage: #example
-* identifier.value = "aspirin"
+* identifier.value = "P-Isobutylhydratropic Acid" 
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
-* code.code.coding[unii] = $UNII#XF417D3PSL
-* name[gsrs].name = "ASPIRIN"
+* code.code.coding[unii] = $UNII#WK2XYI10QM
+* name[gsrs].name = "IBUPROFENPIRIN"
 * name[gsrs].preferred = true
 
 Instance: cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93
@@ -36,11 +36,12 @@ Description: "A quality specification is for an API "
 Usage: #example
 
 * extension[specificationType].valueCodeableConcept = $NCIT#C134022 "Drug Substance"
+* extension[spec-additional-info].valueMarkdown = "This API is is currently characterized through a standard battery of physicochemical characterzation tests."
 * identifier.value = "ExampleSpecification2"
 * version = "1.0"
 * title = "Quality Specification for an API"
 * status = #active
-* subjectReference = Reference(urn:uuid:5f66b17e-e3c0-4ee4-8106-59faa34d70f7)
+* subjectReference = Reference(urn:uuid:580c28ac-1a2c-49fa-9be3-de997da5edcf)
 * date = 2022-12-08
 * useContext.valueCodeableConcept = $NCIT#C134010 "Tentatively Approved"
 * approvalDate = 2022-12-08
@@ -153,8 +154,8 @@ Usage: #example
 * entry[=].fullUrl = "urn:uuid:55d92f43-e328-4011-bbcf-744e3afd954f"
 * entry[+].resource = cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93
 * entry[=].fullUrl = "urn:uuid:cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93"
-* entry[+].resource = 5f66b17e-e3c0-4ee4-8106-59faa34d70f7
-* entry[=].fullUrl = "urn:uuid:5f66b17e-e3c0-4ee4-8106-59faa34d70f7"
+* entry[+].resource = 580c28ac-1a2c-49fa-9be3-de997da5edcf
+* entry[=].fullUrl = "urn:uuid:580c28ac-1a2c-49fa-9be3-de997da5edcf"
 * entry[+].resource = 4f3e9af1-306b-4fad-bf04-7881400b266a
 * entry[=].fullUrl = "urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a"
 * entry[+].resource = e99bddfa-c1b5-435b-bbe8-24816b4e23e5

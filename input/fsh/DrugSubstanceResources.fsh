@@ -34,7 +34,7 @@ Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
@@ -78,7 +78,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -150,7 +150,7 @@ Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
 * .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
@@ -159,7 +159,6 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * status.code
 * role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
 * for ^short = "Reference to MedicinalProductDefinition"
-* substance obeys cmc-strength-type-cases1
 * substance obeys cmc-strength-type-cases2
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
@@ -211,7 +210,7 @@ Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -236,7 +235,7 @@ Examples: USP/NF, EP, Company Standard
 * insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
 
-* sourceMaterial 0..1 MS
+* sourceMaterial 1..1 MS
 * sourceMaterial.type 1..1
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
@@ -292,13 +291,14 @@ Examples: USP/NF, EP, Company Standard
 * supplier only Reference(SupplierOrganization)
 * insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
+* sourceMaterial 0..0 MS
 
 Profile: DrugSubstanceNomenclatureStructure
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature-structure
 Title: "Substance General Information"
 Description: "Substance General Information containting Drug Substance (Active Ingredient) nomenclature (2.3.S.1.1) and Substance Structure (2.3.S.1.2) profile."
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS

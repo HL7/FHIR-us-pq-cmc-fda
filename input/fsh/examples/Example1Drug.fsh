@@ -247,6 +247,8 @@ Usage: #example
 * component[=].constituent[=].function[Function] = $NCIT#C42656 "Color Excipient"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[+].type = $NCIT#C66831 "Layer"
+* component[=].amount.extension[WghtlDenom].valueQuantity = $NCIT#C75765 "[arb'U]"
+* component[=].amount.extension[WghtlDenom].valueQuantity.value = 1
 * component[=].amount = $NCIT#C28253 "mg"
 * component[=].amount.value = 738
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerB"

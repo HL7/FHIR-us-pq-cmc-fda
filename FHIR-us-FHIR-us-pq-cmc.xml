@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/FHIR-us-pq-cmc" url="http://hl7.org/fhir/us/pq-cmc-fda">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="brr" url="http://hl7.org/fhir/us/pq-cmc-fda">
 <version code="current" url=""/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
@@ -27,7 +27,7 @@
 <artifact id="PlanDefinition/a2cba634-a481-4b07-9bd4-62c7ada31e1b" key="PlanDefinition-a2cba634-a481-4b07-9bd4-62c7ada31e1b" name="Citric acid specification Example"/>
 <artifact id="ValueSet/pqcmc-closure-type-terminology" key="ValueSet-pqcmc-closure-type-terminology" name="Closure Type Terminology"/>
 <artifact id="ValueSet/pqcmc-coating-purpose" key="ValueSet-pqcmc-coating-purpose" name="Coating Purpose Terminology"/>
-<artifact id="Composition/4bd1ed57-852b-42be-a9b0-355f8a2aa7d4" key="Composition-4bd1ed57-852b-42be-a9b0-355f8a2aa7d4" name="Cochineal specification Example"/>
+<artifact id="Composition/4bd1ed57-852b-42be-a9b0-355f8a2aa7d4" key="Composition-4bd1ed57-852b-42be-a9b0-355f8a2aa7d4" name="Cochineal specification Composition Example"/>
 <artifact id="PlanDefinition/37bf5cc0-33bf-478b-b84e-ccb35143ef6e" key="PlanDefinition-37bf5cc0-33bf-478b-b84e-ccb35143ef6e" name="Cochineal specification Example"/>
 <artifact id="CodeSystem/pqcmc-comp-section-types" key="CodeSystem-pqcmc-comp-section-types" name="Code System PQCMC Comp Section Types"/>
 <artifact id="ValueSet/pqcmc-product-characteristic" key="ValueSet-pqcmc-product-characteristic" name="Code System PQCMC Product Characteristic"/>
@@ -54,9 +54,9 @@
 <artifact id="Organization/e875ef93-a730-4c44-bead-53663ae7f501" key="Organization-e875ef93-a730-4c44-bead-53663ae7f501" name="East-West Manufacturing"/>
 <artifact id="Composition/5dfbbf17-05c0-441d-af66-7a66072f4ae4" key="Composition-5dfbbf17-05c0-441d-af66-7a66072f4ae4" name="EctdComposition32P10 for 2 layer tablet"/>
 <artifact id="Composition/5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" key="Composition-5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" name="Example Composition for CTD 3.2.S.2.3"/>
-<artifact id="SubstanceDefinition/5f66b17e-e3c0-4ee4-8106-59faa34d70f7" key="SubstanceDefinition-5f66b17e-e3c0-4ee4-8106-59faa34d70f7" name="Example RoutineSubstanceDefinition"/>
+<artifact id="SubstanceDefinition/580c28ac-1a2c-49fa-9be3-de997da5edcf" key="SubstanceDefinition-580c28ac-1a2c-49fa-9be3-de997da5edcf" name="Example RoutineSubstanceDefinition - IBUPROFEN"/>
 <artifact id="SubstanceDefinition/cd84a8b5-4e96-551c-15c6-c97c943eb38a" key="SubstanceDefinition-cd84a8b5-4e96-551c-15c6-c97c943eb38a" name="Example RoutineSubstanceDefinition for Asprin"/>
-<artifact id="SubstanceDefinition/d8242262-2187-4ea2-907f-b66752202b46" key="SubstanceDefinition-d8242262-2187-4ea2-907f-b66752202b46" name="Example SubstanceDefinition for Carrageenan"/>
+<artifact id="SubstanceDefinition/0efb1188-04f0-44ba-bfe7-ca6169ca8703" key="SubstanceDefinition-0efb1188-04f0-44ba-bfe7-ca6169ca8703" name="Example SubstanceDefinition for Carrageenan"/>
 <artifact id="SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a" key="SubstanceDefinition-fd84a8b5-9e96-451c-a5c6-097c943eb38a" name="Example SubstanceDefinition for anhydrous citric acid"/>
 <artifact id="SubstanceDefinition/d3a11b25-e160-4688-b807-6383364096fd" key="SubstanceDefinition-d3a11b25-e160-4688-b807-6383364096fd" name="Example SubstanceDefinition for water"/>
 <artifact id="Organization/8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" key="Organization-8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" name="Example of MfgTestSiteOrganization profile on Organization"/>
@@ -65,7 +65,7 @@
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
 <artifact id="Bundle/6004e36e-7df9-469d-9b29-8e9f9bd7e95f" key="Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f" name="FHIR Document example of 3.2.P.4.1."/>
 <artifact id="Bundle/4a7e17c1-a611-4cc7-9a71-8005a8b427ab" key="Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab" name="FHIR Document example of 3.2.P.5.1."/>
-<artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Codes"/>
+<artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Code Values"/>
 <artifact id="CodeSystem/genc-country-codes-cs" key="CodeSystem-genc-country-codes-cs" name="GENC Country Codes"/>
 <artifact id="StructureDefinition/pq-hierarchical-level-extension" key="StructureDefinition-pq-hierarchical-level-extension" name="Hierarchical Level"/>
 <artifact id="CodeSystem/pqcmc-test-category-codes" key="CodeSystem-pqcmc-test-category-codes" name="Hierarchical Test Category Codes"/>
@@ -133,7 +133,6 @@
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Terminology"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
-<page deprecated="true" key="profiles" name="(profiles)"/>
 <page key="artifacts" name="Artifact List"/>
 <page key="change_notes" name="Change Notes"/>
 <page key="eCTD32P10" name="Description and Composition of the Drug Product (3.2.P.1)"/>
