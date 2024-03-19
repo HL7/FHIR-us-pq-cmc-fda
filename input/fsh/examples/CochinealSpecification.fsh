@@ -229,7 +229,7 @@ Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 Instance: 7cdbb042-9275-4599-a1fe-08877846bf94
 InstanceOf: CMCeCTDDocumentSP4151
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient"
-* identifier.extension[version].valueString = "0.1.21"
+* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:813b4312-8b6d-42cc-9b8c-8bb6463388cc"
 * timestamp = 2024-01-01T19:42:35.255Z

@@ -2,7 +2,7 @@ Instance: 49438799-e286-432c-b8d8-68ac77e7f519
 InstanceOf: SponsorOrganization
 Title: "SponsorOrganization J. Jones Research"
 Description: "Example of a Sponsor type of Organization"
-
+Usage: #example
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "143265625"
 * identifier[DUNSNumber].system = $DUNS
@@ -18,6 +18,7 @@ Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: MfgTestSiteOrganization
 Title: "Manufacturing Site (J. Jones Research)"
 Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
+Usage: #example
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
@@ -36,6 +37,7 @@ Instance: e99bddfa-c1b5-435b-bbe8-24816b4e23e5
 InstanceOf: MfgTestSiteOrganization
 Title: "Vidinaid"
 Description: "Manufacturing site (Vidinaid) instance with second address line"
+Usage: #example
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -55,7 +57,7 @@ Instance: 0efb1188-04f0-44ba-bfe7-ca6169ca8703
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
-
+Usage: #example
 * identifier.value = "carrageenan"
 * classification = $EMAIDMP#9 "Structurally Diverse Substance - Herbal"
 * grade = $NCIT#C134009 "Company Standard"
@@ -72,7 +74,7 @@ Instance: fd84a8b5-9e96-451c-a5c6-097c943eb38a
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for anhydrous citric acid"
 Description: "Identification of the subject of the specification. It is commonly used in the pharmaceutical industry as a stabilizer and preservative."
-
+Usage: #example
 * identifier.value = "Citric acid"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134009 "Company Standard"
@@ -87,7 +89,7 @@ Instance: cd84a8b5-4e96-551c-15c6-c97c943eb38a
 InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition for Asprin"
 Description: "Identification of the Drug Substance of the raw materials whose specifications are "
-
+Usage: #example
 * identifier.value = "salicylate"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
@@ -102,7 +104,7 @@ Instance: d3a11b25-e160-4688-b807-6383364096fd
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for water"
 Description: "Identification of the subject of the specification"
-
+Usage: #example
 * identifier.value = "water"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -117,7 +119,7 @@ Instance: ab241f8c-d21e-4382-a70a-52190dbdf07e
 InstanceOf: QualitySpecification
 Title: "Carrageenan specification Example"
 Description: "Example raw material (Carrageenan) specification for CTD 3.2.S.2.3.  Raw matrials and Excipients share the same profile but are in different bundles."
-
+Usage: #example
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "RawCitricacid"
 * version = "1.0"
@@ -360,7 +362,7 @@ Instance: a2cba634-a481-4b07-9bd4-62c7ada31e1b
 InstanceOf: QualitySpecification
 Title: "Citric acid specification Example"
 Description: "Example raw material (Citric acid) specification for CTD 3.2.S.2.3"
-
+Usage: #example
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "CitricAcidSpecification"
 * version = "1.0"
@@ -460,7 +462,7 @@ Instance: 5819b223-d3d2-419f-b617-b3a9a3625b89
 InstanceOf: QualitySpecification
 Title: "Water Specification Example"
 Description: "Example raw material (water) specification for CTD 3.2.S.2.3"
-
+Usage: #example
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * identifier.value = "WaterSpecification"
 * version = "1.0"
@@ -556,7 +558,7 @@ Instance: 5c0d341e-6e4f-457c-811d-cfaf3eb62ecd
 InstanceOf: EctdComposition32S23
 Title: "Example Composition for CTD 3.2.S.2.3"
 Description: "This composition contains one section with reference to each raw material specification for the drug substance."
-
+Usage: #example
 * identifier.value = "materials1"
 * status = #final
 * subject = Reference(urn:uuid:cd84a8b5-4e96-551c-15c6-c97c943eb38a)
@@ -578,7 +580,8 @@ Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
 InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
 Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
-* identifier.extension[version].valueString = "0.1.21"
+Usage: #example
+* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:7ce2088d-d281-4e2f-9a25-120a1f9805d1"
 * timestamp = 2023-12-05T01:34:39.503Z
