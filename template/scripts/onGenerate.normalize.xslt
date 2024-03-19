@@ -48,7 +48,7 @@
     </xsl:copy>
     <xsl:text>&#xa;</xsl:text>
 	</xsl:template>
-	<xsl:template match="page" priority="5">
+	<xsl:template match="page" priority="10">
     <xsl:copy>
       <xsl:for-each select="@*">
         <xsl:sort select="local-name(.)"/>

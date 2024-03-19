@@ -20,7 +20,7 @@ InstanceOf: QualitySpecification
 Description: "Quality Specification for Cochineal"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-quality-specification"
 * extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
-* identifier.value = "CitricAcidSpecification"
+* identifier.value = "CochinealSpecification"
 * version = "1.0"
 * title = "Cochineal specification Example"
 * status = #active
@@ -216,12 +216,12 @@ Instance: 4bd1ed57-852b-42be-a9b0-355f8a2aa7d4
 InstanceOf: EctdCompositionSP4151
 Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
-* identifier.value = "CochinealSpecification"
+* identifier.value = "CochinealSpecificationComposition"
 * status = #final
 * type.coding = $SectionTypes#SP4151 "Quality Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2024-01-01T19:42:35.254Z
-* title = """Cochineal specification Example"""
+* title = """Cochineal specification Composition Example"""
 * section[Excipient]
   * code = $SectionTypes#32P40 "Product Control of Excipients"
   * title = "32P40"

@@ -291,7 +291,7 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.function.coding 1..1 MS
 * component.constituent.function ^slicing.discriminator.type = #value // or #value
 * component.constituent.function ^slicing.discriminator.path = "coding"
-* component.constituent.function ^slicing.ordered = true
+// * component.constituent.function ^slicing.ordered = true
 * component.constituent.function ^slicing.rules = #closed
 * component.constituent.function ^slicing.description = "Slice on the function coding"
 * component.constituent.function contains

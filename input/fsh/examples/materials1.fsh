@@ -51,12 +51,12 @@ Description: "Manufacturing site (Vidinaid) instance with second address line"
 * contact.address.text = "Vidinaid, 100 Stillwater Avenue, Building #2, Bangor, ME, USA"
 * contact.address.state = "ME"
 
-Instance: d8242262-2187-4ea2-907f-b66752202b46
+Instance: 0efb1188-04f0-44ba-bfe7-ca6169ca8703
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
 
-* identifier.value = "Carrageenan"
+* identifier.value = "carrageenan"
 * classification = $EMAIDMP#9 "Structurally Diverse Substance - Herbal"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
@@ -88,7 +88,7 @@ InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition for Asprin"
 Description: "Identification of the Drug Substance of the raw materials whose specifications are "
 
-* identifier.value = "aspirin"
+* identifier.value = "salicylate"
 * classification = $EMAIDMP#1 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
@@ -96,7 +96,7 @@ Description: "Identification of the Drug Substance of the raw materials whose sp
 * name[sub].name =  "ACETYLSALICYLIC ACID"
 * name[gsrs].name = "ASPIRIN"
 * name[gsrs].preferred = true
-* sourceMaterial.type = $NCIT#C48807 "Chemical"
+
 
 Instance: d3a11b25-e160-4688-b807-6383364096fd
 InstanceOf: ExcipientRaw
@@ -123,7 +123,7 @@ Description: "Example raw material (Carrageenan) specification for CTD 3.2.S.2.3
 * version = "1.0"
 * title = "Raw Material (Carrageenan) Specification Example"
 * status = #active
-* subjectReference = Reference(urn:uuid:d8242262-2187-4ea2-907f-b66752202b46)
+* subjectReference = Reference(urn:uuid:0efb1188-04f0-44ba-bfe7-ca6169ca8703)
 * date = 2023-11-28
 * useContext.valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * goal[+]
@@ -592,8 +592,8 @@ Description: "This is an example of the Substance Control of Materials bundle pr
 * entry[=].fullUrl = "urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5"
 * entry[+].resource = d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
 * entry[=].fullUrl = "urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049"
-* entry[+].resource = d8242262-2187-4ea2-907f-b66752202b46
-* entry[=].fullUrl = "urn:uuid:d8242262-2187-4ea2-907f-b66752202b46"
+* entry[+].resource = 0efb1188-04f0-44ba-bfe7-ca6169ca8703
+* entry[=].fullUrl = "urn:uuid:0efb1188-04f0-44ba-bfe7-ca6169ca8703"
 * entry[+].resource = fd84a8b5-9e96-451c-a5c6-097c943eb38a
 * entry[=].fullUrl = "urn:uuid:fd84a8b5-9e96-451c-a5c6-097c943eb38a"
 * entry[+].resource = d3a11b25-e160-4688-b807-6383364096fd

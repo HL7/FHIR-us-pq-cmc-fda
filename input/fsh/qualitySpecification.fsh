@@ -61,7 +61,7 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * extension contains 
     pq-specification-type-extension named specificationType 1..1 MS and
     pq-additional-info-extension named spec-additional-info 0..1 MS
@@ -72,12 +72,12 @@ Examples: replaces method ABC, using the XYZ facility.
 * identifier 0..1 MS
 * version 1..1 MS
 * version ^short = "Specification Version"
-* version ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined] Examples: 2.1, 13.2, ST1, 00001, 00002, <companyname>001.
+* version ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined] Examples: 2.1, 13.2, ST1, 00001, 00002, companyname-001.
 Note: This value should be unique across all specifications for a given material, not just those with the same name"""
 * title 1..1 MS
 * title ^short = "Specification Title"
 * title ^definition = """The textual identification for the specification. [Source: SME Defined]
-Example: <drug name> 75 mg chewable tablets
+Example: &lt;drug name> 75 mg chewable tablets
 Note: This may include the name of the drug substance, product or the raw material/excipients"""
 * subtitle 0..1 MS
 * subtitle ^short = "Specification Subtitle"
@@ -171,8 +171,8 @@ Note: When result value is numeric there is a controlled vocabulary; when result
   * coding = $NCIT#C48793 "EQ"	
   * text 1..1 MS 
     * ^short = "Value"
-    * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP <711>)
-Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP <151>; 21 CFR 610.13 (b) Test for pyrogenic substances)
+    * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711>)
+Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151>; 21 CFR 610.13 (b) Test for pyrogenic substances)
 """
 * goal.target.detailInteger  0..1 MS
 * goal.target.detailInteger ^short = "Number of Replicates"

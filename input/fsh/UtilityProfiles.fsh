@@ -4,7 +4,7 @@ Id: cmc-document-reference
 Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64."
 
-* meta.profile 0..1 MS
+* meta.profile 1..1 MS
 * status = #current
 * content MS
 * content.attachment MS
