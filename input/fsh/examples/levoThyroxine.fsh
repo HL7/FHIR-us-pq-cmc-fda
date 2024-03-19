@@ -139,7 +139,7 @@ InstanceOf: CMCeCTDDocument32S10
 Title: "Bundle for 3.2.S.1"
 Description: "Bundle containng nomenclature and molecular structure"
 Usage: #example 
-* identifier.extension[version].valueString = "0.1.21"
+* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:1bf43677-1c61-41dd-93c2-8ec7f327d0f1"
 * timestamp = 2023-12-15T22:19:47.022Z

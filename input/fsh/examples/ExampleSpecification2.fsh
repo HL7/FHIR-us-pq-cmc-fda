@@ -2,7 +2,7 @@ Instance: d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
 InstanceOf: SupplierOrganization
 Title: "Example of a Supplier Organization"
 Description: "This example if for a Supplier Organization"
-
+Usage: #example
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "173265332"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
@@ -146,7 +146,7 @@ InstanceOf: CMCeCTDDocumentSP4151
 Title: "FHIR Document example of 3.2.P.4.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"
 Usage: #example
-* identifier.extension[version].valueString = "0.1.21"
+* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:3e9cc7a1-e157-4b46-980a-33a8e50dcf65"
 * timestamp = 2023-12-15T22:36:51.299Z
