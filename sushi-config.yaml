@@ -76,6 +76,8 @@ parameters:
  excludemap: true
  apply-wg: true
  jira-code: FHIR-us-pq-cmc
+ # {joint-iso-itu-t(2) country(16) us(840) organization(1) hl7(113883) externalUseRoots(3) fDA(24)}
+ auto-oid-root: 2.16.840.1.113883.3.24
  special-url: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
     - https://gsrs.ncats.nih.gov
     - http://example.org/NCIt 
