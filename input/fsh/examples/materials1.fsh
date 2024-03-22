@@ -59,7 +59,7 @@ Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
 Usage: #example
 * identifier.value = "carrageenan"
-* classification = $EMAIDMP#9 "Structurally Diverse Substance - Herbal"
+* classification = $NCIT#C3641132 "Structurally Diverse Substance"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
 * code.code.coding[unii] = $UNII#5C69YCD2YJ
@@ -76,7 +76,7 @@ Title: "Example SubstanceDefinition for anhydrous citric acid"
 Description: "Identification of the subject of the specification. It is commonly used in the pharmaceutical industry as a stabilizer and preservative."
 Usage: #example
 * identifier.value = "Citric acid"
-* classification = $EMAIDMP#1 "Chemical"
+* classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
@@ -91,7 +91,7 @@ Title: "Example RoutineSubstanceDefinition for Asprin"
 Description: "Identification of the Drug Substance of the raw materials whose specifications are "
 Usage: #example
 * identifier.value = "salicylate"
-* classification = $EMAIDMP#1 "Chemical"
+* classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * code.code.coding[unii] = $UNII#R16CO5Y76E
@@ -106,7 +106,7 @@ Title: "Example SubstanceDefinition for water"
 Description: "Identification of the subject of the specification"
 Usage: #example
 * identifier.value = "water"
-* classification = $EMAIDMP#1 "Chemical"
+* classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C176793 "BP"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)

@@ -6,14 +6,14 @@ Expression: "select(preferred = true).count() < 2"
 Severity: #error
 
 Invariant: cmc-when-unii-required
-Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
-Expression: "classification.coding.where(system = 'https://www.ema.europa.eu' and code in ('1' | '17' | '2' | '3' |'4') ).exists()
+Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
+Expression: "classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists()
 implies code.code.text.exists()"
 Severity: #error
 
 Invariant: cmc-name-isbt
 Description: "Name.type ISBT 128 required for blood products."
-Expression: "classification.where(coding.where(code = '8' and system = 'https://www.ema.europa.eu').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy')"
+Expression: "classification.where(coding.where(code = '8' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy')"
 Severity: #error
 // Note: 8 is the code for for "Structurally Diverse Subtsance - Blood derived"
 // and 226 is the code for "ISBT 128" in substance name type. $NCIT is currently 
@@ -26,12 +26,12 @@ Severity: #error
 
 Invariant: cmc-substance-structure-graphic-required
 Description: "A Substance Structure Graphic is required Required for Small Molecules. Equivalent to classification  code equals 'Chemical'."
-Expression: "(classification.where(coding.where(code = '1' and system = 'https://www.ema.europa.eu').exists()).exists()) implies structure.representation.exists()"
+Expression: "(classification.where(coding.where(code = '1' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists()).exists()) implies structure.representation.exists()"
 Severity: #error
 
 Invariant: cmc-structure-required
-Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acid','Polymer','Protein - Other'."
-Expression: "classification.coding.where(system = 'https://www.ema.europa.eu' and code in ('1' | '17' | '2' | '3' |'4') ).exists() implies structure.exists()"
+Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
+Expression: "classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
 Severity: #error
 
 Invariant: cmc-source-material

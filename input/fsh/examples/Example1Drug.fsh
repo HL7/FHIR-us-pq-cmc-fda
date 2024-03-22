@@ -27,7 +27,7 @@ Description: "API used in two layer table example"
 Usage: #example 
 
 * identifier.value = "aspirin"
-* classification =  $EMAIDMP#1 "Chemical"
+* classification =  $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * supplier = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
@@ -61,7 +61,7 @@ Description: "An API used in two layer table example."
 Usage: #example 
 
 * identifier.value = "acetaminophen"
-* classification =  $EMAIDMP#1 "Chemical"
+* classification =  $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * supplier = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
@@ -94,7 +94,7 @@ Description: "An excipient in the two layer tablet"
 Usage: #example 
 
 * identifier.value = "Maize starch"
-* classification =  $EMAIDMP#17 "Mixture"
+* classification =  $NCIT#C45305 "Mixture"
 * grade = $NCIT#C134009 "Company Standard"
 * supplier = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
 * manufacturer = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
@@ -130,7 +130,7 @@ Description: "ComponentSubstance example showing the use use of the sourceMateri
 Usage: #example 
 
 * identifier.value = "Grape skin extract"
-* classification =  $EMAIDMP#17 "Mixture"
+* classification =  $NCIT#C45305 "Mixture"
 * grade = $NCIT#C176793 "BP"
 * supplier = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
 * manufacturer = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)

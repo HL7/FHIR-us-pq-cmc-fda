@@ -1,11 +1,9 @@
 CodeSystem: NCItDummy
 Id: cmc-ncit-dummy
-Title: "Dummy NCIT Codesystem"
-Description: "This is a dummy codesystem representing NCIt. It contains all the codes that are usable within the IG.
-It exists solely because NCIt currently cannot be validated against and because https://example.com/ codesystems are
-not allowed by the validator."
+Title: "PQ-CMC-FDA Temporary Codes"
+Description: "Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.  Some but not all are defined in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). Note: Codes that exist in CNIt at time of ballot begin with 'C'."
 * ^caseSensitive = true
-* ^experimental = true	
+* ^experimental = false	
 
 * #batchsize "Batch Quantity"
 * #batchinfo "Batch Formula Additional Information"
@@ -711,26 +709,8 @@ not allowed by the validator."
 * #C154554 "Lozenge Dosage Form Category"
 * #C154433 "Capsule Dose Form Category"
 * #C154605 "Tablet Dosage Form Category"
-
-CodeSystem: EMADummy
-Id: cmc-ema-dummy
-Title: "Dummy EMA Codesystem"
-Description: "This is a dummy codesystem representing EMA. It contains all the codes that are usable within the IG.
-It exists because the publisher previously allowed using value sets from codesystems that it could not find (e.g.
-https://www.ema.europa.eu). This is no longer the case, so a temp code system must be defined in the IG."
-* ^caseSensitive = true
-* ^experimental = true	
-
-* #1 "Chemical"
-* #17 "Mixture"
-* #2 "Nucleic Acid"
-* #3 "Polymer"
-* #4 "Protein - Other"
-* #5 "Protein - Vaccine"
-* #7 "Structurally Diverse Substance - Immunoglobulin"
-* #6 "Structurally Diverse Substance - Vaccine"
-* #10 "Structurally Diverse Substance - Allergen"
-* #11 "Structurally Diverse Substance - Cell therapy"
-* #9 "Structurally Diverse Substance - Herbal"
-* #12 "Structurally Diverse Substance - Other"
-* #8 "Structurally Diverse Substance - Blood derived"
+* #C45305 "Mixture"
+* #C706 "Nucleic Acids"
+* #C48803 "Polymer"
+* #C17021 "Protein"
+*  #C3641132 "Structurally Diverse Substance"
