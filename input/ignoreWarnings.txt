@@ -1,23 +1,3 @@
 == Suppressed Messages ==
 
-# Dependencies are on US Core. This IG does not comply with US Core. See US Core Ticket FHIR-44842
-WARNING: ImplementationGuide.dependency[2].url: The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
-
-# Waiting for pull request in https://github.com/HL7/JIRA-Spec-Artifacts/pulls #950
-WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jira-current.xml' (a normalized view of what is in Github) and 'template/jira-new.xml' (reflects current IG content)
-
-# Loinc codes are all irrelevant to Drug Substances and Drug Products.  This IG does not comply with US Core. See US Core Ticket FHIR-44844
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference').baseDefinition: US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
-# National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug sponsors. See US Core Ticket FHIR-44845
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-sponsor-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
-# Drug manufactures and testing sites are identified by FEI number and DUNS numbers. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used. See US Core Ticket FHIR-44846
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/mfg-test-site-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
-# Supplier Organization conflicts with US Core Organization Profile on identifier codes. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug suppliers. See US Core Ticket FHIR-44853
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/supplier-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
-# The Country Codes and GNEC are not bijective.  Country Codes were incorrectly made Required for SubstanceDefinition.sourceMaterial.countryOfOrigin
-WARNING: ConceptMap/ISOtoGENC: ConceptMap.group[0].source: Source Code System urn:iso:std:iso:3166 doesn't have all content (content = not-present), so the source codes cannot be checked
 
