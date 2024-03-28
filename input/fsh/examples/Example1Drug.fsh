@@ -104,7 +104,7 @@ Usage: #example
 * sourceMaterial.type = $NCIT#C14258 "Plant"
 * sourceMaterial.genus.text = "zea"
 * sourceMaterial.species.text = "mays"
-* sourceMaterial.countryOfOrigin = $Country#ARG "Argentina"    //$GENC#ARG "ARGENTINA"
+* sourceMaterial.countryOfOrigin = $Country#ARG "Argentina"    
 
 Instance: d01421cc-6488-468b-a676-d3e7281875e2
 InstanceOf: DrugProductComponent
@@ -141,7 +141,7 @@ Usage: #example
 * sourceMaterial.genus.text = "Vitis"
 * sourceMaterial.species.text = "vinifera"
 * sourceMaterial.part.text = "skin" 
-* sourceMaterial.countryOfOrigin = $Country#USA "United States of America"    // $GENC#USA "UNITED STATES"
+* sourceMaterial.countryOfOrigin = $Country#USA "United States of America" 
 
 Instance: 3791c4ce-2b43-4d7b-b195-0e5f88f28dab
 InstanceOf: DrugProductComponent
