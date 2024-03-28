@@ -570,5 +570,4 @@ RuleSet: CountryOfOrigin
   * obeys cmc-only-ISO-3166-1-alpha-3
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-  * coding from GENCcountryCodes	
   * coding 1..1 MS

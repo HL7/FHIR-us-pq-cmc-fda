@@ -10,7 +10,6 @@ Alias: $FEINumber = urn:oid:2.16.840.1.113883.4.82
 Alias: $ART = http://hl7.org/fhir/action-relationship-type
 Alias: $FEI = https://www.fda.gov/drugs/drug-approvals-and-databases/drug-establishments-current-registration-site
 // Alias: $EMAIDMP = https://www.ema.europa.eu
-Alias: $GENC = https://nsgreg.nga.mil
 Alias: $Country = urn:iso:std:iso:3166
 Alias: $IDsys = urn:ietf:rfc:3986
 Alias: $SubstanceRelationshipType = http://hl7.org/fhir/substance-relationship-type

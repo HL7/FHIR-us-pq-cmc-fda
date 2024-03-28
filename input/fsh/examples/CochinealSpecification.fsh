@@ -13,7 +13,7 @@ Description: "The Excipient Raw representing Cochineal"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 * sourceMaterial.genus.text = "Dactylopius"
 * sourceMaterial.species.text = "cochineal"
-* sourceMaterial.countryOfOrigin =  $Country#TUR "TURKEY" 
+* sourceMaterial.countryOfOrigin =  $Country#TUR "Turkey" 
 
 Instance: 37bf5cc0-33bf-478b-b84e-ccb35143ef6e
 InstanceOf: QualitySpecification
