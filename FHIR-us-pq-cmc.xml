@@ -62,11 +62,9 @@
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
 <artifact id="Bundle/6004e36e-7df9-469d-9b29-8e9f9bd7e95f" key="Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f" name="FHIR Document example of 3.2.P.4.1."/>
 <artifact id="Bundle/4a7e17c1-a611-4cc7-9a71-8005a8b427ab" key="Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab" name="FHIR Document example of 3.2.P.5.1."/>
-<artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Code Values"/>
-<artifact id="CodeSystem/genc-country-codes-cs" key="CodeSystem-genc-country-codes-cs" name="GENC Country Codes"/>
+<artifact id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Code Three letter Values"/>
 <artifact id="StructureDefinition/pq-hierarchical-level-extension" key="StructureDefinition-pq-hierarchical-level-extension" name="Hierarchical Level"/>
 <artifact id="CodeSystem/pqcmc-test-category-codes" key="CodeSystem-pqcmc-test-category-codes" name="Hierarchical Test Category Codes"/>
-<artifact id="ConceptMap/ISOtoGENC" key="ConceptMap-ISOtoGENC" name="ISO to GENC Country Code Mapping"/>
 <artifact id="SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67" key="SubstanceDefinition-496f83ad-2365-4b12-8672-a349d99f7d67" name="IngredComponentSubstance example showing the use of the sourceMaterial backbone element"/>
 <artifact id="ValueSet/pqcmc-product-part-ingredient-physical-location" key="ValueSet-pqcmc-product-part-ingredient-physical-location" name="Ingredient Location Terminology"/>
 <artifact id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>

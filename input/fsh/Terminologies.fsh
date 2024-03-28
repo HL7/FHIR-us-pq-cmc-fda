@@ -1164,562 +1164,253 @@ Description: "Terminology used to qualify the information pertaining to the manu
 * $NCIT#C154433 "Capsule Dose Form Category"
 * $NCIT#C154605 "Tablet Dosage Form Category"
 
-CodeSystem: GENCcountryCodesCS
-Id: genc-country-codes-cs
-Title: "GENC Country Codes"
-Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
-* ^caseSensitive = true
-* ^experimental = false
-
-
 ValueSet: GENCcountryCodes
 Id: genc-country-codes
-Title: "NCIt code for GENC Country Code Three letter Values"
+Title: "GENC Country Code Three letter Values"
 Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
 * ^experimental = false
-
-* $NCIT#C16267 "AFG"
-* $NCIT#C49344 "XQZ"
-* $NCIT#C16271 "ALB"
-* $NCIT#C16274 "DZA"
-* $NCIT#C17739 "ASM"
-* $NCIT#C16289 "AND"
-* $NCIT#C16292 "AGO"
-* $NCIT#C20133 "AIA"
-* $NCIT#C18007 "ATA"
-* $NCIT#C16303 "ATG"
-* $NCIT#C16305 "ARG"
-* $NCIT#C16306 "ARM"
-* $NCIT#C17884 "ABW"
-* $NCIT#C123741 "XAC"
-* $NCIT#C16311 "AUS"
-* $NCIT#C16312 "AUT"
-* $NCIT#C16316 "AZE"
-* $NCIT#C16321 "BHS"
-* $NCIT#C16322 "BHR"
-* $NCIT#C123742 "XBK"
-* $NCIT#C16323 "BGD"
-* $NCIT#C16324 "BRB"
-* $NCIT#C123743 "XBI"
-* $NCIT#C16372 "BLR"
-* $NCIT#C16329 "BEL"
-* $NCIT#C16331 "BLZ"
-* $NCIT#C16333 "BEN"
-* $NCIT#C16334 "BMU"
-* $NCIT#C16336 "BTN"
-* $NCIT#C16359 "BOL"
-* $NCIT#C101224 "BES"
-* $NCIT#C16361 "BIH"
-* $NCIT#C16363 "BWA"
-* $NCIT#C20104 "BVT"
-* $NCIT#C16364 "BRA"
-* $NCIT#C16365 "IOT"
-* $NCIT#C16367 "BRN"
-* $NCIT#C16368 "BGR"
-* $NCIT#C16369 "BFA"
-* $NCIT#C16370 "MMR"
-* $NCIT#C16371 "BDI"
-* $NCIT#C16382 "CPV"
-* $NCIT#C16378 "KHM"
-* $NCIT#C16379 "CMR"
-* $NCIT#C16380 "CAN"
-* $NCIT#C16391 "CYM"
-* $NCIT#C16409 "CAF"
-* $NCIT#C16412 "TCD"
-* $NCIT#C16427 "CHL"
-* $NCIT#C16428 "CHN"
-* $NCIT#C44482 "CXR"
-* $NCIT#C123744 "CPT"
-* $NCIT#C16445 "CCK"
-* $NCIT#C16449 "COL"
-* $NCIT#C16458 "COM"
-* $NCIT#C16467 "COG"
-* $NCIT#C17266 "COD"
-* $NCIT#C16469 "COK"
-* $NCIT#C123745 "XCS"
-* $NCIT#C16470 "CRI"
-* $NCIT#C16762 "CIV"
-* $NCIT#C16474 "HRV"
-* $NCIT#C16477 "CUB"
-* $NCIT#C101225 "CUW"
-* $NCIT#C16480 "CYP"
-* $NCIT#C17668 "CZE"
-* $NCIT#C16496 "DNK"
-* $NCIT#C49345 "XXD"
-* $NCIT#C123746 "DGA"
-* $NCIT#C16506 "DJI"
-* $NCIT#C16519 "DMA"
-* $NCIT#C16520 "DOM"
-* $NCIT#C16528 "ECU"
-* $NCIT#C16530 "EGY"
-* $NCIT#C16532 "SLV"
-* $NCIT#C123747 "XAZ"
-* $NCIT#C123748 "XCR"
-* $NCIT#C123749 "XCY"
-* $NCIT#C123750 "XKM"
-* $NCIT#C123751 "XKN"
-* $NCIT#C123752 "AX3"
-* $NCIT#C16557 "GNQ"
-* $NCIT#C16558 "ERI"
-* $NCIT#C16562 "EST"
-* $NCIT#C16563 "ETH"
-* $NCIT#C123753 "XEU"
-* $NCIT#C17954 "FLK"
-* $NCIT#C16573 "FRO"
-* $NCIT#C16582 "FJI"
-* $NCIT#C16584 "FIN"
-* $NCIT#C16592 "FRA"
-* $NCIT#C16593 "GUF"
-* $NCIT#C16594 "PYF"
-* $NCIT#C20105 "ATF"
-* $NCIT#C16596 "GAB"
-* $NCIT#C16598 "GMB"
-* $NCIT#C123754 "XGZ"
-* $NCIT#C16634 "GEO"
-* $NCIT#C16636 "DEU"
-* $NCIT#C26330 "GHA"
-* $NCIT#C16638 "GIB"
-* $NCIT#C123755 "XGL"
-* $NCIT#C16645 "GRC"
-* $NCIT#C16646 "GRL"
-* $NCIT#C16647 "GRD"
-* $NCIT#C16651 "GLP"
-* $NCIT#C16652 "GUM"
-* $NCIT#C123756 "AX2"
-* $NCIT#C16654 "GTM"
-* $NCIT#C64375 "GGY"
-* $NCIT#C16655 "GIN"
-* $NCIT#C16656 "GNB"
-* $NCIT#C16657 "GUY"
-* $NCIT#C16660 "HTI"
-* $NCIT#C20106 "HMD"
-* $NCIT#C16694 "HND"
-* $NCIT#C16695 "HKG"
-* $NCIT#C123759 "XHO"
-* $NCIT#C16699 "HUN"
-* $NCIT#C16704 "ISL"
-* $NCIT#C16727 "IND"
-* $NCIT#C16728 "IDN"
-* $NCIT#C16755 "IRN"
-* $NCIT#C16756 "IRQ"
-* $NCIT#C16757 "IRL"
-* $NCIT#C44480 "IMN"
-* $NCIT#C16760 "ISR"
-* $NCIT#C16761 "ITA"
-* $NCIT#C16763 "JAM"
-* $NCIT#C123760 "XJM"
-* $NCIT#C16764 "JPN"
-* $NCIT#C123761 "XJV"
-* $NCIT#C64374 "JEY"
-* $NCIT#C123762 "XJA"
-* $NCIT#C16765 "JOR"
-* $NCIT#C123763 "XJN"
-* $NCIT#C20107 "KAZ"
-* $NCIT#C16769 "KEN"
-* $NCIT#C123764 "XKR"
-* $NCIT#C16639 "KIR"
-* $NCIT#C16773 "PRK"
-* $NCIT#C16774 "KOR"
-* $NCIT#C123740 "XKS"
-* $NCIT#C16775 "KWT"
-* $NCIT#C16771 "KGZ"
-* $NCIT#C16780 "LAO"
-* $NCIT#C16783 "LVA"
-* $NCIT#C16784 "LBN"
-* $NCIT#C16787 "LSO"
-* $NCIT#C16791 "LBR"
-* $NCIT#C16793 "LBY"
-* $NCIT#C16794 "LIE"
-* $NCIT#C16799 "LTU"
-* $NCIT#C16803 "LUX"
-* $NCIT#C16807 "MAC"
-* $NCIT#C17654 "MKD"
-* $NCIT#C16808 "MDG"
-* $NCIT#C16813 "MWI"
-* $NCIT#C16814 "MYS"
-* $NCIT#C16815 "MDV"
-* $NCIT#C16816 "MLI"
-* $NCIT#C16817 "MLT"
-* $NCIT#C16822 "MHL"
-* $NCIT#C16823 "MTQ"
-* $NCIT#C16826 "MRT"
-* $NCIT#C16827 "MUS"
-* $NCIT#C16828 "MYT"
-* $NCIT#C16850 "MEX"
-* $NCIT#C17881 "FSM"
-* $NCIT#C110919 "XMW"
-* $NCIT#C16871 "MDA"
-* $NCIT#C16874 "MCO"
-* $NCIT#C16875 "MNG"
-* $NCIT#C64378 "MNE"
-* $NCIT#C16876 "MSR"
-* $NCIT#C16878 "MAR"
-* $NCIT#C16882 "MOZ"
-* $NCIT#C16891 "NAM"
-* $NCIT#C16896 "NRU"
-* $NCIT#C123766 "XNV"
-* $NCIT#C16901 "NPL"
-* $NCIT#C16903 "NLD"
-* $NCIT#C16913 "NCL"
-* $NCIT#C16914 "NZL"
-* $NCIT#C16915 "NIC"
-* $NCIT#C16916 "NER"
-* $NCIT#C16917 "NGA"
-* $NCIT#C16918 "NIU"
-* $NCIT#C16919 "NFK"
-* $NCIT#C17882 "MNP"
-* $NCIT#C16920 "NOR"
-* $NCIT#C16933 "OMN"
-* $NCIT#C16949 "PAK"
-* $NCIT#C17733 "PLW"
-* $NCIT#C123767 "XPL"
-* $NCIT#C16951 "PAN"
-* $NCIT#C16952 "PNG"
-* $NCIT#C123768 "XPR"
-* $NCIT#C16953 "PRY"
-* $NCIT#C16972 "PER"
-* $NCIT#C16978 "PHL"
-* $NCIT#C16993 "PCN"
-* $NCIT#C17002 "POL"
-* $NCIT#C17006 "PRT"
-* $NCIT#C17043 "PRI"
-* $NCIT#C17045 "QAT"
-* $NCIT#C17095 "REU"
-* $NCIT#C17108 "ROU"
-* $NCIT#C17111 "RUS"
-* $NCIT#C17112 "RWA"
-* $NCIT#C83609 "BLM"
-* $NCIT#C17164 "SHN"
-* $NCIT#C17885 "KNA"
-* $NCIT#C17113 "LCA"
-* $NCIT#C83610 "MAF"
-* $NCIT#C17165 "SPM"
-* $NCIT#C17114 "VCT"
-* $NCIT#C17740 "WSM"
-* $NCIT#C17115 "SMR"
-* $NCIT#C17116 "STP"
-* $NCIT#C17117 "SAU"
-* $NCIT#C17121 "SEN"
-* $NCIT#C64377 "SRB"
-* $NCIT#C17129 "SYC"
-* $NCIT#C17130 "SLE"
-* $NCIT#C17134 "SGP"
-* $NCIT#C101226 "SXM"
-* $NCIT#C17669 "SVK"
-* $NCIT#C17138 "SVN"
-* $NCIT#C17148 "SLB"
-* $NCIT#C17149 "SOM"
-* $NCIT#C17151 "ZAF"
-* $NCIT#C20111 "SGS"
-* $NCIT#C97351 "SSD"
-* $NCIT#C17152 "ESP"
-* $NCIT#C123769 "XSP"
-* $NCIT#C17163 "LKA"
-* $NCIT#C17170 "SDN"
-* $NCIT#C17175 "SUR"
-* $NCIT#C123770 "XSV"
-* $NCIT#C17179 "SWZ"
-* $NCIT#C17180 "SWE"
-* $NCIT#C17181 "CHE"
-* $NCIT#C17182 "SYR"
-* $NCIT#C17184 "TWN"
-* $NCIT#C17183 "TJK"
-* $NCIT#C17185 "TZA"
-* $NCIT#C17192 "THA"
-* $NCIT#C17200 "TLS"
-* $NCIT#C17202 "TGO"
-* $NCIT#C17704 "TKL"
-* $NCIT#C17205 "TON"
-* $NCIT#C17217 "TTO"
-* $NCIT#C123771 "XTR"
-* $NCIT#C17221 "TUN"
-* $NCIT#C17222 "TUR"
-* $NCIT#C17223 "TKM"
-* $NCIT#C17224 "TCA"
-* $NCIT#C17225 "TUV"
-* $NCIT#C17228 "UGA"
-* $NCIT#C17229 "UKR"
-* $NCIT#C17232 "ARE"
-* $NCIT#C17233 "GBR"
-* $NCIT#C17234 "USA"
-* $NCIT#C123772 "AX1"
-* $NCIT#C17244 "URY"
-* $NCIT#C17246 "UZB"
-* $NCIT#C17247 "VUT"
-* $NCIT#C17249 "VAT"
-* $NCIT#C17250 "VEN"
-* $NCIT#C17252 "VNM"
-* $NCIT#C17653 "VGB"
-* $NCIT#C17255 "VIR"
-* $NCIT#C123773 "XWK"
-* $NCIT#C17259 "WLF"
-* $NCIT#C123774 "XWB"
-* $NCIT#C20113 "ESH"
-* $NCIT#C17264 "YEM"
-* $NCIT#C17267 "ZMB"
-* $NCIT#C17268 "ZWE"
-
-RuleSet: ISOtoGENCviaNCItMapping(ISOcode, ISOdisplay, GENCcode, GENCdisplay)
-* group.element[+].code = #{ISOcode} "{ISOdisplay}"
-* group.element[=].target.code = #{GENCcode} "{GENCdisplay}"
-* group.element[=].target.relationship = #equivalent
-
-Instance: ISOtoGENCviaNCIt
-InstanceOf: ConceptMap
-Usage: #definition
-* name = "ISOtoGENCviaNCItMap"
-* title = "ISO to GENC Country Code Mapping"
-* status = #draft
-* experimental = false
-* description = """Maps between ISO 3166-1-3 and GENC via the C code from NCIt. In FHIR ver 5.0.0, [SubstanceDefinition.sourceMaterial.countryOfOrigin](https://build.fhir.org/substancedefinition-definitions.html#SubstanceDefinition.sourceMaterial.countryOfOrigin)
-is bound to <https://build.fhir.org/valueset-country.html> which is all of ISO 3166 three letter codes. ONly use code that are present in 
- GENC."""
-* sourceScopeCanonical = "https://build.fhir.org/valueset-country.html"
-* targetScopeCanonical = "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/genc-country-codes"  
-* group.source = $Country
-* group.target = $GENC
-* insert ISOtoGENCviaNCItMapping(ABW, Aruba, C17884, ABW)
-* insert ISOtoGENCviaNCItMapping(AFG, Afghanistan, C16267, AFG)
-* insert ISOtoGENCviaNCItMapping(AGO, Angola, C16292, AGO)
-* insert ISOtoGENCviaNCItMapping(AIA, Anguilla, C20133, AIA)
-* insert ISOtoGENCviaNCItMapping(ALB, Albania, C16271, ALB)
-* insert ISOtoGENCviaNCItMapping(AND, Andorra, C16289, AND)
-* insert ISOtoGENCviaNCItMapping(ARE, United Arab Emirates, C17232, ARE)
-* insert ISOtoGENCviaNCItMapping(ARG, Argentina, C16305, ARG)
-* insert ISOtoGENCviaNCItMapping(ARM, Armenia, C16306, ARM)
-* insert ISOtoGENCviaNCItMapping(ASM, American Samoa, C17739, ASM)
-* insert ISOtoGENCviaNCItMapping(ATA, Antarctica, C18007, ATA)
-* insert ISOtoGENCviaNCItMapping(ATF, French Southern Territories, C20105, ATF)
-* insert ISOtoGENCviaNCItMapping(ATG, Antigua and Barbuda, C16303, ATG)
-* insert ISOtoGENCviaNCItMapping(AUS, Australia, C16311, AUS)
-* insert ISOtoGENCviaNCItMapping(AUT, Austria, C16312, AUT)
-* insert ISOtoGENCviaNCItMapping(AZE, Azerbaijan, C16316, AZE)
-* insert ISOtoGENCviaNCItMapping(BDI, Burundi, C16371, BDI)
-* insert ISOtoGENCviaNCItMapping(BEL, Belgium, C16329, BEL)
-* insert ISOtoGENCviaNCItMapping(BEN, Benin, C16333, BEN)
-* insert ISOtoGENCviaNCItMapping(BES, Bonaire\, Sint Eustatius and Saba, C101224, BES)
-* insert ISOtoGENCviaNCItMapping(BFA, Burkina Faso, C16369, BFA)
-* insert ISOtoGENCviaNCItMapping(BGD, Bangladesh, C16323, BGD)
-* insert ISOtoGENCviaNCItMapping(BGR, Bulgaria, C16368, BGR)
-* insert ISOtoGENCviaNCItMapping(BHR, Bahrain, C16322, BHR)
-* insert ISOtoGENCviaNCItMapping(BHS, Bahamas, C16321, BHS)
-* insert ISOtoGENCviaNCItMapping(BIH, Bosnia and Herzegovina, C16361, BIH)
-* insert ISOtoGENCviaNCItMapping(BLM, Saint Barthélemy, C83609, BLM)
-* insert ISOtoGENCviaNCItMapping(BLR, Belarus, C16372, BLR)
-* insert ISOtoGENCviaNCItMapping(BLZ, Belize, C16331, BLZ)
-* insert ISOtoGENCviaNCItMapping(BMU, Bermuda, C16334, BMU)
-* insert ISOtoGENCviaNCItMapping(BOL, Bolivia\,Plurinational State of, C16359, BOL)
-* insert ISOtoGENCviaNCItMapping(BRA, Brazil, C16364, BRA)
-* insert ISOtoGENCviaNCItMapping(BRB, Barbados, C16324, BRB)
-* insert ISOtoGENCviaNCItMapping(BRN, Brunei Darussalam, C16367, BRN)
-* insert ISOtoGENCviaNCItMapping(BTN, Bhutan, C16336, BTN)
-* insert ISOtoGENCviaNCItMapping(BVT, Bouvet Island, C20104, BVT)
-* insert ISOtoGENCviaNCItMapping(BWA, Botswana, C16363, BWA)
-* insert ISOtoGENCviaNCItMapping(CAF, Central African Republic, C16409, CAF)
-* insert ISOtoGENCviaNCItMapping(CAN, Canada, C16380, CAN)
-* insert ISOtoGENCviaNCItMapping(CCK, COCOS (KEELING\) ISLANDS, C16445, CCK)
-* insert ISOtoGENCviaNCItMapping(CHE, Switzerland, C17181, CHE)
-* insert ISOtoGENCviaNCItMapping(CHL, Chile, C16427, CHL)
-* insert ISOtoGENCviaNCItMapping(CHN, China, C16428, CHN)
-* insert ISOtoGENCviaNCItMapping(CIV, Côte d'Ivoire, C16762, CIV)
-* insert ISOtoGENCviaNCItMapping(CMR, Cameroon, C16379, CMR)
-* insert ISOtoGENCviaNCItMapping(COD, Congo\, the Democratic Republic of the, C17266, COD)
-* insert ISOtoGENCviaNCItMapping(COG, Congo, C16467, COG)
-* insert ISOtoGENCviaNCItMapping(COK, Cook Islands, C16469, COK)
-* insert ISOtoGENCviaNCItMapping(COL, Colombia, C16449, COL)
-* insert ISOtoGENCviaNCItMapping(COM, Comoros, C16458, COM)
-* insert ISOtoGENCviaNCItMapping(CPV, Cabo Verde, C16382, CPV)
-* insert ISOtoGENCviaNCItMapping(CRI, Costa Rica, C16470, CRI)
-* insert ISOtoGENCviaNCItMapping(CUB, Cuba, C16477, CUB)
-* insert ISOtoGENCviaNCItMapping(CUW, Curaçao, C101225, CUW)
-* insert ISOtoGENCviaNCItMapping(CXR, Christmas Island, C44482, CXR)
-* insert ISOtoGENCviaNCItMapping(CYM, Cayman Islands, C16391, CYM)
-* insert ISOtoGENCviaNCItMapping(CYP, Cyprus, C16480, CYP)
-* insert ISOtoGENCviaNCItMapping(CZE, Czechia, C17668, CZE)
-* insert ISOtoGENCviaNCItMapping(DEU, Germany, C16636, DEU)
-* insert ISOtoGENCviaNCItMapping(DJI, Djibouti, C16506, DJI)
-* insert ISOtoGENCviaNCItMapping(DMA, Dominica, C16519, DMA)
-* insert ISOtoGENCviaNCItMapping(DNK, Denmark, C16496, DNK)
-* insert ISOtoGENCviaNCItMapping(DOM, Dominican Republic, C16520, DOM)
-* insert ISOtoGENCviaNCItMapping(DZA, Algeria, C16274, DZA)
-* insert ISOtoGENCviaNCItMapping(ECU, Ecuador, C16528, ECU)
-* insert ISOtoGENCviaNCItMapping(EGY, Egypt, C16530, EGY)
-* insert ISOtoGENCviaNCItMapping(ERI, Eritrea, C16558, ERI)
-* insert ISOtoGENCviaNCItMapping(ESH, Western Sahara, C20113, ESH)
-* insert ISOtoGENCviaNCItMapping(ESP, Spain, C17152, ESP)
-* insert ISOtoGENCviaNCItMapping(EST, Estonia, C16562, EST)
-* insert ISOtoGENCviaNCItMapping(ETH, Ethiopia, C16563, ETH)
-* insert ISOtoGENCviaNCItMapping(FIN, Finland, C16584, FIN)
-* insert ISOtoGENCviaNCItMapping(FJI, Fiji, C16582, FJI)
-* insert ISOtoGENCviaNCItMapping(FLK, Falkland Islands (Malvinas\), FLK, FLK)	
-* insert ISOtoGENCviaNCItMapping(FRA, France, C16592, FRA)
-* insert ISOtoGENCviaNCItMapping(FRO, Faroe Islands, C16573, FRO)
-* insert ISOtoGENCviaNCItMapping(FSM, Micronesia\, Federated States of, C17881, FSM)
-* insert ISOtoGENCviaNCItMapping(GAB, Gabon, C16596, GAB)
-* insert ISOtoGENCviaNCItMapping(GBR, United Kingdom, C17233, GBR)
-* insert ISOtoGENCviaNCItMapping(GEO, Georgia, C16634, GEO)
-* insert ISOtoGENCviaNCItMapping(GGY, Guernsey, C64375, GGY)
-* insert ISOtoGENCviaNCItMapping(GHA, Ghana, C26330, GHA)
-* insert ISOtoGENCviaNCItMapping(GIB, Gibraltar, C16638, GIB)
-* insert ISOtoGENCviaNCItMapping(GIN, Guinea, C16655, GIN)
-* insert ISOtoGENCviaNCItMapping(GLP, Guadeloupe, C16651, GLP)
-* insert ISOtoGENCviaNCItMapping(GMB, Gambia, C16598, GMB)
-* insert ISOtoGENCviaNCItMapping(GNB, Guinea-Bissau, C16656, GNB)
-* insert ISOtoGENCviaNCItMapping(GNQ, Equatorial Guinea, C16557, GNQ)
-* insert ISOtoGENCviaNCItMapping(GRC, Greece, C16645, GRC)
-* insert ISOtoGENCviaNCItMapping(GRD, Grenada, C16647, GRD)
-* insert ISOtoGENCviaNCItMapping(GRL, Greenland, C16646, GRL)
-* insert ISOtoGENCviaNCItMapping(GTM, Guatemala, C16654, GTM)
-* insert ISOtoGENCviaNCItMapping(GUF, French Guiana, C16593, GUF)
-* insert ISOtoGENCviaNCItMapping(GUM, Guam, C16652, GUM)
-* insert ISOtoGENCviaNCItMapping(GUY, Guyana, C16657, GUY)
-* insert ISOtoGENCviaNCItMapping(HKG, Hong Kong, C16695, HKG)
-* insert ISOtoGENCviaNCItMapping(HMD, Heard Island and McDonald Islands, C20106, HMD)
-* insert ISOtoGENCviaNCItMapping(HND, Honduras, C16694, HND)
-* insert ISOtoGENCviaNCItMapping(HRV, Croatia, C16474, HRV)
-* insert ISOtoGENCviaNCItMapping(HTI, Haiti, C16660, HTI)
-* insert ISOtoGENCviaNCItMapping(HUN, Hungary, C16699, HUN)
-* insert ISOtoGENCviaNCItMapping(IDN, Indonesia, C16728, IDN)
-* insert ISOtoGENCviaNCItMapping(IMN, Isle of Man, C44480, IMN)
-* insert ISOtoGENCviaNCItMapping(IND, India, C16727, IND)
-* insert ISOtoGENCviaNCItMapping(IOT, British Indian Ocean Territory, C16365, IOT)
-* insert ISOtoGENCviaNCItMapping(IRL, Ireland, C16757, IRL)
-* insert ISOtoGENCviaNCItMapping(IRN, Iran\, Islamic Republic of, C16755, IRN)
-* insert ISOtoGENCviaNCItMapping(IRQ, Iraq, C16756, IRQ)
-* insert ISOtoGENCviaNCItMapping(ISL, Iceland, C16704, ISL)
-* insert ISOtoGENCviaNCItMapping(ISR, Israel, C16760, ISR)
-* insert ISOtoGENCviaNCItMapping(ITA, Italy, C16761, ITA)
-* insert ISOtoGENCviaNCItMapping(JAM, Jamaica, C16763, JAM)
-* insert ISOtoGENCviaNCItMapping(JEY, Jersey, C64374, JEY)
-* insert ISOtoGENCviaNCItMapping(JOR, Jordan, C16765, JOR)
-* insert ISOtoGENCviaNCItMapping(JPN, Japan, C16764, JPN)
-* insert ISOtoGENCviaNCItMapping(KAZ, Kazakhstan, C20107, KAZ)
-* insert ISOtoGENCviaNCItMapping(KEN, Kenya, C16769, KEN)
-* insert ISOtoGENCviaNCItMapping(KGZ, Kyrgyzstan, C16771, KGZ)
-* insert ISOtoGENCviaNCItMapping(KHM, Cambodia, C16378, KHM)
-* insert ISOtoGENCviaNCItMapping(KIR, Kiribati, C16639, KIR)
-* insert ISOtoGENCviaNCItMapping(KNA, Saint Kitts and Nevis, C17885, KNA)
-* insert ISOtoGENCviaNCItMapping(KOR, Korea\, Republic of, C16774, KOR)
-* insert ISOtoGENCviaNCItMapping(KWT, Kuwait, C16775, KWT)
-* insert ISOtoGENCviaNCItMapping(LAO, Lao People's Democratic Republic, C16780, LAO)
-* insert ISOtoGENCviaNCItMapping(LBN, Lebanon, C16784, LBN)
-* insert ISOtoGENCviaNCItMapping(LBR, Liberia, C16791, LBR)
-* insert ISOtoGENCviaNCItMapping(LBY, Libya, C16793, LBY)
-* insert ISOtoGENCviaNCItMapping(LCA, Saint Lucia, C17113, LCA)
-* insert ISOtoGENCviaNCItMapping(LIE, Liechtenstein, C16794, LIE)
-* insert ISOtoGENCviaNCItMapping(LKA, Sri Lanka, C17163, LKA)
-* insert ISOtoGENCviaNCItMapping(LSO, Lesotho, C16787, LSO)
-* insert ISOtoGENCviaNCItMapping(LTU, Lithuania, C16799, LTU)
-* insert ISOtoGENCviaNCItMapping(LUX, Luxembourg, C16803, LUX)
-* insert ISOtoGENCviaNCItMapping(LVA, Latvia, C16783, LVA)
-* insert ISOtoGENCviaNCItMapping(MAC, Macao, C16807, MAC)
-* insert ISOtoGENCviaNCItMapping(MAF, Saint Martin (French part\), MAF, MAF)	
-* insert ISOtoGENCviaNCItMapping(MAR, Morocco, C16878, MAR)
-* insert ISOtoGENCviaNCItMapping(MCO, Monaco, C16874, MCO)
-* insert ISOtoGENCviaNCItMapping(MDA, Moldova\, Republic of, C16871, MDA)
-* insert ISOtoGENCviaNCItMapping(MDG, Madagascar, C16808, MDG)
-* insert ISOtoGENCviaNCItMapping(MDV, Maldives, C16815, MDV)
-* insert ISOtoGENCviaNCItMapping(MEX, Mexico, C16850, MEX)
-* insert ISOtoGENCviaNCItMapping(MHL, Marshall Islands, C16822, MHL)
-* insert ISOtoGENCviaNCItMapping(MKD, Macedonia\, the former Yugoslav Republic of, C17654, MKD)
-* insert ISOtoGENCviaNCItMapping(MLI, Mali, C16816, MLI)
-* insert ISOtoGENCviaNCItMapping(MLT, Malta, C16817, MLT)
-* insert ISOtoGENCviaNCItMapping(MMR, Myanmar, C16370, MMR)
-* insert ISOtoGENCviaNCItMapping(MNE, Montenegro, C64378, MNE)
-* insert ISOtoGENCviaNCItMapping(MNG, Mongolia, C16875, MNG)
-* insert ISOtoGENCviaNCItMapping(MNP, Northern Mariana Islands, C17882, MNP)
-* insert ISOtoGENCviaNCItMapping(MOZ, Mozambique, C16882, MOZ)
-* insert ISOtoGENCviaNCItMapping(MRT, Mauritania, C16826, MRT)
-* insert ISOtoGENCviaNCItMapping(MSR, Montserrat, C16876, MSR)
-* insert ISOtoGENCviaNCItMapping(MTQ, Martinique, C16823, MTQ)
-* insert ISOtoGENCviaNCItMapping(MUS, Mauritius, C16827, MUS)
-* insert ISOtoGENCviaNCItMapping(MWI, Malawi, C16813, MWI)
-* insert ISOtoGENCviaNCItMapping(MYS, Malaysia, C16814, MYS)
-* insert ISOtoGENCviaNCItMapping(MYT, Mayotte, C16828, MYT)
-* insert ISOtoGENCviaNCItMapping(NAM, Namibia, C16891, NAM)
-* insert ISOtoGENCviaNCItMapping(NCL, New Caledonia, C16913, NCL)
-* insert ISOtoGENCviaNCItMapping(NER, Niger, C16916, NER)
-* insert ISOtoGENCviaNCItMapping(NFK, Norfolk Island, C16919, NFK)
-* insert ISOtoGENCviaNCItMapping(NGA, Nigeria, C16917, NGA)
-* insert ISOtoGENCviaNCItMapping(NIC, Nicaragua, C16915, NIC)
-* insert ISOtoGENCviaNCItMapping(NIU, Niue, C16918, NIU)
-* insert ISOtoGENCviaNCItMapping(NLD, Netherlands, C16903, NLD)
-* insert ISOtoGENCviaNCItMapping(NOR, Norway, C16920, NOR)
-* insert ISOtoGENCviaNCItMapping(NPL, Nepal, C16901, NPL)
-* insert ISOtoGENCviaNCItMapping(NRU, Nauru, C16896, NRU)
-* insert ISOtoGENCviaNCItMapping(NZL, New Zealand, C16914, NZL)
-* insert ISOtoGENCviaNCItMapping(OMN, Oman, C16933, OMN)
-* insert ISOtoGENCviaNCItMapping(PAK, Pakistan, C16949, PAK)
-* insert ISOtoGENCviaNCItMapping(PAN, Panama, C16951, PAN)
-* insert ISOtoGENCviaNCItMapping(PCN, Pitcairn, C16993, PCN)
-* insert ISOtoGENCviaNCItMapping(PER, Peru, C16972, PER)
-* insert ISOtoGENCviaNCItMapping(PHL, Philippines, C16978, PHL)
-* insert ISOtoGENCviaNCItMapping(PLW, Palau, C17733, PLW)
-* insert ISOtoGENCviaNCItMapping(PNG, Papua New Guinea, C16952, PNG)
-* insert ISOtoGENCviaNCItMapping(POL, Poland, C17002, POL)
-* insert ISOtoGENCviaNCItMapping(PRI, Puerto Rico, C17043, PRI)
-* insert ISOtoGENCviaNCItMapping(PRK, Korea\, Democratic People's Republic of, C16773, PRK)
-* insert ISOtoGENCviaNCItMapping(PRT, Portugal, C17006, PRT)
-* insert ISOtoGENCviaNCItMapping(PRY, Paraguay, C16953, PRY)
-* insert ISOtoGENCviaNCItMapping(PYF, French Polynesia, C16594, PYF)
-* insert ISOtoGENCviaNCItMapping(QAT, Qatar, C17045, QAT)
-* insert ISOtoGENCviaNCItMapping(REU, Réunion, C17095, REU)
-* insert ISOtoGENCviaNCItMapping(ROU, Romania, C17108, ROU)
-* insert ISOtoGENCviaNCItMapping(RUS, Russian Federation, C17111, RUS)
-* insert ISOtoGENCviaNCItMapping(RWA, Rwanda, C17112, RWA)
-* insert ISOtoGENCviaNCItMapping(SAU, Saudi Arabia, C17117, SAU)
-* insert ISOtoGENCviaNCItMapping(SDN, Sudan, C17170, SDN)
-* insert ISOtoGENCviaNCItMapping(SEN, Senegal, C17121, SEN)
-* insert ISOtoGENCviaNCItMapping(SGP, Singapore, C17134, SGP)
-* insert ISOtoGENCviaNCItMapping(SGS, South Georgia and the South Sandwich Islands, C20111, SGS)
-* insert ISOtoGENCviaNCItMapping(SHN, Saint Helena\, Ascension and Tristan da Cunha, C17164, SHN)
-* insert ISOtoGENCviaNCItMapping(SLB, Solomon Islands, C17148, SLB)
-* insert ISOtoGENCviaNCItMapping(SLE, Sierra Leone, C17130, SLE)
-* insert ISOtoGENCviaNCItMapping(SLV, El Salvador, C16532, SLV)
-* insert ISOtoGENCviaNCItMapping(SMR, San Marino, C17115, SMR)
-* insert ISOtoGENCviaNCItMapping(SOM, Somalia, C17149, SOM)
-* insert ISOtoGENCviaNCItMapping(SPM, Saint Pierre and Miquelon, C17165, SPM)
-* insert ISOtoGENCviaNCItMapping(SRB, Serbia, C64377, SRB)
-* insert ISOtoGENCviaNCItMapping(SSD, South Sudan, C97351, SSD)
-* insert ISOtoGENCviaNCItMapping(STP, Sao Tome and Principe, C17116, STP)
-* insert ISOtoGENCviaNCItMapping(SUR, Suriname, C17175, SUR)
-* insert ISOtoGENCviaNCItMapping(SVK, Slovakia, C17669, SVK)
-* insert ISOtoGENCviaNCItMapping(SVN, Slovenia, C17138, SVN)
-* insert ISOtoGENCviaNCItMapping(SWE, Sweden, C17180, SWE)
-* insert ISOtoGENCviaNCItMapping(SWZ, Swaziland, C17179, SWZ)
-* insert ISOtoGENCviaNCItMapping(SXM, Sint Maarten (Dutch part\), SXM, SXM)	
-* insert ISOtoGENCviaNCItMapping(SYC, Seychelles, C17129, SYC)
-* insert ISOtoGENCviaNCItMapping(SYR, Syrian Arab Republic, C17182, SYR)
-* insert ISOtoGENCviaNCItMapping(TCA, Turks and Caicos Islands, C17224, TCA)
-* insert ISOtoGENCviaNCItMapping(TCD, Chad, C16412, TCD)
-* insert ISOtoGENCviaNCItMapping(TGO, Togo, C17202, TGO)
-* insert ISOtoGENCviaNCItMapping(THA, Thailand, C17192, THA)
-* insert ISOtoGENCviaNCItMapping(TJK, Tajikistan, C17183, TJK)
-* insert ISOtoGENCviaNCItMapping(TKL, Tokelau, C17704, TKL)
-* insert ISOtoGENCviaNCItMapping(TKM, Turkmenistan, C17223, TKM)
-* insert ISOtoGENCviaNCItMapping(TLS, Timor-Leste, C17200, TLS)
-* insert ISOtoGENCviaNCItMapping(TON, Tonga, C17205, TON)
-* insert ISOtoGENCviaNCItMapping(TTO, Trinidad and Tobago, C17217, TTO)
-* insert ISOtoGENCviaNCItMapping(TUN, Tunisia, C17221, TUN)
-* insert ISOtoGENCviaNCItMapping(TUR, Turkey, C17222, TUR)
-* insert ISOtoGENCviaNCItMapping(TUV, Tuvalu, C17225, TUV)
-* insert ISOtoGENCviaNCItMapping(TWN, Taiwan\, Province of China, C17184, TWN)
-* insert ISOtoGENCviaNCItMapping(TZA, Tanzania\, United Republic of, C17185, TZA)
-* insert ISOtoGENCviaNCItMapping(UGA, Uganda, C17228, UGA)
-* insert ISOtoGENCviaNCItMapping(UKR, Ukraine, C17229, UKR)
-* insert ISOtoGENCviaNCItMapping(URY, Uruguay, C17244, URY)
-* insert ISOtoGENCviaNCItMapping(USA, United States of America, C17234, USA)
-* insert ISOtoGENCviaNCItMapping(UZB, Uzbekistan, C17246, UZB)
-* insert ISOtoGENCviaNCItMapping(VAT, Holy See, C17249, VAT)
-* insert ISOtoGENCviaNCItMapping(VCT, Saint Vincent and the Grenadines, C17114, VCT)
-* insert ISOtoGENCviaNCItMapping(VEN, Venezuela\, Bolivarian Republic of, C17250, VEN)
-* insert ISOtoGENCviaNCItMapping(VGB, Virgin Islands\, British, C17653, VGB)
-* insert ISOtoGENCviaNCItMapping(VIR, Virgin Islands\, U.S., C17255, VIR)
-* insert ISOtoGENCviaNCItMapping(VNM, Viet Nam, C17252, VNM)
-* insert ISOtoGENCviaNCItMapping(VUT, Vanuatu, C17247, VUT)
-* insert ISOtoGENCviaNCItMapping(WLF, Wallis and Futuna, C17259, WLF)
-* insert ISOtoGENCviaNCItMapping(WSM, Samoa, C17740, WSM)
-* insert ISOtoGENCviaNCItMapping(YEM, Yemen, C17264, YEM)
-* insert ISOtoGENCviaNCItMapping(ZAF, South Africa, C17151, ZAF)
-* insert ISOtoGENCviaNCItMapping(ZMB, Zambia, C17267, ZMB)
-* insert ISOtoGENCviaNCItMapping(ZWE, Zimbabwe, C17268, ZWE)
+* $Country#ABW, "Aruba"
+* $Country#AFG, "Afghanistan"
+* $Country#AGO, "Angola"
+* $Country#AIA, "Anguilla"
+* $Country#ALB, "Albania"
+* $Country#AND, "Andorra"
+* $Country#ARE, "United Arab Emirates"
+* $Country#ARG, "Argentina"
+* $Country#ARM, "Armenia"
+* $Country#ASM, "American Samoa"
+* $Country#ATA, "Antarctica"
+* $Country#ATF, "French Southern Territories"
+* $Country#ATG, "Antigua and Barbuda"
+* $Country#AUS, "Australia"
+* $Country#AUT, "Austria"
+* $Country#AZE, "Azerbaijan"
+* $Country#BDI, "Burundi"
+* $Country#BEL, "Belgium"
+* $Country#BEN, "Benin"
+* $Country#BES, "Bonaire, Sint Eustatius and Saba"
+* $Country#BFA, "Burkina Faso"
+* $Country#BGD, "Bangladesh"
+* $Country#BGR, "Bulgaria"
+* $Country#BHR, "Bahrain"
+* $Country#BHS, "Bahamas"
+* $Country#BIH, "Bosnia and Herzegovina"
+* $Country#BLM, "Saint Barthélemy"
+* $Country#BLR, "Belarus"
+* $Country#BLZ, "Belize"
+* $Country#BMU, "Bermuda"
+* $Country#BOL, "Bolivia,Plurinational State of"
+* $Country#BRA, "Brazil"
+* $Country#BRB, "Barbados"
+* $Country#BRN, "Brunei Darussalam"
+* $Country#BTN, "Bhutan"
+* $Country#BVT, "Bouvet Island"
+* $Country#BWA, "Botswana"
+* $Country#CAF, "Central African Republic"
+* $Country#CAN, "Canada"
+* $Country#CCK, "Cocos (Keeling) Islands"
+* $Country#CHE, "Switzerland"
+* $Country#CHL, "Chile"
+* $Country#CHN, "China"
+* $Country#CIV, "Côte d'Ivoire"
+* $Country#CMR, "Cameroon"
+* $Country#COD, "Congo, the Democratic Republic of the"
+* $Country#COG, "Congo"
+* $Country#COK, "Cook Islands"
+* $Country#COL, "Colombia"
+* $Country#COM, "Comoros"
+* $Country#CPV, "Cabo Verde"
+* $Country#CRI, "Costa Rica"
+* $Country#CUB, "Cuba"
+* $Country#CUW, "Curaçao"
+* $Country#CXR, "Christmas Island"
+* $Country#CYM, "Cayman Islands"
+* $Country#CYP, "Cyprus"
+* $Country#CZE, "Czechia"
+* $Country#DEU, "Germany"
+* $Country#DJI, "Djibouti"
+* $Country#DMA, "Dominica"
+* $Country#DNK, "Denmark"
+* $Country#DOM, "Dominican Republic"
+* $Country#DZA, "Algeria"
+* $Country#ECU, "Ecuador"
+* $Country#EGY, "Egypt"
+* $Country#ERI, "Eritrea"
+* $Country#ESH, "Western Sahara"
+* $Country#ESP, "Spain"
+* $Country#EST, "Estonia"
+* $Country#ETH, "Ethiopia"
+* $Country#FIN, "Finland"
+* $Country#FJI, "Fiji"
+* $Country#FLK, "Falkland Islands (Malvinas)"
+* $Country#FRA, "France"
+* $Country#FRO, "Faroe Islands"
+* $Country#FSM, "Micronesia, Federated States of"
+* $Country#GAB, "Gabon"
+* $Country#GBR, "United Kingdom"
+* $Country#GEO, "Georgia"
+* $Country#GGY, "Guernsey"
+* $Country#GHA, "Ghana"
+* $Country#GIB, "Gibraltar"
+* $Country#GIN, "Guinea"
+* $Country#GLP, "Guadeloupe"
+* $Country#GMB, "Gambia"
+* $Country#GNB, "Guinea-Bissau"
+* $Country#GNQ, "Equatorial Guinea"
+* $Country#GRC, "Greece"
+* $Country#GRD, "Grenada"
+* $Country#GRL, "Greenland"
+* $Country#GTM, "Guatemala"
+* $Country#GUF, "French Guiana"
+* $Country#GUM, "Guam"
+* $Country#GUY, "Guyana"
+* $Country#HKG, "Hong Kong"
+* $Country#HMD, "Heard Island and McDonald Islands"
+* $Country#HND, "Honduras"
+* $Country#HRV"
+* $Country#HTI, "Haiti"
+* $Country#HUN, "Hungary"
+* $Country#IDN, "Indonesia"
+* $Country#IMN, "Isle of Man"
+* $Country#IND, "India"
+* $Country#IOT, "British Indian Ocean Territory"
+* $Country#IRL, "Ireland"
+* $Country#IRN, "Iran, Islamic Republic of"
+* $Country#IRQ, "Iraq"
+* $Country#ISL, "Iceland"
+* $Country#ISR, "Israel"
+* $Country#ITA, "Italy"
+* $Country#JAM, "Jamaica"
+* $Country#JEY, "Jersey"
+* $Country#JOR, "Jordan"
+* $Country#JPN, "Japan"
+* $Country#KAZ, "Kazakhstan"
+* $Country#KEN, "Kenya"
+* $Country#KGZ, "Kyrgyzstan"
+* $Country#KHM, "Cambodia"
+* $Country#KIR, "Kiribati"
+* $Country#KNA, "Saint Kitts and Nevis"
+* $Country#KOR, "Korea, Republic of"
+* $Country#KWT, "Kuwait"
+* $Country#LAO, "Lao People's Democratic Republic"
+* $Country#LBN, "Lebanon"
+* $Country#LBR, "Liberia"
+* $Country#LBY, "Libya"
+* $Country#LCA, "Saint Lucia"
+* $Country#LIE, "Liechtenstein"
+* $Country#LKA, "Sri Lanka"
+* $Country#LSO, "Lesotho"
+* $Country#LTU, "Lithuania"
+* $Country#LUX, "Luxembourg"
+* $Country#LVA, "Latvia"
+* $Country#MAC, "Macao"
+* $Country#MAF, "Saint Martin (French part)"
+* $Country#MAR, "Morocco"
+* $Country#MCO, "Monaco"
+* $Country#MDA, "Moldova, Republic of"
+* $Country#MDG, "Madagascar"
+* $Country#MDV, "Maldives"
+* $Country#MEX, "Mexico"
+* $Country#MHL, "Marshall Islands"
+* $Country#MKD, "Macedonia, the former Yugoslav Republic of"
+* $Country#MLI, "Mali"
+* $Country#MLT, "Malta"
+* $Country#MMR, "Myanmar"
+* $Country#MNE, "Montenegro"
+* $Country#MNG, "Mongolia"
+* $Country#MNP, "Northern Mariana Islands"
+* $Country#MOZ, "Mozambique"
+* $Country#MRT, "Mauritania"
+* $Country#MSR, "Montserrat"
+* $Country#MTQ, "Martinique"
+* $Country#MUS, "Mauritius"
+* $Country#MWI, "Malawi"
+* $Country#MYS, "Malaysia"
+* $Country#MYT, "Mayotte"
+* $Country#NAM, "Namibia"
+* $Country#NCL, "New Caledonia"
+* $Country#NER, "Niger"
+* $Country#NFK, "Norfolk Island"
+* $Country#NGA, "Nigeria"
+* $Country#NIC, "Nicaragua"
+* $Country#NIU, "Niue"
+* $Country#NLD, "Netherlands"
+* $Country#NOR, "Norway"
+* $Country#NPL, "Nepal"
+* $Country#NRU, "Nauru"
+* $Country#NZL, "New Zealand"
+* $Country#OMN, "Oman"
+* $Country#PAK, "Pakistan"
+* $Country#PAN, "Panama"
+* $Country#PCN, "Pitcairn"
+* $Country#PER, "Peru"
+* $Country#PHL, "Philippines"
+* $Country#PLW, "Palau"
+* $Country#PNG, "Papua New Guinea"
+* $Country#POL, "Poland"
+* $Country#PRI, "Puerto Rico"
+* $Country#PRK, "Korea, Democratic People's Republic of"
+* $Country#PRT, "Portugal"
+* $Country#PRY, "Paraguay"
+* $Country#PYF, "French Polynesia"
+* $Country#QAT, "Qatar"
+* $Country#REU, "Réunion"
+* $Country#ROU, "Romania"
+* $Country#RUS, "Russian Federation"
+* $Country#RWA, "Rwanda"
+* $Country#SAU, "Saudi Arabia"
+* $Country#SDN, "Sudan"
+* $Country#SEN, "Senegal"
+* $Country#SGP, "Singapore"
+* $Country#SGS, "South Georgia and the South Sandwich Islands"
+* $Country#SHN, "Saint Helena, Ascension and Tristan da Cunha"
+* $Country#SLB, "Solomon Islands"
+* $Country#SLE, "Sierra Leone"
+* $Country#SLV, "El Salvador"
+* $Country#SMR, "San Marino"
+* $Country#SOM, "Somalia"
+* $Country#SPM, "Saint Pierre and Miquelon"
+* $Country#SRB, "Serbia"
+* $Country#SSD, "South Sudan"
+* $Country#STP, "Sao Tome and Principe"
+* $Country#SUR, "Suriname"
+* $Country#SVK, "Slovakia"
+* $Country#SVN, "Slovenia"
+* $Country#SWE, "Sweden"
+* $Country#SWZ, "Swaziland"
+* $Country#SXM, "Sint Maarten (Dutch part)"
+* $Country#SYC, "Seychelles"
+* $Country#SYR, "Syrian Arab Republic"
+* $Country#TCA, "Turks and Caicos Islands"
+* $Country#TCD "Chad"
+* $Country#TGO, "Togo"
+* $Country#THA, "Thailand"
+* $Country#TJK, "Tajikistan"
+* $Country#TKL, "Tokelau"
+* $Country#TKM, "Turkmenistan"
+* $Country#TLS, "Timor-Leste"
+* $Country#TON, "Tonga"
+* $Country#TTO, "Trinidad and Tobago"
+* $Country#TUN, "Tunisia"
+* $Country#TUR, "Turkey"
+* $Country#TUV, "Tuvalu"
+* $Country#TWN, "Taiwan, Province of China"
+* $Country#TZA, "Tanzania, United Republic of"
+* $Country#UGA, "Uganda"
+* $Country#UKR, "Ukraine"
+* $Country#URY, "Uruguay"
+* $Country#USA, "United States of America"
+* $Country#UZB, "Uzbekistan"
+* $Country#VAT, "Holy See"
+* $Country#VCT, "Saint Vincent and the Grenadines"
+* $Country#VEN, "Venezuela, Bolivarian Republic of"
+* $Country#VGB, "Virgin Islands, British"
+* $Country#VIR, "Virgin Islands, U.S."
+* $Country#VNM, "Viet Nam"
+* $Country#VUT, "Vanuatu"
+* $Country#WLF, "Wallis and Futuna"
+* $Country#WSM, "Samoa"
+* $Country#YEM, "Yemen"
+* $Country#ZAF, "South Africa"
+* $Country#ZMB, "Zambia"
+* $Country#ZWE, "Zimbabwe"
