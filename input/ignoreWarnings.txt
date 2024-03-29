@@ -1,3 +1,224 @@
 == Suppressed Messages ==
 
+# Loinc codes not pertinent to Drug Substances and Drug Products.  This IG does not comply with US Core. See US Core Ticket FHIR-44844
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference').baseDefinition: US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+# National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug sponsors. See US Core Ticket FHIR-44845
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-sponsor-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+# Drug manufactures and testing sites are identified by FEI number and DUNS numbers. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used. See US Core Ticket FHIR-44846
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/mfg-test-site-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+# Supplier Organization conflicts with US Core Organization Profile on identifier codes. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug suppliers. See US Core Ticket FHIR-44853
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/supplier-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+# UNII Codes see https://terminology.hl7.org/UNII.html  Source: FDA Substance Registration System System:	The URI to identify UNII codes is http://fdasis.nlm.nih.gov.  This code system does not have a terminology server. ==
+INFORMATION: Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9: Bundle.entry[1].resource/*SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9: Bundle.entry[2].resource/*SubstanceDefinition/832f22b4-6f0c-41f8-9b7d-f26f55e9973c*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/6004e36e-7df9-469d-9b29-8e9f9bd7e95f: Bundle.entry[2].resource/*SubstanceDefinition/580c28ac-1a2c-49fa-9be3-de997da5edcf*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/7cdbb042-9275-4599-a1fe-08877846bf94: Bundle.entry[2].resource/*SubstanceDefinition/278736ef-2ddf-49e4-895c-3a9f34db36cf*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1: Bundle.entry[1].resource/*SubstanceDefinition/cd84a8b5-4e96-551c-15c6-c97c943eb38a*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1: Bundle.entry[5].resource/*SubstanceDefinition/0efb1188-04f0-44ba-bfe7-ca6169ca8703*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1: Bundle.entry[6].resource/*SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1: Bundle.entry[7].resource/*SubstanceDefinition/d3a11b25-e160-4688-b807-6383364096fd*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888: Bundle.entry[8].resource/*SubstanceDefinition/2d70d504-8cc6-4282-81d4-b20b0a98b78b*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888: Bundle.entry[9].resource/*SubstanceDefinition/fc878c4f-a98c-427c-816b-e03ccdf0e712*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888: Bundle.entry[10].resource/*SubstanceDefinition/393a14e7-3edc-4373-bbe5-9e569d504a1c*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888: Bundle.entry[11].resource/*SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67*/.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/0efb1188-04f0-44ba-bfe7-ca6169ca8703: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/278736ef-2ddf-49e4-895c-3a9f34db36cf: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/2d70d504-8cc6-4282-81d4-b20b0a98b78b: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/393a14e7-3edc-4373-bbe5-9e569d504a1c: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/580c28ac-1a2c-49fa-9be3-de997da5edcf: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/832f22b4-6f0c-41f8-9b7d-f26f55e9973c: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/cd84a8b5-4e96-551c-15c6-c97c943eb38a: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/d3a11b25-e160-4688-b807-6383364096fd: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/fc878c4f-a98c-427c-816b-e03ccdf0e712: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+# UNII Codes see https://terminology.hl7.org/UNII.html
+INFORMATION: SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a: SubstanceDefinition.code[0].code.coding[0]: A definition for CodeSystem 'https://fdasis.nlm.nih.gov' could not be found, so the code cannot be validated
+
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: CodeSystem/cmc-ncit-dummy: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: CodeSystem/cmc-product-name-types: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: CodeSystem/cmc-relationship-types: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: CodeSystem/pqcmc-comp-section-types: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: CodeSystem/pqcmc-test-category-codes: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ImplementationGuide/hl7.fhir.us.pq-cmc-fda: ImplementationGuide.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: PlanDefinition/37bf5cc0-33bf-478b-b84e-ccb35143ef6e: PlanDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89: PlanDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: PlanDefinition/a2cba634-a481-4b07-9bd4-62c7ada31e1b: PlanDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: PlanDefinition/aa514363-d43f-4052-b44e-b67aa4d6dee7: PlanDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: PlanDefinition/ab241f8c-d21e-4382-a70a-52190dbdf07e: PlanDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: PlanDefinition/cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93: PlanDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/cmc-document-reference: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/cmc-ectd-document-32p10: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/cmc-ectd-document-32s10: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/cmc-ectd-document-32s23: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/cmc-ectd-document-sp4151: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/cmc-sponsor-organization: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/content-percent: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/ectd-composition-32p10: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/ectd-composition-32s10: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/ectd-composition-32s23: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/ectd-composition-sp4151: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/mfg-test-site-organization: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/optional-denominator: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-additional-info-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-cmc-address: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-container-closure-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-hierarchical-level-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-ig-version: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-interpretation-code-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-order-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pq-specification-type-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-component: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-component-substance: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-drug-product-description: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-drug-substance-nomenclature-structure: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-drugproduct-container-closure: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-excipient: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-polymorphic-form: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-product-part: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-routine-drug-product: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/pqcmc-routine-drug-substance: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/strength-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: StructureDefinition/supplier-organization: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/capsule-classification-category: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/cmc-comp-section-types-vs: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/cmc-product-name-types-vs: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/cmc-relationship-types-vs: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-chemical-structure-datafile-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-closure-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-coating-purpose: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-conformance-to-criteria-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-container-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-drug-product-component-function-category-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-excipient-function-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-interpretation-code-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-manufactured-dose-form-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-name-part-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-org-identifier-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-product-characteristic: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-product-part-ingredient-physical-location: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-product-part-type: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-quality-benchmark-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-release-mechanism: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-release-profile: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-source-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-specification-status-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-specification-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-strength-operator-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-strength-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-substance-name-type: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-test-category-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-test-method-origin-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-test-usage-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/pqcmc-units-of-measure-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/spl-drug-route-of-administration-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/spl-pharmaceutical-dosage-form-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+INFORMATION: ValueSet/substance-classification: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 
