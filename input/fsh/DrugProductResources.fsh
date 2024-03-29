@@ -427,6 +427,7 @@ SME comment -- this is the marketed dosage form
 * route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
 * route.coding.code from SplDrugRouteofAdministrationTerminology (required)
 * insert ProprietaryAndNonProprietaryNames
+* name.usage.jurisdiction 0..0
 
 Profile: DrugProductContainerClosure
 Parent: MedicinalProductDefinition
@@ -439,6 +440,7 @@ Description: "Description and coding of the container closure system. Profile of
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * insert ProprietaryAndNonProprietaryNames
+* name.usage.jurisdiction 0..0
 
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
@@ -468,6 +470,7 @@ SME comment -- this is the marketed dosage form"""
   * coding 1..1 MS
   * coding from SplDrugRouteofAdministrationTerminology (required)
 * insert ProprietaryAndNonProprietaryNames
+* name.usage.jurisdiction 0..0
 * crossReference MS
 * crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"

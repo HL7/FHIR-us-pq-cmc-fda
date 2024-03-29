@@ -100,7 +100,7 @@ Title: "Drug Substance Nomenclature and Structure"
 Description: "LEVOTHYROXINE SODIUM ANHYDROUS"
 Usage: #example 
 * identifier.value = "levoThyroxine"
-* classification = $EMAIDMP#1 "Chemical"
+* classification = $NCIT#C48807 "Chemical"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
 * molecularWeight.amount = $NCIT#C41127 "u"
 * molecularWeight.amount.value = 798.85

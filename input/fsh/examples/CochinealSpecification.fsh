@@ -3,7 +3,7 @@ InstanceOf: ExcipientRaw
 Description: "The Excipient Raw representing Cochineal"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"
 * identifier.value = "Cochineal"
-* classification = $EMAIDMP#1 "Chemical"
+* classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134009 "Company Standard"
 // * manufacturer = Reference(urn:uuid:310aa241-52ff-4e7b-b956-7642f75fc18b)
 // * supplier = Reference(urn:uuid:fa889ced-1b1d-4467-a37b-112dc354a59e)
@@ -13,7 +13,7 @@ Description: "The Excipient Raw representing Cochineal"
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
 * sourceMaterial.genus.text = "Dactylopius"
 * sourceMaterial.species.text = "cochineal"
-* sourceMaterial.countryOfOrigin =  $Country#TUR "TURKEY" 
+* sourceMaterial.countryOfOrigin =  $Country#TUR "Turkey" 
 
 Instance: 37bf5cc0-33bf-478b-b84e-ccb35143ef6e
 InstanceOf: QualitySpecification

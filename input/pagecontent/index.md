@@ -208,7 +208,7 @@ The development of this Implementation Guide is an initiative funded by the US F
 At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
 
 #### IP Statements
-{% include ip-statements.xhtml %}
+{% include ip-statements.xhtml %} 
 
 This IP is temporary based on required bindings in some resources. The country codes from https://nsgreg.nga.mil will be used after the technical corrections to R5 are released.  The examples use the country codes from https://nsgreg.nga.mil.
 #### Dependencies

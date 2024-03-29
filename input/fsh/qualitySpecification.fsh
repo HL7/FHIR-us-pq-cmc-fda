@@ -69,7 +69,7 @@ Description: "A quality specification is for a drug product or drug substance (e
 * extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
 Examples: replaces method ABC, using the XYZ facility.
 """
-* identifier 0..1 MS
+* identifier 0..* MS
 * version 1..1 MS
 * version ^short = "Specification Version"
 * version ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined] Examples: 2.1, 13.2, ST1, 00001, 00002, companyname-001.

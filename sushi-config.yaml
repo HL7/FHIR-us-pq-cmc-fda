@@ -4,12 +4,13 @@ name: FHIR_pqcmc_fda
 title: "Pharmaceutical Quality - Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA"
 description: "The FDA PQ-CMC FHIR IG  is for submission of structured and standardized information regarding drug product quality, chemistry, manufacturing and processes controls.  This data is intended for submission to the US FDA by biopharmaceutical companies for the purpose of drug application review."
 
-status: draft
+status: active
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 0.1.24
+version: 1.0.0-ballot
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel: Build CI
+releaseLabel: STU 1-ballot
+
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
     valueCode: brr
@@ -76,31 +77,18 @@ parameters:
  excludemap: true
  apply-wg: true
  jira-code: pq-cmc
- # {joint-iso-itu-t(2) country(16) us(840) organization(1) hl7(113883) externalUseRoots(3) fDA(24)}
- # auto-oid-root: 2.16.840.1.113883.3.24
+ # {joint-iso-itu-t(2) country(16) us(840) organization(1) hl7(113883)}
+ auto-oid-root: 2.16.840.1.113883.4.642.40.36
  special-url: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-    - https://gsrs.ncats.nih.gov
-    - http://example.org/NCIt 
     - https://www.uniprot.org
     - urn:oid:1.3.6.1.4.1.5193
     - http://unitsofmeasure.org
     - urn:oid:1.3.6.1.4.1.519.1
     - urn:oid:2.16.840.1.113883.4.82
     - https://www.fda.gov/drugs/drug-approvals-and-databases/drug-establishments-current-registration-site
-    - https://www.ema.europa.eu
-    - https://geonames.nga.mil 
     - urn:ietf:rfc:3986
-    - http://hl7.org/fhir/substance-relationship-type
-    - http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-comp-section-types
-    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-    - http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-relationship-types
-    - http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-product-part-type
-    - http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-release-profile
-# apply-version: true
 #   validation: [allow-any-extensions, no-broken-links]
-dependencies:
-  fhir.dicom:
-    version: 2023.4.20230907
+
 
 
 

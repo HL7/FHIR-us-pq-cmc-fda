@@ -1,14 +1,13 @@
 CodeSystem: CmcRelationshipTypes
 Id: cmc-relationship-types
 Title: "Relationship Types Codes"
-Description: "Local value set of all codes in the Relationship Types code system."
+Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems"
 * ^caseSensitive = true
 * ^experimental = false
 
 * #parent "Parent"
 * #child "Child"
 * #primary "Primary"
-
 
 ValueSet: CmcRelationshipTypesVS
 Id: cmc-relationship-types-vs
@@ -17,7 +16,6 @@ Description: "Local value set of all codes in Relationship Types codes"
 
 * ^experimental = false
 * include codes from system CmcRelationshipTypes
-
 
 ValueSet: CmcProductNameTypesVS
 Id: cmc-product-name-types-vs
@@ -30,7 +28,7 @@ Description: "Local value set of all codes in the Code system."
 CodeSystem: CmcProductNameTypes
 Id: cmc-product-name-types
 Title: "Product Name Types Code Types"
-Description: "IG only code system of all codes in Code system."
+Description: "Indicates patent or trademark status. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems"
 
 * ^caseSensitive = true
 * ^experimental = false
@@ -41,16 +39,16 @@ Description: "IG only code system of all codes in Code system."
 CodeSystem: PqcmcTestCategoryCodes
 Id: pqcmc-test-category-codes
 Title: "Hierarchical Test Category Codes"
-Description: "Waiting for NCIt codes to be added; then this may be deleted."
+Description: "Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems). The hierarchy will presist in the IG."
 * ^caseSensitive = true
-* ^experimental = true
+* ^experimental = false
 * ^hierarchyMeaning = #is-a
 
 * #TC1 "Assay" "Tests which measure the content of the active ingredient in the drug substance or drug product.of a substance. Synonymous with strength or purity which is commonly used of define the content of the active ingredient in a drug product. Note: chiral purity, preservative content, Anti-Oxidant Concentration, Chelate Concentration, isomeric ratio"
 * #TC1 #SUBC2 "active ingredient" "Tests that verify the content and potency of a pharmaceutical substance that is intended effect in the diagnosis, cure, mitigation, treatment, or prevention of disease, or to affect the structure or any function of the body."
 * #TC1 #SUBC3 "amino acid content" "Methodology used to determine the amino acid composition or content of proteins, peptides, and other pharmaceutical preparations"
 * #TC1 #SUBC4 "bioburden" "Test that screens for aerobic mesophilic bacteria and fungi."
-* #TC1 #SUBC5 "counterion content" "Tests that measures the secondardy ion of a drug salt."
+* #TC1 #SUBC5 "counterion content" "Tests that measures the secondardy ion of a drug scharacalt."
 * #TC1 #SUBC6 "excipient" "Testing of the amount of material other than the active or adjuvant."
 * #TC1 #SUBC7 "host cell dna" "Measurement of DNA that comes from cell substrate used to make the viral particles."
 * #TC1 #SUBC8 "percent conjugate" "Test to determine the percentage of total protein that functions in interaction with other (non-polypeptide) chemical groups attached by covalent bonding."
@@ -172,7 +170,7 @@ Id: pqcmc-test-category-terminology
 Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * include codes from system pqcmc-test-category-codes
 
 ValueSet: PqcmcNamePartTerminology
@@ -180,7 +178,7 @@ Id: pqcmc-name-part-terminology
 Title: "Name Part Terminology"
 Description: "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 
 * $NamePartType#CON "container name"
 * $NamePartType#DEV "device name"
@@ -200,7 +198,7 @@ Id: pqcmc-product-part-type
 Title: "Product Part Type Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the product part type in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C203896 "Blend"
 * $NCIT#C42890 "Bead"
 * $NCIT#C203897 "Capsule Shell"
@@ -217,7 +215,7 @@ Id: pqcmc-product-part-ingredient-physical-location
 Title: "Ingredient Location Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the location of an ingredient within a product in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C203881 "Active core/granulate"
 * $NCIT#C203882 "Extragranular"
 * $NCIT#C203883 "Intragranular"
@@ -227,7 +225,7 @@ Id: pqcmc-release-profile
 Title: "Release Profile Terminology"
 Description: "A category of terminology used to qualify the information pertaining to release profile in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C42730 "Delayed-Release Profile"
 * $NCIT#C42713 "Extended-Release Profile"
 * $NCIT#C42669 "Immediate Release Profile"
@@ -238,7 +236,7 @@ Id: pqcmc-release-mechanism
 Title: "Release Mechanism Terminology"
 Description: "A category of terminology used to qualify the information pertaining to release mechanism in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C203359 "Matrix"
 * $NCIT#C203360 "Osmotic Pump"
 * $NCIT#C203361 "Reservoir"
@@ -248,7 +246,7 @@ Id: pqcmc-coating-purpose
 Title: "Coating Purpose Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the coating purpose in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C203884 "Appearance/Identification"
 * $NCIT#C203885 "Consumption Enhancement"
 * $NCIT#C203887 "Delayed Release"
@@ -267,7 +265,7 @@ Id: capsule-classification-category
 Title: "Capsule Shell Classification  Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the classification of a capsule in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C203348 "Hard Gelatin Capsule Shell"
 * $NCIT#C203349 "Hard HPMC Capsule Shell"
 * $NCIT#C203350 "Hard Pullulan Capsule Shell"
@@ -280,7 +278,7 @@ Id: pqcmc-substance-name-type
 Title: "Substance Name Type"
 Description: "A category of terminology used to quality the information pertaining to the type of substance name in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C71898 "Brand"
 * $NCIT#C97054 "Generic Name"
 * $NCIT#C203355 "GSRS Preferred Term"
@@ -293,34 +291,34 @@ Description: "A category of terminology used to quality the information pertaini
 * $NCIT#C95517 "ISBT-128 DIN"
 * $NCIT#C203354 "Company ID/Code"
 
-ValueSet: EVMPDSubstanceClassification
-Id: evmpd-substance-classification
-Title: "EVMPD Substance Classification"
-Description: "EudraVigilance eXtended Medicinal Product Dictionary (XEVMPD) substance classes"
+ValueSet: SubstanceClassification
+Id: substance-classification
+Title: "Substance Classification"
+Description: "Substance classes"
 
-* ^experimental = true
-* $EMAIDMP#1 "Chemical"
-* $EMAIDMP#17 "Mixture"
-* $EMAIDMP#2 "Nucleic Acid"
-* $EMAIDMP#3 "Polymer"
-* $EMAIDMP#4 "Protein - Other"
-* $EMAIDMP#5 "Protein - Vaccine"
-* $EMAIDMP#7 "Structurally Diverse Substance - Immunoglobulin"
-* $EMAIDMP#6 "Structurally Diverse Substance - Vaccine"
-* $EMAIDMP#10 "Structurally Diverse Substance - Allergen"
-* $EMAIDMP#11 "Structurally Diverse Substance - Cell therapy"
-* $EMAIDMP#9 "Structurally Diverse Substance - Herbal"
-* $EMAIDMP#12 "Structurally Diverse Substance - Other"
-* $EMAIDMP#8 "Structurally Diverse Substance - Blood derived"
-
-
+* ^experimental = false
+* $NCIT#C48807 "Chemical"
+* $NCIT#C45305 "Mixture"
+* $NCIT#C706 "Nucleic Acids"
+* $NCIT#C48803 "Polymer"
+* $NCIT#C17021 "Protein"
+// * $NCIT#4 "Protein - Other"
+// * $NCIT#5 "Protein - Vaccine"
+*  $NCIT#C3641132 "Structurally Diverse Substance"
+// * $NCIT#7 "Structurally Diverse Substance - Immunoglobulin"
+// * $NCIT#6 "Structurally Diverse Substance - Vaccine"
+// * $NCIT#10 "Structurally Diverse Substance - Allergen"
+// * $NCIT#11 "Structurally Diverse Substance - Cell therapy"
+// * $NCIT#9 "Structurally Diverse Substance - Herbal"
+// * $NCIT#12 "Structurally Diverse Substance - Other"
+// * $NCIT#8 "Structurally Diverse Substance - Blood derived"
 
 ValueSet: PqcmcProductCharacteristic
 Id: pqcmc-product-characteristic
 Title: "Code System PQCMC Product Characteristic"
 Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
 
-* ^experimental = true
+* ^experimental = false
 
 * $NCIT#OvrRelsProf "Product Overall Release Profile"
 * $NCIT#OvrRelsMech "Product Overall Release Mechanism"
@@ -352,13 +350,13 @@ ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
 Title: "eCTD sections Terminology"
 Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a value set instead of the code system."
-* ^experimental = true
+* ^experimental = false
 * include codes from system PqcmcCompSectionTypes
 
 CodeSystem: PqcmcCompSectionTypes
 Id: pqcmc-comp-section-types
 Title: "Code System PQCMC Comp Section Types"
-Description: "Classification of a section of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes."
+Description: "Classification of a section of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)."
 
 * ^caseSensitive = true
 * ^experimental = false
@@ -444,7 +442,7 @@ Id: pqcmc-chemical-structure-datafile-type-terminology
 Title: "Chemical Structure Data File Type Terminology"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C54683 "InChI File (small molecule)"
 * $NCIT#C133997 "mmCIF (large molecules)"
 * $NCIT#C133910 "MOLFILE"
@@ -458,7 +456,7 @@ Id: pqcmc-closure-type-terminology
 Title: "Closure Type Terminology"
 Description: "Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C96113 "Child-resistant, Metal"
 * $NCIT#C96114 "Child-resistant, Plastic"
 * $NCIT#C96115 "Continuous Thread, Metal"
@@ -492,7 +490,7 @@ ValueSet: PqcmcConformanceCriteriaTerminology
 Id: pqcmc-conformance-to-criteria-terminology
 Title: "Conformance to Criteria Terminology"
 Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C80262 "Conforms"
 * $NCIT#C133998 "Does not conform"
 
@@ -501,7 +499,7 @@ Id: pqcmc-container-type-terminology
 Title: "Container Type Terminology"
 Description: "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C43165 "AMPULE"
 * $NCIT#C43166 "APPLICATOR"
 * $NCIT#C43167 "BAG"
@@ -581,7 +579,7 @@ Id: pqcmc-drug-product-component-function-category-terminology
 Title: "Drug Product Component Function Category Terminology"
 Description: "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C82533 "Active Ingredient"
 * $NCIT#C2140 "Adjuvant"
 * $NCIT#C42637 "Inactive Ingredient"
@@ -598,7 +596,7 @@ Id: pqcmc-excipient-function-terminology
 Title: "Excipient Function Terminology"
 Description: "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C176637 "Absorption Modifying Excipient"
 * $NCIT#C89528 "Adhesive Device"
 * $NCIT#C176642 "Adsorbent"
@@ -662,7 +660,7 @@ Id: pqcmc-interpretation-code-terminology
 Title: "Interpretation Code Terminology"
 Description: "Terminology used to qualify the information pertaining to numeric interpretation codes, Weight Operator codes and Amount Operator code in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
 * $NCIT#C61584 "MT (more than)"
@@ -675,7 +673,7 @@ Id: pqcmc-quality-benchmark-terminology
 Title: "Quality Benchmark Terminology"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C176793 "BP"
 * $NCIT#C134009 "Company Standard"
 * $NCIT#C134007 "EP"
@@ -687,7 +685,7 @@ Id: pqcmc-source-type-terminology
 Title: "Source Type Terminology"
 Description: "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C14182 "Animal"
 * $NCIT#C18634 "Animal Sources"
 * $NCIT#C48807 "Chemical"
@@ -701,7 +699,7 @@ Id: pqcmc-specification-status-terminology
 Title: "Specification Status Terminology"
 Description: "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C25425 "Approved"
 * $NCIT#C48660 "Not Applicable"
 * $NCIT#C134011 "Not Approved"
@@ -713,7 +711,7 @@ Id: pqcmc-specification-type-terminology
 Title: "Specification Type Terminology"
 Description: "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C134021 "Drug Product"
 * $NCIT#C134022 "Drug Substance"
 * $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
@@ -723,7 +721,7 @@ Id: pqcmc-org-identifier-type-terminology
 Title: "Organization-Site Identifier Terminology"
 Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
 * $NCIT#C134004 "FEI"
@@ -734,7 +732,7 @@ Id: pqcmc-strength-operator-terminology
 Title: "Strength Operator Terminology"
 Description: "Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C48793 "EQ"
 * $NCIT#C61585 "LT (less than)"
 * $NCIT#C61584 "MT (more than)"
@@ -747,7 +745,7 @@ Id: pqcmc-strength-type-terminology
 Title: "Strength Type Terminology"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C45420 "Activity"
 * $NCIT#C168628 "Mass"
 
@@ -756,7 +754,7 @@ Id: pqcmc-test-method-origin-terminology
 Title: "Test Method Origin Terminology"
 Description: "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C96164 "CFR"
 * $NCIT#C96102 "Compendial"
 * $NCIT#C96103 "Proprietary"
@@ -766,7 +764,7 @@ Id: pqcmc-test-usage-terminology
 Title: "Test Usage Terminology"
 Description: "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C134029 "Release"
 * $NCIT#C134030 "Stability"
 
@@ -775,7 +773,7 @@ Id: spl-pharmaceutical-dosage-form-terminology
 Title: "Pharmaceutical Dosage Form Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C100103 "CELLULAR SHEET"
 * $NCIT#C113106 "INJECTABLE FOAM"
 * $NCIT#C124794 "TABLET, CHEWABLE, EXTENDED RELEASE"
@@ -950,7 +948,7 @@ Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
 Note: Includes SPL Unit of Presentation Terminology"
 
-* ^experimental = true
+* ^experimental = false
 
 * $NCIT#C75765 "[arb'U]"
 * $NCIT#C92953 "[Amb'a'1'U]"
@@ -1030,7 +1028,7 @@ Id: spl-drug-route-of-administration-terminology
 Title: "Drug Route Of Administration Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product route of administration in the framework of the Structured Product Labeling documents."
 
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C132737 "Intracanalicular"
 * $NCIT#C28161 "INTRAMUSCULAR"
 * $NCIT#C38192 "AURICULAR (OTIC)"
@@ -1160,570 +1158,9 @@ ValueSet: PqcmcManufacturedDoseFormTerminology
 Id: pqcmc-manufactured-dose-form-terminology
 Title: "Manufactured Dose Form Terminology"
 Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
-* ^experimental = true
+* ^experimental = false
 * $NCIT#C48623 "NOT APPLICABLE"
 * $NCIT#C154554 "Lozenge Dosage Form Category"
 * $NCIT#C154433 "Capsule Dose Form Category"
 * $NCIT#C154605 "Tablet Dosage Form Category"
 
-CodeSystem: GENCcountryCodesCS
-Id: genc-country-codes-cs
-Title: "GENC Country Codes"
-Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
-* ^caseSensitive = true
-* ^experimental = true
-* #AFG "AFGHANISTAN"
-* #XQZ "AKROTIRI"
-* #ALB "ALBANIA"
-* #DZA "ALGERIA"
-* #ASM "AMERICAN SAMOA"
-* #AND "ANDORRA"
-* #AGO "ANGOLA"
-* #AIA "ANGUILLA"
-* #ATA "ANTARCTICA"
-* #ATG "ANTIGUA AND BARBUDA"
-* #ARG "ARGENTINA"
-* #ARM "ARMENIA"
-* #ABW "ARUBA"
-* #XAC "ASHMORE AND CARTIER ISLANDS"
-* #AUS "AUSTRALIA"
-* #AUT "AUSTRIA"
-* #AZE "AZERBAIJAN"
-* #BHS "BAHAMAS, THE"
-* #BHR "BAHRAIN"
-* #XBK "BAKER ISLAND"
-* #BGD "BANGLADESH"
-* #BRB "BARBADOS"
-* #XBI "BASSAS DA INDIA"
-* #BLR "BELARUS"
-* #BEL "BELGIUM"
-* #BLZ "BELIZE"
-* #BEN "BENIN"
-* #BMU "BERMUDA"
-* #BTN "BHUTAN"
-* #BOL "BOLIVIA"
-* #BES "BONAIRE, SINT EUSTATIUS, AND SABA"
-* #BIH "BOSNIA AND HERZEGOVINA"
-* #BWA "BOTSWANA"
-* #BVT "BOUVET ISLAND"
-* #BRA "BRAZIL"
-* #IOT "BRITISH INDIAN OCEAN TERRITORY"
-* #BRN "BRUNEI"
-* #BGR "BULGARIA"
-* #BFA "BURKINA FASO"
-* #MMR "BURMA"
-* #BDI "BURUNDI"
-* #CPV "CABO VERDE"
-* #KHM "CAMBODIA"
-* #CMR "CAMEROON"
-* #CAN "CANADA"
-* #CYM "CAYMAN ISLANDS"
-* #CAF "CENTRAL AFRICAN REPUBLIC"
-* #TCD "CHAD"
-* #CHL "CHILE"
-* #CHN "CHINA"
-* #CXR "CHRISTMAS ISLAND"
-* #CPT "CLIPPERTON ISLAND"
-* #CCK "COCOS (KEELING) ISLANDS"
-* #COL "COLOMBIA"
-* #COM "COMOROS"
-* #COG "CONGO (BRAZZAVILLE)"
-* #COD "CONGO (KINSHASA)"
-* #COK "COOK ISLANDS"
-* #XCS "CORAL SEA ISLANDS"
-* #CRI "COSTA RICA"
-* #CIV "CÔTE D'IVOIRE"
-* #HRV "CROATIA"
-* #CUB "CUBA"
-* #CUW "CURAÇAO"
-* #CYP "CYPRUS"
-* #CZE "CZECHIA"
-* #DNK "DENMARK"
-* #XXD "DHEKELIA"
-* #DGA "DIEGO GARCIA"
-* #DJI "DJIBOUTI"
-* #DMA "DOMINICA"
-* #DOM "DOMINICAN REPUBLIC"
-* #ECU "ECUADOR"
-* #EGY "EGYPT"
-* #SLV "EL SALVADOR"
-* #XAZ "ENTITY 1"
-* #XCR "ENTITY 2"
-* #XCY "ENTITY 3"
-* #XKM "ENTITY 4"
-* #XKN "ENTITY 5"
-* #AX3 "ENTITY 6"
-* #GNQ "EQUATORIAL GUINEA"
-* #ERI "ERITREA"
-* #EST "ESTONIA"
-* #ETH "ETHIOPIA"
-* #XEU "EUROPA ISLAND"
-* #FLK "FALKLAND ISLANDS (ISLAS MALVINAS)"
-* #FRO "FAROE ISLANDS"
-* #FJI "FIJI"
-* #FIN "FINLAND"
-* #FRA "FRANCE"
-* #GUF "FRENCH GUIANA"
-* #PYF "FRENCH POLYNESIA"
-* #ATF "FRENCH SOUTHERN AND ANTARCTIC LANDS"
-* #GAB "GABON"
-* #GMB "GAMBIA, THE"
-* #XGZ "GAZA STRIP"
-* #GEO "GEORGIA"
-* #DEU "GERMANY"
-* #GHA "GHANA"
-* #GIB "GIBRALTAR"
-* #XGL "GLORIOSO ISLANDS"
-* #GRC "GREECE"
-* #GRL "GREENLAND"
-* #GRD "GRENADA"
-* #GLP "GUADELOUPE"
-* #GUM "GUAM"
-* #AX2 "GUANTANAMO BAY NAVAL BASE"
-* #GTM "GUATEMALA"
-* #GGY "GUERNSEY"
-* #GIN "GUINEA"
-* #GNB "GUINEA-BISSAU"
-* #GUY "GUYANA"
-* #HTI "HAITI"
-* #HMD "HEARD ISLAND AND MCDONALD ISLANDS"
-* #HND "HONDURAS"
-* #HKG "HONG KONG"
-* #XHO "HOWLAND ISLAND"
-* #HUN "HUNGARY"
-* #ISL "ICELAND"
-* #IND "INDIA"
-* #IDN "INDONESIA"
-* #IRN "IRAN"
-* #IRQ "IRAQ"
-* #IRL "IRELAND"
-* #IMN "ISLE OF MAN"
-* #ISR "ISRAEL"
-* #ITA "ITALY"
-* #JAM "JAMAICA"
-* #XJM "JAN MAYEN"
-* #JPN "JAPAN"
-* #XJV "JARVIS ISLAND"
-* #JEY "JERSEY"
-* #XJA "JOHNSTON ATOLL"
-* #JOR "JORDAN"
-* #XJN "JUAN DE NOVA ISLAND"
-* #KAZ "KAZAKHSTAN"
-* #KEN "KENYA"
-* #XKR "KINGMAN REEF"
-* #KIR "KIRIBATI"
-* #PRK "KOREA, NORTH"
-* #KOR "KOREA, SOUTH"
-* #XKS "KOSOVO"
-* #KWT "KUWAIT"
-* #KGZ "KYRGYZSTAN"
-* #LAO "LAOS"
-* #LVA "LATVIA"
-* #LBN "LEBANON"
-* #LSO "LESOTHO"
-* #LBR "LIBERIA"
-* #LBY "LIBYA"
-* #LIE "LIECHTENSTEIN"
-* #LTU "LITHUANIA"
-* #LUX "LUXEMBOURG"
-* #MAC "MACAU"
-* #MKD "NORTH MACEDONIA"
-* #MDG "MADAGASCAR"
-* #MWI "MALAWI"
-* #MYS "MALAYSIA"
-* #MDV "MALDIVES"
-* #MLI "MALI"
-* #MLT "MALTA"
-* #MHL "MARSHALL ISLANDS"
-* #MTQ "MARTINIQUE"
-* #MRT "MAURITANIA"
-* #MUS "MAURITIUS"
-* #MYT "MAYOTTE"
-* #MEX "MEXICO"
-* #FSM "MICRONESIA, FEDERATED STATES OF"
-* #XMW "MIDWAY ISLANDS"
-* #MDA "MOLDOVA"
-* #MCO "MONACO"
-* #MNG "MONGOLIA"
-* #MNE "MONTENEGRO"
-* #MSR "MONTSERRAT"
-* #MAR "MOROCCO"
-* #MOZ "MOZAMBIQUE"
-* #NAM "NAMIBIA"
-* #NRU "NAURU"
-* #XNV "NAVASSA ISLAND"
-* #NPL "NEPAL"
-* #NLD "NETHERLANDS"
-* #NCL "NEW CALEDONIA"
-* #NZL "NEW ZEALAND"
-* #NIC "NICARAGUA"
-* #NER "NIGER"
-* #NGA "NIGERIA"
-* #NIU "NIUE"
-* #NFK "NORFOLK ISLAND"
-* #MNP "NORTHERN MARIANA ISLANDS"
-* #NOR "NORWAY"
-* #OMN "OMAN"
-* #PAK "PAKISTAN"
-* #PLW "PALAU"
-* #PSE "PALESTINIAN TERRITORY"
-* #XPL "PALMYRA ATOLL"
-* #PAN "PANAMA"
-* #PNG "PAPUA NEW GUINEA"
-* #XPR "PARACEL ISLANDS"
-* #PRY "PARAGUAY"
-* #PER "PERU"
-* #PHL "PHILIPPINES"
-* #PCN "PITCAIRN ISLANDS"
-* #POL "POLAND"
-* #PRT "PORTUGAL"
-* #PRI "PUERTO RICO"
-* #QAT "QATAR"
-* #REU "REUNION"
-* #ROU "ROMANIA"
-* #RUS "RUSSIA"
-* #RWA "RWANDA"
-* #BLM "SAINT BARTHELEMY"
-* #SHN "SAINT HELENA, ASCENSION, AND TRISTAN DA CUNHA"
-* #KNA "SAINT KITTS AND NEVIS"
-* #LCA "SAINT LUCIA"
-* #MAF "SAINT MARTIN"
-* #SPM "SAINT PIERRE AND MIQUELON"
-* #VCT "SAINT VINCENT AND THE GRENADINES"
-* #WSM "SAMOA"
-* #SMR "SAN MARINO"
-* #STP "SAO TOME AND PRINCIPE"
-* #SAU "SAUDI ARABIA"
-* #SEN "SENEGAL"
-* #SRB "SERBIA"
-* #SYC "SEYCHELLES"
-* #SLE "SIERRA LEONE"
-* #SGP "SINGAPORE"
-* #SXM "SINT MAARTEN"
-* #SVK "SLOVAKIA"
-* #SVN "SLOVENIA"
-* #SLB "SOLOMON ISLANDS"
-* #SOM "SOMALIA"
-* #ZAF "SOUTH AFRICA"
-* #SGS "SOUTH GEORGIA AND SOUTH SANDWICH ISLANDS"
-* #SSD "SOUTH SUDAN"
-* #ESP "SPAIN"
-* #XSP "SPRATLY ISLANDS"
-* #LKA "SRI LANKA"
-* #SDN "SUDAN"
-* #SUR "SURINAME"
-* #XSV "SVALBARD"
-* #SWZ "ESWATINI"
-* #SWE "SWEDEN"
-* #CHE "SWITZERLAND"
-* #SYR "SYRIA"
-* #TWN "TAIWAN"
-* #TJK "TAJIKISTAN"
-* #TZA "TANZANIA"
-* #THA "THAILAND"
-* #TLS "TIMOR-LESTE"
-* #TGO "TOGO"
-* #TKL "TOKELAU"
-* #TON "TONGA"
-* #TTO "TRINIDAD AND TOBAGO"
-* #XTR "TROMELIN ISLAND"
-* #TUN "TUNISIA"
-* #TUR "TURKEY"
-* #TKM "TURKMENISTAN"
-* #TCA "TURKS AND CAICOS ISLANDS"
-* #TUV "TUVALU"
-* #UGA "UGANDA"
-* #UKR "UKRAINE"
-* #ARE "UNITED ARAB EMIRATES"
-* #GBR "UNITED KINGDOM"
-* #USA "UNITED STATES"
-* #AX1 "UNKNOWN"
-* #URY "URUGUAY"
-* #UZB "UZBEKISTAN"
-* #VUT "VANUATU"
-* #VAT "VATICAN CITY"
-* #VEN "VENEZUELA"
-* #VNM "VIETNAM"
-* #VGB "VIRGIN ISLANDS, BRITISH"
-* #VIR "VIRGIN ISLANDS, U.S."
-* #XWK "WAKE ISLAND"
-* #WLF "WALLIS AND FUTUNA"
-* #XWB "WEST BANK"
-* #ESH "WESTERN SAHARA"
-* #YEM "YEMEN"
-* #ZMB "ZAMBIA"
-* #ZWE "ZIMBABWE"
-
-ValueSet: GENCcountryCodes
-Id: genc-country-codes
-Title: "GENC Country Code Values"
-Description: "The GENC Standard specifies an information model for representing names and codes of geopolitical entities and administrative subdivisions, with supporting information. A geopolitical entity is a region controlled by a political community having an organized government and possessing internal and external sovereignty, most often as a State but sometimes having a dependent relationship on another political authority, or a special sovereignty status. Geopolitical entities may be divided into administratively subordinate divisions. A GENC code (or, synonymously, an ISO 3166 code element) for a geopolitical entity or administrative subdivision is a unique designation of that concept within a set of similar concepts established by a suitable authority. This information model is based on that of ISO 3166 but extended to capture additional information required by U.S. Government stakeholders."
-* ^experimental = true
-* include codes from system GENCcountryCodesCS
-
-
-RuleSet: ISOtoGENCMapping(ISOcode, ISOdisplay, GENCcode, GENCdisplay)
-* group.element[+].code = #{ISOcode} "{ISOdisplay}"
-* group.element[=].target.code = #{GENCcode} "{GENCdisplay}"
-* group.element[=].target.relationship = #equivalent
-
-Instance: ISOtoGENC
-InstanceOf: ConceptMap
-Usage: #definition
-* name = "IsoToGencMap"
-* title = "ISO to GENC Country Code Mapping"
-* status = #draft
-* experimental = false
-* description = """Maps between ISO 3166-1-3 and GENC. In 6.0.0, [SubstanceDefinition.sourceMaterial.countryOfOrigin](https://build.fhir.org/substancedefinition-definitions.html#SubstanceDefinition.sourceMaterial.countryOfOrigin)
-is bound to <https://build.fhir.org/valueset-country.html> which is all of ISO 3166 including both 2 and 3 letter codes
-but should only be GENC."""
-* sourceScopeCanonical = "https://build.fhir.org/valueset-country.html"
-* targetScopeCanonical = "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/genc-country-codes"
-* group.source = $Country
-* group.target = $GENC
-* insert ISOtoGENCMapping(ABW, Aruba, ABW, Aruba)
-* insert ISOtoGENCMapping(AFG, Afghanistan, AFG, Afghanistan)
-* insert ISOtoGENCMapping(AGO, Angola, AGO, Angola)
-* insert ISOtoGENCMapping(AIA, Anguilla, AIA, Anguilla)
-* insert ISOtoGENCMapping(ALB, Albania, ALB, Albania)
-* insert ISOtoGENCMapping(AND, Andorra, AND, Andorra)
-* insert ISOtoGENCMapping(ARE, United Arab Emirates, ARE, United Arab Emirates)
-* insert ISOtoGENCMapping(ARG, Argentina, ARG, Argentina)
-* insert ISOtoGENCMapping(ARM, Armenia, ARM, Armenia)
-* insert ISOtoGENCMapping(ASM, American Samoa, ASM, American Samoa)
-* insert ISOtoGENCMapping(ATA, Antarctica, ATA, Antarctica)
-* insert ISOtoGENCMapping(ATF, French Southern Territories, ATF, French Southern and Antarctic Lands)
-* insert ISOtoGENCMapping(ATG, Antigua and Barbuda, ATG, Antigua and Barbuda)
-* insert ISOtoGENCMapping(AUS, Australia, AUS, Australia)
-* insert ISOtoGENCMapping(AUT, Austria, AUT, Austria)
-* insert ISOtoGENCMapping(AZE, Azerbaijan, AZE, Azerbaijan)
-* insert ISOtoGENCMapping(BDI, Burundi, BDI, Burundi)
-* insert ISOtoGENCMapping(BEL, Belgium, BEL, Belgium)
-* insert ISOtoGENCMapping(BEN, Benin, BEN, Benin)
-* insert ISOtoGENCMapping(BES, Bonaire\, Sint Eustatius and Saba, BES, Bonaire\, Sint Eustatius\, and Saba)
-* insert ISOtoGENCMapping(BFA, Burkina Faso, BFA, Burkina Faso)
-* insert ISOtoGENCMapping(BGD, Bangladesh, BGD, Bangladesh)
-* insert ISOtoGENCMapping(BGR, Bulgaria, BGR, Bulgaria)
-* insert ISOtoGENCMapping(BHR, Bahrain, BHR, Bahrain)
-* insert ISOtoGENCMapping(BHS, Bahamas, BHS, Bahamas\, The)
-* insert ISOtoGENCMapping(BIH, Bosnia and Herzegovina, BIH, Bosnia and Herzegovina)
-* insert ISOtoGENCMapping(BLM, Saint Barthélemy, BLM, Saint Barthelemy)
-* insert ISOtoGENCMapping(BLR, Belarus, BLR, Belarus)
-* insert ISOtoGENCMapping(BLZ, Belize, BLZ, Belize)
-* insert ISOtoGENCMapping(BMU, Bermuda, BMU, Bermuda)
-* insert ISOtoGENCMapping(BOL, Bolivia\, Plurinational State of, BOL, Bolivia)
-* insert ISOtoGENCMapping(BRA, Brazil, BRA, Brazil)
-* insert ISOtoGENCMapping(BRB, Barbados, BRB, Barbados)
-* insert ISOtoGENCMapping(BRN, Brunei Darussalam, BRN, Brunei)
-* insert ISOtoGENCMapping(BTN, Bhutan, BTN, Bhutan)
-* insert ISOtoGENCMapping(BVT, Bouvet Island, BVT, Bouvet Island)
-* insert ISOtoGENCMapping(BWA, Botswana, BWA, Botswana)
-* insert ISOtoGENCMapping(CAF, Central African Republic, CAF, Central African Republic)
-* insert ISOtoGENCMapping(CAN, Canada, CAN, Canada)
-* insert ISOtoGENCMapping(CCK, Cocos (Keeling\) Islands, CCK, Cocos (Keeling\) Islands)
-* insert ISOtoGENCMapping(CHE, Switzerland, CHE, Switzerland)
-* insert ISOtoGENCMapping(CHL, Chile, CHL, Chile)
-* insert ISOtoGENCMapping(CHN, China, CHN, China)
-* insert ISOtoGENCMapping(CIV, Côte d'Ivoire, CIV, Côte d'Ivoire)
-* insert ISOtoGENCMapping(CMR, Cameroon, CMR, Cameroon)
-* insert ISOtoGENCMapping(COD, Congo\, the Democratic Republic of the, COD, Congo (Kinshasa\))
-* insert ISOtoGENCMapping(COG, Congo, COG, Congo (Brazzaville\))
-* insert ISOtoGENCMapping(COK, Cook Islands, COK, Cook Islands (the\))
-* insert ISOtoGENCMapping(COL, Colombia, COL, Colombia)
-* insert ISOtoGENCMapping(COM, Comoros, COM, Comoros)
-* insert ISOtoGENCMapping(CPV, Cabo Verde, CPV, Cape Verde)
-* insert ISOtoGENCMapping(CRI, Costa Rica, CRI, Costa Rica)
-* insert ISOtoGENCMapping(CUB, Cuba, CUB, Cuba)
-* insert ISOtoGENCMapping(CUW, Curaçao, CUW, Curaçao)
-* insert ISOtoGENCMapping(CXR, Christmas Island, CXR, Christmas Island)
-* insert ISOtoGENCMapping(CYM, Cayman Islands, CYM, Cayman Islands (the\))
-* insert ISOtoGENCMapping(CYP, Cyprus, CYP, Cyprus)
-* insert ISOtoGENCMapping(CZE, Czechia, CZE, Czech Republic)
-* insert ISOtoGENCMapping(DEU, Germany, DEU, Germany)
-* insert ISOtoGENCMapping(DJI, Djibouti, DJI, Djibouti)
-* insert ISOtoGENCMapping(DMA, Dominica, DMA, Dominica)
-* insert ISOtoGENCMapping(DNK, Denmark, DNK, Denmark)
-* insert ISOtoGENCMapping(DOM, Dominican Republic, DOM, Dominican Republic (the\))
-* insert ISOtoGENCMapping(DZA, Algeria, DZA, Algeria)
-* insert ISOtoGENCMapping(ECU, Ecuador, ECU, Ecuador)
-* insert ISOtoGENCMapping(EGY, Egypt, EGY, Egypt)
-* insert ISOtoGENCMapping(ERI, Eritrea, ERI, Eritrea)
-* insert ISOtoGENCMapping(ESH, Western Sahara, ESH, Western Sahara)
-* insert ISOtoGENCMapping(ESP, Spain, ESP, Spain)
-* insert ISOtoGENCMapping(EST, Estonia, EST, Estonia)
-* insert ISOtoGENCMapping(ETH, Ethiopia, ETH, Ethiopia)
-* insert ISOtoGENCMapping(FIN, Finland, FIN, Finland)
-* insert ISOtoGENCMapping(FJI, Fiji, FJI, Fiji)
-* insert ISOtoGENCMapping(FLK, Falkland Islands (Malvinas\), FLK, Falkland Islands (Islas Malvinas\))
-* insert ISOtoGENCMapping(FRA, France, FRA, France)
-* insert ISOtoGENCMapping(FRO, Faroe Islands, FRO, Faroe Islands (the\))
-* insert ISOtoGENCMapping(FSM, Micronesia\, Federated States of, FSM, Micronesia\, Federated States of)
-* insert ISOtoGENCMapping(GAB, Gabon, GAB, Gabon)
-* insert ISOtoGENCMapping(GBR, United Kingdom, GBR, United Kingdom (the\))
-* insert ISOtoGENCMapping(GEO, Georgia, GEO, Georgia)
-* insert ISOtoGENCMapping(GGY, Guernsey, GGY, Guernsey)
-* insert ISOtoGENCMapping(GHA, Ghana, GHA, Ghana)
-* insert ISOtoGENCMapping(GIB, Gibraltar, GIB, Gibraltar)
-* insert ISOtoGENCMapping(GIN, Guinea, GIN, Guinea)
-* insert ISOtoGENCMapping(GLP, Guadeloupe, GLP, Guadeloupe)
-* insert ISOtoGENCMapping(GMB, Gambia, GMB, Gambia\, The)
-* insert ISOtoGENCMapping(GNB, Guinea-Bissau, GNB, Guinea-Bissau)
-* insert ISOtoGENCMapping(GNQ, Equatorial Guinea, GNQ, Equatorial Guinea)
-* insert ISOtoGENCMapping(GRC, Greece, GRC, Greece)
-* insert ISOtoGENCMapping(GRD, Grenada, GRD, Grenada)
-* insert ISOtoGENCMapping(GRL, Greenland, GRL, Greenland)
-* insert ISOtoGENCMapping(GTM, Guatemala, GTM, Guatemala)
-* insert ISOtoGENCMapping(GUF, French Guiana, GUF, French Guiana)
-* insert ISOtoGENCMapping(GUM, Guam, GUM, Guam)
-* insert ISOtoGENCMapping(GUY, Guyana, GUY, Guyana)
-* insert ISOtoGENCMapping(HKG, Hong Kong, HKG, Hong Kong)
-* insert ISOtoGENCMapping(HMD, Heard Island and McDonald Islands, HMD, Heard Island and McDonald Islands)
-* insert ISOtoGENCMapping(HND, Honduras, HND, Honduras)
-* insert ISOtoGENCMapping(HRV, Croatia, HRV, Croatia)
-* insert ISOtoGENCMapping(HTI, Haiti, HTI, Haiti)
-* insert ISOtoGENCMapping(HUN, Hungary, HUN, Hungary)
-* insert ISOtoGENCMapping(IDN, Indonesia, IDN, Indonesia)
-* insert ISOtoGENCMapping(IMN, Isle of Man, IMN, Isle of Man)
-* insert ISOtoGENCMapping(IND, India, IND, India)
-* insert ISOtoGENCMapping(IOT, British Indian Ocean Territory, IOT, British Indian Ocean Territory)
-* insert ISOtoGENCMapping(IRL, Ireland, IRL, Ireland)
-* insert ISOtoGENCMapping(IRN, Iran\, Islamic Republic of, IRN, Iran)
-* insert ISOtoGENCMapping(IRQ, Iraq, IRQ, Iraq)
-* insert ISOtoGENCMapping(ISL, Iceland, ISL, Iceland)
-* insert ISOtoGENCMapping(ISR, Israel, ISR, Israel)
-* insert ISOtoGENCMapping(ITA, Italy, ITA, Italy)
-* insert ISOtoGENCMapping(JAM, Jamaica, JAM, Jamaica)
-* insert ISOtoGENCMapping(JEY, Jersey, JEY, Jersey)
-* insert ISOtoGENCMapping(JOR, Jordan, JOR, Jordan)
-* insert ISOtoGENCMapping(JPN, Japan, JPN, Japan)
-* insert ISOtoGENCMapping(KAZ, Kazakhstan, KAZ, Kazakhstan)
-* insert ISOtoGENCMapping(KEN, Kenya, KEN, Kenya)
-* insert ISOtoGENCMapping(KGZ, Kyrgyzstan, KGZ, Kyrgyzstan)
-* insert ISOtoGENCMapping(KHM, Cambodia, KHM, Cambodia)
-* insert ISOtoGENCMapping(KIR, Kiribati, KIR, Kiribati)
-* insert ISOtoGENCMapping(KNA, Saint Kitts and Nevis, KNA, Saint Kitts and Nevis)
-* insert ISOtoGENCMapping(KOR, Korea\, Republic of, KOR, Korea\, South)
-* insert ISOtoGENCMapping(KWT, Kuwait, KWT, Kuwait)
-* insert ISOtoGENCMapping(LAO, Lao People's Democratic Republic, LAO, Laos)
-* insert ISOtoGENCMapping(LBN, Lebanon, LBN, Lebanon)
-* insert ISOtoGENCMapping(LBR, Liberia, LBR, Liberia)
-* insert ISOtoGENCMapping(LBY, Libya, LBY, Libya)
-* insert ISOtoGENCMapping(LCA, Saint Lucia, LCA, Saint Lucia)
-* insert ISOtoGENCMapping(LIE, Liechtenstein, LIE, Liechtenstein)
-* insert ISOtoGENCMapping(LKA, Sri Lanka, LKA, Sri Lanka)
-* insert ISOtoGENCMapping(LSO, Lesotho, LSO, Lesotho)
-* insert ISOtoGENCMapping(LTU, Lithuania, LTU, Lithuania)
-* insert ISOtoGENCMapping(LUX, Luxembourg, LUX, Luxembourg)
-* insert ISOtoGENCMapping(LVA, Latvia, LVA, Latvia)
-* insert ISOtoGENCMapping(MAC, Macao, MAC, Macau)
-* insert ISOtoGENCMapping(MAF, Saint Martin (French part\), MAF, Saint Martin)
-* insert ISOtoGENCMapping(MAR, Morocco, MAR, Morocco)
-* insert ISOtoGENCMapping(MCO, Monaco, MCO, Monaco)
-* insert ISOtoGENCMapping(MDA, Moldova\, Republic of, MDA, Moldova)
-* insert ISOtoGENCMapping(MDG, Madagascar, MDG, Madagascar)
-* insert ISOtoGENCMapping(MDV, Maldives, MDV, Maldives)
-* insert ISOtoGENCMapping(MEX, Mexico, MEX, Mexico)
-* insert ISOtoGENCMapping(MHL, Marshall Islands, MHL, Marshall Islands)
-* insert ISOtoGENCMapping(MKD, Macedonia\, the former Yugoslav Republic of, MKD, Macedonia)
-* insert ISOtoGENCMapping(MLI, Mali, MLI, Mali)
-* insert ISOtoGENCMapping(MLT, Malta, MLT, Malta)
-* insert ISOtoGENCMapping(MMR, Myanmar, MMR, Burma)
-* insert ISOtoGENCMapping(MNE, Montenegro, MNE, Montenegro)
-* insert ISOtoGENCMapping(MNG, Mongolia, MNG, Mongolia)
-* insert ISOtoGENCMapping(MNP, Northern Mariana Islands, MNP, Northern Mariana Islands)
-* insert ISOtoGENCMapping(MOZ, Mozambique, MOZ, Mozambique)
-* insert ISOtoGENCMapping(MRT, Mauritania, MRT, Mauritania)
-* insert ISOtoGENCMapping(MSR, Montserrat, MSR, Montserrat)
-* insert ISOtoGENCMapping(MTQ, Martinique, MTQ, Martinique)
-* insert ISOtoGENCMapping(MUS, Mauritius, MUS, Mauritius)
-* insert ISOtoGENCMapping(MWI, Malawi, MWI, Malawi)
-* insert ISOtoGENCMapping(MYS, Malaysia, MYS, Malaysia)
-* insert ISOtoGENCMapping(MYT, Mayotte, MYT, Mayotte)
-* insert ISOtoGENCMapping(NAM, Namibia, NAM, Namibia)
-* insert ISOtoGENCMapping(NCL, New Caledonia, NCL, New Caledonia)
-* insert ISOtoGENCMapping(NER, Niger, NER, Niger (the\))
-* insert ISOtoGENCMapping(NFK, Norfolk Island, NFK, Norfolk Island)
-* insert ISOtoGENCMapping(NGA, Nigeria, NGA, Nigeria)
-* insert ISOtoGENCMapping(NIC, Nicaragua, NIC, Nicaragua)
-* insert ISOtoGENCMapping(NIU, Niue, NIU, Niue)
-* insert ISOtoGENCMapping(NLD, Netherlands, NLD, Netherlands)
-* insert ISOtoGENCMapping(NOR, Norway, NOR, Norway)
-* insert ISOtoGENCMapping(NPL, Nepal, NPL, Nepal)
-* insert ISOtoGENCMapping(NRU, Nauru, NRU, Nauru)
-* insert ISOtoGENCMapping(NZL, New Zealand, NZL, New Zealand)
-* insert ISOtoGENCMapping(OMN, Oman, OMN, Oman)
-* insert ISOtoGENCMapping(PAK, Pakistan, PAK, Pakistan)
-* insert ISOtoGENCMapping(PAN, Panama, PAN, Panama)
-* insert ISOtoGENCMapping(PCN, Pitcairn, PCN, Pitcairn Islands)
-* insert ISOtoGENCMapping(PER, Peru, PER, Peru)
-* insert ISOtoGENCMapping(PHL, Philippines, PHL, Philippines)
-* insert ISOtoGENCMapping(PLW, Palau, PLW, Palau)
-* insert ISOtoGENCMapping(PNG, Papua New Guinea, PNG, Papua New Guinea)
-* insert ISOtoGENCMapping(POL, Poland, POL, Poland)
-* insert ISOtoGENCMapping(PRI, Puerto Rico, PRI, Puerto Rico)
-* insert ISOtoGENCMapping(PRK, Korea\, Democratic People's Republic of, PRK, Korea\, North)
-* insert ISOtoGENCMapping(PRT, Portugal, PRT, Portugal)
-* insert ISOtoGENCMapping(PRY, Paraguay, PRY, Paraguay)
-* insert ISOtoGENCMapping(PSE, Palestine\, State of, PSE, Palestinian Territory)
-* insert ISOtoGENCMapping(PYF, French Polynesia, PYF, French Polynesia)
-* insert ISOtoGENCMapping(QAT, Qatar, QAT, Qatar)
-* insert ISOtoGENCMapping(REU, Réunion, REU, Reunion)
-* insert ISOtoGENCMapping(ROU, Romania, ROU, Romania)
-* insert ISOtoGENCMapping(RUS, Russian Federation, RUS, Russia)
-* insert ISOtoGENCMapping(RWA, Rwanda, RWA, Rwanda)
-* insert ISOtoGENCMapping(SAU, Saudi Arabia, SAU, Saudi Arabia)
-* insert ISOtoGENCMapping(SDN, Sudan, SDN, Sudan (the\))
-* insert ISOtoGENCMapping(SEN, Senegal, SEN, Senegal)
-* insert ISOtoGENCMapping(SGP, Singapore, SGP, Singapore)
-* insert ISOtoGENCMapping(SGS, South Georgia and the South Sandwich Islands, SGS, South Georgia and South Sandwich Islands)
-* insert ISOtoGENCMapping(SHN, Saint Helena\, Ascension and Tristan da Cunha, SHN, Saint Helena\, Ascension\, and Tristan da Cunha)
-* insert ISOtoGENCMapping(SLB, Solomon Islands, SLB, Solomon Islands (the\))
-* insert ISOtoGENCMapping(SLE, Sierra Leone, SLE, Sierra Leone)
-* insert ISOtoGENCMapping(SLV, El Salvador, SLV, El Salvador)
-* insert ISOtoGENCMapping(SMR, San Marino, SMR, San Marino)
-* insert ISOtoGENCMapping(SOM, Somalia, SOM, Somalia)
-* insert ISOtoGENCMapping(SPM, Saint Pierre and Miquelon, SPM, Saint Pierre and Miquelon)
-* insert ISOtoGENCMapping(SRB, Serbia, SRB, Serbia)
-* insert ISOtoGENCMapping(SSD, South Sudan, SSD, South Sudan)
-* insert ISOtoGENCMapping(STP, Sao Tome and Principe, STP, Sao Tome and Principe)
-* insert ISOtoGENCMapping(SUR, Suriname, SUR, Suriname)
-* insert ISOtoGENCMapping(SVK, Slovakia, SVK, Slovakia)
-* insert ISOtoGENCMapping(SVN, Slovenia, SVN, Slovenia)
-* insert ISOtoGENCMapping(SWE, Sweden, SWE, Sweden)
-* insert ISOtoGENCMapping(SWZ, Swaziland, SWZ, Swaziland)
-* insert ISOtoGENCMapping(SXM, Sint Maarten (Dutch part\), SXM, Sint Maarten)
-* insert ISOtoGENCMapping(SYC, Seychelles, SYC, Seychelles)
-* insert ISOtoGENCMapping(SYR, Syrian Arab Republic, SYR, Syria)
-* insert ISOtoGENCMapping(TCA, Turks and Caicos Islands, TCA, Turks and Caicos Islands (the\))
-* insert ISOtoGENCMapping(TCD, Chad, TCD, Chad)
-* insert ISOtoGENCMapping(TGO, Togo, TGO, Togo)
-* insert ISOtoGENCMapping(THA, Thailand, THA, Thailand)
-* insert ISOtoGENCMapping(TJK, Tajikistan, TJK, Tajikistan)
-* insert ISOtoGENCMapping(TKL, Tokelau, TKL, Tokelau)
-* insert ISOtoGENCMapping(TKM, Turkmenistan, TKM, Turkmenistan)
-* insert ISOtoGENCMapping(TLS, Timor-Leste, TLS, Timor-Leste)
-* insert ISOtoGENCMapping(TON, Tonga, TON, Tonga)
-* insert ISOtoGENCMapping(TTO, Trinidad and Tobago, TTO, Trinidad and Tobago)
-* insert ISOtoGENCMapping(TUN, Tunisia, TUN, Tunisia)
-* insert ISOtoGENCMapping(TUR, Turkey, TUR, Turkey)
-* insert ISOtoGENCMapping(TUV, Tuvalu, TUV, Tuvalu)
-* insert ISOtoGENCMapping(TWN, Taiwan\, Province of China, TWN, Taiwan)
-* insert ISOtoGENCMapping(TZA, Tanzania\, United Republic of, TZA, Tanzania)
-* insert ISOtoGENCMapping(UGA, Uganda, UGA, Uganda)
-* insert ISOtoGENCMapping(UKR, Ukraine, UKR, Ukraine)
-* insert ISOtoGENCMapping(URY, Uruguay, URY, Uruguay)
-* insert ISOtoGENCMapping(USA, United States of America, USA, United States)
-* insert ISOtoGENCMapping(UZB, Uzbekistan, UZB, Uzbekistan)
-* insert ISOtoGENCMapping(VAT, Holy See, VAT, Vatican City)
-* insert ISOtoGENCMapping(VCT, Saint Vincent and the Grenadines, VCT, Saint Vincent and the Grenadines)
-* insert ISOtoGENCMapping(VEN, Venezuela\, Bolivarian Republic of, VEN, Venezuela)
-* insert ISOtoGENCMapping(VGB, Virgin Islands\, British, VGB, Virgin Islands\, British)
-* insert ISOtoGENCMapping(VIR, Virgin Islands\, U.S., VIR, Virgin Islands\, U.S.)
-* insert ISOtoGENCMapping(VNM, Viet Nam, VNM, Vietnam)
-* insert ISOtoGENCMapping(VUT, Vanuatu, VUT, Vanuatu)
-* insert ISOtoGENCMapping(WLF, Wallis and Futuna, WLF, Wallis and Futuna)
-* insert ISOtoGENCMapping(WSM, Samoa, WSM, Samoa)
-* insert ISOtoGENCMapping(YEM, Yemen, YEM, Yemen)
-* insert ISOtoGENCMapping(ZAF, South Africa, ZAF, South Africa)
-* insert ISOtoGENCMapping(ZMB, Zambia, ZMB, Zambia)
-* insert ISOtoGENCMapping(ZWE, Zimbabwe, ZWE, Zimbabwe)

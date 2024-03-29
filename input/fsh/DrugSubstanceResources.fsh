@@ -85,7 +85,7 @@ Description: "Any raw material intended for use in the manufacture of a drug sub
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
-* classification from EVMPDSubstanceClassification
+* classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
@@ -217,7 +217,7 @@ Description: "Provides sufficient information to identify an inactive substance 
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
-* classification from EVMPDSubstanceClassification
+* classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
@@ -275,7 +275,7 @@ Description: "Provides sufficient information to identify a drug substance. Prof
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
-* classification from EVMPDSubstanceClassification
+* classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 """
@@ -304,7 +304,7 @@ Description: "Substance General Information containting Drug Substance (Active I
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
-* classification from EVMPDSubstanceClassification
+* classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
@@ -568,7 +568,7 @@ It is accessible at https://www.uniprot.org/
 RuleSet: CountryOfOrigin
 * sourceMaterial.countryOfOrigin 0..1 MS 
   * obeys cmc-only-ISO-3166-1-alpha-3
+  * obeys cmc-iso-genc-overlap
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-//  * coding from GENCcountryCodes	
   * coding 1..1 MS
