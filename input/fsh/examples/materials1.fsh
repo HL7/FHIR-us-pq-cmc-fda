@@ -124,10 +124,10 @@ Usage: #example
 * identifier.value = "RawCitricacid"
 * version = "1.0"
 * title = "Raw Material (Carrageenan) Specification Example"
+* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
 * status = #active
 * subjectReference = Reference(urn:uuid:0efb1188-04f0-44ba-bfe7-ca6169ca8703)
 * date = 2023-11-28
-* useContext.valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * goal[+]
   * id = "e512320e-0ffb-47d9-922a-5415aaa4cb30"
   * description.text = "Viscous upon cooling"
@@ -367,10 +367,10 @@ Usage: #example
 * identifier.value = "CitricAcidSpecification"
 * version = "1.0"
 * title = "Citric acid specification Example"
+* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
 * status = #active
 * subjectReference = Reference(urn:uuid:fd84a8b5-9e96-451c-a5c6-097c943eb38a)
 * date = 2023-12-01
-* useContext.valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * goal[+]
   * id = "9bc2bfdf-c9b1-440a-bafe-89f2674341d4"
   * description.text = "White Solid"
@@ -467,10 +467,10 @@ Usage: #example
 * identifier.value = "WaterSpecification"
 * version = "1.0"
 * title = "Water Specification Example"
+* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
 * status = #active
 * subjectReference = Reference(urn:uuid:d3a11b25-e160-4688-b807-6383364096fd)
 * date = 2023-12-01
-* useContext.valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * goal[+]
   * id = "1779ee35-8725-4322-ae82-89ed499f6864"
   * description.text = "<=12 deg"

@@ -24,10 +24,10 @@ Usage: #example
 * identifier.value = "ExampleSpecification"
 * version = "1.0"
 * title = "Quality Specification for OXAZEPAM"
+* type.coding[ApprovalStatus] = $NCIT#C134011 "Not Approved"
 * status = #active
 * subjectReference = Reference(urn:uuid:89676a69-1fe7-422c-ab00-92abe4ef6ea9)
 * date = 2022-12-08
-* useContext.valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * goal[+]
   * id = "32649771-1290-4386-9cf7-7a72274f22b4"
   * description.text = "Average of 10 between 2-3 pH"
