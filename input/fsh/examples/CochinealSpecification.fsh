@@ -23,10 +23,10 @@ Description: "Quality Specification for Cochineal"
 * identifier.value = "CochinealSpecification"
 * version = "1.0"
 * title = "Cochineal specification Example"
+* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
 * status = #active
 * subjectReference = Reference(urn:uuid:278736ef-2ddf-49e4-895c-3a9f34db36cf)
 * date = 2023-12-01
-* useContext.valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * goal[+]
   * id = "e900181a-876c-4ed6-ac96-d5a73c3d6767"
   * description.text = "White Solid"
