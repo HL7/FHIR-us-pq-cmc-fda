@@ -218,3 +218,7 @@ INFORMATION: CodeSystem/cmc-product-name-types: CodeSystem: Most code systems de
 
 # Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide. Given more testing they will move to THO.
 INFORMATION: CodeSystem/cmc-relationship-types: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The code system is required by PlanDefinition.type. http://terminology.hl7.org/CodeSystem/plan-definition-type has maturity level 2.
+INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.snapshot.element[31].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|0.1.0
+INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.differential.element[11].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|0.1.0
