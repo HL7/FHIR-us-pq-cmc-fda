@@ -64,7 +64,8 @@ Description: "A quality specification is for a drug product or drug substance (e
 * meta.profile 1..1 MS
 * extension contains 
     pq-specification-type-extension named specificationType 1..1 MS and
-    pq-additional-info-extension named spec-additional-info 0..1 MS
+    pq-additional-info-extension named spec-additional-info 0..1 MS and
+    SDWorkGroup named work-group 0..1
 * extension[spec-additional-info] ^short = "Specification Additional Information"
 * extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
 Examples: replaces method ABC, using the XYZ facility.
@@ -82,6 +83,18 @@ Note: This may include the name of the drug substance, product or the raw materi
 * subtitle 0..1 MS
 * subtitle ^short = "Specification Subtitle"
 * subtitle ^definition = "An additional textual identification for the specification [Source: SME Defined]."
+* type 1..1 MS
+  * coding 2..2 MS
+  * coding ^slicing.discriminator.type = #value
+  * coding ^slicing.discriminator.path = "$this"
+  * coding ^slicing.rules = #closed
+  * coding ^slicing.description = "Slice on the coding itself"
+  * coding ^slicing.ordered = false
+  * coding contains 
+    DefinitionType 1..1 MS and
+    ApprovalStatus 1..1 MS
+  * coding[DefinitionType] = http://terminology.hl7.org/CodeSystem/plan-definition-type#workflow-definition "Workflow Definition"
+  * coding[ApprovalStatus] from PqcmcSpecificationStatusTerminology (required)
 * status MS
 * subject[x] 1..1 MS
 * subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
@@ -90,15 +103,6 @@ Note: This may include the name of the drug substance, product or the raw materi
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
 Note: This is the date a particular version of the specification was internally accepted by the submitter.
 """
-* useContext 1..1 MS
-* useContext ^short = "Specification Status"
-* useContext ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
-Examples: Approved, Not Approved, Reported in a CBE or AR.
-Note: There are instances when FDA does approve the Specifications in a supplement or an amendment where other information in the dossier has not changed.
-Note: This is different from Application Status"""
-* useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#workflow	"Workflow Setting"
-* useContext.valueCodeableConcept 1..1 MS
-* useContext.valueCodeableConcept.coding from PqcmcSpecificationStatusTerminology (required)
 * approvalDate  MS
 * approvalDate ^short = "Specification Status Date"
 * approvalDate ^definition = """The date on which the FDA approval status for a specification became effective. [Source: SME Defined]

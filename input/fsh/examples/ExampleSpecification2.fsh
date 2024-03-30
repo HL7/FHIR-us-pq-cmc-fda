@@ -40,10 +40,10 @@ Usage: #example
 * identifier.value = "ExampleSpecification2"
 * version = "1.0"
 * title = "Quality Specification for an API"
+* type.coding[ApprovalStatus] = $NCIT#C134010 "Tentatively Approved"
 * status = #active
 * subjectReference = Reference(urn:uuid:580c28ac-1a2c-49fa-9be3-de997da5edcf)
 * date = 2022-12-08
-* useContext.valueCodeableConcept = $NCIT#C134010 "Tentatively Approved"
 * approvalDate = 2022-12-08
 * goal[+]
   * id = "b304ed45-5295-4082-9827-f20e1ff0d1d3"
