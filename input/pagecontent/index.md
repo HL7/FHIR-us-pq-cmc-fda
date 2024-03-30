@@ -210,7 +210,6 @@ At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Res
 #### IP Statements
 {% include ip-statements.xhtml %} 
 
-This IP is temporary based on required bindings in some resources. The country codes from https://nsgreg.nga.mil will be used after the technical corrections to R5 are released.  The examples use the country codes from https://nsgreg.nga.mil.
 #### Dependencies
 {% include dependency-table.xhtml %}
 
