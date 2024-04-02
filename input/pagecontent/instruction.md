@@ -4,7 +4,7 @@ Each of the Composition profiles is contained in a specified bundle of the docum
 
 <div>{%include legend.svg%}</div>
 
-For more information about the profiles found in any of the diagrams, look on the [Artifacts page](Artifacts.html) for details about the specific requirements. 
+For more information about the profiles found in any of the diagrams, look on the [Artifacts page](artifacts.html) for details about the specific requirements. 
 
 ### Referencing Bundled Resources
 
