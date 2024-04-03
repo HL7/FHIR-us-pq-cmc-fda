@@ -567,8 +567,9 @@ It is accessible at https://www.uniprot.org/
 
 RuleSet: CountryOfOrigin
 * sourceMaterial.countryOfOrigin 0..1 MS 
-  * obeys cmc-only-ISO-3166-1-alpha-3
   * obeys cmc-iso-genc-overlap
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
   * coding 1..1 MS
+    * code 1..1 MS
+      * obeys cmc-only-ISO-3166-1-alpha-3

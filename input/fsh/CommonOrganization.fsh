@@ -112,14 +112,13 @@ Id: pq-cmc-address
 Description: "pq-specific Constraints on the Address datatype dealing with US addresses."
 * obeys addr-state
 * obeys addr-zip
-//* obeys CMC-county
 * line 1..2
 * city 1..1 MS
 * state 0..1 MS
 * postalCode 1..1 MS
 * country 1..1 MS
-* country ^short = "Country can either be a 3-letter country code or the full country name matching the code. The codes and full names are Target Code column in the ConceptMap: ISO to GENC Country Code Mapping"
-
+* country ^short = "Country must be a 3-letter country code. The codes and full names are Target Code column in the ConceptMap: ISO to GENC Country Code Mapping"
+  * obeys cmc-only-ISO-3166-1-alpha-3
 
 Invariant: addr-state
 Description: "If the country is USA, then the state and postal code exist"
@@ -131,12 +130,4 @@ Description: "If the country is USA, then the postal code is 5 digits with an op
 Expression: "country = 'USA' implies postalCode.matches('^[0-9]{5}(-[0-9]{4})?$')"
 Severity: #error
 
-Invariant: CMC-county
-Description: "Countrys are from GENC Country Codes Value Set"
-Expression: "(
-country.exists() implies
-country.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/genc-country-codes').exists()
-)"
-
-Severity: #error
 
