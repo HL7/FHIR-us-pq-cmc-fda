@@ -198,8 +198,8 @@ implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cm
 
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
-Description: "Country of origin must be a 3 letter country code"
-Expression: "coding.code.length() = 3"
+Description: "Country must be a 3 letter country code"
+Expression: "$this.length() = 3"
 
 Invariant: cmc-coating-indication-required
 Severity: #error
