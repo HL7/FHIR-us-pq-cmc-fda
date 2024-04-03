@@ -20,6 +20,11 @@ publisher:
   email: brr@lists.HL7.org
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
+dependencies:  
+  hl7.terminology: 5.5.0
+  hl7.terminology: 5.3.0
+
+
 menu:
   Table of Contents: toc.html
   Home: index.html
