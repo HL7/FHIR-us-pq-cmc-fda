@@ -5,10 +5,10 @@
   "mode" : "working",
   "status" : "ballot",
   "sequence" : "STU1",
-  "desc" : "The MAy 2024 Ballot Version is the first ballot of this implementation guide.",
+  "desc" : "The May 2024 Ballot Version is the first ballot of this implementation guide.",
   "first" : "true",
   "title" : "Pharmaceutical Quality - Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA",
   "ci-build" : "https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda",
   "category" : "Pharmaceutical",
-  "introduction" : "The FDA PQ-CMC FHIR IG  is for submission of structured and standardized information regarding drug product quality, chemistry, manufacturing and processes controls.  This data is intended for submission to the US FDA by biopharmaceutical companies for the purpose of drug application review."
+  "introduction" : "The FDA PQ-CMC FHIR IG is for submission of structured and standardized information regarding drug product quality, chemistry, manufacturing and processes controls.  This data is intended for submission to the US FDA by biopharmaceutical companies for the purpose of drug application review."
 }
