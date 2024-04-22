@@ -32,12 +32,12 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
     }
   }
 
-  node "DrugSubstance" as NN {
+  node "DrugSubstanceCharacterization" as NN {
 
     object "**Parent:** SubstanceDefintion" as obj3 {
 
       **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance.html]]
+      [[StructureDefinition-pqcmc-drug-substance-characterization.html]]
       **ValueSets:**
       Chemical Structure Data File Type Terminology
       Substance Classification
@@ -45,18 +45,16 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
     }
   }
 
-  node "DrugSubstanceImpurities" as N6 {
+    node "ImpuritySubstance" as N6 {
 
-    object "**Parent:** DrugSubstance" as obj2 {
+    object "**Parent:** SubstanceDefinition" as obj2 {
       **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-impurities.html]]
+      [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
       **ValueSets:**
-      Substance Classification
       Impurity Classification Terminology
       Chemical Structure Data File Type Terminology
     }
 
-  }
   node "Base64DocumentReference" as NB64 {
 
     object "**Parent:** DocumentReference"  as obj64 {

@@ -609,17 +609,6 @@ Example: This is the representation of the instrumental output for the molecule 
 """
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
-* molecularWeight 0..1 MS
-* molecularWeight ^short = "Molecular Weight"
-* molecularWeight ^definition = "The average mass of a molecule of a compound compared to ¹/₁₂ the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms. [Source: Merriam Webster]"
-* molecularWeight.amount 1..1 MS
-* molecularWeight.amount.unit ^short = "Molecular Weight UOM"
-* molecularWeight.amount.unit ^definition = """The labeled unit of measure for the molecular weight. [Source: Adapted for NCI EVS C117055]
- """
-* molecularWeight.amount.code 1..1 MS
-* molecularWeight.amount.code from PqcmcUnitsMeasureTerminology (required)
-
-
 * insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
 
