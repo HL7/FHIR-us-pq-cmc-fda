@@ -32,7 +32,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                   **ValueSets:**
-                  EVMPD Substance Classification
+                  Substance Classification
                   Quality Benchmark Terminology
             }
       }
@@ -44,7 +44,6 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   [[StructureDefinition-mfg-test-site-organization.html]]
                   **ValueSets:**
                   Testing Site and Organization Identifier Type Terminology
-                  GENC Country Codes
             }
       }
 
@@ -80,7 +79,6 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-cmc-sponsor-organization.html]]
                   **ValueSets:**
-                  GENC Country Codes
                   Testing Site and Organization Identifier Type Terminology
             }
       }

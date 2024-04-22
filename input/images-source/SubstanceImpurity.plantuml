@@ -28,7 +28,6 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
       **ValueSets:**
-      GENC Country Codes
       Testing Site and Organization Identifier Type Terminology
     }
   }
@@ -41,7 +40,7 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
       [[StructureDefinition-pqcmc-drug-substance.html]]
       **ValueSets:**
       Chemical Structure Data File Type Terminology
-      EVMPD Substance Classification
+      Substance Classification
       Units Of Measure Terminology
     }
   }
@@ -52,7 +51,7 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-impurities.html]]
       **ValueSets:**
-      EVMPD Substance Classification
+      Substance Classification
       Impurity Classification Terminology
       Chemical Structure Data File Type Terminology
     }

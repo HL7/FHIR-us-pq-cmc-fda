@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/pq-cmc-fda/2024May" ciUrl="https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda" defaultVersion="1.0.0-ballot" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/FHIR-us-pq-cmc" url="http://hl7.org/fhir/us/pq-cmc-fda">
-<version code="current" url="https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda"/>
-<version code="1.0.0-ballot" url="http://hl7.org/fhir/us/pq-cmc-fda/2024May"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/FHIR-us-pq-cmc" url="http://hl7.org/fhir/us/pq-cmc-fda">
+<version code="current" url=""/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -16,10 +15,15 @@
 <artifact id="DocumentReference/22bd989e-8056-494f-9bc1-195d13428179" key="DocumentReference-22bd989e-8056-494f-9bc1-195d13428179" name="Base64 Document Reference - L-thyroxine-3D-structure-CT1000583834.sdf"/>
 <artifact id="DocumentReference/d94ad7ac-b935-432f-bc68-312b6b8dcca7" key="DocumentReference-d94ad7ac-b935-432f-bc68-312b6b8dcca7" name="Base64 Document Reference - Levothyroid.png"/>
 <artifact id="DocumentReference/0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3" key="DocumentReference-0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3" name="Base64 Document Reference - Monosodium_D-thyroxine_hydrate.png"/>
+<artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
+<artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization Terminology"/>
 <artifact id="Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9" key="Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9" name="Bundle for 3.2.S.1"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p32" key="StructureDefinition-cmc-ectd-document-32p32" name="CMC eCTD 32P32 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32p55" key="StructureDefinition-cmc-ectd-document-32p55" name="CMC eCTD 32P55 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32s10" key="StructureDefinition-cmc-ectd-document-32s10" name="CMC eCTD 32S10 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32s23" key="StructureDefinition-cmc-ectd-document-32s23" name="CMC eCTD 32S23 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32s30" key="StructureDefinition-cmc-ectd-document-32s30" name="CMC eCTD 32S30 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-sp4151" key="StructureDefinition-cmc-ectd-document-sp4151" name="CMC eCTD SP4151 Document"/>
 <artifact id="Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888" key="Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888" name="CMCeCTDDocument32P10 bundle"/>
 <artifact id="ValueSet/capsule-classification-category" key="ValueSet-capsule-classification-category" name="Capsule Shell Classification Terminology"/>
@@ -42,11 +46,16 @@
 <artifact id="StructureDefinition/content-percent" key="StructureDefinition-content-percent" name="Content Percent"/>
 <artifact id="StructureDefinition/cmc-document-reference" key="StructureDefinition-cmc-document-reference" name="Document Reference Attachment"/>
 <artifact id="Organization/e165f057-5eed-4e64-8328-4438fc88fb1b" key="Organization-e165f057-5eed-4e64-8328-4438fc88fb1b" name="Drug Manufacturing Site - Vandechemie"/>
+<artifact id="StructureDefinition/pqcmc-product-batch-formula" key="StructureDefinition-pqcmc-product-batch-formula" name="Drug Product Batch Formula"/>
+<artifact id="StructureDefinition/pqcmc-dp-ingredient" key="StructureDefinition-pqcmc-dp-ingredient" name="Drug Product Batch Formula Ingredient"/>
 <artifact id="StructureDefinition/pqcmc-component" key="StructureDefinition-pqcmc-component" name="Drug Product Component"/>
 <artifact id="ValueSet/pqcmc-drug-product-component-function-category-terminology" key="ValueSet-pqcmc-drug-product-component-function-category-terminology" name="Drug Product Component Function Category Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drugproduct-container-closure" key="StructureDefinition-pqcmc-drugproduct-container-closure" name="Drug Product Container Closure"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-description" key="StructureDefinition-pqcmc-drug-product-description" name="Drug Product Description"/>
+<artifact id="StructureDefinition/pqcmc-drug-product-with-impurities" key="StructureDefinition-pqcmc-drug-product-with-impurities" name="Drug Product Impurities"/>
 <artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-characterization" key="StructureDefinition-pqcmc-drug-substance-characterization" name="Drug Substance"/>
+<artifact id="StructureDefinition/pqcmc-drug-product-substance-impurity" key="StructureDefinition-pqcmc-drug-product-substance-impurity" name="Drug Substance Impurity"/>
 <artifact id="SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166" key="SubstanceDefinition-21b6b724-507e-4cf4-a462-93334b98d166" name="Drug Substance Nomenclature and Structure"/>
 <artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="DrugProductComponent example for an excipient - Maize starch"/>
 <artifact deprecated="true" id="CodeSystem/cmc-ema-dummy" key="CodeSystem-cmc-ema-dummy" name="Dummy EMA Codesystem"/>
@@ -71,6 +80,7 @@
 <artifact id="StructureDefinition/pq-hierarchical-level-extension" key="StructureDefinition-pq-hierarchical-level-extension" name="Hierarchical Level"/>
 <artifact id="CodeSystem/pqcmc-test-category-codes" key="CodeSystem-pqcmc-test-category-codes" name="Hierarchical Test Category Codes"/>
 <artifact deprecated="true" id="ConceptMap/ISOtoGENC" key="ConceptMap-ISOtoGENC" name="ISO to GENC Country Code Mapping"/>
+<artifact id="ValueSet/pqcmc-impurity-classification-terminology" key="ValueSet-pqcmc-impurity-classification-terminology" name="Impurity Classification Terminology"/>
 <artifact id="SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67" key="SubstanceDefinition-496f83ad-2365-4b12-8672-a349d99f7d67" name="IngredComponentSubstance example showing the use of the sourceMaterial backbone element"/>
 <artifact id="ValueSet/pqcmc-product-part-ingredient-physical-location" key="ValueSet-pqcmc-product-part-ingredient-physical-location" name="Ingredient Location Terminology"/>
 <artifact id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>
@@ -87,6 +97,7 @@
 <artifact id="StructureDefinition/pqcmc-polymorphic-form" key="StructureDefinition-pqcmc-polymorphic-form" name="Polymorphic Form"/>
 <artifact id="SubstanceDefinition/832f22b4-6f0c-41f8-9b7d-f26f55e9973c" key="SubstanceDefinition-832f22b4-6f0c-41f8-9b7d-f26f55e9973c" name="Polymorphic Form Example"/>
 <artifact id="StructureDefinition/pq-cmc-address" key="StructureDefinition-pq-cmc-address" name="PqAddress"/>
+<artifact id="StructureDefinition/pq-product-batch-ingredient-extension" key="StructureDefinition-pq-product-batch-ingredient-extension" name="Product Batch Ingredient Extension"/>
 <artifact id="CodeSystem/cmc-product-name-types" key="CodeSystem-cmc-product-name-types" name="Product Name Types Code Types"/>
 <artifact id="ValueSet/cmc-product-name-types-vs" key="ValueSet-cmc-product-name-types-vs" name="Product Name Types Terminology"/>
 <artifact id="ValueSet/pqcmc-product-part-type" key="ValueSet-pqcmc-product-part-type" name="Product Part Type Terminology"/>
@@ -125,12 +136,15 @@
 <artifact id="Organization/e99bddfa-c1b5-435b-bbe8-24816b4e23e5" key="Organization-e99bddfa-c1b5-435b-bbe8-24816b4e23e5" name="Vidinaid"/>
 <artifact id="PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89" key="PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89" name="Water Specification Example"/>
 <artifact id="MedicinalProductDefinition/89676a69-1fe7-422c-ab00-92abe4ef6ea9" key="MedicinalProductDefinition-89676a69-1fe7-422c-ab00-92abe4ef6ea9" name="drug product for specification"/>
+<artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
 <artifact id="Composition/260f5aa3-23d2-4999-8e5f-70f247390ee5" key="Composition-260f5aa3-23d2-4999-8e5f-70f247390ee5" name="eCTD Composition for 3.2.S.1"/>
 <artifact id="Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1" key="Bundle-7ce2088d-d281-4e2f-9a25-120a1f9805d1" name="eCTD Document for 32S23"/>
 <artifact id="Composition/55d92f43-e328-4011-bbcf-744e3afd954f" key="Composition-55d92f43-e328-4011-bbcf-744e3afd954f" name="eCTD Drug Substance Specification Composition SP4151"/>
+<artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
 <artifact id="Composition/d332acdf-4874-407b-9950-528f14c6bea2" key="Composition-d332acdf-4874-407b-9950-528f14c6bea2" name="eCTD Product Specification Composition SP4151"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
+<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterization"/>
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Terminology"/>
@@ -144,7 +158,10 @@
 <page key="eCTD32S10" name="General Information (3.2.S.1)"/>
 <page key="instruction" name="General Instructions"/>
 <page key="index" name="Home"/>
+<page key="eCTD32P32" name="Product Batch Formula"/>
+<page key="eCTD32P55" name="Product Characterization of Impurities"/>
 <page key="eCTDSP4151" name="Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"/>
 <page key="eCTD32S23" name="Substance Control of Materials (3.2.S.2.3)"/>
 <page key="toc" name="Table of Contents"/>
+<page key="eCTD32S30" name="eCTD Substance Characterisation"/>
 </specification>

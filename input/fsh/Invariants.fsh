@@ -82,15 +82,15 @@ Description: "A document must have an identifier with a system and a value"
 Expression: "type = 'document' implies (identifier.exists(system.exists() and value.exists()))"
 Severity: #error
 
-//Invariant: cmc-percent-quantity
-//Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-//Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
-//Severity: #error
+Invariant: cmc-percent-quantity
+Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
+Severity: #error
 
-//Invariant: cmc-percent-quantity-ingredient
-//Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-//Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
-//Severity: #error
+Invariant: cmc-percent-quantity-ingredient
+Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
+Severity: #error
 
 Invariant: cmc-link-required
 Description: "Action linkId is required for alternate tests"

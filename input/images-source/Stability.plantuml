@@ -109,7 +109,6 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      [[StructureDefinition-mfg-test-site-organization.html]]
                      **ValueSets:**
                      Testing Site and Organization Identifier Type Terminology
-                     GENC Country Codes
               }
        }
 
@@ -211,7 +210,6 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      **Reference:**
                      [[StructureDefinition-cmc-sponsor-organization.html]]
                      **ValueSets:**
-                     GENC Country Codes
                      Testing Site and Organization Identifier Type Terminology
               }
        }

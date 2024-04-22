@@ -54,7 +54,6 @@ package "eCTD Heading 3.2.S.6.0 Container Closure System Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
       **ValueSets:**
-      GENC Country Codes
       Testing Site and Organization Identifier Type Terminology
     }
   }
