@@ -64,7 +64,7 @@ package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES 
       Impurity Classification Terminology
       Chemical Structure Data File Type Terminology
     }
-    
+   }
   N1 -[#darkred]-> NSO
   NN -[#darkred]-> N6
   N1 -[#darkred]-> NN
