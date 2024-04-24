@@ -5,7 +5,10 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="SubstanceDefinition/278736ef-2ddf-49e4-895c-3a9f34db36cf" key="SubstanceDefinition-278736ef-2ddf-49e4-895c-3a9f34db36cf" name="278736ef-2ddf-49e4-895c-3a9f34db36cf"/>
+<artifact id="SubstanceDefinition/58ae52aa-c81e-415a-8791-e67a3195290d" key="SubstanceDefinition-58ae52aa-c81e-415a-8791-e67a3195290d" name="58ae52aa-c81e-415a-8791-e67a3195290d"/>
 <artifact id="Bundle/7cdbb042-9275-4599-a1fe-08877846bf94" key="Bundle-7cdbb042-9275-4599-a1fe-08877846bf94" name="7cdbb042-9275-4599-a1fe-08877846bf94"/>
+<artifact id="Organization/98effc99-db2b-428d-89aa-0ce426e02788" key="Organization-98effc99-db2b-428d-89aa-0ce426e02788" name="98effc99-db2b-428d-89aa-0ce426e02788"/>
+<artifact id="Bundle/9e8f2d16-66b1-47ec-878d-f50ae021985b" key="Bundle-9e8f2d16-66b1-47ec-878d-f50ae021985b" name="9e8f2d16-66b1-47ec-878d-f50ae021985b"/>
 <artifact id="MedicinalProductDefinition/77ad6922-9c59-43d1-93cb-29d063cc2e8c" key="MedicinalProductDefinition-77ad6922-9c59-43d1-93cb-29d063cc2e8c" name="A DrugProductContainerClosure"/>
 <artifact id="MedicinalProductDefinition/5772a6f2-cde1-4903-bfcf-1639340205cc" key="MedicinalProductDefinition-5772a6f2-cde1-4903-bfcf-1639340205cc" name="A DrugProductDescription for a multilayer product"/>
 <artifact id="ManufacturedItemDefinition/a8316fc9-8ca8-4115-81c1-9f8f84c99149" key="ManufacturedItemDefinition-a8316fc9-8ca8-4115-81c1-9f8f84c99149" name="A FinishedProduct profile based on ManufacturedItemDefinition"/>
@@ -135,12 +138,14 @@
 <artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
 <artifact id="Organization/e99bddfa-c1b5-435b-bbe8-24816b4e23e5" key="Organization-e99bddfa-c1b5-435b-bbe8-24816b4e23e5" name="Vidinaid"/>
 <artifact id="PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89" key="PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89" name="Water Specification Example"/>
+<artifact id="MedicinalProductDefinition/ddd3abad-347c-4d2f-95f3-dd804e250502" key="MedicinalProductDefinition-ddd3abad-347c-4d2f-95f3-dd804e250502" name="ddd3abad-347c-4d2f-95f3-dd804e250502"/>
 <artifact id="MedicinalProductDefinition/89676a69-1fe7-422c-ab00-92abe4ef6ea9" key="MedicinalProductDefinition-89676a69-1fe7-422c-ab00-92abe4ef6ea9" name="drug product for specification"/>
 <artifact id="StructureDefinition/ectd-composition-32p32" key="StructureDefinition-ectd-composition-32p32" name="eCTD Batch Formula"/>
 <artifact id="Composition/260f5aa3-23d2-4999-8e5f-70f247390ee5" key="Composition-260f5aa3-23d2-4999-8e5f-70f247390ee5" name="eCTD Composition for 3.2.S.1"/>
 <artifact id="Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1" key="Bundle-7ce2088d-d281-4e2f-9a25-120a1f9805d1" name="eCTD Document for 32S23"/>
 <artifact id="Composition/55d92f43-e328-4011-bbcf-744e3afd954f" key="Composition-55d92f43-e328-4011-bbcf-744e3afd954f" name="eCTD Drug Substance Specification Composition SP4151"/>
 <artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
+<artifact id="Composition/8a07e353-9cf6-4f27-8a30-2c2d4f439847" key="Composition-8a07e353-9cf6-4f27-8a30-2c2d4f439847" name="eCTD Product Characterization of Impurities Composition for TabletCoatedBeadsCoatedAll"/>
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
 <artifact id="Composition/d332acdf-4874-407b-9950-528f14c6bea2" key="Composition-d332acdf-4874-407b-9950-528f14c6bea2" name="eCTD Product Specification Composition SP4151"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
@@ -148,6 +153,7 @@
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Terminology"/>
+<artifact id="SubstanceDefinition/ffa30c0b-8031-436a-87f1-635b3bbe5989" key="SubstanceDefinition-ffa30c0b-8031-436a-87f1-635b3bbe5989" name="ffa30c0b-8031-436a-87f1-635b3bbe5989"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

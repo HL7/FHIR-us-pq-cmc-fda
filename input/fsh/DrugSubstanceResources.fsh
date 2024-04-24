@@ -629,12 +629,11 @@ Description: "Any component of the drug substance that is not the chemical entit
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
-* classification from SubstanceClassification
+* classification from PqcmcImpurityClassificationTerminology (required)
 * classification ^short = "Impurity Classification"
 * classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
 Examples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.
 """
-* classification.coding from PqcmcImpurityClassificationTerminology (required)
 * characterization MS
 * characterization.technique.text 1..1 MS
 * characterization.form.text 0..1 MS

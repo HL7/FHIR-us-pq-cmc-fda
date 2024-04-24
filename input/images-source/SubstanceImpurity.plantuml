@@ -45,7 +45,7 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
     }
   }
 
-    node "ImpuritySubstance" as N6 {
+  node "ImpuritySubstance" as N6 {
 
     object "**Parent:** SubstanceDefinition" as obj2 {
       **Reference:**
@@ -54,7 +54,7 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
       Impurity Classification Terminology
       Chemical Structure Data File Type Terminology
     }
-
+  }
   node "Base64DocumentReference" as NB64 {
 
     object "**Parent:** DocumentReference"  as obj64 {
