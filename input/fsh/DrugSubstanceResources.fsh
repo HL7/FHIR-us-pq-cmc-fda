@@ -602,7 +602,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * characterization.description 0..1 MS
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
-* characterization.file 0..1 MS
+* characterization.file 0..* MS
 * characterization.file ^short = "Analysis Graphic"
 * characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
 Note: Refer to the 'Acceptable File Formats for use in eCTD'
@@ -640,7 +640,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.description 0..1 MS
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
-* characterization.file 0..1 MS
+* characterization.file 0..* MS
 * characterization.file ^short = "Analysis Graphic"
 * characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
 Note: Refer to the 'Acceptable File Formats for use in eCTD'
