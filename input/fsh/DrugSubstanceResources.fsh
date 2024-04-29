@@ -595,6 +595,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * supplier only Reference(SupplierOrganization)
 * characterization 0..* MS
 * characterization.technique.text 1..1 MS
+* characterization.technique.text ^short = "Substance Characterization Technique"
 * characterization.form.text 0..1 MS
 * characterization.form.text ^short = "Form"
 * characterization.form.text ^definition = ""
