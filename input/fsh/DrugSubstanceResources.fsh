@@ -615,9 +615,6 @@ Example: This is the representation of the instrumental output for the molecule 
 * relationship 0..* MS
 //* relationship obeys cmc-substance-relationship  not needed  since this resource is for illustraion.
 * relationship.substanceDefinitionReference only Reference(ImpuritySubstance)
-* relationship.type.text
-* relationship.type.text ^short = "Values: 'Polymorph', 'Raw Material', and 'Impurity'"
-//* Is a rule set required so that if reference is PolymorphicForm text is "Polymorph",e if ComponentSubstance then text is "Raw Material" DrugSubstanceImpurity then text is "Impurity"
 
 Profile: ImpuritySubstance
 Parent: SubstanceDefinition
