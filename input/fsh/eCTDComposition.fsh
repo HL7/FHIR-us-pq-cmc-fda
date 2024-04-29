@@ -362,7 +362,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document."
-* section contains Structure 1..1 MS and Impurities 0..* MS
+* section contains Structure 1..1 MS
 * section[Structure] ^definition = "Substance Characterization to be included under the 3.2.S.3.0 eCTD heading."
 * section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
