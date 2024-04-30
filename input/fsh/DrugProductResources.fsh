@@ -421,11 +421,7 @@ Note: If there is a new dosage form that does not exist in the controlled termin
 SME comment -- this is the marketed dosage form
 """
 * combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
-* route 1..* MS
-* route.coding.code 1..1 MS
-* route.coding.code ^short = "Product Route of Administration"
-* route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-* route.coding.code from SplDrugRouteofAdministrationTerminology (required)
+* insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 
@@ -464,17 +460,19 @@ Note: If there is a new dosage form that does not exist in the controlled termin
 
 SME comment -- this is the marketed dosage form"""
   * coding  from SplPharmaceuticalDosageFormTerminology (required)
-* route 0..1 MS
-* route ^short = "Route of Administration"
-* route ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-  * coding 1..1 MS
-  * coding from SplDrugRouteofAdministrationTerminology (required)
+* insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 * crossReference MS
 * crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"
 * crossReference.product only CodeableReference(DrugProductDescription)
+
+RuleSet: RouteOfAdministration
+* route 1..* MS
+  * ^short = "Route of Administration"
+  * ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
+* route from SplDrugRouteofAdministrationTerminology (required)
 
 RuleSet: ProprietaryAndNonProprietaryNames
 * name 1..2 MS
@@ -688,6 +686,7 @@ Description: "The Drug Product produced by the batch formula."
 * identifier ^short = "optional user designated identifier"	
 * comprisedOf 1..* MS
 * comprisedOf only Reference(BatchFormula)
+* insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 
 Profile: DrugProductwithImpurities
