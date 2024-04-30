@@ -686,7 +686,6 @@ Description: "The Drug Product produced by the batch formula."
 * identifier ^short = "optional user designated identifier"	
 * comprisedOf 1..* MS
 * comprisedOf only Reference(BatchFormula)
-* insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 
 Profile: DrugProductwithImpurities
