@@ -274,3 +274,8 @@ Expression: "coding.where(
 // PSE  Palestine, State of
 // SJM  Svalbard and Jan Mayen
 // UMI  United states minor outlying Islands
+
+Invariant: cmc-substance-characterization-content-required
+Severity: #error
+Description: "Drug Substance Characterization must contain at least one characterization or at least one relationship"
+Expression: "characterization.exists() or relationship.exists()"

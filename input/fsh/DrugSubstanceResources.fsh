@@ -581,6 +581,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
+* obeys cmc-substance-characterization-content-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
