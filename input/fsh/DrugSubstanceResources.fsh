@@ -610,6 +610,7 @@ Example: This is the representation of the instrumental output for the molecule 
 """
 * characterization.file.data 1..1 MS
 * characterization.file.title 1..1 MS
+* characterization.file.contentType 1..1 MS
 * insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
 
