@@ -512,14 +512,22 @@ Note: The minimum is the scientific name.
   Container 0..* and
   Form 0..* and 
   Device 0..*
+* name obeys cmc-strength-name-must-reference-scientific
 * name[NonProprietary].part.type from PqcmcNamePartTerminology (required)
 * name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
 * name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
 * name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
 * name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+* name[NonProprietary].part[Strength].type.text  1..1 MS
 * name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
 * name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
 * name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
+
+Invariant: cmc-strength-name-must-reference-scientific
+Description: "strength parts must modify a scientific part, scientific parts must be modified by a strength part. The same scientific part cannot appear more than once"
+Expression: "part.type.where(coding.exists(code = 'STR')).text = part.where(type.coding.exists(code = 'SCI')).part
+and part.where(type.coding.exists(code = 'SCI')).part.distinct().count() = part.where(type.coding.exists(code = 'SCI')).part.count()"
+Severity: #error
 
 // Stage 2
 

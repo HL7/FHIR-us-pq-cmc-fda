@@ -9,8 +9,10 @@ Usage: #example
 * route = $NCIT#C38288 "ORAL"
 * name[NonProprietary].part[Scientific][+].part = "OXAZEPAM"
 * name[NonProprietary].part[Strength][+].part = "30mg"
+* name[NonProprietary].part[Strength][=].type.text = "OXAZEPAM"
 * name[NonProprietary].part[Scientific][+].part = "PROPRANOLOL HYDROCHLORIDE"
 * name[NonProprietary].part[Strength][+].part = "60mg"
+* name[NonProprietary].part[Strength][=].type.text = "PROPRANOLOL HYDROCHLORIDE"
 * name[NonProprietary].productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
 * name[NonProprietary].type.text = "Non-Proprietary"
 

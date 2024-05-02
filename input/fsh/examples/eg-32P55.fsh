@@ -36,6 +36,7 @@ Usage: #example
 * description = """A drug product composed of one type of bead with two coatings inside a coated tablet"""
 * name[NonProprietary].part[Scientific][+].part = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[NonProprietary].part[Strength][+].part = "125mg"
+* name[NonProprietary].part[Strength][=].type.text = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[NonProprietary].productName = "LEVOTHYROXINE SODIUM ANHYDROUS 125mg"
 * name[NonProprietary].type.text = "Non-Proprietary"
 * impurity[+].reference = Reference(urn:uuid:58ae52aa-c81e-415a-8791-e67a3195290d)
