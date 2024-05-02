@@ -476,35 +476,38 @@ RuleSet: RouteOfAdministration
 
 RuleSet: ProprietaryAndNonProprietaryNames
 * name 1..2 MS
-* name.productName 1..1 MS
-* name.type 1..1 MS
-* name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
-* name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * productName 1..1 MS
+  * type 1..1 MS
+  * obeys cmc-strength-name-must-reference-scientific
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type = $NameType#PROP "Proprietary"
-* name[Proprietary].part 0..* MS
-* name[Proprietary].part.part 1..1 MS
-* name[Proprietary].part.type 1..1 MS
-* name[Proprietary].part ^slicing.discriminator.type = #value
-* name[Proprietary].part ^slicing.discriminator.path = "type"
-* name[Proprietary].part ^slicing.rules = #open
-* name[Proprietary].part ^slicing.description = "Optional name parts"
-* name[Proprietary].part.type from PqcmcNamePartTerminology (required)
-* name[NonProprietary].type = $NameType#NON "Non-Proprietary"
-* name[NonProprietary].part 1..* MS
-* name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
+* name[Proprietary]
+  * type = $NameType#PROP "Proprietary"
+  * part 0..* MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "type"
+    * ^slicing.rules = #open
+    * ^slicing.description = "Optional name parts"
+    * part 1..1 MS
+    * type 1..1 MS
+    * type from PqcmcNamePartTerminology (required)
+* name[NonProprietary]
+  * type = $NameType#NON "Non-Proprietary"
+  * part 1..* MS
+    * ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
 """
-* name[NonProprietary].part.part 1..1 MS
-* name[NonProprietary].part.type 1..1 MS
-* name[NonProprietary].part ^slicing.discriminator.type = #value
-* name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
-* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
-//* name[NonProprietary].part.part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
-* name[NonProprietary].part contains 
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "type"
+    * ^slicing.rules = #open
+    * ^slicing.description = "The scientific name part is required and all name parts if present"
+    * part 1..1 MS
+    * type 1..1 MS
+    * type from PqcmcNamePartTerminology (required)
+  * part contains 
   Scientific 1..* and
   Invented 0..* and 
   Formulation 0..* and 
@@ -512,22 +515,14 @@ Note: The minimum is the scientific name.
   Container 0..* and
   Form 0..* and 
   Device 0..*
-* name obeys cmc-strength-name-must-reference-scientific
-* name[NonProprietary].part.type from PqcmcNamePartTerminology (required)
-* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
-* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
-* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
-* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
-* name[NonProprietary].part[Strength].type.text  1..1 MS
-* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
-* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
-* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
-
-Invariant: cmc-strength-name-must-reference-scientific
-Description: "strength parts must modify a scientific part, scientific parts must be modified by a strength part. The same scientific part cannot appear more than once"
-Expression: "part.type.where(coding.exists(code = 'STR')).text = part.where(type.coding.exists(code = 'SCI')).part
-and part.where(type.coding.exists(code = 'SCI')).part.distinct().count() = part.where(type.coding.exists(code = 'SCI')).part.count()"
-Severity: #error
+  * part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+  * part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+  * part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+  * part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+  * part[Strength].type.text  1..1 MS
+  * part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+  * part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+  * part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
 
 // Stage 2
 

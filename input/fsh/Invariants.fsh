@@ -279,3 +279,13 @@ Invariant: cmc-substance-characterization-content-required
 Severity: #error
 Description: "Drug Substance Characterization must contain at least one characterization or at least one relationship"
 Expression: "characterization.exists() or relationship.exists()"
+
+Invariant: cmc-strength-name-must-reference-scientific
+Description: "strength parts must modify a scientific part, scientific parts must be modified by a strength part. The same scientific part cannot appear more than once"
+Expression: "defineVariable('system','http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2').select(
+defineVariable('strengthReferences',part.type.where(coding.exists(code = 'STR' and system = %system)).text).select(
+defineVariable('scientificNames',part.where(type.coding.exists(code = 'SCI' and system = %system)).part).select(
+    %strengthReferences = %scientificNames and 
+    %scientificNames.distinct() = %scientificNames
+)))"
+Severity: #error
