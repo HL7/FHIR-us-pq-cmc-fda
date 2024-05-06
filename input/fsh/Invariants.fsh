@@ -44,27 +44,28 @@ Severity: #error
 Invariant: cmc-strength-type-cases2
 Description: "IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
-Expression: "strength
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+strength
 .extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension')
 .extension.where(
     value.coding.where(
         code = 'C45420' and 
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+        system = %system
     ).exists()
 ).exists()
 implies (
     strength.presentation.ofType(Ratio).exists() and
     strength.presentation.numerator.where(
         code = 'C75765' and
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+        system = %system
     )
 ) or (
     strength.presentation.ofType(Quantity).exists() and
     strength.presentation.where(
         code = 'C75765' and
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+        system = %system
     )
-)"
+))"
 Severity: #error
 
 Invariant: cmc-ppidref-required
@@ -165,20 +166,21 @@ Severity: #error
 
 Invariant: cmc-arbitrary-unit-text-required
 Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
-Expression: "property.where(
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+    property.where(
     type.coding.exists(
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (
+        system = %system and (
             code = 'TotWgtNum' or 
             code = 'TotWgtDen'
         )
     ) and
-    value.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'C75765')
+    value.exists(system = %system and code = 'C75765')
 ).exists() implies property.where(
     type.coding.exists(
         code = 'TotWgtTxt' and
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+        system = %system
     )
-).exists()"
+).exists())"
 Severity: #error
 // Note: checks if a property for the numerator or denominator exists. if it
 // does and it has an arbitrary unit, then there needs to be a slice for 
@@ -193,8 +195,9 @@ Expression: "representation.exists() implies format.exists()"
 Invariant: cmc-capsule-count-required
 Severity: #error
 Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
-Expression: "manufacturedDoseForm.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'C154433')
-implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'CapConCnt')).exists()"
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+    manufacturedDoseForm.coding.exists(system = %system and code = 'C154433')
+implies property.where(type.coding.exists(system = %system and code = 'CapConCnt')).exists())"
 
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
@@ -204,12 +207,13 @@ Expression: "$this.length() = 3"
 Invariant: cmc-coating-indication-required
 Severity: #error
 Description: "Coating indication is required when the dosage form is a tablet, lozenge or capsule"
-Expression: "manufacturedDoseForm.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+    manufacturedDoseForm.coding.exists(system = %system and (
     code = 'C154605' or
     code = 'C154433' or
     code = 'C154554'
 ))
-implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code = 'CoatInd')).exists()"
+implies property.where(type.coding.exists(system = %system and code = 'CoatInd')).exists())"
 // Note: Currently checks if manufacturedDoseForm is any of the solid oral
 // dose forms (lozenge, capsule, tablet). Can capsules and lozenges have
 // coatings?
@@ -217,55 +221,53 @@ implies property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cm
 Invariant: cmc-tablet-layer-count-required
 Severity: #error
 Description: "Tablet layer count is required when the dosage form is a tablet"
-Expression: "manufacturedDoseForm.coding.exists(
-    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+    manufacturedDoseForm.coding.exists(
+    system = %system and
     code = 'C154605'
 ) implies property.where(
     type.coding.exists(
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+        system = %system and
         code = 'TabLayCnt'
     )
-).exists()"
+).exists())"
 
 Invariant: cmc-tablet-bead-count-required
 Severity: #error
 Description: "Tablet bead count is required when the dosage form is a tablet"
-Expression: "manufacturedDoseForm.coding.exists(
-    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(manufacturedDoseForm.coding.exists(
+    system = %system and
     code = 'C154605'
 ) implies property.where(
     type.coding.exists(
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+        system = %system and
         code = 'BeaTypCnt'
     )
-).exists()"
+).exists())"
 
 Invariant: cmc-capsule-classification-required
 Severity: #error
 Description: "when the the dosage form is 'capsule' and a 'capsule shell' part
 exists, a capsule shell part classification is mandatory"
-Expression: "manufacturedDoseForm.coding.exists(
-    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(manufacturedDoseForm.coding.exists(
+    system = %system and
     code = 'C154433'
 ) and component.type.coding.exists(
-    system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+    system = %system and
     code = 'C203897'
 ) implies property.where(
     type.coding.exists(
-        system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+        system = %system and
         code = 'CapClass'
     )
-).exists()"
+).exists())"
 
 Invariant: cmc-iso-genc-overlap
 Severity: #error
 Description: "Only country codes that are also member of GENC can be used."
 Expression: "coding.where(
     (system = 'urn:iso:std:iso:3166') and (
-        (code = 'ALA') or
-        (code = 'PSE') or
-        (code = 'SJM') or
-        (code = 'UMI')
+    code in ('ALA'|'PSE'|'SJM'|'UMI')
     )
 ).exists().not()"
 // codes with no GENC equivalent
