@@ -308,7 +308,6 @@ Examples: Filler, Surfactant"""
 * component.constituent.hasIngredient 1..1 MS
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
-* component.property 0..* MS
 * component.property 1..* MS
 * component.property ^slicing.discriminator.type = #value
 * component.property ^slicing.discriminator.path = "type"
@@ -323,30 +322,8 @@ Examples: Filler, Surfactant"""
     Color 0..1 MS and
     ContPercent 1..1 MS and
     AddInfo 0..1 MS 
-* component.property[PPiD].type MS
-* component.property[PPiD].type = $NCIT#PPiD "Product Part Identifier"
-* component.property[PPiD].value[x] 1..1 MS
-* component.property[PPiD].value[x] only CodeableConcept
-* component.property[PPiD].valueCodeableConcept.coding from CmcRelationshipTypesVS	
-* component.property[PPiD].valueCodeableConcept.coding  ^short = "Product Part Role"
-* component.property[PPiD].valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
-If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
-If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
-"""
-* component.property[PPiD].valueCodeableConcept.text 1..1 MS
-* component.property[PPiD].valueCodeableConcept.text ^short = "Product Part Identifier"
-* component.property[PPiD].valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
-Examples: 1, A1, Red bead, Blue minitablet
-"""
-* component.property[PPiDref].type MS
-* component.property[PPiDref].type = $NCIT#PPiDref "Product Part Identifier Reference"
-* component.property[PPiDref].value[x] 1..1 MS
-* component.property[PPiDref].value[x] only CodeableConcept
-* component.property[PPiDref].valueCodeableConcept.text 1..1 MS
-* component.property[PPiDref].valueCodeableConcept.text ^short = "Product Part Identifier Reference"
-* component.property[PPiDref].valueCodeableConcept.text ^definition = """ Identifies the parent or outer-level product part. [Source: SME Defined]
-Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
-"""
+* component.property[PPiD] insert ProductPartIdentifierProperty
+* component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
 * component.property[RelsProf].type MS
 * component.property[RelsProf].type = $NCIT#RelsProf "Product Part Release Profile"
 * component.property[RelsProf].value[x] 1..1 MS
@@ -391,16 +368,43 @@ Examples: yellow, pink, blue, pale yellow."""
 * component.property[ContPercent].valueQuantity ^definition = """The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
 Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
 """
-* component.property[AddInfo].type MS
-* component.property[AddInfo].type = $NCIT#AddInfo "Product Part Additional Information"
-* component.property[AddInfo].value[x] only markdown
-* component.property[AddInfo].valueMarkdown ^short = "Product Part Additional Information"
-* component.property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
-Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
-"""
+* component.property[AddInfo] insert AdditionalInformationProperty
 * component.component 0..* MS
 
-
+RuleSet: AdditionalInformationProperty
+* type MS
+* type = $NCIT#AddInfo "Product Part Additional Information"
+* value[x] only markdown
+* valueMarkdown ^short = "Product Part Additional Information"
+* valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
+Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
+"""
+RuleSet: ProductPartIdentifierProperty
+* type MS
+* type = $NCIT#PPiD "Product Part Identifier"
+* value[x] 1..1 MS
+* value[x] only CodeableConcept
+* valueCodeableConcept.coding from CmcRelationshipTypesVS	
+* valueCodeableConcept.coding  ^short = "Product Part Role"
+* valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
+If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
+If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
+"""
+* valueCodeableConcept.text 1..1 MS
+* valueCodeableConcept.text ^short = "Product Part Identifier"
+* valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
+Examples: 1, A1, Red bead, Blue minitablet
+"""
+RuleSet: ProductPartIdentifierReferenceProperty
+* type MS
+* type = $NCIT#PPiDref "Product Part Identifier Reference"
+* value[x] 1..1 MS
+* value[x] only CodeableConcept
+* valueCodeableConcept.text 1..1 MS
+* valueCodeableConcept.text ^short = "Product Part Identifier Reference"
+* valueCodeableConcept.text ^definition = """ Identifies the parent or outer-level product part. [Source: SME Defined]
+Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
+"""
 
 Profile: RoutineDrugProduct
 Parent: MedicinalProductDefinition
@@ -599,13 +603,7 @@ Example: 1000 kg
 * property[BatchUtil].valueCodeableConcept ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
 Examples: commercial, development. """
 * property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
-* property[AddInfo].type 1..1 MS
-* property[AddInfo].type = $NCIT#batchinfo "Batch Formula Additional Information"
-* property[AddInfo].value[x] only markdown
-* property[AddInfo].valueMarkdown ^short = "Batch Formula Additional Information"
-* property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the batch formula. [Source: SME Defined]
-Examples: Water for wet granulation -- removed during processing; adjusted for assay, etc.
-"""
+* property[AddInfo] insert AdditionalInformationProperty
 // Product parts
 * component 1..* MS
 * component.type 1..1 MS
@@ -670,12 +668,18 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.hasIngredient 1..1 MS
 * component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
 // Product part
-* component.property 0..1 MS
-* component.property.type = $NCIT#info "Product Part Additional Information"
-* component.property.value[x] only markdown
-* component.property.valueMarkdown ^short = "Component Additional Information"
-* component.property.valueMarkdown ^definition = """A placeholder for providing any comments relevant to the component. [Source: SME Defined]
- Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.."""
+* component.property 1..3 MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #closed
+  * ^slicing.description = "Slice based on value"
+* component.property contains
+    PPiD 1..1 MS and
+    PPiDref 0..1 MS and
+    AddInfo 0..1 MS 
+* component.property[PPiD] insert ProductPartIdentifierProperty
+* component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
+* component.property[AddInfo] insert AdditionalInformationProperty
 * component.component 0..* MS
 
 Profile: BatchFormulaMedicinalProduct
