@@ -690,6 +690,7 @@ Description: "The Drug Product produced by the batch formula."
 * comprisedOf 1..* MS
 * comprisedOf only Reference(BatchFormula)
 * insert ProprietaryAndNonProprietaryNames
+* insert RouteOfAdministration
 
 Profile: DrugProductwithImpurities
 Parent: MedicinalProductDefinition
