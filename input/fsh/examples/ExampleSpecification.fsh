@@ -424,12 +424,11 @@ Usage: #example
 
 * identifier.value = "ExampleSpecification"
 * status = #final
-* type.coding = $SectionTypes#SP4151 "Quality Specification"
+* type.coding = $SectionTypes#32P51 "Product Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:33:13.089Z
 * title = """Quality Specification for an example Drug Product"""
-* section[DrugProduct]
-  * code = $SectionTypes#32P51 "Product Specification"
+* section
   * title = "32P51"
   * entry = Reference(urn:uuid:aa514363-d43f-4052-b44e-b67aa4d6dee7)
 

@@ -132,12 +132,11 @@ Usage: #example
 
 * identifier.value = "ExampleSpecification2"
 * status = #final
-* type.coding = $SectionTypes#SP4151 "Quality Specification"
+* type.coding = $SectionTypes#32S41 "Substance Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:36:51.299Z
 * title = """Quality Specification for an API"""
-* section[Api]
-  * code = $SectionTypes#32S41 "Substance Specification"
+* section
   * title = "32S41"
   * entry = Reference(urn:uuid:cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93)
 

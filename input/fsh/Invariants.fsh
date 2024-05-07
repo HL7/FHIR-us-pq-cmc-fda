@@ -137,7 +137,7 @@ Severity: #error
 
 Invariant: cmc-SP4151
 Description: "The composition must be EctdCompositionSP4151"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='SP4151'))).exists()"
+Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code in ('32P51'|'32S41'|'32P40')))).exists()"
 Severity: #error
 
 

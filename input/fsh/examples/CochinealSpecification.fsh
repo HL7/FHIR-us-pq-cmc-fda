@@ -218,12 +218,11 @@ Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
 * identifier.value = "CochinealSpecificationComposition"
 * status = #final
-* type.coding = $SectionTypes#SP4151 "Quality Specification"
+* type.coding = $SectionTypes#32P40 "Product Control of Excipients"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2024-01-01T19:42:35.254Z
 * title = """Cochineal specification Composition Example"""
-* section[Excipient]
-  * code = $SectionTypes#32P40 "Product Control of Excipients"
+* section
   * title = "32P40"
   * entry = Reference(urn:uuid:37bf5cc0-33bf-478b-b84e-ccb35143ef6e)
 Instance: 7cdbb042-9275-4599-a1fe-08877846bf94

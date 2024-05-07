@@ -171,43 +171,17 @@ Description: "The fields needed to Quality Specifications for APIs, Drug Substan
 * meta.profile 1..1 MS 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#SP4151 "Quality Specification"
+* type from PqcmcQualitySpecificationSectionTypes (required)
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
-
 * section 1..1 MS
-* section.code 1..1 MS
-* section.code from CmcCompSectionTypesVS (required)
 * section.title 1..1 MS
 /*
     SECTION SLICESProduct
 */
 * section.entry MS
-
-* section ^slicing.discriminator.type = #value
-* section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #closed
-* section ^slicing.description = "There is only one section in the profile. The slice the code must correpond to the subject of the Quality Specification profile: RoutineDrugProduct or Routine Api or Excipient"
-* section contains
-    DrugProduct 0..1 MS and
-    Api 0..1 MS and
-    Excipient 0..1 MS
-* section[DrugProduct] ^definition = "Product Specification to be included under the 3.2.P.5.1 eCTD heading."
-* section[DrugProduct].code = $SectionTypes#32P51 "Product Specification"
-* section[DrugProduct].title 1..1 MS
-* section[DrugProduct].entry 1..1 MS
-* section[DrugProduct].entry only Reference(QualitySpecification)
-* section[Api] ^definition = "Drug Substance Specification to be included under the 3.2.S.4.1 eCTD heading."
-* section[Api].code = $SectionTypes#32S41 "Substance Specification"
-* section[Api].title 1..1 MS
-* section[Api].entry 1..1 MS
-* section[Api].entry only Reference(QualitySpecification)
-* section[Excipient] ^definition = "Excipient Specification to be included under the 3.2.P.4.1 eCTD heading."
-* section[Excipient].code = $SectionTypes#32P40 "Product Control of Excipients"
-* section[Excipient].title 1..1 MS
-* section[Excipient].entry 1..1 MS
-* section[Excipient].entry only Reference(QualitySpecification)
+* section.entry only Reference(QualitySpecification)
 // need check that Specification type in instance matches the seciton selected.
 
 Profile: EctdComposition32P10

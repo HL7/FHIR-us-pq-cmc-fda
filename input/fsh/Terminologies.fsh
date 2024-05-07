@@ -464,6 +464,15 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 //* $NCIT#C16275 "Calculated"
 //* $NCIT#C133995 "Experimental"
 
+ValueSet: PqcmcQualitySpecificationSectionTypes
+Id: cmc-specification-types-vs
+Title: "Relationship Types Terminology"
+Description: "Local value set of all codes in Relationship Types codes"
+* ^experimental = false
+* $SectionTypes#32P51 "Product Specification"
+* $SectionTypes#32S41 "Substance Specification"
+* $SectionTypes#32P40 "Product Control of Excipients"
+
 ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
 Id: pqcmc-chemical-structure-datafile-type-terminology
 Title: "Chemical Structure Data File Type Terminology"
