@@ -117,7 +117,7 @@ Description: "pq-specific Constraints on the Address datatype dealing with US ad
 * state 0..1 MS
 * postalCode 1..1 MS
 * country 1..1 MS
-* country ^short = "Country must be a 3-letter country code. The codes and full names are Target Code column in the ConceptMap: ISO to GENC Country Code Mapping"
+* country ^short = "Country must be a 3-letter country code."
   * obeys cmc-only-ISO-3166-1-alpha-3
 
 Invariant: addr-state

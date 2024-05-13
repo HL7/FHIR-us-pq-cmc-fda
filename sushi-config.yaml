@@ -6,10 +6,10 @@ description: "The FDA PQ-CMC FHIR IG is for submission of structured and standar
 
 status: active
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 1.1.0
+version: 1.1.1
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel: 1.1.0
+releaseLabel: 1.1.1
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  

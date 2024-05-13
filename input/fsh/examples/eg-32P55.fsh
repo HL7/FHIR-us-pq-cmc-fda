@@ -30,7 +30,7 @@ Usage: #example
 
 Instance: ddd3abad-347c-4d2f-95f3-dd804e250502
 InstanceOf: DrugProductwithImpurities
-Description: "Example of Drug Product with Impurities for  eCTD SP4151"
+Description: "Example of Drug Product with Impurities"
 Usage: #example
 * identifier.value = "TabletCoatedBeadsCoatedAll"
 * description = """A drug product composed of one type of bead with two coatings inside a coated tablet"""

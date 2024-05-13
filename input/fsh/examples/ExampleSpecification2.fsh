@@ -142,7 +142,7 @@ Usage: #example
 
 Instance: 6004e36e-7df9-469d-9b29-8e9f9bd7e95f
 InstanceOf: CMCeCTDDocumentSP4151
-Title: "FHIR Document example of 3.2.P.4.1."
+Title: "FHIR Document example of 3.2.S.4.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"
 Usage: #example
 * identifier.extension[version].valueString = "0.1.24"

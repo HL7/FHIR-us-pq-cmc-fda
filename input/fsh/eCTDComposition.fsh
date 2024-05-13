@@ -166,7 +166,7 @@ Profile: EctdCompositionSP4151
 Parent: Composition
 Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
-Description: "The fields needed to Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
+Description: "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
 
 * meta.profile 1..1 MS 
 * status = #final

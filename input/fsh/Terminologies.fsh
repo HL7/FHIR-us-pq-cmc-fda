@@ -28,7 +28,7 @@ Description: "Terminology used to qualify the information pertaining to batch ut
 CodeSystem: CmcRelationshipTypes
 Id: cmc-relationship-types
 Title: "Relationship Types Codes"
-Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems"
+Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -55,7 +55,7 @@ Description: "Local value set of all codes in the Code system."
 CodeSystem: CmcProductNameTypes
 Id: cmc-product-name-types
 Title: "Product Name Types Code Types"
-Description: "Indicates patent or trademark status. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems"
+Description: "Indicates patent or trademark status. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
 
 * ^caseSensitive = true
 * ^experimental = false

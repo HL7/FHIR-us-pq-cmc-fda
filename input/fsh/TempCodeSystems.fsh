@@ -1,7 +1,7 @@
 CodeSystem: NCItDummy
 Id: cmc-ncit-dummy
 Title: "PQ-CMC-FDA Temporary Codes"
-Description: "Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.  Some but not all are defined in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). Note: Codes that exist in CNIt at time of ballot begin with 'C'."
+Description: "Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.  Some but not all are defined in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). Note: Codes that exist in NCIt at time of ballot begin with 'C'."
 * ^caseSensitive = true
 * ^experimental = false	
 * ^publisher = "NCI Thesaurus (NCIt)"
@@ -316,7 +316,7 @@ Unless otherwise indicated, all text within NCI products is free of copyright an
 * #C134008 "JP"
 * #C134006 "USP-NF"
 * #C14182 "Animal"
-* #C18634 "Animal Sources"
+* #C18634 "Animal-derived indirectly"
 * #C48807 "Chemical"
 * #C14225 "Human"
 * #C14227 "Insect"
@@ -333,7 +333,7 @@ Unless otherwise indicated, all text within NCI products is free of copyright an
 * #C134003 "DUNS"
 * #C134004 "FEI"
 * #C17998 "Unknown"
-* #C133936 "20 +/- 5 degrees C"
+* #C133936 "-20 degrees C (+/-) 5 degrees C"
 * #C134018 "25 +/- 2 degrees C/40% +/- 5%RH"
 * #C134014 "25 +/- 2 degrees C/60% +/- 5%RH"
 * #C134015 "30 +/- 2 degrees C/65% +/- 5%RH"

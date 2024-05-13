@@ -88,7 +88,7 @@ Usage: #example
 Instance: cd84a8b5-4e96-551c-15c6-c97c943eb38a
 InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition for Asprin"
-Description: "Identification of the Drug Substance of the raw materials whose specifications are "
+Description: "Identification of the Drug Substance of the raw materials whose specifications are for Aspirin."
 Usage: #example
 * identifier.value = "salicylate"
 * classification = $NCIT#C48807 "Chemical"

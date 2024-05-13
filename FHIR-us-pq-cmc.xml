@@ -77,8 +77,8 @@
 <artifact id="Organization/d9e7c2f7-0f59-4645-bb6d-5a8dd2425049" key="Organization-d9e7c2f7-0f59-4645-bb6d-5a8dd2425049" name="Example of a Supplier Organization"/>
 <artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
 <artifact id="ValueSet/pqcmc-excipient-function-terminology" key="ValueSet-pqcmc-excipient-function-terminology" name="Excipient Function Terminology"/>
-<artifact id="Bundle/6004e36e-7df9-469d-9b29-8e9f9bd7e95f" key="Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f" name="FHIR Document example of 3.2.P.4.1."/>
 <artifact id="Bundle/4a7e17c1-a611-4cc7-9a71-8005a8b427ab" key="Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab" name="FHIR Document example of 3.2.P.5.1."/>
+<artifact id="Bundle/6004e36e-7df9-469d-9b29-8e9f9bd7e95f" key="Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f" name="FHIR Document example of 3.2.S.4.1."/>
 <artifact deprecated="true" id="ValueSet/genc-country-codes" key="ValueSet-genc-country-codes" name="GENC Country Code Values"/>
 <artifact deprecated="true" id="CodeSystem/genc-country-codes-cs" key="CodeSystem-genc-country-codes-cs" name="GENC Country Codes"/>
 <artifact id="StructureDefinition/pq-hierarchical-level-extension" key="StructureDefinition-pq-hierarchical-level-extension" name="Hierarchical Level"/>
@@ -110,6 +110,7 @@
 <artifact id="StructureDefinition/pqcmc-quality-specification" key="StructureDefinition-pqcmc-quality-specification" name="Quality Specification"/>
 <artifact id="CodeSystem/cmc-relationship-types" key="CodeSystem-cmc-relationship-types" name="Relationship Types Codes"/>
 <artifact id="ValueSet/cmc-relationship-types-vs" key="ValueSet-cmc-relationship-types-vs" name="Relationship Types Terminology"/>
+<artifact id="ValueSet/cmc-specification-types-vs" key="ValueSet-cmc-relationship-types-vs" name="Relationship Types Terminology"/>
 <artifact id="ValueSet/pqcmc-release-mechanism" key="ValueSet-pqcmc-release-mechanism" name="Release Mechanism Terminology"/>
 <artifact id="ValueSet/pqcmc-release-profile" key="ValueSet-pqcmc-release-profile" name="Release Profile Terminology"/>
 <artifact id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
