@@ -110,7 +110,7 @@ As mentioned above, the PQ/CMC project Phase 1 structured data requirements are 
   <tr>
    <td>3
    </td>
-   <td>Product Characterization of Impurities
+   <td>Product Characterisation of Impurities
    </td>
    <td>3.2.P.5.5
    </td>

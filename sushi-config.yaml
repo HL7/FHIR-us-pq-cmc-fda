@@ -30,11 +30,11 @@ menu:
   eCTD Profiles (Stages 1 & 2):
     General Information (3.2.S.1): eCTD32S10.html 
     Control of Materials (3.2.S.2.3): eCTD32S23.html
-    Substance Characterization (3.2.S.3.0): eCTD32S30.html   
+    Substance Characterisation (3.2.S.3.0): eCTD32S30.html   
     Specification (3.2.S.4.1, 3.2.P.4 & 3.2.P.5.1): eCTDSP4151.html 
     Description and Composition of the Drug Product (3.2.P.1): eCTD32P10.html 
     Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
-    Product Characterization of Impurities (3.2.P.5.5): eCTD32P55.html
+    Product Characterisation of Impurities (3.2.P.5.5): eCTD32P55.html
 
 #  DRAFT eCTD Profiles:
 #    Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
@@ -72,7 +72,7 @@ pages:
     title: Product Batch Formula
     generation: markdown
   eCTD32P55.md:
-    title: Product Characterization of Impurities
+    title: Product Characterisation of Impurities
     generation: markdown
   artifacts.html:
     title: "Artifact List"

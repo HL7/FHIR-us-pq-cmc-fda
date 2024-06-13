@@ -17,7 +17,7 @@ The current development IG - Sept connectathon
 - SP4151 example use Composition code uses a specification code 
 - CommonOrganization..fsh at PqAddress 3 letter Country code enforced 
 - DrugProductResources..fsh at Batch Formula MID changes
-- DrugSubstanceResources..fsh at characterization must have something
+- DrugSubstanceResources..fsh at characterisation must have something
 - Invariants..fsh at SP4151 Composition code uses a specification code
 - TempCodeSystems..fsh at Updated with change since with ballot
 - Terminologies..fsh at SP4151 Composition code uses a specification code

@@ -39,8 +39,8 @@ Description: "Alternate structure present in the drug substance"
 * structure.molecularFormula ^short = "Molecular Formula"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]"
 * structure.technique 0..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+* structure.technique ^short = "Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -329,8 +329,8 @@ Description: "Substance General Information containting Drug Substance (Active I
 Biopolymer Sequence: TBD
 """
 * structure.technique 1..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+* structure.technique ^short = "Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -573,15 +573,15 @@ RuleSet: CountryOfOrigin
 
 //*Stage 2 --------------------------------------------------------------------------------------------------------------*/
 
-Profile: DrugSubstanceCharacterization
+Profile: DrugSubstanceCharacterisation
 Parent: SubstanceDefinition
-Id: pqcmc-drug-substance-characterization
+Id: pqcmc-drug-substance-characterisation
 Title: "Drug Substance"
-Description: "Drug Substance (Active Ingredient) nomenclature and characterization."
+Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
 * meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
-* obeys cmc-substance-characterization-content-required
+* obeys cmc-substance-characterisation-content-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -596,7 +596,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterizati
 * supplier only Reference(SupplierOrganization)
 * characterization 0..* MS
 * characterization.technique.text 1..1 MS
-* characterization.technique.text ^short = "Substance Characterization Technique"
+* characterization.technique.text ^short = "Substance Characterisation Technique"
 * characterization.form.text 0..1 MS
 * characterization.form.text ^short = "Form"
 * characterization.form.text ^definition = ""
@@ -653,14 +653,14 @@ Example: This is the representation of the instrumental output for the molecule 
 * structure 0..1 MS
 //* structure obeys cmc-representation-or-document
 * structure.technique MS
-* structure.technique ^short = "Impurity Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+* structure.technique ^short = "Impurity Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation MS
 * structure.representation.format 0..1 MS
 * structure.representation.format ^short = "Drug Substance Impurity Method Type| Drug Product Impurity Method Type"
-* structure.representation.format ^definition = "The technique used to elucidate the structure or characterization of the impurity. [Source: SME Defined]"
+* structure.representation.format ^definition = "The technique used to elucidate the structure or characterisation of the impurity. [Source: SME Defined]"
 * structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
 * structure.representation.representation 0..1 MS
 * structure.representation.representation ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File | Impurity Chemical Structure Data File"

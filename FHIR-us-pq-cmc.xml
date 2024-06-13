@@ -58,7 +58,7 @@
 <artifact id="StructureDefinition/pqcmc-drug-product-description" key="StructureDefinition-pqcmc-drug-product-description" name="Drug Product Description"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-with-impurities" key="StructureDefinition-pqcmc-drug-product-with-impurities" name="Drug Product Impurities"/>
 <artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
-<artifact id="StructureDefinition/pqcmc-drug-substance-characterization" key="StructureDefinition-pqcmc-drug-substance-characterization" name="Drug Substance"/>
+<artifact id="StructureDefinition/pqcmc-drug-substance-characterisation" key="StructureDefinition-pqcmc-drug-substance-characterisation" name="Drug Substance"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-substance-impurity" key="StructureDefinition-pqcmc-drug-product-substance-impurity" name="Drug Substance Impurity"/>
 <artifact id="SubstanceDefinition/21b6b724-507e-4cf4-a462-93334b98d166" key="SubstanceDefinition-21b6b724-507e-4cf4-a462-93334b98d166" name="Drug Substance Nomenclature and Structure"/>
 <artifact id="Ingredient/d01421cc-6488-468b-a676-d3e7281875e2" key="Ingredient-d01421cc-6488-468b-a676-d3e7281875e2" name="DrugProductComponent example for an excipient - Maize starch"/>
@@ -146,12 +146,12 @@
 <artifact id="Composition/260f5aa3-23d2-4999-8e5f-70f247390ee5" key="Composition-260f5aa3-23d2-4999-8e5f-70f247390ee5" name="eCTD Composition for 3.2.S.1"/>
 <artifact id="Bundle/7ce2088d-d281-4e2f-9a25-120a1f9805d1" key="Bundle-7ce2088d-d281-4e2f-9a25-120a1f9805d1" name="eCTD Document for 32S23"/>
 <artifact id="Composition/55d92f43-e328-4011-bbcf-744e3afd954f" key="Composition-55d92f43-e328-4011-bbcf-744e3afd954f" name="eCTD Drug Substance Specification Composition SP4151"/>
-<artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterization of Impurities Composition"/>
-<artifact id="Composition/8a07e353-9cf6-4f27-8a30-2c2d4f439847" key="Composition-8a07e353-9cf6-4f27-8a30-2c2d4f439847" name="eCTD Product Characterization of Impurities Composition for TabletCoatedBeadsCoatedAll"/>
+<artifact id="StructureDefinition/ectd-composition-32p55" key="StructureDefinition-ectd-composition-32p55" name="eCTD Product Characterisation of Impurities Composition"/>
+<artifact id="Composition/8a07e353-9cf6-4f27-8a30-2c2d4f439847" key="Composition-8a07e353-9cf6-4f27-8a30-2c2d4f439847" name="eCTD Product Characterisation of Impurities Composition for TabletCoatedBeadsCoatedAll"/>
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
 <artifact id="Composition/d332acdf-4874-407b-9950-528f14c6bea2" key="Composition-d332acdf-4874-407b-9950-528f14c6bea2" name="eCTD Product Specification Composition SP4151"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterization"/>
+<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterisation"/>
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Terminology"/>
@@ -167,7 +167,7 @@
 <page key="instruction" name="General Instructions"/>
 <page key="index" name="Home"/>
 <page key="eCTD32P32" name="Product Batch Formula"/>
-<page key="eCTD32P55" name="Product Characterization of Impurities"/>
+<page key="eCTD32P55" name="Product Characterisation of Impurities"/>
 <page key="eCTDSP4151" name="Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"/>
 <page key="eCTD32S23" name="Substance Control of Materials (3.2.S.2.3)"/>
 <page key="toc" name="Table of Contents"/>

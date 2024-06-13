@@ -8,7 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES {
+package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES {
 
   object "**Bundle Reference:**" as objbun {
     [[StructureDefinition-cmc-ectd-document-32p55.html]]

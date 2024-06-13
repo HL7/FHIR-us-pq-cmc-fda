@@ -32,12 +32,12 @@ package "3.2.S.3.0 eCTD Heading Characterisation Bundle" as NODES {
     }
   }
 
-  node "DrugSubstanceCharacterization" as NN {
+  node "DrugSubstanceCharacterisation" as NN {
 
     object "**Parent:** SubstanceDefintion" as obj3 {
 
       **Reference:**
-      [[StructureDefinition-pqcmc-drug-substance-characterization.html]]
+      [[StructureDefinition-pqcmc-drug-substance-characterisation.html]]
       **ValueSets:**
       Chemical Structure Data File Type Terminology
       Substance Classification
