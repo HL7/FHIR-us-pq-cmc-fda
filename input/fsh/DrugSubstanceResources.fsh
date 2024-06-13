@@ -604,14 +604,12 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
 * characterization.file 0..* MS
-* characterization.file ^short = "Analysis Graphic"
+* characterization.file ^short = "Analysis Graphic | Analytical Instrument Data File"
 * characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
 Note: Refer to the 'Acceptable File Formats for use in eCTD'
 Example: This is the representation of the instrumental output for the molecule -- CH3OH
 """
-* characterization.file.data 1..1 MS
-* characterization.file.title 1..1 MS
-* characterization.file.contentType 1..1 MS
+* characterization.file only PqcmcAttachment
 * insert UniiAndUniProtCodes
 * insert ShortSetSubstanceNames
 
