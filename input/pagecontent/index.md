@@ -144,7 +144,7 @@ As mentioned above, the PQ/CMC project Phase 1 structured data requirements are 
    </td>
    <td>Substance Characterisation
    </td>
-   <td>3.2.S.3.0
+   <td>3.2.S.3
    </td>
   </tr>
   <tr>

@@ -400,7 +400,7 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 * #32S24 "Substance Controls of Critical Steps and Intermediates"
 * #32S25 "Substance Process Validation and/or Evaluation"
 * #32S26 "Substance Manufacturing Process Development"
-* #32S30 "Substance Characterisation"
+* #32S3 "Substance Characterisation"
 * #32S31 "Substance Elucidation of Structure and other Characteristics"
 * #32S32 "Substance Impurities"
 * #32S40 "Substance Control of Drug Substance"

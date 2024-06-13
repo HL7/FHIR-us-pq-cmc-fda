@@ -27,7 +27,7 @@
 <artifact id="StructureDefinition/cmc-ectd-document-32p55" key="StructureDefinition-cmc-ectd-document-32p55" name="CMC eCTD 32P55 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32s10" key="StructureDefinition-cmc-ectd-document-32s10" name="CMC eCTD 32S10 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32s23" key="StructureDefinition-cmc-ectd-document-32s23" name="CMC eCTD 32S23 Document"/>
-<artifact id="StructureDefinition/cmc-ectd-document-32s30" key="StructureDefinition-cmc-ectd-document-32s30" name="CMC eCTD 32S30 Document"/>
+<artifact id="StructureDefinition/cmc-ectd-document-32s3" key="StructureDefinition-cmc-ectd-document-32s3" name="CMC eCTD 32S3 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-sp4151" key="StructureDefinition-cmc-ectd-document-sp4151" name="CMC eCTD SP4151 Document"/>
 <artifact id="Bundle/bd0f0a7a-27ea-4884-801d-bd0546e80888" key="Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888" name="CMCeCTDDocument32P10 bundle"/>
 <artifact id="ValueSet/capsule-classification-category" key="ValueSet-capsule-classification-category" name="Capsule Shell Classification Terminology"/>
@@ -151,7 +151,7 @@
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
 <artifact id="Composition/d332acdf-4874-407b-9950-528f14c6bea2" key="Composition-d332acdf-4874-407b-9950-528f14c6bea2" name="eCTD Product Specification Composition SP4151"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification Composition"/>
-<artifact id="StructureDefinition/ectd-composition-32s30" key="StructureDefinition-ectd-composition-32s30" name="eCTD Substance Characterisation"/>
+<artifact id="StructureDefinition/ectd-composition-32s3" key="StructureDefinition-ectd-composition-32s3" name="eCTD Substance Characterisation"/>
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
 <artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections Terminology"/>
@@ -171,5 +171,5 @@
 <page key="eCTDSP4151" name="Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"/>
 <page key="eCTD32S23" name="Substance Control of Materials (3.2.S.2.3)"/>
 <page key="toc" name="Table of Contents"/>
-<page key="eCTD32S30" name="eCTD Substance Characterisation"/>
+<page key="eCTD32S3" name="eCTD Substance Characterisation"/>
 </specification>

@@ -121,10 +121,10 @@ INFORMATION: ValueSet/spl-pharmaceutical-dosage-form-terminology: ValueSet.juris
 INFORMATION: ValueSet/substance-classification: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/cmc-ectd-document-32p32: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/cmc-ectd-document-32p55: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-INFORMATION: StructureDefinition/cmc-ectd-document-32s30: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32s3: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/ectd-composition-32p32: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/ectd-composition-32p55: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-INFORMATION: StructureDefinition/ectd-composition-32s30: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/ectd-composition-32s3: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pq-product-batch-ingredient-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-batch-formula-product: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-dp-ingredient: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
@@ -222,10 +222,10 @@ INFORMATION: ValueSet/substance-classification: ValueSet.extension[0].value.ofTy
 INFORMATION: ImplementationGuide/hl7.fhir.us.pq-cmc-fda: ImplementationGuide.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/cmc-ectd-document-32p32: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/cmc-ectd-document-32p55: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
-INFORMATION: StructureDefinition/cmc-ectd-document-32s30: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32s3: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/ectd-composition-32p32: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/ectd-composition-32p55: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
-INFORMATION: StructureDefinition/ectd-composition-32s30: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/ectd-composition-32s3: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pq-product-batch-ingredient-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-batch-formula-product: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-dp-ingredient: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0

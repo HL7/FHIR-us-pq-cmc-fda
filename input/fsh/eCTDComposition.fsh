@@ -79,12 +79,12 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 
 /*Bundles Stage 2-------------------------------------------------------------------------------------------*/
 
-Profile: CMCeCTDDocument32S30
+Profile: CMCeCTDDocument32S3
 Parent: Bundle
-Id: cmc-ectd-document-32s30
-Title: "CMC eCTD 32S30 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles."
-* . ^short = "CMC eCTD 32S30 Bundle"
+Id: cmc-ectd-document-32s3
+Title: "CMC eCTD 32S3 Document"
+Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
+* . ^short = "CMC eCTD 32S3 Bundle"
 * . obeys cmc-identifer
 * meta.profile 1..1 MS
 * identifier 1..1 MS
@@ -105,7 +105,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S30 profiles.
     SubstanceDefinition 1..* and
     Organization 1..* and
     DocumentReference 0..*
-* entry[Composition].resource only EctdComposition32S30
+* entry[Composition].resource only EctdComposition32S3
 * entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation
 * entry[Organization].resource only cmc-sponsor-organization
 * entry[DocumentReference].resource only Base64DocumentReference
@@ -313,16 +313,16 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 * section.title 1..1 MS
 * section.entry only Reference(DrugProductwithImpurities)
 
-Profile: EctdComposition32S30
+Profile: EctdComposition32S3
 Parent: Composition
-Id: ectd-composition-32s30
+Id: ectd-composition-32s3
 Title: "eCTD Substance Characterisation"
-Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3.0 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
+Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
 * meta.profile 1..1 MS
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#32S30 "Substance Characterisation"
+* type = $SectionTypes#32S3 "Substance Characterisation"
 * author 1..1 MS
 * author only Reference(SponsorOrganization)
 * title 1..1 MS
@@ -337,7 +337,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section ^slicing.rules = #open
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document."
 * section contains Structure 1..1 MS
-* section[Structure] ^definition = "Substance Characterisation to be included under the 3.2.S.3.0 eCTD heading."
+* section[Structure] ^definition = "Substance Characterisation to be included under the 3.2.S.3 eCTD heading."
 * section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry 1..1 MS
