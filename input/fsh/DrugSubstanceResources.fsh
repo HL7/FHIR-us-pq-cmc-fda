@@ -595,11 +595,11 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
 * characterization 0..* MS
+  * technique ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
 * characterization.technique.text 1..1 MS
 * characterization.technique.text ^short = "Substance Characterisation Technique"
-* characterization.form.text 0..1 MS
-* characterization.form.text ^short = "Form"
-* characterization.form.text ^definition = ""
 * characterization.description 0..1 MS
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
