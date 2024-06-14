@@ -34,6 +34,7 @@ Description: "Example of Drug Product with Impurities"
 Usage: #example
 * identifier.value = "TabletCoatedBeadsCoatedAll"
 * description = """A drug product composed of one type of bead with two coatings inside a coated tablet"""
+* combinedPharmaceuticalDoseForm = $NCIT#C42964 "TABLET, MULTILAYER"
 * name[NonProprietary].part[Scientific][+].part = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[NonProprietary].part[Strength][+].part = "125mg"
 * name[NonProprietary].part[Strength][=].type.text = "LEVOTHYROXINE SODIUM ANHYDROUS"
