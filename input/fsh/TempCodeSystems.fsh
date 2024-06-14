@@ -117,6 +117,7 @@ Unless otherwise indicated, all text within NCI products is free of copyright an
 * #AmtOper "Product Part Ingredient Amount Operator"
 * #AmtText "Product Part Ingredient Amount Textual"
 * #QualStd "Quality Standard"
+* #Sterile "Sterile Product Indicator"
 * #C133994 "Bioequivalence"
 * #C133992 "Clinical"
 * #C133990 "Commercial"

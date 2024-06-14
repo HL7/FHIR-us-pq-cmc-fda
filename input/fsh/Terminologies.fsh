@@ -372,6 +372,7 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 * $NCIT#AmtOper "Product Part Ingredient Amount Operator"
 * $NCIT#AmtText "Product Part Ingredient Amount Textual"
 * $NCIT#QualStd "Quality Standard"
+* $NCIT#Sterile "Sterile Product Indicator"
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs

@@ -102,7 +102,8 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
       TotWgtOper 0..1 MS and
-      QualStd 1..* MS
+      QualStd 1..* MS and
+      Sterile 0..1 MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].type from pqcmc-product-characteristic
@@ -232,7 +233,13 @@ Note: This is typically applicable to biologics.
 Examples: USP/NF, EP, Company Standard
 """
 * property[QualStd].valueCodeableConcept from PqcmcQualityBenchmarkTerminology (required)
-
+* property[Sterile]
+  * type 1..1 MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#Sterile "Sterile Product Indicator"
+  * value[x] 1..1 MS
+  * value[x] only boolean
+    * ^short = "Sterile Product Indicator"
 // Product parts
 * component 1..* MS
 * component obeys cmc-ppidref-required
