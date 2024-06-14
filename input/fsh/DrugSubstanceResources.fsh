@@ -605,9 +605,12 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 * characterization.description ^definition = ""
 * characterization.file 0..* MS
 * characterization.file ^short = "Analysis Graphic | Analytical Instrument Data File"
-* characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+* characterization.file ^definition = """Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
 Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the instrumental output for the molecule -- CH3OH
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+
+Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF.
 """
 * characterization.file only PqcmcAttachment
 * insert UniiAndUniProtCodes
@@ -641,13 +644,15 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * characterization.description ^short = "Analytical Instrument Data File Narrative Text"
 * characterization.description ^definition = ""
 * characterization.file 0..* MS
-* characterization.file ^short = "Analysis Graphic"
-* characterization.file ^definition = """The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+* characterization.file ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
+* characterization.file ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
 Note: Refer to the 'Acceptable File Formats for use in eCTD'
 Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+
+Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF.
 """
-* characterization.file.data 1..1 MS
-* characterization.file.title 1..1 MS
+* characterization.file only PqcmcAttachment
 * structure 0..1 MS
 //* structure obeys cmc-representation-or-document
 * structure.technique MS
@@ -661,15 +666,9 @@ Example: This is the representation of the instrumental output for the molecule 
 * structure.representation.format ^definition = "The technique used to elucidate the structure or characterisation of the impurity. [Source: SME Defined]"
 * structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
 * structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File | Impurity Chemical Structure Data File"
-* structure.representation.representation ^definition = """Impurity Chemical Structure Data File: A machine readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: Structured Data File (SDF), MDL MOLFILE, IUPAC Chemical Identifier (InChI) file.
-
-Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
-Example: JCAMP, ADX, ADF.
-
-Impurity Chemical Structure Data File: A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+* structure.representation.representation ^short = "Impurity Chemical Structure Data File"
+* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
 """
 * structure.representation.document 0..1 MS
 * structure.representation.document ^short = "Impurity Structure Graphic"
