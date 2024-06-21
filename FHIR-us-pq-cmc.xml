@@ -6,6 +6,10 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="SubstanceDefinition/278736ef-2ddf-49e4-895c-3a9f34db36cf" key="SubstanceDefinition-278736ef-2ddf-49e4-895c-3a9f34db36cf" name="278736ef-2ddf-49e4-895c-3a9f34db36cf"/>
+<artifact id="Bundle/32532fe8-1bfb-4a0a-998d-9294742a9519" key="Bundle-32532fe8-1bfb-4a0a-998d-9294742a9519" name="32532fe8-1bfb-4a0a-998d-9294742a9519"/>
+<artifact id="Organization/37a26b1a-ede3-4677-943e-72b513f945b7" key="Organization-37a26b1a-ede3-4677-943e-72b513f945b7" name="37a26b1a-ede3-4677-943e-72b513f945b7"/>
+<artifact id="Organization/48beec35-843c-42f5-9251-7aa6fd693199" key="Organization-48beec35-843c-42f5-9251-7aa6fd693199" name="48beec35-843c-42f5-9251-7aa6fd693199"/>
+<artifact id="SubstanceDefinition/55f2bbea-1a2d-4240-aef0-bc1a76b39212" key="SubstanceDefinition-55f2bbea-1a2d-4240-aef0-bc1a76b39212" name="55f2bbea-1a2d-4240-aef0-bc1a76b39212"/>
 <artifact id="SubstanceDefinition/58ae52aa-c81e-415a-8791-e67a3195290d" key="SubstanceDefinition-58ae52aa-c81e-415a-8791-e67a3195290d" name="58ae52aa-c81e-415a-8791-e67a3195290d"/>
 <artifact id="Bundle/7cdbb042-9275-4599-a1fe-08877846bf94" key="Bundle-7cdbb042-9275-4599-a1fe-08877846bf94" name="7cdbb042-9275-4599-a1fe-08877846bf94"/>
 <artifact id="Organization/98effc99-db2b-428d-89aa-0ce426e02788" key="Organization-98effc99-db2b-428d-89aa-0ce426e02788" name="98effc99-db2b-428d-89aa-0ce426e02788"/>
@@ -73,6 +77,7 @@
 <artifact id="SubstanceDefinition/0efb1188-04f0-44ba-bfe7-ca6169ca8703" key="SubstanceDefinition-d8242262-2187-4ea2-907f-b66752202b46" name="Example SubstanceDefinition for Carrageenan"/>
 <artifact id="SubstanceDefinition/fd84a8b5-9e96-451c-a5c6-097c943eb38a" key="SubstanceDefinition-fd84a8b5-9e96-451c-a5c6-097c943eb38a" name="Example SubstanceDefinition for anhydrous citric acid"/>
 <artifact id="SubstanceDefinition/d3a11b25-e160-4688-b807-6383364096fd" key="SubstanceDefinition-d3a11b25-e160-4688-b807-6383364096fd" name="Example SubstanceDefinition for water"/>
+<artifact id="Organization/4664ad30-26e8-4e59-9313-1c23bf11e0c1" key="Organization-8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" name="Example of MfgTestSiteOrganization profile on Organization"/>
 <artifact id="Organization/8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" key="Organization-8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9" name="Example of MfgTestSiteOrganization profile on Organization"/>
 <artifact id="Organization/d9e7c2f7-0f59-4645-bb6d-5a8dd2425049" key="Organization-d9e7c2f7-0f59-4645-bb6d-5a8dd2425049" name="Example of a Supplier Organization"/>
 <artifact id="StructureDefinition/pqcmc-excipient" key="StructureDefinition-pqcmc-excipient" name="Excipient Drug Substance"/>
@@ -130,6 +135,8 @@
 <artifact id="Ingredient/fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" key="Ingredient-fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" name="Strength info for the Active Ingredient"/>
 <artifact id="Ingredient/3791c4ce-2b43-4d7b-b195-0e5f88f28dab" key="Ingredient-3791c4ce-2b43-4d7b-b195-0e5f88f28dab" name="Strength information - Grape skin extract"/>
 <artifact id="Ingredient/7f10a35e-228d-42db-8918-6ccada78454d" key="Ingredient-7f10a35e-228d-42db-8918-6ccada78454d" name="Strength information for the Active Ingredient - acetaminophen"/>
+<artifact id="SubstanceDefinition/3419cdae-4d99-4068-bfaa-8037550bf327" key="SubstanceDefinition-3419cdae-4d99-4068-bfaa-8037550bf327" name="Substance Characterization - EthylAcetate"/>
+<artifact id="Composition/d52acdbd-6881-495a-84a2-0dccf07ee5ab" key="Composition-d52acdbd-6881-495a-84a2-0dccf07ee5ab" name="Substance Characterization for EthylAcetate"/>
 <artifact id="ValueSet/substance-classification" key="ValueSet-substance-classification" name="Substance Classification"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature-structure" key="StructureDefinition-pqcmc-drug-substance-nomenclature-structure" name="Substance General Information"/>
 <artifact id="ValueSet/pqcmc-substance-name-type" key="ValueSet-pqcmc-substance-name-type" name="Substance Name Type"/>
