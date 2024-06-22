@@ -33,6 +33,7 @@ jobs:
 
       - name: Install IG publisher
         run: |
+          curl -L https://raw.githubusercontent.com/HL7/ig-publisher-scripts/main/_updatePublisher.sh -o ./_updatePublisher.sh
           chmod +x ./_updatePublisher.sh
           ./_updatePublisher.sh -y
 
