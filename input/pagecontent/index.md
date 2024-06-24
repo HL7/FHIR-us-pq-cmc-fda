@@ -52,7 +52,9 @@ There is another project in HL7 BR&R that covers the same domain of Pharmaceutic
 
 #### FHIR Resources and Profiles
 
-Version 1.0.0 of the PQ/CMC IG is bound to FHIR R5. It consists of four FHIR bundle profiles that are scoped to the FDA PQ/CMC Phase 1, Stage 1 requirements and are aligned with sections of Module 3 of ICH eCTD version 4.0 as indicated by the profile name. Phase 1, Stage 1 is based on these four FHIR bundle profiles are composed from eight Resources in FHIR followed by a asterisk. The FHIR resources leveraged in all of Phase 1 are listed below and represented in Figure 3 below.
+Version 1.0.0 of the PQ/CMC IG is bound to FHIR R5. It consists of four FHIR bundle profiles that are scoped to the FDA PQ/CMC Phase 1, Stage 1 requirements and are aligned with sections of Module 3 of ICH CTD version 4.0 as indicated by the profile name.
+
+The FHIR resources leveraged in all of Phase 1 are listed below and represented in Figure 3 below. The four Stage 1 FHIR bundle profiles are composed from eight FHIR Resources. These eight FHIR Resources are identified in the list below with an "*" asterisk after the Resource name.
 
 Note: The first 2 FHIR Resources – Bundle and Composition are organizational profiles used to package the content/domain resources. 
 

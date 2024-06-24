@@ -6,10 +6,10 @@ description: "The FDA PQ-CMC FHIR IG is for submission of structured and standar
 
 status: active
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 1.1.1
+version: 1.1.2
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel: 1.1.1
+releaseLabel: 1.1.2
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
@@ -60,7 +60,7 @@ pages:
     title: "Substance Control of Materials (3.2.S.2.3)"
     generation: markdown
   eCTD32S3.md: 
-    title: eCTD Substance Characterisation
+    title: eCTD Substance Characterisation (3.2.S.3)"
     generation: markdown
   eCTDSP4151.html:
     title: "Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"
@@ -69,10 +69,10 @@ pages:
     title: "Description and Composition of the Drug Product (3.2.P.1)"
     generation: markdown
   eCTD32P32.md:
-    title: Product Batch Formula
+    title: "Product Batch Formula (3.2.P.3.2)"
     generation: markdown
   eCTD32P55.md:
-    title: Product Characterisation of Impurities
+    title: "Product Characterisation of Impurities (3.2.P.5.5)"
     generation: markdown
   artifacts.html:
     title: "Artifact List"

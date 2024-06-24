@@ -1,7 +1,18 @@
 PQ/CMC FHIR Implementation Guide is under development.  Minor releases will be posted for feedback. These release notes will be retained until the next major release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 1.1.1
+### Changes and Updates for Version 1.1.2
 The current development IG - Sept connectathon
+- Organization.fsh: ballot comments
+- amount on Batch formula component
+- Substance impurity characterization changes
+- Invariants: Charaterization to Characterisation
+- Added Sterile product indicator
+- Attachment as a Profile - support of Ballot
+- aliases.fsh: most changes from FMG ballot approval
+- eCTDComposition.fsh 32S30 to 32s3
+- qualitySpecification.fsh specification detailQuantity using comparator
+
+### Changes and Updates for Version 1.1.1
 
 - Fixed typo > "Note: Codes that exist in NCIt at time of ballot begin with ‘C’."
 - Fixed Missing closing parenthesis > ...(likely either NCIt or HL7’s UTG code systems)

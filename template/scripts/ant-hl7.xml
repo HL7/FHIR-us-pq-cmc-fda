@@ -55,6 +55,10 @@
         <tokenfilter>
           <replacestring from="&amp;" to="&amp;amp;"/>
         </tokenfilter>
+        <tokenfilter>
+          <replacestring from="&lt;" to="&amp;lt;"/>
+          <replacestring from="&gt;" to="&amp;gt;"/>
+        </tokenfilter>
       </filterchain>
       <header filtering="no">&lt;json&gt;</header>
       <footer filtering="no">&lt;/json&gt;</footer>
