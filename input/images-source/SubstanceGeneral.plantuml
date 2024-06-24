@@ -19,7 +19,7 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
       **ValueSets:**
-      EVMPD Substance Classification
+      Substance Classification
       Units Of Measure Terminology
       Chemical Structure Data File Type Terminology
       Substance Name Type
@@ -49,21 +49,18 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-polymorphic-form.html]]
       **ValueSets:**
-      EVMPD Substance Classification
+      Substance Classification
       Units Of Measure Terminology
       Chemical Structure Data File Type Terminology
-
     }
-
   }
   node "SponsorOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
+      **ValueSets:**   
       Testing Site and Organization Identifier Type Terminology
-
-      GENC Country Codes
     }
   }
 
@@ -74,7 +71,6 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
       [[StructureDefinition-mfg-test-site-organization.html]]
       **ValueSets:**
       Testing Site and Organization Identifier Type Terminology
-      GENC Country Codes
     }
   }
 

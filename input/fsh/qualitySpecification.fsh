@@ -137,11 +137,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "ValueNumeric"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
-* goal.target.detailQuantity.extension contains pq-interpretation-code-extension named interpretationCode 1..1 MS
-* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept ^short = "Interpretation Code"
-* goal.target.detailQuantity.extension[interpretationCode].valueCodeableConcept ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
-Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail.
-"""
+  * comparator 0..1 MS
 * goal.target.detailQuantity.value 1..1 MS
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS

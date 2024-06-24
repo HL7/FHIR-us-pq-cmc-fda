@@ -30,9 +30,8 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       **Reference:**
       [[StructureDefinition-pqcmc-excipient.html]]
       **ValueSets:**
-      GENC Country Codes
       Source Type Terminology
-      EVMPD Substance Classification
+      Substance Classification
       Quality Standard Terminology
     }
   }
@@ -43,7 +42,6 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       [[StructureDefinition-mfg-test-site-organization.html]]
       **ValueSets:**
       Testing Site and Organization Identifier Type Terminology
-      GENC Country Codes
     }
   }
 
@@ -62,7 +60,6 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
       **ValueSets:**
-      GENC Country Codes
     }
   }
 
@@ -72,9 +69,8 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
       **ValueSets:**
-      EVMPD Substance Classification
+      Substance Classification
       Quality Standard Terminology
-      GENC Country Codes
       Source Type Terminology
     }
   }

@@ -1,7 +1,34 @@
+ValueSet: PqcmcImpurityClassificationTerminology	
+Id: pqcmc-impurity-classification-terminology	
+Title: "Impurity Classification Terminology"	
+Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+* ^experimental = true	
+* $NCIT#C176816 "Degradation Product"	
+* $NCIT#C185190 "Elemental Impurities"	
+* $NCIT#C176815 "Residual Solvent"	
+* $NCIT#C134001 "Inorganic"	
+* $NCIT#C176812 "Process Related/Process"	
+* $NCIT#C185192 "Leachables"	
+* $NCIT#C176813 "Product Related"	
+* $NCIT#C92081 "Microbiological"
+
+ValueSet: PqcmcBatchUtilizationTerminology	
+Id: pqcmc-batch-utilization-terminology	
+Title: "Batch utilization Terminology"	
+Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+	
+* ^experimental = true	
+* $NCIT#C133994 "Bioequivalence"	
+* $NCIT#C133992 "Clinical"	
+* $NCIT#C133990 "Commercial"	
+* $NCIT#C133991 "Development"	
+* $NCIT#C133993 "Validation"	
+* $NCIT#C185328 "Stability Study"
+
 CodeSystem: CmcRelationshipTypes
 Id: cmc-relationship-types
 Title: "Relationship Types Codes"
-Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems"
+Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -28,7 +55,7 @@ Description: "Local value set of all codes in the Code system."
 CodeSystem: CmcProductNameTypes
 Id: cmc-product-name-types
 Title: "Product Name Types Code Types"
-Description: "Indicates patent or trademark status. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems"
+Description: "Indicates patent or trademark status. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
 
 * ^caseSensitive = true
 * ^experimental = false
@@ -345,6 +372,7 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 * $NCIT#AmtOper "Product Part Ingredient Amount Operator"
 * $NCIT#AmtText "Product Part Ingredient Amount Textual"
 * $NCIT#QualStd "Quality Standard"
+* $NCIT#Sterile "Sterile Product Indicator"
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
@@ -373,7 +401,7 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 * #32S24 "Substance Controls of Critical Steps and Intermediates"
 * #32S25 "Substance Process Validation and/or Evaluation"
 * #32S26 "Substance Manufacturing Process Development"
-* #32S30 "Substance Characterization"
+* #32S3 "Substance Characterisation"
 * #32S31 "Substance Elucidation of Structure and other Characteristics"
 * #32S32 "Substance Impurities"
 * #32S40 "Substance Control of Drug Substance"
@@ -417,7 +445,7 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 * #32P52 "Product Analytical Procedures"
 * #32P53 "Product Validation of Analytical Procedures"
 * #32P54 "Product Batch Analyses"
-* #32P55 "Product Characterization of Impurities"
+* #32P55 "Product Characterisation of Impurities"
 * #32P56 "Product Justification of Specifications"
 * #32P60 "Product Reference Standards or Materials"
 * #32P70 "Product Container Closure System"
@@ -436,6 +464,15 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 //Description: "Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 //* $NCIT#C16275 "Calculated"
 //* $NCIT#C133995 "Experimental"
+
+ValueSet: PqcmcQualitySpecificationSectionTypes
+Id: cmc-specification-types-vs
+Title: "Relationship Types Terminology"
+Description: "Local value set of all codes in Relationship Types codes"
+* ^experimental = false
+* $SectionTypes#32P51 "Product Specification"
+* $SectionTypes#32S41 "Substance Specification"
+* $SectionTypes#32P40 "Product Control of Excipients"
 
 ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
 Id: pqcmc-chemical-structure-datafile-type-terminology

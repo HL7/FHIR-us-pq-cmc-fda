@@ -171,8 +171,10 @@ Usage: #example
 * route = $NCIT#C38288 "ORAL"
 * name[NonProprietary].part[Scientific][+].part = "ASPIRIN"
 * name[NonProprietary].part[Strength][+].part = "200mg"
+* name[NonProprietary].part[Strength][=].type.text = "ASPIRIN"
 * name[NonProprietary].part[Scientific][+].part = "ACETAMINOPHEN"
 * name[NonProprietary].part[Strength][+].part = "300mg"
+* name[NonProprietary].part[Strength][=].type.text = "ACETAMINOPHEN"
 * name[NonProprietary].productName = "ASPIRIN 200mg, ACETAMINOPHEN 300mg"
 * name[NonProprietary].type.text = "Non-Proprietary"
 
@@ -187,8 +189,10 @@ Usage: #example
 * extension[containerClosure].extension[description].valueMarkdown = """a plastic bottle with a child-proof cap"""
 * name[NonProprietary].part[Scientific][+].part = "ASPIRIN"
 * name[NonProprietary].part[Strength][+].part = "200mg"
+* name[NonProprietary].part[Strength][=].type.text = "ASPIRIN"
 * name[NonProprietary].part[Scientific][+].part = "ACETAMINOPHEN"
 * name[NonProprietary].part[Strength][+].part = "300mg"
+* name[NonProprietary].part[Strength][=].type.text = "ACETAMINOPHEN"
 * name[NonProprietary].productName = "ASPIRIN 200mg, ACETAMINOPHEN 300mg"
 * name[NonProprietary].type.text = "Non-Proprietary"
 

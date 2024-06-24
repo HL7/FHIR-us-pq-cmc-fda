@@ -10,10 +10,10 @@ Reference ICH Guideline: Q6B
 Information on impurities should be provided. 
 Reference ICH Guidelines: Q3A, Q3C, Q5C, Q6A, and Q6B 
 
-### eCTD Heading 3.2.S.3.0 Profile Map
+### eCTD Heading 3.2.S.3 Profile Map
 <div>{%include SubstanceImpurity.svg%}</div>
 
-### Example 3.2.S.3.0 Bundle
+### Example 3.2.S.3 Bundle
 
 
 

@@ -57,72 +57,72 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.21 $NCIT#C48570 "%"
+      * comparator = #<=
 * goal[+]
   * id = "fc230a97-fd1a-4017-8603-822c5430a217"
   * description.text = "Formaldehyde NMT 1.5%"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 1.5 $NCIT#C48570 "%"
+      * comparator = #<=
 * goal[+]
   * id = "8d6688e0-7412-4d64-afe8-b73d8aec596e"
   * description.text = "Impurity C NMT 2%"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 2 $NCIT#C48570 "%"
+      * comparator = #<=
 * goal[+]
   * id = "f8e8343d-a37d-4b91-916b-f58d6947dc9c"
   * description.text = "Unspecified Impurity NMT 0.10 % w/w"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.10 $NCIT#C48528 "%{WeightToWeight}"
+      * comparator = #<=
 * goal[+]
   * id = "be7abaa1-0769-4560-af76-326e07d1df9a"
   * description.text = "Total Impurities"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.7 $NCIT#C48570 "%"
+      * comparator = #<=
 * goal[+]
   * id = "cfdd469d-020b-4047-946f-f513d58f007f"
   * description.text = "Total Unidentified Impurities NMT 0.3%"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.3 $NCIT#C48570 "%"
+      * comparator = #<=
 * goal[+]
   * id = "c5eea380-416f-4d19-a21e-c021f3c7c543"
   * description.text = "RRT 2.2 NMT 0.10% w/w"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.10 $NCIT#C48528 "%{WeightToWeight}"
+      * comparator = #<=
 * goal[+]
   * id = "41e19fa2-f568-443e-8bc1-6b0a6dca9d0c"
   * description.text = "RRT 2.4 NMT 0.10% w/w"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.10 $NCIT#C48528 "%{WeightToWeight}"
+      * comparator = #<=
 * goal[+]
   * id = "e493cb3d-45b6-4463-b9b6-e588c51e032c"
   * description.text = "RRT 3.41 NMT 0.10% w/w"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.20 $NCIT#C48528 "%{WeightToWeight}"
+      * comparator = #<=
 * action[+]
   * extension[testOrder].valueDecimal = 1
   * linkId = "b9359ce8-73f3-45c5-9674-98d850053aa2"
@@ -218,12 +218,11 @@ Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
 * identifier.value = "CochinealSpecificationComposition"
 * status = #final
-* type.coding = $SectionTypes#SP4151 "Quality Specification"
+* type.coding = $SectionTypes#32P40 "Product Control of Excipients"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2024-01-01T19:42:35.254Z
 * title = """Cochineal specification Composition Example"""
-* section[Excipient]
-  * code = $SectionTypes#32P40 "Product Control of Excipients"
+* section
   * title = "32P40"
   * entry = Reference(urn:uuid:37bf5cc0-33bf-478b-b84e-ccb35143ef6e)
 Instance: 7cdbb042-9275-4599-a1fe-08877846bf94

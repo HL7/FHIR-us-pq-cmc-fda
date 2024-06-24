@@ -72,16 +72,16 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 10 $NCIT#C68742 "colony forming units"
+      * comparator = #<=
 * goal[+]
   * id = "442983b5-bbc3-4534-9f1b-5ae5e4c531c1"
   * description.text = "NMT 100 colony-forming units"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 100 $NCIT#C68742 "colony forming units"
+      * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
   * extension[testOrder].valueDecimal = 1
@@ -132,18 +132,17 @@ Usage: #example
 
 * identifier.value = "ExampleSpecification2"
 * status = #final
-* type.coding = $SectionTypes#SP4151 "Quality Specification"
+* type.coding = $SectionTypes#32S41 "Substance Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:36:51.299Z
 * title = """Quality Specification for an API"""
-* section[Api]
-  * code = $SectionTypes#32S41 "Substance Specification"
+* section
   * title = "32S41"
   * entry = Reference(urn:uuid:cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93)
 
 Instance: 6004e36e-7df9-469d-9b29-8e9f9bd7e95f
 InstanceOf: CMCeCTDDocumentSP4151
-Title: "FHIR Document example of 3.2.P.4.1."
+Title: "FHIR Document example of 3.2.S.4.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"
 Usage: #example
 * identifier.extension[version].valueString = "0.1.24"

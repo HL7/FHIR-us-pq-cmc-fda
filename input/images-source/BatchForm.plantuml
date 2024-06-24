@@ -20,7 +20,6 @@ node "SponsorOrganization" as NSO {
         **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
-        GENC Country Codes
         Sponsor Identifier Type Terminology 
     }
 }
@@ -49,7 +48,6 @@ node "MfgTestSiteOrganization" as NMFG {
       [[StructureDefinition-mfg-test-site-organization.html]]
          **ValueSets:**
         Testing Site and Organization Identifier Type Terminology
-	    GENC Country Codes
     }
 }
 
@@ -58,7 +56,7 @@ node "RoutineSubstanceDefinition" as NNS {
                    **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                 **ValueSets:**
-                EVMPD Substance Classification
+                Substance Classification
                 Quality Benchmark Terminology
       }  
 }

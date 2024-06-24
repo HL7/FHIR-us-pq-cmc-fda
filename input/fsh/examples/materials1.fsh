@@ -88,7 +88,7 @@ Usage: #example
 Instance: cd84a8b5-4e96-551c-15c6-c97c943eb38a
 InstanceOf: RoutineSubstanceDefinition
 Title: "Example RoutineSubstanceDefinition for Asprin"
-Description: "Identification of the Drug Substance of the raw materials whose specifications are "
+Description: "Identification of the Drug Substance of the raw materials whose specifications are for Aspirin."
 Usage: #example
 * identifier.value = "salicylate"
 * classification = $NCIT#C48807 "Chemical"
@@ -162,8 +162,8 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 200 $NCIT#C68742 "colony forming units"
+      * comparator = #<=
 * goal[+]
   * id = "95bf9d43-f337-4905-9c50-788b69d00843"
   * description.text = "Negative"
@@ -198,16 +198,16 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 3 $NCIT#C48523 "parts per million"
+      * comparator = #<=
 * goal[+]
   * id = "03fbc16c-d4d4-40ac-8689-448bda831dac"
   * description.text = "<= 10 ppm"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 10 $NCIT#C48523 "parts per million"
+      * comparator = #<=
 * goal[+]
   * id = "28aba010-126e-4c47-8611-367cdacdd87e"
   * description.text = "As Reported"
@@ -221,19 +221,19 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 2 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "8125f603-96e7-4f3e-8b13-c15c5870e6e6"
   * description.text = "<30ml H2O @ 25C"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 30 $NCIT#C28254 "mL"
+      * comparator = #<=
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C48793 "EQ"
     * detailQuantity = 25 $NCIT#C42559 "degree Celsius"
+      * comparator = #<=
 * action[+]
   * id = "428fa917-a7d3-4515-9b48-c9366acd673a"
   * extension[testOrder].valueDecimal = 1
@@ -401,8 +401,8 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.21 $NCIT#C48570 "percent"
+      * comparator = #<=
 * action[+]
   * id = "fdf5e37f-ae97-48c1-9809-33aebff37199"
   * extension[testOrder].valueDecimal = 1
@@ -476,8 +476,8 @@ Usage: #example
   * description.text = "<=12 deg"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 12 $NCIT#C68667 "degrees of rotation"
+      * comparator = #<=
 * goal[+]
   * id = "2897e150-8465-48c7-9269-1cda86dc3075"
   * description.text = "Conforms to reference standard"
@@ -495,8 +495,8 @@ Usage: #example
   * description.text = "<= 395mg/L"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 395 $NCIT#C28253 "milligram"
+      * comparator = #<=
 * action[+]
   * id = "3668eb6f-797c-4325-8f41-160c951b4adc"
   * extension[testOrder].valueDecimal = 1

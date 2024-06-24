@@ -53,7 +53,6 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-cmc-sponsor-organization.html]]
             **ValueSets:**
-            GENC Country Codes
             Testing Site and Organization Identifier Type Terminology
         }
     }
@@ -64,9 +63,8 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-excipient.html]]
             **ValueSets:**
-            GENC Country Codes
             Source Type Terminology
-            EVMPD Substance Classification
+            Substance Classification
             Quality Standard Terminology
         }
     }
@@ -77,7 +75,6 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             [[StructureDefinition-mfg-test-site-organization.html]]
             **ValueSets:**
             Organization Unique Identifier Type
-            GENC Country Codes
         }
     }
 
@@ -86,7 +83,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
                    **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                 **ValueSets:**
-                EVMPD Substance Classification
+                Substance Classification
                 Quality Benchmark Terminology
       }  
 }

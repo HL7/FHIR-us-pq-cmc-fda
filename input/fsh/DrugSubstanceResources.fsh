@@ -25,9 +25,6 @@ Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, 
 * extension[strengthOperator] ^definition = """A mathematical symbol that denotes equality or inequality between two values
 Note: This is typically applicable to biologics """
 
-
-
-
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
 Id: pqcmc-polymorphic-form
@@ -42,8 +39,8 @@ Description: "Alternate structure present in the drug substance"
 * structure.molecularFormula ^short = "Molecular Formula"
 * structure.molecularFormula ^definition = "An expression which states the number and type of atoms present in a molecule of a substance or sequence for biotechnology products. [Source: SME Defined]"
 * structure.technique 0..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+* structure.technique ^short = "Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -332,8 +329,8 @@ Description: "Substance General Information containting Drug Substance (Active I
 Biopolymer Sequence: TBD
 """
 * structure.technique 1..1 MS
-* structure.technique ^short = "Substance Characterization Technique"
-* structure.technique ^definition = """The technique used to elucidate the structure or characterization of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+* structure.technique ^short = "Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
@@ -573,3 +570,174 @@ RuleSet: CountryOfOrigin
   * coding 1..1 MS
     * code 1..1 MS
       * obeys cmc-only-ISO-3166-1-alpha-3
+
+//*Stage 2 --------------------------------------------------------------------------------------------------------------*/
+
+Profile: DrugSubstanceCharacterisation
+Parent: SubstanceDefinition
+Id: pqcmc-drug-substance-characterisation
+Title: "Drug Substance"
+Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
+* meta.profile 0..1 MS
+* . obeys cmc-when-unii-required
+* . obeys cmc-name-isbt
+* obeys cmc-substance-characterisation-content-required
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* classification 1..* MS
+* classification from SubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
+* manufacturer 1..1 MS
+* manufacturer only Reference(MfgTestSiteOrganization)
+* supplier 0..1 MS
+* supplier only Reference(SupplierOrganization)
+* characterization 0..* MS
+  * technique ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
+* characterization.technique.text 1..1 MS
+* characterization.technique.text ^short = "Substance Characterisation Technique"
+* characterization.description 0..1 MS
+* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
+* characterization.description ^definition = ""
+* characterization.file 0..* MS
+* characterization.file ^short = "Analysis Graphic | Analytical Instrument Data File"
+* characterization.file ^definition = """Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+
+Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF.
+"""
+* characterization.file only PqcmcAttachment
+* insert UniiAndUniProtCodes
+* insert ShortSetSubstanceNames
+
+* relationship 0..* MS
+//* relationship obeys cmc-substance-relationship  not needed  since this resource is for illustraion.
+* relationship.substanceDefinitionReference only Reference(ImpuritySubstance)
+
+Profile: ImpuritySubstance
+Parent: SubstanceDefinition
+Id: pqcmc-drug-product-substance-impurity
+Title: "Drug Substance Impurity"
+Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+* meta.profile 0..1 MS
+* . obeys cmc-structure-required
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* classification 1..* MS
+* classification from PqcmcImpurityClassificationTerminology (required)
+* classification ^short = "Impurity Classification"
+* classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
+Examples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.
+"""
+* characterization MS
+* characterization.technique.text 1..1 MS
+* characterization.form.text 0..1 MS
+* characterization.form.text ^short = "Form"
+* characterization.form.text ^definition = ""
+* characterization.description 0..1 MS
+* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
+* characterization.description ^definition = ""
+* characterization.file 0..* MS
+* characterization.file ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
+* characterization.file ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+
+Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF.
+"""
+* characterization.file only PqcmcAttachment
+* structure 0..1 MS
+//* structure obeys cmc-representation-or-document
+* structure.technique MS
+* structure.technique ^short = "Impurity Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+"""
+* structure.technique.text 1..1 MS
+* structure.representation MS
+* structure.representation.format 0..1 MS
+* structure.representation.format ^short = "Drug Substance Impurity Method Type| Drug Product Impurity Method Type"
+* structure.representation.format ^definition = "The technique used to elucidate the structure or characterisation of the impurity. [Source: SME Defined]"
+* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
+* structure.representation.representation 0..1 MS
+* structure.representation.representation ^short = "Impurity Chemical Structure Data File"
+* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+"""
+* structure.representation.document 0..1 MS
+* structure.representation.document ^short = "Impurity Structure Graphic"
+* structure.representation.document ^definition = "A pictorial representation of the structure of the impurity substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD' Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."
+* structure.representation.document only Reference(Base64DocumentReference)
+
+//element(*,SubstanceDefinition)/code/code/coding
+* insert UniiAndUniProtCodes
+* insert ShortSetSubstanceNames
+
+Profile: DrugProductIngredient
+Parent: Ingredient
+Id: pqcmc-dp-ingredient
+Title: "Drug Product Batch Formula Ingredient"
+Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
+
+* meta.profile 0..1 MS
+* identifier 0..1 MS
+* substance.code 1..1 MS
+* substance.code ^short = "Ingredient Substance"
+* substance.code only CodeableReference(pqcmc-routine-drug-substance)
+* substance.strength 1..* MS
+
+* substance.strength 1..2 MS
+* substance.strength ^slicing.discriminator.type = #value
+* substance.strength ^slicing.discriminator.path = "concentrationQuantity.code"
+* substance.strength ^slicing.rules = #closed
+* substance.strength ^slicing.description = "Slice based on value of unit"
+* substance.strength contains
+      Weight 1..1 MS and
+      VolumeToVolume 0..1 MS and
+      WeightToVolume 0..1 MS and
+      WeightToWeight 0..1 MS
+* substance.strength[Weight] obeys cmc-percent-quantity-ingredient      
+* substance.strength[Weight].concentrationQuantity.value 1..1 MS
+* substance.strength[Weight].concentrationQuantity.value ^short = "Component Quantity Per Batch"
+* substance.strength[Weight].concentrationQuantity.value ^definition = """Component Quantity Per Batch: Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
+
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* substance.strength[Weight].concentrationQuantity.unit 1..1 MS
+* substance.strength[Weight].concentrationQuantity.code 1..1 MS
+* substance.strength[Weight].concentrationQuantity.code from PqcmcUnitsMeasureTerminology (required)
+
+* substance.strength[VolumeToVolume].concentrationQuantity.value 1..1 MS
+* substance.strength[VolumeToVolume].concentrationQuantity.value ^short = "Quantity Percent"
+* substance.strength[VolumeToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
+
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* substance.strength[VolumeToVolume].concentrationQuantity.code = $NCIT#C48571 "%{VolumeToVolume}"
+
+* substance.strength[WeightToVolume].concentrationQuantity.value 1..1 MS
+* substance.strength[WeightToVolume].concentrationQuantity.value ^short = "Quantity Percent"
+* substance.strength[WeightToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Volume: TThe percentage of the component in the batch [Source: SME Defined]
+
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* substance.strength[WeightToVolume].concentrationQuantity.code =  $NCIT#C48527 "%{WeightToVolume}"
+* substance.strength[WeightToWeight].concentrationQuantity.value 1..1 MS
+* substance.strength[WeightToWeight].concentrationQuantity.value ^short = "Quantity Percent"
+* substance.strength[WeightToWeight].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined]
+
+Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+"""
+* substance.strength[WeightToWeight].concentrationQuantity.code = $NCIT#C48528 "%{WeightToWeight}"
+
+//* substance.strength.textConcentration ^short = "Strength Textual"
+//* substance.strength.textConcentration ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+//Note: This is typically applicable to biologics
+//Example: International Units for Enzymes
+//"""

@@ -8,7 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES {
+package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES {
 
   object "**Bundle Reference:**" as objbun {
     [[StructureDefinition-cmc-ectd-document-32p55.html]]
@@ -39,7 +39,6 @@ package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES 
       **Reference:**
       [[StructureDefinition-cmc-sponsor-organization.html]]
       **ValueSets:**
-      GENC Country Codes
       Testing Site and Organization Identifier Type Terminology
     }
   }
@@ -56,7 +55,7 @@ package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES 
     }
   }
 
-  node "ImpuritySubstance" as N6 {
+   node "ImpuritySubstance" as N6 {
 
     object "**Parent:** SubstanceDefinition" as obj2 {
       **Reference:**
@@ -65,9 +64,7 @@ package "eCTD Heading 3.2.P.5.5 Characterization of Impurities Bundle" as NODES 
       Impurity Classification Terminology
       Chemical Structure Data File Type Terminology
     }
-
-  }
-
+   }
   N1 -[#darkred]-> NSO
   NN -[#darkred]-> N6
   N1 -[#darkred]-> NN
