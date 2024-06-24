@@ -72,16 +72,16 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 10 $NCIT#C68742 "colony forming units"
+      * comparator = #<=
 * goal[+]
   * id = "442983b5-bbc3-4534-9f1b-5ae5e4c531c1"
   * description.text = "NMT 100 colony-forming units"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 100 $NCIT#C68742 "colony forming units"
+      * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
   * extension[testOrder].valueDecimal = 1

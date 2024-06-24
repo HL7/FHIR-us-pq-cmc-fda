@@ -53,8 +53,8 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.5 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "b122987d-586c-481b-951c-6202e660158d"
   * description.text = "Color of solution is clear"
@@ -68,8 +68,8 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.05 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "8d7c85c2-7a4b-432e-ac94-226f296e4fca"
   * description.text = "No Particulate Matter detected"
@@ -83,24 +83,24 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.014 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "b46dce64-a009-46cd-ab95-21d1d5b4df77"
   * description.text = "<= 0.04 %"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.04 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "5566f501-37e1-49fb-8783-b20c074ec0c3"
   * description.text = "<= 0.001 %"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
     * detailQuantity = 0.001 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "db19e3ab-e28b-4477-8bd7-2409093ed5a3"
   * description.text = "Color intenssity of feriric ammonium sulfate TS is not less that than salicylic acid (0.1%) solution"
@@ -115,32 +115,32 @@ Usage: #example
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
     * measure.text = "Ethanol"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.2 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "cae2da87-c4b7-43d0-9e8e-c64d0d4df6c2"
   * description.text = "Ethyl Ether < 0.1%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Ethyl Ether"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.1 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "28ad4d5b-d975-4f6e-9792-b3d9cc7ce279"
   * description.text = "1—propanol < 0.15%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "1—propanol"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.15 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "33fa051c-6b3c-4e4d-bd4e-09d39fc253b3"
   * description.text = "Total < 0.5%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Total Residual Solvents"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0.5 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "9100e938-42ff-4004-8473-ed5090d66f3a"
   * description.text = "99.5 - 100.5 %"
@@ -162,8 +162,8 @@ Usage: #example
   * description.text = "Each unit is NLT Q + 5%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
     * detailQuantity = 85 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "47c0d685-0b23-4637-9af8-a554e4fad7ec"
   * description.text = "n=6"
@@ -176,28 +176,28 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 12 units"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
     * detailQuantity = 80 $NCIT#C48570 "percent"
+      * comparator = #<=
   * target[+]
     * measure.text = "unit"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 65 $NCIT#C48570 "percent"
+      * comparator = #<=
 * goal[+]
   * id = "15309a78-92a9-4cf9-aee1-452d6d2f7a91"
   * description.text = "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 24 units"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
     * detailQuantity = 80 $NCIT#C48570 "percent"
+      * comparator = #<=
   * target[+]
     * measure.text = "units less than Q – 15%"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
     * detailQuantity = 2 $NCIT#C92953  "amb a 1 units"
+      * comparator = #<=
   * target[+]
     * measure.text = "units less than Q – 25%"
-    * detailQuantity.extension[interpretationCode].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
     * detailQuantity = 0 $NCIT#C92953  "amb a 1 units"
+      * comparator = #<=
 * goal[+]
   * id = "666ace1e-bd29-4263-9ae2-2391106326bb"
   * description.text = "n=12"
