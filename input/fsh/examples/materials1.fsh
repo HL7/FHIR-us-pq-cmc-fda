@@ -391,10 +391,13 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 3.4 $NCIT#C45997 "pH"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-    * detailRange.high = 4.3 $NCIT#C45997 "pH"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 3.4 $NCIT#C45997 "pH"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 4.3 $NCIT#C45997 "pH"
+          * comparator = #<=
 * goal[+]
   * id = "e046aab8-b10f-4e13-89e6-bfa869a90b38"
   * description.text = "residue <= 0.21%"

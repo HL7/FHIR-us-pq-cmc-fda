@@ -55,6 +55,35 @@ Context: "PlanDefinition.repeat(action)"
 * value[x] obeys cmc-greater-than-zero
 * value[x] only decimal 
 
+Extension: TargetRange
+Id: pq-target-range
+Title: "Target Range"
+Description: "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator"
+Context: "PlanDefinition.goal.target"
+* . ?!
+* . ^isModifierReason = "When present, the target cannot have a detail; instead this extension acts as its detail"
+* extension 
+  * ^short = "ValueNumeric (range)"
+  * ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
+* extension contains 
+  low 1..1 MS and
+  high 1..1 MS
+* extension[low]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+    * value 1..1 MS
+    * unit 1..1 MS
+* extension[high]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+    * value 1..1 MS
+    * unit 1..1 MS
+
+Invariant: cmc-target-range
+Description: "When the Range extension is present, detail cannot be present."
+Expression: "modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-target-range').exists() implies detail.exists().not()"
+Severity: #error
+
 Profile: QualitySpecification
 Parent: PlanDefinition
 Id: pqcmc-quality-specification
@@ -129,11 +158,13 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.documentation.display ^definition = """A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
 Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
+* goal.target obeys cmc-target-range
 * goal.target ^short = "Acceptance Criteron"
+  * modifierExtension contains pq-target-range named targetRange 0..1 MS
 * goal.target.measure.text 0..1 MS
 * goal.target.measure.text ^short = "Detailed parameter being measured if more granular than Sub-Test"
 * goal.target.detail[x] MS
-* goal.target.detail[x] only Quantity or Range or CodeableConcept or integer
+* goal.target.detail[x] only Quantity or CodeableConcept or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "ValueNumeric"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
@@ -142,26 +173,6 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS
 * goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology (required)
-* goal.target.detailRange  0..1 MS
-* goal.target.detailRange ^short = "ValueNumeric (range)"
-* goal.target.detailRange ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
-* goal.target.detailRange
-* goal.target.detailRange.low 1..1
-* goal.target.detailRange.low.extension contains pq-interpretation-code-extension named interpretationCodeLow 1..1 MS
-* goal.target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept ^short = "Interpretation Code"
-* goal.target.detailRange.low.extension[interpretationCodeLow].valueCodeableConcept ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
-* goal.target.detailRange.low.value 1..1 MS
-* goal.target.detailRange.low.unit 1..1 MS
-* goal.target.detailRange.low.code 1..1 MS
-* goal.target.detailRange.low.code from  PqcmcUnitsMeasureTerminology (required)
-* goal.target.detailRange.high 1..1
-* goal.target.detailRange.high.extension contains pq-interpretation-code-extension named interpretationCodeHigh 1..1 MS
-* goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept ^short = "Interpretation Code"
-* goal.target.detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail."""
-* goal.target.detailRange.high.value 1..1 MS
-* goal.target.detailRange.high.unit 1..1 MS
-* goal.target.detailRange.high.code 1..1 MS
-* goal.target.detailRange.high.code from  PqcmcUnitsMeasureTerminology (required)
 * goal.target.detailCodeableConcept 0..1 MS
   * coding 1..1 MS
   * coding from PqcmcInterpretationCodeTerminology (required)

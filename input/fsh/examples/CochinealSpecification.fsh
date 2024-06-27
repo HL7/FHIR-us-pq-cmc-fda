@@ -47,10 +47,13 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 3.4 $NCIT#C45997 "[pH]"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-    * detailRange.high = 4.3 $NCIT#C45997 "[pH]"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 3.4 $NCIT#C45997 "[pH]"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 4.3 $NCIT#C45997 "[pH]"
+          * comparator = #<=
 * goal[+]
   * id = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
   * description.text = "residue <= 0.21%"

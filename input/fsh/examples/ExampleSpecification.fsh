@@ -36,10 +36,13 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 2 $NCIT#C45997 "pH"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
-    * detailRange.high = 3 $NCIT#C45997 "pH"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 2 $NCIT#C45997 "pH"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 3 $NCIT#C45997 "pH"
+          * comparator = #<
 * goal[+]
   * id = "59a4ca76-858e-4d58-8e5f-88e75f51ec33"
   * description.text = "Maxima only at the same wavelengths compared to reference standard"
@@ -147,10 +150,13 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 99.5 $NCIT#C48570 "percent"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-    * detailRange.high = 100.5 $NCIT#C48570 "percent"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 99.5 $NCIT#C48570 "percent"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 100.5 $NCIT#C48570 "percent"
+          * comparator = #<=
 * goal[+]
   * id = "af260128-f105-4692-ba40-49f21f12ad46"
   * description.text = "n=6"
