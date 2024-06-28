@@ -33,14 +33,14 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "White solid"
+    * detailString = "White solid"
 * goal[+]
   * id = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
   * description.text = "IR spectrum conforms to reference standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "IR spectrum conforms to reference standard"
+    * detailString = "IR spectrum conforms to reference standard"
 * goal[+]
   * id = "1f476689-f440-4a77-9e9c-0615af3571eb"
   * description.text = "pH 3.4-4.3"

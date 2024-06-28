@@ -51,21 +51,21 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Negative"
+    * detailString = "Negative"
 * goal[+]
   * id = "d4e38c52-30f6-4bb7-ab84-99439a7266ce"
   * description.text = "Negative"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Negative"
+    * detailString = "Negative"
 * goal[+]
   * id = "2abf1f19-e1b1-42e4-b943-79f5fa1642fe"
   * description.text = "Negative"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Negative"
+    * detailString = "Negative"
 * goal[+]
   * id = "c0ed4a79-8f40-4d26-8845-4cea166fb627"
   * description.text = "NMT 10 colony-forming units"

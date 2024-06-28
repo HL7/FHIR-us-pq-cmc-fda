@@ -164,7 +164,7 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.measure.text 0..1 MS
 * goal.target.measure.text ^short = "Detailed parameter being measured if more granular than Sub-Test"
 * goal.target.detail[x] MS
-* goal.target.detail[x] only Quantity or CodeableConcept or integer
+* goal.target.detail[x] only Quantity or string or integer
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "ValueNumeric"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
@@ -173,16 +173,9 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS
 * goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology (required)
-* goal.target.detailCodeableConcept 0..1 MS
-  * coding 1..1 MS
-  * coding from PqcmcInterpretationCodeTerminology (required)
-  * coding ^short = "Interpretation Code"
-  * coding ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
-  //* coding = $NCIT#C48660 "Not Applicable"
-  * coding = $NCIT#C48793 "EQ"	
-  * text 1..1 MS 
-    * ^short = "Value"
-    * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711>)
+* goal.target.detailString 0..1 MS
+  * ^short = "Value"
+  * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711>)
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151>; 21 CFR 610.13 (b) Test for pyrogenic substances)
 """
 * goal.target.detailInteger  0..1 MS

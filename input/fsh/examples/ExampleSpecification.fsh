@@ -49,7 +49,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Conforms"
+    * detailString = "Conforms"
 * goal[+]
   * id = "c40aa176-e6aa-4fe4-869d-6550ee992903"
   * description.text = "<= 0.5 %"
@@ -64,7 +64,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Conforms"
+    * detailString = "Conforms"
 * goal[+]
   * id = "929747ad-e83a-46f0-bbbc-133ee951e819"
   * description.text = "<= 0.05 %"
@@ -79,7 +79,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "pass"
+    * detailString = "pass"
 * goal[+]
   * id = "de4f962a-d486-486d-8d84-f2d1635646b4"
   * description.text = "<= 0.014 %"
@@ -110,7 +110,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "pass"
+    * detailString = "pass"
 * goal[+]
   * id = "82370588-7aae-4556-9262-a7f50dbd01aa"
   * description.text = "Ethanol < 0.2%"
