@@ -692,18 +692,6 @@ Description: "Terminology used to qualify the information pertaining to excipien
 * $NCIT#C176668 "Wetting Excipient"
 * $NCIT#C176658 "pH Modifying Excipient"
 
-ValueSet: PqcmcInterpretationCodeTerminology
-Id: pqcmc-interpretation-code-terminology
-Title: "Interpretation Code Terminology"
-Description: "Terminology used to qualify the information pertaining to numeric interpretation codes, Weight Operator codes and Amount Operator code in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = false
-* $NCIT#C48793 "EQ"
-* $NCIT#C61585 "LT (less than)"
-* $NCIT#C61584 "MT (more than)"
-* $NCIT#C61583 "NLT (not less than)"
-* $NCIT#C61586 "NMT (not more than)"
-* $NCIT#C48660 "Not Applicable"
 
 ValueSet: PqcmcQualityBenchmarkTerminology
 Id: pqcmc-quality-benchmark-terminology

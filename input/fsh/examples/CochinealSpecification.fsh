@@ -33,24 +33,27 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "White solid"
+    * detailString = "White solid"
 * goal[+]
   * id = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
   * description.text = "IR spectrum conforms to reference standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "IR spectrum conforms to reference standard"
+    * detailString = "IR spectrum conforms to reference standard"
 * goal[+]
   * id = "1f476689-f440-4a77-9e9c-0615af3571eb"
   * description.text = "pH 3.4-4.3"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 3.4 $NCIT#C45997 "[pH]"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-    * detailRange.high = 4.3 $NCIT#C45997 "[pH]"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 3.4 $NCIT#C45997 "[pH]"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 4.3 $NCIT#C45997 "[pH]"
+          * comparator = #<=
 * goal[+]
   * id = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
   * description.text = "residue <= 0.21%"

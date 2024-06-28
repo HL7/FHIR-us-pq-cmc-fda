@@ -134,28 +134,28 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Viscous upon cooling"
+    * detailString = "Viscous upon cooling"
 * goal[+]
   * id = "2c6e465b-4dec-4a09-9dc5-58c480009d27"
   * description.text = "Kappa, iota or lambda"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Kappa, iota or Lambda"
+    * detailString = "Kappa, iota or Lambda"
 * goal[+]
   * id = "c233a5f7-37e2-4b2b-9f04-cf1b25534865"
   * description.text = "Blue, stringy precipitate forms"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Blue stringy precipitate forms"
+    * detailString = "Blue stringy precipitate forms"
 * goal[+]
   * id = "c759888d-1eac-4a12-aa9b-403f395f2c18"
   * description.text = "FTIR matches standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "FTIR matches standard"
+    * detailString = "FTIR matches standard"
 * goal[+]
   * id = "66d4035c-633a-49b1-b974-e3171911f44a"
   * description.text = "max 200 cfu/g"
@@ -170,28 +170,28 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Negative"
+    * detailString = "Negative"
 * goal[+]
   * id = "4e475e2c-c235-4433-b1e4-201a17e45796"
   * description.text = "Negative"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "Negative"
+    * detailString = "Negative"
 * goal[+]
   * id = "af4ec6c3-4590-43f7-92e0-c8dae0e76e1f"
   * description.text = "As Reported"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "As Reported"
+    * detailString = "As Reported"
 * goal[+]
   * id = "b00cb099-5fd8-4ef4-b05b-c1c7c4cd4c73"
   * description.text = "As Reported"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "As Reported"
+    * detailString = "As Reported"
 * goal[+]
   * id = "464f3063-0a4b-4408-9f4a-d6c0b8170097"
   * description.text = "<= 3 ppm"
@@ -214,14 +214,14 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "As Reported"
+    * detailString = "As Reported"
 * goal[+]
   * id = "4b3aa353-3bc7-463f-b4c2-defd041da2c7"
   * description.text = "<= 2.0%"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 2 $NCIT#C48570 "percent"
+    * detailQuantity = 2 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "8125f603-96e7-4f3e-8b13-c15c5870e6e6"
@@ -377,31 +377,34 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "White solid"
+    * detailString = "White solid"
 * goal[+]
   * id = "59e2c94a-d383-4776-9b00-3b97b0741c9a"
   * description.text = "IR spectrum conforms to reference standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "IR spectrum conforms to reference standard"
+    * detailString = "IR spectrum conforms to reference standard"
 * goal[+]
   * id = "a2ed2d13-e96a-4d7b-b825-c69afd334cf7"
   * description.text = "pH 3.4-4.3"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 3.4 $NCIT#C45997 "pH"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-    * detailRange.high = 4.3 $NCIT#C45997 "pH"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 3.4 $NCIT#C45997 "pH"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 4.3 $NCIT#C45997 "pH"
+          * comparator = #<=
 * goal[+]
   * id = "e046aab8-b10f-4e13-89e6-bfa869a90b38"
   * description.text = "residue <= 0.21%"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.21 $NCIT#C48570 "percent"
+    * detailQuantity = 0.21 $NCIT#C48570 "%"
       * comparator = #<=
 * action[+]
   * id = "fdf5e37f-ae97-48c1-9809-33aebff37199"
@@ -483,13 +486,13 @@ Usage: #example
   * description.text = "Conforms to reference standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailCodeableConcept.text = "Conforms to reference standard"
+    * detailString = "Conforms to reference standard"
 * goal[+]
   * id = "9c86ccba-a210-4ce5-9a23-b145d9f123c6"
   * description.text = "Odorless"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailCodeableConcept.text = "Odorless"
+    * detailString = "Odorless"
 * goal[+]
   * id = "de0f0d85-5617-4b07-98fc-9976b2dbf216"
   * description.text = "<= 395mg/L"
