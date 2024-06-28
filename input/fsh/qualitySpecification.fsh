@@ -97,7 +97,7 @@ Note: This may include the name of the drug substance, product or the raw materi
   * coding[ApprovalStatus] from PqcmcSpecificationStatusTerminology (required)
 * status MS
 * subject[x] 1..1 MS
-* subject[x] only Reference(RoutineDrugProduct or RoutineSubstanceDefinition or ExcipientRaw)
+* subject[x] only Reference(DrugProductHandle or RoutineSubstanceDefinition or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
@@ -241,9 +241,6 @@ Note: This could also be a transferred lab method.
 * action.relatedAction.relationship MS
 * action.relatedAction.relationship ^short = "Code is concurrent"
 * action.relatedAction.relationship = $ActRelationType#concurrent "Concurrent"
-* action.selectionBehavior MS
-* action.selectionBehavior ^short = "Code is exactly-one"
-* action.selectionBehavior = $ActSelection#exactly-one "Exactly One"
 * action.goalId 0..* MS
 * action.goalId ^short = "Reference to Acceptance Criteria"
 

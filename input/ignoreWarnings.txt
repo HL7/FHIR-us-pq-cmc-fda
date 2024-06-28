@@ -81,7 +81,7 @@ INFORMATION: StructureDefinition/pqcmc-excipient: StructureDefinition.jurisdicti
 INFORMATION: StructureDefinition/pqcmc-polymorphic-form: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-product-part: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-INFORMATION: StructureDefinition/pqcmc-routine-drug-product: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-handle: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-routine-drug-substance: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/strength-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/supplier-organization: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
@@ -181,7 +181,7 @@ INFORMATION: StructureDefinition/pqcmc-excipient: StructureDefinition.extension[
 INFORMATION: StructureDefinition/pqcmc-polymorphic-form: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-product-part: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
-INFORMATION: StructureDefinition/pqcmc-routine-drug-product: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-handle: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-routine-drug-substance: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/strength-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/supplier-organization: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0

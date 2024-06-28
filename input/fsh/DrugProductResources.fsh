@@ -413,11 +413,11 @@ RuleSet: ProductPartIdentifierReferenceProperty
 Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
 """
 
-Profile: RoutineDrugProduct
+Profile: DrugProductHandle
 Parent: MedicinalProductDefinition
-Id: pqcmc-routine-drug-product 
-Title: "Routine Drug Product"
-Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."
+Id: pqcmc-drug-product-handle 
+Title: "Drug Product Handle"
+Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure."
 
 * meta.profile 1..1 MS
 * identifier 0..1 MS

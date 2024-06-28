@@ -1,5 +1,5 @@
 Instance: 89676a69-1fe7-422c-ab00-92abe4ef6ea9
-InstanceOf: RoutineDrugProduct
+InstanceOf: DrugProductHandle
 Title: "drug product for specification"
 Description: "Includes the identifier of the drug product"
 Usage: #example
@@ -219,7 +219,6 @@ Usage: #example
   * documentation.label = "USP <197>"
   * relatedAction[+].targetId = "84d64dd8-b799-418a-a713-a854c4d3c2b9"
   * relatedAction[=].relationship = #concurrent
-  * selectionBehavior = #exactly-one
   * goalId[+] = "32649771-1290-4386-9cf7-7a72274f22b4"
 * action[+]
   * id = "84d64dd8-b799-418a-a713-a854c4d3c2b9"
@@ -237,7 +236,6 @@ Usage: #example
   * documentation.label = "EX-TEST-01"
   * relatedAction[+].targetId = "2047a6b6-e3fc-4071-8989-526297579091"
   * relatedAction[=].relationship = #concurrent
-  * selectionBehavior = #exactly-one
   * goalId[+] = "59a4ca76-858e-4d58-8e5f-88e75f51ec33"
 * action[+]
   * id = "838e66ce-f4b0-47a5-8ea0-aa7882a84303"

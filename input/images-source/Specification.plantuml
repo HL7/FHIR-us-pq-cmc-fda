@@ -13,11 +13,11 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
     [[StructureDefinition-cmc-ectd-document-sp4151.html]]
   }
 
-  node "RoutineDrugProduct" as NN {
+  node "DrugProductHandle" as NN {
 
     object "**Parent:** MedicinalProductDefinition" as obj3 {
       **Reference:**
-      [[StructureDefinition-pqcmc-routine-drug-product.html]]
+      [[StructureDefinition-pqcmc-drug-product-handle.html]]
       **ValueSets:**
       Drug Route Of Administration Terminology
       Pharmaceutical Dosage Form Terminology
