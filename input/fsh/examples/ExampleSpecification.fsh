@@ -56,7 +56,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.5 $NCIT#C48570 "percent"
+    * detailQuantity = 0.5 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "b122987d-586c-481b-951c-6202e660158d"
@@ -71,7 +71,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.05 $NCIT#C48570 "percent"
+    * detailQuantity = 0.05 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "8d7c85c2-7a4b-432e-ac94-226f296e4fca"
@@ -86,7 +86,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.014 $NCIT#C48570 "percent"
+    * detailQuantity = 0.014 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "b46dce64-a009-46cd-ab95-21d1d5b4df77"
@@ -94,7 +94,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.04 $NCIT#C48570 "percent"
+    * detailQuantity = 0.04 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "5566f501-37e1-49fb-8783-b20c074ec0c3"
@@ -102,7 +102,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.001 $NCIT#C48570 "percent"
+    * detailQuantity = 0.001 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "db19e3ab-e28b-4477-8bd7-2409093ed5a3"
@@ -118,7 +118,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
     * measure.text = "Ethanol"
-    * detailQuantity = 0.2 $NCIT#C48570 "percent"
+    * detailQuantity = 0.2 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "cae2da87-c4b7-43d0-9e8e-c64d0d4df6c2"
@@ -126,7 +126,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Ethyl Ether"
-    * detailQuantity = 0.1 $NCIT#C48570 "percent"
+    * detailQuantity = 0.1 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "28ad4d5b-d975-4f6e-9792-b3d9cc7ce279"
@@ -134,7 +134,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "1—propanol"
-    * detailQuantity = 0.15 $NCIT#C48570 "percent"
+    * detailQuantity = 0.15 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "33fa051c-6b3c-4e4d-bd4e-09d39fc253b3"
@@ -142,7 +142,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Total Residual Solvents"
-    * detailQuantity = 0.5 $NCIT#C48570 "percent"
+    * detailQuantity = 0.5 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "9100e938-42ff-4004-8473-ed5090d66f3a"
@@ -152,10 +152,10 @@ Usage: #example
   * target[+]
     * modifierExtension[targetRange]
       * extension[low]
-        * valueQuantity = 99.5 $NCIT#C48570 "percent"
+        * valueQuantity = 99.5 $NCIT#C48570 "%"
           * comparator = #>=
       * extension[high]
-        * valueQuantity = 100.5 $NCIT#C48570 "percent"
+        * valueQuantity = 100.5 $NCIT#C48570 "%"
           * comparator = #<=
 * goal[+]
   * id = "af260128-f105-4692-ba40-49f21f12ad46"
@@ -168,7 +168,7 @@ Usage: #example
   * description.text = "Each unit is NLT Q + 5%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity = 85 $NCIT#C48570 "percent"
+    * detailQuantity = 85 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "47c0d685-0b23-4637-9af8-a554e4fad7ec"
@@ -182,11 +182,11 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 12 units"
-    * detailQuantity = 80 $NCIT#C48570 "percent"
+    * detailQuantity = 80 $NCIT#C48570 "%"
       * comparator = #<=
   * target[+]
     * measure.text = "unit"
-    * detailQuantity = 65 $NCIT#C48570 "percent"
+    * detailQuantity = 65 $NCIT#C48570 "%"
       * comparator = #<=
 * goal[+]
   * id = "15309a78-92a9-4cf9-aee1-452d6d2f7a91"
@@ -194,7 +194,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 24 units"
-    * detailQuantity = 80 $NCIT#C48570 "percent"
+    * detailQuantity = 80 $NCIT#C48570 "%"
       * comparator = #<=
   * target[+]
     * measure.text = "units less than Q – 15%"
