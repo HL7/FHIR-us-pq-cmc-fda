@@ -92,8 +92,8 @@
 <artifact id="ValueSet/pqcmc-impurity-classification-terminology" key="ValueSet-pqcmc-impurity-classification-terminology" name="Impurity Classification Terminology"/>
 <artifact id="SubstanceDefinition/496f83ad-2365-4b12-8672-a349d99f7d67" key="SubstanceDefinition-496f83ad-2365-4b12-8672-a349d99f7d67" name="IngredComponentSubstance example showing the use of the sourceMaterial backbone element"/>
 <artifact id="ValueSet/pqcmc-product-part-ingredient-physical-location" key="ValueSet-pqcmc-product-part-ingredient-physical-location" name="Ingredient Location Terminology"/>
-<artifact id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>
-<artifact id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
+<artifact deprecated="true" id="StructureDefinition/pq-interpretation-code-extension" key="StructureDefinition-pq-interpretation-code-extension" name="Interpretation Code"/>
+<artifact deprecated="true" id="ValueSet/pqcmc-interpretation-code-terminology" key="ValueSet-pqcmc-interpretation-code-terminology" name="Interpretation Code Terminology"/>
 <artifact id="ValueSet/pqcmc-manufactured-dose-form-terminology" key="ValueSet-pqcmc-manufactured-dose-form-terminology" name="Manufactured Dose Form Terminology"/>
 <artifact id="StructureDefinition/pqcmc-product-part" key="StructureDefinition-pqcmc-product-part" name="Manufactured Drug Product"/>
 <artifact id="Organization/4b565cf3-5353-48af-8cd6-5ccf4e9fd579" key="Organization-4b565cf3-5353-48af-8cd6-5ccf4e9fd579" name="Manufacturing Site (J. Jones Research)"/>

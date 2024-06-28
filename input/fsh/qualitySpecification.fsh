@@ -1,25 +1,3 @@
-Extension: InterpretationCodeExtension
-Id: pq-interpretation-code-extension
-Title: "Interpretation Code"
-Description: "A code that describes how to relate the given value to an acceptance value."
-* ^context[+].type = #element
-* ^context[=].expression = "Observation.referenceRange.low"
-* ^context[+].type = #element
-* ^context[=].expression = "Observation.referenceRange.high"
-* ^context[+].type = #element
-* ^context[=].expression = "Observation.component.referenceRange.low"
-* ^context[+].type = #element
-* ^context[=].expression = "Observation.component.referenceRange.high"
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detail.ofType(Quantity)"
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detail.ofType(Range).low"
-* ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition.goal.target.detail.ofType(Range).high"
-
-* value[x] only CodeableConcept
-* value[x] from PqcmcInterpretationCodeTerminology (required)
-
 Extension: SpecificationTypeExtension
 Id: pq-specification-type-extension
 Title: "Specification Type"
