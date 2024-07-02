@@ -467,8 +467,8 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 
 ValueSet: PqcmcQualitySpecificationSectionTypes
 Id: cmc-specification-types-vs
-Title: "Relationship Types Terminology"
-Description: "Local value set of all codes in Relationship Types codes"
+Title: "Specification Type Terminology"
+Description: "Local value set of all codes in Specification Type codes"
 * ^experimental = false
 * $SectionTypes#32P51 "Product Specification"
 * $SectionTypes#32S41 "Substance Specification"
