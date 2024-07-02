@@ -21,7 +21,7 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:  
-  hl7.terminology: 5.5.0
+  hl7.terminology.r5: 5.5.0
 
 menu:
   Table of Contents: toc.html
