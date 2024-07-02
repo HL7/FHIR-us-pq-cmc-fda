@@ -689,7 +689,7 @@ Description: "The amount details about the drug product ingredients in the batch
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
-* substance.code only CodeableReference(pqcmc-routine-drug-substance)
+* substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
 * substance.strength 1..* MS
 
 * substance.strength 1..2 MS
