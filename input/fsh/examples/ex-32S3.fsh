@@ -17,7 +17,7 @@ InstanceOf: EctdComposition32S3
 * author = Reference(urn:uuid:48beec35-843c-42f5-9251-7aa6fd693199)
 * date = 2024-06-19T21:06:21.134Z
 * title = """Substance Characterization for EthylAcetate"""
-* section
+* section[Structure]
   * title = "Substance Characterization"
   * entry = Reference(urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327)
 Instance: 32532fe8-1bfb-4a0a-998d-9294742a9519
