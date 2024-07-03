@@ -580,6 +580,7 @@ Description: "Listing of all components of the dosage form to be used in the man
 * name ^short = "Product Non-proprietary Name"
 * name ^definition = """A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
 """
+* manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology
 * manufacturer MS
 * manufacturer only Reference(MfgTestSiteOrganization) 
 * property 1..* MS
@@ -615,50 +616,17 @@ Examples: commercial, development. """
 * property[AddInfo] insert AdditionalInformationProperty
 // Product parts
 * component 1..* MS
+* component obeys cmc-percent-quantity
   * amount 1..2 MS
-  * amount ^slicing.discriminator.type = #value
-  * amount ^slicing.discriminator.path = "code"
-  * amount ^slicing.rules = #closed
-  * amount ^slicing.description = "Slice based on value of unit"
-  * amount contains
-      Weight 1..1 MS and
-      VolumeToVolume 0..1 MS and
-      WeightToVolume 0..1 MS and 
-      WeightToWeight 0..1 MS
-  * amount[Weight].value 1..1 MS
-  * amount[Weight] obeys cmc-percent-quantity
-  * amount[Weight].value ^short = "Component Quantity Per Batch"
-  * amount[Weight].value ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
-"""
-  * amount[Weight].unit 1..1 MS
-  * amount[Weight].code 1..1 MS
-  * amount[Weight].code from PqcmcUnitsMeasureTerminology (required)
-  * amount[VolumeToVolume].value 1..1 MS
-  * amount[VolumeToVolume].value ^short = "Quantity Percent"
-  * amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[VolumeToVolume].code = $NCIT#C48571 "%{VolumeToVolume}"
-
-  * amount[WeightToVolume].value 1..1 MS
-  * amount[WeightToVolume].value ^short = "Quantity Percent"
-  * amount[WeightToVolume].value ^definition = """Quantity expressed as Weight To Volume: The percentage of the component in the batch [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[WeightToVolume].code = $NCIT#C48527 "%{WeightToVolume}"
-  * amount[WeightToWeight].value 1..1 MS
-  * amount[WeightToWeight].value ^short = "Quantity Percent"
-  * amount[WeightToWeight].value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined] 
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[WeightToWeight].code = $NCIT#C48528 "%{WeightToWeight}"
+  * amount from PqcmcUnitsMeasureTerminology (required)
+  * amount ^short = "Component Quantity Per Batch"
+  * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
 Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 """
+* component.type from PqcmcProductPartType
 // ingredient
 * component.constituent 1..* MS
 * component.constituent.extension contains pq-additional-info-extension named additional-info 0..1 MS
@@ -668,6 +636,7 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
 * component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
 * component.constituent
+* component.constituent obeys cmc-percent-quantity
   * amount 1..2 MS
   * amount ^slicing.discriminator.type = #value
   * amount ^slicing.discriminator.path = "code"
@@ -679,7 +648,6 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
       WeightToVolume 0..1 MS and 
       WeightToWeight 0..1 MS
   * amount[Weight].value 1..1 MS
-  * amount[Weight] obeys cmc-percent-quantity
   * amount[Weight].value ^short = "Component Quantity Per Batch"
   * amount[Weight].value ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
 """

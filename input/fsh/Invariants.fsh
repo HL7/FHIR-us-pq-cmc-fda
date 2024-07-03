@@ -85,12 +85,25 @@ Severity: #error
 
 Invariant: cmc-percent-quantity
 Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "code in ('C48527'|'C48527'|'C48528').count() = 0"
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+  amount
+  .where(system = %system and (('C48527' | 'C48528' | 'C48571') contains code).not())
+  .count() = 1
+)"
 Severity: #error
 
 Invariant: cmc-percent-quantity-ingredient
-Description: "The Ingredient.substance.strength.concentration.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "concentration.ofType(Quantity).code in ('C48527' | 'C48527' | 'C48528').count() = 0"
+Description: "There must be a concentration whose unit is not VolumeToVolume, WeightToVolume or WeightToWeight"
+// Logic:
+// select the concentrationQuantity's (all concentrations)
+// find the concentrations where the system is NCIT and the code is not a percent
+// make sure there is exactly one
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+  strength.concentration
+    .ofType(Quantity)
+    .where(system = %system and  (('C48527' | 'C48528' | 'C48571') contains code).not())
+    .count() = 1
+)"
 Severity: #error
 
 Invariant: cmc-link-required

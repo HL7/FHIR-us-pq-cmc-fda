@@ -691,53 +691,8 @@ Description: "The amount details about the drug product ingredients in the batch
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
 * substance.strength 1..* MS
-
-* substance.strength 1..2 MS
-* substance.strength ^slicing.discriminator.type = #value
-* substance.strength ^slicing.discriminator.path = "concentrationQuantity.code"
-* substance.strength ^slicing.rules = #closed
-* substance.strength ^slicing.description = "Slice based on value of unit"
-* substance.strength contains
-      Weight 1..1 MS and
-      VolumeToVolume 0..1 MS and
-      WeightToVolume 0..1 MS and
-      WeightToWeight 0..1 MS
-* substance.strength[Weight] obeys cmc-percent-quantity-ingredient      
-* substance.strength[Weight].concentrationQuantity.value 1..1 MS
-* substance.strength[Weight].concentrationQuantity.value ^short = "Component Quantity Per Batch"
-* substance.strength[Weight].concentrationQuantity.value ^definition = """Component Quantity Per Batch: Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
-"""
-* substance.strength[Weight].concentrationQuantity.unit 1..1 MS
-* substance.strength[Weight].concentrationQuantity.code 1..1 MS
-* substance.strength[Weight].concentrationQuantity.code from PqcmcUnitsMeasureTerminology (required)
-
-* substance.strength[VolumeToVolume].concentrationQuantity.value 1..1 MS
-* substance.strength[VolumeToVolume].concentrationQuantity.value ^short = "Quantity Percent"
-* substance.strength[VolumeToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
-"""
-* substance.strength[VolumeToVolume].concentrationQuantity.code = $NCIT#C48571 "%{VolumeToVolume}"
-
-* substance.strength[WeightToVolume].concentrationQuantity.value 1..1 MS
-* substance.strength[WeightToVolume].concentrationQuantity.value ^short = "Quantity Percent"
-* substance.strength[WeightToVolume].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Volume: TThe percentage of the component in the batch [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
-"""
-* substance.strength[WeightToVolume].concentrationQuantity.code =  $NCIT#C48527 "%{WeightToVolume}"
-* substance.strength[WeightToWeight].concentrationQuantity.value 1..1 MS
-* substance.strength[WeightToWeight].concentrationQuantity.value ^short = "Quantity Percent"
-* substance.strength[WeightToWeight].concentrationQuantity.value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
-"""
-* substance.strength[WeightToWeight].concentrationQuantity.code = $NCIT#C48528 "%{WeightToWeight}"
-
-//* substance.strength.textConcentration ^short = "Strength Textual"
-//* substance.strength.textConcentration ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
-//Note: This is typically applicable to biologics
-//Example: International Units for Enzymes
-//"""
+* substance obeys cmc-percent-quantity-ingredient
+  * strength 1..2 MS
+    * concentration[x] 1..1 MS
+    * concentration[x] only Quantity
+    * concentrationQuantity from PqcmcUnitsMeasureTerminology (required)
