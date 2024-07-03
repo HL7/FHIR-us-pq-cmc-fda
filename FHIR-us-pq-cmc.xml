@@ -60,6 +60,7 @@
 <artifact id="ValueSet/pqcmc-drug-product-component-function-category-terminology" key="ValueSet-pqcmc-drug-product-component-function-category-terminology" name="Drug Product Component Function Category Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drugproduct-container-closure" key="StructureDefinition-pqcmc-drugproduct-container-closure" name="Drug Product Container Closure"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-description" key="StructureDefinition-pqcmc-drug-product-description" name="Drug Product Description"/>
+<artifact id="StructureDefinition/pqcmc-drug-product-handle" key="StructureDefinition-pqcmc-drug-product-handle" name="Drug Product Handle"/>
 <artifact id="StructureDefinition/pqcmc-drug-product-with-impurities" key="StructureDefinition-pqcmc-drug-product-with-impurities" name="Drug Product Impurities"/>
 <artifact id="ValueSet/spl-drug-route-of-administration-terminology" key="ValueSet-spl-drug-route-of-administration-terminology" name="Drug Route Of Administration Terminology"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-characterisation" key="StructureDefinition-pqcmc-drug-substance-characterisation" name="Drug Substance"/>
@@ -119,7 +120,7 @@
 <artifact id="ValueSet/cmc-specification-types-vs" key="ValueSet-cmc-relationship-types-vs" name="Relationship Types Terminology"/>
 <artifact id="ValueSet/pqcmc-release-mechanism" key="ValueSet-pqcmc-release-mechanism" name="Release Mechanism Terminology"/>
 <artifact id="ValueSet/pqcmc-release-profile" key="ValueSet-pqcmc-release-profile" name="Release Profile Terminology"/>
-<artifact id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
+<artifact deprecated="true" id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
 <artifact id="StructureDefinition/pqcmc-routine-drug-substance" key="StructureDefinition-pqcmc-routine-drug-substance" name="Routine Drug Substance"/>
 <artifact id="ValueSet/pqcmc-source-type-terminology" key="ValueSet-pqcmc-source-type-terminology" name="Source Type Terminology"/>
 <artifact id="ValueSet/pqcmc-specification-status-terminology" key="ValueSet-pqcmc-specification-status-terminology" name="Specification Status Terminology"/>

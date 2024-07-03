@@ -218,7 +218,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1 eCTD heading."
 * section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ContainerClosure].entry 1..* MS
-* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
+* section[ContainerClosure].entry only Reference(ContainerClosure)
 
 Profile: EctdComposition32S10
 Parent: Composition
