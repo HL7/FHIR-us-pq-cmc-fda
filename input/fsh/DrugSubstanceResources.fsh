@@ -541,7 +541,7 @@ RuleSet: UniiAndUniProtCodes
   
 Implementation Note: the cardinality represents the business rule for unii, uniprot, or some other code being required"""
   * code 1..1 MS
-    * coding
+    * coding 1..1 MS
       * ^slicing.discriminator.type = #value
       * ^slicing.discriminator.path = "system"
       * ^slicing.rules = #open
