@@ -224,7 +224,7 @@ Description: "Provides sufficient information to identify an inactive substance 
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
-* grade.coding from PqcmcQualityBenchmarkTerminology (required)
+* grade from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
