@@ -62,6 +62,34 @@ Note: This includes primary packaging components and secondary packaging compone
 * extension[depiction].value[x] 1..1
 * extension[depiction].value[x] only Reference(Base64DocumentReference)
 
+Profile: ContainerClosure
+Parent: PackagedProductDefinition
+Description: "Container Closure for drug product referred to in Drug Product Description."
+* packageFor 1..1 MS
+* packageFor only Reference(DrugProductDescription)
+* description 1..1 MS
+* description ^short = "Container Closure System Description"
+* description ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+"""
+* attachedDocument 0..* MS
+* attachedDocument ^short = "Container Closure System Depiction"
+* attachedDocument ^definition = "Diagram of cContainer Closure System or any of its parts noted in the Container Closure System Description"
+* packaging 1..1 MS
+* packaging.type 1..1 MS
+* packaging.type contains
+    ContainerType 1..1 MS and
+    ClosureType 0..1 MS
+* packaging.type[ContainerType] ^short =  "Container Type"
+* packaging.type[ContainerType] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+* packaging.type[ContainerType].coding from PqcmcContainerTypeTerminology (required)
+* packaging.type[ClosureType] ^short = "Closure Type"
+* packaging.type[ClosureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+* packaging.type[ClosureType].coding from PqcmcClosureTypeTerminology (required)
+* packaging.quantity 0..1 MS
+* packaging.packaging 0..* MS
+
 Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
 Id: pqcmc-product-part
