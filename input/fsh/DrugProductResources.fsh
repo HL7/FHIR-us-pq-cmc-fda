@@ -77,16 +77,20 @@ Note: This includes primary packaging components and secondary packaging compone
 * attachedDocument ^short = "Container Closure System Depiction"
 * attachedDocument ^definition = "Diagram of cContainer Closure System or any of its parts noted in the Container Closure System Description"
 * packaging 1..1 MS
-* packaging.type 1..1 MS
-* packaging.type contains
-    ContainerType 1..1 MS and
-    ClosureType 0..1 MS
-* packaging.type[ContainerType] ^short =  "Container Type"
-* packaging.type[ContainerType] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
-* packaging.type[ContainerType].coding from PqcmcContainerTypeTerminology (required)
-* packaging.type[ClosureType] ^short = "Closure Type"
-* packaging.type[ClosureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
-* packaging.type[ClosureType].coding from PqcmcClosureTypeTerminology (required)
+  * type 1..1 MS
+    * coding 1..2 MS
+    * coding ^slicing.discriminator.type = #value
+    * coding ^slicing.discriminator.path = "$this"
+    * coding ^slicing.rules = #closed
+    * coding contains 
+      ContainerType 1..1 MS and
+      ClosureType 0..1 MS
+    * coding[ContainerType] from PqcmcContainerTypeTerminology (required)
+      * ^short =  "Container Type"
+      * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+    * coding[ClosureType] from PqcmcClosureTypeTerminology (required)
+      * ^short = "Closure Type"
+      * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
 * packaging.quantity 0..1 MS
 * packaging.packaging 0..* MS
 
