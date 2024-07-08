@@ -759,3 +759,4 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * impurity ^short = "Product Impurity"	
 * impurity only CodeableReference(ImpuritySubstance)	
 * insert ProprietaryAndNonProprietaryNames
+* insert RouteOfAdministration
