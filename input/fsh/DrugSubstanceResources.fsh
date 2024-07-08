@@ -379,7 +379,6 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
   // comn 0..1 MS and
   gsrs 0..1 MS and
   usp 0..1 MS and
-  comp 0..1 MS and
   cas 0..1 MS and
   inn 0..1 MS and
   usan 0..1 MS and
@@ -431,13 +430,7 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[usp].type.coding 1..1 MS
 * name[usp].type.coding = $NCIT#C203358	"USP-NF Established Name"
 
-* name[comp].name 1..1 MS
-* name[comp].name ^short = "Company ID/Code"
-* name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
-"""
-* name[comp].type 1..1 MS
-* name[comp].type.coding 1..1
-* name[comp].type.coding = $NCIT#C203354	"Company ID/Code"
+* insert CompanyName
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
@@ -532,6 +525,16 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[isbt].type.coding = $NCIT#C95517	"ISBT-128 DIN"
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
+
+RuleSet: CompanyName
+* name contains comp 0..1 MS
+* name[comp].name 1..1 MS
+* name[comp].name ^short = "Company ID/Code"
+* name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type 1..1 MS
+* name[comp].type.coding 1..1
+* name[comp].type.coding = $NCIT#C203354	"Company ID/Code"
 
 RuleSet: UniiAndUniProtCodes(cardinality)
 // lots of things derived from substanceDefinition use code
@@ -678,6 +681,7 @@ Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB,
 // impurities might be unknown and not have Unii's
 * insert UniiAndUniProtCodes(0)
 * insert ShortSetSubstanceNames
+* insert CompanyName
 
 Profile: DrugProductIngredient
 Parent: Ingredient
