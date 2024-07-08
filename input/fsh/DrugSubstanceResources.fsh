@@ -593,7 +593,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
-* manufacturer 1..1 MS
+* manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
