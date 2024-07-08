@@ -597,25 +597,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
-* characterization 0..* MS
-  * technique ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
-"""
-* characterization.technique.text 1..1 MS
-* characterization.technique.text ^short = "Substance Characterisation Technique"
-* characterization.description 0..1 MS
-* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
-* characterization.description ^definition = ""
-* characterization.file 0..* MS
-* characterization.file ^short = "Analysis Graphic | Analytical Instrument Data File"
-* characterization.file ^definition = """Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
-Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
-
-Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
-Example: JCAMP, ADX, ADF.
-"""
-* characterization.file only PqcmcAttachment
+* insert SubstanceCharacterization
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
@@ -637,24 +619,7 @@ Description: "Any component of the drug substance that is not the chemical entit
 * classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
 Examples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.
 """
-* characterization MS
-* characterization.technique.text 1..1 MS
-* characterization.form.text 0..1 MS
-* characterization.form.text ^short = "Form"
-* characterization.form.text ^definition = ""
-* characterization.description 0..1 MS
-* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
-* characterization.description ^definition = ""
-* characterization.file 0..* MS
-* characterization.file ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
-* characterization.file ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
-Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
-
-Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
-Example: JCAMP, ADX, ADF.
-"""
-* characterization.file only PqcmcAttachment
+* insert SubstanceCharacterization
 * structure 0..1 MS
 //* structure obeys cmc-representation-or-document
 * structure.technique MS
@@ -681,6 +646,28 @@ Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB,
 * insert UniiAndUniProtCodes(0)
 * insert ShortSetSubstanceNames
 * insert CompanyName
+
+RuleSet: SubstanceCharacterization
+* characterization MS
+  * technique
+    * ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
+    * text 1..1 MS
+      * ^short = "Substance Characterisation Technique"
+  * description 0..1 MS
+    * ^short = "Analytical Instrument Data File Narrative Text"
+    * ^definition = ""
+  * file 0..* MS
+    * ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
+    * ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+
+Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF.
+"""
+  * file only PqcmcAttachment
 
 Profile: DrugProductIngredient
 Parent: Ingredient
