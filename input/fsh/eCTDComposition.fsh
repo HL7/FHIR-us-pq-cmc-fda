@@ -307,7 +307,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
  SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section.entry MS
+* section.entry 0..1 MS
 * section ^definition = "Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading."
 * section.code = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * section.title 1..1 MS
