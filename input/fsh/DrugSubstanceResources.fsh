@@ -109,7 +109,7 @@ Examples: USP/NF, EP, Company Standard
 Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG.
 """
 * structure.representation.document only Reference(Base64DocumentReference)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * sourceMaterial 0..1 MS
@@ -229,7 +229,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * sourceMaterial 1..1 MS
@@ -286,7 +286,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 * sourceMaterial 0..0 MS
 
@@ -350,7 +350,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
  Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
 * structure.representation.document only Reference(Base64DocumentReference)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert SubstanceNames
 
 * relationship 0..* MS
@@ -533,10 +533,10 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
 
-RuleSet: UniiAndUniProtCodes
+RuleSet: UniiAndUniProtCodes(cardinality)
 // lots of things derived from substanceDefinition use code
 // for unii and uniprot codes 
-* code 1..* MS
+* code {cardinality}..* MS
   * ^definition = """
   
 Implementation Note: the cardinality represents the business rule for unii, uniprot, or some other code being required"""
@@ -613,7 +613,7 @@ Analytical Instrument Data File: The transport format for data exchange. [Source
 Example: JCAMP, ADX, ADF.
 """
 * characterization.file only PqcmcAttachment
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * relationship 0..* MS
@@ -675,8 +675,8 @@ Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB,
 * structure.representation.document ^definition = "A pictorial representation of the structure of the impurity substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD' Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."
 * structure.representation.document only Reference(Base64DocumentReference)
 
-//element(*,SubstanceDefinition)/code/code/coding
-* insert UniiAndUniProtCodes
+// impurities might be unknown and not have Unii's
+* insert UniiAndUniProtCodes(0)
 * insert ShortSetSubstanceNames
 
 Profile: DrugProductIngredient
