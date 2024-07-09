@@ -97,18 +97,13 @@ Description: "Batch Formula Drug Product Identification"
 * route = $NCIT#C38288 "ORAL"
 * comprisedOf = Reference(urn:uuid:249ef22b-d521-4304-a388-6b9035f97b22)
 * name[NonProprietary]
-  * productName = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
+  * productName = "ATOMOXETINE HYDROCHLORIDE 1mg"
   * type = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types#NON "Non-Proprietary"
   * part[Scientific][+]
-    * part = "OXAZEPAM"
+    * part = "ATOMOXETINE HYDROCHLORIDE"
   * part[Strength][+]
-    * part = "30mg"
-    * type.text = "OXAZEPAM"
-  * part[Scientific][+]
-    * part = "PROPRANOLOL HYDROCHLORIDE"
-  * part[Strength][+]
-    * part = "60mg"
-    * type.text = "PROPRANOLOL HYDROCHLORIDE"
+    * part = "1mg"
+    * type.text = "ATOMOXETINE HYDROCHLORIDE"
 
 Instance: 249ef22b-d521-4304-a388-6b9035f97b22
 InstanceOf: BatchFormula
@@ -116,7 +111,7 @@ Description: "Batch Formula for Oxazepam / Propranolol-Hydrochloride product"
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-batch-formula"
 * identifier.value = "Oxazepam-Propranolol-BatchFormula"
 * status = #active
-* name = "OXAZEPAM 30mg, PROPRANOLOL HYDROCHLORIDE 60mg"
+* name = "ATOMOXETINE HYDROCHLORIDE 1mg"
 * manufacturedDoseForm = $NCIT#C48623 "NOT APPLICABLE"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
 * property[BatchSize]
@@ -131,7 +126,7 @@ Description: "Batch Formula for Oxazepam / Propranolol-Hydrochloride product"
   * amount[+] = 53.2 $NCIT#C28252 "kg"
   // atomexetine hydrochloride
   * constituent[+]
-    * amount[Weight] = 12.62 $NCIT#C48155 "g"
+    * amount[Weight] = 25.42 $NCIT#C48155 "g"
     * hasIngredient.reference = Reference(urn:uuid:1c1a2a23-1fd7-4487-9682-49877f9f9f77)
   // glacial acetic acid
   * constituent[+]
@@ -167,7 +162,7 @@ InstanceOf: DrugProductIngredient
 * substance
   * code.reference = Reference(urn:uuid:717d868e-6696-4ebb-adf4-63eadb3bf058)
   * strength[+]
-    * concentrationQuantity = 12.62 $NCIT#C48155 "g"
+    * concentrationQuantity = 25.42 $NCIT#C48155 "g"
 
 // Atomoxetine API
 Instance: 717d868e-6696-4ebb-adf4-63eadb3bf058
