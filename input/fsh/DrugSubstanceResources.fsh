@@ -629,9 +629,9 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * structure.technique.text 1..1 MS
 * structure.representation MS
 * structure.representation.format 0..1 MS
-* structure.representation.format ^short = "Drug Substance Impurity Method Type| Drug Product Impurity Method Type"
+* structure.representation.format ^short = "Drug Substance Impurity Method Type"
 * structure.representation.format ^definition = "The technique used to elucidate the structure or characterisation of the impurity. [Source: SME Defined]"
-* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
+* structure.representation.format.text 0..1 MS
 * structure.representation.representation 0..1 MS
 * structure.representation.representation ^short = "Impurity Chemical Structure Data File"
 * structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
