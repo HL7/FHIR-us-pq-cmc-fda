@@ -1,7 +1,7 @@
 Instance: b69435a0-45c6-4d44-9fde-b354e17408d7
-InstanceOf: SponsorOrganization
+InstanceOf: CodedOrganization
 Title: "Sponsor of API"
-Description: "SponsorOrganization - Large Life"
+Description: "CodedOrganization - Large Life"
 Usage: #example 
 
 * name = "Large Life"
@@ -16,7 +16,7 @@ Usage: #example
 * identifier[DUNSNumber].system = $DUNS
 
 Instance: e165f057-5eed-4e64-8328-4438fc88fb1b
-InstanceOf: SupplierOrganization
+InstanceOf: CodedOrganization
 Title: "Drug Manufacturing Site - Vandechemie"
 Description: "Example of Manufacturing site using the MfgTestSiteOrganization profile - Vandechemie"
 Usage: #example 

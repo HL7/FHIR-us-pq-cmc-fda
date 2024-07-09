@@ -44,7 +44,7 @@ Usage: #example
 * impurity[+].reference = Reference(urn:uuid:ffa30c0b-8031-436a-87f1-635b3bbe5989)
 
 Instance: 98effc99-db2b-428d-89aa-0ce426e02788
-InstanceOf: SponsorOrganization
+InstanceOf: CodedOrganization
 Description: "Sponsor example for eCTD SP4151"
 Usage: #example
 
