@@ -179,22 +179,14 @@ Usage: #example
 * name[NonProprietary].type.text = "Non-Proprietary"
 
 Instance: 77ad6922-9c59-43d1-93cb-29d063cc2e8c
-InstanceOf: DrugProductContainerClosure
-Title: "A DrugProductContainerClosure"
-Description: "An example of section 3.2.P.1.2 for a multilayer product"
-Usage: #example 
-
-* extension[containerClosure].extension[containerType].valueCodeableConcept = $NCIT#C43169 "BOTTLE"
-* extension[containerClosure].extension[closureType].valueCodeableConcept = $NCIT#C96114 "Child-resistant, Plastic"
-* extension[containerClosure].extension[description].valueMarkdown = """a plastic bottle with a child-proof cap"""
-* name[NonProprietary].part[Scientific][+].part = "ASPIRIN"
-* name[NonProprietary].part[Strength][+].part = "200mg"
-* name[NonProprietary].part[Strength][=].type.text = "ASPIRIN"
-* name[NonProprietary].part[Scientific][+].part = "ACETAMINOPHEN"
-* name[NonProprietary].part[Strength][+].part = "300mg"
-* name[NonProprietary].part[Strength][=].type.text = "ACETAMINOPHEN"
-* name[NonProprietary].productName = "ASPIRIN 200mg, ACETAMINOPHEN 300mg"
-* name[NonProprietary].type.text = "Non-Proprietary"
+InstanceOf: ContainerClosure
+Title: "Example Container Closure"
+Usage: #example
+* packageFor = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
+* description = """a plastic bottle with a child-proof cap"""
+* packaging.type
+  * coding[ContainerType] = $NCIT#C43169 "BOTTLE"
+  * coding[ClosureType] = $NCIT#C96114 "Child-resistant, Plastic"
 
 Instance: a8316fc9-8ca8-4115-81c1-9f8f84c99149
 InstanceOf: FinishedProduct

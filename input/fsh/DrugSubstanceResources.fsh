@@ -109,7 +109,7 @@ Examples: USP/NF, EP, Company Standard
 Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG.
 """
 * structure.representation.document only Reference(Base64DocumentReference)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * sourceMaterial 0..1 MS
@@ -225,11 +225,11 @@ Description: "Provides sufficient information to identify an inactive substance 
 Examples: USP/NF, EP, Company Standard
 """
 * grade from PqcmcQualityBenchmarkTerminology (required)
-* manufacturer 0..1 MS
+* manufacturer 0..* MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * sourceMaterial 1..1 MS
@@ -286,7 +286,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 * sourceMaterial 0..0 MS
 
@@ -350,7 +350,7 @@ Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules
 * structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
  Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
 * structure.representation.document only Reference(Base64DocumentReference)
-* insert UniiAndUniProtCodes
+* insert UniiAndUniProtCodes(1)
 * insert SubstanceNames
 
 * relationship 0..* MS
@@ -379,7 +379,6 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
   // comn 0..1 MS and
   gsrs 0..1 MS and
   usp 0..1 MS and
-  comp 0..1 MS and
   cas 0..1 MS and
   inn 0..1 MS and
   usan 0..1 MS and
@@ -431,13 +430,7 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[usp].type.coding 1..1 MS
 * name[usp].type.coding = $NCIT#C203358	"USP-NF Established Name"
 
-* name[comp].name 1..1 MS
-* name[comp].name ^short = "Company ID/Code"
-* name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
-"""
-* name[comp].type 1..1 MS
-* name[comp].type.coding 1..1
-* name[comp].type.coding = $NCIT#C203354	"Company ID/Code"
+* insert CompanyName
 
 * name[cas].name 1..1 MS
 * name[cas].name ^short = "CAS Number"
@@ -533,10 +526,20 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
 
-RuleSet: UniiAndUniProtCodes
+RuleSet: CompanyName
+* name contains comp 0..1 MS
+* name[comp].name 1..1 MS
+* name[comp].name ^short = "Company ID/Code"
+* name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
+"""
+* name[comp].type 1..1 MS
+* name[comp].type.coding 1..1
+* name[comp].type.coding = $NCIT#C203354	"Company ID/Code"
+
+RuleSet: UniiAndUniProtCodes(cardinality)
 // lots of things derived from substanceDefinition use code
 // for unii and uniprot codes 
-* code 1..* MS
+* code {cardinality}..* MS
   * ^definition = """
   
 Implementation Note: the cardinality represents the business rule for unii, uniprot, or some other code being required"""
@@ -590,30 +593,12 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
-* manufacturer 1..1 MS
+* manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
-* characterization 0..* MS
-  * technique ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
-Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
-"""
-* characterization.technique.text 1..1 MS
-* characterization.technique.text ^short = "Substance Characterisation Technique"
-* characterization.description 0..1 MS
-* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
-* characterization.description ^definition = ""
-* characterization.file 0..* MS
-* characterization.file ^short = "Analysis Graphic | Analytical Instrument Data File"
-* characterization.file ^definition = """Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
-Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
-
-Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
-Example: JCAMP, ADX, ADF.
-"""
-* characterization.file only PqcmcAttachment
-* insert UniiAndUniProtCodes
+* insert SubstanceCharacterization
+* insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * relationship 0..* MS
@@ -626,7 +611,6 @@ Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
 * meta.profile 0..1 MS
-* . obeys cmc-structure-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -635,24 +619,7 @@ Description: "Any component of the drug substance that is not the chemical entit
 * classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
 Examples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.
 """
-* characterization MS
-* characterization.technique.text 1..1 MS
-* characterization.form.text 0..1 MS
-* characterization.form.text ^short = "Form"
-* characterization.form.text ^definition = ""
-* characterization.description 0..1 MS
-* characterization.description ^short = "Analytical Instrument Data File Narrative Text"
-* characterization.description ^definition = ""
-* characterization.file 0..* MS
-* characterization.file ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
-* characterization.file ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
-Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
-
-Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
-Example: JCAMP, ADX, ADF.
-"""
-* characterization.file only PqcmcAttachment
+* insert SubstanceCharacterization
 * structure 0..1 MS
 //* structure obeys cmc-representation-or-document
 * structure.technique MS
@@ -675,9 +642,32 @@ Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB,
 * structure.representation.document ^definition = "A pictorial representation of the structure of the impurity substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD' Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."
 * structure.representation.document only Reference(Base64DocumentReference)
 
-//element(*,SubstanceDefinition)/code/code/coding
-* insert UniiAndUniProtCodes
+// impurities might be unknown and not have Unii's
+* insert UniiAndUniProtCodes(0)
 * insert ShortSetSubstanceNames
+* insert CompanyName
+
+RuleSet: SubstanceCharacterization
+* characterization MS
+  * technique
+    * ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
+Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
+"""
+    * text 1..1 MS
+      * ^short = "Substance Characterisation Technique"
+  * description 0..1 MS
+    * ^short = "Analytical Instrument Data File Narrative Text"
+    * ^definition = ""
+  * file 0..* MS
+    * ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
+    * ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+Note: Refer to the 'Acceptable File Formats for use in eCTD'
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
+
+Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF.
+"""
+  * file only PqcmcAttachment
 
 Profile: DrugProductIngredient
 Parent: Ingredient

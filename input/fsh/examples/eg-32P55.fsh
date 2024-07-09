@@ -42,6 +42,7 @@ Usage: #example
 * name[NonProprietary].type.text = "Non-Proprietary"
 * impurity[+].reference = Reference(urn:uuid:58ae52aa-c81e-415a-8791-e67a3195290d)
 * impurity[+].reference = Reference(urn:uuid:ffa30c0b-8031-436a-87f1-635b3bbe5989)
+* route = $NCIT#C38288 "ORAL"
 
 Instance: 98effc99-db2b-428d-89aa-0ce426e02788
 InstanceOf: CodedOrganization
