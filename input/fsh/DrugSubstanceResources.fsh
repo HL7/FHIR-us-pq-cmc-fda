@@ -225,7 +225,7 @@ Description: "Provides sufficient information to identify an inactive substance 
 Examples: USP/NF, EP, Company Standard
 """
 * grade from PqcmcQualityBenchmarkTerminology (required)
-* manufacturer 0..1 MS
+* manufacturer 0..* MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
 * supplier only Reference(SupplierOrganization)
