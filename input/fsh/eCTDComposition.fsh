@@ -106,7 +106,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
     Organization 1..* and
     DocumentReference 0..*
 * entry[Composition].resource only EctdComposition32S3
-* entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation
+* entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation or ImpuritySubstance
 * entry[Organization].resource only cmc-sponsor-organization
 * entry[DocumentReference].resource only Base64DocumentReference
 
