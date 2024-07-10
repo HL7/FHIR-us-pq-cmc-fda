@@ -61,7 +61,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
     obj2 *-- objQSEx
   }
 
-  node "MfgTestSiteOrganization" as NMFG {
+  node "CodedOrganization" as NMFG {
 
     object "**Parent:** Organization" as objDP {
       **Reference:**
@@ -113,7 +113,6 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
     }
     object "**Extensions**" as objExsObserv  {
       actualpulldate
-      interpretationCode
       replicate
     }
     objExsObserv *-- observ3
@@ -131,7 +130,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
     }
     object "**Extensions**" as objExsStageObs  {
       actualpulldate
-      interpretationCode
+      TargetRange
       replicate
     }
 
@@ -147,7 +146,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       Code system PQCMC Comp Section Types
     }
   }
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**

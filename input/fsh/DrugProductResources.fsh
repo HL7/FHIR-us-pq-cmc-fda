@@ -28,39 +28,38 @@ Description: "The constituent optional denominator is used then the unit is othe
 Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Denominator = 1
 """
 
-Extension: ContainerClosureExtension
-Id: pq-container-closure-extension
-Title: "Container Closure"
-Description: "The packaging information including a brief description of the components, the assembled packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials."
-* . ^short = "Container Closure System Information"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicinalProductDefinition"
-* ^context[+].type = #element
-* ^context[=].expression = "SubstanceDefinition"
-* extension contains
-    containerType 1..1 MS and
-    closureType 1..1 MS and  
-    description 1..1 MS and
-    depiction 0..* MS 
-* extension[containerType].value[x] 1..1
-* extension[containerType].value[x] only CodeableConcept
-* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
-* extension[containerType].value[x] ^short = "Container Type"
-* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
-* extension[closureType].value[x] 1..1
-* extension[closureType].value[x] only CodeableConcept
-* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
-* extension[closureType].value[x] ^short = "Closure Type"
-* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
-* extension[description].value[x] 1..1
-* extension[description].value[x] only markdown
-* extension[description].value[x] ^short = "Container Closure System Description"
-* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
-Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
-Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
-"""
-* extension[depiction].value[x] 1..1
-* extension[depiction].value[x] only Reference(Base64DocumentReference)
+//Extension: SubatanceContainerClosureExtension
+//Id: pq-container-closure-extension
+//Title: "Container Closure"
+//Description: "The packaging information including a brief description of the components, //the assembled packaging system and any precautions needed to ensure the protection and //preservation of the drug substance during its use in the clinical trials."
+//* . ^short = "Container Closure System Information"
+//* ^context[+].type = #element
+//* ^context[=].expression = "SubstanceDefinition"
+//* extension contains
+//*    containerType 1..1 MS and
+//*    closureType 1..1 MS and  
+//*    description 1..1 MS and
+//*    depiction 0..//* MS 
+//* extension[containerType].value[x] 1..1
+//* extension[containerType].value[x] only CodeableConcept
+//* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
+//* extension[containerType].value[x] ^short = "Container Type"
+//* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+//* extension[closureType].value[x] 1..1
+//* extension[closureType].value[x] only CodeableConcept
+//* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
+//* extension[closureType].value[x] ^short = "Closure Type"
+//* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+//* extension[description].value[x] 1..1
+//* extension[description].value[x] only markdown
+//* extension[description].value[x] ^short = "Container Closure System Description"
+//* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+//Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+//Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+///"""
+//* extension[depiction].value[x] 1..1
+//* extension[depiction].value[x] only Reference(Base64DocumentReference)
+
 
 Profile: ContainerClosure
 Parent: PackagedProductDefinition
@@ -459,19 +458,6 @@ Description: "Includes the essential identifying information of the drug product
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 
-Profile: DrugProductContainerClosure
-Parent: MedicinalProductDefinition
-Id: pqcmc-drugproduct-container-closure
-Title: "Drug Product Container Closure"
-Description: "Description and coding of the container closure system. Profile of Drug Product profile."
-
-* meta.profile 1..1 MS
-* .extension contains pq-container-closure-extension named containerClosure 1..* MS
-* identifier 0..1 
-* identifier ^short = "optional user designated identifier"	
-* insert ProprietaryAndNonProprietaryNames
-* name.usage.jurisdiction 0..0
-
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
 Id: pqcmc-drug-product-description
@@ -614,7 +600,7 @@ Description: "Listing of all components of the dosage form to be used in the man
 """
 * manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology
 * manufacturer MS
-* manufacturer only Reference(MfgTestSiteOrganization) 
+* manufacturer only Reference(CodedOrganization) 
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
@@ -760,3 +746,88 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * impurity only CodeableReference(ImpuritySubstance)	
 * insert ProprietaryAndNonProprietaryNames
 * insert RouteOfAdministration
+
+//----------------------------------------Batch Analysis ------------------------------------------------------------------------//
+Profile: DrugProductmanufacturingBatch
+Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
+Id: drug-product-manufacturing-batch
+Title: "Drug Product Manufacturing Batch"
+Description: "This profile defines the details of a batch of medicine."
+
+* ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/drug-product-manufacturing-batch"
+* ^context.type = #element
+* ^context.expression = "Medication.batch"
+* extension[manufacturingDate] 1..1 MS
+* extension[manufacturingDate] ^short = "Manufacturing Date"
+* extension[manufacturingDate] ^definition = """The date associated with manufacturing a batch. [Source: SME Defined]
+Note: See Manufacturing Date Description element. """
+* extension[manufacturingDate].valueDateTime MS
+* extension[manufacturingDateClassification] 1..1 MS
+* extension[manufacturingDateClassification] ^short = "Manufacturing Date Description"
+* extension[manufacturingDateClassification] ^definition = """A textual description that provides a rationale for the selection of the manufacturing date. [Source: SME Defined] Note: This description should include the specific operation/step in the manufacturing process associated with the assigned manufacturing date. """
+* extension[manufacturingDateClassification].valueCodeableConcept MS
+* extension[assignedManufacturer] 1..1 MS
+* extension[assignedManufacturer] ^short = "Assigned Manufacturer"
+* extension[assignedManufacturer].valueReference only Reference(MfgTestSiteOrganization)
+* extension[expirationDateClassification] 1..1 MS
+* extension[expirationDateClassification] ^short = "Expiration Date Classification"
+* extension[expirationDateClassification] ^definition = """The endorsement of the expiration date that clarifies whether this date has been approved by the FDA or is being proposed by the sponsor/applicant. [Source: SME Defined]
+This classification applies to ALL products.
+ For an original application, Expiration Date Classification is 'Proposed'.
+ After an application has been approved, Expiration date classification is 'Approved'
+ For a Supplement that's changing the expiration date that is already classified as 'Approved' for the drug product, the changed Expiration Date Classification would be 'Proposed'.
+ For products that do not have an Expiration Date, the Expiration Date Classification will be 'NA'.
+"""
+* extension[expirationDateClassification].valueCodeableConcept MS
+* extension[expirationDateClassification].valueCodeableConcept from PqcmcExpirationDateClassificationTerminology (required)
+* extension[batchUtilization] 1..1 MS
+* extension[batchUtilization] ^short = "Batch Utilization"
+* extension[batchUtilization] ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
+Examples: commercial, development. """
+* extension[batchUtilization].valueCodeableConcept MS
+* extension[batchUtilization].valueCodeableConcept from PqcmcBatchUtilizationTerminology (required)
+* extension[batchQuantity] 1..1 MS
+* extension[batchQuantity] ^short = "Batch Size"
+* extension[batchQuantity] ^definition = "The batch size can be defined either by a fixed quantity or by the amount produced in a fixed time interval. [Source: ICH Q7 - Part of the definition of Batch]"
+* extension[batchQuantity].value[x] 1..1 MS
+* extension[batchQuantity].value[x] only Quantity
+* extension[batchQuantity].value[x].code from PqcmcUnitsMeasureTerminology (required)
+* extension[additionalInformation] MS
+* extension[additionalInformation] ^short = "Additional Information"
+* extension[additionalInformation] ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
+Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc.
+"""
+* extension[additionalInformation].valueString MS
+* extension[container] 1..* MS
+* extension[container] ^short = "Container"
+* extension[container].extension[lotNumber].valueString 1..1 MS
+* extension[container].extension[lotNumber] ^short = "Container Lot Number"
+* extension[container].extension[lotNumber] ^definition = """A combination of letters, numbers, or symbols, or any combination of them to uniquely identify the container's manufacturing lot.
+ Note: This is different from the drug product batch/lot number. Example: Company A makes batch of bottles (container) -- need a lot number on the container (bottle) assigned by the manufacturer of the bottle (container). This requirement becomes critical when the dosing and delivery of the drug is impacted by the container (bottle).
+ """
+* extension[container].extension[type] 1..1 MS
+* extension[container].extension[type] ^short = "Container Type"
+* extension[container].extension[type] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C43164]"
+* extension[container].extension[type].valueCodeableConcept 1..1 MS
+* extension[container].extension[type].valueCodeableConcept from PqcmcContainerTypeTerminology (required)
+* extension[container].extension[quantity] 1..1 MS
+* extension[container].extension[quantity] ^short = "Container Fill per Container Size"
+* extension[container].extension[quantity] ^definition = """Container Fill: Amount or volume of the drug product in the container. [Source: SME Defined]. Examples: 100 tablets; 10 mL, 1 transdermal system, 1 sachet, etc. Note: the examples include both the Container Fill and the Container Fill Unit
+ Container Fill: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709] Examples: tablets, mL.
+ Container Size: The volume or physical proportions or dimension of the container. [Source: SME Defined] Example: 250 (mL) Note: may not apply to all container types, for example – single dose dose container sizes
+ Container Size Unit: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709] Examples: mL, L, cc.
+ """
+* extension[container].extension[quantity].valueRatio 1..1 MS
+* extension[container].extension[closureSystemDescription] 1..1 MS
+* extension[container].extension[closureSystemDescription] ^short = "Container Closure System Description"
+* extension[container].extension[closureSystemDescription] ^definition = """ Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+ Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+ Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+ """
+* extension[container].extension[closureSystemDescription].valueString 1..1 MS
+* extension[container].extension[closureType] 1..1 MS
+* extension[container].extension[closureType] ^short = "Closure Type"
+* extension[container].extension[closureType] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+* extension[container].extension[closureType].valueCodeableConcept 1..1 MS
+* extension[container].extension[closureType].valueCodeableConcept from PqcmcClosureTypeTerminology (required)
+

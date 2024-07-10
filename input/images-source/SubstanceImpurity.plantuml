@@ -22,7 +22,7 @@ package "3.2.S.3 eCTD Heading Characterisation Bundle" as NODES {
       Code system PQCMC Comp Section Types
     }
   }
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**

@@ -71,8 +71,8 @@ Description: "A quality specification is for a drug product or drug substance (e
 * meta.profile 1..1 MS
 * extension contains 
     pq-specification-type-extension named specificationType 1..1 MS and
-    pq-additional-info-extension named spec-additional-info 0..1 MS and
-    SDWorkGroup named work-group 0..1
+    pq-additional-info-extension named spec-additional-info 0..1 MS 
+//    SDWorkGroup named work-group 0..1
 * extension[spec-additional-info] ^short = "Specification Additional Information"
 * extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
 Examples: replaces method ABC, using the XYZ facility.

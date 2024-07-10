@@ -102,11 +102,11 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
               obj2 *-- objQSEx
        }
 
-       node "MfgTestSiteOrganization" as NMFG {
+       node "CodedOrganization" as NMFG {
 
               object "**Parent:** Organization" as objDP {
                      **Reference:**
-                     [[StructureDefinition-mfg-test-site-organization.html]]
+                     [[StructureDefinition-cmc-organization.html]]
                      **ValueSets:**
                      Testing Site and Organization Identifier Type Terminology
               }
@@ -204,7 +204,7 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      Code system PQCMC Comp Section Types
               }
        }
-       node "SponsorOrganization" as NSO {
+       node "CodedOrganization" as NSO {
 
               object "**Parent:** Organization" as objAu {
                      **Reference:**

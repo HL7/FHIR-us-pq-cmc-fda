@@ -40,7 +40,7 @@ InstanceOf: CMCeCTDDocument32S3
 * entry[=].fullUrl = "urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327"
 Instance: 37a26b1a-ede3-4677-943e-72b513f945b7
 InstanceOf: CodedOrganization
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/supplier-organization"
+* meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
 * name = "Vidinaid Site"
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.line[1] = "Building #2"

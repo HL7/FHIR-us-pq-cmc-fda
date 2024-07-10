@@ -15,7 +15,7 @@ Usage: #example
 * contact.address.text = "J. Jones Research, 123 Broad Way, New York, NY, United States"
 
 Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
-InstanceOf: MfgTestSiteOrganization
+InstanceOf: CodedOrganization
 Title: "Manufacturing Site (J. Jones Research)"
 Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
 Usage: #example
@@ -34,7 +34,7 @@ Usage: #example
 * contact.address.text = "Manufacturing Site (J. Jones Research), 444 Grant Street, Bedford, NY, United States"
 
 Instance: e99bddfa-c1b5-435b-bbe8-24816b4e23e5
-InstanceOf: MfgTestSiteOrganization
+InstanceOf: CodedOrganization
 Title: "Vidinaid"
 Description: "Manufacturing site (Vidinaid) instance with second address line"
 Usage: #example

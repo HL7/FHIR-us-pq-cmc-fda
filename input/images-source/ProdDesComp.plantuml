@@ -39,11 +39,11 @@ package "eCTD Heading 3.2.P.1 Bundle" as NODES {
     }
     objMID *-- objMIDExs
   }
-  node "MfgTestSiteOrganization" as NMFG {
+  node "CodedOrganization" as NMFG {
 
     object "**Parent:** Organization" as objDP {
       **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
+      [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
       Testing Site and Organization Identifier Type Terminology
     }
@@ -120,7 +120,7 @@ package "eCTD Heading 3.2.P.1 Bundle" as NODES {
     obj22 *-- objEx
   }
 
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
