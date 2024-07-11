@@ -707,7 +707,7 @@ Description: "This profile defines the details of a batch of API."
 * extension[assignedManufacturer] 1..1 MS
 * extension[assignedManufacturer] ^short = "Assigned Manufacturer"
 * extension[assignedManufacturer]
-* extension[assignedManufacturer].valueReference only Reference(MfgTestSiteOrganization)
+* extension[assignedManufacturer].valueReference only Reference(CodedOrganization)
 * extension[expirationDateClassification] 1..1 MS
 * extension[expirationDateClassification] ^short = "Retest Date Classification"
 * extension[expirationDateClassification] ^definition = """The endorsement of the Retest date that clarifies whether this date has been approved by the FDA or is being proposed by the sponsor/applicant for a drug substance. [Source: SME Defined]

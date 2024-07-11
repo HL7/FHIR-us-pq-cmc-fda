@@ -748,7 +748,7 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * insert RouteOfAdministration
 
 //----------------------------------------Batch Analysis ------------------------------------------------------------------------//
-Profile: DrugProductmanufacturingBatch
+Profile: DrugProductManufacturingBatch
 Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
 Id: drug-product-manufacturing-batch
 Title: "Drug Product Manufacturing Batch"
@@ -768,7 +768,7 @@ Note: See Manufacturing Date Description element. """
 * extension[manufacturingDateClassification].valueCodeableConcept MS
 * extension[assignedManufacturer] 1..1 MS
 * extension[assignedManufacturer] ^short = "Assigned Manufacturer"
-* extension[assignedManufacturer].valueReference only Reference(MfgTestSiteOrganization)
+* extension[assignedManufacturer].valueReference only Reference(CodedOrganization)
 * extension[expirationDateClassification] 1..1 MS
 * extension[expirationDateClassification] ^short = "Expiration Date Classification"
 * extension[expirationDateClassification] ^definition = """The endorsement of the expiration date that clarifies whether this date has been approved by the FDA or is being proposed by the sponsor/applicant. [Source: SME Defined]

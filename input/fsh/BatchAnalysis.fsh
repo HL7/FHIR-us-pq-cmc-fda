@@ -57,7 +57,7 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * code.coding 0..0	
 * code.text 1..1 MS	
 * subject 1..1 MS	
-* subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
+* subject only Reference(DrugProductManufacturingBatch or DrugSubstanceBatch)	
 * subject ^short = "A single medication batch/lot or a single subtance batch/lot"	
 * effectiveDateTime	1..1 MS
 * effectiveDateTime ^short = "Batch Analysis Release Date"
@@ -114,26 +114,27 @@ Examples: first batch manufactured at a new facility; first batch manufactured u
 """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS	
-* referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
-* referenceRange.low MS	
-* referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
-* referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-"""
-* referenceRange.low.extension[interpretationCode] 1..1 MS	
-* referenceRange.low.code 1..1 MS	
-* referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
-* referenceRange.low.unit 1..1 MS
-* referenceRange.high MS	
-* referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
-* referenceRange.high.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-"""
-* referenceRange.high.extension[interpretationCode] 1..1 MS	
-* referenceRange.high.value 1..1 MS	
-* referenceRange.high.code 1..1 MS	
-* referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
-* referenceRange.high.unit 1..1 MS
+* referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."
+* insert ReferenceRangeWithPqTargetRange
+// * referenceRange.low MS	
+// * referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
+// * referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
+// """
+// * referenceRange.low.extension[interpretationCode] 1..1 MS	
+// * referenceRange.low.code 1..1 MS	
+// * referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
+// * referenceRange.low.unit 1..1 MS
+// * referenceRange.high MS	
+// * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
+// * referenceRange.high.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
+// """
+// * referenceRange.high.extension[interpretationCode] 1..1 MS	
+// * referenceRange.high.value 1..1 MS	
+// * referenceRange.high.code 1..1 MS	
+// * referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
+// * referenceRange.high.unit 1..1 MS
 * referenceRange.text ^short = "Original Text"	
 * referenceRange.text  
 * referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -180,24 +181,26 @@ Examples: Conforms, Does not Conform"""
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * component.referenceRange 1..1 MS	
 * component.referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
-* component.referenceRange.low MS	
-* component.referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
-* component.referenceRange.low.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-Note: When result value is numeric there is a controlled vocabulary"""
-* component.referenceRange.low.value 1..1 MS	
-* component.referenceRange.low.code 1..1 MS	
-* component.referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)
-* component.referenceRange.low.unit 1..1 MS
-* component.referenceRange.high MS	
-* component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
-* component.referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
-* component.referenceRange.high.extension[interpretationCode] 1..1 MS	
-* component.referenceRange.high.value 1..1 MS	
-* component.referenceRange.high.code 1..1 MS	
-* component.referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)
-* component.referenceRange.high.unit 1..1 MS
+* component
+  * insert ReferenceRangeWithPqTargetRange
+// * component.referenceRange.low MS	
+// * component.referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
+// * component.referenceRange.low.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
+// Note: When result value is numeric there is a controlled vocabulary"""
+// * component.referenceRange.low.value 1..1 MS	
+// * component.referenceRange.low.code 1..1 MS	
+// * component.referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)
+// * component.referenceRange.low.unit 1..1 MS
+// * component.referenceRange.high MS	
+// * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
+// * component.referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] Note: When result value is numeric there is a controlled vocabulary."""
+// * component.referenceRange.high.extension[interpretationCode] 1..1 MS	
+// * component.referenceRange.high.value 1..1 MS	
+// * component.referenceRange.high.code 1..1 MS	
+// * component.referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)
+// * component.referenceRange.high.unit 1..1 MS
 * component.referenceRange.text ^short = "Original Text"	
 * component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
  Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -275,26 +278,27 @@ Note: The full descriptor of the technique is part of the next data element - Re
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS	
 * referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
-* referenceRange.low MS	
-* referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
-* referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
-Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
-"""
-* referenceRange.low.value 1..1 MS	
-* referenceRange.low.code 1..1 MS	
-* referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
-* referenceRange.low.unit 1..1 MS
-* referenceRange.high MS	
-* referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
-* referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
-Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
-"""
-* referenceRange.high.value 1..1 MS	
-* referenceRange.high.code 1..1 MS	
-* referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
-* referenceRange.high.unit 1..1 MS
+* insert ReferenceRangeWithPqTargetRange
+// * referenceRange.low MS	
+// * referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
+// * referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
+// Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
+// """
+// * referenceRange.low.value 1..1 MS	
+// * referenceRange.low.code 1..1 MS	
+// * referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
+// * referenceRange.low.unit 1..1 MS
+// * referenceRange.high MS	
+// * referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
+// * referenceRange.high.extension[interpretationCode]  ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined]
+// Note: When result value is numeric there is a controlled vocabulary; when result value is textual the vocabulary is Pass/Fail. 
+// """
+// * referenceRange.high.value 1..1 MS	
+// * referenceRange.high.code 1..1 MS	
+// * referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
+// * referenceRange.high.unit 1..1 MS
 * referenceRange.text ^short = "Original Text"	
 * referenceRange.text  ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -344,25 +348,34 @@ Examples: Conforms, Does not Conform"""
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * component.referenceRange 1..1 MS	
 * component.referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
-* component.referenceRange.low MS	
-* component.referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
-* component.referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-"""
-* component.referenceRange.low.value 1..1 MS	
-* component.referenceRange.low.code 1..1 MS	
-* component.referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
-* component.referenceRange.low.unit 1..1 MS
-* component.referenceRange.high MS	
-* component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
-* component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
-* component.referenceRange.high.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
-"""
-* component.referenceRange.high.value 1..1 MS	
-* component.referenceRange.high.code 1..1 MS	
-* component.referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
-* component.referenceRange.high.unit 1..1 MS
+* component
+  * insert ReferenceRangeWithPqTargetRange
+// * component.referenceRange.low MS	
+// * component.referenceRange.low.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * component.referenceRange.low.extension[interpretationCode] ^short = "Interpretation Code"	
+// * component.referenceRange.low.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
+// """
+// * component.referenceRange.low.value 1..1 MS	
+// * component.referenceRange.low.code 1..1 MS	
+// * component.referenceRange.low.code from PqcmcUnitsMeasureTerminology (required)	
+// * component.referenceRange.low.unit 1..1 MS
+// * component.referenceRange.high MS	
+// * component.referenceRange.high.extension contains pq-interpretation-code-extension named interpretationCode  1..1 MS	
+// * component.referenceRange.high.extension[interpretationCode] ^short = "Interpretation Code"	
+// * component.referenceRange.high.extension[interpretationCode] ^definition = """A code that describes how to relate the given value to an acceptance value. [Source: SME Defined] 
+// """
+// * component.referenceRange.high.value 1..1 MS	
+// * component.referenceRange.high.code 1..1 MS	
+// * component.referenceRange.high.code from PqcmcUnitsMeasureTerminology (required)	
+// * component.referenceRange.high.unit 1..1 MS
 * component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
 * component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
 Note: This is the text as it appears in the Specification."""
+
+
+RuleSet: ReferenceRangeWithPqTargetRange
+* referenceRange
+  * modifierExtension contains pq-target-range named referenceRange 0..1 MS
+  * low 0..0
+  * high 0..0
