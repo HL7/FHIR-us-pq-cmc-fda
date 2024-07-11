@@ -1,3 +1,24 @@
+
+ValueSet: PqcmcExpirationDateClassificationTerminology	
+Id: pqcmc-expiration-date-classification-terminology	
+Title: "Expiration Date Classification Terminology"	
+Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+	
+* ^experimental = true	
+* $NCIT#C185182 "Approved"	
+* $NCIT#C48660 "Not Applicable"	
+* $NCIT#C185188 "Proposed"	
+	
+ValueSet: PqcmcRetestDateClassificationTerminology	
+Id: pqcmc-retest-date-classification-terminology	
+Title: "Retest Date Classification Terminology"	
+Description: "Terminology used to qualify the information pertaining to retest date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+	
+* ^experimental = true	
+* $NCIT#C185186 "Adequate"	
+* $NCIT#C48660 "Not Applicable"	
+* $NCIT#C185188 "Proposed"	
+
 ValueSet: PqcmcImpurityClassificationTerminology	
 Id: pqcmc-impurity-classification-terminology	
 Title: "Impurity Classification Terminology"	

@@ -18,7 +18,7 @@ Note: This may include the name of the drug substance, product or the raw materi
 * extension[specificationVersion]	
 * extension[specificationVersion].valueString	
 * extension[specificationVersion].valueString ^short = "Specification Version"	
-* extension[specificationVersion].valueString ^definition = """The alphanumeric text assigned by the sponsor to a particular edition of a specification. [Source: SME Defined] 
+* extension[specificationVersion].valueString ^definition = """The alphanumeric text assigned by the CodedOrganization to a particular edition of a specification. [Source: SME Defined] 
 Examples: 2.1, 13.2, ST1, 00001, 00002, &lt; companyname &gt; 001, etc. 
 Note: This value should be unique across all specifications for a given material, not just those with the same name.
 """	
@@ -57,11 +57,11 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * code.coding 0..0	
 * code.text 1..1 MS	
 * subject 1..1 MS	
-* subject only Reference(DrugProductManufacturingBatch or DrugSubstanceBatch)	
+* subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
 * subject ^short = "A single medication batch/lot or a single subtance batch/lot"	
 * effectiveDateTime	1..1 MS
 * effectiveDateTime ^short = "Batch Analysis Release Date"
-* effectiveDateTime ^definition = """The date at which the drug substance or drug product is released by the quality assurance unit of the sponsor/applicant. [Source: SME Defined]
+* effectiveDateTime ^definition = """The date at which the drug substance or drug product is released by the quality assurance unit of the CodedOrganization/applicant. [Source: SME Defined]
 Note: A single release date per batch.
 """
 * performer 1..1 MS	
@@ -153,7 +153,7 @@ Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all
 * component.code.text ^short = "Test Name | Relative Retention Time (RRT)"	
 * component.code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined] 
 * Examples: Assay by HPLC, moisture, pH, Particle Size Distribution, Dissolution, analysis for impurities, etc. 
-* Note: as defined by the sponsor 
+* Note: as defined by the CodedOrganization 
 Relative Retention Time (RRT):	The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
 * Example: 1:23 (a ratio) 
 * Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value."""
@@ -230,7 +230,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * code.text ^short = "Test Name | RRT"	
 * code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
-Note: as defined by the sponsor
+Note: as defined by the CodedOrganization
 
 RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
 Example: 1:23 (a ratio)
@@ -319,7 +319,7 @@ Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all
 * component.code.text ^short = "Test Name | Relative Retention Time"
 * component.code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
 Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
-Note: as defined by the sponsor.
+Note: as defined by the CodedOrganization.
 Relative Retention Time:The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
 Example: 1:23 (a ratio)
 Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
