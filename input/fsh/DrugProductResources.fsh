@@ -811,7 +811,6 @@ Id: drug-product-manufacturing-batch
 Title: "Drug Product Manufacturing Batch"
 Description: "This profile defines the details of a batch of medicine."
 
-* ^url = "http://hl7.org/fhir/us/pq-cmc/StructureDefinition/drug-product-manufacturing-batch"
 * ^context.type = #element
 * ^context.expression = "Medication.batch"
 * extension[manufacturingDate] 1..1 MS
