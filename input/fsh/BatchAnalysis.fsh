@@ -95,7 +95,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * valueQuantity.unit ^short = "ValueNumeric UOM"	
 * valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
-* valueQuantity.code from PqcmcUnitsMeasureTerminology (required)
+* valueQuantity from PqcmcUnitsMeasureTerminology (required)
 * valueString 0..1 MS
 * valueString ^short = "Value"	
 * valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
@@ -147,7 +147,7 @@ Relative Retention Time (RRT):	The ratio of the retention time of a component re
 * component.valueQuantity.unit ^short = "ValueNumeric UOM"	
 * component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
-* component.valueQuantity.code from PqcmcUnitsMeasureTerminology (required)
+* component.valueQuantity from PqcmcUnitsMeasureTerminology (required)
 * component.valueString 0..1 MS
 * component.valueString ^short = "Value"	
 * component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
@@ -183,12 +183,9 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * status MS	
 * category 1..1 MS
 * category.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
-* category.coding 1..2 MS
-* category.coding ^short = "Test Category | Test Subcategory"
-* category.coding ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* category.coding from PqcmcTestCategoryTerminology (required)
-* category.coding.code 1..1 MS
-* category.coding.display 1..1
+* category ^short = "Test Category / Test Subcategory"
+* category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category from PqcmcTestCategoryTerminology (required)
 * code.text 1..1 MS	
 * code.text ^short = "Test Name | RRT"	
 * code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
@@ -217,7 +214,7 @@ Note:  This is the title or name of the impurity (sometimes expressed as a ratio
 * valueQuantity.unit ^short = "ValueNumeric UOM"	
 * valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueQuantity.code 1..1 MS	
-* valueQuantity.code from PqcmcUnitsMeasureTerminology (required)
+* valueQuantity  from PqcmcUnitsMeasureTerminology (required)
 * valueString 0..1 MS
 * valueString ^short = "Value"	
 * valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
@@ -226,9 +223,7 @@ Note:  This is the title or name of the impurity (sometimes expressed as a ratio
 * interpretation ^short = "Conformance to Criteria"	
 * interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
 Examples: Conforms, Does not Conform"""
-* interpretation.coding.code from PqcmcConformanceCriteriaTerminology (required)	
-* interpretation.coding.code 1..1
-* interpretation.coding.display 1..1
+* interpretation from PqcmcConformanceCriteriaTerminology (required)	
 * note MS	
 * note ^short = "Additional Information"	
 * note ^definition = """AA placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
@@ -276,7 +271,7 @@ Note: This is the title or name of the impurity (sometimes expressed as a ratio)
 * component.valueQuantity.unit ^short = "ValueNumeric UOM"	
 * component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
 * component.valueQuantity.code 1..1 MS	
-* component.valueQuantity.code from PqcmcUnitsMeasureTerminology (required)
+* component.valueQuantity from PqcmcUnitsMeasureTerminology (required)
 * component.valueString 0..1 MS
 * component.valueString ^short = "Value"	
 * component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
@@ -286,8 +281,6 @@ Note: This is the title or name of the impurity (sometimes expressed as a ratio)
 * component.interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
 Examples: Conforms, Does not Conform"""
 * component.interpretation from PqcmcConformanceCriteriaTerminology (required)	
-* component.interpretation.coding.code 1..1
-* component.interpretation.coding.display 1..1
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * component.referenceRange 1..1 MS	
 * component.referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
