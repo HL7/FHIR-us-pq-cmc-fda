@@ -83,92 +83,104 @@ Title: "Multiple Result Observation"
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 	
 * identifier 1..1 MS	
-* identifier ^short = "Stage"	
-* identifier ^definition = """A set of discrete sequential steps performed on a given test. [Source: SME Defined]"""
-* identifier ^comment = "Note: This can be named or numbered.  This will never be 'Single Stage'."	
+  * ^short = "Stage"	
+  * ^definition = """
+    A set of discrete sequential steps performed on a given test. [Source: SME Defined]
+  """
+  * ^comment = "Note: This can be named or numbered.  This will never be 'Single Stage'."	
+  * value 1..1 MS
 * status MS	
 * value[x] only Quantity or string
-* valueQuantity.value 0..1 MS	
-* valueQuantity.value ^short = "ValueNumeric"	
-* valueQuantity. ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
-* valueQuantity.unit 1..1 MS
-* valueQuantity.unit ^short = "ValueNumeric UOM"	
-* valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
-* valueQuantity.code 1..1 MS	
 * valueQuantity from PqcmcUnitsMeasureTerminology (required)
-* valueString 0..1 MS
-* valueString ^short = "Value"	
-* valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
+* valueQuantity MS
+  * ^short = "ValueNumeric"	
+  * ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
+  * value 1..1 MS	
+  * unit 1..1 MS
+    * ^short = "ValueNumeric UOM"	
+    * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
+* valueString MS
+  * ^short = "Value"	
+  * ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
-* interpretation ^short = "Conformance to Criteria"	
-* interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined]
- Examples: Conforms, Does not Conform"""
+  * ^short = "Conformance to Criteria"	
+  * ^definition = """
+    A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined]
+    Examples: Conforms, Does not Conform
+  """
 * interpretation from PqcmcConformanceCriteriaTerminology (required)	
-* interpretation.coding.code 1..1
-* interpretation.coding.display 1..1
 * note MS	
-* note ^short = "Additional Information"	
-* note ^definition = """A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
-Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc. 
-"""
-// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
+  * ^short = "Additional Information"	
+  * ^definition = """
+    A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined] 
+    Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc. 
+  """
+  * ^example.label = "test"
+  * ^example.valueString = "this is also a test"
 * referenceRange 1..1 MS	
 * referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."
 * insert ReferenceRangeWithPqTargetRange
-* referenceRange.text ^short = "Original Text"	
-* referenceRange.text  
-* referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
-Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
-Note: This is the text as it appears in the Specification."""
-* referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
+* referenceRange.text MS
+  * ^short = "Original Text"	
+  * ^definition = """
+    The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+    Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+    Note: This is the text as it appears in the Specification.
+  """
+    * ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
 * component 0..1 MS	
-* component ^short = "Replicates"	
-* component.extension contains pq-replicate-extension named replicate  1..1 MS	
-* component.extension[replicate] ^short = "Replicate Number"	
-* component.extension[replicate] ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
-Examples: Prepare six aliquots from the sample.
-Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method."""
-//* component.extension[replicate] only integer	
-* component.code.text 1..1 MS	
-* component.code.text ^short = "Test Name | Relative Retention Time (RRT)"	
-* component.code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined] 
-* Examples: Assay by HPLC, moisture, pH, Particle Size Distribution, Dissolution, analysis for impurities, etc. 
-* Note: as defined by the CodedOrganization 
-Relative Retention Time (RRT):	The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
-* Example: 1:23 (a ratio) 
-* Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value."""
-* component.value[x] 1..1 MS	
-* component.value[x] only Quantity or string	
-* component.valueQuantity.value 0..1 MS	
-* component.valueQuantity.value ^short = "ValueNumeric"	
-* component.valueQuantity.value ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
-* component.valueQuantity.unit 1..1 MS
-* component.valueQuantity.unit ^short = "ValueNumeric UOM"	
-* component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
-* component.valueQuantity.code 1..1 MS	
-* component.valueQuantity from PqcmcUnitsMeasureTerminology (required)
-* component.valueString 0..1 MS
-* component.valueString ^short = "Value"	
-* component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
-* component.dataAbsentReason MS	
-* component.interpretation 1..1 MS	
-* component.interpretation ^short = "Conformance to Criteria"	
-* component.interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
-Examples: Conforms, Does not Conform"""
-* component.interpretation from PqcmcConformanceCriteriaTerminology	(required)
-* component.interpretation.coding.code 1..1
-* component.interpretation.coding.display 1..1
+  * ^short = "Replicates"	
+  * extension contains pq-replicate-extension named replicate  1..1 MS	
+  * extension[replicate]
+    * ^short = "Replicate Number"	
+    * ^definition = """
+      An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
+      Examples: Prepare six aliquots from the sample.
+      Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
+    """
+  * code.text 1..1 MS	
+    * ^short = "Test Name | Relative Retention Time (RRT)"	
+    * ^definition = """
+      Test Name: The textual description of a procedure or analytical method. [Source: SME Defined] 
+      * Examples: Assay by HPLC, moisture, pH, Particle Size Distribution, Dissolution, analysis for impurities, etc. 
+      * Note: as defined by the CodedOrganization 
+      Relative Retention Time (RRT):	The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+      * Example: 1:23 (a ratio) 
+      * Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
+    """
+  * value[x] 1..1 MS	
+  * value[x] only Quantity or string	
+  * valueQuantity MS
+  * valueQuantity from PqcmcUnitsMeasureTerminology (required)
+    * value 0..1 MS // is this correct?
+      * ^short = "ValueNumeric"	
+      * ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
+    * unit 1..1 MS
+      * ^short = "ValueNumeric UOM"	
+      * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
+  * valueString MS
+    * ^short = "Value"	
+    * ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
+  * dataAbsentReason MS	
+  * interpretation 1..1 MS	
+  * interpretation from PqcmcConformanceCriteriaTerminology	(required)
+    * ^short = "Conformance to Criteria"	
+    * ^definition = """
+      A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+      Examples: Conforms, Does not Conform
+    """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
-* component.referenceRange 1..1 MS	
-* component.referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
-* component
+  * referenceRange 1..1 MS	
+    * ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
   * insert ReferenceRangeWithPqTargetRange
-* component.referenceRange.text ^short = "Original Text"	
-* component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
- Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
- Note: This is the text as it appears in the Specification.
-"""
+  * referenceRange.text MS 
+    * ^short = "Original Text"	
+    * ^definition = """
+      The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+      Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+      Note: This is the text as it appears in the Specification.
+    """
 	
 Profile: ResultObservation	
 Parent: Observation	
@@ -177,119 +189,136 @@ Title: "Result Observation"
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 	
 * identifier 1..1 MS	
-* identifier ^short = "Stage"	
-* identifier ^definition = "A set of discrete sequential steps performed on a given test. [Source: SME Defined]"
-* identifier ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
+  * ^short = "Stage"	
+  * ^definition = "A set of discrete sequential steps performed on a given test. [Source: SME Defined]"
+  * ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."
+  * value 1..1 MS // an Identifier isn't useful without a value	
 * status MS	
 * category 1..1 MS
-* category.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
-* category ^short = "Test Category / Test Subcategory"
-* category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
 * category from PqcmcTestCategoryTerminology (required)
+  * extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
+  * ^short = "Test Category / Test Subcategory"
+  * ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
 * code.text 1..1 MS	
-* code.text ^short = "Test Name | RRT"	
-* code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
-Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
-Note: as defined by the CodedOrganization
-
-RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
-Example: 1:23 (a ratio)
-Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
-"""
+  * ^short = "Test Name | RRT"	
+  * ^definition = """
+    Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+    Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+    Note: as defined by the CodedOrganization
+    
+    RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+    Example: 1:23 (a ratio)
+    Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
+  """
 * effective[x] 1..1 MS	
-* effective[x].extension contains pq-pullDate-extension named actualpulldate 1..1 MS	
-* effective[x] ^short = "Test Date"	
-* effective[x] ^definition = "The date when a particular test was performed. [Source: SME Defined]."
 * effective[x] only dateTime	
+  * extension contains pq-pullDate-extension named actualpulldate 1..1 MS	
+  * ^short = "Test Date"	
+  * ^definition = "The date when a particular test was performed. [Source: SME Defined]."
 * performer MS	
-* performer ^short = "Testing Site Unique Identifier"	
-* performer ^definition = "A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]."
 * performer only Reference(CodedOrganization)	
+  * ^short = "Testing Site Unique Identifier"	
+  * ^definition = "A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]."
 * value[x] 1..1 MS	
 * value[x]  only Quantity or string
-* valueQuantity.value 0..1 MS	
-* valueQuantity.value ^short = "ValueNumeric"	
-* valueQuantity. ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
-* valueQuantity.unit 1..1 MS
-* valueQuantity.unit ^short = "ValueNumeric UOM"	
-* valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
-* valueQuantity.code 1..1 MS	
-* valueQuantity  from PqcmcUnitsMeasureTerminology (required)
+* valueQuantity
+  * value 0..1 MS // is this correct?
+    * ^short = "ValueNumeric"	
+  * ^definition = "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"
+  * unit 1..1 MS // unit is essentially a display value in a Coding. should it be mandatory?
+    * ^short = "ValueNumeric UOM"	
+    * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
+// saying Quantity.code is 1..1 does nothing if the binding is required
+* valueQuantity from PqcmcUnitsMeasureTerminology (required)
 * valueString 0..1 MS
-* valueString ^short = "Value"	
-* valueString ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
+  * ^short = "Value"	
+  * ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
-* interpretation ^short = "Conformance to Criteria"	
-* interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
-Examples: Conforms, Does not Conform"""
 * interpretation from PqcmcConformanceCriteriaTerminology (required)	
+  * ^short = "Conformance to Criteria"	
+  * ^definition = """
+    A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+    Examples: Conforms, Does not Conform
+  """
 * note MS	
-* note ^short = "Additional Information"	
-* note ^definition = """AA placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
-Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
-"""
+  * ^short = "Additional Information"	
+  * ^definition = """
+    AA placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
+    Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
+  """
 * method.text 1..1 MS	
-* method.text ^short = "Analytical Procedure"	
-* method.text  ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined] . 
-Note: The full descriptor of the technique is part of the next data element - Reference to Procedure"""
+  * ^short = "Analytical Procedure"	
+  * ^definition = """
+    The name of the technique used to determine the nature of a characteristic. [Source: SME Defined] . 
+    Note: The full descriptor of the technique is part of the next data element - Reference to Procedure
+  """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS	
 * referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
 * insert ReferenceRangeWithPqTargetRange
-* referenceRange.text ^short = "Original Text"	
-* referenceRange.text  ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
-Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
-Note: This is the text as it appears in the Specification."""
-* referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
+* referenceRange.text MS
+  * ^short = "Original Text"	
+  * ^definition = """
+    The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+    Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+    Note: This is the text as it appears in the Specification.
+  """
+  * ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
 * hasMember 0..1 MS	
 * hasMember only Reference(MultipleReplicatesResultObservation)	
-* hasMember ^comment = "Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition."	
+  * ^comment = "Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition."	
 * component 0..1 MS	
-* component ^short = "Replicates"	
-* component.extension contains pq-replicate-extension named replicate  1..1 MS	
-* component.extension[replicate] ^short = "Replicate Number"	
-* component.extension[replicate] ^definition = """An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
-Examples: Prepare six aliquots from the sample.
-Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method. """
+  * ^short = "Replicates"	
+  * extension contains pq-replicate-extension named replicate  1..1 MS	
+  * extension[replicate] ^short = "Replicate Number"	
+  * extension[replicate] ^definition = """
+    An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
+    Examples: Prepare six aliquots from the sample.
+    Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
+  """
 //* component.extension[replicate] only integer	
-* component.code.text 1..1 MS	
-* component.code.text ^short = "Test Name | Relative Retention Time"
-* component.code.text ^definition = """Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
-Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
-Note: as defined by the CodedOrganization.
-Relative Retention Time:The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
-Example: 1:23 (a ratio)
-Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
-"""	
-* component.value[x] 1..1 MS	
-* component.value[x]  only Quantity or string
-* component.valueQuantity.value 0..1 MS	
-* component.valueQuantity.value ^short = "ValueNumeric"	
-* component.valueQuantity.value ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
-* component.valueQuantity.unit 1..1 MS
-* component.valueQuantity.unit ^short = "ValueNumeric UOM"	
-* component.valueQuantity.unit ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
-* component.valueQuantity.code 1..1 MS	
-* component.valueQuantity from PqcmcUnitsMeasureTerminology (required)
-* component.valueString 0..1 MS
-* component.valueString ^short = "Value"	
-* component.valueString ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
-* component.dataAbsentReason MS	
-* component.interpretation 1..1 MS	
-* component.interpretation ^short = "Conformance to Criteria"	
-* component.interpretation ^definition = """A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
-Examples: Conforms, Does not Conform"""
-* component.interpretation from PqcmcConformanceCriteriaTerminology (required)	
+  * code.text 1..1 MS	
+  * code.text ^short = "Test Name | Relative Retention Time"
+  * code.text ^definition = """
+    Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+    Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+    Note: as defined by the CodedOrganization.
+    Relative Retention Time:The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+    Example: 1:23 (a ratio)
+    Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
+  """	
+  * value[x] 1..1 MS	
+  * value[x] only Quantity or string
+  * valueQuantity from PqcmcUnitsMeasureTerminology (required)
+    * value 0..1 MS	
+      * ^short = "ValueNumeric"	
+      * ^definition = "The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]"
+    * unit 1..1 MS
+      * ^short = "ValueNumeric UOM"	
+      * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]"	
+  * valueString 0..1 MS
+    * ^short = "Value"	
+    * ^definition = "The acceptable qualitative or text value of the result of the test.[Source: SME Defined]"
+  * dataAbsentReason MS	
+  * interpretation 1..1 MS	
+    * ^short = "Conformance to Criteria"	
+    * ^definition = """
+      A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+      Examples: Conforms, Does not Conform
+    """
+  * interpretation from PqcmcConformanceCriteriaTerminology (required)	
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
-* component.referenceRange 1..1 MS	
-* component.referenceRange ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
-* component
+  * referenceRange 1..1 MS	
+    * ^definition = "Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values."	
   * insert ReferenceRangeWithPqTargetRange
-* component.referenceRange.text ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
-* component.referenceRange.text ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
-Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
-Note: This is the text as it appears in the Specification."""
+  * referenceRange.text MS
+    * ^comment = "Note: For non-numeric tests, the Original Text is the only required element for referenceRange."	
+    * ^definition = """
+      The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+      Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+      Note: This is the text as it appears in the Specification.
+    """
 
 
 RuleSet: ReferenceRangeWithPqTargetRange
