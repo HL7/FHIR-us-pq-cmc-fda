@@ -527,7 +527,6 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
   * productName 1..1 MS
   * type 1..1 MS
-  * obeys cmc-strength-name-must-reference-scientific
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary]
   * type = $NameType#PROP "Proprietary"
@@ -540,6 +539,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
     * type 1..1 MS
     * type from PqcmcNamePartTerminology (required)
 * name[NonProprietary]
+  * obeys cmc-strength-name-must-reference-scientific
   * type = $NameType#NON "Non-Proprietary"
   * part 1..* MS
     * ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
