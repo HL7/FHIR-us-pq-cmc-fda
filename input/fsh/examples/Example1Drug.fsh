@@ -268,8 +268,8 @@ Usage: #example
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 
 Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
-InstanceOf: SponsorOrganization
-Title: "SponsorOrganization - Wunderwerke"
+InstanceOf: CodedOrganization
+Title: "CodedOrganization - Wunderwerke"
 Description: "A company sponsor of a drug application"
 Usage: #example 
 

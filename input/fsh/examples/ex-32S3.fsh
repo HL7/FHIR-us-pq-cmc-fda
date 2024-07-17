@@ -1,5 +1,5 @@
 Instance: 48beec35-843c-42f5-9251-7aa6fd693199
-InstanceOf: SponsorOrganization
+InstanceOf: CodedOrganization
 * name = "WunderWerke"
 * contact.address.line[0] = "Restful Rd"
 * contact.address.state = "CT"
@@ -39,7 +39,7 @@ InstanceOf: CMCeCTDDocument32S3
 * entry[+].resource = 3419cdae-4d99-4068-bfaa-8037550bf327
 * entry[=].fullUrl = "urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327"
 Instance: 37a26b1a-ede3-4677-943e-72b513f945b7
-InstanceOf: SupplierOrganization
+InstanceOf: CodedOrganization
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/supplier-organization"
 * name = "Vidinaid Site"
 * contact.address.line[0] = "100 Stillwater Avenue"

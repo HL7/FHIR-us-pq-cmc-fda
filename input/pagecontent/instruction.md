@@ -1,196 +1,43 @@
 ###Understanding FHIR
-	<p>
-    This implementation guide is based on the HL7 <a href="{{site.data.fhir.path}}index.html">FHIR</a> standard.  It uses terminology, notations and design principles that are
-    specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well
-    as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following
-    prior to reading the rest of this implementation guide.
-  </p>
 
-- 
-			<a href="{{site.data.fhir.path}}overview.html">FHIR overview</a>
+This implementation guide is based on the HL7 [FHIR](http://hl7.org/fhir/R5/index.html)<span style="text-decoration:underline;"> </span>
 
-- 
-			<a href="{{site.data.fhir.path}}overview-dev.html">Developer's introduction</a>
+![alt_text](images/image1.png "image_tooltip")
+[ ](http://hl7.org/fhir/R5/index.html)standard. It uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
 
-			<a href="{{site.data.fhir.path}}datatypes.html">FHIR data types</a>
+    [FHIR overview](http://hl7.org/fhir/R4/overview.html)
 
-- 
-			<a href="{{site.data.fhir.path}}terminologies.html">Using codes</a>
+    [Developer's introduction](http://hl7.org/fhir/R4/overview-dev.html)<span style="text-decoration:underline;"> </span>
 
-- 
-			<a href="{{site.data.fhir.path}}references.html">References between resources</a>
+    [FHIR data types](http://hl7.org/fhir/R4/datatypes.html)<span style="text-decoration:underline;"> </span>
 
-- 
-			<a href="{{site.data.fhir.path}}formats.html">How to read resource &amp; profile definitions</a>
+    [Using codes](http://hl7.org/fhir/R4/terminologies.html)<span style="text-decoration:underline;"> </span>
 
-- 
-			<a href="{{site.data.fhir.path}}resource.html">Base resource</a>
+    [References between resources](http://hl7.org/fhir/R4/references.html)<span style="text-decoration:underline;"> </span>
 
-- 
-			<a href="{{site.data.fhir.path}}search.html">Search</a>
+    [How to read resource & profile definitions](http://hl7.org/fhir/R4/formats.html)<span style="text-decoration:underline;"> </span>
+
+    [Base resource](http://hl7.org/fhir/R4/resource.html)<span style="text-decoration:underline;"> </span>
+
+    [RESTful operations](http://hl7.org/fhir/R4/http.html)<span style="text-decoration:underline;"> </span>
+
+    This IG only contains only bundles of the document type because the bundle instances will be delivered with a eCTD filing.  Any implementation adapting these for use in a FHIR server should read [RESTful operations](http://hl7.org/fhir/R4/http.html)
+
+#### Additional Considerations
+
+FHIR defines the notion of [Must Support](http://hl7.org/fhir/R4/conformance-rules.html#mustSupport).  To help establish conformance expectations for systems. For the purposes of _this_ implementation guide, "must support" shall be interpreted as follows:
+	Conformant systems SHALL be capable of sending and receiving the data element.
+	When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements.
+	
+	Developers implementing the Invariants will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
+
+<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-	<p>
-    This IG only contains only bundles of the document type because the bundle instances will be delivered with a eCTD filing.  Any implementation adapting these for use in a FHIR server should read <a href="{{site.data.fhir.path}}http.html">RESTful operations</a>
-  </p>
+![alt_text](images/image19.png "image_tooltip")
+.
 
-
-	<h4>Resources</h4>
-	<p>
     This implementation guide defines profiles on several resources.  Implementations are expected to be conformant with these profiles to be conformant with this implementation guide.
-  </p>
-	<table class="grid">
-		<tbody>
-			<tr>
-				<th>Based on FHIR Resource</th>
-				<th>SDC Profile(s)</th>
-				<th>Purpose</th>
-			</tr>
-<!--			<tr>
-				<td>
-					<a href="sdc-structuredefinition.html">SDC Data Element (DE) Profile</a>
-				</td>
-				<td>
-					<a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a>
-				</td>
-				<td>Used to define data elements using FHIR logical models that can be referenced in questionnaires and can be used to auto-populate form data</td>
-			</tr>-->
-			<tr>
-				<td rowspan="12">
-					<a href="{{site.data.fhir.path}}questionnaire.html">Questionnaire</a>
-				</td>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire.html">SDC Base Questionnaire Profile</a>
-				</td>
-				<td>Used to define form definitions that may be downloaded for manual and/or automatic population</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-search.html">Search Questionnaire Profile</a>
-				</td>
-				<td>Defines properties that must be supported for systems that support searching for and returning Questionnaires</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-render.html">Advanced Rendering Questionnaire Profile</a>
-				</td>
-				<td>Defines additional capabilities for controlling the rendering of the questionnaire</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-behave.html">Advanced Behavior Questionnaire Profile</a>
-				</td>
-				<td>Defines additional capabilities for controlling data entry and calculating values within the questionnaire</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-pop-obsn.html">Populatable Questionnaire - Observation Profile</a>
-				</td>
-				<td>Defines elements that support auto-population and pre-population of questionnaires using the Observation-based population mechanism</td>
-			</tr>
-      <tr>
-        <td>
-          <a href="StructureDefinition-sdc-questionnaire-pop-exp.html">Populatable Questionnaire - Expression Profile</a>
-        </td>
-        <td>Defines elements that support auto-population and pre-population of questionnaires using the Expression-based population mechanism</td>
-      </tr>
-      <tr>
-        <td>
-          <a href="StructureDefinition-sdc-questionnaire-pop-smap.html">Populatable Questionnaire - StructureMap Profile</a>
-        </td>
-        <td>Defines elements that support auto-population and pre-population of questionnaires using the Structure-based population mechanism</td>
-      </tr>
-
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-extr-obsn.html">Extractable Questionnaire - Observation Profile</a>
-				</td>
-				<td>Defines elements that allow conversion of a QuestionnaireResponse to an Observation resource or Bundle of Observation resources using the Observation-based extraction mechanism</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-extr-defn.html">Extractable Questionnaire - Definition Profile</a>
-				</td>
-				<td>Defines elements that allow conversion of a QuestionnaireResponse to a FHIR resource or Bundle of FHIR resources using the Definition-based extraction mechanism</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-extr-smap.html">Extractable Questionnaire - StructureMap Profile</a>
-				</td>
-				<td>Defines elements that allow conversion of a QuestionnaireResponse to a FHIR resource or Bundle of FHIR resources using the StructureMap-based extraction mechanism</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-adapt.html">Adaptive Questionnaire Profile</a>
-				</td>
-				<td>Defines the metadata that should be present to embed an adaptive Questionnaire as part of a QuestionnaireResponse</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaire-adapt-srch.html">Adaptive Questionnaire - search Profile</a>
-				</td>
-				<td>Defines the metadata that should be present to support searching for adaptive questionnaires</td>
-			</tr>
-			<tr>
-				<td rowspan="2">
-					<a href="{{site.data.fhir.path}}questionnaireresponse.html">QuestionnaireResponse</a>
-				</td>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaireresponse.html">SDC Questionnaire Response Profile</a>
-				</td>
-				<td>Used to share instance data captured using questionnaire forms</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="StructureDefinition-sdc-questionnaireresponse-adapt.html">Adaptive Questionnaire Response Profile</a>
-				</td>
-				<td>Represents a response to a questionnaire that is dynamically built as each question is answered</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="{{site.data.fhir.path}}valueset.html">ValueSet</a>
-				</td>
-				<td>
-					<a href="StructureDefinition-sdc-valueset.html">SDC Value Set Profile</a>
-				</td>
-				<td>Used to define collections of allowed values for data elements and for questions in questionnaires</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="{{site.data.fhir.path}}codesystem.html">CodeSystem</a>
-				</td>
-				<td>
-					<a href="StructureDefinition-sdc-codesystem.html">SDC Code System Profile</a>
-				</td>
-				<td>Used to define allowed values for data elements and for questions in questionnaires</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="{{site.data.fhir.path}}metadatatypes.html#UsageContext">UsageContext</a>
-				</td>
-				<td>
-					<a href="StructureDefinition-sdc-usagecontext.html">SDC Usage Context Profile</a>
-				</td>
-				<td>Constraints on the codes and values of UsageContext to help ensure consistent usage in SDC Questionnaires</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>
-    Additional resources such as <a href="{{site.data.fhir.path}}patient.html">Patient</a>, <a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a>,
-    <a href="{{site.data.fhir.path}}binary.html">Binary</a>, <a href="{{site.data.fhir.path}}conceptmap.html">ConceptMap</a>, <a href="{{site.data.fhir.path}}structuremap.html">StructureMap</a>,
-    <a href="{{site.data.fhir.path}}provenance.html">Provenance</a>, <a href="{{site.data.fhir.path}}auditevent.html">AuditEvent</a> and others are also
-    likely to be used in SDC solutions, though no SDC-specific profiles have been created for them.
-    <!-- Todo: decide how explicit the list of relevant sections needs to be -->
-	</p>
-
-	<a name="terminologyops"> </a>
-	<h4>Terminology Operations</h4>
-	<p>
-    In addition to the QuestionnaireResponse <a href="populate.html">population operations</a>, <a href="OperationDefinition-QuestionnaireResponse-extract.html">extract operation</a>, <a href="OperationDefinition-Questionnaire-next-question.html">next-question operation</a> and <a href="OperationDefinition-Questionnaire-process-response.html">process response operation</a>, it will be useful for Form Filler and Form Manager systems to support some of FHIR's
-    <a href="{{site.data.fhir.path}}terminology-service.html">terminology service</a> capabilities - specifically the
-    <a href="{{site.data.fhir.path}}operation-valueset-expand.html">Valueset Expand</a> and
-    <a href="{{site.data.fhir.path}}operation-valueset-validate-code.html">Validate code</a>
-    operations.
   </p>
 
   <a name="conformance"> </a>
@@ -202,14 +49,7 @@
 
 - Conformant systems SHALL be capable of sending and receiving the data element</li>
 - When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements</li>
-- Where an element affects the display or validation of a Questionnaire and a system performs either or both of those operations, the behavior established by the value
-      of the element SHALL be performed</li>
-
-
-
-
-
-
+- Where an element affects the display or validation of a Questionnaire and a system performs either or both of those operations, the behavior established by the value of the element SHALL be performed</li>
 
 
 

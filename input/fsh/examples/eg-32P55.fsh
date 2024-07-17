@@ -45,7 +45,7 @@ Usage: #example
 * route = $NCIT#C38288 "ORAL"
 
 Instance: 98effc99-db2b-428d-89aa-0ce426e02788
-InstanceOf: SponsorOrganization
+InstanceOf: CodedOrganization
 Description: "Sponsor example for eCTD SP4151"
 Usage: #example
 

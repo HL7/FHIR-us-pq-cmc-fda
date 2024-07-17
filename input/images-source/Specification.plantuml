@@ -58,7 +58,7 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
 
     object "**Parent:** Organization" as objDP {
       **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
+      [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
     }
   }

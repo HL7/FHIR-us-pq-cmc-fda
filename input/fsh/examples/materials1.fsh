@@ -1,6 +1,6 @@
 Instance: 49438799-e286-432c-b8d8-68ac77e7f519
-InstanceOf: SponsorOrganization
-Title: "SponsorOrganization J. Jones Research"
+InstanceOf: CodedOrganization
+Title: "CodedOrganization J. Jones Research"
 Description: "Example of a Sponsor type of Organization"
 Usage: #example
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"

@@ -106,8 +106,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
     Organization 1..* and
     DocumentReference 0..*
 * entry[Composition].resource only EctdComposition32S3
-* entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation or ImpuritySubstance
-* entry[Organization].resource only cmc-sponsor-organization
+* entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation
+* entry[Organization].resource only cmc-organization
 * entry[DocumentReference].resource only Base64DocumentReference
 
 Profile: CMCeCTDDocument32P32
@@ -173,7 +173,7 @@ Description: "The fields needed to represent Quality Specifications for APIs, Dr
 * identifier 0..1 MS
 * type from PqcmcQualitySpecificationSectionTypes (required)
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 1..1 MS
 * section.title 1..1 MS
@@ -195,7 +195,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 3..3 MS
 * section.code 1..1 MS
@@ -231,7 +231,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
     SECTION SLICES
@@ -256,7 +256,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * subject 1..1 MS
 * subject only Reference(RoutineSubstanceDefinition)
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
     SECTION SLICES - not requried - only one option
@@ -280,7 +280,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
 */
@@ -302,7 +302,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
 */
@@ -324,7 +324,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * identifier 0..1 MS
 * type = $SectionTypes#32S3 "Substance Characterisation"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 
 /*

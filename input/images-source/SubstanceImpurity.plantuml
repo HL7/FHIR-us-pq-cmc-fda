@@ -26,7 +26,7 @@ package "3.2.S.3 eCTD Heading Characterisation Bundle" as NODES {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
+      [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
       Testing Site and Organization Identifier Type Terminology
     }

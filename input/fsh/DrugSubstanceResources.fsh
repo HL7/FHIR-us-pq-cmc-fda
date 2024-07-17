@@ -96,7 +96,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(SupplierOrganization)
+* supplier only Reference(CodedOrganization)
 * structure MS
 //* structure obeys cmc-representation-or-document
 * structure.representation 1..*
@@ -228,7 +228,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer 0..* MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(SupplierOrganization)
+* supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
@@ -285,7 +285,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer 1..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(SupplierOrganization)
+* supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 * sourceMaterial 0..0 MS
@@ -309,7 +309,7 @@ Description: "Substance General Information containting Drug Substance (Active I
 * manufacturer 1..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(SupplierOrganization)
+* supplier only Reference(CodedOrganization)
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
 * molecularWeight ^definition = "The average mass of a molecule of a compound compared to ¹/₁₂ the mass of carbon 12 and calculated as the sum of the atomic weights of the constituent atoms. [Source: Merriam Webster]"
@@ -596,7 +596,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * manufacturer 0..1 MS
 * manufacturer only Reference(MfgTestSiteOrganization)
 * supplier 0..1 MS
-* supplier only Reference(SupplierOrganization)
+* supplier only Reference(CodedOrganization)
 * insert SubstanceCharacterization
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
