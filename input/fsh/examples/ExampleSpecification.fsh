@@ -212,7 +212,6 @@ Usage: #example
     * detailInteger = 12
 * action[+]
   * id = "2047a6b6-e3fc-4071-8989-526297579091"
-  * extension[testOrder].valueDecimal = 1.1
   * prefix = "Single Stage"
   * title = "Spectrophotometry Identification"
   * description = "Alternate"
@@ -228,7 +227,6 @@ Usage: #example
   * goalId[+] = "32649771-1290-4386-9cf7-7a72274f22b4"
 * action[+]
   * id = "84d64dd8-b799-418a-a713-a854c4d3c2b9"
-  * extension[testOrder].valueDecimal = 1.2
   * linkId = "2047a6b6-e3fc-4071-8989-526297579091"
   * prefix = "Single Stage"
   * title = "Identity - Ferric Chloride"
@@ -245,7 +243,6 @@ Usage: #example
   * goalId[+] = "59a4ca76-858e-4d58-8e5f-88e75f51ec33"
 * action[+]
   * id = "838e66ce-f4b0-47a5-8ea0-aa7882a84303"
-  * extension[testOrder].valueDecimal = 2
   * prefix = "Single Stage"
   * title = "Loss on Drying"
   * code
@@ -258,7 +255,6 @@ Usage: #example
   * goalId[+] = "c40aa176-e6aa-4fe4-869d-6550ee992903"
 * action[+]
   * id = "3510686b-fb93-4980-a41c-0a3754be7f37"
-  * extension[testOrder].valueDecimal = 3
   * prefix = "Single Stage"
   * title = "Readily Carbonizable Sub"
   * code
@@ -273,7 +269,6 @@ Usage: #example
   * goalId[+] = "b122987d-586c-481b-951c-6202e660158d"
 * action[+]
   * id = "b2e18cc4-f494-4ef0-be34-810d8d4b439b"
-  * extension[testOrder].valueDecimal = 4
   * prefix = "Single Stage"
   * title = "Residue on ignition (Ash)"
   * code
@@ -286,7 +281,6 @@ Usage: #example
   * goalId[+] = "929747ad-e83a-46f0-bbbc-133ee951e819"
 * action[+]
   * id = "d315a1c3-dd93-498d-8ae3-dc0d4b3bec75"
-  * extension[testOrder].valueDecimal = 5
   * prefix = "Single Stage"
   * title = "Substances insoluble in sodium carbonate TS"
   * code
@@ -299,7 +293,6 @@ Usage: #example
   * goalId[+] = "8d7c85c2-7a4b-432e-ac94-226f296e4fca"
 * action[+]
   * id = "6ec15bbc-a78a-4351-9ad8-fcf97e839ab9"
-  * extension[testOrder].valueDecimal = 6
   * prefix = "Single Stage"
   * title = "Impurities - Chloride (Cl)"
   * code
@@ -314,7 +307,6 @@ Usage: #example
   * goalId[+] = "de4f962a-d486-486d-8d84-f2d1635646b4"
 * action[+]
   * id = "fa31b425-896c-4b25-b693-ccdd14e0c8ee"
-  * extension[testOrder].valueDecimal = 7
   * prefix = "Single Stage"
   * title = "Impurities - Sulfate (SO4)"
   * code
@@ -329,7 +321,6 @@ Usage: #example
   * goalId[+] = "b46dce64-a009-46cd-ab95-21d1d5b4df77"
 * action[+]
   * id = "cef5aa1a-8770-4f78-9bc3-da9f18b77e5c"
-  * extension[testOrder].valueDecimal = 8
   * prefix = "Single Stage"
   * title = "Elemental Impurities - Limits"
   * code
@@ -344,7 +335,6 @@ Usage: #example
   * goalId[+] = "5566f501-37e1-49fb-8783-b20c074ec0c3"
 * action[+]
   * id = "d5871ee2-8b06-414c-91b4-4b30f5881c8a"
-  * extension[testOrder].valueDecimal = 9
   * prefix = "Single Stage"
   * title = "Limit of Free Salicylic Acid"
   * code
@@ -359,7 +349,6 @@ Usage: #example
   * goalId[+] = "db19e3ab-e28b-4477-8bd7-2409093ed5a3"
 * action[+]
   * id = "e192fc72-c4b1-419f-8098-6f65037a3962"
-  * extension[testOrder].valueDecimal = 10
   * prefix = "Single Stage"
   * title = "Organic Volatile Impurities"
   * code
@@ -377,7 +366,6 @@ Usage: #example
   * goalId[+] = "33fa051c-6b3c-4e4d-bd4e-09d39fc253b3"
 * action[+]
   * id = "b7e88ea0-3c61-49db-86ec-8d01f8b7667b"
-  * extension[testOrder].valueDecimal = 11
   * prefix = "Single Stage"
   * title = "Assay Dry Basis"
   * code
@@ -392,7 +380,6 @@ Usage: #example
   * goalId[+] = "9100e938-42ff-4004-8473-ed5090d66f3a"
 * action[+]
   * id = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
-  * extension[testOrder].valueDecimal = 12
   * title = "Dissolution - 30 minute"
   * code
     * coding = $NCIT#C96103 "Proprietary"
@@ -402,19 +389,16 @@ Usage: #example
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-05"
   * action[+]
-    * extension[stageOrder].valueDecimal = 1
     * linkId = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
     * prefix = "Stage 1"
     * goalId[+] = "af260128-f105-4692-ba40-49f21f12ad46"
     * goalId[+] = "31d9dcac-bf72-420b-a415-c924155a83f4"
   * action[+]
-    * extension[stageOrder].valueDecimal = 2
     * linkId = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
     * prefix = "Stage 2"
     * goalId[+] = "47c0d685-0b23-4637-9af8-a554e4fad7ec"
     * goalId[+] = "14d3dee8-e024-4367-b0a2-a2a809303ee0"
   * action[+]
-    * extension[stageOrder].valueDecimal = 3
     * linkId = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
     * prefix = "Stage 3"
     * goalId[+] = "15309a78-92a9-4cf9-aee1-452d6d2f7a91"

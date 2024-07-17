@@ -157,7 +157,6 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * action obeys cmc-link-required and cmc-single-or-multistage
 * action 1..* MS
 * action ^short = "Method"
-* action.extension[testOrder].valueDecimal 1..1 MS
 * action.linkId MS
 * action.linkId ^short = "only required for alternate tests"
 * action.prefix 0..1 MS
@@ -215,7 +214,6 @@ Note: This could also be a transferred lab method.
 //* action.action obeys cmc-at-least-one
 * action.action 0..* MS
 * action.action ^short = "Groups or Stages"
-* action.action.extension[stageOrder].valueDecimal 1..1 MS
 * action.action.prefix 0..1 MS
 * action.action.prefix ^short = "Stage Name"
 * action.action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP  &lt;711&gt;)

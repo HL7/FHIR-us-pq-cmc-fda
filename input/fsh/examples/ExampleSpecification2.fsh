@@ -84,7 +84,6 @@ Usage: #example
       * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-  * extension[testOrder].valueDecimal = 1
   * title = "Microbiological Examination of Nonsterile Products"
   * code
     * coding = $NCIT#C96102 "Compendial"
@@ -94,31 +93,26 @@ Usage: #example
   * documentation.type = #documentation
   * documentation.label = "USP <61>"
   * action[+]
-    * extension[stageOrder].valueDecimal = 1
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
     * prefix = "Stage 1"
     * title = "Staphylococcus aureus"
     * goalId[+] = "b304ed45-5295-4082-9827-f20e1ff0d1d3"
   * action[+]
-    * extension[stageOrder].valueDecimal = 2
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
     * prefix = "Stage 2"
     * title = "Pseudomonas aeruginosa"
     * goalId[+] = "d4e38c52-30f6-4bb7-ab84-99439a7266ce"
   * action[+]
-    * extension[stageOrder].valueDecimal = 3
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
     * prefix = "Stage 3"
     * title = "Bacillus subtilis"
     * goalId[+] = "2abf1f19-e1b1-42e4-b943-79f5fa1642fe"
   * action[+]
-    * extension[stageOrder].valueDecimal = 4
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
     * prefix = "Stage 4"
     * title = "Total Aerobic Microbial Count (TAMC)"
     * goalId[+] = "c0ed4a79-8f40-4d26-8845-4cea166fb627"
   * action[+]
-    * extension[stageOrder].valueDecimal = 5
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
     * prefix = "Stage 5"
     * title = "Total Yeasts and Molds Count (TYMC)"

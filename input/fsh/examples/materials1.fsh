@@ -236,7 +236,6 @@ Usage: #example
       * comparator = #<=
 * action[+]
   * id = "428fa917-a7d3-4515-9b48-c9366acd673a"
-  * extension[testOrder].valueDecimal = 1
   * prefix = "Single Stage"
   * title = "Identification"
   * code
@@ -247,24 +246,19 @@ Usage: #example
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-001"
   * action[+]
-    * extension[stageOrder].valueDecimal = 1.1
     * title = "Identification A"
     * goalId[+] = "e512320e-0ffb-47d9-922a-5415aaa4cb30"
   * action[+]
-    * extension[stageOrder].valueDecimal = 1.2
     * title = "Identification B"
     * goalId[+] = "2c6e465b-4dec-4a09-9dc5-58c480009d27"
   * action[+]
-    * extension[stageOrder].valueDecimal = 1.3
     * title = "Identification C"
     * goalId[+] = "c233a5f7-37e2-4b2b-9f04-cf1b25534865"
   * action[+]
-    * extension[stageOrder].valueDecimal = 1.4
     * title = "Identification D"
     * goalId[+] = "c759888d-1eac-4a12-aa9b-403f395f2c18"
 * action[+]
   * id = "f7cbb73f-4220-4987-b498-c049230091ea"
-  * extension[testOrder].valueDecimal = 2
   * prefix = "Single Stage"
   * title = "Microbial Limits"
   * code
@@ -275,20 +269,16 @@ Usage: #example
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-002"
   * action[+]
-    * extension[stageOrder].valueDecimal = 2.1
     * title = "Total Bacterial Count"
     * goalId[+] = "66d4035c-633a-49b1-b974-e3171911f44a"
   * action[+]
-    * extension[stageOrder].valueDecimal = 2.2
     * title = "Salmonella"
     * goalId[+] = "95bf9d43-f337-4905-9c50-788b69d00843"
   * action[+]
-    * extension[stageOrder].valueDecimal = 2.3
     * title = "Escherichia Coli"
     * goalId[+] = "4e475e2c-c235-4433-b1e4-201a17e45796"
 * action[+]
   * id = "f5f8221c-f9ec-4b47-8ec7-90ff44f7388c"
-  * extension[testOrder].valueDecimal = 3
   * prefix = "Single Stage"
   * title = "Elemental Impurities"
   * code
@@ -301,24 +291,19 @@ Usage: #example
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-003"
   * action[+]
-    * extension[stageOrder].valueDecimal = 3.1
     * title = "Cadmium (Cd)"
     * goalId[+] = "af4ec6c3-4590-43f7-92e0-c8dae0e76e1f"
   * action[+]
-    * extension[stageOrder].valueDecimal = 3.2
     * title = "Mercury (Hg)"
     * goalId[+] = "b00cb099-5fd8-4ef4-b05b-c1c7c4cd4c73"
   * action[+]
-    * extension[stageOrder].valueDecimal = 3.3
     * title = "Arsenic (As)"
     * goalId[+] = "464f3063-0a4b-4408-9f4a-d6c0b8170097"
   * action[+]
-    * extension[stageOrder].valueDecimal = 3.4
     * title = "Lead (Pb)"
     * goalId[+] = "03fbc16c-d4d4-40ac-8689-448bda831dac"
 * action[+]
   * id = "37b44e91-529a-4d87-843b-ec3dd172c09f"
-  * extension[testOrder].valueDecimal = 4
   * prefix = "Single Stage"
   * title = "Residual Solvents"
   * code
@@ -333,7 +318,6 @@ Usage: #example
   * goalId[+] = "28aba010-126e-4c47-8611-367cdacdd87e"
 * action[+]
   * id = "25a64081-a0c2-4d72-8a48-538f81fcc35f"
-  * extension[testOrder].valueDecimal = 5
   * prefix = "Single Stage"
   * title = "Impurity: Insoluble Matter"
   * code
@@ -346,7 +330,6 @@ Usage: #example
   * goalId[+] = "4b3aa353-3bc7-463f-b4c2-defd041da2c7"
 * action[+]
   * id = "055a79d2-3f6b-49ec-a129-6feac5c33812"
-  * extension[testOrder].valueDecimal = 6
   * prefix = "Single Stage"
   * title = "Solubility in H2O"
   * code
@@ -408,7 +391,6 @@ Usage: #example
       * comparator = #<=
 * action[+]
   * id = "fdf5e37f-ae97-48c1-9809-33aebff37199"
-  * extension[testOrder].valueDecimal = 1
   * prefix = "Single Stage"
   * title = "Appearance"
   * code
@@ -423,7 +405,6 @@ Usage: #example
   * goalId[+] = "9bc2bfdf-c9b1-440a-bafe-89f2674341d4"
 * action[+]
   * id = "f6da4e9e-4954-4fd1-a78a-b297fea64a6f"
-  * extension[testOrder].valueDecimal = 2
   * prefix = "Single Stage"
   * title = "Identification"
   * code
@@ -436,7 +417,6 @@ Usage: #example
   * goalId[+] = "59e2c94a-d383-4776-9b00-3b97b0741c9a"
 * action[+]
   * id = "a5beeff6-dcc1-4b42-8ea1-76dea4b0da1d"
-  * extension[testOrder].valueDecimal = 3
   * prefix = "Single Stage"
   * title = "pH"
   * code
@@ -449,7 +429,6 @@ Usage: #example
   * goalId[+] = "a2ed2d13-e96a-4d7b-b825-c69afd334cf7"
 * action[+]
   * id = "aad4c3ce-985d-45ab-9d00-c2c01ca3813f"
-  * extension[testOrder].valueDecimal = 4
   * prefix = "Single Stage"
   * title = "Residue on Ignition"
   * code
@@ -502,7 +481,6 @@ Usage: #example
       * comparator = #<=
 * action[+]
   * id = "3668eb6f-797c-4325-8f41-160c951b4adc"
-  * extension[testOrder].valueDecimal = 1
   * prefix = "Single Stage"
   * title = "Color degree"
   * code
@@ -517,7 +495,6 @@ Usage: #example
   * goalId[+] = "1779ee35-8725-4322-ae82-89ed499f6864"
 * action[+]
   * id = "42cf5de4-2c64-48fc-a4d8-9e74066c36a3"
-  * extension[testOrder].valueDecimal = 2
   * prefix = "Single Stage"
   * title = "Turbidity"
   * code
@@ -530,7 +507,6 @@ Usage: #example
   * goalId[+] = "2897e150-8465-48c7-9269-1cda86dc3075"
 * action[+]
   * id = "c552eee7-4dca-4a01-b291-5044d5132cc9"
-  * extension[testOrder].valueDecimal = 3
   * prefix = "Single Stage"
   * title = "Smell and taste"
   * code
@@ -545,7 +521,6 @@ Usage: #example
   * goalId[+] = "9c86ccba-a210-4ce5-9a23-b145d9f123c6"
 * action[+]
   * id = "b33b402a-0dc7-4953-a7b8-aa2efeb8434f"
-  * extension[testOrder].valueDecimal = 4
   * prefix = "Single Stage"
   * title = "Total hardness"
   * code

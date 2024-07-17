@@ -127,7 +127,6 @@ Description: "Quality Specification for Cochineal"
     * detailQuantity = 0.20 $NCIT#C48528 "%{WeightToWeight}"
       * comparator = #<=
 * action[+]
-  * extension[testOrder].valueDecimal = 1
   * linkId = "b9359ce8-73f3-45c5-9674-98d850053aa2"
   * prefix = "Single Stage"
   * title = "Appearance"
@@ -142,7 +141,6 @@ Description: "Quality Specification for Cochineal"
   * documentation.label = "EX-TEST-101"
   * goalId[+] = "e900181a-876c-4ed6-ac96-d5a73c3d6767"
 * action[+]
-  * extension[testOrder].valueDecimal = 2
   * linkId = "443ed163-7a7b-4d48-9462-be5532158411"
   * prefix = "Single Stage"
   * title = "Identification"
@@ -155,7 +153,6 @@ Description: "Quality Specification for Cochineal"
   * documentation.label = "EX-TEST-102"
   * goalId[+] = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
 * action[+]
-  * extension[testOrder].valueDecimal = 3
   * linkId = "058193ee-dd86-4c63-9f47-7b0608abbca4"
   * prefix = "Single Stage"
   * title = "pH"
@@ -168,7 +165,6 @@ Description: "Quality Specification for Cochineal"
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "1f476689-f440-4a77-9e9c-0615af3571eb"
 * action[+]
-  * extension[testOrder].valueDecimal = 4
   * linkId = "940c8db4-9ed1-416e-84ec-9f9e143be8ab"
   * prefix = "Single Stage"
   * title = "Residue on Ignition"
@@ -181,7 +177,6 @@ Description: "Quality Specification for Cochineal"
   * documentation.label = "USP <281>"
   * goalId[+] = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
 * action[+]
-  * extension[testOrder].valueDecimal = 5
   * linkId = "9fca0a37-6d10-4273-a966-c026ab6eb07d"
   * prefix = "Single Stage"
   * title = "Impurities"
@@ -198,20 +193,16 @@ Description: "Quality Specification for Cochineal"
   * goalId[+] = "be7abaa1-0769-4560-af76-326e07d1df9a"
   * goalId[+] = "cfdd469d-020b-4047-946f-f513d58f007f"
   * action[+]
-    * extension[stageOrder].valueDecimal = 5.1
     * title = "Unidentified Impurities"
     * action[+]
-      * extension[testOrder].valueDecimal = 5.11
       * title = "2.2"
       * prefix = "RRT"
       * goalId[+] = "c5eea380-416f-4d19-a21e-c021f3c7c543"
     * action[+]
-      * extension[testOrder].valueDecimal = 5.12
       * title = "2.4"
       * prefix = "RRT"
       * goalId[+] = "41e19fa2-f568-443e-8bc1-6b0a6dca9d0c"
     * action[+]
-      * extension[testOrder].valueDecimal = 5.13
       * title = "3.41"
       * prefix = "RRT"
       * goalId[+] = "e493cb3d-45b6-4463-b9b6-e588c51e032c"
