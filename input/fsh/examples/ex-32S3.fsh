@@ -22,7 +22,6 @@ InstanceOf: EctdComposition32S3
   * entry = Reference(urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327)
 Instance: 32532fe8-1bfb-4a0a-998d-9294742a9519
 InstanceOf: CMCeCTDDocument32S3
-* identifier.extension[version].valueString = "1.1.1"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:32532fe8-1bfb-4a0a-998d-9294742a9519"
 * timestamp = 2024-06-19T21:06:21.134Z

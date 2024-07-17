@@ -4,8 +4,6 @@ Title: "Example Batch Formula bundle"
 Description: "FHIR bundle with a CMC eCTD 32P32 profile"
 Usage: #example
 * identifier	
-  * extension[version]	
-    * valueString = "1.1.2"	
   * system = $IDsys	
   * value = "urn:uuid:a242b79e-b706-49d3-93ba-b4364ab2baa3"	
 * timestamp = 2024-07-01T12:34:56.789Z	

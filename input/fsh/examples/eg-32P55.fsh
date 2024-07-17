@@ -74,7 +74,6 @@ Instance: 9e8f2d16-66b1-47ec-878d-f50ae021985b
 InstanceOf: CMCeCTDDocument32P55
 Description: "FHIR document bundle with the CMC eCTD 32P55 profile for a Drug Product"
 Usage: #example
-* identifier.extension[version].valueString = "1.1.1"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:2b738e27-de1f-4f63-8d91-c8860089d2a1"
 * timestamp = 2024-04-24T01:12:07.108Z
