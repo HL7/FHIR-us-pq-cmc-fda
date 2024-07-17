@@ -17,7 +17,7 @@ Id: cmc-document-reference
 Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #current
 * content MS
 * content.attachment MS
@@ -42,14 +42,3 @@ Description: "Any additional information"
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only markdown
 
-Extension: IgVersion
-Id: pq-ig-version
-Title: "Profile IG Version"
-Description: "The IG version number of the bundle profile to which the instance conforms.  Additionally, all the profiles of the resources in the bundle must conform to this version."
-* ^context.type = #element
-* ^context.expression = "Bundle.identifier"
-
-* value[x] 1..1
-* value[x] only string
-* . ^short = "IG Version"
-* . ^definition = "The Implementation Guide version number of the bundle profile to which the instance conforms.  Additionally, all the profiles of the resources in the bundle must conform to this version."

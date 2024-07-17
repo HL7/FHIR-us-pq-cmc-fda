@@ -25,14 +25,6 @@ Description: "Numeric level in the hierarchical value-set"
   * ^definition = """Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2."""
 * value[x] only integer
 
-Extension: TestOrderExtension 
-Id: pq-order-extension
-Title: "Test Order | Stage Sequence Order"
-Description: "The sequential number assigned to each Test or Stage to specify the order of display on the Quality Specification."
-Context: "PlanDefinition.repeat(action)"
-* value[x] obeys cmc-greater-than-zero
-* value[x] only decimal 
-
 Extension: TargetRange
 Id: pq-target-range
 Title: "Target Range"
@@ -68,7 +60,7 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * extension contains 
     pq-specification-type-extension named specificationType 1..1 MS and
     pq-additional-info-extension named spec-additional-info 0..1 MS and
@@ -104,7 +96,7 @@ Note: This may include the name of the drug substance, product or the raw materi
   * coding[ApprovalStatus] from PqcmcSpecificationStatusTerminology (required)
 * status MS
 * subject[x] 1..1 MS
-* subject[x] only Reference(DrugProductHandle or RoutineSubstanceDefinition or ExcipientRaw)
+* subject[x] only Reference(DrugProductHandle or SubstanceDefinitionHandle or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
 * date ^definition = """The date when the sponsor assigned a date to a specific version. [Source: SME Defined]
@@ -165,12 +157,6 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * action obeys cmc-link-required and cmc-single-or-multistage
 * action 1..* MS
 * action ^short = "Method"
-* action.extension contains pq-order-extension named testOrder 1..1 MS
-* action.extension[testOrder] ^short = "Test Order"
-* action.extension[testOrder] ^definition = """Test Order: The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
-[Source: SME Defined]
-Examples: 1, 2, 3.
-"""
 * action.extension[testOrder].valueDecimal 1..1 MS
 * action.linkId MS
 * action.linkId ^short = "only required for alternate tests"
@@ -229,10 +215,6 @@ Note: This could also be a transferred lab method.
 //* action.action obeys cmc-at-least-one
 * action.action 0..* MS
 * action.action ^short = "Groups or Stages"
-* action.action.extension contains pq-order-extension named stageOrder 1..1 MS
-* action.action.extension[stageOrder] ^short = "Stage Sequence Order"
-* action.action.extension[stageOrder] ^definition = """The order of the stages in regular succession. [Source: SME Defined] Examples: 1, 2, 3.
-"""
 * action.action.extension[stageOrder].valueDecimal 1..1 MS
 * action.action.prefix 0..1 MS
 * action.action.prefix ^short = "Stage Name"
@@ -272,12 +254,6 @@ Used for the following: Analytical Instrument Data File Type, Impurity Analysis 
 * action.action.action 0..* MS
 * action.action.action obeys cmc-subtest-rrt
 * action.action.action ^short = "Sub-Test"
-* action.action.action.extension contains pq-order-extension named testOrder 1..1 MS
-* action.action.action.extension[testOrder] ^short = "Test Order"
-* action.action.action.extension[testOrder] ^definition = """The sequential number assigned to each Test to specify the order of display on the Quality Specification. [Source: SME Defined]
-Implementation note: This is a decimaal value. Number the nested test by inheriting the value action.extension[testOrder]. For example, if the action.extension[testOrder] equals 3, then the first action.action.action.extension[testOrder] would be 3.1.
-"""
-* action.action.action.extension[testOrder].valueDecimal 1..1 MS
 * action.action.action.prefix 0..1 MS
 * action.action.action.prefix ^short = "RRT"
 * action.action.action.prefix ^definition = """RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 

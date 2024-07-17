@@ -1,6 +1,6 @@
 Instance: 8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9
-InstanceOf: MfgTestSiteOrganization
-Title: "Example of MfgTestSiteOrganization profile on Organization"
+InstanceOf: CodedOrganization
+Title: "Example of CodedOrganization profile on Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 Usage: #example
 
