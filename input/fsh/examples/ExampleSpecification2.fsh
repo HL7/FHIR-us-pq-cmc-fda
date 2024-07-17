@@ -16,8 +16,8 @@ Usage: #example
 * contact.address.text = "Mega Chem Supply, 350 W Main Street, Rochester, NY, United States"
 
 Instance: 580c28ac-1a2c-49fa-9be3-de997da5edcf
-InstanceOf: RoutineSubstanceDefinition
-Title: "Example RoutineSubstanceDefinition - IBUPROFEN"
+InstanceOf: SubstanceDefinitionHandle
+Title: "Example SubstanceDefinitionHandle - IBUPROFEN"
 Description: "Provides sufficient information to identify a drug substance"
 Usage: #example
 * identifier.value = "P-Isobutylhydratropic Acid" 

@@ -78,10 +78,10 @@ Expression: "property.where(
         property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-product-characteristic' and code = 'PPiDref')).exists()"
 Severity: #error
 
-Invariant: cmc-identifer
-Description: "A document must have an identifier with a system and a value"
-Expression: "type = 'document' implies (identifier.exists(system.exists() and value.exists()))"
-Severity: #error
+//Invariant: cmc-identifer
+//Description: "A document must have an identifier with a system and a value"
+//Expression: "type = 'document' implies (identifier.exists(system.exists() and value.exists()))"
+//Severity: #error
 
 Invariant: cmc-percent-quantity
 Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"

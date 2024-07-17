@@ -18,7 +18,7 @@ Usage: #example
 Instance: e165f057-5eed-4e64-8328-4438fc88fb1b
 InstanceOf: CodedOrganization
 Title: "Drug Manufacturing Site - Vandechemie"
-Description: "Example of Manufacturing site using the MfgTestSiteOrganization profile - Vandechemie"
+Description: "Example of Manufacturing site using the CodedOrganization profile - Vandechemie"
 Usage: #example 
 * name = "Vandechemie"
 * contact.address[+].text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
@@ -31,7 +31,7 @@ Usage: #example
 * identifier[DUNSNumber].system = $DUNS
 
 Instance: e875ef93-a730-4c44-bead-53663ae7f501
-InstanceOf: MfgTestSiteOrganization
+InstanceOf: CodedOrganization
 Title: "East-West Manufacturing"
 Description: "Manufacture of Chemicals"
 Usage: #example 

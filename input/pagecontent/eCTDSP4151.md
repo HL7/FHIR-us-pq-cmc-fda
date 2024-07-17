@@ -6,8 +6,9 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 
 ### Implementer Instructions
 
-* A Quality Specification has one or more Tests. 
-* Each Test has one or more Stages. 
+* A Quality Specification has one or more Tests.
+* Tests should be entered in the file in the order in which they should be displayed.
+* Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
     * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/eCTD32S23.html) for Quality Specification for a Raw Material. 

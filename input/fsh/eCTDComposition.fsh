@@ -7,9 +7,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 * . ^short = "CMC eCTD 32P1 Bundle"
 * . obeys cmc-identifer
 * obeys cmc-32P10
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -26,9 +26,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
 * . obeys cmc-identifer
 * obeys cmc-32S10
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -46,9 +46,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles.
 * . ^short = "CMC eCTD 32S23 Bundle"
 * . obeys cmc-identifer
 * obeys cmc-32S23
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -66,9 +66,9 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * . ^short = "CMC eCTD SP4151 Bundle"
 * . obeys cmc-identifer
 * obeys cmc-SP4151
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -86,9 +86,9 @@ Title: "CMC eCTD 32S3 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
 * . obeys cmc-identifer
-* meta.profile 1..1 MS
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -118,9 +118,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles 
 
 * . ^short = "CMC eCTD 32P32 Bundle"
 * . obeys cmc-identifer
-* meta.profile 1..1 MS
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS
+* identifier MS
+
 
 * type MS
 * type = #document
@@ -143,9 +143,9 @@ Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (Product Characterisation of Impurities)."
 * . ^short = "CMC eCTD 32P55 Bundle"
 * . obeys cmc-identifer
-* meta.profile 1..1 MS
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -168,7 +168,7 @@ Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type from PqcmcQualitySpecificationSectionTypes (required)
@@ -190,7 +190,7 @@ Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
@@ -226,7 +226,7 @@ Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
 Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1 heading of the eCTD. References Sponsor Organization."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
@@ -249,12 +249,12 @@ Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
 Description: "The fields needed to represent the Substance Control of Materials to be included under the eCTD 3.2.S.2.3 heading. References Sponsor Organization and Drug Substance Materials."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
 * subject 1..1 MS
-* subject only Reference(RoutineSubstanceDefinition)
+* subject only Reference(SubstanceDefinitionHandle)
 * author 1..1 MS
 * author only Reference(CodedOrganization)
 * title 1..1 MS
@@ -275,7 +275,7 @@ Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
 Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD. References Sponsor Organization and Batch Formula"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
@@ -297,7 +297,7 @@ Id: ectd-composition-32p55
 Title: "eCTD Product Characterisation of Impurities Composition"
 Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterisation of Impurities"
@@ -319,7 +319,7 @@ Id: ectd-composition-32s3
 Title: "eCTD Substance Characterisation"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S3 "Substance Characterisation"

@@ -20,11 +20,10 @@ Parent: Organization
 Id: cmc-organization
 Title: "Basic Organization"
 Description: "A profile for the data elements required to identify the sponsor of the drug products or substances, Suppliers."
-* ^abstract = true
-* meta.profile 1..1 MS
+* meta.profile MS
 * insert DUNSandFEINumber
 * name 1..1 MS
-* contact 1..1
+* contact 1..* MS
 * contact.address 1..1 MS
 * contact.address only PqAddress
 
@@ -44,7 +43,7 @@ Severity: #error
 //Title: "Manufacturing and/or Test Site Organization"
 //Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 //* ^abstract = true
-//* meta.profile 1..1 MS
+//* meta.profile MS
 //* insert DUNSandFEINumber
 //* identifier ^short = "Manufacturing Site Unique Identifier | Testing Site Unique Identifier"
 //* identifier ^definition = """Manufacturing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which manufactures, prepares, propagates, compounds or processes drugs. [Source: Adapted from FDA Drug Establishment Current Registration Site]

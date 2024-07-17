@@ -105,7 +105,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * obeys cmc-tablet-layer-count-required
 * obeys cmc-tablet-bead-count-required
 * obeys cmc-capsule-classification-required
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 MS
 * status 1..1 MS
 * name MS
@@ -139,139 +139,145 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].type from pqcmc-product-characteristic
-* property[OvrRelsProf].valueCodeableConcept 1..1 MS
-* property[OvrRelsProf].valueCodeableConcept ^short = "Product Overall Release Profile"
-* property[OvrRelsProf].valueCodeableConcept ^definition = """The overall release profile is the drug release profile (e.g., IR, DR, or ER-USP nomenclature) that is achieved by the drug delivery system used in the dosage form design as evident from the pharmacokinetic plasma drug concentration versus time curve (this is currently focused on solids).
+* property[OvrRelsProf].type ^short = "Product Overall Release Profile"
+* property[OvrRelsProf].type ^definition = """The overall release profile is the drug release profile (e.g., IR, DR, or ER-USP nomenclature) that is achieved by the drug delivery system used in the dosage form design as evident from the pharmacokinetic plasma drug concentration versus time curve (this is currently focused on solids).
 For example, a capsule filled with IR and DR beads will exhibit an ER release profile as evident from the pharmacokinetic curve. In this example, the "product overall release profile" is "ER". [Source: SME Defined]
 """
+* property[OvrRelsProf].valueCodeableConcept 1..1 MS
 * property[OvrRelsProf].valueCodeableConcept.coding from PqcmcReleaseProfile
 
 * property[OvrRelsMech].type MS
 * property[OvrRelsMech].type = $NCIT#OvrRelsMech "Product Overall Release Mechanism"
 * property[OvrRelsMech].type from pqcmc-product-characteristic
-* property[OvrRelsMech].valueCodeableConcept 1..1 MS
-* property[OvrRelsMech].valueCodeableConcept ^short = "Product Overall Release Mechanism"
-* property[OvrRelsMech].valueCodeableConcept ^definition = """TThe dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
+* property[OvrRelsMech].type ^short = "Product Overall Release Mechanism"
+* property[OvrRelsMech].type ^definition = """TThe dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
 """
+* property[OvrRelsMech].valueCodeableConcept 1..1 MS
 * property[OvrRelsMech].valueCodeableConcept.coding from PqcmcReleaseMechanism
 
 * property[CoatInd].type MS
+* property[CoatInd].type ^short = "Product Coating Indicator"
+* property[CoatInd].type ^definition = "A property that identifies whether the drug product contains any coatings. [Source: SME Defined]"
 * property[CoatInd].type from pqcmc-product-characteristic
 * property[CoatInd].type = $NCIT#CoatInd "Coating Indicator"
 * property[CoatInd].valueBoolean 1..1 MS
-* property[CoatInd].valueBoolean ^short = "Product Coating Indicator"
-* property[CoatInd].valueBoolean ^definition = "A property that identifies whether the drug product contains any coatings. [Source: SME Defined]"
 
 * property[LayCnt].type MS
+* property[LayCnt].type ^short = "Product Tablet Layer Count"
+* property[LayCnt].type ^definition = """The total number of layers in the tablet. [Source: SME Defined]
+Note: Non-layered tablets will be considered as one layer tablets."""
 * property[LayCnt].type from pqcmc-product-characteristic
 * property[LayCnt].type = $NCIT#TabLayCnt "Tablet Layer Count"
 * property[LayCnt].value[x] 1..1 MS
 * property[LayCnt].value[x] only Quantity
-* property[LayCnt].valueQuantity.value ^short = "Product Tablet Layer Count"
-* property[LayCnt].valueQuantity.value ^definition = """The total number of layers in the tablet. [Source: SME Defined]
-Note: Non-layered tablets will be considered as one layer tablets."""
 * property[LayCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[BeaTypCnt].type MS
+* property[BeaTypCnt].type ^short = "Tablet Bead Type Count"
+* property[BeaTypCnt].type ^definition = """TThe total number of type of beads present in a tablet [Source: SME Defined]
+Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
+"""
 * property[BeaTypCnt].type from pqcmc-product-characteristic
 * property[BeaTypCnt].type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
 * property[BeaTypCnt].value[x] 1..1 MS
 * property[BeaTypCnt].value[x] only Quantity
-* property[BeaTypCnt].valueQuantity.value ^short = "Tablet Bead Type Count"
-* property[BeaTypCnt].valueQuantity.value ^definition = """TThe total number of type of beads present in a tablet [Source: SME Defined]
-Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
-"""
+
 * property[BeaTypCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[CapClass].type MS
+* property[CapClass].type ^short = "Capsule Shell Part Classification Category"
+* property[CapClass].type ^definition = "Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]"
 * property[CapClass].type from pqcmc-product-characteristic
 * property[CapClass].type = $NCIT#CapClass "Capsule Classification Category"
 * property[CapClass].valueCodeableConcept 1..1 MS
-* property[CapClass].valueCodeableConcept ^short = "Capsule Shell Part Classification Category"
-* property[CapClass].valueCodeableConcept ^definition = "Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]"
 * property[CapClass].valueCodeableConcept.coding from PqcmcCapsuleClassificationCategory
 
 * property[CapConCnt].type MS
+* property[CapConCnt].type ^short = "Product Capsule Constituent Count"
+* property[CapConCnt].type ^definition = """The number of distinct constituents contained in the capsule shell of the drug product. [Source: SME Defined]
+Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.
+"""
 * property[CapConCnt].type from pqcmc-product-characteristic
 * property[CapConCnt].type = $NCIT#CapConCnt "Capsule Constituent Count"
 * property[CapConCnt].value[x] 1..1 MS
 * property[CapConCnt].value[x] only Quantity
-* property[CapConCnt].valueQuantity.value ^short = "Product Capsule Constituent Count"
-* property[CapConCnt].valueQuantity.value ^definition = """The number of distinct constituents contained in the capsule shell of the drug product. [Source: SME Defined]
-Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.
-"""
 * property[CapConCnt].valueQuantity.code = $NCIT#C66832 "1*"
 
 * property[Schematic].type MS
+* property[Schematic].type ^short = "Product Schematic"
+* property[Schematic].type ^definition = "The pictorial representation of the drug product. [Source: SME Defined]"
 * property[Schematic].type from pqcmc-product-characteristic
 * property[Schematic].type = $NCIT#Schematic "Product Schematic"
 * property[Schematic].valueAttachment 1..1 MS
-* property[Schematic].valueAttachment ^short = "Product Schematic"
-* property[Schematic].valueAttachment ^definition = "The pictorial representation of the drug product. [Source: SME Defined]"
 
 * property[WgtTyp].type MS
+* property[WgtTyp].type ^short = "Product Weight Type"
+* property[WgtTyp].type ^definition = """A physical (content) or activity measurement of the weight of the drug product unit. [Source: SME Defined]
+Example: Mass, Activity"""
 * property[WgtTyp].type from pqcmc-product-characteristic
 * property[WgtTyp].type = $NCIT#WgtTyp "Product Weight Type"
 * property[WgtTyp].valueCodeableConcept 1..1 MS
-* property[WgtTyp].valueCodeableConcept ^short = "Product Weight Type"
-* property[WgtTyp].valueCodeableConcept ^definition = """A physical (content) or activity measurement of the weight of the drug product unit. [Source: SME Defined]
-Example: Mass, Activity"""
 * property[WgtTyp].valueCodeableConcept.coding from PqcmcStrengthTypeTerminology
 
 * property[TotWgtNum].type MS
+* property[TotWgtNum].type ^short = "Product Total Weight Numeric Numerator"
+* property[TotWgtNum].type ^definition = """Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]
+Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 * property[TotWgtNum].type from pqcmc-product-characteristic
 * property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
 * property[TotWgtNum].value[x] 1..1 MS
 * property[TotWgtNum].value[x] only Quantity
-* property[TotWgtNum].valueQuantity.value ^short = "Product Total Weight Numeric Numerator"
-* property[TotWgtNum].valueQuantity.value ^definition = """Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]
-Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 * property[TotWgtNum].valueQuantity.code from PqcmcUnitsMeasureTerminology
 
 * property[TotWgtDen].type MS
+* property[TotWgtDen].type ^short = "Product Total Weight Numeric Denominator"
+* property[TotWgtDen].type ^definition = """Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
+Note: For solid oral dose forms, by definition this is 1
+"""
 * property[TotWgtDen].type from pqcmc-product-characteristic
 * property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].value[x] 1..1 MS
 * property[TotWgtDen].value[x] only Quantity
-* property[TotWgtDen].valueQuantity.value ^short = "Product Total Weight Numeric Denominator"
-* property[TotWgtDen].valueQuantity.value ^definition = """Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
-Note: For solid oral dose forms, by definition this is 1
-"""
 * property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
+
 * property[TotWgtTxt].type MS
+* property[TotWgtTxt].type ^short = "Product Total Weight Textual"
+* property[TotWgtTxt].type ^definition = """A written description of the weight of the drug product. [Source: SME Defined]
+Note: This is typically applicable to biologics
+Example: International Units for Enzymes"""
 * property[TotWgtTxt].type from pqcmc-product-characteristic
 * property[TotWgtTxt].type = $NCIT#TotWgtTxt "Total Weight Textual"
 * property[TotWgtTxt].value[x] 1..1 MS
 * property[TotWgtTxt].value[x] only markdown
-* property[TotWgtTxt].valueMarkdown.value ^short = "Product Total Weight Textual"
-* property[TotWgtTxt].valueMarkdown.value ^definition = """A written description of the weight of the drug product. [Source: SME Defined]
-Note: This is typically applicable to biologics
-Example: International Units for Enzymes"""
+
 * property[TotWgtOper].type MS
+* property[TotWgtOper].type ^short = "Product Total Weight Operator"
+* property[TotWgtOper].type ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
+Note: This is typically applicable to biologics.
+"""
 * property[TotWgtOper].type from pqcmc-product-characteristic
 * property[TotWgtOper].type = $NCIT#TotWgtOper "Total Weight Operator"
 * property[TotWgtOper].valueCodeableConcept 1..1 MS
-* property[TotWgtOper].valueCodeableConcept ^short = "Product Total Weight Operator"
-* property[TotWgtOper].valueCodeableConcept ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
-Note: This is typically applicable to biologics.
-"""
 * property[TotWgtOper].valueCodeableConcept from PqcmcStrengthOperatorTerminology
+
 * property[QualStd].type MS
-* property[QualStd].type from pqcmc-product-characteristic
-* property[QualStd].type = $NCIT#QualStd "Quality Standard"
-* property[QualStd].valueCodeableConcept 1..1 MS  
-* property[QualStd].valueCodeableConcept ^short = "Product Quality Standard"
-* property[QualStd].valueCodeableConcept ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
+* property[QualStd].type ^short = "Product Quality Standard"
+* property[QualStd].type ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
+* property[QualStd].type from pqcmc-product-characteristic
+* property[QualStd].type = $NCIT#QualStd "Quality Standard"
+* property[QualStd].valueCodeableConcept 1..1 MS
 * property[QualStd].valueCodeableConcept from PqcmcQualityBenchmarkTerminology (required)
+
 * property[Sterile]
   * type 1..1 MS
+  * type  ^short = "Sterile Product Indicator"
   * type from pqcmc-product-characteristic
   * type = $NCIT#Sterile "Sterile Product Indicator"
   * value[x] 1..1 MS
   * value[x] only boolean
-    * ^short = "Sterile Product Indicator"
+
 // Product parts
 * component 1..* MS
 * component obeys cmc-ppidref-required
@@ -451,7 +457,7 @@ Id: pqcmc-drug-product-handle
 Title: "Drug Product Handle"
 Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "Optional user designated identifier"
 * insert DosageForm
@@ -465,7 +471,7 @@ Id: pqcmc-drugproduct-container-closure
 Title: "Drug Product Container Closure"
 Description: "Description and coding of the container closure system. Profile of Drug Product profile."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * .extension contains pq-container-closure-extension named containerClosure 1..* MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
@@ -478,7 +484,7 @@ Id: pqcmc-drug-product-description
 Title: "Drug Product Description"
 Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * description 0..1 MS
@@ -501,6 +507,7 @@ SME comment -- this is the marketed dosage form"""
 * crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"
 * crossReference.product only CodeableReference(DrugProductDescription)
+* crossReference.typeco-packaged.text = "co-packaged"
 
 RuleSet: DosageForm
 * combinedPharmaceuticalDoseForm 1..1 MS
@@ -604,7 +611,7 @@ Id: pqcmc-product-batch-formula
 Title: "Drug Product Batch Formula"
 Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * status 1..1 MS
@@ -614,7 +621,7 @@ Description: "Listing of all components of the dosage form to be used in the man
 """
 * manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology
 * manufacturer MS
-* manufacturer only Reference(MfgTestSiteOrganization) 
+* manufacturer only Reference(CodedOrganization) 
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
@@ -737,7 +744,7 @@ Id: pqcmc-batch-formula-product
 Title: "Batch Formula Drug Product Identification"
 Description: "The Drug Product produced by the batch formula."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
 * comprisedOf 1..* MS
@@ -751,7 +758,7 @@ Id: pqcmc-drug-product-with-impurities
 Title: "Drug Product Impurities"
 Description: "List of drug product impurities. Profile of Drug Product profile."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * insert DosageForm

@@ -31,7 +31,7 @@ Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
@@ -75,7 +75,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
-* meta.profile 1..1 MS
+* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -94,7 +94,7 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade.coding from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..1 MS
-* manufacturer only Reference(MfgTestSiteOrganization)
+* manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
 * structure MS
@@ -147,7 +147,7 @@ Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * .extension contains pq-additional-info-extension named additional-info 0..1 MS
 * .extension[additional-info] ^short = "Drug Product Component Additional Information"
 * .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
@@ -207,7 +207,7 @@ Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -226,7 +226,7 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..* MS
-* manufacturer only Reference(MfgTestSiteOrganization)
+* manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
@@ -262,11 +262,11 @@ Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of 
 * sourceMaterial.part.text 1..1
 * insert CountryOfOrigin
 
-Profile: RoutineSubstanceDefinition
+Profile: SubstanceDefinitionHandle
 Parent: SubstanceDefinition
 Id: pqcmc-routine-drug-substance
-Title: "Routine Drug Substance"
-Description: "Provides sufficient information to identify a drug substance. Profile on Drug Substance profile."
+Title: "Drug Substance Handle"
+Description: "Provides sufficient information to identify a drug substance. Profile on SubstanceDefinition."
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -283,7 +283,7 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade.coding from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 1..1 MS
-* manufacturer only Reference(MfgTestSiteOrganization)
+* manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
@@ -295,7 +295,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature-structure
 Title: "Substance General Information"
 Description: "Substance General Information containting Drug Substance (Active Ingredient) nomenclature (2.3.S.1.1) and Substance Structure (2.3.S.1.2) profile."
-* meta.profile 1..1 MS
+* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -307,7 +307,7 @@ Description: "Substance General Information containting Drug Substance (Active I
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 1..1 MS
-* manufacturer only Reference(MfgTestSiteOrganization)
+* manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
 * molecularWeight 0..1 MS
@@ -594,7 +594,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 0..1 MS
-* manufacturer only Reference(MfgTestSiteOrganization)
+* manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
 * insert SubstanceCharacterization
