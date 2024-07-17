@@ -120,11 +120,12 @@ InstanceOf: QualitySpecification
 Title: "Carrageenan specification Example"
 Description: "Example raw material (Carrageenan) specification for CTD 3.2.S.2.3.  Raw matrials and Excipients share the same profile but are in different bundles."
 Usage: #example
-* extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "RawCitricacid"
 * version = "1.0"
 * title = "Raw Material (Carrageenan) Specification Example"
-* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
+* type.coding[SpecType] = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents" 
 * status = #active
 * subjectReference = Reference(urn:uuid:0efb1188-04f0-44ba-bfe7-ca6169ca8703)
 * date = 2023-11-28
@@ -346,11 +347,12 @@ InstanceOf: QualitySpecification
 Title: "Citric acid specification Example"
 Description: "Example raw material (Citric acid) specification for CTD 3.2.S.2.3"
 Usage: #example
-* extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "CitricAcidSpecification"
 * version = "1.0"
 * title = "Citric acid specification Example"
-* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
+* type.coding[SpecType] = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents" 
 * status = #active
 * subjectReference = Reference(urn:uuid:fd84a8b5-9e96-451c-a5c6-097c943eb38a)
 * date = 2023-12-01
@@ -445,11 +447,12 @@ InstanceOf: QualitySpecification
 Title: "Water Specification Example"
 Description: "Example raw material (water) specification for CTD 3.2.S.2.3"
 Usage: #example
-* extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "WaterSpecification"
 * version = "1.0"
 * title = "Water Specification Example"
-* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
+* type.coding[SpecType] = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents" 
 * status = #active
 * subjectReference = Reference(urn:uuid:d3a11b25-e160-4688-b807-6383364096fd)
 * date = 2023-12-01

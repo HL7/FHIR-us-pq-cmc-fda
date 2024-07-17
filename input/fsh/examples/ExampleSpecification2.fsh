@@ -35,15 +35,15 @@ Title: "A quality specification is for a drug substance"
 Description: "A quality specification is for an API "
 Usage: #example
 
-* extension[specificationType].valueCodeableConcept = $NCIT#C134022 "Drug Substance"
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C134010 "Tentatively Approved" 
 * extension[spec-additional-info].valueMarkdown = "This API is is currently characterized through a standard battery of physicochemical characterzation tests."
 * identifier.value = "ExampleSpecification2"
 * version = "1.0"
 * title = "Quality Specification for an API"
-* type.coding[ApprovalStatus] = $NCIT#C134010 "Tentatively Approved"
+* type.coding[SpecType] = $NCIT#C134022 "Drug Substance"
 * status = #active
 * subjectReference = Reference(urn:uuid:580c28ac-1a2c-49fa-9be3-de997da5edcf)
-* date = 2022-12-08
+* date = 2022-12-08 
 * approvalDate = 2022-12-08
 * goal[+]
   * id = "b304ed45-5295-4082-9827-f20e1ff0d1d3"

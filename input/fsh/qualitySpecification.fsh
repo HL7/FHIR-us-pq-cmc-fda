@@ -1,13 +1,13 @@
-Extension: SpecificationTypeExtension
-Id: pq-specification-type-extension
-Title: "Specification Type"
-Description: "A classification of specification related to the kind of the entity it is referencing."
+Extension: SpecificationStatusExtension
+Id: pq-specification-status-extension
+Title: "Specification Status"
+Description: "A classification of the regulatory status of the specification."
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"
 * value[x] 1..1 MS
-  * ^short = "Specification Type"
-  * ^definition = """A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
-Examples: Drug product, Drug substance. 
+  * ^short = "Specification Stutus"
+  * ^definition = """The current FDA regulatory status of the specification. [Source: SME Defined]
+Examples: Approved, Not Approved, Reported in a CBE or AR. 
 """
 * value[x] only CodeableConcept
 * value[x] from PqcmcSpecificationTypeTerminology (required)
@@ -62,9 +62,8 @@ Description: "A quality specification is for a drug product or drug substance (e
 
 * meta.profile MS
 * extension contains 
-    pq-specification-type-extension named specificationType 1..1 MS and
-    pq-additional-info-extension named spec-additional-info 0..1 MS and
-    SDWorkGroup named work-group 0..1
+    pq-specification-status-extension named ApprovalStatus 1..1 MS and
+    pq-additional-info-extension named spec-additional-info 0..1  
 * extension[spec-additional-info] ^short = "Specification Additional Information"
 * extension[spec-additional-info] ^definition = """Placeholder for providing any comments that are relevant to the specification. [Source: SME Defined]
 Examples: replaces method ABC, using the XYZ facility.
@@ -91,9 +90,15 @@ Note: This may include the name of the drug substance, product or the raw materi
   * coding ^slicing.ordered = false
   * coding contains 
     DefinitionType 1..1 MS and
-    ApprovalStatus 1..1 MS
+    SpecType 1..1 MS
   * coding[DefinitionType] = http://terminology.hl7.org/CodeSystem/plan-definition-type#workflow-definition "Workflow Definition"
-  * coding[ApprovalStatus] from PqcmcSpecificationStatusTerminology (required)
+  * coding[SpecType] from PqcmcSpecificationTypeTerminology (required)
+  * coding[SpecType]  ^short = "Specification Type"
+  * coding[SpecType] ^definition = "A classification of specification related to the kind of the entity it is referencing."
+  * ^short = "Specification Type"
+  * ^definition = """A classification of specification related to the kind of entity it is referencing. [Source: SME Defined]
+Examples: Drug product, Drug substance. 
+"""
 * status MS
 * subject[x] 1..1 MS
 * subject[x] only Reference(DrugProductHandle or SubstanceDefinitionHandle or ExcipientRaw)

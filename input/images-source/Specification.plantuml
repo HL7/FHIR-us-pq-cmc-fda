@@ -95,7 +95,6 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
     object "**Extensions**" as objQSEx {
       Interpretation Code
       Specification Status
-      Specification Type
       Additional Information
       Test Order
     }

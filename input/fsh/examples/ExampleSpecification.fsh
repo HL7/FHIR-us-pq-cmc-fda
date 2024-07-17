@@ -22,11 +22,12 @@ Title: "A quality specification is for a drug product"
 Description: "A quality specification is for a Drug Product"
 Usage: #example
 
-* extension[specificationType].valueCodeableConcept = $NCIT#C134021 "Drug Product"
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * identifier.value = "ExampleSpecification"
 * version = "1.0"
 * title = "Quality Specification for OXAZEPAM"
-* type.coding[ApprovalStatus] = $NCIT#C134011 "Not Approved"
+* type.coding[SpecType] = $NCIT#C134021 "Drug Product"
+
 * status = #active
 * subjectReference = Reference(urn:uuid:89676a69-1fe7-422c-ab00-92abe4ef6ea9)
 * date = 2022-12-08

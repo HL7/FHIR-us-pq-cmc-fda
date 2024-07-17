@@ -18,12 +18,12 @@ Description: "The Excipient Raw representing Cochineal"
 Instance: 37bf5cc0-33bf-478b-b84e-ccb35143ef6e
 InstanceOf: QualitySpecification
 Description: "Quality Specification for Cochineal"
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-quality-specification"
-* extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "CochinealSpecification"
 * version = "1.0"
 * title = "Cochineal specification Example"
-* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
+* type.coding[SpecType] = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * status = #active
 * subjectReference = Reference(urn:uuid:278736ef-2ddf-49e4-895c-3a9f34db36cf)
 * date = 2023-12-01
