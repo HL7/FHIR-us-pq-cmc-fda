@@ -232,7 +232,7 @@ Usage: #example
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5659
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler Excipient"
+* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:3791c4ce-2b43-4d7b-b195-0e5f88f28dab)
 * component[=].constituent[=].amount = $NCIT#C28253 "mg"
@@ -240,7 +240,7 @@ Usage: #example
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0022
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42656 "Color Excipient"
+* component[=].constituent[=].function[Function] = $NCIT#C42656 "Coloring Agent"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[+].type = $NCIT#C66831 "Layer"
 * component[=].amount.extension[WghtlDenom].valueQuantity = $NCIT#C75765 "[arb'U]"
@@ -264,7 +264,7 @@ Usage: #example
 * component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5935
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler Excipient"
+* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 
 Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
