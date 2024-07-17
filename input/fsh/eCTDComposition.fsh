@@ -5,7 +5,6 @@ Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-32P10
 * meta.profile MS  
 * identifier MS
@@ -24,7 +23,6 @@ Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-32S10
 * meta.profile MS  
 * identifier MS
@@ -44,7 +42,6 @@ Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-32S23
 * meta.profile MS  
 * identifier MS
@@ -64,7 +61,6 @@ Id: cmc-ectd-document-sp4151
 Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-SP4151
 * meta.profile MS  
 * identifier MS
@@ -85,7 +81,6 @@ Id: cmc-ectd-document-32s3
 Title: "CMC eCTD 32S3 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
-* . obeys cmc-identifer
 * meta.profile MS
 * identifier MS
 
@@ -117,7 +112,6 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles (Product Batch Formula)."
 
 * . ^short = "CMC eCTD 32P32 Bundle"
-* . obeys cmc-identifer
 * meta.profile MS
 * identifier MS
 
@@ -142,7 +136,6 @@ Id: cmc-ectd-document-32p55
 Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (Product Characterisation of Impurities)."
 * . ^short = "CMC eCTD 32P55 Bundle"
-* . obeys cmc-identifer
 * meta.profile MS
 * identifier MS
 
