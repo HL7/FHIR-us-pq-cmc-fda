@@ -43,24 +43,7 @@ Description: "Alternate structure present in the drug substance"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
-* structure.representation 1..* MS
-* structure.representation.format 0..1 MS
-* structure.representation.format ^short = "Structural Representation Type"
-* structure.representation.format ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
-Examples: SMILES, MOLFILE, HELM, etc.
-"""
-* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
-* structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Structural Representation"
-* structure.representation.representation ^definition = """A machine readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM, etc.
-
-Note: If the UNII for the substa is submitted (i.e., the substance exists in GSRS), then this does not have to be included in the submission.
-
-NOTE: SDF files are now accepted thru eCTD. 
-"""
-* structure.representation.document 0..1 MS
-* structure.representation.document only Reference(Base64DocumentReference)
+* insert GraphicAndStructureRepresentations(0,1)
 * code 0..1 MS
 * code.code.coding.system = $UNII
 * code.code.coding ^short = "UNII"
@@ -97,18 +80,7 @@ Examples: USP/NF, EP, Company Standard
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
 * supplier only Reference(CodedOrganization)
-* structure MS
-//* structure obeys cmc-representation-or-document
-* structure.representation 1..*
-* structure.representation.representation 0..1 MS
-* structure.representation.format 0..1
-* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
-* structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Substance Structure Graphic"
-* structure.representation.document ^definition = """A pictorial representation of the structure of the substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG.
-"""
-* structure.representation.document only Reference(Base64DocumentReference)
+* insert GraphicAndStructureRepresentations(0,1)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
@@ -334,22 +306,7 @@ Biopolymer Sequence: TBD
 """
 * structure.technique.text 1..1 MS
 * structure.representation 1..* MS
-* structure.representation.format 0..1 MS
-* structure.representation.format ^short = "Structural Representation Type"
-* structure.representation.format ^definition = """A format name or abbreviation that identifies a file structure. [Source: SME Defined]
-Examples: SMILES, MOLFILE, HELM, etc.
-"""
-* structure.representation.format.coding from PqcmcChemicalStructureDataFileTypeTerminology (required)
-* structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Drug Substance Structural Representation"
-* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: SDF, MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
- """
-* structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Substance Structure Graphic"
-* structure.representation.document ^definition = """A pictorial representation of the structure of the drug substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD'
- Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."""
-* structure.representation.document only Reference(Base64DocumentReference)
+* insert GraphicAndStructureRepresentations(0,1)
 * insert UniiAndUniProtCodes(1)
 * insert SubstanceNames
 
@@ -627,20 +584,46 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique.text 1..1 MS
-* structure.representation MS
-* structure.representation.format 0..1 MS
-* structure.representation.format ^short = "Drug Substance Impurity Method Type"
-* structure.representation.format ^definition = "The technique used to elucidate the structure or characterisation of the impurity. [Source: SME Defined]"
-* structure.representation.format.text 0..1 MS
-* structure.representation.representation 0..1 MS
-* structure.representation.representation ^short = "Impurity Chemical Structure Data File"
-* structure.representation.representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+* structure
+  * representation MS
+    * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
+    * ^slicing.discriminator.type = #value
+    * ^slicing.rules = #closed
+    * ^slicing.discriminator.path = "type.text"
+    * ^slicing.ordered = false
+  * representation contains
+    graphic 0..1 and
+    structureData 0..*
+  * representation[graphic]
+    * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Graphics"
+    * document 1..1
+      * ^short = "Impurity Structure Graphic"
+      * ^definition = """
+        A pictorial representation of the structure of the impurity substance. 
+        [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for 
+        use in eCTD' Example: This is the representation of the molecule CH3OH, 
+        or the sequence SHLVEALALVAGERG.
+      """
+    * document only Reference(GraphicReference)
+  * representation[structureData]
+    * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
+    * format 0..1 MS
+    * format ^short = "Drug Substance Impurity Method Type"
+    * format.text 0..1 MS
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Structure"
+    * representation 0..1 MS
+    * representation ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+    * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
 Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
 """
-* structure.representation.document 0..1 MS
-* structure.representation.document ^short = "Impurity Structure Graphic"
-* structure.representation.document ^definition = "A pictorial representation of the structure of the impurity substance. [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for use in eCTD' Example: This is the representation of the molecule CH3OH, or the sequence SHLVEALALVAGERG."
-* structure.representation.document only Reference(Base64DocumentReference)
+    * document 0..1 MS
+    * document ^short = "Impurity Chemical Structure Data (large files, e.g. SDF, CIF)"
+    * document only Reference(StructureReference)
 
 // impurities might be unknown and not have Unii's
 * insert UniiAndUniProtCodes(0)
@@ -660,14 +643,22 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
     * ^definition = ""
   * file 0..* MS
     * ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
-    * ^definition = """Impurity Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
+    * ^slicing.discriminator.type = #profile
+    * ^slicing.rules = #open
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.ordered = false
+  * file contains 
+    AnalysisGraphic 0..* and
+    AnalyticalInstrumentData 0..*
+  * file[AnalysisGraphic] only GraphicAttachment
+    * ^short = "Analysis Graphic"
+    * ^definition = """Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
 Note: Refer to the 'Acceptable File Formats for use in eCTD'
-Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]
-
-Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
-Example: JCAMP, ADX, ADF.
-"""
-  * file only PqcmcAttachment
+Example: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]"""
+  * file[AnalyticalInstrumentData] only AnalyticalInstrumentData
+    * ^short = "Analytical Instrument Data File"
+    * ^definition = """Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
+Example: JCAMP, ADX, ADF."""
 
 Profile: DrugProductIngredient
 Parent: Ingredient
@@ -686,3 +677,45 @@ Description: "The amount details about the drug product ingredients in the batch
     * concentration[x] 1..1 MS
     * concentration[x] only Quantity
     * concentrationQuantity from PqcmcUnitsMeasureTerminology (required)
+
+
+RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)
+* structure
+  * representation MS
+    * ^short = "Structure Graphic | Structure Data File"
+    * ^slicing.discriminator.type = #value
+    * ^slicing.rules = #closed
+    * ^slicing.discriminator.path = "type.text"
+    * ^slicing.ordered = false
+  * representation contains
+    graphic {minimumGraphics}..1 and
+    structureData {minimumStructures}..*
+  * representation[graphic]
+    * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Graphics"
+    * document 1..1
+      * ^short = "Structure Graphic"
+      * ^definition = """
+        A pictorial representation of the structure of the substance. 
+        [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for 
+        use in eCTD' Example: This is the representation of the molecule CH3OH, 
+        or the sequence SHLVEALALVAGERG.
+      """
+    * document only Reference(GraphicReference)
+  * representation[structureData]
+    * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
+    * format 0..1 MS
+    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Structure"
+    * representation 0..1 MS
+    * representation ^short = "Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+    * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+"""
+    * document 0..1 MS
+    * document ^short = "Chemical Structure Data (large files, e.g. SDF, CIF)"
+    * document only Reference(StructureReference)

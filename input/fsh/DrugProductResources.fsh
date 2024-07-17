@@ -60,7 +60,7 @@ Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resista
 Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
 """
 * extension[depiction].value[x] 1..1
-* extension[depiction].value[x] only Reference(Base64DocumentReference)
+* extension[depiction].value[x] only Reference(GraphicReference)
 
 Profile: ContainerClosure
 Parent: PackagedProductDefinition
