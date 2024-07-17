@@ -507,7 +507,7 @@ SME comment -- this is the marketed dosage form"""
 * crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"
 * crossReference.product only CodeableReference(DrugProductDescription)
-* crossReference.typeco-packaged.text = "co-packaged"
+* crossReference.type.text = "co-packaged"
 
 RuleSet: DosageForm
 * combinedPharmaceuticalDoseForm 1..1 MS
