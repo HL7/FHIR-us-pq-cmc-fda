@@ -5,10 +5,13 @@ Usage: #example
 * identifier.value = "DCM"
 * classification = $NCIT#C176815 "Residual Solvent"
 * structure.technique.text = "Leftover Solvent"
-* structure.representation[+].type.coding = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[=].representation = """YMWUJEATGCHHMB-UHFFFAOYSA-N"""
-* structure.representation[+].type.coding = $NCIT#C54684 "SMILES"
-* structure.representation[=].representation = """ClCCl"""
+* structure
+  * representation[structureData][+]
+    * type.coding = $NCIT#C54683 "InChI File (small molecule)"
+    * representation = """YMWUJEATGCHHMB-UHFFFAOYSA-N"""
+  * representation[structureData][+]
+    * type.coding = $NCIT#C54684 "SMILES"
+    * representation = """ClCCl"""
 * code.code = $UNII#588X2YUY0A
 * name[sub].name = "DICHLOROMETHANE"
 * name[sub].preferred = true
@@ -20,10 +23,12 @@ Usage: #example
 * identifier.value = "hydroxyApatite"
 * classification = $NCIT#C176816 "Degradation Product"
 * structure.technique.text = "formed from dicalcium phosphate degradation"
-* structure.representation[+].type.coding = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[=].representation = """XZFUZCHOJLQYHV-UHFFFAOYSA-M"""
-* structure.representation[+].type.coding = $NCIT#C54684 "SMILES"
-* structure.representation[=].representation = """[OH-].[Ca++].[Ca++].[Ca++].[Ca++].[Ca++].[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O"""
+* structure.representation[structureData][+]
+  * type.coding = $NCIT#C54683 "InChI File (small molecule)"
+  * representation = """XZFUZCHOJLQYHV-UHFFFAOYSA-M"""
+* structure.representation[structureData][+]
+  * type.coding = $NCIT#C54684 "SMILES"
+  * representation = """[OH-].[Ca++].[Ca++].[Ca++].[Ca++].[Ca++].[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O"""
 * code.code = $UNII#91D9GV0Z28
 * name[gsrs].name = "TRIBASIC CALCIUM PHOSPHATE"
 * name[gsrs].preferred = true
