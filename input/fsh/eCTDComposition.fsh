@@ -5,11 +5,10 @@ Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-32P10
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -24,11 +23,10 @@ Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-32S10
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -44,11 +42,10 @@ Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-32S23
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -64,11 +61,10 @@ Id: cmc-ectd-document-sp4151
 Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
-* . obeys cmc-identifer
 * obeys cmc-SP4151
-* meta.profile 1..1 MS  
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS  
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -85,10 +81,9 @@ Id: cmc-ectd-document-32s3
 Title: "CMC eCTD 32S3 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
-* . obeys cmc-identifer
-* meta.profile 1..1 MS
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -107,8 +102,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
     DocumentReference 0..*
 * entry[Composition].resource only EctdComposition32S3
 * entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation
-* entry[Organization].resource only cmc-sponsor-organization
-* entry[DocumentReference].resource only Base64DocumentReference
+* entry[Organization].resource only cmc-organization
+* entry[DocumentReference].resource only GraphicReference or StructureReference
 
 Profile: CMCeCTDDocument32P32
 Parent: Bundle
@@ -117,10 +112,9 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles (Product Batch Formula)."
 
 * . ^short = "CMC eCTD 32P32 Bundle"
-* . obeys cmc-identifer
-* meta.profile 1..1 MS
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS
+* identifier MS
+
 
 * type MS
 * type = #document
@@ -142,10 +136,9 @@ Id: cmc-ectd-document-32p55
 Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (Product Characterisation of Impurities)."
 * . ^short = "CMC eCTD 32P55 Bundle"
-* . obeys cmc-identifer
-* meta.profile 1..1 MS
-* identifier 1..1 MS
-* identifier.extension contains pq-ig-version named version 1..1 MS
+* meta.profile MS
+* identifier MS
+
 * type MS
 * type = #document
 * type ^short = "document"
@@ -168,12 +161,12 @@ Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type from PqcmcQualitySpecificationSectionTypes (required)
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 1..1 MS
 * section.title 1..1 MS
@@ -190,12 +183,12 @@ Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 3..3 MS
 * section.code 1..1 MS
@@ -218,7 +211,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1 eCTD heading."
 * section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ContainerClosure].entry 1..* MS
-* section[ContainerClosure].entry only Reference(DrugProductContainerClosure)
+* section[ContainerClosure].entry only Reference(ContainerClosure)
 
 Profile: EctdComposition32S10
 Parent: Composition
@@ -226,12 +219,12 @@ Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
 Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1 heading of the eCTD. References Sponsor Organization."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
     SECTION SLICES
@@ -249,14 +242,14 @@ Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
 Description: "The fields needed to represent the Substance Control of Materials to be included under the eCTD 3.2.S.2.3 heading. References Sponsor Organization and Drug Substance Materials."
 
-* meta.profile 1..1 MS 
+* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
 * subject 1..1 MS
-* subject only Reference(RoutineSubstanceDefinition)
+* subject only Reference(SubstanceDefinitionHandle)
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
     SECTION SLICES - not requried - only one option
@@ -275,12 +268,12 @@ Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
 Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD. References Sponsor Organization and Batch Formula"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
 */
@@ -297,17 +290,17 @@ Id: ectd-composition-32p55
 Title: "eCTD Product Characterisation of Impurities Composition"
 Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
 */
 * section 1..1 MS
-* section.entry MS
+* section.entry 0..1 MS
 * section ^definition = "Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading."
 * section.code = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * section.title 1..1 MS
@@ -319,12 +312,12 @@ Id: ectd-composition-32s3
 Title: "eCTD Substance Characterisation"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S3 "Substance Characterisation"
 * author 1..1 MS
-* author only Reference(SponsorOrganization)
+* author only Reference(CodedOrganization)
 * title 1..1 MS
 
 /*

@@ -13,11 +13,11 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
             [[StructureDefinition-cmc-ectd-document-sp7181.html]]
       }
 
-      node "RoutineDrugProduct" as NN {
+      node "DrugProductHandle" as NN {
 
             object "**Parent:** MedicinalProductDefinition" as obj3 {
                   **Reference:**
-                  [[StructureDefinition-pqcmc-routine-drug-product.html]]
+                  [[StructureDefinition-pqcmc-drug-product-handle.html]]
                   **ValueSets:**
                   Drug Route Of Administration Terminology
                   Pharmaceutical Dosage Form Terminology
@@ -77,7 +77,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
 
             object "**Parent:** Organization" as objAu {
                   **Reference:**
-                  [[StructureDefinition-cmc-sponsor-organization.html]]
+                  [[StructureDefinition-cmc-organization.html]]
                   **ValueSets:**
                   Testing Site and Organization Identifier Type Terminology
             }

@@ -1,6 +1,6 @@
 Instance: 8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9
-InstanceOf: MfgTestSiteOrganization
-Title: "Example of MfgTestSiteOrganization profile on Organization"
+InstanceOf: CodedOrganization
+Title: "Example of CodedOrganization profile on Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
 Usage: #example
 
@@ -48,11 +48,9 @@ Usage: #example
 * substance.code.reference = Reference(urn:uuid:2d70d504-8cc6-4282-81d4-b20b0a98b78b)
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.1665
-* substance.strength.presentationRatio.numerator = $NCIT#C28253 "mg"
-* substance.strength.presentationRatio.numerator.value = 200
-* substance.strength.presentationRatio.denominator = $NCIT#C75765 "[arb'U]"
-* substance.strength.presentationRatio.denominator.value = 1
-* substance.strength.textPresentation = "200mg"
+* substance.strength.concentrationRatio.numerator = 200 $NCIT#C28253 "mg"
+* substance.strength.concentrationRatio.denominator = 1 $NCIT#C75765 "[arb'U]"
+* substance.strength.textConcentration = "200mg"
 
 Instance: fc878c4f-a98c-427c-816b-e03ccdf0e712
 InstanceOf: ComponentSubstance
@@ -81,11 +79,11 @@ Usage: #example
 * substance.code.reference = Reference(urn:uuid:fc878c4f-a98c-427c-816b-e03ccdf0e712)
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.2498
-* substance.strength.presentationRatio.numerator = $NCIT#C28253 "mg"
-* substance.strength.presentationRatio.numerator.value = 300
-* substance.strength.presentationRatio.denominator = $NCIT#C75765 "[arb'U]"
-* substance.strength.presentationRatio.denominator.value = 1
-* substance.strength.textPresentation = "300mg"
+* substance.strength.concentrationRatio.numerator = $NCIT#C28253 "mg"
+* substance.strength.concentrationRatio.numerator.value = 300
+* substance.strength.concentrationRatio.denominator = $NCIT#C75765 "[arb'U]"
+* substance.strength.concentrationRatio.denominator.value = 1
+* substance.strength.textConcentration = "300mg"
 
 Instance: 393a14e7-3edc-4373-bbe5-9e569d504a1c
 InstanceOf: ComponentSubstance
@@ -117,11 +115,9 @@ Usage: #example
 * substance.code.reference = Reference(urn:uuid:393a14e7-3edc-4373-bbe5-9e569d504a1c)
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.5828
-* substance.strength.presentationRatio.numerator = $NCIT#C28253 "mg"
-* substance.strength.presentationRatio.numerator.value = 700
-* substance.strength.presentationRatio.denominator = $NCIT#C75765 "[arb'U]"
-* substance.strength.presentationRatio.denominator.value = 1
-* substance.strength.textPresentation = "700mg"
+* substance.strength.concentrationRatio.numerator = 700 $NCIT#C28253 "mg"
+* substance.strength.concentrationRatio.denominator = 1 $NCIT#C75765 "[arb'U]"
+* substance.strength.textConcentration = "700mg"
 
 Instance: 496f83ad-2365-4b12-8672-a349d99f7d67
 InstanceOf: ComponentSubstance
@@ -154,11 +150,11 @@ Usage: #example
 * substance.code.reference = Reference(urn:uuid:496f83ad-2365-4b12-8672-a349d99f7d67)
 * substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
 * substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.0008
-* substance.strength.presentationRatio.numerator = $NCIT#C28253 "mg"
-* substance.strength.presentationRatio.numerator.value = 1
-* substance.strength.presentationRatio.denominator = $NCIT#C75765 "[arb'U]"
-* substance.strength.presentationRatio.denominator.value = 1
-* substance.strength.textPresentation = "1mg"
+* substance.strength.concentrationRatio.numerator = $NCIT#C28253 "mg"
+* substance.strength.concentrationRatio.numerator.value = 1
+* substance.strength.concentrationRatio.denominator = $NCIT#C75765 "[arb'U]"
+* substance.strength.concentrationRatio.denominator.value = 1
+* substance.strength.textConcentration = "1mg"
 
 Instance: 5772a6f2-cde1-4903-bfcf-1639340205cc
 InstanceOf: DrugProductDescription
@@ -179,22 +175,14 @@ Usage: #example
 * name[NonProprietary].type.text = "Non-Proprietary"
 
 Instance: 77ad6922-9c59-43d1-93cb-29d063cc2e8c
-InstanceOf: DrugProductContainerClosure
-Title: "A DrugProductContainerClosure"
-Description: "An example of section 3.2.P.1.2 for a multilayer product"
-Usage: #example 
-
-* extension[containerClosure].extension[containerType].valueCodeableConcept = $NCIT#C43169 "BOTTLE"
-* extension[containerClosure].extension[closureType].valueCodeableConcept = $NCIT#C96114 "Child-resistant, Plastic"
-* extension[containerClosure].extension[description].valueMarkdown = """a plastic bottle with a child-proof cap"""
-* name[NonProprietary].part[Scientific][+].part = "ASPIRIN"
-* name[NonProprietary].part[Strength][+].part = "200mg"
-* name[NonProprietary].part[Strength][=].type.text = "ASPIRIN"
-* name[NonProprietary].part[Scientific][+].part = "ACETAMINOPHEN"
-* name[NonProprietary].part[Strength][+].part = "300mg"
-* name[NonProprietary].part[Strength][=].type.text = "ACETAMINOPHEN"
-* name[NonProprietary].productName = "ASPIRIN 200mg, ACETAMINOPHEN 300mg"
-* name[NonProprietary].type.text = "Non-Proprietary"
+InstanceOf: ContainerClosure
+Title: "Example Container Closure"
+Usage: #example
+* packageFor = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
+* description = """a plastic bottle with a child-proof cap"""
+* packaging.type
+  * coding[ContainerType] = $NCIT#C43169 "BOTTLE"
+  * coding[ClosureType] = $NCIT#C96114 "Child-resistant, Plastic"
 
 Instance: a8316fc9-8ca8-4115-81c1-9f8f84c99149
 InstanceOf: FinishedProduct
@@ -221,63 +209,61 @@ Usage: #example
 * property[TotWgtDen].valueQuantity.value = 1
 * property[QualStd].valueCodeableConcept = $NCIT#C134006 "USP-NF"
 * component[+].type = $NCIT#C66831 "Layer"
-* component[=].amount = $NCIT#C28253 "mg"
-* component[=].amount.value = 463
+* component[=]
+  * amount[weight] = 463 $NCIT#C28253 "mg"
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerA"
 * component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
 * component[=].property[ContPercent].valueQuantity.value = 0.3855
 * component[=].property[Color].valueCodeableConcept.text = "Purple"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f)
-* component[=].constituent[=].amount = $NCIT#C28253 "mg"
-* component[=].constituent[=].amount.value = 200
-* component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.4319
+* component[=].constituent[=].amount[weight] = 200 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 43.19 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
-* component[=].constituent[=].amount = $NCIT#C28253 "mg"
-* component[=].constituent[=].amount.value = 262
-* component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5659
+* component[=].constituent[=].amount[weight] = 262 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 56.59 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler Excipient"
+* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:3791c4ce-2b43-4d7b-b195-0e5f88f28dab)
-* component[=].constituent[=].amount = $NCIT#C28253 "mg"
-* component[=].constituent[=].amount.value = 1
-* component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.0022
+* component[=].constituent[=].amount[weight] = 1 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 0.22 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42656 "Color Excipient"
+* component[=].constituent[=].function[Function] = $NCIT#C42656 "Coloring Agent"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[+].type = $NCIT#C66831 "Layer"
-* component[=].amount.extension[WghtlDenom].valueQuantity = $NCIT#C75765 "[arb'U]"
-* component[=].amount.extension[WghtlDenom].valueQuantity.value = 1
-* component[=].amount = $NCIT#C28253 "mg"
-* component[=].amount.value = 738
+* component[=]
+  * modifierExtension[amountRatio]
+    * valueRatio
+      * numerator = 738 $NCIT#C28253 "mg"
+      * denominator = 1 $NCIT#C75765 "[arb'U]"
+
+
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerB"
 * component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
 * component[=].property[ContPercent].valueQuantity.value = 0.6145
 * component[=].property[Color].valueCodeableConcept.text = "White"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:7f10a35e-228d-42db-8918-6ccada78454d)
-* component[=].constituent[=].amount = $NCIT#C28253 "mg"
-* component[=].constituent[=].amount.value = 300
-* component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.4065
+* component[=].constituent[=].amount[weight] = 300 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 40.65 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
-* component[=].constituent[=].amount = $NCIT#C28253 "mg"
-* component[=].constituent[=].amount.value = 438
-* component[=].constituent[=].extension[ConstituentPercent].valueDecimal = 0.5935
+* component[=].constituent[=].amount[weight] = 438 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 59.35 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
-* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler Excipient"
+* component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 
 Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
-InstanceOf: SponsorOrganization
-Title: "SponsorOrganization - Wunderwerke"
+InstanceOf: CodedOrganization
+Title: "CodedOrganization - Wunderwerke"
 Description: "A company sponsor of a drug application"
 Usage: #example 
 
@@ -317,7 +303,6 @@ Title: "CMCeCTDDocument32P10 bundle"
 Description: "A bundle for 3.2.P.1.0"
 Usage: #example 
 
-* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:8a5a9684-f8fb-4f21-a397-a1a0996b2b7f"
 * timestamp = 2023-12-09T07:12:23.538Z
