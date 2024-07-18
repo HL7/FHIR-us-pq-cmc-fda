@@ -751,19 +751,6 @@ Description: "Terminology used to qualify the information pertaining to the spon
 * $NCIT#C134004 "FEI"
 * $NCIT#C17998 "Unknown"
 
-ValueSet: PqcmcStrengthOperatorTerminology
-Id: pqcmc-strength-operator-terminology
-Title: "Strength Operator Terminology"
-Description: "Terminology used to qualify the information pertaining to strength operators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-
-* ^experimental = true
-* $NCIT#C48793 "EQ"
-* $NCIT#C61585 "LT (less than)"
-* $NCIT#C61584 "MT (more than)"
-* $NCIT#C61583 "NLT (not less than)"
-* $NCIT#C61586 "NMT (not more than)"
-* $NCIT#C48660 "Not Applicable"
-
 ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
 Title: "Strength Type Terminology"

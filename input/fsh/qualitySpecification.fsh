@@ -114,6 +114,12 @@ Note: If the application is not yet approved, then this is the date of the curre
 Note: This is not the application approval status date."""
 * goal MS
 * goal ^short = "Acceptance Criteria"
+* goal.extension contains 
+    pq-additional-info-extension named ac-additional-info 0..1  
+* goal.extension[ac-additional-info] ^short = "Acceptance Criteria Additional Information"
+* goal.extension[ac-additional-info] ^definition = """A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
+Note: The concept of  'In-Process' is  subsumed by the Release code.
+Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.description 1..1 MS
 * goal.description ^short = "Original Text"
 * goal.description ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
@@ -125,13 +131,6 @@ Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as i
 Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.addresses.coding.code from PqcmcTestUsageTerminology (required)
 * goal.addresses.text ^short = "Accpetance Criteria Usage"
-
-* goal.documentation 0..* MS
-* goal.documentation.type = http://hl7.org/fhir/related-artifact-type#comments-on
-* goal.documentation.display 1..1 MS
-* goal.documentation.display ^short = "Acceptance Criteria Additional Information"
-* goal.documentation.display ^definition = """A textual field to provide any additional information about the acceptance criteria. [Source: SME Defined]
-Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.target 1..* MS
 * goal.target obeys cmc-target-range
 * goal.target ^short = "Acceptance Criteron"

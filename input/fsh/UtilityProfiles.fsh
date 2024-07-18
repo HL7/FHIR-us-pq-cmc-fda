@@ -78,6 +78,8 @@ Description: "Any additional information"
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"
 * ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition"
+* ^context[+].type = #element "PlanDefinition.goal"
 * ^context[=].expression = "ResearchStudy"
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"

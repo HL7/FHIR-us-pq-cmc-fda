@@ -141,7 +141,9 @@ Note: Non-layered tablets will be considered as one layer tablets."""
 * property[LayCnt].type = $NCIT#TabLayCnt "Tablet Layer Count"
 * property[LayCnt].value[x] 1..1 MS
 * property[LayCnt].value[x] only Quantity
-* property[LayCnt].valueQuantity.code = $NCIT#C66832 "1*"
+* property[LayCnt].valueQuantity.unit = "1*"
+* property[LayCnt].valueQuantity.system = $NCIT
+* property[LayCnt].valueQuantity.code = #C66832
 
 * property[BeaTypCnt].type MS
 * property[BeaTypCnt].type ^short = "Tablet Bead Type Count"
@@ -152,9 +154,9 @@ Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet B
 * property[BeaTypCnt].type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
 * property[BeaTypCnt].value[x] 1..1 MS
 * property[BeaTypCnt].value[x] only Quantity
-
-* property[BeaTypCnt].valueQuantity.code = $NCIT#C66832 "1*"
-
+* property[BeaTypCnt].valueQuantity.unit = "1*"
+* property[BeaTypCnt].valueQuantity.system = $NCIT
+* property[BeaTypCnt].valueQuantity.code = #C66832 
 * property[CapClass].type MS
 * property[CapClass].type ^short = "Capsule Shell Part Classification Category"
 * property[CapClass].type ^definition = "Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]"
@@ -172,7 +174,9 @@ Example: For the case of a capsule shell filled with one type of bead and a mini
 * property[CapConCnt].type = $NCIT#CapConCnt "Capsule Constituent Count"
 * property[CapConCnt].value[x] 1..1 MS
 * property[CapConCnt].value[x] only Quantity
-* property[CapConCnt].valueQuantity.code = $NCIT#C66832 "1*"
+* property[CapConCnt].valueQuantity.unit = "1*"
+* property[CapConCnt].valueQuantity.system = $NCIT
+* property[CapConCnt].valueQuantity.code = #C66832 
 
 * property[Schematic].type MS
 * property[Schematic].type ^short = "Product Schematic"
@@ -314,7 +318,9 @@ Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, 
 * component.constituent.amount[percent].unit ^short = "Content Percent UOM"
 * component.constituent.amount[percent].unit ^definition = "The  unit of measure for the content percent of an ingredient."
 * component.constituent.amount[percent].code 1..1 MS
-* component.constituent.amount[percent].code = $NCIT#C48570 
+* component.constituent.amount[percent].code = #C48570 
+* component.constituent.amount[percent].system 1..1 MS
+* component.constituent.amount[percent].system = $NCIT
 * component.constituent.amount[percent].unit = "%"
 
 * component.constituent.amount[ingredientAmount].value 1..1 MS
@@ -329,7 +335,6 @@ Note: Amount can also be referred to as potency in biologics and other products.
 """
 * component.constituent.amount[ingredientAmount].code 1..1 MS
 * component.constituent.amount[ingredientAmount].code from PqcmcUnitsMeasureTerminology
-
 * component.constituent.amount[portion].value 1..1 MS
 * component.constituent.amount[portion].value ^short = "Product Part Proportion"
 * component.constituent.amount[portion].value ^definition = "Measurement of the relative proportion of the product component  used then the unit is other than 1 per product part."

@@ -9,7 +9,7 @@ Description: "Values required in Ingredient.substance.strength"
     contentPercent 1..1 MS and
     strengthOperator 0..1 MS
 * extension[strengthType].value[x] only CodeableConcept
-* extension[strengthType].value[x] from PqcmcStrengthTypeTerminology (required)
+* extension[strengthType].value[x] from $QTCompare (required)
 * extension[strengthType] ^short = "Strength Type (for API)"
 * extension[strengthType] ^definition = """A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
 Example: Mass, Activity
@@ -133,45 +133,57 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(ComponentSubstance)
 * substance.strength 1..1 MS
-* substance.strength.extension contains strength-extension named strengthFactors 1..1 MS
-* substance.strength.presentation[x] 1..1 MS
-* substance.strength.presentation[x] only Ratio or Quantity
-* substance.strength.presentationRatio 0..1 MS
-* substance.strength.presentationRatio.numerator 1..1 MS
-* substance.strength.presentationRatio.numerator.value ^short = "Product Ingredient Amount Numeric Numerator"
-* substance.strength.presentationRatio.numerator.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
+* substance.strength.extension contains named strengthFactors 1..1 MS
+* substance.strength.concentration[x] 1..1 MS
+* substance.strength.concentration[x] only Ratio or Quantity
+* substance.strength.concentration[x] 1..1 MS
+* substance.strength.concentration[x] only Ratio or Quantity
+* substance.strength.concentrationQuantity 0..1 MS
+* substance.strength.concentrationQuantity.value 1..1 MS
+* substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
+* substance.strength.concentrationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
 Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
 """
-* substance.strength.presentationRatio.numerator.value 1..1 MS
-* substance.strength.presentationRatio.numerator.unit 1..1 MS
-* substance.strength.presentationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
-* substance.strength.presentationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
+* substance.strength.concentrationQuantity.unit 1..1
+* substance.strength.concentrationQuantity.code 1..1
+* substance.strength.concentrationQuantity.code from  PqcmcUnitsMeasureTerminology (required)
+* substance.strength.textconcentration 1..1 MS
+* substance.strength.textconcentration ^short = "Strength Textual"
+* substance.strength.textconcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+* substance.strength.concentrationRatio 0..1 MS
+* substance.strength.concentrationRatio.numerator 1..1 MS
+* substance.strength.concentrationRatio.numerator.value ^short = "Product Ingredient Amount Numeric Numerator"
+* substance.strength.concentrationRatio.numerator.value ^definition = """Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
+"""
+* substance.strength.concentrationRatio.numerator.value 1..1 MS
+* substance.strength.concentrationRatio.numerator.unit 1..1 MS
+* substance.strength.concentrationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
+* substance.strength.concentrationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
 Example: mg"""
-* substance.strength.presentationRatio.numerator.code 1..1 MS
-* substance.strength.presentationRatio.numerator.code from  PqcmcUnitsMeasureTerminology (required)
-* substance.strength.presentationRatio.denominator 1..1 MS
-* substance.strength.presentationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
-* substance.strength.presentationRatio.denominator.value  ^definition = """Specifies the quantity of the ingredient(s) consistent with this single dose unit (e.g., one tablet, capsule) of drug product. [Source: SME Defined]
-Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Denominator = 1
+* substance.strength.concentrationRatio.numerator.code 1..1 MS
+* substance.strength.concentrationRatio.numerator.code from  PqcmcUnitsMeasureTerminology (required)
+* substance.strength.concentrationRatio.denominator 1..1 MS
+* substance.strength.concentrationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
+* substance.strength.concentrationRatio.denominator.value  ^definition = """Specifies the quantity of the ingredients within a single dose unit (e.g., vial, syringe) of drug product. [Source: SME Defined]
+Example: 10mg/syringe, 1mg/ml
 """
-* substance.strength.presentationRatio.denominator.value 1..1 MS
-* substance.strength.presentationRatio.denominator.unit 1..1 MS
-* substance.strength.presentationRatio.denominator.code 1..1 MS
-* substance.strength.presentationRatio.denominator.code from  PqcmcUnitsMeasureTerminology (required)
+* substance.strength.concentrationRatio.denominator.value 1..1 MS
+* substance.strength.concentrationRatio.denominator.unit 1..1 MS
+* substance.strength.concentrationRatio.denominator.code 1..1 MS
+* substance.strength.concentrationRatio.denominator.code from  PqcmcUnitsMeasureTerminology (required)
 
-* substance.strength.presentationQuantity 0..1 MS
-* substance.strength.presentationQuantity.value 1..1 MS
-* substance.strength.presentationQuantity.value ^short = "Product Ingredient Amount Numeric"
-* substance.strength.presentationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
+* substance.strength.concentrationQuantity 0..1 MS
+* substance.strength.concentrationQuantity.value 1..1 MS
+* substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
+* substance.strength.concentrationQuantity.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
 Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
 """
-* substance.strength.presentationQuantity.unit 1..1
-* substance.strength.presentationQuantity.code 1..1
-* substance.strength.presentationQuantity.code from  PqcmcUnitsMeasureTerminology (required)
-* substance.strength.textPresentation 1..1 MS
-* substance.strength.textPresentation ^short = "Strength Textual"
-* substance.strength.textPresentation ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
-
+* substance.strength.concentrationQuantity.unit 1..1
+* substance.strength.concentrationQuantity.code 1..1
+* substance.strength.concentrationQuantity.code from  PqcmcUnitsMeasureTerminology (required)
+* substance.strength.textconcentration 1..1 MS
+* substance.strength.textconcentration ^short = "Strength Textual"
+* substance.strength.textconcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 
 Profile: ExcipientRaw
 Parent: SubstanceDefinition
@@ -230,8 +242,7 @@ Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine
 Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
 IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
 Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
-* sourceMaterial.part.coding 0..0
-* sourceMaterial.part.text 1..1
+* sourceMaterial.part.text 1..1 MS
 * insert CountryOfOrigin
 
 Profile: SubstanceDefinitionHandle

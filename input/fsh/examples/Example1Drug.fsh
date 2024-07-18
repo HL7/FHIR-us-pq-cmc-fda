@@ -220,23 +220,26 @@ Usage: #example
 * component[=].property[ContPercent].valueQuantity.value = 0.3855
 * component[=].property[Color].valueCodeableConcept.text = "Purple"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f)
-* component[=].constituent[=].amount[ingredientAmount] = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount[ingredientAmount].value = 200
+* component[=].constituent[=].amount[ingredientAmount].unit = "mg"
+* component[=].constituent[=].amount[ingredientAmount].system = $NCIT
+* component[=].constituent[=].amount[ingredientAmount].code = #C28253 
 * component[=].constituent[=].amount[percent].value = 43.19
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
-* component[=].constituent[=].amount[ingredientAmount] = $NCIT#C28253 "mg"
-* component[=].constituent[=].amount[ingredientAmount].value = 262
+* component[=].constituent[=].amount[ingredientAmount] = 262 $NCIT#C28253 "mg"
 * component[=].constituent[=].amount[percent].value = 56.59
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 * component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:3791c4ce-2b43-4d7b-b195-0e5f88f28dab)
-* component[=].constituent[=].amount[ingredientAmount] = $NCIT#C28253 "mg"
 * component[=].constituent[=].amount[ingredientAmount].value = 1
+* component[=].constituent[=].amount[ingredientAmount].unit = "mg"
+* component[=].constituent[=].amount[ingredientAmount].code = #C28253 
+* component[=].constituent[=].amount[ingredientAmount].system = $NCIT
 * component[=].constituent[=].amount[percent].value = 0.22
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
