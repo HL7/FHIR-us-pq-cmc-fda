@@ -304,3 +304,18 @@ defineVariable('scientificNames',part.where(type.coding.exists(code = 'SCI' and 
     %scientificNames.distinct() = %scientificNames
 )))"
 Severity: #error
+
+Invariant: cmc-amount-ratio-or-quantity
+Severity: #error
+Description: "The amount ratio extension and an amount with a non-percentage unit are mutually exclusive"
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+  modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')
+  .union(
+    amount.where(
+        system = %system and 
+        code.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units')
+    )
+  ).count() = 1
+)"
+// Logically: Either the amount ratio extension or an amount that isn't a percent must be present, and they
+// can never be present at the same time, so their combined count is always 1

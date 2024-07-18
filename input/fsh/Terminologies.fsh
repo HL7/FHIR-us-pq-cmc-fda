@@ -1180,3 +1180,20 @@ Description: "The acceptable file types that can be used in Structure Data Files
 * urn:ietf:bcp:13#application/x-mdl-molfile "Molfile (.mol)"
 * urn:ietf:bcp:13#application/x-cif "Crystallographic Information File (.cif)"
 * urn:ietf:bcp:13#application/x-inchi "IUPAC International Chemical Identifier (.inchi)"
+
+ValueSet: PqcmcPercentageUnits
+Id: pqcmc-percentage-units
+Title: "Percentage Units"
+* ^experimental = true
+* $NCIT#C48570 "%"
+* $NCIT#C48571 "%{VolumeToVolume}"
+* $NCIT#C67015 "mg%"
+* $NCIT#C48527 "%{WeightToVolume}"
+* $NCIT#C48528 "%{WeightToWeight}"
+
+ValueSet: PqcmcNonPercentageUnits
+Id: pqcmc-non-percentage-units
+Title: "Non-Percentage Units"
+* ^experimental = true
+* include codes from valueset PqcmcUnitsMeasureTerminology
+* exclude codes from valueset PqcmcPercentageUnits
