@@ -10,7 +10,7 @@ Description: "A classification of the regulatory status of the specification."
 Examples: Approved, Not Approved, Reported in a CBE or AR. 
 """
 * value[x] only CodeableConcept
-* value[x] from PqcmcSpecificationTypeTerminology (required)
+* value[x] from PqcmcSpecificationStatusTerminology (required)
 
 Extension: HierarchicalLevelExtension
 Id: pq-hierarchical-level-extension
