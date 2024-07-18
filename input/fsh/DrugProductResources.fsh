@@ -65,6 +65,20 @@ Note: This includes primary packaging components and secondary packaging compone
 * packaging.quantity 0..1 MS
 * packaging.packaging 0..* MS
 
+Extension: AmountRatio
+Id: pq-amount-ratio
+Title: "Amount Ratio"
+Description: "represent an amount as a ratio in ManufacturedItemDefinition"
+* . ?!
+* . ^isModifierReason = "the PQCMC use Case requires ingredient and part amounts be accepted as either quantities or ratios. When present, an amount representing anything but the percentage cannot be present"
+* value[x] 1..1 MS
+* value[x] only Ratio
+* valueRatio
+  * numerator 1..1 MS
+    * ^short = "Amount Numeric Numerator"
+  * denominator 1..1 MS
+    * ^short = "Amount Numeric Denominator"
+
 Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
 Id: pqcmc-product-part
@@ -246,6 +260,8 @@ Examples: USP/NF, EP, Company Standard
 // Product parts
 * component 1..* MS
 * component obeys cmc-ppidref-required
+* component.modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+* component obeys cmc-amount-ratio-or-quantity
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -257,82 +273,71 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 * component.function.text ^definition = """The main purpose for the part in the dosage form. [Source: SME Defined]
 Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
 """
-* component.amount 1..1  MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "code"
-  * ^slicing.rules = #open
-  * ^slicing.ordered = false
-* component.amount contains
-  ingredientAmount 0..1 MS and
-  portion  0..1 MS
-* component.amount[ingredientAmount].value 1..1 MS
-* component.amount[ingredientAmount].value ^short = "Product Part Total Weight Numeric"
-* component.amount[ingredientAmount].value ^definition = """Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
-Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
-"""
-* component.amount[ingredientAmount].unit 1..1 MS
-* component.amount[ingredientAmount].unit ^short = "Product Part Total Weight Numeric UOM"
-* component.amount[ingredientAmount].unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
-Example: mg
-"""
-* component.amount[ingredientAmount].code 1..1 MS
-* component.amount[ingredientAmount].code from PqcmcUnitsMeasureTerminology
-
-* component.amount[portion].value 1..1 MS
-* component.amount[portion].value ^short = "Product Part Proportion"
-* component.amount[portion].value ^definition = "Measurement of the relative proportion of the product component  used then the unit is other than 1 per product part."
-* component.amount[portion].unit 1..1 MS
-* component.amount[portion].unit ^short = "Product Part Proportion UOM"
-* component.amount[portion].unit ^definition = "The  unit of measure for the relative proportion of the product component."
-* component.amount[portion].code 1..1 MS
-* component.amount[portion].code from PqcmcUnitsMeasureTerminology
+* component
+  * amount 0..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "code"
+    * ^slicing.rules = #open
+    * ^slicing.ordered = false
+  * amount contains 
+    weight 0..1 MS and
+    percent 0..1 MS
+  * amount[weight]
+    * value 1..1 MS
+      * ^short = "Product Part Total Weight Numeric Numerator"
+      * ^definition = """
+        Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
+        Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
+      """
+    * code from PqcmcNonPercentageUnits
+  * amount[percent]
+    * value 1..1 MS
+      * ^short = "Product Part Content Percent"
+      * ^definition = """
+        The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
+        Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
+      """
+    * unit MS
+      * ^short = "Product Part Total Weight Numeric Numerator UOM"
+      * ^definition = """
+        The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
+        Example: mg
+      """
+    * code from PqcmcPercentageUnits
 
 // ingredient
 * component.constituent 1..* MS
 * component.constituent obeys cmc-ingredient-functions
-* component.constituent.amount 1..1  MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "code"
-  * ^slicing.rules = #open
-  * ^slicing.ordered = false
-* component.constituent.amount contains
-  percent 0..1 MS and
-  ingredientAmount 0..1 MS and
-  portion  0..1 MS
-* component.constituent.amount[percent].value 1..1 MS
-* component.constituent.amount[percent].value ^short = "Content Percent"
-* component.constituent.amount[percent].value ^definition = """The percentage of the constituent in the component. [Source: SME Defined]
-Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
-"""
-* component.constituent.amount[percent].unit 1..1 MS
-* component.constituent.amount[percent].unit ^short = "Content Percent UOM"
-* component.constituent.amount[percent].unit ^definition = "The  unit of measure for the content percent of an ingredient."
-* component.constituent.amount[percent].code 1..1 MS
-* component.constituent.amount[percent].code = #C48570 
-* component.constituent.amount[percent].system 1..1 MS
-* component.constituent.amount[percent].system = $NCIT
-* component.constituent.amount[percent].unit = "%"
-
-* component.constituent.amount[ingredientAmount].value 1..1 MS
-* component.constituent.amount[ingredientAmount].value ^short = "Product Part Ingredient Amount Numeric"
-* component.constituent.amount[ingredientAmount].value ^definition = """Specifies the quantity of an ingredient in a single part of the drug product. [Source: SME Defined]
-Note: a single part of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
-Note: Amount can also be referred to as potency in biologics and other products.
-"""
-* component.constituent.amount[ingredientAmount].unit 1..1 MS
-* component.constituent.amount[ingredientAmount].unit ^short = "Product Part Ingredient Amount Numeric UOM"
-* component.constituent.amount[ingredientAmount].unit ^definition = """The labeled unit of measure for the content of an ingredient, expressed quantitatively per product part. [Source: Adapted for NCI EVS C117055]
-"""
-* component.constituent.amount[ingredientAmount].code 1..1 MS
-* component.constituent.amount[ingredientAmount].code from PqcmcUnitsMeasureTerminology
-* component.constituent.amount[portion].value 1..1 MS
-* component.constituent.amount[portion].value ^short = "Product Part Proportion"
-* component.constituent.amount[portion].value ^definition = "Measurement of the relative proportion of the product component  used then the unit is other than 1 per product part."
-* component.constituent.amount[portion].unit 1..1 MS
-* component.constituent.amount[portion].unit ^short = "Product Part Proportion UOM"
-* component.constituent.amount[portion].unit ^definition = "The  unit of measure for the relative proportion of the product component."
-* component.constituent.amount[portion].code 1..1 MS
-* component.constituent.amount[portion].code from PqcmcUnitsMeasureTerminology
+* component.constituent
+  * modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+* component.constituent obeys cmc-amount-ratio-or-quantity
+* component.constituent
+  * amount 1..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "code"
+    * ^slicing.rules = #open
+    * ^slicing.ordered = false
+  * amount contains 
+    weight 1..1 MS and
+    percent 0..1 MS
+  * amount[weight]
+    * value 1..1 MS
+      * ^short = "Product Part Ingredient Amount Numeric"
+      * ^definition = """
+        Specifies the quantity of an ingredient in a single part of the drug product. [Source: SME Defined]
+        Note: a single part of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
+        Note: Amount can also be referred to as potency in biologics and other products.
+      """
+    * unit MS
+      * ^short = "Product Part Ingredient Amount Numeric UOM"
+      * ^definition = """
+        The labeled unit of measure for the content of an ingredient, expressed quantitatively per product part. [Source: Adapted for NCI EVS C117055]
+      """
+    * code from PqcmcNonPercentageUnits
+  * amount[percent]
+    * value 1..1 MS
+      * ^short = "Product Part Ingredient Content Percent"
+    * code from PqcmcPercentageUnits
 * component.constituent.location 0..* MS
 * component.constituent.location ^short = "Product Part Ingredient Physical Location"
 * component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]

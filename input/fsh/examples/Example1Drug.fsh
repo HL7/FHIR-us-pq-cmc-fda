@@ -209,34 +209,38 @@ Usage: #example
 * property[TotWgtDen].valueQuantity.value = 1
 * property[QualStd].valueCodeableConcept = $NCIT#C134006 "USP-NF"
 * component[+].type = $NCIT#C66831 "Layer"
-* component[=].amount = 463 $NCIT#C28253 "mg"
+* component[=]
+  * amount[weight] = 463 $NCIT#C28253 "mg"
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerA"
 * component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
 * component[=].property[ContPercent].valueQuantity.value = 0.3855
 * component[=].property[Color].valueCodeableConcept.text = "Purple"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f)
-* component[=].constituent[=].amount[ingredientAmount] = 200 $NCIT#C28253 "mg"
-* component[=].constituent[=].amount[percent].value = 43.19
+* component[=].constituent[=].amount[weight] = 200 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 43.19 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
-* component[=].constituent[=].amount[ingredientAmount] = 262 $NCIT#C28253 "mg"
-* component[=].constituent[=].amount[percent].value = 56.59
+* component[=].constituent[=].amount[weight] = 262 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 56.59 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 * component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:3791c4ce-2b43-4d7b-b195-0e5f88f28dab)
-* component[=].constituent[=].amount[ingredientAmount] = 1 $NCIT#C28253 "mg"
-* component[=].constituent[=].amount[percent].value = 0.22
+* component[=].constituent[=].amount[weight] = 1 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 0.22 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "Purple Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 * component[=].constituent[=].function[Function] = $NCIT#C42656 "Coloring Agent"
 * component[=].constituent[=].location = $NCIT#C203883 "Intragranular"
 * component[+].type = $NCIT#C66831 "Layer"
-* component[=].amount[ingredientAmount] = 738 $NCIT#C28253 "mg"
-* component[=].amount[portion] = 1 $NCIT#C75765 "[arb'U]"
+* component[=]
+  * modifierExtension[amountRatio]
+    * valueRatio
+      * numerator = 738 $NCIT#C28253 "mg"
+      * denominator = 1 $NCIT#C75765 "[arb'U]"
 
 
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerB"
@@ -244,14 +248,14 @@ Usage: #example
 * component[=].property[ContPercent].valueQuantity.value = 0.6145
 * component[=].property[Color].valueCodeableConcept.text = "White"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:7f10a35e-228d-42db-8918-6ccada78454d)
-* component[=].constituent[=].amount = 300 $NCIT#C28253 "mg"
-* component[=].constituent[=].amount[percent].value = 0.4065
+* component[=].constituent[=].amount[weight] = 300 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 40.65 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].location = $NCIT#C203881 "Active core/granulate"
 * component[=].constituent[=].function[Category] = $NCIT#C82533 "Active Ingredient"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2)
-* component[=].constituent[=].amount = 438 $NCIT#C28253 "mg"
-* component[=].constituent[=].amount[percent].value = 0.5935
+* component[=].constituent[=].amount[weight] = 438 $NCIT#C28253 "mg"
+* component[=].constituent[=].amount[percent] = 59.35 $NCIT#C48570 "%"
 * component[=].constituent[=].location.text = "White Layer"
 * component[=].constituent[=].function[Category] = $NCIT#C42637 "Inactive Ingredient"
 * component[=].constituent[=].function[Function] = $NCIT#C42650 "Filler"
