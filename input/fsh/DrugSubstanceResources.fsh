@@ -19,12 +19,6 @@ Example: Mass, Activity
 * extension[contentPercent] ^definition = """The percentage of the component in the drug product. [Source: SME Defined]
 Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
 """
-* extension[strengthOperator].value[x] only CodeableConcept
-* extension[strengthOperator].value[x] from PqcmcStrengthOperatorTerminology (required)
-* extension[strengthOperator] ^short = "Strength Operator"
-* extension[strengthOperator] ^definition = """A mathematical symbol that denotes equality or inequality between two values
-Note: This is typically applicable to biologics """
-
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
 Id: pqcmc-polymorphic-form
@@ -133,9 +127,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(ComponentSubstance)
 * substance.strength 1..1 MS
-* substance.strength.extension contains named strengthFactors 1..1 MS
-* substance.strength.concentration[x] 1..1 MS
-* substance.strength.concentration[x] only Ratio or Quantity
+* substance.strength.extension contains strength-extension named strengthFactors 1..1 MS
 * substance.strength.concentration[x] 1..1 MS
 * substance.strength.concentration[x] only Ratio or Quantity
 * substance.strength.concentrationQuantity 0..1 MS
@@ -144,24 +136,24 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength.concentrationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
 Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
 """
-* substance.strength.concentrationQuantity.unit 1..1
-* substance.strength.concentrationQuantity.code 1..1
-* substance.strength.concentrationQuantity.code from  PqcmcUnitsMeasureTerminology (required)
-* substance.strength.textconcentration 1..1 MS
-* substance.strength.textconcentration ^short = "Strength Textual"
-* substance.strength.textconcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+* substance.strength.concentrationQuantity from PqcmcUnitsMeasureTerminology (required)
+* substance.strength.textConcentration 1..1 MS
+* substance.strength.textConcentration ^short = "Strength Textual"
+* substance.strength.textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 * substance.strength.concentrationRatio 0..1 MS
-* substance.strength.concentrationRatio.numerator 1..1 MS
-* substance.strength.concentrationRatio.numerator.value ^short = "Product Ingredient Amount Numeric Numerator"
-* substance.strength.concentrationRatio.numerator.value ^definition = """Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
-"""
-* substance.strength.concentrationRatio.numerator.value 1..1 MS
-* substance.strength.concentrationRatio.numerator.unit 1..1 MS
+* substance.strength.concentrationRatio
+  * numerator 1..1 MS
+  * numerator from PqcmcUnitsMeasureTerminology (required)
+    * value ^short = "Product Ingredient Amount Numeric Numerator"
+    * ^definition = """
+      Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
+    """
+  * denominator MS
+  * denominator from PqcmcUnitsMeasureTerminology (required)
 * substance.strength.concentrationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
 * substance.strength.concentrationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
 Example: mg"""
 * substance.strength.concentrationRatio.numerator.code 1..1 MS
-* substance.strength.concentrationRatio.numerator.code from  PqcmcUnitsMeasureTerminology (required)
 * substance.strength.concentrationRatio.denominator 1..1 MS
 * substance.strength.concentrationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
 * substance.strength.concentrationRatio.denominator.value  ^definition = """Specifies the quantity of the ingredients within a single dose unit (e.g., vial, syringe) of drug product. [Source: SME Defined]
@@ -170,9 +162,9 @@ Example: 10mg/syringe, 1mg/ml
 * substance.strength.concentrationRatio.denominator.value 1..1 MS
 * substance.strength.concentrationRatio.denominator.unit 1..1 MS
 * substance.strength.concentrationRatio.denominator.code 1..1 MS
-* substance.strength.concentrationRatio.denominator.code from  PqcmcUnitsMeasureTerminology (required)
 
 * substance.strength.concentrationQuantity 0..1 MS
+* substance.strength.concentrationQuantity from PqcmcUnitsMeasureTerminology (required)
 * substance.strength.concentrationQuantity.value 1..1 MS
 * substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
 * substance.strength.concentrationQuantity.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
@@ -180,10 +172,9 @@ Example: if the tablet contains 325 mg of the ingredient in each unit dose, then
 """
 * substance.strength.concentrationQuantity.unit 1..1
 * substance.strength.concentrationQuantity.code 1..1
-* substance.strength.concentrationQuantity.code from  PqcmcUnitsMeasureTerminology (required)
-* substance.strength.textconcentration 1..1 MS
-* substance.strength.textconcentration ^short = "Strength Textual"
-* substance.strength.textconcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+* substance.strength.textConcentration 1..1 MS
+* substance.strength.textConcentration ^short = "Strength Textual"
+* substance.strength.textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 
 Profile: ExcipientRaw
 Parent: SubstanceDefinition
