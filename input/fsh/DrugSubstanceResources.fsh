@@ -9,7 +9,7 @@ Description: "Values required in Ingredient.substance.strength"
     contentPercent 1..1 MS and
     strengthOperator 0..1 MS
 * extension[strengthType].value[x] only CodeableConcept
-* extension[strengthType].value[x] from $QTCompare (required)
+* extension[strengthType].value[x] from PqcmcStrengthTypeTerminology (required)
 * extension[strengthType] ^short = "Strength Type (for API)"
 * extension[strengthType] ^definition = """A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
 Example: Mass, Activity
