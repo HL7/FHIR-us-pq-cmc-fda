@@ -18,7 +18,7 @@ package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
 node "SponsorOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **Reference:**
-      [[StructureDefinition-cmc-organization.html]]
+      [[StructureDefinition-cmc-sponsor-organization.html]]
         **ValueSets:**
         Sponsor Identifier Type Terminology 
     }

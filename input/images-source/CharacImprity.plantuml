@@ -37,7 +37,7 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
-      [[StructureDefinition-cmc-organization.html]]
+      [[StructureDefinition-cmc-sponsor-organization.html]]
       **ValueSets:**
       Testing Site and Organization Identifier Type Terminology
     }
