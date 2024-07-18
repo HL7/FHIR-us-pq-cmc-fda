@@ -1184,6 +1184,7 @@ Description: "The acceptable file types that can be used in Structure Data Files
 ValueSet: PqcmcPercentageUnits
 Id: pqcmc-percentage-units
 Title: "Percentage Units"
+Description: "Units of Measure terminologies that represent the concept of a percentage"
 * ^experimental = true
 * $NCIT#C48570 "%"
 * $NCIT#C48571 "%{VolumeToVolume}"
@@ -1194,6 +1195,7 @@ Title: "Percentage Units"
 ValueSet: PqcmcNonPercentageUnits
 Id: pqcmc-non-percentage-units
 Title: "Non-Percentage Units"
+Description: "Units of Measure terminologies that do not represent percentages"
 * ^experimental = true
 * include codes from valueset PqcmcUnitsMeasureTerminology
 * exclude codes from valueset PqcmcPercentageUnits
