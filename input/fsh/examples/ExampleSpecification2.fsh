@@ -89,7 +89,7 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC13 "Microbial Limits"
+  * reason[=].coding = $NCIT#C134256 "Microbial Limits"
   * documentation.type = #documentation
   * documentation.label = "USP <61>"
   * action[+]
