@@ -134,9 +134,9 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC6 "Organoleptic"
+  * reason[=].coding = $TestCats#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#SUBC20 "Description/Appearance"
+  * reason[=].coding = $TestCats#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
   * goalId[+] = "e900181a-876c-4ed6-ac96-d5a73c3d6767"
@@ -148,7 +148,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC7 "Identification"
+  * reason[=].coding = $TestCats#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
   * goalId[+] = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
@@ -160,7 +160,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC23 "pH"
+  * reason[=].coding = $TestCats#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "1f476689-f440-4a77-9e9c-0615af3571eb"
@@ -172,7 +172,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC38 "Residue on Ignition"
+  * reason[=].coding = $TestCats#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
@@ -184,7 +184,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC53 "Impurity"
+  * reason[=].coding = $TestCats#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-104"
   * goalId[+] = "fc230a97-fd1a-4017-8603-822c5430a217"
