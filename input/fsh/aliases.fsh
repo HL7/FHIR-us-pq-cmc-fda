@@ -20,5 +20,4 @@ Alias: $DOCREF = http://hl7.org/fhir/document-reference-status
 Alias: $NameType = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types
 Alias: $ActRelationType = http://hl7.org/fhir/action-relationship-type
 Alias: $ActSelection = http://hl7.org/fhir/action-selection-behavior
-Alias: $TestCats = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-test-category-codes
 Alias: $PubStatus = http://hl7.org/fhir/publication-status#draft 

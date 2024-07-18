@@ -220,7 +220,7 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Spectrophotometry"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C138993 "Identification"
+  * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "USP <197>"
   * relatedAction[+].targetId = "84d64dd8-b799-418a-a713-a854c4d3c2b9"
@@ -236,7 +236,7 @@ Usage: #example
     * coding = $NCIT#C96103 "Proprietary"
     * text = "HPLC"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C138993 "Identification"
+  * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-01"
   * relatedAction[+].targetId = "2047a6b6-e3fc-4071-8989-526297579091"
@@ -250,7 +250,7 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C134255 "Loss on Drying"
+  * reason[=].coding = $NCIT#C134255 "Loss on Drying"
   * documentation.type = #documentation
   * documentation.label = "USP <731>"
   * goalId[+] = "c40aa176-e6aa-4fe4-869d-6550ee992903"
@@ -262,9 +262,9 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C205026 "Organoleptic"
+  * reason[=].coding = $NCIT#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C134262 "Color of Solution"
+  * reason[=].coding = $NCIT#C134262 "Color of Solution"
   * documentation.type = #documentation
   * documentation.label = "USP <271>"
   * goalId[+] = "b122987d-586c-481b-951c-6202e660158d"
@@ -276,7 +276,7 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C134276 "Residue on Ignition"
+  * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "929747ad-e83a-46f0-bbbc-133ee951e819"
@@ -288,7 +288,7 @@ Usage: #example
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C193381 "Foreign and Particulate Matter"
+  * reason[=].coding = $NCIT#C193381 "Foreign and Particulate Matter"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-02"
   * goalId[+] = "8d7c85c2-7a4b-432e-ac94-226f296e4fca"
@@ -300,9 +300,9 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C205039 "Specified Identified Impurity"
+  * reason[=].coding = $NCIT#C205039 "Specified Identified Impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <221>"
   * goalId[+] = "de4f962a-d486-486d-8d84-f2d1635646b4"
@@ -314,9 +314,9 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C205039 "Specified Identified Impurity"
+  * reason[=].coding = $NCIT#C205039 "Specified Identified Impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <221>"
   * goalId[+] = "b46dce64-a009-46cd-ab95-21d1d5b4df77"
@@ -328,9 +328,9 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "UV"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C205014 "Elemental Impurity"
+  * reason[=].coding = $NCIT#C205014 "Elemental Impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <231>"
   * goalId[+] = "5566f501-37e1-49fb-8783-b20c074ec0c3"
@@ -342,9 +342,9 @@ Usage: #example
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C134254 "Impurities/Degradation Products/Related Substances"
+  * reason[=].coding = $NCIT#C134254 "Impurities/Degradation Products/Related Substances"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-03"
   * goalId[+] = "db19e3ab-e28b-4477-8bd7-2409093ed5a3"
@@ -356,9 +356,9 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C134002 "Residual Solvent"
+  * reason[=].coding = $NCIT#C134002 "Residual Solvent"
   * documentation.type = #documentation
   * documentation.label = "USP <467>"
   * goalId[+] = "82370588-7aae-4556-9262-a7f50dbd01aa"
@@ -373,9 +373,9 @@ Usage: #example
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C60819 "Assay"
+  * reason[=].coding = $NCIT#C60819 "Assay"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#C204845 "Active Ingredient Content"
+  * reason[=].coding = $NCIT#C204845 "Active Ingredient Content"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-04"
   * goalId[+] = "9100e938-42ff-4004-8473-ed5090d66f3a"
@@ -386,7 +386,7 @@ Usage: #example
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#C134253 "Dissolution"
+  * reason[=].coding = $NCIT#C134253 "Dissolution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-05"
   * action[+]
