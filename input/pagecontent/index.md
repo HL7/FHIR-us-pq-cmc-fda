@@ -16,7 +16,7 @@ The scope of FDA’s PQ/CMC project is to develop structured data standards for 
 
 <figure>
   <center><img style="padding-top:0;padding-bottom:30px;width: 60%; margin: auto;"  src="figure2.png" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/></center>
-  <figcaption style="text-align: center">Figure 2: Data Standards Development Phases</figcaption>
+  <figcaption style="text-align: center">Figure 2: Data Standards development Phases</figcaption>
 </figure>
 
 #### IG Scope

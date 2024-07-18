@@ -21,7 +21,7 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:  
-  hl7.terminology.r5: 5.5.0
+  hl7.terminology: 5.5.0
 
 menu:
   Table of Contents: toc.html
@@ -60,7 +60,7 @@ pages:
     title: "Substance Control of Materials (3.2.S.2.3)"
     generation: markdown
   eCTD32S3.md: 
-    title: "eCTD Substance Characterisation (3.2.S.3)"
+    title: eCTD Substance Characterisation (3.2.S.3)"
     generation: markdown
   eCTDSP4151.html:
     title: "Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"

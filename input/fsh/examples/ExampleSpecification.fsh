@@ -1,5 +1,5 @@
 Instance: 89676a69-1fe7-422c-ab00-92abe4ef6ea9
-InstanceOf: DrugProductHandle
+InstanceOf: RoutineDrugProduct
 Title: "drug product for specification"
 Description: "Includes the identifier of the drug product"
 Usage: #example
@@ -22,12 +22,11 @@ Title: "A quality specification is for a drug product"
 Description: "A quality specification is for a Drug Product"
 Usage: #example
 
-* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C134011 "Not Approved"
+* extension[specificationType].valueCodeableConcept = $NCIT#C134021 "Drug Product"
 * identifier.value = "ExampleSpecification"
 * version = "1.0"
 * title = "Quality Specification for OXAZEPAM"
-* type.coding[SpecType] = $NCIT#C134021 "Drug Product"
-
+* type.coding[ApprovalStatus] = $NCIT#C134011 "Not Approved"
 * status = #active
 * subjectReference = Reference(urn:uuid:89676a69-1fe7-422c-ab00-92abe4ef6ea9)
 * date = 2022-12-08
@@ -37,27 +36,24 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * modifierExtension[targetRange]
-      * extension[low]
-        * valueQuantity = 2 $NCIT#C45997 "pH"
-          * comparator = #>=
-      * extension[high]
-        * valueQuantity = 3 $NCIT#C45997 "pH"
-          * comparator = #<
+    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
+    * detailRange.low = 2 $NCIT#C45997 "pH"
+    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61585 "LT (less than)"
+    * detailRange.high = 3 $NCIT#C45997 "pH"
 * goal[+]
   * id = "59a4ca76-858e-4d58-8e5f-88e75f51ec33"
   * description.text = "Maxima only at the same wavelengths compared to reference standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailString = "Conforms"
+    * detailCodeableConcept.text = "Conforms"
 * goal[+]
   * id = "c40aa176-e6aa-4fe4-869d-6550ee992903"
   * description.text = "<= 0.5 %"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.5 $NCIT#C48570 "%"
+    * detailQuantity = 0.5 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "b122987d-586c-481b-951c-6202e660158d"
@@ -65,14 +61,14 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailString = "Conforms"
+    * detailCodeableConcept.text = "Conforms"
 * goal[+]
   * id = "929747ad-e83a-46f0-bbbc-133ee951e819"
   * description.text = "<= 0.05 %"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.05 $NCIT#C48570 "%"
+    * detailQuantity = 0.05 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "8d7c85c2-7a4b-432e-ac94-226f296e4fca"
@@ -80,14 +76,14 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailString = "pass"
+    * detailCodeableConcept.text = "pass"
 * goal[+]
   * id = "de4f962a-d486-486d-8d84-f2d1635646b4"
   * description.text = "<= 0.014 %"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.014 $NCIT#C48570 "%"
+    * detailQuantity = 0.014 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "b46dce64-a009-46cd-ab95-21d1d5b4df77"
@@ -95,7 +91,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.04 $NCIT#C48570 "%"
+    * detailQuantity = 0.04 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "5566f501-37e1-49fb-8783-b20c074ec0c3"
@@ -103,7 +99,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.001 $NCIT#C48570 "%"
+    * detailQuantity = 0.001 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "db19e3ab-e28b-4477-8bd7-2409093ed5a3"
@@ -111,7 +107,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailString = "pass"
+    * detailCodeableConcept.text = "pass"
 * goal[+]
   * id = "82370588-7aae-4556-9262-a7f50dbd01aa"
   * description.text = "Ethanol < 0.2%"
@@ -119,7 +115,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
     * measure.text = "Ethanol"
-    * detailQuantity = 0.2 $NCIT#C48570 "%"
+    * detailQuantity = 0.2 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "cae2da87-c4b7-43d0-9e8e-c64d0d4df6c2"
@@ -127,7 +123,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Ethyl Ether"
-    * detailQuantity = 0.1 $NCIT#C48570 "%"
+    * detailQuantity = 0.1 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "28ad4d5b-d975-4f6e-9792-b3d9cc7ce279"
@@ -135,7 +131,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "1—propanol"
-    * detailQuantity = 0.15 $NCIT#C48570 "%"
+    * detailQuantity = 0.15 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "33fa051c-6b3c-4e4d-bd4e-09d39fc253b3"
@@ -143,7 +139,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Total Residual Solvents"
-    * detailQuantity = 0.5 $NCIT#C48570 "%"
+    * detailQuantity = 0.5 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "9100e938-42ff-4004-8473-ed5090d66f3a"
@@ -151,13 +147,10 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * modifierExtension[targetRange]
-      * extension[low]
-        * valueQuantity = 99.5 $NCIT#C48570 "%"
-          * comparator = #>=
-      * extension[high]
-        * valueQuantity = 100.5 $NCIT#C48570 "%"
-          * comparator = #<=
+    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
+    * detailRange.low = 99.5 $NCIT#C48570 "percent"
+    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
+    * detailRange.high = 100.5 $NCIT#C48570 "percent"
 * goal[+]
   * id = "af260128-f105-4692-ba40-49f21f12ad46"
   * description.text = "n=6"
@@ -169,7 +162,7 @@ Usage: #example
   * description.text = "Each unit is NLT Q + 5%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity = 85 $NCIT#C48570 "%"
+    * detailQuantity = 85 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "47c0d685-0b23-4637-9af8-a554e4fad7ec"
@@ -183,11 +176,11 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 12 units"
-    * detailQuantity = 80 $NCIT#C48570 "%"
+    * detailQuantity = 80 $NCIT#C48570 "percent"
       * comparator = #<=
   * target[+]
     * measure.text = "unit"
-    * detailQuantity = 65 $NCIT#C48570 "%"
+    * detailQuantity = 65 $NCIT#C48570 "percent"
       * comparator = #<=
 * goal[+]
   * id = "15309a78-92a9-4cf9-aee1-452d6d2f7a91"
@@ -195,7 +188,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 24 units"
-    * detailQuantity = 80 $NCIT#C48570 "%"
+    * detailQuantity = 80 $NCIT#C48570 "percent"
       * comparator = #<=
   * target[+]
     * measure.text = "units less than Q – 15%"
@@ -213,6 +206,7 @@ Usage: #example
     * detailInteger = 12
 * action[+]
   * id = "2047a6b6-e3fc-4071-8989-526297579091"
+  * extension[testOrder].valueDecimal = 1.1
   * prefix = "Single Stage"
   * title = "Spectrophotometry Identification"
   * description = "Alternate"
@@ -220,14 +214,16 @@ Usage: #example
     * coding = $NCIT#C96102 "Compendial"
     * text = "Spectrophotometry"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C138993 "Identification"
+  * reason[=].coding = $TestCats#TC7 "Identification"
   * documentation.type = #documentation
   * documentation.label = "USP <197>"
   * relatedAction[+].targetId = "84d64dd8-b799-418a-a713-a854c4d3c2b9"
   * relatedAction[=].relationship = #concurrent
+  * selectionBehavior = #exactly-one
   * goalId[+] = "32649771-1290-4386-9cf7-7a72274f22b4"
 * action[+]
   * id = "84d64dd8-b799-418a-a713-a854c4d3c2b9"
+  * extension[testOrder].valueDecimal = 1.2
   * linkId = "2047a6b6-e3fc-4071-8989-526297579091"
   * prefix = "Single Stage"
   * title = "Identity - Ferric Chloride"
@@ -236,129 +232,139 @@ Usage: #example
     * coding = $NCIT#C96103 "Proprietary"
     * text = "HPLC"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C138993 "Identification"
+  * reason[=].coding = $TestCats#TC7 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-01"
   * relatedAction[+].targetId = "2047a6b6-e3fc-4071-8989-526297579091"
   * relatedAction[=].relationship = #concurrent
+  * selectionBehavior = #exactly-one
   * goalId[+] = "59a4ca76-858e-4d58-8e5f-88e75f51ec33"
 * action[+]
   * id = "838e66ce-f4b0-47a5-8ea0-aa7882a84303"
+  * extension[testOrder].valueDecimal = 2
   * prefix = "Single Stage"
   * title = "Loss on Drying"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C134255 "Loss on Drying"
+  * reason[=].coding = $TestCats#TC12 "Loss on Drying"
   * documentation.type = #documentation
   * documentation.label = "USP <731>"
   * goalId[+] = "c40aa176-e6aa-4fe4-869d-6550ee992903"
 * action[+]
   * id = "3510686b-fb93-4980-a41c-0a3754be7f37"
+  * extension[testOrder].valueDecimal = 3
   * prefix = "Single Stage"
   * title = "Readily Carbonizable Sub"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C205026 "Organoleptic"
+  * reason[=].coding = $TestCats#TC6 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C134262 "Color of Solution"
+  * reason[=].coding = $TestCats#SUBC22 "Color of solution"
   * documentation.type = #documentation
   * documentation.label = "USP <271>"
   * goalId[+] = "b122987d-586c-481b-951c-6202e660158d"
 * action[+]
   * id = "b2e18cc4-f494-4ef0-be34-810d8d4b439b"
+  * extension[testOrder].valueDecimal = 4
   * prefix = "Single Stage"
   * title = "Residue on ignition (Ash)"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
+  * reason[=].coding = $TestCats#TC38 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "929747ad-e83a-46f0-bbbc-133ee951e819"
 * action[+]
   * id = "d315a1c3-dd93-498d-8ae3-dc0d4b3bec75"
+  * extension[testOrder].valueDecimal = 5
   * prefix = "Single Stage"
   * title = "Substances insoluble in sodium carbonate TS"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C193381 "Foreign and Particulate Matter"
+  * reason[=].coding = $TestCats#TC11 "Foreign and Particulate Matter"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-02"
   * goalId[+] = "8d7c85c2-7a4b-432e-ac94-226f296e4fca"
 * action[+]
   * id = "6ec15bbc-a78a-4351-9ad8-fcf97e839ab9"
+  * extension[testOrder].valueDecimal = 6
   * prefix = "Single Stage"
   * title = "Impurities - Chloride (Cl)"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C204971 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C205039 "Specified Identified Impurity"
+  * reason[=].coding = $TestCats#SUBC92 "Specified identified impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <221>"
   * goalId[+] = "de4f962a-d486-486d-8d84-f2d1635646b4"
 * action[+]
   * id = "fa31b425-896c-4b25-b693-ccdd14e0c8ee"
+  * extension[testOrder].valueDecimal = 7
   * prefix = "Single Stage"
   * title = "Impurities - Sulfate (SO4)"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C204971 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C205039 "Specified Identified Impurity"
+  * reason[=].coding = $TestCats#SUBC92 "Specified identified impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <221>"
   * goalId[+] = "b46dce64-a009-46cd-ab95-21d1d5b4df77"
 * action[+]
   * id = "cef5aa1a-8770-4f78-9bc3-da9f18b77e5c"
+  * extension[testOrder].valueDecimal = 8
   * prefix = "Single Stage"
   * title = "Elemental Impurities - Limits"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "UV"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C204971 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C205014 "Elemental Impurity"
+  * reason[=].coding = $TestCats#SUBC98 "elemental impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <231>"
   * goalId[+] = "5566f501-37e1-49fb-8783-b20c074ec0c3"
 * action[+]
   * id = "d5871ee2-8b06-414c-91b4-4b30f5881c8a"
+  * extension[testOrder].valueDecimal = 9
   * prefix = "Single Stage"
   * title = "Limit of Free Salicylic Acid"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C204971 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C134254 "Impurities/Degradation Products/Related Substances"
+  * reason[=].coding = $TestCats#SUBC100 "Impurities/Degradation Products/Related Substances"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-03"
   * goalId[+] = "db19e3ab-e28b-4477-8bd7-2409093ed5a3"
 * action[+]
   * id = "e192fc72-c4b1-419f-8098-6f65037a3962"
+  * extension[testOrder].valueDecimal = 10
   * prefix = "Single Stage"
   * title = "Organic Volatile Impurities"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C204971 "Impurity"
+  * reason[=].coding = $TestCats#TC53 "Impurity"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C134002 "Residual Solvent"
+  * reason[=].coding = $TestCats#SUBC101 "residual solvent"
   * documentation.type = #documentation
   * documentation.label = "USP <467>"
   * goalId[+] = "82370588-7aae-4556-9262-a7f50dbd01aa"
@@ -367,39 +373,44 @@ Usage: #example
   * goalId[+] = "33fa051c-6b3c-4e4d-bd4e-09d39fc253b3"
 * action[+]
   * id = "b7e88ea0-3c61-49db-86ec-8d01f8b7667b"
+  * extension[testOrder].valueDecimal = 11
   * prefix = "Single Stage"
   * title = "Assay Dry Basis"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C60819 "Assay"
+  * reason[=].coding = $TestCats#TC1 "Assay"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $NCIT#C204845 "Active Ingredient Content"
+  * reason[=].coding = $TestCats#SUBC2 "active ingredient"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-04"
   * goalId[+] = "9100e938-42ff-4004-8473-ed5090d66f3a"
 * action[+]
   * id = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
+  * extension[testOrder].valueDecimal = 12
   * title = "Dissolution - 30 minute"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C134253 "Dissolution"
+  * reason[=].coding = $TestCats#TC9 "Dissolution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-05"
   * action[+]
+    * extension[stageOrder].valueDecimal = 1
     * linkId = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
     * prefix = "Stage 1"
     * goalId[+] = "af260128-f105-4692-ba40-49f21f12ad46"
     * goalId[+] = "31d9dcac-bf72-420b-a415-c924155a83f4"
   * action[+]
+    * extension[stageOrder].valueDecimal = 2
     * linkId = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
     * prefix = "Stage 2"
     * goalId[+] = "47c0d685-0b23-4637-9af8-a554e4fad7ec"
     * goalId[+] = "14d3dee8-e024-4367-b0a2-a2a809303ee0"
   * action[+]
+    * extension[stageOrder].valueDecimal = 3
     * linkId = "6d1ba5a8-6590-496a-ad6b-ca68cfda2878"
     * prefix = "Stage 3"
     * goalId[+] = "15309a78-92a9-4cf9-aee1-452d6d2f7a91"
@@ -426,6 +437,7 @@ InstanceOf: CMCeCTDDocumentSP4151
 Title: "FHIR Document example of 3.2.P.5.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Product"
 Usage: #example
+* identifier.extension[version].valueString = "0.1.21"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:34a0748d-b199-4a2e-a5bc-0f880886fef7"
 * timestamp = 2023-12-15T22:33:13.089Z
