@@ -74,8 +74,6 @@ Description: "Any additional information"
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.property.valueMarkdown"
 * ^context[+].type = #element
-* ^context[=].expression = "Ingredient"
-* ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"

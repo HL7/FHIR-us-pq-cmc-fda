@@ -120,14 +120,14 @@ Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
 * meta.profile MS
-* .extension contains pq-additional-info-extension named additional-info 0..1 MS
-* .extension[additional-info] ^short = "Drug Product Component Additional Information"
-* .extension[additional-info] ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
+* status.code
+* for ^short = "Reference to MedicinalProductDefinition"
+* role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
+* comment 0..1 MS
+* comment ^short = "Drug Product Component Additional Information"
+* comment ^definition = """A placeholder for providing any comments that are relevant to the component. [Source: SME Defined]
 Examples: removed during process, adjusted for loss on drying, etc.
 """
-* status.code
-* role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
-* for ^short = "Reference to MedicinalProductDefinition"
 * substance obeys cmc-strength-type-cases2
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
