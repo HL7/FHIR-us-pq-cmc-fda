@@ -72,23 +72,23 @@ Description: "Codes temporarily defined as part of the PQ-CMC-FDA implementation
 * ^hierarchyMeaning = #is-a
 
 * #C60819 "Assay" "Tests which measure the content of the active ingredient in the drug substance or drug product.of a substance. Synonymous with strength or purity which is commonly used of define the content of the active ingredient in a drug product. Note: chiral purity, preservative content, Anti-Oxidant Concentration, Chelate Concentration, isomeric ratio"
-* #C60819 #C204845 "active ingredient" "Tests that verify the content and potency of a pharmaceutical substance that is intended effect in the diagnosis, cure, mitigation, treatment, or prevention of disease, or to affect the structure or any function of the body."
-* #C60819 #C81183 "amino acid content" "Methodology used to determine the amino acid composition or content of proteins, peptides, and other pharmaceutical preparations"
-* #C60819 #C205003 "bioburden" "Test that screens for aerobic mesophilic bacteria and fungi."
-* #C60819 #C205007 "counterion content" "Tests that measures the secondardy ion of a drug scharacalt."
-* #C60819 #C205015 "excipient" "Testing of the amount of material other than the active or adjuvant."
-* #C60819 #C205018 "host cell dna" "Measurement of DNA that comes from cell substrate used to make the viral particles."
-* #C60819 #C205028 "percent conjugate" "Test to determine the percentage of total protein that functions in interaction with other (non-polypeptide) chemical groups attached by covalent bonding."
-* #C60819 #C62352 "purity" "Testing methods to identify actives and indirectly measure impurities that may be present in a medicine. Examples of analytical procedures for this test #SUBCategory include SDS-page and HPLC."
-* #C60819 #C171277 "nucleic acid content" "Tests designed to reveal the presence of a particular nucleic acid from a test sample."
-* #C60819 #C205038 "solvate content" "Identifcation of hydrates or solvates by the assay of water of crystallization or solvent found in the crystal."
-* #C60819 #C64858 "total protein" "Test to determine total protein concentration in the product"
-* #C60819 #C205006 "Cell and Gene therapy product characterization assay" """Tests to determine Cell and Gene therapy product properties.
+* #C60819 #C204845 "Active Ingredient Content" "Tests that verify the content and potency of a pharmaceutical substance that is intended effect in the diagnosis, cure, mitigation, treatment, or prevention of disease, or to affect the structure or any function of the body."
+* #C60819 #C81183 "Amino Acid Content" "Methodology used to determine the amino acid composition or content of proteins, peptides, and other pharmaceutical preparations"
+* #C60819 #C205003 "Bioburden" "Test that screens for aerobic mesophilic bacteria and fungi."
+* #C60819 #C205007 "Counterion Content" "Tests that measures the secondardy ion of a drug scharacalt."
+* #C60819 #C205015 "Excipient" "Testing of the amount of material other than the active or adjuvant."
+* #C60819 #C205018 "Host Cell DNA" "Measurement of DNA that comes from cell substrate used to make the viral particles."
+* #C60819 #C205028 "Percent Conjugate" "Test to determine the percentage of total protein that functions in interaction with other (non-polypeptide) chemical groups attached by covalent bonding."
+* #C60819 #C62352 "Purity" "Testing methods to identify actives and indirectly measure impurities that may be present in a medicine. Examples of analytical procedures for this test #SUBCategory include SDS-page and HPLC."
+* #C60819 #C171277 "Nucleic Acid Content" "Tests designed to reveal the presence of a particular nucleic acid from a test sample."
+* #C60819 #C205038 "Solvate Content" "Identifcation of hydrates or solvates by the assay of water of crystallization or solvent found in the crystal."
+* #C60819 #C64858 "Total Protein" "Test to determine total protein concentration in the product"
+* #C60819 #C205006 "Cell and Gene Therapy Product Characterization Assay" """Tests to determine Cell and Gene therapy product properties.
 Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted molecules, Gene expression, Genetic stability, percent recovery, gene expression, cell surface marker expression, proliferation capacity, total cell number, cell morphology, cell distribution in scaffold, total volume of scaffold, cellular pattern, vector genome concentration, vector infectious titer assay, replication competence assay, DNA homogeneity, transduction efficiency, vector genome concentration, vector infectious titer assay, Replication competence assay [Source: SME Defined]"""
 * #C134249 "Container Closure Integrity" "Tests for the adequacy of pharmaceutical packaging and closures."
 * #C134250 "Uniformity" "Tests to ensure the consistency of the API in the formulation. Test may be done as an IPC, release or stability test."
-* #C134250 #C134115 "Uniformity of dosage unit" "Tests of the variability of the dosage unit including dispensed dose."
-* #C134250 #C205050 "Uniformity in containers" "Content Uniformity based for multi-use containers, tubes and jars."
+* #C134250 #C134115 "Uniformity of Dosage Unit" "Tests of the variability of the dosage unit including dispensed dose."
+* #C134250 #C205050 "Uniformity in Containers" "Content Uniformity based for multi-use containers, tubes and jars."
 * #C133961 "Deliverable Volume/Fill Volume" "Tests designed to provide assurance that oral liquids will, when transferred from the original container, deliver the volume of dosage form that is declared on the label of the article."
 * #C205026 "Organoleptic" "Evaluation via the senses—including taste, sight, smell, and touch."
 * #C205026 #C138990 "Description/Appearance" "Tests using visual inspection to assess the physical state and color of the drug substance or product."
@@ -100,16 +100,16 @@ Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted mol
 * #C134253 "Dissolution" "Test to determine compliance with the requirements of the material of interest dissolving into solution. A dosage unit is defined as 1 tablet or 1 capsule or the amount specified."
 * #C205012 "Droplet Size" "Tests that determine the size of the liquid drop [Source: SME Defined]"
 * #C193381 "Foreign and Particulate Matter" "Tests for injections or infusions to check for insoluble particles to confirm that they are not present in excess of specified levels in the solutions [Source: Adapted from ICH Q4B]."
-* #C193381 #C205024  "Metal detection" "Tests for metallic particles to confirm that they are not present in excess of specified levels. [Source: SME Defined]"
+* #C193381 #C205024  "Metal Detection" "Tests for metallic particles to confirm that they are not present in excess of specified levels. [Source: SME Defined]"
 * #C134255 "Loss on Drying" "Analytical procedures to determine the amount of volatile matter of any kind that is driven off under the conditions specified."
 * #C134256 "Microbial Limits" "Tests for the estimation of the number of viable aerobic microorganisms present and for the freedom from designated microbial species in the pharmaceutical articles of all kinds, from raw materials to the finished forms."
-* #C205027 "Osmolality/ Osmolarity" "Osmolality and osmolarity are measurements of the solute concentration of a solution. Osmolality is expressed in terms of the weight of the solvent and osmolarity is expressed in terms of solvent volume. [Source: SME Defined]"
+* #C205027 "Osmolality/Osmolarity" "Osmolality and osmolarity are measurements of the solute concentration of a solution. Osmolality is expressed in terms of the weight of the solvent and osmolarity is expressed in terms of solvent volume. [Source: SME Defined]"
 * #C134257 "Particle Size Distribution" "Analytical procedures that utilize mechanical sieving for deducing the particle-size distribution of a powdered solid."
 * #C134260 "Bulk Density" "Tests that determine the ratio of the mass of an untapped powder sample and its volume including the contribution of the interparticulate void volume."
 * #C134263 "Conductivity" "Electrical conductivity is a measure of the ion-facilitated electron flow through it."
 * #C133974 "Crystallinity" "The detection and/or quantification of the amount of amorphous material within a highly crystalline substance."
-* #C133975  "Friability" "The percent loss of a tablet due to mechanical action that results in fracture or breaking during the test"
-* #C134264  "Hardness" "A test used to identify the ability of a material to resist mechanical deformation such as scratching or penetration by other substances."
+* #C133975 "Friability" "The percent loss of a tablet due to mechanical action that results in fracture or breaking during the test"
+* #C134264 "Hardness" "A test used to identify the ability of a material to resist mechanical deformation such as scratching or penetration by other substances."
 * #C63394 "Melting Point" "The temperature at the which a substance changes from solid to a liquid state at atmospheric pressure."
 * #C103201 "Optical Rotation" "A property of many pharmaceutical substances to rotate an incident plane of polarized light so that the transmitted light emerges at a measurable angle to the plane of the incident light. [Source: Adapted from USP <781>]"
 * #C205029 "pH" "The measure of acidity or alkalinity of an aqueous solution."
@@ -117,43 +117,43 @@ Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted mol
 * #C64832 "Specific Gravity" "The ratio of the density of any substance to the density of some other substance taken as standard, water being the standard for liquids and solids, and hydrogen or air being the standard for gases."
 * #C25483 "Material Properties/Measurements" "Dimensions and physical properties of the material of interest including tablets, capsule, soft gel capsule, granulate or pellet, etc."
 * #C25483 #C205022 "Individual Weight" "The weight of a single unit of the material of interest. Examples: 800 mg (a tablet) [Source: SME Defined]"
-* #C25483 #C205209 "Group/Average Weight" """The sum total weights of the material of interest units or sum total of the material of interest divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (per 10), 10 mg (per tablet)
+* #C25483 #C205209 "Average Weight" """The sum total weights of the material of interest units or sum total of the material of interest divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (per 10), 10 mg (per tablet)
 note: for a QS or IPC this is likely a range but as a result it would be a single value
 note: the unit would indicate if the value represents a total weight of the group or the average weight across the group - both values could be provided [Source: SME Defined]"""
-* #C25483 #C205053  "Weight variation" """The difference in weights of the material of interest. Examples: 2%, 5 mg, 2.5 %
+* #C25483 #C205053  "Weight Variation" """The difference in weights of the material of interest. Examples: 2%, 5 mg, 2.5 %
 note: may be a percent, a value or a percent relative standard deviation [Source: SME Defined]"""
-* #C25483 #C205021 "ndividual Fill Weight" """The weight of material of interest within a single unit. Example: 1 gram (in each vial), 200 mg (in each capsule)
+* #C25483 #C205021 "Individual Fill Weight" """The weight of material of interest within a single unit. Example: 1 gram (in each vial), 200 mg (in each capsule)
 note: could be a capsule, vial or bottle
 ote: for a QS or IPC this is likely a range but as a result it would be a single value [Source: SME Defined]"""
-* #C25483 #C205206 "Group/Average Fill Weight" """The sum total weights of material of interest across multiple units divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (weight of 10 tablets), 10 mg (per tablet)
+* #C25483 #C205206 "Average Fill Weight" """The sum total weights of material of interest across multiple units divided by the number of units included in the sum. Example: 790-810 mg, 100 mg (weight of 10 tablets), 10 mg (per tablet)
 note: for a QS or IPC this is likely a range but as a result it would be a single value
 note: the unit would indicate if the value represents a total weight of the group or the average weight across the group - both values could be provided [Source: SME Defined]"""
-* #C25483 #C205045 "Target group weight gain %" """A predetermined percentage weight increase for a set of units resulting from of an action such as coating. Example: 3% (weight gain after coating)
+* #C25483 #C205045 "Target Group Weight Gain %" """A predetermined percentage weight increase for a set of units resulting from of an action such as coating. Example: 3% (weight gain after coating)
 note: this can be associated with a bulk material or a single unit [Source: SME Defined]"""
-* #C25483 #C205036 "Shell weight" "The weight of outer casing ('shell') into which material of interest is filled. Example: 20 mg [Source: SME Defined]"
-* #C25483 #C205011 "Orifice location" "The position of hole drilled in the unit dose. [Source: SME Defined]"
-* #C25483 #C205010 "Orifice diameter" "The length of a straight line measurement across the center of the hole drilled in the unit dose. [Source: SME Defined]"
-* #C25483 #C205009 "Orifice depth" "The measurement of the penetration of the hole drilled in the unit dose as measured from the outer edge to the deepest point of penetration. [Source: SME Defined]"
-* #C25483 #C205037 "Drilled side (single or double)" "An observation if one or both sides of the unit dose has been drilled. [Source: SME Defined]"
-* #C25483 #C205025 "Number of orifices" "The total count of holes drilled in the unit dose [Source: SME Defined]"
-* #C25483 #C205034 "Ribbon thickness" "The dimension between two surfaces of a continuous sheet of compressed material in preparation for subsequent processing. [Source: adapted from  Thickness]"
-* #C25483 #C205033 "Ribbon density" "The compactness of a continuous sheet of compressed material in preparation for subsequent processing [Source: adapted from  Density]"
-* #C25483 #C205035 "Seam thickness" "The measurement of overlap common to two edges of the same material joined together. Example: 1 mm [Source: SME Defined]"
-* #C25483 #C205005 "Lock length" "The length of a straight line measurement from the longest edge-to-edge distance through a Capsule body and cap that have been coupled such that the locking rings are sealed as designed. [Source: SME Defined]"
-* #C25483 #C205044 "Tablet/Capsule length" "The length of a straight line measurement from the longest edge-to-edge distance through the Tablet/Capsule. [Source: SME Defined]"
-* #C25483 #C205043 "Tablet/Capsule diameter" "The length of a straight line measurement across the circular center of a Tablet/Capsule. [Source: SME Defined]"
-* #C25483 #C205042 "Tablet thickness" "The length of a straight line measurement from the shortest edge-to-edge distance through a Tablet. [Source: SME Defined]"
+* #C25483 #C205036 "Shell Weight" "The weight of outer casing ('shell') into which material of interest is filled. Example: 20 mg [Source: SME Defined]"
+* #C25483 #C205011 "Orifice Location" "The position of hole drilled in the unit dose. [Source: SME Defined]"
+* #C25483 #C205010 "Orifice Diameter" "The length of a straight line measurement across the center of the hole drilled in the unit dose. [Source: SME Defined]"
+* #C25483 #C205009 "Orifice Depth" "The measurement of the penetration of the hole drilled in the unit dose as measured from the outer edge to the deepest point of penetration. [Source: SME Defined]"
+* #C25483 #C205037 "Drilled Side (Single or Double)" "An observation if one or both sides of the unit dose has been drilled. [Source: SME Defined]"
+* #C25483 #C205025 "Number of Orifices" "The total count of holes drilled in the unit dose [Source: SME Defined]"
+* #C25483 #C205034 "Ribbon Thickness" "The dimension between two surfaces of a continuous sheet of compressed material in preparation for subsequent processing. [Source: adapted from  Thickness]"
+* #C25483 #C205033 "Ribbon Density" "The compactness of a continuous sheet of compressed material in preparation for subsequent processing [Source: adapted from  Density]"
+* #C25483 #C205035 "Seam Thickness" "The measurement of overlap common to two edges of the same material joined together. Example: 1 mm [Source: SME Defined]"
+* #C25483 #C205005 "Lock Length" "The length of a straight line measurement from the longest edge-to-edge distance through a Capsule body and cap that have been coupled such that the locking rings are sealed as designed. [Source: SME Defined]"
+* #C25483 #C205044 "Tablet/Capsule Length" "The length of a straight line measurement from the longest edge-to-edge distance through the Tablet/Capsule. [Source: SME Defined]"
+* #C25483 #C205043 "Tablet/Capsule Diameter" "The length of a straight line measurement across the circular center of a Tablet/Capsule. [Source: SME Defined]"
+* #C25483 #C205042 "Tablet Thickness" "The length of a straight line measurement from the shortest edge-to-edge distance through a Tablet. [Source: SME Defined]"
 * #C134266 "Tap Density" "An increased bulk density attained after mechanically tapping the container containing the powder sample. (aka - tapped density)"
 * #C205049 "Transdermal Properties" """Tests that determine the physical properties of transdermal systems [Source: SME Defined]
 Example, Peel adhesion test, Tack test, Cold Flow test, etc."""
-* #C133979 "Viscosity/ Rheological Properties" "A property of liquids that is closely related to the resistance to flow."
+* #C133979 "Viscosity/Rheological Properties" "A property of liquids that is closely related to the resistance to flow."
 * #C134267 "Plume Geometry" "A test that measures the spray pattern characteristics, including shape and size of the evolving spray cloud under defined experimental and instrumental test conditions [Source: Adapted from USP-NF]"
 * #C134269 "Polymorphism" """Tests to determine the different crystalline forms of a given drug substance [Source: Adapted from ICH Q6A].
 BACKGROUND
 Polymorphism -- The occurrence of different crystalline forms of the same drug substance. This may include solvation or hydration products (also known as pseudopolymorphs) and amorphous forms."""
 * #C205030 "Porosity" "Tests that measure the empty spaces/voids in the material. [Source: SME Defined]"
 * #C134270 "Potency" "Tests to measure the biological activity using a suitably quantitative biological assay (also called potency assay or bioassay), based on the attribute of the product which is linked to the relevant biological properties [Source: Adapted from ICH Q6B]"
-* #C133983 "Pyrogenicity/Endotoxin (test example – rabbit test name)" "Tests designed to limit to an acceptable level the risks of febrile reaction in the patient to the administration, by injection, of the product concerned. The test involves measuring the rise in temperature of rabbits following the intravenous injection of a test solution and is designed for products that can be tolerated by the test rabbit in a dose not to exceed 10 mL/kg injected intravenously within a period of NMT 10 min."
+* #C133983 "Pyrogenicity/Endotoxin" "Tests designed to limit to an acceptable level the risks of febrile reaction in the patient to the administration, by injection, of the product concerned. The test involves measuring the rise in temperature of rabbits following the intravenous injection of a test solution and is designed for products that can be tolerated by the test rabbit in a dose not to exceed 10 mL/kg injected intravenously within a period of NMT 10 min."
 * #C134272 "Reconstitution Time" "Measurement of how long it takes to restore something dried to its original state of liquid."
 * #C133985 "Redispersibility" "Testing of oral suspensions that settle on storage (produce sediment) to measure the time required to achieve resuspension."
 * #C205032 "Refractive Index" "Tests performed to determine the ratio of velocity of light in air to the velocity of light in the substance. [Source: Adapted from USP <831>]"
@@ -164,7 +164,7 @@ Polymorphism -- The occurrence of different crystalline forms of the same drug s
 * #C134114 "Total Organic Carbon" "An indirect measure of organic molecules present in pharmaceutical waters measured as carbon [Source: USP <643>]."
 * #C205023 "Mechanical Integrity" "Test that measures what amount of force is needed to alter the mechanical integrity of a construct."
 * #C205041 "Surface Area" "Total surface area of a 2D or 3D materials"
-* #C18951 "Post-translational modifications" "Test to measure if the protein undergoing post translational modification which include glycocylation etc."
+* #C18951 "Post-translational Modifications" "Test to measure if the protein undergoing post translational modification which include glycocylation etc."
 * #C18951 #C16643 "Glycosylation" "Post translation modification due to addition of sugar"
 * #C18951 #C205054 "Thrombin Peptide Map" "Map of peptides derived from digestion of protein with thrombin"
 * #C18951 #C205031 "Sialylation" "Post translational modification of proteins by sialylation"
@@ -174,22 +174,22 @@ Polymorphism -- The occurrence of different crystalline forms of the same drug s
 * #C205013 "Elemental Analysis" "The relative proportion of elements present"
 * #C74723 "Turbidity" "Measurement of the clarity and degree of opalescence of liquids by comparison of the solutions in diffused daylight after preparation of the reference suspension."
 * #C204971 "Impurity" "Analytical procedures to establish material purity by determining the presence of a material or component of a material that is not defined as the material."
-* #C204971 #C205039 "Specified identified impurity" "Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and for which a structured characterization has been achieved.
+* #C204971 #C205039 "Specified Identified Impurity" "Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and for which a structured characterization has been achieved.
 Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"
-* #C204971 #C205040 "Specified unidentified impurity" """Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and that is defined solely by qualitative analytical properties (e.g., chromatographic retention time) due to the lack of achieving a structured characterization.
+* #C204971 #C205040 "Specified Unidentified Impurity" """Testing for an impurity that is individually listed and limited with a specific acceptance criterion in the new drug substance or drug product specification and that is defined solely by qualitative analytical properties (e.g., chromatographic retention time) due to the lack of achieving a structured characterization.
 Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
-* #C204971 #C205052 "Unspecified impurity" """Testing for an impurity that is limited by a general acceptance criterion, but not individually listed with its own specific acceptance criterion, in the new drug substance or drug product specification.
+* #C204971 #C205052 "Unspecified Impurity" """Testing for an impurity that is limited by a general acceptance criterion, but not individually listed with its own specific acceptance criterion, in the new drug substance or drug product specification.
 Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
-* #C204971 #C205047 "Total impurities" """The sum of all impurities at a level greater than (>) the reporting threshold.
+* #C204971 #C205047 "Total Impurities" """The sum of all impurities at a level greater than (>) the reporting threshold.
 Note: this includes degradation products for tests conducted on drug products. [adapted from ICH Q3A (R2) & Q3B (R2)]"""
 * #C204971 #C205048 "Total Unknown Impurities" """The sum of unknown (unidentified) impurities in a new drug substance or drug product specification.
 Note: Total impurities includes all impurities while Total Unknown impurities only includes all the unknown impurities. [Source: SME Defined]"""
-* #C204971 #C205051 "Identified impurity under IT that is monitored as unspecified" """Identification (chemical name and/or UNII code) of all the identified (known) impurities that are being controlled as “unspecified impurities” rather than “Specified Identified Impurity” due to the level being consistently below the ICH identification threshold (IT) value.
+* #C204971 #C205051 "Identified Impurity under IT, Monitored as Unspecified" """Identification (chemical name and/or UNII code) of all the identified (known) impurities that are being controlled as “unspecified impurities” rather than “Specified Identified Impurity” due to the level being consistently below the ICH identification threshold (IT) value.
 Note: this includes degradation products for tests conducted on drug products. [Source: SME Defined]"""
-* #C204971 #C205014 "elemental impurity" "Analytical procedures that determine the amount of single elements in drug products or drug product components."
-* #C204971 #C204890 "impurity chemical" "Analytical procedures to establish chemical purity by determining the presence of a component of the material that is not the chemical entity defined as the material."
+* #C204971 #C205014 "Elemental Impurity" "Analytical procedures that determine the amount of single elements in drug products or drug product components."
+* #C204971 #C204890 "Impurity Chemical" "Analytical procedures to establish chemical purity by determining the presence of a component of the material that is not the chemical entity defined as the material."
 * #C204971 #C134254 "Impurities/Degradation Products/Related Substances" "Tests that establishes the characteristic and uniqueness of the the substance of interest and should be able to discriminate between compounds of closely related structures which are likely to be present. Includes leachables and extractables."
-* #C204971 #C134002 "residual solvent" """Tests performed to determine if organic volatile chemicals that are used or produced in manufacture of drug substance or excipients, or in the preparation of drug products are present in the pharmaceuticals. [Source: Adapted from USP <467>]
+* #C204971 #C134002 "Residual Solvent" """Tests performed to determine if organic volatile chemicals that are used or produced in manufacture of drug substance or excipients, or in the preparation of drug products are present in the pharmaceuticals. [Source: Adapted from USP <467>]
 BACKGROUND: For pharmacopeial purposes, residual solvents in pharmaceuticals are defined as organic volatile chemicals that are used or produced in the manufacture of drug substances or excipients, or in the preparation of drug products."""
 
 ValueSet: PqcmcTestCategoryTerminology
