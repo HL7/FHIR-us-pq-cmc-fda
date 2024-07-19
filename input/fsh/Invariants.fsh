@@ -6,9 +6,17 @@ Expression: "select(preferred = true).count() < 2"
 Severity: #error
 
 Invariant: cmc-when-unii-required
-Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
-Expression: "classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists()
-implies code.code.text.exists()"
+Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'."
+Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803') ).exists()
+implies code.where(
+  code.coding.system = 'http://fdasis.nlm.nih.gov'
+).exists())
+ and classification.coding.where(
+  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+  code = 'C17021'
+).exists() implies code.where(
+  code.coding.system = 'https://www.uniprot.org'
+).exists()"
 Severity: #error
 
 Invariant: cmc-name-isbt

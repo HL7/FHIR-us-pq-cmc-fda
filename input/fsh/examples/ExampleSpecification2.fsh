@@ -25,7 +25,7 @@ Usage: #example
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
-* code.code.coding[unii] = $UNII#WK2XYI10QM
+* code[unii].code = $UNII#WK2XYI10QM
 * name[gsrs].name = "IBUPROFENPIRIN"
 * name[gsrs].preferred = true
 

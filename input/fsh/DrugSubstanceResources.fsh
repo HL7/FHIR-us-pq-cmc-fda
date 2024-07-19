@@ -499,30 +499,33 @@ RuleSet: UniiAndUniProtCodes(cardinality)
 // lots of things derived from substanceDefinition use code
 // for unii and uniprot codes 
 * code {cardinality}..* MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "code.coding.system"
+  * ^slicing.rules = #open
+* code contains 
+  unii 0..1 and
+  uniProt 0..1
+* code[unii]
+  * ^short = "UNII"
   * ^definition = """
-  
-Implementation Note: the cardinality represents the business rule for unii, uniprot, or some other code being required"""
+    The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+    Example: 362O9ITL9D
+    Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+  """
   * code 1..1 MS
     * coding 1..1 MS
-      * ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "system"
-      * ^slicing.rules = #open
-    * coding contains
-        unii 0..1 and
-        uniProt 0..1
-    * coding[unii]
+      * system 1..1 MS
       * system = $UNII
-      * ^short = "UNII"
-      * ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
-Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
-"""
-    * coding[uniProt]
+* code[uniProt]
+  * ^short = "UniProt ID"
+  * ^definition = """
+    The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+    It is accessible at https://www.uniprot.org/
+  """
+  * code 1..1 MS
+    * coding 1..1 MS
+      * system 1..1 MS
       * system = $UNIPROT
-      * ^short = "UniProt ID"
-      * ^definition = """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
-It is accessible at https://www.uniprot.org/
-"""
 
 RuleSet: CountryOfOrigin
 * sourceMaterial.countryOfOrigin 0..1 MS 
