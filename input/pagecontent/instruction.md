@@ -1,9 +1,7 @@
 ###Understanding FHIR
 
 This implementation guide is based on the HL7 [FHIR](http://hl7.org/fhir/R5/index.html)<span style="text-decoration:underline;"> </span>
-
-![alt_text](images/image1.png "image_tooltip")
-[ ](http://hl7.org/fhir/R5/index.html)standard. It uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
+ It uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
 
     [FHIR overview](http://hl7.org/fhir/R4/overview.html)
 
@@ -31,14 +29,9 @@ FHIR defines the notion of [Must Support](http://hl7.org/fhir/R4/conformance-rul
 	
 	Developers implementing the Invariants will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
 
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image19.png "image_tooltip")
-.
-
+<p>
     This implementation guide defines profiles on several resources.  Implementations are expected to be conformant with these profiles to be conformant with this implementation guide.
-  </p>
+</p>
 
   <a name="conformance"> </a>
   <h4>Conformance and Must Support</h4>
@@ -51,15 +44,13 @@ FHIR defines the notion of [Must Support](http://hl7.org/fhir/R4/conformance-rul
 - When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements</li>
 - Where an element affects the display or validation of a Questionnaire and a system performs either or both of those operations, the behavior established by the value of the element SHALL be performed</li>
 
-
-
 ###  Diagrams and General Notes on Bundles
 
 Each of the Composition profiles is contained in a specified bundle of the document type. They each have a page under the eCTD Profiles tab. The example bundles are not specific to any particular product and should not be examined for any sense of chemical or biological science. All examples are fictitious but sometimes based on real chemical compounds. All sources were augmented with values required by this standard or altered with more current names or completely additional data to illustrate a profile feature. All attempts were made to produce realistic content and challenge formatting within XML. Some element examples have been added into the mix to demonstrate their syntax. The diagram below contains a legend for the Composition profile diagrams.
 
 <div>{%include legend.svg%}</div>
 
-For more information about the profiles found in any of the diagrams, look on the [Artifacts page](artifacts.html) for details about the specific requirements. 
+For more information about the profiles found in any of the diagrams, look on the [Artifacts page](artifacts.html) for details about the specific requirements.
 
 ### Referencing Bundled Resources
 

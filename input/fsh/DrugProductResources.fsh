@@ -104,6 +104,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtNum 1..1 MS and
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
+      TotWgtOper 0..1 MS and
       QualStd 1..* MS and
       Sterile 0..1 MS
 * property[OvrRelsProf].type MS
@@ -224,6 +225,15 @@ Example: International Units for Enzymes"""
 * property[TotWgtTxt].value[x] 1..1 MS
 * property[TotWgtTxt].value[x] only markdown
 
+* property[TotWgtOper].type MS
+* property[TotWgtOper].type ^short = "Product Total Weight Operator"
+* property[TotWgtOper].type ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
+Note: This is typically applicable to biologics.
+"""
+* property[TotWgtOper].type from pqcmc-product-characteristic
+* property[TotWgtOper].type = $NCIT#TotWgtOper "Total Weight Operator"
+* property[TotWgtOper].valueCodeableConcept 1..1 MS
+* property[TotWgtOper].valueCodeableConcept from $QTCompare
 
 * property[QualStd].type MS
 * property[QualStd].type ^short = "Product Quality Standard"

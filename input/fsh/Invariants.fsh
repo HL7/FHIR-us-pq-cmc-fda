@@ -133,25 +133,7 @@ Severity: #error
 // ---- Composition Invariants ----
 // checks if there is a composition which has a type
 // code for its respective section type.
-Invariant: cmc-32S23
-Description: "The composition must be EctdComposition32S23"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32S23'))).exists()"
-Severity: #error
 
-Invariant: cmc-32S10
-Description: "The composition must be EctdComposition32S10"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32S10'))).exists()"
-Severity: #error
-
-Invariant: cmc-32P10
-Description: "The composition must be EctdComposition32P10"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32P10'))).exists()"
-Severity: #error
-
-Invariant: cmc-SP4151
-Description: "The composition must be EctdCompositionSP4151"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code in ('32P51'|'32S41'|'32P40')))).exists()"
-Severity: #error
 
 
 Invariant: cmc-single-or-multistage

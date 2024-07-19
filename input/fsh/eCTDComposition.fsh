@@ -5,7 +5,6 @@ Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
-* obeys cmc-32P10
 * meta.profile MS  
 * identifier MS
 
@@ -16,6 +15,15 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
+* entry contains
+    Composition 1..1 
+* entry[Composition].resource only EctdComposition32P10
+// If you want to avoid warnings, you can list the other types of allowed resources too.
+// No need to indicate that composition is the first, as that's already enforced by a base invariant on Bundles of type 'document'
 
 Profile: CMCeCTDDocument32S10
 Parent: Bundle
@@ -23,7 +31,6 @@ Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
-* obeys cmc-32S10
 * meta.profile MS  
 * identifier MS
 
@@ -34,26 +41,36 @@ Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
-//* entry[0].resource only EctdComposition32S1
- 
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
+* entry contains
+    Composition 1..1 
+* entry[Composition].resource only EctdComposition32S10
+
 Profile: CMCeCTDDocument32S23
 Parent: Bundle
 Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
-* obeys cmc-32S23
 * meta.profile MS  
 * identifier MS
-
 * type MS
 * type = #document
 * type ^short = "document"
 * timestamp 1..1 MS
 * entry 1..* MS
-
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
+* entry contains
+    Composition 1..1 
+* entry[Composition].resource only EctdComposition32S23
 
 Profile: CMCeCTDDocumentSP4151
 Parent: Bundle
@@ -61,10 +78,9 @@ Id: cmc-ectd-document-sp4151
 Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
-* obeys cmc-SP4151
+
 * meta.profile MS  
 * identifier MS
-
 * type MS
 * type = #document
 * type ^short = "document"
@@ -72,6 +88,14 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry 1..* MS
 * entry.fullUrl 1..1 MS //each entry must have a fullUrl
 * entry.resource 1..1 MS // each entry must have a resource
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
+* entry contains
+    Composition 1..1 
+* entry[Composition].resource only EctdCompositionSP4151
+
 
 /*Bundles Stage 2-------------------------------------------------------------------------------------------*/
 
@@ -83,7 +107,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
 * meta.profile MS
 * identifier MS
-
 * type MS
 * type = #document
 * type ^short = "document"
@@ -96,14 +119,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
 * entry contains
-    Composition 1..1 and
-    SubstanceDefinition 1..* and
-    Organization 1..* and
-    DocumentReference 0..*
+    Composition 1..1 
 * entry[Composition].resource only EctdComposition32S3
-* entry[SubstanceDefinition].resource only DrugSubstanceCharacterisation
-* entry[Organization].resource only cmc-organization
-* entry[DocumentReference].resource only GraphicReference or StructureReference
+
 
 Profile: CMCeCTDDocument32P32
 Parent: Bundle
@@ -114,8 +132,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles 
 * . ^short = "CMC eCTD 32P32 Bundle"
 * meta.profile MS
 * identifier MS
-
-
 * type MS
 * type = #document
 * type ^short = "document"
@@ -127,8 +143,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles 
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
- Composition 1..1
-* entry[Composition].resource only ectd-composition-32p32
+    Composition 1..1 
+* entry[Composition].resource only EctdComposition32P32
 
 Profile: CMCeCTDDocument32P55
 Parent: Bundle
@@ -138,7 +154,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (
 * . ^short = "CMC eCTD 32P55 Bundle"
 * meta.profile MS
 * identifier MS
-
 * type MS
 * type = #document
 * type ^short = "document"
@@ -150,8 +165,8 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
- Composition 1..1
-* entry[Composition].resource only ectd-composition-32p55
+    Composition 1..1 
+* entry[Composition].resource only EctdComposition32P55
 
 /*Compositions Stage 1--------------------------------------------------------------------------------------*/
 
@@ -170,9 +185,7 @@ Description: "The fields needed to represent Quality Specifications for APIs, Dr
 * title 1..1 MS
 * section 1..1 MS
 * section.title 1..1 MS
-/*
-    SECTION SLICESProduct
-*/
+
 * section.entry MS
 * section.entry only Reference(QualitySpecification)
 // need check that Specification type in instance matches the seciton selected.

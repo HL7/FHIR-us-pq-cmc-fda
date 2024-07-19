@@ -45,7 +45,7 @@ node "DrugProductIngredient" as NNgred {
 node "MfgTestSiteOrganization" as NMFG { 
       object "**Parent:** Organization" as objDP {
                    **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
+      [[StructureDefinition-cmc-organization.html]]
          **ValueSets:**
         Testing Site and Organization Identifier Type Terminology
     }

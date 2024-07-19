@@ -25,7 +25,6 @@ The additional example illustrations below of drug products are included as an a
 
 <p style="text-align: center; font-weight: bold"> Example 3: Tablet with two coatings </p>
 
-
 Drug Product content includes information such as: the dosage form, routes of administration, a narrative description of the product, a schematic, the type of container and container closure used for the dosage form, quality standard and release profile of the dose unit, and the amount of each constituent (both active and inactive ingredients) contained in the drug product.
 
 Component content includes information such as: a component identifier, component type, and release profile of the component and the amount of each constituent (both active and inactive ingredients) contained in the component as well as the function of the constituent in the component.

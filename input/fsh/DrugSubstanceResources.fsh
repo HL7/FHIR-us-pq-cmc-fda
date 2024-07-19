@@ -1,15 +1,14 @@
 Extension: StrengthExtension
 Id:  strength-extension
 Title: "Strength Extension"
-Description: "Values required in Ingredient.substance.strength"
+Description: "Strength Type (for API)"
 * ^context[+].type = #element
 * ^context[=].expression = "Ingredient.substance.strength"
 * extension contains
     strengthType 1..1 MS and
-    contentPercent 1..1 MS and
-    strengthOperator 0..1 MS
+    contentPercent 1..1 MS
 * extension[strengthType].value[x] only CodeableConcept
-* extension[strengthType].value[x] from $QTCompare (required)
+* extension[strengthType].value[x] from PqcmcStrengthTypeTerminology (required)
 * extension[strengthType] ^short = "Strength Type (for API)"
 * extension[strengthType] ^definition = """A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
 Example: Mass, Activity
@@ -135,6 +134,11 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
 * substance.strength.concentrationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
 Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
+"""
+* substance.strength.concentrationQuantity.comparator 1..1 MS
+* substance.strength.concentrationQuantity.comparator ^short = "Drug Product Component Total Weight Operator"
+* substance.strength.concentrationQuantity.comparator ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
+Note: This is typically applicable to biologics.
 """
 * substance.strength.concentrationQuantity from PqcmcUnitsMeasureTerminology (required)
 * substance.strength.textConcentration 1..1 MS
