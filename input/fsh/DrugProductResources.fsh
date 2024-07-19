@@ -90,6 +90,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * obeys cmc-tablet-layer-count-required
 * obeys cmc-tablet-bead-count-required
 * obeys cmc-capsule-classification-required
+* obeys cmc-component-id-ref
 * meta.profile MS
 * identifier 0..1 MS
 * status 1..1 MS
@@ -259,7 +260,7 @@ Examples: USP/NF, EP, Company Standard
 
 // Product parts
 * component 1..* MS
-* component obeys cmc-ppidref-required
+// * component obeys cmc-ppidref-required
 * component.modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
 * component obeys cmc-amount-ratio-or-quantity
 * component.type 1..1 MS
@@ -443,12 +444,12 @@ RuleSet: ProductPartIdentifierProperty
 * type = $NCIT#PPiD "Product Part Identifier"
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
-* valueCodeableConcept.coding from CmcRelationshipTypesVS	
-* valueCodeableConcept.coding  ^short = "Product Part Role"
-* valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
-If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
-If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
-"""
+// * valueCodeableConcept.coding from CmcRelationshipTypesVS	
+// * valueCodeableConcept.coding  ^short = "Product Part Role"
+// * valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
+// If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
+// If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
+// """
 * valueCodeableConcept.text 1..1 MS
 * valueCodeableConcept.text ^short = "Product Part Identifier"
 * valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]

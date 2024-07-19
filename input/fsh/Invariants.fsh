@@ -68,15 +68,45 @@ implies (
 ))"
 Severity: #error
 
-Invariant: cmc-ppidref-required
-Description: "A PPiDref is required when the PPiD is designated a child."
-Expression: "property.where(
-        type.coding.exists(system = '' and code = 'PPiD') and    
-        value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-relationship-types' and code = 'child')
-    ).exists()
-    implies 
-        property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-product-characteristic' and code = 'PPiDref')).exists()"
+Invariant: cmc-component-id-ref
+Description: "If a PPiD ref is present, it must reference the PPiD of another component. It cannot reference itself"
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+  component.select(
+    property.where(
+      type.coding.exists(
+        system = %system and
+        code = 'PPiDref'
+      )
+    ).select(value)
+  ).all(
+    text in %context.component.select(
+      property.where(
+        type.coding.exists(
+          system = %system and
+          code = 'PPiD'
+        )
+      ).select(value.text)
+    )
+  ) and component.where(
+    property.where(
+      type.coding.exists(
+        system = %system and
+        code = 'PPiDref'
+      )
+    ).select(value.text) =
+    property.where(
+      type.coding.exists(
+        system = %system and
+        code = 'PPiD'
+      )
+    ).select(value.text)
+  ).exists().not()
+)"
 Severity: #error
+// Logic: get all the Ppidrefs. Each of them must exist in the set of all Ids.
+// afterwards check to make sure there are no components that refer to themselves
+
+
 
 //Invariant: cmc-identifer
 //Description: "A document must have an identifier with a system and a value"
