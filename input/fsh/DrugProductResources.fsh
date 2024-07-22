@@ -119,7 +119,6 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtNum 1..1 MS and
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
-      TotWgtOper 0..1 MS and
       QualStd 1..* MS and
       Sterile 0..1 MS
 * property[OvrRelsProf].type MS
@@ -217,8 +216,12 @@ Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 * property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
 * property[TotWgtNum].value[x] 1..1 MS
 * property[TotWgtNum].value[x] only Quantity
-* property[TotWgtNum].valueQuantity.code from PqcmcUnitsMeasureTerminology
-
+* property[TotWgtNum].valueQuantity from PqcmcUnitsMeasureTerminology
+* property[TotWgtNum].valueQuantity.comparator MS
+  * ^short = "Product Total Weight Operator"
+  * ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined]
+  Note: This is typically applicable to biologics.
+  """
 * property[TotWgtDen].type MS
 * property[TotWgtDen].type ^short = "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].type ^definition = """Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
@@ -227,7 +230,7 @@ Note: For solid oral dose forms, by definition this is 1
 * property[TotWgtDen].type from pqcmc-product-characteristic
 * property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].value[x] 1..1 MS
-* property[TotWgtDen].value[x] only Quantity
+* property[TotWgtDen].value[x] only SimpleQuantity
 * property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
 
 * property[TotWgtTxt].type MS
@@ -240,15 +243,6 @@ Example: International Units for Enzymes"""
 * property[TotWgtTxt].value[x] 1..1 MS
 * property[TotWgtTxt].value[x] only markdown
 
-* property[TotWgtOper].type MS
-* property[TotWgtOper].type ^short = "Product Total Weight Operator"
-* property[TotWgtOper].type ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
-Note: This is typically applicable to biologics.
-"""
-* property[TotWgtOper].type from pqcmc-product-characteristic
-* property[TotWgtOper].type = $NCIT#TotWgtOper "Total Weight Operator"
-* property[TotWgtOper].valueCodeableConcept 1..1 MS
-* property[TotWgtOper].valueCodeableConcept from $QTCompare
 
 * property[QualStd].type MS
 * property[QualStd].type ^short = "Product Quality Standard"
