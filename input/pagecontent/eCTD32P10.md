@@ -47,9 +47,8 @@ The domain concepts of Description and Composition of the Drug Product are repre
     * [Drug Product Component](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-component.html) (DrugProductComponent) profile on the [Ingredient](https://hl7.org/fhir/R5/ingredient.html) Resource
     * [Component Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-component-substance.html) (ComponentSubstance) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) Resource
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
-    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html)<span style="text-decoration:underline;"> Resource</span>
-
+    * [Basic Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
+    </span>
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
 

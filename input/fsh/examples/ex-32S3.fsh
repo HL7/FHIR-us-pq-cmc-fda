@@ -1,5 +1,5 @@
 Instance: 48beec35-843c-42f5-9251-7aa6fd693199
-InstanceOf: SponsorOrganization
+InstanceOf: CodedOrganization
 * name = "WunderWerke"
 * contact.address.line[0] = "Restful Rd"
 * contact.address.state = "CT"
@@ -17,12 +17,11 @@ InstanceOf: EctdComposition32S3
 * author = Reference(urn:uuid:48beec35-843c-42f5-9251-7aa6fd693199)
 * date = 2024-06-19T21:06:21.134Z
 * title = """Substance Characterization for EthylAcetate"""
-* section
+* section[Structure]
   * title = "Substance Characterization"
   * entry = Reference(urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327)
 Instance: 32532fe8-1bfb-4a0a-998d-9294742a9519
 InstanceOf: CMCeCTDDocument32S3
-* identifier.extension[version].valueString = "1.1.1"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:32532fe8-1bfb-4a0a-998d-9294742a9519"
 * timestamp = 2024-06-19T21:06:21.134Z
@@ -32,15 +31,14 @@ InstanceOf: CMCeCTDDocument32S3
 * entry[=].fullUrl = "urn:uuid:48beec35-843c-42f5-9251-7aa6fd693199"
 * entry[+].resource = 37a26b1a-ede3-4677-943e-72b513f945b7
 * entry[=].fullUrl = "urn:uuid:37a26b1a-ede3-4677-943e-72b513f945b7"
-* entry[+].resource = 4664ad30-26e8-4e59-9313-1c23bf11e0c1
-* entry[=].fullUrl = "urn:uuid:4664ad30-26e8-4e59-9313-1c23bf11e0c1"
+* entry[+].resource = 8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9
+* entry[=].fullUrl = "urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9"
 * entry[+].resource = 55f2bbea-1a2d-4240-aef0-bc1a76b39212
 * entry[=].fullUrl = "urn:uuid:55f2bbea-1a2d-4240-aef0-bc1a76b39212"
 * entry[+].resource = 3419cdae-4d99-4068-bfaa-8037550bf327
 * entry[=].fullUrl = "urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327"
 Instance: 37a26b1a-ede3-4677-943e-72b513f945b7
-InstanceOf: SupplierOrganization
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/supplier-organization"
+InstanceOf: CodedOrganization
 * name = "Vidinaid Site"
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.line[1] = "Building #2"
@@ -52,19 +50,6 @@ InstanceOf: SupplierOrganization
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
-Instance: 4664ad30-26e8-4e59-9313-1c23bf11e0c1
-InstanceOf: MfgTestSiteOrganization
-Title: "Example of MfgTestSiteOrganization profile on Organization"
-Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
-* identifier[DUNSNumber].value = "143265222"
-* identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
-* identifier[DUNSNumber].system = $DUNS
-* name = "Sams BioPharm"
-* contact.address.line[0] = "126 Broad Way"
-* contact.address.city = "Albany"
-* contact.address.country = "USA"
-* contact.address.postalCode = "10100"
-* contact.address.state = "NY"
 Instance: 55f2bbea-1a2d-4240-aef0-bc1a76b39212
 InstanceOf: ImpuritySubstance
 Description: "Impurity substance for DIOXANE"
@@ -80,7 +65,7 @@ Title: "Substance Characterization - EthylAcetate"
 Description: "Drug Substance Characterization for EthylAcetate"
 * identifier.value = "EthylAcetate"
 * classification[+] = $NCIT#C48807 "Chemical"
-* manufacturer = Reference(urn:uuid:4664ad30-26e8-4e59-9313-1c23bf11e0c1)
+* manufacturer = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
 * supplier = Reference(urn:uuid:37a26b1a-ede3-4677-943e-72b513f945b7)
 * characterization[+]
   * technique.text = "Elemental Analysis"
