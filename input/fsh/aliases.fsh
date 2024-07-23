@@ -8,6 +8,8 @@ Alias: $CAS = urn:oid:1.3.6.1.4.1.5193
 Alias: $DUNS = urn:oid:1.3.6.1.4.1.519.1
 Alias: $FEINumber = urn:oid:2.16.840.1.113883.4.82
 Alias: $ART = http://hl7.org/fhir/action-relationship-type
+Alias: $QTCompare = http://hl7.org/fhir/ValueSet/quantity-comparator 
+
 Alias: $FEI = https://www.fda.gov/drugs/drug-approvals-and-databases/drug-establishments-current-registration-site
 // Alias: $EMAIDMP = https://www.ema.europa.eu
 Alias: $Country = urn:iso:std:iso:3166
@@ -20,5 +22,4 @@ Alias: $DOCREF = http://hl7.org/fhir/document-reference-status
 Alias: $NameType = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types
 Alias: $ActRelationType = http://hl7.org/fhir/action-relationship-type
 Alias: $ActSelection = http://hl7.org/fhir/action-selection-behavior
-Alias: $TestCats = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-test-category-codes
 Alias: $PubStatus = http://hl7.org/fhir/publication-status#draft 
