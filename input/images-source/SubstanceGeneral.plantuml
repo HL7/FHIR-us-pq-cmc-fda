@@ -68,7 +68,7 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
 
     object "**Parent:** Organization" as objTS  {
       **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
+      [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
       Testing Site and Organization Identifier Type Terminology
     }

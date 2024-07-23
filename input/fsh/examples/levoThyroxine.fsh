@@ -143,23 +143,31 @@ Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:1bf43677-1c61-41dd-93c2-8ec7f327d0f1"
 * timestamp = 2023-12-15T22:19:47.022Z
-* entry[0].resource = 260f5aa3-23d2-4999-8e5f-70f247390ee5
-* entry[=].fullUrl = "urn:uuid:260f5aa3-23d2-4999-8e5f-70f247390ee5"
-* entry[+].resource = 21b6b724-507e-4cf4-a462-93334b98d166
-* entry[=].fullUrl = "urn:uuid:21b6b724-507e-4cf4-a462-93334b98d166"
-* entry[+].resource = 832f22b4-6f0c-41f8-9b7d-f26f55e9973c
-* entry[=].fullUrl = "urn:uuid:832f22b4-6f0c-41f8-9b7d-f26f55e9973c"
-* entry[+].resource = b69435a0-45c6-4d44-9fde-b354e17408d7
-* entry[=].fullUrl = "urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7"
+// Composition
+* entry[Composition].resource = 260f5aa3-23d2-4999-8e5f-70f247390ee5
+* entry[Composition].fullUrl = "urn:uuid:260f5aa3-23d2-4999-8e5f-70f247390ee5"
+// structureNomenclature
+* entry[Organization][+].resource = b69435a0-45c6-4d44-9fde-b354e17408d7
+* entry[Organization][=].fullUrl = "urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7"
+
+* entry[StructureDefinition][+].resource = 21b6b724-507e-4cf4-a462-93334b98d166
+* entry[StructureDefinition][=].fullUrl = "urn:uuid:21b6b724-507e-4cf4-a462-93334b98d166"
+// Polymorph
+* entry[StructureDefinition][+].resource = 832f22b4-6f0c-41f8-9b7d-f26f55e9973c
+* entry[StructureDefinition][=].fullUrl = "urn:uuid:832f22b4-6f0c-41f8-9b7d-f26f55e9973c"
 // organizations
-* entry[+].resource = e165f057-5eed-4e64-8328-4438fc88fb1b
-* entry[=].fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
-* entry[+].resource = e875ef93-a730-4c44-bead-53663ae7f501
-* entry[=].fullUrl = "urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501"
+* entry[Organization][+].resource = e165f057-5eed-4e64-8328-4438fc88fb1b
+* entry[Organization][=].fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
+* entry[Organization][+].resource = e875ef93-a730-4c44-bead-53663ae7f501
+* entry[Organization][=].fullUrl = "urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501"
 // documennts
-* entry[+].resource = 0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3
-* entry[=].fullUrl = "urn:uuid:0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3"
-* entry[+].resource = d94ad7ac-b935-432f-bc68-312b6b8dcca7
-* entry[=].fullUrl = "urn:uuid:d94ad7ac-b935-432f-bc68-312b6b8dcca7"
-* entry[+].resource = 22bd989e-8056-494f-9bc1-195d13428179
-* entry[=].fullUrl = "urn:uuid:22bd989e-8056-494f-9bc1-195d13428179"
+
+// graphic
+* entry[GraphicsFiles][+].resource = 0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3
+* entry[GraphicsFiles][=].fullUrl = "urn:uuid:0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3"
+// graphic
+* entry[GraphicsFiles][+].resource = d94ad7ac-b935-432f-bc68-312b6b8dcca7
+* entry[GraphicsFiles][=].fullUrl = "urn:uuid:d94ad7ac-b935-432f-bc68-312b6b8dcca7"
+// structure
+* entry[StructureFiles][+].resource = 22bd989e-8056-494f-9bc1-195d13428179
+* entry[StructureFiles][=].fullUrl = "urn:uuid:22bd989e-8056-494f-9bc1-195d13428179"

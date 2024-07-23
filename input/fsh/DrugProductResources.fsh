@@ -73,7 +73,8 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * obeys cmc-tablet-layer-count-required
 * obeys cmc-tablet-bead-count-required
 * obeys cmc-capsule-classification-required
-* meta.profile 1..1 MS
+* obeys cmc-component-id-ref
+* meta.profile MS
 * identifier 0..1 MS
 * status 1..1 MS
 * name MS
@@ -191,20 +192,17 @@ Example: Mass, Activity"""
 * property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
 * property[TotWgtNum].value[x] 1..1 MS
 * property[TotWgtNum].value[x] only Quantity
-* property[TotWgtNum].valueQuantity.value ^short = "Product Total Weight Numeric Numerator"
-* property[TotWgtNum].valueQuantity.value ^definition = """Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]
-Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
-* property[TotWgtNum].valueQuantity.code from PqcmcUnitsMeasureTerminology
-
+* property[TotWgtNum].valueQuantity from PqcmcUnitsMeasureTerminology
+* property[TotWgtNum].valueQuantity.comparator MS
+  * ^short = "Product Total Weight Operator"
+  * ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined]
+  Note: This is typically applicable to biologics.
+  """
 * property[TotWgtDen].type MS
 * property[TotWgtDen].type from pqcmc-product-characteristic
 * property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].value[x] 1..1 MS
-* property[TotWgtDen].value[x] only Quantity
-* property[TotWgtDen].valueQuantity.value ^short = "Product Total Weight Numeric Denominator"
-* property[TotWgtDen].valueQuantity.value ^definition = """Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
-Note: For solid oral dose forms, by definition this is 1
-"""
+* property[TotWgtDen].value[x] only SimpleQuantity
 * property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
 * property[TotWgtTxt].type MS
 * property[TotWgtTxt].type from pqcmc-product-characteristic
@@ -242,7 +240,9 @@ Examples: USP/NF, EP, Company Standard
     * ^short = "Sterile Product Indicator"
 // Product parts
 * component 1..* MS
-* component obeys cmc-ppidref-required
+// * component obeys cmc-ppidref-required
+* component.modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+* component obeys cmc-amount-ratio-or-quantity
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -391,12 +391,12 @@ RuleSet: ProductPartIdentifierProperty
 * type = $NCIT#PPiD "Product Part Identifier"
 * value[x] 1..1 MS
 * value[x] only CodeableConcept
-* valueCodeableConcept.coding from CmcRelationshipTypesVS	
-* valueCodeableConcept.coding  ^short = "Product Part Role"
-* valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
-If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
-If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
-"""
+// * valueCodeableConcept.coding from CmcRelationshipTypesVS	
+// * valueCodeableConcept.coding  ^short = "Product Part Role"
+// * valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
+// If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
+// If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
+// """
 * valueCodeableConcept.text 1..1 MS
 * valueCodeableConcept.text ^short = "Product Part Identifier"
 * valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]

@@ -41,7 +41,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
 
             object "**Parent:** Organization" as objDP {
                   **Reference:**
-                  [[StructureDefinition-mfg-test-site-organization.html]]
+                  [[StructureDefinition-cmc-organization.html]]
                   **ValueSets:**
                   Testing Site and Organization Identifier Type Terminology
             }

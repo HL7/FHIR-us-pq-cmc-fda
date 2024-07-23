@@ -1,10 +1,56 @@
+###Understanding FHIR
+
+This implementation guide is based on the HL7 [FHIR](http://hl7.org/fhir/R5/index.html)<span style="text-decoration:underline;"> </span>
+ It uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
+
+    [FHIR overview](http://hl7.org/fhir/R4/overview.html)
+
+    [Developer's introduction](http://hl7.org/fhir/R4/overview-dev.html)<span style="text-decoration:underline;"> </span>
+
+    [FHIR data types](http://hl7.org/fhir/R4/datatypes.html)<span style="text-decoration:underline;"> </span>
+
+    [Using codes](http://hl7.org/fhir/R4/terminologies.html)<span style="text-decoration:underline;"> </span>
+
+    [References between resources](http://hl7.org/fhir/R4/references.html)<span style="text-decoration:underline;"> </span>
+
+    [How to read resource & profile definitions](http://hl7.org/fhir/R4/formats.html)<span style="text-decoration:underline;"> </span>
+
+    [Base resource](http://hl7.org/fhir/R4/resource.html)<span style="text-decoration:underline;"> </span>
+
+    [RESTful operations](http://hl7.org/fhir/R4/http.html)<span style="text-decoration:underline;"> </span>
+
+    This IG only contains only bundles of the document type because the bundle instances will be delivered with a eCTD filing.  Any implementation adapting these for use in a FHIR server should read [RESTful operations](http://hl7.org/fhir/R4/http.html)
+
+#### Additional Considerations
+
+FHIR defines the notion of [Must Support](http://hl7.org/fhir/R4/conformance-rules.html#mustSupport).  To help establish conformance expectations for systems. For the purposes of _this_ implementation guide, "must support" shall be interpreted as follows:
+	Conformant systems SHALL be capable of sending and receiving the data element.
+	When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements.
+	
+	Developers implementing the Invariants will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
+
+<p>
+    This implementation guide defines profiles on several resources.  Implementations are expected to be conformant with these profiles to be conformant with this implementation guide.
+</p>
+
+  <a name="conformance"> </a>
+  <h4>Conformance and Must Support</h4>
+	<p>
+    FHIR defines the notion of <a href="{{site.data.fhir.path}}conformance-rules.html#mustSupport">Must Support</a> to help establish conformance expectations for systems.  The specific meaning of
+    "must support" is left to be defined in individual implementation guides.  For the purposes of <i>this</i> implementation guide, "must support" shall be interpreted as follows:
+  </p>
+
+- Conformant systems SHALL be capable of sending and receiving the data element</li>
+- When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements</li>
+- Where an element affects the display or validation of a Questionnaire and a system performs either or both of those operations, the behavior established by the value of the element SHALL be performed</li>
+
 ###  Diagrams and General Notes on Bundles
 
 Each of the Composition profiles is contained in a specified bundle of the document type. They each have a page under the eCTD Profiles tab. The example bundles are not specific to any particular product and should not be examined for any sense of chemical or biological science. All examples are fictitious but sometimes based on real chemical compounds. All sources were augmented with values required by this standard or altered with more current names or completely additional data to illustrate a profile feature. All attempts were made to produce realistic content and challenge formatting within XML. Some element examples have been added into the mix to demonstrate their syntax. The diagram below contains a legend for the Composition profile diagrams.
 
 <div>{%include legend.svg%}</div>
 
-For more information about the profiles found in any of the diagrams, look on the [Artifacts page](artifacts.html) for details about the specific requirements. 
+For more information about the profiles found in any of the diagrams, look on the [Artifacts page](artifacts.html) for details about the specific requirements.
 
 ### Referencing Bundled Resources
 

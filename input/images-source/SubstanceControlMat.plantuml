@@ -72,7 +72,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
 
         object "**Parent:** Organization" as objTS  {
             **Reference:**
-            [[StructureDefinition-mfg-test-site-organization.html]]
+            [[StructureDefinition-cmc-organization.html]]
             **ValueSets:**
             Organization Unique Identifier Type
         }

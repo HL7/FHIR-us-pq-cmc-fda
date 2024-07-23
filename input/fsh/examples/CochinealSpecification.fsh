@@ -7,7 +7,7 @@ Description: "The Excipient Raw representing Cochineal"
 * grade = $NCIT#C134009 "Company Standard"
 // * manufacturer = Reference(urn:uuid:310aa241-52ff-4e7b-b956-7642f75fc18b)
 // * supplier = Reference(urn:uuid:fa889ced-1b1d-4467-a37b-112dc354a59e)
-* code.code.coding[unii] = $UNII#TZ8Z31B35M
+* code[unii].code = $UNII#TZ8Z31B35M
 * name[gsrs].name = "Cochineal"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C48807 "Chemical"

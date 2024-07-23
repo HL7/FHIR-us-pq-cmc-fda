@@ -1201,3 +1201,49 @@ Description: "Terminology used to qualify the information pertaining to the manu
 * $NCIT#C154433 "Capsule Dose Form Category"
 * $NCIT#C154605 "Tablet Dosage Form Category"
 
+ValueSet: PqcmcGraphicalFileTypes
+Id: pqcmc-graphical-file-types
+Title: "Graphical File Types"
+Description: "The acceptable file types that can be used in graphical files"
+* ^experimental = false
+* urn:ietf:bcp:13#image/jpeg
+* urn:ietf:bcp:13#image/png
+* urn:ietf:bcp:13#image/svg
+* urn:ietf:bcp:13#image/gif
+* urn:ietf:bcp:13#image/tiff
+
+ValueSet: PqcmcAnalyticalInstrumentDataTypes
+Id: pqcmc-analytical-instrument-data-types
+Title: "Analytical Instrument Data File Types"
+Description: "The acceptable file types that can be used in Analytical Instrument Data Files"
+* ^experimental = false
+* urn:ietf:bcp:13#application/x-jcamp-dx "JCAMP Spectroscopic Data (.jdx, .dx)"
+
+ValueSet: PqcmcStructureDataTypes
+Id: pqcmc-structure-data-types
+Title: "Structure Data Types"
+Description: "The acceptable file types that can be used in Structure Data Files (MOL,SDF,INCHI,etc)"
+* ^experimental = false
+* urn:ietf:bcp:13#application/x-mdl-sdfile "Structure-Data File (.sdf)"
+* urn:ietf:bcp:13#application/x-mdl-molfile "Molfile (.mol)"
+* urn:ietf:bcp:13#application/x-cif "Crystallographic Information File (.cif)"
+* urn:ietf:bcp:13#application/x-inchi "IUPAC International Chemical Identifier (.inchi)"
+
+ValueSet: PqcmcPercentageUnits
+Id: pqcmc-percentage-units
+Title: "Percentage Units"
+Description: "Units of Measure terminologies that represent the concept of a percentage"
+* ^experimental = true
+* $NCIT#C48570 "%"
+* $NCIT#C48571 "%{VolumeToVolume}"
+* $NCIT#C67015 "mg%"
+* $NCIT#C48527 "%{WeightToVolume}"
+* $NCIT#C48528 "%{WeightToWeight}"
+
+ValueSet: PqcmcNonPercentageUnits
+Id: pqcmc-non-percentage-units
+Title: "Non-Percentage Units"
+Description: "Units of Measure terminologies that do not represent percentages"
+* ^experimental = true
+* include codes from valueset PqcmcUnitsMeasureTerminology
+* exclude codes from valueset PqcmcPercentageUnits

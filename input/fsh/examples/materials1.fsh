@@ -62,7 +62,7 @@ Usage: #example
 * classification = $NCIT#C3641132 "Structurally Diverse Substance"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
-* code.code.coding[unii] = $UNII#5C69YCD2YJ
+* code[unii].code = $UNII#5C69YCD2YJ
 * name[gsrs].name = "Carrageenan"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C14258 "Plant"
@@ -80,7 +80,7 @@ Usage: #example
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
-* code.code.coding[unii] = $UNII#XF417D3PSL
+* code[unii].code = $UNII#XF417D3PSL
 * name[gsrs].name = "ANHYDROUS CITRIC ACID"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C48807 "Chemical"
@@ -94,7 +94,7 @@ Usage: #example
 * classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
-* code.code.coding[unii] = $UNII#R16CO5Y76E
+* code[unii].code = $UNII#R16CO5Y76E
 * name[sub].name =  "ACETYLSALICYLIC ACID"
 * name[gsrs].name = "ASPIRIN"
 * name[gsrs].preferred = true
@@ -110,7 +110,7 @@ Usage: #example
 * grade = $NCIT#C176793 "BP"
 * manufacturer = Reference(urn:uuid:e99bddfa-c1b5-435b-bbe8-24816b4e23e5)
 * supplier = Reference(urn:uuid:d9e7c2f7-0f59-4645-bb6d-5a8dd2425049)
-* code.code.coding[unii] = $UNII#059QF0KO0R
+* code[unii].code = $UNII#059QF0KO0R
 * name[gsrs].name = "WATER"
 * name[gsrs].preferred = true
 * sourceMaterial.type = $NCIT#C48807 "Chemical"

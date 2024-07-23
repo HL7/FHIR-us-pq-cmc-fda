@@ -1,13 +1,12 @@
 Extension: StrengthExtension
 Id:  strength-extension
 Title: "Strength Extension"
-Description: "Values required in Ingredient.substance.strength"
+Description: "Strength Type (for API)"
 * ^context[+].type = #element
 * ^context[=].expression = "Ingredient.substance.strength"
 * extension contains
     strengthType 1..1 MS and
-    contentPercent 1..1 MS and
-    strengthOperator 0..1 MS
+    contentPercent 1..1 MS
 * extension[strengthType].value[x] only CodeableConcept
 * extension[strengthType].value[x] from PqcmcStrengthTypeTerminology (required)
 * extension[strengthType] ^short = "Strength Type (for API)"
@@ -170,10 +169,27 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength.presentationRatio.numerator.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
 Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
 """
-* substance.strength.presentationRatio.numerator.value 1..1 MS
-* substance.strength.presentationRatio.numerator.unit 1..1 MS
-* substance.strength.presentationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
-* substance.strength.presentationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
+* substance.strength.concentrationQuantity.comparator 1..1 MS
+* substance.strength.concentrationQuantity.comparator ^short = "Drug Product Component Total Weight Operator"
+* substance.strength.concentrationQuantity.comparator ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
+Note: This is typically applicable to biologics.
+"""
+* substance.strength.concentrationQuantity from PqcmcUnitsMeasureTerminology (required)
+* substance.strength.textConcentration 1..1 MS
+* substance.strength.textConcentration ^short = "Strength Textual"
+* substance.strength.textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+* substance.strength.concentrationRatio 0..1 MS
+* substance.strength.concentrationRatio
+  * numerator 1..1 MS
+  * numerator from PqcmcUnitsMeasureTerminology (required)
+    * value ^short = "Product Ingredient Amount Numeric Numerator"
+    * ^definition = """
+      Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
+    """
+  * denominator MS
+  * denominator from PqcmcUnitsMeasureTerminology (required)
+* substance.strength.concentrationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
+* substance.strength.concentrationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
 Example: mg"""
 * substance.strength.presentationRatio.numerator.code 1..1 MS
 * substance.strength.presentationRatio.numerator.code from  PqcmcUnitsMeasureTerminology (required)
@@ -536,31 +552,34 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 RuleSet: UniiAndUniProtCodes
 // lots of things derived from substanceDefinition use code
 // for unii and uniprot codes 
-* code 1..* MS
+* code {cardinality}..* MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "code.coding.system"
+  * ^slicing.rules = #open
+* code contains 
+  unii 0..1 and
+  uniProt 0..1
+* code[unii]
+  * ^short = "UNII"
   * ^definition = """
-  
-Implementation Note: the cardinality represents the business rule for unii, uniprot, or some other code being required"""
+    The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+    Example: 362O9ITL9D
+    Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+  """
   * code 1..1 MS
-    * coding
-      * ^slicing.discriminator.type = #value
-      * ^slicing.discriminator.path = "system"
-      * ^slicing.rules = #open
-    * coding contains
-        unii 0..1 and
-        uniProt 0..1
-    * coding[unii]
+    * coding 1..1 MS
+      * system 1..1 MS
       * system = $UNII
-      * ^short = "UNII"
-      * ^definition = """The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
-Example: 362O9ITL9D
-Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
-"""
-    * coding[uniProt]
+* code[uniProt]
+  * ^short = "UniProt ID"
+  * ^definition = """
+    The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
+    It is accessible at https://www.uniprot.org/
+  """
+  * code 1..1 MS
+    * coding 1..1 MS
+      * system 1..1 MS
       * system = $UNIPROT
-      * ^short = "UniProt ID"
-      * ^definition = """The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.
-It is accessible at https://www.uniprot.org/
-"""
 
 RuleSet: CountryOfOrigin
 * sourceMaterial.countryOfOrigin 0..1 MS 

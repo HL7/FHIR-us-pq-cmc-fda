@@ -6,9 +6,17 @@ Expression: "select(preferred = true).count() < 2"
 Severity: #error
 
 Invariant: cmc-when-unii-required
-Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
-Expression: "classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists()
-implies code.code.text.exists()"
+Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'."
+Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803') ).exists()
+implies code.where(
+  code.coding.system = 'http://fdasis.nlm.nih.gov'
+).exists())
+ and classification.coding.where(
+  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+  code = 'C17021'
+).exists() implies code.where(
+  code.coding.system = 'https://www.uniprot.org'
+).exists()"
 Severity: #error
 
 Invariant: cmc-name-isbt
@@ -68,15 +76,45 @@ implies (
 ))"
 Severity: #error
 
-Invariant: cmc-ppidref-required
-Description: "A PPiDref is required when the PPiD is designated a child."
-Expression: "property.where(
-        type.coding.exists(system = '' and code = 'PPiD') and    
-        value.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-relationship-types' and code = 'child')
-    ).exists()
-    implies 
-        property.where(type.coding.exists(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/pqcmc-product-characteristic' and code = 'PPiDref')).exists()"
+Invariant: cmc-component-id-ref
+Description: "If a PPiD ref is present, it must reference the PPiD of another component. It cannot reference itself"
+Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+  component.select(
+    property.where(
+      type.coding.exists(
+        system = %system and
+        code = 'PPiDref'
+      )
+    ).select(value)
+  ).all(
+    text in %context.component.select(
+      property.where(
+        type.coding.exists(
+          system = %system and
+          code = 'PPiD'
+        )
+      ).select(value.text)
+    )
+  ) and component.where(
+    property.where(
+      type.coding.exists(
+        system = %system and
+        code = 'PPiDref'
+      )
+    ).select(value.text) =
+    property.where(
+      type.coding.exists(
+        system = %system and
+        code = 'PPiD'
+      )
+    ).select(value.text)
+  ).exists().not()
+)"
 Severity: #error
+// Logic: get all the Ppidrefs. Each of them must exist in the set of all Ids.
+// afterwards check to make sure there are no components that refer to themselves
+
+
 
 Invariant: cmc-identifer
 Description: "A document must have an identifier with a system and a value"
@@ -120,25 +158,7 @@ Severity: #error
 // ---- Composition Invariants ----
 // checks if there is a composition which has a type
 // code for its respective section type.
-Invariant: cmc-32S23
-Description: "The composition must be EctdComposition32S23"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32S23'))).exists()"
-Severity: #error
 
-Invariant: cmc-32S10
-Description: "The composition must be EctdComposition32S10"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32S10'))).exists()"
-Severity: #error
-
-Invariant: cmc-32P10
-Description: "The composition must be EctdComposition32P10"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code='32P10'))).exists()"
-Severity: #error
-
-Invariant: cmc-SP4151
-Description: "The composition must be EctdCompositionSP4151"
-Expression: "entry.select(resource as Composition).where(type.exists(coding.exists(code in ('32P51'|'32S41'|'32P40')))).exists()"
-Severity: #error
 
 
 Invariant: cmc-single-or-multistage
