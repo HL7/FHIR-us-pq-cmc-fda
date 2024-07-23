@@ -6,9 +6,8 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 
 ### Implementer Instructions
 
-* A Quality Specification has one or more Tests.
-* Tests should be entered in the file in the order in which they should be displayed.
-* Each Test has one or more Stages.
+* A Quality Specification has one or more Tests. 
+* Each Test has one or more Stages. 
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
     * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/eCTD32S23.html) for Quality Specification for a Raw Material. 
@@ -20,13 +19,13 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 * Specification, Test, Acceptance Criteria
     * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
 * Drug Product
-    * [Routine Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
+    * [Routine Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-routine-drug-product.html) (RoutineDrugProduct) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
     * [Routine Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Excipient/Raw Material 
     * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-sponsor-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
     * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
@@ -42,199 +41,260 @@ Both the acceptable qualitative or text value and the acceptable quantitative or
 
 ##### Representing Acceptance Criteria (Numeric EQ)
    
-A numeric EQ acceptance criteria may or may not use an = sign in the text. Often it is stated as a single value. An examples original text: ```0.05 %```. The absence of a comparator in a Quantity datatype indicates equality.
+A numeric EQ acceptance criteria may or may not use an = sign in the text. Often it is stated as a single value. An examples original text: 0.05 %
 
-```xml
-<target>
-  <detailQuantity>
-    <value value="0.05"/>
-    <unit value="%"/>
-    <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-    <code value="C48570"/>
-  </detailQuantity>
-</target>
-```
-
+          
+       <detailQuantity>
+        <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+            <valueCodeableConcept>
+             <coding>
+              <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+              <code value="C48793"/>
+              <display value="EQ"/>
+             </coding>
+            </valueCodeableConcept>
+        </extension>
+        <value value="0.05"/>
+        <unit value="%"/>
+        <code value="%"/>
+       </detailQuantity>
+          
 ##### Representing Acceptance Criteria (Numeric LT)
-A numeric LT acceptance criteria may use LT in the text or the ```&lt;``` the escaped form of the character '<'. An example original text: ```&lt; 0.05 %```.
-
-```xml
-<target>
-  <detailQuantity>
-    <value value="0.05"/>
-    <comparator value="&lt;"/>
-    <unit value="%"/>
-    <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-    <code value="C48570"/>
-  </detailQuantity>
-</target>
-```
+A numeric LT acceptance criteria may use LT in the text or the &lt; the escaped form of the character. An example original text: &lt; 0.05 %
+           
+            <detailQuantity>
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                            <code value="C61585"/>
+                            <display value="LT (less than)"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <value value="0.05"/>
+                <unit value="%"/>
+                <code value="%"/>
+            </detailQuantity>
             
 ##### Representing Acceptance Criteria (Numeric MT)
-A numeric MT acceptance criteria may use MT in the text or the ```&gt;``` the escaped form of the character '>'. An example original text: ```&gt; 0.27 percent```.
+A numeric MT acceptance criteria may use MT in the text or the &gt; the escaped form of the character. An example original text: &gt; 0.27 percent
 
-```xml
-<target>
-  <detailQuantity>
-    <value value="0.27"/>
-    <comparator value="&gt;"/>
-    <unit value="%"/>
-    <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-    <code value="C48570"/>
-  </detailQuantity>
-</target>
-```
+            
+            <detailQuantity>
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                            <code value="C61584"/>
+                            <display value="MT (more than)"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <value value="0.27"/>
+                <unit value="%"/>
+                <code value="%"/>
+            </detailQuantity>
+            
 
 ##### Representing Acceptance Criteria (Numeric NLT)
-The Not Less Than (NLT) is used when the maximum limit includes the limit value as acceptable. In this example, each unit is NLT Q + 5% the value must be calculated to be structured. According to the method, Q = 85. The structured acceptance criterion must be transformed into a single value (85 + 4.25 = 89.25). The maximum acceptable value is 89.25%. NLT is represented by the ```>=``` (greater than or equal to) comparator, which is encoded as ```&gt;=```.
-
-```xml
-<target>
-  <detailQuantity>
-    <value value="89.25"/>
-    <comparator value="&gt;="/>
-    <unit value="%"/>
-    <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-    <code value="C48570"/>
-  </detailQuantity>
-</target>
-```  
+The Not Less Than (NLT) is used when the maximum limit includes the limit value as acceptable. In this example, each unit is NLT Q + 5% the value must be calculated to be structured. According to the method, Q = 85. The structured acceptance criterion must be transformed into a single value (85 + 4.25 = 89.25). The maximum acceptable value is 89.25%.
+    
+            <detailQuantity>
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                            <code value="C61583"/>
+                            <display value="NLT (not less than)"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <value value="89.25"/>
+                <unit value="%"/>
+                <code value="%"/>
+            </detailQuantity>          
 
 ##### Representing Acceptance Criteria (Numeric NMT)
     
-The Not More Than (NMT) is used when the minimum limit includes the limit value as acceptable. In this example, NMT 450 ppm at time of release, the phrase , “at time of release” is not included in the target. That information is captured in the Acceptance Criteria Usage as the coded value “Release”. NMT is represented by the ```<=``` (less than or equal to) comparator, which is encoded as ```&lt;=```.
-
-```xml
-<target>
-  <detailQuantity>
-    <value value="450"/>
-    <comparator value="&lt;="/>
-    <unit value="[ppm]"/>
-    <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-    <code value="C48523"/>
-  </detailQuantity>
-</target>
-```
+The Not More Than (NMT) is used when the minimum limit includes the limit value as acceptable. In this example, NMT 450 ppm at time of release, the phrase , “at time of release” is not included in the target. That information is captured in the Acceptance Criteria Usage as the coded value “Release”.
+            
+            <detailQuantity>
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                            <code value="C61586"/>
+                            <display value="NMT (not more than)"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <value value="450"/>
+                <unit value="[ppm]"/>
+                <code value="[ppm]"/>
+            </detailQuantity>
+            
 
 ##### Representing Acceptance Criteria (Numeric Range)
-
-The Numeric Range is used when the method specifies an upper and lower limit. Numeric Range is represented by a modifier extension that contains a 'low' and 'high' Quantity. The limits can be inclusive or exclusive limit values. To structure this Acceptance Criteria, carefully read the original text. Words such as “to” and “between” usually mean exclusive of the limit values. Original text with the interpretation codes is not ambiguous. Consult the method text when in doubt. Examples of original text: “85.0% to 115.0% Label Claim” - use ```&gt;``` and ```&lt;```; “between 85.0% and 115.0% Label Claim” - use ```&gt;``` and ```&lt;``` and “NLT 85.0% and NMT 115.0% Label Claim” - use ```&gt;=``` and ```&lt;=```.  
-
-```xml
-<target>
-  <modifierExtension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-target-range">
-    <extension url="low">
-      <valueQuantity>
-        <value value="85.0"/>
-        <comparator value="&gt;="/>
-        <unit value="%"/>
-        <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-        <code value="C48570"/>
-      </valueQuantity>
-    </extension>
-    <extension url="high">
-      <valueQuantity>
-        <value value="115.0"/>
-        <comparator value="&lt;="/>
-        <unit value="%"/>
-        <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-        <code value="C48570"/>
-      </valueQuantity>
-    </extension>
-  </modifierExtension>
-</target>
-```
+The Numeric Range is used when the method specifies an upper and lower limit. The limits can be inclusive or exclusive limit values. To structure this Acceptance Criteria, carefully read the original text. Words such as “to” and “between” usually mean exclusive of the limit values. Original text with the interpretation codes is not ambiguous. Consult the method text when in doubt. Examples of original text: “85.0% to 115.0% Label Claim” - use MT and LT; “between 85.0% and 115.0% Label Claim” - use MT and LT; and “NLT 85.0% and NMT 115.0% Label Claim” - use NLT and NMT.  
+    
+    <detailRange>
+        <low>
+            <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                        <code value="C61583"/>
+                        <display value="NLT (not less than)"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <value value="85"/>
+            <unit value="%"/>
+            <code value="%"/>
+        </low>
+        <high>
+            <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                        <code value="C61586"/>
+                        <display value="NMT (not more than)"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <value value="115"/>
+            <unit value="%"/>
+            <code value="%"/>
+        </high>
+    </detailRange>
     
 ##### Representing Acceptance Criteria (Text)
-Acceptance Criteria (Text) is strictly for qualitative constraints. These will typically have a descriptive phrase. An example original text is, “Clear, colorless solution free of visible particulates”. Because it is not numeric, the relative interpretation codes do not apply.
-
-```xml       
-<target>
-  <detailString value="Clear, colorless solution free of visible particulates"/>
-</target>
-```
+Acceptance Criteria (Text) is strictly for qualitative constraints. These will typically have a descriptive phrase. An example original text is, “Clear, colorless solution free of visible particulates”. Because it is not numeric, the relative interpretation codes do not apply. Always code the pq-interpretation-code-extension as “Not Applicable”.
+             
+            <detailString>
+                <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+                            <code value="C48660"/>
+                            <display value="Not Applicable"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+            </detailString>
+            
 ##### Representing Replicate Number (Integer)
 When the number of replicates is specified in the test, enter it as an integer.  The integer has no unit and is simply a count.   
+        An example original text: n=10
 
-An example original text: n=10
-```xml
-<target>
-  <detailInteger value="10"/>
-</target>
-```
+    <detailInteger value="10">
+    </detailInteger>
+
 #### Report only Acceptance Criteria
-If the analytic procedure only requires that the results be reported, use a text result
+If the analytic procedure only requires that the results be reported, use the interpretation code “EQ” with a text result.
 
-```xml
-<goal id="b843d27a-3f07-4ea2-a670-05d16db3320a">
-  <description>
-    <text value="Record result"/>
-  </description>
-  <addresses>
-    <coding>
-      <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-      <code value="C134030"/>
-      <display value="Stability"/>
-    </coding>
-  </addresses>
-  <target>
-    <detailString value="As Reported"/>
-  </target>
-</goal>
-```
+
+        <goal id="b843d27a-3f07-4ea2-a670-05d16db3320a">
+          <description>
+            <text value="Record result"/>
+          </description>
+          <addresses>
+            <coding>
+              <system value="http://example.org/NCIt"/>
+              <code value="C134030"/>
+              <display value="Stability"/>
+            </coding>
+          </addresses>
+          <target>
+            <detailCodeableConcept>
+              <coding>
+                <system value="http://example.org/NCIt"/>
+                <code value="C48793"/>
+                <display value="EQ"/>
+              </coding>
+              <text value="As Reported"/>
+            </detailCodeableConcept>
+          </target>
+        </goal>
+
 
 #### Complex Acceptance Criteria
 Acceptace Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses.  When this occurs, the modeling in the goal backbone element requries multiple targets.  Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%" becomes three targets: Average of 24 units, units less than Q – 15%, and units less than Q – 25%.  Each has a detailQuantity to express the acceptable amount. 
 
-```xml
-<goal id="1f5530b9-5d21-46ef-80f3-1ae6121c88f9">
-  <description>
-    <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"/>
-  </description>
-  <addresses>
-    <coding>
-      <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-      <code value="C134029"/>
-      <display value="Release"/>
-    </coding>
-  </addresses>
-  <target>
-    <measure>
-      <text value="Average of 24 units">
-    </measure>
-    <detailQuantity>
-      <value value="80"/>
-      <comparator value="&gt;="/>
-      <unit value="%"/>
-      <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-      <code value="C48570"/>
-    </detailQuantity>
-  </target>
-  <target>
-    <measure>
-      <text value="NMT 2 units less than Q – 15%"/>
-    </measure>
-    <detailQuantity>
-      <value value="2"/>
-      <comparator value="&lt;="/>
-      <unit value="[Amb'a'1'U]"/>
-      <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-      <code value="C92953"/>
-    </detailQuantity>
-  </target>
-  <target>
-    <measure>
-      <text value="no units less than Q – 25%"/>
-    </measure>
-    <detailQuantity>
-      <value value="0"/>
-      <unit value="[Amb'a'1'U]"/>
-      <system value="http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy"/>
-      <code value="C92953"/>
-    </detailQuantity>
-  </target>
-</goal>
-```
+
+          <goal id="1f5530b9-5d21-46ef-80f3-1ae6121c88f9">
+             <description>
+               <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"/>
+             </description>
+             <addresses>
+               <coding>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C134029"/>
+                 <display value="Release"/>
+               </coding>
+             </addresses>
+             <target>
+               <measure>
+                 <text value="Average of 24 units"/>
+               </measure>
+               <detailQuantity>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                   <valueCodeableConcept>
+                     <coding>
+                       <system value="http://example.org/NCIt"/>
+                       <code value="C61583"/>
+                       <display value="NLT (not less than)"/>
+                     </coding>
+                   </valueCodeableConcept>
+                 </extension>
+                 <value value="80"/>
+                 <unit value="percent"/>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C48570"/>
+               </detailQuantity>
+             </target>
+             <target>
+               <measure>
+                 <text value="units less than Q – 15%"/>
+               </measure>
+               <detailQuantity>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                   <valueCodeableConcept>
+                     <coding>
+                       <system value="http://example.org/NCIt"/>
+                       <code value="C61583"/>
+                       <display value="NLT (not less than)"/>
+                     </coding>
+                   </valueCodeableConcept>
+                 </extension>
+                 <value value="2"/>
+                 <unit value="amb a 1 units"/>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C92953"/>
+               </detailQuantity>
+             </target>
+             <target>
+               <measure>
+                 <text value="units less than Q – 25%"/>
+               </measure>
+               <detailQuantity>
+                 <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-interpretation-code-extension">
+                   <valueCodeableConcept>
+                     <coding>
+                       <system value="http://example.org/NCIt"/>
+                       <code value="C61585"/>
+                       <display value="LT (less than)"/>
+                     </coding>
+                   </valueCodeableConcept>
+                 </extension>
+                 <value value="0"/>
+                 <unit value="amb a 1 units"/>
+                 <system value="http://example.org/NCIt"/>
+                 <code value="C92953"/>
+               </detailQuantity>
+             </target>
+           </goal>
 
  
 #### Special Cases for Method Representation

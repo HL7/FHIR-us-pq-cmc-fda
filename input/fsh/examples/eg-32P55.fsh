@@ -5,13 +5,10 @@ Usage: #example
 * identifier.value = "DCM"
 * classification = $NCIT#C176815 "Residual Solvent"
 * structure.technique.text = "Leftover Solvent"
-* structure
-  * representation[structureData][+]
-    * type.coding = $NCIT#C54683 "InChI File (small molecule)"
-    * representation = """YMWUJEATGCHHMB-UHFFFAOYSA-N"""
-  * representation[structureData][+]
-    * type.coding = $NCIT#C54684 "SMILES"
-    * representation = """ClCCl"""
+* structure.representation[+].type.coding = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[=].representation = """YMWUJEATGCHHMB-UHFFFAOYSA-N"""
+* structure.representation[+].type.coding = $NCIT#C54684 "SMILES"
+* structure.representation[=].representation = """ClCCl"""
 * code.code = $UNII#588X2YUY0A
 * name[sub].name = "DICHLOROMETHANE"
 * name[sub].preferred = true
@@ -23,12 +20,10 @@ Usage: #example
 * identifier.value = "hydroxyApatite"
 * classification = $NCIT#C176816 "Degradation Product"
 * structure.technique.text = "formed from dicalcium phosphate degradation"
-* structure.representation[structureData][+]
-  * type.coding = $NCIT#C54683 "InChI File (small molecule)"
-  * representation = """XZFUZCHOJLQYHV-UHFFFAOYSA-M"""
-* structure.representation[structureData][+]
-  * type.coding = $NCIT#C54684 "SMILES"
-  * representation = """[OH-].[Ca++].[Ca++].[Ca++].[Ca++].[Ca++].[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O"""
+* structure.representation[+].type.coding = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[=].representation = """XZFUZCHOJLQYHV-UHFFFAOYSA-M"""
+* structure.representation[+].type.coding = $NCIT#C54684 "SMILES"
+* structure.representation[=].representation = """[OH-].[Ca++].[Ca++].[Ca++].[Ca++].[Ca++].[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O.[O-]P([O-])([O-])=O"""
 * code.code = $UNII#91D9GV0Z28
 * name[gsrs].name = "TRIBASIC CALCIUM PHOSPHATE"
 * name[gsrs].preferred = true
@@ -47,10 +42,9 @@ Usage: #example
 * name[NonProprietary].type.text = "Non-Proprietary"
 * impurity[+].reference = Reference(urn:uuid:58ae52aa-c81e-415a-8791-e67a3195290d)
 * impurity[+].reference = Reference(urn:uuid:ffa30c0b-8031-436a-87f1-635b3bbe5989)
-* route = $NCIT#C38288 "ORAL"
 
 Instance: 98effc99-db2b-428d-89aa-0ce426e02788
-InstanceOf: CodedOrganization
+InstanceOf: SponsorOrganization
 Description: "Sponsor example for eCTD SP4151"
 Usage: #example
 
@@ -79,6 +73,7 @@ Instance: 9e8f2d16-66b1-47ec-878d-f50ae021985b
 InstanceOf: CMCeCTDDocument32P55
 Description: "FHIR document bundle with the CMC eCTD 32P55 profile for a Drug Product"
 Usage: #example
+* identifier.extension[version].valueString = "1.1.1"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:2b738e27-de1f-4f63-8d91-c8860089d2a1"
 * timestamp = 2024-04-24T01:12:07.108Z

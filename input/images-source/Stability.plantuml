@@ -208,7 +208,7 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
 
               object "**Parent:** Organization" as objAu {
                      **Reference:**
-                     [[StructureDefinition-cmc-organization.html]]
+                     [[StructureDefinition-cmc-sponsor-organization.html]]
                      **ValueSets:**
                      Testing Site and Organization Identifier Type Terminology
               }

@@ -1,7 +1,7 @@
 Instance: b69435a0-45c6-4d44-9fde-b354e17408d7
-InstanceOf: CodedOrganization
+InstanceOf: SponsorOrganization
 Title: "Sponsor of API"
-Description: "CodedOrganization - Large Life"
+Description: "SponsorOrganization - Large Life"
 Usage: #example 
 
 * name = "Large Life"
@@ -16,9 +16,9 @@ Usage: #example
 * identifier[DUNSNumber].system = $DUNS
 
 Instance: e165f057-5eed-4e64-8328-4438fc88fb1b
-InstanceOf: CodedOrganization
+InstanceOf: SupplierOrganization
 Title: "Drug Manufacturing Site - Vandechemie"
-Description: "Example of Manufacturing site using the CodedOrganization profile - Vandechemie"
+Description: "Example of Manufacturing site using the MfgTestSiteOrganization profile - Vandechemie"
 Usage: #example 
 * name = "Vandechemie"
 * contact.address[+].text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
@@ -31,7 +31,7 @@ Usage: #example
 * identifier[DUNSNumber].system = $DUNS
 
 Instance: e875ef93-a730-4c44-bead-53663ae7f501
-InstanceOf: CodedOrganization
+InstanceOf: MfgTestSiteOrganization
 Title: "East-West Manufacturing"
 Description: "Manufacture of Chemicals"
 Usage: #example 
@@ -52,7 +52,7 @@ Usage: #example
 * contact.address.line[1] = "Building #2"
 
 Instance: 0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3
-InstanceOf:  GraphicReference
+InstanceOf:  Base64DocumentReference
 Title: "Base64 Document Reference - Monosodium_D-thyroxine_hydrate.png"
 Description: "Monosodium D-thyroxine hydrate.png"
 Usage: #example           
@@ -67,17 +67,17 @@ Description: "Polymorphic Form - DextroThyroxine"
 Usage: #example 
 * identifier.value = "DextroThyroxine"
 * structure.molecularFormula = "C15H10I4NO4.Na.H2O"
-* structure.representation[structureData][+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
-* structure.representation[structureData][=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[structureData][+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
-* structure.representation[structureData][=].type = $NCIT#C54684 "SMILES"
-* structure.representation[graphic][+].document = Reference(urn:uuid:0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3)
+* structure.representation[+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
+* structure.representation[=].type = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
+* structure.representation[=].type = $NCIT#C54684 "SMILES"
+* structure.representation[+].document = Reference(urn:uuid:0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3)
 * code.code = $UNII#0H00N2AHSP
 * name[gsrs].name = "DEXTROTHYROXINE SODIUM"
 * name[gsrs].preferred = true
 
 Instance: d94ad7ac-b935-432f-bc68-312b6b8dcca7
-InstanceOf:  GraphicReference
+InstanceOf:  Base64DocumentReference
 Title: "Base64 Document Reference - Levothyroid.png"
 Description: "Base 64 Document - png file"    
 Usage: #example      
@@ -86,11 +86,11 @@ Usage: #example
 * content.attachment.title = "Levothyroid.png"
 
 Instance: 22bd989e-8056-494f-9bc1-195d13428179
-InstanceOf:  StructureReference
+InstanceOf:  Base64DocumentReference
 Title: "Base64 Document Reference - L-thyroxine-3D-structure-CT1000583834.sdf"
 Description: "An attached SDfile.  The ASCII file content is attached in base64." 
 Usage: #example       
-* content.attachment.contentType = urn:ietf:bcp:13#application/x-mdl-sdfile
+* content.attachment.contentType = urn:ietf:bcp:13#application/octet-stream
 * content.attachment.data = """Q1QxMDAwNTgzODM0CgoKIDM1IDM2ICAwICAwICAwICAwICAwICAwICAwICAwOTk5IFYyMDAwCiAgIC0wLjAxNjcgICAgMS4zODM3ICAgIDAuMDA5NiBDICAgMCAgMCAgMCAgMCAgMAogICAgMC4wMDIxICAgLTAuMDA0MSAgICAwLjAwMjAgQyAgIDAgIDAgIDAgIDAgIDAKICAgIDEuMTc3MiAgICAyLjA5MTMgICAgMC4wMDIxIEMgICAwICAwICAwICAwICAwCiAgIC0xLjIwMjAgICAgMi4wNDg0ICAgIDAuMDE4OSBPICAgMCAgMCAgMCAgMCAgMAogICAgMS4yMDg5ICAgLTAuNjc3NCAgIC0wLjAxMzEgQyAgIDAgIDAgIDAgIDAgIDAKICAgLTEuNzk3MiAgIC0xLjA3NzEgICAgMC4wMTQxIEkgICAwICAwICAwICAwICAwCiAgICAyLjM4MTAgICAgMS40MTI4ICAgLTAuMDEzMSBDICAgMCAgMCAgMCAgMCAgMAogICAgMS4xNTQ1ICAgIDQuMTg2MiAgICAwLjAxMjggSSAgIDAgIDAgIDAgIDAgIDAKICAgLTEuNzUzMCAgICAyLjM1NDEgICAgMS4yMjM3IEMgICAwICAwICAwICAwICAwCiAgICAyLjM5NjcgICAgMC4wMzAyICAgLTAuMDIwMiBDICAgMCAgMCAgMCAgMCAgMAogICAtMi45NjIwICAgIDMuMDMyMCAgICAxLjI4MTQgQyAgIDAgIDAgIDAgIDAgIDAKICAgLTEuMTA5MSAgICAxLjk4MzEgICAgMi4zOTUwIEMgICAwICAwICAwICAwICAwCiAgICAzLjcxMTEgICAtMC43MDY5ICAgLTAuMDM2MiBDICAgMCAgMCAgMCAgMCAgMAogICAtMy41MjIzICAgIDMuMzQyMyAgICAyLjUwNTkgQyAgIDAgIDAgIDAgIDAgIDAKICAgLTEuNjY5NSAgICAyLjI5MjkgICAgMy42MTk1IEMgICAwICAwICAwICAwICAwCiAgICA0LjE0MjcgICAtMC45NDg2ICAgLTEuNDg0MCBDICAgMCAgMCAgMCAgMCAgMAogICAtMi44NzU3ICAgIDIuOTc1OSAgICAzLjY3NzQgQyAgIDAgIDAgIDAgIDAgIDAKICAgLTUuMzQ3NyAgICA0LjM2NjYgICAgMi41OTMxIEkgICAwICAwICAwICAwICAwCiAgIC0wLjY5NzcgICAgMS43MzE0ICAgIDUuMzg4NSBJICAgMCAgMCAgMCAgMCAgMAogICAgNS41MTMxICAgLTEuNTc1MiAgIC0xLjUwMTggQyAgIDAgIDAgIDAgIDAgIDAKICAgIDMuMTgzNyAgIC0xLjg0OTggICAtMi4xMzY5IE4gICAwICAwICAwICAwICAwCiAgIC0zLjQyNjkgICAgMy4yODE3ICAgIDQuODgyNSBPICAgMCAgMCAgMCAgMCAgMAogICAgNS42MzA0ICAgLTIuNzY3MSAgIC0xLjY2MTcgTyAgIDAgIDAgIDAgIDAgIDAKICAgIDYuNjAzNCAgIC0wLjgwOTIgICAtMS4zMzk5IE8gICAwICAwICAwICAwICAwCiAgICAxLjIyNDEgICAtMS43NTcyICAgLTAuMDE5MSBIICAgMCAgMCAgMCAgMCAgMAogICAgMy4zMTA0ICAgIDEuOTYyOSAgIC0wLjAxOTAgSCAgIDAgIDAgIDAgIDAgIDAKICAgLTMuNDY1MSAgICAzLjMxNzUgICAgMC4zNjk0IEggICAwICAwICAwICAwICAwCiAgIC0wLjE2OTkgICAgMS40NTE3ICAgIDIuMzQ5OSBIICAgMCAgMCAgMCAgMCAgMAogICAgNC40NjgwICAgLTAuMTExMSAgICAwLjQ3MzkgSCAgIDAgIDAgIDAgIDAgIDAKICAgIDMuNTk3MyAgIC0xLjY2MzYgICAgMC40NzM1IEggICAwICAwICAwICAwICAwCiAgICA0LjE3MDQgICAgMC4wMDExICAgLTIuMDE4MyBIICAgMCAgMCAgMCAgMCAgMAogICAgMy40MTA2ICAgLTEuOTc0MSAgIC0zLjExMjIgSCAgIDAgIDAgIDAgIDAgIDAKICAgIDMuMTM5NiAgIC0yLjczNzggICAtMS42NTk5IEggICAwICAwICAwICAwICAwCiAgIC00LjAxODcgICAgMi41OTk4ICAgIDUuMjI4NyBIICAgMCAgMCAgMCAgMCAgMAogICAgNy40NjA3ICAgLTEuMjU2MiAgIC0xLjM1ODcgSCAgIDAgIDAgIDAgIDAgIDAKICAxICAyICAxICAwICAwICAwICAwCiAgMSAgMyAgMiAgMCAgMCAgMCAgMAogIDEgIDQgIDEgIDAgIDAgIDAgIDAKICAyICA1ICAyICAwICAwICAwICAwCiAgMiAgNiAgMSAgMCAgMCAgMCAgMAogIDMgIDcgIDEgIDAgIDAgIDAgIDAKICAzICA4ICAxICAwICAwICAwICAwCiAgNCAgOSAgMSAgMCAgMCAgMCAgMAogIDUgMTAgIDEgIDAgIDAgIDAgIDAKICA1IDI1ICAxICAwICAwICAwICAwCiAgNyAxMCAgMiAgMCAgMCAgMCAgMAogIDcgMjYgIDEgIDAgIDAgIDAgIDAKICA5IDExICAxICAwICAwICAwICAwCiAgOSAxMiAgMiAgMCAgMCAgMCAgMAogMTAgMTMgIDEgIDAgIDAgIDAgIDAKIDExIDE0ICAyICAwICAwICAwICAwCiAxMSAyNyAgMSAgMCAgMCAgMCAgMAogMTIgMTUgIDEgIDAgIDAgIDAgIDAKIDEyIDI4ICAxICAwICAwICAwICAwCiAxMyAxNiAgMSAgMCAgMCAgMCAgMAogMTMgMjkgIDEgIDAgIDAgIDAgIDAKIDEzIDMwICAxICAwICAwICAwICAwCiAxNCAxNyAgMSAgMCAgMCAgMCAgMAogMTQgMTggIDEgIDAgIDAgIDAgIDAKIDE1IDE3ICAyICAwICAwICAwICAwCiAxNSAxOSAgMSAgMCAgMCAgMCAgMAogMTYgMjAgIDEgIDAgIDAgIDAgIDAKIDE2IDIxICAxICAwICAwICAwICAwCiAxNiAzMSAgMSAgMCAgMCAgMCAgMAogMTcgMjIgIDEgIDAgIDAgIDAgIDAKIDIwIDIzICAyICAwICAwICAwICAwCiAyMCAyNCAgMSAgMCAgMCAgMCAgMAogMjEgMzIgIDEgIDAgIDAgIDAgIDAKIDIxIDMzICAxICAwICAwICAwICAwCiAyMiAzNCAgMSAgMCAgMCAgMCAgMAogMjQgMzUgIDEgIDAgIDAgIDAgIDAKTSAgRU5ECiQkJCQK"""
 * content.attachment.title = "L-thyroxine-3D-structure-CT1000583834.sdf"
 
@@ -107,12 +107,12 @@ Usage: #example
 * supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
 * code.code = $UNII#054I36CPMN
 * structure.technique.text = """NMR Spectroscopy"""
-* structure.representation[structureData][+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
-* structure.representation[structureData][=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[structureData][+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
-* structure.representation[structureData][=].type = $NCIT#C54684 "SMILES"
-* structure.representation[graphic][+].document = Reference(urn:uuid:d94ad7ac-b935-432f-bc68-312b6b8dcca7)
-* structure.representation[structureData][+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
+* structure.representation[+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
+* structure.representation[=].type = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
+* structure.representation[=].type = $NCIT#C54684 "SMILES"
+* structure.representation[+].document = Reference(urn:uuid:d94ad7ac-b935-432f-bc68-312b6b8dcca7)
+* structure.representation[+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
 * name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[gsrs].preferred = true
 * name[iupac].name = "sodium;(2S)-2-amino-3-[4-(4-hydroxy-3,5-diiodophenoxy)-3,5-diiodophenyl]propanoate"
@@ -139,6 +139,7 @@ InstanceOf: CMCeCTDDocument32S10
 Title: "Bundle for 3.2.S.1"
 Description: "Bundle containng nomenclature and molecular structure"
 Usage: #example 
+* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:1bf43677-1c61-41dd-93c2-8ec7f327d0f1"
 * timestamp = 2023-12-15T22:19:47.022Z
