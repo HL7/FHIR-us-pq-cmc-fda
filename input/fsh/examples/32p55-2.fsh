@@ -42,6 +42,7 @@ Usage: #example
 
 * name = "WunderChem GmbH"
 * contact.address
+  * type = #postal
   * line[+] = "Deutsche Strasse 123"
   * line[+] = "Building 2"
   * city = "Munich"

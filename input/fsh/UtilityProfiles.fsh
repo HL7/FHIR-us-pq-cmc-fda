@@ -68,18 +68,15 @@ Description: "A profile that represents the document or diagram in base64."
 Extension: AditionalInformationExtension
 Id: pq-additional-info-extension
 Title: "Additional Information"
-Description: "Any additional information"
+Description: "Any additional information that that the submitter wishes to provide to the FDA that is not structured in the IG. The content of the information submitted via Additional Information may be analyzed at some point in the future, to identify candidate elements for structuring in future iterations of the IG."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * ^context[+].type = #element
-* ^context[=].expression = "ManufacturedItemDefinition.component.property.valueMarkdown"
-* ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"
 * ^context[+].type = #element
-* ^context[=].expression = "PlanDefinition"
-* ^context[+].type = #element "PlanDefinition.goal"
-* ^context[=].expression = "ResearchStudy"
-* ^context[+].type = #element
-* ^context[=].expression = "DiagnosticReport"
+* ^context[=].expression =  "PlanDefinition.goal"
+//* ^context[=].expression = "ResearchStudy"
+//* ^context[+].type = #element
+//* ^context[=].expression = "DiagnosticReport"
 * value[x] only markdown
 

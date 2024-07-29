@@ -15,7 +15,7 @@ package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
     }  
 
  
-node "SponsorOrganization" as NSO { 
+node "CodedOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **Reference:**
       [[StructureDefinition-cmc-organization.html]]
@@ -41,14 +41,6 @@ node "DrugProductIngredient" as NNgred {
   Code system PQCMC Comp Section Types
     }
      
-}
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-                   **Reference:**
-      [[StructureDefinition-cmc-organization.html]]
-         **ValueSets:**
-        Testing Site and Organization Identifier Type Terminology
-    }
 }
 
 node "RoutineSubstanceDefinition" as NNS { 
@@ -85,12 +77,12 @@ node "BatchFormula" as NN {
  obj3 *-- objExs2     
 }
 
-NN -[#darkred]-> NMFG
+NN -[#darkred]-> NSO
 NN -[#darkred]-> NNgred
 NN2 -[#darkred]-> NN
 N1 -[#darkred]-> NN2
 N1 -[#darkred]-> NSO        
-NNS -[#darkred]-> NMFG
+NNS -[#darkred]-> NSO
 NNgred -[#darkred]-> NNS
 
 }

@@ -15,11 +15,11 @@ In addition to identifying the raw material by name (e.g., GSRS Preferred, Gener
 The domain concepts of Substance Control of Materials are represented in FHIR in this IG. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR Resources. Detail study of the profiles and each of the resources will be needed for developing a deeper understanding of this Substance Control of Materials FHIR Bundle Profile. Concepts that are key to this domain include the following:
 
 * Raw Material
-    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Excipient Drug Substance](StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Quality Specification
-    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
-* Related Organizations
-    * [Basic Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
+    * [Quality Specification](StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
+    * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
+
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 

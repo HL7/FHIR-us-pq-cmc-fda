@@ -47,7 +47,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
         }
     }
 
-    node "SponsorOrganization" as NSO {
+    node "CodedOrganization" as NSO {
 
         object "**Parent:** Organization" as objAu {
             **Reference:**

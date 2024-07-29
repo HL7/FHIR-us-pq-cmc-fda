@@ -54,7 +54,7 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       eCTD sections Value Set
     }
   }
-  node "SponsorOrganization" as NMSpon {
+  node "CodedOrganization" as NMSpon {
 
     object "**Parent:** Organization" as objDP {
       **Reference:**

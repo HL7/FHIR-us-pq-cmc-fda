@@ -61,15 +61,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
     obj2 *-- objQSEx
   }
 
-  node "MfgTestSiteOrganization" as NMFG {
 
-    object "**Parent:** Organization" as objDP {
-      **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
-    }
-  }
   node "DrugSubstanceBatch" as NNS {
 
     object "**Parent:** Substance" as obj4 {
@@ -147,7 +139,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       Code system PQCMC Comp Section Types
     }
   }
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
@@ -163,13 +155,13 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
   N1 -[#darkred]-> NSO
   CH -[#green]-> NNS
   CH -[#green]-> NN
-  NNS -[#darkred]-> NMFG
+  NNS -[#darkred]-> NSO
   NN -[#darkred]-> NMFG
   N2 -[#darkred]-> CH
-  N2 -[#darkred]-> NMFG
+  N2 -[#darkred]-> NSO
   N2 -[#darkred]-> NNOBS
-  NNOBS -[#darkred]-> NMFG
+  NNOBS -[#darkred]-> NSO
   NNOBS -[#darkred]-> NNstage
-  NNstage -[#darkred]-> NMFG
+  NNstage -[#darkred]-> NSO
 }
 @enduml

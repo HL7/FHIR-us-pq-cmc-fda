@@ -73,7 +73,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   Code system PQCMC Comp Section Types
             }
       }
-      node "SponsorOrganization" as NSO {
+      node "CodedOrganization" as NSO {
 
             object "**Parent:** Organization" as objAu {
                   **Reference:**

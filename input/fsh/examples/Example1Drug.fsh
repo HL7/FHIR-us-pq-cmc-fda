@@ -14,6 +14,8 @@ Usage: #example
   * value = "1234567"
 * name = "Sams BioPharm"
   //PqAddress
+* contact.address
+  * type = #postal
 * contact.address.line = "2752 Main Street"
 * contact.address.city = "Princeton"
 * contact.address.state = "NJ"
@@ -268,6 +270,8 @@ Description: "A company sponsor of a drug application"
 Usage: #example 
 
 * name = "Wunderwerke"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "123 Scenic Road"
 * contact.address.state = "CT"
 * contact.address.city = "Bridgeport"

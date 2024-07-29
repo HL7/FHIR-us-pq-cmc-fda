@@ -55,6 +55,8 @@ Description: "Sponsor example for eCTD SP4151"
 Usage: #example
 
 * name = "connectathon_Site"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "Restful Rd"
 * contact.address.state = "CT"
 * contact.address.city = "Danbury"

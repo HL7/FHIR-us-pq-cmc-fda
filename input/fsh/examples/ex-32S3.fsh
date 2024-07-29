@@ -1,6 +1,8 @@
 Instance: 48beec35-843c-42f5-9251-7aa6fd693199
 InstanceOf: CodedOrganization
 * name = "WunderWerke"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "Restful Rd"
 * contact.address.state = "CT"
 * contact.address.city = "Danbury"
@@ -40,6 +42,8 @@ InstanceOf: CMCeCTDDocument32S3
 Instance: 37a26b1a-ede3-4677-943e-72b513f945b7
 InstanceOf: CodedOrganization
 * name = "Vidinaid Site"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.line[1] = "Building #2"
 * contact.address.state = "ME"

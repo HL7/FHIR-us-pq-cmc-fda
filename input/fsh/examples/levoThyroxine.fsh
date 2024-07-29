@@ -5,6 +5,8 @@ Description: "CodedOrganization - Large Life"
 Usage: #example 
 
 * name = "Large Life"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "123 Broad Way"
 * contact.address.state = "NY"
 * contact.address.city = "New York"
@@ -21,11 +23,13 @@ Title: "Drug Manufacturing Site - Vandechemie"
 Description: "Example of Manufacturing site using the CodedOrganization profile - Vandechemie"
 Usage: #example 
 * name = "Vandechemie"
-* contact.address[+].text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
-* contact.address[=].line = "Ruzettelaan 39234"
-* contact.address[=].city = "Blankenberge"
-* contact.address[=].postalCode = "8370"
-* contact.address[=].country = "BEL"
+* contact.address
+  * type = #postal
+* contact.address.text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
+* contact.address.line = "Ruzettelaan 39234"
+* contact.address.city = "Blankenberge"
+* contact.address.postalCode = "8370"
+* contact.address.country = "BEL"
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -43,6 +47,8 @@ Usage: #example
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
 * name = "East-West Manufacturing"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.state = "ME"
 * contact.address.city = "Bangor"

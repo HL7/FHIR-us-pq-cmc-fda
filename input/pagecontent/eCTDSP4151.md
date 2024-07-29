@@ -11,23 +11,23 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
-    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/eCTD32S23.html) for Quality Specification for a Raw Material. 
+    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. 
 
 ### Representation in FHIR
 
 The domain concepts of Quality Specification are represented in FHIR in this IG. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR Resources. Detail study of the profiles and each of the resources will be needed for developing a deeper understanding of this Quality Specification FHIR Bundle Profile. Concepts that are key to this domain include the following:
 
 * Specification, Test, Acceptance Criteria
-    * [Quality Specification](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
+    * [Quality Specification](StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
 * Drug Product
-    * [Routine Drug Product](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
+    * [Routine Drug Product](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
-    * [Routine Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Routine Drug Substance](StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Excipient/Raw Material 
-    * [Excipient Drug Substance](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
+    * [Excipient Drug Substance](StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
 * Related Organizations
-    * [Sponsor Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-cmc-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
-    * [Manufacturing and/or Test Site Organization](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Sponsor Organization](StructureDefinition-cmc-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Manufacturing and/or Test Site Organization](StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 

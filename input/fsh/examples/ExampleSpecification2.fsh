@@ -8,6 +8,8 @@ Usage: #example
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
 * name = "Mega Chem Supply"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "350 W Main Street"
 * contact.address.state = "NY"
 * contact.address.city = "Rochester"

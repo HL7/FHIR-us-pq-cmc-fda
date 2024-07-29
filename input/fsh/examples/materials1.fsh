@@ -7,6 +7,8 @@ Usage: #example
 * identifier[DUNSNumber].value = "143265625"
 * identifier[DUNSNumber].system = $DUNS
 * name = "J. Jones Research"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "123 Broad Way"
 * contact.address.state = "NY"
 * contact.address.city = "New York"
@@ -26,6 +28,8 @@ Usage: #example
 * identifier[FEINumber].value = "6913973"
 * identifier[FEINumber].system = $FEINumber
 * name = "Manufacturing Site (J. Jones Research)"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "444 Grant Street"
 * contact.address.city = "Bedford"
 * contact.address.state = "NY"
@@ -45,6 +49,8 @@ Usage: #example
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
 * name = "Vidinaid"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.line[1] = "Building #2"
 * contact.address.city = "Bangor"

@@ -389,60 +389,62 @@ Examples: Filler, Surfactant"""
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
 * component.property[RelsProf].type MS
+* component.property[RelsProf].type ^short = "Product Part Release Profile"
+* component.property[RelsProf].type ^definition = """The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]"""
 * component.property[RelsProf].type = $NCIT#RelsProf "Product Part Release Profile"
 * component.property[RelsProf].value[x] 1..1 MS
 * component.property[RelsProf].value[x] only CodeableConcept
-* component.property[RelsProf].valueCodeableConcept ^short = "Product Part Release Profile"
-* component.property[RelsProf].valueCodeableConcept ^definition = """The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]"""
 * component.property[RelsProf].valueCodeableConcept.coding from PqcmcReleaseProfile
 
 * component.property[RelsMech].type = $NCIT#RelsMech "Product Part Release Mechanism"
+* component.property[RelsMech].type ^short = "Product Part Release Mechanism"
+* component.property[RelsMech].type ^definition = """The method employed to realize the specified part release profile. [Source: SME Defined] Example: matrix or reservoir"""
 * component.property[RelsMech].value[x] 1..1 MS
 * component.property[RelsMech].value[x] only CodeableConcept
-* component.property[RelsMech].valueCodeableConcept ^short = "Product Part Release Mechanism"
-* component.property[RelsMech].valueCodeableConcept ^definition = """The method employed to realize the specified part release profile. [Source: SME Defined] Example: matrix or reservoir"""
-
 * component.property[RelsMech].valueCodeableConcept.coding from PqcmcReleaseMechanism
 
 * component.property[CoatPurpose].type MS
+* component.property[CoatPurpose].type ^short = "Coating Product Part Purpose"
+* component.property[CoatPurpose].type ^definition = """The reason the coating or covering was added. [Source: SME Defined]
+Examples: rate-controlling, color, release type, protective, taste masking.
+"""
 * component.property[CoatPurpose].type = $NCIT#CoatPurpose "Coating Product Part Purpose"
 * component.property[CoatPurpose].value[x] 1..1 MS
 * component.property[CoatPurpose].value[x] only CodeableConcept
-* component.property[CoatPurpose].valueCodeableConcept ^short = "Coating Product Part Purpose"
-* component.property[CoatPurpose].valueCodeableConcept ^definition = """
-The reason the coating or covering was added. [Source: SME Defined]
-Examples: rate-controlling, color, release type, protective, taste masking.
-"""
+
 * component.property[CoatPurpose].valueCodeableConcept.coding from PqcmcCoatingPurpose
 
 * component.property[Color].type MS
+* component.property[Color].type ^short = "Product Part Color Description"
+* component.property[Color].type ^definition = """The hue or the tint of the drug product part. [Source: SME Defined]
+Examples: yellow, pink, blue, pale yellow."""
 * component.property[Color].type = $NCIT#Color "Product Part Color Description"
 * component.property[Color].value[x] 1..1 MS
 * component.property[Color].value[x] only CodeableConcept
 * component.property[Color].valueCodeableConcept.text 1..1 MS
-* component.property[Color].valueCodeableConcept.text ^short = "Product Part Color Description"
-* component.property[Color].valueCodeableConcept.text ^definition = """The hue or the tint of the drug product part. [Source: SME Defined]
-Examples: yellow, pink, blue, pale yellow."""
 
 * component.property[ContPercent].type MS
+* component.property[ContPercent].type ^short = "Product Part Content Percent"
+* component.property[ContPercent].type ^definition = """The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
+Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
+"""
 * component.property[ContPercent].type = $NCIT#ContPercent "Product Part Content Percent"
 * component.property[ContPercent].value[x] 1..1 MS
 * component.property[ContPercent].value[x] only Quantity
-* component.property[ContPercent].valueQuantity ^short = "Product Part Content Percent"
-* component.property[ContPercent].valueQuantity ^definition = """The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
-Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
-"""
+
 * component.property[AddInfo] insert AdditionalInformationProperty
+
 * component.component 0..* MS
 
 RuleSet: AdditionalInformationProperty
 * type MS
-* type = $NCIT#AddInfo "Product Part Additional Information"
-* value[x] only markdown
-* valueMarkdown ^short = "Product Part Additional Information"
-* valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
+* type ^short = "Product Part Additional Information"
+* type ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
 Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
+* type = $NCIT#AddInfo "Product Part Additional Information"
+* value[x] only markdown
+
 RuleSet: ProductPartIdentifierProperty
 * type MS
 * type = $NCIT#PPiD "Product Part Identifier"

@@ -1,7 +1,7 @@
 CodeSystem: NCItDummy
 Id: cmc-ncit-dummy
 Title: "PQ-CMC-FDA Temporary Codes"
-Description: "Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.  Some but not all are defined in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). Note: Codes that exist in NCIt at time of ballot begin with 'C'."
+Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide. Some, but not all, are defined in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). Note: Codes that exist in NCIt at time of ballot begin with 'C'."""
 * ^caseSensitive = true
 * ^experimental = true
 * ^hierarchyMeaning = #is-a
