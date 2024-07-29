@@ -3,6 +3,7 @@ Parent: Attachment
 Id: pqcmc-attachment
 Title: "PQCMC Attachment"
 Description: "Any attached file in a submission is required to have a type, data, and a title"
+* ^abstract = true
 * contentType 1..1 MS
 * data 1..1 MS
 * title 1..1 MS 
@@ -11,13 +12,53 @@ Description: "Any attached file in a submission is required to have a type, data
 Used for the following: Analytical Instrument Data File Type, Impurity Analysis Graphic, Impurity Analytical Instrument Data File, Impurity Chemical Structure Data File, and Substance Structure Graphic.
 """
 
+Profile: GraphicAttachment
+Parent: PqcmcAttachment
+Id: pqcmc-graphic-attachment
+Title: "Analysis Graphic"
+Description: "Any attached file that contains a graphical representation"
+* ^abstract = true
+* contentType from PqcmcGraphicalFileTypes (required)
+
+Profile: AnalyticalInstrumentData
+Parent: PqcmcAttachment
+Id: pqcmc-analytical-intstrument-data
+Title: "Analytical Instrument Data"
+Description: "Any attached file that contains analytical instrument data"
+* ^abstract = true
+* contentType from PqcmcAnalyticalInstrumentDataTypes (required)
+
+Profile: StructureDataAttachment
+Parent: PqcmcAttachment
+Id: pqcmc-structure-data
+Title: "Structure Data"
+Description: "Any attached file that contains structure data (e.g. SDFiles, MolFiles, INCHI)"
+* ^abstract = true
+* contentType from PqcmcStructureDataTypes (required)
+
+Profile: GraphicReference
+Parent: Base64DocumentReference
+Id: pqcmc-graphic-reference
+Title: "Graphic Reference"
+Description: "A Document Reference to any attachment tha contains a graphical representation"
+* ^abstract = true
+* content.attachment only GraphicAttachment
+
+Profile: StructureReference
+Parent: Base64DocumentReference
+Id: pqcmc-structure-reference
+Title: "Structure Data Reference"
+Description: "A Document Reference to any attachment that contains structure data"
+* ^abstract = true
+* content.attachment only StructureDataAttachment
+
 Profile: Base64DocumentReference
 Parent: DocumentReference
 Id: cmc-document-reference
 Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64."
 
-* meta.profile 1..1 MS
+* meta.profile MS
 * status = #current
 * content MS
 * content.attachment MS
@@ -33,23 +74,12 @@ Description: "Any additional information"
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.property.valueMarkdown"
 * ^context[+].type = #element
-* ^context[=].expression = "Ingredient"
-* ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"
 * ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition"
+* ^context[+].type = #element "PlanDefinition.goal"
 * ^context[=].expression = "ResearchStudy"
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only markdown
 
-Extension: IgVersion
-Id: pq-ig-version
-Title: "Profile IG Version"
-Description: "The IG version number of the bundle profile to which the instance conforms.  Additionally, all the profiles of the resources in the bundle must conform to this version."
-* ^context.type = #element
-* ^context.expression = "Bundle.identifier"
-
-* value[x] 1..1
-* value[x] only string
-* . ^short = "IG Version"
-* . ^definition = "The Implementation Guide version number of the bundle profile to which the instance conforms.  Additionally, all the profiles of the resources in the bundle must conform to this version."

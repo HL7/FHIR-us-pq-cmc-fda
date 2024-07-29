@@ -18,12 +18,12 @@ Description: "The Excipient Raw representing Cochineal"
 Instance: 37bf5cc0-33bf-478b-b84e-ccb35143ef6e
 InstanceOf: QualitySpecification
 Description: "Quality Specification for Cochineal"
-* meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-quality-specification"
-* extension[specificationType].valueCodeableConcept = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
+
+* extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "CochinealSpecification"
 * version = "1.0"
 * title = "Cochineal specification Example"
-* type.coding[ApprovalStatus] = $NCIT#C48660 "Not Applicable"
+* type.coding[SpecType] = $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 * status = #active
 * subjectReference = Reference(urn:uuid:278736ef-2ddf-49e4-895c-3a9f34db36cf)
 * date = 2023-12-01
@@ -33,24 +33,27 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "White solid"
+    * detailString = "White solid"
 * goal[+]
   * id = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
   * description.text = "IR spectrum conforms to reference standard"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailCodeableConcept.text = "IR spectrum conforms to reference standard"
+    * detailString = "IR spectrum conforms to reference standard"
 * goal[+]
   * id = "1f476689-f440-4a77-9e9c-0615af3571eb"
   * description.text = "pH 3.4-4.3"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailRange.low.extension[interpretationCodeLow].valueCodeableConcept = $NCIT#C61583 "NLT (not less than)"
-    * detailRange.low = 3.4 $NCIT#C45997 "[pH]"
-    * detailRange.high.extension[interpretationCodeHigh].valueCodeableConcept = $NCIT#C61586 "NMT (not more than)"
-    * detailRange.high = 4.3 $NCIT#C45997 "[pH]"
+    * modifierExtension[targetRange]
+      * extension[low]
+        * valueQuantity = 3.4 $NCIT#C45997 "[pH]"
+          * comparator = #>=
+      * extension[high]
+        * valueQuantity = 4.3 $NCIT#C45997 "[pH]"
+          * comparator = #<=
 * goal[+]
   * id = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
   * description.text = "residue <= 0.21%"
@@ -124,7 +127,6 @@ Description: "Quality Specification for Cochineal"
     * detailQuantity = 0.20 $NCIT#C48528 "%{WeightToWeight}"
       * comparator = #<=
 * action[+]
-  * extension[testOrder].valueDecimal = 1
   * linkId = "b9359ce8-73f3-45c5-9674-98d850053aa2"
   * prefix = "Single Stage"
   * title = "Appearance"
@@ -132,14 +134,13 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC6 "Organoleptic"
+  * reason[=].coding = $NCIT#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valueInteger = 2
-  * reason[=].coding = $TestCats#SUBC20 "Description/Appearance"
+  * reason[=].coding = $NCIT#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
   * goalId[+] = "e900181a-876c-4ed6-ac96-d5a73c3d6767"
 * action[+]
-  * extension[testOrder].valueDecimal = 2
   * linkId = "443ed163-7a7b-4d48-9462-be5532158411"
   * prefix = "Single Stage"
   * title = "Identification"
@@ -147,12 +148,11 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC7 "Identification"
+  * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
   * goalId[+] = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
 * action[+]
-  * extension[testOrder].valueDecimal = 3
   * linkId = "058193ee-dd86-4c63-9f47-7b0608abbca4"
   * prefix = "Single Stage"
   * title = "pH"
@@ -160,12 +160,11 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC23 "pH"
+  * reason[=].coding = $NCIT#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "1f476689-f440-4a77-9e9c-0615af3571eb"
 * action[+]
-  * extension[testOrder].valueDecimal = 4
   * linkId = "940c8db4-9ed1-416e-84ec-9f9e143be8ab"
   * prefix = "Single Stage"
   * title = "Residue on Ignition"
@@ -173,12 +172,11 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC38 "Residue on Ignition"
+  * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
 * action[+]
-  * extension[testOrder].valueDecimal = 5
   * linkId = "9fca0a37-6d10-4273-a966-c026ab6eb07d"
   * prefix = "Single Stage"
   * title = "Impurities"
@@ -186,7 +184,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $TestCats#TC53 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-104"
   * goalId[+] = "fc230a97-fd1a-4017-8603-822c5430a217"
@@ -195,20 +193,16 @@ Description: "Quality Specification for Cochineal"
   * goalId[+] = "be7abaa1-0769-4560-af76-326e07d1df9a"
   * goalId[+] = "cfdd469d-020b-4047-946f-f513d58f007f"
   * action[+]
-    * extension[stageOrder].valueDecimal = 5.1
     * title = "Unidentified Impurities"
     * action[+]
-      * extension[testOrder].valueDecimal = 5.11
       * title = "2.2"
       * prefix = "RRT"
       * goalId[+] = "c5eea380-416f-4d19-a21e-c021f3c7c543"
     * action[+]
-      * extension[testOrder].valueDecimal = 5.12
       * title = "2.4"
       * prefix = "RRT"
       * goalId[+] = "41e19fa2-f568-443e-8bc1-6b0a6dca9d0c"
     * action[+]
-      * extension[testOrder].valueDecimal = 5.13
       * title = "3.41"
       * prefix = "RRT"
       * goalId[+] = "e493cb3d-45b6-4463-b9b6-e588c51e032c"
@@ -228,7 +222,6 @@ Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
 Instance: 7cdbb042-9275-4599-a1fe-08877846bf94
 InstanceOf: CMCeCTDDocumentSP4151
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient"
-* identifier.extension[version].valueString = "0.1.24"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:813b4312-8b6d-42cc-9b8c-8bb6463388cc"
 * timestamp = 2024-01-01T19:42:35.255Z
