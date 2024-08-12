@@ -74,7 +74,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 10 $NCIT#C68742 "colony forming units"
+    * detailQuantity = 10 $UCUM#[CFU] "colony forming unit"
       * comparator = #<=
 * goal[+]
   * id = "442983b5-bbc3-4534-9f1b-5ae5e4c531c1"
@@ -82,7 +82,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 100 $NCIT#C68742 "colony forming units"
+    * detailQuantity = 100 $UCUM#[CFU] "colony forming unit"
       * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"

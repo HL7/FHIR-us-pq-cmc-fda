@@ -1,37 +1,38 @@
 // take out until substance stability
-Extension: ContainerClosureExtension
-Id: pq-container-closure-extension
-Title: "Container Closure"
-Description: "The packaging information including a brief description of the components, the assembled packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials."
-* . ^short = "Container Closure System Information"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicinalProductDefinition"
-* ^context[+].type = #element
-* ^context[=].expression = "SubstanceDefinition"
-* extension contains
-    containerType 1..1 MS and
-    closureType 1..1 MS and  
-    description 1..1 MS and
-    depiction 0..* MS 
-* extension[containerType].value[x] 1..1
-* extension[containerType].value[x] only CodeableConcept
-* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
-* extension[containerType].value[x] ^short = "Container Type"
-* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
-* extension[closureType].value[x] 1..1
-* extension[closureType].value[x] only CodeableConcept
-* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
-* extension[closureType].value[x] ^short = "Closure Type"
-* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
-* extension[description].value[x] 1..1
-* extension[description].value[x] only markdown
-* extension[description].value[x] ^short = "Container Closure System Description"
-* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
-Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
-Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
-"""
-* extension[depiction].value[x] 1..1
-* extension[depiction].value[x] only Reference(GraphicReference)
+//Extension: ContainerClosureExtension
+//Id: pq-container-closure-extension
+//Title: "Container Closure"
+//Description: "The packaging information including a brief description of the components, the assembled packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials."
+//* . ^short = "Container Closure System Information"
+//* ^context[+].type = #element
+//* ^context[=].expression = "MedicinalProductDefinition"
+//* ^context[+].type = #element
+//* ^context[=].expression = "SubstanceDefinition"
+//* extension contains
+//    containerType 1..1 MS and
+//   closureType 1..1 MS and  
+//   description 1..1 MS and
+//   depiction 0..//* MS 
+//* extension[containerType].value[x] 1..1
+//* extension[containerType].value[x] only CodeableConcept
+//* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
+//* extension[containerType].value[x] ^short = "Container Type"
+//* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+//* extension[closureType].value[x] 1..1
+//* extension[closureType].value[x] only CodeableConcept
+//* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
+//* extension[closureType].value[x] ^short = "Closure Type"
+//* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+//* extension[description].value[x] 1..1
+//* extension[description].value[x] only markdown
+//* extension[description].value[x] ^short = "Container Closure System Description"
+//* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+//Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+//Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+//"""
+//* extension[depiction].value[x] 1..1
+//* extension[depiction].value[x] only Reference(GraphicReference)
+
 
 Profile: ContainerClosure
 Parent: PackagedProductDefinition
@@ -55,7 +56,7 @@ Note: This includes primary packaging components and secondary packaging compone
     * coding ^slicing.rules = #closed
     * coding contains 
       ContainerType 1..1 MS and
-      ClosureType 0..1 MS
+      ClosureType 1..1 MS
     * coding[ContainerType] from PqcmcContainerTypeTerminology (required)
       * ^short =  "Container Type"
       * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
@@ -76,8 +77,13 @@ Description: "represent an amount as a ratio in ManufacturedItemDefinition"
 * valueRatio
   * numerator 1..1 MS
     * ^short = "Amount Numeric Numerator"
+      * value 1..1 MS
   * denominator 1..1 MS
+  * denominator from PqcmcPercentageUnits (required)
     * ^short = "Amount Numeric Denominator"
+      * value 1..1 MS
+      * unit 1..1 MS
+      * code 1..1 MS 
 
 Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
@@ -216,7 +222,7 @@ Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 * property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
 * property[TotWgtNum].value[x] 1..1 MS
 * property[TotWgtNum].value[x] only Quantity
-* property[TotWgtNum].valueQuantity from PqcmcUnitsMeasureTerminology
+* property[TotWgtNum].valueQuantity from PqcmcUnitsMeasureTerminology (extensible)
 * property[TotWgtNum].valueQuantity.comparator MS
   * ^short = "Product Total Weight Operator"
   * ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined]
@@ -231,7 +237,7 @@ Note: For solid oral dose forms, by definition this is 1
 * property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].value[x] 1..1 MS
 * property[TotWgtDen].value[x] only SimpleQuantity
-* property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
+* property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology (extensible)
 
 * property[TotWgtTxt].type MS
 * property[TotWgtTxt].type ^short = "Product Total Weight Textual"
@@ -302,13 +308,14 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
         The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
         Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
       """
-    * unit MS
+    * unit 1..1 MS
       * ^short = "Product Part Total Weight Numeric Numerator UOM"
       * ^definition = """
         The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
         Example: mg
       """
-    * code from PqcmcPercentageUnits
+    * unit from PqcmcPercentageUnits
+    * code 1..1 MS 
 
 // ingredient
 * component.constituent 1..* MS
@@ -333,11 +340,13 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
         Note: a single part of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
         Note: Amount can also be referred to as potency in biologics and other products.
       """
-    * unit MS
+    * unit 1..1 MS
       * ^short = "Product Part Ingredient Amount Numeric UOM"
       * ^definition = """
         The labeled unit of measure for the content of an ingredient, expressed quantitatively per product part. [Source: Adapted for NCI EVS C117055]
       """
+
+    * code 1..1 MS
     * code from PqcmcNonPercentageUnits
   * amount[percent]
     * value 1..1 MS
@@ -486,18 +495,7 @@ Description: "Includes the essential identifying information of the drug product
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 
-Profile: DrugProductContainerClosure
-Parent: MedicinalProductDefinition
-Id: pqcmc-drugproduct-container-closure
-Title: "Drug Product Container Closure"
-Description: "Description and coding of the container closure system. Profile of Drug Product profile."
 
-* meta.profile MS
-* .extension contains pq-container-closure-extension named containerClosure 1..* MS
-* identifier 0..1 
-* identifier ^short = "optional user designated identifier"	
-* insert ProprietaryAndNonProprietaryNames
-* name.usage.jurisdiction 0..0
 
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
@@ -678,7 +676,7 @@ Examples: commercial, development. """
 * component 1..* MS
 * component obeys cmc-percent-quantity
   * amount 1..2 MS
-  * amount from PqcmcUnitsMeasureTerminology (required)
+  * amount from PqcmcUnitsMeasureTerminology (extensible)
   * amount ^short = "Component Quantity Per Batch"
   * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
 * component.type 1..1 MS
@@ -713,13 +711,13 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
   * amount[Weight].unit 1..1 MS
   * amount[Weight].code 1..1 MS
-  * amount[Weight].code from PqcmcUnitsMeasureTerminology (required)
+  * amount[Weight].code from PqcmcPercentageUnits
   * amount[VolumeToVolume].value 1..1 MS
   * amount[VolumeToVolume].value ^short = "Quantity Percent"
   * amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
 """
-  * amount[VolumeToVolume].code = $NCIT#C48571 "%{VolumeToVolume}"
+  * amount[VolumeToVolume].code = $UCUM#%{VolumeToVolume} "percent VolumeToVolume"
 
   * amount[WeightToVolume].value 1..1 MS
   * amount[WeightToVolume].value ^short = "Quantity Percent"
@@ -727,14 +725,15 @@ Quantity UOM: A named quantity in terms of which other quantities are measured o
 
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
 """
-  * amount[WeightToVolume].code = $NCIT#C48527 "%{WeightToVolume}"
+  * amount[WeightToVolume].code = $UCUM#%{WeightToVolume} "percent WeightToVolume"
   * amount[WeightToWeight].value 1..1 MS
   * amount[WeightToWeight].value ^short = "Quantity Percent"
   * amount[WeightToWeight].value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined] 
 
 Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
 """
-  * amount[WeightToWeight].code = $NCIT#C48528 "%{WeightToWeight}"
+  * amount[WeightToWeight].code = $UCUM#%{WeightToWeight} "percent WeightToWeight"
+
 
 * component.constituent.location 0..* MS
 * component.constituent.location ^short = "Product Part Ingredient Physical Location"

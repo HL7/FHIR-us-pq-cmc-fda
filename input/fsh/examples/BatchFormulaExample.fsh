@@ -135,15 +135,15 @@ Usage: #example
   * amount[+] = 53.2 $NCIT#C28252 "kg"	
   // atomexetine hydrochloride	
   * constituent[+]	
-    * amount[Weight] = 25.42 $NCIT#C48155 "g"	
+    * amount[Weight] = 25.42 $UCUM#g "gram"	
     * hasIngredient.reference = Reference(urn:uuid:1c1a2a23-1fd7-4487-9682-49877f9f9f77)	
   // glacial acetic acid	
   * constituent[+]	
-    * amount[Weight] = 20.50 $NCIT#C48155 "g"	
+    * amount[Weight] = 20.50 $UCUM#g "gram"	
     * hasIngredient.reference = Reference(urn:uuid:12cce82f-8595-4860-b7ca-06c9ec0327f2)	
   // sodium acetate	
   * constituent[+]	
-    * amount[Weight] = 5.00 $NCIT#C48155 "g"	
+    * amount[Weight] = 5.00 $UCUM#g "gram"	
     * hasIngredient.reference = Reference(urn:uuid:45eb4f05-83d9-4819-bb60-96c7c5ce2b76)	
   // mannitol	
   * constituent[+]	
@@ -151,7 +151,7 @@ Usage: #example
     * hasIngredient.reference = Reference(urn:uuid:29c0ee76-f62f-41d3-b761-73d5f205e552)	
   // metacresol	
   * constituent[+]	
-    * amount[Weight] = 150.00 $NCIT#C48155 "g"	
+    * amount[Weight] = 150.00 $UCUM#g "gram"	
     * hasIngredient.reference = Reference(urn:uuid:44fad9fd-826a-4f0c-9f25-e0a78d1c4269)	
   // water	
   * constituent[+]	
@@ -175,7 +175,7 @@ Usage: #example
 * substance	
   * code.reference = Reference(urn:uuid:717d868e-6696-4ebb-adf4-63eadb3bf058)	
   * strength[+]	
-    * concentrationQuantity = 25.42 $NCIT#C48155 "g"	
+    * concentrationQuantity = 25.42 $UCUM#g "gram"	
 	
 // Atomoxetine API	
 
@@ -206,7 +206,7 @@ Usage: #example
 * substance	
   * code.reference = Reference(urn:uuid:45942749-64db-4f91-88c3-51adb680fed1)	
   * strength[+]	
-    * concentrationQuantity = 20.50 $NCIT#C48155 "g"	
+    * concentrationQuantity = 20.50 $UCUM#g "gram"	
 	
 
 Instance: 45942749-64db-4f91-88c3-51adb680fed1	
@@ -240,7 +240,7 @@ Usage: #example
 * substance	
   * code.reference = Reference(urn:uuid:07c598ee-3dcf-45b7-b4e5-b24812c22aff)	
   * strength[+]	
-    * concentrationQuantity = 5.00 $NCIT#C48155 "g"	
+    * concentrationQuantity = 5.00 $UCUM#g "gram"	
 	
 	
 // sodium acetate excipient	
@@ -311,7 +311,7 @@ Usage: #example
 * substance	
   * code.reference = Reference(urn:uuid:c75df5fb-e962-43a6-9dd3-c6682da10a7e)	
   * strength[+]	
-    * concentrationQuantity = 150.00 $NCIT#C48155 "g"	
+    * concentrationQuantity = 150.00 $UCUM#g "gram"	
 	
 // metacresol Excipient	
 

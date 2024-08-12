@@ -169,7 +169,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 200 $NCIT#C68742 "colony forming units"
+    * detailQuantity = 200 $UCUM#[CFU] "colony forming unit"
       * comparator = #<=
 * goal[+]
   * id = "95bf9d43-f337-4905-9c50-788b69d00843"
@@ -228,7 +228,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 2 $NCIT#C48570 "%"
+    * detailQuantity = 2 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "8125f603-96e7-4f3e-8b13-c15c5870e6e6"
@@ -395,7 +395,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.21 $NCIT#C48570 "%"
+    * detailQuantity = 0.21 $UCUM#% "percent"
       * comparator = #<=
 * action[+]
   * id = "fdf5e37f-ae97-48c1-9809-33aebff37199"

@@ -49,10 +49,10 @@ Description: "Quality Specification for Cochineal"
   * target[+]
     * modifierExtension[targetRange]
       * extension[low]
-        * valueQuantity = 3.4 $NCIT#C45997 "[pH]"
+        * valueQuantity = 3.4 $UCUM#[pH] "pH"
           * comparator = #>=
       * extension[high]
-        * valueQuantity = 4.3 $NCIT#C45997 "[pH]"
+        * valueQuantity = 4.3 $UCUM#[pH] "pH"
           * comparator = #<=
 * goal[+]
   * id = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
@@ -60,7 +60,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.21 $NCIT#C48570 "%"
+    * detailQuantity = 0.21 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "fc230a97-fd1a-4017-8603-822c5430a217"
@@ -68,7 +68,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 1.5 $NCIT#C48570 "%"
+    * detailQuantity = 1.5 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "8d6688e0-7412-4d64-afe8-b73d8aec596e"
@@ -76,7 +76,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 2 $NCIT#C48570 "%"
+    * detailQuantity = 2 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "f8e8343d-a37d-4b91-916b-f58d6947dc9c"
@@ -84,7 +84,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.10 $NCIT#C48528 "%{WeightToWeight}"
+    * detailQuantity = 0.10 $UCUM#%{WeightToVolume} "percent WeightToVolume"
       * comparator = #<=
 * goal[+]
   * id = "be7abaa1-0769-4560-af76-326e07d1df9a"
@@ -92,7 +92,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.7 $NCIT#C48570 "%"
+    * detailQuantity = 0.7 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "cfdd469d-020b-4047-946f-f513d58f007f"
@@ -100,7 +100,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.3 $NCIT#C48570 "%"
+    * detailQuantity = 0.3 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "c5eea380-416f-4d19-a21e-c021f3c7c543"
@@ -108,7 +108,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.10 $NCIT#C48528 "%{WeightToWeight}"
+    * detailQuantity = 0.10 $UCUM#%{WeightToVolume} "percent WeightToVolume"
       * comparator = #<=
 * goal[+]
   * id = "41e19fa2-f568-443e-8bc1-6b0a6dca9d0c"
@@ -116,7 +116,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.10 $NCIT#C48528 "%{WeightToWeight}"
+    * detailQuantity = 0.10 $UCUM#%{WeightToVolume} "percent WeightToVolume"
       * comparator = #<=
 * goal[+]
   * id = "e493cb3d-45b6-4463-b9b6-e588c51e032c"
@@ -124,7 +124,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.20 $NCIT#C48528 "%{WeightToWeight}"
+    * detailQuantity = 0.20 $UCUM#%{WeightToVolume} "percent WeightToVolume"
       * comparator = #<=
 * action[+]
   * linkId = "b9359ce8-73f3-45c5-9674-98d850053aa2"

@@ -108,7 +108,7 @@ Usage: #example
 * identifier.value = "levoThyroxine"
 * classification = $NCIT#C48807 "Chemical"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
-* molecularWeight.amount = $NCIT#C41127 "u"
+* molecularWeight.amount = $UCUM#u "unified atomic mass unit"
 * molecularWeight.amount.value = 798.85
 * supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
 * code.code = $UNII#054I36CPMN
