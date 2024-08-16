@@ -160,7 +160,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $NCIT#C205029 "pH"
+  * reason[=].coding = $UCUM#[pH] "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "1f476689-f440-4a77-9e9c-0615af3571eb"
