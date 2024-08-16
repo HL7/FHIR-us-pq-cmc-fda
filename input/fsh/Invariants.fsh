@@ -64,14 +64,14 @@ strength
 implies (
     strength.presentation.ofType(Ratio).exists() and
     strength.presentation.numerator.where(
-        code = 'C75765' and
-        system = %system
+        code = '[arb\u005c\u0027U]' and
+        system = 'http://unitsofmeasure.org'
     )
 ) or (
     strength.presentation.ofType(Quantity).exists() and
     strength.presentation.where(
-        code = 'C75765' and
-        system = %system
+        code = '[arb\u005c\u0027U]' and
+        system = 'http://unitsofmeasure.org'
     )
 ))"
 Severity: #error
@@ -123,9 +123,9 @@ Severity: #error
 
 Invariant: cmc-percent-quantity
 Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   amount
-  .where(system = %system and (('C48527' | 'C48528' | 'C48571') contains code).not())
+  .where(system = %system and (('%{WeightToWeight}' | '%{WeightToVolume}' | '%{VolumeToVolume}') contains code).not())
   .count() = 1
 )"
 Severity: #error
@@ -136,10 +136,10 @@ Description: "There must be a concentration whose unit is not VolumeToVolume, We
 // select the concentrationQuantity's (all concentrations)
 // find the concentrations where the system is NCIT and the code is not a percent
 // make sure there is exactly one
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   strength.concentration
     .ofType(Quantity)
-    .where(system = %system and  (('C48527' | 'C48528' | 'C48571') contains code).not())
+    .where(system = %system and  (('%{WeightToWeight}' | '%{WeightToVolume}' | '%{VolumeToVolume}') contains code).not())
     .count() = 1
 )"
 Severity: #error
@@ -328,7 +328,7 @@ Severity: #error
 Invariant: cmc-amount-ratio-or-quantity
 Severity: #error
 Description: "The amount ratio extension and an amount with a non-percentage unit are mutually exclusive"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')
   .union(
     amount.where(
