@@ -79,7 +79,7 @@ Description: "represent an amount as a ratio in ManufacturedItemDefinition"
     * ^short = "Amount Numeric Numerator"
       * value 1..1 MS
   * denominator 1..1 MS
-  * denominator from PqcmcPercentageUnits (required)
+  * denominator from PqcmcNonPercentageUnits (required)
     * ^short = "Amount Numeric Denominator"
       * value 1..1 MS
       * unit 1..1 MS
@@ -314,8 +314,7 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
         The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
         Example: mg
       """
-    * unit from PqcmcPercentageUnits
-    * code 1..1 MS 
+    * code from PqcmcPercentageUnits
 
 // ingredient
 * component.constituent 1..* MS
@@ -711,7 +710,7 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
   * amount[Weight].unit 1..1 MS
   * amount[Weight].code 1..1 MS
-  * amount[Weight].code from PqcmcPercentageUnits
+  * amount[Weight].code from PqcmcNonPercentageUnits
   * amount[VolumeToVolume].value 1..1 MS
   * amount[VolumeToVolume].value ^short = "Quantity Percent"
   * amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
