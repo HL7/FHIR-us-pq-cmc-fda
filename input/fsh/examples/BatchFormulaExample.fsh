@@ -124,7 +124,7 @@ Usage: #example
 * manufacturedDoseForm = $NCIT#C48623 "NOT APPLICABLE"	
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)	
 * property[BatchSize]	
-  * valueQuantity = 50 $NCIT#C48505 "L"	
+  * valueQuantity = 50 $UCUM#L "liter"
 * property[BatchUtil]	
   * valueCodeableConcept = $NCIT#C133990 "Commercial"	
 * property[AddInfo]	
@@ -132,7 +132,7 @@ Usage: #example
 // there is one component	
 * component[+]	
   * type = $NCIT#C42986 "Solution"	
-  * amount[+] = 53.2 $NCIT#C28252 "kg"	
+  * amount[+] = 53.2 $UCUM#kg "kilogram"	
   // atomexetine hydrochloride	
   * constituent[+]	
     * amount[Weight] = 25.42 $UCUM#g "gram"	
@@ -147,7 +147,7 @@ Usage: #example
     * hasIngredient.reference = Reference(urn:uuid:45eb4f05-83d9-4819-bb60-96c7c5ce2b76)	
   // mannitol	
   * constituent[+]	
-    * amount[Weight] = 2.27 $NCIT#C28252 "kg"	
+    * amount[Weight] = 2.27 $UCUM#kg "kilogram"	
     * hasIngredient.reference = Reference(urn:uuid:29c0ee76-f62f-41d3-b761-73d5f205e552)	
   // metacresol	
   * constituent[+]	
@@ -155,7 +155,7 @@ Usage: #example
     * hasIngredient.reference = Reference(urn:uuid:44fad9fd-826a-4f0c-9f25-e0a78d1c4269)	
   // water	
   * constituent[+]	
-    * amount[Weight] = 50.75 $NCIT#C28252 "kg"	
+    * amount[Weight] = 50.75 $UCUM#kg "kilogram"	
     * hasIngredient.reference = Reference(urn:uuid:d0574580-7694-4a36-8a27-5bdbccfc5557)	
   * property[PPiD]	
     * valueCodeableConcept.text = "solution"	
@@ -276,7 +276,7 @@ Usage: #example
 * substance	
   * code.reference = Reference(urn:uuid:a339a562-e325-4ce6-a830-d25c27b5e2da)	
   * strength[+]	
-    * concentrationQuantity = 2.27 $NCIT#C28252 "kg"	
+    * concentrationQuantity = 2.27 $UCUM#kg "kilogram"	
 	
 // mannitol excipient	
 
@@ -346,7 +346,7 @@ Usage: #example
 * substance	
   * code.reference = Reference(urn:uuid:c4e5b7c6-2e52-48e3-813b-d227cf29329b)	
   * strength[+]	
-    * concentrationQuantity = 50.75 $NCIT#C28252 "kg"	
+    * concentrationQuantity = 50.75 $UCUM#kg "kilogram"	
 	
 // water excipient	
 

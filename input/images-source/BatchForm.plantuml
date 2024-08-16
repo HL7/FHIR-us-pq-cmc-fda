@@ -43,7 +43,7 @@ node "DrugProductIngredient" as NNgred {
      
 }
 
-node "RoutineSubstanceDefinition" as NNS { 
+node "SubstanceDefinitionHandle" as NNS { 
       object "**Parent:** SubstanceDefinition" as obj4 {
                    **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]

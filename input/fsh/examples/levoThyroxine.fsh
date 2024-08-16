@@ -129,7 +129,7 @@ Usage: #example
 Instance: 260f5aa3-23d2-4999-8e5f-70f247390ee5
 InstanceOf: EctdComposition32S10
 Title: "eCTD Composition for 3.2.S.1"
-Description: "Composistion containing eCTD Substance General Information "
+Description: "Composition containing eCTD Substance General Information"
 Usage: #example 
 * identifier.value = "Substance General - levoThyroxine"
 * status = #final

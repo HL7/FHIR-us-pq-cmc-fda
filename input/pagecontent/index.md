@@ -82,7 +82,7 @@ Note: The first 2 FHIR Resources – Bundle and Composition are organizational p
 
 #### PQ/CMC FHIR Profiles
 
-As mentioned above, the PQ/CMC project Phase 1 structured data requirements are represented in the PQ/CMC FHIR IG. These Profiles have been designed at the boundary of the leaf-level sections of Module 3 of eCTD v 4.0. The table below contains a mapping of the FHIR Profiles to the Phase 1 requirements. The PQ/CMC FHIR profiles can be accessed through the “eCTD Profiles” menu in the main bar at the top of this page.
+As mentioned above, the PQ/CMC project Phase 1 structured data requirements are represented in the PQ/CMC FHIR IG. These Profiles have been designed at the boundary of the leaf-level sections of Module 3 of eCTD v 4.0. The table below contains a mapping of the FHIR Profiles to the Phase 1 requirements. The PQ/CMC FHIR profiles can be accessed through the "eCTD Profiles" menu in the main bar at the top of this page or via hyperlinks in the table below. Additional menu items and links will be added  as new profiles are built out and balloted.
 
 <table>
   <tr>

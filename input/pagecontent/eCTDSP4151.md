@@ -22,7 +22,7 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 * Drug Product
     * [Routine Drug Product](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
-    * [Routine Drug Substance](StructureDefinition-pqcmc-routine-drug-substance.html) (RoutineSubstanceDefinition) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
+    * [Substance Definition Handle](StructureDefinition-pqcmc-routine-drug-substance.html) (SubstanceDefinitionHandle) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Excipient/Raw Material 
     * [Excipient Drug Substance](StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
 * Related Organizations

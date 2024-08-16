@@ -39,10 +39,10 @@ Usage: #example
   * target[+]
     * modifierExtension[targetRange]
       * extension[low]
-        * valueQuantity = 2 $NCIT#C45997 "pH"
+        * valueQuantity = 2 $UCUM#[pH] "pH"
           * comparator = #>=
       * extension[high]
-        * valueQuantity = 3 $NCIT#C45997 "pH"
+        * valueQuantity = 3 $UCUM#[pH] "pH"
           * comparator = #<
 * goal[+]
   * id = "59a4ca76-858e-4d58-8e5f-88e75f51ec33"

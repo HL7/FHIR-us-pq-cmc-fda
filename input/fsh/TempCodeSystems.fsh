@@ -3,7 +3,8 @@ Id: cmc-ncit-dummy
 Title: "PQ-CMC-FDA Temporary Codes"
 Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide. Some, but not all, are defined in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). Note: Codes that exist in NCIt at time of ballot begin with 'C'."""
 * ^caseSensitive = true
-* ^experimental = true
+* ^experimental = false
+* ^status = #draft
 * ^hierarchyMeaning = #is-a
 * ^publisher = "NCI Thesaurus (NCIt)"
 * ^copyright = "PQ-CMC-FDA Temporary Codes are either in the current NCIt or are in the process of being included in NCI.  When all codes are in NCIt, they will migrate to the HL7 Terminology (THO).  License Note	
@@ -335,15 +336,15 @@ Unless otherwise indicated, all text within NCI products is free of copyright an
 * #C134003 "DUNS"
 * #C134004 "FEI"
 * #C17998 "Unknown"
-* #C133936 "-20 degrees C (+/-) 5 degrees C"
-* #C134018 "25 +/- 2 degrees C/40% +/- 5%RH"
-* #C134014 "25 +/- 2 degrees C/60% +/- 5%RH"
-* #C134015 "30 +/- 2 degrees C/65% +/- 5%RH"
-* #C134017 "30 +/- 2 degrees C/75% +/- 5%RH"
-* #C134019 "30 degrees C +/- 2 degrees C/35%RH +/- 5%RH"
-* #C134016 "40 +/- 2 degrees C/75% +/- 5%RH"
-* #C133940 "40 degrees C +/- 2 degrees C/not more than (NMT) 25%RH"
-* #C133935 "5 +/- 3 degrees C"
+//* #C133936 "-20 degrees C (+/-) 5 degrees C"
+//* #C134018 "25 +/- 2 degrees C/40% +/- 5%RH"
+//* #C134014 "25 +/- 2 degrees C/60% +/- 5%RH"
+//* #C134015 "30 +/- 2 degrees C/65% +/- 5%RH"
+//* #C134017 "30 +/- 2 degrees C/75% +/- 5%RH"
+//* #C134019 "30 degrees C +/- 2 degrees C/35%RH +/- 5%RH"
+//* #C134016 "40 +/- 2 degrees C/75% +/- 5%RH"
+//* #C133940 "40 degrees C +/- 2 degrees C/not more than (NMT) 25%RH"
+//* #C133935 "5 +/- 3 degrees C"
 * #C96148 "Proprietary"
 * #C45420 "Activity"
 * #C168628 "Mass"

@@ -26,7 +26,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
       }
       diamond CH
 
-      node "RoutineSubstanceDefinition for API" as NNS {
+      node "SubstanceDefinitionHandle for API" as NNS {
 
             object "**Parent Profile:** DrugSubstance" as obj4 {
                   **Reference:**

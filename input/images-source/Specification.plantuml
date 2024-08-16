@@ -63,7 +63,7 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
     }
   }
 
-  node "RoutineSubstanceDefinition for API" as NNS {
+  node "SubstanceDefinitionHandle for API" as NNS {
 
     object "**Parent:** SubstanceDefinition" as obj4 {
       **Reference:**

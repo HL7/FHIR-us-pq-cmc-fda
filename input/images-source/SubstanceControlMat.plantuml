@@ -78,7 +78,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
         }
     }
 
-  node "RoutineSubstanceDefinition" as NN { 
+  node "SubstanceDefinitionHandle" as NN { 
       object "**Parent:** SubstanceDefinition" as obj3 {
                    **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
