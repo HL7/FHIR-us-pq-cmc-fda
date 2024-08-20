@@ -384,10 +384,10 @@ Usage: #example
   * target[+]
     * modifierExtension[targetRange]
       * extension[low]
-        * valueQuantity = 3.4 $UCUM#[pH] "pH"
+        * valueQuantity = 3.4 $UCUM#[pH] "[pH]"
           * comparator = #>=
       * extension[high]
-        * valueQuantity = 4.3 $UCUM#[pH] "pH"
+        * valueQuantity = 4.3 $UCUM#[pH] "[pH]"
           * comparator = #<=
 * goal[+]
   * id = "e046aab8-b10f-4e13-89e6-bfa869a90b38"
@@ -426,7 +426,7 @@ Usage: #example
 * action[+]
   * id = "a5beeff6-dcc1-4b42-8ea1-76dea4b0da1d"
   * prefix = "Single Stage"
-  * title = "pH"
+  * title = "[pH]"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"

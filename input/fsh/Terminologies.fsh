@@ -970,8 +970,8 @@ Description: "Terminology used for representation of the information on pharmace
 * $NCIT#C87541 "POWDER, LYOPHILIZED"
 * $NCIT#C87542 "PENDANT"
 
-ValueSet: PqcmcUnitsMeasureTerminology
-Id: pqcmc-units-of-measure-terminology
+ValueSet: PqcmcUnitsMeasure
+Id: pqcmc-units-of-measure
 Title: "Units Of Measure Terminology"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
 Note: Includes SPL Unit of Presentation Terminology"
@@ -1047,7 +1047,7 @@ Note: Includes SPL Unit of Presentation Terminology"
 * $UCUM#{Vial} "Vial"
 * $UCUM#wk "week"
 * $UCUM#a "year"
-* $UCUM#[pH] "pH"
+* $UCUM#[pH] "[pH]"
 * $UCUM#[dqt_us] "dry quart"
 * $UCUM#[dpt_us] "dry pint"
 * $UCUM#mho "mho"
@@ -1057,7 +1057,7 @@ Note: Includes SPL Unit of Presentation Terminology"
 * $UCUM#[FNU] "Formazin Nephelometric Unit"
 * $UCUM#{JTU} "Jackson Turbidity Unit"
 * $UCUM#mg% "milligram per deciliter"
-* $UCUM#%{WeightToWeight} "percent WeightToWeight"
+* $UCUM#%{WeightToWeight} "percent WeightToWeight"  
 * $UCUM#%{WeightToVolume} "percent WeightToVolume"
 * $UCUM#% "percent"
 * $UCUM#%{VolumeToVolume} "percent VolumeToVolume"
@@ -1254,5 +1254,5 @@ Title: "Non-Percentage Units"
 Description: "Units of Measure terminologies that do not represent percentages"
 * ^experimental = false
 * ^status = #draft
-* include codes from valueset PqcmcUnitsMeasureTerminology
+* include codes from valueset PqcmcUnitsMeasure
 * exclude codes from valueset PqcmcPercentageUnits

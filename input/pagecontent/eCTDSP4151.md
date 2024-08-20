@@ -26,7 +26,8 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 * Excipient/Raw Material 
     * [Excipient Drug Substance](StructureDefinition-pqcmc-excipient.html) (ExcipientRaw) profile [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource 
 * Related Organizations
-    * [Sponsor Organization](StructureDefinition-cmc-organization.html) (SponsorOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
+    * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
+
     * [Manufacturing and/or Test Site Organization](StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.

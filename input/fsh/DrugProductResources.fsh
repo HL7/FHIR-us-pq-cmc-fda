@@ -222,7 +222,7 @@ Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
 * property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
 * property[TotWgtNum].value[x] 1..1 MS
 * property[TotWgtNum].value[x] only Quantity
-* property[TotWgtNum].valueQuantity from PqcmcUnitsMeasureTerminology (extensible)
+* property[TotWgtNum].valueQuantity from PqcmcUnitsMeasure (extensible)
 * property[TotWgtNum].valueQuantity.comparator MS
   * ^short = "Product Total Weight Operator"
   * ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined]
@@ -237,7 +237,7 @@ Note: For solid oral dose forms, by definition this is 1
 * property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
 * property[TotWgtDen].value[x] 1..1 MS
 * property[TotWgtDen].value[x] only SimpleQuantity
-* property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology (extensible)
+* property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasure (extensible)
 
 * property[TotWgtTxt].type MS
 * property[TotWgtTxt].type ^short = "Product Total Weight Textual"
@@ -661,7 +661,7 @@ Example: 1000 kg
 * property[BatchSize].valueQuantity.unit ^definition = """A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
 """
 * property[BatchSize].valueQuantity.code 1..1 MS
-* property[BatchSize].valueQuantity.code from  PqcmcUnitsMeasureTerminology
+* property[BatchSize].valueQuantity.code from  PqcmcUnitsMeasure
 
 * property[BatchUtil].type = $NCIT#BatchUtil "Batch Utilization"
 * property[BatchUtil].value[x] only CodeableConcept
@@ -675,7 +675,7 @@ Examples: commercial, development. """
 * component 1..* MS
 * component obeys cmc-percent-quantity
   * amount 1..2 MS
-  * amount from PqcmcUnitsMeasureTerminology (extensible)
+  * amount from PqcmcUnitsMeasure (extensible)
   * amount ^short = "Component Quantity Per Batch"
   * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
 * component.type 1..1 MS

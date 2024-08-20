@@ -122,7 +122,7 @@ Severity: #error
 //Severity: #error
 
 Invariant: cmc-percent-quantity
-Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasure cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
 Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   amount
   .where(system = %system and (('%{WeightToWeight}' | '%{WeightToVolume}' | '%{VolumeToVolume}') contains code).not())

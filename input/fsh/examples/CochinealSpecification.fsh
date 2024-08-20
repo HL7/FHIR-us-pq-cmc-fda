@@ -49,10 +49,10 @@ Description: "Quality Specification for Cochineal"
   * target[+]
     * modifierExtension[targetRange]
       * extension[low]
-        * valueQuantity = 3.4 $UCUM#[pH] "pH"
+        * valueQuantity = 3.4 $UCUM#[pH] "[pH]"
           * comparator = #>=
       * extension[high]
-        * valueQuantity = 4.3 $UCUM#[pH] "pH"
+        * valueQuantity = 4.3 $UCUM#[pH] "[pH]"
           * comparator = #<=
 * goal[+]
   * id = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
@@ -84,7 +84,7 @@ Description: "Quality Specification for Cochineal"
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.10 $UCUM#%{WeightToWeight} "percent WeightToWeight"
+    * detailQuantity = 0.10 $UCUM#%{WeightToWeight} "percent WeightToWeight" 
       * comparator = #<=
 * goal[+]
   * id = "be7abaa1-0769-4560-af76-326e07d1df9a"
@@ -160,7 +160,7 @@ Description: "Quality Specification for Cochineal"
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valueInteger = 1
-  * reason[=].coding = $UCUM#[pH] "pH"
+  * reason[=].coding = $NCIT#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "1f476689-f440-4a77-9e9c-0615af3571eb"

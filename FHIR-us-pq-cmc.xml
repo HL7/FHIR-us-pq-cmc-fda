@@ -180,7 +180,7 @@
 <artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin Terminology"/>
 <artifact deprecated="true" id="StructureDefinition/pq-order-extension" key="StructureDefinition-pq-order-extension" name="Test Order | Stage Sequence Order"/>
 <artifact id="ValueSet/pqcmc-test-usage-terminology" key="ValueSet-pqcmc-test-usage-terminology" name="Test Usage Terminology"/>
-<artifact id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
+<artifact id="ValueSet/pqcmc-units-of-measure" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
 <artifact id="Organization/e99bddfa-c1b5-435b-bbe8-24816b4e23e5" key="Organization-e99bddfa-c1b5-435b-bbe8-24816b4e23e5" name="Vidinaid"/>
 <artifact id="PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89" key="PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89" name="Water Specification Example"/>
 <artifact id="Bundle/a7a2d35b-5d9d-4a8c-b012-d04a07662c0a" key="Bundle-a7a2d35b-5d9d-4a8c-b012-d04a07662c0a" name="a7a2d35b-5d9d-4a8c-b012-d04a07662c0a"/>

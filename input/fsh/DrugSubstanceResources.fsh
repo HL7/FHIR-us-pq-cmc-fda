@@ -140,20 +140,20 @@ Example: if the tablet contains 325 mg of the ingredient in each unit dose, then
 * substance.strength.concentrationQuantity.comparator ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
 Note: This is typically applicable to biologics.
 """
-* substance.strength.concentrationQuantity from PqcmcUnitsMeasureTerminology (extensible)
+* substance.strength.concentrationQuantity from PqcmcUnitsMeasure (extensible)
 * substance.strength.textConcentration 1..1 MS
 * substance.strength.textConcentration ^short = "Strength Textual"
 * substance.strength.textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
 * substance.strength.concentrationRatio 0..1 MS
 * substance.strength.concentrationRatio
   * numerator 1..1 MS
-  * numerator from PqcmcUnitsMeasureTerminology (extensible)
+  * numerator from PqcmcUnitsMeasure (extensible)
     * value ^short = "Product Ingredient Amount Numeric Numerator"
     * ^definition = """
       Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
     """
   * denominator MS
-  * denominator from PqcmcUnitsMeasureTerminology (extensible)
+  * denominator from PqcmcUnitsMeasure (extensible)
 * substance.strength.concentrationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
 * substance.strength.concentrationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
 Example: mg"""
@@ -168,7 +168,7 @@ Example: 10mg/syringe, 1mg/ml
 * substance.strength.concentrationRatio.denominator.code 1..1 MS
 
 * substance.strength.concentrationQuantity 0..1 MS
-* substance.strength.concentrationQuantity from PqcmcUnitsMeasureTerminology (extensible)
+* substance.strength.concentrationQuantity from PqcmcUnitsMeasure (extensible)
 * substance.strength.concentrationQuantity.value 1..1 MS
 * substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
 * substance.strength.concentrationQuantity.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
@@ -296,7 +296,7 @@ Description: "Substance General Information containting Drug Substance (Active I
 * molecularWeight.amount.unit ^definition = """The labeled unit of measure for the molecular weight. [Source: Adapted for NCI EVS C117055]
  """
 * molecularWeight.amount.code 1..1 MS
-* molecularWeight.amount.code from PqcmcUnitsMeasureTerminology (extensible)
+* molecularWeight.amount.code from PqcmcUnitsMeasure (extensible)
 * . obeys cmc-structure-required
 * . obeys cmc-substance-structure-graphic-required
 * structure 1..1 MS
@@ -685,7 +685,7 @@ Description: "The amount details about the drug product ingredients in the batch
   * strength 1..2 MS
     * concentration[x] 1..1 MS
     * concentration[x] only Quantity
-    * concentrationQuantity from PqcmcUnitsMeasureTerminology (extensible)
+    * concentrationQuantity from PqcmcUnitsMeasure (extensible)
 
 
 RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)
