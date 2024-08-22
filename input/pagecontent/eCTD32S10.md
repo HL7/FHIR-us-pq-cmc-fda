@@ -25,7 +25,6 @@ The domain concepts of Substance Nomenclature and Structure are represented in F
 
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below. 
 
-
 ### CTD 3.2.S.1 Profile Map
 
 <div>{%include SubstanceGeneral.svg%}</div>

@@ -1200,10 +1200,13 @@ Title: "Manufactured Dose Form Terminology"
 Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
 * ^experimental = false
 * ^status = #draft
-* $NCIT#C48623 "NOT APPLICABLE"
-* $NCIT#C154554 "Lozenge Dosage Form Category"
-* $NCIT#C154433 "Capsule Dose Form Category"
-* $NCIT#C154605 "Tablet Dosage Form Category"
+* $NCIT#C45299 "Gas"
+* $NCIT#C45298 "Liquid"
+* $NCIT#C154598 "Solution" 
+* $NCIT#C149895 "Semi-solid"
+* $NCIT#C45300 "Solid"
+* $NCIT#C154433 "Capsule" 
+* $NCIT#C154605 "Tablet" 
 
 ValueSet: PqcmcGraphicalFileTypes
 Id: pqcmc-graphical-file-types

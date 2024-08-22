@@ -9,7 +9,7 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "Bundle" as NODES {
-  node "Name of Profile" as Nameprofile {
+  node "A Profile on a resource" as Nameprofile {
     object "**Parent:** Name of Resource or 'Profile' name if parent is a profile" as objcs {
       **ValueSets:**
       Terminology 1
@@ -30,7 +30,7 @@ package "Bundle" as NODES {
   
   diamond CH
 
-  node "Example Composition Profile" as NN {
+  node "Example Profile" as NN {
 
     object "**Parent:** a Resource" as obj3 {
       **ValueSets:**

@@ -494,8 +494,6 @@ Description: "Includes the essential identifying information of the drug product
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 
-
-
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
 Id: pqcmc-drug-product-description

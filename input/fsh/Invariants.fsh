@@ -219,7 +219,6 @@ Severity: #error
 // does and it has an arbitrary unit, then there needs to be a slice for 
 // weight textual
 
-
 Invariant: cmc-format-required
 Severity: #error
 Description: "Format is required when a representation is provided"

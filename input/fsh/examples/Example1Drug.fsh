@@ -198,7 +198,7 @@ Usage: #example
 * property[OvrRelsMech].valueCodeableConcept = $NCIT#C203359 "Matrix"
 * property[CoatInd].valueBoolean = false
 * property[WgtTyp].valueCodeableConcept = $NCIT#C168628 "Mass"
-* manufacturedDoseForm = $NCIT#C154605 "Tablet Dosage Form Category"
+* manufacturedDoseForm = $NCIT#C154605 "Tablet"
 * property[LayCnt].valueQuantity.value = 2
 * property[BeaTypCnt].valueQuantity.value = 0
 * property[Schematic].valueAttachment

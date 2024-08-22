@@ -28,8 +28,6 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 * Related Organizations
     * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
 
-    * [Manufacturing and/or Test Site Organization](StructureDefinition-mfg-test-site-organization.html) (MfgTestSiteOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
-
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
 ### eCTD Heading 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Profile Map

@@ -121,7 +121,7 @@ Usage: #example
 * identifier.value = "Oxazepam-Propranolol-BatchFormula"	
 * status = #active	
 * name = "ATOMOXETINE HYDROCHLORIDE 1mg"	
-* manufacturedDoseForm = $NCIT#C48623 "NOT APPLICABLE"	
+* manufacturedDoseForm = $NCIT#C45298 "Liquid"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)	
 * property[BatchSize]	
   * valueQuantity = 50 $UCUM#L "liter"

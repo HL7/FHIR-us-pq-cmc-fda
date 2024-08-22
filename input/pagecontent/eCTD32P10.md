@@ -41,7 +41,7 @@ The domain concepts of Description and Composition of the Drug Product are repre
 * Drug Product
     * [Drug Product Description](StructureDefinition-pqcmc-drug-product-description.html) (DrugProductDescription) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
 * Container Closure
-    * [Drug Product Container Closure](StructureDefinition-pqcmc-drugproduct-container-closure.html) (DrugProductContainerClosure) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
+    * [Drug Product Container Closure](StructureDefinition-ContainerClosure.html) (ContainerClosure) profile on the [PackagedProductDefinition](https://hl7.org/fhir/packagedproductdefinition.html) Resource
 * Product Composition
     * [Manufactured Drug Product](StructureDefinition-pqcmc-product-part.html) (FinishedProduct) profile on the [ManufacturedItemDefinition](https://hl7.org/fhir/R5/manufactureditemdefinition.html) Resource
     * [Drug Product Component](StructureDefinition-pqcmc-component.html) (DrugProductComponent) profile on the [Ingredient](https://hl7.org/fhir/R5/ingredient.html) Resource
@@ -51,11 +51,11 @@ The domain concepts of Description and Composition of the Drug Product are repre
     </span>
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
-
 ### eCTD 3.2.P.1 Profile Map
 
 <div>{%include ProdDesComp.svg%}</div>
 Use the zoom feature in the browser to enlarge the profile map for reading.
+[big image](largeDiagrams.html#32P1)
 
 ### Usage Patterns
 
