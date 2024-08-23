@@ -440,13 +440,13 @@ Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Cont
 * component.property[ContPercent].value[x] 1..1 MS
 * component.property[ContPercent].value[x] only Quantity
 
-* component.property[AddInfo] insert AdditionalInformationProperty
+* component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
 
 * component.component 0..* MS
 
-RuleSet: AdditionalInformationProperty
+RuleSet: AdditionalInformationProperty(short)
 * type MS
-* type ^short = "Product Part Additional Information"
+* type ^short = "{short}"
 * type ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
 Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
@@ -668,14 +668,32 @@ Example: 1000 kg
 * property[BatchUtil].valueCodeableConcept ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
 Examples: commercial, development. """
 * property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
-* property[AddInfo] insert AdditionalInformationProperty
+* property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
 // Product parts
 * component 1..* MS
-* component obeys cmc-percent-quantity
-  * amount 1..2 MS
-  * amount from PqcmcUnitsMeasure (extensible)
-  * amount ^short = "Component Quantity Per Batch"
-  * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
+  * amount 2..2
+  * amount ^slicing.discriminator.type = #value
+  * amount ^slicing.discriminator.path = "code"
+  * amount ^slicing.rules = #closed
+  * amount ^slicing.description = "Slice based on value of unit"
+  * amount contains
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * amount[perBatch]
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
+// * component obeys cmc-percent-quantity
+//   * amount 1..2 MS
+//   * amount from PqcmcUnitsMeasure (extensible)
+//   * amount ^short = "Component Quantity Per Batch"
+//   * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -752,8 +770,7 @@ Examples: Intragranular, Extra granular, Blend
     AddInfo 0..1 MS 
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
-* component.property[AddInfo] insert AdditionalInformationProperty
-* component.component 0..* MS
+* component.property[AddInfo] insert AdditionalInformationProperty(Batch Component Additional Information)
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition
@@ -768,6 +785,14 @@ Description: "The Drug Product produced by the batch formula."
 * comprisedOf only Reference(BatchFormula)
 * insert ProprietaryAndNonProprietaryNames
 * insert RouteOfAdministration
+* combinedPharmaceuticalDoseForm 1..1 MS
+  * ^short = "Product Dosage Form"
+  * ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+
+SME comment -- this is the marketed dosage form"""
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
 
 Profile: DrugProductwithImpurities
 Parent: MedicinalProductDefinition
