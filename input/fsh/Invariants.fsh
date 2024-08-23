@@ -338,3 +338,12 @@ Expression: "defineVariable('system','http://unitsofmeasure.org').select(
 )"
 // Logically: Either the amount ratio extension or an amount that isn't a percent must be present, and they
 // can never be present at the same time, so their combined count is always 1
+
+Invariant: cmc-impurity-unii-required
+Severity: #error
+Description: "If Product Impurity Chemical Structure Data File is not present, then a unii is required"
+Expression: "structure.representation.where(type.text = 'Structure' and document.exists()).exists().not() implies (
+  code.where(
+    code.coding.system = 'http://fdasis.nlm.nih.gov'
+  ).exists()
+)"

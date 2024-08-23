@@ -576,6 +576,7 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+* obeys cmc-impurity-unii-required
 * meta.profile 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
