@@ -753,7 +753,6 @@ Examples: Intragranular, Extra granular, Blend
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
 * component.property[AddInfo] insert AdditionalInformationProperty
-* component.component 0..* MS
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition
