@@ -133,7 +133,8 @@ Usage: #example
 // there is one component	
 * component[+]	
   * type = $NCIT#C42986 "Solution"	
-  * amount[+] = 53.2 $UCUM#kg "kilogram"	
+  * amount[perBatch] = 53.2 $UCUM#kg "kilogram"
+  * amount[percent] = 100 $UCUM#% "percent"
   // atomexetine hydrochloride	
   * constituent[+]	
     * amount[Weight] = 25.42 $UCUM#g "gram"	

@@ -671,11 +671,29 @@ Examples: commercial, development. """
 * property[AddInfo] insert AdditionalInformationProperty
 // Product parts
 * component 1..* MS
-* component obeys cmc-percent-quantity
-  * amount 1..2 MS
-  * amount from PqcmcUnitsMeasure (extensible)
-  * amount ^short = "Component Quantity Per Batch"
-  * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
+  * amount 2..2
+  * amount ^slicing.discriminator.type = #value
+  * amount ^slicing.discriminator.path = "code"
+  * amount ^slicing.rules = #closed
+  * amount ^slicing.description = "Slice based on value of unit"
+  * amount contains
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * amount[perBatch]
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
+// * component obeys cmc-percent-quantity
+//   * amount 1..2 MS
+//   * amount from PqcmcUnitsMeasure (extensible)
+//   * amount ^short = "Component Quantity Per Batch"
+//   * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
