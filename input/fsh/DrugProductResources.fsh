@@ -440,13 +440,13 @@ Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Cont
 * component.property[ContPercent].value[x] 1..1 MS
 * component.property[ContPercent].value[x] only Quantity
 
-* component.property[AddInfo] insert AdditionalInformationProperty
+* component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
 
 * component.component 0..* MS
 
-RuleSet: AdditionalInformationProperty
+RuleSet: AdditionalInformationProperty(short)
 * type MS
-* type ^short = "Product Part Additional Information"
+* type ^short = "{short}"
 * type ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
 Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
@@ -668,7 +668,7 @@ Example: 1000 kg
 * property[BatchUtil].valueCodeableConcept ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
 Examples: commercial, development. """
 * property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
-* property[AddInfo] insert AdditionalInformationProperty
+* property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
 // Product parts
 * component 1..* MS
   * amount 2..2
@@ -770,7 +770,7 @@ Examples: Intragranular, Extra granular, Blend
     AddInfo 0..1 MS 
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
-* component.property[AddInfo] insert AdditionalInformationProperty
+* component.property[AddInfo] insert AdditionalInformationProperty(Batch Component Additional Information)
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition
