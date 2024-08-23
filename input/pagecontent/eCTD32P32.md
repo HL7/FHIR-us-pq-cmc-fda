@@ -25,9 +25,6 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 ### CTD 3.2.P.3.2 Profile Map
 
 <div>{%include BatchForm.svg%}</div>
-Use the zoom feature in the browser to enlarge the profile map for reading.
-[big image](largeDiagrams.html#32P32)
-
 
 ### Usage Patterns
 
