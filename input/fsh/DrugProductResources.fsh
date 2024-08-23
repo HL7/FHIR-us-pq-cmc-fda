@@ -126,7 +126,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
       QualStd 1..* MS and
-      Sterile 0..1 MS
+      Sterile 1..1 MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].type from pqcmc-product-characteristic

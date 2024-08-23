@@ -210,6 +210,7 @@ Usage: #example
 * property[TotWgtDen].valueQuantity = $UCUM#1 "1*"
 * property[TotWgtDen].valueQuantity.value = 1
 * property[QualStd].valueCodeableConcept = $NCIT#C134006 "USP-NF"
+* property[Sterile].valueBoolean = true
 * component[+].type = $NCIT#C66831 "Layer"
 * component[=]
   * amount[weight] = 463 $UCUM#mg "milligram"
