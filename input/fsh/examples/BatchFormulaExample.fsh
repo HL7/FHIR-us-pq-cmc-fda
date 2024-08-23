@@ -100,6 +100,7 @@ Description: "Basic idenfier informion in MDI for the Drug Product with referenc
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-batch-formula-product"	
 * identifier.value = "Oxazepam-Propranolol-BatchFormula-Identification"	
+* combinedPharmaceuticalDoseForm = $NCIT#C42998 "TABLET"
 * route = $NCIT#C38288 "ORAL"	
 * comprisedOf = Reference(urn:uuid:249ef22b-d521-4304-a388-6b9035f97b22)	
 * name[NonProprietary]	

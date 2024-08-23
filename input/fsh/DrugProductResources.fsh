@@ -767,6 +767,14 @@ Description: "The Drug Product produced by the batch formula."
 * comprisedOf only Reference(BatchFormula)
 * insert ProprietaryAndNonProprietaryNames
 * insert RouteOfAdministration
+* combinedPharmaceuticalDoseForm 1..1 MS
+  * ^short = "Product Dosage Form"
+  * ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+
+SME comment -- this is the marketed dosage form"""
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
 
 Profile: DrugProductwithImpurities
 Parent: MedicinalProductDefinition
