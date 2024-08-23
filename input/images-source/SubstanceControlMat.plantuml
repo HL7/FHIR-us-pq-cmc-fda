@@ -47,15 +47,6 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
         }
     }
 
-    node "CodedOrganization" as NSO {
-
-        object "**Parent:** Organization" as objAu {
-            **Reference:**
-            [[StructureDefinition-cmc-organization.html]]
-            **ValueSets:**
-            Testing Site and Organization Identifier Type Terminology
-        }
-    }
 
     node "ExcipientRaw" as N21 {
 
@@ -68,16 +59,17 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             Quality Standard Terminology
         }
     }
-    node "MfgTestSiteOrganization" as N21mfg {
+        node "CodedOrganization" as NSO {
 
-        object "**Parent:** Organization" as objTS  {
+        object "**Parent:** Organization" as objAu {
             **Reference:**
             [[StructureDefinition-cmc-organization.html]]
             **ValueSets:**
-            Organization Unique Identifier Type
+            Testing Site and Organization Identifier Type Terminology
         }
     }
 
+    
   node "SubstanceDefinitionHandle" as NN { 
       object "**Parent:** SubstanceDefinition" as obj3 {
                    **Reference:**
@@ -88,10 +80,10 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
       }  
 }
 
-    N1 -[#darkred]-> N2
+    N1 -[#darkred]--> N2
     N2 -[#darkred]-> N21
-    N1 -[#darkred]-> NSO
-    N1 -[#darkred]-> NN
-    N21 -[#darkred]-> N21mfg
+    N1 -[#darkred]--> NSO
+    N1 -[#darkred]--> NN
+    N21 -[#darkred]-> NSO
 }
 @enduml

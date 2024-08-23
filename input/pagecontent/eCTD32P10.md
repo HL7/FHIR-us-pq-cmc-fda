@@ -2,6 +2,8 @@
 
 The Description and Composition of the Drug Product bundle profile provides a mechanism for the industry to submit Module 3 of CTD 3.2.P.1 folder content to the FDA. The contents of this section include a description of the drug product, its container closure, and its components and constituents. At this time, the profile is scoped to support only products that have a solid oral dose form; other dose forms will be supported in future iterations of the profile.
 
+The Food and Drug Administration (FDA) requires registered drug establishments to provide a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution. Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which is a universal product identifier for human drugs. It identifies the labeler, product, and trade package size. The second segment of the NDC, the product code, identifies a specific strength, dosage form, and formulation for a particular firm. The decision was made to align the definition of a PQ/CMC drug product with the product code (or second segment) of the NDC. Therefore, each 32P10 bundle is for a specific strength and dose form. For those drug products that are available in multiple strengths and/or dose forms, a separate 32P10 bundle must be submitted for each distinct combination.
+
 For the purposes of the PQ/CMC IG, the Example 1 below of a two-layer Tablet provides description of the terms used to explain the 2-layer tablet.
 
 <table ><tr><td><img src="image1.png" /></td></tr></table>
@@ -13,7 +15,7 @@ For the purposes of the PQ/CMC IG, the Example 1 below of a two-layer Tablet pro
     - A Drug Product must have at least one Component.
 
 - <span style="text-decoration:underline;">Constituents</span> are the active and inactive ingredients used in the manufacture of the Drug Product
-    - Constituent information is included with respect to the Drug Product and with respect to each relevant Component.
+    - Constituent information is included with respect to the Drug Product and with respect to each relevant Component. Each Constituent may be included in one or more Components of the Drug Product.
 
 The additional example illustrations below of drug products are included as an aid to understanding the terms or semantics in the context of the PQ/CMC IG.
 
@@ -54,8 +56,6 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 ### eCTD 3.2.P.1 Profile Map
 
 <div>{%include ProdDesComp.svg%}</div>
-Use the zoom feature in the browser to enlarge the profile map for reading.
-[big image](largeDiagrams.html#32P1)
 
 ### Usage Patterns
 

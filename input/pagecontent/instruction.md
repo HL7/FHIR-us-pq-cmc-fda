@@ -44,11 +44,14 @@ FHIR defines the notion of [Must Support](http://hl7.org/fhir/R4/conformance-rul
 
 ###  Diagrams and General Notes on Bundles
 
-Each of the Composition profiles is contained in a specified bundle of the document type. They each have a page under the eCTD Profiles tab. The example bundles are not specific to any particular product and should not be examined for any sense of chemical or biological science. All examples are fictitious but sometimes based on real chemical compounds. All sources were augmented with values required by this standard or altered with more current names or completely additional data to illustrate a profile feature. All attempts were made to produce realistic content and challenge formatting within XML. Some element examples have been added into the mix to demonstrate their syntax. The diagram below contains a legend for the Composition profile diagrams.
+FHIR bundles are used to group a collection of resources into a single package. This can include various resources like lab records, research studies, and more. Each Bundle profile defines a specific use case or standard for how resources should be bundled together. Profiles ensure that the bundles meet certain requirements and follow consistent formatting rules. The Composition profiles are categorized under various document types to better organize and define their use cases. Each profile in a bundle corresponds to a specific type of document or record. For FHIR in general, a Composition profile might be used for documents such as a discharge summary or a lab report. In this Implementation Guide (IG), the Composition profiles are used to itemize the elements required in a particular eCTD section. 
+The diagram shown below functions as a legend for the symbols and notations used in the Composition profile diagrams. This is crucial for interpreting the relationships and details correctly. 
 
 <div>{%include legend.svg%}</div>
 
-For more information about the profiles found in any of the diagrams, look on the [Artifacts page](artifacts.html) for details about the specific requirements.
+For more detailed information about the profiles illustrated in the diagrams, users can refer to the Artifacts page and the profile pages linked in the diagrams. This page provides specifics about the requirements for each profile, helping users understand how to implement or use the profiles effectively. By examining the diagrams and referencing the profiles on the [Artifacts page](artifacts.html) and individual profile pages, users can gain a thorough understanding of how FHIR bundles in this IG are structured and how to apply the profiles in practice.
+
+**Note**:  The example bundles provided in the eCTD bundle pages are not linked to any real products or substances. They are illustrative, sometimes using real chemical compounds for context, but their primary purpose is to demonstrate the profile features rather than actual scientific content. Values within these examples may be augmented or altered to fit the requirements of the standard or to illustrate specific features.
 
 ### Referencing Bundled Resources
 
