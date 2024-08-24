@@ -323,6 +323,9 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
 * component.constituent obeys cmc-ingredient-functions
 * component.constituent
   * modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+  * extension contains http://hl7.org/fhir/StructureDefinition/originalText named textualStrength 0..1 MS
+  * extension[textualStrength].value[x] only string
+    * ^short = "Textual Strength"
 * component.constituent obeys cmc-amount-ratio-or-quantity
 * component.constituent
   * amount 1..2 MS
