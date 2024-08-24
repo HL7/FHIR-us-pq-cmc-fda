@@ -25,7 +25,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       Pharmaceutical Dosage Form Terminology
       Expiration Date Classification Terminology
       Batch utilization Terminology
-      Units Of Measure Terminology
+      Units Of Measure
       Container Type Terminology
       Closure Type Terminology
 
@@ -69,7 +69,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       [[StructureDefinition-pqcmc-drug-substance-batch.html]]
       **ValueSets:**
       Batch utilization Terminology
-      Units Of Measure Terminology
+      Units Of Measure
       Container Type Terminology
       Closure Type Terminology
     }
@@ -98,7 +98,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       [[StructureDefinition-pq-result-observation.html]]
       **ValueSets:**
       Conformance Criteria Terminology
-      Units Of Measure Terminology
+      Units Of Measure
       Interpretation Code Terminology
       Test Category Terminology
       Test Sub-Category Terminology
@@ -118,7 +118,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       [[StructureDefinition-pq-additional-stage-result-observation.html]]
       **ValueSets:**
       Conformance Criteria Terminology
-      Units Of Measure Terminology
+      Units Of Measure
       Interpretation Code Terminology
     }
     object "**Extensions**" as objExsStageObs  {
@@ -144,8 +144,6 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
     }
   }
   diamond CH

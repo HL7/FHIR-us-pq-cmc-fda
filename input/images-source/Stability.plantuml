@@ -23,7 +23,7 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      Pharmaceutical Dosage Form Terminology
                      Expiration Date Classification Terminology
                      Batch utilization Terminology
-                     Units Of Measure Terminology
+                     Units Of Measure
                      Container Type Terminology
                      Closure Type Terminology
               }
@@ -55,7 +55,7 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
                      **ValueSets:**
                      Batch utilization Terminology
-                     Units Of Measure Terminology
+                     Units Of Measure
                      Container Type Terminology
                      Closure Type Terminology
               }
@@ -163,7 +163,7 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      [[StructureDefinition-pq-result-observation.html]]
                      **ValueSets:**
                      Conformance Criteria Terminology
-                     Units Of Measure Terminology
+                     Units Of Measure
                      Test Category Terminology
                      Test Sub-Category Terminology
                      Interpretation Code Terminology
@@ -183,7 +183,7 @@ package "eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle"
                      [[StructureDefinition-pq-result-observation.html]]
                      **ValueSets:**
                      Conformance Criteria Terminology
-                     Units Of Measure Terminology
+                     Units Of Measure
                      Interpretation Code Terminology
               }
               object "**Extensions**" as objExsStageObs  {

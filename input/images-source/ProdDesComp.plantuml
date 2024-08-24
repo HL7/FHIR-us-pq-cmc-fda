@@ -55,6 +55,7 @@ package "eCTD Heading 3.2.P.1 Bundle" as NODES {
       PqcmcUnitsMeasure
     }
     object "**Extensions**" as objMIDExs {
+      OriginalText
       AmountRatio
     }
     objMID *-- objMIDExs

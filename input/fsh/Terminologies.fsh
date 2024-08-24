@@ -186,7 +186,7 @@ Description: "Terminology used to qualify the information pertaining to test cat
 
 ValueSet: PqcmcNamePartTerminology
 Id: pqcmc-name-part-terminology
-Title: "Name Part Terminology"
+Title: "PQCMC Name Part Terminology"
 Description: "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -972,7 +972,7 @@ Description: "Terminology used for representation of the information on pharmace
 
 ValueSet: PqcmcUnitsMeasure
 Id: pqcmc-units-of-measure
-Title: "Units Of Measure Terminology"
+Title: "Units Of Measure"
 Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
 Note: Includes SPL Unit of Presentation Terminology"
 
