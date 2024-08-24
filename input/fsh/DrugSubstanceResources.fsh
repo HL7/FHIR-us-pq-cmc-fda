@@ -671,7 +671,7 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
     * text 1..1 MS
       * ^short = "Substance Characterisation Technique"
   * description 0..1 MS
-    * ^short = "Analytical Narrative Text and Table"
+    * ^short = "Analysis Narrative Text and Table"
     * ^definition = ""
   * file 0..* MS
     * ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
