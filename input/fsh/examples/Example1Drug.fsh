@@ -214,9 +214,9 @@ Usage: #example
 * component[+].type = $NCIT#C66831 "Layer"
 * component[=]
   * amount[weight] = 463 $UCUM#mg "milligram"
+  * amount[percent] = 38.55 $UCUM#% "percent"
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerA"
 * component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
-* component[=].property[ContPercent].valueQuantity.value = 0.3855
 * component[=].property[Color].valueCodeableConcept.text = "Purple"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f)
 * component[=].constituent[=].amount[weight] = 200 $UCUM#mg "milligram"
@@ -244,11 +244,10 @@ Usage: #example
     * valueRatio
       * numerator = 738 $UCUM#mg "milligram"
       * denominator = 1 $UCUM#[arb'U] "arbitrary unit"
-
+  * amount[percent] = 61.45 $UCUM#% "percent"
 
 * component[=].property[PPiD].valueCodeableConcept.text = "Example1Drug_LayerB"
 * component[=].property[RelsProf].valueCodeableConcept = $NCIT#C42730 "Delayed-Release Profile"
-* component[=].property[ContPercent].valueQuantity.value = 0.6145
 * component[=].property[Color].valueCodeableConcept.text = "White"
 * component[=].constituent[+].hasIngredient.reference = Reference(urn:uuid:7f10a35e-228d-42db-8918-6ccada78454d)
 * component[=].constituent[=].amount[weight] = 300 $UCUM#mg "milligram"

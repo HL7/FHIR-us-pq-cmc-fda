@@ -295,11 +295,13 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
     percent 0..1 MS
   * amount[weight]
     * value 1..1 MS
-      * ^short = "Product Part Total Weight Numeric Numerator"
+      * ^short = "Product Part Total Weight Numeric"
       * ^definition = """
         Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
         Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
       """
+    * unit 1..1 MS 
+      * ^short = "Product Part Total Weight Numeric UOM"
     * code from PqcmcNonPercentageUnits
   * amount[percent]
     * value 1..1 MS
@@ -309,7 +311,7 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
         Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
       """
     * unit 1..1 MS
-      * ^short = "Product Part Total Weight Numeric Numerator UOM"
+      * ^short = "Product Part Content Percent UOM"
       * ^definition = """
         The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
         Example: mg
@@ -351,6 +353,8 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
     * value 1..1 MS
       * ^short = "Product Part Ingredient Content Percent"
     * code from PqcmcPercentageUnits
+    * unit 1..1 MS
+      * ^short = "Product Part Ingredient Content Percent UOM"
 * component.constituent.location 0..* MS
 * component.constituent.location ^short = "Product Part Ingredient Physical Location"
 * component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
@@ -392,7 +396,6 @@ Examples: Filler, Surfactant"""
     RelsMech 0..1 MS and
     CoatPurpose 0..* MS and
     Color 0..1 MS and
-    ContPercent 1..1 MS and
     AddInfo 0..1 MS 
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
@@ -431,14 +434,6 @@ Examples: yellow, pink, blue, pale yellow."""
 * component.property[Color].value[x] only CodeableConcept
 * component.property[Color].valueCodeableConcept.text 1..1 MS
 
-* component.property[ContPercent].type MS
-* component.property[ContPercent].type ^short = "Product Part Content Percent"
-* component.property[ContPercent].type ^definition = """The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
-Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
-"""
-* component.property[ContPercent].type = $NCIT#ContPercent "Product Part Content Percent"
-* component.property[ContPercent].value[x] 1..1 MS
-* component.property[ContPercent].value[x] only Quantity
 
 * component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
 
