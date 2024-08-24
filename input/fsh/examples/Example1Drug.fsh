@@ -48,11 +48,12 @@ Usage: #example
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C82533 "Active Ingredient"
 * substance.code.reference = Reference(urn:uuid:2d70d504-8cc6-4282-81d4-b20b0a98b78b)
-* substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
-* substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.1665
-* substance.strength.concentrationRatio.numerator = 200 $UCUM#mg "milligram"
-* substance.strength.concentrationRatio.denominator = 1 $UCUM#[arb'U] "arbitrary unit"
-* substance.strength.textConcentration = "200mg"
+* substance.strength[amount].extension[strengthFactors].valueCodeableConcept = $NCIT#C168628 "Mass"
+* substance.strength[amount].concentrationRatio.numerator = 200 $UCUM#mg "milligram"
+* substance.strength[amount].concentrationRatio.denominator = 1 $UCUM#[arb'U] "arbitrary unit"
+* substance.strength[amount].textConcentration = "200mg"
+* substance.strength[percent]
+  * concentrationQuantity = 16.65 $UCUM#% "percent"
 
 Instance: fc878c4f-a98c-427c-816b-e03ccdf0e712
 InstanceOf: ComponentSubstance
@@ -79,13 +80,14 @@ Usage: #example
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C82533 "Active Ingredient"
 * substance.code.reference = Reference(urn:uuid:fc878c4f-a98c-427c-816b-e03ccdf0e712)
-* substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
-* substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.2498
-* substance.strength.concentrationRatio.numerator = $UCUM#mg "milligram"
-* substance.strength.concentrationRatio.numerator.value = 300
-* substance.strength.concentrationRatio.denominator = $UCUM#[arb'U] "arbitrary unit"
-* substance.strength.concentrationRatio.denominator.value = 1
-* substance.strength.textConcentration = "300mg"
+* substance.strength[amount].extension[strengthFactors].valueCodeableConcept = $NCIT#C168628 "Mass"
+* substance.strength[amount].concentrationRatio.numerator = $UCUM#mg "milligram"
+* substance.strength[amount].concentrationRatio.numerator.value = 300
+* substance.strength[amount].concentrationRatio.denominator = $UCUM#[arb'U] "arbitrary unit"
+* substance.strength[amount].concentrationRatio.denominator.value = 1
+* substance.strength[amount].textConcentration = "300mg"
+* substance.strength[percent]
+  * concentrationQuantity = 24.98 $UCUM#% "percent"
 
 Instance: 393a14e7-3edc-4373-bbe5-9e569d504a1c
 InstanceOf: ComponentSubstance
@@ -115,11 +117,12 @@ Usage: #example
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C42637 "Inactive Ingredient"
 * substance.code.reference = Reference(urn:uuid:393a14e7-3edc-4373-bbe5-9e569d504a1c)
-* substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
-* substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.5828
-* substance.strength.concentrationRatio.numerator = 700 $UCUM#mg "milligram"
-* substance.strength.concentrationRatio.denominator = 1 $UCUM#[arb'U] "arbitrary unit"
-* substance.strength.textConcentration = "700mg"
+* substance.strength[amount].extension[strengthFactors].valueCodeableConcept = $NCIT#C168628 "Mass"
+* substance.strength[amount].concentrationRatio.numerator = 700 $UCUM#mg "milligram"
+* substance.strength[amount].concentrationRatio.denominator = 1 $UCUM#[arb'U] "arbitrary unit"
+* substance.strength[amount].textConcentration = "700mg"
+* substance.strength[percent]
+  * concentrationQuantity = 58.28 $UCUM#% "percent"
 
 Instance: 496f83ad-2365-4b12-8672-a349d99f7d67
 InstanceOf: ComponentSubstance
@@ -150,13 +153,14 @@ Usage: #example
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C42637 "Inactive Ingredient"
 * substance.code.reference = Reference(urn:uuid:496f83ad-2365-4b12-8672-a349d99f7d67)
-* substance.strength.extension[strengthFactors].extension[strengthType].valueCodeableConcept = $NCIT#C168628 "Mass"
-* substance.strength.extension[strengthFactors].extension[contentPercent].valueDecimal = 0.0008
-* substance.strength.concentrationRatio.numerator = $UCUM#mg "milligram"
-* substance.strength.concentrationRatio.numerator.value = 1
-* substance.strength.concentrationRatio.denominator = $UCUM#[arb'U] "arbitrary unit"
-* substance.strength.concentrationRatio.denominator.value = 1
-* substance.strength.textConcentration = "1mg"
+* substance.strength[amount].extension[strengthFactors].valueCodeableConcept = $NCIT#C168628 "Mass"
+* substance.strength[amount].concentrationRatio.numerator = $UCUM#mg "milligram"
+* substance.strength[amount].concentrationRatio.numerator.value = 1
+* substance.strength[amount].concentrationRatio.denominator = $UCUM#[arb'U] "arbitrary unit"
+* substance.strength[amount].concentrationRatio.denominator.value = 1
+* substance.strength[amount].textConcentration = "1mg"
+* substance.strength[percent]
+  * concentrationQuantity = 0.08 $UCUM#% "percent"
 
 Instance: 5772a6f2-cde1-4903-bfcf-1639340205cc
 InstanceOf: DrugProductDescription
