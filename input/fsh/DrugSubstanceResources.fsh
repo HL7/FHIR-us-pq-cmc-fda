@@ -131,12 +131,12 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength.concentration[x] only Ratio or Quantity
 * substance.strength.concentrationQuantity 0..1 MS
 * substance.strength.concentrationQuantity.value 1..1 MS
-* substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
+* substance.strength.concentrationQuantity.value ^short = "Ingredient Total Amount Numeric"
 * substance.strength.concentrationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
-Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
+Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Ingredient Total Amount Numeric = 325
 """
 * substance.strength.concentrationQuantity.comparator 1..1 MS
-* substance.strength.concentrationQuantity.comparator ^short = "Drug Product Component Total Weight Operator"
+* substance.strength.concentrationQuantity.comparator ^short = "Ingredient Total Amount Operator"
 * substance.strength.concentrationQuantity.comparator ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
 Note: This is typically applicable to biologics.
 """
@@ -154,17 +154,21 @@ Note: This is typically applicable to biologics.
     """
   * denominator MS
   * denominator from PqcmcUnitsMeasure (extensible)
-* substance.strength.concentrationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
+  * numerator
+    * value 1..1 MS
+      * ^short = "Ingredient Total Amount Numeric Numerator"
+* substance.strength.concentrationRatio.numerator.unit ^short = "Ingredient Total Amount Numeric Numerator UOM"
 * substance.strength.concentrationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
 Example: mg"""
 * substance.strength.concentrationRatio.numerator.code 1..1 MS
 * substance.strength.concentrationRatio.denominator 1..1 MS
-* substance.strength.concentrationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
+* substance.strength.concentrationRatio.denominator.value  ^short = "Ingredient Total Amount Numeric Denominator"
 * substance.strength.concentrationRatio.denominator.value  ^definition = """Specifies the quantity of the ingredients within a single dose unit (e.g., vial, syringe) of drug product. [Source: SME Defined]
 Example: 10mg/syringe, 1mg/ml
 """
 * substance.strength.concentrationRatio.denominator.value 1..1 MS
 * substance.strength.concentrationRatio.denominator.unit 1..1 MS
+  * ^short = "Ingredient Total Amount Numeric Denominator UOM"
 * substance.strength.concentrationRatio.denominator.code 1..1 MS
 
 * substance.strength.concentrationQuantity 0..1 MS
