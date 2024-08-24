@@ -681,12 +681,28 @@ Description: "The amount details about the drug product ingredients in the batch
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
-* substance.strength 1..* MS
-* substance obeys cmc-percent-quantity-ingredient
-  * strength 1..2 MS
+* substance
+  * strength 2..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.rules = #closed
+    * ^slicing.discriminator.path = "concentration.code"
+    * ^slicing.ordered = false
+  * strength contains 
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * strength[perBatch]
+    * ^short = "Ingredient Total per Batch"
+    * ^definition = "the total amount of thi ingredient present in the batch"
     * concentration[x] 1..1 MS
     * concentration[x] only Quantity
-    * concentrationQuantity from PqcmcUnitsMeasure (extensible)
+    * concentrationQuantity.code 1..1 MS
+    * concentrationQuantity.code from PqcmcNonPercentageUnits (required)
+  * strength[percent]
+    * ^short = "Ingredient percent of Total Batch"
+    * concentration[x] 1..1 MS
+    * concentration[x] only Quantity
+    * concentrationQuantity.code 1..1 MS
+    * concentrationQuantity.code from PqcmcPercentageUnits (required)
 
 
 RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)

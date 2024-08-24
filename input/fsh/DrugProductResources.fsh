@@ -706,45 +706,33 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
 * component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
 * component.constituent
-* component.constituent obeys cmc-percent-quantity
-  * amount 1..2 MS
+  * amount 2..2 MS
   * amount ^slicing.discriminator.type = #value
   * amount ^slicing.discriminator.path = "code"
   * amount ^slicing.rules = #closed
   * amount ^slicing.description = "Slice based on value of unit"
   * amount contains
-      Weight 1..1 MS and
-      VolumeToVolume 0..1 MS and
-      WeightToVolume 0..1 MS and 
-      WeightToWeight 0..1 MS
-  * amount[Weight].value 1..1 MS
-  * amount[Weight].value ^short = "Component Quantity Per Batch"
-  * amount[Weight].value ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
-"""
-  * amount[Weight].unit 1..1 MS
-  * amount[Weight].code 1..1 MS
-  * amount[Weight].code from PqcmcNonPercentageUnits
-  * amount[VolumeToVolume].value 1..1 MS
-  * amount[VolumeToVolume].value ^short = "Quantity Percent"
-  * amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[VolumeToVolume].code = $UCUM#%{VolumeToVolume} "percent VolumeToVolume"
-
-  * amount[WeightToVolume].value 1..1 MS
-  * amount[WeightToVolume].value ^short = "Quantity Percent"
-  * amount[WeightToVolume].value ^definition = """Quantity expressed as Weight To Volume: The percentage of the component in the batch [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[WeightToVolume].code = $UCUM#%{WeightToVolume} "percent WeightToVolume"
-  * amount[WeightToWeight].value 1..1 MS
-  * amount[WeightToWeight].value ^short = "Quantity Percent"
-  * amount[WeightToWeight].value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined] 
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[WeightToWeight].code = $UCUM#%{WeightToWeight} "percent WeightToWeight"
+      perBatch 1..1 MS and
+      percent 1..1 MS
+  * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """
+      Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * ^short = "Quantity Percent"
+    * ^definition = """
+      Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
+      Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
 
 
 * component.constituent.location 0..* MS
