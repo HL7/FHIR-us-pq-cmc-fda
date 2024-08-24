@@ -4,20 +4,15 @@ Title: "Strength Extension"
 Description: "Strength Type (for API)"
 * ^context[+].type = #element
 * ^context[=].expression = "Ingredient.substance.strength"
-* extension contains
-    strengthType 1..1 MS and
-    contentPercent 1..1 MS
-* extension[strengthType].value[x] only CodeableConcept
-* extension[strengthType].value[x] from PqcmcStrengthTypeTerminology (required)
-* extension[strengthType] ^short = "Strength Type (for API)"
-* extension[strengthType] ^definition = """A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
-Example: Mass, Activity
-"""
-* extension[contentPercent].value[x] only decimal
-* extension[contentPercent] ^short = "Product Ingredient Content Percent"
-* extension[contentPercent] ^definition = """The percentage of the component in the drug product. [Source: SME Defined]
-Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
-"""
+* value[x] 1..1 MS
+  * ^short = "Strength Type (for API)"
+  * ^definition = """
+    A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]
+    Example: Mass, Activity
+  """
+* value[x] only CodeableConcept
+* value[x] from PqcmcStrengthTypeTerminology (required)
+
 Profile: PolymorphicForm
 Parent: SubstanceDefinition
 Id: pqcmc-polymorphic-form
@@ -125,60 +120,87 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(ComponentSubstance)
-* substance.strength 1..1 MS
-* substance.strength.extension contains strength-extension named strengthFactors 1..1 MS
-* substance.strength.concentration[x] 1..1 MS
-* substance.strength.concentration[x] only Ratio or Quantity
-* substance.strength.concentrationQuantity 0..1 MS
-* substance.strength.concentrationQuantity.value 1..1 MS
-* substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
-* substance.strength.concentrationQuantity.value ^definition = """TSpecifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
-Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
-"""
-* substance.strength.concentrationQuantity.comparator 1..1 MS
-* substance.strength.concentrationQuantity.comparator ^short = "Drug Product Component Total Weight Operator"
-* substance.strength.concentrationQuantity.comparator ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
-Note: This is typically applicable to biologics.
-"""
-* substance.strength.concentrationQuantity from PqcmcUnitsMeasure (extensible)
-* substance.strength.textConcentration 1..1 MS
-* substance.strength.textConcentration ^short = "Strength Textual"
-* substance.strength.textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
-* substance.strength.concentrationRatio 0..1 MS
-* substance.strength.concentrationRatio
-  * numerator 1..1 MS
-  * numerator from PqcmcUnitsMeasure (extensible)
-    * value ^short = "Product Ingredient Amount Numeric Numerator"
-    * ^definition = """
-      Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
-    """
-  * denominator MS
-  * denominator from PqcmcUnitsMeasure (extensible)
-* substance.strength.concentrationRatio.numerator.unit ^short = "Product Ingredient Amount Numeric Numerator UOM"
-* substance.strength.concentrationRatio.numerator.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
-Example: mg"""
-* substance.strength.concentrationRatio.numerator.code 1..1 MS
-* substance.strength.concentrationRatio.denominator 1..1 MS
-* substance.strength.concentrationRatio.denominator.value  ^short = "Product Ingredient Amount Numeric Denominator"
-* substance.strength.concentrationRatio.denominator.value  ^definition = """Specifies the quantity of the ingredients within a single dose unit (e.g., vial, syringe) of drug product. [Source: SME Defined]
-Example: 10mg/syringe, 1mg/ml
-"""
-* substance.strength.concentrationRatio.denominator.value 1..1 MS
-* substance.strength.concentrationRatio.denominator.unit 1..1 MS
-* substance.strength.concentrationRatio.denominator.code 1..1 MS
 
-* substance.strength.concentrationQuantity 0..1 MS
-* substance.strength.concentrationQuantity from PqcmcUnitsMeasure (extensible)
-* substance.strength.concentrationQuantity.value 1..1 MS
-* substance.strength.concentrationQuantity.value ^short = "Product Ingredient Amount Numeric"
-* substance.strength.concentrationQuantity.value ^definition = """Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
-Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Numerator = 325
-"""
-* substance.strength.concentrationQuantity.unit 1..1
-* substance.strength.concentrationQuantity.code 1..1
-* substance.strength.textConcentration 1..1 MS
-* substance.strength.textConcentration ^short = "Strength Textual"
-* substance.strength.textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+* substance.strength 2..2 MS
+  * ^slicing.discriminator[+].type = #exists
+  * ^slicing.discriminator[=].path = "textConcentration"
+  // * ^slicing.discriminator[+].type = #type
+  // * ^slicing.discriminator[=].path = "concentration"
+  // * ^slicing.discriminator[+].type = #value
+  // * ^slicing.discriminator[=].path = "concentration.code"
+  * ^slicing.rules = #closed
+  * ^slicing.description = ""
+  * ^slicing.ordered = false
+* substance.strength contains
+  amount 1..1 MS and
+  percent 1..1 MS
+* substance.strength[amount]
+  * extension contains strength-extension named strengthFactors 1..1 MS
+  * concentration[x] 1..1 MS
+  * concentration[x] only Ratio or Quantity
+  * concentrationQuantity 0..1 MS
+  * concentrationQuantity.value 1..1 MS
+  * concentrationQuantity.value ^short = "Ingredient Total Amount Numeric"
+  * concentrationQuantity.value ^definition = """
+    Specifies the quantity of an ingredient in a single dose unit (e.g., one tablet, capsule) of the drug product. [Source: SME Defined]
+    Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Ingredient Total Amount Numeric = 325
+  """
+  * concentrationQuantity.comparator 0..1 MS // you CANNOT make comparator mandatory! it's absence implies equality
+  * concentrationQuantity.comparator ^short = "Ingredient Total Amount Operator"
+  * concentrationQuantity.comparator ^definition = """
+    A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
+    Note: This is typically applicable to biologics.
+  """
+  * concentrationQuantity.unit 1..1
+  * concentrationQuantity.code 1..1 MS
+  * concentrationQuantity.code from PqcmcNonPercentageUnits (required)
+  * textConcentration 1..1 MS
+  * textConcentration ^short = "Strength Textual"
+  * textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
+  * concentrationRatio 0..1 MS
+  * concentrationRatio
+    * numerator 1..1 MS
+    * numerator from PqcmcNonPercentageUnits (required)
+      * value ^short = "Product Ingredient Amount Numeric Numerator"
+      * ^definition = """
+        Specifies the quantity of an ingredient in a single dose unit of the drug product. [Source: SME Defined]
+      """
+    * denominator MS
+    * denominator from PqcmcNonPercentageUnits (required)
+    * numerator
+      * value 1..1 MS
+        * ^short = "Ingredient Total Amount Numeric Numerator"
+  * concentrationRatio.numerator.unit ^short = "Ingredient Total Amount Numeric Numerator UOM"
+  * concentrationRatio.numerator.unit ^definition = """
+    The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI EVS C117055]
+    Example: mg
+  """
+  * concentrationRatio.numerator.code 1..1 MS
+  * concentrationRatio.denominator 1..1 MS
+  * concentrationRatio.denominator.value  ^short = "Ingredient Total Amount Numeric Denominator"
+  * concentrationRatio.denominator.value  ^definition = """
+    Specifies the quantity of the ingredients within a single dose unit (e.g., vial, syringe) of drug product. [Source: SME Defined]
+    Example: 10mg/syringe, 1mg/ml
+  """
+  * concentrationRatio.denominator.value 1..1 MS
+  * concentrationRatio.denominator.unit 1..1 MS
+    * ^short = "Ingredient Total Amount Numeric Denominator UOM"
+  * concentrationRatio.denominator.code 1..1 MS
+* substance.strength[percent]
+  * concentration[x] 1..1 MS
+  * concentration[x] only Quantity
+  * textConcentration 0..0
+  * concentrationQuantity
+    * value 1..1 MS
+      * ^short = "Ingredient Total Amount Content Percent"
+      * ^definition = """
+        The percentage of the component in the drug product. [Source: SME Defined]
+        Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
+      """
+    * code 1..1 MS
+      * ^short = "Ingredient Total Amount Content Percent UOM"
+    * code from PqcmcPercentageUnits (required)
+    
 
 Profile: ExcipientRaw
 Parent: SubstanceDefinition
@@ -649,7 +671,7 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
     * text 1..1 MS
       * ^short = "Substance Characterisation Technique"
   * description 0..1 MS
-    * ^short = "Analytical Instrument Data File Narrative Text"
+    * ^short = "Analysis Narrative Text and Table"
     * ^definition = ""
   * file 0..* MS
     * ^short = "Impurity Analysis Graphic | Impurity Analytical Instrument Data File"
@@ -681,12 +703,28 @@ Description: "The amount details about the drug product ingredients in the batch
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
-* substance.strength 1..* MS
-* substance obeys cmc-percent-quantity-ingredient
-  * strength 1..2 MS
+* substance
+  * strength 2..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.rules = #closed
+    * ^slicing.discriminator.path = "concentration.code"
+    * ^slicing.ordered = false
+  * strength contains 
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * strength[perBatch]
+    * ^short = "Ingredient Total per Batch"
+    * ^definition = "the total amount of thi ingredient present in the batch"
     * concentration[x] 1..1 MS
     * concentration[x] only Quantity
-    * concentrationQuantity from PqcmcUnitsMeasure (extensible)
+    * concentrationQuantity.code 1..1 MS
+    * concentrationQuantity.code from PqcmcNonPercentageUnits (required)
+  * strength[percent]
+    * ^short = "Ingredient percent of Total Batch"
+    * concentration[x] 1..1 MS
+    * concentration[x] only Quantity
+    * concentrationQuantity.code 1..1 MS
+    * concentrationQuantity.code from PqcmcPercentageUnits (required)
 
 
 RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)

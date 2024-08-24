@@ -126,7 +126,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
       QualStd 1..* MS and
-      Sterile 0..1 MS
+      Sterile 1..1 MS
 * property[OvrRelsProf].type MS
 * property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
 * property[OvrRelsProf].type from pqcmc-product-characteristic
@@ -295,11 +295,13 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
     percent 0..1 MS
   * amount[weight]
     * value 1..1 MS
-      * ^short = "Product Part Total Weight Numeric Numerator"
+      * ^short = "Product Part Total Weight Numeric"
       * ^definition = """
         Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
         Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
       """
+    * unit 1..1 MS 
+      * ^short = "Product Part Total Weight Numeric UOM"
     * code from PqcmcNonPercentageUnits
   * amount[percent]
     * value 1..1 MS
@@ -309,7 +311,7 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
         Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
       """
     * unit 1..1 MS
-      * ^short = "Product Part Total Weight Numeric Numerator UOM"
+      * ^short = "Product Part Content Percent UOM"
       * ^definition = """
         The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
         Example: mg
@@ -321,6 +323,9 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
 * component.constituent obeys cmc-ingredient-functions
 * component.constituent
   * modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+  * extension contains http://hl7.org/fhir/StructureDefinition/originalText named textualStrength 0..1 MS
+  * extension[textualStrength].value[x] only string
+    * ^short = "Textual Strength"
 * component.constituent obeys cmc-amount-ratio-or-quantity
 * component.constituent
   * amount 1..2 MS
@@ -351,6 +356,8 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
     * value 1..1 MS
       * ^short = "Product Part Ingredient Content Percent"
     * code from PqcmcPercentageUnits
+    * unit 1..1 MS
+      * ^short = "Product Part Ingredient Content Percent UOM"
 * component.constituent.location 0..* MS
 * component.constituent.location ^short = "Product Part Ingredient Physical Location"
 * component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
@@ -392,7 +399,6 @@ Examples: Filler, Surfactant"""
     RelsMech 0..1 MS and
     CoatPurpose 0..* MS and
     Color 0..1 MS and
-    ContPercent 1..1 MS and
     AddInfo 0..1 MS 
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
@@ -431,14 +437,6 @@ Examples: yellow, pink, blue, pale yellow."""
 * component.property[Color].value[x] only CodeableConcept
 * component.property[Color].valueCodeableConcept.text 1..1 MS
 
-* component.property[ContPercent].type MS
-* component.property[ContPercent].type ^short = "Product Part Content Percent"
-* component.property[ContPercent].type ^definition = """The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
-Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
-"""
-* component.property[ContPercent].type = $NCIT#ContPercent "Product Part Content Percent"
-* component.property[ContPercent].value[x] 1..1 MS
-* component.property[ContPercent].value[x] only Quantity
 
 * component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
 
@@ -680,6 +678,8 @@ Examples: commercial, development. """
     perBatch 1..1 MS and
     percent 1..1 MS
   * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
     * value 1..1 MS
     * unit 1..1 MS
     * code 1..1 MS
@@ -689,11 +689,6 @@ Examples: commercial, development. """
     * unit 1..1 MS
     * code 1..1 MS
     * code from PqcmcPercentageUnits (required)
-// * component obeys cmc-percent-quantity
-//   * amount 1..2 MS
-//   * amount from PqcmcUnitsMeasure (extensible)
-//   * amount ^short = "Component Quantity Per Batch"
-//   * amount ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
@@ -709,45 +704,33 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
 * component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
 * component.constituent
-* component.constituent obeys cmc-percent-quantity
-  * amount 1..2 MS
+  * amount 2..2 MS
   * amount ^slicing.discriminator.type = #value
   * amount ^slicing.discriminator.path = "code"
   * amount ^slicing.rules = #closed
   * amount ^slicing.description = "Slice based on value of unit"
   * amount contains
-      Weight 1..1 MS and
-      VolumeToVolume 0..1 MS and
-      WeightToVolume 0..1 MS and 
-      WeightToWeight 0..1 MS
-  * amount[Weight].value 1..1 MS
-  * amount[Weight].value ^short = "Component Quantity Per Batch"
-  * amount[Weight].value ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
-"""
-  * amount[Weight].unit 1..1 MS
-  * amount[Weight].code 1..1 MS
-  * amount[Weight].code from PqcmcNonPercentageUnits
-  * amount[VolumeToVolume].value 1..1 MS
-  * amount[VolumeToVolume].value ^short = "Quantity Percent"
-  * amount[VolumeToVolume].value ^definition = """Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[VolumeToVolume].code = $UCUM#%{VolumeToVolume} "percent VolumeToVolume"
-
-  * amount[WeightToVolume].value 1..1 MS
-  * amount[WeightToVolume].value ^short = "Quantity Percent"
-  * amount[WeightToVolume].value ^definition = """Quantity expressed as Weight To Volume: The percentage of the component in the batch [Source: SME Defined]
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[WeightToVolume].code = $UCUM#%{WeightToVolume} "percent WeightToVolume"
-  * amount[WeightToWeight].value 1..1 MS
-  * amount[WeightToWeight].value ^short = "Quantity Percent"
-  * amount[WeightToWeight].value ^definition = """Quantity expressed as Weight To Weight: The percentage of the component in the batch [Source: SME Defined] 
-
-Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
-"""
-  * amount[WeightToWeight].code = $UCUM#%{WeightToWeight} "percent WeightToWeight"
+      perBatch 1..1 MS and
+      percent 1..1 MS
+  * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """
+      Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * ^short = "Quantity Percent"
+    * ^definition = """
+      Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
+      Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
 
 
 * component.constituent.location 0..* MS
