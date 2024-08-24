@@ -20,19 +20,20 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
       [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
       **ValueSets:**
       Substance Classification
-      Units Of Measure Terminology
+      Units Of Measure
       Chemical Structure Data File Type Terminology
-      Substance Name Type
+      Substance Name Type 
     }
   }
 
-  node "Base64DocumentReference" as NB64 {
+  node "GraphicReference" as NB64 {
 
-    object "**Parent:** DocumentReferencee"  as obj64 {
+    object "**Parent:** Base64DocumentReference"  as obj64 {
       **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]]
+      [[StructureDefinition-pqcmc-graphic-reference.html]]
     }
   }
+
   node "EctdComposition32S10" as N1 {
 
     object "**Parent:** Composition" as obj1 {
@@ -49,8 +50,7 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-polymorphic-form.html]]
       **ValueSets:**
-      Substance Classification
-      Units Of Measure Terminology
+      Units Of Measure
       Chemical Structure Data File Type Terminology
     }
   }
@@ -59,15 +59,23 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**   
-      Testing Site and Organization Identifier Type Terminology
+  }
+  }
+ 
+  node "StructureReference" as NBstruc {
+
+    object "**Parent:** Base64DocumentReference"  as objb64 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-structure-reference.html]]
     }
   }
 
- 
   N1 -[#darkred]-> NN
   NN -[#darkred]-> N2
+  NN -[#darkred]-> NB64
+  NN -[#darkred]-> NBstruc
   N2 -[#darkred]-> NB64
+  N2 -[#darkred]-> NBstruc
   N1 -[#darkred]-> NSO
   NN -[#darkred]-> NSO
 }

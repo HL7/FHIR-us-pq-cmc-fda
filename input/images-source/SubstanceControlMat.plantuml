@@ -19,21 +19,16 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-quality-specification.html]]
             **ValueSets**
-            Interpretation Code Terminology
             Specification Status Terminology
-            Specification Type Terminology
             Test Category Terminology
             Test Method Origin Terminology
-            Test Sub-Category Terminology
             Test Usage Terminology
-            Units Of Measure Terminology
+            Units Of Measure
         }
         object "**Extensions**" as objQSEx {
-            Interpretation Code
-            Specification Status
-            Specification Type
+            Approval Status
             Additional Information
-            Test Order
+            TargetRange
         }
         obj2 <|-- objQSEx
     }
@@ -47,7 +42,6 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
         }
     }
 
-
     node "ExcipientRaw" as N21 {
 
         object "**Parent:** SubstanceDefinition" as obj22 {
@@ -59,26 +53,24 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             Quality Standard Terminology
         }
     }
-        node "CodedOrganization" as NSO {
+    node "CodedOrganization" as NSO {
 
         object "**Parent:** Organization" as objAu {
             **Reference:**
             [[StructureDefinition-cmc-organization.html]]
-            **ValueSets:**
-            Testing Site and Organization Identifier Type Terminology
         }
     }
 
-    
-  node "SubstanceDefinitionHandle" as NN { 
-      object "**Parent:** SubstanceDefinition" as obj3 {
-                   **Reference:**
-      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
-                **ValueSets:**
-                Substance Classification
-                Quality Benchmark Terminology
-      }  
-}
+    node "SubstanceDefinitionHandle" as NN {
+
+        object "**Parent:** SubstanceDefinition" as obj3 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+            **ValueSets:**
+            Substance Classification
+            Quality Benchmark Terminology
+        }
+    }
 
     N1 -[#darkred]--> N2
     N2 -[#darkred]-> N21

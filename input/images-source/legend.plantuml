@@ -23,8 +23,6 @@ package "Bundle" as NODES {
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
     }
   }
   
