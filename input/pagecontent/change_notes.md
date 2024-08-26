@@ -1,7 +1,10 @@
 PQ/CMC FHIR Implementation Guide is under development.  Minor releases will be posted for feedback. These release notes will be retained until the next major release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 1.1.4
+### Changes and Updates for Version 1.1.5
 The current development IG - Sept connectathon plus Stage 2
+Updates to Home page and copywrite for NCIt
+
+### Changes and Updates for Version 1.1.4
 Text type ballot changes
 Bundle Map diagram updates
 Stage 2 changes from Excel file
