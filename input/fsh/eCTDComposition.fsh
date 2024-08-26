@@ -7,7 +7,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 * . ^short = "CMC eCTD 32P1 Bundle"
 * meta.profile MS  
 * identifier MS
-
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"
@@ -23,7 +23,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
     Composition 1..1 and
     FinishedProduct 1..1 and
     DrugProductDescription 1..1 and
-    ContainerClosure 1..1 and
+    ContainerClosure 1..* and
     Organization 0..* and
     DrugProductComponent 0..* and
     ComponentSubstance 0..* and
@@ -49,7 +49,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
 * meta.profile MS  
 * identifier MS
-
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"
@@ -89,6 +89,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles.
 * . ^short = "CMC eCTD 32S23 Bundle"
 * meta.profile MS  
 * identifier MS
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"
@@ -126,6 +127,7 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 
 * meta.profile MS  
 * identifier MS
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"
@@ -162,6 +164,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
 * meta.profile MS
 * identifier MS
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"
@@ -197,6 +200,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles 
 * . ^short = "CMC eCTD 32P32 Bundle"
 * meta.profile MS
 * identifier MS
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"
@@ -231,6 +235,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (
 * . ^short = "CMC eCTD 32P55 Bundle"
 * meta.profile MS
 * identifier MS
+* identifier ^definition = "Designation by the author."
 * type MS
 * type = #document
 * type ^short = "document"

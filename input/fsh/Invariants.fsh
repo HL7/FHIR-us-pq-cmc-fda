@@ -6,7 +6,7 @@ Expression: "select(preferred = true).count() < 2"
 Severity: #error
 
 Invariant: cmc-when-unii-required
-Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'."
+Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'. A UniProt code is required for any of these categories: 'Protein'"
 Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803') ).exists()
 implies code.where(
   code.coding.system = 'http://fdasis.nlm.nih.gov'
@@ -64,14 +64,14 @@ strength
 implies (
     strength.presentation.ofType(Ratio).exists() and
     strength.presentation.numerator.where(
-        code = 'C75765' and
-        system = %system
+        code = '[arb\u005c\u0027U]' and
+        system = 'http://unitsofmeasure.org'
     )
 ) or (
     strength.presentation.ofType(Quantity).exists() and
     strength.presentation.where(
-        code = 'C75765' and
-        system = %system
+        code = '[arb\u005c\u0027U]' and
+        system = 'http://unitsofmeasure.org'
     )
 ))"
 Severity: #error
@@ -122,10 +122,10 @@ Severity: #error
 //Severity: #error
 
 Invariant: cmc-percent-quantity
-Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasureTerminology cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Description: "The component.constituent('Weight').amount.code from PqcmcUnitsMeasure cannot be  VolumeToVolume, WeightToVolume or WeightToWeight"
+Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   amount
-  .where(system = %system and (('C48527' | 'C48528' | 'C48571') contains code).not())
+  .where(system = %system and (('%{WeightToWeight}' | '%{WeightToVolume}' | '%{VolumeToVolume}') contains code).not())
   .count() = 1
 )"
 Severity: #error
@@ -136,10 +136,10 @@ Description: "There must be a concentration whose unit is not VolumeToVolume, We
 // select the concentrationQuantity's (all concentrations)
 // find the concentrations where the system is NCIT and the code is not a percent
 // make sure there is exactly one
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   strength.concentration
     .ofType(Quantity)
-    .where(system = %system and  (('C48527' | 'C48528' | 'C48571') contains code).not())
+    .where(system = %system and  (('%{WeightToWeight}' | '%{WeightToVolume}' | '%{VolumeToVolume}') contains code).not())
     .count() = 1
 )"
 Severity: #error
@@ -218,7 +218,6 @@ Severity: #error
 // Note: checks if a property for the numerator or denominator exists. if it
 // does and it has an arbitrary unit, then there needs to be a slice for 
 // weight textual
-
 
 Invariant: cmc-format-required
 Severity: #error
@@ -328,7 +327,7 @@ Severity: #error
 Invariant: cmc-amount-ratio-or-quantity
 Severity: #error
 Description: "The amount ratio extension and an amount with a non-percentage unit are mutually exclusive"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://unitsofmeasure.org').select(
   modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')
   .union(
     amount.where(
@@ -339,3 +338,12 @@ Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSyst
 )"
 // Logically: Either the amount ratio extension or an amount that isn't a percent must be present, and they
 // can never be present at the same time, so their combined count is always 1
+
+Invariant: cmc-impurity-unii-required
+Severity: #error
+Description: "If Product Impurity Chemical Structure Data File is not present, then a unii is required"
+Expression: "structure.representation.where(type.text = 'Structure' and document.exists()).exists().not() implies (
+  code.where(
+    code.coding.system = 'http://fdasis.nlm.nih.gov'
+  ).exists()
+)"

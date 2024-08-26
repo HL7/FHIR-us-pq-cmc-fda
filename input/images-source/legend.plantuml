@@ -9,7 +9,7 @@ skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
 package "Bundle" as NODES {
-  node "Name of Profile" as Nameprofile {
+  node "A Profile on a resource" as Nameprofile {
     object "**Parent:** Name of Resource or 'Profile' name if parent is a profile" as objcs {
       **ValueSets:**
       Terminology 1
@@ -18,19 +18,17 @@ package "Bundle" as NODES {
     }
   }
 
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
     }
   }
   
   diamond CH
 
-  node "Name of Profile 2" as NN {
+  node "Example Profile" as NN {
 
     object "**Parent:** a Resource" as obj3 {
       **ValueSets:**
@@ -48,7 +46,7 @@ package "Bundle" as NODES {
 
   }
 
-  node "Name of profile.  All eCTD bundles have a composition profile" as N1 {
+  node "Profile on a resource.  All eCTD bundles have a composition profile" as N1 {
 
     object "**Parent:** Composition" as obj1 {
       **ValueSets:**
@@ -57,7 +55,7 @@ package "Bundle" as NODES {
 
   }
 
-  node "Name of Profile 3" as NN3 {
+  node "Another Profile on a resource" as NN3 {
 
     object "**Parent:** a Resource" as obj33 {
       **ValueSets:**

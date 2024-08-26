@@ -12,7 +12,14 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
   object "**Bundle Reference:**" as objbun {
     [[StructureDefinition-cmc-ectd-document-sp4151.html]]
   }
+  node "CodedOrganization" as NMSpon {
 
+    object "**Parent:** Organization" as objDP {
+      **Reference:**
+      [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+    }
+  }
   node "DrugProductHandle" as NN {
 
     object "**Parent:** MedicinalProductDefinition" as obj3 {
@@ -33,15 +40,7 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       Source Type Terminology
       Substance Classification
       Quality Standard Terminology
-    }
-  }
-  node "MfgTestSiteOrganization" as N21mfg {
-
-    object "**Parent:** Organization" as objTS  {
-      **Reference:**
-      [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
+      
     }
   }
 
@@ -54,16 +53,9 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       eCTD sections Value Set
     }
   }
-  node "SponsorOrganization" as NMSpon {
 
-    object "**Parent:** Organization" as objDP {
-      **Reference:**
-      [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-    }
-  }
 
-  node "RoutineSubstanceDefinition for API" as NNS {
+  node "SubstanceDefinitionHandle for API" as NNS {
 
     object "**Parent:** SubstanceDefinition" as obj4 {
       **Reference:**
@@ -71,7 +63,6 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       **ValueSets:**
       Substance Classification
       Quality Standard Terminology
-      Source Type Terminology
     }
   }
 
@@ -83,31 +74,36 @@ package "eCTD Heading 3.2.S.4.1 and 3.2.P.4 and 5.1 Specification Bundles" as NO
       **Reference:**
       [[StructureDefinition-pqcmc-quality-specification.html]]
       **ValueSets**
-      Interpretation Code Terminology
       Specification Status Terminology
-      Specification Type Terminology
       Test Category Terminology
       Test Method Origin Terminology
-      Test Sub-Category Terminology
       Test Usage Terminology
-      Units Of Measure Terminology
+      Units Of Measure
     }
     object "**Extensions**" as objQSEx {
-      Interpretation Code
-      Specification Status
+      Approval Status
       Additional Information
-      Test Order
+      TargetRange
     }
     obj2 *-- objQSEx
   }
 
-  N1 -[#darkred]-> NMSpon
+    node "CodedOrganization (manufacturer or supplier)" as NMSpon2 {
+
+    object "**Parent:** Organization" as objDP2 {
+      **Reference:**
+      [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+    }
+  }
   N1 -[#darkred]-> N2
-  N2 -[#darkred]-> CH
+  N1 -[#darkred]-> NMSpon
+
+  N2 -[#darkred]--> CH
   CH -[#green]-> N21
   CH -[#green]-> NNS
   CH -[#green]-> NN
-  NNS -[#darkred]-> N21mfg
-  N21 -[#darkred]-> N21mfg
+  NNS -[#darkred]--> NMSpon2
+  N21 -[#darkred]--> NMSpon2
 }
 @enduml

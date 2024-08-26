@@ -14,7 +14,6 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
     [[StructureDefinition-cmc-ectd-document-32p55.html]]
   }
 
-
   node "EctdComposition32P55" as N1 {
 
     object "**Parent:** Composition" as obj1 {
@@ -24,25 +23,28 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
       Code system PQCMC Comp Section Types
     }
   }
-  node "Base64DocumentReference" as NB64 {
+  node "GraphicReference" as NB64 {
 
-    object "**Parent:** DocumentReference"  as obj64 {
-
+    object "**Parent:** Base64DocumentReference"  as obj64 {
       **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]]
+      [[StructureDefinition-pqcmc-graphic-reference.html]]
     }
-
   }
-  node "SponsorOrganization" as NSO {
+  node "StructureReference" as NBstruc {
+
+    object "**Parent:** Base64DocumentReference"  as objb64 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-structure-reference.html]]
+    }
+  }
+
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
     }
   }
-
 
   node "DrugProductwithImpurities" as NN {
 
@@ -51,11 +53,13 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-with-impurities.html]]
       **ValueSets:**
-      Name Part Terminology
+      Pharmaceutical Dosage Form Terminology
+      Drug Route Of Administration Terminology
+      PQCMC Name Part Terminology
     }
   }
 
-   node "ImpuritySubstance" as N6 {
+  node "ImpuritySubstance" as N6 {
 
     object "**Parent:** SubstanceDefinition" as obj2 {
       **Reference:**
@@ -64,11 +68,12 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
       Impurity Classification Terminology
       Chemical Structure Data File Type Terminology
     }
-   }
+  }
   N1 -[#darkred]-> NSO
   NN -[#darkred]-> N6
   N1 -[#darkred]-> NN
   N6 -[#darkred]-> NB64
+  N6 -[#darkred]-> NBstruc
 
 }
 @enduml

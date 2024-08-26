@@ -15,7 +15,7 @@ Examples: Approved, Not Approved, Reported in a CBE or AR.
 Extension: HierarchicalLevelExtension
 Id: pq-hierarchical-level-extension
 Title: "Hierarchical Level"
-Description: "Numeric level in the hierarchical value-set"
+Description: "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguished between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. "
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action.reason"
 
@@ -142,11 +142,12 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "ValueNumeric"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
-  * comparator 0..1 MS
+* goal.target.detailQuantity from  PqcmcUnitsMeasure (required)  
 * goal.target.detailQuantity.value 1..1 MS
+* goal.target.detailQuantity.comparator 0..1 MS
 * goal.target.detailQuantity.unit 1..1 MS
 * goal.target.detailQuantity.code 1..1 MS
-* goal.target.detailQuantity.code from  PqcmcUnitsMeasureTerminology (required)
+
 * goal.target.detailString 0..1 MS
   * ^short = "Value"
   * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711>)

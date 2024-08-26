@@ -14,8 +14,16 @@ package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
               [[StructureDefinition-cmc-ectd-document-sp4151.html]]
     }  
 
- 
-node "SponsorOrganization" as NSO { 
+  node "EctdComposition32P32" as N1 { 
+      object "**Parent:** Composition" as obj1 {
+                   **Reference:**
+      [[StructureDefinition-ectd-composition-32p32.html]]
+      **ValueSets:**
+  Code system PQCMC Comp Section Types
+    }
+     
+}
+node "CodedOrganization" as NSO { 
       object "**Parent:** Organization" as objAu {
         **Reference:**
       [[StructureDefinition-cmc-organization.html]]
@@ -29,29 +37,13 @@ node "DrugProductIngredient" as NNgred {
              **Reference:**
       [[StructureDefinition-pqcmc-dp-ingredient.html]]
         **ValueSets:**
-        Units of Measure Terminology    
+        Units Of Measure    
       }      
 
 }
- node "EctdComposition32P32" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-                   **Reference:**
-      [[StructureDefinition-ectd-composition-32p32.html]]
-      **ValueSets:**
-  Code system PQCMC Comp Section Types
-    }
-     
-}
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-                   **Reference:**
-      [[StructureDefinition-cmc-organization.html]]
-         **ValueSets:**
-        Testing Site and Organization Identifier Type Terminology
-    }
-}
 
-node "RoutineSubstanceDefinition" as NNS { 
+
+node "SubstanceDefinitionHandle" as NNS { 
       object "**Parent:** SubstanceDefinition" as obj4 {
                    **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
@@ -64,7 +56,10 @@ node "BatchFormulaMedicinalProduct" as NN2 {
       object "**Parent:** MedicinalProductDefinition" as obj32 {
                    **Reference:**
       [[StructureDefinition-pqcmc-batch-formula-product.html]]
-          
+          **ValueSets:**
+           Pharmaceutical Dosage Form Terminology
+          Drug Route Of Administration Terminology
+          PQCMC Name Part Terminology
       }
 }
 
@@ -73,9 +68,14 @@ node "BatchFormula" as NN {
          **Reference:**
       [[StructureDefinition-pqcmc-product-batch-formula.html]]
         **ValueSets:**
-        Product Part Ingredient Physical Location value set        
+        Manufactured Dose Form Terminology
+        Product Part Type Terminology 
         Batch utilization Terminology
-        Units Of Measure Terminology
+        Non-Percentage Units
+        Percentage Units
+        Ingredient Location Terminology
+        Units Of Measure
+
       } 
       object "**Extensions**" as objExs2 {
         Additional Information
@@ -84,13 +84,12 @@ node "BatchFormula" as NN {
 
  obj3 *-- objExs2     
 }
-
-NN -[#darkred]-> NMFG
+N1 -[#darkred]--> NSO   
+N1 -[#darkred]-> NN2
+NNS -[#darkred]-> NSO
+NN -[#darkred]-> NSO
 NN -[#darkred]-> NNgred
 NN2 -[#darkred]-> NN
-N1 -[#darkred]-> NN2
-N1 -[#darkred]-> NSO        
-NNS -[#darkred]-> NMFG
 NNgred -[#darkred]-> NNS
 
 }

@@ -22,13 +22,11 @@ package "3.2.S.3 eCTD Heading Characterisation Bundle" as NODES {
       Code system PQCMC Comp Section Types
     }
   }
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
     }
   }
 
@@ -41,7 +39,7 @@ package "3.2.S.3 eCTD Heading Characterisation Bundle" as NODES {
       **ValueSets:**
       Chemical Structure Data File Type Terminology
       Substance Classification
-      Units Of Measure Terminology
+
     }
   }
 
@@ -52,21 +50,27 @@ package "3.2.S.3 eCTD Heading Characterisation Bundle" as NODES {
       [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
       **ValueSets:**
       Impurity Classification Terminology
-      Chemical Structure Data File Type Terminology
     }
   }
-  node "Base64DocumentReference" as NB64 {
+  node "GraphicReference" as NB64 {
 
-    object "**Parent:** DocumentReference"  as obj64 {
-
+    object "**Parent:** Base64DocumentReference"  as obj64 {
       **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]]
+      [[StructureDefinition-pqcmc-graphic-reference.html]]
     }
-
   }
+  node "StructureReference" as NBstruc {
+
+    object "**Parent:** Base64DocumentReference"  as objb64 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-structure-reference.html]]
+    }
+  }
+
   N1 -[#darkred]-> NSO
   NN -[#darkred]-> N6
   N1 -[#darkred]-> NN
   N6 -[#darkred]-> NB64
+  N6 -[#darkred]-> NBstruc
 }
 @enduml

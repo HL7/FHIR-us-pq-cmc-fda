@@ -7,6 +7,8 @@ Usage: #example
 * identifier[DUNSNumber].value = "143265625"
 * identifier[DUNSNumber].system = $DUNS
 * name = "J. Jones Research"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "123 Broad Way"
 * contact.address.state = "NY"
 * contact.address.city = "New York"
@@ -26,6 +28,8 @@ Usage: #example
 * identifier[FEINumber].value = "6913973"
 * identifier[FEINumber].system = $FEINumber
 * name = "Manufacturing Site (J. Jones Research)"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "444 Grant Street"
 * contact.address.city = "Bedford"
 * contact.address.state = "NY"
@@ -45,6 +49,8 @@ Usage: #example
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
 * name = "Vidinaid"
+* contact.address
+  * type = #postal
 * contact.address.line[0] = "100 Stillwater Avenue"
 * contact.address.line[1] = "Building #2"
 * contact.address.city = "Bangor"
@@ -163,7 +169,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 200 $NCIT#C68742 "colony forming units"
+    * detailQuantity = 200 $UCUM#[CFU] "colony forming unit"
       * comparator = #<=
 * goal[+]
   * id = "95bf9d43-f337-4905-9c50-788b69d00843"
@@ -199,7 +205,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 3 $NCIT#C48523 "parts per million"
+    * detailQuantity = 3 $UCUM#[ppm] "part per million"
       * comparator = #<=
 * goal[+]
   * id = "03fbc16c-d4d4-40ac-8689-448bda831dac"
@@ -207,7 +213,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 10 $NCIT#C48523 "parts per million"
+    * detailQuantity = 10 $UCUM#[ppm] "part per million"
       * comparator = #<=
 * goal[+]
   * id = "28aba010-126e-4c47-8611-367cdacdd87e"
@@ -222,7 +228,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 2 $NCIT#C48570 "%"
+    * detailQuantity = 2 $UCUM#% "percent"
       * comparator = #<=
 * goal[+]
   * id = "8125f603-96e7-4f3e-8b13-c15c5870e6e6"
@@ -230,10 +236,10 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 30 $NCIT#C28254 "mL"
+    * detailQuantity = 30 $UCUM#mL "milliliter"
       * comparator = #<=
   * target[+]
-    * detailQuantity = 25 $NCIT#C42559 "degree Celsius"
+    * detailQuantity = 25 $UCUM#Cel "degree Celsius"
       * comparator = #<=
 * action[+]
   * id = "428fa917-a7d3-4515-9b48-c9366acd673a"
@@ -378,10 +384,10 @@ Usage: #example
   * target[+]
     * modifierExtension[targetRange]
       * extension[low]
-        * valueQuantity = 3.4 $NCIT#C45997 "pH"
+        * valueQuantity = 3.4 $UCUM#[pH] "[pH]"
           * comparator = #>=
       * extension[high]
-        * valueQuantity = 4.3 $NCIT#C45997 "pH"
+        * valueQuantity = 4.3 $UCUM#[pH] "[pH]"
           * comparator = #<=
 * goal[+]
   * id = "e046aab8-b10f-4e13-89e6-bfa869a90b38"
@@ -389,7 +395,7 @@ Usage: #example
   * addresses[+] = $NCIT#C134029 "Release"
   * addresses[+] = $NCIT#C134030 "Stability"
   * target[+]
-    * detailQuantity = 0.21 $NCIT#C48570 "%"
+    * detailQuantity = 0.21 $UCUM#% "percent"
       * comparator = #<=
 * action[+]
   * id = "fdf5e37f-ae97-48c1-9809-33aebff37199"
@@ -420,7 +426,7 @@ Usage: #example
 * action[+]
   * id = "a5beeff6-dcc1-4b42-8ea1-76dea4b0da1d"
   * prefix = "Single Stage"
-  * title = "pH"
+  * title = "[pH]"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
@@ -461,7 +467,7 @@ Usage: #example
   * description.text = "<=12 deg"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity = 12 $NCIT#C68667 "degrees of rotation"
+    * detailQuantity = 12 $UCUM#deg "degree"
       * comparator = #<=
 * goal[+]
   * id = "2897e150-8465-48c7-9269-1cda86dc3075"
@@ -480,7 +486,7 @@ Usage: #example
   * description.text = "<= 395mg/L"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
-    * detailQuantity = 395 $NCIT#C28253 "milligram"
+    * detailQuantity = 395 $UCUM#mg "milligram"
       * comparator = #<=
 * action[+]
   * id = "3668eb6f-797c-4325-8f41-160c951b4adc"
