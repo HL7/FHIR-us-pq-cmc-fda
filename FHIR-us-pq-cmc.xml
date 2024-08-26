@@ -62,6 +62,7 @@
 <artifact id="SubstanceDefinition/2d70d504-8cc6-4282-81d4-b20b0a98b78b" key="SubstanceDefinition-2d70d504-8cc6-4282-81d4-b20b0a98b78b" name="Composition ingredient substance indentifying information - aspirin"/>
 <artifact id="ValueSet/pqcmc-conformance-to-criteria-terminology" key="ValueSet-pqcmc-conformance-to-criteria-terminology" name="Conformance to Criteria Terminology"/>
 <artifact deprecated="true" id="StructureDefinition/pq-container-closure-extension" key="StructureDefinition-pq-container-closure-extension" name="Container Closure"/>
+<artifact id="DocumentReference/928a3bb5-7be3-4d6e-830f-1a2fc6dcee9b" key="DocumentReference-928a3bb5-7be3-4d6e-830f-1a2fc6dcee9b" name="Container Closure Attached Document example"/>
 <artifact id="ValueSet/pqcmc-container-type-terminology" key="ValueSet-pqcmc-container-type-terminology" name="Container Type Terminology"/>
 <artifact id="StructureDefinition/ContainerClosure" key="StructureDefinition-ContainerClosure" name="ContainerClosure"/>
 <artifact deprecated="true" id="StructureDefinition/content-percent" key="StructureDefinition-content-percent" name="Content Percent"/>

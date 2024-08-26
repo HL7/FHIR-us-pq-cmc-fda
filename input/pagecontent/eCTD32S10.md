@@ -38,5 +38,11 @@ This image demonstrates a Drug Substance with a polymorph displayed with narrati
 
 The file includes a SDF file as an attachment.  After processing with the narrative tranform available on the [Downloads page](downloads.html), clink on the file link at the bottom.
 
-<div><img src="32S10Lev.png" /></div>
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="32S10Lev.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}
 

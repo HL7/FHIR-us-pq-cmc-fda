@@ -48,6 +48,7 @@ Note: This includes primary packaging components and secondary packaging compone
 * attachedDocument 0..* MS
 * attachedDocument ^short = "Container Closure System Depiction"
 * attachedDocument ^definition = "Diagram of cContainer Closure System or any of its parts noted in the Container Closure System Description"
+* attachedDocument only Reference(GraphicReference)
 * packaging 1..1 MS
   * type 1..1 MS
     * coding 1..2 MS
