@@ -7,8 +7,7 @@ Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implemen
 * ^status = #draft
 * ^hierarchyMeaning = #is-a
 * ^publisher = "NCI Thesaurus (NCIt)"
-* ^copyright = "PQ-CMC-FDA Temporary Codes are either in the current NCIt or are in the process of being included in NCI.  When all codes are in NCIt, they will migrate to the HL7 Terminology (THO).  License Note	
-Unless otherwise indicated, all text within NCI products is free of copyright and may be reused without our permission. Credit the National Cancer Institute as the source."
+* ^copyright = "PQ-CMC-FDA Temporary Codes are either in the NCI Thesaurus (NCIt) or are in the process of being included in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). License Note Unless otherwise indicated, all text within NCI products is free of copyright and may be reused without our permission. Credit the National Cancer Institute as the source. For more licensing information see: [https://www.cancer.gov/policies/copyright-reuse](https://www.cancer.gov/policies/copyright-reuse)"
 
 * #batchsize "Batch Quantity"
 * #batchinfo "Batch Formula Additional Information"
