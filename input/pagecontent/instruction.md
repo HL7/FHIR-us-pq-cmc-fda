@@ -131,7 +131,14 @@ There are many elements defined by the markdown datatype. The sytlesheets are re
 * Confirm by clicking “OK”. Note: Due to Cross-Origin Resource Sharing (CORS), the phrase “This page says” cannot be changed. 
 * To process another bundle, simply click on “Choose file” and select the bundle file.
 
-<table style="margin: 0px auto;"><tr><td><img src="fill_Transform.png" /></td></tr></table>
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="fill_Transform.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}
 
 <p style="text-align: center; font-weight: bold">  Narrative Transform Text Area and Save Button  </p>
 
