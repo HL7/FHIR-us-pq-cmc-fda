@@ -2,7 +2,13 @@ PQ/CMC FHIR Implementation Guide is under development.  Minor releases will be p
 
 ### Changes and Updates for Version 1.1.4
 The current development IG - Sept connectathon plus Stage 2
-
+Text type ballot changes
+Bundle Map diagram updates
+Stage 2 changes from Excel file
+Transforms for Stage 2
+Updates to Stage 1 transforms
+Images updates and size change for Jira tickets
+Updates to Quality Specification page for xml snippets
 
 ### Changes and Updates for Version 1.1.3
 - Bundle slicing

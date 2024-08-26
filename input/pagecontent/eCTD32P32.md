@@ -38,7 +38,7 @@ TBD - Insert image of  BatchForm
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="x.png" />
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="BatchFormula.png" />
 
 </figure>
 
