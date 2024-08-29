@@ -344,4 +344,9 @@ Usage: #example
 * entry[+]	
   * resource = 254742fb-7b5b-49f5-b4af-e0d14d81f2f6	
   * fullUrl = "urn:uuid:254742fb-7b5b-49f5-b4af-e0d14d81f2f6"	
-	
+* entry[+]
+  * resource = 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
+  * fullUrl = "urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579"
+* entry[+]
+  * resource = e165f057-5eed-4e64-8328-4438fc88fb1b
+  * fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
