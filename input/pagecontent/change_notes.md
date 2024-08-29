@@ -2,16 +2,31 @@ PQ/CMC FHIR Implementation Guide is under development.  Minor releases will be p
 
 ### Changes and Updates for Version 1.1.5
 The current development IG - Sept connectathon plus Stage 2
-Updates to Home page and copywrite for NCIt
+- Included Excipient Drug Substance in the Profile Map (at the same level as Substance Definition Handle).
+- Changed section 1.3 to section 1.2.2 and adjusted the section numbering that followed — for example, "IG Overview" is now section 1.3.
+- Removed the two asterisks so that the section title is "Pharmaceutical Quality Projects in BR&R WG".
+- Fixed the typo x10.
+- Changed C18634 display to "Animal-derived indirectly".
+- Changed "Bundle Reference" block in the diagram to show and link to "StructureDefinition-cmc-ectd-document-32p32.html".
+- This value set name was a duplicate although it pointed to a different value set. Both seemed to have overlapping content although one was identified by SME requirements with terms registered at NCI and the other was technical in nature identifying the 3 different CTD sections used for Quality Specification information. PROPOSED: change this VS name to "eCTD specification sections terminology".
+- Fixed composition.section.type to be 1..1 in all the stage 2 compositions.
+- Rename ValueSet: PQCMC Product Characteristic Codes.
+- Included Excipient Drug Substance in the Profile Map (at the same level as Substance Definition Handle).
+- Added new Batch Formula example with parts
+- Updated example Batch formula with parts example
+- Updated transform
+
+### Changes and Updates for Version 1.1.5
+- Updates to Home page and copywrite for NCIt
 
 ### Changes and Updates for Version 1.1.4
-Text type ballot changes
-Bundle Map diagram updates
-Stage 2 changes from Excel file
-Transforms for Stage 2
-Updates to Stage 1 transforms
-Images updates and size change for Jira tickets
-Updates to Quality Specification page for xml snippets
+- Text type ballot changes
+- Bundle Map diagram updates
+- Stage 2 changes from Excel file
+- Transforms for Stage 2
+- Updates to Stage 1 transforms
+- Images updates and size change for Jira tickets
+- Updates to Quality Specification page for xml snippets
 
 ### Changes and Updates for Version 1.1.3
 - Bundle slicing

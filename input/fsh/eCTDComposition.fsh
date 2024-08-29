@@ -69,8 +69,6 @@ Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
   StructureDefinition 1..* and
   GraphicsFiles 0..* and
   StructureFiles 0..*
-
-
 * entry[Composition].resource only EctdComposition32S10
 * entry[Organization].resource only CodedOrganization
 // The intersection of all possible DrugSubstanceNomenclatureStructures and
@@ -280,6 +278,8 @@ Description: "The fields needed to represent Quality Specifications for APIs, Dr
 
 * section.entry MS
 * section.entry only Reference(QualitySpecification)
+* section.code 1..1 MS
+* section.code = $SectionTypes#SP4151 "Quality Specification"
 // need check that Specification type in instance matches the seciton selected.
 
 Profile: EctdComposition32P10
@@ -337,6 +337,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section 1..1 MS
 * section.entry 1..1 MS
 * section ^definition = "Substance General Information the 3.2.S.1 eCTD heading."
+* section.code 1..1 MS
 * section.code = $SectionTypes#32S10 "Substance General Information"
 * section.title 1..1 MS
 * section.entry only Reference(DrugSubstanceNomenclatureStructure)
@@ -362,6 +363,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section 1..* MS
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included under the 3.2.S.2.3 eCTD heading."
+* section.code 1..1 MS
 * section.code = $SectionTypes#32S231 "Raw Material Specification"
 * section.entry 1..* MS
 * section.entry only Reference(QualitySpecification)
@@ -385,6 +387,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * section 1..1 MS
 * section.entry 1..1 MS
 * section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
+* section.code 1..1 MS
 * section.code = $SectionTypes#32P32 "Product Batch Formula"
 * section.title 1..1 MS
 * section.entry only Reference(BatchFormulaMedicinalProduct)
@@ -407,6 +410,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 * section 1..1 MS
 * section.entry 0..1 MS
 * section ^definition = "Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading."
+* section.code 1..1 MS
 * section.code = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * section.title 1..1 MS
 * section.entry only Reference(DrugProductwithImpurities)
@@ -436,6 +440,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section ^slicing.description = "Slice based on the different sections that are needed in an ectd document."
 * section contains Structure 1..1 MS
 * section[Structure] ^definition = "Substance Characterisation to be included under the 3.2.S.3 eCTD heading."
+* section[Structure].code 1..1 MS
 * section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry 1..1 MS

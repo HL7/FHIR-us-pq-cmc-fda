@@ -334,7 +334,7 @@ Description: "Substance classes"
 
 ValueSet: PqcmcProductCharacteristic
 Id: pqcmc-product-characteristic
-Title: "Code System PQCMC Product Characteristic"
+Title: "PQCMC Product Characteristic"
 Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
 
 * ^experimental = false
@@ -463,7 +463,7 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 
 ValueSet: PqcmcQualitySpecificationSectionTypes
 Id: cmc-specification-types-vs
-Title: "Specification Type Terminology"
+Title: "Specification Section Type Terminology"
 Description: "Local value set of all codes in Specification Type codes"
 * ^experimental = false
 * ^status = #draft
@@ -720,7 +720,7 @@ Description: "Terminology used to qualify the information pertaining to source t
 * ^experimental = false
 * ^status = #draft
 * $NCIT#C14182 "Animal"
-* $NCIT#C18634 "Animal Sources"
+* $NCIT#C18634 "Animal-derived indirectly"
 * $NCIT#C48807 "Chemical"
 * $NCIT#C14225 "Human"
 * $NCIT#C14227 "Insect"

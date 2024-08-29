@@ -46,7 +46,7 @@ This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CM
 - The Stage 1 CTD sections and FHIR profiles are currently limited to the Solid Oral Dosage Form (SODF).
 - All co-packaged products that include diluents are out of scope at this time.
 
-### Pharmaceutical Quality Projects in BR&R WG**
+#### Pharmaceutical Quality Projects in BR&R WG
 
 At HL7, this project is referred to as Pharmaceutical Quality – Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA. BR&R WG maintains a Confluence page for this project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+-+Chemistry%2C+Manufacturing+and+Controls+%28PQ-CMC%29+Submissions+to+FDA) 
 
