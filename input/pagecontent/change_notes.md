@@ -15,6 +15,7 @@ The current development IG - Sept connectathon plus Stage 2
 - Added new Batch Formula example with parts
 - Updated example Batch formula with parts example
 - Updated transform
+- corrected the link 'StructureDefinition-narrativeLink.html' for "narrativeLink extension" build error
 
 ### Changes and Updates for Version 1.1.5
 - Updates to Home page and copywrite for NCIt
