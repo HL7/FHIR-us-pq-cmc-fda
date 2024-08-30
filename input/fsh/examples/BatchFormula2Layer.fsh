@@ -186,13 +186,13 @@ Title: "Batch Formula for 2 layer tablet"
 Description: "Batch Formula Exmample for drug product with two component layers"
 Usage: #example
 	
-* identifier.value = "ASPIRIN-ACETAMINOPHEN-BatchFormula"	
+* identifier.value = "ASPIRIN-ACETAMINOPHEN"	
 * status = #active	
 * name = "ASPIRIN 200mg, ACETAMINOPHEN 300mg 2000 tablets"	
 * manufacturedDoseForm = $NCIT#C154605 "Tablet" 
 * manufacturer = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)	
 * property[BatchSize]	
-//  * valueQuantity = 2000 $UCUM#/{tbl} "tablets" 
+ // * valueQuantity = $UCUM#\{tbl\} "tablets" 
   * valueQuantity = 2000 $UCUM#1 "1*" 
 * property[BatchUtil]	
   * valueCodeableConcept = $NCIT#C133991 "Development"
