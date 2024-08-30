@@ -1,4 +1,4 @@
-Instance: a242b79e-b706-49d3-93ba-b4364ab2baa3	
+Instance: a242b79e-b706-49d3-93ba-b4364ab2baa3
 InstanceOf: CMCeCTDDocument32P32
 Title: "Example Batch Formula bundle"
 Description: "FHIR bundle with a CMC eCTD 32P32 profile"
@@ -77,7 +77,7 @@ Usage: #example
   * fullUrl = "urn:uuid:c4e5b7c6-2e52-48e3-813b-d227cf29329b"	
 	
 
-Instance: 0003c00b-bfc2-4775-8b1c-9f99d5cf1f39	
+Instance: 0003c00b-bfc2-4775-8b1c-9f99d5cf1f39
 InstanceOf: EctdComposition32P32
 Title: "Example Composition 3.2.P.3.2"
 Description: "Composition 32P32 - Batch Formula Composition"
@@ -93,14 +93,14 @@ Usage: #example
   * entry = Reference(urn:uuid:d0d2df25-5cfa-4417-b8d1-b8147957f53c)	
 	
 
-Instance: d0d2df25-5cfa-4417-b8d1-b8147957f53c	
+Instance: d0d2df25-5cfa-4417-b8d1-b8147957f53c
 InstanceOf: BatchFormulaMedicinalProduct
 Title: "Batch Formula Drug Product Identification"
 Description: "Basic idenfier informion in MDI for the Drug Product with reference to the Batch Formula"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-batch-formula-product"	
 * identifier.value = "Oxazepam-Propranolol-BatchFormula-Identification"	
-* combinedPharmaceuticalDoseForm = $NCIT#C42998 "TABLET"
+* combinedPharmaceuticalDoseForm = $NCIT#C42953 "LIQUID"
 * route = $NCIT#C38288 "ORAL"	
 * comprisedOf = Reference(urn:uuid:249ef22b-d521-4304-a388-6b9035f97b22)	
 * name[NonProprietary]	
@@ -113,7 +113,7 @@ Usage: #example
     * type.text = "ATOMOXETINE HYDROCHLORIDE"	
 	
 
-Instance: 249ef22b-d521-4304-a388-6b9035f97b22	
+Instance: 249ef22b-d521-4304-a388-6b9035f97b22
 InstanceOf: BatchFormula
 Title: "Batch Formula for Oxazepam / Propranolol-Hydrochloride product"
 Description: "Batch Formula Exmample for a liquid drug product"
@@ -191,7 +191,7 @@ Usage: #example
 
 Instance: 717d868e-6696-4ebb-adf4-63eadb3bf058	
 InstanceOf: SubstanceDefinitionHandle
-Title: "Exampe SubstanceDefinition- ATOMOXETINE HYDROCHLORIDE"
+Title: "Example SubstanceDefinition- ATOMOXETINE HYDROCHLORIDE"
 Description: "Idenfiers for the subtance used in a batch formula"
 Usage: #example
 * classification = $NCIT#C48807 "Chemical"	
@@ -206,7 +206,7 @@ Usage: #example
 
 Instance: 12cce82f-8595-4860-b7ca-06c9ec0327f2	
 InstanceOf: DrugProductIngredient
-Title: "Exampple batch formula ingredient - Acetic Acid"
+Title: "Example batch formula ingredient - Acetic Acid"
 Description: "Example inactive ingredient in batch formula"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
@@ -223,7 +223,7 @@ Usage: #example
 
 Instance: 45942749-64db-4f91-88c3-51adb680fed1	
 InstanceOf: ExcipientRaw
-Title: "Exampple batch formula ingredient substance - Acetic Acid"
+Title: "Example batch formula ingredient substance - Acetic Acid"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
@@ -242,7 +242,7 @@ Usage: #example
 
 Instance: 45eb4f05-83d9-4819-bb60-96c7c5ce2b76	
 InstanceOf: DrugProductIngredient
-Title: "Exampple batch formula ingredient - Sodium Acetate Anhydrous"
+Title: "Example batch formula ingredient - Sodium Acetate Anhydrous"
 Description: "Example inactive ingredient in batch formula"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
@@ -260,7 +260,7 @@ Usage: #example
 
 Instance: 07c598ee-3dcf-45b7-b4e5-b24812c22aff	
 InstanceOf: ExcipientRaw
-Title: "Exampple batch formula ingredient substance - Sodium Acetate Anhydrous"
+Title: "Example batch formula ingredient substance - Sodium Acetate Anhydrous"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
@@ -279,7 +279,7 @@ Usage: #example
 
 Instance: 29c0ee76-f62f-41d3-b761-73d5f205e552	
 InstanceOf: DrugProductIngredient
-Title: "Exampple batch formula ingredient - Mannitol"
+Title: "Example batch formula ingredient - Mannitol"
 Description: "Example inactive ingredient in batch formula"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
@@ -297,7 +297,7 @@ Usage: #example
 
 Instance: a339a562-e325-4ce6-a830-d25c27b5e2da	
 InstanceOf: ExcipientRaw
-Title: "Exampple batch formula ingredient substance - MANNITOL"
+Title: "Example batch formula ingredient substance - MANNITOL"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
@@ -316,7 +316,7 @@ Usage: #example
 
 Instance: 44fad9fd-826a-4f0c-9f25-e0a78d1c4269	
 InstanceOf: DrugProductIngredient
-Title: "Exampple batch formula ingredient - Metacresol"
+Title: "Example batch formula ingredient - Metacresol"
 Description: "Example inactive ingredient in batch formula"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
@@ -334,7 +334,7 @@ Usage: #example
 
 Instance: c75df5fb-e962-43a6-9dd3-c6682da10a7e	
 InstanceOf: ExcipientRaw
-Title: "Exampple batch formula ingredient substance - METACRESOL"
+Title: "Example batch formula ingredient substance - METACRESOL"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
@@ -353,7 +353,7 @@ Usage: #example
 
 Instance: d0574580-7694-4a36-8a27-5bdbccfc5557	
 InstanceOf: DrugProductIngredient
-Title: "Exampple batch formula ingredient - Water"
+Title: "Example batch formula ingredient - Water"
 Description: "Example inactive ingredient in batch formula"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
@@ -371,7 +371,7 @@ Usage: #example
 
 Instance: c4e5b7c6-2e52-48e3-813b-d227cf29329b	
 InstanceOf: ExcipientRaw
-Title: "Exampple batch formula ingredient substance - Water"
+Title: "Example batch formula ingredient substance - Water"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	

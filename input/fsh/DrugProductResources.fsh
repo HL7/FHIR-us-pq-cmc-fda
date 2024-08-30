@@ -327,6 +327,8 @@ Example: In a two layer tablet with two APIs: Product Part Function Description 
   * extension contains http://hl7.org/fhir/StructureDefinition/originalText named textualStrength 0..1 MS
   * extension[textualStrength].value[x] only string
     * ^short = "Textual Strength"
+  * extension[textualStrength]
+    * ^comment = "For whatever reason, the comments for the Original Text extension has a link that doesn't resolve! Overwriting it with this text resolves the IG error"
 * component.constituent obeys cmc-amount-ratio-or-quantity
 * component.constituent
   * amount 1..2 MS
