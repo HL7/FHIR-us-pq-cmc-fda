@@ -120,7 +120,13 @@ There are many elements defined by the markdown datatype. The sytlesheets are re
 * UnZip the file. 
 * Open Transform.html in a browser. The page displays as shown below.
 
-<table style="margin: 0px auto;"><tr><td><img src="emptyxmlStyler_Transform.png" /></td></tr></table>
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="emptyxmlStyler_Transform.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}
 
 <p style="text-align: center; font-weight: bold"> Narrative Transform HTML Page </p>
 
