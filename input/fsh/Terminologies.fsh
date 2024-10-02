@@ -1216,7 +1216,6 @@ Description: "The acceptable file types that can be used in graphical files"
 * ^status = #draft
 * urn:ietf:bcp:13#image/jpeg
 * urn:ietf:bcp:13#image/png
-* urn:ietf:bcp:13#image/svg
 * urn:ietf:bcp:13#image/svg+xml
 * urn:ietf:bcp:13#image/gif
 * urn:ietf:bcp:13#image/tiff
