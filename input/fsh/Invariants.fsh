@@ -7,16 +7,16 @@ Severity: #error
 
 Invariant: cmc-when-unii-required
 Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'. A UniProt code is required for any of these categories: 'Protein'"
-Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803') ).exists()
+Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (code in ('C48807' | 'C45305' | 'C706' | 'C48803'))).exists()
 implies code.where(
-  code.coding.system = 'http://fdasis.nlm.nih.gov'
+  code.coding.exists(system = 'http://fdasis.nlm.nih.gov')
 ).exists())
- and classification.coding.where(
+ and (classification.coding.where(
   system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
   code = 'C17021'
 ).exists() implies code.where(
-  code.coding.system = 'https://www.uniprot.org'
-).exists()"
+  code.coding.exists(system = 'https://www.uniprot.org')
+).exists())"
 Severity: #error
 
 Invariant: cmc-name-isbt
@@ -344,6 +344,6 @@ Severity: #error
 Description: "If Product Impurity Chemical Structure Data File is not present, then a unii is required"
 Expression: "structure.representation.where(type.text = 'Structure' and document.exists()).exists().not() implies (
   code.where(
-    code.coding.system = 'http://fdasis.nlm.nih.gov'
+    code.coding.exists(system = 'http://fdasis.nlm.nih.gov')
   ).exists()
 )"
