@@ -71,6 +71,10 @@ Extension: AmountRatio
 Id: pq-amount-ratio
 Title: "Amount Ratio"
 Description: "represent an amount as a ratio in ManufacturedItemDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * . ?!
 * . ^isModifierReason = "the PQCMC use Case requires ingredient and part amounts be accepted as either quantities or ratios. When present, an amount representing anything but the percentage cannot be present"
 * value[x] 1..1 MS
