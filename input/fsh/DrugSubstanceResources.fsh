@@ -584,8 +584,10 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * insert ShortSetSubstanceNames
 
 * relationship 0..* MS
+  * ^short = "Reference to Drug Substance Impurity"
 //* relationship obeys cmc-substance-relationship  not needed  since this resource is for illustraion.
-* relationship.substanceDefinitionReference only Reference(ImpuritySubstance)
+  * substanceDefinition[x] 1..1 MS
+  * substanceDefinition[x] only Reference(ImpuritySubstance)
 
 Profile: ImpuritySubstance
 Parent: SubstanceDefinition
