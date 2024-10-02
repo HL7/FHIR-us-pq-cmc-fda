@@ -5,7 +5,6 @@ Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -47,7 +46,6 @@ Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -85,7 +83,6 @@ Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -123,7 +120,6 @@ Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
 
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -160,7 +156,6 @@ Id: cmc-ectd-document-32s3
 Title: "CMC eCTD 32S3 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
-* meta.profile MS
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -196,7 +191,6 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles (Product Batch Formula)."
 
 * . ^short = "CMC eCTD 32P32 Bundle"
-* meta.profile MS
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -231,7 +225,6 @@ Id: cmc-ectd-document-32p55
 Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (Product Characterisation of Impurities)."
 * . ^short = "CMC eCTD 32P55 Bundle"
-* meta.profile MS
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -266,7 +259,6 @@ Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type from PqcmcQualitySpecificationSectionTypes (required)
@@ -288,7 +280,6 @@ Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
@@ -324,7 +315,6 @@ Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
 Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1 heading of the eCTD. References Sponsor Organization."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
@@ -348,7 +338,6 @@ Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
 Description: "The fields needed to represent the Substance Control of Materials to be included under the eCTD 3.2.S.2.3 heading. References Sponsor Organization and Drug Substance Materials."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
@@ -375,7 +364,6 @@ Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
 Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD. References Sponsor Organization and Batch Formula"
 
-* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
@@ -398,7 +386,6 @@ Id: ectd-composition-32p55
 Title: "eCTD Product Characterisation of Impurities Composition"
 Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
 
-* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterisation of Impurities"
@@ -421,7 +408,6 @@ Id: ectd-composition-32s3
 Title: "eCTD Substance Characterisation"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
-* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S3 "Substance Characterisation"

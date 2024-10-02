@@ -19,7 +19,6 @@ Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
-* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
@@ -46,7 +45,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
-* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -107,7 +105,6 @@ Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
-* meta.profile MS
 * status.code
 * for ^short = "Reference to MedicinalProductDefinition"
 * role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
@@ -208,7 +205,6 @@ Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 
-* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -295,7 +291,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature-structure
 Title: "Substance General Information"
 Description: "Substance General Information containting Drug Substance (Active Ingredient) nomenclature (2.3.S.1.1) and Substance Structure (2.3.S.1.2) profile."
-* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -569,7 +564,6 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-characterisation
 Title: "Drug Substance"
 Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
-* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * obeys cmc-substance-characterisation-content-required
@@ -599,7 +593,6 @@ Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
 * obeys cmc-impurity-unii-required
-* meta.profile 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -698,7 +691,6 @@ Id: pqcmc-dp-ingredient
 Title: "Drug Product Batch Formula Ingredient"
 Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
 
-* meta.profile 0..1 MS
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"

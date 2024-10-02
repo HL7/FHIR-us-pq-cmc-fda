@@ -20,7 +20,6 @@ Parent: Organization
 Id: cmc-organization
 Title: "Basic Organization"
 Description: "A profile for the data elements required to identify the sponsor of the drug products or substances, Suppliers."
-* meta.profile MS
 * insert DUNSandFEINumber
 * name 1..1 MS
 * contact 1..* MS

@@ -102,7 +102,6 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * obeys cmc-tablet-bead-count-required
 * obeys cmc-capsule-classification-required
 * obeys cmc-component-id-ref
-* meta.profile MS
 * identifier 0..1 MS
 * status 1..1 MS
 * name MS
@@ -491,7 +490,6 @@ Id: pqcmc-drug-product-handle
 Title: "Drug Product Handle"
 Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure."
 
-* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "Optional user designated identifier"
 * insert DosageForm
@@ -505,7 +503,6 @@ Id: pqcmc-drug-product-description
 Title: "Drug Product Description"
 Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."
 
-* meta.profile MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * description 0..1 MS
@@ -632,7 +629,6 @@ Id: pqcmc-product-batch-formula
 Title: "Drug Product Batch Formula"
 Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
 
-* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * status 1..1 MS
@@ -768,7 +764,6 @@ Id: pqcmc-batch-formula-product
 Title: "Batch Formula Drug Product Identification"
 Description: "The Drug Product produced by the batch formula."
 
-* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
 * comprisedOf 1..* MS
@@ -790,7 +785,6 @@ Id: pqcmc-drug-product-with-impurities
 Title: "Drug Product Impurities"
 Description: "List of drug product impurities. Profile of Drug Product profile."
 
-* meta.profile MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * insert DosageForm

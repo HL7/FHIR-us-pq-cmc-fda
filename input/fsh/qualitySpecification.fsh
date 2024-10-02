@@ -60,7 +60,6 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
-* meta.profile MS
 * extension contains 
     pq-specification-status-extension named ApprovalStatus 1..1 MS and
     pq-additional-info-extension named spec-additional-info 0..1  
