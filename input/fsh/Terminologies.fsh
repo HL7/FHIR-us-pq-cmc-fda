@@ -1259,3 +1259,13 @@ Description: "Units of Measure terminologies that do not represent percentages"
 * ^status = #draft
 * include codes from valueset PqcmcUnitsMeasure
 * exclude codes from valueset PqcmcPercentageUnits
+
+ValueSet: PqcmcRepresentationTypes
+Id: pqcmc-representation-types
+Title: "Representation Types"
+Description: "The different types of representations (graphical, structure/file and structure/text)"
+* ^experimental = false
+* ^status = #draft
+* $NCIT#C54273 "Picture"
+* $NCIT#C45253 "String"
+* $NCIT#C103240 "Chemical Structure"

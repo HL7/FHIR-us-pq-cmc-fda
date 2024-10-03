@@ -616,16 +616,19 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
     * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
     * ^slicing.discriminator.type = #value
     * ^slicing.rules = #closed
-    * ^slicing.discriminator.path = "type.text"
+    * ^slicing.discriminator.path = "type"
     * ^slicing.ordered = false
+    * type 1..1 MS
+    * type from PqcmcRepresentationTypes (required)
   * representation contains
     graphic 0..1 and
-    structureData 0..*
+    structureFile 0..* and
+    structureString 0..*
   * representation[graphic]
     * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Graphics"
+      * ^short = "Graphic"
+    * type = $NCIT#C54273
     * document 1..1
       * ^short = "Impurity Structure Graphic"
       * ^definition = """
@@ -635,22 +638,43 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
         or the sequence SHLVEALALVAGERG.
       """
     * document only Reference(GraphicReference)
-  * representation[structureData]
-    * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
-    * format 0..1 MS
-    * format ^short = "Drug Substance Impurity Method Type"
-    * format.text 0..1 MS
+  * representation[structureFile]
+    * ^short = "machine-readable representation -- attached file"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Structure"
-    * representation 0..1 MS
-    * representation ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
-    * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
-"""
-    * document 0..1 MS
-    * document ^short = "Impurity Chemical Structure Data (large files, e.g. SDF, CIF)"
+      * ^short = "Structure File"
+    * type = $NCIT#C103240
+    * document 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)"
     * document only Reference(StructureReference)
+  * representation[structureString]
+    * ^short = "machine-readable representation -- plain text"
+    * type 1..1 MS
+      * ^short = "Structure Textual"
+    * type = $NCIT#C45253
+    * format 1..1 MS
+      * ^short = "Drug Substance Impurity Method Type"
+    * representation 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+      * ^definition = """
+        A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+        Examples: SMILES, INCHI
+      """
+//   * representation[structureData]
+//     * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
+//     * format 0..1 MS
+//     * format ^short = "Drug Substance Impurity Method Type"
+//     * format.text 0..1 MS
+//     * type 1..1 MS
+//       * text 1..1 MS
+//       * text = "Structure"
+//     * representation 0..1 MS
+//     * representation ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+//     * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+// Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+// """
+//     * document 0..1 MS
+//     * document ^short = "Impurity Chemical Structure Data (large files, e.g. SDF, CIF)"
+//     * document only Reference(StructureReference)
 
 // impurities might be unknown and not have Unii's
 * insert UniiAndUniProtCodes(0)
