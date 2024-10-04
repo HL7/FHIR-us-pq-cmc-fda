@@ -653,6 +653,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
     * type = $NCIT#C45253
     * format 1..1 MS
       * ^short = "Drug Substance Impurity Method Type"
+    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
     * representation 1..1 MS
       * ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
       * ^definition = """
