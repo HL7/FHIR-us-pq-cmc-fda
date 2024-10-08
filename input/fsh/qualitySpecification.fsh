@@ -100,6 +100,7 @@ Examples: Drug product, Drug substance.
 """
 * status MS
 * subject[x] 1..1 MS
+* insert PQReference(subject[x])
 * subject[x] only Reference(DrugProductHandle or SubstanceDefinitionHandle or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"

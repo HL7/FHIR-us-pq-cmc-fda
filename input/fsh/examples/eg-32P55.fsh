@@ -36,7 +36,7 @@ Usage: #example
 Instance: ddd3abad-347c-4d2f-95f3-dd804e250502
 InstanceOf: DrugProductwithImpurities
 Description: "Example of Drug Product with Impurities"
-Usage: #example
+Usage: #inline
 * identifier.value = "TabletCoatedBeadsCoatedAll"
 * description = """A drug product composed of one type of bead with two coatings inside a coated tablet"""
 * combinedPharmaceuticalDoseForm = $NCIT#C42964 "TABLET, MULTILAYER"
@@ -70,7 +70,7 @@ Usage: #example
 Instance: 8a07e353-9cf6-4f27-8a30-2c2d4f439847
 InstanceOf: EctdComposition32P55
 Description: "FHIR composition for CMC eCTD SP4151"
-Usage: #example
+Usage: #inline
 * date = 2024-04-24T01:12:07.108Z
 * author = Reference(urn:uuid:98effc99-db2b-428d-89aa-0ce426e02788)
 * title = "eCTD Product Characterisation of Impurities Composition for TabletCoatedBeadsCoatedAll"

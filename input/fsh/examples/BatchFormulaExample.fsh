@@ -81,7 +81,7 @@ Instance: 0003c00b-bfc2-4775-8b1c-9f99d5cf1f39
 InstanceOf: EctdComposition32P32
 Title: "Example Composition 3.2.P.3.2"
 Description: "Composition 32P32 - Batch Formula Composition"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32p32"	
 * identifier.value = "BatchFormulaComposition"	
 * status = #final	
@@ -97,7 +97,7 @@ Instance: d0d2df25-5cfa-4417-b8d1-b8147957f53c
 InstanceOf: BatchFormulaMedicinalProduct
 Title: "Batch Formula Drug Product Identification"
 Description: "Basic idenfier informion in MDI for the Drug Product with reference to the Batch Formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-batch-formula-product"	
 * identifier.value = "Oxazepam-Propranolol-BatchFormula-Identification"	
 * combinedPharmaceuticalDoseForm = $NCIT#C42953 "LIQUID"
@@ -117,7 +117,7 @@ Instance: 249ef22b-d521-4304-a388-6b9035f97b22
 InstanceOf: BatchFormula
 Title: "Batch Formula for Oxazepam / Propranolol-Hydrochloride product"
 Description: "Batch Formula Exmample for a liquid drug product"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-batch-formula"	
 * identifier.value = "Oxazepam-Propranolol-BatchFormula"	
 * status = #active	
@@ -175,7 +175,7 @@ Instance: 1c1a2a23-1fd7-4487-9682-49877f9f9f77
 InstanceOf: DrugProductIngredient
 Title: "Example AtomexetineHydrochloride"
 Description: "Batch formula drug product example Active"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "AtomexetineHydrochlorideBFIngredient"	
 * status = #active	
@@ -193,7 +193,7 @@ Instance: 717d868e-6696-4ebb-adf4-63eadb3bf058
 InstanceOf: SubstanceDefinitionHandle
 Title: "Example SubstanceDefinition- ATOMOXETINE HYDROCHLORIDE"
 Description: "Idenfiers for the subtance used in a batch formula"
-Usage: #example
+Usage: #inline
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)	
@@ -208,7 +208,7 @@ Instance: 12cce82f-8595-4860-b7ca-06c9ec0327f2
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Acetic Acid"
 Description: "Example inactive ingredient in batch formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "GlacialAceticAcidBFIngredient"	
 * status = #active	
@@ -244,7 +244,7 @@ Instance: 45eb4f05-83d9-4819-bb60-96c7c5ce2b76
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Sodium Acetate Anhydrous"
 Description: "Example inactive ingredient in batch formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "AnhydrousSodiumAcetateBFIngredient"	
 * status = #active	
@@ -281,7 +281,7 @@ Instance: 29c0ee76-f62f-41d3-b761-73d5f205e552
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Mannitol"
 Description: "Example inactive ingredient in batch formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "MannitolBFIngredient"	
 * status = #active	
@@ -318,7 +318,7 @@ Instance: 44fad9fd-826a-4f0c-9f25-e0a78d1c4269
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Metacresol"
 Description: "Example inactive ingredient in batch formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "MetacresolBFIngredient"	
 * status = #active	
@@ -355,7 +355,7 @@ Instance: d0574580-7694-4a36-8a27-5bdbccfc5557
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Water"
 Description: "Example inactive ingredient in batch formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "WaterBFIngredient"	
 * status = #active	

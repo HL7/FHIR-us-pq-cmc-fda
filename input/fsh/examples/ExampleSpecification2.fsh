@@ -21,7 +21,7 @@ Instance: 580c28ac-1a2c-49fa-9be3-de997da5edcf
 InstanceOf: SubstanceDefinitionHandle
 Title: "Example SubstanceDefinitionHandle - IBUPROFEN"
 Description: "Provides sufficient information to identify a drug substance"
-Usage: #example
+Usage: #inline
 * identifier.value = "P-Isobutylhydratropic Acid" 
 * classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
@@ -35,7 +35,7 @@ Instance: cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93
 InstanceOf: QualitySpecification
 Title: "A quality specification is for a drug substance"
 Description: "A quality specification is for an API "
-Usage: #example
+Usage: #inline
 
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C134010 "Tentatively Approved" 
 * extension[spec-additional-info].valueMarkdown = "This API is is currently characterized through a standard battery of physicochemical characterzation tests."
@@ -124,7 +124,7 @@ Instance: 55d92f43-e328-4011-bbcf-744e3afd954f
 InstanceOf: EctdCompositionSP4151
 Title: "eCTD Drug Substance Specification Composition SP4151"
 Description: "Composition SP4151 implementing eCTD 3.2.S.4.1."
-Usage: #example
+Usage: #inline
 
 * identifier.value = "ExampleSpecification2"
 * status = #final

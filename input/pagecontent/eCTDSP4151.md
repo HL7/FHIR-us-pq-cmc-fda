@@ -432,9 +432,7 @@ This example demonstrates a quality specification for a Drug Product. The first 
 Additionally, there is an example specification to show the reference to a Drug Substance [6004e36e-7df9-469d-9b29-8e9f9bd7e95f](Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f.html). Its [narrative layout](#drug-substance-specification-example) is show below the Drug Product specification.
 
 For examples of specifications referencing excipients see: 
-- [5819b223-d3d2-419f-b617-b3a9a3625b89.html](PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89.html)
-- [ab241f8c-d21e-4382-a70a-52190dbdf07e.html](PlanDefinition-ab241f8c-d21e-4382-a70a-52190dbdf07e.html)
-- [a-2cba634-a481-4b07-9bd4-62c7ada31e1b.html](PlanDefinition-a2cba634-a481-4b07-9bd4-62c7ada31e1b.html)
+- [Control of Materials Example](Bundle-7ce2088d-d281-4e2f-9a25-120a1f9805d1.html)
 
 #### Drug Product Specification Example
 

@@ -70,7 +70,7 @@ Instance: 832f22b4-6f0c-41f8-9b7d-f26f55e9973c
 InstanceOf: PolymorphicForm
 Title: "Polymorphic Form Example"
 Description: "Polymorphic Form - DextroThyroxine"
-Usage: #example 
+Usage: #inline
 * identifier.value = "DextroThyroxine"
 * structure.molecularFormula = "C15H10I4NO4.Na.H2O"
 * structure.representation[structureData][+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
@@ -104,7 +104,7 @@ Instance: 21b6b724-507e-4cf4-a462-93334b98d166
 InstanceOf: DrugSubstanceNomenclatureStructure
 Title: "Drug Substance Nomenclature and Structure"
 Description: "LEVOTHYROXINE SODIUM ANHYDROUS"
-Usage: #example 
+Usage: #inline
 * identifier.value = "levoThyroxine"
 * classification = $NCIT#C48807 "Chemical"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
@@ -130,7 +130,7 @@ Instance: 260f5aa3-23d2-4999-8e5f-70f247390ee5
 InstanceOf: EctdComposition32S10
 Title: "eCTD Composition for 3.2.S.1"
 Description: "Composition containing eCTD Substance General Information"
-Usage: #example 
+Usage: #inline
 * identifier.value = "Substance General - levoThyroxine"
 * status = #final
 * type.coding = $SectionTypes#32S10 "Substance General Information"	

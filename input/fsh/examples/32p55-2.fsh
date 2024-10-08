@@ -57,7 +57,7 @@ Usage: #example
 Instance: 45ec3ebc-ec1a-4b4d-bfc4-c50edc67f2ce
 InstanceOf: EctdComposition32P55
 Description: "FHIR Composition for 32P55"
-Usage: #example
+Usage: #inline
 * date = 2024-07-16T10:15:00.000Z
 * author = Reference(urn:uuid:f22ab70c-20c0-4ee4-848b-622b67ec8592)
 * title = "eCTD Product Characterisation of Impurities"
@@ -68,7 +68,7 @@ Usage: #example
 Instance: 6248d2ea-c9e0-4280-9beb-08b7041071c2
 InstanceOf: DrugProductwithImpurities
 Description: "Drug Product with Impurities for AmphetamineSalt_1"
-Usage: #example
+Usage: #inline
 * identifier.value = "AmphetamineSalt_1"
 * description = "An uncoated tablet containing amphetamine sulfate"
 * combinedPharmaceuticalDoseForm = $NCIT#C42998 "TABLET"
@@ -177,7 +177,7 @@ Usage: #example
 Instance: ac7ac2da-df69-4ed9-b399-4dc40a71b332
 InstanceOf: ImpuritySubstance
 Description: "Impurity Substance - Phenylacetone"
-Usage: #example
+Usage: #inline
 * identifier.value = "PhenylAcetone"
 * classification = $NCIT#C176812 "Process Related/Process"
 * characterization[+]

@@ -38,6 +38,7 @@ Profile: ContainerClosure
 Parent: PackagedProductDefinition
 Description: "Container Closure for drug product referred to in Drug Product Description."
 * packageFor 1..1 MS
+* insert PQReference(packageFor)
 * packageFor only Reference(DrugProductDescription)
 * description 1..1 MS
 * description ^short = "Container Closure System Description"
@@ -48,6 +49,7 @@ Note: This includes primary packaging components and secondary packaging compone
 * attachedDocument 0..* MS
 * attachedDocument ^short = "Container Closure System Depiction"
 * attachedDocument ^definition = "Diagram of cContainer Closure System or any of its parts noted in the Container Closure System Description"
+* insert PQReference(attachedDocument)
 * attachedDocument only Reference(GraphicReference)
 * packaging 1..1 MS
   * type 1..1 MS
@@ -391,6 +393,7 @@ Example: Active Ingredient, Inactive Ingredient, Adjuvant."""
 Examples: Filler, Surfactant"""
 * component.constituent.function[Function].coding from PqcmcExcipientFunctionTerminology (required)
 * component.constituent.hasIngredient 1..1 MS
+* insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
 * component.property 1..* MS
@@ -524,6 +527,7 @@ SME comment -- this is the marketed dosage form"""
 * crossReference MS
 * crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"
+* insert PQCodeableReference(crossReference.product)
 * crossReference.product only CodeableReference(DrugProductDescription)
 * crossReference.type.text = "co-packaged"
 
@@ -638,6 +642,7 @@ Description: "Listing of all components of the dosage form to be used in the man
 """
 * manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology
 * manufacturer MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization) 
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
@@ -743,6 +748,7 @@ Examples: Intragranular, Extra granular, Blend
 """
 * component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocation
 * component.constituent.hasIngredient 1..1 MS
+* insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
 // Product part
 * component.property 1..3 MS
@@ -767,6 +773,7 @@ Description: "The Drug Product produced by the batch formula."
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"	
 * comprisedOf 1..* MS
+* insert PQReference(comprisedOf)
 * comprisedOf only Reference(BatchFormula)
 * insert ProprietaryAndNonProprietaryNames
 * insert RouteOfAdministration
@@ -789,7 +796,8 @@ Description: "List of drug product impurities. Profile of Drug Product profile."
 * identifier ^short = "optional user designated identifier"	
 * insert DosageForm
 * impurity 0..* MS	
-* impurity ^short = "Product Impurity"	
+* impurity ^short = "Product Impurity"
+* insert PQCodeableReference(impurity)
 * impurity only CodeableReference(ImpuritySubstance)	
 * insert ProprietaryAndNonProprietaryNames
 * insert RouteOfAdministration

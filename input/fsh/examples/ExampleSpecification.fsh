@@ -20,7 +20,7 @@ Instance: aa514363-d43f-4052-b44e-b67aa4d6dee7
 InstanceOf: QualitySpecification
 Title: "A quality specification is for a drug product"
 Description: "A quality specification is for a Drug Product"
-Usage: #example
+Usage: #inline
 
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * identifier.value = "ExampleSpecification"
@@ -409,7 +409,7 @@ Instance: d332acdf-4874-407b-9950-528f14c6bea2
 InstanceOf: EctdCompositionSP4151
 Title: "eCTD Product Specification Composition SP4151"
 Description: "Composition SP4151 implementing eCTD 3.2.P.5.1."
-Usage: #example
+Usage: #inline
 
 * identifier.value = "ExampleSpecification"
 * status = #final

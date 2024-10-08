@@ -4,7 +4,7 @@ Instance: d4713a90-38d1-49e5-a977-78c63e518562
 InstanceOf: DrugProductIngredient
 Title: "Example Asprin Ingredient"
 Description: "Batch formula drug product example Active - Asprin"
-Usage: #example
+Usage: #inline
 
 * identifier.value = "Asprin - Ingredient"	
 * status = #active	
@@ -20,7 +20,7 @@ Instance: cbb54715-3928-4e3f-9abe-32914f694957
 InstanceOf: SubstanceDefinitionHandle
 Title: "API used in two layer table example"
 Description: "Identification for the drug subtance used in a batch formula"
-Usage: #example
+Usage: #inline
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
 * manufacturer = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
@@ -34,7 +34,7 @@ Instance: fbd464cc-2511-4a3a-b058-3cec4fffd14f
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Acetaminophen"
 Description: "Example Active ingredient in batch formula"
-Usage: #example
+Usage: #inline
 	
 * identifier.value = "AcetaminophenIngredient"	
 * status = #active	
@@ -50,7 +50,7 @@ Instance: ca1ff85f-3f05-46be-8cc4-30b076d88c13
 InstanceOf: SubstanceDefinitionHandle
 Title: "Ingredient substance indentifying information - acetaminophen"
 Description: "An API used in seond layer of table example."
-Usage: #example 
+Usage: #inline
 
 * classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
@@ -65,7 +65,7 @@ Instance: 9973ba9a-b257-425a-8fb9-6dcfe379ca08
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Maize starch"
 Description: "Example inactive ingredient in a batch formula distributed over two parts"
-Usage: #example
+Usage: #inline
 	
 * identifier.value = "MaizeStarchIngredient"	
 * status = #active	
@@ -98,7 +98,7 @@ Instance: 4e394a0c-4b25-492e-aac7-0faf121ffc4f
 InstanceOf: DrugProductIngredient
 Title: "Example batch formula ingredient - Grape skinn"
 Description: "Example inactive ingredient in a batch formula in single part"
-Usage: #example
+Usage: #inline
 	
 * identifier.value = "GrapeskinIngredient"	
 * status = #active	
@@ -144,7 +144,7 @@ Instance: 95648837-ec81-42d9-970c-eac390f2f604
 InstanceOf: DrugProductIngredient
 Title: "Example 2-layer batch formula ingredient - Water"
 Description: "Example 2-layer inactive ingredient in batch formula"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"	
 * identifier.value = "WaterBFIngredient"	
 * status = #active	
@@ -160,7 +160,7 @@ Instance: f0f3ff35-5cfa-6617-b8f1-b8167957f53c
 InstanceOf: BatchFormulaMedicinalProduct
 Title: "Batch Formula Drug Product Identification 2 layer"
 Description: "Basic idenfier informion  the Drug Product with reference to the Batch Formula for 2 layer example"
-Usage: #example
+Usage: #inline
 	
 * identifier.value = "ASPIRIN-ACETAMINOPHEN-Identification"	
 * combinedPharmaceuticalDoseForm = $NCIT#C42964 "TABLET, MULTILAYER"
@@ -184,7 +184,7 @@ Instance: 8a3e11d9-4323-43c4-be00-8f0ea1837070
 InstanceOf: BatchFormula
 Title: "Batch Formula for 2 layer tablet"
 Description: "Batch Formula Exmample for drug product with two component layers"
-Usage: #example
+Usage: #inline
 	
 * identifier.value = "ASPIRIN-ACETAMINOPHEN"	
 * status = #active	
@@ -264,7 +264,7 @@ Instance: c00b0003-c2bf-7547-8b1c-f1f399f99d5c
 InstanceOf: EctdComposition32P32
 Title: "Example Composition 3.2.P.3.2 two layer tablet"
 Description: "Composition 32P32 - Batch Formula Composition with multiple parts"
-Usage: #example
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32p32"	
 * identifier.value = "BatchFormulaComposition2layer"
 * status = #final	

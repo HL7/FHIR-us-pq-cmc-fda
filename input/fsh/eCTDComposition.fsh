@@ -263,12 +263,14 @@ Description: "The fields needed to represent Quality Specifications for APIs, Dr
 * identifier 0..1 MS
 * type from PqcmcQualitySpecificationSectionTypes (required)
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 1..1 MS
 * section.title 1..1 MS
 
 * section.entry MS
+* insert PQReference(section.entry)
 * section.entry only Reference(QualitySpecification)
 * section.code 1..1 MS
 * section.code = $SectionTypes#SP4151 "Quality Specification"
@@ -284,6 +286,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 3..3 MS
@@ -299,14 +302,17 @@ Description: "The fields needed to represent the Product Description, Container 
 * section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1 eCTD heading."
 * section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ProductDescription].entry 1..1 MS
+* insert PQReference(section[ProductDescription].entry)
 * section[ProductDescription].entry only Reference(DrugProductDescription)
 * section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1 eCTD heading."
 * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
 * section[ProductComposition].entry 1..1 MS
+* insert PQReference(section[ProductComposition].entry)
 * section[ProductComposition].entry only Reference(FinishedProduct)
 * section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1 eCTD heading."
 * section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ContainerClosure].entry 1..* MS
+* insert PQReference(section[ContainerClosure].entry)
 * section[ContainerClosure].entry only Reference(ContainerClosure)
 
 Profile: EctdComposition32S10
@@ -319,6 +325,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
@@ -330,6 +337,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section.code 1..1 MS
 * section.code = $SectionTypes#32S10 "Substance General Information"
 * section.title 1..1 MS
+* insert PQReference(section.entry)
 * section.entry only Reference(DrugSubstanceNomenclatureStructure)
 
 Profile: EctdComposition32S23
@@ -342,8 +350,10 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
 * subject 1..1 MS
+* insert PQReference(subject)
 * subject only Reference(SubstanceDefinitionHandle)
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
@@ -355,6 +365,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section.code 1..1 MS
 * section.code = $SectionTypes#32S231 "Raw Material Specification"
 * section.entry 1..* MS
+* insert PQReference(section.entry)
 * section.entry only Reference(QualitySpecification)
 
 // Stage 2  Compositions -------------------------------------------------------------------------------------------------*/
@@ -368,6 +379,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
@@ -378,6 +390,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * section.code 1..1 MS
 * section.code = $SectionTypes#32P32 "Product Batch Formula"
 * section.title 1..1 MS
+* insert PQReference(section.entry)
 * section.entry only Reference(BatchFormulaMedicinalProduct)
 
 Profile: EctdComposition32P55
@@ -390,6 +403,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
@@ -400,6 +414,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 * section.code 1..1 MS
 * section.code = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * section.title 1..1 MS
+* insert PQReference(section.entry)
 * section.entry only Reference(DrugProductwithImpurities)
 
 Profile: EctdComposition32S3
@@ -412,6 +427,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * identifier 0..1 MS
 * type = $SectionTypes#32S3 "Substance Characterisation"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 
@@ -430,4 +446,5 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry 1..1 MS
+* insert PQReference(section[Structure].entry)
 * section[Structure].entry only Reference(DrugSubstanceCharacterisation)

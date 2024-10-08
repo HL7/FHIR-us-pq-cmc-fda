@@ -63,8 +63,10 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade.coding from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert GraphicAndStructureRepresentations(0,1)
 * insert UniiAndUniProtCodes(1)
@@ -116,6 +118,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance obeys cmc-strength-type-cases2
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
+* insert PQCodeableReference(substance.code)
 * substance.code only CodeableReference(ComponentSubstance)
 
 * substance.strength 2..2 MS
@@ -223,8 +226,10 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..* MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert  PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
@@ -279,8 +284,10 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade.coding from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 1..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
@@ -302,8 +309,10 @@ Description: "Substance General Information containting Drug Substance (Active I
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 1..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
@@ -334,8 +343,9 @@ Biopolymer Sequence: TBD
 * insert SubstanceNames
 
 * relationship 0..* MS
-* relationship.substanceDefinitionReference ^short = "The substance definition of a polyphorm of the Drug Substance"
-* relationship.substanceDefinitionReference only Reference( PolymorphicForm )
+* relationship.substanceDefinition[x] ^short = "The substance definition of a polyphorm of the Drug Substance"
+* insert PQReference(relationship.substanceDefinition[x])
+* relationship.substanceDefinition[x] only Reference( PolymorphicForm )
 * relationship.type.text = "Polymorph"
 * relationship.type.text ^short = "Polymorph"
 
@@ -576,8 +586,10 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 0..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert SubstanceCharacterization
 * insert UniiAndUniProtCodes(1)
@@ -587,6 +599,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
   * ^short = "Reference to Drug Substance Impurity"
 //* relationship obeys cmc-substance-relationship  not needed  since this resource is for illustraion.
   * substanceDefinition[x] 1..1 MS
+  * insert PQReference(substanceDefinition[x])
   * substanceDefinition[x] only Reference(ImpuritySubstance)
 
 Profile: ImpuritySubstance
@@ -637,6 +650,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
         use in eCTD' Example: This is the representation of the molecule CH3OH, 
         or the sequence SHLVEALALVAGERG.
       """
+    * insert PQReference(document)
     * document only Reference(GraphicReference)
   * representation[structureFile]
     * ^short = "machine-readable representation -- attached file"
@@ -645,6 +659,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
     * type = $NCIT#C103240
     * document 1..1 MS
       * ^short = "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)"
+    * insert PQReference(document)
     * document only Reference(StructureReference)
   * representation[structureString]
     * ^short = "machine-readable representation -- plain text"
@@ -721,6 +736,7 @@ Description: "The amount details about the drug product ingredients in the batch
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
+* insert PQCodeableReference(substance.code)
 * substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
 * substance
   * strength 2..2 MS
@@ -770,6 +786,7 @@ RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)
         use in eCTD' Example: This is the representation of the molecule CH3OH, 
         or the sequence SHLVEALALVAGERG.
       """
+    * insert PQReference(document)
     * document only Reference(GraphicReference)
   * representation[structureData]
     * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
@@ -785,4 +802,5 @@ Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB,
 """
     * document 0..1 MS
     * document ^short = "Chemical Structure Data (large files, e.g. SDF, CIF)"
+    * insert PQReference(document)
     * document only Reference(StructureReference)
