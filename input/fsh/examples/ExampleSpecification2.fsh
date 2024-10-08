@@ -90,7 +90,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134256 "Microbial Limits"
   * documentation.type = #documentation
   * documentation.label = "USP <61>"

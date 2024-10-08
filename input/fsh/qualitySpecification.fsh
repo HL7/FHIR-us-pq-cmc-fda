@@ -20,11 +20,9 @@ Description: "Numeric level in the hierarchical value-set. As an example, this e
 * ^context[=].expression = "PlanDefinition.action.reason"
 
 * value[x] 1..1 MS
-  * obeys cmc-greater-than-zero
   * ^short = "TestCategory  Level"
   * ^definition = """Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2."""
-* value[x] only integer
-
+* value[x] only positiveInt
 Extension: TargetRange
 Id: pq-target-range
 Title: "Target Range"

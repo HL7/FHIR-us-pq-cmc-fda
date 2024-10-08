@@ -159,10 +159,6 @@ Severity: #error
 //Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
 //Severity: #error
 
-Invariant: cmc-greater-than-zero
-Description: "Hierachial levels are greater than 0"
-Expression: "($this > 0)  = true" 
-Severity: #error
 
 Invariant: cmc-subtest-rrt 
 Description: "a subtest's prefix represents relative retention time, should it exist"

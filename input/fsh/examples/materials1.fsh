@@ -247,7 +247,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-001"
@@ -270,7 +270,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134256 "Microbial Limits"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-002"
@@ -290,9 +290,9 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "UV"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C205014 "Elemental Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-003"
@@ -315,9 +315,9 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134002 "Residual Solvent"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-004"
@@ -329,7 +329,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-005"
@@ -341,7 +341,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C60821 "Solubility"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-006"
@@ -403,9 +403,9 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
@@ -417,7 +417,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
@@ -429,7 +429,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
@@ -441,7 +441,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
@@ -494,9 +494,9 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Colorimetry"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134262 "Color of Solution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-201"
@@ -508,7 +508,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Spectrophotometer"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C74723 "Turbidity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-202"
@@ -520,9 +520,9 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Smell"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C139027 "Odor"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-203"
@@ -534,7 +534,7 @@ Usage: #inline
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134264  "Hardness"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-204"
