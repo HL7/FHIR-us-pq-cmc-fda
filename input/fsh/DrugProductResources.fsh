@@ -285,11 +285,13 @@ Examples: USP/NF, EP, Company Standard
 Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 """
 * component.type.coding from PqcmcProductPartType
-* component.function.text 0..1 MS
-* component.function.text ^short = "Product Part Function Description"
-* component.function.text ^definition = """The main purpose for the part in the dosage form. [Source: SME Defined]
-Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
-"""
+* component.function MS
+* component.function only CodeableConceptTextOnly
+  * ^short = "Product Part Function Description"
+  * ^definition = """
+    The main purpose for the part in the dosage form. [Source: SME Defined]
+    Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
+  """
 * component
   * amount 0..2 MS
     * ^slicing.discriminator.type = #value
@@ -443,8 +445,8 @@ Examples: rate-controlling, color, release type, protective, taste masking.
 Examples: yellow, pink, blue, pale yellow."""
 * component.property[Color].type = $NCIT#Color "Product Part Color Description"
 * component.property[Color].value[x] 1..1 MS
-* component.property[Color].value[x] only CodeableConcept
-* component.property[Color].valueCodeableConcept.text 1..1 MS
+* component.property[Color].value[x] only CodeableConceptTextOnly
+// * component.property[Color].valueCodeableConcept.text 1..1 MS
 
 
 * component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
@@ -464,28 +466,28 @@ RuleSet: ProductPartIdentifierProperty
 * type MS
 * type = $NCIT#PPiD "Product Part Identifier"
 * value[x] 1..1 MS
-* value[x] only CodeableConcept
+* value[x] only CodeableConceptTextOnly
 // * valueCodeableConcept.coding from CmcRelationshipTypesVS	
 // * valueCodeableConcept.coding  ^short = "Product Part Role"
 // * valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
 // If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
 // If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
 // """
-* valueCodeableConcept.text 1..1 MS
-* valueCodeableConcept.text ^short = "Product Part Identifier"
-* valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
-Examples: 1, A1, Red bead, Blue minitablet
-"""
+  * ^short = "Product Part Identifier"
+  * ^definition = """
+    A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
+    Examples: 1, A1, Red bead, Blue minitablet
+  """
 RuleSet: ProductPartIdentifierReferenceProperty
 * type MS
 * type = $NCIT#PPiDref "Product Part Identifier Reference"
 * value[x] 1..1 MS
-* value[x] only CodeableConcept
-* valueCodeableConcept.text 1..1 MS
-* valueCodeableConcept.text ^short = "Product Part Identifier Reference"
-* valueCodeableConcept.text ^definition = """ Identifies the parent or outer-level product part. [Source: SME Defined]
-Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
-"""
+* value[x] only CodeableConceptTextOnly
+  * ^short = "Product Part Identifier Reference"
+  * ^definition = """
+    Identifies the parent or outer-level product part. [Source: SME Defined]
+    Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
+  """
 
 Profile: DrugProductHandle
 Parent: MedicinalProductDefinition

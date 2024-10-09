@@ -133,8 +133,9 @@ Note: The concept of  'In-Process' is  subsumed by the Release code."
 * goal.target obeys cmc-target-range
 * goal.target ^short = "Acceptance Criteron"
   * modifierExtension contains pq-target-range named targetRange 0..1 MS
-* goal.target.measure.text 0..1 MS
-* goal.target.measure.text ^short = "Detailed parameter being measured if more granular than Sub-Test"
+* goal.target.measure 0..1 MS
+* goal.target.measure only CodeableConceptTextOnly
+  * ^short = "Detailed parameter being measured if more granular than Sub-Test"
 * goal.target.detail[x] MS
 * goal.target.detail[x] only Quantity or string or integer
 * goal.target.detailQuantity  0..1 MS

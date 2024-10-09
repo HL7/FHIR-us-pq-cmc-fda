@@ -104,3 +104,11 @@ Title: "Literal Reference"
 Description: "abstract profile to ensure the reference is always a literal reference. Used in conjuction with a rule set to ensure every reference is also bundled"
 * ^abstract = true
 * reference 1..1 MS
+
+Profile: CodeableConceptTextOnly
+Parent: CodeableConcept
+Id: codeable-concept-text-only
+Title: "Text Only Codeable Concept"
+Description: "abstract profile for the common scenario where only the text field is used and is required. Doesn't stop the coding portion from being used but it will not be parsed"
+* ^abstract = true
+* text 1..1 MS

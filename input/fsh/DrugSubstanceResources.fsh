@@ -29,7 +29,7 @@ Description: "Alternate structure present in the drug substance"
 * structure.technique ^short = "Substance Characterisation Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
-* structure.technique.text 1..1 MS
+* structure.technique only CodeableConceptTextOnly
 * insert GraphicAndStructureRepresentations(0,1)
 * code 0..1 MS
 * code.code.coding.system = $UNII
@@ -77,28 +77,30 @@ Examples: USP/NF, EP, Company Standard
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = "A classification that provides the origin of the raw material. [Source: SME Defined]"
 * sourceMaterial.type.coding from PqcmcSourceTypeTerminology (required)
-* sourceMaterial.genus 0..1 MS
-* sourceMaterial.genus.coding 0..0
-* sourceMaterial.genus.text 1..1
-* sourceMaterial.genus.text ^short = "Source Organism"
-* sourceMaterial.genus.text ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species 0..1 MS
-* sourceMaterial.species ^short = "Source Organism"
-* sourceMaterial.species ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species.coding 0..0
-* sourceMaterial.species.text 1..1
-* sourceMaterial.part 0..1 MS
-* sourceMaterial.part ^short = "Source Organism Part"
-* sourceMaterial.part ^definition = """A fragment of the source organism. [Source: SME Defined]
-Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
-IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
-Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
-* sourceMaterial.part.coding 0..0
-* sourceMaterial.part.text 1..1
+* sourceMaterial
+  * genus 0..1 MS
+  * genus only CodeableConceptTextOnly
+    * ^short = "Source Organism Genus"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * species 0..1 MS
+  * species only CodeableConceptTextOnly
+    * ^short = "Source Organism Species"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * part 0..1 MS
+  * part only CodeableConceptTextOnly
+    * ^short = "Source Organism Part"
+    * ^definition = """
+      A fragment of the source organism. [Source: SME Defined]
+      Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
+      IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
+      Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal
+    """
 * insert CountryOfOrigin
 
 Profile: DrugProductComponent
@@ -240,27 +242,30 @@ Examples: USP/NF, EP, Company Standard
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
 Example: cat hair would be an Animal source type """
 * sourceMaterial.type.coding from PqcmcSourceTypeTerminology (required)
-* sourceMaterial.genus 0..1 MS
-* sourceMaterial.genus.coding 0..0
-* sourceMaterial.genus.text 1..1
-* sourceMaterial.genus.text ^short = "Source Organism"
-* sourceMaterial.genus.text ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species 0..1 MS
-* sourceMaterial.species ^short = "Source Organism"
-* sourceMaterial.species ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species.coding 0..0
-* sourceMaterial.species.text 1..1
-* sourceMaterial.part 0..1 MS
-* sourceMaterial.part ^short = "Source Organism Part"
-* sourceMaterial.part ^definition = """A fragment of the source organism. [Source: SME Defined]
-Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
-IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
-Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
-* sourceMaterial.part.text 1..1 MS
+* sourceMaterial
+  * genus 0..1 MS
+  * genus only CodeableConceptTextOnly
+    * ^short = "Source Organism Genus"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * species 0..1 MS
+  * species only CodeableConceptTextOnly
+    * ^short = "Source Organism Species"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * part 0..1 MS
+  * part only CodeableConceptTextOnly
+    * ^short = "Source Organism Part"
+    * ^definition = """
+      A fragment of the source organism. [Source: SME Defined]
+      Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
+      IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
+      Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal
+    """
 * insert CountryOfOrigin
 
 Profile: SubstanceDefinitionHandle
@@ -336,7 +341,7 @@ Biopolymer Sequence: TBD
 * structure.technique ^short = "Substance Characterisation Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
-* structure.technique.text 1..1 MS
+* structure.technique only CodeableConceptTextOnly
 * structure.representation 1..* MS
 * insert GraphicAndStructureRepresentations(0,1)
 * insert UniiAndUniProtCodes(1)
@@ -346,8 +351,9 @@ Biopolymer Sequence: TBD
 * relationship.substanceDefinition[x] ^short = "The substance definition of a polyphorm of the Drug Substance"
 * insert PQReference(relationship.substanceDefinition[x])
 * relationship.substanceDefinition[x] only Reference( PolymorphicForm )
+* relationship.type only CodeableConceptTextOnly
 * relationship.type.text = "Polymorph"
-* relationship.type.text ^short = "Polymorph"
+* relationship.type ^short = "Polymorph"
 
 
 
@@ -620,7 +626,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * structure.technique ^short = "Impurity Substance Characterisation Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
-* structure.technique.text 1..1 MS
+* structure.technique only CodeableConceptTextOnly
 * structure
   * representation MS
     * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
@@ -696,12 +702,12 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 
 RuleSet: SubstanceCharacterization
 * characterization MS
-  * technique
+  * technique MS
+  * technique only CodeableConceptTextOnly
     * ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
-    * text 1..1 MS
-      * ^short = "Substance Characterisation Technique"
+    * ^short = "Substance Characterisation Technique"
   * description 0..1 MS
     * ^short = "Analysis Narrative Text and Table"
     * ^definition = ""
