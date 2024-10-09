@@ -290,20 +290,6 @@ Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSyst
     )
 ).exists())"
 
-Invariant: cmc-iso-genc-overlap
-Severity: #error
-Description: "Only country codes that are also member of GENC can be used."
-Expression: "coding.where(
-    (system = 'urn:iso:std:iso:3166') and (
-    code in ('ALA'|'PSE'|'SJM'|'UMI')
-    )
-).exists().not()"
-// codes with no GENC equivalent
-// code display
-// ALA  Eland Islands
-// PSE  Palestine, State of
-// SJM  Svalbard and Jan Mayen
-// UMI  United states minor outlying Islands
 
 Invariant: cmc-substance-characterisation-content-required
 Severity: #error
