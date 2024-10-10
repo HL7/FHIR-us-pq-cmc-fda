@@ -422,23 +422,28 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocation
 * component.constituent.location.text 0..1 MS
 * component.constituent.function 1..2 MS
-* component.constituent.function.coding 1..1 MS
 * component.constituent.function ^slicing.discriminator.type = #value // or #value
-* component.constituent.function ^slicing.discriminator.path = "coding"
-// * component.constituent.function ^slicing.ordered = true
+* component.constituent.function ^slicing.discriminator.path = "$this"
 * component.constituent.function ^slicing.rules = #closed
 * component.constituent.function ^slicing.description = "Slice on the function coding"
 * component.constituent.function contains
     Category 1..1 MS and
     Function 0..1 MS
-* component.constituent.function[Category] ^short = "Product Part Ingredient Component Function Category"
-* component.constituent.function[Category] ^definition = """A classification that identifies the higher level purpose of that material. [Source: SME Defined]
-Example: Active Ingredient, Inactive Ingredient, Adjuvant."""
-* component.constituent.function[Category].coding from PqcmcDrugProductComponentFunctionCategoryTerminology (required)
-* component.constituent.function[Function] ^short = "Product Part Ingredient Function"
-* component.constituent.function[Function] ^definition = """A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]
-Examples: Filler, Surfactant"""
-* component.constituent.function[Function].coding from PqcmcExcipientFunctionTerminology (required)
+* component.constituent
+  * function[Category] 
+  * function[Category] from PqcmcDrugProductComponentFunctionCategoryTerminology (required)
+  * ^short = "Product Part Ingredient Component Function Category"
+  * ^definition = """
+    A classification that identifies the higher level purpose of that material. [Source: SME Defined]
+    Example: Active Ingredient, Inactive Ingredient, Adjuvant.
+  """
+  * function[Function]
+  * function[Function] from PqcmcExcipientFunctionTerminology (required)
+    * ^short = "Product Part Ingredient Function"
+    * ^definition = """
+      A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]
+      Examples: Filler, Surfactant
+    """
 * component.constituent.hasIngredient 1..1 MS
 * insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
@@ -575,14 +580,15 @@ Description: "Includes the properties of the drug product and components. Profil
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose."""
 * combinedPharmaceuticalDoseForm 1..1 MS
-  * coding 1..1 MS
-  * coding ^short = "Product Dosage Form"
-  * coding ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
-Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
-Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
+  * ^short = "Product Dosage Form"
+  * ^definition = """
+    The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+    Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+    Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 
-SME comment -- this is the marketed dosage form"""
-  * coding  from SplPharmaceuticalDosageFormTerminology (required)
+    SME comment -- this is the marketed dosage form
+  """
 * insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
@@ -715,27 +721,36 @@ Description: "Listing of all components of the dosage form to be used in the man
       BatchSize 1..1 MS and
       BatchUtil 1..* MS and
       AddInfo 0..1 MS
-* property[BatchSize].type 1..1 MS
-* property[BatchSize].type ^short = "Batch Quantity"
-* property[BatchSize].type ^definition = """The amount of material in a specific batch size [Source: SME Defined]
-Example: 1000 kg
-"""
-* property[BatchSize].type = $NCIT#batchsize "Batch Quantity"
-* property[BatchSize].value[x] only Quantity
-* property[BatchSize].valueQuantity.unit 1..1 MS
-* property[BatchSize].valueQuantity.unit ^short = "Quantity UOM"
-* property[BatchSize].valueQuantity.unit ^definition = """A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
-"""
-* property[BatchSize].valueQuantity.code 1..1 MS
-* property[BatchSize].valueQuantity.code from  PqcmcUnitsMeasure
 
-* property[BatchUtil].type = $NCIT#BatchUtil "Batch Utilization"
-* property[BatchUtil].value[x] only CodeableConcept
-* property[BatchUtil].valueCodeableConcept 1..1 MS
-* property[BatchUtil].valueCodeableConcept ^short = "Batch Utilization"
-* property[BatchUtil].valueCodeableConcept ^definition = """A categorization of the batch that identifies its usage. [Source: SME Defined]
-Examples: commercial, development. """
-* property[BatchUtil].valueCodeableConcept.coding from PqcmcBatchUtilizationTerminology
+* property[BatchSize]
+  * ^short = "Batch Quantity"
+  * ^definition = """
+    The amount of material in a specific batch size [Source: SME Defined]
+    Example: 1000 kg
+  """
+  * type MS
+  * type = $NCIT#batchsize "Batch Quantity"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] from PqcmcUnitsMeasure (required)
+    * value 1..1 MS
+    * code
+      * ^short = "Quantity UOM"
+      * ^definition = """
+        A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+      """
+* property[BatchUtil]
+  * ^short = "Batch Utilization"
+  * ^definition = """
+    A categorization of the batch that identifies its usage. [Source: SME Defined]
+    Examples: commercial, development.
+  """
+  * type MS
+  * type = $NCIT#BatchUtil "Batch Utilization"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcBatchUtilizationTerminology (required)
+
 * property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
 // Product parts
 * component 1..* MS
@@ -808,7 +823,7 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 * component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
 Examples: Intragranular, Extra granular, Blend
 """
-* component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocation
+* component.constituent.location from PqcmcProductPartIngredientPhysicalLocation
 * component.constituent.hasIngredient 1..1 MS
 * insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
