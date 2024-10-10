@@ -20,6 +20,14 @@ Description: "Any attached file that contains a graphical representation"
 * ^abstract = true
 * contentType from PqcmcGraphicalFileTypes (required)
 
+Profile: PDFAttachment
+Parent: PqcmcAttachment
+Id: pqcmc-pdf-attachment
+Title: "Attached Document (PDF)"
+Description: "An attached PDF file"
+* ^abstract = true
+* contentType = #application/pdf
+
 Profile: AnalyticalInstrumentData
 Parent: PqcmcAttachment
 Id: pqcmc-analytical-intstrument-data
