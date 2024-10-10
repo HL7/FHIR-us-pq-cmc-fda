@@ -30,7 +30,8 @@ Description: "Alternate structure present in the drug substance"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
 * structure.technique only CodeableConceptTextOnly
-* insert GraphicAndStructureRepresentations(0,1)
+* insert GraphicAndStructureRepresentations(0..1,0..*,0..*)
+* structure obeys cmc-structure-representation-required
 * code 0..1 MS
 * code.code.coding.system = $UNII
 * code.code.coding ^short = "UNII"
@@ -68,7 +69,8 @@ Examples: USP/NF, EP, Company Standard
 * supplier 0..1 MS
 * insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
-* insert GraphicAndStructureRepresentations(0,1)
+* insert GraphicAndStructureRepresentations(0..1,0..*,0..*)
+* structure obeys cmc-structure-representation-required
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
@@ -342,7 +344,8 @@ Biopolymer Sequence: TBD
 """
 * structure.technique only CodeableConceptTextOnly
 * structure.representation 1..* MS
-* insert GraphicAndStructureRepresentations(0,1)
+* insert GraphicAndStructureRepresentations(0..1,0..*,0..*)
+* structure obeys cmc-structure-representation-required
 * insert UniiAndUniProtCodes(1)
 * insert SubstanceNames
 
@@ -750,45 +753,55 @@ Description: "The amount details about the drug product ingredients in the batch
     * concentrationQuantity.code from PqcmcPercentageUnits (required)
 
 
-RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)
+RuleSet: GraphicAndStructureRepresentations(graphicsCardinality, structureFileCardinality,structureStringCardinality)
 * structure
   * representation MS
-    * ^short = "Structure Graphic | Structure Data File"
+    * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
     * ^slicing.discriminator.type = #value
     * ^slicing.rules = #closed
-    * ^slicing.discriminator.path = "type.text"
+    * ^slicing.discriminator.path = "type"
     * ^slicing.ordered = false
+    * type 1..1 MS
+    * type from PqcmcRepresentationTypes (required)
   * representation contains
-    graphic {minimumGraphics}..1 and
-    structureData {minimumStructures}..*
+    graphic {graphicsCardinality} and
+    structureFile {structureFileCardinality} and
+    structureString {structureStringCardinality}
   * representation[graphic]
     * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Graphics"
+      * ^short = "Graphic"
+    * type = $NCIT#C54273
     * document 1..1
-      * ^short = "Structure Graphic"
+      * ^short = "Impurity Structure Graphic"
       * ^definition = """
-        A pictorial representation of the structure of the substance. 
+        A pictorial representation of the structure of the impurity substance. 
         [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for 
         use in eCTD' Example: This is the representation of the molecule CH3OH, 
         or the sequence SHLVEALALVAGERG.
       """
     * insert PQReference(document)
     * document only Reference(GraphicReference)
-  * representation[structureData]
-    * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
-    * format 0..1 MS
-    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+  * representation[structureFile]
+    * ^short = "machine-readable representation -- attached file"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Structure"
-    * representation 0..1 MS
-    * representation ^short = "Chemical Structure Data (short, plain text representations, e.g. SMILES)"
-    * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
-"""
-    * document 0..1 MS
-    * document ^short = "Chemical Structure Data (large files, e.g. SDF, CIF)"
+      * ^short = "Structure File"
+    * type = $NCIT#C103240
+    * document 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)"
     * insert PQReference(document)
     * document only Reference(StructureReference)
+  * representation[structureString]
+    * ^short = "machine-readable representation -- plain text"
+    * type 1..1 MS
+      * ^short = "Structure Textual"
+    * type = $NCIT#C45253
+    * format 1..1 MS
+      * ^short = "Drug Substance Impurity Method Type"
+    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+    * representation 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+      * ^definition = """
+        A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+        Examples: SMILES, INCHI
+      """

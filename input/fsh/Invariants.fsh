@@ -324,8 +324,19 @@ Expression: "defineVariable('system','http://unitsofmeasure.org').select(
 Invariant: cmc-impurity-unii-required
 Severity: #error
 Description: "If Product Impurity Chemical Structure Data File is not present, then a unii is required"
-Expression: "structure.representation.where(type.text = 'Structure' and document.exists()).exists().not() implies (
+Expression: "structure.representation.type.coding.where(
+  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+  code = 'C103240'
+).exists().not() implies (
   code.where(
     code.coding.exists(system = 'http://fdasis.nlm.nih.gov')
   ).exists()
 )"
+
+Invariant: cmc-structure-representation-required
+Description: "Either a file or string structure representation is required"
+Expression: "representation.type.coding.where(
+  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+  and (code in ('C45253' | 'C103240'))
+).exists()"
+Severity: #error

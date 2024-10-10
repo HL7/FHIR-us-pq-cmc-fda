@@ -73,10 +73,10 @@ Description: "Polymorphic Form - DextroThyroxine"
 Usage: #inline
 * identifier.value = "DextroThyroxine"
 * structure.molecularFormula = "C15H10I4NO4.Na.H2O"
-* structure.representation[structureData][+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
-* structure.representation[structureData][=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[structureData][+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
-* structure.representation[structureData][=].type = $NCIT#C54684 "SMILES"
+* structure.representation[structureString][+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
+* structure.representation[structureString][=].format = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[structureString][+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
+* structure.representation[structureString][=].format = $NCIT#C54684 "SMILES"
 * structure.representation[graphic][+].document = Reference(urn:uuid:0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3)
 * code.code = $UNII#0H00N2AHSP
 * name[gsrs].name = "DEXTROTHYROXINE SODIUM"
@@ -113,12 +113,12 @@ Usage: #inline
 * supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
 * code.code = $UNII#054I36CPMN
 * structure.technique.text = """NMR Spectroscopy"""
-* structure.representation[structureData][+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
-* structure.representation[structureData][=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[structureData][+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
-* structure.representation[structureData][=].type = $NCIT#C54684 "SMILES"
+* structure.representation[structureString][+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
+* structure.representation[structureString][=].format = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[structureString][+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
+* structure.representation[structureString][=].format = $NCIT#C54684 "SMILES"
 * structure.representation[graphic][+].document = Reference(urn:uuid:d94ad7ac-b935-432f-bc68-312b6b8dcca7)
-* structure.representation[structureData][+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
+* structure.representation[structureFile][+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
 * name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[gsrs].preferred = true
 * name[iupac].name = "sodium;(2S)-2-amino-3-[4-(4-hydroxy-3,5-diiodophenoxy)-3,5-diiodophenyl]propanoate"
