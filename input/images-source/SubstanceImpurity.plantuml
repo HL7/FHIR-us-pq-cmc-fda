@@ -8,10 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "3.2.S.3 eCTD Heading Characterisation Bundle" as NODES {
-  object "**Bundle Reference:**" as objbun {
-    [[StructureDefinition-cmc-ectd-document-32s3.html]]
-  }
+package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading Characterisation Bundle]]" as NODES {
 
   node "EctdComposition32S3" as N1 {
 
