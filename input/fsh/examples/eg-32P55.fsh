@@ -69,7 +69,7 @@ Usage: #example
 
 Instance: 8a07e353-9cf6-4f27-8a30-2c2d4f439847
 InstanceOf: EctdComposition32P55
-Description: "FHIR composition for CMC eCTD SP4151"
+Description: "FHIR composition for CMC eCTD 32P55"
 Usage: #inline
 * date = 2024-04-24T01:12:07.108Z
 * author = Reference(urn:uuid:98effc99-db2b-428d-89aa-0ce426e02788)

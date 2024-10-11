@@ -675,9 +675,8 @@ Description: "Extension for measurement properties for ingredients in the batch 
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * extension contains
-  overagePercent 0..1 MS and
-  overageJustification 0..1 MS and
-  strengthTextual 1..1 MS
+  overagePercent 1..1 MS and
+  overageJustification 1..1 MS 
 * extension[overagePercent].value[x] only decimal
 * extension[overagePercent].value[x] ^short = "Overage Percent"
 * extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
@@ -687,10 +686,18 @@ Example: 3% overage of drug that has a label claim of 10mg of active (API) - the
 * extension[overageJustification].value[x] only markdown
 * extension[overageJustification].value[x] ^short = "Overage Justification"
 * extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
-* extension[strengthTextual] 1..1 MS 
-* extension[strengthTextual].value[x] only string
-* extension[strengthTextual].value[x] ^short = "Strength Textual"
-* extension[strengthTextual].value[x] ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+
+Extension: ProductBatchStrengthTextualExtension
+Id: pq-product-batch-strength-textual-extension
+Title: "Product Batch Strength Textual Extension"
+Description: "Extension for strenght as a sting for ingredients in the batch formla."
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+
+* value[x] only string
+* value[x] 1..1 MS
+* value[x] ^short = "Strength Textual"
+* value[x] ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
 Note: This is typically applicable to biologics
 Example: International Units for Enzymes
 """
@@ -789,6 +796,10 @@ Examples: Water for wet granulation - removed during process; adjusted for loss 
 """
 * component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
 * component.constituent
+* component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
+* component.constituent
+
+
   * amount 2..2 MS
   * amount ^slicing.discriminator.type = #value
   * amount ^slicing.discriminator.path = "code"
