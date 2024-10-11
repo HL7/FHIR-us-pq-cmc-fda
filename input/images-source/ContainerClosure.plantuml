@@ -8,10 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.7 Container Closure System Bundle" as NODES {
-    object "**Bundle Reference:**" as objbun {
-        [[StructureDefinition-cmc-ectd-document-32p70.html]]
-    }
+package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7 Container Closure System Bundle]]" as NODES {
 
     node "EctdComposition32P7" as N1 {
 
