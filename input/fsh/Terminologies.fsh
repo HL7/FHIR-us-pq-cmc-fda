@@ -1216,7 +1216,6 @@ Description: "The acceptable file types that can be used in graphical files"
 * ^status = #draft
 * urn:ietf:bcp:13#image/jpeg
 * urn:ietf:bcp:13#image/png
-* urn:ietf:bcp:13#image/svg
 * urn:ietf:bcp:13#image/svg+xml
 * urn:ietf:bcp:13#image/gif
 * urn:ietf:bcp:13#image/tiff
@@ -1260,3 +1259,25 @@ Description: "Units of Measure terminologies that do not represent percentages"
 * ^status = #draft
 * include codes from valueset PqcmcUnitsMeasure
 * exclude codes from valueset PqcmcPercentageUnits
+
+ValueSet: PqcmcRepresentationTypes
+Id: pqcmc-representation-types
+Title: "Representation Types"
+Description: "The different types of representations (graphical, structure/file and structure/text)"
+* ^experimental = false
+* ^status = #draft
+* $NCIT#C54273 "Picture"
+* $NCIT#C45253 "String"
+* $NCIT#C103240 "Chemical Structure"
+
+ValueSet: PqcmcGENCAndISOIntersect
+Id: pqcmc-genc-and-iso-intersect
+Title: "GENC and ISO 3166 Intersection"
+Description: "The 3 letter country codes used in GENC and ISO have significant overlap: only the country codes in ISO 3166 that have an equivalent code in GENC may be used"
+* ^experimental = false
+* ^status = #draft
+* include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
+* exclude urn:iso:std:iso:3166#ALA
+* exclude urn:iso:std:iso:3166#PSE
+* exclude urn:iso:std:iso:3166#SJM
+* exclude urn:iso:std:iso:3166#UMI

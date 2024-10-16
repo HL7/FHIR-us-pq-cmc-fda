@@ -761,3 +761,7 @@ Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implemen
 * #C45300 "Solid"
 * #C45300 #C154433 "Capsule" 
 * #C45300 #C154605 "Tablet" 
+
+* #C54273 "Picture" "A visual representation of an object, scene, person or abstraction."
+* #C45253 "String" "An expression consisting of a linear sequence of symbols (characters or words or phrases)."
+* #C103240 "Chemical Structure" "A representation of the arrangement of atoms and bonds."

@@ -8,11 +8,8 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
+package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle]]" as NODES {
 
-  object "**Bundle Reference:**" as objbun {
-    [[StructureDefinition-cmc-ectd-document-sp4454.html]]
-  }
 
 
 
@@ -22,12 +19,12 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-instance.html]]
       **ValueSets:**
-      Pharmaceutical Dosage Form Terminology
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
       Expiration Date Classification Terminology
-      Batch utilization Terminology
-      Units Of Measure
-      Container Type Terminology
-      Closure Type Terminology
+      [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
 
     }
 
@@ -68,10 +65,10 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-batch.html]]
       **ValueSets:**
-      Batch utilization Terminology
-      Units Of Measure
-      Container Type Terminology
-      Closure Type Terminology
+      [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
     }
     object "**Extensions**" as objExs2 {
       Manufacturing Date
@@ -97,11 +94,9 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pq-result-observation.html]]
       **ValueSets:**
-      Conformance Criteria Terminology
-      Units Of Measure
-      Interpretation Code Terminology
-      Test Category Terminology
-      Test Sub-Category Terminology
+      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
     }
     object "**Extensions**" as objExsObserv  {
       actualpulldate
@@ -117,9 +112,8 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pq-additional-stage-result-observation.html]]
       **ValueSets:**
-      Conformance Criteria Terminology
-      Units Of Measure
-      Interpretation Code Terminology
+      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
     }
     object "**Extensions**" as objExsStageObs  {
       actualpulldate
@@ -136,7 +130,7 @@ package "eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-ectd-composition-sp4454.html]]
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
   }
   node "CodedOrganization" as NSO {

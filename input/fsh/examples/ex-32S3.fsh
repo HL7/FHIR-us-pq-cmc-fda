@@ -14,6 +14,7 @@ InstanceOf: CodedOrganization
 * identifier[DUNSNumber].system = $DUNS
 Instance: d52acdbd-6881-495a-84a2-0dccf07ee5ab
 InstanceOf: EctdComposition32S3
+Usage: #inline
 * identifier.value = "EthylAcetate -- Characterization Composition"
 * status = #final
 * author = Reference(urn:uuid:48beec35-843c-42f5-9251-7aa6fd693199)
@@ -24,6 +25,7 @@ InstanceOf: EctdComposition32S3
   * entry = Reference(urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327)
 Instance: 32532fe8-1bfb-4a0a-998d-9294742a9519
 InstanceOf: CMCeCTDDocument32S3
+Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:32532fe8-1bfb-4a0a-998d-9294742a9519"
 * timestamp = 2024-06-19T21:06:21.134Z
@@ -67,6 +69,7 @@ Instance: 3419cdae-4d99-4068-bfaa-8037550bf327
 InstanceOf: DrugSubstanceCharacterisation
 Title: "Substance Characterization - EthylAcetate"
 Description: "Drug Substance Characterization for EthylAcetate"
+Usage: #inline
 * identifier.value = "EthylAcetate"
 * classification[+] = $NCIT#C48807 "Chemical"
 * manufacturer = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)

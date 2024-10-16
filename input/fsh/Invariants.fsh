@@ -7,16 +7,16 @@ Severity: #error
 
 Invariant: cmc-when-unii-required
 Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'. A UniProt code is required for any of these categories: 'Protein'"
-Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803') ).exists()
+Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (code in ('C48807' | 'C45305' | 'C706' | 'C48803'))).exists()
 implies code.where(
-  code.coding.system = 'http://fdasis.nlm.nih.gov'
+  code.coding.exists(system = 'http://fdasis.nlm.nih.gov')
 ).exists())
- and classification.coding.where(
+ and (classification.coding.where(
   system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
   code = 'C17021'
 ).exists() implies code.where(
-  code.coding.system = 'https://www.uniprot.org'
-).exists()"
+  code.coding.exists(system = 'https://www.uniprot.org')
+).exists())"
 Severity: #error
 
 Invariant: cmc-name-isbt
@@ -159,10 +159,6 @@ Severity: #error
 //Expression: "(action.action.goalId.count() > 0) or (action.action.action.goalId.count() > 0 ) = true" 
 //Severity: #error
 
-Invariant: cmc-greater-than-zero
-Description: "Hierachial levels are greater than 0"
-Expression: "($this > 0)  = true" 
-Severity: #error
 
 Invariant: cmc-subtest-rrt 
 Description: "a subtest's prefix represents relative retention time, should it exist"
@@ -294,20 +290,6 @@ Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSyst
     )
 ).exists())"
 
-Invariant: cmc-iso-genc-overlap
-Severity: #error
-Description: "Only country codes that are also member of GENC can be used."
-Expression: "coding.where(
-    (system = 'urn:iso:std:iso:3166') and (
-    code in ('ALA'|'PSE'|'SJM'|'UMI')
-    )
-).exists().not()"
-// codes with no GENC equivalent
-// code display
-// ALA  Eland Islands
-// PSE  Palestine, State of
-// SJM  Svalbard and Jan Mayen
-// UMI  United states minor outlying Islands
 
 Invariant: cmc-substance-characterisation-content-required
 Severity: #error
@@ -342,8 +324,19 @@ Expression: "defineVariable('system','http://unitsofmeasure.org').select(
 Invariant: cmc-impurity-unii-required
 Severity: #error
 Description: "If Product Impurity Chemical Structure Data File is not present, then a unii is required"
-Expression: "structure.representation.where(type.text = 'Structure' and document.exists()).exists().not() implies (
+Expression: "structure.representation.type.coding.where(
+  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+  code = 'C103240'
+).exists().not() implies (
   code.where(
-    code.coding.system = 'http://fdasis.nlm.nih.gov'
+    code.coding.exists(system = 'http://fdasis.nlm.nih.gov')
   ).exists()
 )"
+
+Invariant: cmc-structure-representation-required
+Description: "Either a file or string structure representation is required"
+Expression: "representation.type.coding.where(
+  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+  and (code in ('C45253' | 'C103240'))
+).exists()"
+Severity: #error

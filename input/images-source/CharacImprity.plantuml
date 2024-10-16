@@ -8,11 +8,8 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES {
+package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle]]" as NODES {
 
-  object "**Bundle Reference:**" as objbun {
-    [[StructureDefinition-cmc-ectd-document-32p55.html]]
-  }
 
   node "EctdComposition32P55" as N1 {
 
@@ -20,21 +17,25 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
       **Reference:**
       [[StructureDefinition-ectd-composition-32p55.html]]
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
   }
   node "GraphicReference" as NB64 {
 
-    object "**Parent:** Base64DocumentReference"  as obj64 {
+    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
       **Reference:**
       [[StructureDefinition-pqcmc-graphic-reference.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types]]
     }
   }
   node "StructureReference" as NBstruc {
 
-    object "**Parent:** Base64DocumentReference"  as objb64 {
+    object "**Parent Profile:** Base64DocumentReference"  as objb64 {
       **Reference:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
+       **ValueSets:**
+      [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]] 
     }
   }
 
@@ -43,19 +44,21 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 
   node "DrugProductwithImpurities" as NN {
 
-    object "**Parent:** MedicationDefinition" as obj3 {
+    object "**Parent:** MedicinalProductDefinition" as obj3 {
 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-with-impurities.html]]
       **ValueSets:**
-      Pharmaceutical Dosage Form Terminology
-      Drug Route Of Administration Terminology
-      PQCMC Name Part Terminology
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html Name Part Terminology]]
     }
   }
 
@@ -65,8 +68,8 @@ package "eCTD Heading 3.2.P.5.5 Characterisation of Impurities Bundle" as NODES 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
       **ValueSets:**
-      Impurity Classification Terminology
-      Chemical Structure Data File Type Terminology
+      [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]
+      [[ValueSet-pqcmc-analytical-instrument-data-types.html Analytical Instrument Data File Types]]
     }
   }
   N1 -[#darkred]-> NSO

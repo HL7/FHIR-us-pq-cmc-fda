@@ -22,30 +22,48 @@ It uses terminology, notations and design principles that are specific to FHIR. 
 #### Additional Considerations
 
 FHIR defines the notion of [Must Support](http://hl7.org/fhir/R4/conformance-rules.html#mustSupport).  To help establish conformance expectations for systems. For the purposes of _this_ implementation guide, "must support" shall be interpreted as follows:
-	Conformant systems SHALL be capable of sending and receiving the data element.
-	When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements.
-	
-	Developers implementing the Invariants will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
+- Conformant systems SHALL be capable of sending and receiving the data element.
+- When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements.
+- Developers implementing the Invariants will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
 
 <p>
     This implementation guide defines profiles on several resources.  Implementations are expected to be conformant with these profiles to be conformant with this implementation guide.
 </p>
 
-  <a name="conformance"> </a>
-  <h4>Conformance and Must Support</h4>
-	<p>
-    FHIR defines the notion of <a href="{{site.data.fhir.path}}conformance-rules.html#mustSupport">Must Support</a> to help establish conformance expectations for systems.  The specific meaning of
-    "must support" is left to be defined in individual implementation guides.  For the purposes of <i>this</i> implementation guide, "must support" shall be interpreted as follows:
-  </p>
+#### Conformance and Must Support
+
+FHIR defines the notion of <a href="{{site.data.fhir.path}}conformance-rules.html#mustSupport">Must Support</a> to help establish conformance expectations for systems.  The specific meaning of
+"must support" is left to be defined in individual implementation guides.  For the purposes of <i>this</i> implementation guide, "must support" shall be interpreted as follows:
 
 - Conformant systems SHALL be capable of sending and receiving the data element</li>
 - When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements</li>
 - Where an element affects the display or validation of a Questionnaire and a system performs either or both of those operations, the behavior established by the value of the element SHALL be performed</li>
 
-###  Diagrams and General Notes on Bundles
+### Acronyms
 
-FHIR bundles are used to group a collection of resources into a single package. This can include various resources like lab records, research studies, and more. Each Bundle profile defines a specific use case or standard for how resources should be bundled together. Profiles ensure that the bundles meet certain requirements and follow consistent formatting rules. The Composition profiles are categorized under various document types to better organize and define their use cases. Each profile in a bundle corresponds to a specific type of document or record. For FHIR in general, a Composition profile might be used for documents such as a discharge summary or a lab report. In this Implementation Guide (IG), the Composition profiles are used to itemize the elements required in a particular eCTD section. 
-The diagram shown below functions as a legend for the symbols and notations used in the Composition profile diagrams. This is crucial for interpreting the relationships and details correctly. 
+Acronyms contained in this IG:
+
+- ANDA - Abbreviated New Drug Application
+- BLA - Biologics License Application
+- BR&R WG - Biomedical Research & Regulation Work Group
+- CTD - Common Technical Document
+- DMF - Drug Master File
+- eCTD - electronic Common Technical Document
+- FDA - Food and Drug Administration
+- FHIR - Fast Healthcare Interoperability Resources
+- FRN - Federal Register Notice
+- HL7 - Health Level 7
+- ICH - International Council for Harmonisation of Technical Requirements for Pharmaceuticals for Human Use
+- IG - Implementation Guide
+- NCE - New Chemical Entity
+- NDA - New Drug Application
+- NDC - National Drug Code
+- PQ/CMC - Pharmaceutical Quality/Chemistry Manufacturing and Controls
+- SODF - Solid Oral Dosage Form
+
+### Diagrams and General Notes on Bundles
+
+FHIR bundles are used to group a collection of resources into a single package. This can include various resources like lab records, research studies, and more. Each Bundle profile defines a specific use case or standard for how resources should be bundled together. Profiles ensure that the bundles meet certain requirements and follow consistent formatting rules. The Composition profiles are categorized under various document types to better organize and define their use cases. Each profile in a bundle corresponds to a specific type of document or record. For FHIR in general, a Composition profile might be used for documents such as a discharge summary or a lab report. In this Implementation Guide (IG), the Composition profiles are used to itemize the elements required in a particular eCTD section. The diagram shown below functions as a legend for the symbols and notations used in the Composition profile diagrams. This is crucial for interpreting the relationships and details correctly.
 
 <div>{%include legend.svg%}</div>
 

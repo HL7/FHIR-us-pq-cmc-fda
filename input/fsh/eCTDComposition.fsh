@@ -5,7 +5,6 @@ Title: "CMC eCTD 32P10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -47,7 +46,6 @@ Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
 * . ^short = "CMC eCTD 32S1 Bundle"
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -85,7 +83,6 @@ Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
 * . ^short = "CMC eCTD 32S23 Bundle"
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -123,7 +120,6 @@ Title: "CMC eCTD SP4151 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
 * . ^short = "CMC eCTD SP4151 Bundle"
 
-* meta.profile MS  
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -160,7 +156,6 @@ Id: cmc-ectd-document-32s3
 Title: "CMC eCTD 32S3 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
 * . ^short = "CMC eCTD 32S3 Bundle"
-* meta.profile MS
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -196,7 +191,6 @@ Title: "CMC eCTD 32P32 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles (Product Batch Formula)."
 
 * . ^short = "CMC eCTD 32P32 Bundle"
-* meta.profile MS
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -231,7 +225,6 @@ Id: cmc-ectd-document-32p55
 Title: "CMC eCTD 32P55 Document"
 Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (Product Characterisation of Impurities)."
 * . ^short = "CMC eCTD 32P55 Bundle"
-* meta.profile MS
 * identifier MS
 * identifier ^definition = "Designation by the author."
 * type MS
@@ -266,17 +259,18 @@ Id: ectd-composition-sp4151
 Title: "eCTD Specification Composition"
 Description: "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type from PqcmcQualitySpecificationSectionTypes (required)
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 1..1 MS
 * section.title 1..1 MS
 
 * section.entry MS
+* insert PQReference(section.entry)
 * section.entry only Reference(QualitySpecification)
 * section.code 1..1 MS
 * section.code = $SectionTypes#SP4151 "Quality Specification"
@@ -288,11 +282,11 @@ Id: ectd-composition-32p10
 Title: "eCTD Product Description and Composition"
 Description: "The fields needed to represent the Product Description, Container Closure and Composition of the Drug Product to be included under the 3.2.P.1 heading of the eCTD. References Sponsor Organization, Drug Product Description, and Product Container Closure System."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 * section 3..3 MS
@@ -308,14 +302,17 @@ Description: "The fields needed to represent the Product Description, Container 
 * section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1 eCTD heading."
 * section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ProductDescription].entry 1..1 MS
+* insert PQReference(section[ProductDescription].entry)
 * section[ProductDescription].entry only Reference(DrugProductDescription)
 * section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1 eCTD heading."
 * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
 * section[ProductComposition].entry 1..1 MS
+* insert PQReference(section[ProductComposition].entry)
 * section[ProductComposition].entry only Reference(FinishedProduct)
 * section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1 eCTD heading."
 * section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ContainerClosure].entry 1..* MS
+* insert PQReference(section[ContainerClosure].entry)
 * section[ContainerClosure].entry only Reference(ContainerClosure)
 
 Profile: EctdComposition32S10
@@ -324,11 +321,11 @@ Id: ectd-composition-32s10
 Title: "eCTD Substance General Information"
 Description: "The fields needed to represent the Substance Nomenclature and Structure to be included under the 3.2.S.1 heading of the eCTD. References Sponsor Organization."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S10 "Substance General Information"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
@@ -340,6 +337,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section.code 1..1 MS
 * section.code = $SectionTypes#32S10 "Substance General Information"
 * section.title 1..1 MS
+* insert PQReference(section.entry)
 * section.entry only Reference(DrugSubstanceNomenclatureStructure)
 
 Profile: EctdComposition32S23
@@ -348,13 +346,14 @@ Id: ectd-composition-32s23
 Title: "eCTD Substance Control of Materials Composition"
 Description: "The fields needed to represent the Substance Control of Materials to be included under the eCTD 3.2.S.2.3 heading. References Sponsor Organization and Drug Substance Materials."
 
-* meta.profile MS 
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S23 "Substance Control of Materials"
 * subject 1..1 MS
+* insert PQReference(subject)
 * subject only Reference(SubstanceDefinitionHandle)
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
@@ -366,6 +365,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section.code 1..1 MS
 * section.code = $SectionTypes#32S231 "Raw Material Specification"
 * section.entry 1..* MS
+* insert PQReference(section.entry)
 * section.entry only Reference(QualitySpecification)
 
 // Stage 2  Compositions -------------------------------------------------------------------------------------------------*/
@@ -375,11 +375,11 @@ Id: ectd-composition-32p32
 Title: "eCTD Batch Formula"
 Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD. References Sponsor Organization and Batch Formula"
 
-* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P32 "Product Batch Formula"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
@@ -390,6 +390,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 * section.code 1..1 MS
 * section.code = $SectionTypes#32P32 "Product Batch Formula"
 * section.title 1..1 MS
+* insert PQReference(section.entry)
 * section.entry only Reference(BatchFormulaMedicinalProduct)
 
 Profile: EctdComposition32P55
@@ -398,11 +399,11 @@ Id: ectd-composition-32p55
 Title: "eCTD Product Characterisation of Impurities Composition"
 Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
 
-* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 /*
  SECTION SLICES - not requried - only one option
@@ -413,6 +414,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 * section.code 1..1 MS
 * section.code = $SectionTypes#32P55 "Product Characterisation of Impurities"
 * section.title 1..1 MS
+* insert PQReference(section.entry)
 * section.entry only Reference(DrugProductwithImpurities)
 
 Profile: EctdComposition32S3
@@ -421,11 +423,11 @@ Id: ectd-composition-32s3
 Title: "eCTD Substance Characterisation"
 Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
 
-* meta.profile MS
 * status = #final
 * identifier 0..1 MS
 * type = $SectionTypes#32S3 "Substance Characterisation"
 * author 1..1 MS
+* insert PQReference(author)
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 
@@ -444,4 +446,5 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry 1..1 MS
+* insert PQReference(section[Structure].entry)
 * section[Structure].entry only Reference(DrugSubstanceCharacterisation)

@@ -19,7 +19,6 @@ Id: pqcmc-polymorphic-form
 Title: "Polymorphic Form"
 Description: "Alternate structure present in the drug substance"
 
-* meta.profile MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * structure 0..1 MS
@@ -30,8 +29,9 @@ Description: "Alternate structure present in the drug substance"
 * structure.technique ^short = "Substance Characterisation Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
-* structure.technique.text 1..1 MS
-* insert GraphicAndStructureRepresentations(0,1)
+* structure.technique only CodeableConceptTextOnly
+* insert GraphicAndStructureRepresentations(0..1,0..*,0..*)
+* structure obeys cmc-structure-representation-required
 * code 0..1 MS
 * code.code.coding.system = $UNII
 * code.code.coding ^short = "UNII"
@@ -46,13 +46,12 @@ Parent: SubstanceDefinition
 Id: pqcmc-component-substance
 Title: "Component Substance"
 Description: "Any raw material intended for use in the manufacture of a drug substance, or any ingredient intended for use in the manufacture of a drug product including those that may not appear in such drug product."
-* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
@@ -63,42 +62,48 @@ Description: "Any raw material intended for use in the manufacture of a drug sub
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
-* grade.coding from PqcmcQualityBenchmarkTerminology (required)
+* grade from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
-* insert GraphicAndStructureRepresentations(0,1)
+* insert GraphicAndStructureRepresentations(0..1,0..*,0..*)
+* structure obeys cmc-structure-representation-required
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * sourceMaterial 0..1 MS
-* sourceMaterial.type 0..1
-* sourceMaterial.type ^short = "Source Type"
-* sourceMaterial.type ^definition = "A classification that provides the origin of the raw material. [Source: SME Defined]"
-* sourceMaterial.type.coding from PqcmcSourceTypeTerminology (required)
-* sourceMaterial.genus 0..1 MS
-* sourceMaterial.genus.coding 0..0
-* sourceMaterial.genus.text 1..1
-* sourceMaterial.genus.text ^short = "Source Organism"
-* sourceMaterial.genus.text ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species 0..1 MS
-* sourceMaterial.species ^short = "Source Organism"
-* sourceMaterial.species ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species.coding 0..0
-* sourceMaterial.species.text 1..1
-* sourceMaterial.part 0..1 MS
-* sourceMaterial.part ^short = "Source Organism Part"
-* sourceMaterial.part ^definition = """A fragment of the source organism. [Source: SME Defined]
-Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
-IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
-Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
-* sourceMaterial.part.coding 0..0
-* sourceMaterial.part.text 1..1
+  * type 0..1 MS
+  * type from PqcmcSourceTypeTerminology (required)
+    * ^short = "Source Type"
+    * ^definition = """
+      A classification that provides the origin of the raw material. [Source: SME Defined]
+    """
+  * genus 0..1 MS
+  * genus only CodeableConceptTextOnly
+    * ^short = "Source Organism Genus"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * species 0..1 MS
+  * species only CodeableConceptTextOnly
+    * ^short = "Source Organism Species"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * part 0..1 MS
+  * part only CodeableConceptTextOnly
+    * ^short = "Source Organism Part"
+    * ^definition = """
+      A fragment of the source organism. [Source: SME Defined]
+      Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
+      IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
+      Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal
+    """
 * insert CountryOfOrigin
 
 Profile: DrugProductComponent
@@ -107,7 +112,6 @@ Id: pqcmc-component
 Title: "Drug Product Component"
 Description: "The amount details about the drug product components to define the product composition in a product unit. Use composition."
 
-* meta.profile MS
 * status.code
 * for ^short = "Reference to MedicinalProductDefinition"
 * role from  PqcmcDrugProductComponentFunctionCategoryTerminology (required)
@@ -119,6 +123,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance obeys cmc-strength-type-cases2
 * substance.code MS
 * substance.code ^short = "Ingredient Substance"
+* insert PQCodeableReference(substance.code)
 * substance.code only CodeableReference(ComponentSubstance)
 
 * substance.strength 2..2 MS
@@ -139,6 +144,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
   * concentration[x] 1..1 MS
   * concentration[x] only Ratio or Quantity
   * concentrationQuantity 0..1 MS
+  * concentrationQuantity from PqcmcNonPercentageUnits (required)
   * concentrationQuantity.value 1..1 MS
   * concentrationQuantity.value ^short = "Ingredient Total Amount Numeric"
   * concentrationQuantity.value ^definition = """
@@ -152,8 +158,6 @@ Examples: removed during process, adjusted for loss on drying, etc.
     Note: This is typically applicable to biologics.
   """
   * concentrationQuantity.unit 1..1
-  * concentrationQuantity.code 1..1 MS
-  * concentrationQuantity.code from PqcmcNonPercentageUnits (required)
   * textConcentration 1..1 MS
   * textConcentration ^short = "Strength Textual"
   * textConcentration ^definition = "A written description of the strength of the ingredient. [Source: SME Defined]"
@@ -190,7 +194,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
   * concentration[x] 1..1 MS
   * concentration[x] only Quantity
   * textConcentration 0..0
-  * concentrationQuantity
+  * concentrationQuantity from PqcmcPercentageUnits (required)
     * value 1..1 MS
       * ^short = "Ingredient Total Amount Content Percent"
       * ^definition = """
@@ -199,7 +203,6 @@ Examples: removed during process, adjusted for loss on drying, etc.
       """
     * code 1..1 MS
       * ^short = "Ingredient Total Amount Content Percent UOM"
-    * code from PqcmcPercentageUnits (required)
     
 
 Profile: ExcipientRaw
@@ -208,7 +211,6 @@ Id: pqcmc-excipient
 Title: "Excipient Drug Substance"
 Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
 
-* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * . obeys cmc-source-material
@@ -227,8 +229,10 @@ Examples: USP/NF, EP, Company Standard
 """
 * grade from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 0..* MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert  PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
@@ -238,28 +242,31 @@ Examples: USP/NF, EP, Company Standard
 * sourceMaterial.type ^short = "Source Type"
 * sourceMaterial.type ^definition = """A classification that provides the origin of the raw material. [Source: SME Defined]
 Example: cat hair would be an Animal source type """
-* sourceMaterial.type.coding from PqcmcSourceTypeTerminology (required)
-* sourceMaterial.genus 0..1 MS
-* sourceMaterial.genus.coding 0..0
-* sourceMaterial.genus.text 1..1
-* sourceMaterial.genus.text ^short = "Source Organism"
-* sourceMaterial.genus.text ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species 0..1 MS
-* sourceMaterial.species ^short = "Source Organism"
-* sourceMaterial.species ^definition = """The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
-Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
-"""
-* sourceMaterial.species.coding 0..0
-* sourceMaterial.species.text 1..1
-* sourceMaterial.part 0..1 MS
-* sourceMaterial.part ^short = "Source Organism Part"
-* sourceMaterial.part ^definition = """A fragment of the source organism. [Source: SME Defined]
-Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
-IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
-Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal """
-* sourceMaterial.part.text 1..1 MS
+* sourceMaterial.type from PqcmcSourceTypeTerminology (required)
+* sourceMaterial
+  * genus 0..1 MS
+  * genus only CodeableConceptTextOnly
+    * ^short = "Source Organism Genus"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * species 0..1 MS
+  * species only CodeableConceptTextOnly
+    * ^short = "Source Organism Species"
+    * ^definition = """
+      The name, genus or genus and species of the organism from which the material is derived. [Source: SME Defined]
+      Examples: Examples: human or Homo Sapiens, chicken, dog or canine, cow or bovine, rat or rattus.
+    """
+  * part 0..1 MS
+  * part only CodeableConceptTextOnly
+    * ^short = "Source Organism Part"
+    * ^definition = """
+      A fragment of the source organism. [Source: SME Defined]
+      Examples: secretions, material from a specific organ, tissue or portion of the organism such as liver, pancreas, blood or from bark or seed of a plant.
+      IDMP 11238 definition & examples: Entity of anatomical origin of source material within an organism.
+      Cartilage, Root and Stolon, whole plant is considered as a part, Aerial part of the plant, Leaf, Tuberous Root, whole animal
+    """
 * insert CountryOfOrigin
 
 Profile: SubstanceDefinitionHandle
@@ -281,10 +288,12 @@ Description: "Provides sufficient information to identify a drug substance. Prof
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
 """
-* grade.coding from PqcmcQualityBenchmarkTerminology (required)
+* grade from PqcmcQualityBenchmarkTerminology (required)
 * manufacturer 1..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
@@ -295,20 +304,21 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature-structure
 Title: "Substance General Information"
 Description: "Substance General Information containting Drug Substance (Active Ingredient) nomenclature (2.3.S.1.1) and Substance Structure (2.3.S.1.2) profile."
-* meta.profile MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 1..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * molecularWeight 0..1 MS
 * molecularWeight ^short = "Molecular Weight"
@@ -318,7 +328,7 @@ Description: "Substance General Information containting Drug Substance (Active I
 * molecularWeight.amount.unit ^definition = """The labeled unit of measure for the molecular weight. [Source: Adapted for NCI EVS C117055]
  """
 * molecularWeight.amount.code 1..1 MS
-* molecularWeight.amount.code from PqcmcUnitsMeasure (extensible)
+* molecularWeight.amount from PqcmcUnitsMeasure (extensible)
 * . obeys cmc-structure-required
 * . obeys cmc-substance-structure-graphic-required
 * structure 1..1 MS
@@ -332,17 +342,20 @@ Biopolymer Sequence: TBD
 * structure.technique ^short = "Substance Characterisation Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
-* structure.technique.text 1..1 MS
+* structure.technique only CodeableConceptTextOnly
 * structure.representation 1..* MS
-* insert GraphicAndStructureRepresentations(0,1)
+* insert GraphicAndStructureRepresentations(0..1,0..*,0..*)
+* structure obeys cmc-structure-representation-required
 * insert UniiAndUniProtCodes(1)
 * insert SubstanceNames
 
 * relationship 0..* MS
-* relationship.substanceDefinitionReference ^short = "The substance definition of a polyphorm of the Drug Substance"
-* relationship.substanceDefinitionReference only Reference( PolymorphicForm )
+* relationship.substanceDefinition[x] ^short = "The substance definition of a polyphorm of the Drug Substance"
+* insert PQReference(relationship.substanceDefinition[x])
+* relationship.substanceDefinition[x] only Reference( PolymorphicForm )
+* relationship.type only CodeableConceptTextOnly
 * relationship.type.text = "Polymorph"
-* relationship.type.text ^short = "Polymorph"
+* relationship.type ^short = "Polymorph"
 
 
 
@@ -353,8 +366,9 @@ RuleSet: SubstanceNames
 Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 """
 * name obeys cmc-name-preferred
+* name.type from PqcmcSubstanceNameType // don't use example binding
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding" //element(*,SubstanceDefinition)/name/type/coding/code
+* name ^slicing.discriminator.path = "type" //element(*,SubstanceDefinition)/name/type/coding/code
 * name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
 * name contains
@@ -375,23 +389,21 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[sys].name ^definition = """A name derived directly from the chemical structure. [Source: SME Defined]
 """
 * name[sys].type 1..1 MS
-* name[sys].type.coding 1..1 MS
-* name[sys].type.coding = $NCIT#C203357	"Systematic Name"
+* name[sys].type = $NCIT#C203357	"Systematic Name"
 
 * name[sub].name 1..1 MS
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
-* name[sub].type.coding 1..1 MS
-* name[sub].type.coding = $NCIT#C97054	"Generic Name"
+
+* name[sub].type = $NCIT#C97054 "Generic Name"
 
 * name[brand].name 1..1 MS
 * name[brand].name ^short = "Brand"
 * name[brand].name ^definition = """The part of the name or logo associated with a specific product or service identifying and distinguishing it from varieties of the same product or service marketed by competing companies.
 """
 * name[brand].type 1..1 MS
-* name[brand].type.coding 1..1 MS
-* name[brand].type.coding = $NCIT#C71898	"Brand"
+* name[brand].type = $NCIT#C71898	"Brand"
 
 // * name[comn].name 1..1 MS
 // * name[comn].name ^short = "Common"
@@ -404,16 +416,14 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[gsrs].name ^short = "GSRS Preferred Term"
 * name[gsrs].name ^definition = """Default display name identified within FDA Global Substance Registration System (GSRS)."""
 * name[gsrs].type 1..1 MS
-* name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = $NCIT#C203355 "GSRS Preferred Term"
+* name[gsrs].type = $NCIT#C203355 "GSRS Preferred Term"
 
 * name[usp].name 1..1 MS
 * name[usp].name ^short = "USP-NF Established Name"
 * name[usp].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Pharmacopeia (USP) and excipients by the National Formulary (NF). [Source: SME Defined]
 """
 * name[usp].type 1..1 MS
-* name[usp].type.coding 1..1 MS
-* name[usp].type.coding = $NCIT#C203358	"USP-NF Established Name"
+* name[usp].type = $NCIT#C203358	"USP-NF Established Name"
 
 * insert CompanyName
 
@@ -423,24 +433,21 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 Example: CAS [103-90-2]
 """
 * name[cas].type 1..1 MS
-* name[cas].type.coding 1..1 MS
-* name[cas].type.coding = $NCIT#C54682	"CAS Number"
+* name[cas].type = $NCIT#C54682	"CAS Number"
 
 * name[inn].name 1..1 MS
 * name[inn].name ^short = "INN" 
 * name[inn].name ^definition = """International Nonproprietary Names (INN) is a unique name that is globally recognized and is public property. A nonproprietary name is also known as a generic name. Note: International Nonproprietary Names (INN) facilitate the identification of pharmaceutical substances or active pharmaceutical ingredients [Source: http://www.who.int/medicines/services/inn/en/] Example: Paracetamol
 """
 * name[inn].type 1..1 MS
-* name[inn].type.coding 1..1 MS
-* name[inn].type.coding = $NCIT#C142585	"INN"
+* name[inn].type = $NCIT#C142585	"INN"
 
 * name[usan].name 1..1 MS
 * name[usan].name ^short = "USAN"
 * name[usan].name ^definition = """A unique nonproprietary name assigned to drugs and biologics and assigned by the United States Adopted Names Council [Source: SME Defined] Example: acetaminophen
 """
 * name[usan].type 1..1 MS
-* name[usan].type.coding 1..1 MS
-* name[usan].type.coding = $NCIT#C96973	"USAN"
+* name[usan].type = $NCIT#C96973	"USAN"
 
 * name[iupac].name 1..1 MS
 * name[iupac].name ^short = "IUPAC Name" 
@@ -448,16 +455,14 @@ Example: CAS [103-90-2]
 Example: N- (4-hydroxyphenyl)acetamide
 """
 * name[iupac].type 1..1 MS
-* name[iupac].type.coding 1..1 MS
-* name[iupac].type.coding = $NCIT#C203356	"IUPAC Name"
+* name[iupac].type = $NCIT#C203356	"IUPAC Name"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT-128 DIN"
 * name[isbt].name ^definition = """It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
 """
 * name[isbt].type 1..1 MS
-* name[isbt].type.coding 1..1 MS
-* name[isbt].type.coding = $NCIT#C95517	"ISBT-128 DIN"
+* name[isbt].type = $NCIT#C95517	"ISBT-128 DIN"
 
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
@@ -471,9 +476,10 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 """
 * name obeys cmc-name-preferred
 * name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type.coding" //element(*,SubstanceDefinition)/name/type/coding/code
+* name ^slicing.discriminator.path = "type" //element(*,SubstanceDefinition)/name/type/coding/code
 * name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
+* name.type from PqcmcSubstanceNameType // don't use example binding
 * name contains
   sub 0..1 MS and
   // comn 0..1 MS and
@@ -483,8 +489,7 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[sub].name ^short = "Generic Name"
 * name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
-* name[sub].type.coding 1..1 MS
-* name[sub].type.coding = $NCIT#C97054	"Generic Name"
+* name[sub].type = $NCIT#C97054	"Generic Name"
 
 // * name[comn].name 1..1 MS
 // * name[comn].name ^short = "Common"
@@ -498,16 +503,14 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[gsrs].name ^definition = """Default display name identified within FDA Global Substance Registration System (GSRS).
 """
 * name[gsrs].type 1..1 MS
-* name[gsrs].type.coding 1..1 MS
-* name[gsrs].type.coding = $NCIT#C203355 "GSRS Preferred Term"
+* name[gsrs].type = $NCIT#C203355 "GSRS Preferred Term"
 
 * name[isbt].name 1..1 MS
 * name[isbt].name ^short = "ISBT-128 DIN" 
 * name[isbt].name ^definition = """It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]
 """
 * name[isbt].type 1..1 MS
-* name[isbt].type.coding 1..1 MS
-* name[isbt].type.coding = $NCIT#C95517	"ISBT-128 DIN"
+* name[isbt].type = $NCIT#C95517	"ISBT-128 DIN"
 * name.preferred 0..1 MS
 * name.preferred ^short = "True when the name type is Substance Name"
 
@@ -518,8 +521,7 @@ RuleSet: CompanyName
 * name[comp].name ^definition = """An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]
 """
 * name[comp].type 1..1 MS
-* name[comp].type.coding 1..1
-* name[comp].type.coding = $NCIT#C203354	"Company ID/Code"
+* name[comp].type = $NCIT#C203354	"Company ID/Code"
 
 RuleSet: UniiAndUniProtCodes(cardinality)
 // lots of things derived from substanceDefinition use code
@@ -555,12 +557,9 @@ RuleSet: UniiAndUniProtCodes(cardinality)
 
 RuleSet: CountryOfOrigin
 * sourceMaterial.countryOfOrigin 0..1 MS 
-  * obeys cmc-iso-genc-overlap
+* sourceMaterial.countryOfOrigin from PqcmcGENCAndISOIntersect (required)
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
-  * coding 1..1 MS
-    * code 1..1 MS
-      * obeys cmc-only-ISO-3166-1-alpha-3
 
 //*Stage 2 --------------------------------------------------------------------------------------------------------------*/
 
@@ -569,29 +568,33 @@ Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-characterisation
 Title: "Drug Substance"
 Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
-* meta.profile 0..1 MS
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * obeys cmc-substance-characterisation-content-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
 * manufacturer 0..1 MS
+* insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization)
 * supplier 0..1 MS
+* insert PQReference(supplier)
 * supplier only Reference(CodedOrganization)
 * insert SubstanceCharacterization
 * insert UniiAndUniProtCodes(1)
 * insert ShortSetSubstanceNames
 
 * relationship 0..* MS
+  * ^short = "Reference to Drug Substance Impurity"
 //* relationship obeys cmc-substance-relationship  not needed  since this resource is for illustraion.
-* relationship.substanceDefinitionReference only Reference(ImpuritySubstance)
+  * substanceDefinition[x] 1..1 MS
+  * insert PQReference(substanceDefinition[x])
+  * substanceDefinition[x] only Reference(ImpuritySubstance)
 
 Profile: ImpuritySubstance
 Parent: SubstanceDefinition
@@ -599,7 +602,6 @@ Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
 Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
 * obeys cmc-impurity-unii-required
-* meta.profile 0..1 MS
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
 * classification 1..* MS
@@ -615,22 +617,25 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * structure.technique ^short = "Impurity Substance Characterisation Technique"
 * structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
 """
-* structure.technique.text 1..1 MS
+* structure.technique only CodeableConceptTextOnly
 * structure
   * representation MS
     * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
     * ^slicing.discriminator.type = #value
     * ^slicing.rules = #closed
-    * ^slicing.discriminator.path = "type.text"
+    * ^slicing.discriminator.path = "type"
     * ^slicing.ordered = false
+    * type 1..1 MS
+    * type from PqcmcRepresentationTypes (required)
   * representation contains
     graphic 0..1 and
-    structureData 0..*
+    structureFile 0..* and
+    structureString 0..*
   * representation[graphic]
     * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Graphics"
+      * ^short = "Graphic"
+    * type = $NCIT#C54273
     * document 1..1
       * ^short = "Impurity Structure Graphic"
       * ^definition = """
@@ -639,23 +644,47 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
         use in eCTD' Example: This is the representation of the molecule CH3OH, 
         or the sequence SHLVEALALVAGERG.
       """
+    * insert PQReference(document)
     * document only Reference(GraphicReference)
-  * representation[structureData]
-    * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
-    * format 0..1 MS
-    * format ^short = "Drug Substance Impurity Method Type"
-    * format.text 0..1 MS
+  * representation[structureFile]
+    * ^short = "machine-readable representation -- attached file"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Structure"
-    * representation 0..1 MS
-    * representation ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
-    * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
-"""
-    * document 0..1 MS
-    * document ^short = "Impurity Chemical Structure Data (large files, e.g. SDF, CIF)"
+      * ^short = "Structure File"
+    * type = $NCIT#C103240
+    * document 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)"
+    * insert PQReference(document)
     * document only Reference(StructureReference)
+  * representation[structureString]
+    * ^short = "machine-readable representation -- plain text"
+    * type 1..1 MS
+      * ^short = "Structure Textual"
+    * type = $NCIT#C45253
+    * format 1..1 MS
+      * ^short = "Drug Substance Impurity Method Type"
+    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+    * representation 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+      * ^definition = """
+        A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+        Examples: SMILES, INCHI
+      """
+//   * representation[structureData]
+//     * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
+//     * format 0..1 MS
+//     * format ^short = "Drug Substance Impurity Method Type"
+//     * format.text 0..1 MS
+//     * type 1..1 MS
+//       * text 1..1 MS
+//       * text = "Structure"
+//     * representation 0..1 MS
+//     * representation ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+//     * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+// Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+// """
+//     * document 0..1 MS
+//     * document ^short = "Impurity Chemical Structure Data (large files, e.g. SDF, CIF)"
+//     * document only Reference(StructureReference)
 
 // impurities might be unknown and not have Unii's
 * insert UniiAndUniProtCodes(0)
@@ -664,12 +693,12 @@ Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB,
 
 RuleSet: SubstanceCharacterization
 * characterization MS
-  * technique
+  * technique MS
+  * technique only CodeableConceptTextOnly
     * ^definition = """The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]
 Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
 """
-    * text 1..1 MS
-      * ^short = "Substance Characterisation Technique"
+    * ^short = "Substance Characterisation Technique"
   * description 0..1 MS
     * ^short = "Analysis Narrative Text and Table"
     * ^definition = ""
@@ -698,10 +727,10 @@ Id: pqcmc-dp-ingredient
 Title: "Drug Product Batch Formula Ingredient"
 Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
 
-* meta.profile 0..1 MS
 * identifier 0..1 MS
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
+* insert PQCodeableReference(substance.code)
 * substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
 * substance
   * strength 2..2 MS
@@ -727,43 +756,55 @@ Description: "The amount details about the drug product ingredients in the batch
     * concentrationQuantity.code from PqcmcPercentageUnits (required)
 
 
-RuleSet: GraphicAndStructureRepresentations(minimumGraphics, minimumStructures)
+RuleSet: GraphicAndStructureRepresentations(graphicsCardinality, structureFileCardinality,structureStringCardinality)
 * structure
   * representation MS
-    * ^short = "Structure Graphic | Structure Data File"
+    * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
     * ^slicing.discriminator.type = #value
     * ^slicing.rules = #closed
-    * ^slicing.discriminator.path = "type.text"
+    * ^slicing.discriminator.path = "type"
     * ^slicing.ordered = false
+    * type 1..1 MS
+    * type from PqcmcRepresentationTypes (required)
   * representation contains
-    graphic {minimumGraphics}..1 and
-    structureData {minimumStructures}..*
+    graphic {graphicsCardinality} and
+    structureFile {structureFileCardinality} and
+    structureString {structureStringCardinality}
   * representation[graphic]
     * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Graphics"
+      * ^short = "Graphic"
+    * type = $NCIT#C54273
     * document 1..1
-      * ^short = "Structure Graphic"
+      * ^short = "Impurity Structure Graphic"
       * ^definition = """
-        A pictorial representation of the structure of the substance. 
+        A pictorial representation of the structure of the impurity substance. 
         [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for 
         use in eCTD' Example: This is the representation of the molecule CH3OH, 
         or the sequence SHLVEALALVAGERG.
       """
+    * insert PQReference(document)
     * document only Reference(GraphicReference)
-  * representation[structureData]
-    * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
-    * format 0..1 MS
-    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+  * representation[structureFile]
+    * ^short = "machine-readable representation -- attached file"
     * type 1..1 MS
-      * text 1..1 MS
-      * text = "Structure"
-    * representation 0..1 MS
-    * representation ^short = "Chemical Structure Data (short, plain text representations, e.g. SMILES)"
-    * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
-Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
-"""
-    * document 0..1 MS
-    * document ^short = "Chemical Structure Data (large files, e.g. SDF, CIF)"
+      * ^short = "Structure File"
+    * type = $NCIT#C103240
+    * document 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)"
+    * insert PQReference(document)
     * document only Reference(StructureReference)
+  * representation[structureString]
+    * ^short = "machine-readable representation -- plain text"
+    * type 1..1 MS
+      * ^short = "Structure Textual"
+    * type = $NCIT#C45253
+    * format 1..1 MS
+      * ^short = "Drug Substance Impurity Method Type"
+    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+    * representation 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+      * ^definition = """
+        A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+        Examples: SMILES, INCHI
+      """

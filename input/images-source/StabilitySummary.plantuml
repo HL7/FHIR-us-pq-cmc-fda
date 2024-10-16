@@ -8,10 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES {
-      object "**Bundle Reference:**" as objbun {
-            [[StructureDefinition-cmc-ectd-document-sp7181.html]]
-      }
+package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle]]" as NODES {
 
       node "DrugProductHandle" as NN {
 
@@ -19,9 +16,9 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-pqcmc-drug-product-handle.html]]
                   **ValueSets:**
-                  Drug Route Of Administration Terminology
-                  Pharmaceutical Dosage Form Terminology
-                  Name Part Terminology
+                  [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+                  [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+                  [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
             }
       }
       diamond CH
@@ -32,8 +29,8 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                   **ValueSets:**
-                  Substance Classification
-                  Quality Benchmark Terminology
+                  [[ValueSet-substance-classification.html Substance Classification]]
+                  [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
             }
       }
 
@@ -53,7 +50,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-pqcmc-stability-summary.html]]
                   **ValueSets:**
-                  Units Of Measure
+                  [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
                   Storage Conditions Terminology
             }
 
@@ -70,7 +67,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-ectd-composition-sp7181.html]]
                   **ValueSets:**
-                  Code system PQCMC Comp Section Types
+                  [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
             }
       }
       node "CodedOrganization" as NSO {

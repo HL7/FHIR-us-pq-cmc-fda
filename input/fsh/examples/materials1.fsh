@@ -63,7 +63,7 @@ Instance: 0efb1188-04f0-44ba-bfe7-ca6169ca8703
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
-Usage: #example
+Usage: #inline
 * identifier.value = "carrageenan"
 * classification = $NCIT#C3641132 "Structurally Diverse Substance"
 * grade = $NCIT#C134009 "Company Standard"
@@ -80,7 +80,7 @@ Instance: fd84a8b5-9e96-451c-a5c6-097c943eb38a
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for anhydrous citric acid"
 Description: "Identification of the subject of the specification. It is commonly used in the pharmaceutical industry as a stabilizer and preservative."
-Usage: #example
+Usage: #inline
 * identifier.value = "Citric acid"
 * classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134009 "Company Standard"
@@ -95,7 +95,7 @@ Instance: cd84a8b5-4e96-551c-15c6-c97c943eb38a
 InstanceOf: SubstanceDefinitionHandle
 Title: "Example SubstanceDefinitionHandle for Asprin"
 Description: "Identification of the Drug Substance of the raw materials whose specifications are for Aspirin."
-Usage: #example
+Usage: #inline
 * identifier.value = "salicylate"
 * classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C134006 "USP-NF"
@@ -110,7 +110,7 @@ Instance: d3a11b25-e160-4688-b807-6383364096fd
 InstanceOf: ExcipientRaw
 Title: "Example SubstanceDefinition for water"
 Description: "Identification of the subject of the specification"
-Usage: #example
+Usage: #inline
 * identifier.value = "water"
 * classification = $NCIT#C48807 "Chemical"
 * grade = $NCIT#C176793 "BP"
@@ -125,8 +125,7 @@ Instance: ab241f8c-d21e-4382-a70a-52190dbdf07e
 InstanceOf: QualitySpecification
 Title: "Carrageenan specification Example"
 Description: "Example raw material (Carrageenan) specification for CTD 3.2.S.2.3.  Raw matrials and Excipients share the same profile but are in different bundles."
-Usage: #example
-
+Usage: #inline
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "RawCitricacid"
 * version = "1.0"
@@ -248,7 +247,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-001"
@@ -271,7 +270,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134256 "Microbial Limits"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-002"
@@ -291,9 +290,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "UV"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C205014 "Elemental Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-003"
@@ -316,9 +315,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134002 "Residual Solvent"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-004"
@@ -330,7 +329,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-005"
@@ -342,7 +341,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C60821 "Solubility"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-006"
@@ -352,7 +351,7 @@ Instance: a2cba634-a481-4b07-9bd4-62c7ada31e1b
 InstanceOf: QualitySpecification
 Title: "Citric acid specification Example"
 Description: "Example raw material (Citric acid) specification for CTD 3.2.S.2.3"
-Usage: #example
+Usage: #inline
 
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "CitricAcidSpecification"
@@ -404,9 +403,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
@@ -418,7 +417,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
@@ -430,7 +429,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
@@ -442,7 +441,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
@@ -452,7 +451,7 @@ Instance: 5819b223-d3d2-419f-b617-b3a9a3625b89
 InstanceOf: QualitySpecification
 Title: "Water Specification Example"
 Description: "Example raw material (water) specification for CTD 3.2.S.2.3"
-Usage: #example
+Usage: #inline
 
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "WaterSpecification"
@@ -495,9 +494,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Colorimetry"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134262 "Color of Solution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-201"
@@ -509,7 +508,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Spectrophotometer"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C74723 "Turbidity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-202"
@@ -521,9 +520,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Smell"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C139027 "Odor"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-203"
@@ -535,7 +534,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134264  "Hardness"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-204"
@@ -545,7 +544,7 @@ Instance: 5c0d341e-6e4f-457c-811d-cfaf3eb62ecd
 InstanceOf: EctdComposition32S23
 Title: "Example Composition for CTD 3.2.S.2.3"
 Description: "This composition contains one section with reference to each raw material specification for the drug substance."
-Usage: #example
+Usage: #inline
 * identifier.value = "materials1"
 * status = #final
 * subject = Reference(urn:uuid:cd84a8b5-4e96-551c-15c6-c97c943eb38a)

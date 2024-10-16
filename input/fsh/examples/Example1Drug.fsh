@@ -26,7 +26,7 @@ Instance: 2d70d504-8cc6-4282-81d4-b20b0a98b78b
 InstanceOf: ComponentSubstance
 Title: "Composition ingredient substance indentifying information - aspirin"
 Description: "API used in two layer table example"
-Usage: #example 
+Usage: #inline
 
 * identifier.value = "aspirin"
 * classification =  $NCIT#C48807 "Chemical"
@@ -43,7 +43,7 @@ Instance: fc09842a-8f71-48f2-9f9f-ff2441b2eb6f
 InstanceOf: DrugProductComponent
 Title: "Strength info for the Active Ingredient"
 Description: "one of the active ingredients in the two layer table example - aspirin"
-Usage: #example 
+Usage: #inline
 
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C82533 "Active Ingredient"
@@ -59,7 +59,7 @@ Instance: fc878c4f-a98c-427c-816b-e03ccdf0e712
 InstanceOf: ComponentSubstance
 Title: "Composition ingredient substance indentifying information - acetaminophen"
 Description: "An API used in two layer table example."
-Usage: #example 
+Usage: #inline
 
 * identifier.value = "acetaminophen"
 * classification =  $NCIT#C48807 "Chemical"
@@ -75,7 +75,7 @@ Instance: 7f10a35e-228d-42db-8918-6ccada78454d
 InstanceOf: DrugProductComponent
 Title: "Strength information for the Active Ingredient - acetaminophen"
 Description: "An active ingredient in the two layer table example -  acetaminophen"
-Usage: #example 
+Usage: #inline
 
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C82533 "Active Ingredient"
@@ -93,7 +93,7 @@ Instance: 393a14e7-3edc-4373-bbe5-9e569d504a1c
 InstanceOf: ComponentSubstance
 Title: "Composition ingredient substance indentifying information - Maize starch"
 Description: "An excipient in the two layer tablet"
-Usage: #example 
+Usage: #inline
 
 * identifier.value = "Maize starch"
 * classification =  $NCIT#C45305 "Mixture"
@@ -112,7 +112,7 @@ Instance: d01421cc-6488-468b-a676-d3e7281875e2
 InstanceOf: DrugProductComponent
 Title: "DrugProductComponent example for an excipient - Maize starch"
 Description: "Strength is captured for all excipients"
-Usage: #example 
+Usage: #inline
 
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C42637 "Inactive Ingredient"
@@ -128,7 +128,7 @@ Instance: 496f83ad-2365-4b12-8672-a349d99f7d67
 InstanceOf: ComponentSubstance
 Title: "IngredComponentSubstance example showing the use of the sourceMaterial backbone element"
 Description: "ComponentSubstance example showing the use use of the sourceMaterial backbone element"
-Usage: #example 
+Usage: #inline
 
 * identifier.value = "Grape skin extract"
 * classification =  $NCIT#C45305 "Mixture"
@@ -148,7 +148,7 @@ Instance: 3791c4ce-2b43-4d7b-b195-0e5f88f28dab
 InstanceOf: DrugProductComponent
 Title: "Strength information - Grape skin extract"
 Description: "Example of a DrugProductComponent for an Inactive Ingredient"
-Usage: #example 
+Usage: #inline
 
 * status = $PubStatus#draft	"Draft"
 * role = $NCIT#C42637 "Inactive Ingredient"
@@ -191,7 +191,7 @@ Usage: #example
 Instance: 77ad6922-9c59-43d1-93cb-29d063cc2e8c
 InstanceOf: ContainerClosure
 Title: "Example Container Closure"
-Usage: #example
+Usage: #inline
 * packageFor = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
 * description = """Plastic Bottle made of high-density polyethylene (HDPE). The plastic is chosen for its resistance to moisture and its ability to maintain the integrity of the drug.
 
@@ -206,7 +206,7 @@ Instance: a8316fc9-8ca8-4115-81c1-9f8f84c99149
 InstanceOf: FinishedProduct
 Title: "A FinishedProduct profile based on ManufacturedItemDefinition"
 Description:  "An example of section 3.2.P.1.3 for a multilayer product"
-Usage: #example 
+Usage: #inline
 
 * identifier.value = "Example1Drug"
 * status = $PubStatus#draft	"Draft"
@@ -302,7 +302,7 @@ Instance: 5dfbbf17-05c0-441d-af66-7a66072f4ae4
 InstanceOf: EctdComposition32P10
 Title: "EctdComposition32P10 for 2 layer tablet"
 Description: "eCTD Product Description and Composition for the two layer tablet example"
-Usage: #example 
+Usage: #inline
 
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-09T07:12:23.537Z

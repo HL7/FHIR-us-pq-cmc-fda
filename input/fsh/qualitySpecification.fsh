@@ -20,11 +20,9 @@ Description: "Numeric level in the hierarchical value-set. As an example, this e
 * ^context[=].expression = "PlanDefinition.action.reason"
 
 * value[x] 1..1 MS
-  * obeys cmc-greater-than-zero
   * ^short = "TestCategory  Level"
   * ^definition = """Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2."""
-* value[x] only integer
-
+* value[x] only positiveInt
 Extension: TargetRange
 Id: pq-target-range
 Title: "Target Range"
@@ -60,7 +58,6 @@ Id: pqcmc-quality-specification
 Title: "Quality Specification"
 Description: "A quality specification is for a drug product or drug substance (excipient, API or raw material)."
 
-* meta.profile MS
 * extension contains 
     pq-specification-status-extension named ApprovalStatus 1..1 MS and
     pq-additional-info-extension named spec-additional-info 0..1  
@@ -101,6 +98,7 @@ Examples: Drug product, Drug substance.
 """
 * status MS
 * subject[x] 1..1 MS
+* insert PQReference(subject[x])
 * subject[x] only Reference(DrugProductHandle or SubstanceDefinitionHandle or ExcipientRaw)
 * date 1..1 MS
 * date ^short = "Specification Version Date"
@@ -125,18 +123,19 @@ Example: value changed from 4% to 5% on 01/01/2010) """
 * goal.description ^definition = """The text of the acceptance criteria as provided in the specification. [Source: SME Defined]
 Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as it appears in the Specification."""
 * goal.addresses 1..* MS
-* goal.addresses.coding.code 1..1 MS
-* goal.addresses.coding.code ^short = "Acceptance Criteria Usage"
-* goal.addresses.coding.code ^definition = "A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
-Note: The concept of  'In-Process' is  subsumed by the Release code."
-* goal.addresses.coding.code from PqcmcTestUsageTerminology (required)
-* goal.addresses.text ^short = "Accpetance Criteria Usage"
+* goal.addresses from PqcmcTestUsageTerminology (required)
+  * ^short = "Acceptance Criteria Usage"
+  * ^definition = """
+    A coded value specifying when a particular analytical procedure or measurement is being performed on a substance or a product. [Source: SME Defined]  Examples: Release, Stability.
+    Note: The concept of  'In-Process' is  subsumed by the Release code.
+  """
 * goal.target 1..* MS
 * goal.target obeys cmc-target-range
 * goal.target ^short = "Acceptance Criteron"
   * modifierExtension contains pq-target-range named targetRange 0..1 MS
-* goal.target.measure.text 0..1 MS
-* goal.target.measure.text ^short = "Detailed parameter being measured if more granular than Sub-Test"
+* goal.target.measure 0..1 MS
+* goal.target.measure only CodeableConceptTextOnly
+  * ^short = "Detailed parameter being measured if more granular than Sub-Test"
 * goal.target.detail[x] MS
 * goal.target.detail[x] only Quantity or string or integer
 * goal.target.detailQuantity  0..1 MS
@@ -185,8 +184,10 @@ If there is more than one comment, include in this element.  Markdown allows for
 * action.code 1..1 MS
 * action.code ^short = "Test Method Origin"
 * action.code ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
-* action.code.coding.code 1..1 MS
-* action.code.coding.code from PqcmcTestMethodOriginTerminology (required)
+// code is a codeableConcept but both the coding and text portions are being used
+// so the binding is down at the coding level
+* action.code.coding 1..1 MS
+* action.code.coding from PqcmcTestMethodOriginTerminology (required)
 * action.code.text 1..1 MS
 * action.code.text ^short = "Analytical Procedure"
 * action.code.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
@@ -194,11 +195,14 @@ If there is more than one comment, include in this element.  Markdown allows for
 * action.reason 1..2 MS
 * action.reason ^short = "Test Category | Test Subcategory"
 * action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+// This is an extension from before the hierarchical relationship was included
+// in the codesystem. This should probably be removed -- there shouldn't be an
+// extension on a datatype (CodeableConcept) and the codesystem would reveal
+// the hiearchy if only the child were provided. If both are the parent and 
+// child code are truly needed a better way to do this would be with two value
+// sets (one with parent codes (required), one with child codes(optional))
 * action.reason.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
-* action.reason.coding MS
-* action.reason.coding from PqcmcTestCategoryTerminology (required)
-* action.reason.coding.code 1..1 MS
-* action.reason.coding.display  1..1
+* action.reason from PqcmcTestCategoryTerminology (required)
 * action.documentation 0..1 MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
 * action.documentation.label 1..1 MS

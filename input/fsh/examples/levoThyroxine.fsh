@@ -70,13 +70,13 @@ Instance: 832f22b4-6f0c-41f8-9b7d-f26f55e9973c
 InstanceOf: PolymorphicForm
 Title: "Polymorphic Form Example"
 Description: "Polymorphic Form - DextroThyroxine"
-Usage: #example 
+Usage: #inline
 * identifier.value = "DextroThyroxine"
 * structure.molecularFormula = "C15H10I4NO4.Na.H2O"
-* structure.representation[structureData][+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
-* structure.representation[structureData][=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[structureData][+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
-* structure.representation[structureData][=].type = $NCIT#C54684 "SMILES"
+* structure.representation[structureString][+].representation = """ANMYAHDLKVNJJO-CURYUGHLSA-M"""
+* structure.representation[structureString][=].format = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[structureString][+].representation = """O.[Na+].N[C@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
+* structure.representation[structureString][=].format = $NCIT#C54684 "SMILES"
 * structure.representation[graphic][+].document = Reference(urn:uuid:0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3)
 * code.code = $UNII#0H00N2AHSP
 * name[gsrs].name = "DEXTROTHYROXINE SODIUM"
@@ -104,7 +104,7 @@ Instance: 21b6b724-507e-4cf4-a462-93334b98d166
 InstanceOf: DrugSubstanceNomenclatureStructure
 Title: "Drug Substance Nomenclature and Structure"
 Description: "LEVOTHYROXINE SODIUM ANHYDROUS"
-Usage: #example 
+Usage: #inline
 * identifier.value = "levoThyroxine"
 * classification = $NCIT#C48807 "Chemical"
 * manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
@@ -113,12 +113,12 @@ Usage: #example
 * supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
 * code.code = $UNII#054I36CPMN
 * structure.technique.text = """NMR Spectroscopy"""
-* structure.representation[structureData][+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
-* structure.representation[structureData][=].type = $NCIT#C54683 "InChI File (small molecule)"
-* structure.representation[structureData][+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
-* structure.representation[structureData][=].type = $NCIT#C54684 "SMILES"
+* structure.representation[structureString][+].representation = """YDTFRJLNMPSCFM-YDALLXLXSA-M"""
+* structure.representation[structureString][=].format = $NCIT#C54683 "InChI File (small molecule)"
+* structure.representation[structureString][+].representation = """[Na+].N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1)C([O-])=O"""
+* structure.representation[structureString][=].format = $NCIT#C54684 "SMILES"
 * structure.representation[graphic][+].document = Reference(urn:uuid:d94ad7ac-b935-432f-bc68-312b6b8dcca7)
-* structure.representation[structureData][+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
+* structure.representation[structureFile][+].document = Reference(urn:uuid:22bd989e-8056-494f-9bc1-195d13428179)
 * name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
 * name[gsrs].preferred = true
 * name[iupac].name = "sodium;(2S)-2-amino-3-[4-(4-hydroxy-3,5-diiodophenoxy)-3,5-diiodophenyl]propanoate"
@@ -130,7 +130,7 @@ Instance: 260f5aa3-23d2-4999-8e5f-70f247390ee5
 InstanceOf: EctdComposition32S10
 Title: "eCTD Composition for 3.2.S.1"
 Description: "Composition containing eCTD Substance General Information"
-Usage: #example 
+Usage: #inline
 * identifier.value = "Substance General - levoThyroxine"
 * status = #final
 * type.coding = $SectionTypes#32S10 "Substance General Information"	

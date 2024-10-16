@@ -20,7 +20,7 @@ Instance: aa514363-d43f-4052-b44e-b67aa4d6dee7
 InstanceOf: QualitySpecification
 Title: "A quality specification is for a drug product"
 Description: "A quality specification is for a Drug Product"
-Usage: #example
+Usage: #inline
 
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C134011 "Not Approved"
 * identifier.value = "ExampleSpecification"
@@ -219,7 +219,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Spectrophotometry"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "USP <197>"
@@ -235,7 +235,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "HPLC"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-01"
@@ -249,7 +249,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134255 "Loss on Drying"
   * documentation.type = #documentation
   * documentation.label = "USP <731>"
@@ -261,9 +261,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134262 "Color of Solution"
   * documentation.type = #documentation
   * documentation.label = "USP <271>"
@@ -275,7 +275,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
@@ -287,7 +287,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C193381 "Foreign and Particulate Matter"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-02"
@@ -299,9 +299,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "FTIR"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C205039 "Specified Identified Impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <221>"
@@ -313,9 +313,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "FTIR"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C205039 "Specified Identified Impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <221>"
@@ -327,9 +327,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "UV"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C205014 "Elemental Impurity"
   * documentation.type = #documentation
   * documentation.label = "USP <231>"
@@ -341,9 +341,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134254 "Impurities/Degradation Products/Related Substances"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-03"
@@ -355,9 +355,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C134002 "Residual Solvent"
   * documentation.type = #documentation
   * documentation.label = "USP <467>"
@@ -372,9 +372,9 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C60819 "Assay"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C204845 "Active Ingredient Content"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-04"
@@ -385,7 +385,7 @@ Usage: #example
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134253 "Dissolution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-05"
@@ -409,7 +409,7 @@ Instance: d332acdf-4874-407b-9950-528f14c6bea2
 InstanceOf: EctdCompositionSP4151
 Title: "eCTD Product Specification Composition SP4151"
 Description: "Composition SP4151 implementing eCTD 3.2.P.5.1."
-Usage: #example
+Usage: #inline
 
 * identifier.value = "ExampleSpecification"
 * status = #final

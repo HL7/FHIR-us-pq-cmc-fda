@@ -1,6 +1,7 @@
 Instance: 278736ef-2ddf-49e4-895c-3a9f34db36cf
 InstanceOf: ExcipientRaw
 Description: "The Excipient Raw representing Cochineal"
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"
 * identifier.value = "Cochineal"
 * classification = $NCIT#C48807 "Chemical"
@@ -18,6 +19,7 @@ Description: "The Excipient Raw representing Cochineal"
 Instance: 37bf5cc0-33bf-478b-b84e-ccb35143ef6e
 InstanceOf: QualitySpecification
 Description: "Quality Specification for Cochineal"
+Usage: #inline
 
 * extension[ApprovalStatus].valueCodeableConcept = $NCIT#C48660 "Not Applicable"
 * identifier.value = "CochinealSpecification"
@@ -133,9 +135,9 @@ Description: "Quality Specification for Cochineal"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205026 "Organoleptic"
-  * reason[+].extension[categoryLevel].valueInteger = 2
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason[=].coding = $NCIT#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
@@ -147,7 +149,7 @@ Description: "Quality Specification for Cochineal"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
@@ -159,7 +161,7 @@ Description: "Quality Specification for Cochineal"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
@@ -171,7 +173,7 @@ Description: "Quality Specification for Cochineal"
   * code
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
@@ -183,7 +185,7 @@ Description: "Quality Specification for Cochineal"
   * code
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
-  * reason[+].extension[categoryLevel].valueInteger = 1
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason[=].coding = $NCIT#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-104"
@@ -209,6 +211,7 @@ Description: "Quality Specification for Cochineal"
 Instance: 4bd1ed57-852b-42be-a9b0-355f8a2aa7d4
 InstanceOf: EctdCompositionSP4151
 Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
+Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
 * identifier.value = "CochinealSpecificationComposition"
 * status = #final

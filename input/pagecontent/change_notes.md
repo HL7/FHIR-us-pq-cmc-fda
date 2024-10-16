@@ -1,6 +1,6 @@
 PQ/CMC FHIR Implementation Guide is under development.  Minor releases will be posted for feedback. These release notes will be retained until the next major release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
 
-### Changes and Updates for Version 1.1.5
+### Changes and Updates for Version 1.1.6
 The current development IG - Sept connectathon plus Stage 2
 - Included Excipient Drug Substance in the Profile Map (at the same level as Substance Definition Handle).
 - Changed section 1.3 to section 1.2.2 and adjusted the section numbering that followed — for example, "IG Overview" is now section 1.3.

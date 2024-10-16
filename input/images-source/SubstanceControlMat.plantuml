@@ -8,10 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
-    object "**Bundle Reference:**" as objbun {
-        [[StructureDefinition-cmc-ectd-document-32s23.html]]
-    }
+package "[[StructureDefinition-cmc-ectd-document-32s23.html eCTD Heading 3.2.S.2.3 Control of Materials Bundle]]" as NODES {
 
     node "QualitySpecification" as N2 {
 
@@ -19,16 +16,17 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-quality-specification.html]]
             **ValueSets**
-            Specification Status Terminology
-            Test Category Terminology
-            Test Method Origin Terminology
-            Test Usage Terminology
-            Units Of Measure
+            [[ValueSet-pqcmc-specification-status-terminology.html Specification Status Terminology]]
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+            [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
+            [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
         }
         object "**Extensions**" as objQSEx {
-            Approval Status
-            Additional Information
-            TargetRange
+            [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+            [[StructureDefinition-pq-hierarchical-level-extension.html Hierarchical Level]]
+            [[StructureDefinition-pq-specification-status-extension.html Specification Status]]
+            [[StructureDefinition-pq-target-range.html Target Range]]
         }
         obj2 <|-- objQSEx
     }
@@ -38,7 +36,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-ectd-composition-32s23.html]]
             **ValueSets:**
-            eCTD sections Value Set
+            [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
         }
     }
 
@@ -48,9 +46,9 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-excipient.html]]
             **ValueSets:**
-            Source Type Terminology
-            Substance Classification
-            Quality Standard Terminology
+            [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
         }
     }
     node "CodedOrganization" as NSO {
@@ -58,6 +56,8 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
         object "**Parent:** Organization" as objAu {
             **Reference:**
             [[StructureDefinition-cmc-organization.html]]
+            **ValueSets:**
+            [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
         }
     }
 
@@ -67,8 +67,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-routine-drug-substance.html]]
             **ValueSets:**
-            Substance Classification
-            Quality Benchmark Terminology
+            [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
         }
     }
 
