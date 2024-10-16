@@ -31,7 +31,8 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### Usage Patterns
 
-Not Applicable
+Not presently defined. Content will be added in the future when FDA PQ/CMC FHIR IG starts supporting other scenarios, for example new dosage forms such as liquids, etc.
+
 ### Examples
 
 This image demonstrates a Drug Substance with a polymorph displayed with narrative inserted in the composition text element.  The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [30536c0e-456c-4f90-9f02-da7be1d289e9](Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9.html)

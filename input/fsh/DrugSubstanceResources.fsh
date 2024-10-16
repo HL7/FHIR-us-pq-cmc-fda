@@ -51,7 +51,7 @@ Description: "Any raw material intended for use in the manufacture of a drug sub
 * . obeys cmc-source-material
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
@@ -308,7 +308,7 @@ Description: "Substance General Information containting Drug Substance (Active I
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
@@ -366,6 +366,7 @@ RuleSet: SubstanceNames
 Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 """
 * name obeys cmc-name-preferred
+* name.type from PqcmcSubstanceNameType // don't use example binding
 * name ^slicing.discriminator.type = #value
 * name ^slicing.discriminator.path = "type" //element(*,SubstanceDefinition)/name/type/coding/code
 * name ^slicing.rules = #closed
@@ -394,6 +395,7 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name[sub].name ^short = "Generic"
 * name[sub].name ^definition = """A non-branded nor registered name that meant for common use."""
 * name[sub].type 1..1 MS
+
 * name[sub].type = $NCIT#C97054 "Generic Name"
 
 * name[brand].name 1..1 MS
@@ -477,6 +479,7 @@ Examples: GSRS Preferred Term, Systematic Name, INN, USP/NF
 * name ^slicing.discriminator.path = "type" //element(*,SubstanceDefinition)/name/type/coding/code
 * name ^slicing.rules = #closed
 * name ^slicing.description = "Slice based on value pattern"
+* name.type from PqcmcSubstanceNameType // don't use example binding
 * name contains
   sub 0..1 MS and
   // comn 0..1 MS and
@@ -570,7 +573,7 @@ Description: "Drug Substance (Active Ingredient) nomenclature and characterisati
 * obeys cmc-substance-characterisation-content-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.

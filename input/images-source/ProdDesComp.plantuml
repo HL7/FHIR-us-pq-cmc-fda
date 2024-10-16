@@ -15,8 +15,8 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-ContainerClosure.html]]
       **ValueSets:**
-      Container Type Terminology
-      Closure Type Terminology
+      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
     }
   }
 
@@ -26,9 +26,9 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-description.html]]
       **ValueSets:**
-      Pharmaceutical Dosage Form Terminology
-      Drug Route Of Administration Terminology
-      Name Part Terminology
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
     }
   }
 
@@ -38,25 +38,23 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-pqcmc-product-part.html]]
       **ValueSets:**
-      PqcmcCapsuleClassificationCategory
-      PqcmcCoatingPurpose
-      PqcmcDrugProductComponentFunctionCategoryTerminology
-      PqcmcExcipientFunctionTerminology
-      PqcmcManufacturedDoseFormTerminology
-      PqcmcNonPercentageUnits
-      PqcmcPercentageUnits
-      pqcmc-product-characteristic
-      PqcmcProductPartIngredientPhysicalLocation
-      PqcmcProductPartType
-      PqcmcQualityBenchmarkTerminology
-      PqcmcReleaseMechanism
-      PqcmcReleaseProfile
-      PqcmcStrengthTypeTerminology
-      PqcmcUnitsMeasure
+      [[ValueSet-capsule-classification-category.html Capsule Classification Category]]
+      [[ValueSet-pqcmc-coating-purpose.html Coating Purpose]]
+      [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
+      [[ValueSet-pqcmc-excipient-function-terminology.html Excipient Function Terminology]]
+      [[ValueSet-pqcmc-manufactured-dose-form-terminology.html Manufactured Dose Form Terminology]]
+      [[ValueSet-pqcmc-non-percentage-units.html Non Percentage Units]]
+      [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
+      [[ValueSet-pqcmc-product-part-ingredient-physical-location.html Product Part Ingredient Physical Location]]
+      [[ValueSet-pqcmc-product-part-type.html Product Part Type]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+      [[ValueSet-pqcmc-release-mechanism.html Release Mechanism]]
+      [[ValueSet-pqcmc-release-profile.html Release Profile]]
+      [[ValueSet-pqcmc-strength-type-terminology.html Strength Type Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
     }
     object "**Extensions**" as objMIDExs {
-      OriginalText
-      AmountRatio
+      [[StructureDefinition-pq-amount-ratio.html Amount Ratio]]
     }
     objMID *-- objMIDExs
   }
@@ -65,9 +63,11 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
     object "**Parent:** Ingredient" as obj3 {
       **Reference:**
       [[StructureDefinition-pqcmc-component.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Percentage Units]]
     }
     object "**Extensions**" as objExs {
-      Strength Extension
+     [[StructureDefinition-strength-extension.html Strength Extension]]
     }
     obj3 *-- objExs
   }
@@ -78,14 +78,15 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-pqcmc-component-substance.html]]
       **ValueSets:**
-      Substance Classification
-      Quality Standard Terminology
-      Source Type Terminology
-      Chemical Structure Data File Type Terminology
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+      [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
     }
   }
 
-  node "StructureReference" as NB642 {
+  node "StructureDataAttachment" as NB642 {
 
     object "**Parent:** PqcmcAttachment"  as obj642 {
 
@@ -94,7 +95,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
     }
 
   }
-  node "GraphicReference" as NB64 {
+  node "GraphicAttachment" as NB64 {
 
     object "**Parent:** PqcmcAttachment"  as obj64 {
 
@@ -109,7 +110,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
-      Sponsor Identifier Type Terminology
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
     }
   }
 
@@ -119,7 +120,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-ectd-composition-32p10.html]]
       **ValueSets:**
-      eCTD sections Value Set
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
 
   }

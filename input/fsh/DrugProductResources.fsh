@@ -620,7 +620,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
 * name 1..2 MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "type"
-  * ^slicing.rules = #open
+  * ^slicing.rules = #closed
   * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
   * productName 1..1 MS
   * type 1..1 MS
@@ -630,7 +630,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * part 0..* MS
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "type"
-    * ^slicing.rules = #open
+    * ^slicing.rules = #closed
     * ^slicing.description = "Optional name parts"
     * part 1..1 MS
     * type 1..1 MS
@@ -644,7 +644,7 @@ Note: The minimum is the scientific name.
 """
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "type"
-    * ^slicing.rules = #open
+    * ^slicing.rules = #closed
     * ^slicing.description = "The scientific name part is required and all name parts if present"
     * part 1..1 MS
     * type 1..1 MS

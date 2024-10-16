@@ -16,7 +16,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
             **Reference:**
             [[StructureDefinition-ectd-composition-32p70.html]]
             **ValueSets:**
-            Code system PQCMC Comp Section Types
+            [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
         }
 
     }
@@ -26,9 +26,9 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
             **Reference:**
             [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
             **ValueSets:**
-            Container Type Terminology
-            Closure Type Terminology
-            Name Part Terminology
+            [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+            [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
+            [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
         }
         object "**Extensions**" as objEx {
             containerClosure
@@ -37,7 +37,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
     }
     node "Base64DocumentReference" as NB64 {
 
-        object "**Parent:** DocumentReference" as obj64 {
+        object "**Parent Profile:** DocumentReference" as obj64 {
 
             **Reference:**
             [[StructureDefinition-cmc-document-reference.html]]

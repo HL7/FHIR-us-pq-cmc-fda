@@ -24,9 +24,9 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-handle.html]]
       **ValueSets:**
-      Drug Route Of Administration Terminology
-      Pharmaceutical Dosage Form Terminology
-      Name Part Terminology
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
     }
   }
   node "ExcipientRaw" as N21 {
@@ -35,10 +35,10 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       **Reference:**
       [[StructureDefinition-pqcmc-excipient.html]]
       **ValueSets:**
-      Source Type Terminology
-      Substance Classification
-      Quality Standard Terminology
-      
+      [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+
     }
   }
 
@@ -48,7 +48,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       **Reference:**
       [[StructureDefinition-ectd-composition-sp4151.html]]
       **ValueSets:**
-      eCTD sections Value Set
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
   }
 
@@ -59,8 +59,8 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
       **ValueSets:**
-      Substance Classification
-      Quality Standard Terminology
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
     }
   }
 
@@ -72,21 +72,22 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       **Reference:**
       [[StructureDefinition-pqcmc-quality-specification.html]]
       **ValueSets**
-      Specification Status Terminology
-      Test Category Terminology
-      Test Method Origin Terminology
-      Test Usage Terminology
-      Units Of Measure
+      [[ValueSet-pqcmc-specification-status-terminology.html Specification Status Terminology]]
+      [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+      [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
+      [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
     }
     object "**Extensions**" as objQSEx {
-      Approval Status
-      Additional Information
-      TargetRange
+      [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+      [[StructureDefinition-pq-hierarchical-level-extension.html Hierarchical Level]]
+      [[StructureDefinition-pq-specification-status-extension.html Specification Status]]
+      [[StructureDefinition-pq-target-range.html Target Range]]
     }
     obj2 *-- objQSEx
   }
 
-    node "CodedOrganization (manufacturer or supplier)" as NMSpon2 {
+  node "CodedOrganization (manufacturer or supplier)" as NMSpon2 {
 
     object "**Parent:** Organization" as objDP2 {
       **Reference:**

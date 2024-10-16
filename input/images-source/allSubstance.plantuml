@@ -24,9 +24,9 @@ package "eCTD Drug Substance Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-excipient.html]]
             **ValueSets:**
-            Source Type Terminology
-            Substance Classification
-            Quality Standard Terminology
+            [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
         }
     }
     node "QualitySpecification" as N2all {
@@ -35,11 +35,11 @@ package "eCTD Drug Substance Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-quality-specification.html]]
             **ValueSets**
-            Specification Status Terminology
-            Test Category Terminology
-            Test Method Origin Terminology
-            Test Usage Terminology
-            Units Of Measure
+            [[ValueSet-pqcmc-specification-status-terminology.html Specification Status Terminology]]
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+            [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
+            [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
         }
         object "**Extensions**" as objallQSEx {
             Approval Status
@@ -55,8 +55,8 @@ package "eCTD Drug Substance Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
             **ValueSets:**
-            Substance Classification
-            Units Of Measure
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
             Chemical Structure Data File Type Terminology
             Substance Name Type
         }
@@ -68,7 +68,7 @@ package "eCTD Drug Substance Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
             **ValueSets:**
-            Impurity Classification Terminology
+            [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]
         }
     }
     node "GraphicReference" as NB64 {
@@ -85,7 +85,7 @@ package "eCTD Drug Substance Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-polymorphic-form.html]]
             **ValueSets:**
-            Units Of Measure
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
             Chemical Structure Data File Type Terminology
         }
     }

@@ -60,12 +60,10 @@ Acronyms contained in this IG:
 - NDC - National Drug Code
 - PQ/CMC - Pharmaceutical Quality/Chemistry Manufacturing and Controls
 - SODF - Solid Oral Dosage Form
--
 
 ### Diagrams and General Notes on Bundles
 
-FHIR bundles are used to group a collection of resources into a single package. This can include various resources like lab records, research studies, and more. Each Bundle profile defines a specific use case or standard for how resources should be bundled together. Profiles ensure that the bundles meet certain requirements and follow consistent formatting rules. The Composition profiles are categorized under various document types to better organize and define their use cases. Each profile in a bundle corresponds to a specific type of document or record. For FHIR in general, a Composition profile might be used for documents such as a discharge summary or a lab report. In this Implementation Guide (IG), the Composition profiles are used to itemize the elements required in a particular eCTD section. 
-The diagram shown below functions as a legend for the symbols and notations used in the Composition profile diagrams. This is crucial for interpreting the relationships and details correctly. 
+FHIR bundles are used to group a collection of resources into a single package. This can include various resources like lab records, research studies, and more. Each Bundle profile defines a specific use case or standard for how resources should be bundled together. Profiles ensure that the bundles meet certain requirements and follow consistent formatting rules. The Composition profiles are categorized under various document types to better organize and define their use cases. Each profile in a bundle corresponds to a specific type of document or record. For FHIR in general, a Composition profile might be used for documents such as a discharge summary or a lab report. In this Implementation Guide (IG), the Composition profiles are used to itemize the elements required in a particular eCTD section. The diagram shown below functions as a legend for the symbols and notations used in the Composition profile diagrams. This is crucial for interpreting the relationships and details correctly.
 
 <div>{%include legend.svg%}</div>
 

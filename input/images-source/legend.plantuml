@@ -25,7 +25,7 @@ package "Bundle" as NODES {
       [[StructureDefinition-cmc-organization.html]]
     }
   }
-  
+
   diamond CH
 
   node "Example Profile" as NN {
@@ -50,7 +50,7 @@ package "Bundle" as NODES {
 
     object "**Parent:** Composition" as obj1 {
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
 
   }

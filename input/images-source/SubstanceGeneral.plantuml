@@ -12,20 +12,20 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
 
   node "DrugSubstanceNomenclatureMolecularStructure" as NN {
 
-    object "**Parent Profile:** SubstanceDefinition" as obj3 {
+    object "**Parent:** SubstanceDefinition" as obj3 {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
       **ValueSets:**
-      Substance Classification
-      Units Of Measure
-      Chemical Structure Data File Type Terminology
-      Substance Name Type 
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
     }
   }
 
   node "GraphicReference" as NB64 {
 
-    object "**Parent:** Base64DocumentReference"  as obj64 {
+    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
       **Reference:**
       [[StructureDefinition-pqcmc-graphic-reference.html]]
     }
@@ -37,7 +37,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       **Reference:**
       [[StructureDefinition-ectd-composition-32s10.html]]
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
 
   }
@@ -47,8 +47,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       **Reference:**
       [[StructureDefinition-pqcmc-polymorphic-form.html]]
       **ValueSets:**
-      Units Of Measure
-      Chemical Structure Data File Type Terminology
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
     }
   }
   node "CodedOrganization" as NSO {
@@ -56,13 +55,15 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
+    }
   }
-  }
- 
+
   node "StructureReference" as NBstruc {
 
-    object "**Parent:** Base64DocumentReference"  as objb64 {
-      **Reference:**
+    object "**Parent Profile:** Base64DocumentReference"  as objb64 {
+      **Reference:**morning
       [[StructureDefinition-pqcmc-structure-reference.html]]
     }
   }

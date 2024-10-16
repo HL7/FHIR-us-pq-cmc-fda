@@ -28,7 +28,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### Usage Patterns
 
-Not Applicable
+Not presently defined. Content will be added in the future when FDA PQ/CMC FHIR IG starts supporting other scenarios, for example new dosage forms such as liquids, etc.
 
 ### Examples
 

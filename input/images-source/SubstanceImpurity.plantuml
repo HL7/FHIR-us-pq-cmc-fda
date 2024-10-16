@@ -16,7 +16,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       **Reference:**
       [[StructureDefinition-ectd-composition-32s3.html]]
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
   }
   node "CodedOrganization" as NSO {
@@ -24,6 +24,8 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 
@@ -34,9 +36,9 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-characterisation.html]]
       **ValueSets:**
-      Chemical Structure Data File Type Terminology
-      Substance Classification
-
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-analytical-instrument-data-types.html Analytical Instrument Data File Types]]
     }
   }
 
@@ -46,19 +48,22 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
       **ValueSets:**
-      Impurity Classification Terminology
+      [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]
+      [[ValueSet-pqcmc-analytical-instrument-data-types.html Analytical Instrument Data File Types]]
     }
   }
   node "GraphicReference" as NB64 {
 
-    object "**Parent:** Base64DocumentReference"  as obj64 {
+    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
       **Reference:**
       [[StructureDefinition-pqcmc-graphic-reference.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types]]
     }
   }
   node "StructureReference" as NBstruc {
 
-    object "**Parent:** Base64DocumentReference"  as objb64 {
+    object "**Parent Profile:** Base64DocumentReference"  as objb64 {
       **Reference:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
     }

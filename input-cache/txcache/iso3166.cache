@@ -9295,7 +9295,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9318,7 +9317,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9341,7 +9339,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9364,7 +9361,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9390,7 +9386,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9416,7 +9411,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -9442,7 +9436,6 @@ v: {
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
   "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -10740,5 +10733,83 @@ e: {
   }
 },
   "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "TUR",
+    "display" : "Turkey"
+  }]
+}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.7", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "x-system-cache-id",
+    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
+  }]
+}}####
+v: {
+  "display" : "Turkey",
+  "code" : "TUR",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "USA",
+    "display" : "United States of America"
+  }]
+}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.7", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "x-system-cache-id",
+    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
+  }]
+}}####
+v: {
+  "display" : "United States of America",
+  "code" : "USA",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "ARG",
+    "display" : "Argentina"
+  }]
+}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.7", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "x-system-cache-id",
+    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
+  }]
+}}####
+v: {
+  "display" : "Argentina",
+  "code" : "ARG",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018",
+  "server" : "http://tx.fhir.org/r4",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
 }
 -------------------------------------------------------------------------------------
