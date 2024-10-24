@@ -1,0 +1,116 @@
+@startuml allSubstance
+allowmixing
+'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
+package "eCTD Drug Substance Bundle" as NODES {
+
+    node "CodedOrganization" as NSO {
+
+        object "**Parent:** Organization" as objAu {
+            **Reference:**
+            [[StructureDefinition-cmc-organization.html]]
+        }
+    }
+
+    node "ExcipientRaw" as N2all1 {
+
+        object "**Parent:** SubstanceDefinition" as objall22 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-excipient.html]]
+            **ValueSets:**
+            [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+        }
+    }
+    node "QualitySpecification" as N2all {
+
+        object "**Parent:** PlanDefinition" as objall2 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-quality-specification.html]]
+            **ValueSets**
+            [[ValueSet-pqcmc-specification-status-terminology.html Specification Status Terminology]]
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+            [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
+            [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+        }
+        object "**Extensions**" as objallQSEx {
+            Approval Status
+            Additional Information
+            TargetRange
+        }
+        objall2 <|-- objallQSEx
+    }
+
+    node "DrugSubstanceNomenclatureMolecularStructure-DrugSubstanceCharacterisation" as NN {
+
+        object "**Parent Profile:** SubstanceDefinition" as obj33 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
+            **ValueSets:**
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+            Chemical Structure Data File Type Terminology
+            Substance Name Type
+        }
+    }
+
+    node "ImpuritySubstance" as N6 {
+
+        object "**Parent:** SubstanceDefinition" as obj2 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
+            **ValueSets:**
+            [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]
+        }
+    }
+    node "GraphicReference" as NB64 {
+
+        object "**Parent:** Base64DocumentReference"  as obj64 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-graphic-reference.html]]
+        }
+    }
+
+    node "PolymorphicForm" as N2 {
+
+        object "**Parent:** SubstanceDefinition" as obj2poly {
+            **Reference:**
+            [[StructureDefinition-pqcmc-polymorphic-form.html]]
+            **ValueSets:**
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+            Chemical Structure Data File Type Terminology
+        }
+    }
+
+    node "StructureReference" as NBstruc {
+
+        object "**Parent:** Base64DocumentReference"  as objb64 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-structure-reference.html]]
+        }
+    }
+
+
+    NN -[#darkred]-> N2
+    NN -[#darkred]-> NB64
+    NN -[#darkred]-> NBstruc
+    NN -[#darkred]-> N6
+    N2 -[#darkred]-> NB64
+    N2 -[#darkred]-> NBstruc
+    NN -[#darkred]-> NSO
+    N2all1 -[#darkred]-> NSO
+    N2all -[#darkred]-> N2all1
+    N6 -[#darkred]-> NB64
+    N6 -[#darkred]-> NBstruc
+}
+
+
+@enduml

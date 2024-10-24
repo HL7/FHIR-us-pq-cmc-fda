@@ -8,10 +8,7 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
-    object "**Bundle Reference:**" as objbun {
-        [[StructureDefinition-cmc-ectd-document-32s23.html]]
-    }
+package "[[StructureDefinition-cmc-ectd-document-32s23.html eCTD Heading 3.2.S.2.3 Control of Materials Bundle]]" as NODES {
 
     node "QualitySpecification" as N2 {
 
@@ -19,21 +16,17 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-quality-specification.html]]
             **ValueSets**
-            Interpretation Code Terminology
-            Specification Status Terminology
-            Specification Type Terminology
-            Test Category Terminology
-            Test Method Origin Terminology
-            Test Sub-Category Terminology
-            Test Usage Terminology
-            Units Of Measure Terminology
+            [[ValueSet-pqcmc-specification-status-terminology.html Specification Status Terminology]]
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+            [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
+            [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
+            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
         }
         object "**Extensions**" as objQSEx {
-            Interpretation Code
-            Specification Status
-            Specification Type
-            Additional Information
-            Test Order
+            [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+            [[StructureDefinition-pq-hierarchical-level-extension.html Hierarchical Level]]
+            [[StructureDefinition-pq-specification-status-extension.html Specification Status]]
+            [[StructureDefinition-pq-target-range.html Target Range]]
         }
         obj2 <|-- objQSEx
     }
@@ -43,18 +36,7 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-ectd-composition-32s23.html]]
             **ValueSets:**
-            eCTD sections Value Set
-        }
-    }
-
-    node "SponsorOrganization" as NSO {
-
-        object "**Parent:** Organization" as objAu {
-            **Reference:**
-            [[StructureDefinition-cmc-sponsor-organization.html]]
-            **ValueSets:**
-            GENC Country Codes
-            Testing Site and Organization Identifier Type Terminology
+            [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
         }
     }
 
@@ -64,37 +46,39 @@ package "eCTD Heading 3.2.S.2.3 Control of Materials Bundle" as NODES {
             **Reference:**
             [[StructureDefinition-pqcmc-excipient.html]]
             **ValueSets:**
-            GENC Country Codes
-            Source Type Terminology
-            EVMPD Substance Classification
-            Quality Standard Terminology
+            [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+            [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+            [[ValueSet-pqcmc-genc-and-iso-intersect.html GENC and ISO 3166 Intersection]]
         }
     }
-    node "MfgTestSiteOrganization" as N21mfg {
+    node "CodedOrganization" as NSO {
 
-        object "**Parent:** Organization" as objTS  {
+        object "**Parent:** Organization" as objAu {
             **Reference:**
-            [[StructureDefinition-mfg-test-site-organization.html]]
+            [[StructureDefinition-cmc-organization.html]]
             **ValueSets:**
-            Organization Unique Identifier Type
-            GENC Country Codes
+            [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
         }
     }
 
-  node "RoutineSubstanceDefinition" as NN { 
-      object "**Parent:** SubstanceDefinition" as obj3 {
-                   **Reference:**
-      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
-                **ValueSets:**
-                EVMPD Substance Classification
-                Quality Benchmark Terminology
-      }  
-}
+    node "SubstanceDefinitionHandle" as NN {
 
-    N1 -[#darkred]-> N2
+        object "**Parent:** SubstanceDefinition" as obj3 {
+            **Reference:**
+            [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+            **ValueSets:**
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+            [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+        }
+    }
+
+    N1 -[#darkred]--> N2
     N2 -[#darkred]-> N21
-    N1 -[#darkred]-> NSO
-    N1 -[#darkred]-> NN
-    N21 -[#darkred]-> N21mfg
+    N1 -[#darkred]--> NSO
+    N1 -[#darkred]--> NN
+    N21 -[#darkred]-> NSO
 }
 @enduml

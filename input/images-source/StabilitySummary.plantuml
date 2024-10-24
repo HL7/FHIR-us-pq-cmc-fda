@@ -8,32 +8,29 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES {
-      object "**Bundle Reference:**" as objbun {
-            [[StructureDefinition-cmc-ectd-document-sp7181.html]]
-      }
+package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle]]" as NODES {
 
-      node "RoutineDrugProduct" as NN {
+      node "DrugProductHandle" as NN {
 
             object "**Parent:** MedicinalProductDefinition" as obj3 {
                   **Reference:**
-                  [[StructureDefinition-pqcmc-routine-drug-product.html]]
+                  [[StructureDefinition-pqcmc-drug-product-handle.html]]
                   **ValueSets:**
-                  Drug Route Of Administration Terminology
-                  Pharmaceutical Dosage Form Terminology
-                  Name Part Terminology
+                  [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+                  [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+                  [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
             }
       }
       diamond CH
 
-      node "RoutineSubstanceDefinition for API" as NNS {
+      node "SubstanceDefinitionHandle for API" as NNS {
 
             object "**Parent Profile:** DrugSubstance" as obj4 {
                   **Reference:**
                   [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                   **ValueSets:**
-                  EVMPD Substance Classification
-                  Quality Benchmark Terminology
+                  [[ValueSet-substance-classification.html Substance Classification]]
+                  [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
             }
       }
 
@@ -41,10 +38,9 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
 
             object "**Parent:** Organization" as objDP {
                   **Reference:**
-                  [[StructureDefinition-mfg-test-site-organization.html]]
+                  [[StructureDefinition-cmc-organization.html]]
                   **ValueSets:**
                   Testing Site and Organization Identifier Type Terminology
-                  GENC Country Codes
             }
       }
 
@@ -54,7 +50,7 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-pqcmc-stability-summary.html]]
                   **ValueSets:**
-                  Units Of Measure Terminology
+                  [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
                   Storage Conditions Terminology
             }
 
@@ -71,16 +67,15 @@ package "eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle" as NODES
                   **Reference:**
                   [[StructureDefinition-ectd-composition-sp7181.html]]
                   **ValueSets:**
-                  Code system PQCMC Comp Section Types
+                  [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
             }
       }
-      node "SponsorOrganization" as NSO {
+      node "CodedOrganization" as NSO {
 
             object "**Parent:** Organization" as objAu {
                   **Reference:**
-                  [[StructureDefinition-cmc-sponsor-organization.html]]
+                  [[StructureDefinition-cmc-organization.html]]
                   **ValueSets:**
-                  GENC Country Codes
                   Testing Site and Organization Identifier Type Terminology
             }
       }

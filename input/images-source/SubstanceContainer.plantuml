@@ -8,11 +8,8 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.S.6.0 Container Closure System Bundle" as NODES {
+package "[[StructureDefinition-cmc-ectd-document-32s60.html eCTD Heading 3.2.S.6.0 Container Closure System Bundle]]" as NODES {
 
-  object "**Bundle Reference:**" as objbun {
-    [[StructureDefinition-cmc-ectd-document-32s60.html]]
-  }
 
 
   node "EctdComposition32S60" as N1 {
@@ -21,7 +18,7 @@ package "eCTD Heading 3.2.S.6.0 Container Closure System Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-ectd-composition-32s60.html]]
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
 
   }
@@ -31,8 +28,8 @@ package "eCTD Heading 3.2.S.6.0 Container Closure System Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-container-closure.html]]
       **ValueSets:**
-      Container Type Terminology
-      Closure Type Terminology
+      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
     }
     object "**Extensions**" as objEx {
       containerClosure
@@ -48,13 +45,12 @@ package "eCTD Heading 3.2.S.6.0 Container Closure System Bundle" as NODES {
     }
 
   }
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
+      [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
-      GENC Country Codes
       Testing Site and Organization Identifier Type Terminology
     }
   }

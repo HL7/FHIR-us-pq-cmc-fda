@@ -2,14 +2,14 @@ id: hl7.fhir.us.pq-cmc-fda
 canonical: http://hl7.org/fhir/us/pq-cmc-fda 
 name: FHIR_pqcmc_fda
 title: "Pharmaceutical Quality - Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA"
-description: "The FDA PQ-CMC FHIR IG  is for submission of structured and standardized information regarding drug product quality, chemistry, manufacturing and processes controls.  This data is intended for submission to the US FDA by biopharmaceutical companies for the purpose of drug application review."
+description: "The FDA PQ-CMC FHIR IG is for submission of structured and standardized information regarding drug product quality, chemistry, manufacturing and processes controls.  This data is intended for submission to the US FDA by biopharmaceutical companies for the purpose of drug application review."
 
 status: active
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 1.0.0-ballot
+version: 1.1.8
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel: STU 1-ballot
+releaseLabel: Pre-publish Ballot 1 review
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
@@ -21,22 +21,24 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:  
-  hl7.terminology: 5.5.0
+  hl7.terminology.r5: 5.5.0
 
 menu:
   Table of Contents: toc.html
   Home: index.html
   General Instructions: instruction.html
-  eCTD Profiles (Stage 1):
-    Description and Composition of the Drug Product (3.2.P.1): eCTD32P10.html 
+  eCTD Profiles Stage 1:
     General Information (3.2.S.1): eCTD32S10.html 
-    Control of Materials (3.2.S.2.3): eCTD32S23.html
+    Control of Materials (3.2.S.2.3): eCTD32S23.html  
     Specification (3.2.S.4.1, 3.2.P.4 & 3.2.P.5.1): eCTDSP4151.html 
+    Description and Composition of the Drug Product (3.2.P.1): eCTD32P10.html      
+  eCTD Profiles Stage 2:
+    Substance Characterisation (3.2.S.3): eCTD32S3.html   
+    Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
+    Product Characterisation of Impurities (3.2.P.5.5): eCTD32P55.html
+
 #  DRAFT eCTD Profiles:
-#    Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
-#    Product Characterization of Impurities (3.2.P.5.5): eCTD32P55.html 
 #    Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
-#    Substance Characterization (3.2.S.3.0): eCTD32S30.html 
 #    Substance Container Closure System (3.2.S.6.0): eCTD32S60.html
 #    Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
 #    Stability Summary (3.2.S.7.1 & 3.2.P.8.1): eCTDSP7181.html
@@ -52,17 +54,26 @@ pages:
   instruction.html:
     title: "General Instructions"
     generation: markdown
-  eCTD32P10.html:
-    title: "Description and Composition of the Drug Product (3.2.P.1)"
-    generation: markdown
   eCTD32S10.html:
     title: "General Information (3.2.S.1)"
     generation: markdown
   eCTD32S23.html:
     title: "Substance Control of Materials (3.2.S.2.3)"
     generation: markdown
+  eCTD32S3.md: 
+    title: "Substance Characterisation (3.2.S.3)"
+    generation: markdown
   eCTDSP4151.html:
     title: "Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"
+    generation: markdown
+  eCTD32P10.html:
+    title: "Description and Composition of the Drug Product (3.2.P.1)"
+    generation: markdown
+  eCTD32P32.md:
+    title: "Product Batch Formula (3.2.P.3.2)"
+    generation: markdown
+  eCTD32P55.md:
+    title: "Product Characterisation of Impurities (3.2.P.5.5)"
     generation: markdown
   artifacts.html:
     title: "Artifact List"
@@ -72,7 +83,6 @@ pages:
   change_notes.html:
     title: "Change Notes"
     generation: markdown
-
 
 parameters:
  releaselabel: true

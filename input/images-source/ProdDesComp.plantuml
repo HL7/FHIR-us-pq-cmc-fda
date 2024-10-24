@@ -8,9 +8,16 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.1 Bundle" as NODES {
-  object "**Bundle Reference:**" as objbun {
-    [[StructureDefinition-cmc-ectd-document-32p10.html]]
+package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1 Bundle]]" as NODES {
+  node "ContainerClosure" as N21 {
+
+    object "**Parent:** PackagedProductDefinition" as obj22 {
+      **Reference:**
+      [[StructureDefinition-ContainerClosure.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
+    }
   }
 
   node "DrugProductDescription" as N2 {
@@ -19,91 +26,51 @@ package "eCTD Heading 3.2.P.1 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-description.html]]
       **ValueSets:**
-      Drug Route Of Administration Terminology
-      Pharmaceutical Dosage Form Terminology
-      Name Part Terminology
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
     }
   }
-  node "EctdComposition32P10" as N1 {
 
-    object "**Parent:** Composition" as obj1 {
-      **Reference:**
-      [[StructureDefinition-ectd-composition-32p10.html]]
-      **ValueSets:**
-      eCTD sections Value Set
-    }
-
-  }
-  node "DrugProductContainerClosure" as N21 {
-
-    object "**Parent:** MedicinalProductDefinition" as obj22 {
-      **Reference:**
-      [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
-      **ValueSets:**
-      Container Type Terminology
-      Closure Type Terminology
-    }
-    object "**Extensions**" as objEx {
-      Container Closure
-    }
-    obj22 *-- objEx
-  }
-
-  node "SponsorOrganization" as NSO {
-
-    object "**Parent:** Organization" as objAu {
-      **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-      **ValueSets:**
-      Sponsor Identifier Type Terminology
-      GENC Country Codes
-    }
-  }
   node "FinishedProduct"as MID {
     object "**Parent:** ManufacturedItemDefinition" as objMID {
 
       **Reference:**
       [[StructureDefinition-pqcmc-product-part.html]]
       **ValueSets:**
-      Capsule Classification Category Value Set
-      Coating Purpose value set
-      Drug Product Component Function Category Terminology
-      Excipient Function Terminology
-      Product Part Ingredient Physical Location value set
-      Product Part Type Value Set
-      Relationship types Value Set
-      Release Mechanism value set
-      Release Profile value set
-      Strength Operator Terminology
-      Strength Type Terminology
-      Units Of Measure Terminology
+      [[ValueSet-capsule-classification-category.html Capsule Classification Category]]
+      [[ValueSet-pqcmc-coating-purpose.html Coating Purpose]]
+      [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
+      [[ValueSet-pqcmc-excipient-function-terminology.html Excipient Function Terminology]]
+      [[ValueSet-pqcmc-manufactured-dose-form-terminology.html Manufactured Dose Form Terminology]]
+      [[ValueSet-pqcmc-non-percentage-units.html Non Percentage Units]]
+      [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
+      [[ValueSet-pqcmc-product-part-ingredient-physical-location.html Product Part Ingredient Physical Location]]
+      [[ValueSet-pqcmc-product-part-type.html Product Part Type]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+      [[ValueSet-pqcmc-release-mechanism.html Release Mechanism]]
+      [[ValueSet-pqcmc-release-profile.html Release Profile]]
+      [[ValueSet-pqcmc-strength-type-terminology.html Strength Type Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-product-characteristic.html Product Characteristic]]
     }
-        object "**Extensions**" as objMIDExs {
-      Content Percent
-      Optional Denominator
+    object "**Extensions**" as objMIDExs {
+      [[StructureDefinition-pq-amount-ratio.html Amount Ratio]]
     }
     objMID *-- objMIDExs
   }
-  node "MfgTestSiteOrganization" as NMFG {
-
-    object "**Parent:** Organization" as objDP {
-      **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-      **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
-      GENC Country Codes
-    }
-  }
-
   node "DrugProductComponent" as NN {
 
     object "**Parent:** Ingredient" as obj3 {
       **Reference:**
       [[StructureDefinition-pqcmc-component.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Non-Percentage Units]]
+      [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
     }
     object "**Extensions**" as objExs {
-      Additional Information
-      Strength Extension
+      [[StructureDefinition-strength-extension.html Strength Extension]]
     }
     obj3 *-- objExs
   }
@@ -114,29 +81,64 @@ package "eCTD Heading 3.2.P.1 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-component-substance.html]]
       **ValueSets:**
-      EVMPD Substance Classification
-      Quality Standard Terminology
-      Source Type Terminology
-      GENC Country Codes
-      Chemical Structure Data File Type Terminology
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+      [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+      [[ValueSet-pqcmc-genc-and-iso-intersect.html GENC and ISO 3166 Intersection]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
     }
   }
-  node "Base64DocumentReference" as NB64 {
 
-    object "**Parent:** DocumentReference"  as obj64 {
+  node "StructureDataAttachment" as NB642 {
+
+    object "**Parent:** PqcmcAttachment"  as obj642 {
 
       **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]]
+      [[StructureDefinition-pqcmc-structure-data.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
+    }
+
+  }
+  node "GraphicAttachment" as NB64 {
+
+    object "**Parent:** PqcmcAttachment"  as obj64 {
+
+      **Reference:**
+      [[StructureDefinition-pqcmc-graphic-attachment.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types ]]
+    }
+
+  }
+  node "CodedOrganization" as NSO {
+
+    object "**Parent:** Organization" as objAu {
+      **Reference:**
+      [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
+    }
+  }
+
+  node "EctdComposition32P10" as N1 {
+
+    object "**Parent:** Composition" as obj1 {
+      **Reference:**
+      [[StructureDefinition-ectd-composition-32p10.html]]
+      **ValueSets:**
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
 
   }
 
   N1 -[#darkred]-> N2
-  N1 -[#darkred]-> MID
+  N1 -[#darkred]--> MID
   N1 -[#darkred]-> NSO
-  N1 -[#darkred]-> N21
-  MID -[#darkred]-> NN
-  NCS -[#darkred]-> NMFG
+  N1 -[#darkred]-->  N21
+  MID -[#darkred]--> NN
+  NCS -[#darkred]-> NSO
   NN -[#darkred]-> NCS
   NCS -[#darkred]-> NB64
+  NCS -[#darkred]-> NB642
   @enduml

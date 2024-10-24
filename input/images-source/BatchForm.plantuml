@@ -8,92 +8,109 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.P.3.2 Batch Formula Bundle" as NODES {
+package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3.2 Batch Formula Bundle]]" as NODES {
 
-   object "**Bundle Reference:**" as objbun {
-              [[StructureDefinition-cmc-ectd-document-sp4151.html]]
-    }  
 
- 
-node "SponsorOrganization" as NSO { 
-      object "**Parent:** Organization" as objAu {
-        **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-        **ValueSets:**
-        GENC Country Codes
-        Sponsor Identifier Type Terminology 
-    }
-}
+  node "EctdComposition32P32" as N1 {
 
-node "DrugProductIngredient" as NNgred { 
-      object "**Parent:** Ingredient" as obj10 {
-             **Reference:**
-      [[StructureDefinition-pqcmc-dp-ingredient.html]]
-        **ValueSets:**
-        Units of Measure Terminology    
-      }      
-
-}
- node "EctdComposition32P32" as N1 { 
-      object "**Parent:** Composition" as obj1 {
-                   **Reference:**
+    object "**Parent:** Composition" as obj1 {
+      **Reference:**
       [[StructureDefinition-ectd-composition-32p32.html]]
       **ValueSets:**
-  Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
-     
-}
-node "MfgTestSiteOrganization" as NMFG { 
-      object "**Parent:** Organization" as objDP {
-                   **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
-         **ValueSets:**
-        Testing Site and Organization Identifier Type Terminology
-	    GENC Country Codes
-    }
-}
 
-node "RoutineSubstanceDefinition" as NNS { 
-      object "**Parent:** SubstanceDefinition" as obj4 {
-                   **Reference:**
+  }
+  node "CodedOrganization" as NSO {
+
+    object "**Parent:** Organization" as objAu {
+      **Reference:**
+      [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
+    }
+  }
+
+  node "DrugProductIngredient" as NNgred {
+
+    object "**Parent:** Ingredient" as obj10 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-dp-ingredient.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Percentage Units]]
+    }
+  }
+
+  node "SubstanceDefinitionHandle" as NNS {
+
+    object "**Parent:** SubstanceDefinition" as obj4 {
+      **Reference:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
-                **ValueSets:**
-                EVMPD Substance Classification
-                Quality Benchmark Terminology
-      }  
-}
-node "BatchFormulaMedicinalProduct" as NN2 { 
-      object "**Parent:** MedicinalProductDefinition" as obj32 {
-                   **Reference:**
+      **ValueSets:**
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+    }
+
+  }
+
+  node "ExcipientRaw" as NNSEx {
+
+    object "**Parent:** SubstanceDefinition" as obj42 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-excipient.html]]
+      **ValueSets:**
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
+      [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+    }
+
+  }
+
+  node "BatchFormulaMedicinalProduct" as NN2 {
+
+    object "**Parent:** MedicinalProductDefinition" as obj32 {
+      **Reference:**
       [[StructureDefinition-pqcmc-batch-formula-product.html]]
-          
-      }
-}
+      **ValueSets:**
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html Name Part Terminology]]
+    }
+  }
 
-node "BatchFormula" as NN { 
-      object "**Parent:** ManufacturedItemDefinition" as obj3 {
-         **Reference:**
+  node "BatchFormula" as NN {
+
+    object "**Parent:** ManufacturedItemDefinition" as obj3 {
+      **Reference:**
       [[StructureDefinition-pqcmc-product-batch-formula.html]]
-        **ValueSets:**
-        Product Part Ingredient Physical Location value set        
-        Batch utilization Terminology
-        Units Of Measure Terminology
-      } 
-      object "**Extensions**" as objExs2 {
-        Additional Information
-        Product Batch Ingredient Extension
-}
+      **ValueSets:**
+      [[ValueSet-pqcmc-manufactured-dose-form-terminology.html Manufactured Dose Form Terminology]]
+      [[ValueSet-pqcmc-product-part-type.html Product Part Type Terminology]]
+      [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
+      [[ValueSet-pqcmc-non-percentage-units.html Non-Percentage Units]]
+      [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
+      [[ValueSet-pqcmc-product-part-ingredient-physical-location.html Ingredient Location Terminology]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
 
- obj3 *-- objExs2     
-}
+    }
 
-NN -[#darkred]-> NMFG
-NN -[#darkred]-> NNgred
-NN2 -[#darkred]-> NN
-N1 -[#darkred]-> NN2
-N1 -[#darkred]-> NSO        
-NNS -[#darkred]-> NMFG
-NNgred -[#darkred]-> NNS
+    object "**Extensions**" as objExs2 {
+      [[StructureDefinition-pq-product-batch-ingredient-extension.html Product Batch Ingredient Extension]]
+      [[StructureDefinition-pq-product-batch-strength-textual-extension.html Product Batch Strength Textual Extension]]
+      [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+    }
 
+    obj3 *-- objExs2
+  }
+  N1 -[#darkred]--> NSO
+  N1 -[#darkred]-> NN2
+  NNS -[#darkred]-> NSO
+  NN -[#darkred]-> NSO
+  NN -[#darkred]-> NNgred
+  NN2 -[#darkred]-> NN
+  NNgred -[#darkred]-> NNS
+  NNgred -[#darkred]->NNSEx
+  NNSEx -[#darkred]-> NSO
 }
 @enduml

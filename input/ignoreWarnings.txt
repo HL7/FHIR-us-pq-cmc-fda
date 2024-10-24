@@ -69,7 +69,6 @@ INFORMATION: StructureDefinition/pq-cmc-address: StructureDefinition.jurisdictio
 INFORMATION: StructureDefinition/pq-container-closure-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pq-hierarchical-level-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pq-ig-version: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-INFORMATION: StructureDefinition/pq-interpretation-code-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pq-order-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pq-specification-type-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-component: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
@@ -81,7 +80,7 @@ INFORMATION: StructureDefinition/pqcmc-excipient: StructureDefinition.jurisdicti
 INFORMATION: StructureDefinition/pqcmc-polymorphic-form: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-product-part: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-INFORMATION: StructureDefinition/pqcmc-routine-drug-product: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-handle: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/pqcmc-routine-drug-substance: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/strength-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: StructureDefinition/supplier-organization: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
@@ -96,7 +95,6 @@ INFORMATION: ValueSet/pqcmc-conformance-to-criteria-terminology: ValueSet.jurisd
 INFORMATION: ValueSet/pqcmc-container-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/pqcmc-drug-product-component-function-category-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/pqcmc-excipient-function-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-INFORMATION: ValueSet/pqcmc-interpretation-code-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/pqcmc-manufactured-dose-form-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/pqcmc-name-part-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/pqcmc-org-identifier-type-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
@@ -119,6 +117,21 @@ INFORMATION: ValueSet/pqcmc-units-of-measure-terminology: ValueSet.jurisdiction[
 INFORMATION: ValueSet/spl-drug-route-of-administration-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/spl-pharmaceutical-dosage-form-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 INFORMATION: ValueSet/substance-classification: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32p32: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32p55: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32s3: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/ectd-composition-32p32: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/ectd-composition-32p55: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/ectd-composition-32s3: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pq-product-batch-ingredient-extension: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-batch-formula-product: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-dp-ingredient: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-substance-impurity: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-with-impurities: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-substance: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: StructureDefinition/pqcmc-product-batch-formula: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: ValueSet/pqcmc-batch-utilization-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+INFORMATION: ValueSet/pqcmc-impurity-classification-terminology: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 
 # Both the resource and the codeSystem are trial use. This is OK.
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.snapshot.element[31].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|1.0.0
@@ -154,7 +167,6 @@ INFORMATION: StructureDefinition/pq-cmc-address: StructureDefinition.extension[0
 INFORMATION: StructureDefinition/pq-container-closure-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pq-hierarchical-level-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pq-ig-version: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
-INFORMATION: StructureDefinition/pq-interpretation-code-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pq-order-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pq-specification-type-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-component: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
@@ -166,7 +178,7 @@ INFORMATION: StructureDefinition/pqcmc-excipient: StructureDefinition.extension[
 INFORMATION: StructureDefinition/pqcmc-polymorphic-form: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-product-part: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
-INFORMATION: StructureDefinition/pqcmc-routine-drug-product: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-handle: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/pqcmc-routine-drug-substance: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/strength-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: StructureDefinition/supplier-organization: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
@@ -181,7 +193,6 @@ INFORMATION: ValueSet/pqcmc-conformance-to-criteria-terminology: ValueSet.extens
 INFORMATION: ValueSet/pqcmc-container-type-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ValueSet/pqcmc-drug-product-component-function-category-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ValueSet/pqcmc-excipient-function-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
-INFORMATION: ValueSet/pqcmc-interpretation-code-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ValueSet/pqcmc-manufactured-dose-form-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ValueSet/pqcmc-name-part-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ValueSet/pqcmc-org-identifier-type-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
@@ -205,6 +216,21 @@ INFORMATION: ValueSet/spl-drug-route-of-administration-terminology: ValueSet.ext
 INFORMATION: ValueSet/spl-pharmaceutical-dosage-form-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ValueSet/substance-classification: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 INFORMATION: ImplementationGuide/hl7.fhir.us.pq-cmc-fda: ImplementationGuide.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32p32: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32p55: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/cmc-ectd-document-32s3: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/ectd-composition-32p32: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/ectd-composition-32p55: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/ectd-composition-32s3: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pq-product-batch-ingredient-extension: StructureDefinition.extension[1].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-batch-formula-product: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-dp-ingredient: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-substance-impurity: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-product-with-impurities: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-drug-substance: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: StructureDefinition/pqcmc-product-batch-formula: StructureDefinition.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: ValueSet/pqcmc-batch-utilization-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
+INFORMATION: ValueSet/pqcmc-impurity-classification-terminology: ValueSet.extension[0].value.ofType(code): Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 
 # Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.  Some but not all codes were are in NCIt by the time of ballot. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). 
 INFORMATION: CodeSystem/cmc-ncit-dummy: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)

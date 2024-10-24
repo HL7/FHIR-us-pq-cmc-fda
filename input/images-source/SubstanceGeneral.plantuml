@@ -8,38 +8,29 @@ skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
-package "eCTD Heading 3.2.S.1 Bundle" as NODES {
-  object "**Bundle Reference:**" as objbun {
-    [[StructureDefinition-cmc-ectd-document-32s10.html]]
-  }
+package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1 Bundle]]" as NODES {
 
   node "DrugSubstanceNomenclatureMolecularStructure" as NN {
 
-    object "**Parent Profile:** SubstanceDefinition" as obj3 {
+    object "**Parent:** SubstanceDefinition" as obj3 {
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
       **ValueSets:**
-      EVMPD Substance Classification
-      Units Of Measure Terminology
-      Chemical Structure Data File Type Terminology
-      Substance Name Type
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+      [[ValueSet-pqcmc-representation-types.html Representation Types]]
     }
   }
 
-  node "Base64DocumentReference" as NB64 {
-
-    object "**Parent:** DocumentReferencee"  as obj64 {
-      **Reference:**
-      [[StructureDefinition-cmc-document-reference.html]]
-    }
-  }
   node "EctdComposition32S10" as N1 {
 
     object "**Parent:** Composition" as obj1 {
       **Reference:**
       [[StructureDefinition-ectd-composition-32s10.html]]
       **ValueSets:**
-      Code system PQCMC Comp Section Types
+      [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
 
   }
@@ -49,39 +40,48 @@ package "eCTD Heading 3.2.S.1 Bundle" as NODES {
       **Reference:**
       [[StructureDefinition-pqcmc-polymorphic-form.html]]
       **ValueSets:**
-      EVMPD Substance Classification
-      Units Of Measure Terminology
-      Chemical Structure Data File Type Terminology
-
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+      [[ValueSet-pqcmc-representation-types.html Representation Types]]
     }
-
   }
-  node "SponsorOrganization" as NSO {
+  node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
       **Reference:**
-      [[StructureDefinition-cmc-sponsor-organization.html]]
-      Testing Site and Organization Identifier Type Terminology
-
-      GENC Country Codes
+      [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 
-  node "MfgTestSiteOrganization" as N21mfg {
+  node "GraphicReference" as NB64 {
 
-    object "**Parent:** Organization" as objTS  {
+    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
       **Reference:**
-      [[StructureDefinition-mfg-test-site-organization.html]]
+      [[StructureDefinition-pqcmc-graphic-reference.html]]
       **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
-      GENC Country Codes
+      [[StructureDefinition-PqcmcGraphicalFileTypes.html pqcmc-graphical-file-types]]
+    }
+  }
+
+  node "StructureReference" as NBstruc {
+
+    object "**Parent Profile:** Base64DocumentReference"  as objb64 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-structure-reference.html]]
+      **ValueSets:**
+      [[StructureDefinition-pqcmc-structure-data-types.html Structure Data Types]]
     }
   }
 
   N1 -[#darkred]-> NN
   NN -[#darkred]-> N2
+  NN -[#darkred]-> NB64
+  NN -[#darkred]-> NBstruc
   N2 -[#darkred]-> NB64
+  N2 -[#darkred]-> NBstruc
   N1 -[#darkred]-> NSO
-  NN -[#darkred]-> N21mfg
+  NN -[#darkred]-> NSO
 }
 @enduml

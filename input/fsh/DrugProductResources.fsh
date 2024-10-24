@@ -1,66 +1,99 @@
-Extension: ContentPercent
-Id:  content-percent
-Title: "Content Percent"
-Description: "constituent content percent"
-* ^context[+].type = #element
-* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
-* value[x] 1..1
-* value[x] obeys cmc-decimal-format
-* value[x] only decimal
-* . ^short = "Constituent Content Percent"
-* . ^definition = """The percentage of the constituent in the component. [Source: SME Defined]
-Example: Product Total Weight = 1200 mg and Product Ingredient Amount = 325 mg, so Product Ingredient Content Percent = 27.08
-"""
+// take out until substance stability
+//Extension: ContainerClosureExtension
+//Id: pq-container-closure-extension
+//Title: "Container Closure"
+//Description: "The packaging information including a brief description of the components, the assembled packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials."
+//* . ^short = "Container Closure System Information"
+//* ^context[+].type = #element
+//* ^context[=].expression = "MedicinalProductDefinition"
+//* ^context[+].type = #element
+//* ^context[=].expression = "SubstanceDefinition"
+//* extension contains
+//    containerType 1..1 MS and
+//   closureType 1..1 MS and  
+//   description 1..1 MS and
+//   depiction 0..//* MS 
+//* extension[containerType].value[x] 1..1
+//* extension[containerType].value[x] only CodeableConcept
+//* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
+//* extension[containerType].value[x] ^short = "Container Type"
+//* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+//* extension[closureType].value[x] 1..1
+//* extension[closureType].value[x] only CodeableConcept
+//* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
+//* extension[closureType].value[x] ^short = "Closure Type"
+//* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+//* extension[description].value[x] 1..1
+//* extension[description].value[x] only markdown
+//* extension[description].value[x] ^short = "Container Closure System Description"
+//* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+//Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+//Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+//"""
+//* extension[depiction].value[x] 1..1
+//* extension[depiction].value[x] only Reference(GraphicReference)
 
-Extension: OptionalDenominator
-Id:  optional-denominator
-Title: "Optional Denominator"
-Description: "The constituent optional denominator is used then the unit is other than 1 per product part."
-* ^context[+].type = #element
-* ^context[=].expression = "ManufacturedItemDefinition.component.amount"
-* ^context[+].type = #element
-* ^context[=].expression = "ManufacturedItemDefinition.component.constituent.amount"
-* value[x] 1..1
-* value[x] only Quantity
 
-* . ^short = "Product Part Total Weight Numeric Denominator | Product Part Ingredient Amount Numeric Denominator"
-* . ^definition = """Specifies the quantity of the ingredient(s) consistent with this single dose unit (e.g., one tablet, capsule) of drug product. [Source: SME Defined]
-Example: if the tablet contains 325 mg of the ingredient in each unit dose, then Product Ingredient Numeric Denominator = 1
-"""
-
-Extension: ContainerClosureExtension
-Id: pq-container-closure-extension
-Title: "Container Closure"
-Description: "The packaging information including a brief description of the components, the assembled packaging system and any precautions needed to ensure the protection and preservation of the drug substance or drug product during their use in the clinical trials."
-* . ^short = "Container Closure System Information"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicinalProductDefinition"
-* ^context[+].type = #element
-* ^context[=].expression = "SubstanceDefinition"
-* extension contains
-    containerType 1..1 MS and
-    closureType 1..1 MS and  
-    description 1..1 MS and
-    depiction 0..* MS 
-* extension[containerType].value[x] 1..1
-* extension[containerType].value[x] only CodeableConcept
-* extension[containerType].value[x] from PqcmcContainerTypeTerminology (required)
-* extension[containerType].value[x] ^short = "Container Type"
-* extension[containerType].value[x] ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
-* extension[closureType].value[x] 1..1
-* extension[closureType].value[x] only CodeableConcept
-* extension[closureType].value[x] from PqcmcClosureTypeTerminology (required)
-* extension[closureType].value[x] ^short = "Closure Type"
-* extension[closureType].value[x] ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
-* extension[description].value[x] 1..1
-* extension[description].value[x] only markdown
-* extension[description].value[x] ^short = "Container Closure System Description"
-* extension[description].value[x] ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+Profile: ContainerClosure
+Parent: PackagedProductDefinition
+Description: "Container Closure for drug product referred to in Drug Product Description."
+* packageFor 1..1 MS
+* insert PQReference(packageFor)
+* packageFor only Reference(DrugProductDescription)
+* description 1..1 MS
+* description ^short = "Container Closure System Description"
+* description ^definition = """Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
 Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
 Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
 """
-* extension[depiction].value[x] 1..1
-* extension[depiction].value[x] only Reference(Base64DocumentReference)
+* attachedDocument 0..* MS
+* attachedDocument ^short = "Container Closure System Depiction"
+* attachedDocument ^definition = "Diagram of cContainer Closure System or any of its parts noted in the Container Closure System Description"
+* insert PQReference(attachedDocument)
+* attachedDocument only Reference(GraphicReference)
+* packaging 1..1 MS
+  // packaging only allows for one 'type' backbone element, so slicing on
+  // the coding in a codeableConcept is okay here. The other option would
+  // be to make closure type a property which is 0..*
+  * type 1..1 MS
+    * coding 1..2 MS
+    * coding ^slicing.discriminator.type = #value
+    * coding ^slicing.discriminator.path = "$this"
+    * coding ^slicing.rules = #closed
+    * coding contains 
+      ContainerType 1..1 MS and
+      ClosureType 1..1 MS
+    * coding[ContainerType] from PqcmcContainerTypeTerminology (required)
+      * ^short =  "Container Type"
+      * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+    * coding[ClosureType] from PqcmcClosureTypeTerminology (required)
+      * ^short = "Closure Type"
+      * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+* packaging.quantity 0..1 MS
+* packaging.packaging 0..* MS
+
+Extension: AmountRatio
+Id: pq-amount-ratio
+Title: "Amount Ratio"
+Description: "represent an amount as a ratio in ManufacturedItemDefinition"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component"
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* . ?!
+* . ^isModifierReason = "the PQCMC use Case requires ingredient and part amounts be accepted as either quantities or ratios. When present, an amount representing anything but the percentage cannot be present"
+* value[x] 1..1 MS
+* value[x] only Ratio
+* valueRatio
+  * numerator 1..1 MS
+    * ^short = "Amount Numeric Numerator"
+      * value 1..1 MS
+  * denominator 1..1 MS
+  * denominator from PqcmcNonPercentageUnits (required)
+    * ^short = "Amount Numeric Denominator"
+      * value 1..1 MS
+      * unit 1..1 MS
+      * code 1..1 MS 
 
 Profile: FinishedProduct
 Parent: ManufacturedItemDefinition
@@ -73,7 +106,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 * obeys cmc-tablet-layer-count-required
 * obeys cmc-tablet-bead-count-required
 * obeys cmc-capsule-classification-required
-* meta.profile 1..1 MS
+* obeys cmc-component-id-ref
 * identifier 0..1 MS
 * status 1..1 MS
 * name MS
@@ -82,7 +115,7 @@ Description: "The manufactured drug product defined by all its parts or layers. 
 Example: Tylenol
 
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]"""
-* manufacturedDoseForm.coding from PqcmcManufacturedDoseFormTerminology
+* manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology (required)
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type"
@@ -101,184 +134,285 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
       TotWgtNum 1..1 MS and
       TotWgtDen 0..1 MS and
       TotWgtTxt 0..1 MS and
-      TotWgtOper 0..1 MS and
-      QualStd 1..* MS
-* property[OvrRelsProf].type MS
-* property[OvrRelsProf].type = $NCIT#OvrRelsProf "Product Overall Release Profile"
-* property[OvrRelsProf].type from pqcmc-product-characteristic
-* property[OvrRelsProf].valueCodeableConcept 1..1 MS
-* property[OvrRelsProf].valueCodeableConcept ^short = "Product Overall Release Profile"
-* property[OvrRelsProf].valueCodeableConcept ^definition = """The overall release profile is the drug release profile (e.g., IR, DR, or ER-USP nomenclature) that is achieved by the drug delivery system used in the dosage form design as evident from the pharmacokinetic plasma drug concentration versus time curve (this is currently focused on solids).
-For example, a capsule filled with IR and DR beads will exhibit an ER release profile as evident from the pharmacokinetic curve. In this example, the "product overall release profile" is "ER". [Source: SME Defined]
-"""
-* property[OvrRelsProf].valueCodeableConcept.coding from PqcmcReleaseProfile
+      QualStd 1..* MS and
+      Sterile 1..1 MS
 
-* property[OvrRelsMech].type MS
-* property[OvrRelsMech].type = $NCIT#OvrRelsMech "Product Overall Release Mechanism"
-* property[OvrRelsMech].type from pqcmc-product-characteristic
-* property[OvrRelsMech].valueCodeableConcept 1..1 MS
-* property[OvrRelsMech].valueCodeableConcept ^short = "Product Overall Release Mechanism"
-* property[OvrRelsMech].valueCodeableConcept ^definition = """TThe dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
-"""
-* property[OvrRelsMech].valueCodeableConcept.coding from PqcmcReleaseMechanism
+* property[OvrRelsProf]
+  * ^short = "Product Overall Release Profile"
+  * ^definition = """
+    The overall release profile is the drug release profile (e.g., IR, DR, or ER-USP nomenclature) that is achieved by the drug delivery system used in the dosage form design as evident from the pharmacokinetic plasma drug concentration versus time curve (this is currently focused on solids).
+    For example, a capsule filled with IR and DR beads will exhibit an ER release profile as evident from the pharmacokinetic curve. In this example, the "product overall release profile" is "ER". [Source: SME Defined]
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#OvrRelsProf "Product Overall Release Profile"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcReleaseProfile (required)
 
-* property[CoatInd].type MS
-* property[CoatInd].type from pqcmc-product-characteristic
-* property[CoatInd].type = $NCIT#CoatInd "Coating Indicator"
-* property[CoatInd].valueBoolean 1..1 MS
-* property[CoatInd].valueBoolean ^short = "Product Coating Indicator"
-* property[CoatInd].valueBoolean ^definition = "A property that identifies whether the drug product contains any coatings. [Source: SME Defined]"
+* property[OvrRelsMech]
+  * ^short = "Product Overall Release Mechanism"
+  * ^definition = """
+    The dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#OvrRelsMech "Product Overall Release Mechanism"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcReleaseMechanism (required)
 
-* property[LayCnt].type MS
-* property[LayCnt].type from pqcmc-product-characteristic
-* property[LayCnt].type = $NCIT#TabLayCnt "Tablet Layer Count"
-* property[LayCnt].value[x] 1..1 MS
-* property[LayCnt].value[x] only Quantity
-* property[LayCnt].valueQuantity.value ^short = "Product Tablet Layer Count"
-* property[LayCnt].valueQuantity.value ^definition = """The total number of layers in the tablet. [Source: SME Defined]
-Note: Non-layered tablets will be considered as one layer tablets."""
-* property[LayCnt].valueQuantity.code = $NCIT#C66832 "1*"
+* property[CoatInd]
+  * ^short = "Product Coating Indicator"
+  * ^definition = """
+    A property that identifies whether the drug product contains any coatings. [Source: SME Defined]
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#CoatInd "Coating Indicator"
+  * value[x] 1..1 MS
+  * value[x] only boolean
 
-* property[BeaTypCnt].type MS
-* property[BeaTypCnt].type from pqcmc-product-characteristic
-* property[BeaTypCnt].type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
-* property[BeaTypCnt].value[x] 1..1 MS
-* property[BeaTypCnt].value[x] only Quantity
-* property[BeaTypCnt].valueQuantity.value ^short = "Tablet Bead Type Count"
-* property[BeaTypCnt].valueQuantity.value ^definition = """TThe total number of type of beads present in a tablet [Source: SME Defined]
-Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
-"""
-* property[BeaTypCnt].valueQuantity.code = $NCIT#C66832 "1*"
+* property[LayCnt]
+  * ^short = "Product Tablet Layer Count"
+  * ^definition = """
+    The total number of layers in the tablet. [Source: SME Defined]
+    Note: Non-layered tablets will be considered as one layer tablets.
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#TabLayCnt "Tablet Layer Count"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] = $UCUM#1
+    * value 1..1 MS
 
-* property[CapClass].type MS
-* property[CapClass].type from pqcmc-product-characteristic
-* property[CapClass].type = $NCIT#CapClass "Capsule Classification Category"
-* property[CapClass].valueCodeableConcept 1..1 MS
-* property[CapClass].valueCodeableConcept ^short = "Capsule Shell Part Classification Category"
-* property[CapClass].valueCodeableConcept ^definition = "Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]"
-* property[CapClass].valueCodeableConcept.coding from PqcmcCapsuleClassificationCategory
+* property[BeaTypCnt]
+  * ^short = "Tablet Bead Type Count"
+  * ^definition = """
+    The total number of type of beads present in a tablet [Source: SME Defined]
+    Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] = $UCUM#1
+    * value 1..1 MS
 
-* property[CapConCnt].type MS
-* property[CapConCnt].type from pqcmc-product-characteristic
-* property[CapConCnt].type = $NCIT#CapConCnt "Capsule Constituent Count"
-* property[CapConCnt].value[x] 1..1 MS
-* property[CapConCnt].value[x] only Quantity
-* property[CapConCnt].valueQuantity.value ^short = "Product Capsule Constituent Count"
-* property[CapConCnt].valueQuantity.value ^definition = """The number of distinct constituents contained in the capsule shell of the drug product. [Source: SME Defined]
-Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.
-"""
-* property[CapConCnt].valueQuantity.code = $NCIT#C66832 "1*"
+* property[CapClass]
+  * ^short = "Capsule Shell Part Classification Category"
+  * ^definition = """
+    Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#CapClass "Capsule Classification Category"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcCapsuleClassificationCategory (required)
 
-* property[Schematic].type MS
-* property[Schematic].type from pqcmc-product-characteristic
-* property[Schematic].type = $NCIT#Schematic "Product Schematic"
-* property[Schematic].valueAttachment 1..1 MS
-* property[Schematic].valueAttachment ^short = "Product Schematic"
-* property[Schematic].valueAttachment ^definition = "The pictorial representation of the drug product. [Source: SME Defined]"
+* property[CapConCnt]
+  * ^short = "Product Capsule Constituent Count"
+  * ^definition = """
+    The number of distinct constituents contained in the capsule shell of the drug product. [Source: SME Defined]
+    Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#CapConCnt "Capsule Constituent Count"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] = $UCUM#1
+    * value 1..1 MS
 
-* property[WgtTyp].type MS
-* property[WgtTyp].type from pqcmc-product-characteristic
-* property[WgtTyp].type = $NCIT#WgtTyp "Product Weight Type"
-* property[WgtTyp].valueCodeableConcept 1..1 MS
-* property[WgtTyp].valueCodeableConcept ^short = "Product Weight Type"
-* property[WgtTyp].valueCodeableConcept ^definition = """A physical (content) or activity measurement of the weight of the drug product unit. [Source: SME Defined]
-Example: Mass, Activity"""
-* property[WgtTyp].valueCodeableConcept.coding from PqcmcStrengthTypeTerminology
+* property[Schematic]
+  * ^short = "Product Schematic"
+  * ^definition = """
+    The pictorial representation of the drug product. [Source: SME Defined]
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#Schematic "Product Schematic"
+  * value[x] 1..1 MS
+  * value[x] only Attachment
+  * value[x] only GraphicAttachment or PDFAttachment
 
-* property[TotWgtNum].type MS
-* property[TotWgtNum].type from pqcmc-product-characteristic
-* property[TotWgtNum].type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
-* property[TotWgtNum].value[x] 1..1 MS
-* property[TotWgtNum].value[x] only Quantity
-* property[TotWgtNum].valueQuantity.value ^short = "Product Total Weight Numeric Numerator"
-* property[TotWgtNum].valueQuantity.value ^definition = """Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]
-Note: a single unit of a solid oral dose form could be a tablet or a capsule"""
-* property[TotWgtNum].valueQuantity.code from PqcmcUnitsMeasureTerminology
+* property[WgtTyp]
+  * ^short = "Product Weight Type"
+  * ^definition = """
+    A physical (content) or activity measurement of the weight of the drug product unit. [Source: SME Defined]
+    Example: Mass, Activity
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#WgtTyp "Product Weight Type"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcStrengthTypeTerminology (required)
 
-* property[TotWgtDen].type MS
-* property[TotWgtDen].type from pqcmc-product-characteristic
-* property[TotWgtDen].type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
-* property[TotWgtDen].value[x] 1..1 MS
-* property[TotWgtDen].value[x] only Quantity
-* property[TotWgtDen].valueQuantity.value ^short = "Product Total Weight Numeric Denominator"
-* property[TotWgtDen].valueQuantity.value ^definition = """Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
-Note: For solid oral dose forms, by definition this is 1
-"""
-* property[TotWgtDen].valueQuantity.code from PqcmcUnitsMeasureTerminology
-* property[TotWgtTxt].type MS
-* property[TotWgtTxt].type from pqcmc-product-characteristic
-* property[TotWgtTxt].type = $NCIT#TotWgtTxt "Total Weight Textual"
-* property[TotWgtTxt].value[x] 1..1 MS
-* property[TotWgtTxt].value[x] only markdown
-* property[TotWgtTxt].valueMarkdown.value ^short = "Product Total Weight Textual"
-* property[TotWgtTxt].valueMarkdown.value ^definition = """A written description of the weight of the drug product. [Source: SME Defined]
-Note: This is typically applicable to biologics
-Example: International Units for Enzymes"""
-* property[TotWgtOper].type MS
-* property[TotWgtOper].type from pqcmc-product-characteristic
-* property[TotWgtOper].type = $NCIT#TotWgtOper "Total Weight Operator"
-* property[TotWgtOper].valueCodeableConcept 1..1 MS
-* property[TotWgtOper].valueCodeableConcept ^short = "Product Total Weight Operator"
-* property[TotWgtOper].valueCodeableConcept ^definition = """A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined] Examples: LT, EQ, NMT.
-Note: This is typically applicable to biologics.
-"""
-* property[TotWgtOper].valueCodeableConcept from PqcmcStrengthOperatorTerminology
-* property[QualStd].type MS
-* property[QualStd].type from pqcmc-product-characteristic
-* property[QualStd].type = $NCIT#QualStd "Quality Standard"
-* property[QualStd].valueCodeableConcept 1..1 MS  
-* property[QualStd].valueCodeableConcept ^short = "Product Quality Standard"
-* property[QualStd].valueCodeableConcept ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
-Examples: USP/NF, EP, Company Standard
-"""
-* property[QualStd].valueCodeableConcept from PqcmcQualityBenchmarkTerminology (required)
+* property[TotWgtNum]
+  * ^short = "Product Total Weight Numeric Numerator"
+  * ^definition = """
+    Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]
+    Note: a single unit of a solid oral dose form could be a tablet or a capsule
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] from PqcmcUnitsMeasure (extensible)
+    * comparator MS
+      * ^short = "Product Total Weight Operator"
+      * ^definition = """
+        A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined]
+        Note: This is typically applicable to biologics.
+      """
+
+* property[TotWgtDen]
+  * ^short = "Product Total Weight Numeric Denominator"
+  * ^definition = """
+    Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
+    Note: For solid oral dose forms, by definition this is 1
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
+  * value[x] 1..1 MS
+  * value[x] only SimpleQuantity
+  * value[x] from PqcmcUnitsMeasure (extensible)
+    * value 1..1 MS
+
+* property[TotWgtTxt]
+  * ^short = "Product Total Weight Textual"
+  * ^definition = """
+    A written description of the weight of the drug product. [Source: SME Defined]
+    Note: This is typically applicable to biologics
+    Example: International Units for Enzymes
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#TotWgtTxt "Total Weight Textual"
+  * value[x] 1..1 MS
+  * value[x] only markdown
+
+* property[QualStd]
+  * ^short = "Product Quality Standard"
+  * ^definition = """
+    The established benchmark to which the component complies. [Source: SME Defined]
+    Examples: USP/NF, EP, Company Standard
+  """
+  * type MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#QualStd "Quality Standard"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcQualityBenchmarkTerminology (required)
+
+* property[Sterile]
+  * ^short = "Sterile Product Indicator"
+  * type 1..1 MS
+  * type from pqcmc-product-characteristic
+  * type = $NCIT#Sterile "Sterile Product Indicator"
+  * value[x] 1..1 MS
+  * value[x] only boolean
 
 // Product parts
 * component 1..* MS
-* component obeys cmc-ppidref-required
+// * component obeys cmc-ppidref-required
+* component.modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+* component obeys cmc-amount-ratio-or-quantity
 * component.type 1..1 MS
 * component.type ^short = "Product Part Type"
 * component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
 Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 """
 * component.type.coding from PqcmcProductPartType
-* component.function.text 0..1 MS
-* component.function.text ^short = "Product Part Function Description"
-* component.function.text ^definition = """The main purpose for the part in the dosage form. [Source: SME Defined]
-Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
-"""
-* component.amount.value 1..1 MS
-* component.amount.extension contains optional-denominator named WghtlDenom  0..1 MS	
-* component.amount.value ^short = "Product Part Total Weight Numeric Numerator"
-* component.amount.value ^definition = """Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
-Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
-"""
-* component.amount.unit 1..1 MS
-* component.amount.unit ^short = "Product Part Total Weight Numeric Numerator UOM"
-* component.amount.unit ^definition = """The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
-Example: mg
-"""
-* component.amount.code 1..1 MS
-* component.amount.code from PqcmcUnitsMeasureTerminology
+* component.function MS
+* component.function only CodeableConceptTextOnly
+  * ^short = "Product Part Function Description"
+  * ^definition = """
+    The main purpose for the part in the dosage form. [Source: SME Defined]
+    Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
+  """
+* component
+  * amount 0..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "code"
+    * ^slicing.rules = #open
+    * ^slicing.ordered = false
+  * amount contains 
+    weight 0..1 MS and
+    percent 0..1 MS
+  * amount[weight]
+    * value 1..1 MS
+      * ^short = "Product Part Total Weight Numeric"
+      * ^definition = """
+        Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]
+        Note: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
+      """
+    * unit 1..1 MS 
+      * ^short = "Product Part Total Weight Numeric UOM"
+    * code from PqcmcNonPercentageUnits
+  * amount[percent]
+    * value 1..1 MS
+      * ^short = "Product Part Content Percent"
+      * ^definition = """
+        The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
+        Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
+      """
+    * unit 1..1 MS
+      * ^short = "Product Part Content Percent UOM"
+      * ^definition = """
+        The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]
+        Example: mg
+      """
+    * code from PqcmcPercentageUnits
 
 // ingredient
 * component.constituent 1..* MS
 * component.constituent obeys cmc-ingredient-functions
-* component.constituent.extension contains content-percent named ConstituentPercent  1..1 MS	
-* component.constituent.amount 1..1  MS
-* component.constituent.amount.extension contains optional-denominator named OptionalDenom  0..1 MS	
-* component.constituent.amount.value 1..1 MS
-* component.constituent.amount.value ^short = "Product Part Ingredient Amount Numeric Numerator"
-* component.constituent.amount.value ^definition = """Specifies the quantity of an ingredient in a single part of the drug product. [Source: SME Defined]
-Note: a single part of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
-Note: Amount can also be referred to as potency in biologics and other products.
-"""
-* component.constituent.amount.unit 1..1 MS
-* component.constituent.amount.unit ^short = "Product Part Ingredient Amount Numeric Numerator UOM"
-* component.constituent.amount.unit ^definition = """The labeled unit of measure for the content of an ingredient, expressed quantitatively per product part. [Source: Adapted for NCI EVS C117055]
-"""
-* component.constituent.amount.code 1..1 MS
-* component.constituent.amount.code from PqcmcUnitsMeasureTerminology
+* component.constituent
+  * modifierExtension contains pq-amount-ratio named amountRatio 0..1 MS
+  * extension contains http://hl7.org/fhir/StructureDefinition/originalText named textualStrength 0..1 MS
+  * extension[textualStrength].value[x] only string
+    * ^short = "Textual Strength"
+  * extension[textualStrength]
+    * ^comment = "For whatever reason, the comments for the Original Text extension has a link that doesn't resolve! Overwriting it with this text resolves the IG error"
+* component.constituent obeys cmc-amount-ratio-or-quantity
+* component.constituent
+  * amount 1..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "code"
+    * ^slicing.rules = #open
+    * ^slicing.ordered = false
+  * amount contains 
+    weight 1..1 MS and
+    percent 0..1 MS
+  * amount[weight]
+    * value 1..1 MS
+      * ^short = "Product Part Ingredient Amount Numeric"
+      * ^definition = """
+        Specifies the quantity of an ingredient in a single part of the drug product. [Source: SME Defined]
+        Note: a single part of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule
+        Note: Amount can also be referred to as potency in biologics and other products.
+      """
+    * unit 1..1 MS
+      * ^short = "Product Part Ingredient Amount Numeric UOM"
+      * ^definition = """
+        The labeled unit of measure for the content of an ingredient, expressed quantitatively per product part. [Source: Adapted for NCI EVS C117055]
+      """
+
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits
+  * amount[percent]
+    * value 1..1 MS
+      * ^short = "Product Part Ingredient Content Percent"
+    * code from PqcmcPercentageUnits
+    * unit 1..1 MS
+      * ^short = "Product Part Ingredient Content Percent UOM"
 * component.constituent.location 0..* MS
 * component.constituent.location ^short = "Product Part Ingredient Physical Location"
 * component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
@@ -288,27 +422,32 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.location.coding from PqcmcProductPartIngredientPhysicalLocation
 * component.constituent.location.text 0..1 MS
 * component.constituent.function 1..2 MS
-* component.constituent.function.coding 1..1 MS
 * component.constituent.function ^slicing.discriminator.type = #value // or #value
-* component.constituent.function ^slicing.discriminator.path = "coding"
-// * component.constituent.function ^slicing.ordered = true
+* component.constituent.function ^slicing.discriminator.path = "$this"
 * component.constituent.function ^slicing.rules = #closed
 * component.constituent.function ^slicing.description = "Slice on the function coding"
 * component.constituent.function contains
     Category 1..1 MS and
     Function 0..1 MS
-* component.constituent.function[Category] ^short = "Product Part Ingredient Component Function Category"
-* component.constituent.function[Category] ^definition = """A classification that identifies the higher level purpose of that material. [Source: SME Defined]
-Example: Active Ingredient, Inactive Ingredient, Adjuvant."""
-* component.constituent.function[Category].coding from PqcmcDrugProductComponentFunctionCategoryTerminology (required)
-* component.constituent.function[Function] ^short = "Product Part Ingredient Function"
-* component.constituent.function[Function] ^definition = """A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]
-Examples: Filler, Surfactant"""
-* component.constituent.function[Function].coding from PqcmcExcipientFunctionTerminology (required)
+* component.constituent
+  * function[Category] 
+  * function[Category] from PqcmcDrugProductComponentFunctionCategoryTerminology (required)
+  * ^short = "Product Part Ingredient Component Function Category"
+  * ^definition = """
+    A classification that identifies the higher level purpose of that material. [Source: SME Defined]
+    Example: Active Ingredient, Inactive Ingredient, Adjuvant.
+  """
+  * function[Function]
+  * function[Function] from PqcmcExcipientFunctionTerminology (required)
+    * ^short = "Product Part Ingredient Function"
+    * ^definition = """
+      A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]
+      Examples: Filler, Surfactant
+    """
 * component.constituent.hasIngredient 1..1 MS
+* insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
-* component.property 0..* MS
 * component.property 1..* MS
 * component.property ^slicing.discriminator.type = #value
 * component.property ^slicing.discriminator.path = "type"
@@ -321,124 +460,110 @@ Examples: Filler, Surfactant"""
     RelsMech 0..1 MS and
     CoatPurpose 0..* MS and
     Color 0..1 MS and
-    ContPercent 1..1 MS and
     AddInfo 0..1 MS 
-* component.property[PPiD].type MS
-* component.property[PPiD].type = $NCIT#PPiD "Product Part Identifier"
-* component.property[PPiD].value[x] 1..1 MS
-* component.property[PPiD].value[x] only CodeableConcept
-* component.property[PPiD].valueCodeableConcept.coding from CmcRelationshipTypesVS	
-* component.property[PPiD].valueCodeableConcept.coding  ^short = "Product Part Role"
-* component.property[PPiD].valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
-If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
-If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
-"""
-* component.property[PPiD].valueCodeableConcept.text 1..1 MS
-* component.property[PPiD].valueCodeableConcept.text ^short = "Product Part Identifier"
-* component.property[PPiD].valueCodeableConcept.text ^definition = """A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
-Examples: 1, A1, Red bead, Blue minitablet
-"""
-* component.property[PPiDref].type MS
-* component.property[PPiDref].type = $NCIT#PPiDref "Product Part Identifier Reference"
-* component.property[PPiDref].value[x] 1..1 MS
-* component.property[PPiDref].value[x] only CodeableConcept
-* component.property[PPiDref].valueCodeableConcept.text 1..1 MS
-* component.property[PPiDref].valueCodeableConcept.text ^short = "Product Part Identifier Reference"
-* component.property[PPiDref].valueCodeableConcept.text ^definition = """ Identifies the parent or outer-level product part. [Source: SME Defined]
-Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
-"""
-* component.property[RelsProf].type MS
-* component.property[RelsProf].type = $NCIT#RelsProf "Product Part Release Profile"
-* component.property[RelsProf].value[x] 1..1 MS
-* component.property[RelsProf].value[x] only CodeableConcept
-* component.property[RelsProf].valueCodeableConcept ^short = "Product Part Release Profile"
-* component.property[RelsProf].valueCodeableConcept ^definition = """The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]"""
-* component.property[RelsProf].valueCodeableConcept.coding from PqcmcReleaseProfile
+* component.property[PPiD] insert ProductPartIdentifierProperty
+* component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
 
-* component.property[RelsMech].type = $NCIT#RelsMech "Product Part Release Mechanism"
-* component.property[RelsMech].value[x] 1..1 MS
-* component.property[RelsMech].value[x] only CodeableConcept
-* component.property[RelsMech].valueCodeableConcept ^short = "Product Part Release Mechanism"
-* component.property[RelsMech].valueCodeableConcept ^definition = """The method employed to realize the specified part release profile. [Source: SME Defined] Example: matrix or reservoir"""
+* component
+  * property[RelsProf]
+    * ^short = "Product Part Release Profile"
+    * ^definition = """
+      The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]
+    """
+    * type MS
+    * type = $NCIT#RelsProf "Product Part Release Profile"
+    * value[x] 1..1 MS
+    * value[x] only CodeableConcept
+    * value[x] from PqcmcReleaseProfile (required)
 
-* component.property[RelsMech].valueCodeableConcept.coding from PqcmcReleaseMechanism
+  * property[RelsMech]
+    * ^short = "Product Part Release Mechanism"
+    * ^definition = """
+      The method employed to realize the specified part release profile. [Source: SME Defined] 
+      Example: matrix or reservoir
+    """
+    * type MS
+    * type = $NCIT#RelsMech "Product Part Release Mechanism"
+    * value[x] 1..1 MS
+    * value[x] only CodeableConcept
+    * value[x] from PqcmcReleaseMechanism (required)
 
-* component.property[CoatPurpose].type MS
-* component.property[CoatPurpose].type = $NCIT#CoatPurpose "Coating Product Part Purpose"
-* component.property[CoatPurpose].value[x] 1..1 MS
-* component.property[CoatPurpose].value[x] only CodeableConcept
-* component.property[CoatPurpose].valueCodeableConcept ^short = "Coating Product Part Purpose"
-* component.property[CoatPurpose].valueCodeableConcept ^definition = """
-The reason the coating or covering was added. [Source: SME Defined]
-Examples: rate-controlling, color, release type, protective, taste masking.
-"""
-* component.property[CoatPurpose].valueCodeableConcept.coding from PqcmcCoatingPurpose
+  * property[CoatPurpose]
+    * ^short = "Coating Product Part Purpose"
+    * ^definition = """
+      The reason the coating or covering was added. [Source: SME Defined]
+      Examples: rate-controlling, color, release type, protective, taste masking.
+    """
+    * type MS
+    * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
+    * value[x] 1..1 MS
+    * value[x] only CodeableConcept
+    * value[x] from PqcmcCoatingPurpose (required)
 
-* component.property[Color].type MS
-* component.property[Color].type = $NCIT#Color "Product Part Color Description"
-* component.property[Color].value[x] 1..1 MS
-* component.property[Color].value[x] only CodeableConcept
-* component.property[Color].valueCodeableConcept.text 1..1 MS
-* component.property[Color].valueCodeableConcept.text ^short = "Product Part Color Description"
-* component.property[Color].valueCodeableConcept.text ^definition = """The hue or the tint of the drug product part. [Source: SME Defined]
-Examples: yellow, pink, blue, pale yellow."""
+  * property[Color]
+    * ^short = "Product Part Color Description"
+    * ^definition = """
+      The hue or the tint of the drug product part. [Source: SME Defined]
+      Examples: yellow, pink, blue, pale yellow.
+    """
+    * type MS
+    * type = $NCIT#Color "Product Part Color Description"
+    * value[x] 1..1 MS
+    * value[x] only CodeableConceptTextOnly
 
-* component.property[ContPercent].type MS
-* component.property[ContPercent].type = $NCIT#ContPercent "Product Part Content Percent"
-* component.property[ContPercent].value[x] 1..1 MS
-* component.property[ContPercent].value[x] only Quantity
-* component.property[ContPercent].valueQuantity ^short = "Product Part Content Percent"
-* component.property[ContPercent].valueQuantity ^definition = """The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]
-Example: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5
-"""
-* component.property[AddInfo].type MS
-* component.property[AddInfo].type = $NCIT#AddInfo "Product Part Additional Information"
-* component.property[AddInfo].value[x] only markdown
-* component.property[AddInfo].valueMarkdown ^short = "Product Part Additional Information"
-* component.property[AddInfo].valueMarkdown ^definition = """A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
-Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
-"""
+
+* component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
+
 * component.component 0..* MS
 
+RuleSet: AdditionalInformationProperty(short)
+* ^short = "{short}"
+* ^definition = """
+  A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
+  Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
+"""
+* type MS
+* type = $NCIT#AddInfo "Product Part Additional Information"
+* value[x] 1..1 MS
+* value[x] only markdown
 
+RuleSet: ProductPartIdentifierProperty
+* ^short = "Product Part Identifier"
+* ^definition = """
+  A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
+  Examples: 1, A1, Red bead, Blue minitablet
+"""
+* type MS
+* type = $NCIT#PPiD "Product Part Identifier"
+* value[x] 1..1 MS
+* value[x] only CodeableConceptTextOnly
+// * valueCodeableConcept.coding from CmcRelationshipTypesVS	
+// * valueCodeableConcept.coding  ^short = "Product Part Role"
+// * valueCodeableConcept.coding ^definition = """If the Product does not have parts the Product Part Role is 'Primary'.
+// If the Product does have parts and the Product Part does not have a Product Part Identifier Reference then the component is a 'Parent'.  
+// If the Product does have parts and there is a Product Part Identifier Reference the component  is a 'Child'.
+// """
+RuleSet: ProductPartIdentifierReferenceProperty
+* ^short = "Product Part Identifier Reference"
+* ^definition = """
+  Identifies the parent or outer-level product part. [Source: SME Defined]
+  Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
+"""
+* type MS
+* type = $NCIT#PPiDref "Product Part Identifier Reference"
+* value[x] 1..1 MS
+* value[x] only CodeableConceptTextOnly
 
-Profile: RoutineDrugProduct
+Profile: DrugProductHandle
 Parent: MedicinalProductDefinition
-Id: pqcmc-routine-drug-product 
-Title: "Routine Drug Product"
-Description: "Includes the identifying information of the drug product. Profile of Drug Product profile."
+Id: pqcmc-drug-product-handle 
+Title: "Drug Product Handle"
+Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure."
 
-* meta.profile 1..1 MS
 * identifier 0..1 MS
 * identifier ^short = "Optional user designated identifier"
-* combinedPharmaceuticalDoseForm 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code 1..1 MS
-* combinedPharmaceuticalDoseForm.coding.code ^short = "Product Dosage Form"
-* combinedPharmaceuticalDoseForm.coding.code ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
-Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
-Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
-
-SME comment -- this is the marketed dosage form
-"""
-* combinedPharmaceuticalDoseForm.coding.code from SplPharmaceuticalDosageFormTerminology (required)
-* route 1..* MS
-* route.coding.code 1..1 MS
-* route.coding.code ^short = "Product Route of Administration"
-* route.coding.code ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-* route.coding.code from SplDrugRouteofAdministrationTerminology (required)
-* insert ProprietaryAndNonProprietaryNames
-* name.usage.jurisdiction 0..0
-
-Profile: DrugProductContainerClosure
-Parent: MedicinalProductDefinition
-Id: pqcmc-drugproduct-container-closure
-Title: "Drug Product Container Closure"
-Description: "Description and coding of the container closure system. Profile of Drug Product profile."
-
-* meta.profile 1..1 MS
-* .extension contains pq-container-closure-extension named containerClosure 1..* MS
-* identifier 0..1 
-* identifier ^short = "optional user designated identifier"	
+* insert DosageForm
+* insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 
@@ -448,7 +573,6 @@ Id: pqcmc-drug-product-description
 Title: "Drug Product Description"
 Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."
 
-* meta.profile 1..1 MS
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
 * description 0..1 MS
@@ -456,57 +580,77 @@ Description: "Includes the properties of the drug product and components. Profil
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose."""
 * combinedPharmaceuticalDoseForm 1..1 MS
-  * coding 1..1 MS
-  * coding ^short = "Product Dosage Form"
-  * coding ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
-Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
-Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
+  * ^short = "Product Dosage Form"
+  * ^definition = """
+    The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+    Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+    Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
 
-SME comment -- this is the marketed dosage form"""
-  * coding  from SplPharmaceuticalDosageFormTerminology (required)
-* route 0..1 MS
-* route ^short = "Route of Administration"
-* route ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
-  * coding 1..1 MS
-  * coding from SplDrugRouteofAdministrationTerminology (required)
+    SME comment -- this is the marketed dosage form
+  """
+* insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
 * crossReference MS
 * crossReference.product 
 * crossReference.product ^short = "Co-Packaged Product"
+* insert PQCodeableReference(crossReference.product)
 * crossReference.product only CodeableReference(DrugProductDescription)
+* crossReference.type.text = "co-packaged"
+
+RuleSet: DosageForm
+* combinedPharmaceuticalDoseForm 1..1 MS
+* combinedPharmaceuticalDoseForm ^short = "Product Dosage Form"
+* combinedPharmaceuticalDoseForm ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+
+SME comment -- this is the marketed dosage form
+"""
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
+
+RuleSet: RouteOfAdministration
+* route 1..* MS
+  * ^short = "Route of Administration"
+  * ^definition = "Designation of the part of the body through which or into which, or the way in which, the medicinal product is intended to be introduced. In some cases a medicinal product can be intended for more than one route and/or method of administration. [Source: NCI E C38114]"
+* route from SplDrugRouteofAdministrationTerminology (required)
 
 RuleSet: ProprietaryAndNonProprietaryNames
 * name 1..2 MS
-* name.productName 1..1 MS
-* name.type 1..1 MS
-* name ^slicing.discriminator.type = #value
-* name ^slicing.discriminator.path = "type"
-* name ^slicing.rules = #open
-* name ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #closed
+  * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * productName 1..1 MS
+  * type 1..1 MS
+  * type from cmc-product-name-types-vs (required)
 * name contains Proprietary 0..1 and NonProprietary 1..1
-* name[Proprietary].type = $NameType#PROP "Proprietary"
-* name[Proprietary].part 0..* MS
-* name[Proprietary].part.part 1..1 MS
-* name[Proprietary].part.type 1..1 MS
-* name[Proprietary].part ^slicing.discriminator.type = #value
-* name[Proprietary].part ^slicing.discriminator.path = "type"
-* name[Proprietary].part ^slicing.rules = #open
-* name[Proprietary].part ^slicing.description = "Optional name parts"
-* name[Proprietary].part.type from PqcmcNamePartTerminology (required)
-* name[NonProprietary].type = $NameType#NON "Non-Proprietary"
-* name[NonProprietary].part 1..* MS
-* name[NonProprietary].part ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
+* name[Proprietary]
+  * type = $NameType#PROP "Proprietary"
+  * part 0..* MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "type"
+    * ^slicing.rules = #closed
+    * ^slicing.description = "Optional name parts"
+    * part 1..1 MS
+    * type 1..1 MS
+    * type from PqcmcNamePartTerminology (required)
+* name[NonProprietary]
+  * obeys cmc-strength-name-must-reference-scientific
+  * type = $NameType#NON "Non-Proprietary"
+  * part 1..* MS
+    * ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
 """
-* name[NonProprietary].part.part 1..1 MS
-* name[NonProprietary].part.type 1..1 MS
-* name[NonProprietary].part ^slicing.discriminator.type = #value
-* name[NonProprietary].part ^slicing.discriminator.path = "type"
-* name[NonProprietary].part ^slicing.rules = #open
-* name[NonProprietary].part ^slicing.description = "The scientific name part is required and all name parts if present"
-//* name[NonProprietary].part.part contains Scientific 1..1 Invented 0..1 Formulation 0..1 Strength 0..1 Container 0..1 Form 0..1 Device 0..1
-* name[NonProprietary].part contains 
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "type"
+    * ^slicing.rules = #closed
+    * ^slicing.description = "The scientific name part is required and all name parts if present"
+    * part 1..1 MS
+    * type 1..1 MS
+    * type from PqcmcNamePartTerminology (required)
+  * part contains 
   Scientific 1..* and
   Invented 0..* and 
   Formulation 0..* and 
@@ -514,11 +658,235 @@ Note: The minimum is the scientific name.
   Container 0..* and
   Form 0..* and 
   Device 0..*
-* name[NonProprietary].part.type from PqcmcNamePartTerminology (required)
-* name[NonProprietary].part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
-* name[NonProprietary].part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
-* name[NonProprietary].part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
-* name[NonProprietary].part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
-* name[NonProprietary].part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
-* name[NonProprietary].part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
-* name[NonProprietary].part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
+  * part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
+  * part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
+  * part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL
+  * part[Strength].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#STR
+  * part[Strength].type.text  1..1 MS
+  * part[Container].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#CON
+  * part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
+  * part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
+
+// Stage 2
+
+Extension: ProductBatchIngredientExtension
+Id: pq-product-batch-ingredient-extension
+Title: "Product Batch Ingredient Extension"
+Description: "Extension for measurement properties for ingredients in the batch formla."
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* extension contains
+  overagePercent 1..1 MS and
+  overageJustification 1..1 MS 
+* extension[overagePercent].value[x] only decimal
+* extension[overagePercent].value[x] ^short = "Overage Percent"
+* extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
+Note: This is not for stability loss, and generally not permitted.
+Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+"""
+* extension[overageJustification].value[x] only markdown
+* extension[overageJustification].value[x] ^short = "Overage Justification"
+* extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
+
+Extension: ProductBatchStrengthTextualExtension
+Id: pq-product-batch-strength-textual-extension
+Title: "Product Batch Strength Textual Extension"
+Description: "Extension for strenght as a sting for ingredients in the batch formla."
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+
+* value[x] only string
+* value[x] 1..1 MS
+* value[x] ^short = "Strength Textual"
+* value[x] ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+Note: This is typically applicable to biologics
+Example: International Units for Enzymes
+"""
+
+Profile: BatchFormula
+Parent: ManufacturedItemDefinition
+Id: pqcmc-product-batch-formula
+Title: "Drug Product Batch Formula"
+Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
+
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* status 1..1 MS
+* name 1..1 MS
+* name ^short = "Product Non-proprietary Name"
+* name ^definition = """A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
+"""
+* manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology
+* manufacturer MS
+* insert PQReference(manufacturer)
+* manufacturer only Reference(CodedOrganization) 
+* property 1..* MS
+* property ^slicing.discriminator.type = #value
+* property ^slicing.discriminator.path = "type"
+* property ^slicing.rules = #closed
+* property ^slicing.description = "Slice based on value"
+* property contains
+      BatchSize 1..1 MS and
+      BatchUtil 1..* MS and
+      AddInfo 0..1 MS
+
+* property[BatchSize]
+  * ^short = "Batch Quantity"
+  * ^definition = """
+    The amount of material in a specific batch size [Source: SME Defined]
+    Example: 1000 kg
+  """
+  * type MS
+  * type = $NCIT#batchsize "Batch Quantity"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] from PqcmcUnitsMeasure (required)
+    * value 1..1 MS
+    * code
+      * ^short = "Quantity UOM"
+      * ^definition = """
+        A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+      """
+* property[BatchUtil]
+  * ^short = "Batch Utilization"
+  * ^definition = """
+    A categorization of the batch that identifies its usage. [Source: SME Defined]
+    Examples: commercial, development.
+  """
+  * type MS
+  * type = $NCIT#BatchUtil "Batch Utilization"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcBatchUtilizationTerminology (required)
+
+* property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
+// Product parts
+* component 1..* MS
+  * amount 2..2
+  * amount ^slicing.discriminator.type = #value
+  * amount ^slicing.discriminator.path = "code"
+  * amount ^slicing.rules = #closed
+  * amount ^slicing.description = "Slice based on value of unit"
+  * amount contains
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
+* component.type 1..1 MS
+* component.type ^short = "Product Part Type"
+* component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
+Example: Layer, Bead, Minitablet, Capsule Shell, Coating
+"""
+* component.type from PqcmcProductPartType
+// ingredient
+* component.constituent 1..* MS
+* component.constituent.extension contains pq-additional-info-extension named additional-info 0..1 MS
+* component.constituent.extension[additional-info] ^short = "Drug Product Constituent Additional Information"
+* component.constituent.extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
+Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
+"""
+* component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
+* component.constituent
+* component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
+* component.constituent
+
+
+  * amount 2..2 MS
+  * amount ^slicing.discriminator.type = #value
+  * amount ^slicing.discriminator.path = "code"
+  * amount ^slicing.rules = #closed
+  * amount ^slicing.description = "Slice based on value of unit"
+  * amount contains
+      perBatch 1..1 MS and
+      percent 1..1 MS
+  * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """
+      Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * ^short = "Quantity Percent"
+    * ^definition = """
+      Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
+      Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
+
+
+* component.constituent.location 0..* MS
+* component.constituent.location ^short = "Product Part Ingredient Physical Location"
+* component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
+Examples: Intragranular, Extra granular, Blend
+"""
+* component.constituent.location from PqcmcProductPartIngredientPhysicalLocation
+* component.constituent.hasIngredient 1..1 MS
+* insert PQCodeableReference(component.constituent.hasIngredient)
+* component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
+// Product part
+* component.property 1..3 MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #closed
+  * ^slicing.description = "Slice based on value"
+* component.property contains
+    PPiD 1..1 MS and
+    PPiDref 0..1 MS and
+    AddInfo 0..1 MS 
+* component.property[PPiD] insert ProductPartIdentifierProperty
+* component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
+* component.property[AddInfo] insert AdditionalInformationProperty(Batch Component Additional Information)
+
+Profile: BatchFormulaMedicinalProduct
+Parent: MedicinalProductDefinition
+Id: pqcmc-batch-formula-product
+Title: "Batch Formula Drug Product Identification"
+Description: "The Drug Product produced by the batch formula."
+
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
+* comprisedOf 1..* MS
+* insert PQReference(comprisedOf)
+* comprisedOf only Reference(BatchFormula)
+* insert ProprietaryAndNonProprietaryNames
+* insert RouteOfAdministration
+* combinedPharmaceuticalDoseForm 1..1 MS
+  * ^short = "Product Dosage Form"
+  * ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+
+SME comment -- this is the marketed dosage form"""
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
+
+Profile: DrugProductwithImpurities
+Parent: MedicinalProductDefinition
+Id: pqcmc-drug-product-with-impurities
+Title: "Drug Product Impurities"
+Description: "List of drug product impurities. Profile of Drug Product profile."
+
+* identifier 0..1 
+* identifier ^short = "optional user designated identifier"	
+* insert DosageForm
+* impurity 0..* MS	
+* impurity ^short = "Product Impurity"
+* insert PQCodeableReference(impurity)
+* impurity only CodeableReference(ImpuritySubstance)	
+* insert ProprietaryAndNonProprietaryNames
+* insert RouteOfAdministration
