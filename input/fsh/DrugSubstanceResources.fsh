@@ -57,7 +57,7 @@ Description: "Any raw material intended for use in the manufacture of a drug sub
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
-* grade 1..1
+* grade 1..*
 * grade ^short = "Quality Standard"
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
@@ -216,13 +216,13 @@ Description: "Provides sufficient information to identify an inactive substance 
 * . obeys cmc-source-material
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 [Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
 """
-* grade 1..1
+* grade 1..*
 * grade ^short = "Quality Standard"
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
@@ -278,12 +278,12 @@ Description: "Provides sufficient information to identify a drug substance. Prof
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
-* classification 1..* MS
+* classification 1..1 MS
 * classification from SubstanceClassification
 * classification ^short = "Substance Type"
 * classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
 """
-* grade 1..1
+* grade 1..*
 * grade ^short = "Quality Standard"
 * grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
 Examples: USP/NF, EP, Company Standard
@@ -303,7 +303,7 @@ Profile: DrugSubstanceNomenclatureStructure
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-nomenclature-structure
 Title: "Substance General Information"
-Description: "Substance General Information containting Drug Substance (Active Ingredient) nomenclature (2.3.S.1.1) and Substance Structure (2.3.S.1.2) profile."
+Description: "Substance General Information containing Drug Substance (Active Ingredient) nomenclature (3.2.S.1.1) and Substance Structure (3.2.S.1.2) profile."
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS

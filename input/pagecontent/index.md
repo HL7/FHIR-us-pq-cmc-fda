@@ -104,7 +104,7 @@ The profiles are designed for use as defined in Module 3 of eCTD v 4.0. The tabl
   <tr>
    <td>1
    </td>
-   <td>Description and Composition of the Drug Product https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32P10.html
+   <td>[Description and Composition of the Drug Product](https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32P10.html)
    </td>
    <td>3.2.P.1.0
    </td>
@@ -136,7 +136,7 @@ The profiles are designed for use as defined in Module 3 of eCTD v 4.0. The tabl
   <tr>
    <td>5
    </td>
-   <td>General Information https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32S10.html
+   <td>[General Information] (https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32S10.html)
    </td>
    <td>3.2.S.1.0
    </td>
@@ -144,7 +144,7 @@ The profiles are designed for use as defined in Module 3 of eCTD v 4.0. The tabl
   <tr>
    <td>6
    </td>
-   <td>Control of Materials https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32S23.html
+   <td>[Control of Materials] (https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32S23.html)
    </td>
    <td>3.2.S.2.3
    </td>
@@ -168,7 +168,7 @@ The profiles are designed for use as defined in Module 3 of eCTD v 4.0. The tabl
   <tr>
    <td>9
    </td>
-   <td>Specification https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTDSP4151.html
+   <td>[Specification] (https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTDSP4151.html)
    </td>
    <td>3.2.S.4.1; 3.2.P.4.1; 3.2.P.5.1
    </td>
