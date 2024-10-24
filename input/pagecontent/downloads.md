@@ -10,7 +10,3 @@
 </ul>
 
 </div>
-
-### 3.2.S Profile Map
-
-<div>{%include allSubstance.svg%}</div>

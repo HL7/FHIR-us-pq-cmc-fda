@@ -40,8 +40,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
       [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
       [[ValueSet-pqcmc-org-identifier-type-terminology.html Percentage Units]]
     }
-
-
   }
 
   node "SubstanceDefinitionHandle" as NNS {

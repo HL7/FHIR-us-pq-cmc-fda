@@ -52,6 +52,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       [[ValueSet-pqcmc-release-profile.html Release Profile]]
       [[ValueSet-pqcmc-strength-type-terminology.html Strength Type Terminology]]
       [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-product-characteristic.html Product Characteristic]]
     }
     object "**Extensions**" as objMIDExs {
       [[StructureDefinition-pq-amount-ratio.html Amount Ratio]]
@@ -64,10 +65,12 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-pqcmc-component.html]]
       **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Percentage Units]]
+      [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Non-Percentage Units]]
+      [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
     }
     object "**Extensions**" as objExs {
-     [[StructureDefinition-strength-extension.html Strength Extension]]
+      [[StructureDefinition-strength-extension.html Strength Extension]]
     }
     obj3 *-- objExs
   }
@@ -81,8 +84,8 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       [[ValueSet-substance-classification.html Substance Classification]]
       [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
       [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
-      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
-      [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
+      [[ValueSet-pqcmc-genc-and-iso-intersect.html GENC and ISO 3166 Intersection]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
     }
   }
 
@@ -92,6 +95,8 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
 
       **Reference:**
       [[StructureDefinition-pqcmc-structure-data.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
     }
 
   }
@@ -101,6 +106,8 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
 
       **Reference:**
       [[StructureDefinition-pqcmc-graphic-attachment.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types ]]
     }
 
   }
@@ -110,7 +117,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 

@@ -50,7 +50,7 @@ The domain concepts of Description and Composition of the Drug Product are repre
     * [Component Substance](StructureDefinition-pqcmc-component-substance.html) (ComponentSubstance) profile on the [SubstanceDefinition](https://hl7.org/fhir/R5/substancedefinition.html) Resource
 * Related Organizations
     * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the<span style="text-decoration:underline;"> [Organization](http://hl7.org/fhir/R5/organization.html) Resource</span>
-    </span>
+   
 Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
 
 ### eCTD 3.2.P.1 Profile Map

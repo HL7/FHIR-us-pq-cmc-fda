@@ -624,6 +624,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
   * productName 1..1 MS
   * type 1..1 MS
+  * type from cmc-product-name-types-vs (required)
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary]
   * type = $NameType#PROP "Proprietary"

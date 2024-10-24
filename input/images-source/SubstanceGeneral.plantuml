@@ -20,14 +20,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
       [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
       [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
-    }
-  }
-
-  node "GraphicReference" as NB64 {
-
-    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
-      **Reference:**
-      [[StructureDefinition-pqcmc-graphic-reference.html]]
+      [[ValueSet-pqcmc-representation-types.html Representation Types]]
     }
   }
 
@@ -48,6 +41,8 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       [[StructureDefinition-pqcmc-polymorphic-form.html]]
       **ValueSets:**
       [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+      [[ValueSet-pqcmc-representation-types.html Representation Types]]
     }
   }
   node "CodedOrganization" as NSO {
@@ -60,11 +55,23 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
     }
   }
 
+  node "GraphicReference" as NB64 {
+
+    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-graphic-reference.html]]
+      **ValueSets:**
+      [[StructureDefinition-PqcmcGraphicalFileTypes.html pqcmc-graphical-file-types]]
+    }
+  }
+
   node "StructureReference" as NBstruc {
 
     object "**Parent Profile:** Base64DocumentReference"  as objb64 {
-      **Reference:**morning
+      **Reference:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
+      **ValueSets:**
+      [[StructureDefinition-pqcmc-structure-data-types.html Structure Data Types]]
     }
   }
 

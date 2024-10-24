@@ -37,6 +37,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       [[StructureDefinition-pqcmc-drug-substance-characterisation.html]]
       **ValueSets:**
       [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
+      [[ValueSet-pqcmc-representation-types.html Representation Types]]
       [[ValueSet-substance-classification.html Substance Classification]]
       [[ValueSet-pqcmc-analytical-instrument-data-types.html Analytical Instrument Data File Types]]
     }

@@ -27,25 +27,25 @@ Description: "Terminology used to qualify the information pertaining to batch ut
 * $NCIT#C133993 "Validation"	
 * $NCIT#C185328 "Stability Study"
 
-CodeSystem: CmcRelationshipTypes
-Id: cmc-relationship-types
-Title: "Relationship Types Codes"
-Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
-* ^caseSensitive = true
-* ^experimental = false
-* ^status = #draft
-* #parent "Parent"
-* #child "Child"
-* #primary "Primary"
-
-ValueSet: CmcRelationshipTypesVS
-Id: cmc-relationship-types-vs
-Title: "Relationship Types Terminology"
-Description: "Local value set of all codes in Relationship Types codes"
-
-* ^experimental = false
-* ^status = #draft
-* include codes from system CmcRelationshipTypes
+//	CodeSystem: CmcRelationshipTypes
+//	Id: cmc-relationship-types
+//	Title: "Relationship Types Codes"
+//	Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
+//	* ^caseSensitive = true
+//	* ^experimental = false
+//	* ^status = #draft
+//	* #parent "Parent"
+//	* #child "Child"
+//	* #primary "Primary"
+//	
+//	ValueSet: CmcRelationshipTypesVS
+//	Id: cmc-relationship-types-vs
+//	Title: "Relationship Types Terminology"
+//	Description: "Local value set of all codes in Relationship Types codes"
+//	
+//	* ^experimental = false
+//	* ^status = #draft
+//	* include codes from system CmcRelationshipTypes
 
 ValueSet: CmcProductNameTypesVS
 Id: cmc-product-name-types-vs
@@ -523,14 +523,14 @@ Description: "Terminology used to qualify the information pertaining to closure 
 * $NCIT#C96139 "Stopper"
 * $NCIT#C96140 "Tie"
 
-ValueSet: PqcmcConformanceCriteriaTerminology
-Id: pqcmc-conformance-to-criteria-terminology
-Title: "Conformance to Criteria Terminology"
-Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-* ^experimental = false
-* ^status = #draft
-* $NCIT#C80262 "Conforms"
-* $NCIT#C133998 "Does not conform"
+//	ValueSet: PqcmcConformanceCriteriaTerminology
+//	Id: pqcmc-conformance-to-criteria-terminology
+//	Title: "Conformance to Criteria Terminology"
+//	Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+//	* ^experimental = false
+//	* ^status = #draft
+//	* $NCIT#C80262 "Conforms"
+//	* $NCIT#C133998 "Does not conform"
 
 ValueSet: PqcmcContainerTypeTerminology
 Id: pqcmc-container-type-terminology
@@ -1245,7 +1245,7 @@ Title: "Percentage Units"
 Description: "Units of Measure terminologies that represent the concept of a percentage"
 * ^experimental = false
 * ^status = #draft
-* $UCUM#mg% "milligram per deciliter"
+
 * $UCUM#%{WeightToWeight} "percent WeightToWeight"
 * $UCUM#%{WeightToVolume} "percent WeightToVolume"
 * $UCUM#% "percent"
