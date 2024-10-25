@@ -1,4 +1,6 @@
-PQ/CMC FHIR Implementation Guide is under development.  Minor releases will be posted for feedback. These release notes will be retained until the next major release.  See the Directory of published versions link does not work until there is a balloted publication on HL7.
-
-### Changes and Updates for Version 1.1.8
-last fixes to Stage 1 before the split for publication
+### Version = 1.0.0
+Publication Date: 2024-10-TBD
+url: http://hl7.org/fhir/us/pq-cmc-fda/STU1
+Based on FHIR version : 5.0.0
+Changes:
+The first official published version of this IG publishedas FHIR STU1.

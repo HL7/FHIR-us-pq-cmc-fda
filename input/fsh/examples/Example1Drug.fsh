@@ -183,6 +183,7 @@ Usage: #example
 Instance: 928a3bb5-7be3-4d6e-830f-1a2fc6dcee9b
 InstanceOf: GraphicReference
 Title: "Container Closure Attached Document example"
+Description: "An example of of a graphic reference. In this instance it a daigram of a bottle and its cap stored as a png file."
 Usage: #example
 * content.attachment.title = "bottlePlusCap.png"
 * content.attachment.contentType = urn:ietf:bcp:13#image/png
@@ -192,6 +193,7 @@ Instance: 77ad6922-9c59-43d1-93cb-29d063cc2e8c
 InstanceOf: ContainerClosure
 Title: "Example Container Closure"
 Usage: #inline
+//Usage: #example
 * packageFor = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
 * description = """Plastic Bottle made of high-density polyethylene (HDPE). The plastic is chosen for its resistance to moisture and its ability to maintain the integrity of the drug.
 
