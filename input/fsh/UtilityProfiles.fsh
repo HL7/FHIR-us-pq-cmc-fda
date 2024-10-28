@@ -28,13 +28,13 @@ Description: "An attached PDF file"
 * ^abstract = true
 * contentType = #application/pdf
 
-//Profile: AnalyticalInstrumentData
-//Parent: PqcmcAttachment
-//Id: pqcmc-analytical-intstrument-data
-//Title: "Analytical Instrument Data"
-//Description: "Any attached file that contains analytical instrument data"
-//* ^abstract = true
-//* contentType from PqcmcAnalyticalInstrumentDataTypes (required)
+Profile: AnalyticalInstrumentData
+Parent: PqcmcAttachment
+Id: pqcmc-analytical-intstrument-data
+Title: "Analytical Instrument Data"
+Description: "Any attached file that contains analytical instrument data"
+* ^abstract = true
+* contentType from PqcmcAnalyticalInstrumentDataTypes (required)
 
 Profile: StructureDataAttachment
 Parent: PqcmcAttachment
@@ -65,7 +65,7 @@ Parent: DocumentReference
 Id: cmc-document-reference
 Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64."
-* ^abstract = true
+
 * status = #current
 * content MS
 * content.attachment MS

@@ -6,10 +6,10 @@ description: "The FDA PQ-CMC FHIR IG is for submission of structured and standar
 
 status: active
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 1.0.0
+version: 1.1.8
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel: STU 1
+releaseLabel: Pre-publish Ballot 1 review
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
@@ -32,10 +32,10 @@ menu:
     Control of Materials (3.2.S.2.3): eCTD32S23.html  
     Specification (3.2.S.4.1, 3.2.P.4 & 3.2.P.5.1): eCTDSP4151.html 
     Description and Composition of the Drug Product (3.2.P.1): eCTD32P10.html      
-#    eCTD Profiles Stage 2:
-#    Substance Characterisation (3.2.S.3): eCTD32S3.html   
-#    Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
-#    Product Characterisation of Impurities (3.2.P.5.5): eCTD32P55.html
+  eCTD Profiles Stage 2:
+    Substance Characterisation (3.2.S.3): eCTD32S3.html   
+    Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
+    Product Characterisation of Impurities (3.2.P.5.5): eCTD32P55.html
 
 #  DRAFT eCTD Profiles:
 #    Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
@@ -60,21 +60,21 @@ pages:
   eCTD32S23.html:
     title: "Substance Control of Materials (3.2.S.2.3)"
     generation: markdown
-#      eCTD32S3.md: 
-#        title: "Substance Characterisation (3.2.S.3)"
-#        generation: markdown
+  eCTD32S3.md: 
+    title: "Substance Characterisation (3.2.S.3)"
+    generation: markdown
   eCTDSP4151.html:
     title: "Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"
     generation: markdown
   eCTD32P10.html:
     title: "Description and Composition of the Drug Product (3.2.P.1)"
     generation: markdown
-#      eCTD32P32.md:
-#        title: "Product Batch Formula (3.2.P.3.2)"
-#        generation: markdown
-#      eCTD32P55.md:
-#        title: "Product Characterisation of Impurities (3.2.P.5.5)"
-#        generation: markdown
+  eCTD32P32.md:
+    title: "Product Batch Formula (3.2.P.3.2)"
+    generation: markdown
+  eCTD32P55.md:
+    title: "Product Characterisation of Impurities (3.2.P.5.5)"
+    generation: markdown
   artifacts.html:
     title: "Artifact List"
   downloads.html:

@@ -563,7 +563,134 @@ RuleSet: CountryOfOrigin
 
 //*Stage 2 --------------------------------------------------------------------------------------------------------------*/
 
-//Rulesets---------------------------------------------------------------------------------------------------------------*/
+Profile: DrugSubstanceCharacterisation
+Parent: SubstanceDefinition
+Id: pqcmc-drug-substance-characterisation
+Title: "Drug Substance"
+Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
+* . obeys cmc-when-unii-required
+* . obeys cmc-name-isbt
+* obeys cmc-substance-characterisation-content-required
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* classification 1..1 MS
+* classification from SubstanceClassification
+* classification ^short = "Substance Type"
+* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
+[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
+"""
+* manufacturer 0..1 MS
+* insert PQReference(manufacturer)
+* manufacturer only Reference(CodedOrganization)
+* supplier 0..1 MS
+* insert PQReference(supplier)
+* supplier only Reference(CodedOrganization)
+* insert SubstanceCharacterization
+* insert UniiAndUniProtCodes(1)
+* insert ShortSetSubstanceNames
+
+* relationship 0..* MS
+  * ^short = "Reference to Drug Substance Impurity"
+//* relationship obeys cmc-substance-relationship  not needed  since this resource is for illustraion.
+  * substanceDefinition[x] 1..1 MS
+  * insert PQReference(substanceDefinition[x])
+  * substanceDefinition[x] only Reference(ImpuritySubstance)
+
+Profile: ImpuritySubstance
+Parent: SubstanceDefinition
+Id: pqcmc-drug-product-substance-impurity
+Title: "Drug Substance Impurity"
+Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+* obeys cmc-impurity-unii-required
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* classification 1..* MS
+* classification from PqcmcImpurityClassificationTerminology (required)
+* classification ^short = "Impurity Classification"
+* classification ^definition = """A categorization of impurities based on its origin. [Source: SME Defined]
+Examples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.
+"""
+* insert SubstanceCharacterization
+* structure 0..1 MS
+//* structure obeys cmc-representation-or-document
+* structure.technique MS
+* structure.technique ^short = "Impurity Substance Characterisation Technique"
+* structure.technique ^definition = """The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.
+"""
+* structure.technique only CodeableConceptTextOnly
+* structure
+  * representation MS
+    * ^short = "Impurity Structure Graphic | Impurity Structure Data File"
+    * ^slicing.discriminator.type = #value
+    * ^slicing.rules = #closed
+    * ^slicing.discriminator.path = "type"
+    * ^slicing.ordered = false
+    * type 1..1 MS
+    * type from PqcmcRepresentationTypes (required)
+  * representation contains
+    graphic 0..1 and
+    structureFile 0..* and
+    structureString 0..*
+  * representation[graphic]
+    * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
+    * type 1..1 MS
+      * ^short = "Graphic"
+    * type = $NCIT#C54273
+    * document 1..1
+      * ^short = "Impurity Structure Graphic"
+      * ^definition = """
+        A pictorial representation of the structure of the impurity substance. 
+        [Source: SME Defined] Note: Refer to the 'Acceptable File Formats for 
+        use in eCTD' Example: This is the representation of the molecule CH3OH, 
+        or the sequence SHLVEALALVAGERG.
+      """
+    * insert PQReference(document)
+    * document only Reference(GraphicReference)
+  * representation[structureFile]
+    * ^short = "machine-readable representation -- attached file"
+    * type 1..1 MS
+      * ^short = "Structure File"
+    * type = $NCIT#C103240
+    * document 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)"
+    * insert PQReference(document)
+    * document only Reference(StructureReference)
+  * representation[structureString]
+    * ^short = "machine-readable representation -- plain text"
+    * type 1..1 MS
+      * ^short = "Structure Textual"
+    * type = $NCIT#C45253
+    * format 1..1 MS
+      * ^short = "Drug Substance Impurity Method Type"
+    * format from PqcmcChemicalStructureDataFileTypeTerminology (required)
+    * representation 1..1 MS
+      * ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+      * ^definition = """
+        A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+        Examples: SMILES, INCHI
+      """
+//   * representation[structureData]
+//     * ^short = "machine-readable representation -- may be plain text (e.g. SMILES) or an attached file (e.g. SDF)"
+//     * format 0..1 MS
+//     * format ^short = "Drug Substance Impurity Method Type"
+//     * format.text 0..1 MS
+//     * type 1..1 MS
+//       * text 1..1 MS
+//       * text = "Structure"
+//     * representation 0..1 MS
+//     * representation ^short = "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)"
+//     * representation ^definition = """A machine-readable representation of the structure of the chemical. [Source: SME Defined]
+// Examples: Structured Data File (SDF), MOLFILE, InChI file (small molecule), PDB, mmCIF (large molecules), HELM.
+// """
+//     * document 0..1 MS
+//     * document ^short = "Impurity Chemical Structure Data (large files, e.g. SDF, CIF)"
+//     * document only Reference(StructureReference)
+
+// impurities might be unknown and not have Unii's
+* insert UniiAndUniProtCodes(0)
+* insert ShortSetSubstanceNames
+* insert CompanyName
+
 RuleSet: SubstanceCharacterization
 * characterization MS
   * technique MS
@@ -593,6 +720,40 @@ Example: This is the representation of the instrumental output for the molecule 
     * ^short = "Analytical Instrument Data File"
     * ^definition = """Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
 Example: JCAMP, ADX, ADF."""
+
+Profile: DrugProductIngredient
+Parent: Ingredient
+Id: pqcmc-dp-ingredient
+Title: "Drug Product Batch Formula Ingredient"
+Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
+
+* identifier 0..1 MS
+* substance.code 1..1 MS
+* substance.code ^short = "Ingredient Substance"
+* insert PQCodeableReference(substance.code)
+* substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
+* substance
+  * strength 2..2 MS
+    * ^slicing.discriminator.type = #value
+    * ^slicing.rules = #closed
+    * ^slicing.discriminator.path = "concentration.code"
+    * ^slicing.ordered = false
+  * strength contains 
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * strength[perBatch]
+    * ^short = "Ingredient Total per Batch"
+    * ^definition = "the total amount of thi ingredient present in the batch"
+    * concentration[x] 1..1 MS
+    * concentration[x] only Quantity
+    * concentrationQuantity.code 1..1 MS
+    * concentrationQuantity.code from PqcmcNonPercentageUnits (required)
+  * strength[percent]
+    * ^short = "Ingredient percent of Total Batch"
+    * concentration[x] 1..1 MS
+    * concentration[x] only Quantity
+    * concentrationQuantity.code 1..1 MS
+    * concentrationQuantity.code from PqcmcPercentageUnits (required)
 
 
 RuleSet: GraphicAndStructureRepresentations(graphicsCardinality, structureFileCardinality,structureStringCardinality)

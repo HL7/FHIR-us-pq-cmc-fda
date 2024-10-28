@@ -667,4 +667,226 @@ Note: The minimum is the scientific name.
   * part[Form].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FRM
   * part[Device].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#DEV
 
+// Stage 2
 
+Extension: ProductBatchIngredientExtension
+Id: pq-product-batch-ingredient-extension
+Title: "Product Batch Ingredient Extension"
+Description: "Extension for measurement properties for ingredients in the batch formla."
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* extension contains
+  overagePercent 1..1 MS and
+  overageJustification 1..1 MS 
+* extension[overagePercent].value[x] only decimal
+* extension[overagePercent].value[x] ^short = "Overage Percent"
+* extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
+Note: This is not for stability loss, and generally not permitted.
+Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+"""
+* extension[overageJustification].value[x] only markdown
+* extension[overageJustification].value[x] ^short = "Overage Justification"
+* extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
+
+Extension: ProductBatchStrengthTextualExtension
+Id: pq-product-batch-strength-textual-extension
+Title: "Product Batch Strength Textual Extension"
+Description: "Extension for strenght as a sting for ingredients in the batch formla."
+* ^context[+].type = #element
+* ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+
+* value[x] only string
+* value[x] 1..1 MS
+* value[x] ^short = "Strength Textual"
+* value[x] ^definition = """A written description of the strength of the ingredient.[Source: SME Defined]
+Note: This is typically applicable to biologics
+Example: International Units for Enzymes
+"""
+
+Profile: BatchFormula
+Parent: ManufacturedItemDefinition
+Id: pqcmc-product-batch-formula
+Title: "Drug Product Batch Formula"
+Description: "Listing of all components of the dosage form to be used in the manufacture, their amounts on a per batch basis, including overages, and reference to their quality standards."
+
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"
+* status 1..1 MS
+* name 1..1 MS
+* name ^short = "Product Non-proprietary Name"
+* name ^definition = """A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
+"""
+* manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology
+* manufacturer MS
+* insert PQReference(manufacturer)
+* manufacturer only Reference(CodedOrganization) 
+* property 1..* MS
+* property ^slicing.discriminator.type = #value
+* property ^slicing.discriminator.path = "type"
+* property ^slicing.rules = #closed
+* property ^slicing.description = "Slice based on value"
+* property contains
+      BatchSize 1..1 MS and
+      BatchUtil 1..* MS and
+      AddInfo 0..1 MS
+
+* property[BatchSize]
+  * ^short = "Batch Quantity"
+  * ^definition = """
+    The amount of material in a specific batch size [Source: SME Defined]
+    Example: 1000 kg
+  """
+  * type MS
+  * type = $NCIT#batchsize "Batch Quantity"
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] from PqcmcUnitsMeasure (required)
+    * value 1..1 MS
+    * code
+      * ^short = "Quantity UOM"
+      * ^definition = """
+        A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]
+      """
+* property[BatchUtil]
+  * ^short = "Batch Utilization"
+  * ^definition = """
+    A categorization of the batch that identifies its usage. [Source: SME Defined]
+    Examples: commercial, development.
+  """
+  * type MS
+  * type = $NCIT#BatchUtil "Batch Utilization"
+  * value[x] 1..1 MS
+  * value[x] only CodeableConcept
+  * value[x] from PqcmcBatchUtilizationTerminology (required)
+
+* property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
+// Product parts
+* component 1..* MS
+  * amount 2..2
+  * amount ^slicing.discriminator.type = #value
+  * amount ^slicing.discriminator.path = "code"
+  * amount ^slicing.rules = #closed
+  * amount ^slicing.description = "Slice based on value of unit"
+  * amount contains
+    perBatch 1..1 MS and
+    percent 1..1 MS
+  * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]"""
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
+* component.type 1..1 MS
+* component.type ^short = "Product Part Type"
+* component.type ^definition = """Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]
+Example: Layer, Bead, Minitablet, Capsule Shell, Coating
+"""
+* component.type from PqcmcProductPartType
+// ingredient
+* component.constituent 1..* MS
+* component.constituent.extension contains pq-additional-info-extension named additional-info 0..1 MS
+* component.constituent.extension[additional-info] ^short = "Drug Product Constituent Additional Information"
+* component.constituent.extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
+Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
+"""
+* component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
+* component.constituent
+* component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
+* component.constituent
+
+
+  * amount 2..2 MS
+  * amount ^slicing.discriminator.type = #value
+  * amount ^slicing.discriminator.path = "code"
+  * amount ^slicing.rules = #closed
+  * amount ^slicing.description = "Slice based on value of unit"
+  * amount contains
+      perBatch 1..1 MS and
+      percent 1..1 MS
+  * amount[perBatch]
+    * ^short = "Component Quantity Per Batch"
+    * ^definition = """
+      Specifies the amount of the component per batch size of the drug product. [Source: SME Defined]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcNonPercentageUnits (required)
+  * amount[percent]
+    * ^short = "Quantity Percent"
+    * ^definition = """
+      Quantity expressed as Volume To Volume: The percentage of the component in the batch [Source: SME Defined]
+      Quantity UOM: A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI E - C25709]
+    """
+    * value 1..1 MS
+    * unit 1..1 MS
+    * code 1..1 MS
+    * code from PqcmcPercentageUnits (required)
+
+
+* component.constituent.location 0..* MS
+* component.constituent.location ^short = "Product Part Ingredient Physical Location"
+* component.constituent.location ^definition = """Identifies where the ingredient physically resides within the product part. [Source: SME Defined]
+Examples: Intragranular, Extra granular, Blend
+"""
+* component.constituent.location from PqcmcProductPartIngredientPhysicalLocation
+* component.constituent.hasIngredient 1..1 MS
+* insert PQCodeableReference(component.constituent.hasIngredient)
+* component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
+// Product part
+* component.property 1..3 MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #closed
+  * ^slicing.description = "Slice based on value"
+* component.property contains
+    PPiD 1..1 MS and
+    PPiDref 0..1 MS and
+    AddInfo 0..1 MS 
+* component.property[PPiD] insert ProductPartIdentifierProperty
+* component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
+* component.property[AddInfo] insert AdditionalInformationProperty(Batch Component Additional Information)
+
+Profile: BatchFormulaMedicinalProduct
+Parent: MedicinalProductDefinition
+Id: pqcmc-batch-formula-product
+Title: "Batch Formula Drug Product Identification"
+Description: "The Drug Product produced by the batch formula."
+
+* identifier 0..1 MS
+* identifier ^short = "optional user designated identifier"	
+* comprisedOf 1..* MS
+* insert PQReference(comprisedOf)
+* comprisedOf only Reference(BatchFormula)
+* insert ProprietaryAndNonProprietaryNames
+* insert RouteOfAdministration
+* combinedPharmaceuticalDoseForm 1..1 MS
+  * ^short = "Product Dosage Form"
+  * ^definition = """The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+
+SME comment -- this is the marketed dosage form"""
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
+
+Profile: DrugProductwithImpurities
+Parent: MedicinalProductDefinition
+Id: pqcmc-drug-product-with-impurities
+Title: "Drug Product Impurities"
+Description: "List of drug product impurities. Profile of Drug Product profile."
+
+* identifier 0..1 
+* identifier ^short = "optional user designated identifier"	
+* insert DosageForm
+* impurity 0..* MS	
+* impurity ^short = "Product Impurity"
+* insert PQCodeableReference(impurity)
+* impurity only CodeableReference(ImpuritySubstance)	
+* insert ProprietaryAndNonProprietaryNames
+* insert RouteOfAdministration

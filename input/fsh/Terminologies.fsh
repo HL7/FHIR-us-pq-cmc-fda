@@ -1,31 +1,31 @@
-//	ValueSet: PqcmcImpurityClassificationTerminology
-//	Id: pqcmc-impurity-classification-terminology
-//	Title: "Impurity Classification Terminology"
-//	Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//	* ^experimental = false
-//	* ^status = #draft
-//	* $NCIT#C176816 "Degradation Product"
-//	* $NCIT#C185190 "Elemental Impurities"
-//	* $NCIT#C176815 "Residual Solvent"
-//	* $NCIT#C134001 "Inorganic"
-//	* $NCIT#C176812 "Process Related/Process"
-//	* $NCIT#C185192 "Leachables"
-//	* $NCIT#C176813 "Product Related"
-//	* $NCIT#C92081 "Microbiological"
-//	
-//	ValueSet: PqcmcBatchUtilizationTerminology
-//	Id: pqcmc-batch-utilization-terminology
-//	Title: "Batch utilization Terminology"
-//	Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//	
-//	* ^experimental = false
-//	* ^status = #draft
-//	* $NCIT#C133994 "Bioequivalence"
-//	* $NCIT#C133992 "Clinical"
-//	* $NCIT#C133990 "Commercial"
-//	* $NCIT#C133991 "Development"
-//	* $NCIT#C133993 "Validation"
-//	* $NCIT#C185328 "Stability Study"
+ValueSet: PqcmcImpurityClassificationTerminology	
+Id: pqcmc-impurity-classification-terminology	
+Title: "Impurity Classification Terminology"	
+Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+* ^experimental = false
+* ^status = #draft
+* $NCIT#C176816 "Degradation Product"	
+* $NCIT#C185190 "Elemental Impurities"	
+* $NCIT#C176815 "Residual Solvent"	
+* $NCIT#C134001 "Inorganic"	
+* $NCIT#C176812 "Process Related/Process"	
+* $NCIT#C185192 "Leachables"	
+* $NCIT#C176813 "Product Related"	
+* $NCIT#C92081 "Microbiological"
+
+ValueSet: PqcmcBatchUtilizationTerminology	
+Id: pqcmc-batch-utilization-terminology	
+Title: "Batch utilization Terminology"	
+Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+	
+* ^experimental = false
+* ^status = #draft
+* $NCIT#C133994 "Bioequivalence"	
+* $NCIT#C133992 "Clinical"	
+* $NCIT#C133990 "Commercial"	
+* $NCIT#C133991 "Development"	
+* $NCIT#C133993 "Validation"	
+* $NCIT#C185328 "Stability Study"
 
 //	CodeSystem: CmcRelationshipTypes
 //	Id: cmc-relationship-types
