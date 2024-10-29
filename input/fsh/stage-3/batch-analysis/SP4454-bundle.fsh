@@ -5,9 +5,6 @@ Id: cmc-ectd-document-sp4454
 Title: "CMC eCTD SP4454 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles."
 * . ^short = "CMC eCTD SP4454 Bundle"
-* . obeys cmc-identifer
-* meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
