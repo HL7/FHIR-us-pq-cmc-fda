@@ -1281,3 +1281,21 @@ Description: "The 3 letter country codes used in GENC and ISO have significant o
 * exclude urn:iso:std:iso:3166#PSE
 * exclude urn:iso:std:iso:3166#SJM
 * exclude urn:iso:std:iso:3166#UMI
+
+ValueSet: PqcmcConformanceCriteriaTerminology	
+Id: pqcmc-conformance-to-criteria-terminology	
+Title: "Conformance to Criteria Terminology"	
+Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+* ^experimental = true	
+* $NCIT#C80262 "Conforms"	
+* $NCIT#C133998 "Does not conform"
+
+ValueSet: PqcmcExpirationDateClassificationTerminology	
+Id: pqcmc-expiration-date-classification-terminology	
+Title: "Expiration Date Classification Terminology"	
+Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+	
+* ^experimental = true	
+* $NCIT#C185182 "Approved"	
+* $NCIT#C48660 "Not Applicable"	
+* $NCIT#C185188 "Proposed"	
