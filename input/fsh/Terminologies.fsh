@@ -1298,4 +1298,14 @@ Description: "Terminology used to qualify the information pertaining to expirati
 * ^experimental = true	
 * $NCIT#C185182 "Approved"	
 * $NCIT#C48660 "Not Applicable"	
-* $NCIT#C185188 "Proposed"	
+* $NCIT#C185188 "Proposed"
+
+ValueSet: PqcmcStorageConditionCategoryTerminology	
+Id: pqcmc-storage-condition-category-terminology	
+Title: "Storage Condition Category Terminology"	
+Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"	
+* ^experimental = true	
+	
+* $NCIT#CC201 "Accelerated"
+* $NCIT#CC202 "Intermediate"
+* $NCIT#CC203 "Long term"
