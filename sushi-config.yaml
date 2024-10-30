@@ -9,7 +9,7 @@ license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
 version: 1.0.0
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel: STU 1
+releaseLabel: STU1
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
