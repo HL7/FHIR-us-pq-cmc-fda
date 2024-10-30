@@ -4,9 +4,6 @@ Id: cmc-ectd-document-sp7181
 Title: "CMC eCTD SP7181 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles."
 * . ^short = "CMC eCTD SP7181 Bundle"
-* . obeys cmc-identifer
-* meta.profile 1..1 MS  
-* meta.profile.extension contains pq-ig-version named version 1..1 MS
 * identifier 1..1 MS
 * type MS
 * type = #document (exactly)
