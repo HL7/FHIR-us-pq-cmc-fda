@@ -56,7 +56,7 @@ Note: This includes primary packaging components and secondary packaging compone
   // the coding in a codeableConcept is okay here. The other option would
   // be to make closure type a property which is 0..*
   * type 1..1 MS
-    * coding 1..2 MS
+    * coding 2..2 MS
     * coding ^slicing.discriminator.type = #value
     * coding ^slicing.discriminator.path = "$this"
     * coding ^slicing.rules = #closed
