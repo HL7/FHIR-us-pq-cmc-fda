@@ -32,6 +32,18 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
     }
   }
 
+  node "DrugProductHandle" as N2handle {
+
+    object "**Parent:** MedicinalProductDefinition" as objcross {
+      **Reference:**
+      [[StructureDefinition-pqcmc-drug-product-handle.html]]
+      **ValueSets:**
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
+    }
+  }
+
   node "FinishedProduct"as MID {
     object "**Parent:** ManufacturedItemDefinition" as objMID {
 
@@ -89,27 +101,24 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
     }
   }
 
-  node "StructureDataAttachment" as NB642 {
+    node "GraphicReference" as NB64 {
 
-    object "**Parent:** PqcmcAttachment"  as obj642 {
-
+    object "**Parent Profile:** Base64DocumentReference"  as obj64 {
       **Reference:**
-      [[StructureDefinition-pqcmc-structure-data.html]]
+      [[StructureDefinition-pqcmc-graphic-reference.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types]]
+    }
+  }
+
+  node "StructureReference" as NBstruc {
+
+    object "**Parent Profile:** Base64DocumentReference"  as objb64 {
+      **Reference:**
+      [[StructureDefinition-pqcmc-structure-reference.html]]
       **ValueSets:**
       [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
     }
-
-  }
-  node "GraphicAttachment" as NB64 {
-
-    object "**Parent:** PqcmcAttachment"  as obj64 {
-
-      **Reference:**
-      [[StructureDefinition-pqcmc-graphic-attachment.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types ]]
-    }
-
   }
   node "CodedOrganization" as NSO {
 
@@ -132,13 +141,17 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
 
   }
 
-  N1 -[#darkred]-> N2
+  N1 -[#darkred]--> N2
   N1 -[#darkred]--> MID
-  N1 -[#darkred]-> NSO
-  N1 -[#darkred]-->  N21
+  N1 -[#darkred]--> NSO
+  N1 -[#darkred]--> N21
+  N2 -[#darkred]--> N2handle : Only when there is a Co-Packaged Product
+  N21 -[#darkred]--> NB64
+  N21 -[#darkred]--> N2
   MID -[#darkred]--> NN
-  NCS -[#darkred]-> NSO
-  NN -[#darkred]-> NCS
-  NCS -[#darkred]-> NB64
-  NCS -[#darkred]-> NB642
-  @enduml
+  NCS -[#darkred]--> NSO
+  NN -[#darkred]--> NCS
+  NCS -[#darkred]--> NB64
+  NCS -[#darkred]--> NBstruc
+}
+@enduml
