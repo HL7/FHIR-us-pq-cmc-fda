@@ -61,7 +61,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       **Reference:**
       [[StructureDefinition-pqcmc-graphic-reference.html]]
       **ValueSets:**
-      [[StructureDefinition-PqcmcGraphicalFileTypes.html pqcmc-graphical-file-types]]
+      [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types]]
     }
   }
 
@@ -71,17 +71,18 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       **Reference:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
       **ValueSets:**
-      [[StructureDefinition-pqcmc-structure-data-types.html Structure Data Types]]
+      [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
     }
   }
+}
 
-  N1 -[#darkred]-> NN
-  NN -[#darkred]-> N2
-  NN -[#darkred]-> NB64
-  NN -[#darkred]-> NBstruc
-  N2 -[#darkred]-> NB64
-  N2 -[#darkred]-> NBstruc
-  N1 -[#darkred]-> NSO
-  NN -[#darkred]-> NSO
+N1 -[#darkred]-> NN
+NN -[#darkred]-> N2
+NN -[#darkred]-> NB64
+NN -[#darkred]-> NBstruc
+N2 -[#darkred]-> NB64
+N2 -[#darkred]-> NBstruc
+N1 -[#darkred]-> NSO
+NN -[#darkred]-> NSO
 }
 @enduml

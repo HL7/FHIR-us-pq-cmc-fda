@@ -21,22 +21,23 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 * entry contains
     Composition 1..1 and
     FinishedProduct 1..1 and
-    DrugProductDescription 1..1 and
+    DrugProduct 1..* and
     ContainerClosure 1..* and
     Organization 0..* and
     DrugProductComponent 0..* and
     ComponentSubstance 0..* and
     GraphicsFile 0..* and
-    StructureFile 0..*
+    StructureFile 0..* 
 * entry[Composition].resource only EctdComposition32P10
 * entry[FinishedProduct].resource only FinishedProduct
-* entry[DrugProductDescription].resource only DrugProductDescription
+* entry[DrugProduct].resource only DrugProductDescription or DrugProductHandle
 * entry[ContainerClosure].resource only ContainerClosure
 * entry[Organization].resource only CodedOrganization
 * entry[DrugProductComponent].resource only DrugProductComponent
 * entry[ComponentSubstance].resource only ComponentSubstance
 * entry[GraphicsFile].resource only GraphicReference
 * entry[StructureFile].resource only StructureReference
+
 // If you want to avoid warnings, you can list the other types of allowed resources too.
 // No need to indicate that composition is the first, as that's already enforced by a base invariant on Bundles of type 'document'
 
@@ -150,106 +151,6 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 
 /*Bundles Stage 2-------------------------------------------------------------------------------------------*/
 
-Profile: CMCeCTDDocument32S3
-Parent: Bundle
-Id: cmc-ectd-document-32s3
-Title: "CMC eCTD 32S3 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
-* . ^short = "CMC eCTD 32S3 Bundle"
-* identifier MS
-* identifier ^definition = "Designation by the author."
-* type MS
-* type = #document
-* type ^short = "document"
-* timestamp 1..1 MS
-* entry 1..* MS
-* entry.fullUrl 1..1 MS // each entry must have a fullUrl
-* entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
-* entry contains
-    Composition 1..1 and
-    Characterisation 1..1 and
-    Organization 1..3 and
-    Impurity 0..* and
-    GraphicsFile 0..* and
-    StructureFile 0..*
-* entry[Composition].resource only EctdComposition32S3
-* entry[Characterisation].resource only DrugSubstanceCharacterisation
-* entry[Organization].resource only CodedOrganization
-* entry[Impurity].resource only ImpuritySubstance
-* entry[GraphicsFile].resource only GraphicReference
-* entry[StructureFile].resource only StructureReference
-
-
-Profile: CMCeCTDDocument32P32
-Parent: Bundle
-Id: cmc-ectd-document-32p32
-Title: "CMC eCTD 32P32 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles (Product Batch Formula)."
-
-* . ^short = "CMC eCTD 32P32 Bundle"
-* identifier MS
-* identifier ^definition = "Designation by the author."
-* type MS
-* type = #document
-* type ^short = "document"
-* timestamp 1..1 MS
-* entry 1..* MS
-* entry.fullUrl 1..1 MS //each entry must have a fullUrl
-* entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry contains
-    Composition 1..1 and
-    Organization 1..* and
-    BatchFormulaMedicinalProduct 1..1 and
-    BatchFormula 1..* and
-    Ingredient 0..* and
-    RoutineSubstance 0..* and
-    ExcipientRaw 0..*
-* entry[Composition].resource only EctdComposition32P32
-* entry[Organization].resource only CodedOrganization
-* entry[BatchFormulaMedicinalProduct].resource only BatchFormulaMedicinalProduct
-* entry[BatchFormula].resource only BatchFormula
-* entry[Ingredient].resource only DrugProductIngredient
-* entry[RoutineSubstance].resource only SubstanceDefinitionHandle
-* entry[ExcipientRaw].resource only ExcipientRaw
-
-Profile: CMCeCTDDocument32P55
-Parent: Bundle
-Id: cmc-ectd-document-32p55
-Title: "CMC eCTD 32P55 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (Product Characterisation of Impurities)."
-* . ^short = "CMC eCTD 32P55 Bundle"
-* identifier MS
-* identifier ^definition = "Designation by the author."
-* type MS
-* type = #document
-* type ^short = "document"
-* timestamp 1..1 MS
-* entry 1..* MS
-* entry.fullUrl 1..1 MS //each entry must have a fullUrl
-* entry.resource 1..1 MS // each entry must have a resource
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry contains
-    Composition 1..1 and
-    Organization 1..1 and
-    DrugProduct 1..1 and
-    Impurity 0..* and
-    GraphicsFile 0..* and
-    StructureFile 0..*
-* entry[Composition].resource only EctdComposition32P55
-* entry[Organization].resource only CodedOrganization
-* entry[DrugProduct].resource only DrugProductwithImpurities
-* entry[Impurity].resource only ImpuritySubstance
-* entry[GraphicsFile].resource only GraphicReference
-* entry[StructureFile].resource only StructureReference
 
 /*Compositions Stage 1--------------------------------------------------------------------------------------*/
 
@@ -369,82 +270,3 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section.entry only Reference(QualitySpecification)
 
 // Stage 2  Compositions -------------------------------------------------------------------------------------------------*/
-Profile: EctdComposition32P32
-Parent: Composition
-Id: ectd-composition-32p32
-Title: "eCTD Batch Formula"
-Description: "The fields needed to represent the Product Batch Formula to be included under the eCTD. References Sponsor Organization and Batch Formula"
-
-* status = #final
-* identifier 0..1 MS
-* type = $SectionTypes#32P32 "Product Batch Formula"
-* author 1..1 MS
-* insert PQReference(author)
-* author only Reference(CodedOrganization)
-/*
- SECTION SLICES - not requried - only one option
-*/
-* section 1..1 MS
-* section.entry 1..1 MS
-* section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
-* section.code 1..1 MS
-* section.code = $SectionTypes#32P32 "Product Batch Formula"
-* section.title 1..1 MS
-* insert PQReference(section.entry)
-* section.entry only Reference(BatchFormulaMedicinalProduct)
-
-Profile: EctdComposition32P55
-Parent: Composition
-Id: ectd-composition-32p55
-Title: "eCTD Product Characterisation of Impurities Composition"
-Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
-
-* status = #final
-* identifier 0..1 MS
-* type = $SectionTypes#32P55 "Product Characterisation of Impurities"
-* author 1..1 MS
-* insert PQReference(author)
-* author only Reference(CodedOrganization)
-/*
- SECTION SLICES - not requried - only one option
-*/
-* section 1..1 MS
-* section.entry 0..1 MS
-* section ^definition = "Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading."
-* section.code 1..1 MS
-* section.code = $SectionTypes#32P55 "Product Characterisation of Impurities"
-* section.title 1..1 MS
-* insert PQReference(section.entry)
-* section.entry only Reference(DrugProductwithImpurities)
-
-Profile: EctdComposition32S3
-Parent: Composition
-Id: ectd-composition-32s3
-Title: "eCTD Substance Characterisation"
-Description: "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities"
-
-* status = #final
-* identifier 0..1 MS
-* type = $SectionTypes#32S3 "Substance Characterisation"
-* author 1..1 MS
-* insert PQReference(author)
-* author only Reference(CodedOrganization)
-* title 1..1 MS
-
-/*
- SECTION SLICES
-*/
-* section 1..* MS
-* section.entry MS
-* section ^slicing.discriminator.type = #value
-* section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #open
-* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document."
-* section contains Structure 1..1 MS
-* section[Structure] ^definition = "Substance Characterisation to be included under the 3.2.S.3 eCTD heading."
-* section[Structure].code 1..1 MS
-* section[Structure].code = $SectionTypes#32S31 "Substance Elucidation of Structure and other Characteristics"
-* section[Structure].title 1..1 MS
-* section[Structure].entry 1..1 MS
-* insert PQReference(section[Structure].entry)
-* section[Structure].entry only Reference(DrugSubstanceCharacterisation)

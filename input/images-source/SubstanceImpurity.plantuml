@@ -67,6 +67,8 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
     object "**Parent Profile:** Base64DocumentReference"  as objb64 {
       **Reference:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
+        **ValueSets:**
+        [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
     }
   }
 

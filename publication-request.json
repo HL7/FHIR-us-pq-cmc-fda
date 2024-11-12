@@ -1,0 +1,9 @@
+{
+  "package-id" : "hl7.fhir.us.pq-cmc-fda",
+  "version" : "1.0.0",
+  "path" : "http://hl7.org/fhir/us/pq-cmc-fda/STU1",
+  "mode" : "milestone",   
+  "status" : "trial-use",  
+  "sequence" : "STU1",
+  "desc" : "The initial release of this implementation guide."
+}
