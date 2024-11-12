@@ -41,7 +41,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
       [[ValueSet-pqcmc-genc-and-iso-intersect.html GENC and ISO 3166 Intersection]]
     }
-
+  }
     node "EctdCompositionSP4151" as N1 {
 
       object "**Parent:** Composition" as obj1 {
