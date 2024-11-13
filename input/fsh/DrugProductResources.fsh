@@ -562,10 +562,12 @@ Description: "Includes the essential identifying information of the drug product
 
 * identifier 0..1 MS
 * identifier ^short = "Optional user designated identifier"
+* description 0..0 MS
 * insert DosageForm
 * insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
+* crossReference 0..0 MS
 
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
@@ -575,7 +577,7 @@ Description: "Includes the properties of the drug product and components. Profil
 
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
-* description 0..1 MS
+* description 1..1 MS
 * description ^short = "Drug Product Description"
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose."""
@@ -592,12 +594,11 @@ Examples: dosage form, container closure system, purpose."""
 * insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
-* crossReference MS
-* crossReference.product 
+* crossReference 0..* MS
+* crossReference.product MS
 * crossReference.product ^short = "Co-Packaged Product"
 * insert PQCodeableReference(crossReference.product)
-* crossReference.product only CodeableReference(DrugProductDescription)
-* crossReference.type.text = "co-packaged"
+* crossReference.product only CodeableReference(DrugProductHandle)
 
 RuleSet: DosageForm
 * combinedPharmaceuticalDoseForm 1..1 MS

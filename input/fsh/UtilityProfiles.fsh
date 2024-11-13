@@ -65,7 +65,7 @@ Parent: DocumentReference
 Id: cmc-document-reference
 Title: "Document Reference Attachment"
 Description: "A profile that represents the document or diagram in base64."
-
+* ^abstract = true
 * status = #current
 * content MS
 * content.attachment MS

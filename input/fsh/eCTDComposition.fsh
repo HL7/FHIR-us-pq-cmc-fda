@@ -18,25 +18,26 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
-* entry contains
+* * entry contains
     Composition 1..1 and
     FinishedProduct 1..1 and
-    DrugProductDescription 1..1 and
+    DrugProduct 1..* and
     ContainerClosure 1..* and
     Organization 0..* and
     DrugProductComponent 0..* and
     ComponentSubstance 0..* and
     GraphicsFile 0..* and
-    StructureFile 0..*
+    StructureFile 0..* 
 * entry[Composition].resource only EctdComposition32P10
 * entry[FinishedProduct].resource only FinishedProduct
-* entry[DrugProductDescription].resource only DrugProductDescription
+* entry[DrugProduct].resource only DrugProductDescription or DrugProductHandle
 * entry[ContainerClosure].resource only ContainerClosure
 * entry[Organization].resource only CodedOrganization
 * entry[DrugProductComponent].resource only DrugProductComponent
 * entry[ComponentSubstance].resource only ComponentSubstance
 * entry[GraphicsFile].resource only GraphicReference
 * entry[StructureFile].resource only StructureReference
+
 // If you want to avoid warnings, you can list the other types of allowed resources too.
 // No need to indicate that composition is the first, as that's already enforced by a base invariant on Bundles of type 'document'
 

@@ -193,7 +193,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength[percent]
   * concentration[x] 1..1 MS
   * concentration[x] only Quantity
-  * textConcentration 0..0
+  * textConcentration 0..0 MS
   * concentrationQuantity from PqcmcPercentageUnits (required)
     * value 1..1 MS
       * ^short = "Ingredient Total Amount Content Percent"
