@@ -33,7 +33,7 @@
 //	Description: "Local value set of all codes in the Relationship Types code system.Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
 //	* ^caseSensitive = true
 //	* ^experimental = false
-//	* ^status = #draft
+//	* ^status = #active
 //	* #parent "Parent"
 //	* #child "Child"
 //	* #primary "Primary"
@@ -44,7 +44,7 @@
 //	Description: "Local value set of all codes in Relationship Types codes"
 //	
 //	* ^experimental = false
-//	* ^status = #draft
+//	* ^status = #active
 //	* include codes from system CmcRelationshipTypes
 
 ValueSet: CmcProductNameTypesVS
@@ -53,7 +53,7 @@ Title: "Product Name Types Terminology"
 Description: "Local value set of all codes in the Code system."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * include codes from system CmcProductNameTypes
 
 CodeSystem: CmcProductNameTypes
@@ -63,7 +63,7 @@ Description: "Indicates patent or trademark status. Codes temporarily defined as
 
 * ^caseSensitive = true
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * #PROP "Proprietary"
 * #NON "Non-Proprietary"
@@ -74,7 +74,7 @@ Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C60819 "Assay"
 * $NCIT#C204845 "Active Ingredient Content"
 * $NCIT#C205001 "Adventitious Agents (Safety)"
@@ -190,7 +190,7 @@ Title: "PQCMC Name Part Terminology"
 Description: "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NamePartType#CON "container name"
 * $NamePartType#DEV "device name"
 * $NamePartType#FLAV "FlavorName"
@@ -210,7 +210,7 @@ Title: "Product Part Type Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the product part type in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C203896 "Blend"
 * $NCIT#C42890 "Bead"
 * $NCIT#C203897 "Capsule Shell"
@@ -228,7 +228,7 @@ Title: "Ingredient Location Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the location of an ingredient within a product in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C203881 "Active core/granulate"
 * $NCIT#C203882 "Extragranular"
 * $NCIT#C203883 "Intragranular"
@@ -239,7 +239,7 @@ Title: "Release Profile Terminology"
 Description: "A category of terminology used to qualify the information pertaining to release profile in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C42730 "Delayed-Release Profile"
 * $NCIT#C42713 "Extended-Release Profile"
 * $NCIT#C42669 "Immediate Release Profile"
@@ -251,7 +251,7 @@ Title: "Release Mechanism Terminology"
 Description: "A category of terminology used to qualify the information pertaining to release mechanism in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C203359 "Matrix"
 * $NCIT#C203360 "Osmotic Pump"
 * $NCIT#C203361 "Reservoir"
@@ -262,7 +262,7 @@ Title: "Coating Purpose Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the coating purpose in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C203884 "Appearance/Identification"
 * $NCIT#C203885 "Consumption Enhancement"
 * $NCIT#C203887 "Delayed Release"
@@ -282,7 +282,7 @@ Title: "Capsule Shell Classification  Terminology"
 Description: "A category of terminology used to qualify the information pertaining to the classification of a capsule in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C203348 "Hard Gelatin Capsule Shell"
 * $NCIT#C203349 "Hard HPMC Capsule Shell"
 * $NCIT#C203350 "Hard Pullulan Capsule Shell"
@@ -296,7 +296,7 @@ Title: "Substance Name Type"
 Description: "A category of terminology used to quality the information pertaining to the type of substance name in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C71898 "Brand"
 * $NCIT#C97054 "Generic Name"
 * $NCIT#C203355 "GSRS Preferred Term"
@@ -315,7 +315,7 @@ Title: "Substance Classification"
 Description: "Substance classes"
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C48807 "Chemical"
 * $NCIT#C45305 "Mixture"
 * $NCIT#C706 "Nucleic Acids"
@@ -338,7 +338,7 @@ Title: "PQCMC Product Characteristic"
 Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $NCIT#OvrRelsProf "Product Overall Release Profile"
 * $NCIT#OvrRelsMech "Product Overall Release Mechanism"
@@ -372,7 +372,7 @@ Id: cmc-comp-section-types-vs
 Title: "eCTD sections Terminology"
 Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a value set instead of the code system."
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * include codes from system PqcmcCompSectionTypes
 
@@ -383,7 +383,7 @@ Description: "Classification of a section of a PQ/CMC composition/document gener
 
 * ^caseSensitive = true
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * #32S10 "Substance General Information"
 * #32S11 "Substance Nomenclature"
@@ -466,7 +466,7 @@ Id: cmc-specification-types-vs
 Title: "Specification Section Type Terminology"
 Description: "Local value set of all codes in Specification Type codes"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $SectionTypes#32P51 "Product Specification"
 * $SectionTypes#32S41 "Substance Specification"
 * $SectionTypes#32P40 "Product Control of Excipients"
@@ -477,7 +477,7 @@ Title: "Chemical Structure Data File Type Terminology"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C54683 "InChI File (small molecule)"
 * $NCIT#C133997 "mmCIF (large molecules)"
 * $NCIT#C133910 "MOLFILE"
@@ -492,7 +492,7 @@ Title: "Closure Type Terminology"
 Description: "Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $NCIT#C96113 "Child-resistant, Metal"
 * $NCIT#C96114 "Child-resistant, Plastic"
@@ -528,7 +528,7 @@ Description: "Terminology used to qualify the information pertaining to closure 
 //	Title: "Conformance to Criteria Terminology"
 //	Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 //	* ^experimental = false
-//	* ^status = #draft
+//	* ^status = #active
 //	* $NCIT#C80262 "Conforms"
 //	* $NCIT#C133998 "Does not conform"
 
@@ -538,7 +538,7 @@ Title: "Container Type Terminology"
 Description: "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $NCIT#C43165 "AMPULE"
 * $NCIT#C43166 "APPLICATOR"
@@ -620,7 +620,7 @@ Title: "Drug Product Component Function Category Terminology"
 Description: "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $NCIT#C82533 "Active Ingredient"
 * $NCIT#C2140 "Adjuvant"
@@ -639,7 +639,7 @@ Title: "Excipient Function Terminology"
 Description: "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $NCIT#C176637 "Absorption modifier"
 * $NCIT#C89528 "Adhesive"
@@ -705,7 +705,7 @@ Title: "Quality Benchmark Terminology"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C176793 "BP"
 * $NCIT#C134009 "Company Standard"
 * $NCIT#C134007 "EP"
@@ -718,7 +718,7 @@ Title: "Source Type Terminology"
 Description: "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C14182 "Animal"
 * $NCIT#C18634 "Animal-derived indirectly"
 * $NCIT#C48807 "Chemical"
@@ -733,7 +733,7 @@ Title: "Specification Status Terminology"
 Description: "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C25425 "Approved"
 * $NCIT#C48660 "Not Applicable"
 * $NCIT#C134011 "Not Approved"
@@ -746,7 +746,7 @@ Title: "Specification Type Terminology"
 Description: "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C134021 "Drug Product"
 * $NCIT#C134022 "Drug Substance"
 * $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
@@ -757,7 +757,7 @@ Title: "Organization-Site Identifier Terminology"
 Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C134005 "CFN"
 * $NCIT#C134003 "DUNS"
 * $NCIT#C134004 "FEI"
@@ -769,7 +769,7 @@ Title: "Strength Type Terminology"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C45420 "Activity"
 * $NCIT#C168628 "Mass"
 
@@ -779,7 +779,7 @@ Title: "Test Method Origin Terminology"
 Description: "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C96164 "CFR"
 * $NCIT#C96102 "Compendial"
 * $NCIT#C96103 "Proprietary"
@@ -790,7 +790,7 @@ Title: "Test Usage Terminology"
 Description: "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C134029 "Release"
 * $NCIT#C134030 "Stability"
 
@@ -800,7 +800,7 @@ Title: "Pharmaceutical Dosage Form Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $NCIT#C100103 "CELLULAR SHEET"
 * $NCIT#C113106 "INJECTABLE FOAM"
@@ -977,7 +977,7 @@ Description: "Terminology used to qualify the information pertaining to units of
 Note: Includes SPL Unit of Presentation Terminology"
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $UCUM#{actuation} "actuation"
 * $UCUM#[Amb'a'1'U] "Amb a 1 units"
@@ -1068,7 +1068,7 @@ Title: "Drug Route Of Administration Terminology"
 Description: "Terminology used for representation of the information on pharmaceutical product route of administration in the framework of the Structured Product Labeling documents."
 
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C132737 "Intracanalicular"
 * $NCIT#C28161 "INTRAMUSCULAR"
 * $NCIT#C38192 "AURICULAR (OTIC)"
@@ -1199,7 +1199,7 @@ Id: pqcmc-manufactured-dose-form-terminology
 Title: "Manufactured Dose Form Terminology"
 Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C45299 "Gas"
 * $NCIT#C45298 "Liquid"
 * $NCIT#C154598 "Solution" 
@@ -1213,7 +1213,7 @@ Id: pqcmc-graphical-file-types
 Title: "Graphical File Types"
 Description: "The acceptable file types that can be used in graphical files"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * urn:ietf:bcp:13#image/jpeg
 * urn:ietf:bcp:13#image/png
 * urn:ietf:bcp:13#image/svg+xml
@@ -1225,7 +1225,7 @@ Id: pqcmc-analytical-instrument-data-types
 Title: "Analytical Instrument Data File Types"
 Description: "The acceptable file types that can be used in Analytical Instrument Data Files"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * urn:ietf:bcp:13#application/x-jcamp-dx "JCAMP Spectroscopic Data (.jdx, .dx)"
 
 ValueSet: PqcmcStructureDataTypes
@@ -1233,7 +1233,7 @@ Id: pqcmc-structure-data-types
 Title: "Structure Data Types"
 Description: "The acceptable file types that can be used in Structure Data Files (MOL,SDF,INCHI,etc)"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * urn:ietf:bcp:13#application/x-mdl-sdfile "Structure-Data File (.sdf)"
 * urn:ietf:bcp:13#application/x-mdl-molfile "Molfile (.mol)"
 * urn:ietf:bcp:13#application/x-cif "Crystallographic Information File (.cif)"
@@ -1244,7 +1244,7 @@ Id: pqcmc-percentage-units
 Title: "Percentage Units"
 Description: "Units of Measure terminologies that represent the concept of a percentage"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 
 * $UCUM#%{WeightToWeight} "percent WeightToWeight"
 * $UCUM#%{WeightToVolume} "percent WeightToVolume"
@@ -1256,7 +1256,7 @@ Id: pqcmc-non-percentage-units
 Title: "Non-Percentage Units"
 Description: "Units of Measure terminologies that do not represent percentages"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * include codes from valueset PqcmcUnitsMeasure
 * exclude codes from valueset PqcmcPercentageUnits
 
@@ -1265,7 +1265,7 @@ Id: pqcmc-representation-types
 Title: "Representation Types"
 Description: "The different types of representations (graphical, structure/file and structure/text)"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * $NCIT#C54273 "Picture"
 * $NCIT#C45253 "String"
 * $NCIT#C103240 "Chemical Structure"
@@ -1275,7 +1275,7 @@ Id: pqcmc-genc-and-iso-intersect
 Title: "GENC and ISO 3166 Intersection"
 Description: "The 3 letter country codes used in GENC and ISO have significant overlap: only the country codes in ISO 3166 that have an equivalent code in GENC may be used"
 * ^experimental = false
-* ^status = #draft
+* ^status = #active
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 * exclude urn:iso:std:iso:3166#ALA
 * exclude urn:iso:std:iso:3166#PSE
