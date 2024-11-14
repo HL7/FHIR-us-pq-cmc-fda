@@ -13,10 +13,13 @@ For the purposes of the PQ/CMC IG, the Example 1 below of a two-layer Tablet pro
 - A <span style="text-decoration:underline;">Drug Product</span> is the dose unit, i.e., the whole tablet.
 - <span style="text-decoration:underline;">Components</span> are the “parts” of the Drug Product, i.e., each of the two layers in the tablet is considered a Component. If the tablet was coated, the coating would be another (third) Component.
     - A Drug Product must have at least one Component.
+    - NOTE:  In the FDA Federal Register Notice (FRN), a Component is referred to as the Product Part.  The PQ/CMC FHIR IG uses the HL7 resource term and hence the word Component.    
 
 - <span style="text-decoration:underline;">Constituents</span> are the active and inactive ingredients used in the manufacture of the Drug Product
     - Constituent information is included with respect to the Drug Product and with respect to each relevant Component. Each Constituent may be included in one or more Components of the Drug Product.
 
+    - NOTE:  In the FDA Federal Register Notice (FRN), a Constituent is referred to as the Ingredient.  The PQ/CMC FHIR IG uses the HL7 resource term and hence the word Constituent.
+    
 The additional example illustrations below of drug products are included as an aid to understanding the terms or semantics in the context of the PQ/CMC IG.
 
 <table style="margin: 0px auto;"><tr><td><img src="image2.png" /></td></tr></table>
