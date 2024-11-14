@@ -18,7 +18,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
-* * entry contains
+* entry contains
     Composition 1..1 and
     FinishedProduct 1..1 and
     DrugProduct 1..* and
