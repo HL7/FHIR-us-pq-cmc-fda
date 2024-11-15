@@ -623,13 +623,13 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "type"
   * ^slicing.rules = #closed
-  * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * ^slicing.description = "Require nonproprietary name. Parts required if present in the nonproprietary name"
   * productName 1..1 MS
   * type 1..1 MS
   * type from cmc-product-name-types-vs (required)
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary]
-  * type = $NameType#PROP "Proprietary"
+  * type = $NCIT#C71898 "Proprietary Name"
   * part 0..* MS
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "type"
@@ -640,7 +640,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
     * type from PqcmcNamePartTerminology (required)
 * name[NonProprietary]
   * obeys cmc-strength-name-must-reference-scientific
-  * type = $NameType#NON "Non-Proprietary"
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part 1..* MS
     * ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.

@@ -169,13 +169,10 @@ Description: "The fields needed to represent Quality Specifications for APIs, Dr
 * title 1..1 MS
 * section 1..1 MS
 * section.title 1..1 MS
-
 * section.entry MS
 * insert PQReference(section.entry)
 * section.entry only Reference(QualitySpecification)
-* section.code 1..1 MS
-* section.code = $SectionTypes#SP4151 "Quality Specification"
-// need check that Specification type in instance matches the seciton selected.
+
 
 Profile: EctdComposition32P10
 Parent: Composition
@@ -185,7 +182,7 @@ Description: "The fields needed to represent the Product Description, Container 
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#32P10 "Product Description and Composition of the Drug Product"
+* type = $SectionTypes#ich_3.2.p.1 "Description and Composition of the Drug Product"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -201,17 +198,17 @@ Description: "The fields needed to represent the Product Description, Container 
 // the contains line determines the order, not the section profiling
 * section contains ProductDescription 1..1 MS and ProductComposition 1..1 MS and ContainerClosure 1..1 MS
 * section[ProductDescription] ^definition = "Drug product description to be included under the 3.2.P.1 eCTD heading."
-* section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
+* section[ProductDescription].code.text = "Product Description"
 * section[ProductDescription].entry 1..1 MS
 * insert PQReference(section[ProductDescription].entry)
 * section[ProductDescription].entry only Reference(DrugProductDescription)
 * section[ProductComposition] ^definition = "Drug product components to be included under the 3.2.P.1 eCTD heading."
-* section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
+* section[ProductComposition].code.text = "Product Composition"
 * section[ProductComposition].entry 1..1 MS
 * insert PQReference(section[ProductComposition].entry)
 * section[ProductComposition].entry only Reference(FinishedProduct)
 * section[ContainerClosure] ^definition = "Product Container Closure Description to be included under the 3.2.P.1 eCTD heading."
-* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
+* section[ContainerClosure].code.text =  "Product Container Closure Description"
 * section[ContainerClosure].entry 1..* MS
 * insert PQReference(section[ContainerClosure].entry)
 * section[ContainerClosure].entry only Reference(ContainerClosure)
@@ -224,7 +221,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#32S10 "Substance General Information"
+* type = $SectionTypes#ich_3.2.s.1 "General Information"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -235,8 +232,6 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 * section 1..1 MS
 * section.entry 1..1 MS
 * section ^definition = "Substance General Information the 3.2.S.1 eCTD heading."
-* section.code 1..1 MS
-* section.code = $SectionTypes#32S10 "Substance General Information"
 * section.title 1..1 MS
 * insert PQReference(section.entry)
 * section.entry only Reference(DrugSubstanceNomenclatureStructure)
@@ -249,7 +244,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#32S23 "Substance Control of Materials"
+* type = $SectionTypes#ich_3.2.s.2.3 "Control of Materials"
 * subject 1..1 MS
 * insert PQReference(subject)
 * subject only Reference(SubstanceDefinitionHandle)
@@ -263,8 +258,6 @@ Description: "The fields needed to represent the Substance Control of Materials 
 * section 1..* MS
 * section.entry MS
 * section ^definition = "Substance Control of Materials to be included under the 3.2.S.2.3 eCTD heading."
-* section.code 1..1 MS
-* section.code = $SectionTypes#32S231 "Raw Material Specification"
 * section.entry 1..* MS
 * insert PQReference(section.entry)
 * section.entry only Reference(QualitySpecification)

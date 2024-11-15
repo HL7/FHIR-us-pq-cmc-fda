@@ -54,19 +54,9 @@ Description: "Local value set of all codes in the Code system."
 
 * ^experimental = false
 * ^status = #active
-* include codes from system CmcProductNameTypes
 
-CodeSystem: CmcProductNameTypes
-Id: cmc-product-name-types
-Title: "Product Name Types Code Types"
-Description: "Indicates patent or trademark status. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)"
-
-* ^caseSensitive = true
-* ^experimental = false
-* ^status = #active
-
-* #PROP "Proprietary"
-* #NON "Non-Proprietary"
+* $NCIT#C71898 "Proprietary Name"
+* $NCIT#C96971 "Nonproprietary Name"
 
 ValueSet: PqcmcTestCategoryTerminology
 Id: pqcmc-test-category-terminology
@@ -370,89 +360,75 @@ Description: "Product Characteristic for the characteristic element in Manufactu
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
 Title: "eCTD sections Terminology"
-Description: "Value set of all codes in Code system PQCMC Comp Section Types for bindings that require a value set instead of the code system."
+Description: "Value set of all codes in Code system PQCMC Comp Section Types."
 * ^experimental = false
 * ^status = #active
 
-* include codes from system PqcmcCompSectionTypes
-
-CodeSystem: PqcmcCompSectionTypes
-Id: pqcmc-comp-section-types
-Title: "Code System PQCMC Comp Section Types"
-Description: "Classification of a section of a PQ/CMC composition/document generally based on eCTD Module 3 section numbering for product and substance. A composition can have many section codes. Codes temporarily defined as part of the PQ-CMC-FDA implementation guide.  These will eventually migrate into an officially maintained terminology (likely either NCIt or HL7's UTG code systems)."
-
-* ^caseSensitive = true
-* ^experimental = false
-* ^status = #active
-
-* #32S10 "Substance General Information"
-* #32S11 "Substance Nomenclature"
-* #32S12 "Substance Structure"
-* #32S13 "Substance General Properties"
-* #32S20 "Substance Manufacture"
-* #32S21 "Substance Manufacturers"
-* #32S22 "Substance Description of Manufacturing Process and Process Controls"
-* #32S23 "Substance Control of Materials"
-* #32S231 "Raw Material Specification"
-* #32S24 "Substance Controls of Critical Steps and Intermediates"
-* #32S25 "Substance Process Validation and/or Evaluation"
-* #32S26 "Substance Manufacturing Process Development"
-* #32S3 "Substance Characterisation"
-* #32S31 "Substance Elucidation of Structure and other Characteristics"
-* #32S32 "Substance Impurities"
-* #32S40 "Substance Control of Drug Substance"
-* #32S41 "Substance Specification"
-* #32S42 "Substance Analytical Procedures"
-* #32S43 "Substance Validation of Analytical Procedures"
-* #32S44 "Substance Batch Analyses"
-* #32S45 "Substance Justification of Specification"
-* #32S50 "Substance Reference Standards or Materials"
-* #32S60 "Substance Container Closure System"
-* #32S70 "Substance Stability"
-* #32S71 "Substance Stability Summary and Conclusions"
-* #32S72 "Substance Postapproval Stability Protocol and Stability Commitment"
-* #32S73 "Substance Stability Data"
-* #32P10 "Product Description and Composition of the Drug Product"
-* #32P11 "Product Description"
-* #32P12 "Product Composition"
-* #32P13 "Product Container Closure Description"
-* #32P20 "Product Pharmaceutical Development"
-* #32P21 "Product Components of the Drug Product"
-* #32P22 "Product Drug Product"
-* #32P23 "Product Manufacturing Process Development"
-* #32P24 "Product Container Closure System"
-* #32P25 "Product Microbiological Attributes"
-* #32P26 "Product Compatibility"
-* #32P30 "Product Manufacture"
-* #32P31 "Product Manufacturers"
-* #32P32 "Product Batch Formula"
-* #32P33 "Product Description of Manufacturing Process and Process Controls"
-* #32P34 "Product Controls of Critical Steps and Intermediates"
-* #32P35 "Product Process Validation and/or Evaluation"
-* #32P40 "Product Control of Excipients"
-* #32P41 "Excipients Specification"
-* #32P42 "Product Analytical Procedures"
-* #32P43 "Product Validation of Analytical Procedures"
-* #32P44 "Product Justification of Specifications"
-* #32P45 "Product Excipients of Human or Animal Origin"
-* #32P46 "Product Novel Excipients"
-* #32P50 "Product name dosage form"
-* #32P51 "Product Specification"
-* #32P52 "Product Analytical Procedures"
-* #32P53 "Product Validation of Analytical Procedures"
-* #32P54 "Product Batch Analyses"
-* #32P55 "Product Characterisation of Impurities"
-* #32P56 "Product Justification of Specifications"
-* #32P60 "Product Reference Standards or Materials"
-* #32P70 "Product Container Closure System"
-* #32P80 "Product Stability"
-* #32P81 "Product Stability Summary and Conclusion"
-* #32P82 "Product Postapproval Stability Protocol and Stability Commitment"
-* #32P83 "Product Stability Data"
-* #SP4151 "Quality Specification"
-* #SP4454 "Batch Analyses"
-* #SP7383 "Stability Data"
-* #SP7181 "Stability Summary and Conclusion"
+* $SectionTypes#ich_3.2.s "Drug Substance"
+* $SectionTypes#ich_3.2.s.1 "General Information"
+* $SectionTypes#ich_3.2.s.2 "Manufacture"
+* $SectionTypes#ich_3.2.s.2.1 "Manufacturers"
+* $SectionTypes#ich_3.2.s.2.2 "Description of Manufacturing Process and Process Controls"
+* $SectionTypes#ich_3.2.s.2.3 "Control of Materials"
+* $SectionTypes#ich_3.2.s.2.4 "Controls of Critical Steps and Intermediates"
+* $SectionTypes#ich_3.2.s.2.5 "Process Validation and/or Evaluation"
+* $SectionTypes#ich_3.2.s.2.6 "Manufacturing Process Development"
+* $SectionTypes#ich_3.2.s.3 "Characterisation"
+* $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
+* $SectionTypes#ich_3.2.s.3.2 "Impurities"
+* $SectionTypes#ich_3.2.s.4 "Control of Drug Substance"
+* $SectionTypes#ich_3.2.s.4.1 "Specification"
+* $SectionTypes#ich_3.2.s.4.2 "Analytical Procedures"
+* $SectionTypes#ich_3.2.s.4.3 "Validation of Analytical Procedures"
+* $SectionTypes#ich_3.2.s.4.4 "Batch Analyses"
+* $SectionTypes#ich_3.2.s.4.5 "Justification of Specification"
+* $SectionTypes#ich_3.2.s.5 "Reference Standards or Materials"
+* $SectionTypes#ich_3.2.s.6 "Container Closure System"
+* $SectionTypes#ich_3.2.s.7 "Stability"
+* $SectionTypes#ich_3.2.s.7.1 "Stability Summary and Conclusions"
+* $SectionTypes#ich_3.2.s.7.2 "Postapproval Stability Protocol and Stability Commitment"
+* $SectionTypes#ich_3.2.s.7.3 "Stability Data"
+* $SectionTypes#ich_3.2.p "Drug Product"
+* $SectionTypes#ich_3.2.p.1 "Description and Composition of the Drug Product"
+* $SectionTypes#ich_3.2.p.2 "Pharmaceutical Development"
+* $SectionTypes#ich_3.2.p.2.1 "Components of the Drug Product"
+* $SectionTypes#ich_3.2.p.2.2 "Drug Product"
+* $SectionTypes#ich_3.2.p.2.3 "Manufacturing Process Development"
+* $SectionTypes#ich_3.2.p.2.4 "Container Closure System"
+* $SectionTypes#ich_3.2.p.2.5 "Microbiological Attributes"
+* $SectionTypes#ich_3.2.p.2.6 "Compatibility"
+* $SectionTypes#ich_3.2.p.3 "Manufacture"
+* $SectionTypes#ich_3.2.p.3.1 "Manufacturer(s)"
+* $SectionTypes#ich_3.2.p.3.2 "Batch Formula"
+* $SectionTypes#ich_3.2.p.3.3 "Description of Manufacturing Process and Process Controls"
+* $SectionTypes#ich_3.2.p.3.4 "Controls of Critical Steps and Intermediates"
+* $SectionTypes#ich_3.2.p.3.5 "Process Validation and/or Evaluation"
+* $SectionTypes#ich_3.2.p.4 "Control of Excipients"
+* $SectionTypes#ich_3.2.p.4.1 "Specification"
+* $SectionTypes#ich_3.2.p.4.2 "Analytical Procedures"
+* $SectionTypes#ich_3.2.p.4.3 "Validation of Analytical Procedures"
+* $SectionTypes#ich_3.2.p.4.4 "Justification of Specifications"
+* $SectionTypes#ich_3.2.p.4.5 "Excipients of Human or Animal Origin"
+* $SectionTypes#ich_3.2.p.4.6 "Novel Excipients"
+* $SectionTypes#ich_3.2.p.5 "Control of Drug Product"
+* $SectionTypes#ich_3.2.p.5.1 "Specification(s)"
+* $SectionTypes#ich_3.2.p.5.2 "Analytical Procedures"
+* $SectionTypes#ich_3.2.p.5.3 "Validation of Analytical Procedures"
+* $SectionTypes#ich_3.2.p.5.4 "Batch Analyses"
+* $SectionTypes#ich_3.2.p.5.5 "Characterisation of Impurities"
+* $SectionTypes#ich_3.2.p.5.6 "Justification of Specifications"
+* $SectionTypes#ich_3.2.p.6 "Reference Standards or Materials"
+* $SectionTypes#ich_3.2.p.7 "Container Closure System"
+* $SectionTypes#ich_3.2.p.8 "Stability"
+* $SectionTypes#ich_3.2.p.8.1 "Stability Summary and Conclusion"
+* $SectionTypes#ich_3.2.p.8.2 "Postapproval Stability Protocol and Stability Commitment"
+* $SectionTypes#ich_3.2.p.8.3 "Stability Data"
+* $SectionTypes#ich_3.2.a "Appendices"
+* $SectionTypes#ich_3.2.a.1 "Facilities And Equipment"
+* $SectionTypes#ich_3.2.a.2 "Adventitious Agents Safety Evaluation"
+* $SectionTypes#ich_3.2.a.3 "Excipients"
+* $SectionTypes#ich_3.2.r "Regional Information"
+* $SectionTypes#ich_3.3 "Literature References" 
 
 //ValueSet: PqcmcChemicalStructureDataFileOriginTerminology
 //Id: pqcmc-chemical-structure-datafile-origin-terminology
@@ -467,9 +443,9 @@ Title: "Specification Section Type Terminology"
 Description: "Local value set of all codes in Specification Type codes"
 * ^experimental = false
 * ^status = #active
-* $SectionTypes#32P51 "Product Specification"
-* $SectionTypes#32S41 "Substance Specification"
-* $SectionTypes#32P40 "Product Control of Excipients"
+* $SectionTypes#ich_3.2.p.5.1 "Specification(s)"
+* $SectionTypes#ich_3.2.s.4.1 "Specification"
+* $SectionTypes#ich_3.2.p.4 "Control of Excipients"
 
 ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
 Id: pqcmc-chemical-structure-datafile-type-terminology
