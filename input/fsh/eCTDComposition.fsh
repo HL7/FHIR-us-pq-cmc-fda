@@ -192,7 +192,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * section.code from CmcCompSectionTypesVS (required)
 * section.title 1..1 MS
 * section ^slicing.discriminator.type = #value
-* section ^slicing.discriminator.path = "code"
+* section ^slicing.discriminator.path = "code.text"
 * section ^slicing.rules = #closed
 * section ^slicing.description = "Slice based on the ectd document sections."
 // the contains line determines the order, not the section profiling
