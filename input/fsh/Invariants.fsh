@@ -81,32 +81,20 @@ Description: "If a PPiD ref is present, it must reference the PPiD of another co
 Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
   component.select(
     property.where(
-      type.coding.exists(
-        system = %system and
-        code = 'PPiDref'
-      )
+      type.text = 'Product Part Identifier Reference'
     ).select(value)
   ).all(
     text in %context.component.select(
       property.where(
-        type.coding.exists(
-          system = %system and
-          code = 'PPiD'
-        )
+        type.text = 'Product Part Identifier'
       ).select(value.text)
     )
   ) and component.where(
     property.where(
-      type.coding.exists(
-        system = %system and
-        code = 'PPiDref'
-      )
+      type.text = 'Product Part Identifier Reference'
     ).select(value.text) =
     property.where(
-      type.coding.exists(
-        system = %system and
-        code = 'PPiD'
-      )
+      type.text = 'Product Part Identifier'
     ).select(value.text)
   ).exists().not()
 )"
@@ -114,7 +102,39 @@ Severity: #error
 // Logic: get all the Ppidrefs. Each of them must exist in the set of all Ids.
 // afterwards check to make sure there are no components that refer to themselves
 
-
+/// old with codings
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//   component.select(
+//     property.where(
+//       type.coding.exists(
+//         system = %system and
+//         code = 'PPiDref'
+//       )
+//     ).select(value)
+//   ).all(
+//     text in %context.component.select(
+//       property.where(
+//         type.coding.exists(
+//           system = %system and
+//           code = 'PPiD'
+//         )
+//       ).select(value.text)
+//     )
+//   ) and component.where(
+//     property.where(
+//       type.coding.exists(
+//         system = %system and
+//         code = 'PPiDref'
+//       )
+//     ).select(value.text) =
+//     property.where(
+//       type.coding.exists(
+//         system = %system and
+//         code = 'PPiD'
+//       )
+//     ).select(value.text)
+//   ).exists().not()
+// )"
 
 //Invariant: cmc-identifer
 //Description: "A document must have an identifier with a system and a value"
@@ -203,11 +223,24 @@ Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesa
     ) and
     value.exists(system = %system and code = 'C75765')
 ).exists() implies property.where(
-    type.coding.exists(
-        code = 'TotWgtTxt' and
-        system = %system
-    )
+    type = 'Total Weight Textual'
 ).exists())"
+/// old with coding
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     property.where(
+//     type.coding.exists(
+//         system = %system and (
+//             code = 'TotWgtNum' or 
+//             code = 'TotWgtDen'
+//         )
+//     ) and
+//     value.exists(system = %system and code = 'C75765')
+// ).exists() implies property.where(
+//     type.coding.exists(
+//         code = 'TotWgtTxt' and
+//         system = %system
+//     )
+// ).exists())"
 Severity: #error
 // Note: checks if a property for the numerator or denominator exists. if it
 // does and it has an arbitrary unit, then there needs to be a slice for 
@@ -223,7 +256,10 @@ Severity: #error
 Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
 Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     manufacturedDoseForm.coding.exists(system = %system and code = 'C154433')
-implies property.where(type.coding.exists(system = %system and code = 'CapConCnt')).exists())"
+implies property.where(type.text = 'Capsule Constituent Count').exists())"
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     manufacturedDoseForm.coding.exists(system = %system and code = 'C154433')
+// implies property.where(type.coding.exists(system = %system and code = 'CapConCnt')).exists())"
 
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
@@ -233,13 +269,22 @@ Expression: "$this.length() = 3"
 Invariant: cmc-coating-indication-required
 Severity: #error
 Description: "Coating indication is required when the dosage form is a tablet, lozenge or capsule"
+/// new, just looking for 'coating indicator' text
 Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     manufacturedDoseForm.coding.exists(system = %system and (
     code = 'C154605' or
     code = 'C154433' or
     code = 'C154554'
 ))
-implies property.where(type.coding.exists(system = %system and code = 'CoatInd')).exists())"
+implies property.where(type.text = 'Coating Indicator').exists())"
+/// old, pre-ncit-dummy removal. looking for a type codeable concept with a 'CoatInd' code
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     manufacturedDoseForm.coding.exists(system = %system and (
+//     code = 'C154605' or
+//     code = 'C154433' or
+//     code = 'C154554'
+// ))
+// implies property.where(type.coding.exists(system = %system and code = 'CoatInd')).exists())"
 // Note: Currently checks if manufacturedDoseForm is any of the solid oral
 // dose forms (lozenge, capsule, tablet). Can capsules and lozenges have
 // coatings?
@@ -252,11 +297,19 @@ Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesa
     system = %system and
     code = 'C154605'
 ) implies property.where(
-    type.coding.exists(
-        system = %system and
-        code = 'TabLayCnt'
-    )
+    type.text = 'Tablet Layer Count'
 ).exists())"
+/// old with coding check
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     manufacturedDoseForm.coding.exists(
+//     system = %system and
+//     code = 'C154605'
+// ) implies property.where(
+//     type.coding.exists(
+//         system = %system and
+//         code = 'TabLayCnt'
+//     )
+// ).exists())"
 
 Invariant: cmc-tablet-bead-count-required
 Severity: #error
@@ -265,12 +318,17 @@ Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesa
     system = %system and
     code = 'C154605'
 ) implies property.where(
-    type.coding.exists(
-        system = %system and
-        code = 'BeaTypCnt'
-    )
+    type.text = 'Tablet Bead Type Count'
 ).exists())"
-
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(
+//     system = %system and
+//     code = 'C154605'
+// ) implies property.where(
+//     type.coding.exists(
+//         system = %system and
+//         code = 'BeaTypCnt'
+//     )
+// ).exists())"
 Invariant: cmc-capsule-classification-required
 Severity: #error
 Description: "when the the dosage form is 'capsule' and a 'capsule shell' part
@@ -282,11 +340,22 @@ Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesa
     system = %system and
     code = 'C203897'
 ) implies property.where(
-    type.coding.exists(
-        system = %system and
-        code = 'CapClass'
-    )
+    type.text = 'Capsule Classification Category'
 ).exists())"
+
+/// old with coding
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(
+//     system = %system and
+//     code = 'C154433'
+// ) and component.type.coding.exists(
+//     system = %system and
+//     code = 'C203897'
+// ) implies property.where(
+//     type.coding.exists(
+//         system = %system and
+//         code = 'CapClass'
+//     )
+// ).exists())"
 
 
 Invariant: cmc-substance-characterisation-content-required

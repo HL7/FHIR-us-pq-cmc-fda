@@ -435,8 +435,10 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
 * component.property 1..* MS
+* component.property.type 1..1 MS
+* component.property.type.text 1..1 MS
 * component.property ^slicing.discriminator.type = #value
-* component.property ^slicing.discriminator.path = "type"
+* component.property ^slicing.discriminator.path = "type.text"
 * component.property ^slicing.rules = #closed
 * component.property ^slicing.description = "Slice based on value"
 * component.property contains
@@ -456,8 +458,10 @@ Examples: Intragranular, Extra granular, Blend
     * ^definition = """
       The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]
     """
-    * type MS
-    * type = $NCIT#RelsProf "Product Part Release Profile"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Product Part Release Profile"
+    // * type = $NCIT#RelsProf "Product Part Release Profile"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcReleaseProfile (required)
@@ -468,8 +472,10 @@ Examples: Intragranular, Extra granular, Blend
       The method employed to realize the specified part release profile. [Source: SME Defined] 
       Example: matrix or reservoir
     """
-    * type MS
-    * type = $NCIT#RelsMech "Product Part Release Mechanism"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Product Part Release Mechanism"
+    // * type = $NCIT#RelsMech "Product Part Release Mechanism"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcReleaseMechanism (required)
@@ -480,8 +486,10 @@ Examples: Intragranular, Extra granular, Blend
       The reason the coating or covering was added. [Source: SME Defined]
       Examples: rate-controlling, color, release type, protective, taste masking.
     """
-    * type MS
-    * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Coating Product Part Purpose"
+    // * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcCoatingPurpose (required)
@@ -492,8 +500,10 @@ Examples: Intragranular, Extra granular, Blend
       The hue or the tint of the drug product part. [Source: SME Defined]
       Examples: yellow, pink, blue, pale yellow.
     """
-    * type MS
-    * type = $NCIT#Color "Product Part Color Description"
+    * type 1..1  MS
+      * text 1..1 MS
+      * text = "Product Part Color Description"
+    // * type = $NCIT#Color "Product Part Color Description"
     * value[x] 1..1 MS
     * value[x] only CodeableConceptTextOnly
 
@@ -508,8 +518,10 @@ RuleSet: AdditionalInformationProperty(short)
   A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
   Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
-* type MS
-* type = $NCIT#AddInfo "Product Part Additional Information"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Additional Information"
+// * type = $NCIT#AddInfo "Product Part Additional Information"
 * value[x] 1..1 MS
 * value[x] only markdown
 
@@ -519,8 +531,10 @@ RuleSet: ProductPartIdentifierProperty
   A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
   Examples: 1, A1, Red bead, Blue minitablet
 """
-* type MS
-* type = $NCIT#PPiD "Product Part Identifier"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Identifier"
+// * type = $NCIT#PPiD "Product Part Identifier"
 * value[x] 1..1 MS
 * value[x] only CodeableConceptTextOnly
 // * valueCodeableConcept.coding from CmcRelationshipTypesVS	
@@ -535,8 +549,10 @@ RuleSet: ProductPartIdentifierReferenceProperty
   Identifies the parent or outer-level product part. [Source: SME Defined]
   Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
 """
-* type MS
-* type = $NCIT#PPiDref "Product Part Identifier Reference"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Identifier Reference"
+// * type = $NCIT#PPiDref "Product Part Identifier Reference"
 * value[x] 1..1 MS
 * value[x] only CodeableConceptTextOnly
 
