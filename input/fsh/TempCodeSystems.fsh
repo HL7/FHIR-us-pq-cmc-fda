@@ -3,8 +3,7 @@ Id: cmc-temp
 Title: "PQ-CMC-FDA Temporary Codes"
 Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.
 * ^caseSensitive = true
-* ^experimental = false
-* ^status = #draft
+* ^status = #active
 * ^hierarchyMeaning = #is-a
 
 //* #batchsize "Batch Quantity"

@@ -311,13 +311,13 @@ Usage: #inline
 * title = "eCTD Product Description and Composition for Example1Drug"
 * section[ProductDescription].title = "Product Description for Example1Drug"
 * section[ProductDescription].entry = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
-* section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
-* section[ContainerClosure].title = "Container Closure Description for Example1Drug"
-* section[ContainerClosure].entry = Reference(urn:uuid:77ad6922-9c59-43d1-93cb-29d063cc2e8c)
-* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
+* section[ProductDescription].code.text = "Product Description"
 * section[ProductComposition].title = "Product Composition for Example1Drug"
 * section[ProductComposition].entry = Reference(urn:uuid:a8316fc9-8ca8-4115-81c1-9f8f84c99149)
-* section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
+* section[ProductComposition].code.text = "Product Composition"
+* section[ContainerClosure].title = "Container Closure Description for Example1Drug"
+* section[ContainerClosure].entry = Reference(urn:uuid:77ad6922-9c59-43d1-93cb-29d063cc2e8c)
+* section[ContainerClosure].code.text =  "Product Container Closure Description"
 
 Instance: bd0f0a7a-27ea-4884-801d-bd0546e80888
 InstanceOf: CMCeCTDDocument32P10
@@ -330,16 +330,18 @@ Usage: #example
 * timestamp = 2023-12-09T07:12:23.538Z
 * entry[0].resource = 5dfbbf17-05c0-441d-af66-7a66072f4ae4
 * entry[=].fullUrl = "urn:uuid:5dfbbf17-05c0-441d-af66-7a66072f4ae4"
-* entry[+].resource = 77ad6922-9c59-43d1-93cb-29d063cc2e8c
-* entry[=].fullUrl = "urn:uuid:77ad6922-9c59-43d1-93cb-29d063cc2e8c"
-* entry[+].resource = 5772a6f2-cde1-4903-bfcf-1639340205cc
-* entry[=].fullUrl = "urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc"
 * entry[+].resource = a8316fc9-8ca8-4115-81c1-9f8f84c99149
 * entry[=].fullUrl = "urn:uuid:a8316fc9-8ca8-4115-81c1-9f8f84c99149"
-* entry[+].resource = fc09842a-8f71-48f2-9f9f-ff2441b2eb6f
-* entry[=].fullUrl = "urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f"
+* entry[+].resource = 5772a6f2-cde1-4903-bfcf-1639340205cc
+* entry[=].fullUrl = "urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc"
+* entry[+].resource = 77ad6922-9c59-43d1-93cb-29d063cc2e8c
+* entry[=].fullUrl = "urn:uuid:77ad6922-9c59-43d1-93cb-29d063cc2e8c"
+* entry[+].resource = 4f3e9af1-306b-4fad-bf04-7881400b266a
+* entry[=].fullUrl = "urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a"
 * entry[+].resource = 7f10a35e-228d-42db-8918-6ccada78454d
 * entry[=].fullUrl = "urn:uuid:7f10a35e-228d-42db-8918-6ccada78454d"
+* entry[+].resource = fc09842a-8f71-48f2-9f9f-ff2441b2eb6f
+* entry[=].fullUrl = "urn:uuid:fc09842a-8f71-48f2-9f9f-ff2441b2eb6f"
 * entry[+].resource = d01421cc-6488-468b-a676-d3e7281875e2
 * entry[=].fullUrl = "urn:uuid:d01421cc-6488-468b-a676-d3e7281875e2"
 * entry[+].resource = 3791c4ce-2b43-4d7b-b195-0e5f88f28dab
@@ -352,8 +354,6 @@ Usage: #example
 * entry[=].fullUrl = "urn:uuid:393a14e7-3edc-4373-bbe5-9e569d504a1c"
 * entry[+].resource = 496f83ad-2365-4b12-8672-a349d99f7d67
 * entry[=].fullUrl = "urn:uuid:496f83ad-2365-4b12-8672-a349d99f7d67"
-* entry[+].resource = 4f3e9af1-306b-4fad-bf04-7881400b266a
-* entry[=].fullUrl = "urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a"
 * entry[+].resource = 8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9
 * entry[=].fullUrl = "urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9"
 * entry[+].resource = 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
