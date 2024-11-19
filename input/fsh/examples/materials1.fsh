@@ -65,7 +65,7 @@ Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
 Usage: #inline
 * identifier.value = "carrageenan"
-* classification = $NCIT#C3641132 "Structurally Diverse Substance"
+* classification = $NCIT#C103206 "Structurally Diverse Substance"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
 * code[unii].code = $UNII#5C69YCD2YJ
