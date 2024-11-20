@@ -4,6 +4,7 @@ Title: "PQ-CMC-FDA Temporary Codes"
 Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide. """
 * ^caseSensitive = true
 * ^status = #active
+* ^experimental = false
 * ^hierarchyMeaning = #is-a
 
 // test category (hierarchical)

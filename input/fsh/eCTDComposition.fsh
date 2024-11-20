@@ -189,7 +189,7 @@ Description: "The fields needed to represent the Product Description, Container 
 * title 1..1 MS
 * section 3..3 MS
 * section.code 1..1 MS
-* section.code from CmcCompSectionTypesVS (required)
+// * section.code from CmcCompSectionTypesVS (required)
 * section.title 1..1 MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code.text"
