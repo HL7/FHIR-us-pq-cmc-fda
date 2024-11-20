@@ -162,7 +162,11 @@ Description: "The fields needed to represent Quality Specifications for APIs, Dr
 
 * status = #final
 * identifier 0..1 MS
-* type from PqcmcQualitySpecificationSectionTypes (required)
+* type 1..1 MS 
+// !!!generates errors while ich codes are not in any codesystem
+// on a terminology server. once it is, uncomment this line.
+// you could maybe get the same effect by slicing
+//* type from PqcmcQualitySpecificationSectionTypes (required)
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
