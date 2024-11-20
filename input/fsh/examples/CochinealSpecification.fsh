@@ -136,9 +136,9 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $NCIT#C205026 "Organoleptic"
+  * reason[=].coding = $TEMPH#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valuePositiveInt = 2
-  * reason[=].coding = $NCIT#C138990 "Description/Appearance"
+  * reason[=].coding = $TEMPH#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
   * goalId[+] = "e900181a-876c-4ed6-ac96-d5a73c3d6767"
@@ -150,7 +150,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $NCIT#C138993 "Identification"
+  * reason[=].coding = $TEMPH#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
   * goalId[+] = "21c69fab-2cb3-46dc-8c56-d1c64d5ddf5c"
@@ -162,7 +162,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $NCIT#C205029 "pH"
+  * reason[=].coding = $TEMPH#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "1f476689-f440-4a77-9e9c-0615af3571eb"
@@ -174,7 +174,7 @@ Usage: #inline
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
+  * reason[=].coding = $TEMPH#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "9c0d2619-4505-4e6b-a801-bc30f84bc3e2"
@@ -186,7 +186,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $NCIT#C204971 "Impurity"
+  * reason[=].coding = $TEMPH#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-104"
   * goalId[+] = "fc230a97-fd1a-4017-8603-822c5430a217"
