@@ -13,8 +13,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:9cba7c84-36de-4b39-a6d7-139044355ac8",
-    "timestamp" : "2024-11-19T04:40:40.919Z",
+    "identifier" : "urn:uuid:732a71da-7e5c-40f1-9dcf-eca32a5bdc0f",
+    "timestamp" : "2024-11-19T23:59:51.269Z",
     "total" : 747,
     "offset" : 0,
     "parameter" : [{
@@ -3803,8 +3803,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:fb549ae2-513d-49b2-a814-7061f48bf877",
-    "timestamp" : "2024-11-19T04:40:41.024Z",
+    "identifier" : "urn:uuid:ead79616-01c4-4404-9649-a8061244ba3d",
+    "timestamp" : "2024-11-19T23:59:51.628Z",
     "total" : 4,
     "offset" : 0,
     "parameter" : [{
@@ -3871,8 +3871,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:ca19cf84-4b1f-4eec-8e16-e665232f4cda",
-    "timestamp" : "2024-11-19T04:40:41.045Z",
+    "identifier" : "urn:uuid:8c0fc992-c456-4bc0-82d5-c9bb910dec2a",
+    "timestamp" : "2024-11-19T23:59:51.753Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -5171,8 +5171,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:08a526ef-9dd0-4cc7-9f45-ec428ae2b3bf",
-    "timestamp" : "2024-11-19T04:41:01.284Z",
+    "identifier" : "urn:uuid:8817f89a-3744-4417-8b1f-cd47c2baadf6",
+    "timestamp" : "2024-11-20T00:00:02.963Z",
     "total" : 4,
     "offset" : 0,
     "parameter" : [{
@@ -5235,7 +5235,7 @@ v: {
   "code" : "ALA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5258,7 +5258,7 @@ v: {
   "code" : "PSE",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5281,7 +5281,7 @@ v: {
   "code" : "SJM",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5304,7 +5304,7 @@ v: {
   "code" : "UMI",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5328,7 +5328,7 @@ v: {
   "code" : "TUR",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5351,7 +5351,7 @@ v: {
   "code" : "TUR",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5377,7 +5377,7 @@ v: {
   "code" : "TUR",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5401,7 +5401,7 @@ v: {
   "code" : "USA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5424,7 +5424,7 @@ v: {
   "code" : "USA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5450,7 +5450,7 @@ v: {
   "code" : "USA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5476,7 +5476,7 @@ v: {
   "code" : "ARG",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5500,7 +5500,7 @@ v: {
   "code" : "ARG",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5523,7 +5523,7 @@ v: {
   "code" : "ARG",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://nuc.lan/r4",
+  "server" : "http://tx.fhir.org/r5",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
@@ -5550,8 +5550,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:ef3368c2-469e-426b-9ed2-eea088fc583b",
-    "timestamp" : "2024-11-19T04:42:59.242Z",
+    "identifier" : "urn:uuid:b721fafa-4baa-47e5-a1f2-ca4eea547cb6",
+    "timestamp" : "2024-11-20T00:02:09.581Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -6843,8 +6843,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:3aca7ea7-500f-49fa-aa72-5bb24e266804",
-    "timestamp" : "2024-11-19T04:43:13.043Z",
+    "identifier" : "urn:uuid:d3584222-be7b-47dc-97d1-9974b272219b",
+    "timestamp" : "2024-11-20T00:02:28.800Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -8136,8 +8136,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:073578b5-714b-42b6-8389-25f968d4581d",
-    "timestamp" : "2024-11-19T04:43:13.091Z",
+    "identifier" : "urn:uuid:c8bff842-3bef-4c0b-84ad-1486059ed878",
+    "timestamp" : "2024-11-20T00:02:29.019Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -9429,8 +9429,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:cb1954d3-dc6a-4a3b-866a-535bc3093add",
-    "timestamp" : "2024-11-19T04:43:13.128Z",
+    "identifier" : "urn:uuid:5af52755-8622-41c9-a578-6f438187ac1b",
+    "timestamp" : "2024-11-20T00:02:29.300Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{

@@ -1,15 +1,10 @@
-CodeSystem: TempHierarchical
-Id: cmc-temp
+CodeSystem: Temporary
+Id: temporary
 Title: "PQ-CMC-FDA Temporary Codes"
-Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide.
+Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implementation guide. """
 * ^caseSensitive = true
 * ^status = #active
 * ^hierarchyMeaning = #is-a
-
-//* #batchsize "Batch Quantity"
-//* #batchinfo "Batch Formula Additional Information"
-//* #BatchUtil "Batch Utilization"
-//* #info "Product Part Additional Information"
 
 // test category (hierarchical)
 * #C60819 "Assay" "A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug."
@@ -26,7 +21,7 @@ Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implemen
 * #C60819 #C171277 "Nucleic Acid Content" "Tests designed to reveal the presence of a particular nucleic acid from a test sample."
 * #C60819 #C205038 "Solvate Content" "Identification of hydrates or solvates by the assay of water of crystallization or solvent found in the crystal."
 * #C60819 #C64858 "Total Protein" "Test to determine total protein concentration in the product."
-* #C60819 #C205006 "Cell and Gene Therapy Product Characterization Assay" "Tests to determine Cell and Gene therapy product properties. Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted molecules, Gene expression, Genetic stability, percent recovery, gene expression, cell surface marker expression, proliferation capacity, total cell number, cell morphology, cell distribution in scaffold, total volume of scaffold, cellular pattern, vector genome concentration, vector infectious titer assay, replication competence assay, DNA homogeneity, transduction efficiency, vector genome concentration, vector infectious titer assay, Replication competence assay."""
+* #C60819 #C205006 "Cell and Gene Therapy Product Characterization Assay" "Tests to determine Cell and Gene therapy product properties. Examples: Viability, Cell number, Morphology, Cell surface markers, Secreted molecules, Gene expression, Genetic stability, percent recovery, gene expression, cell surface marker expression, proliferation capacity, total cell number, cell morphology, cell distribution in scaffold, total volume of scaffold, cellular pattern, vector genome concentration, vector infectious titer assay, replication competence assay, DNA homogeneity, transduction efficiency, vector genome concentration, vector infectious titer assay, Replication competence assay."
 * #C134249 "Container Closure Integrity" "Tests for the adequacy of pharmaceutical packaging and container closures."
 * #C134250 "Uniformity" "Tests to ensure the consistency of the API in the formulation. Test may be done as an IPC, release, or stability test."
 * #C134250 #C205004 "Blend Uniformity" "Test to ensure the adequacy of the mixing of active pharmaceutical ingredients (APIs) with other components of the drug product."
@@ -129,6 +124,8 @@ Description: """Codes are temporarily defined as part of the PQ-CMC-FDA implemen
 * #C45300 #C154433 "Capsule" 
 * #C45300 #C154605 "Tablet" 
 
-* #C54273 "Picture" "A visual representation of an object, scene, person or abstraction."
-* #C45253 "String" "An expression consisting of a linear sequence of symbols (characters or words or phrases)."
-* #C103240 "Chemical Structure" "A representation of the arrangement of atoms and bonds."
+//* #batchsize "Batch Quantity"
+//* #batchinfo "Batch Formula Additional Information"
+//* #BatchUtil "Batch Utilization"
+//* #info "Product Part Additional Information"
+
