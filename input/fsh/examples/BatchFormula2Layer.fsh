@@ -168,7 +168,7 @@ Usage: #inline
 * comprisedOf = Reference(urn:uuid:8a3e11d9-4323-43c4-be00-8f0ea1837070)	
 * name[NonProprietary]	
   * productName = "ASPIRIN 200mg, ACETAMINOPHEN 300mg"
-  * type = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types#NON "Non-Proprietary"	
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part[Scientific][+]	
     * part = "ASPIRIN"	
   * part[Strength][+]	

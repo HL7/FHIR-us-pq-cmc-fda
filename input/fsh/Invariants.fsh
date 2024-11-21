@@ -7,12 +7,12 @@ Severity: #error
 
 Invariant: cmc-when-unii-required
 Description: "A UNII is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer'. A UniProt code is required for any of these categories: 'Protein'"
-Expression: "(classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and (code in ('C48807' | 'C45305' | 'C706' | 'C48803'))).exists()
+Expression: "(classification.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and (code in ('C48807' | 'C45305' | 'C706' | 'C48803'))).exists()
 implies code.where(
   code.coding.exists(system = 'http://fdasis.nlm.nih.gov')
 ).exists())
  and (classification.coding.where(
-  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+  system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and
   code = 'C17021'
 ).exists() implies code.where(
   code.coding.exists(system = 'https://www.uniprot.org')
@@ -21,7 +21,7 @@ Severity: #error
 
 Invariant: cmc-name-isbt
 Description: "Name.type ISBT 128 required for blood products."
-Expression: "classification.where(coding.where(code = '8' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy')"
+Expression: "classification.where(coding.where(code = '8' and system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').exists()).exists() implies name.type.coding.exists(code = '226' and system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl')"
 Severity: #error
 // Note: 8 is the code for for "Structurally Diverse Subtsance - Blood derived"
 // and 226 is the code for "ISBT 128" in substance name type. $NCIT is currently 
@@ -29,24 +29,22 @@ Severity: #error
 Invariant: cmc-ingredient-functions
 Description: "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.
 If Drug Product Component Function Category constituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list."
-Expression: "function.coding.where(code = 'C42637' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists() implies function.coding.code.count() = 2"
+Expression: "function.coding.where(code = 'C42637' and system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').exists() implies function.coding.code.count() = 2"
 Severity: #error
 
 Invariant: cmc-substance-structure-graphic-required
 Description: "A Substance Structure Graphic is required Required for Small Molecules. Equivalent to classification  code equals 'Chemical'."
-Expression: "(classification.where(coding.where(code = '1' and system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').exists()).exists()) implies structure.representation.exists()"
+Expression: "(classification.where(coding.where(code = '1' and system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').exists()).exists()) implies structure.representation.exists()"
 Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
-Expression: "classification.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
+Expression: "classification.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
 Severity: #error
 
 Invariant: cmc-source-material
-//swap back in when NCIt is in THO http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
-// global replace all invariants
 Description: "IF raw material source type equals Microbial, Animal, Plant, Insect or Human THEN the 4 source related attributes are required and the manufacturer and supplier information is highly desirable."
-Expression: "sourceMaterial.type.coding.where(system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and code in ('C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258')).exists()
+Expression: "sourceMaterial.type.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and code in ('C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258')).exists()
 implies (sourceMaterial.genus.exists() and  sourceMaterial.species.exists() and sourceMaterial.part.exists() and sourceMaterial.countryOfOrigin.exists())"
 Severity: #error
 
@@ -54,7 +52,7 @@ Severity: #error
 Invariant: cmc-strength-type-cases2
 Description: "IF Strength Type = Activity THEN Strength Textual, Strength UOM ([arb'U]) and Strength Operator are applicable data elements.
 Strength Textual and Strength UOM will be Mandatory and Operator will be Optional. Codes 75765 [arb'U]; C45420 Activity."
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
 strength
 .extension('http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension')
 .extension.where(
@@ -80,35 +78,23 @@ Severity: #error
 
 Invariant: cmc-component-id-ref
 Description: "If a PPiD ref is present, it must reference the PPiD of another component. It cannot reference itself"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
   component.select(
     property.where(
-      type.coding.exists(
-        system = %system and
-        code = 'PPiDref'
-      )
+      type.text = 'Product Part Identifier Reference'
     ).select(value)
   ).all(
     text in %context.component.select(
       property.where(
-        type.coding.exists(
-          system = %system and
-          code = 'PPiD'
-        )
+        type.text = 'Product Part Identifier'
       ).select(value.text)
     )
   ) and component.where(
     property.where(
-      type.coding.exists(
-        system = %system and
-        code = 'PPiDref'
-      )
+      type.text = 'Product Part Identifier Reference'
     ).select(value.text) =
     property.where(
-      type.coding.exists(
-        system = %system and
-        code = 'PPiD'
-      )
+      type.text = 'Product Part Identifier'
     ).select(value.text)
   ).exists().not()
 )"
@@ -116,7 +102,39 @@ Severity: #error
 // Logic: get all the Ppidrefs. Each of them must exist in the set of all Ids.
 // afterwards check to make sure there are no components that refer to themselves
 
-
+/// old with codings
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//   component.select(
+//     property.where(
+//       type.coding.exists(
+//         system = %system and
+//         code = 'PPiDref'
+//       )
+//     ).select(value)
+//   ).all(
+//     text in %context.component.select(
+//       property.where(
+//         type.coding.exists(
+//           system = %system and
+//           code = 'PPiD'
+//         )
+//       ).select(value.text)
+//     )
+//   ) and component.where(
+//     property.where(
+//       type.coding.exists(
+//         system = %system and
+//         code = 'PPiDref'
+//       )
+//     ).select(value.text) =
+//     property.where(
+//       type.coding.exists(
+//         system = %system and
+//         code = 'PPiD'
+//       )
+//     ).select(value.text)
+//   ).exists().not()
+// )"
 
 //Invariant: cmc-identifer
 //Description: "A document must have an identifier with a system and a value"
@@ -170,8 +188,6 @@ Severity: #error
 // checks if there is a composition which has a type
 // code for its respective section type.
 
-
-
 Invariant: cmc-single-or-multistage
 Description: "if a test is multi-stage, the test can't have a prefix and its stages must have a name and can't be named 'Single Stage' and must be unique. If it's single stage its prefix is 'Single Stage' and its groups can't have prefixes"
 Expression: "((
@@ -197,7 +213,7 @@ Severity: #error
 
 Invariant: cmc-arbitrary-unit-text-required
 Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     property.where(
     type.coding.exists(
         system = %system and (
@@ -207,11 +223,24 @@ Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSyst
     ) and
     value.exists(system = %system and code = 'C75765')
 ).exists() implies property.where(
-    type.coding.exists(
-        code = 'TotWgtTxt' and
-        system = %system
-    )
+    type = 'Total Weight Textual'
 ).exists())"
+/// old with coding
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     property.where(
+//     type.coding.exists(
+//         system = %system and (
+//             code = 'TotWgtNum' or 
+//             code = 'TotWgtDen'
+//         )
+//     ) and
+//     value.exists(system = %system and code = 'C75765')
+// ).exists() implies property.where(
+//     type.coding.exists(
+//         code = 'TotWgtTxt' and
+//         system = %system
+//     )
+// ).exists())"
 Severity: #error
 // Note: checks if a property for the numerator or denominator exists. if it
 // does and it has an arbitrary unit, then there needs to be a slice for 
@@ -225,9 +254,12 @@ Expression: "representation.exists() implies format.exists()"
 Invariant: cmc-capsule-count-required
 Severity: #error
 Description: "Capsule constituent count is required when the dosage form is 'Capsule'"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     manufacturedDoseForm.coding.exists(system = %system and code = 'C154433')
-implies property.where(type.coding.exists(system = %system and code = 'CapConCnt')).exists())"
+implies property.where(type.text = 'Capsule Constituent Count').exists())"
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     manufacturedDoseForm.coding.exists(system = %system and code = 'C154433')
+// implies property.where(type.coding.exists(system = %system and code = 'CapConCnt')).exists())"
 
 Invariant: cmc-only-ISO-3166-1-alpha-3
 Severity: #error
@@ -237,13 +269,22 @@ Expression: "$this.length() = 3"
 Invariant: cmc-coating-indication-required
 Severity: #error
 Description: "Coating indication is required when the dosage form is a tablet, lozenge or capsule"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+/// new, just looking for 'coating indicator' text
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     manufacturedDoseForm.coding.exists(system = %system and (
     code = 'C154605' or
     code = 'C154433' or
     code = 'C154554'
 ))
-implies property.where(type.coding.exists(system = %system and code = 'CoatInd')).exists())"
+implies property.where(type.text = 'Coating Indicator').exists())"
+/// old, pre-ncit-dummy removal. looking for a type codeable concept with a 'CoatInd' code
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     manufacturedDoseForm.coding.exists(system = %system and (
+//     code = 'C154605' or
+//     code = 'C154433' or
+//     code = 'C154554'
+// ))
+// implies property.where(type.coding.exists(system = %system and code = 'CoatInd')).exists())"
 // Note: Currently checks if manufacturedDoseForm is any of the solid oral
 // dose forms (lozenge, capsule, tablet). Can capsules and lozenges have
 // coatings?
@@ -251,46 +292,70 @@ implies property.where(type.coding.exists(system = %system and code = 'CoatInd')
 Invariant: cmc-tablet-layer-count-required
 Severity: #error
 Description: "Tablet layer count is required when the dosage form is a tablet"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     manufacturedDoseForm.coding.exists(
     system = %system and
     code = 'C154605'
 ) implies property.where(
-    type.coding.exists(
-        system = %system and
-        code = 'TabLayCnt'
-    )
+    type.text = 'Tablet Layer Count'
 ).exists())"
+/// old with coding check
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
+//     manufacturedDoseForm.coding.exists(
+//     system = %system and
+//     code = 'C154605'
+// ) implies property.where(
+//     type.coding.exists(
+//         system = %system and
+//         code = 'TabLayCnt'
+//     )
+// ).exists())"
 
 Invariant: cmc-tablet-bead-count-required
 Severity: #error
 Description: "Tablet bead count is required when the dosage form is a tablet"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(manufacturedDoseForm.coding.exists(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(
     system = %system and
     code = 'C154605'
 ) implies property.where(
-    type.coding.exists(
-        system = %system and
-        code = 'BeaTypCnt'
-    )
+    type.text = 'Tablet Bead Type Count'
 ).exists())"
-
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(
+//     system = %system and
+//     code = 'C154605'
+// ) implies property.where(
+//     type.coding.exists(
+//         system = %system and
+//         code = 'BeaTypCnt'
+//     )
+// ).exists())"
 Invariant: cmc-capsule-classification-required
 Severity: #error
 Description: "when the the dosage form is 'capsule' and a 'capsule shell' part
 exists, a capsule shell part classification is mandatory"
-Expression: "defineVariable('system','http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy').select(manufacturedDoseForm.coding.exists(
+Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(
     system = %system and
     code = 'C154433'
 ) and component.type.coding.exists(
     system = %system and
     code = 'C203897'
 ) implies property.where(
-    type.coding.exists(
-        system = %system and
-        code = 'CapClass'
-    )
+    type.text = 'Capsule Classification Category'
 ).exists())"
+
+/// old with coding
+// Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(
+//     system = %system and
+//     code = 'C154433'
+// ) and component.type.coding.exists(
+//     system = %system and
+//     code = 'C203897'
+// ) implies property.where(
+//     type.coding.exists(
+//         system = %system and
+//         code = 'CapClass'
+//     )
+// ).exists())"
 
 
 Invariant: cmc-substance-characterisation-content-required
@@ -327,7 +392,7 @@ Invariant: cmc-impurity-unii-required
 Severity: #error
 Description: "If Product Impurity Chemical Structure Data File is not present, then a unii is required"
 Expression: "structure.representation.type.coding.where(
-  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy' and
+  system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and
   code = 'C103240'
 ).exists().not() implies (
   code.where(
@@ -338,7 +403,7 @@ Expression: "structure.representation.type.coding.where(
 Invariant: cmc-structure-representation-required
 Description: "Either a file or string structure representation is required"
 Expression: "representation.type.coding.where(
-  system = 'http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-ncit-dummy'
+  system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'
   and (code in ('C45253' | 'C103240'))
 ).exists()"
 Severity: #error

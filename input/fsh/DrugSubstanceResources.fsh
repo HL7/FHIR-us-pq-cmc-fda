@@ -691,6 +691,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * insert ShortSetSubstanceNames
 * insert CompanyName
 
+//Rulesets---------------------------------------------------------------------------------------------------------------*/
 RuleSet: SubstanceCharacterization
 * characterization MS
   * technique MS

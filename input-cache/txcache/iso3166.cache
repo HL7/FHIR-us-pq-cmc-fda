@@ -13,8 +13,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:dbec7c93-0d25-4fed-8b79-cfa2324f70c7",
-    "timestamp" : "2024-11-11T16:14:31.535Z",
+    "identifier" : "urn:uuid:f47bbd9a-8637-4cff-80f4-ff4caf734edc",
+    "timestamp" : "2024-11-21T14:54:18.624Z",
     "total" : 747,
     "offset" : 0,
     "parameter" : [{
@@ -3803,8 +3803,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:76d4f0d1-f1a7-4728-a1e2-fc789b46bfa0",
-    "timestamp" : "2024-11-11T16:14:31.676Z",
+    "identifier" : "urn:uuid:ac3c1211-5e4e-421e-95ae-b43ac50dcb48",
+    "timestamp" : "2024-11-21T14:54:18.713Z",
     "total" : 4,
     "offset" : 0,
     "parameter" : [{
@@ -3871,8 +3871,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:593ea876-6e43-4e7d-9e6c-2ae32b5852fd",
-    "timestamp" : "2024-11-11T16:14:31.754Z",
+    "identifier" : "urn:uuid:4ff19565-6299-4853-ba88-11da853aaa6c",
+    "timestamp" : "2024-11-21T14:54:18.736Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -5171,8 +5171,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:9321e3a0-fd31-4e1e-820f-06b11b7fa007",
-    "timestamp" : "2024-11-11T16:14:37.801Z",
+    "identifier" : "urn:uuid:8d056f21-c6e0-45ee-943d-00c4fccb2979",
+    "timestamp" : "2024-11-21T14:54:54.006Z",
     "total" : 4,
     "offset" : 0,
     "parameter" : [{
@@ -5235,7 +5235,8 @@ v: {
   "code" : "ALA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5257,7 +5258,8 @@ v: {
   "code" : "PSE",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5279,7 +5281,8 @@ v: {
   "code" : "SJM",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5301,7 +5304,8 @@ v: {
   "code" : "UMI",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5324,7 +5328,8 @@ v: {
   "code" : "TUR",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5346,7 +5351,8 @@ v: {
   "code" : "TUR",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5359,7 +5365,7 @@ v: {
     "code" : "TUR",
     "display" : "Turkey"
   }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.2.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "parameter" : [{
     "name" : "x-system-cache-id",
@@ -5371,7 +5377,8 @@ v: {
   "code" : "TUR",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5394,7 +5401,8 @@ v: {
   "code" : "USA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5416,7 +5424,8 @@ v: {
   "code" : "USA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5429,7 +5438,7 @@ v: {
     "code" : "USA",
     "display" : "United States of America"
   }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.2.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "parameter" : [{
     "name" : "x-system-cache-id",
@@ -5441,7 +5450,8 @@ v: {
   "code" : "USA",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5454,7 +5464,7 @@ v: {
     "code" : "ARG",
     "display" : "Argentina"
   }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.2.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
   "resourceType" : "Parameters",
   "parameter" : [{
     "name" : "x-system-cache-id",
@@ -5466,7 +5476,8 @@ v: {
   "code" : "ARG",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5489,7 +5500,8 @@ v: {
   "code" : "ARG",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5511,7 +5523,8 @@ v: {
   "code" : "ARG",
   "system" : "urn:iso:std:iso:3166",
   "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
+  "server" : "http://Nuc.lan/r4",
+  "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"
 }
@@ -5537,8 +5550,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:30ed317e-20f8-410c-9377-e1d6b80787a9",
-    "timestamp" : "2024-11-11T16:15:58.629Z",
+    "identifier" : "urn:uuid:8a436ddf-5623-42b6-8a80-d5c1f0599b9f",
+    "timestamp" : "2024-11-21T14:57:37.436Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -6830,8 +6843,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:7b0018c3-62f1-495e-9265-58ffda7c1fbf",
-    "timestamp" : "2024-11-11T16:16:10.676Z",
+    "identifier" : "urn:uuid:56e81c1f-f9b4-491a-a8be-38be6c2ef71b",
+    "timestamp" : "2024-11-21T14:57:56.647Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -8123,8 +8136,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:e6c66b0f-c2af-436f-a16d-b390967c4299",
-    "timestamp" : "2024-11-11T16:16:10.781Z",
+    "identifier" : "urn:uuid:1623c54c-1515-47dd-b35d-bc3d09ad0899",
+    "timestamp" : "2024-11-21T14:57:56.691Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -9416,8 +9429,8 @@ e: {
   "resourceType" : "ValueSet",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:d5a96fb1-ec0d-4049-adef-225e5999e3c0",
-    "timestamp" : "2024-11-11T16:16:10.864Z",
+    "identifier" : "urn:uuid:5d4a1076-c936-423e-b360-eef3442158ef",
+    "timestamp" : "2024-11-21T14:57:56.724Z",
     "total" : 249,
     "offset" : 0,
     "parameter" : [{
@@ -10688,518 +10701,5 @@ e: {
   }
 },
   "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "TUR",
-    "display" : "Turkey"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.7", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "USA",
-    "display" : "United States of America"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.7", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "ARG",
-    "display" : "Argentina"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.7", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "TUR",
-    "display" : "Turkey"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.8", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "USA",
-    "display" : "United States of America"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.8", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "ARG",
-    "display" : "Argentina"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.1.8", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "TUR",
-    "display" : "Turkey"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "USA",
-    "display" : "United States of America"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "ARG",
-    "display" : "Argentina"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "TUR",
-  "display" : "Turkey"
-}, "valueSet" :null, "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "TUR"
-}, "url": "http://hl7.org/fhir/ValueSet/country--0", "version": "5.0.0", "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "TUR",
-    "display" : "Turkey"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-CA", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "USA",
-  "display" : "United States of America"
-}, "valueSet" :null, "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "USA"
-}, "url": "http://hl7.org/fhir/ValueSet/country--0", "version": "5.0.0", "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "USA",
-    "display" : "United States of America"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-CA", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "ARG",
-    "display" : "Argentina"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.0.0", "langs":"en-CA", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "ARG",
-  "display" : "Argentina"
-}, "valueSet" :null, "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "urn:iso:std:iso:3166",
-  "code" : "ARG"
-}, "url": "http://hl7.org/fhir/ValueSet/country--0", "version": "5.0.0", "langs":"en-CA", "useServer":"true", "useClient":"false", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "TUR",
-    "display" : "Turkey"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.2.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Turkey",
-  "code" : "TUR",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "USA",
-    "display" : "United States of America"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.2.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "United States of America",
-  "code" : "USA",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "urn:iso:std:iso:3166",
-    "code" : "ARG",
-    "display" : "Argentina"
-  }]
-}, "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect", "version": "1.2.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
-  "resourceType" : "Parameters",
-  "parameter" : [{
-    "name" : "x-system-cache-id",
-    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
-  }]
-}}####
-v: {
-  "display" : "Argentina",
-  "code" : "ARG",
-  "system" : "urn:iso:std:iso:3166",
-  "version" : "2018",
-  "server" : "http://tx.fhir.org/r4",
-  "unknown-systems" : "",
-  "issues" : {
-  "resourceType" : "OperationOutcome"
-}
-
 }
 -------------------------------------------------------------------------------------

@@ -118,7 +118,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology (required)
 * property 1..* MS
 * property ^slicing.discriminator.type = #value
-* property ^slicing.discriminator.path = "type"
+* property ^slicing.discriminator.path = "type.text"
 * property ^slicing.rules = #closed
 * property ^slicing.description = "Slice based on value"
 * property contains
@@ -144,8 +144,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     For example, a capsule filled with IR and DR beads will exhibit an ER release profile as evident from the pharmacokinetic curve. In this example, the "product overall release profile" is "ER". [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#OvrRelsProf "Product Overall Release Profile"
+  * type.text = "Product Overall Release Profile"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcReleaseProfile (required)
@@ -156,8 +155,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     The dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#OvrRelsMech "Product Overall Release Mechanism"
+  * type.text =  "Product Overall Release Mechanism"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcReleaseMechanism (required)
@@ -168,8 +166,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     A property that identifies whether the drug product contains any coatings. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#CoatInd "Coating Indicator"
+  * type.text = "Coating Indicator"
   * value[x] 1..1 MS
   * value[x] only boolean
 
@@ -180,8 +177,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Note: Non-layered tablets will be considered as one layer tablets.
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TabLayCnt "Tablet Layer Count"
+  * type.text = "Tablet Layer Count"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] = $UCUM#1
@@ -194,8 +190,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
+  * type.text = "Tablet Bead Type Count"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] = $UCUM#1
@@ -207,8 +202,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#CapClass "Capsule Classification Category"
+  * type.text = "Capsule Classification Category"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcCapsuleClassificationCategory (required)
@@ -220,8 +214,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#CapConCnt "Capsule Constituent Count"
+  * type.text = "Capsule Constituent Count"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] = $UCUM#1
@@ -233,8 +226,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     The pictorial representation of the drug product. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#Schematic "Product Schematic"
+  * type.text = "Product Schematic"
   * value[x] 1..1 MS
   * value[x] only Attachment
   * value[x] only GraphicAttachment or PDFAttachment
@@ -246,8 +238,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: Mass, Activity
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#WgtTyp "Product Weight Type"
+  * type.text = "Product Weight Type"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcStrengthTypeTerminology (required)
@@ -259,8 +250,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Note: a single unit of a solid oral dose form could be a tablet or a capsule
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
+  * type.text = "Product Total Weight Numeric Numerator"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] from PqcmcUnitsMeasure (extensible)
@@ -278,8 +268,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Note: For solid oral dose forms, by definition this is 1
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
+  * type.text = "Product Total Weight Numeric Denominator"
   * value[x] 1..1 MS
   * value[x] only SimpleQuantity
   * value[x] from PqcmcUnitsMeasure (extensible)
@@ -293,8 +282,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: International Units for Enzymes
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TotWgtTxt "Total Weight Textual"
+  * type.text = "Total Weight Textual"
   * value[x] 1..1 MS
   * value[x] only markdown
 
@@ -305,8 +293,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Examples: USP/NF, EP, Company Standard
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#QualStd "Quality Standard"
+  * type.text = "Quality Standard"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcQualityBenchmarkTerminology (required)
@@ -314,8 +301,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * property[Sterile]
   * ^short = "Sterile Product Indicator"
   * type 1..1 MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#Sterile "Sterile Product Indicator"
+  * type.text = "Sterile Product Indicator"
   * value[x] 1..1 MS
   * value[x] only boolean
 
@@ -449,8 +435,10 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
 * component.property 1..* MS
+* component.property.type 1..1 MS
+* component.property.type.text 1..1 MS
 * component.property ^slicing.discriminator.type = #value
-* component.property ^slicing.discriminator.path = "type"
+* component.property ^slicing.discriminator.path = "type.text"
 * component.property ^slicing.rules = #closed
 * component.property ^slicing.description = "Slice based on value"
 * component.property contains
@@ -470,8 +458,10 @@ Examples: Intragranular, Extra granular, Blend
     * ^definition = """
       The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]
     """
-    * type MS
-    * type = $NCIT#RelsProf "Product Part Release Profile"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Product Part Release Profile"
+    // * type = $NCIT#RelsProf "Product Part Release Profile"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcReleaseProfile (required)
@@ -482,8 +472,10 @@ Examples: Intragranular, Extra granular, Blend
       The method employed to realize the specified part release profile. [Source: SME Defined] 
       Example: matrix or reservoir
     """
-    * type MS
-    * type = $NCIT#RelsMech "Product Part Release Mechanism"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Product Part Release Mechanism"
+    // * type = $NCIT#RelsMech "Product Part Release Mechanism"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcReleaseMechanism (required)
@@ -494,8 +486,10 @@ Examples: Intragranular, Extra granular, Blend
       The reason the coating or covering was added. [Source: SME Defined]
       Examples: rate-controlling, color, release type, protective, taste masking.
     """
-    * type MS
-    * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Coating Product Part Purpose"
+    // * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcCoatingPurpose (required)
@@ -506,8 +500,10 @@ Examples: Intragranular, Extra granular, Blend
       The hue or the tint of the drug product part. [Source: SME Defined]
       Examples: yellow, pink, blue, pale yellow.
     """
-    * type MS
-    * type = $NCIT#Color "Product Part Color Description"
+    * type 1..1  MS
+      * text 1..1 MS
+      * text = "Product Part Color Description"
+    // * type = $NCIT#Color "Product Part Color Description"
     * value[x] 1..1 MS
     * value[x] only CodeableConceptTextOnly
 
@@ -522,8 +518,10 @@ RuleSet: AdditionalInformationProperty(short)
   A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
   Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
-* type MS
-* type = $NCIT#AddInfo "Product Part Additional Information"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Additional Information"
+// * type = $NCIT#AddInfo "Product Part Additional Information"
 * value[x] 1..1 MS
 * value[x] only markdown
 
@@ -533,8 +531,10 @@ RuleSet: ProductPartIdentifierProperty
   A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
   Examples: 1, A1, Red bead, Blue minitablet
 """
-* type MS
-* type = $NCIT#PPiD "Product Part Identifier"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Identifier"
+// * type = $NCIT#PPiD "Product Part Identifier"
 * value[x] 1..1 MS
 * value[x] only CodeableConceptTextOnly
 // * valueCodeableConcept.coding from CmcRelationshipTypesVS	
@@ -549,8 +549,10 @@ RuleSet: ProductPartIdentifierReferenceProperty
   Identifies the parent or outer-level product part. [Source: SME Defined]
   Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
 """
-* type MS
-* type = $NCIT#PPiDref "Product Part Identifier Reference"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Identifier Reference"
+// * type = $NCIT#PPiDref "Product Part Identifier Reference"
 * value[x] 1..1 MS
 * value[x] only CodeableConceptTextOnly
 
@@ -600,6 +602,7 @@ Examples: dosage form, container closure system, purpose."""
 * insert PQCodeableReference(crossReference.product)
 * crossReference.product only CodeableReference(DrugProductHandle)
 
+
 RuleSet: DosageForm
 * combinedPharmaceuticalDoseForm 1..1 MS
 * combinedPharmaceuticalDoseForm ^short = "Product Dosage Form"
@@ -622,13 +625,13 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "type"
   * ^slicing.rules = #closed
-  * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * ^slicing.description = "Require nonproprietary name. Parts required if present in the nonproprietary name"
   * productName 1..1 MS
   * type 1..1 MS
   * type from cmc-product-name-types-vs (required)
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary]
-  * type = $NameType#PROP "Proprietary"
+  * type = $NCIT#C71898 "Proprietary Name"
   * part 0..* MS
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "type"
@@ -639,7 +642,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
     * type from PqcmcNamePartTerminology (required)
 * name[NonProprietary]
   * obeys cmc-strength-name-must-reference-scientific
-  * type = $NameType#NON "Non-Proprietary"
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part 1..* MS
     * ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.

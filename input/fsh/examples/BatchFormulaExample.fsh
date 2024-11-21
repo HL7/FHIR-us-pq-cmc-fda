@@ -105,7 +105,7 @@ Usage: #inline
 * comprisedOf = Reference(urn:uuid:249ef22b-d521-4304-a388-6b9035f97b22)	
 * name[NonProprietary]	
   * productName = "ATOMOXETINE HYDROCHLORIDE 1mg"	
-  * type = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types#NON "Non-Proprietary"	
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part[Scientific][+]	
     * part = "ATOMOXETINE HYDROCHLORIDE"	
   * part[Strength][+]	

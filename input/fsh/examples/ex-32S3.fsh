@@ -71,7 +71,7 @@ Title: "Substance Characterization - EthylAcetate"
 Description: "Drug Substance Characterization for EthylAcetate"
 Usage: #inline
 * identifier.value = "EthylAcetate"
-* classification[+] = $NCIT#C48807 "Chemical"
+* classification[+] = $NCIT#C48807 "Chemical"  
 * manufacturer = Reference(urn:uuid:8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9)
 * supplier = Reference(urn:uuid:37a26b1a-ede3-4677-943e-72b513f945b7)
 * characterization[+]
