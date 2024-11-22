@@ -794,17 +794,16 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 * component.type from PqcmcProductPartType
 // ingredient
 * component.constituent 1..* MS
-* component.constituent.extension contains pq-additional-info-extension named additional-info 0..1 MS
-* component.constituent.extension[additional-info] ^short = "Drug Product Constituent Additional Information"
-* component.constituent.extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
-Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
-"""
-* component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
-* component.constituent
-* component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
-* component.constituent
-
-
+  * extension contains 
+    pq-additional-info-extension named additional-info 0..1 MS and
+    pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS and
+    pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
+  * extension[additional-info]
+    * ^short = "Drug Product Constituent Additional Information"
+    * ^definition = """
+      A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
+      Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
+    """
   * amount 2..2 MS
   * amount ^slicing.discriminator.type = #value
   * amount ^slicing.discriminator.path = "code"
