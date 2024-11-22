@@ -192,7 +192,6 @@ Usage: #inline
 * manufacturedDoseForm = $NCIT#C154605 "Tablet" 
 * manufacturer = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)	
 * property[BatchSize]	
- // * valueQuantity = $UCUM#\{tbl\} "tablets" 
   * valueQuantity = 2000 $UCUM#1 "1*" 
 * property[BatchUtil]	
   * valueCodeableConcept = $NCIT#C133991 "Development"

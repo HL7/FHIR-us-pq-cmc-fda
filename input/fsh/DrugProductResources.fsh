@@ -725,8 +725,10 @@ Description: "Listing of all components of the dosage form to be used in the man
 * insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization) 
 * property 1..* MS
+  * type 1..1 MS
+    * text 1..1 MS
 * property ^slicing.discriminator.type = #value
-* property ^slicing.discriminator.path = "type"
+* property ^slicing.discriminator.path = "type.text"
 * property ^slicing.rules = #closed
 * property ^slicing.description = "Slice based on value"
 * property contains
@@ -740,8 +742,7 @@ Description: "Listing of all components of the dosage form to be used in the man
     The amount of material in a specific batch size [Source: SME Defined]
     Example: 1000 kg
   """
-  * type MS
-  * type = $NCIT#batchsize "Batch Quantity"
+  * type.text = "Batch Quantity"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] from PqcmcUnitsMeasure (required)
@@ -757,13 +758,13 @@ Description: "Listing of all components of the dosage form to be used in the man
     A categorization of the batch that identifies its usage. [Source: SME Defined]
     Examples: commercial, development.
   """
-  * type MS
-  * type = $NCIT#BatchUtil "Batch Utilization"
+  * type.text = "Batch Utilization"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcBatchUtilizationTerminology (required)
 
 * property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
+
 // Product parts
 * component 1..* MS
   * amount 2..2
@@ -843,18 +844,22 @@ Examples: Intragranular, Extra granular, Blend
 * insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
 // Product part
-* component.property 1..3 MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "type"
-  * ^slicing.rules = #closed
-  * ^slicing.description = "Slice based on value"
+* component.property 1..* MS
+* component.property.type 1..1 MS
+* component.property.type.text 1..1 MS
+* component.property ^slicing.discriminator.type = #value
+* component.property ^slicing.discriminator.path = "type.text"
+* component.property ^slicing.rules = #closed
+* component.property ^slicing.description = "Slice based on value"
 * component.property contains
     PPiD 1..1 MS and
     PPiDref 0..1 MS and
     AddInfo 0..1 MS 
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
-* component.property[AddInfo] insert AdditionalInformationProperty(Batch Component Additional Information)
+* component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
+
+* component.component 0..* MS
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition
