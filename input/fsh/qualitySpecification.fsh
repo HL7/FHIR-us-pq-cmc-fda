@@ -23,6 +23,7 @@ Description: "Numeric level in the hierarchical value-set. As an example, this e
   * ^short = "TestCategory  Level"
   * ^definition = """Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2."""
 * value[x] only positiveInt
+
 Extension: TargetRange
 Id: pq-target-range
 Title: "Target Range"
