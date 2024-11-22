@@ -435,7 +435,6 @@ Description: "The fields needed to represent the Substance Structure and Impurit
  SECTION SLICES
 */
 * section 1..* MS
-* section.entry MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
