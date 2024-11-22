@@ -271,7 +271,7 @@ Usage: #inline
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)	
 * date = 2024-08-01T12:34:56.789Z	
 * title = """Batch formula example two layer tablet"""
-* section	
+* section[BatchFormulaMedicinalProduct]
   * title = "Batch Formula"	
   * entry = Reference(urn:uuid:f0f3ff35-5cfa-6617-b8f1-b8167957f53c)	
 

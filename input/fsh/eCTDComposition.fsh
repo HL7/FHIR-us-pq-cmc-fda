@@ -384,14 +384,24 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 /*
  SECTION SLICES - not requried - only one option
 */
-* section 1..1 MS
-* section.entry 1..1 MS
-* section ^definition = "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading."
-* section.code 1..1 MS
-* section.code = $SectionTypes#ich_3.2.p.3.2 "Batch Formula"
-* section.title 1..1 MS
-* insert PQReference(section.entry)
-* section.entry only Reference(BatchFormulaMedicinalProduct)
+* section 1..* MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "code"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Slice on ICH code. only one slice is defined but slicing is left open for interoperability"
+  * ^slicing.ordered = false
+  * code 1..1 MS
+* section contains BatchFormulaMedicinalProduct 1..1 MS
+* section[BatchFormulaMedicinalProduct]
+  * ^definition = """
+    Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading.
+  """
+  * code = $SectionTypes#ich_3.2.p.3.2 "Batch Formula"
+  * title 1..1 MS
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(BatchFormulaMedicinalProduct)
+
 
 Profile: EctdComposition32P55
 Parent: Composition
@@ -408,14 +418,23 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 /*
  SECTION SLICES - not requried - only one option
 */
-* section 1..1 MS
-* section.entry 0..1 MS
-* section ^definition = "Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading."
-* section.code 1..1 MS
-* section.code = $SectionTypes#ich_3.2.p.5.5 "Characterisation of Impurities"
-* section.title 1..1 MS
-* insert PQReference(section.entry)
-* section.entry only Reference(DrugProductwithImpurities)
+* section 1..* MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "code"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Slice on the ICH Section code. only one slice is defined but is left open for other sections that won't be parsed"
+  * ^slicing.ordered = false
+  * code 1..1 MS
+* section contains Characterisation 1..1 MS
+* section[Characterisation]
+  * ^definition = """
+    Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading.
+  """
+  * code = $SectionTypes#ich_3.2.p.5.5 "Characterisation of Impurities"
+  * title 1..1 MS
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(DrugProductwithImpurities)
 
 Profile: EctdComposition32S3
 Parent: Composition

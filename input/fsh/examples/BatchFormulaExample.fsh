@@ -87,8 +87,8 @@ Usage: #inline
 * status = #final	
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)	
 * date = 2024-07-01T12:34:56.789Z	
-* title = """Batch formula example"""	
-* section	
+* title = """Batch formula example"""
+* section[BatchFormulaMedicinalProduct]
   * title = "Batch Formula"	
   * entry = Reference(urn:uuid:d0d2df25-5cfa-4417-b8d1-b8147957f53c)	
 	

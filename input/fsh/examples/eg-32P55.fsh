@@ -74,8 +74,8 @@ Usage: #inline
 * date = 2024-04-24T01:12:07.108Z
 * author = Reference(urn:uuid:98effc99-db2b-428d-89aa-0ce426e02788)
 * title = "eCTD Product Characterisation of Impurities Composition for TabletCoatedBeadsCoatedAll"
-* section.title = "Impurities for TabletCoatedBeadsCoatedAll"
-* section.entry[+] = Reference(urn:uuid:ddd3abad-347c-4d2f-95f3-dd804e250502)
+* section[Characterisation].title = "Impurities for TabletCoatedBeadsCoatedAll"
+* section[Characterisation].entry[+] = Reference(urn:uuid:ddd3abad-347c-4d2f-95f3-dd804e250502)
 
 Instance: 9e8f2d16-66b1-47ec-878d-f50ae021985b
 InstanceOf: CMCeCTDDocument32P55
