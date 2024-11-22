@@ -51,7 +51,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s60.html eCTD Heading 3.2.S.6
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
-      Testing Site and Organization Identifier Type Terminology
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 }

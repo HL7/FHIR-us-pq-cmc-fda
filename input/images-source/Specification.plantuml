@@ -16,6 +16,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
       **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
   node "DrugProductHandle" as NN {
