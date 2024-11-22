@@ -61,7 +61,7 @@ Usage: #inline
 * date = 2024-07-16T10:15:00.000Z
 * author = Reference(urn:uuid:f22ab70c-20c0-4ee4-848b-622b67ec8592)
 * title = "eCTD Product Characterisation of Impurities"
-* section
+* section[Characterisation]
   * title = "Substance Impurities for AmphetamineSalt_1"
   * entry = Reference(urn:uuid:6248d2ea-c9e0-4280-9beb-08b7041071c2)
 
