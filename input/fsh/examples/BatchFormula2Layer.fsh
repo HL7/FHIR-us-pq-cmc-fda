@@ -192,7 +192,6 @@ Usage: #inline
 * manufacturedDoseForm = $NCIT#C154605 "Tablet" 
 * manufacturer = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)	
 * property[BatchSize]	
- // * valueQuantity = $UCUM#\{tbl\} "tablets" 
   * valueQuantity = 2000 $UCUM#1 "1*" 
 * property[BatchUtil]	
   * valueCodeableConcept = $NCIT#C133991 "Development"
@@ -226,8 +225,11 @@ Usage: #inline
     * location = $NCIT#C203882 "Extragranular"
     * location.text = "Purple Layer"
    // water	
-  * constituent[+]	
-    * amount[perBatch] = 305.57 $UCUM#g "gram"
+  * constituent[+]
+    * extension[formulaIngredient]
+      * extension[overagePercent].valueDecimal = 0.02
+      * extension[overageJustification].valueMarkdown = "Evaporation"
+    * amount[perBatch] = 311.68 $UCUM#g "gram"
     * amount[percent] = 33.0 $UCUM#% "percent"
     * hasIngredient.reference = Reference(urn:uuid:95648837-ec81-42d9-970c-eac390f2f604)	
     * location = $NCIT#C203882 "Extragranular"
@@ -277,8 +279,8 @@ Usage: #inline
 
 Instance: 49d3b79e-b436-a242-93ba-b706b4364ab2
 InstanceOf: CMCeCTDDocument32P32
-Title: "Example Batch Formula bundle"
-Description: "FHIR bundle with a CMC eCTD 32P32 profile"
+Title: "Example Batch Formula bundle with two layers"
+Description: "FHIR bundle with a CMC eCTD 32P32 profile - with layers"
 Usage: #example
 * identifier	
   * system = $IDsys	

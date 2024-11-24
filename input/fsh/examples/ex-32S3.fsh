@@ -56,6 +56,7 @@ InstanceOf: CodedOrganization
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
 * identifier[FEINumber].value = "6981397"
 * identifier[FEINumber].system = $FEINumber
+
 Instance: 55f2bbea-1a2d-4240-aef0-bc1a76b39212
 InstanceOf: ImpuritySubstance
 Description: "Impurity substance for DIOXANE"
@@ -65,6 +66,7 @@ Description: "Impurity substance for DIOXANE"
 * code.code = $UNII#J8A3S10O7S
 * name[sub].name = "DIOXANE"
 * name[sub].preferred = true
+
 Instance: 3419cdae-4d99-4068-bfaa-8037550bf327
 InstanceOf: DrugSubstanceCharacterisation
 Title: "Substance Characterization - EthylAcetate"
