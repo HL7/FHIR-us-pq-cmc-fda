@@ -65,6 +65,7 @@ Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
+* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-supplement].valueCanonical = Canonical(NCItTestCategoryHierarchySupplement)
 * ^status = #active
 * $NCIT#C60819 "Assay"
 * $NCIT#C204845 "Active Ingredient Content"
@@ -1177,6 +1178,7 @@ Title: "Manufactured Dose Form Terminology"
 Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
 * ^experimental = false
 * ^status = #active
+* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-supplement].valueCanonical = Canonical(NCItTestCategoryHierarchySupplement)
 * $NCIT#C45299 "Gas"
 * $NCIT#C45298 "Liquid"
 * $NCIT#C154598 "Solution" 
