@@ -3,10 +3,10 @@ RuleSet: child(parent,child)
   * ^property[+].code = #child
   * ^property[=].valueCode = {child}
 
-CodeSystem: NCItTestCategoryHierarchySupplement
-Id: cmc-test-category-hierarchy-supplement
-Title: "PQ-CMC-FDA NCIt Test Category Hieararchy Supplement"
-Description: """Provides hierarchical relationship for the test category value set as a CodeSystem supplement"""
+CodeSystem: NCItHierarchySupplement
+Id: cmc-hierarchy-supplement
+Title: "PQ-CMC-FDA NCIt Hieararchy Supplement"
+Description: """Provides hierarchical relationships for value sets as a CodeSystem supplement to the NCI Thesaurus (NCIt) """
 * ^experimental = false
 * ^status = #draft
 * ^publisher = "NCI Thesaurus (NCIt)"
