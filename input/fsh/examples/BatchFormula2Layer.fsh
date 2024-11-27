@@ -81,7 +81,7 @@ Instance: 99f4a24f-880f-45f1-8364-8e4e03977b2e
 InstanceOf: ExcipientRaw
 Title: "Ingredient substance indentifying information - Maize starch"
 Description: " Maize starch excipient in the two layer tablet"
-Usage: #example 
+ Usage: #inline
 
 * classification = $NCIT#C45305 "Mixture"
 * grade = $NCIT#C134009 "Company Standard"
@@ -114,7 +114,7 @@ Instance: a4624559-6c4f-4e90-996d-bc3bf2f5a3f4
 InstanceOf: ExcipientRaw
 Title: "Ingredient substance indentifying information - Grape skin extract"
 Description: "Grape skin extract excipient"
-Usage: #example
+ Usage: #inline
 
 * classification = $NCIT#C45305 "Mixture"
 * grade = $NCIT#C176793 "BP"
@@ -129,7 +129,7 @@ Instance: 254742fb-7b5b-49f5-b4af-e0d14d81f2f6
 InstanceOf: ExcipientRaw
 Title: "Example 2-layer batch formula ingredient substance - Water"
 Description: "Example 2-layer inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	

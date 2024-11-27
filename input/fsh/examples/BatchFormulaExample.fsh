@@ -137,6 +137,7 @@ Usage: #inline
   * amount[percent] = 100 $UCUM#% "percent"
   // atomexetine hydrochloride	
   * constituent[+]	
+    * extension[StrengthTextual].valueString = "5% atomexetine hydrochloride solution"
     * amount[perBatch] = 25.42 $UCUM#g "gram"	
     * amount[percent] = 0.0477 $UCUM#% "percent"
     * hasIngredient.reference = Reference(urn:uuid:1c1a2a23-1fd7-4487-9682-49877f9f9f77)	
@@ -225,7 +226,7 @@ Instance: 45942749-64db-4f91-88c3-51adb680fed1
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - Acetic Acid"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -262,7 +263,7 @@ Instance: 07c598ee-3dcf-45b7-b4e5-b24812c22aff
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - Sodium Acetate Anhydrous"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -299,7 +300,7 @@ Instance: a339a562-e325-4ce6-a830-d25c27b5e2da
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - MANNITOL"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -336,7 +337,7 @@ Instance: c75df5fb-e962-43a6-9dd3-c6682da10a7e
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - METACRESOL"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -373,7 +374,7 @@ Instance: c4e5b7c6-2e52-48e3-813b-d227cf29329b
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - Water"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	

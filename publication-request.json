@@ -1,9 +1,10 @@
 {
   "package-id" : "hl7.fhir.us.pq-cmc-fda",
-  "version" : "1.0.0",
-  "path" : "http://hl7.org/fhir/us/pq-cmc-fda/STU1",
-  "mode" : "milestone",   
-  "status" : "trial-use",  
-  "sequence" : "STU1",
-  "desc" : "The initial release of this implementation guide."
+  "version" : "2.0.0-ballot",
+  "path" : "http://hl7.org/fhir/us/pq-cmc-fda/STU2-ballot",
+  "mode" : "working",   
+  "status" : "ballot",  
+  "sequence" : "STU2",
+  "desc" : "The January 2025 Ballot STU2 is the second ballot of this implementation guide. It contains Stage 2 content: Substance Characterisation,  Product Batch Formula, and Product Characterisation of Impurities.",
+  "first" : false
 }

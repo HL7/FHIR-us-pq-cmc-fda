@@ -64,7 +64,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       [[ValueSet-pqcmc-release-profile.html Release Profile]]
       [[ValueSet-pqcmc-strength-type-terminology.html Strength Type Terminology]]
       [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-      [[ValueSet-pqcmc-product-characteristic.html Product Characteristic]]
     }
     object "**Extensions**" as objMIDExs {
       [[StructureDefinition-pq-amount-ratio.html Amount Ratio]]
