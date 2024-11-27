@@ -2,7 +2,7 @@ Instance: 49438799-e286-432c-b8d8-68ac77e7f519
 InstanceOf: CodedOrganization
 Title: "CodedOrganization J. Jones Research"
 Description: "Example of a Sponsor type of Organization"
-Usage: #example
+Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "143265625"
 * identifier[DUNSNumber].system = $DUNS
@@ -20,7 +20,7 @@ Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: CodedOrganization
 Title: "Manufacturing Site (J. Jones Research)"
 Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
-Usage: #example
+Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
@@ -41,7 +41,7 @@ Instance: e99bddfa-c1b5-435b-bbe8-24816b4e23e5
 InstanceOf: CodedOrganization
 Title: "Vidinaid"
 Description: "Manufacturing site (Vidinaid) instance with second address line"
-Usage: #example
+Usage: #inline
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -248,7 +248,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C138993 "Identification"
+  * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-001"
   * action[+]
@@ -271,7 +271,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C134256 "Microbial Limits"
+  * reason[=].coding = $NCIT#C134256 "Microbial Limits"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-002"
   * action[+]
@@ -291,9 +291,9 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "UV"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valuePositiveInt = 2
-  * reason[=].coding = $TEMPH#C205014 "Elemental Impurity"
+  * reason[=].coding = $NCIT#C205014 "Elemental Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-003"
   * action[+]
@@ -316,9 +316,9 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * reason[+].extension[categoryLevel].valuePositiveInt = 2
-  * reason[=].coding = $TEMPH#C134002 "Residual Solvent"
+  * reason[=].coding = $NCIT#C134002 "Residual Solvent"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-004"
   * goalId[+] = "28aba010-126e-4c47-8611-367cdacdd87e"
@@ -330,7 +330,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C204971 "Impurity"
+  * reason[=].coding = $NCIT#C204971 "Impurity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-005"
   * goalId[+] = "4b3aa353-3bc7-463f-b4c2-defd041da2c7"
@@ -342,7 +342,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C60821 "Solubility"
+  * reason[=].coding = $NCIT#C60821 "Solubility"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-006"
   * goalId[+] = "8125f603-96e7-4f3e-8b13-c15c5870e6e6"
@@ -404,9 +404,9 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C205026 "Organoleptic"
+  * reason[=].coding = $NCIT#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valuePositiveInt = 2
-  * reason[=].coding = $TEMPH#C138990 "Description/Appearance"
+  * reason[=].coding = $NCIT#C138990 "Description/Appearance"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-101"
   * goalId[+] = "9bc2bfdf-c9b1-440a-bafe-89f2674341d4"
@@ -418,7 +418,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "FTIR"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C138993 "Identification"
+  * reason[=].coding = $NCIT#C138993 "Identification"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-102"
   * goalId[+] = "59e2c94a-d383-4776-9b00-3b97b0741c9a"
@@ -430,7 +430,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C205029 "pH"
+  * reason[=].coding = $NCIT#C205029 "pH"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-103"
   * goalId[+] = "a2ed2d13-e96a-4d7b-b825-c69afd334cf7"
@@ -442,7 +442,7 @@ Usage: #inline
     * coding = $NCIT#C96102 "Compendial"
     * text = "Visual"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C134276 "Residue on Ignition"
+  * reason[=].coding = $NCIT#C134276 "Residue on Ignition"
   * documentation.type = #documentation
   * documentation.label = "USP <281>"
   * goalId[+] = "e046aab8-b10f-4e13-89e6-bfa869a90b38"
@@ -495,9 +495,9 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Colorimetry"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C205026 "Organoleptic"
+  * reason[=].coding = $NCIT#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valuePositiveInt = 2
-  * reason[=].coding = $TEMPH#C134262 "Color of Solution"
+  * reason[=].coding = $NCIT#C134262 "Color of Solution"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-201"
   * goalId[+] = "1779ee35-8725-4322-ae82-89ed499f6864"
@@ -509,7 +509,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Spectrophotometer"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C74723 "Turbidity"
+  * reason[=].coding = $NCIT#C74723 "Turbidity"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-202"
   * goalId[+] = "2897e150-8465-48c7-9269-1cda86dc3075"
@@ -521,9 +521,9 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Smell"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C205026 "Organoleptic"
+  * reason[=].coding = $NCIT#C205026 "Organoleptic"
   * reason[+].extension[categoryLevel].valuePositiveInt = 2
-  * reason[=].coding = $TEMPH#C139027 "Odor"
+  * reason[=].coding = $NCIT#C139027 "Odor"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-203"
   * goalId[+] = "9c86ccba-a210-4ce5-9a23-b145d9f123c6"
@@ -535,7 +535,7 @@ Usage: #inline
     * coding = $NCIT#C96103 "Proprietary"
     * text = "Titration"
   * reason[+].extension[categoryLevel].valuePositiveInt = 1
-  * reason[=].coding = $TEMPH#C134264  "Hardness"
+  * reason[=].coding = $NCIT#C134264  "Hardness"
   * documentation.type = #documentation
   * documentation.label = "EX-TEST-204"
   * goalId[+] = "de0f0d85-5617-4b07-98fc-9976b2dbf216"

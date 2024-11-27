@@ -1,7 +1,6 @@
 RuleSet: DUNSandFEINumber
 * identifier 1..* MS
 * identifier.type 0..1 MS
-* identifier.type from PqcmcOrgIdentifierTypeTerminology (required)
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value

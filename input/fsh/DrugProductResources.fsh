@@ -117,6 +117,8 @@ Example: Tylenol
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]"""
 * manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology (required)
 * property 1..* MS
+* property.type 1..1 MS
+* property.type.text 1..1 MS
 * property ^slicing.discriminator.type = #value
 * property ^slicing.discriminator.path = "type.text"
 * property ^slicing.rules = #closed
