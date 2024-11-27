@@ -2,7 +2,7 @@ Instance: 8ee60ed1-e22f-4d3b-ab08-8986e4e8e1d9
 InstanceOf: CodedOrganization
 Title: "Example of CodedOrganization profile on Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
-Usage: #example
+Usage: #inline
 
 * identifier[DUNSNumber]
   * type.coding = $NCIT#C134003 "DUNS"
@@ -183,6 +183,7 @@ Usage: #inline
 Instance: 928a3bb5-7be3-4d6e-830f-1a2fc6dcee9b
 InstanceOf: GraphicReference
 Title: "Container Closure Attached Document example"
+Description: "An example of of a graphic reference. In this instance it a daigram of a bottle and its cap stored as a png file."
 Usage: #inline
 * content.attachment.title = "bottlePlusCap.png"
 * content.attachment.contentType = urn:ietf:bcp:13#image/png
@@ -283,7 +284,7 @@ Instance: 4f3e9af1-306b-4fad-bf04-7881400b266a
 InstanceOf: CodedOrganization
 Title: "CodedOrganization - Wunderwerke"
 Description: "A company sponsor of a drug application"
-Usage: #example 
+Usage: #inline 
 
 * name = "Wunderwerke"
 * contact.address

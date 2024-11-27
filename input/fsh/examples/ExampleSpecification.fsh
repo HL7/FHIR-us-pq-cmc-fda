@@ -413,7 +413,7 @@ Usage: #inline
 
 * identifier.value = "ExampleSpecification"
 * status = #final
-* type.coding = $SectionTypes#32P51 "Product Specification"
+* type.coding = $SectionTypes#ich_3.2.p.5.1 "Specification(s)"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:33:13.089Z
 * title = """Quality Specification for an example Drug Product"""

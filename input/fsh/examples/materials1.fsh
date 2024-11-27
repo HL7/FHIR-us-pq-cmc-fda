@@ -552,13 +552,13 @@ Usage: #inline
 * date = 2023-12-05T01:34:39.502Z
 * title = """Control of Materials Example"""
 * section[+]
-  * code = $SectionTypes#32S231 "Raw Material Specification"
+  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
   * entry = Reference(urn:uuid:ab241f8c-d21e-4382-a70a-52190dbdf07e)
 * section[+]
-  * code = $SectionTypes#32S231 "Raw Material Specification"
+  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
   * entry = Reference(urn:uuid:a2cba634-a481-4b07-9bd4-62c7ada31e1b)
 * section[+]
-  * code = $SectionTypes#32S231 "Raw Material Specification"
+  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
   * entry = Reference(urn:uuid:5819b223-d3d2-419f-b617-b3a9a3625b89)
 
 
