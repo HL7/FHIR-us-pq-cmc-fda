@@ -65,6 +65,7 @@ Title: "Test Category Terminology"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
+* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-supplement].valueCanonical = Canonical(NCItHierarchySupplement)
 * ^status = #active
 * $NCIT#C60819 "Assay"
 * $NCIT#C204845 "Active Ingredient Content"
@@ -323,40 +324,44 @@ Description: "Substance classes"
 // * $NCIT#12 "Structurally Diverse Substance - Other"
 // * $NCIT#8 "Structurally Diverse Substance - Blood derived"
 
-ValueSet: PqcmcProductCharacteristic
-Id: pqcmc-product-characteristic
-Title: "PQCMC Product Characteristic"
-Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
+//ValueSet: PqcmcProductCharacteristic
+//Id: pqcmc-product-characteristic
+//Title: "PQCMC Product Characteristic"
+//Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
 
 * ^experimental = false
 * ^status = #active
 
-* $NCIT#OvrRelsProf "Product Overall Release Profile"
-* $NCIT#OvrRelsMech "Product Overall Release Mechanism"
-* $NCIT#CoatInd "Coating Indicator"
-* $NCIT#TabLayCnt "Tablet Layer Count"
-* $NCIT#BeaTypCnt "Tablet Bead Type Count"
-* $NCIT#CapConCnt "Capsule Constituent Count"
-* $NCIT#CapClass "Capsule Classification Category"
-* $NCIT#Schematic "Product Schematic"
-* $NCIT#WgtTyp "Product Weight Type"
-* $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
-* $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
-* $NCIT#TotWgtTxt "Total Weight Textual"
-* $NCIT#TotWgtOper "Total Weight Operator"
-* $NCIT#PPiD "Product Part Identifier"
-* $NCIT#PPiDref "Product Part Identifier Reference"
-* $NCIT#RelsProf "Product Part Release Profile"
-* $NCIT#RelsMech "Product Part Release Mechanism"
-* $NCIT#CoatPurpose "Coating Product Part Purpose"
-* $NCIT#Color "Product Part Color Description"
-* $NCIT#ContPercent "Product Part Content Percent"
-* $NCIT#AddInfo "Product Part Additional Information"
-* $NCIT#StrnType "Strength Type (for API)"
-* $NCIT#AmtOper "Product Part Ingredient Amount Operator"
-* $NCIT#AmtText "Product Part Ingredient Amount Textual"
-* $NCIT#QualStd "Quality Standard"
-* $NCIT#Sterile "Sterile Product Indicator"
+//* ^experimental = false
+//* ^status = #active
+
+//* $NCIT#OvrRelsProf "Product Overall Release Profile"
+//* $NCIT#OvrRelsMech "Product Overall Release Mechanism"
+//* $NCIT#CoatInd "Coating Indicator"
+//* $NCIT#TabLayCnt "Tablet Layer Count"
+//* $NCIT#BeaTypCnt "Tablet Bead Type Count"
+//* $NCIT#CapConCnt "Capsule Constituent Count"
+//* $NCIT#CapClass "Capsule Classification Category"
+//* $NCIT#Schematic "Product Schematic"
+//* $NCIT#WgtTyp "Product Weight Type"
+//* $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
+//* $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
+//* $NCIT#TotWgtTxt "Total Weight Textual"
+//* $NCIT#TotWgtOper "Total Weight Operator"
+//* $NCIT#PPiD "Product Part Identifier"
+//* $NCIT#PPiDref "Product Part Identifier Reference"
+//* $NCIT#RelsProf "Product Part Release Profile"
+//* $NCIT#RelsMech "Product Part Release Mechanism"
+//* $NCIT#CoatPurpose "Coating Product Part Purpose"
+//* $NCIT#Color "Product Part Color Description"
+//* $NCIT#ContPercent "Product Part Content Percent"
+//* $NCIT#AddInfo "Product Part Additional Information"
+//* $NCIT#StrnType "Strength Type (for API)"
+//* $NCIT#AmtOper "Product Part Ingredient Amount Operator"
+//* $NCIT#AmtText "Product Part Ingredient Amount Textual"
+//* $NCIT#QualStd "Quality Standard"
+//* $NCIT#Sterile "Sterile Product Indicator"
+
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
@@ -1177,6 +1182,7 @@ Title: "Manufactured Dose Form Terminology"
 Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
 * ^experimental = false
 * ^status = #active
+* ^extension[http://hl7.org/fhir/StructureDefinition/valueset-supplement].valueCanonical = Canonical(NCItHierarchySupplement)
 * $NCIT#C45299 "Gas"
 * $NCIT#C45298 "Liquid"
 * $NCIT#C154598 "Solution" 

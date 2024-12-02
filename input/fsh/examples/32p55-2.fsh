@@ -1,7 +1,7 @@
 Instance: a7a2d35b-5d9d-4a8c-b012-d04a07662c0a
 InstanceOf: CMCeCTDDocument32P55
 Description: "An Example FHIR Bundle containing data for the CMC eCTD 32P55 document"
-Usage: #example
+ Usage: #inline
 * identifier
   * system = $IDsys
   * value = "urn:uuid:a7a2d35b-5d9d-4a8c-b012-d04a07662c0a"
@@ -38,7 +38,7 @@ Usage: #example
 Instance: f22ab70c-20c0-4ee4-848b-622b67ec8592
 InstanceOf: CodedOrganization
 Description: "Sponsor for Amphetamine Salts 32P55"
-Usage: #example
+ Usage: #inline
 
 * name = "WunderChem GmbH"
 * contact.address
@@ -92,7 +92,7 @@ Usage: #inline
 Instance: 8202d18a-df68-4cbd-912d-59c7cff5cfa6
 InstanceOf: ImpuritySubstance
 Description: "Impurity Substance - elementalIron"
-Usage: #example
+ Usage: #inline
 * identifier.value = "ironImpurity"
 * classification = $NCIT#C185190 "Elemental Impurities"
 * structure
@@ -108,7 +108,7 @@ Usage: #example
 Instance: 7f7c63b0-8ad8-4529-b000-bf4b6c384558
 InstanceOf: ImpuritySubstance
 Description: "Impurity Substance - methylamine"
-Usage: #example
+ Usage: #inline
 * identifier.value = "MethylAmine"
 * classification = $NCIT#C176812 "Process Related/Process"
 * characterization[+]
@@ -248,7 +248,8 @@ Usage: #inline
 
 Instance: de75e338-626c-4503-a25d-4fcdd8e39bee
 InstanceOf: StructureReference
-Usage: #example
+Description: "An SDF file in a Structure Reference"
+
 * status = #current
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference"
 * content.attachment

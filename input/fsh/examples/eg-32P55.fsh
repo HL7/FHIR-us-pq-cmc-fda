@@ -1,7 +1,7 @@
 Instance: 58ae52aa-c81e-415a-8791-e67a3195290d
 InstanceOf: ImpuritySubstance
 Description: "Impurity substance - DICHLOROMETHANE"
-Usage: #example
+ Usage: #inline
 * identifier.value = "DCM"
 * classification = $NCIT#C176815 "Residual Solvent"
 * structure.technique.text = "Leftover Solvent"
@@ -19,7 +19,7 @@ Usage: #example
 Instance: ffa30c0b-8031-436a-87f1-635b3bbe5989
 InstanceOf: ImpuritySubstance
 Description: "Impurity substance - hydroxyApatite"
-Usage: #example
+ Usage: #inline
 * identifier.value = "hydroxyApatite"
 * classification = $NCIT#C176816 "Degradation Product"
 * structure.technique.text = "formed from dicalcium phosphate degradation"
@@ -52,7 +52,7 @@ Usage: #inline
 Instance: 98effc99-db2b-428d-89aa-0ce426e02788
 InstanceOf: CodedOrganization
 Description: "Sponsor example for eCTD SP4151"
-Usage: #example
+ Usage: #inline
 
 * name = "connectathon_Site"
 * contact.address
