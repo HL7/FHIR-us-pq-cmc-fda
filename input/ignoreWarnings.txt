@@ -20,7 +20,7 @@ A definition for CodeSystem 'http://terminology.hl7.org/temporary-uri/codeSystem
 Error from http://tx.fhir.org/r5: Unable to provide support for code system http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use
 Unknown System 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' specified, so Concepts and Filters can't be checked (Details: A definition for CodeSystem 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' could not be found, so the code cannot be validated)
 
-# This IG does not use  ValueSet http://hl7.org/fhir/ValueSet/jurisdiction
+# This IG does not use  the HL7l jurisdiction ValueSet 
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 The definition for the element 'MedicinalProductDefinition.name.usage.jurisdiction' 
 %binds to the value set 'http://hl7.org/fhir/ValueSet/jurisdiction' which is experimental, but this structure is not labeled as experimental
