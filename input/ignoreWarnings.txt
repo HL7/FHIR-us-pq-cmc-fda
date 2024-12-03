@@ -11,11 +11,11 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/Stru
 # This is a supplement to the NCI Thesaurus (NCIt)
 INFORMATION: CodeSystem/cmc-hierarchy-supplement: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# Both the resource and the codeSystem are trial use. This is OK.
+# These are inherited from the core specification.
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.snapshot.element[22].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|1.0.0
 INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.differential.element[9].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|1.0.0
 
-# Registered new code system with THO was giving this url as a temporary identifier.  Will be replace when permanent identifier given.
+# Registered new code system with THO was given this url as a temporary identifier.  Will be replace when permanent identifier is provided.
 A definition for CodeSystem 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' could not be found, so the code cannot be validated
 Error from http://tx.fhir.org/r5: Unable to provide support for code system http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use
 Unknown System 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' specified, so Concepts and Filters can't be checked (Details: A definition for CodeSystem 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' could not be found, so the code cannot be validated)

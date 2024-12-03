@@ -9,7 +9,7 @@ license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
 version: 2.0.0-ballot
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel:  Ballot STU2 review
+releaseLabel:  2025Jan
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
@@ -21,7 +21,7 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:  
-  hl7.terminology.r5: 5.5.0
+#  hl7.terminology.r5: 5.5.0
 
 menu:
   Table of Contents: toc.html
