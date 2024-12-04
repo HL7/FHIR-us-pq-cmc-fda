@@ -4,44 +4,31 @@
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference').baseDefinition: US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # Organization conflicts with US Core Organization Profile on identifier codes. National Provider Identifier (NPI), Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories, and NAIC Code are not used to identify drug suppliers. See US Core Ticket FHIR-44853
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization').baseDefinition: US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-reference').baseDefinition: US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-structure-reference').baseDefinition: US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+%US FHIR Usage rules require that all profiles on Organization derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+%US FHIR Usage rules require that all profiles on DocumentReference derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # This is a supplement to the NCI Thesaurus (NCIt)
 INFORMATION: CodeSystem/cmc-hierarchy-supplement: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# These are inherited from the core specification.
-INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.snapshot.element[22].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|1.0.0
-INFORMATION: StructureDefinition/pqcmc-quality-specification: StructureDefinition.differential.element[9].pattern.ofType(Coding): Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/plan-definition-type|1.0.0
-
-# Registered new code system with THO was given this url as a temporary identifier.  Will be replace when permanent identifier is provided.
+# Registered new code system with THO and was provided this url as a temporary identifier.  Will replace when permanent identifier is provided.
 A definition for CodeSystem 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' could not be found, so the code cannot be validated
 Error from http://tx.fhir.org/r5: Unable to provide support for code system http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use
 Unknown System 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' specified, so Concepts and Filters can't be checked (Details: A definition for CodeSystem 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use' could not be found, so the code cannot be validated)
 
 # This IG does not use  the HL7l jurisdiction ValueSet 
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-The definition for the element 'MedicinalProductDefinition.name.usage.jurisdiction' 
-%binds to the value set 'http://hl7.org/fhir/ValueSet/jurisdiction' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'PackagedProductDefinition.legalStatusOfSupply.jurisdiction' 
-%binds to the value set 'http://hl7.org/fhir/ValueSet/jurisdiction' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'PlanDefinition.jurisdiction' 
-%binds to the value set 'http://hl7.org/fhir/ValueSet/jurisdiction' which is experimental, but this structure is not labeled as experimental
-The definition for the element 'SubstanceDefinition.name.jurisdiction' 
 %binds to the value set 'http://hl7.org/fhir/ValueSet/jurisdiction' which is experimental, but this structure is not labeled as experimental
 
-# Using UCUM codes like %{WeightToWeight}, %{WeightToVolume}, and %{VolumeToVolume} for drug product specifications offers key advantages: they ensure consistency, reduce errors, meet regulatory requirements (e.g., eCTD, FHIR), simplify data exchange with machine-readable formats, clearly define concentration types (e.g., w/w, w/v, v/v), and support international collaboration by overcoming language and unit barriers. These codes enhance clarity, compliance, and efficiency in pharmaceutical processes, while not being used in computations.
+# Using UCUM codes like %{WeightToWeight}, %{WeightToVolume}, and %{VolumeToVolume} for drug product specifications offers key advantages: they ensure consistency, reduce errors, meet regulatory requirements (e.g., eCTD, FHIR), simplify data exchange with machine-readable formats, clearly define concentration types (e.g., w/w, w/v, v/v), and support international collaboration by overcoming language and unit barriers. These codes enhance clarity, compliance, and efficiency in pharmaceutical processes, and are not being used in computations.
 %UCUM Codes that contain human readable annotations like {WeightToWeight} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
-%UCUM Codes that contain human readable annotations like {WeightToVolume} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
-%UCUM Codes that contain human readable annotations like {VolumeToVolume} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
 
-# This IG does not uses the default ValueSets either because the element is not used or a required binding is being used.  They are: http://hl7.org/fhir/ValueSet/action-code, 
+# These are all inherited from Core Specification.
 %binds to the value set 'http://hl7.org/fhir/ValueSet/action-code' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/action-participant-function' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/action-reason-code' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/body-site' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/c80-facilitycodes' which is experimental, but this structure is not labeled as experimental
+%binds to the value set 'http://hl7.org/fhir/ValueSet/c80-practice-codes' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/citation-artifact-classifier' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/clinical-findings' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/country' which is experimental, but this structure is not labeled as experimental
@@ -98,7 +85,6 @@ The definition for the element 'SubstanceDefinition.name.jurisdiction'
 %binds to the value set 'http://hl7.org/fhir/ValueSet/substance-weight-type' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/unit-of-presentation' which is experimental, but this structure is not labeled as experimental
 %binds to the value set 'http://hl7.org/fhir/ValueSet/version-algorithm' which is experimental, but this structure is not labeled as experimental
-%binds to the value set 'http://hl7.org/fhir/ValueSet/c80-practice-codes' which is experimental, but this structure is not labeled as experimental
 
 # They are inline examples so that they just show in the bundles.  Comes from having to restrict references to be bundled only. The usage is set to inline because the publisher does not support remote reference defined in the bundle.
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ContainerClosure'): The Implementation Guide contains no explicitly linked examples for this profile
