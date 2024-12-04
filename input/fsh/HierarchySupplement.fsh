@@ -36,10 +36,10 @@ Description: """Provides hierarchical relationships for value sets as a CodeSyst
 * insert child(#C60819,#C205006)
 //* #C134249
 // * #C134250
-* insert child(#C60819,#C205004)
-* insert child(#C60819,#C205019)
-* insert child(#C60819,#C134115)
-* insert child(#C60819,#C205050)
+* insert child(#C134250,#C205004)
+* insert child(#C134250,#C205019)
+* insert child(#C134250,#C134115)
+* insert child(#C134250,#C205050)
 // * #C133961
 // * #C205026
 * insert child(#C205026,#C138990)
