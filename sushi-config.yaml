@@ -9,7 +9,7 @@ license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
 version: 2.0.0-ballot
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel:  2025Jan
+releaseLabel:  STU2 ballot
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
