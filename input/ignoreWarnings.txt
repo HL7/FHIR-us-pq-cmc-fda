@@ -110,3 +110,6 @@ INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-product-with-impurities'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-substance-characterisation'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-batch-formula'): The Implementation Guide contains no explicitly linked examples for this profile
+
+# 08 - The terminology version mismatch and broken links, stem from discrepancies in the dependency hl7.terminology.r5:6.1.0 and are publisher errors related to terminology and link resolution. These errors do not indicate problems with the content or structure of the IG but are artifacts of external dependencies and publishing infrastructure. As such, these warnings can be safely ignored without impacting the validity or usability of the IG.
+%The link 'http://terminology.hl7.org/5.1.0/CodeSystem-v3-nciThesaurus.html' for "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl" cannot be resolved
