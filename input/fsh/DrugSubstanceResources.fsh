@@ -561,7 +561,7 @@ RuleSet: CountryOfOrigin
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
 
-
+//*Stage 2 --------------------------------------------------------------------------------------------------------------*/
 
 //Rulesets---------------------------------------------------------------------------------------------------------------*/
 RuleSet: SubstanceCharacterization
@@ -593,40 +593,6 @@ Example: This is the representation of the instrumental output for the molecule 
     * ^short = "Analytical Instrument Data File"
     * ^definition = """Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
 Example: JCAMP, ADX, ADF."""
-
-Profile: DrugProductIngredient
-Parent: Ingredient
-Id: pqcmc-dp-ingredient
-Title: "Drug Product Batch Formula Ingredient"
-Description: "The amount details about the drug product ingredients in the batch. Use for Batch Formula."
-
-* identifier 0..1 MS
-* substance.code 1..1 MS
-* substance.code ^short = "Ingredient Substance"
-* insert PQCodeableReference(substance.code)
-* substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
-* substance
-  * strength 2..2 MS
-    * ^slicing.discriminator.type = #value
-    * ^slicing.rules = #closed
-    * ^slicing.discriminator.path = "concentration.code"
-    * ^slicing.ordered = false
-  * strength contains 
-    perBatch 1..1 MS and
-    percent 1..1 MS
-  * strength[perBatch]
-    * ^short = "Ingredient Total per Batch"
-    * ^definition = "the total amount of thi ingredient present in the batch"
-    * concentration[x] 1..1 MS
-    * concentration[x] only Quantity
-    * concentrationQuantity.code 1..1 MS
-    * concentrationQuantity.code from PqcmcNonPercentageUnits (required)
-  * strength[percent]
-    * ^short = "Ingredient percent of Total Batch"
-    * concentration[x] 1..1 MS
-    * concentration[x] only Quantity
-    * concentrationQuantity.code 1..1 MS
-    * concentrationQuantity.code from PqcmcPercentageUnits (required)
 
 
 RuleSet: GraphicAndStructureRepresentations(graphicsCardinality, structureFileCardinality,structureStringCardinality)
