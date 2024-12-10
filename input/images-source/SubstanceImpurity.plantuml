@@ -36,10 +36,8 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-substance-characterisation.html]]
       **ValueSets:**
-      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
-      [[ValueSet-pqcmc-representation-types.html Representation Types]]
       [[ValueSet-substance-classification.html Substance Classification]]
-      [[ValueSet-pqcmc-analytical-instrument-data-types.html Analytical Instrument Data File Types]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
     }
   }
 
@@ -49,8 +47,10 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       **Reference:**
       [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
       **ValueSets:**
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+      [[ValueSet-pqcmc-representation-types.html Representation Types]]
       [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]
-      [[ValueSet-pqcmc-analytical-instrument-data-types.html Analytical Instrument Data File Types]]
+      [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
     }
   }
   node "GraphicReference" as NB64 {
@@ -62,13 +62,14 @@ package "[[StructureDefinition-cmc-ectd-document-32s3.html 3.2.S.3 eCTD Heading 
       [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types]]
     }
   }
+
   node "StructureReference" as NBstruc {
 
     object "**Parent Profile:** Base64DocumentReference"  as objb64 {
       **Reference:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
-        **ValueSets:**
-        [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]]
     }
   }
 

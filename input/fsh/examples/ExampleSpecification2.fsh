@@ -2,7 +2,7 @@ Instance: d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
 InstanceOf: CodedOrganization
 Title: "Example of a Supplier Organization"
 Description: "This example if for a Supplier Organization"
-Usage: #inline
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "173265332"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"

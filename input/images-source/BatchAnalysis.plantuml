@@ -138,6 +138,8 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
     object "**Parent:** Organization" as objAu {
       **Reference:**
       [[StructureDefinition-cmc-organization.html]]
+      **ValueSets:**
+      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
   diamond CH

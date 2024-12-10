@@ -2,7 +2,7 @@ Instance: 49438799-e286-432c-b8d8-68ac77e7f519
 InstanceOf: CodedOrganization
 Title: "CodedOrganization J. Jones Research"
 Description: "Example of a Sponsor type of Organization"
-Usage: #inline
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "143265625"
 * identifier[DUNSNumber].system = $DUNS
@@ -20,7 +20,7 @@ Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: CodedOrganization
 Title: "Manufacturing Site (J. Jones Research)"
 Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
-Usage: #inline
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
@@ -41,7 +41,7 @@ Instance: e99bddfa-c1b5-435b-bbe8-24816b4e23e5
 InstanceOf: CodedOrganization
 Title: "Vidinaid"
 Description: "Manufacturing site (Vidinaid) instance with second address line"
-Usage: #inline
+ Usage: #inline
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
