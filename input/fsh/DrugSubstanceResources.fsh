@@ -561,8 +561,6 @@ RuleSet: CountryOfOrigin
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
 
-//*Stage 2 --------------------------------------------------------------------------------------------------------------*/
-
 
 //Rulesets---------------------------------------------------------------------------------------------------------------*/
 RuleSet: SubstanceCharacterization
