@@ -561,7 +561,6 @@ RuleSet: CountryOfOrigin
   * ^short = "Source Organism Country of Origin"
   * ^definition = "The name of the country where the organism was reared. [Source: SME Defined]"
 
-//*Stage 2 --------------------------------------------------------------------------------------------------------------*/
 
 //Rulesets---------------------------------------------------------------------------------------------------------------*/
 RuleSet: SubstanceCharacterization
@@ -593,6 +592,7 @@ Example: This is the representation of the instrumental output for the molecule 
     * ^short = "Analytical Instrument Data File"
     * ^definition = """Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]
 Example: JCAMP, ADX, ADF."""
+
 
 
 RuleSet: GraphicAndStructureRepresentations(graphicsCardinality, structureFileCardinality,structureStringCardinality)
