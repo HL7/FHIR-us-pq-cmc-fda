@@ -84,7 +84,6 @@ Unknown System 'http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 %binds to the value set 'http://hl7.org/fhir/ValueSet/jurisdiction' which is experimental, but this structure is not labeled as experimental
 
-
 # 07 - They are inline examples so that they just show in the bundles.  Comes from having to restrict references to be bundled only. The usage is set to inline because the publisher does not support remote reference defined in the bundle.
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ContainerClosure'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization'): The Implementation Guide contains no explicitly linked examples for this profile
