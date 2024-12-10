@@ -58,6 +58,7 @@ Description: "The type of the product name. Often the proprietary name is unknow
 * $NCIT#C71898 "Proprietary Name"
 * $NCIT#C96971 "Nonproprietary Name"
 
+
 ValueSet: PqcmcTestCategoryTerminology
 Id: pqcmc-test-category-terminology
 Title: "Test Category Terminology"
@@ -360,6 +361,7 @@ Description: "Substance classes"
 //* $NCIT#AmtText "Product Part Ingredient Amount Textual"
 //* $NCIT#QualStd "Quality Standard"
 //* $NCIT#Sterile "Sterile Product Indicator"
+
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
