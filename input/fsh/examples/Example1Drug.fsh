@@ -193,7 +193,6 @@ Instance: 77ad6922-9c59-43d1-93cb-29d063cc2e8c
 InstanceOf: ContainerClosure
 Title: "Example Container Closure"
 Usage: #inline
-//Usage: #inline
 * packageFor = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
 * description = """Plastic Bottle made of high-density polyethylene (HDPE). The plastic is chosen for its resistance to moisture and its ability to maintain the integrity of the drug.
 

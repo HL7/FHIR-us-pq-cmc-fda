@@ -1,31 +1,31 @@
-//	ValueSet: PqcmcImpurityClassificationTerminology
-//	Id: pqcmc-impurity-classification-terminology
-//	Title: "Impurity Classification Terminology"
-//	Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//	* ^experimental = false
-//	* ^status = #draft
-//	* $NCIT#C176816 "Degradation Product"
-//	* $NCIT#C185190 "Elemental Impurities"
-//	* $NCIT#C176815 "Residual Solvent"
-//	* $NCIT#C134001 "Inorganic"
-//	* $NCIT#C176812 "Process Related/Process"
-//	* $NCIT#C185192 "Leachables"
-//	* $NCIT#C176813 "Product Related"
-//	* $NCIT#C92081 "Microbiological"
-//	
-//	ValueSet: PqcmcBatchUtilizationTerminology
-//	Id: pqcmc-batch-utilization-terminology
-//	Title: "Batch utilization Terminology"
-//	Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//	
-//	* ^experimental = false
-//	* ^status = #draft
-//	* $NCIT#C133994 "Bioequivalence"
-//	* $NCIT#C133992 "Clinical"
-//	* $NCIT#C133990 "Commercial"
-//	* $NCIT#C133991 "Development"
-//	* $NCIT#C133993 "Validation"
-//	* $NCIT#C185328 "Stability Study"
+ValueSet: PqcmcImpurityClassificationTerminology	
+Id: pqcmc-impurity-classification-terminology	
+Title: "Impurity Classification Terminology"	
+Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+* ^experimental = false
+* ^status = #active
+* $NCIT#C176816 "Degradation Product"	
+* $NCIT#C185190 "Elemental Impurities"	
+* $NCIT#C176815 "Residual Solvent"	
+* $NCIT#C134001 "Inorganic"	
+* $NCIT#C176812 "Process Related/Process"	
+* $NCIT#C185192 "Leachables"	
+* $NCIT#C176813 "Product Related"	
+* $NCIT#C92081 "Microbiological"
+
+ValueSet: PqcmcBatchUtilizationTerminology	
+Id: pqcmc-batch-utilization-terminology	
+Title: "Batch utilization Terminology"	
+Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+	
+* ^experimental = false
+* ^status = #active
+* $NCIT#C133994 "Bioequivalence"	
+* $NCIT#C133992 "Clinical"	
+* $NCIT#C133990 "Commercial"	
+* $NCIT#C133991 "Development"	
+* $NCIT#C133993 "Validation"	
+* $NCIT#C185328 "Stability Study"
 
 //	CodeSystem: CmcRelationshipTypes
 //	Id: cmc-relationship-types
@@ -323,40 +323,43 @@ Description: "Substance classes"
 // * $NCIT#12 "Structurally Diverse Substance - Other"
 // * $NCIT#8 "Structurally Diverse Substance - Blood derived"
 
-//	ValueSet: PqcmcProductCharacteristic
-//	Id: pqcmc-product-characteristic
-//	Title: "PQCMC Product Characteristic"
-//	Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
-//	
-//	* ^experimental = false
-//	* ^status = #active
-//	
-//	* $NCIT#OvrRelsProf "Product Overall Release Profile"
-//	* $NCIT#OvrRelsMech "Product Overall Release Mechanism"
-//	* $NCIT#CoatInd "Coating Indicator"
-//	* $NCIT#TabLayCnt "Tablet Layer Count"
-//	* $NCIT#BeaTypCnt "Tablet Bead Type Count"
-//	* $NCIT#CapConCnt "Capsule Constituent Count"
-//	* $NCIT#CapClass "Capsule Classification Category"
-//	* $NCIT#Schematic "Product Schematic"
-//	* $NCIT#WgtTyp "Product Weight Type"
-//	* $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
-//	* $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
-//	* $NCIT#TotWgtTxt "Total Weight Textual"
-//	* $NCIT#TotWgtOper "Total Weight Operator"
-//	* $NCIT#PPiD "Product Part Identifier"
-//	* $NCIT#PPiDref "Product Part Identifier Reference"
-//	* $NCIT#RelsProf "Product Part Release Profile"
-//	* $NCIT#RelsMech "Product Part Release Mechanism"
-//	* $NCIT#CoatPurpose "Coating Product Part Purpose"
-//	* $NCIT#Color "Product Part Color Description"
-//	* $NCIT#ContPercent "Product Part Content Percent"
-//	* $NCIT#AddInfo "Product Part Additional Information"
-//	* $NCIT#StrnType "Strength Type (for API)"
-//	* $NCIT#AmtOper "Product Part Ingredient Amount Operator"
-//	* $NCIT#AmtText "Product Part Ingredient Amount Textual"
-//	* $NCIT#QualStd "Quality Standard"
-//	* $NCIT#Sterile "Sterile Product Indicator"
+//ValueSet: PqcmcProductCharacteristic
+//Id: pqcmc-product-characteristic
+//Title: "PQCMC Product Characteristic"
+//Description: "Product Characteristic for the characteristic element in ManufacturedItemDefinition for product composition."
+
+* ^experimental = false
+* ^status = #active
+
+//* ^experimental = false
+//* ^status = #active
+
+//* $NCIT#OvrRelsProf "Product Overall Release Profile"
+//* $NCIT#OvrRelsMech "Product Overall Release Mechanism"
+//* $NCIT#CoatInd "Coating Indicator"
+//* $NCIT#TabLayCnt "Tablet Layer Count"
+//* $NCIT#BeaTypCnt "Tablet Bead Type Count"
+//* $NCIT#CapConCnt "Capsule Constituent Count"
+//* $NCIT#CapClass "Capsule Classification Category"
+//* $NCIT#Schematic "Product Schematic"
+//* $NCIT#WgtTyp "Product Weight Type"
+//* $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
+//* $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
+//* $NCIT#TotWgtTxt "Total Weight Textual"
+//* $NCIT#TotWgtOper "Total Weight Operator"
+//* $NCIT#PPiD "Product Part Identifier"
+//* $NCIT#PPiDref "Product Part Identifier Reference"
+//* $NCIT#RelsProf "Product Part Release Profile"
+//* $NCIT#RelsMech "Product Part Release Mechanism"
+//* $NCIT#CoatPurpose "Coating Product Part Purpose"
+//* $NCIT#Color "Product Part Color Description"
+//* $NCIT#ContPercent "Product Part Content Percent"
+//* $NCIT#AddInfo "Product Part Additional Information"
+//* $NCIT#StrnType "Strength Type (for API)"
+//* $NCIT#AmtOper "Product Part Ingredient Amount Operator"
+//* $NCIT#AmtText "Product Part Ingredient Amount Textual"
+//* $NCIT#QualStd "Quality Standard"
+//* $NCIT#Sterile "Sterile Product Indicator"
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs

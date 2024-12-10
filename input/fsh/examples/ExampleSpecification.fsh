@@ -4,6 +4,7 @@ Title: "drug product for specification"
 Description: "Includes the identifier of the drug product"
 Usage: #inline
 
+
 * identifier.value = "Example2BeadDrug"
 * combinedPharmaceuticalDoseForm = $NCIT#C25158 "CAPSULE"
 * route = $NCIT#C38288 "ORAL"
