@@ -2,7 +2,7 @@ Instance: d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
 InstanceOf: CodedOrganization
 Title: "Example of a Supplier Organization"
 Description: "This example if for a Supplier Organization"
-Usage: #example
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "173265332"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
@@ -128,7 +128,7 @@ Usage: #inline
 
 * identifier.value = "ExampleSpecification2"
 * status = #final
-* type.coding = $SectionTypes#32S41 "Substance Specification"
+* type.coding = $SectionTypes#ich_3.2.s.4.1 "Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:36:51.299Z
 * title = """Quality Specification for an API"""
