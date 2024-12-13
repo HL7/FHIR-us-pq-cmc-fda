@@ -215,12 +215,12 @@ The development of this Implementation Guide is an initiative funded by the US F
 	- Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
   - Josiah Tindor (IBM PM)
   
-At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
+At HL7, the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) Work Group.
 
 The PQ/CMC team would like to acknowledge the contribution of the BR&R WG members who have participated in the Medication-related FHIR resource discussions and helped refine the resources.
 
 #### IP Statements
-{% include ip-statements.xhtml %} 
+{% include ip-statements.xhtml %}
 
 #### Dependencies
 {% include dependency-table.xhtml %}

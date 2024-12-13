@@ -6,10 +6,10 @@ description: "The FDA PQ-CMC FHIR IG is for submission of structured and standar
 
 status: active
 license: CC0-1.0 #https://www.hl7.org/fhir/valueset-spdx-license.html
-version: 2.0.0-ballot
+version: 3.0.0-ballot
 fhirVersion: 5.0.0
 copyrightYear: 2021+
-releaseLabel:  STU2
+releaseLabel:  STU3
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
@@ -27,22 +27,19 @@ menu:
   Table of Contents: toc.html
   Home: index.html
   General Instructions: instruction.html
-  eCTD Profiles Stage 1:
+  eCTD Profiles STU:
     General Information (3.2.S.1): eCTD32S10.html 
     Control of Materials (3.2.S.2.3): eCTD32S23.html  
     Specification (3.2.S.4.1, 3.2.P.4 & 3.2.P.5.1): eCTDSP4151.html 
     Description and Composition of the Drug Product (3.2.P.1): eCTD32P10.html      
-  eCTD Profiles Stage 2:
     Substance Characterisation (3.2.S.3): eCTD32S3.html   
     Product Batch Formula (3.2.P.3.2): eCTD32P32.html 
     Product Characterisation of Impurities (3.2.P.5.5): eCTD32P55.html
-
-#  DRAFT eCTD Profiles:
-#    Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
-#    Substance Container Closure System (3.2.S.6.0): eCTD32S60.html
-#    Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
-#    Stability Summary (3.2.S.7.1 & 3.2.P.8.1): eCTDSP7181.html
-#    Stability Data (3.2.S.7.3 & 3.2.P.8.3): eCTDSP7383.html
+  eCTD Profiles Stage 3:
+    Substance Container Closure System (3.2.S.6.0): eCTD32S60.html
+    Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
+    Stability Summary (3.2.S.7.1 & 3.2.P.8.1): eCTDSP7181.html
+    Stability Data (3.2.S.7.3 & 3.2.P.8.3): eCTDSP7383.html
   Artifacts: artifacts.html
   Downloads: downloads.html
   Change Notes: change_notes.html
@@ -75,6 +72,19 @@ pages:
   eCTD32P55.md:
     title: "Product Characterisation of Impurities (3.2.P.5.5)"
     generation: markdown
+  eCTD32S60.md:
+    title: "Substance Container Closure System (3.2.S.6.0)"
+    generation: markdown
+  eCTDSP4454.md:
+    title: "Batch Analyses (3.2.S.4.4 & 3.2.P.5.4)"
+    generation: markdown
+  eCTDSP7181.md:
+    title: "Stability Summary (3.2.S.7.1 & 3.2.P.8.1)"
+    generation: markdown
+  eCTDSP7383.md:
+    title: "Stability Data (3.2.S.7.3 & 3.2.P.8.3)"
+    generation: markdown
+
   artifacts.html:
     title: "Artifact List"
   downloads.html:

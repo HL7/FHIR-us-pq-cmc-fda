@@ -1264,3 +1264,108 @@ Description: "The 3 letter country codes used in GENC and ISO have significant o
 * exclude urn:iso:std:iso:3166#PSE
 * exclude urn:iso:std:iso:3166#SJM
 * exclude urn:iso:std:iso:3166#UMI
+
+
+ValueSet: PqcmcConformanceCriteriaTerminology
+Id: pqcmc-conformance-to-criteria-terminology
+Title: "Conformance to Criteria Terminology"
+Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C80262 "Conforms"
+* $NCIT#C133998 "Does not conform"
+
+ValueSet: PqcmcExpirationDateClassificationTerminology
+Id: pqcmc-expiration-date-classification-terminology
+Title: "Expiration Date Classification Terminology"
+Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C185182 "Approved"
+* $NCIT#C48660 "Not Applicable"
+* $NCIT#C185188 "Proposed"
+
+ValueSet: PqcmcStorageConditionCategoryTerminology
+Id: pqcmc-storage-condition-category-terminology
+Title: "Storage Condition Category Terminology"
+Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"
+* ^experimental = false
+* ^status = #active
+* $NCIT#CC201 "Accelerated"
+* $NCIT#CC202 "Intermediate"
+* $NCIT#CC203 "Long term"
+
+ValueSet: PqcmcStabilityStudyReasonTerminology
+Id: pqcmc-stability-study-reason-terminology
+Title: "Stability Study Reason Terminology"
+Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C115123 "Abbreviated New Animal Drug Application"
+* $NCIT#C73113 "Abbreviated New Drug Application"
+* $NCIT#C96089 "Annual Report"
+* $NCIT#C96094 "Supplement to an Approved Application"
+* $NCIT#C71778 "Biologics License Application"
+* $NCIT#C70877 "Master File"
+* $NCIT#C115122 "Generic Investigational New Animal Drug File"
+* $NCIT#C80440 "Humanitarian Device Exemption (HDE)"
+* $NCIT#C82667 "Investigational Device Exemption"
+* $NCIT#C96091 "Investigational New Animal Drug File"
+* $NCIT#C96090 "Investigational New Drug Application"
+* $NCIT#C96092 "New Active Ingredient"
+* $NCIT#C72901 "New Animal Drug Application"
+* $NCIT#C72899 "New Drug Application"
+* $NCIT#C70880 "Premarket Approval"
+* $NCIT#C80442 "Premarket Notification 510(K)"
+
+ValueSet: PqcmcStudyTypeTerminology
+Id: pqcmc-study-type-terminology
+Title: "Study Type Terminology"
+Description: "Terminology used to qualify the information pertaining to study types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C134028 "Complex"
+* $NCIT#C134027 "Cycled-Simple"
+* $NCIT#C96087 "Photostability"
+* $NCIT#C134026 "Standard"
+
+ValueSet: PqcmcStorageConditionsTerminology
+Id: pqcmc-storage-conditions-terminology
+Title: "Storage Conditions Terminology"
+Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C133936 "20 +/ 5 degrees C"
+* $NCIT#C134018 "25 +/ 2 degrees C/40% +/ 5%RH"
+* $NCIT#C134014 "25 +/ 2 degrees C/60% +/ 5%RH"
+* $NCIT#C134015 "30 +/ 2 degrees C/65% +/ 5%RH"
+* $NCIT#C134017 "30 +/ 2 degrees C/75% +/ 5%RH"
+* $NCIT#C134019 "30 degrees C +/ 2 degrees C/35%RH +/ 5%RH"
+* $NCIT#C134016 "40 +/ 2 degrees C/75% +/ 5%RH"
+* $NCIT#C133940 "40 degrees C +/ 2 degrees C/not more than (NMT) 25%RH"
+* $NCIT#C133935 "5 +/ 3 degrees C"
+* $NCIT#C96148 "Proprietary"
+
+ValueSet: PqcmcContainerOrientationTerminology
+Id: pqcmc-container-orientation-terminology
+Title: "Container Orientation Terminology"
+Description: "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C25241 "Horizontal"
+* $NCIT#C133999 "Inverted"
+* $NCIT#C86043 "Upright"
+* $NCIT#C133915 "Valvedown"
+* $NCIT#C133914 "Valveup"
+
+ValueSet: PqcmcIntervalDescriptionCodeTerminology
+Id: pqcmc-interval-description-code-terminology
+Title: "Interval Description Code Terminology"
+Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C96154 "Ambient Delayed Testing"
+* $NCIT#C96151 "Delayed Testing"
+* $NCIT#C96153 "Frozen Delayed Testing"
+* $NCIT#C96150 "Immediate Testing"
+* $NCIT#C96155 "Refrigerated Delayed Testing"
