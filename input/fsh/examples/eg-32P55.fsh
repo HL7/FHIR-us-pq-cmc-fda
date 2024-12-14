@@ -85,15 +85,12 @@ Usage: #example
 * identifier.value = "urn:uuid:2b738e27-de1f-4f63-8d91-c8860089d2a1"
 * timestamp = 2024-04-24T01:12:07.108Z
 // composition
-* entry[+]
 * entry[+].resource = 8a07e353-9cf6-4f27-8a30-2c2d4f439847
 * entry[=].fullUrl = "urn:uuid:8a07e353-9cf6-4f27-8a30-2c2d4f439847"  
 // product with impurities
-* entry[+]
 * entry[+].resource = ddd3abad-347c-4d2f-95f3-dd804e250502
-* entry[=].fullUrl = "urn:uuid:ddd3abad-347c-4d2f-95f3-dd804e250502".
+* entry[=].fullUrl = "urn:uuid:ddd3abad-347c-4d2f-95f3-dd804e250502"
 // sponsor
-* entry[+]
 * entry[+].resource = 98effc99-db2b-428d-89aa-0ce426e02788
 * entry[=].fullUrl = "urn:uuid:98effc99-db2b-428d-89aa-0ce426e02788"
 // impurities
