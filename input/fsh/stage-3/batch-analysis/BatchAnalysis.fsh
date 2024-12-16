@@ -41,8 +41,8 @@ Extension: PullDateExtension
 Id: pq-pullDate-extension
 Title: "Pull Date"
 Description: "Contains elements related to the pull date of the study samples in a stability study."
-* ^context[+].type = #element
-* ^context[=].expression = "Observation.effectiveDateTime"
+* ^context[+].type = #fhirpath
+* ^context[=].expression = "Observation"
 * value[x] 1..1 MS
   * ^short = "Pull Date"
   * ^definition = """

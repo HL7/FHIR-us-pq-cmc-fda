@@ -28,7 +28,11 @@ Extension: TargetRange
 Id: pq-target-range
 Title: "Target Range"
 Description: "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator"
-Context: PlanDefinition.goal.target
+// Context: "PlanDefinition.goal.target"
+* ^context[+].type = #element
+* ^context[=].expression = "PlanDefinition.goal.target"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.referenceRange"
 * . ?!
 * . ^isModifierReason = "When present, the target cannot have a detail; instead this extension acts as its detail"
 * extension 
