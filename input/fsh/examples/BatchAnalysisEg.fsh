@@ -4,7 +4,7 @@ Usage: #inline
 Title: "Batch Analysis example"
 Description: "An example Batch Analysis (WIP)"
 * extension[qualitySpecification]
-  * extension[specification].valueString = "levothyroxine batch"
+  * extension[specification].valueString = "QS-234 Levothyroxine"
   * extension[specificationVersion].valueString = "1.0.0"
 * identifier.value = "Batch_Analysis_001" 
 * status = #final
@@ -24,7 +24,7 @@ Description: "example batch"
 * instance = true
 * extension[api-batch]
   * extension[manufacturingDate].valueDateTime = "2024-11-30"
-  * extension[manufacturingDateClassification].valueCodeableConcept.text = "Start time"
+  * extension[manufacturingDateClassification].valueCodeableConcept.text = "Starting materials mixing"
   * extension[assignedManufacturer].valueReference = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
   * extension[expirationDateClassification].valueCodeableConcept = $NCIT#C185182 "Approved"
   * extension[batchUtilization].valueCodeableConcept = $NCIT#C185328 "Stability Study"
@@ -36,7 +36,7 @@ Description: "example batch"
       * numerator = 100 'kg' "kilograms"
       * denominator = 1 '1' "1*"
     * extension[closureSystemDescription].valueString = "steel drum with polyethylene lining"
-    * extension[closureType].valueCodeableConcept = $NCIT#C96139 "Stopper"
+    * extension[closureType].valueCodeableConcept = * $NCIT#C96126 "Lug, Metal"
 * identifier.value = "139202"
 // unii:
 * code.concept.text = "054I36CPMN"
