@@ -36,10 +36,27 @@ Description: "example batch"
       * numerator = 100 'kg' "kilograms"
       * denominator = 1 '1' "1*"
     * extension[closureSystemDescription].valueString = "steel drum with polyethylene lining"
-    * extension[closureType].valueCodeableConcept = * $NCIT#C96126 "Lug, Metal"
+    * extension[closureType].valueCodeableConcept = $NCIT#C96126 "Lug, Metal"
 * identifier.value = "139202"
 // unii:
-* code.concept.text = "054I36CPMN"
+* code.reference = Reference(urn:uuid:230f6632-0654-4dfe-afd3-b7b61a6d9736)
+
+
+Instance: 230f6632-0654-4dfe-afd3-b7b61a6d9736
+InstanceOf: SubstanceDefinitionHandle
+Title: "Substance Definition Handle for LevoThyroxine in Batch Analysis Example"
+Description: "LEVOTHYROXINE SODIUM ANHYDROUS -- Substance Definition Handle"
+Usage: #inline
+* identifier.value = "levoThyroxine"
+* classification = $NCIT#C48807 "Chemical"
+* manufacturer = Reference(urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501)
+* molecularWeight.amount = $UCUM#u "unified atomic mass unit"
+* molecularWeight.amount.value = 798.85
+* supplier = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
+* code.code = $UNII#054I36CPMN
+* grade = $NCIT#C134006 "USP-NF"
+* name[gsrs].name = "LEVOTHYROXINE SODIUM ANHYDROUS"
+* name[gsrs].preferred = true
 
 
 Instance: 12d1c42f-0f1f-4908-a9ab-38286295db7a
@@ -150,3 +167,10 @@ Description: "An example Batch analysis bundle for microbe limits in a levoThyro
 * entry[+]
   * resource = 9b7c26c9-a4be-4598-b056-6e3ab136c50d
   * fullUrl = "urn:uuid:9b7c26c9-a4be-4598-b056-6e3ab136c50d"
+// substance definition handle
+* entry[+]
+  * resource = 230f6632-0654-4dfe-afd3-b7b61a6d9736
+  * fullUrl = "urn:uuid:230f6632-0654-4dfe-afd3-b7b61a6d9736"
+* entry[+]
+  * resource = e875ef93-a730-4c44-bead-53663ae7f501
+  * fullUrl = "urn:uuid:e875ef93-a730-4c44-bead-53663ae7f501"
