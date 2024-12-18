@@ -25,14 +25,8 @@ Description: "Includes the properties of the drug product as manufactured."
   """
 * ingredient 1..* MS
   * item MS
-  * item only LiteralCodeableReference
-    * ^short = "UNII"
-    * ^definition = """
-      The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
-      Example: 362O9ITL9D
-      Note: If a UNII does not exist, please go to
-      * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
-    """
+  * insert PQCodeableReference(item)
+  * item only CodeableReference(IngredientBatch)
   * isActive 1..1 MS
     * ^short = "Active ingredient indicator"
   * strength[x] MS
@@ -63,3 +57,13 @@ Description: "Includes the properties of the drug product as manufactured."
     * ^definition = """
       The date the manufacturer guarantees the full potency and safety of a particular batch/lot of medicinal product. The complete point in time date consisting of day, month and year shall be specified using the ISO 8601 date format. [Source: ISO IDMP 11615-2017]
     """
+
+Profile: IngredientBatch
+Parent: Substance
+Id: ingredient-batch
+Title: "Ingredient Batch"
+Description: "Properties for ingredients used in ProductBatch. includes a short manufacturing batch extension and a reference to SubstanceDefinitionHandle or ExcipientRaw"
+* extension contains ingredient-manufacturing-batch named ingredient-batch 1..1 MS
+* code MS
+* insert PQCodeableReference(code)
+* code only CodeableReference(SubstanceDefinitionHandle or ExcipientRaw)
