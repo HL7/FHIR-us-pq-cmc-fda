@@ -1,4 +1,4 @@
-Instance: a242b79e-b706-49d3-93ba-b4364ab2baa3
+Instance: BatchFormulaBundle
 InstanceOf: CMCeCTDDocument32P32
 Title: "Example Batch Formula bundle"
 Description: "FHIR bundle with a CMC eCTD 32P32 profile"

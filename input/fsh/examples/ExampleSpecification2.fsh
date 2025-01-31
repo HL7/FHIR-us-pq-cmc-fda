@@ -136,7 +136,7 @@ Usage: #inline
   * title = "32S41"
   * entry = Reference(urn:uuid:cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93)
 
-Instance: 6004e36e-7df9-469d-9b29-8e9f9bd7e95f
+Instance: SpecificationSubstanceBundle
 InstanceOf: CMCeCTDDocumentSP4151
 Title: "FHIR Document example of 3.2.S.4.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"

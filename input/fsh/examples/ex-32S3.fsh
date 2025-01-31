@@ -28,9 +28,9 @@ Usage: #inline
   * title = "Substance Characterization"
   * entry = Reference(urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327)
 
-Instance: 32532fe8-1bfb-4a0a-998d-9294742a9519
+Instance: CharacterisationBundle
 InstanceOf: CMCeCTDDocument32S3
-Description: "Example of a document bunlde for 3.2.S.3"
+Description: "Example of a document bundle for 3.2.S.3"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:32532fe8-1bfb-4a0a-998d-9294742a9519"

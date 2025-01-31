@@ -192,7 +192,7 @@ Usage: #inline
 * manufacturedDoseForm = $NCIT#C154605 "Tablet" 
 * manufacturer = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)	
 * property[BatchSize]	
-  * valueQuantity = 2000 $UCUM#1 "1*" 
+  * valueQuantity = 2000 $UCUM#{tbl} "tablets"
 * property[BatchUtil]	
   * valueCodeableConcept = $NCIT#C133991 "Development"
 * property[AddInfo]	
@@ -226,9 +226,9 @@ Usage: #inline
     * location.text = "Purple Layer"
    // water	
   * constituent[+]
-    * extension[formulaIngredient]
-      * extension[overagePercent].valueDecimal = 0.02
-      * extension[overageJustification].valueMarkdown = "Evaporation"
+    * extension[ingredientOverage]
+      * extension[percent].valueDecimal = 0.02
+      * extension[justification].valueMarkdown = "Evaporation"
     * amount[perBatch] = 311.68 $UCUM#g "gram"
     * amount[percent] = 33.0 $UCUM#% "percent"
     * hasIngredient.reference = Reference(urn:uuid:95648837-ec81-42d9-970c-eac390f2f604)	
@@ -277,7 +277,7 @@ Usage: #inline
   * title = "Batch Formula"	
   * entry = Reference(urn:uuid:f0f3ff35-5cfa-6617-b8f1-b8167957f53c)	
 
-Instance: 49d3b79e-b436-a242-93ba-b706b4364ab2
+Instance: BatchFormulaBundle2Layer
 InstanceOf: CMCeCTDDocument32P32
 Title: "Example Batch Formula bundle with two layers"
 Description: "FHIR bundle with a CMC eCTD 32P32 profile - with layers"

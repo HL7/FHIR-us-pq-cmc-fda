@@ -222,7 +222,8 @@ Usage: #inline
 * section
   * title = "32P40"
   * entry = Reference(urn:uuid:37bf5cc0-33bf-478b-b84e-ccb35143ef6e)
-Instance: 7cdbb042-9275-4599-a1fe-08877846bf94
+
+Instance: SpedificationExcipientBundle
 InstanceOf: CMCeCTDDocumentSP4151
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient"
 * identifier.system = $IDsys

@@ -140,10 +140,10 @@ Usage: #inline
 * section.title = "Drug Substance Nomeclature and Structure for levoThyroxine"
 * section.entry = Reference(urn:uuid:21b6b724-507e-4cf4-a462-93334b98d166)
 
-Instance: 30536c0e-456c-4f90-9f02-da7be1d289e9
+Instance: GeneralInformationBundle
 InstanceOf: CMCeCTDDocument32S10
 Title: "Bundle for 3.2.S.1"
-Description: "Bundle containng nomenclature and molecular structure"
+Description: "Bundle containing nomenclature and molecular structure"
 Usage: #example 
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:1bf43677-1c61-41dd-93c2-8ec7f327d0f1"

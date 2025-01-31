@@ -675,24 +675,24 @@ Note: The minimum is the scientific name.
 
 // Stage 2
 
-Extension: ProductBatchIngredientExtension
-Id: pq-product-batch-ingredient-extension
-Title: "Product Batch Ingredient Extension"
-Description: "Extension for measurement properties for ingredients in the batch formla."
+Extension: OverageExtension
+Id: pq-overage-extension
+Title: "Overage Extension"
+Description: "Extension for measurements related to excess for ingredients in the batch formla."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * extension contains
-  overagePercent 1..1 MS and
-  overageJustification 1..1 MS 
-* extension[overagePercent].value[x] only decimal
-* extension[overagePercent].value[x] ^short = "Overage Percent"
-* extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
+  percent 1..1 MS and
+  justification 1..1 MS 
+* extension[percent].value[x] only decimal
+* extension[percent].value[x] ^short = "Overage Percent"
+* extension[percent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
 Note: This is not for stability loss, and generally not permitted.
 Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
 """
-* extension[overageJustification].value[x] only markdown
-* extension[overageJustification].value[x] ^short = "Overage Justification"
-* extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
+* extension[justification].value[x] only markdown
+* extension[justification].value[x] ^short = "Overage Justification"
+* extension[justification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
 
 Extension: ProductBatchStrengthTextualExtension
 Id: pq-product-batch-strength-textual-extension
@@ -802,7 +802,7 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 * component.constituent.extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
 Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
 """
-* component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
+* component.constituent.extension contains pq-overage-extension named ingredientOverage 0..1 MS
 * component.constituent
 * component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
 * component.constituent
