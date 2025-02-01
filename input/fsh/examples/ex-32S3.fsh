@@ -25,7 +25,7 @@ Usage: #inline
 * date = 2024-06-19T21:06:21.134Z
 * title = """Substance Characterization for EthylAcetate"""
 * section[Structure]
-  * title = "Substance Characterization"
+  * title = "Elucidation of Structure and Other Characteristics"
   * entry = Reference(urn:uuid:3419cdae-4d99-4068-bfaa-8037550bf327)
 
 Instance: CharacterisationBundle
