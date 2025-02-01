@@ -522,7 +522,7 @@ RuleSet: AdditionalInformationProperty(short)
 """
 * type 1..1 MS
   * text 1..1 MS
-  * text = "Product Part Additional Information"
+  * text = "{short}"
 // * type = $NCIT#AddInfo "Product Part Additional Information"
 * value[x] 1..1 MS
 * value[x] only markdown
