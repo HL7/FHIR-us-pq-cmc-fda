@@ -112,8 +112,8 @@ There are many elements defined by the markdown datatype. The sytlesheets are re
 * Unordered Lists with asterisk only
 * Ordered Lists
 * Links
-* Blockqoutes
-* Backslash Escapses: restricted to asterisk, underscore, curly braces, Parenthesis, plus sign and minus sign
+* Blockquotes
+* Backslash Escape: restricted to asterisk, underscore, curly braces, Parenthesis, plus sign and minus sign
 
 #### Not Supported
 * Emoji

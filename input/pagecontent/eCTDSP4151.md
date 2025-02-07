@@ -11,7 +11,7 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
-    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. 
+    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. 
 
 ### Representation in FHIR
 
@@ -324,8 +324,6 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 ##### Representing Acceptance Criteria of Averaged Replicate Tests
 There are two scenarios for averages. The acceptance criteria of the average is the same as the individual test, in which case the same test can be encoded in the top level Action backbone element. Its title is “Single Stage” and there are one or many goalIDs. Or the acceptance criteria of the average is different than the individual test, in which case either use the Action for the average and Action.Action for the individual acceptance criteria or move down a level to Action.Action and Action.Action.Action. The profile was designed this way to provide flexibility to implementers. The acceptance criteria should indicate the number of replicates in the referenced analytic procedure.
 
-
-
 ##### Representing Methods with Many Test Measures
 The Action backbone is profiled to three levels.  The first level represents the method (analytic procedure) concepts and a simple tests. The second level represents test groups and stages. In the simplest case is _Single Stage_ and two tests. A _Single Stage_ , one test is accomplished at the highest Action level. The third level represents sub-tests. The middle Action level can have Acceptance Criteria.  These are typically calculations on the values obtained from the sub-tests.  Methods using Cascade Impactors typically have Acceptance Criteria for the plates and group the plates and assign Acceptance Criteria to the groups.  The example below shows three Groups and their associated plates.  Both the Groups and their sub-test each have their own goalIDs that link to their respective Acceptance Criteria.  The word "Stage" for the sub-tests has no association with _Stage_ as mapped to the PlanDefinition resource.  In this case it referring to the stage of the cascade impactor modelling inhalation.
 
@@ -427,12 +425,12 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 
 ### Example 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Bundle
 
-This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [4a7e17c1-a611-4cc7-9a71-8005a8b427ab](Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab.html)  
+This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [SpecificationProductBundle](Bundle-SpecificationProductBundle.html)  
 
-Additionally, there is an example specification to show the reference to a Drug Substance [6004e36e-7df9-469d-9b29-8e9f9bd7e95f](Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f.html). Its [narrative layout](#drug-substance-specification-example) is show below the Drug Product specification.
+Additionally, there is an example specification to show the reference to a Drug Substance [SpecificationSubstanceBundle](Bundle-SpecificationSubstanceBundle.html). Its [narrative layout](#drug-substance-specification-example) is shown below the Drug Product specification.
 
 For examples of specifications referencing excipients see: 
-- [Control of Materials Example](Bundle-7ce2088d-d281-4e2f-9a25-120a1f9805d1.html)
+- [Control of Materials Example](Bundle-ControlMaterialsBundle.html)
 
 #### Drug Product Specification Example
 
