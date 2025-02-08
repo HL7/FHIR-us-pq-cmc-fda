@@ -13,7 +13,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
       node "DrugProductHandle" as NN {
 
             object "**Parent:** MedicinalProductDefinition" as obj3 {
-                  **Reference:**
+                  **Page:**
                   [[StructureDefinition-pqcmc-drug-product-handle.html]]
                   **ValueSets:**
                   [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
@@ -26,7 +26,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
       node "SubstanceDefinitionHandle for API" as NNS {
 
             object "**Parent Profile:** DrugSubstance" as obj4 {
-                  **Reference:**
+                  **Page:**
                   [[StructureDefinition-pqcmc-routine-drug-substance.html]]
                   **ValueSets:**
                   [[ValueSet-substance-classification.html Substance Classification]]
@@ -37,7 +37,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
       node "MfgTestSiteOrganization" as NMFG {
 
             object "**Parent:** Organization" as objDP {
-                  **Reference:**
+                  **Page:**
                   [[StructureDefinition-cmc-organization.html]]
                   **ValueSets:**
                   Testing Site and Organization Identifier Type Terminology
@@ -47,7 +47,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
       node "StabilitySummary" as NMain {
 
             object "**Parent:** PlanDefinition" as objMain {
-                  **Reference:**
+                  **Page:**
                   [[StructureDefinition-pqcmc-stability-summary.html]]
                   **ValueSets:**
                   [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
@@ -64,7 +64,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
       node "EctdCompositionSP7181" as N1 {
 
             object "**Parent:** Composition" as obj1 {
-                  **Reference:**
+                  **Page:**
                   [[StructureDefinition-ectd-composition-sp7181.html]]
                   **ValueSets:**
                   [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
@@ -73,7 +73,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
       node "CodedOrganization" as NSO {
 
             object "**Parent:** Organization" as objAu {
-                  **Reference:**
+                  **Page:**
                   [[StructureDefinition-cmc-organization.html]]
                   **ValueSets:**
                   Testing Site and Organization Identifier Type Terminology

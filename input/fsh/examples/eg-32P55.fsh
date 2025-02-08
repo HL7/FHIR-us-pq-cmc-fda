@@ -77,7 +77,7 @@ Usage: #inline
 * section[Characterisation].title = "Impurities for TabletCoatedBeadsCoatedAll"
 * section[Characterisation].entry[+] = Reference(urn:uuid:ddd3abad-347c-4d2f-95f3-dd804e250502)
 
-Instance: 9e8f2d16-66b1-47ec-878d-f50ae021985b
+Instance: CharacterisationImpuritiesProductBundle
 InstanceOf: CMCeCTDDocument32P55
 Description: "FHIR document bundle with the CMC eCTD 32P55 profile for a Drug Product"
 Usage: #example

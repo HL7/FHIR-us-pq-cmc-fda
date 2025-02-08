@@ -259,7 +259,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (
 Profile: EctdCompositionSP4151
 Parent: Composition
 Id: ectd-composition-sp4151
-Title: "eCTD Specification Composition"
+Title: "eCTD Specification"
 Description: "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials."
 
 * status = #final
@@ -345,7 +345,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 Profile: EctdComposition32S23
 Parent: Composition
 Id: ectd-composition-32s23
-Title: "eCTD Substance Control of Materials Composition"
+Title: "eCTD Substance Control of Materials"
 Description: "The fields needed to represent the Substance Control of Materials to be included under the eCTD 3.2.S.2.3 heading. References Sponsor Organization and Drug Substance Materials."
 
 * status = #final
@@ -377,7 +377,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#32P32 "Product Batch Formula"
+* type = $SectionTypes#ich_3.2.p.3.2 "Batch Formula"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -406,12 +406,12 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 Profile: EctdComposition32P55
 Parent: Composition
 Id: ectd-composition-32p55
-Title: "eCTD Product Characterisation of Impurities Composition"
+Title: "eCTD Product Characterisation of Impurities"
 Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#32P55 "Product Characterisation of Impurities"
+* type = $SectionTypes#ich_3.2.p.5.5 "Characterisation of Impurities"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)

@@ -13,7 +13,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "CodedOrganization" as NSO {
 
         object "**Parent:** Organization" as objAu {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-cmc-organization.html]]
             **ValueSets:**
             [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
@@ -23,7 +23,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "ExcipientRaw" as N2all1 {
 
         object "**Parent:** SubstanceDefinition" as objall22 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-excipient.html]]
             **ValueSets:**
             [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
@@ -34,7 +34,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "QualitySpecification" as N2all {
 
         object "**Parent:** PlanDefinition" as objall2 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-quality-specification.html]]
             **ValueSets**
             [[ValueSet-pqcmc-specification-status-terminology.html Specification Status Terminology]]
@@ -54,7 +54,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "DrugSubstanceNomenclatureMolecularStructure-DrugSubstanceCharacterisation" as NN {
 
         object "**Parent Profile:** SubstanceDefinition" as obj33 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
             **ValueSets:**
             [[ValueSet-substance-classification.html Substance Classification]]
@@ -67,7 +67,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "ImpuritySubstance" as N6 {
 
         object "**Parent:** SubstanceDefinition" as obj2 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
             **ValueSets:**
             [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]
@@ -76,7 +76,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "GraphicReference" as NB64 {
 
         object "**Parent:** Base64DocumentReference"  as obj64 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-graphic-reference.html]]
         }
     }
@@ -84,7 +84,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "PolymorphicForm" as N2 {
 
         object "**Parent:** SubstanceDefinition" as obj2poly {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-polymorphic-form.html]]
             **ValueSets:**
             [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
@@ -95,7 +95,7 @@ package "eCTD Drug Substance Bundle" as NODES {
     node "StructureReference" as NBstruc {
 
         object "**Parent:** Base64DocumentReference"  as objb64 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-structure-reference.html]]
         }
     }

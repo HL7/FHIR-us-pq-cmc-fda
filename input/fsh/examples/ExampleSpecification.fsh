@@ -421,7 +421,7 @@ Usage: #inline
   * title = "32P51"
   * entry = Reference(urn:uuid:aa514363-d43f-4052-b44e-b67aa4d6dee7)
 
-Instance: 4a7e17c1-a611-4cc7-9a71-8005a8b427ab
+Instance: SpecificationProductBundle
 InstanceOf: CMCeCTDDocumentSP4151
 Title: "FHIR Document example of 3.2.P.5.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Product"

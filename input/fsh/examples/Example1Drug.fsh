@@ -318,7 +318,7 @@ Usage: #inline
 * section[ProductComposition].entry = Reference(urn:uuid:a8316fc9-8ca8-4115-81c1-9f8f84c99149)
 * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
 
-Instance: bd0f0a7a-27ea-4884-801d-bd0546e80888
+Instance: DescriptionCompositionBundle
 InstanceOf: CMCeCTDDocument32P10
 Title: "CMCeCTDDocument32P10 bundle"
 Description: "A bundle for 3.2.P.1.0"

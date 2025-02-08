@@ -210,7 +210,7 @@ Usage: #inline
       * goalId[+] = "e493cb3d-45b6-4463-b9b6-e588c51e032c"
 Instance: 4bd1ed57-852b-42be-a9b0-355f8a2aa7d4
 InstanceOf: EctdCompositionSP4151
-Description: "Composition SP4151 implementing eCTD 3.2.P.4.0"
+Description: "Composition SP4151 implementing eCTD 3.2.P.4.0 for a sourced excipient"
 Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
 * identifier.value = "CochinealSpecificationComposition"
@@ -222,9 +222,10 @@ Usage: #inline
 * section
   * title = "32P40"
   * entry = Reference(urn:uuid:37bf5cc0-33bf-478b-b84e-ccb35143ef6e)
-Instance: 7cdbb042-9275-4599-a1fe-08877846bf94
+
+Instance: SpecificationExcipientBundle
 InstanceOf: CMCeCTDDocumentSP4151
-Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient"
+Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient with a source material"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:813b4312-8b6d-42cc-9b8c-8bb6463388cc"
 * timestamp = 2024-01-01T19:42:35.255Z

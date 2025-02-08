@@ -562,7 +562,7 @@ Usage: #inline
   * entry = Reference(urn:uuid:5819b223-d3d2-419f-b617-b3a9a3625b89)
 
 
-Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
+Instance: ControlMaterialsBundle
 InstanceOf: CMCeCTDDocument32S23
 Title: "eCTD Document for 32S23"
 Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."

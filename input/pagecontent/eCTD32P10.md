@@ -66,7 +66,7 @@ Not presently defined. Content will be added in the future when FDA PQ/CMC FHIR 
 
 ### Examples
 
-This image demonstrates a multilayer tablet displayed with narrative inserted in the composition text element.  It has two parts. The XML can be found on the Artifacts page and does not contain the narrative in the image, rather it contains the narrative generated for all examples by the IG publisher program. It is on the artifacts page and in the Bundle profile. [bd0f0a7a-27ea-4884-801d-bd0546e80888](Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888.html)
+This image demonstrates a multilayer tablet displayed with narrative inserted in the composition text element.  It has two parts. The XML can be found on the Artifacts page and does not contain the narrative in the image, rather it contains the narrative generated for all examples by the IG publisher program. It is on the artifacts page and in the Bundle profile. [DescriptionCompositionBundle](Bundle-DescriptionCompositionBundle.html)
 
 {::options parse_block_html="false" /}
 <figure>

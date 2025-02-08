@@ -14,7 +14,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "DrugProductBatch" as NN {
 
               object "**Parent:** Medication" as obj3 {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pqcmc-drug-product-instance.html]]
                      **ValueSets:**
                      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
@@ -48,7 +48,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "DrugSubstanceBatch" as NNS {
 
               object "**Parent:** Substance" as obj4 {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
                      **ValueSets:**
                      Batch utilization Terminology
@@ -76,7 +76,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "StabilityStudyIntervalReport" as Ninterval {
 
               object "**Parent:** DiagnosticReport" as objinterval {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pqcmc-stability-study-interval-report.html]]
               }
               object "**Extensions**" as objIntEx {
@@ -90,7 +90,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "BatchAnalysis" as N2 {
 
               object "**Parent:** DiagnosticReport" as obj2 {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pqcmc-batch-analysis.html]]
               }
               object "**Extensions**" as objQSEx {
@@ -102,7 +102,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "MfgTestSiteOrganization" as NMFG {
 
               object "**Parent:** Organization" as objDP {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-cmc-organization.html]]
                      **ValueSets:**
                      Testing Site and Organization Identifier Type Terminology
@@ -112,7 +112,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "StabilitySubStudy" as NSub {
 
               object "**Parent:** ResearchStudy" as objSub {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pq-stability-sub-study.html]]
                      **ValueSets:**
                      Study Type Terminology
@@ -131,7 +131,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "StabilityStudy" as NMain {
 
               object "**Parent:** ResearchStudy" as objMain {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pq-stability-study.html]]
                      **ValueSets:**
                      Stability Study Reason Terminology
@@ -147,7 +147,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "StabilitySubStudy" as NSub2 {
 
               object "Another StabilitySubStudy" as objSub2 {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pq-stability-sub-study.html]]
 
               }
@@ -156,7 +156,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "ResultObservation" as NNOBS {
 
               object "**Parent:** Observation" as observ3 {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pq-result-observation.html]]
                      **ValueSets:**
                      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
@@ -176,7 +176,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "MultipleReplicatesResultObservation" as NNstage {
 
               object "**Parent:** Observation" as observS {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-pq-result-observation.html]]
                      **ValueSets:**
                      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
@@ -195,7 +195,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "EctdCompositionSP7383" as N1 {
 
               object "**Parent:** Composition" as obj1 {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-ectd-composition-sp7383.html]]
                      **ValueSets:**
                      Code system PQCMC Comp Section Types
@@ -204,7 +204,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        node "CodedOrganization" as NSO {
 
               object "**Parent:** Organization" as objAu {
-                     **Reference:**
+                     **Page:**
                      [[StructureDefinition-cmc-organization.html]]
                      **ValueSets:**
                      Testing Site and Organization Identifier Type Terminology

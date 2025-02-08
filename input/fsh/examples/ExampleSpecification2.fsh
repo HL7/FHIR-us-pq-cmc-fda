@@ -86,6 +86,7 @@ Usage: #inline
       * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
+  * prefix = "Single Stage"
   * title = "Microbiological Examination of Nonsterile Products"
   * code
     * coding = $NCIT#C96102 "Compendial"
@@ -96,27 +97,22 @@ Usage: #inline
   * documentation.label = "USP <61>"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 1"
     * title = "Staphylococcus aureus"
     * goalId[+] = "b304ed45-5295-4082-9827-f20e1ff0d1d3"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 2"
     * title = "Pseudomonas aeruginosa"
     * goalId[+] = "d4e38c52-30f6-4bb7-ab84-99439a7266ce"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 3"
     * title = "Bacillus subtilis"
     * goalId[+] = "2abf1f19-e1b1-42e4-b943-79f5fa1642fe"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 4"
     * title = "Total Aerobic Microbial Count (TAMC)"
     * goalId[+] = "c0ed4a79-8f40-4d26-8845-4cea166fb627"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 5"
     * title = "Total Yeasts and Molds Count (TYMC)"
     * goalId[+] = "442983b5-bbc3-4534-9f1b-5ae5e4c531c1"
 
@@ -136,7 +132,7 @@ Usage: #inline
   * title = "32S41"
   * entry = Reference(urn:uuid:cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93)
 
-Instance: 6004e36e-7df9-469d-9b29-8e9f9bd7e95f
+Instance: SpecificationSubstanceBundle
 InstanceOf: CMCeCTDDocumentSP4151
 Title: "FHIR Document example of 3.2.S.4.1."
 Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"
