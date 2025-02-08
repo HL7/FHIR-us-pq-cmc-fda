@@ -96,7 +96,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
     }
 
     object "**Extensions**" as objExs2 {
-      [[StructureDefinition-pq-product-batch-ingredient-extension.html Product Batch Ingredient Extension]]
+      [[StructureDefinition-pq-overage-extension.html Overage Extension]]
       [[StructureDefinition-pq-product-batch-strength-textual-extension.html Product Batch Strength Textual Extension]]
       [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
     }

@@ -429,7 +429,8 @@ This example demonstrates a quality specification for a Drug Product. The first 
 
 Additionally, there is an example specification to show the reference to a Drug Substance [SpecificationSubstanceBundle](Bundle-SpecificationSubstanceBundle.html). Its [narrative layout](#drug-substance-specification-example) is shown below the Drug Product specification.
 
-For examples of specifications referencing excipients see: 
+The final example is for a excipient with an animal source for 3.2.P.4.  Drug Excipient [SpecificationExcipientBundle](Bundle-SpecificationExcipientBundle.html). Its [narrative layout](#drug-excipient-specification-example)
+For more examples of specifications referencing excipients see: 
 - [Control of Materials Example](Bundle-ControlMaterialsBundle.html)
 
 #### Drug Product Specification Example
@@ -448,6 +449,17 @@ For examples of specifications referencing excipients see:
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="1200px" src="APIspec.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}
+
+#### Drug Excipient Specification Example
+  This is an example showing a drug excipient as the subject of the specification.
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="excipient.png" />
 
 </figure>
 

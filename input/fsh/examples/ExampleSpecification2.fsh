@@ -86,6 +86,7 @@ Usage: #inline
       * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
+  * prefix = "Single Stage"
   * title = "Microbiological Examination of Nonsterile Products"
   * code
     * coding = $NCIT#C96102 "Compendial"
@@ -96,27 +97,22 @@ Usage: #inline
   * documentation.label = "USP <61>"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Single Stage"
     * title = "Staphylococcus aureus"
     * goalId[+] = "b304ed45-5295-4082-9827-f20e1ff0d1d3"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Single Stage"
     * title = "Pseudomonas aeruginosa"
     * goalId[+] = "d4e38c52-30f6-4bb7-ab84-99439a7266ce"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Single Stage"
     * title = "Bacillus subtilis"
     * goalId[+] = "2abf1f19-e1b1-42e4-b943-79f5fa1642fe"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Single Stage"
     * title = "Total Aerobic Microbial Count (TAMC)"
     * goalId[+] = "c0ed4a79-8f40-4d26-8845-4cea166fb627"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Single Stage"
     * title = "Total Yeasts and Molds Count (TYMC)"
     * goalId[+] = "442983b5-bbc3-4534-9f1b-5ae5e4c531c1"
 
