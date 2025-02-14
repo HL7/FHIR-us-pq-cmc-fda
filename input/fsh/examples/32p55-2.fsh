@@ -1,7 +1,7 @@
 Instance: CharacterisationImpuritiesBundle
 InstanceOf: CMCeCTDDocument32P55
 Description: "An Example FHIR Bundle containing data for the CMC eCTD 32P55 document"
- Usage: #inline
+Usage: #example
 * identifier
   * system = $IDsys
   * value = "urn:uuid:a7a2d35b-5d9d-4a8c-b012-d04a07662c0a"
