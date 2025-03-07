@@ -2,7 +2,7 @@ Instance: CharacterisationImpuritiesBundle
 InstanceOf: CMCeCTDDocument32P55
 Title: "3.2.P.5.5 Bundle 2"
 Description: "Product Characterisation of Impurities bundle - example 2"
- Usage: #inline
+Usage: #example
 * identifier
   * system = $IDsys
   * value = "urn:uuid:a7a2d35b-5d9d-4a8c-b012-d04a07662c0a"
