@@ -40,7 +40,7 @@ Title: "East-West Manufacturing"
 Description: "Manufacture of Chemicals"
  Usage: #inline 
 
-* identifier[DUNSNumber].value = "143265222"
+* identifier[DUNSNumber].value = "147275722"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
 * identifier[FEINumber].type = $NCIT#C134004 "FEI"
@@ -142,8 +142,8 @@ Usage: #inline
 
 Instance: GeneralInformationBundle
 InstanceOf: CMCeCTDDocument32S10
-Title: "Bundle for 3.2.S.1"
-Description: "Bundle containing nomenclature and molecular structure"
+Title: "3.2.S.1 Bundle"
+Description: "General Information bundle"
 Usage: #example 
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:1bf43677-1c61-41dd-93c2-8ec7f327d0f1"

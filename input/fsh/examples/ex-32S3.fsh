@@ -30,7 +30,8 @@ Usage: #inline
 
 Instance: CharacterisationBundle
 InstanceOf: CMCeCTDDocument32S3
-Description: "Example of a document bundle for 3.2.S.3"
+Title: "3.2.S.3 Bundle "
+Description: "Substance Characterisation bundle"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:32532fe8-1bfb-4a0a-998d-9294742a9519"

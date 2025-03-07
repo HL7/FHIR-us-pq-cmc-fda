@@ -1,16 +1,16 @@
 ### Domain Overview
 
-The Substance Characterisation bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.3 folder content to the FDA. This is a higher level CTD folder. At present this folder’s scope is the drug substance 3.2.S.3.1 – Elucidation of Structure and Other Characteristics and 3.2.S.3.2 – Impurities. Some of the content of these sections are described below –
+The Substance Characterisation bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.3 folder content to the FDA. This is a higher level CTD folder. At present this folder’s scope is the drug substance 3.2.S.3.1 - Elucidation of Structure and Other Characteristics and 3.2.S.3.2 - Impurities. Some of the content of these sections are described below –
 
 * 3.2.S.3.1 - Elucidation of Structure and Other Characteristics
     * Pictorial representations of the drug substance produced as the result of elucidating the structure or characterization of the drug substance through various techniques, including, but not limited to, NMR and mass spectrometry.
-* 3.2.S.3.2 – Impurities
+* 3.2.S.3.2 - Impurities
     * For each impurity found within the drug substance, in addition to identifying the impurity by name, and UNII if known, the content includes pictorial representations of the impurities produced as the result of elucidating the structure or characterization of the impurity through various techniques, including, but not limited to, NMR and mass spectrometry.
 
 ### Implementer Instructions
 
 * For a drug product containing more than one active drug substance, the CMC eCTD 32S3 Document should be provided in its entirety for each drug substance.
-    * CMC eCTD 32S3 Document – profile on Bundle Resource (representing the FHIR XML content as a collection of content in a single “document” and which should be repeated for each active substance). There will be one document profile for each S section in module 3.
+    * CMC eCTD 32S3 Document - profile on Bundle Resource (representing the FHIR XML content as a collection of content in a single “document” and which should be repeated for each active substance). There will be one document profile for each S section in module 3.
 * The preferred formats for both the Impurity Structure Graphic and Analysis Graphic are .png and .svg.
 * Guidance in how to prepare SD Files for ANDAs, NDAs, and BLAs is available here: _[Quick Guide to Creating a Structure-Data File (SD File) for Electronic Common Technical Document (eCTD) Submission](https://www.fda.gov/industry/fda-data-standards-advisory-board/fdas-global-substance-registration-system)_. Guidance in how to prepare SD Files for DMFs is available here: [Quick Guide to Creating a Structure-Data File (SD File) for DMF Submissions](https://www.fda.gov/drugs/gdufa-ii-drug-master-files-dmfs/drug-master-file-dmf-submission-resources) 
     * The SD Files should be included in the 32S3 XML bundle as documented in the IG.

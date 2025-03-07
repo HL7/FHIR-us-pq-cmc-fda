@@ -183,12 +183,12 @@ If the analytic procedure only requires that the results be reported, use a text
 ```
 
 #### Complex Acceptance Criteria
-Acceptace Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses.  When this occurs, the modeling in the goal backbone element requries multiple targets.  Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%" becomes three targets: Average of 24 units, units less than Q – 15%, and units less than Q – 25%.  Each has a detailQuantity to express the acceptable amount. 
+Acceptace Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses.  When this occurs, the modeling in the goal backbone element requries multiple targets.  Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%" becomes three targets: Average of 24 units, units less than Q - 15%, and units less than Q - 25%.  Each has a detailQuantity to express the acceptable amount. 
 
 ```xml
 <goal id="1f5530b9-5d21-46ef-80f3-1ae6121c88f9">
   <description>
-    <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"/>
+    <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%"/>
   </description>
   <addresses>
     <coding>
@@ -211,7 +211,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
   </target>
   <target>
     <measure>
-      <text value="NMT 2 units less than Q – 15%"/>
+      <text value="NMT 2 units less than Q - 15%"/>
     </measure>
     <detailQuantity>
       <value value="2"/>
@@ -223,7 +223,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
   </target>
   <target>
     <measure>
-      <text value="no units less than Q – 25%"/>
+      <text value="no units less than Q - 25%"/>
     </measure>
     <detailQuantity>
       <value value="0"/>
@@ -423,7 +423,7 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
         </action>
     </action>
 
-### Example 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Bundle
+### Example 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Bundles
 
 This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [SpecificationProductBundle](Bundle-SpecificationProductBundle.html)  
 

@@ -227,7 +227,7 @@ Usage: #inline
    // water	
   * constituent[+]
     * extension[ingredientOverage]
-      * extension[percent].valueDecimal = 0.02
+      * extension[proportionDecimal].valueDecimal = 0.02
       * extension[justification].valueMarkdown = "Evaporation"
     * amount[perBatch] = 311.68 $UCUM#g "gram"
     * amount[percent] = 33.0 $UCUM#% "percent"
@@ -279,8 +279,8 @@ Usage: #inline
 
 Instance: BatchFormulaBundle2Layer
 InstanceOf: CMCeCTDDocument32P32
-Title: "Example Batch Formula bundle with two layers"
-Description: "FHIR bundle with a CMC eCTD 32P32 profile - with layers"
+Title: "3.2.P.3.2 Bundle for two-layer tablet"
+Description: "Batch Formula bundle for a tablet drug product with two layers"
 Usage: #example
 * identifier	
   * system = $IDsys	

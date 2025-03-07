@@ -326,14 +326,14 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
     Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
   """
 * component
-  * amount 0..2 MS
+  * amount 1..2 MS
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "code"
     * ^slicing.rules = #open
     * ^slicing.ordered = false
   * amount contains 
     weight 0..1 MS and
-    percent 0..1 MS
+    percent 1..1 MS
   * amount[weight]
     * value 1..1 MS
       * ^short = "Product Part Total Weight Numeric"
@@ -678,18 +678,20 @@ Note: The minimum is the scientific name.
 Extension: OverageExtension
 Id: pq-overage-extension
 Title: "Overage Extension"
-Description: "Extension for measurements related to excess for ingredients in the batch formla."
+Description: "Extension for measurements related to excess for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 * extension contains
-  percent 1..1 MS and
+  proportionDecimal 1..1 MS and
   justification 1..1 MS 
-* extension[percent].value[x] only decimal
-* extension[percent].value[x] ^short = "Overage Percent"
-* extension[percent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
+* extension[proportionDecimal].value[x] only decimal
+* extension[proportionDecimal].value[x] ^short = "Overage Percent"
+* extension[proportionDecimal].value[x] ^definition = """Overage is the proportion of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
 Note: This is not for stability loss, and generally not permitted.
 Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+The value is entered as a decimal value less then one.
 """
+* extension[proportionDecimal] obeys overage-percent-limit
 * extension[justification].value[x] only markdown
 * extension[justification].value[x] ^short = "Overage Justification"
 * extension[justification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
