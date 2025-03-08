@@ -15,7 +15,7 @@ Examples: Approved, Not Approved, Reported in a CBE or AR.
 Extension: HierarchicalLevelExtension
 Id: pq-hierarchical-level-extension
 Title: "Hierarchical Level"
-Description: "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguished between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. "
+Description: "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguish between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. "
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action.reason"
 

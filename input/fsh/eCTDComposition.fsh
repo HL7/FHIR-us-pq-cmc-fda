@@ -2,7 +2,7 @@ Profile: CMCeCTDDocument32P10
 Parent: Bundle
 Id: cmc-ectd-document-32p10
 Title: "CMC eCTD 32P10 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles."
+Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles (Description and Composition of the Drug Product)."
 
 * . ^short = "CMC eCTD 32P1 Bundle"
 * identifier MS
@@ -45,7 +45,7 @@ Profile: CMCeCTDDocument32S10
 Parent: Bundle
 Id: cmc-ectd-document-32s10
 Title: "CMC eCTD 32S10 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles."
+Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles (General Information)."
 * . ^short = "CMC eCTD 32S1 Bundle"
 * identifier MS
 * identifier ^definition = "Designation by the author."
@@ -82,7 +82,7 @@ Profile: CMCeCTDDocument32S23
 Parent: Bundle
 Id: cmc-ectd-document-32s23
 Title: "CMC eCTD 32S23 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles."
+Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles (Substance Control of Materials)."
 * . ^short = "CMC eCTD 32S23 Bundle"
 * identifier MS
 * identifier ^definition = "Designation by the author."
@@ -118,7 +118,7 @@ Profile: CMCeCTDDocumentSP4151
 Parent: Bundle
 Id: cmc-ectd-document-sp4151
 Title: "CMC eCTD SP4151 Document"
-Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles."
+Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles (Specification)."
 * . ^short = "CMC eCTD SP4151 Bundle"
 
 * identifier MS
@@ -157,7 +157,7 @@ Profile: CMCeCTDDocument32S3
 Parent: Bundle
 Id: cmc-ectd-document-32s3
 Title: "CMC eCTD 32S3 Document"
-Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles."
+Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles (Substance Characterisation)."
 * . ^short = "CMC eCTD 32S3 Bundle"
 * identifier MS
 * identifier ^definition = "Designation by the author."
@@ -407,7 +407,7 @@ Profile: EctdComposition32P55
 Parent: Composition
 Id: ectd-composition-32p55
 Title: "eCTD Product Characterisation of Impurities"
-Description: "The fields needed to represent the Product Characterisation of Impurities in a to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
+Description: "The fields needed to represent the Product Characterisation of Impurities in a EctdComposition32P55 to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities"
 
 * status = #final
 * identifier 0..1 MS

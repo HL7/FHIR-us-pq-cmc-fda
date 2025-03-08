@@ -75,7 +75,7 @@ Note: This includes primary packaging components and secondary packaging compone
 Extension: AmountRatio
 Id: pq-amount-ratio
 Title: "Amount Ratio"
-Description: "represent an amount as a ratio in ManufacturedItemDefinition"
+Description: "The fields needed to represent an amount as a ratio."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component"
 * ^context[+].type = #element
@@ -560,7 +560,7 @@ Profile: DrugProductHandle
 Parent: MedicinalProductDefinition
 Id: pqcmc-drug-product-handle 
 Title: "Drug Product Handle"
-Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure."
+Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure. Profile on MedicinalProductDefinition."
 
 * identifier 0..1 MS
 * identifier ^short = "Optional user designated identifier"
@@ -697,7 +697,7 @@ The value is entered as a decimal value less then one.
 Extension: ProductBatchStrengthTextualExtension
 Id: pq-product-batch-strength-textual-extension
 Title: "Product Batch Strength Textual Extension"
-Description: "Extension for strenght as a string for ingredients in the batch formla."
+Description: "Extension for strength as a string for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 

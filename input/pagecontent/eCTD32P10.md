@@ -45,6 +45,7 @@ The domain concepts of Description and Composition of the Drug Product are repre
 
 * Drug Product
     * [Drug Product Description](StructureDefinition-pqcmc-drug-product-description.html) (DrugProductDescription) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
+    * [Co-Packaged Product](DrugProductHandle) profile on the [MedicinalProductDefinition](StructureDefinition-pqcmc-drug-product-handle.html) resource
 * Container Closure
     * [Drug Product Container Closure](StructureDefinition-ContainerClosure.html) (ContainerClosure) profile on the [PackagedProductDefinition](https://hl7.org/fhir/packagedproductdefinition.html) Resource
 * Product Composition
