@@ -803,9 +803,8 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
 """
 * component.constituent.extension contains pq-overage-extension named ingredientOverage 0..1 MS
-* component.constituent.extension[ingredientOverage]
 * component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
-* component.constituent.extension[StrengthTextual]
+* component.constituent
 
   * amount 2..2 MS
   * amount ^slicing.discriminator.type = #value
