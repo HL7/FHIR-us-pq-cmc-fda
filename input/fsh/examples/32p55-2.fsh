@@ -1,7 +1,8 @@
 Instance: CharacterisationImpuritiesBundle
 InstanceOf: CMCeCTDDocument32P55
-Description: "An Example FHIR Bundle containing data for the CMC eCTD 32P55 document"
- Usage: #inline
+Title: "3.2.P.5.5 Bundle 2"
+Description: "Product Characterisation of Impurities bundle - example 2"
+Usage: #example
 * identifier
   * system = $IDsys
   * value = "urn:uuid:a7a2d35b-5d9d-4a8c-b012-d04a07662c0a"
@@ -248,7 +249,8 @@ Usage: #inline
 
 Instance: de75e338-626c-4503-a25d-4fcdd8e39bee
 InstanceOf: StructureReference
-Description: "An SDF file in a Structure Reference"
+Title: "SDF File in a Structure Reference"
+Description: "A sample SDF file that can be referenced from the bundle profiles"
 
 * status = #current
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference"

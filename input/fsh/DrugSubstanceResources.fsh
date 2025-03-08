@@ -268,11 +268,12 @@ Example: cat hair would be an Animal source type """
     """
 * insert CountryOfOrigin
 
+
 Profile: SubstanceDefinitionHandle
 Parent: SubstanceDefinition
 Id: pqcmc-routine-drug-substance
 Title: "Drug Substance Handle"
-Description: "Provides sufficient information to identify a drug substance. Profile on SubstanceDefinition."
+Description: "Includes the essential identifying information of the drug substance required to link to other profiles about the substance in the eCTD structure. Profile on SubstanceDefinition."
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -566,7 +567,7 @@ Profile: DrugSubstanceCharacterisation
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-characterisation
 Title: "Drug Substance"
-Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
+Description: "Drug Substance (Active Ingredient) nomenclature and characterization."
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * obeys cmc-substance-characterisation-content-required
@@ -599,7 +600,7 @@ Profile: ImpuritySubstance
 Parent: SubstanceDefinition
 Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
-Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+Description: "Any component of the drug substance that is not the chemical entity for product composition."
 * obeys cmc-impurity-unii-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"

@@ -320,8 +320,8 @@ Usage: #inline
 
 Instance: DescriptionCompositionBundle
 InstanceOf: CMCeCTDDocument32P10
-Title: "CMCeCTDDocument32P10 bundle"
-Description: "A bundle for 3.2.P.1.0"
+Title: "3.2.P.1.0 Bundle"
+Description: "Description and Composition of the Drug Product bundle"
 Usage: #example 
 
 * identifier.system = $IDsys

@@ -225,7 +225,8 @@ Usage: #inline
 
 Instance: SpecificationExcipientBundle
 InstanceOf: CMCeCTDDocumentSP4151
-Description: "FHIR document bundle with the CMC eCTD SP4151 profile for an Excipient with a source material"
+Title: "3.2.P.4 Bundle"
+Description: "Specification bundle for an Excipient substance"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:813b4312-8b6d-42cc-9b8c-8bb6463388cc"
 * timestamp = 2024-01-01T19:42:35.255Z

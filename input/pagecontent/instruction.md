@@ -23,13 +23,12 @@ It uses terminology, notations and design principles that are specific to FHIR. 
 FHIR defines the notion of [Must Support](http://hl7.org/fhir/R5/conformance-rules.html#mustSupport).  To help establish conformance expectations for systems. For the purposes of _this_ implementation guide, "must support" shall be interpreted as follows:
 - Conformant systems SHALL be capable of sending and receiving the data element.
 - When a system persists a resource instance, all "must support" elements SHALL be persisted and retrieved with other elements.
+- Developers implementing Invariants in this IG will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
 
 <p>
     This implementation guide defines profiles on several resources.  Implementations are expected to be conformant with these profiles to be conformant with this implementation guide.
 </p>
-<p>
-- Developers implementing the Invariants will need to be familiar with the [FHIRPath Specification](http://hl7.org/fhirpath)
-</p>
+
 
 ### Acronyms
 
@@ -128,20 +127,13 @@ There are many elements defined by the markdown datatype. The sytlesheets are re
 
 * Download NarrativeTransform.zip from the [Downloads page](downloads.html).  Respond “Keep” if the files system objects to saving the download. Unblock the zipfile.
 * UnZip the file. 
-* Open Styler.html in a browser. The page displays as shown below.
-
-<p style="text-align: center; font-weight: bold"> Narrative Transform HTML Page </p>
-
+* Open Styler.html in a browser. 
 * Click on “Choose file” then select a bundle file. The Narrative Transform detects the bundle type. All bundles in this IG are supported.
 * The Narrative Transform does not validate the bundle. If the XML is not displayed, an error message appears. If this happens, check the XML file.
 * The transformed XML bundle will show in the text area. Verify that this is the bundle and save the updated file by clicking the “Save XML Bundle file” at the bottom of the page. You may have to scroll down the page to see the button.
 * Enter a new file name for the new XML bundle file.
 * Confirm by clicking “OK”. Note: Due to Cross-Origin Resource Sharing (CORS), the phrase “This page says” cannot be changed. 
 * To process another bundle, simply click on “Choose file” and select the bundle file.
-
-<p style="text-align: center; font-weight: bold">  Narrative Transform Text Area and Save Button  </p>
-
-* To process another file, simply open another file.
 
 ### Versioning of Bundles
 Any versioning of bundles is for the application sponsor's usage.  The status of all bundles is "active". The eCTD software will replace all prior bundles versions and the latest bundle will be the current version.

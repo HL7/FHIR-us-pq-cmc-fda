@@ -79,7 +79,8 @@ Usage: #inline
 
 Instance: CharacterisationImpuritiesProductBundle
 InstanceOf: CMCeCTDDocument32P55
-Description: "FHIR document bundle with the CMC eCTD 32P55 profile for a Drug Product"
+Title: "3.2.P.5.5 Bundle"
+Description: "Product Characterisation of Impurities bundle"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:2b738e27-de1f-4f63-8d91-c8860089d2a1"

@@ -212,7 +212,7 @@ Severity: #error
 
 
 Invariant: cmc-arbitrary-unit-text-required
-Description: "BR – Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
+Description: "BR - Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual"
 Expression: "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(
     property.where(
     type.coding.exists(
@@ -406,4 +406,9 @@ Expression: "representation.type.coding.where(
   system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'
   and (code in ('C45253' | 'C103240'))
 ).exists()"
+Severity: #error
+
+Invariant: overage-percent-limit
+Description: "Overage percent must be less than 1."
+Expression: "extension('proportionDecimal').value.exists() implies extension('proportionDecimal').value < 1"
 Severity: #error

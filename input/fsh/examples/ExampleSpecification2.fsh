@@ -134,8 +134,8 @@ Usage: #inline
 
 Instance: SpecificationSubstanceBundle
 InstanceOf: CMCeCTDDocumentSP4151
-Title: "FHIR Document example of 3.2.S.4.1."
-Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"
+Title: "3.2.S.4.1 Bundle"
+Description: "Specification bundle for an API substance"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:3e9cc7a1-e157-4b46-980a-33a8e50dcf65"

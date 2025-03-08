@@ -1,6 +1,6 @@
 ### Domain Overview
 
-The Product Batch Formula bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.P.3.2 folder content to the FDA. The contents of this section include the amount of material in a specific type of batch, in total and broken down by the components and constituents that constitute the drug product. Please refer to the Domain Overview Section 7.1 of the [Description and Composition of Drug Product (3.2.P.3.1)] (eCTD32P10.html) for explanation of Components and Constituents.
+The Product Batch Formula bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.P.3.2 folder content to the FDA. The contents of this section include the amount of material in a specific type of batch, in total and broken down by the components and constituents that constitute the drug product. Please refer to the Domain Overview Section 7.1 of the [Description and Composition of Drug Product (3.2.P.3.1)](eCTD32P10.html) for explanation of Components and Constituents.
 
 ### Implementer Instructions
 

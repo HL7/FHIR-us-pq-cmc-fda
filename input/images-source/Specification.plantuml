@@ -49,7 +49,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4151.html eCTD Heading 3.2.S.
         **Page:**
         [[StructureDefinition-ectd-composition-sp4151.html]]
         **ValueSets:**
-        [[ValueSet-cmc-specification-types-vs.html "Specification Section Type Terminology"]]
+        [[ValueSet-cmc-specification-types-vs.html Specification Section Type Terminology]]
       }
     }
 

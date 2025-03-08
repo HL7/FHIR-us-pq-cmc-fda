@@ -1,7 +1,7 @@
 Instance: BatchFormulaBundle
 InstanceOf: CMCeCTDDocument32P32
-Title: "Example Batch Formula bundle"
-Description: "FHIR bundle with a CMC eCTD 32P32 profile"
+Title: "3.2.P.3.2 Bundle for liquid "
+Description: "Batch Formula bundle for a liquid drug product"
 Usage: #example
 * identifier	
   * system = $IDsys	

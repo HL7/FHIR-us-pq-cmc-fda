@@ -179,7 +179,7 @@ Usage: #inline
     * detailInteger = 6
 * goal[+]
   * id = "14d3dee8-e024-4367-b0a2-a2a809303ee0"
-  * description.text = "Average of 12 units (S1 + S2) is equal to or greater than Q and no unit is less than Q – 15%"
+  * description.text = "Average of 12 units (S1 + S2) is equal to or greater than Q and no unit is less than Q - 15%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 12 units"
@@ -191,18 +191,18 @@ Usage: #inline
       * comparator = #<=
 * goal[+]
   * id = "15309a78-92a9-4cf9-aee1-452d6d2f7a91"
-  * description.text = "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"
+  * description.text = "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%"
   * addresses[+] = $NCIT#C134029 "Release"
   * target[+]
     * measure.text = "Average of 24 units"
     * detailQuantity = 80 $UCUM#% "percent"
       * comparator = #<=
   * target[+]
-    * measure.text = "units less than Q – 15%"
+    * measure.text = "units less than Q - 15%"
     * detailQuantity = 2 $UCUM#[Amb'a'1'U] "Amb a 1 units"
       * comparator = #<=
   * target[+]
-    * measure.text = "units less than Q – 25%"
+    * measure.text = "units less than Q - 25%"
     * detailQuantity = 0 $UCUM#[Amb'a'1'U] "Amb a 1 units"
       * comparator = #<=
 * goal[+]
@@ -423,8 +423,8 @@ Usage: #inline
 
 Instance: SpecificationProductBundle
 InstanceOf: CMCeCTDDocumentSP4151
-Title: "FHIR Document example of 3.2.P.5.1."
-Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Product"
+Title: "3.2.P.5.1 Bundle"
+Description: "Specification bundle for a Drug Product"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:34a0748d-b199-4a2e-a5bc-0f880886fef7"

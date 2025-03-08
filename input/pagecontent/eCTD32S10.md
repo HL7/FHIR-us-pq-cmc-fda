@@ -1,6 +1,6 @@
 ### Domain Overview
 
-The General Information bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.1 folder content to the FDA. This is a higher level CTD folder.  At present this folder’s scope is the drug substance 3.2.S.1.1 – Nomenclature and 3.2.S.1.2 – Structure.  Some of the content of these sections are described below –
+The General Information bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.1 folder content to the FDA. This is a higher level CTD folder.  At present this folder’s scope is the drug substance 3.2.S.1.1 - Nomenclature and 3.2.S.1.2 - Structure.  Some of the content of these sections are described below –
 - 3.2.S.1.1 - Nomenclature (e.g., GSRS Preferred Name, INN, USAN, etc.)
 - 3.2.S.1.2 - Structure
     - In the case of a New Chemical Entity (NCE), the structural formula, including relative and absolute stereochemistry, the molecular formula, and the relative molecular mass should be provided.
@@ -10,7 +10,7 @@ The General Information bundle profile provides a mechanism for the industry to 
 ### Implementer Instructions
 
 - For a drug product containing more than one active drug substance, the _CMC eCTD 32S10 Document_ should be provided in its entirety for each drug substance.
-    -  _CMC eCTD 32S10 Document_ – profile on [Bundle](http://hl7.org/fhir/R5/bundle.html) Resource (representing the FHIR XML content as a collection of content in a single “document” and which should be repeated for each active substance). There will be one document profile for each S section in module 3.   
+    -  _CMC eCTD 32S10 Document_ - profile on [Bundle](http://hl7.org/fhir/R5/bundle.html) Resource (representing the FHIR XML content as a collection of content in a single “document” and which should be repeated for each active substance). There will be one document profile for each S section in module 3.   
 
 ### Representation in FHIR
 

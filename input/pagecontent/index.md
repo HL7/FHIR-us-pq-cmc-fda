@@ -43,9 +43,10 @@ This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CM
 
 #### Pharmaceutical Quality Projects in BR&R WG
 
-At HL7, this project is referred to as Pharmaceutical Quality – Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA. BR&R WG maintains a Confluence page for this project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+-+Chemistry%2C+Manufacturing+and+Controls+%28PQ-CMC%29+Submissions+to+FDA) 
+At HL7, this project is referred to as Pharmaceutical Quality - Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA. BR&R WG maintains a Confluence page for this project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+-+Chemistry%2C+Manufacturing+and+Controls+%28PQ-CMC%29+Submissions+to+FDA) 
 
-There is another project in HL7 BR&R that covers the domain of Pharmaceutical Quality. That project’s focus is on CMC data exchange between biopharmaceutical companies and their partners. It is often referred to as Pharmaceutical Quality (Industry). BR&R WG maintains a Confluence page for this Industry project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Industry+Use+Case) 
+There is another project in HL7 BR&R that covers the domain of Pharmaceutical Quality. That project’s focus is on CMC data exchange between biopharmaceutical companies and their partners. It is often referred to as Pharmaceutical Quality (Industry). BR&R WG maintains a Confluence page for this Industry project [here](https://confluence.hl7.org/spaces/BRR/pages/161072930/Pharmaceutical+Quality+-+Industry+PQI+Use+Case)
+
 
 ### IG Overview
 
@@ -81,7 +82,7 @@ The development of this Implementation Guide is an initiative funded by the US F
 	- Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
   - Josiah Tindor (IBM PM)
   
-At HL7, the PQ/CMC Projects is sponsored by the HL7 Biomedical Research & Regulation (BR&R) Work-Group.
+At HL7, the PQ/CMC Project is sponsored by the HL7 Biomedical Research & Regulation (BR&R) Work-Group..
 
 The PQ/CMC team would like to acknowledge the contribution of the BR&R WG members who have participated in the Medication-related FHIR resource discussions and helped refine the resources.
 

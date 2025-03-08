@@ -5,7 +5,7 @@ RuleSet: child(parent,child)
 
 CodeSystem: NCItHierarchySupplement
 Id: cmc-hierarchy-supplement
-Title: "PQ-CMC-FDA NCIt Hieararchy Supplement"
+Title: "PQ-CMC-FDA NCIt Hierarchy Supplement"
 Description: """Provides hierarchical relationships for value sets as a CodeSystem supplement to the NCI Thesaurus (NCIt) """
 * ^experimental = false
 * ^status = #draft

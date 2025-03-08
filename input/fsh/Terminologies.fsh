@@ -50,7 +50,7 @@ Description: "Terminology used to qualify the information pertaining to batch ut
 ValueSet: CmcProductNameTypesVS
 Id: cmc-product-name-types-vs
 Title: "Product Name Types Terminology"
-Description: "The type of the product name. Often the proprietary name is unknow at the time of submission."
+Description: "The type of the product name. Often the proprietary name is unknown at the time of submission."
 
 * ^experimental = false
 * ^status = #active
@@ -285,7 +285,7 @@ Description: "A category of terminology used to qualify the information pertaini
 ValueSet: PqcmcSubstanceNameType
 Id: pqcmc-substance-name-type
 Title: "Substance Name Type"
-Description: "A category of terminology used to quality the information pertaining to the type of substance name in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+Description: "A category of terminology used to qualify the information pertaining to the type of substance name in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
 * ^status = #active
