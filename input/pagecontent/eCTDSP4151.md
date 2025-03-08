@@ -7,7 +7,7 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 ### Implementer Instructions
 
 * A Quality Specification has one or more Tests.
-* Tests should be entered in the file in the order in which they should be displayed.
+* Tests should be entered in the XML bundle in the order in which they should be displayed.
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
@@ -183,7 +183,7 @@ If the analytic procedure only requires that the results be reported, use a text
 ```
 
 #### Complex Acceptance Criteria
-Acceptace Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses.  When this occurs, the modeling in the goal backbone element requries multiple targets.  Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%" becomes three targets: Average of 24 units, units less than Q - 15%, and units less than Q - 25%.  Each has a detailQuantity to express the acceptable amount. 
+Acceptance Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses. When this occurs, the modeling in the goal backbone element requires multiple targets. Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%" becomes three targets: Average of 24 units, units less than Q - 15%, and units less than Q - 25%.  Each has a detailQuantity to express the acceptable amount. 
 
 ```xml
 <goal id="1f5530b9-5d21-46ef-80f3-1ae6121c88f9">

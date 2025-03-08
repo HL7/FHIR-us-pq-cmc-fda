@@ -268,37 +268,6 @@ Example: cat hair would be an Animal source type """
     """
 * insert CountryOfOrigin
 
-Profile: ExcipientRawNoSource
-Parent: SubstanceDefinition
-Id: pqcmc-excipient-no-source
-Title: "Excipient Drug Substance"
-Description: "Provides sufficient information to identify an inactive substance and raw materials and its source when stability data is required in the submission."
-
-* . obeys cmc-when-unii-required
-* . obeys cmc-name-isbt
-* identifier 0..1
-* identifier ^short = "optional user designated identifier"
-* classification 1..1 MS
-* classification from SubstanceClassification
-* classification ^short = "Substance Type"
-* classification ^definition = """A controlled vocabulary as provided by the prEN ISO 11238 - Health informatics identification of medicinal products - Structures and controlled vocabularies for drug substances to group drug substances at a relatively high level acording to the Substance and the Substance Preparation Model.
-[Source: Adapted from 'Logical model of the classification and identification of pharmaceutical and medicinal Products', HL7]
-"""
-* grade 1..*
-* grade ^short = "Quality Standard"
-* grade ^definition = """The established benchmark to which the component complies. [Source: SME Defined]
-Examples: USP/NF, EP, Company Standard
-"""
-* grade from PqcmcQualityBenchmarkTerminology (required)
-* manufacturer 0..* MS
-* insert PQReference(manufacturer)
-* manufacturer only Reference(CodedOrganization)
-* supplier 0..1 MS
-* insert  PQReference(supplier)
-* supplier only Reference(CodedOrganization)
-* insert UniiAndUniProtCodes(1)
-* insert ShortSetSubstanceNames
-
 
 Profile: SubstanceDefinitionHandle
 Parent: SubstanceDefinition
@@ -763,7 +732,7 @@ Description: "The amount details about the drug product ingredients in the batch
 * substance.code 1..1 MS
 * substance.code ^short = "Ingredient Substance"
 * insert PQCodeableReference(substance.code)
-* substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient or pqcmc-ExcipientRawNoSource)
+* substance.code only CodeableReference(pqcmc-routine-drug-substance or pqcmc-excipient)
 * substance
   * strength 2..2 MS
     * ^slicing.discriminator.type = #value

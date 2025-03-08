@@ -45,7 +45,8 @@ This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CM
 
 At HL7, this project is referred to as Pharmaceutical Quality - Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA. BR&R WG maintains a Confluence page for this project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+-+Chemistry%2C+Manufacturing+and+Controls+%28PQ-CMC%29+Submissions+to+FDA) 
 
-There is another project in HL7 BR&R that covers the domain of Pharmaceutical Quality. That project’s focus is on CMC data exchange between biopharmaceutical companies and their partners. It is often referred to as Pharmaceutical Quality (Industry). BR&R WG maintains a Confluence page for this Industry project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Industry+Use+Case) 
+There is another project in HL7 BR&R that covers the domain of Pharmaceutical Quality. That project’s focus is on CMC data exchange between biopharmaceutical companies and their partners. It is often referred to as Pharmaceutical Quality (Industry). BR&R WG maintains a Confluence page for this Industry project [here](https://confluence.hl7.org/spaces/BRR/pages/161072930/Pharmaceutical+Quality+-+Industry+PQI+Use+Case)
+
 
 ### IG Overview
 

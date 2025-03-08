@@ -220,7 +220,7 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles 
 * entry[BatchFormula].resource only BatchFormula
 * entry[Ingredient].resource only DrugProductIngredient
 * entry[RoutineSubstance].resource only SubstanceDefinitionHandle
-* entry[ExcipientRaw].resource only ExcipientRawNoSource
+* entry[ExcipientRaw].resource only ExcipientRaw
 
 Profile: CMCeCTDDocument32P55
 Parent: Bundle

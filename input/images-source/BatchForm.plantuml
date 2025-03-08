@@ -54,7 +54,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
 
   }
 
-  node "ExcipientRaw" as NNSEx {
+  node "ExcipientRawNoSource" as NNSEx {
 
     object "**Parent:** SubstanceDefinition" as obj42 {
       **Page:**
@@ -62,7 +62,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
       **ValueSets:**
       [[ValueSet-substance-classification.html Substance Classification]]
       [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
-      [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
     }
 
   }

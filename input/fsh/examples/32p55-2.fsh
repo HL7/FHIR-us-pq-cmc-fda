@@ -249,7 +249,8 @@ Usage: #inline
 
 Instance: de75e338-626c-4503-a25d-4fcdd8e39bee
 InstanceOf: StructureReference
-Description: "An SDF file in a Structure Reference"
+Title: "SDF File in a Structure Reference"
+Description: "A sample SDF file that can be referenced from the bundle profiles"
 
 * status = #current
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference"
