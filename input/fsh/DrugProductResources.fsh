@@ -509,10 +509,8 @@ Examples: Intragranular, Extra granular, Blend
     * value[x] 1..1 MS
     * value[x] only CodeableConceptTextOnly
 
-
 * component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
 
-* component.component 0..* MS
 
 RuleSet: AdditionalInformationProperty(short)
 * ^short = "{short}"

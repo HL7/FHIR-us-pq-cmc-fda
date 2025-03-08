@@ -127,20 +127,13 @@ There are many elements defined by the markdown datatype. The sytlesheets are re
 
 * Download NarrativeTransform.zip from the [Downloads page](downloads.html).  Respond “Keep” if the files system objects to saving the download. Unblock the zipfile.
 * UnZip the file. 
-* Open Styler.html in a browser. The page displays as shown below.
-
-<p style="text-align: center; font-weight: bold"> Narrative Transform HTML Page </p>
-
+* Open Styler.html in a browser. 
 * Click on “Choose file” then select a bundle file. The Narrative Transform detects the bundle type. All bundles in this IG are supported.
 * The Narrative Transform does not validate the bundle. If the XML is not displayed, an error message appears. If this happens, check the XML file.
 * The transformed XML bundle will show in the text area. Verify that this is the bundle and save the updated file by clicking the “Save XML Bundle file” at the bottom of the page. You may have to scroll down the page to see the button.
 * Enter a new file name for the new XML bundle file.
 * Confirm by clicking “OK”. Note: Due to Cross-Origin Resource Sharing (CORS), the phrase “This page says” cannot be changed. 
 * To process another bundle, simply click on “Choose file” and select the bundle file.
-
-<p style="text-align: center; font-weight: bold">  Narrative Transform Text Area and Save Button  </p>
-
-* To process another file, simply open another file.
 
 ### Versioning of Bundles
 Any versioning of bundles is for the application sponsor's usage.  The status of all bundles is "active". The eCTD software will replace all prior bundles versions and the latest bundle will be the current version.
