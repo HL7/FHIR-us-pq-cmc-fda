@@ -409,6 +409,6 @@ Expression: "representation.type.coding.where(
 Severity: #error
 
 Invariant: overage-percent-limit
-Description: "Overage percent must be less than 1."
-Expression: "extension('proportionDecimal').value.exists() implies extension('proportionDecimal').value < 1"
+Description: "Overage percent must be less than 1.0"
+Expression: "extension.where(url='proportionDecimal').value < 1"
 Severity: #error

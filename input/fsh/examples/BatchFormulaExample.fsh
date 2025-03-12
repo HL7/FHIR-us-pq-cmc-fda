@@ -1,6 +1,6 @@
 Instance: BatchFormulaBundle
 InstanceOf: CMCeCTDDocument32P32
-Title: "3.2.P.3.2 Bundle for liquid "
+Title: "3.2.P.3.2 Bundle for liquid"
 Description: "Batch Formula bundle for a liquid drug product"
 Usage: #example
 * identifier	
