@@ -410,5 +410,6 @@ Severity: #error
 
 Invariant: cmc-overage-percent-limit
 Description: "Overage percent must be less than 1.0"
-Expression: "extension.exists(url='proportionDecimal').value < 1"
+Expression: "extension.where(url='proportionDecimal').single().value < 1"
 Severity: #error
+// there can only be one extension with the 'proportionDecimal url', hence the single()
