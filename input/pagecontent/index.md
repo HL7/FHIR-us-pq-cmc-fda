@@ -33,13 +33,12 @@ This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CM
 
 - This FHIR IG is planned to follow an iterative approach, meaning that as new subdomains of the phases and sections of CTD M3 are structured and represented in FHIR, new FHIR profiles will be added to this IG to represent the content of those specific CTD M3 sections.
 
--  In support of an iterative PQ/CMC IG approach, the phases have been further grouped into implementable smaller groups called “Stages”. For each iteration of this IG, FDA plans to ballot and publish in stages. Each new stage will cover a particular set of subdomains/CTD sections of the larger PQ/CMC domain. For example, the first ballot, May 2024 ballot cycle, is referred to as Stage 1. 
+-  In support of an iterative PQ/CMC IG approach, the phases have been further grouped into implementable smaller groups called “Stages”. For each iteration of this IG, FDA plans to ballot and publish in stages. Each new stage will cover a particular set of subdomains/CTD sections of the larger PQ/CMC domain. The various CTD sections covered under each Stage can be seen under the 'eCTD Stage xx' menu on main menu ribbon on top of this page.
 
 - The domain friendly data element names that were published in the FDA Federal Register Notices (FRN) can be found in the 'Description & Constraints' column within each Profile.
 - Please note that new versions of this IG may include changes to previous published stages.
 - The FHIR profiles defined in this IG are aligned for use within eCTD v 4.0 or later and may not fit with eCTD v3 headings.
 - The PQ/CMC FHIR IG is currently limited to the Solid Oral Dosage Form (SODF).
-- All co-packaged products that include diluents are out of scope at this time.
 
 #### Pharmaceutical Quality Projects in BR&R WG
 

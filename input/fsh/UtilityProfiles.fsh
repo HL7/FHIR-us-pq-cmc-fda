@@ -109,7 +109,7 @@ Profile: LiteralReference
 Parent: Reference
 Id: literal-reference
 Title: "Literal Reference"
-Description: "An abstract profile to ensure the reference is always a literal reference. Used in conjuction with a rule set to ensure every reference is also bundled"
+Description: "An abstract profile to ensure the reference is always a literal reference. Used in conjunction with a rule set to ensure every reference is also bundled."
 * ^abstract = true
 * reference 1..1 MS
 

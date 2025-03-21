@@ -679,7 +679,7 @@ Title: "Overage Extension"
 Description: "Extension for measurements related to excess for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
-* . obeys overage-percent-limit  
+* . obeys cmc-overage-percent-limit  
 * extension contains
   proportionDecimal 1..1 MS and
   justification 1..1 MS 
