@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcRepresentationTypes",
+  "id": "pqcmc-representation-types",
+  "title": "Representation Types",
+  "description": "The different types of representations (graphical, structure/file and structure/text)",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-representation-types",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C54273",
+            "display": "Picture"
+          },
+          {
+            "code": "C45253",
+            "display": "String"
+          },
+          {
+            "code": "C103240",
+            "display": "Chemical Structure"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -11,7 +11,7 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
-    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. 
+    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. Drug Product Handle (DrugProductHandle)
 
 ### Representation in FHIR
 
@@ -20,7 +20,7 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 * Specification, Test, Acceptance Criteria
     * [Quality Specification](StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
 * Drug Product
-    * [Routine Drug Product](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
+    * [Drug Product Handle](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
     * [Substance Definition Handle](StructureDefinition-pqcmc-routine-drug-substance.html) (SubstanceDefinitionHandle) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Excipient/Raw Material 
@@ -430,7 +430,7 @@ This example demonstrates a quality specification for a Drug Product. The first 
 Additionally, there is an example specification to show the reference to a Drug Substance [SpecificationSubstanceBundle](Bundle-SpecificationSubstanceBundle.html). Its [narrative layout](#drug-substance-specification-example) is shown below the Drug Product specification.
 
 The final example is for a excipient with an animal source for 3.2.P.4.  Drug Excipient [SpecificationExcipientBundle](Bundle-SpecificationExcipientBundle.html). Its [narrative layout](#drug-excipient-specification-example)
-For more examples of specifications referencing excipients see: 
+is shown below the Drug Substance specification. For more examples of specifications referencing excipients see: 
 - [Control of Materials Example](Bundle-ControlMaterialsBundle.html)
 
 #### Drug Product Specification Example

@@ -1,0 +1,168 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cmc-ectd-document-32s10",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-ectd-document-32s10",
+  "name": "CMCeCTDDocument32S10",
+  "title": "CMC eCTD 32S10 Document",
+  "status": "active",
+  "description": "Definition for a document bundle with the CMC eCTD 32S1 profiles (General Information).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "short": "CMC eCTD 32S1 Bundle"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "definition": "Designation by the author.",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "document",
+        "patternCode": "document",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resource"
+            }
+          ],
+          "rules": "closed",
+          "description": "",
+          "ordered": false
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Composition",
+        "path": "Bundle.entry",
+        "sliceName": "Composition",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:Composition.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Composition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32s10"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Organization",
+        "path": "Bundle.entry",
+        "sliceName": "Organization",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:Organization.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:StructureDefinition",
+        "path": "Bundle.entry",
+        "sliceName": "StructureDefinition",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:StructureDefinition.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "SubstanceDefinition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-substance-nomenclature-structure",
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-polymorphic-form"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:GraphicsFiles",
+        "path": "Bundle.entry",
+        "sliceName": "GraphicsFiles",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:GraphicsFiles.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "DocumentReference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:StructureFiles",
+        "path": "Bundle.entry",
+        "sliceName": "StructureFiles",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:StructureFiles.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "DocumentReference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-structure-reference"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1221 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pqcmc-product-part",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part",
+  "name": "FinishedProduct",
+  "title": "Manufactured Drug Product",
+  "status": "active",
+  "description": "The manufactured drug product defined by all its parts or layers. If the drug product composition is homogeneous it will have a single part or component.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ManufacturedItemDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ManufacturedItemDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ManufacturedItemDefinition",
+        "path": "ManufacturedItemDefinition",
+        "constraint": [
+          {
+            "key": "cmc-capsule-count-required",
+            "severity": "error",
+            "human": "Capsule constituent count is required when the dosage form is 'Capsule'",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(\r\n    manufacturedDoseForm.coding.exists(system = %system and code = 'C154433')\r\nimplies property.where(type.text = 'Capsule Constituent Count').exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-arbitrary-unit-text-required",
+            "severity": "error",
+            "human": "BR - Product Total Weight Textual - If the UOM is UCUM Arbitrary Unit [arb'U], units must be described in Weight Textual",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(\r\n    property.where(\r\n    type.coding.exists(\r\n        system = %system and (\r\n            code = 'TotWgtNum' or \r\n            code = 'TotWgtDen'\r\n        )\r\n    ) and\r\n    value.exists(system = %system and code = 'C75765')\r\n).exists() implies property.where(\r\n    type = 'Total Weight Textual'\r\n).exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-coating-indication-required",
+            "severity": "error",
+            "human": "Coating indication is required when the dosage form is a tablet, lozenge or capsule",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(\r\n    manufacturedDoseForm.coding.exists(system = %system and (\r\n    code = 'C154605' or\r\n    code = 'C154433' or\r\n    code = 'C154554'\r\n))\r\nimplies property.where(type.text = 'Coating Indicator').exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-tablet-layer-count-required",
+            "severity": "error",
+            "human": "Tablet layer count is required when the dosage form is a tablet",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(\r\n    manufacturedDoseForm.coding.exists(\r\n    system = %system and\r\n    code = 'C154605'\r\n) implies property.where(\r\n    type.text = 'Tablet Layer Count'\r\n).exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-tablet-bead-count-required",
+            "severity": "error",
+            "human": "Tablet bead count is required when the dosage form is a tablet",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(\r\n    system = %system and\r\n    code = 'C154605'\r\n) implies property.where(\r\n    type.text = 'Tablet Bead Type Count'\r\n).exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-capsule-classification-required",
+            "severity": "error",
+            "human": "when the the dosage form is 'capsule' and a 'capsule shell' part\r\nexists, a capsule shell part classification is mandatory",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(manufacturedDoseForm.coding.exists(\r\n    system = %system and\r\n    code = 'C154433'\r\n) and component.type.coding.exists(\r\n    system = %system and\r\n    code = 'C203897'\r\n) implies property.where(\r\n    type.text = 'Capsule Classification Category'\r\n).exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-component-id-ref",
+            "severity": "error",
+            "human": "If a PPiD ref is present, it must reference the PPiD of another component. It cannot reference itself",
+            "expression": "defineVariable('system','http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').select(\r\n  component.select(\r\n    property.where(\r\n      type.text = 'Product Part Identifier Reference'\r\n    ).select(value)\r\n  ).all(\r\n    text in %context.component.select(\r\n      property.where(\r\n        type.text = 'Product Part Identifier'\r\n      ).select(value.text)\r\n    )\r\n  ) and component.where(\r\n    property.where(\r\n      type.text = 'Product Part Identifier Reference'\r\n    ).select(value.text) =\r\n    property.where(\r\n      type.text = 'Product Part Identifier'\r\n    ).select(value.text)\r\n  ).exists().not()\r\n)",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          }
+        ]
+      },
+      {
+        "id": "ManufacturedItemDefinition.identifier",
+        "path": "ManufacturedItemDefinition.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.status",
+        "path": "ManufacturedItemDefinition.status",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.name",
+        "path": "ManufacturedItemDefinition.name",
+        "short": "Product Proprietary Name | Product Non-proprietary Name",
+        "definition": "Product Proprietary Name: The exclusive name of a drug product owned by a company under trademark law regardless of registration status with the Patent and Trademark Office (PTO). [Source: SME Defined] Note: Excludes dosage form, route of administration and strength. \nExample: Tylenol\n\nProduct Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.manufacturedDoseForm",
+        "path": "ManufacturedItemDefinition.manufacturedDoseForm",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-manufactured-dose-form-terminology"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property",
+        "path": "ManufacturedItemDefinition.property",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type.text"
+            }
+          ],
+          "rules": "closed",
+          "description": "Slice based on value"
+        },
+        "min": 6,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property.type",
+        "path": "ManufacturedItemDefinition.property.type",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:OvrRelsProf",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "OvrRelsProf",
+        "short": "Product Overall Release Profile",
+        "definition": "The overall release profile is the drug release profile (e.g., IR, DR, or ER-USP nomenclature) that is achieved by the drug delivery system used in the dosage form design as evident from the pharmacokinetic plasma drug concentration versus time curve (this is currently focused on solids).\nFor example, a capsule filled with IR and DR beads will exhibit an ER release profile as evident from the pharmacokinetic curve. In this example, the \"product overall release profile\" is \"ER\". [Source: SME Defined]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:OvrRelsProf.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Product Overall Release Profile"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:OvrRelsProf.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-release-profile"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:OvrRelsMech",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "OvrRelsMech",
+        "short": "Product Overall Release Mechanism",
+        "definition": "The dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:OvrRelsMech.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Product Overall Release Mechanism"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:OvrRelsMech.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-release-mechanism"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CoatInd",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "CoatInd",
+        "short": "Product Coating Indicator",
+        "definition": "A property that identifies whether the drug product contains any coatings. [Source: SME Defined]",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CoatInd.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Coating Indicator"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CoatInd.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:LayCnt",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "LayCnt",
+        "short": "Product Tablet Layer Count",
+        "definition": "The total number of layers in the tablet. [Source: SME Defined]\nNote: Non-layered tablets will be considered as one layer tablets.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:LayCnt.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Tablet Layer Count"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:LayCnt.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "code": "1",
+          "system": "http://unitsofmeasure.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:LayCnt.value[x].value",
+        "path": "ManufacturedItemDefinition.property.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:BeaTypCnt",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "BeaTypCnt",
+        "short": "Tablet Bead Type Count",
+        "definition": "The total number of type of beads present in a tablet [Source: SME Defined]\nExample: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:BeaTypCnt.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Tablet Bead Type Count"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:BeaTypCnt.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "code": "1",
+          "system": "http://unitsofmeasure.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:BeaTypCnt.value[x].value",
+        "path": "ManufacturedItemDefinition.property.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapClass",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "CapClass",
+        "short": "Capsule Shell Part Classification Category",
+        "definition": "Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapClass.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Capsule Classification Category"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapClass.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/capsule-classification-category"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapConCnt",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "CapConCnt",
+        "short": "Product Capsule Constituent Count",
+        "definition": "The number of distinct constituents contained in the capsule shell of the drug product. [Source: SME Defined]\nExample: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapConCnt.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Capsule Constituent Count"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapConCnt.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "code": "1",
+          "system": "http://unitsofmeasure.org"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:CapConCnt.value[x].value",
+        "path": "ManufacturedItemDefinition.property.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:Schematic",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "Schematic",
+        "short": "Product Schematic",
+        "definition": "The pictorial representation of the drug product. [Source: SME Defined]",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:Schematic.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Product Schematic"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:Schematic.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Attachment",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-attachment",
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-pdf-attachment"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:WgtTyp",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "WgtTyp",
+        "short": "Product Weight Type",
+        "definition": "A physical (content) or activity measurement of the weight of the drug product unit. [Source: SME Defined]\nExample: Mass, Activity",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:WgtTyp.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Product Weight Type"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:WgtTyp.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-strength-type-terminology"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtNum",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "TotWgtNum",
+        "short": "Product Total Weight Numeric Numerator",
+        "definition": "Specifies the total quantity of all ingredients in a single unit of the drug product. [Source: SME Defined]\nNote: a single unit of a solid oral dose form could be a tablet or a capsule",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtNum.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Product Total Weight Numeric Numerator"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtNum.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-units-of-measure"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtNum.value[x].comparator",
+        "path": "ManufacturedItemDefinition.property.value[x].comparator",
+        "short": "Product Total Weight Operator",
+        "definition": "A mathematical symbol that denotes equality or inequality between two values. [Source: SME Defined]\nNote: This is typically applicable to biologics.",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtDen",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "TotWgtDen",
+        "short": "Product Total Weight Numeric Denominator",
+        "definition": "Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]\nNote: For solid oral dose forms, by definition this is 1",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtDen.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Product Total Weight Numeric Denominator"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtDen.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-units-of-measure"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtDen.value[x].value",
+        "path": "ManufacturedItemDefinition.property.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtTxt",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "TotWgtTxt",
+        "short": "Product Total Weight Textual",
+        "definition": "A written description of the weight of the drug product. [Source: SME Defined]\nNote: This is typically applicable to biologics\nExample: International Units for Enzymes",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtTxt.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Total Weight Textual"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:TotWgtTxt.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "markdown"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:QualStd",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "QualStd",
+        "short": "Product Quality Standard",
+        "definition": "The established benchmark to which the component complies. [Source: SME Defined]\nExamples: USP/NF, EP, Company Standard",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:QualStd.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Quality Standard"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:QualStd.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-quality-benchmark-terminology"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:Sterile",
+        "path": "ManufacturedItemDefinition.property",
+        "sliceName": "Sterile",
+        "short": "Sterile Product Indicator",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:Sterile.type.text",
+        "path": "ManufacturedItemDefinition.property.type.text",
+        "patternString": "Sterile Product Indicator"
+      },
+      {
+        "id": "ManufacturedItemDefinition.property:Sterile.value[x]",
+        "path": "ManufacturedItemDefinition.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component",
+        "path": "ManufacturedItemDefinition.component",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "cmc-amount-ratio-or-quantity",
+            "severity": "error",
+            "human": "The amount ratio extension and an amount with a non-percentage unit are mutually exclusive",
+            "expression": "defineVariable('system','http://unitsofmeasure.org').select(\r\n  modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')\r\n  .union(\r\n    amount.where(\r\n        system = %system and \r\n        code.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units')\r\n    )\r\n  ).count() = 1\r\n)",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.modifierExtension",
+        "path": "ManufacturedItemDefinition.component.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.modifierExtension:amountRatio",
+        "path": "ManufacturedItemDefinition.component.modifierExtension",
+        "sliceName": "amountRatio",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.type",
+        "path": "ManufacturedItemDefinition.component.type",
+        "short": "Product Part Type",
+        "definition": "Identifies the kind of element, based on the design the applicant develops to achieve the desired drug product and overall release profile. [Source: SME Defined]\nExample: Layer, Bead, Minitablet, Capsule Shell, Coating",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.type.coding",
+        "path": "ManufacturedItemDefinition.component.type.coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-product-part-type"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.function",
+        "path": "ManufacturedItemDefinition.component.function",
+        "short": "Product Part Function Description",
+        "definition": "The main purpose for the part in the dosage form. [Source: SME Defined]\nExample: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/codeable-concept-text-only"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount",
+        "path": "ManufacturedItemDefinition.component.amount",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:weight",
+        "path": "ManufacturedItemDefinition.component.amount",
+        "sliceName": "weight",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:weight.value",
+        "path": "ManufacturedItemDefinition.component.amount.value",
+        "short": "Product Part Total Weight Numeric",
+        "definition": "Specifies the total quantity of all ingredients in a single part of the drug product. [Source: SME Defined]\nNote: a single unit of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:weight.unit",
+        "path": "ManufacturedItemDefinition.component.amount.unit",
+        "short": "Product Part Total Weight Numeric UOM",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:weight.code",
+        "path": "ManufacturedItemDefinition.component.amount.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:percent",
+        "path": "ManufacturedItemDefinition.component.amount",
+        "sliceName": "percent",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:percent.value",
+        "path": "ManufacturedItemDefinition.component.amount.value",
+        "short": "Product Part Content Percent",
+        "definition": "The percentage of the drug product as a whole, that is represented by this part. [Source: SME Defined]\nExample: total tablet weight = 400 mg, total weight of layer = 250 mg, then Content Percent for the layer = 62.5",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:percent.unit",
+        "path": "ManufacturedItemDefinition.component.amount.unit",
+        "short": "Product Part Content Percent UOM",
+        "definition": "The labeled unit of measure for the content of the drug product, expressed quantitatively per dosage unit. [Source: Adapted for NCI E C117055]\nExample: mg",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.amount:percent.code",
+        "path": "ManufacturedItemDefinition.component.amount.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-percentage-units"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent",
+        "path": "ManufacturedItemDefinition.component.constituent",
+        "short": "Product Part Ingredient Component Function Category",
+        "definition": "A classification that identifies the higher level purpose of that material. [Source: SME Defined]\nExample: Active Ingredient, Inactive Ingredient, Adjuvant.",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "cmc-ingredient-functions",
+            "severity": "error",
+            "human": "If Drug Product Component constituent Function Category is Active Ingredient or Adjuvant THEN Drug Product Component constituent Function is not applicable.\r\nIf Drug Product Component Function Category constituent is Inactive Ingredient (excipient) THEN Drug Product Component Function must be from the value list.",
+            "expression": "function.coding.where(code = 'C42637' and system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl').exists() implies function.coding.code.count() = 2",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          },
+          {
+            "key": "cmc-amount-ratio-or-quantity",
+            "severity": "error",
+            "human": "The amount ratio extension and an amount with a non-percentage unit are mutually exclusive",
+            "expression": "defineVariable('system','http://unitsofmeasure.org').select(\r\n  modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')\r\n  .union(\r\n    amount.where(\r\n        system = %system and \r\n        code.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units')\r\n    )\r\n  ).count() = 1\r\n)",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-part"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.extension",
+        "path": "ManufacturedItemDefinition.component.constituent.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.extension:textualStrength",
+        "path": "ManufacturedItemDefinition.component.constituent.extension",
+        "sliceName": "textualStrength",
+        "comment": "For whatever reason, the comments for the Original Text extension has a link that doesn't resolve! Overwriting it with this text resolves the IG error",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/originalText"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.extension:textualStrength.value[x]",
+        "path": "ManufacturedItemDefinition.component.constituent.extension.value[x]",
+        "short": "Textual Strength",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.modifierExtension",
+        "path": "ManufacturedItemDefinition.component.constituent.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.modifierExtension:amountRatio",
+        "path": "ManufacturedItemDefinition.component.constituent.modifierExtension",
+        "sliceName": "amountRatio",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount",
+        "path": "ManufacturedItemDefinition.component.constituent.amount",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        },
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:weight",
+        "path": "ManufacturedItemDefinition.component.constituent.amount",
+        "sliceName": "weight",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:weight.value",
+        "path": "ManufacturedItemDefinition.component.constituent.amount.value",
+        "short": "Product Part Ingredient Amount Numeric",
+        "definition": "Specifies the quantity of an ingredient in a single part of the drug product. [Source: SME Defined]\nNote: a single part of a solid oral dose form could be a layer of a tablet or a minitablet in a capsule\nNote: Amount can also be referred to as potency in biologics and other products.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:weight.unit",
+        "path": "ManufacturedItemDefinition.component.constituent.amount.unit",
+        "short": "Product Part Ingredient Amount Numeric UOM",
+        "definition": "The labeled unit of measure for the content of an ingredient, expressed quantitatively per product part. [Source: Adapted for NCI EVS C117055]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:weight.code",
+        "path": "ManufacturedItemDefinition.component.constituent.amount.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:percent",
+        "path": "ManufacturedItemDefinition.component.constituent.amount",
+        "sliceName": "percent",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:percent.value",
+        "path": "ManufacturedItemDefinition.component.constituent.amount.value",
+        "short": "Product Part Ingredient Content Percent",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:percent.unit",
+        "path": "ManufacturedItemDefinition.component.constituent.amount.unit",
+        "short": "Product Part Ingredient Content Percent UOM",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.amount:percent.code",
+        "path": "ManufacturedItemDefinition.component.constituent.amount.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-percentage-units"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.location",
+        "path": "ManufacturedItemDefinition.component.constituent.location",
+        "short": "Product Part Ingredient Physical Location",
+        "definition": "Identifies where the ingredient physically resides within the product part. [Source: SME Defined]\nExamples: Intragranular, Extra granular, Blend",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.location.coding",
+        "path": "ManufacturedItemDefinition.component.constituent.location.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-product-part-ingredient-physical-location"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.location.text",
+        "path": "ManufacturedItemDefinition.component.constituent.location.text",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.function",
+        "path": "ManufacturedItemDefinition.component.constituent.function",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed",
+          "description": "Slice on the function coding"
+        },
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.function:Category",
+        "path": "ManufacturedItemDefinition.component.constituent.function",
+        "sliceName": "Category",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-drug-product-component-function-category-terminology"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.function:Function",
+        "path": "ManufacturedItemDefinition.component.constituent.function",
+        "sliceName": "Function",
+        "short": "Product Part Ingredient Function",
+        "definition": "A sub-classification of part ingredients identifying its purpose/role in the drug product part (e.g., in the layer, bead, minitablet). [Source: SME Defined]\nExamples: Filler, Surfactant",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-excipient-function-terminology"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.constituent.hasIngredient",
+        "path": "ManufacturedItemDefinition.component.constituent.hasIngredient",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-codeable-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-component"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property",
+        "path": "ManufacturedItemDefinition.component.property",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type.text"
+            }
+          ],
+          "rules": "closed",
+          "description": "Slice based on value"
+        },
+        "min": 2,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property.type",
+        "path": "ManufacturedItemDefinition.component.property.type",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:PPiD",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "PPiD",
+        "short": "Product Part Identifier",
+        "definition": "A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]\nExamples: 1, A1, Red bead, Blue minitablet",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:PPiD.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Product Part Identifier"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:PPiD.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/codeable-concept-text-only"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:PPiDref",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "PPiDref",
+        "short": "Product Part Identifier Reference",
+        "definition": "Identifies the parent or outer-level product part. [Source: SME Defined]\nExample: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:PPiDref.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Product Part Identifier Reference"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:PPiDref.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/codeable-concept-text-only"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:RelsProf",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "RelsProf",
+        "short": "Product Part Release Profile",
+        "definition": "The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:RelsProf.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Product Part Release Profile"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:RelsProf.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-release-profile"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:RelsMech",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "RelsMech",
+        "short": "Product Part Release Mechanism",
+        "definition": "The method employed to realize the specified part release profile. [Source: SME Defined] \nExample: matrix or reservoir",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:RelsMech.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Product Part Release Mechanism"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:RelsMech.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-release-mechanism"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:CoatPurpose",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "CoatPurpose",
+        "short": "Coating Product Part Purpose",
+        "definition": "The reason the coating or covering was added. [Source: SME Defined]\nExamples: rate-controlling, color, release type, protective, taste masking.",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:CoatPurpose.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Coating Product Part Purpose"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:CoatPurpose.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-coating-purpose"
+        }
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:Color",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "Color",
+        "short": "Product Part Color Description",
+        "definition": "The hue or the tint of the drug product part. [Source: SME Defined]\nExamples: yellow, pink, blue, pale yellow.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:Color.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Product Part Color Description"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:Color.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/codeable-concept-text-only"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:AddInfo",
+        "path": "ManufacturedItemDefinition.component.property",
+        "sliceName": "AddInfo",
+        "short": "Product Part Additional Information",
+        "definition": "A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.\nImplementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:AddInfo.type.text",
+        "path": "ManufacturedItemDefinition.component.property.type.text",
+        "patternString": "Product Part Additional Information"
+      },
+      {
+        "id": "ManufacturedItemDefinition.component.property:AddInfo.value[x]",
+        "path": "ManufacturedItemDefinition.component.property.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "markdown"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

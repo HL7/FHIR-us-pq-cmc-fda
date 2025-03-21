@@ -1,0 +1,64 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "strength-extension",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension",
+  "name": "StrengthExtension",
+  "title": "Strength Extension",
+  "status": "active",
+  "description": "Strength Type (for API)",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Ingredient.substance.strength"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Strength Extension",
+        "definition": "Strength Type (for API)"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/strength-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Strength Type (for API)",
+        "definition": "A physical (content) or activity measurement of the strength of the ingredient. [Source: SME Defined]\nExample: Mass, Activity",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-strength-type-terminology"
+        }
+      }
+    ]
+  }
+}

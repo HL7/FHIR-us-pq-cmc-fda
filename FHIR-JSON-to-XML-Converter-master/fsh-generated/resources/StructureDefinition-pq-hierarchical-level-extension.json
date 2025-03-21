@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pq-hierarchical-level-extension",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-hierarchical-level-extension",
+  "name": "HierarchicalLevelExtension",
+  "title": "Hierarchical Level",
+  "status": "active",
+  "description": "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguish between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. ",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "PlanDefinition.action.reason"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Hierarchical Level",
+        "definition": "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguish between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. "
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-hierarchical-level-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "TestCategory  Level",
+        "definition": "Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2.",
+        "min": 1,
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

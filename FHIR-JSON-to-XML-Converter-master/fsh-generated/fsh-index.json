@@ -1,0 +1,834 @@
+[
+  {
+    "outputFile": "Bundle-BatchFormulaBundle.json",
+    "fshName": "BatchFormulaBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\BatchFormulaExample.fsh",
+    "startLine": 1,
+    "endLine": 77
+  },
+  {
+    "outputFile": "Bundle-BatchFormulaBundle2Layer.json",
+    "fshName": "BatchFormulaBundle2Layer",
+    "fshType": "Instance",
+    "fshFile": "examples\\BatchFormula2Layer.fsh",
+    "startLine": 280,
+    "endLine": 354
+  },
+  {
+    "outputFile": "Bundle-CharacterisationBundle.json",
+    "fshName": "CharacterisationBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\ex-32S3.fsh",
+    "startLine": 31,
+    "endLine": 50
+  },
+  {
+    "outputFile": "Bundle-CharacterisationImpuritiesBundle.json",
+    "fshName": "CharacterisationImpuritiesBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\32p55-2.fsh",
+    "startLine": 1,
+    "endLine": 37
+  },
+  {
+    "outputFile": "Bundle-CharacterisationImpuritiesProductBundle.json",
+    "fshName": "CharacterisationImpuritiesProductBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\eg-32P55.fsh",
+    "startLine": 80,
+    "endLine": 97
+  },
+  {
+    "outputFile": "Bundle-ControlMaterialsBundle.json",
+    "fshName": "ControlMaterialsBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\materials1.fsh",
+    "startLine": 565,
+    "endLine": 596
+  },
+  {
+    "outputFile": "Bundle-DescriptionCompositionBundle.json",
+    "fshName": "DescriptionCompositionBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\Example1Drug.fsh",
+    "startLine": 321,
+    "endLine": 363
+  },
+  {
+    "outputFile": "Bundle-GeneralInformationBundle.json",
+    "fshName": "GeneralInformationBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\levoThyroxine.fsh",
+    "startLine": 143,
+    "endLine": 178
+  },
+  {
+    "outputFile": "Bundle-SpecificationExcipientBundle.json",
+    "fshName": "SpecificationExcipientBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\CochinealSpecification.fsh",
+    "startLine": 226,
+    "endLine": 240
+  },
+  {
+    "outputFile": "Bundle-SpecificationProductBundle.json",
+    "fshName": "SpecificationProductBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\ExampleSpecification.fsh",
+    "startLine": 424,
+    "endLine": 439
+  },
+  {
+    "outputFile": "Bundle-SpecificationSubstanceBundle.json",
+    "fshName": "SpecificationSubstanceBundle",
+    "fshType": "Instance",
+    "fshFile": "examples\\ExampleSpecification2.fsh",
+    "startLine": 135,
+    "endLine": 154
+  },
+  {
+    "outputFile": "CodeSystem-cmc-hierarchy-supplement.json",
+    "fshName": "NCItHierarchySupplement",
+    "fshType": "CodeSystem",
+    "fshFile": "HierarchySupplement.fsh",
+    "startLine": 6,
+    "endLine": 140
+  },
+  {
+    "outputFile": "DocumentReference-de75e338-626c-4503-a25d-4fcdd8e39bee.json",
+    "fshName": "de75e338-626c-4503-a25d-4fcdd8e39bee",
+    "fshType": "Instance",
+    "fshFile": "examples\\32p55-2.fsh",
+    "startLine": 250,
+    "endLine": 260
+  },
+  {
+    "outputFile": "StructureDefinition-ContainerClosure.json",
+    "fshName": "ContainerClosure",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 37,
+    "endLine": 73
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-document-reference.json",
+    "fshName": "Base64DocumentReference",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 63,
+    "endLine": 72
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-32p10.json",
+    "fshName": "CMCeCTDDocument32P10",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 1,
+    "endLine": 39
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-32p32.json",
+    "fshName": "CMCeCTDDocument32P32",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 190,
+    "endLine": 223
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-32p55.json",
+    "fshName": "CMCeCTDDocument32P55",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 225,
+    "endLine": 255
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-32s10.json",
+    "fshName": "CMCeCTDDocument32S10",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 44,
+    "endLine": 79
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-32s23.json",
+    "fshName": "CMCeCTDDocument32S23",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 81,
+    "endLine": 115
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-32s3.json",
+    "fshName": "CMCeCTDDocument32S3",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 156,
+    "endLine": 187
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-ectd-document-sp4151.json",
+    "fshName": "CMCeCTDDocumentSP4151",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 117,
+    "endLine": 149
+  },
+  {
+    "outputFile": "StructureDefinition-cmc-organization.json",
+    "fshName": "CodedOrganization",
+    "fshType": "Profile",
+    "fshFile": "CommonOrganization.fsh",
+    "startLine": 17,
+    "endLine": 26
+  },
+  {
+    "outputFile": "StructureDefinition-codeable-concept-text-only.json",
+    "fshName": "CodeableConceptTextOnly",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 116,
+    "endLine": 122
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-32p10.json",
+    "fshName": "EctdComposition32P10",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 283,
+    "endLine": 320
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-32p32.json",
+    "fshName": "EctdComposition32P32",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 372,
+    "endLine": 403
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-32p55.json",
+    "fshName": "EctdComposition32P55",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 406,
+    "endLine": 437
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-32s10.json",
+    "fshName": "EctdComposition32S10",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 322,
+    "endLine": 343
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-32s23.json",
+    "fshName": "EctdComposition32S23",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 345,
+    "endLine": 369
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-32s3.json",
+    "fshName": "EctdComposition32S3",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 439,
+    "endLine": 468
+  },
+  {
+    "outputFile": "StructureDefinition-ectd-composition-sp4151.json",
+    "fshName": "EctdCompositionSP4151",
+    "fshType": "Profile",
+    "fshFile": "eCTDComposition.fsh",
+    "startLine": 259,
+    "endLine": 280
+  },
+  {
+    "outputFile": "StructureDefinition-literal-codeable-reference.json",
+    "fshName": "LiteralCodeableReference",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 91,
+    "endLine": 98
+  },
+  {
+    "outputFile": "StructureDefinition-literal-reference.json",
+    "fshName": "LiteralReference",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 108,
+    "endLine": 114
+  },
+  {
+    "outputFile": "StructureDefinition-pq-additional-info-extension.json",
+    "fshName": "AditionalInformationExtension",
+    "fshType": "Extension",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 75,
+    "endLine": 88
+  },
+  {
+    "outputFile": "StructureDefinition-pq-amount-ratio.json",
+    "fshName": "AmountRatio",
+    "fshType": "Extension",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 75,
+    "endLine": 96
+  },
+  {
+    "outputFile": "StructureDefinition-pq-cmc-address.json",
+    "fshName": "PqAddress",
+    "fshType": "Profile",
+    "fshFile": "CommonOrganization.fsh",
+    "startLine": 76,
+    "endLine": 89
+  },
+  {
+    "outputFile": "StructureDefinition-pq-hierarchical-level-extension.json",
+    "fshName": "HierarchicalLevelExtension",
+    "fshType": "Extension",
+    "fshFile": "qualitySpecification.fsh",
+    "startLine": 15,
+    "endLine": 25
+  },
+  {
+    "outputFile": "StructureDefinition-pq-overage-extension.json",
+    "fshName": "OverageExtension",
+    "fshType": "Extension",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 676,
+    "endLine": 696
+  },
+  {
+    "outputFile": "StructureDefinition-pq-product-batch-strength-textual-extension.json",
+    "fshName": "ProductBatchStrengthTextualExtension",
+    "fshType": "Extension",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 698,
+    "endLine": 708
+  },
+  {
+    "outputFile": "StructureDefinition-pq-specification-status-extension.json",
+    "fshName": "SpecificationStatusExtension",
+    "fshType": "Extension",
+    "fshFile": "qualitySpecification.fsh",
+    "startLine": 1,
+    "endLine": 13
+  },
+  {
+    "outputFile": "StructureDefinition-pq-target-range.json",
+    "fshName": "TargetRange",
+    "fshType": "Extension",
+    "fshFile": "qualitySpecification.fsh",
+    "startLine": 27,
+    "endLine": 49
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-analytical-intstrument-data.json",
+    "fshName": "AnalyticalInstrumentData",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 31,
+    "endLine": 37
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-attachment.json",
+    "fshName": "PqcmcAttachment",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 1,
+    "endLine": 11
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-batch-formula-product.json",
+    "fshName": "BatchFormulaMedicinalProduct",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 866,
+    "endLine": 886
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-component-substance.json",
+    "fshName": "ComponentSubstance",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 44,
+    "endLine": 107
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-component.json",
+    "fshName": "DrugProductComponent",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 109,
+    "endLine": 205
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-dp-ingredient.json",
+    "fshName": "DrugProductIngredient",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 725,
+    "endLine": 757
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-drug-product-description.json",
+    "fshName": "DrugProductDescription",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 574,
+    "endLine": 603
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-drug-product-handle.json",
+    "fshName": "DrugProductHandle",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 559,
+    "endLine": 572
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-drug-product-substance-impurity.json",
+    "fshName": "ImpuritySubstance",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 599,
+    "endLine": 692
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-drug-product-with-impurities.json",
+    "fshName": "DrugProductwithImpurities",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 888,
+    "endLine": 902
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-drug-substance-characterisation.json",
+    "fshName": "DrugSubstanceCharacterisation",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 566,
+    "endLine": 597
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-drug-substance-nomenclature-structure.json",
+    "fshName": "DrugSubstanceNomenclatureStructure",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 302,
+    "endLine": 358
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-excipient.json",
+    "fshName": "ExcipientRaw",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 208,
+    "endLine": 269
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-graphic-attachment.json",
+    "fshName": "GraphicAttachment",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 15,
+    "endLine": 21
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-graphic-reference.json",
+    "fshName": "GraphicReference",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 47,
+    "endLine": 53
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-pdf-attachment.json",
+    "fshName": "PDFAttachment",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 23,
+    "endLine": 29
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-polymorphic-form.json",
+    "fshName": "PolymorphicForm",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 16,
+    "endLine": 42
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-product-batch-formula.json",
+    "fshName": "BatchFormula",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 713,
+    "endLine": 864
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-product-part.json",
+    "fshName": "FinishedProduct",
+    "fshType": "Profile",
+    "fshFile": "DrugProductResources.fsh",
+    "startLine": 98,
+    "endLine": 512
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-quality-specification.json",
+    "fshName": "QualitySpecification",
+    "fshType": "Profile",
+    "fshFile": "qualitySpecification.fsh",
+    "startLine": 56,
+    "endLine": 292
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-routine-drug-substance.json",
+    "fshName": "SubstanceDefinitionHandle",
+    "fshType": "Profile",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 272,
+    "endLine": 300
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-structure-data.json",
+    "fshName": "StructureDataAttachment",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 39,
+    "endLine": 45
+  },
+  {
+    "outputFile": "StructureDefinition-pqcmc-structure-reference.json",
+    "fshName": "StructureReference",
+    "fshType": "Profile",
+    "fshFile": "UtilityProfiles.fsh",
+    "startLine": 55,
+    "endLine": 61
+  },
+  {
+    "outputFile": "StructureDefinition-strength-extension.json",
+    "fshName": "StrengthExtension",
+    "fshType": "Extension",
+    "fshFile": "DrugSubstanceResources.fsh",
+    "startLine": 1,
+    "endLine": 14
+  },
+  {
+    "outputFile": "ValueSet-capsule-classification-category.json",
+    "fshName": "PqcmcCapsuleClassificationCategory",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 271,
+    "endLine": 283
+  },
+  {
+    "outputFile": "ValueSet-cmc-comp-section-types-vs.json",
+    "fshName": "CmcCompSectionTypesVS",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 366,
+    "endLine": 437
+  },
+  {
+    "outputFile": "ValueSet-cmc-product-name-types-vs.json",
+    "fshName": "CmcProductNameTypesVS",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 50,
+    "endLine": 59
+  },
+  {
+    "outputFile": "ValueSet-cmc-specification-types-vs.json",
+    "fshName": "PqcmcQualitySpecificationSectionTypes",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 446,
+    "endLine": 454
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-analytical-instrument-data-types.json",
+    "fshName": "PqcmcAnalyticalInstrumentDataTypes",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1206,
+    "endLine": 1212
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-batch-utilization-terminology.json",
+    "fshName": "PqcmcBatchUtilizationTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 16,
+    "endLine": 28
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-chemical-structure-datafile-type-terminology.json",
+    "fshName": "PqcmcChemicalStructureDataFileTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 456,
+    "endLine": 469
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-closure-type-terminology.json",
+    "fshName": "PqcmcClosureTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 471,
+    "endLine": 506
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-coating-purpose.json",
+    "fshName": "PqcmcCoatingPurpose",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 251,
+    "endLine": 269
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-container-type-terminology.json",
+    "fshName": "PqcmcContainerTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 517,
+    "endLine": 590
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-drug-product-component-function-category-terminology.json",
+    "fshName": "PqcmcDrugProductComponentFunctionCategoryTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 599,
+    "endLine": 609
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-excipient-function-terminology.json",
+    "fshName": "PqcmcExcipientFunctionTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 618,
+    "endLine": 682
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-genc-and-iso-intersect.json",
+    "fshName": "PqcmcGENCAndISOIntersect",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1256,
+    "endLine": 1266
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-graphical-file-types.json",
+    "fshName": "PqcmcGraphicalFileTypes",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1194,
+    "endLine": 1204
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-impurity-classification-terminology.json",
+    "fshName": "PqcmcImpurityClassificationTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1,
+    "endLine": 14
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-manufactured-dose-form-terminology.json",
+    "fshName": "PqcmcManufacturedDoseFormTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1179,
+    "endLine": 1192
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-name-part-terminology.json",
+    "fshName": "PqcmcNamePartTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 179,
+    "endLine": 197
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-non-percentage-units.json",
+    "fshName": "PqcmcNonPercentageUnits",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1237,
+    "endLine": 1244
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-org-identifier-type-terminology.json",
+    "fshName": "PqcmcOrgIdentifierTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 736,
+    "endLine": 746
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-percentage-units.json",
+    "fshName": "PqcmcPercentageUnits",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1225,
+    "endLine": 1235
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-product-part-ingredient-physical-location.json",
+    "fshName": "PqcmcProductPartIngredientPhysicalLocation",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 217,
+    "endLine": 226
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-product-part-type.json",
+    "fshName": "PqcmcProductPartType",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 199,
+    "endLine": 215
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-quality-benchmark-terminology.json",
+    "fshName": "PqcmcQualityBenchmarkTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 684,
+    "endLine": 695
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-release-mechanism.json",
+    "fshName": "PqcmcReleaseMechanism",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 240,
+    "endLine": 249
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-release-profile.json",
+    "fshName": "PqcmcReleaseProfile",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 228,
+    "endLine": 238
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-representation-types.json",
+    "fshName": "PqcmcRepresentationTypes",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1246,
+    "endLine": 1254
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-source-type-terminology.json",
+    "fshName": "PqcmcSourceTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 697,
+    "endLine": 710
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-specification-status-terminology.json",
+    "fshName": "PqcmcSpecificationStatusTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 712,
+    "endLine": 723
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-specification-type-terminology.json",
+    "fshName": "PqcmcSpecificationTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 725,
+    "endLine": 734
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-strength-type-terminology.json",
+    "fshName": "PqcmcStrengthTypeTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 748,
+    "endLine": 756
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-structure-data-types.json",
+    "fshName": "PqcmcStructureDataTypes",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1214,
+    "endLine": 1223
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-substance-name-type.json",
+    "fshName": "PqcmcSubstanceNameType",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 285,
+    "endLine": 302
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-test-category-terminology.json",
+    "fshName": "PqcmcTestCategoryTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 62,
+    "endLine": 177
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-test-method-origin-terminology.json",
+    "fshName": "PqcmcTestMethodOriginTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 758,
+    "endLine": 767
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-test-usage-terminology.json",
+    "fshName": "PqcmcTestUsageTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 769,
+    "endLine": 777
+  },
+  {
+    "outputFile": "ValueSet-pqcmc-units-of-measure.json",
+    "fshName": "PqcmcUnitsMeasure",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 955,
+    "endLine": 1045
+  },
+  {
+    "outputFile": "ValueSet-spl-drug-route-of-administration-terminology.json",
+    "fshName": "SplDrugRouteofAdministrationTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 1047,
+    "endLine": 1177
+  },
+  {
+    "outputFile": "ValueSet-spl-pharmaceutical-dosage-form-terminology.json",
+    "fshName": "SplPharmaceuticalDosageFormTerminology",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 779,
+    "endLine": 953
+  },
+  {
+    "outputFile": "ValueSet-substance-classification.json",
+    "fshName": "SubstanceClassification",
+    "fshType": "ValueSet",
+    "fshFile": "Terminologies.fsh",
+    "startLine": 304,
+    "endLine": 333
+  }
+]

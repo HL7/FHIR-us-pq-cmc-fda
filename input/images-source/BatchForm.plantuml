@@ -54,18 +54,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
 
   }
 
-  node "ExcipientRawNoSource" as NNSEx {
-
-    object "**Parent:** SubstanceDefinition" as obj42 {
-      **Page:**
-      [[StructureDefinition-pqcmc-excipient.html]]
-      **ValueSets:**
-      [[ValueSet-substance-classification.html Substance Classification]]
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
-    }
-
-  }
-
   node "BatchFormulaMedicinalProduct" as NN2 {
 
     object "**Parent:** MedicinalProductDefinition" as obj32 {
@@ -109,7 +97,5 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
   NN -[#darkred]-> NNgred
   NN2 -[#darkred]-> NN
   NNgred -[#darkred]-> NNS
-  NNgred -[#darkred]->NNSEx
-  NNSEx -[#darkred]-> NSO
 }
 @enduml

@@ -408,7 +408,8 @@ Expression: "representation.type.coding.where(
 ).exists()"
 Severity: #error
 
-Invariant: overage-percent-limit
-Description: "Overage percent must be less than 1."
-Expression: "extension('proportionDecimal').value.exists() implies extension('proportionDecimal').value < 1"
+Invariant: cmc-overage-percent-limit
+Description: "Overage percent must be less than 1.0"
+Expression: "extension.where(url='proportionDecimal').single().value < 1"
 Severity: #error
+// there can only be one extension with the 'proportionDecimal url', hence the single()

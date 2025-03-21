@@ -1,0 +1,283 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcContainerTypeTerminology",
+  "id": "pqcmc-container-type-terminology",
+  "title": "Container Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-container-type-terminology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C43165",
+            "display": "AMPULE"
+          },
+          {
+            "code": "C43166",
+            "display": "APPLICATOR"
+          },
+          {
+            "code": "C43167",
+            "display": "BAG"
+          },
+          {
+            "code": "C43168",
+            "display": "BLISTER PACK"
+          },
+          {
+            "code": "C43169",
+            "display": "BOTTLE"
+          },
+          {
+            "code": "C43170",
+            "display": "BOTTLE, DISPENSING"
+          },
+          {
+            "code": "C43171",
+            "display": "BOTTLE, DROPPER"
+          },
+          {
+            "code": "C43172",
+            "display": "BOTTLE, GLASS"
+          },
+          {
+            "code": "C43173",
+            "display": "BOTTLE, PLASTIC"
+          },
+          {
+            "code": "C43174",
+            "display": "BOTTLE, PUMP"
+          },
+          {
+            "code": "C43175",
+            "display": "BOTTLE, SPRAY"
+          },
+          {
+            "code": "C43176",
+            "display": "BOTTLE, UNIT-DOSE"
+          },
+          {
+            "code": "C43177",
+            "display": "BOTTLE, WITH APPLICATOR"
+          },
+          {
+            "code": "C43178",
+            "display": "BOX"
+          },
+          {
+            "code": "C43179",
+            "display": "BOX, UNIT-DOSE"
+          },
+          {
+            "code": "C43180",
+            "display": "CAN"
+          },
+          {
+            "code": "C43181",
+            "display": "CANISTER"
+          },
+          {
+            "code": "C96143",
+            "display": "Canisters, lined"
+          },
+          {
+            "code": "C92708",
+            "display": "CAPSULE"
+          },
+          {
+            "code": "C43182",
+            "display": "CARTON"
+          },
+          {
+            "code": "C43183",
+            "display": "CARTRIDGE"
+          },
+          {
+            "code": "C43184",
+            "display": "CASE"
+          },
+          {
+            "code": "C43185",
+            "display": "CELLO PACK"
+          },
+          {
+            "code": "C43186",
+            "display": "CONTAINER"
+          },
+          {
+            "code": "C43187",
+            "display": "CUP"
+          },
+          {
+            "code": "C43188",
+            "display": "CUP, UNIT-DOSE"
+          },
+          {
+            "code": "C43189",
+            "display": "CYLINDER"
+          },
+          {
+            "code": "C43190",
+            "display": "DEWAR"
+          },
+          {
+            "code": "C43191",
+            "display": "DIALPACK"
+          },
+          {
+            "code": "C96141",
+            "display": "Dish, Petri"
+          },
+          {
+            "code": "C43192",
+            "display": "DOSE PACK"
+          },
+          {
+            "code": "C43193",
+            "display": "DRUM"
+          },
+          {
+            "code": "C96144",
+            "display": "Flask"
+          },
+          {
+            "code": "C79135",
+            "display": "FLEXIBLE INTERMEDIATE BULK CONTAINER"
+          },
+          {
+            "code": "C16738",
+            "display": "INHALER"
+          },
+          {
+            "code": "C43194",
+            "display": "INHALER, REFILL"
+          },
+          {
+            "code": "C43195",
+            "display": "JAR"
+          },
+          {
+            "code": "C43196",
+            "display": "JUG"
+          },
+          {
+            "code": "C43197",
+            "display": "KIT"
+          },
+          {
+            "code": "C48626",
+            "display": "NOT STATED"
+          },
+          {
+            "code": "C43233",
+            "display": "PACKAGE"
+          },
+          {
+            "code": "C43198",
+            "display": "PACKAGE, COMBINATION"
+          },
+          {
+            "code": "C43199",
+            "display": "PACKET"
+          },
+          {
+            "code": "C79136",
+            "display": "PAIL"
+          },
+          {
+            "code": "C82332",
+            "display": "PATCH"
+          },
+          {
+            "code": "C96142",
+            "display": "Plate, Microwell"
+          },
+          {
+            "code": "C43200",
+            "display": "POUCH"
+          },
+          {
+            "code": "C43201",
+            "display": "SUPERSACK"
+          },
+          {
+            "code": "C43202",
+            "display": "SYRINGE"
+          },
+          {
+            "code": "C43203",
+            "display": "SYRINGE, GLASS"
+          },
+          {
+            "code": "C43204",
+            "display": "SYRINGE, PLASTIC"
+          },
+          {
+            "code": "C43205",
+            "display": "TABMINDER"
+          },
+          {
+            "code": "C43206",
+            "display": "TANK"
+          },
+          {
+            "code": "C53438",
+            "display": "TRAY"
+          },
+          {
+            "code": "C42794",
+            "display": "TUBE"
+          },
+          {
+            "code": "C43207",
+            "display": "TUBE, WITH APPLICATOR"
+          },
+          {
+            "code": "C43226",
+            "display": "VIAL"
+          },
+          {
+            "code": "C43208",
+            "display": "VIAL, DISPENSING"
+          },
+          {
+            "code": "C43209",
+            "display": "VIAL, GLASS"
+          },
+          {
+            "code": "C43210",
+            "display": "VIAL, MULTI-DOSE"
+          },
+          {
+            "code": "C43211",
+            "display": "VIAL, PATENT DELIVERY SYSTEM"
+          },
+          {
+            "code": "C43212",
+            "display": "VIAL, PHARMACY BULK PACKAGE"
+          },
+          {
+            "code": "C43213",
+            "display": "VIAL, PIGGYBACK"
+          },
+          {
+            "code": "C43214",
+            "display": "VIAL, PLASTIC"
+          },
+          {
+            "code": "C43215",
+            "display": "VIAL, SINGLE-DOSE"
+          },
+          {
+            "code": "C43216",
+            "display": "VIAL, SINGLE-USE"
+          }
+        ]
+      }
+    ]
+  }
+}

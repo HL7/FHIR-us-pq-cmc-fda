@@ -1,0 +1,135 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ectd-composition-32s3",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32s3",
+  "name": "EctdComposition32S3",
+  "title": "eCTD Substance Characterisation",
+  "status": "active",
+  "description": "The fields needed to represent the Substance Structure and Impurities to be included under the 3.2.S.3 heading of the eCTD. References Sponsor Organization, Drug Substance Structure, and Drug Substance Impurities",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ich_3.2.s.3",
+              "system": "http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use",
+              "display": "Characterisation"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the different sections that are needed in an ectd document."
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Structure",
+        "path": "Composition.section",
+        "sliceName": "Structure",
+        "definition": "Substance Characterisation to be included under the 3.2.S.3 eCTD heading.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Structure.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Structure.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ich_3.2.s.3.1",
+              "system": "http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use",
+              "display": "Elucidation of Structure and other Characteristics"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Structure.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-substance-characterisation"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

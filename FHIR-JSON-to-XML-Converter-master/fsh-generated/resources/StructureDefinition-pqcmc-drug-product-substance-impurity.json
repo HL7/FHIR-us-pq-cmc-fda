@@ -1,0 +1,546 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pqcmc-drug-product-substance-impurity",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-product-substance-impurity",
+  "name": "ImpuritySubstance",
+  "title": "Drug Substance Impurity",
+  "status": "active",
+  "description": "Any component of the drug substance that is not the chemical entity for product composition.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "SubstanceDefinition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/SubstanceDefinition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "SubstanceDefinition",
+        "path": "SubstanceDefinition",
+        "constraint": [
+          {
+            "key": "cmc-impurity-unii-required",
+            "severity": "error",
+            "human": "If Product Impurity Chemical Structure Data File is not present, then a unii is required",
+            "expression": "structure.representation.type.coding.where(\r\n  system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and\r\n  code = 'C103240'\r\n).exists().not() implies (\r\n  code.where(\r\n    code.coding.exists(system = 'http://fdasis.nlm.nih.gov')\r\n  ).exists()\r\n)",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-product-substance-impurity"
+          }
+        ]
+      },
+      {
+        "id": "SubstanceDefinition.identifier",
+        "path": "SubstanceDefinition.identifier",
+        "short": "optional user designated identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.classification",
+        "path": "SubstanceDefinition.classification",
+        "short": "Impurity Classification",
+        "definition": "A categorization of impurities based on its origin. [Source: SME Defined]\nExamples: Degradation Product, Inorganic, Process Related/Process, Product Related, Leachables.",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-impurity-classification-terminology"
+        }
+      },
+      {
+        "id": "SubstanceDefinition.characterization",
+        "path": "SubstanceDefinition.characterization",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.characterization.technique",
+        "path": "SubstanceDefinition.characterization.technique",
+        "short": "Substance Characterisation Technique",
+        "definition": "The technique used to elucidate the structure ore characterization of the drug substance. [Source: SME Defined]\nExamples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/codeable-concept-text-only"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.characterization.description",
+        "path": "SubstanceDefinition.characterization.description",
+        "short": "Analysis Narrative Text and Table",
+        "definition": "",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.characterization.file",
+        "path": "SubstanceDefinition.characterization.file",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "$this"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        },
+        "short": "Impurity Analysis Graphic | Impurity Analytical Instrument Data File",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.characterization.file:AnalysisGraphic",
+        "path": "SubstanceDefinition.characterization.file",
+        "sliceName": "AnalysisGraphic",
+        "short": "Analysis Graphic",
+        "definition": "Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.\nNote: Refer to the 'Acceptable File Formats for use in eCTD'\nExample: This is the representation of the instrumental output for the molecule -- CH3OHA pictorial representation of the structure of the drug substance. Required for Small Molecules. [Source: SME Defined]",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-attachment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SubstanceDefinition.characterization.file:AnalyticalInstrumentData",
+        "path": "SubstanceDefinition.characterization.file",
+        "sliceName": "AnalyticalInstrumentData",
+        "short": "Analytical Instrument Data File",
+        "definition": "Impurity Analytical Instrument Data File: The transport format for data exchange. [Source: SME Defined]\nExample: JCAMP, ADX, ADF.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Attachment",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-analytical-intstrument-data"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SubstanceDefinition.structure",
+        "path": "SubstanceDefinition.structure",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.structure.technique",
+        "path": "SubstanceDefinition.structure.technique",
+        "short": "Impurity Substance Characterisation Technique",
+        "definition": "The technique used to elucidate the structure or characterisation of the drug substance. [Source: SME Defined] Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay.",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/codeable-concept-text-only"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation",
+        "path": "SubstanceDefinition.structure.representation",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "closed",
+          "ordered": false
+        },
+        "short": "Impurity Structure Graphic | Impurity Structure Data File",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation.type",
+        "path": "SubstanceDefinition.structure.representation.type",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-representation-types"
+        }
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:graphic",
+        "path": "SubstanceDefinition.structure.representation",
+        "sliceName": "graphic",
+        "short": "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:graphic.type",
+        "path": "SubstanceDefinition.structure.representation.type",
+        "short": "Graphic",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C54273",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+            }
+          ]
+        }
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:graphic.document",
+        "path": "SubstanceDefinition.structure.representation.document",
+        "short": "Impurity Structure Graphic",
+        "definition": "A pictorial representation of the structure of the impurity substance. \n[Source: SME Defined] Note: Refer to the 'Acceptable File Formats for \nuse in eCTD' Example: This is the representation of the molecule CH3OH, \nor the sequence SHLVEALALVAGERG.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-reference"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureFile",
+        "path": "SubstanceDefinition.structure.representation",
+        "sliceName": "structureFile",
+        "short": "machine-readable representation -- attached file",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureFile.type",
+        "path": "SubstanceDefinition.structure.representation.type",
+        "short": "Structure File",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C103240",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+            }
+          ]
+        }
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureFile.document",
+        "path": "SubstanceDefinition.structure.representation.document",
+        "short": "Impurity Chemical Structure Data (files, e.g. .SDF, .CIF)",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-structure-reference"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureString",
+        "path": "SubstanceDefinition.structure.representation",
+        "sliceName": "structureString",
+        "short": "machine-readable representation -- plain text",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureString.type",
+        "path": "SubstanceDefinition.structure.representation.type",
+        "short": "Structure Textual",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C45253",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"
+            }
+          ]
+        }
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureString.representation",
+        "path": "SubstanceDefinition.structure.representation.representation",
+        "short": "Impurity Chemical Structure Data (short, plain text representations, e.g. SMILES)",
+        "definition": "A machine-readable representation of the structure of the chemical. [Source: SME Defined]\nExamples: SMILES, INCHI",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.structure.representation:structureString.format",
+        "path": "SubstanceDefinition.structure.representation.format",
+        "short": "Drug Substance Impurity Method Type",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-chemical-structure-datafile-type-terminology"
+        }
+      },
+      {
+        "id": "SubstanceDefinition.code",
+        "path": "SubstanceDefinition.code",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code.coding.system"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.code:unii",
+        "path": "SubstanceDefinition.code",
+        "sliceName": "unii",
+        "short": "UNII",
+        "definition": "The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]\nExample: 362O9ITL9D\nNote: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "SubstanceDefinition.code:unii.code",
+        "path": "SubstanceDefinition.code.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.code:unii.code.coding",
+        "path": "SubstanceDefinition.code.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.code:unii.code.coding.system",
+        "path": "SubstanceDefinition.code.code.coding.system",
+        "min": 1,
+        "patternUri": "http://fdasis.nlm.nih.gov",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.code:uniProt",
+        "path": "SubstanceDefinition.code",
+        "sliceName": "uniProt",
+        "short": "UniProt ID",
+        "definition": "The  UniProt ID is an index to the UniProt knowledgebase,  a large resource of protein sequences and associated detailed annotation.\nIt is accessible at https://www.uniprot.org/",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "SubstanceDefinition.code:uniProt.code",
+        "path": "SubstanceDefinition.code.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.code:uniProt.code.coding",
+        "path": "SubstanceDefinition.code.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.code:uniProt.code.coding.system",
+        "path": "SubstanceDefinition.code.code.coding.system",
+        "min": 1,
+        "patternUri": "https://www.uniprot.org",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name",
+        "path": "SubstanceDefinition.name",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "closed",
+          "description": "Slice based on value pattern"
+        },
+        "short": "Substance Name",
+        "definition": "Substance Name is identified by its Substance Type.\nSubstance Type | Product Part Ingredient Name Type: Identifies the source that assigned the product ingredient name. [Source: SME Defined]\nExamples: GSRS Preferred Term, Systematic Name, INN, USP/NF",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "cmc-name-preferred",
+            "severity": "error",
+            "human": "Name.preferred: at most one = true",
+            "expression": "select(preferred = true).count() < 2",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-product-substance-impurity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name.type",
+        "path": "SubstanceDefinition.name.type",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-substance-name-type"
+        }
+      },
+      {
+        "id": "SubstanceDefinition.name.preferred",
+        "path": "SubstanceDefinition.name.preferred",
+        "short": "True when the name type is Substance Name",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:sub",
+        "path": "SubstanceDefinition.name",
+        "sliceName": "sub",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:sub.name",
+        "path": "SubstanceDefinition.name.name",
+        "short": "Generic Name",
+        "definition": "A non-branded nor registered name that meant for common use.",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:sub.type",
+        "path": "SubstanceDefinition.name.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C97054",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+              "display": "Generic Name"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:sub.preferred",
+        "path": "SubstanceDefinition.name.preferred",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:gsrs",
+        "path": "SubstanceDefinition.name",
+        "sliceName": "gsrs",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:gsrs.name",
+        "path": "SubstanceDefinition.name.name",
+        "short": "GSRS Preferred Term",
+        "definition": "Default display name identified within FDA Global Substance Registration System (GSRS).",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:gsrs.type",
+        "path": "SubstanceDefinition.name.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C203355",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+              "display": "GSRS Preferred Term"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:gsrs.preferred",
+        "path": "SubstanceDefinition.name.preferred",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:isbt",
+        "path": "SubstanceDefinition.name",
+        "sliceName": "isbt",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:isbt.name",
+        "path": "SubstanceDefinition.name.name",
+        "short": "ISBT-128 DIN",
+        "definition": "It is the global standard for the terminology, identification, coding and labeling of medical products of human origin (including blood, cell, tissue, milk, and organ products). [Source: https://www.iccbba.org/]",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:isbt.type",
+        "path": "SubstanceDefinition.name.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C95517",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+              "display": "ISBT-128 DIN"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:isbt.preferred",
+        "path": "SubstanceDefinition.name.preferred",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:comp",
+        "path": "SubstanceDefinition.name",
+        "sliceName": "comp",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:comp.name",
+        "path": "SubstanceDefinition.name.name",
+        "short": "Company ID/Code",
+        "definition": "An internal identifier assigned by the sponsor to this drug substance. [Source: SME Defined]",
+        "mustSupport": true
+      },
+      {
+        "id": "SubstanceDefinition.name:comp.type",
+        "path": "SubstanceDefinition.name.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "C203354",
+              "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+              "display": "Company ID/Code"
+            }
+          ]
+        },
+        "mustSupport": true
+      }
+    ]
+  }
+}

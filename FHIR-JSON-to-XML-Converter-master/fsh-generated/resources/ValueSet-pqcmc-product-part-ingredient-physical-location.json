@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcProductPartIngredientPhysicalLocation",
+  "id": "pqcmc-product-part-ingredient-physical-location",
+  "title": "Ingredient Location Terminology",
+  "description": "A category of terminology used to qualify the information pertaining to the location of an ingredient within a product in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-product-part-ingredient-physical-location",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C203881",
+            "display": "Active core/granulate"
+          },
+          {
+            "code": "C203882",
+            "display": "Extragranular"
+          },
+          {
+            "code": "C203883",
+            "display": "Intragranular"
+          }
+        ]
+      }
+    ]
+  }
+}

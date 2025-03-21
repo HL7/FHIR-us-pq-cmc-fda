@@ -1,0 +1,64 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pq-specification-status-extension",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-specification-status-extension",
+  "name": "SpecificationStatusExtension",
+  "title": "Specification Status",
+  "status": "active",
+  "description": "A classification of the regulatory status of the specification.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "PlanDefinition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Specification Status",
+        "definition": "A classification of the regulatory status of the specification."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-specification-status-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Specification Stutus",
+        "definition": "The current FDA regulatory status of the specification. [Source: SME Defined]\nExamples: Approved, Not Approved, Reported in a CBE or AR. ",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-specification-status-terminology"
+        }
+      }
+    ]
+  }
+}

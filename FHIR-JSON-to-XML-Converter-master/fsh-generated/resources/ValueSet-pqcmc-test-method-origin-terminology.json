@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcTestMethodOriginTerminology",
+  "id": "pqcmc-test-method-origin-terminology",
+  "title": "Test Method Origin Terminology",
+  "description": "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-test-method-origin-terminology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C96164",
+            "display": "CFR"
+          },
+          {
+            "code": "C96102",
+            "display": "Compendial"
+          },
+          {
+            "code": "C96103",
+            "display": "Proprietary"
+          }
+        ]
+      }
+    ]
+  }
+}

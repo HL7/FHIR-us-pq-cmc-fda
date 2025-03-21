@@ -30,7 +30,7 @@ Usage: #inline
 
 Instance: CharacterisationBundle
 InstanceOf: CMCeCTDDocument32S3
-Title: "3.2.S.3 Bundle "
+Title: "3.2.S.3 Bundle"
 Description: "Substance Characterisation bundle"
 Usage: #example
 * identifier.system = $IDsys

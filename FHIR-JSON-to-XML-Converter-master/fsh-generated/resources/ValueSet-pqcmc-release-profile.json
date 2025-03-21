@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcReleaseProfile",
+  "id": "pqcmc-release-profile",
+  "title": "Release Profile Terminology",
+  "description": "A category of terminology used to qualify the information pertaining to release profile in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-release-profile",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C42730",
+            "display": "Delayed-Release Profile"
+          },
+          {
+            "code": "C42713",
+            "display": "Extended-Release Profile"
+          },
+          {
+            "code": "C42669",
+            "display": "Immediate Release Profile"
+          },
+          {
+            "code": "C48660",
+            "display": "Not Applicable"
+          }
+        ]
+      }
+    ]
+  }
+}
