@@ -1,0 +1,135 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ectd-composition-32p55",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32p55",
+  "name": "EctdComposition32P55",
+  "title": "eCTD Product Characterisation of Impurities",
+  "status": "active",
+  "description": "The fields needed to represent the Product Characterisation of Impurities in a EctdComposition32P55 to be included under the eCTD. References Sponsor Organization and Product Characterisation of Impurities",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ich_3.2.p.5.5",
+              "system": "http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use",
+              "display": "Characterisation of Impurities"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice on the ICH Section code. only one slice is defined but is left open for other sections that won't be parsed",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Characterisation",
+        "path": "Composition.section",
+        "sliceName": "Characterisation",
+        "definition": "Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Characterisation.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Characterisation.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ich_3.2.p.5.5",
+              "system": "http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use",
+              "display": "Characterisation of Impurities"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:Characterisation.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-drug-product-with-impurities"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

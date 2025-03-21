@@ -1,0 +1,135 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ectd-composition-32p32",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32p32",
+  "name": "EctdComposition32P32",
+  "title": "eCTD Batch Formula",
+  "status": "active",
+  "description": "The fields needed to represent the Product Batch Formula to be included under the eCTD. References Sponsor Organization and Batch Formula",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ich_3.2.p.3.2",
+              "system": "http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use",
+              "display": "Batch Formula"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice on ICH code. only one slice is defined but slicing is left open for interoperability",
+          "ordered": false
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:BatchFormulaMedicinalProduct",
+        "path": "Composition.section",
+        "sliceName": "BatchFormulaMedicinalProduct",
+        "definition": "Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:BatchFormulaMedicinalProduct.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:BatchFormulaMedicinalProduct.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ich_3.2.p.3.2",
+              "system": "http://terminology.hl7.org/temporary-uri/codeSystem/ICH-context-of-use",
+              "display": "Batch Formula"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:BatchFormulaMedicinalProduct.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-batch-formula-product"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcNamePartTerminology",
+  "id": "pqcmc-name-part-terminology",
+  "title": "PQCMC Name Part Terminology",
+  "description": "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-name-part-terminology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2",
+        "concept": [
+          {
+            "code": "CON",
+            "display": "container name"
+          },
+          {
+            "code": "DEV",
+            "display": "device name"
+          },
+          {
+            "code": "FLAV",
+            "display": "FlavorName"
+          },
+          {
+            "code": "FORMUL",
+            "display": "FormulationPartName"
+          },
+          {
+            "code": "FRM",
+            "display": "form name"
+          },
+          {
+            "code": "INV",
+            "display": "invented name"
+          },
+          {
+            "code": "POPUL",
+            "display": "TargetPopulationName"
+          },
+          {
+            "code": "SCI",
+            "display": "scientific name"
+          },
+          {
+            "code": "STR",
+            "display": "strength name"
+          },
+          {
+            "code": "TIME",
+            "display": "TimeOrPeriodName"
+          },
+          {
+            "code": "TMK",
+            "display": "trademark name"
+          },
+          {
+            "code": "USE",
+            "display": "intended use name"
+          }
+        ]
+      }
+    ]
+  }
+}

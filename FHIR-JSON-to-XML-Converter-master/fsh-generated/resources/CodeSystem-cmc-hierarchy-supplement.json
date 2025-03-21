@@ -1,0 +1,318 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "supplement",
+  "name": "NCItHierarchySupplement",
+  "id": "cmc-hierarchy-supplement",
+  "title": "PQ-CMC-FDA NCIt Hierarchy Supplement",
+  "description": "Provides hierarchical relationships for value sets as a CodeSystem supplement to the NCI Thesaurus (NCIt) ",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-hierarchy-supplement",
+  "concept": [
+    {
+      "code": "C60819",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C204845"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205001"
+        },
+        {
+          "code": "child",
+          "valueCode": "C81183"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205003"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205007"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205015"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205018"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205020"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205028"
+        },
+        {
+          "code": "child",
+          "valueCode": "C62352"
+        },
+        {
+          "code": "child",
+          "valueCode": "C171277"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205038"
+        },
+        {
+          "code": "child",
+          "valueCode": "C64858"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205006"
+        }
+      ]
+    },
+    {
+      "code": "C134250",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C205004"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205019"
+        },
+        {
+          "code": "child",
+          "valueCode": "C134115"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205050"
+        }
+      ]
+    },
+    {
+      "code": "C205026",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C138990"
+        },
+        {
+          "code": "child",
+          "valueCode": "C139027"
+        },
+        {
+          "code": "child",
+          "valueCode": "C134262"
+        },
+        {
+          "code": "child",
+          "valueCode": "C134261"
+        }
+      ]
+    },
+    {
+      "code": "C193381",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C205024"
+        }
+      ]
+    },
+    {
+      "code": "C25483",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C205022"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205017"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205209"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205053"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205021"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205016"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205206"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205045"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205036"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205011"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205010"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205009"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205037"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205025"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205034"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205033"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205035"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205005"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205044"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205043"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205042"
+        }
+      ]
+    },
+    {
+      "code": "C18951",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C16643"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205054"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205031"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205002"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205008"
+        }
+      ]
+    },
+    {
+      "code": "C204971",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C205039"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205040"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205052"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205047"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205048"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205051"
+        },
+        {
+          "code": "child",
+          "valueCode": "C205014"
+        },
+        {
+          "code": "child",
+          "valueCode": "C204890"
+        },
+        {
+          "code": "child",
+          "valueCode": "C134254"
+        },
+        {
+          "code": "child",
+          "valueCode": "C134002"
+        }
+      ]
+    },
+    {
+      "code": "C45298",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C154598"
+        }
+      ]
+    },
+    {
+      "code": "C45300",
+      "property": [
+        {
+          "code": "child",
+          "valueCode": "C154433"
+        },
+        {
+          "code": "child",
+          "valueCode": "C154605"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "publisher": "NCI Thesaurus (NCIt)",
+  "copyright": "PQ-CMC-FDA Temporary Codes are either in the NCI Thesaurus (NCIt) or are in the process of being included in NCIt. When all codes are in NCIt, they will migrate to the HL7 Terminology (THO). License Note Unless otherwise indicated, all text within NCI products is free of copyright and may be reused without our permission. Credit the National Cancer Institute as the source. For more licensing information see: [https://www.cancer.gov/policies/copyright-reuse](https://www.cancer.gov/policies/copyright-reuse)",
+  "supplements": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+  "property": [
+    {
+      "code": "child",
+      "uri": "http://hl7.org/fhir/concept-properties#child",
+      "description": "Defines which codes are children",
+      "type": "code"
+    }
+  ],
+  "hierarchyMeaning": "is-a"
+}

@@ -1,0 +1,53 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcManufacturedDoseFormTerminology",
+  "id": "pqcmc-manufactured-dose-form-terminology",
+  "title": "Manufactured Dose Form Terminology",
+  "description": "Terminology used to qualify the information pertaining to the manufactured dose form.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-manufactured-dose-form-terminology",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+      "valueCanonical": "http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-hierarchy-supplement"
+    }
+  ],
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C45299",
+            "display": "Gas"
+          },
+          {
+            "code": "C45298",
+            "display": "Liquid"
+          },
+          {
+            "code": "C154598",
+            "display": "Solution"
+          },
+          {
+            "code": "C149895",
+            "display": "Semi-solid"
+          },
+          {
+            "code": "C45300",
+            "display": "Solid"
+          },
+          {
+            "code": "C154433",
+            "display": "Capsule"
+          },
+          {
+            "code": "C154605",
+            "display": "Tablet"
+          }
+        ]
+      }
+    ]
+  }
+}

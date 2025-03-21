@@ -1,0 +1,119 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pq-overage-extension",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-overage-extension",
+  "name": "OverageExtension",
+  "title": "Overage Extension",
+  "status": "active",
+  "description": "Extension for measurements related to excess for ingredients in the batch formula.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ManufacturedItemDefinition.component.constituent"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Overage Extension",
+        "definition": "Extension for measurements related to excess for ingredients in the batch formula.",
+        "constraint": [
+          {
+            "key": "cmc-overage-percent-limit",
+            "severity": "error",
+            "human": "Overage percent must be less than 1.0",
+            "expression": "extension.exists(url='proportionDecimal').value < 1",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-overage-extension"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 2
+      },
+      {
+        "id": "Extension.extension:proportionDecimal",
+        "path": "Extension.extension",
+        "sliceName": "proportionDecimal",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:proportionDecimal.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:proportionDecimal.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "proportionDecimal"
+      },
+      {
+        "id": "Extension.extension:proportionDecimal.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Overage Percent",
+        "definition": "Overage is the proportion of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.\nNote: This is not for stability loss, and generally not permitted.\nExample: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.\nThe value is entered as a decimal value less then one.",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:justification",
+        "path": "Extension.extension",
+        "sliceName": "justification",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:justification.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:justification.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "justification"
+      },
+      {
+        "id": "Extension.extension:justification.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Overage Justification",
+        "definition": "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]",
+        "type": [
+          {
+            "code": "markdown"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-overage-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

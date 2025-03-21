@@ -1,0 +1,457 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcTestCategoryTerminology",
+  "id": "pqcmc-test-category-terminology",
+  "title": "Test Category Terminology",
+  "description": "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-test-category-terminology",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-supplement",
+      "valueCanonical": "http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-hierarchy-supplement"
+    }
+  ],
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C60819",
+            "display": "Assay"
+          },
+          {
+            "code": "C204845",
+            "display": "Active Ingredient Content"
+          },
+          {
+            "code": "C205001",
+            "display": "Adventitious Agents (Safety)"
+          },
+          {
+            "code": "C81183",
+            "display": "Amino Acid Content"
+          },
+          {
+            "code": "C205003",
+            "display": "Bioburden"
+          },
+          {
+            "code": "C205007",
+            "display": "Counterion Content"
+          },
+          {
+            "code": "C205015",
+            "display": "Excipient"
+          },
+          {
+            "code": "C205018",
+            "display": "Host Cell DNA"
+          },
+          {
+            "code": "C205020",
+            "display": "In Vitro or In Vivo Test for Viral Contaminants"
+          },
+          {
+            "code": "C205028",
+            "display": "Percent Conjugate"
+          },
+          {
+            "code": "C62352",
+            "display": "Purity"
+          },
+          {
+            "code": "C171277",
+            "display": "Nucleic Acid Content"
+          },
+          {
+            "code": "C205038",
+            "display": "Solvate Content"
+          },
+          {
+            "code": "C64858",
+            "display": "Total Protein"
+          },
+          {
+            "code": "C205006",
+            "display": "Cell and Gene Therapy Product Characterization Assay"
+          },
+          {
+            "code": "C134249",
+            "display": "Container Closure Integrity"
+          },
+          {
+            "code": "C134250",
+            "display": "Uniformity"
+          },
+          {
+            "code": "C205004",
+            "display": "Blend Uniformity"
+          },
+          {
+            "code": "C205019",
+            "display": "IPC Content Uniformity"
+          },
+          {
+            "code": "C134115",
+            "display": "Uniformity of Dosage Unit"
+          },
+          {
+            "code": "C205050",
+            "display": "Uniformity in Containers"
+          },
+          {
+            "code": "C133961",
+            "display": "Deliverable Volume/Fill Volume"
+          },
+          {
+            "code": "C205026",
+            "display": "Organoleptic"
+          },
+          {
+            "code": "C138990",
+            "display": "Description/Appearance"
+          },
+          {
+            "code": "C139027",
+            "display": "Odor"
+          },
+          {
+            "code": "C134262",
+            "display": "Color of Solution"
+          },
+          {
+            "code": "C134261",
+            "display": "Clarity of Solution"
+          },
+          {
+            "code": "C138993",
+            "display": "Identification"
+          },
+          {
+            "code": "C134252",
+            "display": "Disintegration"
+          },
+          {
+            "code": "C134253",
+            "display": "Dissolution"
+          },
+          {
+            "code": "C205012",
+            "display": "Droplet Size"
+          },
+          {
+            "code": "C193381",
+            "display": "Foreign and Particulate Matter"
+          },
+          {
+            "code": "C205024",
+            "display": "Metal Detection"
+          },
+          {
+            "code": "C134255",
+            "display": "Loss on Drying"
+          },
+          {
+            "code": "C134256",
+            "display": "Microbial Limits"
+          },
+          {
+            "code": "C205027",
+            "display": "Osmolality/Osmolarity"
+          },
+          {
+            "code": "C134257",
+            "display": "Particle Size Distribution"
+          },
+          {
+            "code": "C134260",
+            "display": "Bulk Density"
+          },
+          {
+            "code": "C134263",
+            "display": "Conductivity"
+          },
+          {
+            "code": "C133974",
+            "display": "Crystallinity"
+          },
+          {
+            "code": "C133975",
+            "display": "Friability"
+          },
+          {
+            "code": "C134264",
+            "display": "Hardness"
+          },
+          {
+            "code": "C63394",
+            "display": "Melting Point"
+          },
+          {
+            "code": "C103201",
+            "display": "Optical Rotation"
+          },
+          {
+            "code": "C205029",
+            "display": "pH"
+          },
+          {
+            "code": "C60821",
+            "display": "Solubility"
+          },
+          {
+            "code": "C64832",
+            "display": "Specific Gravity"
+          },
+          {
+            "code": "C25483",
+            "display": "Material Properties/Measurements"
+          },
+          {
+            "code": "C205022",
+            "display": "Individual Weight"
+          },
+          {
+            "code": "C205017",
+            "display": "Group Weight"
+          },
+          {
+            "code": "C205209",
+            "display": "Average Weight"
+          },
+          {
+            "code": "C205053",
+            "display": "Weight Variation"
+          },
+          {
+            "code": "C205021",
+            "display": "Individual Fill Weight"
+          },
+          {
+            "code": "C205016",
+            "display": "Group Fill Weight"
+          },
+          {
+            "code": "C205206",
+            "display": "Average Fill Weight"
+          },
+          {
+            "code": "C205045",
+            "display": "Target Group Weight Gain %"
+          },
+          {
+            "code": "C205036",
+            "display": "Shell Weight"
+          },
+          {
+            "code": "C205011",
+            "display": "Orifice Location"
+          },
+          {
+            "code": "C205010",
+            "display": "Orifice Diameter"
+          },
+          {
+            "code": "C205009",
+            "display": "Orifice Depth"
+          },
+          {
+            "code": "C205037",
+            "display": "Drilled Side (Single or Double)"
+          },
+          {
+            "code": "C205025",
+            "display": "Number of Orifices"
+          },
+          {
+            "code": "C205034",
+            "display": "Ribbon Thickness"
+          },
+          {
+            "code": "C205033",
+            "display": "Ribbon Density"
+          },
+          {
+            "code": "C205035",
+            "display": "Seam Thickness"
+          },
+          {
+            "code": "C205005",
+            "display": "Lock Length"
+          },
+          {
+            "code": "C205044",
+            "display": "Tablet/Capsule Length"
+          },
+          {
+            "code": "C205043",
+            "display": "Tablet/Capsule Diameter"
+          },
+          {
+            "code": "C205042",
+            "display": "Tablet Thickness"
+          },
+          {
+            "code": "C134266",
+            "display": "Tap Density"
+          },
+          {
+            "code": "C205049",
+            "display": "Transdermal Properties"
+          },
+          {
+            "code": "C133979",
+            "display": "Viscosity/Rheological Properties"
+          },
+          {
+            "code": "C134267",
+            "display": "Plume Geometry"
+          },
+          {
+            "code": "C134269",
+            "display": "Polymorphism"
+          },
+          {
+            "code": "C205030",
+            "display": "Porosity"
+          },
+          {
+            "code": "C134270",
+            "display": "Potency"
+          },
+          {
+            "code": "C133983",
+            "display": "Pyrogenicity/Endotoxin"
+          },
+          {
+            "code": "C134272",
+            "display": "Reconstitution Time"
+          },
+          {
+            "code": "C133985",
+            "display": "Redispersibility"
+          },
+          {
+            "code": "C205032",
+            "display": "Refractive Index"
+          },
+          {
+            "code": "C134276",
+            "display": "Residue on Ignition"
+          },
+          {
+            "code": "C134277",
+            "display": "Spray Pattern"
+          },
+          {
+            "code": "C134278",
+            "display": "Sterility"
+          },
+          {
+            "code": "C134113",
+            "display": "Syringe Functionality"
+          },
+          {
+            "code": "C134114",
+            "display": "Total Organic Carbon"
+          },
+          {
+            "code": "C200004",
+            "display": "Cytotoxicity"
+          },
+          {
+            "code": "C205023",
+            "display": "Mechanical Integrity"
+          },
+          {
+            "code": "C205041",
+            "display": "Surface Area"
+          },
+          {
+            "code": "C18951",
+            "display": "Post-translational Modifications"
+          },
+          {
+            "code": "C16643",
+            "display": "Glycosylation"
+          },
+          {
+            "code": "C205054",
+            "display": "Thrombin Peptide Map"
+          },
+          {
+            "code": "C205031",
+            "display": "Sialylation"
+          },
+          {
+            "code": "C205002",
+            "display": "Amidation"
+          },
+          {
+            "code": "C205008",
+            "display": "Deamidation"
+          },
+          {
+            "code": "C205000",
+            "display": "Functional Assays"
+          },
+          {
+            "code": "C205013",
+            "display": "Elemental Analysis"
+          },
+          {
+            "code": "C74723",
+            "display": "Turbidity"
+          },
+          {
+            "code": "C204971",
+            "display": "Impurity"
+          },
+          {
+            "code": "C205039",
+            "display": "Specified Identified Impurity"
+          },
+          {
+            "code": "C205040",
+            "display": "Specified Unidentified Impurity"
+          },
+          {
+            "code": "C205052",
+            "display": "Unspecified Impurity"
+          },
+          {
+            "code": "C205047",
+            "display": "Total Impurities"
+          },
+          {
+            "code": "C205048",
+            "display": "Total Unknown Impurities"
+          },
+          {
+            "code": "C205051",
+            "display": "Identified Impurity under IT, Monitored as Unspecified"
+          },
+          {
+            "code": "C205014",
+            "display": "Elemental Impurity"
+          },
+          {
+            "code": "C204890",
+            "display": "Impurity Chemical"
+          },
+          {
+            "code": "C134254",
+            "display": "Impurities/Degradation Products/Related Substances"
+          },
+          {
+            "code": "C134002",
+            "display": "Residual Solvent"
+          }
+        ]
+      }
+    ]
+  }
+}

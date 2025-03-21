@@ -1,0 +1,138 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pq-target-range",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-target-range",
+  "name": "TargetRange",
+  "title": "Target Range",
+  "status": "active",
+  "description": "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "PlanDefinition.goal.target",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Target Range",
+        "definition": "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator",
+        "isModifier": true,
+        "isModifierReason": "When present, the target cannot have a detail; instead this extension acts as its detail"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "short": "ValueNumeric (range)",
+        "definition": "The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]",
+        "min": 2
+      },
+      {
+        "id": "Extension.extension:low",
+        "path": "Extension.extension",
+        "sliceName": "low",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:low.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:low.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "low"
+      },
+      {
+        "id": "Extension.extension:low.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:low.value[x].value",
+        "path": "Extension.extension.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:low.value[x].unit",
+        "path": "Extension.extension.value[x].unit",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:high",
+        "path": "Extension.extension",
+        "sliceName": "high",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:high.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:high.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "high"
+      },
+      {
+        "id": "Extension.extension:high.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:high.value[x].value",
+        "path": "Extension.extension.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:high.value[x].unit",
+        "path": "Extension.extension.value[x].unit",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-target-range"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
