@@ -26,8 +26,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
     object "**Parent:** Organization" as objAu {
       **Page:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 
@@ -54,6 +52,17 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
 
   }
 
+  node "ExcipientRaw" as N2all1 {
+
+        object "**Parent:** SubstanceDefinition" as objall22 {
+            **Page:**
+            [[StructureDefinition-pqcmc-excipient.html]]
+            **ValueSets:**
+            [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+        }
+    }
   node "BatchFormulaMedicinalProduct" as NN2 {
 
     object "**Parent:** MedicinalProductDefinition" as obj32 {
@@ -77,8 +86,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
       [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
       [[ValueSet-pqcmc-non-percentage-units.html Non-Percentage Units]]
       [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
-      [[ValueSet-pqcmc-product-part-ingredient-physical-location.html Ingredient Location Terminology]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+
 
     }
 
@@ -97,5 +105,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
   NN -[#darkred]-> NNgred
   NN2 -[#darkred]-> NN
   NNgred -[#darkred]-> NNS
+  NNgred -[#darkred]-> N2all1
 }
 @enduml

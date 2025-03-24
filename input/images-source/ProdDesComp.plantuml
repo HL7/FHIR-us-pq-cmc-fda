@@ -55,7 +55,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
       [[ValueSet-pqcmc-drug-product-component-function-category-terminology.html Drug Product Component Function Category Terminology]]
       [[ValueSet-pqcmc-excipient-function-terminology.html Excipient Function Terminology]]
       [[ValueSet-pqcmc-manufactured-dose-form-terminology.html Manufactured Dose Form Terminology]]
-      [[ValueSet-pqcmc-non-percentage-units.html Non Percentage Units]]
+      [[ValueSet-pqcmc-non-percentage-units.html Non-Percentage Units]]
       [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
       [[ValueSet-pqcmc-product-part-ingredient-physical-location.html Product Part Ingredient Physical Location]]
       [[ValueSet-pqcmc-product-part-type.html Product Part Type]]
@@ -124,8 +124,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p10.html eCTD Heading 3.2.P.1
     object "**Parent:** Organization" as objAu {
       **Page:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
       
     }
   }

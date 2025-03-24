@@ -50,7 +50,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
             **Page:**
             [[StructureDefinition-cmc-organization.html]]
             **ValueSets:**
-            [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
+            
         }
     }
 }

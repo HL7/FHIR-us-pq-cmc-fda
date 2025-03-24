@@ -733,17 +733,17 @@ Description: "Terminology used to qualify the information pertaining to specific
 * $NCIT#C134022 "Drug Substance"
 * $NCIT#C133931 "Raw Materials/Excipients/Intermediates/Reagents"
 
-ValueSet: PqcmcOrgIdentifierTypeTerminology
-Id: pqcmc-org-identifier-type-terminology
-Title: "Organization-Site Identifier Terminology"
-Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+//ValueSet: PqcmcOrgIdentifierTypeTerminology
+//d: pqcmc-org-identifier-type-terminology
+//Title: "Organization-Site Identifier Terminology"
+//Description: "Terminology used to qualify the information pertaining to the sponsor or testing site unique identifier types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
-* ^experimental = false
-* ^status = #active
-* $NCIT#C134005 "CFN"
-* $NCIT#C134003 "DUNS"
-* $NCIT#C134004 "FEI"
-* $NCIT#C17998 "Unknown"
+//* ^experimental = false
+//* ^status = #active
+//* $NCIT#C134005 "CFN"
+//* $NCIT#C134003 "DUNS"
+//* $NCIT#C134004 "FEI"
+//* $NCIT#C17998 "Unknown"
 
 ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
