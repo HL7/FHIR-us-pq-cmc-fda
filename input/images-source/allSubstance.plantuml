@@ -15,8 +15,7 @@ package "eCTD Drug Substance Bundle" as NODES {
         object "**Parent:** Organization" as objAu {
             **Page:**
             [[StructureDefinition-cmc-organization.html]]
-            **ValueSets:**
-            [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
+                   
         }
     }
 

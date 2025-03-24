@@ -377,8 +377,8 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
     * ^slicing.rules = #open
     * ^slicing.ordered = false
   * amount contains 
-    weight 1..1 MS and
-    percent 0..1 MS
+    weight 0..1 MS and
+    percent 1..1 MS
   * amount[weight]
     * value 1..1 MS
       * ^short = "Product Part Ingredient Amount Numeric"

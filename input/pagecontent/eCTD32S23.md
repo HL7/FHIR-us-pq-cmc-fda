@@ -8,7 +8,7 @@ In addition to identifying the raw material by name (e.g., GSRS Preferred, Gener
 
 - Each 32S23 bundle is for a single active substance.
 -  All raw materials for one active substance are contained in a single bundle.
-- Refer to[ Quality Specification Profile](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fdaeCTDSP4151.html)
+- Refer to[ Quality Specification Profile](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/eCTDSP4151.html)
 
 ### Representation in FHIR
 

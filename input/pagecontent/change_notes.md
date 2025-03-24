@@ -26,14 +26,14 @@ The ballot-related comments resulted in changes to this specification, which are
 5. **Applied:** (Clarification) Add 2 more acknowledgements in the Credits section on the Home page [FHIR-49328](http://jira.hl7.org/browse/FHIR-49328) [See Changes Here](index.html)
 6. **Applied:** (Clarification) Add a clarification sentence in Batch Formula profile to mention single layer tablets use also. [FHIR-49330](http://jira.hl7.org/browse/FHIR-49330) [See Changes Here](eCTD32P32.html)
 7. **Applied:** (Clarification) In Batch Formula profile Domain Overview provide an explanation for terms of Components and Constituents by referring to the 32P1 [FHIR-49331](http://jira.hl7.org/browse/FHIR-49331) [See Changes Here](eCTD32P32.html)
-8. **Applied:** (Correction) Change name of CTD Section 3.2.S.3.1 in Substance Characterisation [FHIR-49352](http://jira.hl7.org/browse/FHIR-1234) [See Changes Here](eCTD32S3.html)
-9. **Applied:** (Clarification) Remove example images from General Instructions [FHIR-49420](http://jira.hl7.org/browse/FHIR-49352) [See Changes Here](instruction.html)
+8. **Applied:** (Correction) Change name of CTD Section 3.2.S.3.1 in Substance Characterisation [FHIR-49352](http://jira.hl7.org/browse/FHIR-49352) [See Changes Here](eCTD32S3.html)
+9. **Applied:** (Clarification) Remove example images from General Instructions [FHIR-49420](http://jira.hl7.org/browse/FHIR-49420) [See Changes Here](instruction.html)
 10. **Applied:** (Clarification) In Artifacts page under Example section, replace the OID names with human readable terms and standardize the names [FHIR-49421](http://jira.hl7.org/browse/FHIR-49421) [See Changes Here](artifacts.html)
 11. **Applied:** (Correction) Change Notes/Log incomplete [FHIR-49574](http://jira.hl7.org/browse/FHIR-49574) [See Changes Here](change_notes.html)
 12. **Applied:** (Clarification) Update text on Home page under section 1.3 IG Overview [FHIR-49594](http://jira.hl7.org/browse/FHIR-49594) [See Changes Here](index.html)
 13. **Applied:** (Clarification) Update ALL Profile Map diagrams in the IG. Change the label from "Reference" to "Page". [FHIR-49596](http://jira.hl7.org/browse/FHIR-49596) [See Changes Here](eCTD32S3.html)
-14. **Applied:** (Clarification) Crange unit of "1*" to other unit in example [FHIR-49621](http://jira.hl7.org/browse/FHIR-49621) [See Changes Here](Bundle-BatchFormulaBundle.html)
-15. **Applied:** (Correction) Overage extension modified with name changes, and invriant [FHIR-49622](http://jira.hl7.org/browse/FHIR-49622) [See Changes Here](StructureDefinition-pq-overage-extension.html)  
+14. **Applied:** (Clarification) Change unit of "1*" to other unit in example [FHIR-49621](http://jira.hl7.org/browse/FHIR-49621) [See Changes Here](Bundle-BatchFormulaBundle.html)
+15. **Applied:** (Correction) Overage extension modified with name changes, and invariant [FHIR-49622](http://jira.hl7.org/browse/FHIR-49622) [See Changes Here](StructureDefinition-pq-overage-extension.html)  
 16. **Applied:** (Correction) Update Home page - Section 1.2.1 IG Scope [FHIR-49285](http://jira.hl7.org/browse/FHIR-49285) [See Changes Here](index.html)
 17. **Applied:** (Correction) Labels in the Narrative Transform too FHIR oriented [FHIR-49574](http://jira.hl7.org/browse/FHIR-49574) [See Changes Here](downloads.html)
 
@@ -42,4 +42,4 @@ Publication Date: 2024-12-11
 url: http://hl7.org/fhir/us/pq-cmc-fda/STU1
 Based on FHIR version : 5.0.0
 Changes:
-The first official published version of this IG publishedas FHIR STU1.
+The first official published version of this IG published as FHIR STU1.

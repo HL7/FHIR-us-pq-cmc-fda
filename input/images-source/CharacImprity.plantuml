@@ -44,8 +44,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
     object "**Parent:** Organization" as objAu {
       **Page:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 

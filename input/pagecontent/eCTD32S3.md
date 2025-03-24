@@ -24,7 +24,7 @@ The Substance Characterisation bundle profile provides a mechanism for the indus
 * Related Organizations
     * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
-Note: profile computable names (in parenthesis above) map to names in the Profile Map below.
+Note: Profile computable names (in parenthesis above) map to names in the Profile Map below.
 
 ### CTD 3.2.S.3 Profile Map
 
