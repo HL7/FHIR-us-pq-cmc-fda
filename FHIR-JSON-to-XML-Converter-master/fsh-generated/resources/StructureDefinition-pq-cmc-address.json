@@ -1,0 +1,83 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pq-cmc-address",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-cmc-address",
+  "name": "PqAddress",
+  "status": "active",
+  "description": "pq-specific Constraints on the Address datatype dealing with US addresses.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Address",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Address",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Address",
+        "path": "Address",
+        "constraint": [
+          {
+            "key": "addr-state",
+            "severity": "error",
+            "human": "If the country is USA, then the state and postal code exist",
+            "expression": "country = 'USA' implies (state.exists() and state.length() = 2 and postalCode.exists())",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-cmc-address"
+          },
+          {
+            "key": "addr-zip",
+            "severity": "error",
+            "human": "If the country is USA, then the postal code is 5 digits with an optional dash and 4 numbers",
+            "expression": "country = 'USA' implies postalCode.matches('^[0-9]{5}(-[0-9]{4})?$')",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-cmc-address"
+          }
+        ]
+      },
+      {
+        "id": "Address.type",
+        "path": "Address.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Address.line",
+        "path": "Address.line",
+        "min": 1,
+        "max": "2"
+      },
+      {
+        "id": "Address.city",
+        "path": "Address.city",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Address.state",
+        "path": "Address.state",
+        "mustSupport": true
+      },
+      {
+        "id": "Address.postalCode",
+        "path": "Address.postalCode",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Address.country",
+        "path": "Address.country",
+        "short": "Country must be a 3-letter country code.",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "cmc-only-ISO-3166-1-alpha-3",
+            "severity": "error",
+            "human": "Country must be a 3 letter country code",
+            "expression": "$this.length() = 3",
+            "source": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-cmc-address"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

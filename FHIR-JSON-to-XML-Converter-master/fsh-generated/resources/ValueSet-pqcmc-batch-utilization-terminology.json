@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcBatchUtilizationTerminology",
+  "id": "pqcmc-batch-utilization-terminology",
+  "title": "Batch utilization Terminology",
+  "description": "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-batch-utilization-terminology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C133994",
+            "display": "Bioequivalence"
+          },
+          {
+            "code": "C133992",
+            "display": "Clinical"
+          },
+          {
+            "code": "C133990",
+            "display": "Commercial"
+          },
+          {
+            "code": "C133991",
+            "display": "Development"
+          },
+          {
+            "code": "C133993",
+            "display": "Validation"
+          },
+          {
+            "code": "C185328",
+            "display": "Stability Study"
+          }
+        ]
+      }
+    ]
+  }
+}

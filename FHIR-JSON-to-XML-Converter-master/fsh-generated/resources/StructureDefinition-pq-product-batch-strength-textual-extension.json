@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pq-product-batch-strength-textual-extension",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-product-batch-strength-textual-extension",
+  "name": "ProductBatchStrengthTextualExtension",
+  "title": "Product Batch Strength Textual Extension",
+  "status": "active",
+  "description": "Extension for strength as a string for ingredients in the batch formula.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ManufacturedItemDefinition.component.constituent"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Product Batch Strength Textual Extension",
+        "definition": "Extension for strength as a string for ingredients in the batch formula."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-product-batch-strength-textual-extension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Strength Textual",
+        "definition": "A written description of the strength of the ingredient.[Source: SME Defined]\nNote: This is typically applicable to biologics\nExample: International Units for Enzymes",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

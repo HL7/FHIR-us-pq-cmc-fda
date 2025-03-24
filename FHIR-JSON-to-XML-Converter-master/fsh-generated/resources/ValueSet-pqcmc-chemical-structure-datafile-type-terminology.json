@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcChemicalStructureDataFileTypeTerminology",
+  "id": "pqcmc-chemical-structure-datafile-type-terminology",
+  "title": "Chemical Structure Data File Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-chemical-structure-datafile-type-terminology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C54683",
+            "display": "InChI File (small molecule)"
+          },
+          {
+            "code": "C133997",
+            "display": "mmCIF (large molecules)"
+          },
+          {
+            "code": "C133910",
+            "display": "MOLFILE"
+          },
+          {
+            "code": "C49039",
+            "display": "PDB"
+          },
+          {
+            "code": "C133996",
+            "display": "SDF"
+          },
+          {
+            "code": "C54684",
+            "display": "SMILES"
+          },
+          {
+            "code": "C85435",
+            "display": "SVG"
+          }
+        ]
+      }
+    ]
+  }
+}

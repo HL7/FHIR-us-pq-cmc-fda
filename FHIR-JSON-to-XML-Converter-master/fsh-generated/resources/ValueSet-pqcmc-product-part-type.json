@@ -1,0 +1,59 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcProductPartType",
+  "id": "pqcmc-product-part-type",
+  "title": "Product Part Type Terminology",
+  "description": "A category of terminology used to qualify the information pertaining to the product part type in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-product-part-type",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C203896",
+            "display": "Blend"
+          },
+          {
+            "code": "C42890",
+            "display": "Bead"
+          },
+          {
+            "code": "C203897",
+            "display": "Capsule Shell"
+          },
+          {
+            "code": "C25450",
+            "display": "Coating"
+          },
+          {
+            "code": "C202489",
+            "display": "Dispersion"
+          },
+          {
+            "code": "C42938",
+            "display": "Granules"
+          },
+          {
+            "code": "C66831",
+            "display": "Layer"
+          },
+          {
+            "code": "C203898",
+            "display": "Minitablets"
+          },
+          {
+            "code": "C42986",
+            "display": "Solution"
+          },
+          {
+            "code": "C42998",
+            "display": "Tablet"
+          }
+        ]
+      }
+    ]
+  }
+}

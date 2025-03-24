@@ -1,0 +1,92 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ectd-composition-sp4151",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151",
+  "name": "EctdCompositionSP4151",
+  "title": "eCTD Specification",
+  "status": "active",
+  "description": "The fields needed to represent Quality Specifications for APIs, Drug Substances, Excipients and Raw Materials.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/literal-reference"
+            ],
+            "targetProfile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-quality-specification"
+            ],
+            "aggregation": [
+              "bundled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

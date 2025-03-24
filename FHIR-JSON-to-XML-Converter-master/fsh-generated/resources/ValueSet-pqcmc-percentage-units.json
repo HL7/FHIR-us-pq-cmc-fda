@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcPercentageUnits",
+  "id": "pqcmc-percentage-units",
+  "title": "Percentage Units",
+  "description": "Units of Measure terminologies that represent the concept of a percentage",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-percentage-units",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          {
+            "code": "%{WeightToWeight}",
+            "display": "percent WeightToWeight"
+          },
+          {
+            "code": "%{WeightToVolume}",
+            "display": "percent WeightToVolume"
+          },
+          {
+            "code": "%",
+            "display": "percent"
+          },
+          {
+            "code": "%{VolumeToVolume}",
+            "display": "percent VolumeToVolume"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcGENCAndISOIntersect",
+  "id": "pqcmc-genc-and-iso-intersect",
+  "title": "GENC and ISO 3166 Intersection",
+  "description": "The 3 letter country codes used in GENC and ISO have significant overlap: only the country codes in ISO 3166 that have an equivalent code in GENC may be used",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-genc-and-iso-intersect",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://hl7.org/fhir/ValueSet/iso3166-1-3"
+        ]
+      }
+    ],
+    "exclude": [
+      {
+        "system": "urn:iso:std:iso:3166",
+        "concept": [
+          {
+            "code": "ALA"
+          },
+          {
+            "code": "PSE"
+          },
+          {
+            "code": "SJM"
+          },
+          {
+            "code": "UMI"
+          }
+        ]
+      }
+    ]
+  }
+}

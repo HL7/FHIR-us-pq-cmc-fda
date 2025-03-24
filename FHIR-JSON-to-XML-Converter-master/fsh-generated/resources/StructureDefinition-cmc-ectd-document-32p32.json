@@ -1,0 +1,203 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cmc-ectd-document-32p32",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-ectd-document-32p32",
+  "name": "CMCeCTDDocument32P32",
+  "title": "CMC eCTD 32P32 Document",
+  "status": "active",
+  "description": "Definition for a document bundle with the CMC eCTD 32P32 profiles (Product Batch Formula).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "short": "CMC eCTD 32P32 Bundle"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "definition": "Designation by the author.",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "document",
+        "patternCode": "document",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resource"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 4,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:Composition",
+        "path": "Bundle.entry",
+        "sliceName": "Composition",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:Composition.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Composition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-32p32"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Organization",
+        "path": "Bundle.entry",
+        "sliceName": "Organization",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:Organization.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:BatchFormulaMedicinalProduct",
+        "path": "Bundle.entry",
+        "sliceName": "BatchFormulaMedicinalProduct",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.entry:BatchFormulaMedicinalProduct.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MedicinalProductDefinition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-batch-formula-product"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:BatchFormula",
+        "path": "Bundle.entry",
+        "sliceName": "BatchFormula",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:BatchFormula.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "ManufacturedItemDefinition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-product-batch-formula"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:Ingredient",
+        "path": "Bundle.entry",
+        "sliceName": "Ingredient",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:Ingredient.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Ingredient",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-dp-ingredient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:RoutineSubstance",
+        "path": "Bundle.entry",
+        "sliceName": "RoutineSubstance",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:RoutineSubstance.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "SubstanceDefinition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-routine-drug-substance"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:ExcipientRaw",
+        "path": "Bundle.entry",
+        "sliceName": "ExcipientRaw",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Bundle.entry:ExcipientRaw.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "SubstanceDefinition",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

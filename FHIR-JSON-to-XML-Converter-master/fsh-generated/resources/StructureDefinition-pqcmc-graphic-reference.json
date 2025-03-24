@@ -1,0 +1,31 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pqcmc-graphic-reference",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-reference",
+  "name": "GraphicReference",
+  "title": "Graphic Reference",
+  "status": "active",
+  "description": "A Document Reference to any attachment that contains a graphical representation",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "DocumentReference",
+  "baseDefinition": "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/cmc-document-reference",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DocumentReference.content.attachment",
+        "path": "DocumentReference.content.attachment",
+        "type": [
+          {
+            "code": "Attachment",
+            "profile": [
+              "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-graphic-attachment"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

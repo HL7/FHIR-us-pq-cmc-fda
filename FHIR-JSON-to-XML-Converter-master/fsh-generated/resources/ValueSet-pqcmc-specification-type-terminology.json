@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PqcmcSpecificationTypeTerminology",
+  "id": "pqcmc-specification-type-terminology",
+  "title": "Specification Type Terminology",
+  "description": "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.",
+  "url": "http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-specification-type-terminology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+        "concept": [
+          {
+            "code": "C134021",
+            "display": "Drug Product"
+          },
+          {
+            "code": "C134022",
+            "display": "Drug Substance"
+          },
+          {
+            "code": "C133931",
+            "display": "Raw Materials/Excipients/Intermediates/Reagents"
+          }
+        ]
+      }
+    ]
+  }
+}
