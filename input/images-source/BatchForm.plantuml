@@ -35,7 +35,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
       **Page:**
       [[StructureDefinition-pqcmc-dp-ingredient.html]]
       **ValueSets:**
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+      [[ValueSet-pqcmc-non-percentage-units.html Non-Percentage Units]]   
       [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
     }
   }
@@ -63,6 +63,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
             [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
         }
     }
+
   node "BatchFormulaMedicinalProduct" as NN2 {
 
     object "**Parent:** MedicinalProductDefinition" as obj32 {

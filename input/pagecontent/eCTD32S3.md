@@ -28,7 +28,7 @@ Note: Profile computable names (in parenthesis above) map to names in the Profil
 
 ### CTD 3.2.S.3 Profile Map
 
-{%include SubstanceImpurity.svg%}
+<div>{%include SubstanceImpurity.svg%}</div>
 
 ### Usage Patterns
 

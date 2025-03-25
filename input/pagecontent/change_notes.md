@@ -41,5 +41,6 @@ The ballot-related comments resulted in changes to this specification, which are
 Publication Date: 2024-12-11
 url: http://hl7.org/fhir/us/pq-cmc-fda/STU1
 Based on FHIR version : 5.0.0
-Changes:
+
+#### Changes:
 The first official published version of this IG published as FHIR STU1.
