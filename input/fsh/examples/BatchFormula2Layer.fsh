@@ -81,7 +81,7 @@ Instance: 99f4a24f-880f-45f1-8364-8e4e03977b2e
 InstanceOf: ExcipientRaw
 Title: "Ingredient substance indentifying information - Maize starch"
 Description: " Maize starch excipient in the two layer tablet"
-Usage: #example 
+ Usage: #inline
 
 * classification = $NCIT#C45305 "Mixture"
 * grade = $NCIT#C134009 "Company Standard"
@@ -114,7 +114,7 @@ Instance: a4624559-6c4f-4e90-996d-bc3bf2f5a3f4
 InstanceOf: ExcipientRaw
 Title: "Ingredient substance indentifying information - Grape skin extract"
 Description: "Grape skin extract excipient"
-Usage: #example
+ Usage: #inline
 
 * classification = $NCIT#C45305 "Mixture"
 * grade = $NCIT#C176793 "BP"
@@ -129,7 +129,7 @@ Instance: 254742fb-7b5b-49f5-b4af-e0d14d81f2f6
 InstanceOf: ExcipientRaw
 Title: "Example 2-layer batch formula ingredient substance - Water"
 Description: "Example 2-layer inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -168,7 +168,7 @@ Usage: #inline
 * comprisedOf = Reference(urn:uuid:8a3e11d9-4323-43c4-be00-8f0ea1837070)	
 * name[NonProprietary]	
   * productName = "ASPIRIN 200mg, ACETAMINOPHEN 300mg"
-  * type = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types#NON "Non-Proprietary"	
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part[Scientific][+]	
     * part = "ASPIRIN"	
   * part[Strength][+]	
@@ -192,8 +192,7 @@ Usage: #inline
 * manufacturedDoseForm = $NCIT#C154605 "Tablet" 
 * manufacturer = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)	
 * property[BatchSize]	
- // * valueQuantity = $UCUM#\{tbl\} "tablets" 
-  * valueQuantity = 2000 $UCUM#1 "1*" 
+  * valueQuantity = 2000 $UCUM#{tbl} "tablets"
 * property[BatchUtil]	
   * valueCodeableConcept = $NCIT#C133991 "Development"
 * property[AddInfo]	
@@ -226,8 +225,11 @@ Usage: #inline
     * location = $NCIT#C203882 "Extragranular"
     * location.text = "Purple Layer"
    // water	
-  * constituent[+]	
-    * amount[perBatch] = 305.57 $UCUM#g "gram"
+  * constituent[+]
+    * extension[ingredientOverage]
+      * extension[proportionDecimal].valueDecimal = 0.02
+      * extension[justification].valueMarkdown = "Evaporation"
+    * amount[perBatch] = 311.68 $UCUM#g "gram"
     * amount[percent] = 33.0 $UCUM#% "percent"
     * hasIngredient.reference = Reference(urn:uuid:95648837-ec81-42d9-970c-eac390f2f604)	
     * location = $NCIT#C203882 "Extragranular"
@@ -271,14 +273,14 @@ Usage: #inline
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)	
 * date = 2024-08-01T12:34:56.789Z	
 * title = """Batch formula example two layer tablet"""
-* section	
+* section[BatchFormulaMedicinalProduct]
   * title = "Batch Formula"	
   * entry = Reference(urn:uuid:f0f3ff35-5cfa-6617-b8f1-b8167957f53c)	
 
-Instance: 49d3b79e-b436-a242-93ba-b706b4364ab2
+Instance: BatchFormulaBundle2Layer
 InstanceOf: CMCeCTDDocument32P32
-Title: "Example Batch Formula bundle"
-Description: "FHIR bundle with a CMC eCTD 32P32 profile"
+Title: "3.2.P.3.2 Bundle for two-layer tablet"
+Description: "Batch Formula bundle for a tablet drug product with two layers"
 Usage: #example
 * identifier	
   * system = $IDsys	

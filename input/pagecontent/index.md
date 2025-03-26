@@ -29,175 +29,41 @@ The scope of FDA’s PQ/CMC project is to develop structured data standards for 
 
 #### IG Scope
 
-This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CMC data developed across all phases.
+This PQ/CMC FHIR IG is eventually intended to represent all the US FDA’s PQ/CMC data standard developed across all phases.
 
 - This FHIR IG is planned to follow an iterative approach, meaning that as new subdomains of the phases and sections of CTD M3 are structured and represented in FHIR, new FHIR profiles will be added to this IG to represent the content of those specific CTD M3 sections.
 
--  In support of an iterative PQ/CMC IG approach, the phases have been further grouped into implementable smaller groups called “Stages”. For each iteration of this IG, FDA plans to ballot and publish in stages. Each new stage will cover a particular set of subdomains/CTD sections of the larger PQ/CMC domain. For example, the first ballot, May 2024 ballot cycle, is referred to as Stage 1. This Stage 1 covers the following CTD sections:
+-  In support of an iterative PQ/CMC IG approach, the phases have been further grouped into implementable smaller groups called “Stages”. For each iteration of this IG, FDA plans to ballot and publish in stages. Each new stage will cover a particular set of subdomains/CTD sections of the larger PQ/CMC domain. The various CTD sections covered under each Stage can be seen under the 'eCTD Stage xx' menu on main menu ribbon on top of this page.
 
-    - Description and Composition of the Drug Product (eCTD 3.2.P.1)
-    - General Substance Information (eCTD 3.2.S.1)
-    - Control of Materials (eCTD 3.2.S.2.3)
-    - Specification (eCTD 3.2.S.4.1; 3.2.P.4.1; 3.2.P.5.1)
-
-- In the future, FDA will add Stage 2 subdomains to this IG and will take Stage 2 subdomains to HL7 ballot, and so on. Ballot dates for future stages have not yet been finalized.
+- The domain friendly data element names that were published in the FDA Federal Register Notices (FRN) can be found in the 'Description & Constraints' column within each Profile.
 - Please note that new versions of this IG may include changes to previous published stages.
 - The FHIR profiles defined in this IG are aligned for use within eCTD v 4.0 or later and may not fit with eCTD v3 headings.
-- The Stage 1 CTD sections and FHIR profiles are currently limited to the Solid Oral Dosage Form (SODF).
-- All co-packaged products that include diluents are out of scope at this time.
+- The PQ/CMC FHIR IG is currently limited to the Solid Oral Dosage Form (SODF).
 
 #### Pharmaceutical Quality Projects in BR&R WG
 
-At HL7, this project is referred to as Pharmaceutical Quality – Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA. BR&R WG maintains a Confluence page for this project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+-+Chemistry%2C+Manufacturing+and+Controls+%28PQ-CMC%29+Submissions+to+FDA) 
+At HL7, this project is referred to as Pharmaceutical Quality - Chemistry, Manufacturing and Controls (PQ-CMC) Submissions to FDA. BR&R WG maintains a Confluence page for this project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+-+Chemistry%2C+Manufacturing+and+Controls+%28PQ-CMC%29+Submissions+to+FDA) 
 
-There is another project in HL7 BR&R that covers the domain of Pharmaceutical Quality. That project’s focus is on CMC data exchange between biopharmaceutical companies and their partners. It is often referred to as Pharmaceutical Quality (Industry). BR&R WG maintains a Confluence page for this Industry project [here](https://confluence.hl7.org/display/BRR/Pharmaceutical+Quality+%28PQ%29+-+Industry+Use+Case) 
+There is another project in HL7 BR&R that covers the domain of Pharmaceutical Quality. That project’s focus is on CMC data exchange between biopharmaceutical companies and their partners. It is often referred to as Pharmaceutical Quality (Industry). BR&R WG maintains a Confluence page for this Industry project [here](https://confluence.hl7.org/spaces/BRR/pages/161072930/Pharmaceutical+Quality+-+Industry+PQI+Use+Case)
+
 
 ### IG Overview
 
 #### FHIR Resources and Profiles
 
-The first version of the PQ/CMC IG is bound to FHIR R5. It consists of four FHIR bundle profiles that are scoped to the FDA PQ/CMC Phase 1, Stage 1 requirements and are aligned with sections of Module 3 of ICH CTD as indicated by the profile title.
+The PQ/CMC FHIR Implementation Guide is being developed iteratively and new subdomains of CMC are added to the IG as the profiles are developed and ready for HL7 Connectathon and Ballot. The first edition of this IG was bound to the FHIR R5 specification. The binding will be updated as new FHIR specifications are released by HL7.
 
-The FHIR resources leveraged in all of Phase 1 are listed below and represented in Figure 3 below. The four Stage 1 FHIR bundle profiles are composed from eight FHIR Resources. These eight FHIR resources are identified in the list below with an "*" asterisk after the resource name.
+The profiles in this IG are aligned with ICH CTD Module 3 section titles. The FHIR profiles can be accessed through the "eCTD Profiles" menus in the main bar at the top of this page. As new content is added to this IG, new profiles will be added and existing profiles will be enhanced. The initial editions of the IG are focused on Solid Oral Dosage Form (SODF). Support for Liquids and Large Molecules will be added in the future.
 
-Note: The first 2 FHIR resources – Bundle and Composition are organizational profiles used to package the content/domain resources.
-
-1.       Bundle *
-2.       Composition *
-3.       DiagnosticReport
-4.       Ingredient *
-5.       Medication
-6.       MedicinalProductDefinition *
-7.       Observation
-8.       Organization *
-9.       PlanDefinition *
-10.   ResearchStudy
-11.   Substance
-12.   SubstanceDefinition *
-13.   ManufacturedItemDefinition *
-14.   PackagedProductDefinition *
+The diagram below shows the choreography of FHIR Resources that are leveraged in the initial editions of this IG. The choreography will be updated as the IG scope is expanded.
 
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="1200px" src="figure3.png" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
-  <figcaption style="text-align: center">Figure 3: PQ/CMC Phase 1 Scope FHIR Resources</figcaption>
+  <figcaption style="text-align: center">Figure 3: PQ/CMC FHIR Resources</figcaption>
 </figure>
 
 {::options parse_block_html="true" /}
-
-#### PQ/CMC FHIR Profiles
-
-As mentioned above, the PQ/CMC project Phase 1 structured data requirements are eventually planned to be represented in the PQ/CMC FHIR IG.
-
-The profiles are designed for use as defined in Module 3 of eCTD v 4.0. The table below contains a mapping of the FHIR Profiles to the Phase 1 requirements. The PQ/CMC FHIR profiles can be accessed through the "eCTD Profiles" menu in the main bar at the top of this page or via hyperlinks in the table below. Additional menu items and links will be added as new profiles are built out and balloted.
-
-
-<table>
-  <tr>
-   <td><strong>No.</strong>
-   </td>
-   <td><strong>PQ/CMC FHIR Profile Name</strong>
-   </td>
-   <td><strong>eCTD Module 3 Section</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>1
-   </td>
-   <td>[Description and Composition of the Drug Product](https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32P10.html)
-   </td>
-   <td>3.2.P.1.0
-   </td>
-  </tr>
-  <tr>
-   <td>2
-   </td>
-   <td>Product Batch Formula
-   </td>
-   <td>3.2.P.3.2
-   </td>
-  </tr>
-  <tr>
-   <td>3
-   </td>
-   <td>Product Characterisation of Impurities
-   </td>
-   <td>3.2.P.5.5
-   </td>
-  </tr>
-  <tr>
-   <td>4
-   </td>
-   <td>Product Container Closure
-   </td>
-   <td>3.2.P.7.0
-   </td>
-  </tr>
-  <tr>
-   <td>5
-   </td>
-   <td>[General Information] (https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32S10.html)
-   </td>
-   <td>3.2.S.1.0
-   </td>
-  </tr>
-  <tr>
-   <td>6
-   </td>
-   <td>[Control of Materials] (https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTD32S23.html)
-   </td>
-   <td>3.2.S.2.3
-   </td>
-  </tr>
-  <tr>
-   <td>7
-   </td>
-   <td>Substance Characterisation
-   </td>
-   <td>3.2.S.3
-   </td>
-  </tr>
-  <tr>
-   <td>8
-   </td>
-   <td>Substance Container Closure System
-   </td>
-   <td>3.2.S.6.0
-   </td>
-  </tr>
-  <tr>
-   <td>9
-   </td>
-   <td>[Specification] (https://hl7.org/fhir/us/pq-cmc-fda/2024May/eCTDSP4151.html)
-   </td>
-   <td>3.2.S.4.1; 3.2.P.4.1; 3.2.P.5.1
-   </td>
-  </tr>
-  <tr>
-   <td>10
-   </td>
-   <td>Batch Analyses
-   </td>
-   <td>3.2.S.4.4; 3.2.P.5.4
-   </td>
-  </tr>
-  <tr>
-   <td>11
-   </td>
-   <td>Stability Summary
-   </td>
-   <td>3.2.S.7.1; 3.2.P.8.1
-   </td>
-  </tr>
-  <tr>
-   <td>12
-   </td>
-   <td>Stability Data
-   </td>
-   <td>3.2.S.7.3; 3.2.P.8.3
-   </td>
-  </tr>
-</table>
 
 
 #### Credits
@@ -215,10 +81,13 @@ The development of this Implementation Guide is an initiative funded by the US F
 	- Scott Gordon (mailto: [pq-cmc@fda.hhs.gov](mailto:pq-cmc@fda.hhs.gov))
   - Josiah Tindor (IBM PM)
   
-At HL7, The the PQ/CMC Projects is Sponsored sponsored by the HL7 Biomedical Research & Regulation (BR&R) work Work groupGroup.
+At HL7, the PQ/CMC Project is sponsored by the HL7 Biomedical Research & Regulation (BR&R) Work-Group..
 
 The PQ/CMC team would like to acknowledge the contribution of the BR&R WG members who have participated in the Medication-related FHIR resource discussions and helped refine the resources.
 
+The PQ/CMC team would like to acknowledge the Drug Quality Reviewers from FDA CDER, CBER, and CVM for their domain expertise in development of the PQ/CMC data standards and controlled terminology which are represented in this IG.
+
+The PQ/CMC team would like to acknowledge the National Cancer Institute's Enterprise Vocabulary Service (NCI EVS) team for their support in registering the PQ/CMC terminology in the NCI Thesaurus (NCIt).
 #### IP Statements
 {% include ip-statements.xhtml %} 
 

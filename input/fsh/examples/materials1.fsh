@@ -2,7 +2,7 @@ Instance: 49438799-e286-432c-b8d8-68ac77e7f519
 InstanceOf: CodedOrganization
 Title: "CodedOrganization J. Jones Research"
 Description: "Example of a Sponsor type of Organization"
-Usage: #example
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "143265625"
 * identifier[DUNSNumber].system = $DUNS
@@ -20,7 +20,7 @@ Instance: 4b565cf3-5353-48af-8cd6-5ccf4e9fd579
 InstanceOf: CodedOrganization
 Title: "Manufacturing Site (J. Jones Research)"
 Description: "Manufacturing site instance of an Organization Example. There will be a type code in future"
-Usage: #example
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "783452221"
 * identifier[DUNSNumber].system = $DUNS
@@ -41,7 +41,7 @@ Instance: e99bddfa-c1b5-435b-bbe8-24816b4e23e5
 InstanceOf: CodedOrganization
 Title: "Vidinaid"
 Description: "Manufacturing site (Vidinaid) instance with second address line"
-Usage: #example
+ Usage: #inline
 * identifier[DUNSNumber].value = "143265222"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].system = $DUNS
@@ -65,7 +65,7 @@ Title: "Example SubstanceDefinition for Carrageenan"
 Description: "Identification of the subject of the specification which is a sourced plant based raw materials. It contains the sourceMaterial backbone elements."
 Usage: #inline
 * identifier.value = "carrageenan"
-* classification = $NCIT#C3641132 "Structurally Diverse Substance"
+* classification = $NCIT#C103206 "Structurally Diverse Substance"
 * grade = $NCIT#C134009 "Company Standard"
 * manufacturer = Reference(urn:uuid:4b565cf3-5353-48af-8cd6-5ccf4e9fd579)
 * code[unii].code = $UNII#5C69YCD2YJ
@@ -552,20 +552,20 @@ Usage: #inline
 * date = 2023-12-05T01:34:39.502Z
 * title = """Control of Materials Example"""
 * section[+]
-  * code = $SectionTypes#32S231 "Raw Material Specification"
+  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
   * entry = Reference(urn:uuid:ab241f8c-d21e-4382-a70a-52190dbdf07e)
 * section[+]
-  * code = $SectionTypes#32S231 "Raw Material Specification"
+  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
   * entry = Reference(urn:uuid:a2cba634-a481-4b07-9bd4-62c7ada31e1b)
 * section[+]
-  * code = $SectionTypes#32S231 "Raw Material Specification"
+  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
   * entry = Reference(urn:uuid:5819b223-d3d2-419f-b617-b3a9a3625b89)
 
 
-Instance: 7ce2088d-d281-4e2f-9a25-120a1f9805d1
+Instance: ControlMaterialsBundle
 InstanceOf: CMCeCTDDocument32S23
-Title: "eCTD Document for 32S23"
-Description: "This is an example of the Substance Control of Materials bundle profile. It is to submit Module 3 of CTD 3.2.S.2.3 folder content to the FDA."
+Title: "3.2.S.2.3 Bundle"
+Description: "Control of Materials bundle"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:7ce2088d-d281-4e2f-9a25-120a1f9805d1"

@@ -13,10 +13,13 @@ For the purposes of the PQ/CMC IG, the Example 1 below of a two-layer Tablet pro
 - A <span style="text-decoration:underline;">Drug Product</span> is the dose unit, i.e., the whole tablet.
 - <span style="text-decoration:underline;">Components</span> are the “parts” of the Drug Product, i.e., each of the two layers in the tablet is considered a Component. If the tablet was coated, the coating would be another (third) Component.
     - A Drug Product must have at least one Component.
+    - NOTE:  In the FDA Federal Register Notice (FRN), a Component is referred to as the Product Part.  The PQ/CMC FHIR IG uses the HL7 resource term and hence the word Component.    
 
 - <span style="text-decoration:underline;">Constituents</span> are the active and inactive ingredients used in the manufacture of the Drug Product
     - Constituent information is included with respect to the Drug Product and with respect to each relevant Component. Each Constituent may be included in one or more Components of the Drug Product.
 
+    - NOTE:  In the FDA Federal Register Notice (FRN), a Constituent is referred to as the Ingredient.  The PQ/CMC FHIR IG uses the HL7 resource term and hence the word Constituent.
+    
 The additional example illustrations below of drug products are included as an aid to understanding the terms or semantics in the context of the PQ/CMC IG.
 
 <table style="margin: 0px auto;"><tr><td><img src="image2.png" /></td></tr></table>
@@ -42,6 +45,7 @@ The domain concepts of Description and Composition of the Drug Product are repre
 
 * Drug Product
     * [Drug Product Description](StructureDefinition-pqcmc-drug-product-description.html) (DrugProductDescription) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
+    * [Co-Packaged Product](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on the [MedicinalProductDefinition](https://hl7.org/fhir/medicinalproductdefinition.html) Resource
 * Container Closure
     * [Drug Product Container Closure](StructureDefinition-ContainerClosure.html) (ContainerClosure) profile on the [PackagedProductDefinition](https://hl7.org/fhir/packagedproductdefinition.html) Resource
 * Product Composition
@@ -63,7 +67,7 @@ Not presently defined. Content will be added in the future when FDA PQ/CMC FHIR 
 
 ### Examples
 
-This image demonstrates a multilayer tablet displayed with narrative inserted in the composition text element.  It has two parts. The XML can be found on the Artifacts page and does not contain the narrative in the image, rather it contains the narrative generated for all examples by the IG publisher program. It is on the artifacts page and in the Bundle profile. [bd0f0a7a-27ea-4884-801d-bd0546e80888](Bundle-bd0f0a7a-27ea-4884-801d-bd0546e80888.html)
+This image demonstrates a multilayer tablet displayed with narrative inserted in the composition text element.  It has two parts. The XML can be found on the Artifacts page and does not contain the narrative in the image, rather it contains the narrative generated for all examples by the IG publisher program. It is on the artifacts page and in the Bundle profile. [DescriptionCompositionBundle](Bundle-DescriptionCompositionBundle.html)
 
 {::options parse_block_html="false" /}
 <figure>

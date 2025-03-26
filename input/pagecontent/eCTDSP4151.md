@@ -7,11 +7,11 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 ### Implementer Instructions
 
 * A Quality Specification has one or more Tests.
-* Tests should be entered in the file in the order in which they should be displayed.
+* Tests should be entered in the XML bundle in the order in which they should be displayed.
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.
-    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. in Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. 
+    * The Quality Specifications for all the raw materials for a Drug Substance are packaged together in a single bundle. Refer to [Substance Control of Materials](eCTD32S23.html) for Quality Specification for a Raw Material. Drug Product Handle (DrugProductHandle)
 
 ### Representation in FHIR
 
@@ -20,7 +20,7 @@ The domain concepts of Quality Specification are represented in FHIR in this IG.
 * Specification, Test, Acceptance Criteria
     * [Quality Specification](StructureDefinition-pqcmc-quality-specification.html) (QualitySpecification) profile on [PlanDefinition](http://hl7.org/fhir/R5/plandefinition.html) resource
 * Drug Product
-    * [Routine Drug Product](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
+    * [Drug Product Handle](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
     * [Substance Definition Handle](StructureDefinition-pqcmc-routine-drug-substance.html) (SubstanceDefinitionHandle) profile on [SubstanceDefinition](http://hl7.org/fhir/R5/substancedefinition.html) resource
 * Excipient/Raw Material 
@@ -183,12 +183,12 @@ If the analytic procedure only requires that the results be reported, use a text
 ```
 
 #### Complex Acceptance Criteria
-Acceptace Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses.  When this occurs, the modeling in the goal backbone element requries multiple targets.  Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%" becomes three targets: Average of 24 units, units less than Q – 15%, and units less than Q – 25%.  Each has a detailQuantity to express the acceptable amount. 
+Acceptance Criteria are written in spoken languages and can be a combination of independent clauses with subordinate clauses. When this occurs, the modeling in the goal backbone element requires multiple targets. Break the Acceptance Criteria phrase into its parts.  Each part becomes a target. In the example below, "Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%" becomes three targets: Average of 24 units, units less than Q - 15%, and units less than Q - 25%.  Each has a detailQuantity to express the acceptable amount. 
 
 ```xml
 <goal id="1f5530b9-5d21-46ef-80f3-1ae6121c88f9">
   <description>
-    <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q – 15%, no unit is less than Q – 25%"/>
+    <text value="Average of 24 units (S1 + S2 + S3) is equal to or greater than Q, not more than 2 units are less than Q - 15%, no unit is less than Q - 25%"/>
   </description>
   <addresses>
     <coding>
@@ -211,7 +211,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
   </target>
   <target>
     <measure>
-      <text value="NMT 2 units less than Q – 15%"/>
+      <text value="NMT 2 units less than Q - 15%"/>
     </measure>
     <detailQuantity>
       <value value="2"/>
@@ -223,7 +223,7 @@ Acceptace Criteria are written in spoken languages and can be a combination of i
   </target>
   <target>
     <measure>
-      <text value="no units less than Q – 25%"/>
+      <text value="no units less than Q - 25%"/>
     </measure>
     <detailQuantity>
       <value value="0"/>
@@ -324,8 +324,6 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
 ##### Representing Acceptance Criteria of Averaged Replicate Tests
 There are two scenarios for averages. The acceptance criteria of the average is the same as the individual test, in which case the same test can be encoded in the top level Action backbone element. Its title is “Single Stage” and there are one or many goalIDs. Or the acceptance criteria of the average is different than the individual test, in which case either use the Action for the average and Action.Action for the individual acceptance criteria or move down a level to Action.Action and Action.Action.Action. The profile was designed this way to provide flexibility to implementers. The acceptance criteria should indicate the number of replicates in the referenced analytic procedure.
 
-
-
 ##### Representing Methods with Many Test Measures
 The Action backbone is profiled to three levels.  The first level represents the method (analytic procedure) concepts and a simple tests. The second level represents test groups and stages. In the simplest case is _Single Stage_ and two tests. A _Single Stage_ , one test is accomplished at the highest Action level. The third level represents sub-tests. The middle Action level can have Acceptance Criteria.  These are typically calculations on the values obtained from the sub-tests.  Methods using Cascade Impactors typically have Acceptance Criteria for the plates and group the plates and assign Acceptance Criteria to the groups.  The example below shows three Groups and their associated plates.  Both the Groups and their sub-test each have their own goalIDs that link to their respective Acceptance Criteria.  The word "Stage" for the sub-tests has no association with _Stage_ as mapped to the PlanDefinition resource.  In this case it referring to the stage of the cascade impactor modelling inhalation.
 
@@ -425,14 +423,15 @@ Note: "..." is used to compress the XML so that the relevant sections can be see
         </action>
     </action>
 
-### Example 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Bundle
+### Example 3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1 Bundles
 
-This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [4a7e17c1-a611-4cc7-9a71-8005a8b427ab](Bundle-4a7e17c1-a611-4cc7-9a71-8005a8b427ab.html)  
+This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.1 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [SpecificationProductBundle](Bundle-SpecificationProductBundle.html)  
 
-Additionally, there is an example specification to show the reference to a Drug Substance [6004e36e-7df9-469d-9b29-8e9f9bd7e95f](Bundle-6004e36e-7df9-469d-9b29-8e9f9bd7e95f.html). Its [narrative layout](#drug-substance-specification-example) is show below the Drug Product specification.
+Additionally, there is an example specification to show the reference to a Drug Substance [SpecificationSubstanceBundle](Bundle-SpecificationSubstanceBundle.html). Its [narrative layout](#drug-substance-specification-example) is shown below the Drug Product specification.
 
-For examples of specifications referencing excipients see: 
-- [Control of Materials Example](Bundle-7ce2088d-d281-4e2f-9a25-120a1f9805d1.html)
+The final example is for a excipient with an animal source for 3.2.P.4.  Drug Excipient [SpecificationExcipientBundle](Bundle-SpecificationExcipientBundle.html). Its [narrative layout](#drug-excipient-specification-example)
+is shown below the Drug Substance specification. For more examples of specifications referencing excipients see: 
+- [Control of Materials Example](Bundle-ControlMaterialsBundle.html)
 
 #### Drug Product Specification Example
 
@@ -450,6 +449,17 @@ For examples of specifications referencing excipients see:
 {::options parse_block_html="false" /}
 <figure>
   <img style="padding-top:0;padding-bottom:30px" width="1200px" src="APIspec.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}
+
+#### Drug Excipient Specification Example
+  This is an example showing a drug excipient as the subject of the specification.
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="excipient.png" />
 
 </figure>
 

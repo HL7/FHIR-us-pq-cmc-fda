@@ -14,7 +14,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
   node "EctdComposition32P32" as N1 {
 
     object "**Parent:** Composition" as obj1 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-ectd-composition-32p32.html]]
       **ValueSets:**
       [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
@@ -24,28 +24,26 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
   node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
     }
   }
 
   node "DrugProductIngredient" as NNgred {
 
     object "**Parent:** Ingredient" as obj10 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-dp-ingredient.html]]
       **ValueSets:**
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Percentage Units]]
+      [[ValueSet-pqcmc-non-percentage-units.html Non-Percentage Units]]   
+      [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
     }
   }
 
   node "SubstanceDefinitionHandle" as NNS {
 
     object "**Parent:** SubstanceDefinition" as obj4 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-routine-drug-substance.html]]
       **ValueSets:**
       [[ValueSet-substance-classification.html Substance Classification]]
@@ -54,23 +52,22 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
 
   }
 
-  node "ExcipientRaw" as NNSEx {
+  node "ExcipientRaw" as N2all1 {
 
-    object "**Parent:** SubstanceDefinition" as obj42 {
-      **Reference:**
-      [[StructureDefinition-pqcmc-excipient.html]]
-      **ValueSets:**
-      [[ValueSet-substance-classification.html Substance Classification]]
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Sponsor Identifier Type Terminology]]
-      [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+        object "**Parent:** SubstanceDefinition" as objall22 {
+            **Page:**
+            [[StructureDefinition-pqcmc-excipient.html]]
+            **ValueSets:**
+            [[ValueSet-pqcmc-source-type-terminology.html Source Type Terminology]]
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+        }
     }
-
-  }
 
   node "BatchFormulaMedicinalProduct" as NN2 {
 
     object "**Parent:** MedicinalProductDefinition" as obj32 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-batch-formula-product.html]]
       **ValueSets:**
       [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
@@ -82,7 +79,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
   node "BatchFormula" as NN {
 
     object "**Parent:** ManufacturedItemDefinition" as obj3 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-product-batch-formula.html]]
       **ValueSets:**
       [[ValueSet-pqcmc-manufactured-dose-form-terminology.html Manufactured Dose Form Terminology]]
@@ -90,13 +87,12 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
       [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
       [[ValueSet-pqcmc-non-percentage-units.html Non-Percentage Units]]
       [[ValueSet-pqcmc-percentage-units.html Percentage Units]]
-      [[ValueSet-pqcmc-product-part-ingredient-physical-location.html Ingredient Location Terminology]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+
 
     }
 
     object "**Extensions**" as objExs2 {
-      [[StructureDefinition-pq-product-batch-ingredient-extension.html Product Batch Ingredient Extension]]
+      [[StructureDefinition-pq-overage-extension.html Overage Extension]]
       [[StructureDefinition-pq-product-batch-strength-textual-extension.html Product Batch Strength Textual Extension]]
       [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
     }
@@ -110,7 +106,6 @@ package "[[StructureDefinition-cmc-ectd-document-32p32.html eCTD Heading 3.2.P.3
   NN -[#darkred]-> NNgred
   NN2 -[#darkred]-> NN
   NNgred -[#darkred]-> NNS
-  NNgred -[#darkred]->NNSEx
-  NNSEx -[#darkred]-> NSO
+  NNgred -[#darkred]-> N2all1
 }
 @enduml

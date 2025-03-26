@@ -21,7 +21,7 @@ package "Bundle" as NODES {
   node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-cmc-organization.html]]
     }
   }
@@ -69,6 +69,6 @@ package "Bundle" as NODES {
   NN -[#darkred]-> CH : A profile can have a choice of reference profiles
   CH -[#green]-> Nameprofile
   CH -[#green]-> NN3
-  N1 -[#darkred]-> NN :  Relationship between profiles.  There can be many profiles and relationships between them.
+  N1 -[#darkred]-> NN :  Relationship(s) between profiles to referenced profile.  
 }
 @enduml

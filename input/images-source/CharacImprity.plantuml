@@ -14,7 +14,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
   node "EctdComposition32P55" as N1 {
 
     object "**Parent:** Composition" as obj1 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-ectd-composition-32p55.html]]
       **ValueSets:**
       [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
@@ -23,7 +23,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
   node "GraphicReference" as NB64 {
 
     object "**Parent Profile:** Base64DocumentReference"  as obj64 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-graphic-reference.html]]
       **ValueSets:**
       [[ValueSet-pqcmc-graphical-file-types.html Graphical File Types]]
@@ -32,7 +32,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
   node "StructureReference" as NBstruc {
 
     object "**Parent Profile:** Base64DocumentReference"  as objb64 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-structure-reference.html]]
        **ValueSets:**
       [[ValueSet-pqcmc-structure-data-types.html Structure Data Types]] 
@@ -42,10 +42,8 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
   node "CodedOrganization" as NSO {
 
     object "**Parent:** Organization" as objAu {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-cmc-organization.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-org-identifier-type-terminology.html Organization-Site Identifier Terminology]]
     }
   }
 
@@ -53,7 +51,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
 
     object "**Parent:** MedicinalProductDefinition" as obj3 {
 
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-drug-product-with-impurities.html]]
       **ValueSets:**
       [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
@@ -65,7 +63,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p55.html eCTD Heading 3.2.P.5
   node "ImpuritySubstance" as N6 {
 
     object "**Parent:** SubstanceDefinition" as obj2 {
-      **Reference:**
+      **Page:**
       [[StructureDefinition-pqcmc-drug-product-substance-impurity.html]]
       **ValueSets:**
       [[ValueSet-pqcmc-impurity-classification-terminology.html Impurity Classification Terminology]]

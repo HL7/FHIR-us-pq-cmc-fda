@@ -13,7 +13,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
     node "EctdComposition32P7" as N1 {
 
         object "**Parent:** Composition" as obj1 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-ectd-composition-32p70.html]]
             **ValueSets:**
             [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
@@ -23,7 +23,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
     node "DrugProductContainerClosure" as N21 {
 
         object "**Parent:** MedicinalProductDefinition" as obj22 {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-pqcmc-drugproduct-container-closure.html]]
             **ValueSets:**
             [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
@@ -39,7 +39,7 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
 
         object "**Parent Profile:** DocumentReference" as obj64 {
 
-            **Reference:**
+            **Page:**
             [[StructureDefinition-cmc-document-reference.html]]
         }
 
@@ -47,8 +47,10 @@ package "[[StructureDefinition-cmc-ectd-document-32p70.html eCTD Heading 3.2.P.7
     node "CodedOrganization" as NSO {
 
         object "**Parent:** Organization" as objAu {
-            **Reference:**
+            **Page:**
             [[StructureDefinition-cmc-organization.html]]
+            **ValueSets:**
+            
         }
     }
 }

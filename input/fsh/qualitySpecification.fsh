@@ -15,7 +15,7 @@ Examples: Approved, Not Approved, Reported in a CBE or AR.
 Extension: HierarchicalLevelExtension
 Id: pq-hierarchical-level-extension
 Title: "Hierarchical Level"
-Description: "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguished between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. "
+Description: "Numeric level in the hierarchical value-set. As an example, this extension is used to distinguish between Test Category | Test Subcategory in Quality Specifications. Test Category is level 1 and Test Subcategory is level two. A constraint enforces values greater than zero. "
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition.action.reason"
 
@@ -23,6 +23,7 @@ Description: "Numeric level in the hierarchical value-set. As an example, this e
   * ^short = "TestCategory  Level"
   * ^definition = """Level within the hierarchical value-set. E.g: first level equals 1, second level equals 2."""
 * value[x] only positiveInt
+
 Extension: TargetRange
 Id: pq-target-range
 Title: "Target Range"
@@ -149,7 +150,7 @@ Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as i
 
 * goal.target.detailString 0..1 MS
   * ^short = "Value"
-  * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711>)
+  * ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples - Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP &lt;711>)
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - USP &lt;151>; 21 CFR 610.13 (b) Test for pyrogenic substances)
 """
 * goal.target.detailInteger  0..1 MS
@@ -165,7 +166,7 @@ Examples: Prepare six aliquots from the sample. Test 8 samples. If any fall abov
 * action.linkId ^short = "only required for alternate tests"
 * action.prefix 0..1 MS
 * action.prefix ^short = "Stage Name"
-* action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP  &lt;711&gt;)
+* action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples - Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP  &lt;711&gt;)
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - &lt;151&gt;; 21 CFR 610.13 (b) Test for pyrogenic substances)
 
 Implememtation Note:  Value at this level is 'Single Stage'
@@ -225,7 +226,7 @@ Note: This could also be a transferred lab method.
 * action.action ^short = "Groups or Stages"
 * action.action.prefix 0..1 MS
 * action.action.prefix ^short = "Stage Name"
-* action.action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples – Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP  &lt;711&gt;)
+* action.action.prefix ^definition = """A textual description and/or a number that identifies a level within a sequential test. [Source: SME Defined] Examples - Single Stage, Stage 1, Stage 2 (sometimes referred to as L1, L2 L3 or A1, A2 as in USP  &lt;711&gt;)
 Note: A Stage may or may not provide a conditional sequence with associated acceptance criteria. [Source: SME Defined] (e.g., dissolution test, pyrogen test - &lt;151&gt;; 21 CFR 610.13 (b) Test for pyrogenic substances)
 
 Implememtation Note: not requried if action.prefix is 'Single Stage'
@@ -279,7 +280,7 @@ RRT: The ratio of the retention time of a component relative to that of another 
 Example: 1:23 (a ratio)
 Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
 
-Implementation Note: For RRT, if there is a range associated with the unidentified peak then the range can be entered instead of indivual values.  E.g.:  0.4 – 0.8.
+Implementation Note: For RRT, if there is a range associated with the unidentified peak then the range can be entered instead of indivual values.  E.g.:  0.4 - 0.8.
 """
 * action.action.action.description 0..1 MS
 * action.action.action.description ^short = "Test Additional Information | Stage Additional Information"

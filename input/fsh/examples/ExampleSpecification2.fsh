@@ -2,7 +2,7 @@ Instance: d9e7c2f7-0f59-4645-bb6d-5a8dd2425049
 InstanceOf: CodedOrganization
 Title: "Example of a Supplier Organization"
 Description: "This example if for a Supplier Organization"
-Usage: #example
+ Usage: #inline
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
 * identifier[DUNSNumber].value = "173265332"
 * identifier[DUNSNumber].type = $NCIT#C134003 "DUNS"
@@ -86,6 +86,7 @@ Usage: #inline
       * comparator = #<=
 * action[+]
   * id = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
+  * prefix = "Single Stage"
   * title = "Microbiological Examination of Nonsterile Products"
   * code
     * coding = $NCIT#C96102 "Compendial"
@@ -96,27 +97,22 @@ Usage: #inline
   * documentation.label = "USP <61>"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 1"
     * title = "Staphylococcus aureus"
     * goalId[+] = "b304ed45-5295-4082-9827-f20e1ff0d1d3"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 2"
     * title = "Pseudomonas aeruginosa"
     * goalId[+] = "d4e38c52-30f6-4bb7-ab84-99439a7266ce"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 3"
     * title = "Bacillus subtilis"
     * goalId[+] = "2abf1f19-e1b1-42e4-b943-79f5fa1642fe"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 4"
     * title = "Total Aerobic Microbial Count (TAMC)"
     * goalId[+] = "c0ed4a79-8f40-4d26-8845-4cea166fb627"
   * action[+]
     * linkId = "997a8ec6-eabf-41a3-b166-ddc3dfb35c27"
-    * prefix = "Stage 5"
     * title = "Total Yeasts and Molds Count (TYMC)"
     * goalId[+] = "442983b5-bbc3-4534-9f1b-5ae5e4c531c1"
 
@@ -128,7 +124,7 @@ Usage: #inline
 
 * identifier.value = "ExampleSpecification2"
 * status = #final
-* type.coding = $SectionTypes#32S41 "Substance Specification"
+* type.coding = $SectionTypes#ich_3.2.s.4.1 "Specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:36:51.299Z
 * title = """Quality Specification for an API"""
@@ -136,10 +132,10 @@ Usage: #inline
   * title = "32S41"
   * entry = Reference(urn:uuid:cc82a0ce-b72f-4d58-8ea0-6f323e2a9a93)
 
-Instance: 6004e36e-7df9-469d-9b29-8e9f9bd7e95f
+Instance: SpecificationSubstanceBundle
 InstanceOf: CMCeCTDDocumentSP4151
-Title: "FHIR Document example of 3.2.S.4.1."
-Description: "FHIR document bundle with the CMC eCTD SP4151 profile for a Drug Substance"
+Title: "3.2.S.4.1 Bundle"
+Description: "Specification bundle for an API substance"
 Usage: #example
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:3e9cc7a1-e157-4b46-980a-33a8e50dcf65"

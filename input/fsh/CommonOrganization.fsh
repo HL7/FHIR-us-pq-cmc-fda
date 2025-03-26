@@ -1,7 +1,6 @@
 RuleSet: DUNSandFEINumber
 * identifier 1..* MS
 * identifier.type 0..1 MS
-* identifier.type from PqcmcOrgIdentifierTypeTerminology (required)
 * identifier.system 1..1 MS
 * identifier.value 1..1 MS
 * identifier ^slicing.discriminator.type = #value
@@ -19,7 +18,7 @@ Profile: CodedOrganization
 Parent: Organization
 Id: cmc-organization
 Title: "Basic Organization"
-Description: "A profile for the data elements required to identify the sponsor of the drug products or substances, Suppliers."
+Description: "A profile for the data elements required to identify the sponsor and/or the supplier of the drug products or substances."
 * insert DUNSandFEINumber
 * name 1..1 MS
 * contact 1..* MS

@@ -1,7 +1,7 @@
-Instance: a242b79e-b706-49d3-93ba-b4364ab2baa3
+Instance: BatchFormulaBundle
 InstanceOf: CMCeCTDDocument32P32
-Title: "Example Batch Formula bundle"
-Description: "FHIR bundle with a CMC eCTD 32P32 profile"
+Title: "3.2.P.3.2 Bundle for liquid"
+Description: "Batch Formula bundle for a liquid drug product"
 Usage: #example
 * identifier	
   * system = $IDsys	
@@ -87,8 +87,8 @@ Usage: #inline
 * status = #final	
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)	
 * date = 2024-07-01T12:34:56.789Z	
-* title = """Batch formula example"""	
-* section	
+* title = """Batch formula example"""
+* section[BatchFormulaMedicinalProduct]
   * title = "Batch Formula"	
   * entry = Reference(urn:uuid:d0d2df25-5cfa-4417-b8d1-b8147957f53c)	
 	
@@ -105,7 +105,7 @@ Usage: #inline
 * comprisedOf = Reference(urn:uuid:249ef22b-d521-4304-a388-6b9035f97b22)	
 * name[NonProprietary]	
   * productName = "ATOMOXETINE HYDROCHLORIDE 1mg"	
-  * type = http://hl7.org/fhir/us/pq-cmc-fda/CodeSystem/cmc-product-name-types#NON "Non-Proprietary"	
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part[Scientific][+]	
     * part = "ATOMOXETINE HYDROCHLORIDE"	
   * part[Strength][+]	
@@ -137,6 +137,7 @@ Usage: #inline
   * amount[percent] = 100 $UCUM#% "percent"
   // atomexetine hydrochloride	
   * constituent[+]	
+    * extension[StrengthTextual].valueString = "5% atomexetine hydrochloride solution"
     * amount[perBatch] = 25.42 $UCUM#g "gram"	
     * amount[percent] = 0.0477 $UCUM#% "percent"
     * hasIngredient.reference = Reference(urn:uuid:1c1a2a23-1fd7-4487-9682-49877f9f9f77)	
@@ -225,7 +226,7 @@ Instance: 45942749-64db-4f91-88c3-51adb680fed1
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - Acetic Acid"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -262,7 +263,7 @@ Instance: 07c598ee-3dcf-45b7-b4e5-b24812c22aff
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - Sodium Acetate Anhydrous"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -299,7 +300,7 @@ Instance: a339a562-e325-4ce6-a830-d25c27b5e2da
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - MANNITOL"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -336,7 +337,7 @@ Instance: c75df5fb-e962-43a6-9dd3-c6682da10a7e
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - METACRESOL"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
@@ -373,7 +374,7 @@ Instance: c4e5b7c6-2e52-48e3-813b-d227cf29329b
 InstanceOf: ExcipientRaw
 Title: "Example batch formula ingredient substance - Water"
 Description: "Example inactive ingredient in batch formula. Contains the identiy and codes of the substance"
-Usage: #example
+ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pqcmc-excipient"	
 * classification = $NCIT#C48807 "Chemical"	
 * grade = $NCIT#C134006 "USP-NF"	
