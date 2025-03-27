@@ -213,6 +213,7 @@ Description: "Provides sufficient information to identify an inactive substance 
 
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
+* . obeys cmc-source-material
 * identifier 0..1
 * identifier ^short = "optional user designated identifier"
 * classification 1..1 MS
