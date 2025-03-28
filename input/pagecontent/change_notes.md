@@ -1,3 +1,20 @@
+### Version = 3.0.0
+Publication Date: 2026-04-TBD
+url: https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/
+Based on FHIR version : 5.0.0
+
+#### Additions:
+
+    Product Container Closure System (3.2.P.7.0): eCTD32P70.html 
+    Substance Container Closure System (3.2.S.6.0): eCTD32S60.html
+    Batch Analyses (3.2.S.4.4 & 3.2.P.5.4): eCTDSP4454.html 
+    Stability Summary (3.2.S.7.1 & 3.2.P.8.1): eCTDSP7181.html
+    Stability Data (3.2.S.7.3 & 3.2.P.8.3): eCTDSP7383.html
+
+#### Changes:
+
+The ballot-related comments resulted in changes to this specification, which are listed below:
+
 ### Version = 2.0.0
 Publication Date: 2025-04-TBD
 url: http://hl7.org/fhir/us/pq-cmc-fda/STU2

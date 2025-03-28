@@ -383,5 +383,4 @@ Description: "Example inactive ingredient in batch formula. Contains the identiy
   * name = "WATER"	
   * preferred = true	
 * sourceMaterial	
-  * type = $NCIT#C48807 "Chemical"	
-
+  * type = $NCIT#C48807 "Chemical"

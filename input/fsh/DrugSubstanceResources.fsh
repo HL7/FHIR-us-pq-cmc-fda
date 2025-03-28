@@ -193,7 +193,7 @@ Examples: removed during process, adjusted for loss on drying, etc.
 * substance.strength[percent]
   * concentration[x] 1..1 MS
   * concentration[x] only Quantity
-  * textConcentration 0..0
+  * textConcentration 0..0 MS
   * concentrationQuantity from PqcmcPercentageUnits (required)
     * value 1..1 MS
       * ^short = "Ingredient Total Amount Content Percent"
@@ -269,11 +269,12 @@ Example: cat hair would be an Animal source type """
     """
 * insert CountryOfOrigin
 
+
 Profile: SubstanceDefinitionHandle
 Parent: SubstanceDefinition
 Id: pqcmc-routine-drug-substance
 Title: "Drug Substance Handle"
-Description: "Provides sufficient information to identify a drug substance. Profile on SubstanceDefinition."
+Description: "Includes the essential identifying information of the drug substance required to link to other profiles about the substance in the eCTD structure. Profile on SubstanceDefinition."
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * identifier 0..1 MS
@@ -567,7 +568,7 @@ Profile: DrugSubstanceCharacterisation
 Parent: SubstanceDefinition
 Id: pqcmc-drug-substance-characterisation
 Title: "Drug Substance"
-Description: "Drug Substance (Active Ingredient) nomenclature and characterisation."
+Description: "Drug Substance (Active Ingredient) nomenclature and characterization."
 * . obeys cmc-when-unii-required
 * . obeys cmc-name-isbt
 * obeys cmc-substance-characterisation-content-required
@@ -600,7 +601,7 @@ Profile: ImpuritySubstance
 Parent: SubstanceDefinition
 Id: pqcmc-drug-product-substance-impurity
 Title: "Drug Substance Impurity"
-Description: "Any component of the drug substance that is not the chemical entity for procduct composition."
+Description: "Any component of the drug substance that is not the chemical entity for product composition."
 * obeys cmc-impurity-unii-required
 * identifier 0..1 MS
 * identifier ^short = "optional user designated identifier"
@@ -691,6 +692,7 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
 * insert ShortSetSubstanceNames
 * insert CompanyName
 
+//Rulesets---------------------------------------------------------------------------------------------------------------*/
 RuleSet: SubstanceCharacterization
 * characterization MS
   * technique MS

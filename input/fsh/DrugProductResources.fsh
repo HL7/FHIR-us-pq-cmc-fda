@@ -48,7 +48,7 @@ Note: This includes primary packaging components and secondary packaging compone
 """
 * attachedDocument 0..* MS
 * attachedDocument ^short = "Container Closure System Depiction"
-* attachedDocument ^definition = "Diagram of Container Closure System or any of its parts noted in the Container Closure System Description"
+* attachedDocument ^definition = "Diagram of cContainer Closure System or any of its parts noted in the Container Closure System Description"
 * insert PQReference(attachedDocument)
 * attachedDocument only Reference(GraphicReference)
 * packaging 1..1 MS
@@ -56,7 +56,7 @@ Note: This includes primary packaging components and secondary packaging compone
   // the coding in a codeableConcept is okay here. The other option would
   // be to make closure type a property which is 0..*
   * type 1..1 MS
-    * coding 2..2 MS
+    * coding 1..2 MS
     * coding ^slicing.discriminator.type = #value
     * coding ^slicing.discriminator.path = "$this"
     * coding ^slicing.rules = #closed
@@ -75,7 +75,7 @@ Note: This includes primary packaging components and secondary packaging compone
 Extension: AmountRatio
 Id: pq-amount-ratio
 Title: "Amount Ratio"
-Description: "represent an amount as a ratio in ManufacturedItemDefinition"
+Description: "The fields needed to represent an amount as a ratio."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component"
 * ^context[+].type = #element
@@ -117,8 +117,10 @@ Example: Tylenol
 Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]"""
 * manufacturedDoseForm from PqcmcManufacturedDoseFormTerminology (required)
 * property 1..* MS
+* property.type 1..1 MS
+* property.type.text 1..1 MS
 * property ^slicing.discriminator.type = #value
-* property ^slicing.discriminator.path = "type"
+* property ^slicing.discriminator.path = "type.text"
 * property ^slicing.rules = #closed
 * property ^slicing.description = "Slice based on value"
 * property contains
@@ -144,8 +146,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     For example, a capsule filled with IR and DR beads will exhibit an ER release profile as evident from the pharmacokinetic curve. In this example, the "product overall release profile" is "ER". [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#OvrRelsProf "Product Overall Release Profile"
+  * type.text = "Product Overall Release Profile"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcReleaseProfile (required)
@@ -156,8 +157,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     The dosage form design used to achieve an ER release profile.  Examples of overall release mechanisms include osmotic pump, reservoir, and matrix. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#OvrRelsMech "Product Overall Release Mechanism"
+  * type.text =  "Product Overall Release Mechanism"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcReleaseMechanism (required)
@@ -168,8 +168,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     A property that identifies whether the drug product contains any coatings. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#CoatInd "Coating Indicator"
+  * type.text = "Coating Indicator"
   * value[x] 1..1 MS
   * value[x] only boolean
 
@@ -180,8 +179,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Note: Non-layered tablets will be considered as one layer tablets.
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TabLayCnt "Tablet Layer Count"
+  * type.text = "Tablet Layer Count"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] = $UCUM#1
@@ -194,8 +192,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: For the case of a 1- layer tablet containing 2 types of beads, Tablet Bead Type Count = 2.
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#BeaTypCnt "Tablet Bead Type Count"
+  * type.text = "Tablet Bead Type Count"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] = $UCUM#1
@@ -207,8 +204,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Categorization of the capsule shell based on factors such as the shell’s barrier to water and oxygen, reactivity, and the material it is made of. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#CapClass "Capsule Classification Category"
+  * type.text = "Capsule Classification Category"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcCapsuleClassificationCategory (required)
@@ -220,8 +216,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: For the case of a capsule shell filled with one type of bead and a minitablet, Constituent Type Count = 2.
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#CapConCnt "Capsule Constituent Count"
+  * type.text = "Capsule Constituent Count"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] = $UCUM#1
@@ -233,8 +228,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     The pictorial representation of the drug product. [Source: SME Defined]
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#Schematic "Product Schematic"
+  * type.text = "Product Schematic"
   * value[x] 1..1 MS
   * value[x] only Attachment
   * value[x] only GraphicAttachment or PDFAttachment
@@ -246,8 +240,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: Mass, Activity
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#WgtTyp "Product Weight Type"
+  * type.text = "Product Weight Type"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcStrengthTypeTerminology (required)
@@ -259,8 +252,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Note: a single unit of a solid oral dose form could be a tablet or a capsule
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TotWgtNum "Product Total Weight Numeric Numerator"
+  * type.text = "Product Total Weight Numeric Numerator"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] from PqcmcUnitsMeasure (extensible)
@@ -278,8 +270,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Note: For solid oral dose forms, by definition this is 1
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TotWgtDen "Product Total Weight Numeric Denominator"
+  * type.text = "Product Total Weight Numeric Denominator"
   * value[x] 1..1 MS
   * value[x] only SimpleQuantity
   * value[x] from PqcmcUnitsMeasure (extensible)
@@ -293,8 +284,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Example: International Units for Enzymes
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#TotWgtTxt "Total Weight Textual"
+  * type.text = "Total Weight Textual"
   * value[x] 1..1 MS
   * value[x] only markdown
 
@@ -305,8 +295,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
     Examples: USP/NF, EP, Company Standard
   """
   * type MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#QualStd "Quality Standard"
+  * type.text = "Quality Standard"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcQualityBenchmarkTerminology (required)
@@ -314,8 +303,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
 * property[Sterile]
   * ^short = "Sterile Product Indicator"
   * type 1..1 MS
-  * type from pqcmc-product-characteristic
-  * type = $NCIT#Sterile "Sterile Product Indicator"
+  * type.text = "Sterile Product Indicator"
   * value[x] 1..1 MS
   * value[x] only boolean
 
@@ -338,14 +326,14 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
     Example: In a two layer tablet with two APIs: Product Part Function Description for Layer 1 = Deliver API 1 and Product Part Function Description for Layer 2 = Deliver API 2
   """
 * component
-  * amount 0..2 MS
+  * amount 1..2 MS
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "code"
     * ^slicing.rules = #open
     * ^slicing.ordered = false
   * amount contains 
     weight 0..1 MS and
-    percent 0..1 MS
+    percent 1..1 MS
   * amount[weight]
     * value 1..1 MS
       * ^short = "Product Part Total Weight Numeric"
@@ -389,8 +377,8 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
     * ^slicing.rules = #open
     * ^slicing.ordered = false
   * amount contains 
-    weight 1..1 MS and
-    percent 0..1 MS
+    weight 0..1 MS and
+    percent 1..1 MS
   * amount[weight]
     * value 1..1 MS
       * ^short = "Product Part Ingredient Amount Numeric"
@@ -449,8 +437,10 @@ Examples: Intragranular, Extra granular, Blend
 * component.constituent.hasIngredient only CodeableReference(DrugProductComponent)
 // Product part properties
 * component.property 1..* MS
+* component.property.type 1..1 MS
+* component.property.type.text 1..1 MS
 * component.property ^slicing.discriminator.type = #value
-* component.property ^slicing.discriminator.path = "type"
+* component.property ^slicing.discriminator.path = "type.text"
 * component.property ^slicing.rules = #closed
 * component.property ^slicing.description = "Slice based on value"
 * component.property contains
@@ -470,8 +460,10 @@ Examples: Intragranular, Extra granular, Blend
     * ^definition = """
       The behavior in which drug substance migrates from the drug product part to the surrounding environment (e.g., biological fluids, dissolution media, etc.) [Source: SME Defined]
     """
-    * type MS
-    * type = $NCIT#RelsProf "Product Part Release Profile"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Product Part Release Profile"
+    // * type = $NCIT#RelsProf "Product Part Release Profile"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcReleaseProfile (required)
@@ -482,8 +474,10 @@ Examples: Intragranular, Extra granular, Blend
       The method employed to realize the specified part release profile. [Source: SME Defined] 
       Example: matrix or reservoir
     """
-    * type MS
-    * type = $NCIT#RelsMech "Product Part Release Mechanism"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Product Part Release Mechanism"
+    // * type = $NCIT#RelsMech "Product Part Release Mechanism"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcReleaseMechanism (required)
@@ -494,8 +488,10 @@ Examples: Intragranular, Extra granular, Blend
       The reason the coating or covering was added. [Source: SME Defined]
       Examples: rate-controlling, color, release type, protective, taste masking.
     """
-    * type MS
-    * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
+    * type 1..1 MS
+      * text 1..1 MS
+      * text = "Coating Product Part Purpose"
+    // * type = $NCIT#CoatPurpose "Coating Product Part Purpose"
     * value[x] 1..1 MS
     * value[x] only CodeableConcept
     * value[x] from PqcmcCoatingPurpose (required)
@@ -506,15 +502,15 @@ Examples: Intragranular, Extra granular, Blend
       The hue or the tint of the drug product part. [Source: SME Defined]
       Examples: yellow, pink, blue, pale yellow.
     """
-    * type MS
-    * type = $NCIT#Color "Product Part Color Description"
+    * type 1..1  MS
+      * text 1..1 MS
+      * text = "Product Part Color Description"
+    // * type = $NCIT#Color "Product Part Color Description"
     * value[x] 1..1 MS
     * value[x] only CodeableConceptTextOnly
 
-
 * component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
 
-* component.component 0..* MS
 
 RuleSet: AdditionalInformationProperty(short)
 * ^short = "{short}"
@@ -522,8 +518,10 @@ RuleSet: AdditionalInformationProperty(short)
   A placeholder for providing any comments that are relevant to the drug product component. [Source: SME Defined] Examples: removed during process, adjusted for loss on drying.
   Implementation note: This is represented in  markdown.  For multiple comments utilize markdwon formating for separation of notes.
 """
-* type MS
-* type = $NCIT#AddInfo "Product Part Additional Information"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "{short}"
+// * type = $NCIT#AddInfo "Product Part Additional Information"
 * value[x] 1..1 MS
 * value[x] only markdown
 
@@ -533,8 +531,10 @@ RuleSet: ProductPartIdentifierProperty
   A submitter designated identifier that uniquely identifies the part within the drug product. [Source: SME Defined]
   Examples: 1, A1, Red bead, Blue minitablet
 """
-* type MS
-* type = $NCIT#PPiD "Product Part Identifier"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Identifier"
+// * type = $NCIT#PPiD "Product Part Identifier"
 * value[x] 1..1 MS
 * value[x] only CodeableConceptTextOnly
 // * valueCodeableConcept.coding from CmcRelationshipTypesVS	
@@ -549,8 +549,10 @@ RuleSet: ProductPartIdentifierReferenceProperty
   Identifies the parent or outer-level product part. [Source: SME Defined]
   Example: A bead (Product Part Identifier = “B1”) has a seal coating (Product Part Identifier = “SCoat”) and is contained in a Hard HPMC capsule shell (Product Part Identifier “Cap Shell”). For the seal coating, Product Part Identifier Reference = “B1”, because the seal coat is applied to the bead.
 """
-* type MS
-* type = $NCIT#PPiDref "Product Part Identifier Reference"
+* type 1..1 MS
+  * text 1..1 MS
+  * text = "Product Part Identifier Reference"
+// * type = $NCIT#PPiDref "Product Part Identifier Reference"
 * value[x] 1..1 MS
 * value[x] only CodeableConceptTextOnly
 
@@ -558,14 +560,16 @@ Profile: DrugProductHandle
 Parent: MedicinalProductDefinition
 Id: pqcmc-drug-product-handle 
 Title: "Drug Product Handle"
-Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure."
+Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure. Profile on MedicinalProductDefinition."
 
 * identifier 0..1 MS
 * identifier ^short = "Optional user designated identifier"
+* description 0..0 MS
 * insert DosageForm
 * insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
+* crossReference 0..0 MS
 
 Profile: DrugProductDescription
 Parent: MedicinalProductDefinition
@@ -575,7 +579,7 @@ Description: "Includes the properties of the drug product and components. Profil
 
 * identifier 0..1 
 * identifier ^short = "optional user designated identifier"	
-* description 0..1 MS
+* description 1..1 MS
 * description ^short = "Drug Product Description"
 * description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
 Examples: dosage form, container closure system, purpose."""
@@ -592,12 +596,12 @@ Examples: dosage form, container closure system, purpose."""
 * insert RouteOfAdministration
 * insert ProprietaryAndNonProprietaryNames
 * name.usage.jurisdiction 0..0
-* crossReference MS
-* crossReference.product 
+* crossReference 0..* MS
+* crossReference.product MS
 * crossReference.product ^short = "Co-Packaged Product"
 * insert PQCodeableReference(crossReference.product)
-* crossReference.product only CodeableReference(DrugProductDescription)
-* crossReference.type.text = "co-packaged"
+* crossReference.product only CodeableReference(DrugProductHandle)
+
 
 RuleSet: DosageForm
 * combinedPharmaceuticalDoseForm 1..1 MS
@@ -621,13 +625,13 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "type"
   * ^slicing.rules = #closed
-  * ^slicing.description = "Require non-proprietary name. Parts required if present in the non-proprietary name"
+  * ^slicing.description = "Require nonproprietary name. Parts required if present in the nonproprietary name"
   * productName 1..1 MS
   * type 1..1 MS
   * type from cmc-product-name-types-vs (required)
 * name contains Proprietary 0..1 and NonProprietary 1..1
 * name[Proprietary]
-  * type = $NameType#PROP "Proprietary"
+  * type = $NCIT#C71898 "Proprietary Name"
   * part 0..* MS
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "type"
@@ -638,7 +642,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
     * type from PqcmcNamePartTerminology (required)
 * name[NonProprietary]
   * obeys cmc-strength-name-must-reference-scientific
-  * type = $NameType#NON "Non-Proprietary"
+  * type = $NCIT#C96971 "Nonproprietary Name"
   * part 1..* MS
     * ^definition = """Name Parts are a means of specifying a range of acceptable forms of the name of a product.
 Note: The minimum is the scientific name.
@@ -669,29 +673,32 @@ Note: The minimum is the scientific name.
 
 // Stage 2
 
-Extension: ProductBatchIngredientExtension
-Id: pq-product-batch-ingredient-extension
-Title: "Product Batch Ingredient Extension"
-Description: "Extension for measurement properties for ingredients in the batch formla."
+Extension: OverageExtension
+Id: pq-overage-extension
+Title: "Overage Extension"
+Description: "Extension for measurements related to excess for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
+* . obeys cmc-overage-percent-limit  
 * extension contains
-  overagePercent 1..1 MS and
-  overageJustification 1..1 MS 
-* extension[overagePercent].value[x] only decimal
-* extension[overagePercent].value[x] ^short = "Overage Percent"
-* extension[overagePercent].value[x] ^definition = """Overage is the percent of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
+  proportionDecimal 1..1 MS and
+  justification 1..1 MS 
+
+* extension[proportionDecimal].value[x] only decimal
+* extension[proportionDecimal].value[x] ^short = "Overage Percent"
+* extension[proportionDecimal].value[x] ^definition = """Overage is the proportion of a drug substance in excess of the label claim to compensate for the loss, such as manufacturing or other.
 Note: This is not for stability loss, and generally not permitted.
 Example: 3% overage of drug that has a label claim of 10mg of active (API) - the formulation would have 10.3 mg. A batch formula for 100 kg would contain 103 kg of API.
+The value is entered as a decimal value less then one.
 """
-* extension[overageJustification].value[x] only markdown
-* extension[overageJustification].value[x] ^short = "Overage Justification"
-* extension[overageJustification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
+* extension[justification].value[x] only markdown
+* extension[justification].value[x] ^short = "Overage Justification"
+* extension[justification].value[x] ^definition = "The rationale for use of excess drug substance during manufacturing of the drug product [Source: SME Defined]"
 
 Extension: ProductBatchStrengthTextualExtension
 Id: pq-product-batch-strength-textual-extension
 Title: "Product Batch Strength Textual Extension"
-Description: "Extension for strenght as a sting for ingredients in the batch formla."
+Description: "Extension for strength as a string for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
 
@@ -721,8 +728,10 @@ Description: "Listing of all components of the dosage form to be used in the man
 * insert PQReference(manufacturer)
 * manufacturer only Reference(CodedOrganization) 
 * property 1..* MS
+  * type 1..1 MS
+    * text 1..1 MS
 * property ^slicing.discriminator.type = #value
-* property ^slicing.discriminator.path = "type"
+* property ^slicing.discriminator.path = "type.text"
 * property ^slicing.rules = #closed
 * property ^slicing.description = "Slice based on value"
 * property contains
@@ -736,8 +745,7 @@ Description: "Listing of all components of the dosage form to be used in the man
     The amount of material in a specific batch size [Source: SME Defined]
     Example: 1000 kg
   """
-  * type MS
-  * type = $NCIT#batchsize "Batch Quantity"
+  * type.text = "Batch Quantity"
   * value[x] 1..1 MS
   * value[x] only Quantity
   * value[x] from PqcmcUnitsMeasure (required)
@@ -753,13 +761,13 @@ Description: "Listing of all components of the dosage form to be used in the man
     A categorization of the batch that identifies its usage. [Source: SME Defined]
     Examples: commercial, development.
   """
-  * type MS
-  * type = $NCIT#BatchUtil "Batch Utilization"
+  * type.text = "Batch Utilization"
   * value[x] 1..1 MS
   * value[x] only CodeableConcept
   * value[x] from PqcmcBatchUtilizationTerminology (required)
 
 * property[AddInfo] insert AdditionalInformationProperty(Batch Formula Additional Information)
+
 // Product parts
 * component 1..* MS
   * amount 2..2
@@ -795,11 +803,9 @@ Example: Layer, Bead, Minitablet, Capsule Shell, Coating
 * component.constituent.extension[additional-info] ^definition = """A placeholder for providing any comments relevant to the constituent [Source: SME Defined]
 Examples: Water for wet granulation - removed during process; adjusted for loss on drying, etc.* property[
 """
-* component.constituent.extension contains pq-product-batch-ingredient-extension named formulaIngredient 0..1 MS
-* component.constituent
+* component.constituent.extension contains pq-overage-extension named ingredientOverage 0..1 MS
 * component.constituent.extension contains pq-product-batch-strength-textual-extension named StrengthTextual 0..1 MS
 * component.constituent
-
 
   * amount 2..2 MS
   * amount ^slicing.discriminator.type = #value
@@ -840,18 +846,22 @@ Examples: Intragranular, Extra granular, Blend
 * insert PQCodeableReference(component.constituent.hasIngredient)
 * component.constituent.hasIngredient only CodeableReference(DrugProductIngredient)
 // Product part
-* component.property 1..3 MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "type"
-  * ^slicing.rules = #closed
-  * ^slicing.description = "Slice based on value"
+* component.property 1..* MS
+* component.property.type 1..1 MS
+* component.property.type.text 1..1 MS
+* component.property ^slicing.discriminator.type = #value
+* component.property ^slicing.discriminator.path = "type.text"
+* component.property ^slicing.rules = #closed
+* component.property ^slicing.description = "Slice based on value"
 * component.property contains
     PPiD 1..1 MS and
     PPiDref 0..1 MS and
     AddInfo 0..1 MS 
 * component.property[PPiD] insert ProductPartIdentifierProperty
 * component.property[PPiDref] insert ProductPartIdentifierReferenceProperty
-* component.property[AddInfo] insert AdditionalInformationProperty(Batch Component Additional Information)
+* component.property[AddInfo] insert AdditionalInformationProperty(Product Part Additional Information)
+
+* component.component 0..* MS
 
 Profile: BatchFormulaMedicinalProduct
 Parent: MedicinalProductDefinition

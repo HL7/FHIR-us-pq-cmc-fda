@@ -11,12 +11,48 @@
           <xsl:with-param name="json" select="."/>
         </xsl:call-template>
       </xsl:variable>
-      
-      <xsl:variable name="list" select="substring-before(substring-after(substring-after($safeJson, '&quot;list&quot;'), '['), ']')"/>
+      <xsl:variable name="strippedLanguages">
+        <xsl:call-template name="stripArray">
+          <xsl:with-param name="arrayName" select="'languages'"/>
+          <xsl:with-param name="string" select="$safeJson"/>
+        </xsl:call-template>
+      </xsl:variable>
+      <xsl:variable name="strippedCorrections">
+        <xsl:call-template name="stripArray">
+          <xsl:with-param name="arrayName" select="'corrections'"/>
+          <xsl:with-param name="string" select="$strippedLanguages"/>
+        </xsl:call-template>
+      </xsl:variable>
+      <xsl:variable name="strippedSubPackages">
+        <xsl:call-template name="stripArray">
+          <xsl:with-param name="arrayName" select="'sub-packages'"/>
+          <xsl:with-param name="string" select="$strippedCorrections"/>
+        </xsl:call-template>
+      </xsl:variable>
+      <xsl:variable name="list" select="substring-before(substring-after(substring-after($strippedSubPackages, '&quot;list&quot;'), '['), ']')"/>
       <xsl:call-template name="processPackage">
         <xsl:with-param name="list" select="$list"/>
       </xsl:call-template>
     </package-list>
+	</xsl:template>
+	<xsl:template name="stripArray">
+    <xsl:param name="arrayName"/>
+    <xsl:param name="string"/>
+    <xsl:variable name="arrayString" select="concat('&quot;', $arrayName, '&quot;')"/>
+    <xsl:choose>
+      <xsl:when test="contains($string, $arrayString)">
+        <xsl:variable name="remainder">
+          <xsl:call-template name="stripArray">
+            <xsl:with-param name="arrayName" select="$arrayName"/>
+            <xsl:with-param name="string" select="substring-after(substring-after($string, $arrayString), ']')"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:value-of select="concat(substring-before($string, $arrayString), concat('&quot;', $arrayName, 'Foo&quot;:1'), $remainder)"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$string"/>
+      </xsl:otherwise>
+    </xsl:choose>
 	</xsl:template>
 	<xsl:template name="processPackage">
     <xsl:param name="list"/>

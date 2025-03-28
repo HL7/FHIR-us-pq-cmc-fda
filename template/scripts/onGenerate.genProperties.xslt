@@ -15,6 +15,7 @@
     <xsl:variable name="family">
       <xsl:choose>
         <xsl:when test="$basefamily='xprod'">other</xsl:when>
+        <xsl:when test="$basefamily='ehrs'">other</xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$basefamily"/>
         </xsl:otherwise>
@@ -52,9 +53,9 @@
         <xsl:value-of select="concat('When using the HL7 template, the IG id must start with &quot;hl7.&quot; - found ', $id)"/>
       </xsl:message>
     </xsl:if>
-    <xsl:if test="not($family='cda' or $family='fhir' or $family='v2' or $family='other')">
+    <xsl:if test="not($family='ehrs' or $family='cda' or $family='fhir' or $family='v2' or $family='other')">
       <xsl:message terminate="yes">
-        <xsl:value-of select="concat('Unrecognized family in id: ', $id, '.  ImplementationGuide.id must be in the form &quot;', 'hl7.[family].[realm].id', '&quot; where family is cda, fhir, v2, xprod, or other')"/>
+        <xsl:value-of select="concat('Unrecognized family in id: ', $id, '.  ImplementationGuide.id must be in the form &quot;', 'hl7.[family].[realm].id', '&quot; where family is ehrs, cda, fhir, v2, xprod, or other')"/>
       </xsl:message>
     </xsl:if>
     <xsl:if test="not($realm='us' or $realm='uv' or $realm='eu')">

@@ -59,7 +59,7 @@
           ' is not allowed for IGs using the HL7 template.  Use a more specific status (draft, informative, trial-use, normative, normative+trial-use, etc.)')"/>
       </xsl:message>
     </xsl:for-each>
-    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='draft' or @status='ballot' or @status='informative' or @status='trial-use' or @status='update' or @status='normative' or @status='normative+trial-use')]">
+    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='draft' or @status='ballot' or @status='informative' or @status='trial-use' or @status='update' or @status='normative' or @status='normative+trial-use' or @status='corrected')]">
       <xsl:message terminate="yes">
         <xsl:value-of select="concat('Unrecognized package-list status: ', @status, ' for release ', @version)"/>
       </xsl:message>
