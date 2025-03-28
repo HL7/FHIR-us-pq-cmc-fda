@@ -505,14 +505,14 @@ Description: "Terminology used to qualify the information pertaining to closure 
 * $NCIT#C96139 "Stopper"
 * $NCIT#C96140 "Tie"
 
-//	ValueSet: PqcmcConformanceCriteriaTerminology
-//	Id: pqcmc-conformance-to-criteria-terminology
-//	Title: "Conformance to Criteria Terminology"
-//	Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
-//	* ^experimental = false
-//	* ^status = #active
-//	* $NCIT#C80262 "Conforms"
-//	* $NCIT#C133998 "Does not conform"
+ValueSet: PqcmcConformanceCriteriaTerminology
+Id: pqcmc-conformance-to-criteria-terminology
+Title: "Conformance to Criteria Terminology"
+Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C80262 "Conforms"
+* $NCIT#C133998 "Does not conform"
 
 ValueSet: PqcmcContainerTypeTerminology
 Id: pqcmc-container-type-terminology
