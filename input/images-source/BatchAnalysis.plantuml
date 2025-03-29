@@ -143,18 +143,18 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
   }
   diamond CH
 
-  N1 -[#darkred]-> CH
-  N1 -[#darkred]-> N2
-  N1 -[#darkred]-> NSO
-  CH -[#green]-> NNS
-  CH -[#green]-> NN
-  NNS -[#darkred]-> NSO
-  NN -[#darkred]-> NMFG
-  N2 -[#darkred]-> CH
-  N2 -[#darkred]-> NSO
+  N1 -[#darkred]--> CH
+  N1 -[#darkred]--> N2
+  N1 -[#darkred]--> NSO
+  CH -[#green]--> NNS
+  CH -[#green]--> NN
+  NNS -[#darkred]--> NSO
+  NN -[#darkred]--> NSO
+  N2 -[#darkred]--> CH
+  N2 -[#darkred]--> NSO
   N2 -[#darkred]-> NNOBS
-  NNOBS -[#darkred]-> NSO
-  NNOBS -[#darkred]-> NNstage
-  NNstage -[#darkred]-> NSO
+  NNOBS -[#darkred]--> NSO
+  NNOBS -[#darkred]--> NNstage
+  NNstage -[#darkred]--> NSO
 }
 @enduml

@@ -211,19 +211,19 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
               }
        }
 
-       CH -[#green]-> NN
-       CH -[#green]-> NNS
-       CH3 -[#green]-> NN
-       CH3 -[#green]-> NNS
-       N1 -[#darkred]-> CH
-       N1 -[#darkred]-> N2
-       N1 -[#darkred]-> NSO
-       N2 -[#darkred]-> CH
-       N2 -[#darkred]-> NMFG
-       N2 -[#darkred]-> NNOBS
-       Ninterval -[#darkred]-> CH3
-       Ninterval -[#darkred]-> NMFG
-       Ninterval -[#darkred]-> NNOBS
+       CH -[#green]--> NN
+       CH -[#green]--> NNS
+       CH3 -[#green]--> NN
+       CH3 -[#green]--> NNS
+       N1 -[#darkred]--> CH
+       N1 -[#darkred]--> N2
+       N1 -[#darkred]--> NSO
+       N2 -[#darkred]--> CH
+       N2 -[#darkred]--> NMFG
+       N2 -[#darkred]--> NNOBS
+       Ninterval -[#darkred]--> CH3
+       Ninterval -[#darkred]--> NMFG
+       Ninterval -[#darkred]--> NNOBS
        NN -[#darkred]-> NMFG
        NNOBS -[#darkred]-> NMFG
        NNOBS -[#darkred]-> NNstage
@@ -231,7 +231,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        NNstage -[#darkred]-> NMFG
        NSub -[#darkred]-> Ninterval
        N1 -[#darkred]-> NMain
-       NSub -[#darkred]-> NSub2
-       NSub -[#darkred]-> NMain
+       NSub -[#darkred]--> NSub2
+       NSub -[#darkred]--> NMain
 }
 @enduml
