@@ -77,7 +77,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
 
        diamond CH
 
-       diamond CH3
        node "DrugProductBatch" as NN {
 
               object "**Parent:** Medication" as obj3 {
@@ -203,20 +202,17 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        }
 
 
-
+       Ninterval -[#darkred]--> CH
+       Ninterval -[#darkred]--> NMFG
+       Ninterval -[#darkred]--> NNOBS
        CH -[#green]--> NN
        CH -[#green]--> NNS
-       CH3 -[#green]--> NN
-       CH3 -[#green]--> NNS
        N1 -[#darkred]--> CH
        N1 -[#darkred]--> N2
-       N1 -[#darkred]--> NSO
+       N1 -[#darkred]-> NSO
        N2 -[#darkred]--> CH
        N2 -[#darkred]--> NMFG
        N2 -[#darkred]--> NNOBS
-       Ninterval -[#darkred]--> CH3
-       Ninterval -[#darkred]--> NMFG
-       Ninterval -[#darkred]--> NNOBS
        NN -[#darkred]-> NMFG
        NNOBS -[#darkred]-> NMFG
        NNOBS -[#darkred]-> NNstage

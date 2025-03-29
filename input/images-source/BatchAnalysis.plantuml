@@ -1,18 +1,15 @@
 @startuml BatchAnalysis
 allowmixing
 'Mixed model of use case and object
-skinparam svgDimensionStyle true
+skinparam svgDimensionStyle false
 skinparam ObjectBackgroundColor LightYellow
 skinparam ObjectBorderColor #A80036
 skinparam activityDiamondBorderColor #A80036
 skinparam activityDiamondBackgroundColor lawnGreen
 skinparam ClassBorderThickness 4
 
+
 package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle]]" as NODES {
-
-
-
-
   node "DrugProductBatch" as NN {
 
     object "**Parent:** Medication" as obj3 {
@@ -143,11 +140,11 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
   }
 
 
-  N1 -[#darkred]--> CH
+  N1 -[#darkred]-> CH
   N1 -[#darkred]--> N2
   N1 -[#darkred]--> NSO
-  CH -[#green]--> NNS
-  CH -[#green]--> NN
+  CH -[#green]-> NNS
+  CH -[#green]-> NN
   NNS -[#darkred]--> NSO
   NN -[#darkred]--> NSO
   N2 -[#darkred]--> CH
