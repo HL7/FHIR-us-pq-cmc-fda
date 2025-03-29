@@ -10,6 +10,24 @@ skinparam ClassBorderThickness 4
 
 package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle]]" as NODES {
 
+       node "EctdCompositionSP7383" as N1 {
+
+              object "**Parent:** Composition" as obj1 {
+                     **Page:**
+                     [[StructureDefinition-ectd-composition-sp7383.html]]
+                     **ValueSets:**
+                     Code system PQCMC Comp Section Types
+              }
+       }
+       node "CodedOrganization" as NSO {
+
+              object "**Parent:** Organization" as objAu {
+                     **Page:**
+                     [[StructureDefinition-cmc-organization.html]]
+                     **ValueSets:**
+                     Testing Site and Organization Identifier Type Terminology
+              }
+       }
 
        node "DrugProductBatch" as NN {
 
@@ -40,6 +58,60 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
                      Container
               }
               objExsBatch *-- obj3
+       }
+       node "BatchAnalysis" as N2 {
+
+              object "**Parent:** DiagnosticReport" as obj2 {
+                     **Page:**
+                     [[StructureDefinition-pqcmc-batch-analysis.html]]
+              }
+              object "**Extensions**" as objQSEx {
+                     Quality Specification Reference
+              }
+              obj2 *-- objQSEx
+       }
+       node "StabilitySubStudy" as NSub {
+
+              object "**Parent:** ResearchStudy" as objSub {
+                     **Page:**
+                     [[StructureDefinition-pq-stability-sub-study.html]]
+                     **ValueSets:**
+                     Study Type Terminology
+                     Storage Conditions Terminology
+                     Storage Condition Category Terminology
+                     Container Orientation Terminology
+              }
+
+              object "**Extensions**" as objExsSub  {
+                     Additional Information
+              }
+              objExsSub *-- objSub
+       }
+
+
+       node "StabilityStudy" as NMain {
+
+              object "**Parent:** ResearchStudy" as objMain {
+                     **Page:**
+                     [[StructureDefinition-pq-stability-study.html]]
+                     **ValueSets:**
+                     Stability Study Reason Terminology
+              }
+
+              object "**Extensions**" as objExsMain  {
+                     Study Protocol
+                     Additional Information
+              }
+              objExsMain *-- objMain
+       }
+
+       node "StabilitySubStudy" as NSub2 {
+
+              object "Another StabilitySubStudy" as objSub2 {
+                     **Page:**
+                     [[StructureDefinition-pq-stability-sub-study.html]]
+
+              }
        }
        diamond CH
 
@@ -87,17 +159,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
               objinterval *-- objIntEx
        }
 
-       node "BatchAnalysis" as N2 {
 
-              object "**Parent:** DiagnosticReport" as obj2 {
-                     **Page:**
-                     [[StructureDefinition-pqcmc-batch-analysis.html]]
-              }
-              object "**Extensions**" as objQSEx {
-                     Quality Specification Reference
-              }
-              obj2 *-- objQSEx
-       }
 
        node "MfgTestSiteOrganization" as NMFG {
 
@@ -109,49 +171,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
               }
        }
 
-       node "StabilitySubStudy" as NSub {
-
-              object "**Parent:** ResearchStudy" as objSub {
-                     **Page:**
-                     [[StructureDefinition-pq-stability-sub-study.html]]
-                     **ValueSets:**
-                     Study Type Terminology
-                     Storage Conditions Terminology
-                     Storage Condition Category Terminology
-                     Container Orientation Terminology
-              }
-
-              object "**Extensions**" as objExsSub  {
-                     Additional Information
-              }
-              objExsSub *-- objSub
-       }
-
-
-       node "StabilityStudy" as NMain {
-
-              object "**Parent:** ResearchStudy" as objMain {
-                     **Page:**
-                     [[StructureDefinition-pq-stability-study.html]]
-                     **ValueSets:**
-                     Stability Study Reason Terminology
-              }
-
-              object "**Extensions**" as objExsMain  {
-                     Study Protocol
-                     Additional Information
-              }
-              objExsMain *-- objMain
-       }
-
-       node "StabilitySubStudy" as NSub2 {
-
-              object "Another StabilitySubStudy" as objSub2 {
-                     **Page:**
-                     [[StructureDefinition-pq-stability-sub-study.html]]
-
-              }
-       }
 
        node "ResultObservation" as NNOBS {
 
@@ -192,24 +211,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
               objExsStageObs *-- observS
        }
 
-       node "EctdCompositionSP7383" as N1 {
 
-              object "**Parent:** Composition" as obj1 {
-                     **Page:**
-                     [[StructureDefinition-ectd-composition-sp7383.html]]
-                     **ValueSets:**
-                     Code system PQCMC Comp Section Types
-              }
-       }
-       node "CodedOrganization" as NSO {
-
-              object "**Parent:** Organization" as objAu {
-                     **Page:**
-                     [[StructureDefinition-cmc-organization.html]]
-                     **ValueSets:**
-                     Testing Site and Organization Identifier Type Terminology
-              }
-       }
 
        CH -[#green]--> NN
        CH -[#green]--> NNS

@@ -57,7 +57,15 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
     }
     obj2 *-- objQSEx
   }
+  node "CodedOrganization" as NSO {
 
+    object "**Parent:** Organization" as objAu {
+      **Page:**
+      [[StructureDefinition-cmc-organization.html]]
+      
+    }
+  }
+  diamond CH
 
   node "DrugSubstanceBatch" as NNS {
 
@@ -133,15 +141,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
   }
-  node "CodedOrganization" as NSO {
 
-    object "**Parent:** Organization" as objAu {
-      **Page:**
-      [[StructureDefinition-cmc-organization.html]]
-      
-    }
-  }
-  diamond CH
 
   N1 -[#darkred]--> CH
   N1 -[#darkred]--> N2
