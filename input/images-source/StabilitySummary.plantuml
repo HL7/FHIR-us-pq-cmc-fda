@@ -34,14 +34,14 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
             }
       }
 
-        node "CodedOrganization" as NMFG {
 
-    object "**Parent:** Organization" as objAu {
-      **Page:**
-      [[StructureDefinition-cmc-organization.html]]
-    }
-  }
+      node "CodedOrganization" as NMFG {
 
+            object "**Parent:** Organization" as objDP {
+                  **Page:**
+                  [[StructureDefinition-cmc-organization.html]]
+            }
+      }
       node "StabilitySummary" as NMain {
 
             object "**Parent:** PlanDefinition" as objMain {

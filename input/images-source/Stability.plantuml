@@ -10,15 +10,6 @@ skinparam ClassBorderThickness 4
 
 package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle]]" as NODES {
 
-       node "EctdCompositionSP7383" as N1 {
-
-              object "**Parent:** Composition" as obj1 {
-                     **Page:**
-                     [[StructureDefinition-ectd-composition-sp7383.html]]
-                     **ValueSets:**
-                     Code system PQCMC Comp Section Types
-              }
-       }
        node "CodedOrganization" as NSO {
 
               object "**Parent:** Organization" as objAu {
@@ -28,37 +19,16 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
                      Testing Site and Organization Identifier Type Terminology
               }
        }
+       node "EctdCompositionSP7383" as N1 {
 
-       node "DrugProductBatch" as NN {
-
-              object "**Parent:** Medication" as obj3 {
+              object "**Parent:** Composition" as obj1 {
                      **Page:**
-                     [[StructureDefinition-pqcmc-drug-product-instance.html]]
+                     [[StructureDefinition-ectd-composition-sp7383.html]]
                      **ValueSets:**
-                     [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
-                     Expiration Date Classification Terminology
-                     Batch utilization Terminology
-                     [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-                     [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
-                     [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
+                     Code system PQCMC Comp Section Types
               }
-
-              object "**Extensions**" as objExsBatch  {
-                     Manufacturing Date
-                     Manufacturing Date Description
-                     Assigned Manufacturer
-                     Expiration Date Classification
-                     Batch Utilization
-                     Batch Size
-                     Additional Information
-                     Container Closure System Description
-                     Container Type
-                     Container Lot Number
-                     Container Fill per Container Size
-                     Container
-              }
-              objExsBatch *-- obj3
        }
+
        node "BatchAnalysis" as N2 {
 
               object "**Parent:** DiagnosticReport" as obj2 {
@@ -105,18 +75,39 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
               objExsMain *-- objMain
        }
 
-       node "StabilitySubStudy" as NSub2 {
-
-              object "Another StabilitySubStudy" as objSub2 {
-                     **Page:**
-                     [[StructureDefinition-pq-stability-sub-study.html]]
-
-              }
-       }
        diamond CH
 
        diamond CH3
+       node "DrugProductBatch" as NN {
 
+              object "**Parent:** Medication" as obj3 {
+                     **Page:**
+                     [[StructureDefinition-pqcmc-drug-product-instance.html]]
+                     **ValueSets:**
+                     [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+                     Expiration Date Classification Terminology
+                     Batch utilization Terminology
+                     [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+                     [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+                     [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
+              }
+
+              object "**Extensions**" as objExsBatch  {
+                     Manufacturing Date
+                     Manufacturing Date Description
+                     Assigned Manufacturer
+                     Expiration Date Classification
+                     Batch Utilization
+                     Batch Size
+                     Additional Information
+                     Container Closure System Description
+                     Container Type
+                     Container Lot Number
+                     Container Fill per Container Size
+                     Container
+              }
+              objExsBatch *-- obj3
+       }
        node "DrugSubstanceBatch" as NNS {
 
               object "**Parent:** Substance" as obj4 {
@@ -233,7 +224,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
        NNstage -[#darkred]-> NMFG
        NSub -[#darkred]-> Ninterval
        N1 -[#darkred]-> NMain
-       NSub -[#darkred]--> NSub2
        NSub -[#darkred]--> NMain
 }
 @enduml
