@@ -124,6 +124,10 @@ Description: "Grape skin extract excipient"
   * preferred = true	
 * sourceMaterial	
   * type = $NCIT#C14258 "Plant"
+  * genus.text = "vitis"
+  * species.text = "vinifera"
+  * part.text = "fruit skin"
+  * countryOfOrigin = $Country#ITA "Italy"
 
 Instance: 254742fb-7b5b-49f5-b4af-e0d14d81f2f6	
 InstanceOf: ExcipientRaw

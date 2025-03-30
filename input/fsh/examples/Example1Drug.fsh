@@ -106,7 +106,8 @@ Usage: #inline
 * sourceMaterial.type = $NCIT#C14258 "Plant"
 * sourceMaterial.genus.text = "zea"
 * sourceMaterial.species.text = "mays"
-* sourceMaterial.countryOfOrigin = $Country#ARG "Argentina"    
+* sourceMaterial.countryOfOrigin = $Country#ARG "Argentina"
+* sourceMaterial.part.text = "kernel"
 
 Instance: d01421cc-6488-468b-a676-d3e7281875e2
 InstanceOf: DrugProductComponent
