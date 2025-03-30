@@ -39,7 +39,7 @@ Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
-Expression: "classification.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
+Expression: "classification.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and (code in 'C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
 Severity: #error
 
 Invariant: cmc-source-material
@@ -404,7 +404,7 @@ Invariant: cmc-structure-representation-required
 Description: "Either a file or string structure representation is required"
 Expression: "representation.type.coding.where(
   system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'
-  and (code in ('C45253' | 'C103240'))
+  and (code in 'C45253' | 'C103240')
 ).exists()"
 Severity: #error
 
