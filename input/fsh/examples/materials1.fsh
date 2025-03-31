@@ -75,6 +75,7 @@ Usage: #inline
 * sourceMaterial.genus.text = "palmaria"
 * sourceMaterial.species.text = "palmata"
 * sourceMaterial.countryOfOrigin =  $Country#USA "United States of America" 
+* sourceMaterial.part.text = "whole"
 
 Instance: fd84a8b5-9e96-451c-a5c6-097c943eb38a
 InstanceOf: ExcipientRaw
