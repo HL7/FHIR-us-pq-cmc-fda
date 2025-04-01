@@ -24,7 +24,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s60.html eCTD Heading 3.2.S.6
   }
   node "SubstanceContainerClosure" as N21 {
 
-    object "**Parent:** DrugSubstance Profile" as obj22 {
+    object "**Parent:** [[https://hl7.org/fhir/R5/packagedproductdefinition.html PackagedProductDefitinion]]" as obj22 {
       **Page:**
       [[StructureDefinition-pqcmc-drug-substance-container-closure.html]]
       **ValueSets:**
