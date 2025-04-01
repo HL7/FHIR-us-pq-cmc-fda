@@ -32,7 +32,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s60.html eCTD Heading 3.2.S.6
       [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
     }
     object "**Extensions**" as objEx {
-      containerClosure
+      [[StructureDefinition-packaged-product-substance-reference.html Packaged Product Substance Reference]]
     }
     obj22 <|-- objEx
   }
