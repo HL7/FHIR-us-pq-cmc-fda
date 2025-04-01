@@ -37,7 +37,7 @@ Description: "Description and coding of the container closure system."
   """
 * packaging 1..1 MS
   * type 1..1 MS
-    * coding MS
+    * coding 2..2 MS
       * ^slicing.discriminator.type = #value
       * ^slicing.discriminator.path = "$this"
       * ^slicing.rules = #open
