@@ -21,6 +21,13 @@ Description: "Description and coding of the container closure system."
   * ^definition = """
     In lieu of packageFor, This profile uses an extension to reference a substance instead of a product
   """
+* description 1..1 MS
+* description ^short = "Container Closure System Description"
+* description ^definition = """
+  Any textual comments that describe the sum of container closure system (CCS) components that together contain and protect the dosage form or drug substance. [Source: Adapted from Q1A(R2)-ICH Glossary]
+  Example: White opaque, round 50 mL HDPE bottle with a fitted 33 mm child resistant black polypropylene threaded cap closure, aluminum sealed, and containing molecular sieve canister 2 gm (CAN TRISORB 2G) as desiccant.
+  Note: This includes primary packaging components and secondary packaging components, if the latter are intended to provide additional protection to the drug substance or the drug product. A packaging system is equivalent to a container closure system. [Source: Adapted from Q1A(R2)-ICH Glossary]
+"""
 * attachedDocument 0..* MS
 * insert PQReference(attachedDocument)
 * attachedDocument only Reference(GraphicReference)
