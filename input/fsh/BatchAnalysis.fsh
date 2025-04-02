@@ -8,7 +8,8 @@ Description: "The product specification used in the batch release or stability t
 
 * extension contains	
     specification 1..1 MS and	
-    specificationVersion 1..1 MS	
+    specificationVersion 1..1 MS	and
+    specificationSubTitle 0..1 MS
 * extension[specification]
   * value[x] 1..1 MS
   * value[x] only string
@@ -27,6 +28,10 @@ Description: "The product specification used in the batch release or stability t
       Examples: 2.1, 13.2, ST1, 00001, 00002, &lt; companyname &gt; 001, etc. 
       Note: This value should be unique across all specifications for a given material, not just those with the same name.
     """
+* extension[specificationSubTitle]
+  * value[x] 1..1 MS
+  * value[x] only string
+    * ^short = "Specification Subtitle"
 
 Extension: ReplicateExtension	
 Id: pq-replicate-extension	
