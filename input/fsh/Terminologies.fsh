@@ -1,6 +1,6 @@
 ValueSet: PqcmcImpurityClassificationTerminology	
 Id: pqcmc-impurity-classification-terminology	
-Title: "Impurity Classification Terminology"	
+Title: "Impurity Classification"	
 Description: "Terminology used to qualify the information pertaining to impurity classifications in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 * ^experimental = false
 * ^status = #active
@@ -15,7 +15,7 @@ Description: "Terminology used to qualify the information pertaining to impurity
 
 ValueSet: PqcmcBatchUtilizationTerminology	
 Id: pqcmc-batch-utilization-terminology	
-Title: "Batch utilization Terminology"	
+Title: "Batch utilization"	
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = false
@@ -49,7 +49,7 @@ Description: "Terminology used to qualify the information pertaining to batch ut
 
 ValueSet: CmcProductNameTypesVS
 Id: cmc-product-name-types-vs
-Title: "Product Name Types Terminology"
+Title: "Product Name Types"
 Description: "The type of the product name. Often the proprietary name is unknown at the time of submission."
 
 * ^experimental = false
@@ -61,7 +61,7 @@ Description: "The type of the product name. Often the proprietary name is unknow
 
 ValueSet: PqcmcTestCategoryTerminology
 Id: pqcmc-test-category-terminology
-Title: "Test Category Terminology"
+Title: "Test Category"
 Description: "Terminology used to qualify the information pertaining to test categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -178,7 +178,7 @@ Description: "Terminology used to qualify the information pertaining to test cat
 
 ValueSet: PqcmcNamePartTerminology
 Id: pqcmc-name-part-terminology
-Title: "PQCMC Name Part Terminology"
+Title: "PQCMC Name Part"
 Description: "Terminology used to qualify the information pertaining to Name Part data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -198,7 +198,7 @@ Description: "Terminology used to qualify the information pertaining to Name Par
 
 ValueSet: PqcmcProductPartType
 Id: pqcmc-product-part-type
-Title: "Product Part Type Terminology"
+Title: "Product Part Type"
 Description: "A category of terminology used to qualify the information pertaining to the product part type in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -216,7 +216,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcProductPartIngredientPhysicalLocation
 Id: pqcmc-product-part-ingredient-physical-location
-Title: "Ingredient Location Terminology"
+Title: "Ingredient Location"
 Description: "A category of terminology used to qualify the information pertaining to the location of an ingredient within a product in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -227,7 +227,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcReleaseProfile
 Id: pqcmc-release-profile
-Title: "Release Profile Terminology"
+Title: "Release Profile"
 Description: "A category of terminology used to qualify the information pertaining to release profile in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -239,7 +239,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcReleaseMechanism
 Id: pqcmc-release-mechanism
-Title: "Release Mechanism Terminology"
+Title: "Release Mechanism"
 Description: "A category of terminology used to qualify the information pertaining to release mechanism in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -250,7 +250,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcCoatingPurpose
 Id: pqcmc-coating-purpose
-Title: "Coating Purpose Terminology"
+Title: "Coating Purpose"
 Description: "A category of terminology used to qualify the information pertaining to the coating purpose in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -270,7 +270,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: PqcmcCapsuleClassificationCategory
 Id: capsule-classification-category
-Title: "Capsule Shell Classification  Terminology"
+Title: "Capsule Shell Classification"
 Description: "A category of terminology used to qualify the information pertaining to the classification of a capsule in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -365,7 +365,7 @@ Description: "Substance classes"
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
-Title: "eCTD sections Terminology"
+Title: "eCTD sections"
 Description: "Value set of all codes in Code system PQCMC Comp Section Types."
 * ^experimental = false
 * ^status = #active
@@ -445,7 +445,7 @@ Description: "Value set of all codes in Code system PQCMC Comp Section Types."
 
 ValueSet: PqcmcQualitySpecificationSectionTypes
 Id: cmc-specification-types-vs
-Title: "Specification Section Type Terminology"
+Title: "Specification Section Type"
 Description: "Local value set of all codes in Specification Type codes"
 * ^experimental = false
 * ^status = #active
@@ -455,7 +455,7 @@ Description: "Local value set of all codes in Specification Type codes"
 
 ValueSet: PqcmcChemicalStructureDataFileTypeTerminology
 Id: pqcmc-chemical-structure-datafile-type-terminology
-Title: "Chemical Structure Data File Type Terminology"
+Title: "Chemical Structure Data File Type"
 Description: "Terminology used to qualify the information pertaining to chemical structure data file types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -470,7 +470,7 @@ Description: "Terminology used to qualify the information pertaining to chemical
 
 ValueSet: PqcmcClosureTypeTerminology
 Id: pqcmc-closure-type-terminology
-Title: "Closure Type Terminology"
+Title: "Closure Type"
 Description: "Terminology used to qualify the information pertaining to closure types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -507,7 +507,7 @@ Description: "Terminology used to qualify the information pertaining to closure 
 
 ValueSet: PqcmcConformanceCriteriaTerminology
 Id: pqcmc-conformance-to-criteria-terminology
-Title: "Conformance to Criteria Terminology"
+Title: "Conformance to Criteria"
 Description: "Terminology used to qualify the information pertaining to conformance to criteria in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 * ^experimental = false
 * ^status = #active
@@ -516,7 +516,7 @@ Description: "Terminology used to qualify the information pertaining to conforma
 
 ValueSet: PqcmcContainerTypeTerminology
 Id: pqcmc-container-type-terminology
-Title: "Container Type Terminology"
+Title: "Container Type"
 Description: "Terminology used to qualify the information pertaining to container types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -598,7 +598,7 @@ Description: "Terminology used to qualify the information pertaining to containe
 
 ValueSet: PqcmcDrugProductComponentFunctionCategoryTerminology
 Id: pqcmc-drug-product-component-function-category-terminology
-Title: "Drug Product Component Function Category Terminology"
+Title: "Drug Product Component Function Category"
 Description: "Terminology used to qualify the information pertaining to drug product component function categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -617,7 +617,7 @@ Description: "Terminology used to qualify the information pertaining to drug pro
 
 ValueSet: PqcmcExcipientFunctionTerminology
 Id: pqcmc-excipient-function-terminology
-Title: "Excipient Function Terminology"
+Title: "Excipient Function"
 Description: "Terminology used to qualify the information pertaining to excipient functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -683,7 +683,7 @@ Description: "Terminology used to qualify the information pertaining to excipien
 
 ValueSet: PqcmcQualityBenchmarkTerminology
 Id: pqcmc-quality-benchmark-terminology
-Title: "Quality Benchmark Terminology"
+Title: "Quality Benchmark"
 Description: "Terminology used to qualify the information pertaining to quality benchmarks in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -696,7 +696,7 @@ Description: "Terminology used to qualify the information pertaining to quality 
 
 ValueSet: PqcmcSourceTypeTerminology
 Id: pqcmc-source-type-terminology
-Title: "Source Type Terminology"
+Title: "Source Type"
 Description: "Terminology used to qualify the information pertaining to source types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -724,7 +724,7 @@ Description: "Terminology used to qualify the information pertaining to specific
 
 ValueSet: PqcmcSpecificationTypeTerminology
 Id: pqcmc-specification-type-terminology
-Title: "Specification Type Terminology"
+Title: "Specification Type"
 Description: "Terminology used to qualify the information pertaining to specification types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -747,7 +747,7 @@ Description: "Terminology used to qualify the information pertaining to specific
 
 ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
-Title: "Strength Type Terminology"
+Title: "Strength Type"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -757,7 +757,7 @@ Description: "Terminology used to qualify the information pertaining to strength
 
 ValueSet: PqcmcTestMethodOriginTerminology
 Id: pqcmc-test-method-origin-terminology
-Title: "Test Method Origin Terminology"
+Title: "Test Method Origin"
 Description: "Terminology used to qualify the information pertaining to test method origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -768,7 +768,7 @@ Description: "Terminology used to qualify the information pertaining to test met
 
 ValueSet: PqcmcTestUsageTerminology
 Id: pqcmc-test-usage-terminology
-Title: "Test Usage Terminology"
+Title: "Test Usage"
 Description: "Terminology used to qualify the information pertaining to test usage in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -778,7 +778,7 @@ Description: "Terminology used to qualify the information pertaining to test usa
 
 ValueSet: SplPharmaceuticalDosageFormTerminology
 Id: spl-pharmaceutical-dosage-form-terminology
-Title: "Pharmaceutical Dosage Form Terminology"
+Title: "Pharmaceutical Dosage Form"
 Description: "Terminology used for representation of the information on pharmaceutical product dosage form in the framework of the SPL documents."
 
 * ^experimental = false
@@ -1046,7 +1046,7 @@ Note: Includes SPL Unit of Presentation Terminology"
 
 ValueSet: SplDrugRouteofAdministrationTerminology
 Id: spl-drug-route-of-administration-terminology
-Title: "Drug Route Of Administration Terminology"
+Title: "Drug Route Of Administration"
 Description: "Terminology used for representation of the information on pharmaceutical product route of administration in the framework of the Structured Product Labeling documents."
 
 * ^experimental = false
@@ -1178,7 +1178,7 @@ Description: "Terminology used for representation of the information on pharmace
 
 ValueSet: PqcmcManufacturedDoseFormTerminology
 Id: pqcmc-manufactured-dose-form-terminology
-Title: "Manufactured Dose Form Terminology"
+Title: "Manufactured Dose Form"
 Description: "Terminology used to qualify the information pertaining to the manufactured dose form."
 * ^experimental = false
 * ^status = #active
@@ -1267,7 +1267,7 @@ Description: "The 3 letter country codes used in GENC and ISO have significant o
 
 ValueSet: PqcmcExpirationDateClassificationTerminology	
 Id: pqcmc-expiration-date-classification-terminology	
-Title: "Expiration Date Classification Terminology"	
+Title: "Expiration Date Classification"	
 Description: "Terminology used to qualify the information pertaining to expiration date classification functions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = false
@@ -1278,7 +1278,7 @@ Description: "Terminology used to qualify the information pertaining to expirati
 
 ValueSet: PqcmcStorageConditionCategoryTerminology	
 Id: pqcmc-storage-condition-category-terminology	
-Title: "Storage Condition Category Terminology"	
+Title: "Storage Condition Category"	
 Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"	
 * ^experimental = false
 * ^status = #active
@@ -1289,7 +1289,7 @@ Description: "A classification of storage conditions (temperature and humidity) 
 
 ValueSet: PqcmcStabilityStudyReasonTerminology	
 Id: pqcmc-stability-study-reason-terminology	
-Title: "Stability Study Reason Terminology"	
+Title: "Stability Study Reason"	
 Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = true	
@@ -1312,7 +1312,7 @@ Description: "Terminology used to qualify the information pertaining to stabilit
 
 ValueSet: PqcmcStudyTypeTerminology	
 Id: pqcmc-study-type-terminology	
-Title: "Study Type Terminology"	
+Title: "Study Type"	
 Description: "Terminology used to qualify the information pertaining to study types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 * ^experimental = false
 * ^status = #active
@@ -1323,7 +1323,7 @@ Description: "Terminology used to qualify the information pertaining to study ty
 
 ValueSet: PqcmcStorageConditionsTerminology	
 Id: pqcmc-storage-conditions-terminology	
-Title: "Storage Conditions Terminology"	
+Title: "Storage Conditions"	
 Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = true	
@@ -1340,7 +1340,7 @@ Description: "Terminology used to qualify the information pertaining to storage 
 
 ValueSet: PqcmcContainerOrientationTerminology	
 Id: pqcmc-container-orientation-terminology	
-Title: "Container Orientation Terminology"	
+Title: "Container Orientation"	
 Description: "Terminology used to qualify the information pertaining to container orientation in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 * ^experimental = false
 * ^status = #active	
@@ -1352,7 +1352,7 @@ Description: "Terminology used to qualify the information pertaining to containe
 
 ValueSet: PqcmcIntervalDescriptionCodeTerminology	
 Id: pqcmc-interval-description-code-terminology	
-Title: "Interval Description Code Terminology"	
+Title: "Interval Description Code"	
 Description: "Terminology used to qualify the information pertaining to interval description codes in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 * ^experimental = false
 * ^status = #active	
