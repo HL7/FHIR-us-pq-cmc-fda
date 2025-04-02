@@ -747,7 +747,7 @@ Description: "Terminology used to qualify the information pertaining to specific
 
 ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
-Title: "Strength Type"
+Title: "Strength Type Terminology"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
