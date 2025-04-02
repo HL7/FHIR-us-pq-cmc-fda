@@ -58,7 +58,7 @@ Description: "Includes the properties of the drug product as manufactured."
     * ^definition = """
       A combination of letters, numbers, or symbols, or any combination of them, from which the complete history of the manufacture, processing, packing, holding, and distribution of a batch or lot of drug product or other material can be determined. [Source: Adapted reference: 21 CFR 210.3 Definitions (4/1/2014)]
     """
-  * expirationDate 1..1 MS
+  * expirationDate 0..1 MS
     * ^short = "Expiration Date"
     * ^definition = """
       The date the manufacturer guarantees the full potency and safety of a particular batch/lot of medicinal product. The complete point in time date consisting of day, month and year shall be specified using the ISO 8601 date format. [Source: ISO IDMP 11615-2017]
