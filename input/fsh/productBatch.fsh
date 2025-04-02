@@ -25,7 +25,8 @@ Description: "Includes the properties of the drug product as manufactured."
   """
 * ingredient 1..* MS
   * item MS
-  * item only LiteralCodeableReference
+  * insert PQCodeableReference(item)
+  * item only CodeableReference(DrugSubstanceBatch)
     * ^short = "UNII"
     * ^definition = """
       The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
