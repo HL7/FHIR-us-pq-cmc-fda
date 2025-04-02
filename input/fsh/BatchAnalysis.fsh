@@ -70,7 +70,7 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * subject 1..1 MS
   * ^short = "A single medication batch/lot or a single subtance batch/lot"	
 * subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
-* effectiveDateTime	1..1 MS
+* effectiveDateTime	0..1 MS
   * ^short = "Batch Analysis Release Date"
   * ^definition = """
     The date at which the drug substance or drug product is released by the quality assurance unit of the sponsor/applicant. [Source: SME Defined]
