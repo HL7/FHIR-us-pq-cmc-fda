@@ -114,6 +114,7 @@ Title: "Drug Substance Manufacturing Batch"
 Description: "This profile defines the details of a batch of API."
 * ^context.type = #element
 * ^context.expression = "Substance"
+* insert manufacturing-batch-extension-commonalities
 * extension[expirationDateClassification]
   * ^short = "Retest Date Classification"
   * ^definition = """
