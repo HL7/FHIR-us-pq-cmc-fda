@@ -951,6 +951,7 @@ Description: "Terminology used for representation of the information on pharmace
 * $NCIT#C87540 "GRANULE FOR SUSPENSION, DELAYED RELEASE"
 * $NCIT#C87541 "POWDER, LYOPHILIZED"
 * $NCIT#C87542 "PENDANT"
+* $NCIT#185352 "DRUG-ELUTING CONTACT LENS"
 
 ValueSet: PqcmcUnitsMeasure
 Id: pqcmc-units-of-measure
@@ -1175,6 +1176,7 @@ Description: "Terminology used for representation of the information on pharmace
 * $NCIT#C79143 "SUBRETINAL"
 * $NCIT#C79144 "INTRAEPICARDIAL"
 * $NCIT#C79145 "TRANSENDOCARDIAL"
+* $NCIT#128997 "SUPRACHOROIDAL"
 
 ValueSet: PqcmcManufacturedDoseFormTerminology
 Id: pqcmc-manufactured-dose-form-terminology
@@ -1319,7 +1321,9 @@ Description: "Terminology used to qualify the information pertaining to study ty
 * $NCIT#C134028 "Complex"	
 * $NCIT#C134027 "Cycled-Simple"	
 * $NCIT#C96087 "Photostability"	
-* $NCIT#C134026 "Standard"	
+* $NCIT#C134026 "Standard"
+* $NCIT#215185 "Bracketing" // not yet on tx.fhir.org
+* $NCIT#215186 "Matrixing" // not yet on tx.fhir.org
 
 ValueSet: PqcmcStorageConditionsTerminology	
 Id: pqcmc-storage-conditions-terminology	
