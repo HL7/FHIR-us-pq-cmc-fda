@@ -413,3 +413,12 @@ Description: "Overage percent must be less than 1.0"
 Expression: "extension.where(url='proportionDecimal').single().value < 1"
 Severity: #error
 // there can only be one extension with the 'proportionDecimal url', hence the single()
+
+Invariant: cmc-stability-mandatory-pull-date
+Description: "When ResultObservation is used in Stability Study, the actualPullDate extension is required"
+Severity: #error
+Expression: "entry.where(resource is Observation).all(
+  extension.exists(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-pullDate-extension')
+)"
+// Logically: resolve every entry in the bundle, select all the Observations, then make sure
+// all of them have the pull date extension

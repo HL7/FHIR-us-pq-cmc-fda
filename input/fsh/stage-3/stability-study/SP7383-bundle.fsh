@@ -4,6 +4,7 @@ Id: cmc-ectd-document-sp7383
 Title: "CMC eCTD SP7383 Document"
 Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles."
 * . ^short = "CMC eCTD SP7383 Bundle"
+* . obeys cmc-stability-mandatory-pull-date
 * identifier 1..1 MS
 * type MS
   * ^short = "document"
