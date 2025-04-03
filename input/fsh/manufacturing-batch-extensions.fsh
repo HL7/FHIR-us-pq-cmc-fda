@@ -160,4 +160,6 @@ Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
 Id: ingredient-manufacturing-batch
 Title: "Ingredient Manufacturing Batch"
 Description: "details for ingredients"
+* ^context.type = #element
+* ^context.expression = "Substance"
 * insert short-manufacturing-batch-extension
