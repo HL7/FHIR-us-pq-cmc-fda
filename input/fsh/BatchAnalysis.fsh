@@ -254,7 +254,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   * ^definition = """
     The date when a particular test was performed. [Source: SME Defined].
   """
-* performer MS
+* performer 1..1 MS
 * insert PQReference(performer)
 * performer only Reference(CodedOrganization)	
   * ^short = "Testing Site Unique Identifier"	
