@@ -11,7 +11,6 @@ Description: "an example Product Batch Analysis"
 * code.text = "Oxazepam Product Assay #001"
 * effectiveDateTime = "2024-12-19"
 * subject = Reference(urn:uuid:fff1c47f-a9af-452e-9402-a8842103a3ec)
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * result[+] = Reference(urn:uuid:022a4874-3ceb-46f8-a242-c15fbcd5165f)
 
 

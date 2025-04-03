@@ -81,16 +81,16 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
     The date at which the drug substance or drug product is released by the quality assurance unit of the sponsor/applicant. [Source: SME Defined]
     Note: A single release date per batch.
   """
-* performer 1..1 MS	
-* performer only Reference(CodedOrganization)	
-  * ^short = "Test Site"	
-  * ^definition = """
-    Reference to the organization profile that contains: 
-    * Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components, etc. [Source: SME Defined]
-    * Testing Site Address: The complete address for the testing site.  [Source: SME Defined]
-    * Testing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]
-    * Testing Site Unique identifier Type:	A value that identifies the source of the unique identifier. [Source: SME Defined] Examples: DUNS, FEI. 
-  """
+// * performer 1..1 MS	
+// * performer only Reference(CodedOrganization)	
+//   * ^short = "Test Site"	
+//   * ^definition = """
+//     Reference to the organization profile that contains: 
+//     * Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components, etc. [Source: SME Defined]
+//     * Testing Site Address: The complete address for the testing site.  [Source: SME Defined]
+//     * Testing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]
+//     * Testing Site Unique identifier Type:	A value that identifies the source of the unique identifier. [Source: SME Defined] Examples: DUNS, FEI. 
+//   """
 * result MS	
 * result only Reference(ResultObservation)	
 	
@@ -312,9 +312,9 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     * ^comment = """
       Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
     """	
-* hasMember 0..1 MS	
+* hasMember 0..* MS	
 * insert PQReference(hasMember)
-* hasMember only Reference(MultipleReplicatesResultObservation)	
+* hasMember only Reference(ResultObservation)	
   * ^comment = """
     Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
   """	
