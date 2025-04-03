@@ -19,7 +19,8 @@ InstanceOf: DrugProductBatch
 Usage: #inline
 Title: "Example Product Batch"
 Description: "an example product batch"
-* identifier.value = "ProductBatch001"
+* identifier.value = "OxazepamProduct"
+* identifier.type = $NCIT#C71898 "Proprietary Name"
 * batch
   * extension[medication-batch]
     * extension[assignedManufacturer].valueReference = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)

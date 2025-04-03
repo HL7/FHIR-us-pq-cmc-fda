@@ -11,6 +11,8 @@ Description: "Includes the properties of the drug product as manufactured."
     Note:  Excludes dosage form, route of administration and strength. Example:  Tylenol 
     Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
   """
+  * type 1..1 MS
+  * type from CmcProductNameTypesVS (required)
 // hold authroization for eStability
 * marketingAuthorizationHolder 0..1 MS
 * insert PQReference(marketingAuthorizationHolder)
