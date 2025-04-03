@@ -304,7 +304,7 @@ Description: "A category of terminology used to qualify the information pertaini
 ValueSet: SubstanceClassification
 Id: substance-classification
 Title: "Substance Classification"
-Description: "Substance classes"
+Description: "A category of terminology used to qualify the information pertaining to substances in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
 * ^status = #active
@@ -1279,7 +1279,7 @@ Description: "Terminology used to qualify the information pertaining to expirati
 ValueSet: PqcmcStorageConditionCategoryTerminology	
 Id: pqcmc-storage-condition-category-terminology	
 Title: "Storage Condition Category"	
-Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]"	
+Description: "A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product in the framework of the Pharaceutical Quality/Chemistry, Manufacturing and Controls documents [Source: SME Defined]"	
 * ^experimental = false
 * ^status = #active
 	
@@ -1324,7 +1324,7 @@ Description: "Terminology used to qualify the information pertaining to study ty
 ValueSet: PqcmcStorageConditionsTerminology	
 Id: pqcmc-storage-conditions-terminology	
 Title: "Storage Conditions"	
-Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
+Description: "Terminology used to qualify the information pertaining to storage conditions categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = true	
 * $NCIT#C133936 "-20 +/- 5 degrees C"	
