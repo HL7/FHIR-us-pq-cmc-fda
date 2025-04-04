@@ -11,7 +11,7 @@ The Substance Container Closure System bundle profile provides a mechanism for t
 The domain concepts of Substance Container Closure System are represented in FHIR in this IG section. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR resources. Detail study of the profiles and each of the resources will be needed to develop a deeper understanding of this Substance Container Closure System FHIR bundle profile. Concepts that are key to this domain include the following:
 
 * Substance Container Closure
-  * [Container Closure](StructureDefinition-ContainerClosure.html) (ContainerClosure) profile on the [PackagedProductDefinition](https://hl7.org/fhir/R5/packagedproductdefinition.html) resource
+  * [Container Closure](StructureDefinition-pqcmc-drug-substance-container-closure.html) (SubstanceContainerClosure) profile on the [PackagedProductDefinition](https://hl7.org/fhir/R5/packagedproductdefinition.html) resource
 * Related Organizations
   * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 
