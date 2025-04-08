@@ -1,15 +1,20 @@
 Extension: QualitySpecificationExtension	
 Id: pq-quality-specification-extension	
 Title: "Quality Specification Reference"	
-Description: "The product specification used in the batch release or stability testing."	
+Description: """
+  The product specification used in the batch release or stability testing.
+  Note: The combination of Specification Title, Specification Subtitle and Specification Version is assumed to be unique across all Specifications.
+  Note: Either the Specification OID must be present, or the Title, Subtitle, and Version must all be present.
+"""	
 * . ^short = "Specification and Specification Version"	
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
-
+* . obeys cmc-specification-reference-oid-or-title
 * extension contains	
-    specification 1..1 MS and	
-    specificationVersion 1..1 MS	and
-    specificationSubTitle 0..1 MS
+    specification 0..1 MS and	
+    specificationVersion 0..1 MS	and
+    specificationSubtitle 0..1 MS and
+    specificationOid 0..1 MS
 * extension[specification]
   * value[x] 1..1 MS
   * value[x] only string
@@ -28,10 +33,14 @@ Description: "The product specification used in the batch release or stability t
       Examples: 2.1, 13.2, ST1, 00001, 00002, &lt; companyname &gt; 001, etc. 
       Note: This value should be unique across all specifications for a given material, not just those with the same name.
     """
-* extension[specificationSubTitle]
+* extension[specificationSubtitle]
   * value[x] 1..1 MS
   * value[x] only string
     * ^short = "Specification Subtitle"
+* extension[specificationOid]
+  * value[x] 1..1 MS
+  * value[x] only oid
+    * ^short = "Specification OID"
 
 Extension: BatchRange
 Id: pq-batch-range
@@ -259,11 +268,11 @@ Title: "Result Observation"
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 	
 * identifier 1..1 MS	
-  * ^short = "Stage"	
+  * ^short = "Stage Name"	
   * ^definition = """
     A set of discrete sequential steps performed on a given test. [Source: SME Defined]
+    Note: This is a fixed value of 'Single Stage' for non-staged tests.
   """
-  * ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
 * status MS	
 * category 1..1 MS
 * category from PqcmcTestCategoryTerminology (required)
@@ -339,7 +348,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   * low 0..0
   * high 0..0
   * text 1..1 MS 
-    * ^short = "Original Text"	
+    * ^short = "Original Text | Text Value"	
     * ^definition = """
       The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
       Examples: White to off-white cake; 22.5 - 27.5 mg/ml 

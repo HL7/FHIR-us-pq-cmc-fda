@@ -422,3 +422,11 @@ Expression: "entry.where(resource is Observation).all(
 )"
 // Logically: resolve every entry in the bundle, select all the Observations, then make sure
 // all of them have the pull date extension
+Invariant: cmc-specification-reference-oid-or-title
+Description: "To Identify the specification used, Either the OID must be present, or the Title, Subtitle and Version must all be present."
+Expression: "extension.where(url = 'specificationOid').exists() or (
+  extension.where(url = 'specification').exists() and
+  extension.where(url = 'specificationSubtitle').exists() and
+  extension.where(url = 'specificationVersion').exists()
+)"
+Severity: #error

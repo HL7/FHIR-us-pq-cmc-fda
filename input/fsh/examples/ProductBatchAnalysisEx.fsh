@@ -6,6 +6,7 @@ Description: "an example Product Batch Analysis"
 * extension[qualitySpecification]
   * extension[specification].valueString = "ExampleSpecification"
   * extension[specificationVersion].valueString = "1.0"
+  * extension[specificationSubtitle].valueString = "Quality Specification for OXAZEPAM"
 * identifier.value = "Batch_Analysis_001"
 * status = #final
 * code.text = "Oxazepam Product Assay #001"
