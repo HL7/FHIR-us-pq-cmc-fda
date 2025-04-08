@@ -7,7 +7,7 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 ### Implementer Instructions
 
 * A Quality Specification has one or more Tests.
-* Tests should be entered in the XML bundle in the order in which they should be displayed.
+* Tests and the stages within them should be entered in the XML bundle in the order in which they should be displayed.
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.
 * A Quality Specification is declared for either a Drug Product or an Ingredient (API) or an Excipient/Raw Material. The same subject refence is used for both excipients and raw material.

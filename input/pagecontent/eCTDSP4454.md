@@ -5,6 +5,8 @@ The Batch Analyses bundle profile provides a mechanism for the industry to submi
 ### Implementer Instructions
 
 * Each Batch Analyses bundle is an evaluation of a single batch of an active substance or a single batch of a drug product.
+* Tests and the stages within them should be entered in the XML bundle in the order in which they should be displayed.
+* The combination of Specification Title, Specification Subtitle and Specification Version is assumed to be unique across all Specifications.
 
 ### Representation in FHIR
 
