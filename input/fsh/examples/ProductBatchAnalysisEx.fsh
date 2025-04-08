@@ -161,7 +161,7 @@ Description: "a result observation for use in an example"
 * valueQuantity = 0.1 '%' "percent"
 * interpretation = $NCIT#C80262 "Conforms"
 * method.text = "mass measurement"
-* referenceRange.modifierExtension[targetRange]
+* referenceRange.modifierExtension[batchRange]
   * extension[low].valueQuantity = 0.0 '%' "percent"
   * extension[high].valueQuantity = 0.5 '%' "percent"
 * referenceRange

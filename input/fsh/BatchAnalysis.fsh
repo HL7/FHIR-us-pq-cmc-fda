@@ -33,6 +33,36 @@ Description: "The product specification used in the batch release or stability t
   * value[x] only string
     * ^short = "Specification Subtitle"
 
+Extension: BatchRange
+Id: pq-batch-range
+Title: "Target Range"
+Description: "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.referenceRange"
+* . ?!
+* . ^isModifierReason = "When present, the target cannot have a referenceRange.low or referenceRange.high; instead this extension acts as its low and high"
+* extension 1..2 MS
+  * ^short = "ValueNumeric (range)"
+  * ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
+* extension contains 
+  low 0..1 MS and
+  high 0..1 MS
+* extension[low]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+    * value 1..1 MS
+    * unit 1..1 MS
+* extension[high]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+    * value 1..1 MS
+    * unit 1..1 MS
+
+// Invariant: cmc-batch-range
+// Description: "When the Range extension is present, referenceRange.low and referenceRange.high cannot be present."
+// Expression: "modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-batch-range').exists() implies (low.exists().not() and high.exists().not())"
+// Severity: #error
+
 Extension: ReplicateExtension	
 Id: pq-replicate-extension	
 Title: "Replicate Number"	
@@ -144,11 +174,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   * ^definition = """
     Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values.
   """
-  * modifierExtension contains pq-target-range named targetRange 1..1 MS
-  * modifierExtension[targetRange]
+  * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+  * modifierExtension[batchRange]
     * extension[low].value[x] from PqcmcUnitsMeasure
     * extension[high].value[x] from PqcmcUnitsMeasure
-  * text MS
+  * low 0..0
+  * high 0..0
+  * text 1..1 MS
     * ^short = "Original Text"	
     * ^definition = """
       The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -204,12 +236,14 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
       Examples: Conforms, Does not Conform
     """
   * referenceRange 1..1 MS
-    * modifierExtension contains pq-target-range named targetRange 1..1 MS
+    * modifierExtension contains pq-batch-range named batchRange 1..1 MS
     // Can't do this
-    * modifierExtension[targetRange]
+    * modifierExtension[batchRange]
       * extension[low].value[x] from PqcmcUnitsMeasure
       * extension[high].value[x] from PqcmcUnitsMeasure
-    * text MS
+    * low 0..0
+    * high 0..0
+    * text 1..1 MS
       * ^short = "Original Text"	
       * ^definition = """
         The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -298,11 +332,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS
-  * modifierExtension contains pq-target-range named targetRange 1..1 MS
-  * modifierExtension[targetRange]
+  * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+  * modifierExtension[batchRange]
     * extension[low].value[x] from PqcmcUnitsMeasure
     * extension[high].value[x] from PqcmcUnitsMeasure
-  * text MS 
+  * low 0..0
+  * high 0..0
+  * text 1..1 MS 
     * ^short = "Original Text"	
     * ^definition = """
       The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -366,11 +402,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
   * referenceRange 1..1 MS
-    * modifierExtension contains pq-target-range named targetRange 1..1 MS
-    * modifierExtension[targetRange]
+    * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+    * modifierExtension[batchRange]
       * extension[low].value[x] from PqcmcUnitsMeasure
       * extension[high].value[x] from PqcmcUnitsMeasure
-    * text MS 
+    * low 0..0 MS
+    * high 0..0 MS
+    * text 1..1 MS 
       * ^short = "Original Text"	
       * ^definition = """
         The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
