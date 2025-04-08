@@ -1277,6 +1277,7 @@ Description: "Terminology used to qualify the information pertaining to expirati
 * $NCIT#C185182 "Approved"	
 * $NCIT#C48660 "Not Applicable"	
 * $NCIT#C185188 "Proposed"
+* $NCIT#C185186 "Adequate"
 
 ValueSet: PqcmcStorageConditionCategoryTerminology	
 Id: pqcmc-storage-condition-category-terminology	
