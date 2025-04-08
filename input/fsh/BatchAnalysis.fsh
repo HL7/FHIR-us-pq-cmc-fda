@@ -354,7 +354,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   * ^comment = """
     Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
   """	
-* component 0..1 MS	
+* component 0..* MS	
   * ^short = "Replicates"	
   * extension contains pq-replicate-extension named replicate  1..1 MS	
     * ^short = "Replicate Number"	
