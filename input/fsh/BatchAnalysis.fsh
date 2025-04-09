@@ -372,6 +372,8 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
       Examples: Prepare six aliquots from the sample.
       Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
     """
+  * extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+    * ^short = "Stage Additional Info"
   * code 1..1 MS
   * code only CodeableConceptTextOnly
     * ^short = "Test Name | Relative Retention Time"
