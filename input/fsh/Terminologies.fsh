@@ -1294,8 +1294,8 @@ ValueSet: PqcmcStabilityStudyReasonTerminology
 Id: pqcmc-stability-study-reason-terminology	
 Title: "Stability Study Reason"	
 Description: "Terminology used to qualify the information pertaining to stability study reason data in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
-	
-* ^experimental = true	
+* ^experimental = false
+* ^status = #active	
 * $NCIT#C115123 "Abbreviated New Animal Drug Application"	
 * $NCIT#C73113 "Abbreviated New Drug Application"	
 * $NCIT#C96089 "Annual Report"	
@@ -1312,6 +1312,23 @@ Description: "Terminology used to qualify the information pertaining to stabilit
 * $NCIT#C72899 "New Drug Application"	
 * $NCIT#C70880 "Premarket Approval"	
 * $NCIT#C80442 "Premarket Notification 510(K)"
+
+ValueSet: PqcmcMfgTestingSiteTerminology	
+Id: pqcmc-mfg-testing-site-terminology	
+Title: "Manufacturing/Testing Site Responsibility Category Terminology "	
+Description: "High level classification of manufacturing/testin sites based on functions or services."
+* ^experimental = false
+* ^status = #active
+* $NCIT#C214875 "Manufacturing"
+* $NCIT#C214876 "Packaging"
+* $NCIT#C214879 "Primary Packaging"
+* $NCIT#C214880 "Secondary Packaging"
+* $NCIT#C101509 "Testing"
+* $NCIT#C214877 "Chemical/Physical Testing"
+* $NCIT#C214878 "Microbiological Testing of Nonsterile Product"
+* $NCIT#C214881 "Sterility Testing"
+* $NCIT#C214882 "Biological Potency Testing"
+* $NCIT#C214888 "Other Site Function"
 
 ValueSet: PqcmcStudyTypeTerminology	
 Id: pqcmc-study-type-terminology	

@@ -139,4 +139,13 @@ Description: """Provides hierarchical relationships for value sets as a CodeSyst
 * insert child(#C45300,#C154433) // "Solid" -> "Capsule"
 * insert child(#C45300,#C154605) // "Solid" -> "Tablet"
 
-
+// $NCIT#C214875 "Manufacturing"
+// $NCIT#C214876 "Packaging"
+* insert child(#C214876,#C214879) // "Packaging" -> "Primary Packaging"
+* insert child(#C214876,#C214880) // "Packaging" -> "Secondary Packaging"
+//* $NCIT#C101509 "Testing"
+* insert child(#C101509, #C214877) //  "Testing" -> "Chemical/Physical Testing"
+* insert child(#C101509, #C214878) //  "Testing" -> "Microbiological Testing of Nonsterile Product"
+* insert child(#C101509, #C214881) //  "Testing" -> "Sterility Testing"
+* insert child(#C101509, #C214882) //  "Testing" -> "Biological Potency Testing"
+//* $NCIT#C214888 "Other Site Function"

@@ -81,7 +81,7 @@ Description: "Profile for the main stability study."
     A non-unique textual identifier given to the drug stability study by the sponsoring organization. [Source: SME Defined]
   """
 * protocol 0..1 MS 
-* protocol Reference (PlanDefinition)
+* protocol only Reference (PlanDefinition)
 * protocol ^short = ""
 * primaryPurposeType 1..1 MS
 * primaryPurposeType from PqcmcStabilityStudyReasonTerminology (required)

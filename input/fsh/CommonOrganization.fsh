@@ -35,42 +35,31 @@ Description: "Identifier number is 7 or 10 digits"
 Expression: "system = 'urn:oid:2.16.840.1.113883.4.82' implies value.length() = 7 or value.length() = 10"
 Severity: #error
 
-//Profile: MfgSiteOrganization
-//Parent: Organization
-//Id: mfg-test-site-organization 
-//Title: "Manufacturing and/or Test Site Organization"
-//Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
-//* ^abstract = true
-//* meta.profile MS
-//* insert DUNSandFEINumber
-//* identifier ^short = "Manufacturing Site Unique Identifier | Testing Site Unique Identifier"
-//* identifier ^definition = """Manufacturing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which manufactures, prepares, propagates, compounds or processes drugs. [Source: Adapted from FDA Drug Establishment Current Registration Site]
+Profile: MfgSiteOrganization
+Parent: Organization
+Id: mfg-test-site-organization 
+Title: "Manufacturing and/or Test Site Organization"
+Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
+* ^abstract = true
+* insert DUNSandFEINumber
+* type 1..* MS
+* type ^short = "Manufacturing Site Function"
+* type ^definition = """v 1.5
+"""
+* type from pqcmc-mfg-testing-site-terminology (required)
+* name 1..1 MS
+* name ^short = "Manufacturing Site Name | Testing Site Name"
+* name ^definition = """Manufacturing Site Name: The name of the establishment (facilities) which manufacture, prepare, propagate, compound, process or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
 
-//Testing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]
-//"""
-//* identifier.type ^short = "Manufacturing Site Unique Identifier Type | Testing Site Unique Identifier Type"
-//* identifier.type ^definition = """A value that identifies the source of the unique identifier. [Source: SME Defined]
-//Examples: Data Universal Number System (DUNS), Facility Establishment Identifiers (FEI), etc.
-//"""
-//* type 1..* MS
-//* type ^short = "Manufacturing Site Function"
-//* type ^definition = """v 1.5
-//"""
-//* type from pqcmc(required)
-//* name 1..1 MS
-//* name ^short = "Manufacturing Site Name | Testing Site Name"
-//* name ^definition = """Manufacturing Site Name: The name of the establishment (facilities) which manufacture, prepare, propagate, compound, process or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
-
-//Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
-//"""
-//* contact 1..1
-//* contact.address 1..1 MS
-//* contact.address ^short = "Manufacturing Site Physical Address | Testing Site Address"
-//* contact.address ^definition = """Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
-
-//Testing Site Address: The complete address for the testing site. [Source: SME defined]
-//"""
-//* contact.address only PqAddress
+Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
+"""
+* contact 1..* MS
+* contact.address 1..1 MS
+* contact.address ^short = "Manufacturing Site Physical Address | Testing Site Address"
+* contact.address ^definition = """Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
+Testing Site Address: The complete address for the testing site. [Source: SME defined]
+"""
+* contact.address only PqAddress
 
 
 Profile: PqAddress
