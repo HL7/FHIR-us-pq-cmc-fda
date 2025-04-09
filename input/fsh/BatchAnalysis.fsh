@@ -1,14 +1,20 @@
 Extension: QualitySpecificationExtension	
 Id: pq-quality-specification-extension	
 Title: "Quality Specification Reference"	
-Description: "The product specification used in the batch release or stability testing."	
+Description: """
+  The product specification used in the batch release or stability testing.
+  Note: The combination of Specification Title, Specification Subtitle and Specification Version is assumed to be unique across all Specifications.
+  Note: Either the Specification OID must be present, or the Title, Subtitle, and Version must all be present.
+"""	
 * . ^short = "Specification and Specification Version"	
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
-
+* . obeys cmc-specification-reference-oid-or-title
 * extension contains	
-    specification 1..1 MS and	
-    specificationVersion 1..1 MS	
+    specification 0..1 MS and	
+    specificationVersion 0..1 MS	and
+    specificationSubtitle 0..1 MS and
+    specificationOid 0..1 MS
 * extension[specification]
   * value[x] 1..1 MS
   * value[x] only string
@@ -27,6 +33,44 @@ Description: "The product specification used in the batch release or stability t
       Examples: 2.1, 13.2, ST1, 00001, 00002, &lt; companyname &gt; 001, etc. 
       Note: This value should be unique across all specifications for a given material, not just those with the same name.
     """
+* extension[specificationSubtitle]
+  * value[x] 1..1 MS
+  * value[x] only string
+    * ^short = "Specification Subtitle"
+* extension[specificationOid]
+  * value[x] 1..1 MS
+  * value[x] only oid
+    * ^short = "Specification OID"
+
+Extension: BatchRange
+Id: pq-batch-range
+Title: "Target Range"
+Description: "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.referenceRange"
+* . ?!
+* . ^isModifierReason = "When present, the target cannot have a referenceRange.low or referenceRange.high; instead this extension acts as its low and high"
+* extension 1..2 MS
+  * ^short = "ValueNumeric (range)"
+  * ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
+* extension contains 
+  low 0..1 MS and
+  high 0..1 MS
+* extension[low]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+    * value 1..1 MS
+    * unit 1..1 MS
+* extension[high]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+    * value 1..1 MS
+    * unit 1..1 MS
+
+// Invariant: cmc-batch-range
+// Description: "When the Range extension is present, referenceRange.low and referenceRange.high cannot be present."
+// Expression: "modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-batch-range').exists() implies (low.exists().not() and high.exists().not())"
+// Severity: #error
 
 Extension: ReplicateExtension	
 Id: pq-replicate-extension	
@@ -42,7 +86,7 @@ Id: pq-pullDate-extension
 Title: "Pull Date"
 Description: "Contains elements related to the pull date of the study samples in a stability study."
 * ^context[+].type = #element
-* ^context[=].expression = "Observation.effectiveDateTime"
+* ^context[=].expression = "Observation"
 * value[x] 1..1 MS
   * ^short = "Pull Date"
   * ^definition = """
@@ -70,22 +114,22 @@ Description: "Batch or lot release testing  to ensure that pharmaceutical produc
 * subject 1..1 MS
   * ^short = "A single medication batch/lot or a single subtance batch/lot"	
 * subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
-* effectiveDateTime	1..1 MS
+* effectiveDateTime	0..1 MS
   * ^short = "Batch Analysis Release Date"
   * ^definition = """
     The date at which the drug substance or drug product is released by the quality assurance unit of the sponsor/applicant. [Source: SME Defined]
     Note: A single release date per batch.
   """
-* performer 1..1 MS	
-* performer only Reference(CodedOrganization)	
-  * ^short = "Test Site"	
-  * ^definition = """
-    Reference to the organization profile that contains: 
-    * Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components, etc. [Source: SME Defined]
-    * Testing Site Address: The complete address for the testing site.  [Source: SME Defined]
-    * Testing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]
-    * Testing Site Unique identifier Type:	A value that identifies the source of the unique identifier. [Source: SME Defined] Examples: DUNS, FEI. 
-  """
+// * performer 1..1 MS	
+// * performer only Reference(CodedOrganization)	
+//   * ^short = "Test Site"	
+//   * ^definition = """
+//     Reference to the organization profile that contains: 
+//     * Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components, etc. [Source: SME Defined]
+//     * Testing Site Address: The complete address for the testing site.  [Source: SME Defined]
+//     * Testing Site Unique Identifier: A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined]
+//     * Testing Site Unique identifier Type:	A value that identifies the source of the unique identifier. [Source: SME Defined] Examples: DUNS, FEI. 
+//   """
 * result MS	
 * result only Reference(ResultObservation)	
 	
@@ -139,11 +183,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   * ^definition = """
     Correpsonds to  Acceptance Criteria in Quality Specification. All numeric values are low and high. Use high when the Interpretation Code is 'EQ'. Only supply original text for qualitative values.
   """
-  * modifierExtension contains pq-target-range named targetRange 1..1 MS
-  * modifierExtension[targetRange]
+  * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+  * modifierExtension[batchRange]
     * extension[low].value[x] from PqcmcUnitsMeasure
     * extension[high].value[x] from PqcmcUnitsMeasure
-  * text MS
+  * low 0..0
+  * high 0..0
+  * text 1..1 MS
     * ^short = "Original Text"	
     * ^definition = """
       The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -199,12 +245,14 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
       Examples: Conforms, Does not Conform
     """
   * referenceRange 1..1 MS
-    * modifierExtension contains pq-target-range named targetRange 1..1 MS
+    * modifierExtension contains pq-batch-range named batchRange 1..1 MS
     // Can't do this
-    * modifierExtension[targetRange]
+    * modifierExtension[batchRange]
       * extension[low].value[x] from PqcmcUnitsMeasure
       * extension[high].value[x] from PqcmcUnitsMeasure
-    * text MS
+    * low 0..0
+    * high 0..0
+    * text 1..1 MS
       * ^short = "Original Text"	
       * ^definition = """
         The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
@@ -220,11 +268,11 @@ Title: "Result Observation"
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 	
 * identifier 1..1 MS	
-  * ^short = "Stage"	
+  * ^short = "Stage Name"	
   * ^definition = """
     A set of discrete sequential steps performed on a given test. [Source: SME Defined]
+    Note: This is a fixed value of 'Single Stage' for non-staged tests.
   """
-  * ^comment = "Note: This is a fixed value of 'Single Stage' for non-staged tests."	
 * status MS	
 * category 1..1 MS
 * category from PqcmcTestCategoryTerminology (required)
@@ -242,14 +290,14 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     Example: 1:23 (a ratio)
     Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
   """
-* extension contains pq-pullDate-extension named actualpulldate 1..1 MS	
+* extension contains pq-pullDate-extension named actualpulldate 0..1 MS	
 * effective[x] 1..1 MS	
 * effective[x] only dateTime	
   * ^short = "Test Date"	
   * ^definition = """
     The date when a particular test was performed. [Source: SME Defined].
   """
-* performer MS
+* performer 1..1 MS
 * insert PQReference(performer)
 * performer only Reference(CodedOrganization)	
   * ^short = "Testing Site Unique Identifier"	
@@ -293,12 +341,14 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS
-  * modifierExtension contains pq-target-range named targetRange 1..1 MS
-  * modifierExtension[targetRange]
+  * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+  * modifierExtension[batchRange]
     * extension[low].value[x] from PqcmcUnitsMeasure
     * extension[high].value[x] from PqcmcUnitsMeasure
-  * text MS 
-    * ^short = "Original Text"	
+  * low 0..0
+  * high 0..0
+  * text 1..1 MS 
+    * ^short = "Original Text | Text Value"	
     * ^definition = """
       The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
       Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
@@ -307,13 +357,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     * ^comment = """
       Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
     """	
-* hasMember 0..1 MS	
-* insert PQReference(hasMember)
-* hasMember only Reference(MultipleReplicatesResultObservation)	
-  * ^comment = """
-    Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
-  """	
-* component 0..1 MS	
+// * hasMember 0..* MS	
+// * insert PQReference(hasMember)
+// * hasMember only Reference(ResultObservation)	
+//   * ^comment = """
+//     Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
+//   """	
+* component 0..* MS	
   * ^short = "Replicates"	
   * extension contains pq-replicate-extension named replicate  1..1 MS	
     * ^short = "Replicate Number"	
@@ -322,6 +372,8 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
       Examples: Prepare six aliquots from the sample.
       Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
     """
+  * extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+    * ^short = "Stage Additional Info"
   * code 1..1 MS
   * code only CodeableConceptTextOnly
     * ^short = "Test Name | Relative Retention Time"
@@ -361,11 +413,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
   * referenceRange 1..1 MS
-    * modifierExtension contains pq-target-range named targetRange 1..1 MS
-    * modifierExtension[targetRange]
+    * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+    * modifierExtension[batchRange]
       * extension[low].value[x] from PqcmcUnitsMeasure
       * extension[high].value[x] from PqcmcUnitsMeasure
-    * text MS 
+    * low 0..0 MS
+    * high 0..0 MS
+    * text 1..1 MS 
       * ^short = "Original Text"	
       * ^definition = """
         The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 

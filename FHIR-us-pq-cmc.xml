@@ -7,6 +7,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Bundle/1036a222-1bf4-499a-87fd-aa64efc9e1e3" key="Bundle-1036a222-1bf4-499a-87fd-aa64efc9e1e3" name="1036a222-1bf4-499a-87fd-aa64efc9e1e3"/>
 <artifact deprecated="true" id="SubstanceDefinition/278736ef-2ddf-49e4-895c-3a9f34db36cf" key="SubstanceDefinition-278736ef-2ddf-49e4-895c-3a9f34db36cf" name="278736ef-2ddf-49e4-895c-3a9f34db36cf"/>
 <artifact id="Bundle/DescriptionCompositionBundle" key="Bundle-DescriptionCompositionBundle" name="3.2.P.1.0 Bundle"/>
 <artifact id="Bundle/BatchFormulaBundle" key="Bundle-BatchFormulaBundle" name="3.2.P.3.2 Bundle for liquid"/>
@@ -20,6 +21,7 @@
 <artifact id="Bundle/CharacterisationBundle" key="Bundle-CharacterisationBundle" name="3.2.S.3 Bundle"/>
 <artifact id="Bundle/SpecificationSubstanceBundle" key="Bundle-SpecificationSubstanceBundle" name="3.2.S.4.1 Bundle"/>
 <artifact deprecated="true" id="Bundle/32532fe8-1bfb-4a0a-998d-9294742a9519" key="Bundle-32532fe8-1bfb-4a0a-998d-9294742a9519" name="32532fe8-1bfb-4a0a-998d-9294742a9519"/>
+<artifact id="Bundle/36564b2e-6a2a-4772-9a31-b4d91e8c7252" key="Bundle-36564b2e-6a2a-4772-9a31-b4d91e8c7252" name="36564b2e-6a2a-4772-9a31-b4d91e8c7252"/>
 <artifact deprecated="true" id="Bundle/7cdbb042-9275-4599-a1fe-08877846bf94" key="Bundle-7cdbb042-9275-4599-a1fe-08877846bf94" name="7cdbb042-9275-4599-a1fe-08877846bf94"/>
 <artifact deprecated="true" id="Bundle/9e8f2d16-66b1-47ec-878d-f50ae021985b" key="Bundle-9e8f2d16-66b1-47ec-878d-f50ae021985b" name="9e8f2d16-66b1-47ec-878d-f50ae021985b"/>
 <artifact deprecated="true" id="MedicinalProductDefinition/77ad6922-9c59-43d1-93cb-29d063cc2e8c" key="MedicinalProductDefinition-77ad6922-9c59-43d1-93cb-29d063cc2e8c" name="A DrugProductContainerClosure"/>
@@ -248,7 +250,7 @@
 <page key="eCTDSP7383" name="Stability Data (3.2.S.7.3 &amp; 3.2.P.8.3)"/>
 <page key="eCTDSP7181" name="Stability Summary (3.2.S.7.1 &amp; 3.2.P.8.1)"/>
 <page key="eCTD32S3" name="Substance Characterisation (3.2.S.3)"/>
-<page key="eCTD32S60" name="Substance Container Closure System (3.2.S.6.0)"/>
+<page key="eCTD32S60" name="Substance Container Closure System (3.2.S.6)"/>
 <page key="eCTD32S23" name="Substance Control of Materials (3.2.S.2.3)"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

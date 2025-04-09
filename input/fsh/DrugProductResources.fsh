@@ -675,7 +675,7 @@ Note: The minimum is the scientific name.
 
 Extension: OverageExtension
 Id: pq-overage-extension
-Title: "Overage Extension"
+Title: "Overage"
 Description: "Extension for measurements related to excess for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"
@@ -697,7 +697,7 @@ The value is entered as a decimal value less then one.
 
 Extension: ProductBatchStrengthTextualExtension
 Id: pq-product-batch-strength-textual-extension
-Title: "Product Batch Strength Textual Extension"
+Title: "Product Batch Strength Textual"
 Description: "Extension for strength as a string for ingredients in the batch formula."
 * ^context[+].type = #element
 * ^context[=].expression = "ManufacturedItemDefinition.component.constituent"

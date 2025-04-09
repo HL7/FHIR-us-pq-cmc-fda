@@ -11,6 +11,8 @@ Description: "Includes the properties of the drug product as manufactured."
     Note:  Excludes dosage form, route of administration and strength. Example:  Tylenol 
     Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
   """
+  * type 1..1 MS
+  * type from CmcProductNameTypesVS (required)
 // hold authroization for eStability
 * marketingAuthorizationHolder 0..1 MS
 * insert PQReference(marketingAuthorizationHolder)
@@ -25,7 +27,8 @@ Description: "Includes the properties of the drug product as manufactured."
   """
 * ingredient 1..* MS
   * item MS
-  * item only LiteralCodeableReference
+  * insert PQCodeableReference(item)
+  * item only CodeableReference(IngredientBatch)
     * ^short = "UNII"
     * ^definition = """
       The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
@@ -58,8 +61,24 @@ Description: "Includes the properties of the drug product as manufactured."
     * ^definition = """
       A combination of letters, numbers, or symbols, or any combination of them, from which the complete history of the manufacture, processing, packing, holding, and distribution of a batch or lot of drug product or other material can be determined. [Source: Adapted reference: 21 CFR 210.3 Definitions (4/1/2014)]
     """
-  * expirationDate 1..1 MS
+  * expirationDate 0..1 MS
     * ^short = "Expiration Date"
     * ^definition = """
       The date the manufacturer guarantees the full potency and safety of a particular batch/lot of medicinal product. The complete point in time date consisting of day, month and year shall be specified using the ISO 8601 date format. [Source: ISO IDMP 11615-2017]
     """
+
+Profile: IngredientBatch
+Parent: Substance
+Id: ingredient-batch
+Title: "Ingredient Batch"
+Description: "Properties for ingredients used in ProductBatch. includes a short manufacturing batch extension and a reference to SubstanceDefinitionHandle or ExcipientRaw"
+* extension contains ingredient-manufacturing-batch named ingredient-batch 1..1 MS
+* identifier 1..1 MS
+  * ^short = "Drug Substance Lot Number"
+  * ^definition = """
+    Lot number of the drug substance used in manufacturing a drug product batch. [Source: SME Defined]
+  """
+  * value 1..1 MS
+* code MS
+* insert PQCodeableReference(code)
+* code only CodeableReference(SubstanceDefinitionHandle or ExcipientRaw)

@@ -1,3 +1,32 @@
+RuleSet: short-manufacturing-batch-extension
+* extension[manufacturingDate] 1..1 MS
+  * ^short = "Manufacturing Date"
+  * ^definition = """
+    The date associated with manufacturing a batch. [Source: SME Defined]
+    Note: See Manufacturing Date Description element.
+  """
+  * valueDateTime MS
+* extension[manufacturingDateClassification] 1..1 MS
+  * ^short = "Manufacturing Date Description"
+  * ^definition = """
+    A textual description that provides a rationale for the selection of the manufacturing date. [Source: SME Defined]
+    Note: This description should include the specific operation/step in the manufacturing process associated with the assigned manufacturing date.
+  """
+  * valueCodeableConcept MS
+  * valueCodeableConcept only CodeableConceptTextOnly
+* extension[expirationDateClassification] 1..1 MS
+  * valueCodeableConcept MS
+  * valueCodeableConcept from PqcmcExpirationDateClassificationTerminology (required)
+* extension[additionalInformation] MS
+  * ^short = "Additional Information"
+  * ^definition = """
+    A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
+    Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure, etc.
+  """
+  * valueString MS
+
+
+
 RuleSet: manufacturing-batch-extension-commonalities
 // all the fields that are common to the two extensions
 * extension[manufacturingDate] 1..1 MS
@@ -114,6 +143,7 @@ Title: "Drug Substance Manufacturing Batch"
 Description: "This profile defines the details of a batch of API."
 * ^context.type = #element
 * ^context.expression = "Substance"
+* insert manufacturing-batch-extension-commonalities
 * extension[expirationDateClassification]
   * ^short = "Retest Date Classification"
   * ^definition = """
@@ -124,3 +154,12 @@ Description: "This profile defines the details of a batch of API."
     * For a Supplement that's changing the Retest Date that is already classified as 'Adequate' for the drug product or drug substance, the changed Retest Date Classification would be 'Proposed'.
     * For substances that do not have a Retest Date, the Retest Date Classification will be 'NA'.
   """
+
+Profile: IngredientManufacturingBatch
+Parent: http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch
+Id: ingredient-manufacturing-batch
+Title: "Ingredient Manufacturing Batch"
+Description: "details for ingredients"
+* ^context.type = #element
+* ^context.expression = "Substance"
+* insert short-manufacturing-batch-extension

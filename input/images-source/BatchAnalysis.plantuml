@@ -129,7 +129,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
     objExsStageObs *-- observS
   }
 
-  node "EctdCompositionSP4151" as N1 {
+  node "EctdCompositionSP4454" as N1 {
 
     object "**Parent:** Composition" as obj1 {
       **Page:**

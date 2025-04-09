@@ -82,6 +82,8 @@ Description: "Any additional information that that the submitter wishes to provi
 * ^context[=].expression = "PlanDefinition"
 * ^context[+].type = #element
 * ^context[=].expression =  "PlanDefinition.goal"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"
 //* ^context[=].expression = "ResearchStudy"
 //* ^context[+].type = #element
 //* ^context[=].expression = "DiagnosticReport"
