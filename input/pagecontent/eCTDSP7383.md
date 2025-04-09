@@ -7,6 +7,7 @@ Reference ICH guidances Q1A, Q1B, Q2A, Q2B, and Q5C.
 
 ### eCTD Heading 3.2.S.7.3 and 3.2.P.8.3 Profile Map
 
+<div width="1200px">{%include newStudy.svg%}</div>
 
 <div width="1200px">{%include Stability.svg%}</div>
 

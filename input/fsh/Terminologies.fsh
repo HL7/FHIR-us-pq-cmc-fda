@@ -1325,8 +1325,8 @@ ValueSet: PqcmcStorageConditionsTerminology
 Id: pqcmc-storage-conditions-terminology	
 Title: "Storage Conditions Terminology"	
 Description: "Terminology used to qualify the information pertaining to storage conditions in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
-	
-* ^experimental = true	
+* ^experimental = false
+* ^status = #active
 * $NCIT#C133936 "20 +/ 5 degrees C"	
 * $NCIT#C134018 "25 +/ 2 degrees C/40% +/ 5%RH"	
 * $NCIT#C134014 "25 +/ 2 degrees C/60% +/ 5%RH"	

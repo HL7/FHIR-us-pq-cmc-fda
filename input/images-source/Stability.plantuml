@@ -10,15 +10,6 @@ skinparam ClassBorderThickness 4
 
 package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle]]" as NODES {
 
-       node "CodedOrganization" as NSO {
-
-              object "**Parent:** Organization" as objAu {
-                     **Page:**
-                     [[StructureDefinition-cmc-organization.html]]
-                     **ValueSets:**
-                     Testing Site and Organization Identifier Type Terminology
-              }
-       }
        node "EctdCompositionSP7383" as N1 {
 
               object "**Parent:** Composition" as obj1 {
@@ -28,18 +19,17 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
                      Code system PQCMC Comp Section Types
               }
        }
+       node "CodedOrganization" as NSO {
 
-       node "BatchAnalysis" as N2 {
-
-              object "**Parent:** DiagnosticReport" as obj2 {
+              object "**Parent:** Organization" as objAu {
                      **Page:**
-                     [[StructureDefinition-pqcmc-batch-analysis.html]]
+                     [[StructureDefinition-cmc-organization.html]]
+                     **ValueSets:**
+                     Testing Site and Organization Identifier Type Terminology
               }
-              object "**Extensions**" as objQSEx {
-                     Quality Specification Reference
-              }
-              obj2 *-- objQSEx
        }
+
+
        node "StabilitySubStudy" as NSub {
 
               object "**Parent:** ResearchStudy" as objSub {
@@ -182,44 +172,20 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
               objExsObserv *-- observ3
        }
 
-       node "MultipleReplicatesResultObservation" as NNstage {
 
-              object "**Parent:** Observation" as observS {
-                     **Page:**
-                     [[StructureDefinition-pq-result-observation.html]]
-                     **ValueSets:**
-                     [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
-                     [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-                     Interpretation Code Terminology
-              }
-              object "**Extensions**" as objExsStageObs  {
-                     actualpulldate
-                     interpretationCode
-                     replicate
-              }
-
-              objExsStageObs *-- observS
-       }
-
-
-       Ninterval -[#darkred]--> CH
-       Ninterval -[#darkred]--> NMFG
-       Ninterval -[#darkred]--> NNOBS
        CH -[#green]--> NN
        CH -[#green]--> NNS
        N1 -[#darkred]--> CH
-       N1 -[#darkred]--> N2
+       N1 -[#darkred]--> CH
        N1 -[#darkred]-> NSO
-       N2 -[#darkred]--> CH
-       N2 -[#darkred]--> NMFG
-       N2 -[#darkred]--> NNOBS
        NN -[#darkred]-> NMFG
        NNOBS -[#darkred]-> NMFG
-       NNOBS -[#darkred]-> NNstage
        NNS -[#darkred]-> NMFG
-       NNstage -[#darkred]-> NMFG
        NSub -[#darkred]-> Ninterval
        N1 -[#darkred]-> NMain
        NSub -[#darkred]--> NMain
+       Ninterval -[#darkred]--> CH
+       Ninterval -[#darkred]--> NMFG
+       Ninterval -[#darkred]--> NNOBS
 }
 @enduml
