@@ -7,6 +7,7 @@ Description: "an example Product Batch Analysis"
   * extension[specification].valueString = "ExampleSpecification"
   * extension[specificationVersion].valueString = "1.0"
   * extension[specificationSubtitle].valueString = "Quality Specification for OXAZEPAM"
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * identifier.value = "Batch_Analysis_001"
 * status = #final
 * code.text = "Oxazepam Product Assay #001"
@@ -181,6 +182,30 @@ Description: "a batch analysis composition for use in an example"
   * title = "Product Batch"
   * entry = Reference(urn:uuid:60d31f18-5f74-4042-b4fa-c73a4aa510ff)
 
+Instance: b2727746-84a9-4e3f-ae76-b847deea3afe
+InstanceOf: MfgSiteOrganization
+Usage: #inline
+Title: "Mfg Site"
+Description: "a manufacturing site to be used in an example"
+* identifier[DUNSNumber]
+  * type.coding = $NCIT#C134003 "DUNS"
+  * system = "urn:oid:1.3.6.1.4.1.519.1"
+  * value = "173265332"
+* identifier[FEINumber]
+  * type.coding = $NCIT#C134004 "FEI"
+  * value = "6981397"
+  * system = "urn:oid:2.16.840.1.113883.4.82"
+* type = $NCIT#C101509 "Testing"
+* name = "mega_chem_Site"
+* contact.address
+  * line[0] = "350 W Main Street"
+  * type = #postal
+* contact.address.city = "Rochester"
+* contact.address.country = "USA"
+* contact.address.postalCode = "14608"
+* contact.address.text = "mega_chem_Site, 350 W Main Street, Rochester, NY, United States"
+* contact.address.state = "NY"
+
 Instance: BatchAnalysisBundle
 InstanceOf: CMCeCTDDocumentSP4454
 Usage: #example
@@ -224,6 +249,9 @@ Description: "an example batch analysis bundle using the specification from Spec
 * entry[+]
   * resource = e165f057-5eed-4e64-8328-4438fc88fb1b
   * fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
+* entry[+]
+  * resource = b2727746-84a9-4e3f-ae76-b847deea3afe
+  * fullUrl = "urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe"
 
 // #Manufacturer: e165f057-5eed-4e64-8328-4438fc88fb1b
 // #Performer: 4f3e9af1-306b-4fad-bf04-7881400b266a

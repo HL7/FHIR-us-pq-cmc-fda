@@ -36,30 +36,29 @@ Expression: "system = 'urn:oid:2.16.840.1.113883.4.82' implies value.length() = 
 Severity: #error
 
 Profile: MfgSiteOrganization
-Parent: Organization
-Id: mfg-test-site-organization 
+Parent: CodedOrganization
+Id: mfg-test-site-organization
 Title: "Manufacturing and/or Test Site Organization"
 Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances."
-* ^abstract = true
-* insert DUNSandFEINumber
 * type 1..* MS
-* type ^short = "Manufacturing Site Function"
-* type ^definition = """v 1.5
-"""
-* type from pqcmc-mfg-testing-site-terminology (required)
-* name 1..1 MS
-* name ^short = "Manufacturing Site Name | Testing Site Name"
-* name ^definition = """Manufacturing Site Name: The name of the establishment (facilities) which manufacture, prepare, propagate, compound, process or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
+  * ^short = "Manufacturing Site Function"
+  * ^definition = """
+    V 1.5
+  """ /// What does this mean?
+* type from PqcmcMfgTestingSiteTerminology (required)
+* name
+  * ^short = "Manufacturing Site Name | Testing Site Name"
+  * ^definition = """
+    Manufacturing Site Name: The name of the establishment (facilities) which manufacture, prepare, propagate, compound, process or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
 
-Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
-"""
-* contact 1..* MS
-* contact.address 1..1 MS
-* contact.address ^short = "Manufacturing Site Physical Address | Testing Site Address"
-* contact.address ^definition = """Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
-Testing Site Address: The complete address for the testing site. [Source: SME defined]
-"""
-* contact.address only PqAddress
+    Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
+  """
+* contact.address
+  * ^short = "Manufacturing Site Physical Address | Testing Site Address"
+  * ^definition = """
+    Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
+    Testing Site Address: The complete address for the testing site. [Source: SME defined]
+  """
 
 
 Profile: PqAddress
