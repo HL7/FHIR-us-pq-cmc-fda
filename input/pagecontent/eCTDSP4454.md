@@ -20,7 +20,6 @@ The domain concepts of Batch Analyses are represented in FHIR in this IG section
   * [Drug Substance Manufactured Batch](StructureDefinition-pqcmc-drug-substance-batch.html) (DrugSubstanceBatch) profile on the [Substance](https://hl7.org/fhir/R5/substance.html) resource
 * Observations
   * [Result Observation](StructureDefinition-pq-result-observation.html) (ResultObservation) profile on the [Observation](https://hl7.org/fhir/R5/observation.html) resource
-  * [Multiple Result Observation](StructureDefinition-pq-additional-stage-result-observation.html) (MultipleReplicatesResultObservation) profile on the [Observation](https://hl7.org/fhir/R5/observation.html) resource
 * Related Organizations
   * [Basic Organization](StructureDefinition-cmc-organization.html) (CodedOrganization) profile on the [Organization](http://hl7.org/fhir/R5/organization.html) resource
 

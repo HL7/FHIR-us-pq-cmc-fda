@@ -111,23 +111,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
     objExsObserv *-- observ3
   }
 
-  node "MultipleReplicatesResultObservation" as NNstage {
-
-    object "**Parent:** Observation" as observS {
-      **Page:**
-      [[StructureDefinition-pq-additional-stage-result-observation.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-    }
-    object "**Extensions**" as objExsStageObs  {
-      actualpulldate
-      interpretationCode
-      replicate
-    }
-
-    objExsStageObs *-- observS
-  }
 
   node "EctdCompositionSP4454" as N1 {
 
@@ -151,7 +134,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
   N2 -[#darkred]--> NSO
   N2 -[#darkred]-> NNOBS
   NNOBS -[#darkred]--> NSO
-  NNOBS -[#darkred]--> NNstage
-  NNstage -[#darkred]--> NSO
+
 }
 @enduml
