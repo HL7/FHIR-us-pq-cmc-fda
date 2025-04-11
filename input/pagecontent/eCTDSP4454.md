@@ -4,9 +4,13 @@ The Batch Analyses bundle profile provides a mechanism for the industry to submi
 
 ### Implementer Instructions
 
-* Each Batch Analyses bundle is an evaluation of a single batch of an active substance or a single batch of a drug product.
-* Tests and the stages within them should be entered in the XML bundle in the order in which they should be displayed.
-* The combination of Specification Title, Specification Subtitle and Specification Version is assumed to be unique across all Specifications.
+The **eCTD Batch Analyses Composition** bundle provides a structured mechanism for representing batch testing data within a regulatory submission, specifically aligned with ICH eCTD sections **3.2.P.5.4 (Control of Drug Product)** and **3.2.S.4.4 (Control of Drug Substance)**. This bundle is centered around a profiled Composition resource that defines the document type as Batch Analyses and organizes its content into four primary sections: the Batch Analysis report, a referencc to the corresponding Product/Substance Specification, the testing results with applicable reference specifications, and the Sponsor and Manufacturing and Testing Organizations.
+
+The core analytic content is captured using a profiled DiagnosticReport resource Batch Analysis, which references the batch of drug product or drug substance under test, identifies the manufacturing or test site, and includes references to one or more Observation resources that document individual analytical results. These observations include metadata such as test name, test category, date of analysis, and interpretation relative to specification criteria. Results may be expressed as quantities, strings, or integers and are supported by value bindings to standardized units of measure. The interger is also used to suport the cardinality in the case of a test with miltiple stages. In addition, each observation includes structured reference ranges through a domain-specific modifier extension (pq-batch-range) that replaces the standard low and high elements with controlled sub-extensions for batch acceptance criteria.
+
+The Observation profile also supports replicate data through the component element, with each replicate annotated using extensions for replicate number and additional information. Pull dates are recorded using a dedicated pq-pullDate-extension, and interpretation results are categorized using the Conformance to Criteria value set. When analytical results span **multiple stages**—such as in stepwise procedures or time-based testing, the hasMember element is used to link together related Observation instances that belong to the same analytical group.
+
+A required extension pq-quality-specification-extension within the Batch Analysis report references the applicable quality specification that defines the acceptance criteria. Organizational references—such as the sponsor and test-site are constrained to a profiled Organization resource to capture site functions.
 
 ### Representation in FHIR
 
@@ -32,7 +36,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### Usage Patterns
 
-Not presently defined. Content will be added in the future when FDA PQ/CMC FHIR IG starts supportinng other scenarios, for example new dosage forms such as liquids, etc.
+Waiting for example.  Will add code snippets for stages and replicates
 
 ### Examples
 
