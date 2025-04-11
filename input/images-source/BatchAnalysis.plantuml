@@ -29,7 +29,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
     object "**Extensions**" as objExsBatch  {
       [[StructureDefinition-drug-product-manufacturing-batch.html drug-product-manufacturing-batch]]
     }
-    objExsBatch *-- obj3
+   
   }
   node "BatchAnalysis" as N2 {
 
