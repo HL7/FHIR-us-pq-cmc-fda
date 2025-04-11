@@ -243,8 +243,8 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * hasMember 0..* MS	
 * insert PQReference(hasMember)
 * hasMember only Reference(ResultObservation)
-  * ^comment = """
-    Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
+  * ^short = """
+    Note: Used to link to test results for Staged tests. Sequence Name must match the name in the quality spedificaition.
     """	
 * component 0..* MS	
   * ^short = "Replicates"	

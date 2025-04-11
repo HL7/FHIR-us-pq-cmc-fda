@@ -10,6 +10,7 @@ skinparam ClassBorderThickness 4
 
 
 package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle]]" as NODES {
+  
   node "DrugProductBatch" as NN {
 
     object "**Parent:** Medication" as obj3 {
@@ -26,18 +27,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
     }
 
     object "**Extensions**" as objExsBatch  {
-      Manufacturing Date
-      Manufacturing Date Description
-      Assigned Manufacturer
-      Expiration Date Classification
-      Batch Utilization
-      Batch Size
-      Additional Information
-      Container Closure System Description
-      Container Type
-      Container Lot Number
-      Container Fill per Container Size
-      Container
+      [[StructureDefinition-drug-product-manufacturing-batch.html drug-product-manufacturing-batch]]
     }
     objExsBatch *-- obj3
   }
@@ -49,7 +39,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[StructureDefinition-pqcmc-batch-analysis.html]]
     }
     object "**Extensions**" as objQSEx {
-      Quality Specification Reference
+      [[StructureDefinition-pq-quality-specification-extension.html  Quality Specification Reference]]
 
     }
     obj2 *-- objQSEx
@@ -76,21 +66,22 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
     }
     object "**Extensions**" as objExs2 {
-      Manufacturing Date
-      Manufacturing Date Description
-      Assigned Manufacturer
-      Batch Utilization
-      Batch Size
-      Additional Information
-      Retest Date Classification
-      Container Closure System Description
-      Container Type
-      Container Lot Number
-      Container Fill per Container Size
-      Container
+ drug-substance-manufacturing-batch
     }
 
     objExs2 *-- obj4
+  }
+
+    node "SubstanceDefinitionHandle" as NNSH {
+
+    object "**Parent:** SubstanceDefinition" as obj4 {
+      **Page:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+      **ValueSets:**
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+    }
+
   }
 
   node "ResultObservation" as NNOBS {
@@ -104,9 +95,9 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
     }
     object "**Extensions**" as objExsObserv  {
-      actualpulldate
+      [[StructureDefinition-pq-pullDate-extension.html Actual Pull Date]]
       interpretationCode
-      replicate
+      [[StructureDefinition-pq-replicate-extension.html Replicate]]
     }
     objExsObserv *-- observ3
   }
@@ -129,6 +120,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
   CH -[#green]-> NNS
   CH -[#green]-> NN
   NNS -[#darkred]--> NSO
+  NNS -[#darkred]-->NNSH
   NN -[#darkred]--> NSO
   N2 -[#darkred]--> CH
   N2 -[#darkred]--> NSO
