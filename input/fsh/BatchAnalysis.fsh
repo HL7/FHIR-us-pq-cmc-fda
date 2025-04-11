@@ -141,11 +141,11 @@ Id: pq-result-observation
 Title: "Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 	
-* identifier 1..1 MS	
+* identifier.value 1..1 MS	
   * ^short = "Stage Name"	
   * ^definition = """
     A set of discrete sequential steps performed on a given test. [Source: SME Defined]
-    Note: This is a fixed value of 'Single Stage' for non-staged tests.
+    Note: This is either 'Single Stage' for non-staged tests and 'Multi-Stage' for tests with more than one stage. Use hasMember to report multiple stages.
   """
 * status MS	
 * category 1..1 MS
@@ -179,7 +179,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined].
   """
 * value[x] 1..1 MS	
-* value[x]  only Quantity or string
+* value[x]  only Quantity or string or integer
 * valueQuantity from PqcmcUnitsMeasure (required)
   * value 1..1 MS
     * ^short = "ValueNumeric"	
@@ -190,8 +190,17 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     * ^short = "ValueNumeric UOM"	
     * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
 * valueString MS
-  * ^short = "Value"	
-  * ^definition = "The acceptable qualitative or text value of the result of the test. [Source: SME Defined]"
+ 	* ^short = "Value"
+  * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]
+    Note: For tests that do not have a gro  N
+    """
+* valueInteger MS
+  * ^short = "Number of Stages | No Aggregates "
+  * ^definition = """
+    The number of stages reported 
+    or
+    Enter 0 when there is no Aggregate measure for the replicates.
+    """
 * dataAbsentReason MS	
 * interpretation 1..1 MS	
 * interpretation from PqcmcConformanceCriteriaTerminology (required)	
@@ -231,12 +240,12 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     * ^comment = """
       Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
     """	
-// * hasMember 0..* MS	
-// * insert PQReference(hasMember)
-// * hasMember only Reference(ResultObservation)	
-//   * ^comment = """
-//     Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
-//   """	
+  * hasMember 0..* MS	
+  * insert PQReference(hasMember)
+  * hasMember only Reference(ResultObservation)
+      * ^comment = """
+        Note: This is used to link to test results from Staged tests. Sequence Name must macht the name in the quality spedificaition.
+        """	
 * component 0..* MS	
   * ^short = "Replicates"	
   * extension contains pq-replicate-extension named replicate  1..1 MS	
@@ -276,6 +285,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     * ^short = "Value"	
     * ^definition = """
       The acceptable qualitative or text value of the result of the test.[Source: SME Defined]
+      Note: Enter 
     """
   * dataAbsentReason MS	
   * interpretation 1..1 MS	
