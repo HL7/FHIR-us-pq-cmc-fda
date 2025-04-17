@@ -532,8 +532,8 @@ RuleSet: UniiAndUniProtCodes(cardinality)
   * ^slicing.discriminator.path = "code.coding.system"
   * ^slicing.rules = #open
 * code contains 
-  unii 0..1 and
-  uniProt 0..1
+  unii 0..1 MS and
+  uniProt 0..1 MS
 * code[unii]
   * ^short = "UNII"
   * ^definition = """
@@ -629,9 +629,9 @@ Examples: Degradation Product, Inorganic, Process Related/Process, Product Relat
     * type 1..1 MS
     * type from PqcmcRepresentationTypes (required)
   * representation contains
-    graphic 0..1 and
-    structureFile 0..* and
-    structureString 0..*
+    graphic 0..1 MS and
+    structureFile 0..* MS and
+    structureString 0..* MS
   * representation[graphic]
     * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
     * type 1..1 MS
@@ -711,8 +711,8 @@ Examples: x-ray, HPLC, NMR, peptide mapping, ligand binding assay, etc.
     * ^slicing.discriminator.path = "$this"
     * ^slicing.ordered = false
   * file contains 
-    AnalysisGraphic 0..* and
-    AnalyticalInstrumentData 0..*
+    AnalysisGraphic 0..* MS and
+    AnalyticalInstrumentData 0..* MS
   * file[AnalysisGraphic] only GraphicAttachment
     * ^short = "Analysis Graphic"
     * ^definition = """Analysis Graphic: The pictorial representation of the data. [Source: SME Defined] Examples: spectrum, chromatogram.
@@ -769,9 +769,9 @@ RuleSet: GraphicAndStructureRepresentations(graphicsCardinality, structureFileCa
     * type 1..1 MS
     * type from PqcmcRepresentationTypes (required)
   * representation contains
-    graphic {graphicsCardinality} and
-    structureFile {structureFileCardinality} and
-    structureString {structureStringCardinality}
+    graphic {graphicsCardinality} MS and
+    structureFile {structureFileCardinality} MS and
+    structureString {structureStringCardinality} MS
   * representation[graphic]
     * ^short = "A graphical, displayable depiction of the structure (e.g. an SVG, PNG)"
     * type 1..1 MS
