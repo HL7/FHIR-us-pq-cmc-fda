@@ -18,9 +18,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32P70 profiles.
   * fullUrl 1..1 MS
   * resource 1..1 MS
 * entry contains
-    Composition 1..1 and
-    MedicinalProductDefinition 1..1 and
-    Organization 1..1
+    Composition 1..1 MS and
+    MedicinalProductDefinition 1..1 MS and
+    Organization 1..1 MS
 * entry[Composition]
   * resource only EctdComposition32P70
 * entry[MedicinalProductDefinition]

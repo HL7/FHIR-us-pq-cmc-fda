@@ -17,5 +17,5 @@ Description: "Definition for a document bundle with the CMC eCTD SP4454 profiles
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
-    Composition 1..1
+    Composition 1..1 MS
 * entry[Composition].resource only ectd-composition-sp4454

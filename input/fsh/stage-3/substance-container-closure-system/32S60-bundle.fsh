@@ -17,9 +17,9 @@ Description: "Definition for a document bundle with the CMC eCTD 32S60 profiles.
   * ^slicing.rules = #open
   * ^slicing.description = "The specific bundle entries that are needed for a Drug Substance Container Closure System document."
 * entry contains
-    Composition 1..1 and
-    SubstanceDefinition 1..1 and
-    Organization 1..1
+    Composition 1..1 MS and
+    SubstanceDefinition 1..1 MS and
+    Organization 1..1 MS
 * entry[Composition]
   * resource only EctdComposition32S60
 * entry[SubstanceDefinition]

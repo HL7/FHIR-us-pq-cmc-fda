@@ -629,7 +629,7 @@ RuleSet: ProprietaryAndNonProprietaryNames
   * productName 1..1 MS
   * type 1..1 MS
   * type from cmc-product-name-types-vs (required)
-* name contains Proprietary 0..1 and NonProprietary 1..1
+* name contains Proprietary 0..1 MS and NonProprietary 1..1 MS
 * name[Proprietary]
   * type = $NCIT#C71898 "Proprietary Name"
   * part 0..* MS
@@ -655,13 +655,13 @@ Note: The minimum is the scientific name.
     * type 1..1 MS
     * type from PqcmcNamePartTerminology (required)
   * part contains 
-  Scientific 1..* and
-  Invented 0..* and 
-  Formulation 0..* and 
-  Strength 1..* and 
-  Container 0..* and
-  Form 0..* and 
-  Device 0..*
+  Scientific 1..* MS and
+  Invented 0..* MS and 
+  Formulation 0..* MS and 
+  Strength 1..* MS and 
+  Container 0..* MS and
+  Form 0..* MS and 
+  Device 0..* MS
   * part[Scientific].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#SCI
   * part[Invented].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#INV
   * part[Formulation].type = http://terminology.hl7.org/CodeSystem/v3-EntityNamePartQualifierR2#FORMUL

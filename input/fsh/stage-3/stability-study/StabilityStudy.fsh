@@ -153,10 +153,10 @@ Description: "Profile for the a stability sub-study."
   * ^slicing.discriminator.path = "coding"
   * ^slicing.rules = #closed // or #closed if you don't want other concepts
 * condition contains
-    substudytype 1..1 and
-    storage 1..1 and
-    storagecategory 1..1 and
-    orientation 0..1
+    substudytype 1..1 MS and
+    storage 1..1 MS and
+    storagecategory 1..1 MS and
+    orientation 0..1 MS
 * condition[substudytype] from PqcmcStudyTypeTerminology (required)
   * ^short = "Sub-Study Type"
   * ^definition = """
