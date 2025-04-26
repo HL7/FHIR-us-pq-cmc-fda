@@ -60,6 +60,41 @@ Description: "A profile for the data elements required to identify an organizati
     Testing Site Address: The complete address for the testing site. [Source: SME defined]
   """
 
+//Profile: MfgSiteLocation
+//Parent: Location
+//Id: mfg-test-site-location
+//Title: "Manufacturing and/or Test Site Location"
+//Description: "A profile for the data elements required to identify an organization that manufactures, processes or tests drug products or substances. This is Location resource requiring name, address, type, status, and a reference to the managing organization."
+//
+//* name
+//  * ^short = "Manufacturing Site Name | Testing Site Name"
+//  * ^definition = """
+//    Manufacturing Site Name: The name of the establishment (facilities) which manufacture, prepare, propagate, compound, process or package drugs that are commercially distributed in the U.S. or offered for import to the U.S[Source: Adapted from FDA Drug Establishment Current Registration Site]
+//
+//    Testing Site Name: The name of the establishment (facility) which tests the raw materials, intermediates, drug substance, drug product, packaging components. [Source: SME Defined]
+//  """
+//
+//* address 1..1
+//  * ^short = "Manufacturing Site Physical Address | Testing Site Address"
+//  * ^definition = """
+//    Manufacturing Site Physical Address: The complete address for the supplier [Source: SME Defined]
+//    Testing Site Address: The complete address for the testing site. [Source: SME defined]
+//  """
+//* type 1..* MS
+//  * ^short = "Manufacturing Site Function"
+//  * ^definition = """
+//    V 1.5
+//  """ /// What does this mean?
+//* type from PqcmcMfgTestingSiteTerminology (required)
+//
+//* status 1..1
+//* status from http://hl7.org/fhir/ValueSet/location-status (required)
+//* status ^short = "Status of the location (e.g., active, suspended, inactive) (required)"
+//
+//* managingOrganization 1..1
+//* managingOrganization only Reference(CodedOrganization)
+//* managingOrganization ^short = "Reference to the managing organization (required)"
+
 
 Profile: PqAddress
 Parent: Address

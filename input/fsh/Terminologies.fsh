@@ -99,7 +99,7 @@ Description: "Terminology used to qualify the information pertaining to test cat
 * $NCIT#C134253 "Dissolution"
 * $NCIT#C205012 "Droplet Size"
 * $NCIT#C193381 "Foreign and Particulate Matter"
-* $NCIT#C205024  "Metal Detection"
+* $NCIT#C205024 "Metal Detection"
 * $NCIT#C134255 "Loss on Drying"
 * $NCIT#C134256 "Microbial Limits"
 * $NCIT#C205027 "Osmolality/Osmolarity"

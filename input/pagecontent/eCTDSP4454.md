@@ -12,6 +12,12 @@ The Observation profile also supports replicate data through the component eleme
 
 A required extension pq-quality-specification-extension within the Batch Analysis report references the applicable quality specification that defines the acceptance criteria. Organizational references—such as the sponsor and test-site are constrained to a profiled Organization resource to capture site functions.
 
+**Note:**
+
+* Each Batch Analyses bundle is an evaluation of a single batch of an active substance or a single batch of a drug product.
+* Tests and the stages within them should be entered in the XML bundle in the order in which they should be displayed.
+* The combination of Specification Title, Specification Subtitle and Specification Version is assumed to be unique across all Specifications.
+
 ### Representation in FHIR
 
 The domain concepts of Batch Analyses are represented in FHIR in this IG section. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR resources. Detail study of the profiles and each of the resources will be needed to develop a deeper understanding of this Batch Analyses FHIR bundle profile. Concepts that are key to this domain include the following:

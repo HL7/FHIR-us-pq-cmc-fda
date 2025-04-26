@@ -168,7 +168,7 @@ Description: "a result observation for use in an example"
   * extension[low].valueQuantity = 0.0 '%' "percent"
   * extension[high].valueQuantity = 0.5 '%' "percent"
 * referenceRange
-  * text = "less than 0.5%" // text is required??
+  * text = "less than 0.5%" // original text
 
 Instance: a0676c71-06f4-4c04-b864-817a0347941c
 InstanceOf: ResultObservation
@@ -182,16 +182,14 @@ Usage: #inline
 * category = $NCIT#C205029 "pH"
 * code
   * coding = $NCIT#C96102 "Compendial"
-  * text = "Visual"
+  * text = "USP <791>"
 * effectiveDateTime = "2025-03-15"
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* effectiveDateTime = "2025-04-10T00:00:00Z"
-
-* valueQuantity = 2.72 '[pH]' "[pH]"
+* valueQuantity = 2.72 'pH' "[pH]"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[low].valueQuantity = 3.0 '[pH]' "[pH]"
-  * extension[high].valueQuantity = 5.0 '[pH]' "[pH]"
+  * extension[low].valueQuantity = 3.0 'pH' "[pH]"
+  * extension[high].valueQuantity = 5.0 'pH' "[pH]"
 * referenceRange
   * text = "Spec range (pH 3.0 – 5.0)"
 * method.text = "USP <791> pH Determination"
@@ -199,48 +197,48 @@ Usage: #inline
 * component[+]
   * extension[replicate].valueInteger = 1
   * code.text = "pH Replicate"
-  * valueQuantity = 2.65 '[pH]' "[pH]"
+  * valueQuantity = 2.65 'pH' "[pH]"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 '[pH]' "[pH]"
-    * extension[high].valueQuantity = 5.0 '[pH]' "[pH]"
+    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
+    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
 * component[+]
   * extension[replicate].valueInteger = 2
   * code.text = "pH Replicate"
-  * valueQuantity = 2.70 '[pH]' "[pH]"
+  * valueQuantity = 2.70 'pH' "[pH]"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 '[pH]' "[pH]"
-    * extension[high].valueQuantity = 5.0 '[pH]' "[pH]"
+    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
+    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
 * component[+]
   * extension[replicate].valueInteger = 3
   * code.text = "pH Replicate"
-  * valueQuantity = 2.75 '[pH]' "[pH]"
+  * valueQuantity = 2.75 'pH' "[pH]"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 '[pH]' "[pH]"
-    * extension[high].valueQuantity = 5.0 '[pH]' "[pH]"
+    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
+    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
 * component[+]
   * extension[replicate].valueInteger = 4
   * code.text = "pH Replicate"
-  * valueQuantity = 2.74 '[pH]' "[pH]"
+  * valueQuantity = 2.74 'pH' "[pH]"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 '[pH]' "[pH]"
-    * extension[high].valueQuantity = 5.0 '[pH]' "[pH]"
+    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
+    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
 * component[+]
   * extension[replicate].valueInteger = 5
   * code.text = "pH Replicate"
-  * valueQuantity = 2.76 '[pH]' "[pH]"
+  * valueQuantity = 2.76 'pH' "[pH]"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 '[pH]' "[pH]"
-    * extension[high].valueQuantity = 5.0 '[pH]' "[pH]"
+    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
+    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
 
 Instance: 554cfdc4-9766-4344-9490-214b770a8925
 InstanceOf: EctdCompositionSP4454

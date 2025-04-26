@@ -140,7 +140,8 @@ Parent: Observation
 Id: pq-result-observation	
 Title: "Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
-	
+
+* extension contains pq-pullDate-extension named actualpulldate 0..1 MS		
 * identifier.value 1..1 MS	
   * ^short = "Stage Name"	
   * ^definition = """
@@ -164,7 +165,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     Example: 1:23 (a ratio)
     Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
   """
-* extension contains pq-pullDate-extension named actualpulldate 0..1 MS	
+
 * effective[x] 1..1 MS	
 * effective[x] only dateTime	
   * ^short = "Test Date"	
