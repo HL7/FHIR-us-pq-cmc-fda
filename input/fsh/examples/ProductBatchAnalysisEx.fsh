@@ -282,58 +282,58 @@ Usage: #inline
   * text = "USP <791>"
 * effectiveDateTime = "2025-03-15"
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 2.72 'pH' "[pH]"
+* valueQuantity = 2.72 '[pH]' "pH"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[low].valueQuantity = 3.0 'pH' "[pH]"
-  * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+  * extension[low].valueQuantity = 3.0 '[pH]' "pH"
+  * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * referenceRange
   * text = "Spec range (pH 3.0 – 5.0)"
 * method.text = "USP <791> pH Determination"
 * component[+]
   * extension[replicate].valueInteger = 1
   * code.text = "pH Replicate"
-  * valueQuantity = 2.65 'pH' "[pH]"
+  * valueQuantity = 2.65 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
-    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+    * extension[low].valueQuantity = 3.0 '[pH]' "pH"
+    * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * component[+]
   * extension[replicate].valueInteger = 2
   * code.text = "pH Replicate"
-  * valueQuantity = 2.70 'pH' "[pH]"
+  * valueQuantity = 2.70 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
-    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+    * extension[low].valueQuantity = 3.0 '[pH]' "pH"
+    * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * component[+]
   * extension[replicate].valueInteger = 3
   * code.text = "pH Replicate"
-  * valueQuantity = 2.75 'pH' "[pH]"
+  * valueQuantity = 2.75 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
-    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+    * extension[low].valueQuantity = 3.0 '[pH]' "pH"
+    * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * component[+]
   * extension[replicate].valueInteger = 4
   * code.text = "pH Replicate"
-  * valueQuantity = 2.74 'pH' "[pH]"
+  * valueQuantity = 2.74 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
-    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+    * extension[low].valueQuantity = 3.0 '[pH]' "pH"
+    * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * component[+]
   * extension[replicate].valueInteger = 5
   * code.text = "pH Replicate"
-  * valueQuantity = 2.76 'pH' "[pH]"
+  * valueQuantity = 2.76 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.modifierExtension[batchRange]
-    * extension[low].valueQuantity = 3.0 'pH' "[pH]"
-    * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+    * extension[low].valueQuantity = 3.0 '[pH]' "pH"
+    * extension[high].valueQuantity = 5.0 '[pH]' "pH"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
 
 Instance: Description
