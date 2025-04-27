@@ -140,7 +140,7 @@ Parent: Observation
 Id: pq-result-observation	
 Title: "Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
-
+* . obeys cmc-range-extension-required
 * extension contains pq-pullDate-extension named actualpulldate 0..1 MS		
 * identifier.value 1..1 MS	
   * ^short = "Stage Name"	
