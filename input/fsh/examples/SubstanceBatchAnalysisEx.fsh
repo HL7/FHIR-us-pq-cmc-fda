@@ -233,7 +233,7 @@ Description: "Example result - first member in group"
 * valueString = "Qualified"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 2 'pH' "[pH]"
+  * extension[high].valueQuantity = 2 '[pH]' "pH"
 * referenceRange.text = "≤ 2 mg/kg"
 * method.text = "Arsenic"
 
@@ -254,7 +254,7 @@ Description: "Example result - second member in group"
 * valueString = "Qualified"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 5.0 'pH' "[pH]"
+  * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * referenceRange.text = "≤ 5 mg/kg"
 * method.text = "Lead"
 
@@ -274,7 +274,7 @@ Description: "Example result - high only acceptance criteria"
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)  // or create a new test site
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 1 'pH' "[pH]"
+  * extension[high].valueQuantity = 1 '[pH]' "pH"
 * referenceRange.text = "≤ 1 mg/kg"
 * method.text = "Mercury"
 * valueString = "Qualified"
