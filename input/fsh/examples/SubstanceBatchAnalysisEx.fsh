@@ -1,4 +1,4 @@
-Instance: GMS90Powder-BatchAnalysis-202010901
+Instance: 00036eb7-fa63-41c9-b1d7-27b3ebb0a28d
 InstanceOf: pqcmc-batch-analysis
 Title: "Batch Analysis for Glycerol Monostearate 90PCT Powder"
 Description: "Batch Analysis conforming to pqcmc-batch-analysis for Lot 2020100901"
@@ -10,16 +10,16 @@ Usage: #inline
 * identifier.value = "Batch_Analysis_002"
 * status = #final
 * code.text = "Batch analysis report for GMS90 Powder"
-* subject.display = "Glycerol Monostearate 90PCT powder" // change this to a subject reference 
 * effectiveDateTime = 2020-10-09
-* performer.display = "WELLGO CHEMICAL TECHNOLOGY Co.,LTD" // make this an organization and make the manufacuter in the Subtance
-* result[+] = Reference(GMS90-Appearance)
-* result[+] = Reference(GMS90-TotalMonostearate)
-* result[+] = Reference(GMS90-FreeGlycerol)
-* result[+] = Reference(GMS90-Fats)
-* result[+] = Reference(GMS90-HeavyMetals)
+* subject = Reference(urn:uuid:6c33cd89-a418-4e1d-8ff7-8924beb01e86)
+* performer = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
+* result[+] = Reference(urn:uuid:50bd6934-f0b8-4fb4-952e-f4fc5dc5d4c0)
+* result[+] = Reference(urn:uuid:1319e6a4-fcdc-4358-95b8-9cd5961ea482)
+* result[+] = Reference(urn:uuid:218d23e0-0219-4bdd-86aa-35145fa616b5)
+* result[+] = Reference(urn:uuid:b8d1bcbe-b969-49a1-acc0-9dfa698e844a)
+* result[+] = Reference(urn:uuid:6160fc94-2eaa-4fed-a6e2-2b251e864caa)
 
-Instance: GMS90-Appearance
+Instance: 50bd6934-f0b8-4fb4-952e-f4fc5dc5d4c0
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Appearance and Organoleptic"
@@ -38,7 +38,7 @@ Description: "Example result - string acceptance criteria.  This method is both 
 * referenceRange.text = "Pellet form without unpleasant odor"
 * method.text = "Evaluation of Crude Drugs"
 
-Instance: GMS90-TotalMonostearate
+Instance: 1319e6a4-fcdc-4358-95b8-9cd5961ea482
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - TotalMonostearate"
@@ -59,7 +59,7 @@ Description: "Example result - lower limit acceptance criteria"
 * referenceRange.text = "≥ 95%"
 * method.text = "Assay of Total Monostearate"
 
-Instance: GMS90-FreeGlycerol
+Instance: 218d23e0-0219-4bdd-86aa-35145fa616b5
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Free Glycerol"
@@ -80,7 +80,7 @@ Description: "Example result - numeric upper only range acceptance criteria"
 * referenceRange.text = "≤ 1.5%"
 * method.text = "Assay of Free Glycerol"
 
-Instance: GMS90-Fats
+Instance: b8d1bcbe-b969-49a1-acc0-9dfa698e844a
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Fats and fixed oils"
@@ -99,12 +99,12 @@ Description: "Example result - group tests conform"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "Fat and Oil passed all test in method"  // check notes on if this is required when has memeber used
 * method.text = "Fats and Fixed Oils"
-* hasMember[+] = Reference(GMS90-AcidValue)
-* hasMember[+] = Reference(GMS90-MeltingPoint)
-* hasMember[+] = Reference(GMS90-IodineValue)
-* hasMember[+] = Reference(GMS90-SaponificationValue)
+* hasMember[+] = Reference(urn:uuid:a71c68c0-2d24-43b0-a9bc-8f98eac5e50a)
+* hasMember[+] = Reference(urn:uuid:d68f393a-57d0-4180-b4fa-265affb76ecc)
+* hasMember[+] = Reference(urn:uuid:dabcbbb0-94b7-4ec3-80c2-114564c1c938)
+* hasMember[+] = Reference(urn:uuid:30b89618-46dc-42de-a3f0-cf6285840303)
 
-Instance: GMS90-AcidValue
+Instance: a71c68c0-2d24-43b0-a9bc-8f98eac5e50a
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Acid Value"
@@ -127,7 +127,7 @@ Description: "Example result - upper limit acceptance criteria"
 * referenceRange.text = "≤ 2.0 mgKOH/g"
 * method.text = "Acid Value"
 
-Instance: GMS90-MeltingPoint
+Instance: d68f393a-57d0-4180-b4fa-265affb76ecc
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Melting Point"
@@ -150,7 +150,7 @@ Description: "Example result - range acceptance criteria"
 * referenceRange.text = "60.0-70.0 °C"
 * method.text = "Melting Point"
 
-Instance: GMS90-IodineValue
+Instance: dabcbbb0-94b7-4ec3-80c2-114564c1c938
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - IodineValue"
@@ -171,7 +171,7 @@ Description: "Example result - uppper limit numeric acceptance criteria"
 * referenceRange.text = "≤ 4.0 g/100g"
 * method.text = "Iodine Value"
 
-Instance: GMS90-SaponificationValue
+Instance: 30b89618-46dc-42de-a3f0-cf6285840303
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - SaponificationValue"
@@ -193,7 +193,7 @@ Description: "Example result - range numeric complex unit acceptance criteria"
 * referenceRange.text = "155-165 mgKOH/g"
 * method.text = "Saponification Value"
 
-Instance: GMS90-HeavyMetals
+Instance: 6160fc94-2eaa-4fed-a6e2-2b251e864caa
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - HeavyMetals"
@@ -211,12 +211,12 @@ Description: "Example result - multiple tests in method acceptance criteria"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "All regulated elements passed the acceptance criteria defined in USP <233> "
 * method.text = "Heavy Metals"
-* hasMember[+] = Reference(GMS90-Arsenic)
-* hasMember[+] = Reference(GMS90-Lead)
-* hasMember[+] = Reference(GMS90-Mercury)
-* hasMember[+] = Reference(GMS90-Cadmium)
+* hasMember[+] = Reference(urn:uuid:774a68f3-0e82-4457-831f-db184b863e3c)
+* hasMember[+] = Reference(urn:uuid:74678745-493e-4c0d-bfa1-40231c06144d)
+* hasMember[+] = Reference(urn:uuid:3bb4278f-7c3a-417b-a4dc-ee63e0dd8bda)
+* hasMember[+] = Reference(urn:uuid:c96745e6-1447-4094-bd35-d2c3680bf4b2)
 
-Instance: GMS90-Arsenic
+Instance: 774a68f3-0e82-4457-831f-db184b863e3c
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Arsenic (HeavyMetals)"
@@ -237,7 +237,7 @@ Description: "Example result - first member in group"
 * referenceRange.text = "≤ 2 mg/kg"
 * method.text = "Arsenic"
 
-Instance: GMS90-Lead
+Instance: 74678745-493e-4c0d-bfa1-40231c06144d
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation -Lead (HeavyMetals)"
@@ -258,7 +258,7 @@ Description: "Example result - second member in group"
 * referenceRange.text = "≤ 5 mg/kg"
 * method.text = "Lead"
 
-Instance: GMS90-Mercury
+Instance: 3bb4278f-7c3a-417b-a4dc-ee63e0dd8bda
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Mercury (HeavyMetals)"
@@ -279,7 +279,7 @@ Description: "Example result - high only acceptance criteria"
 * method.text = "Mercury"
 * valueString = "Qualified"
 
-Instance: GMS90-Cadmium
+Instance: c96745e6-1447-4094-bd35-d2c3680bf4b2
 InstanceOf: ResultObservation
 Usage: #inline
 Title: "Example Observation - Cadmium (HeavyMetals)"
@@ -299,3 +299,117 @@ Description: "Example result - text acceptance criteria"
 * method.text = "Cadmium"
 * referenceRange.text = "Conforms"
 
+Instance: 6c33cd89-a418-4e1d-8ff7-8924beb01e86
+InstanceOf: DrugSubstanceBatch
+Usage: #inline
+Title: "Example DrugSubstanceBatch "
+Description: "An example of  a DrugSubstanceBatch to be used in a Bundle"
+* identifier.value = "GlycerolMonostearate01"
+* extension[api-batch]
+  * extension[manufacturingDate].valueDateTime = 2020-09-25
+  * extension[manufacturingDateClassification].valueCodeableConcept.text = "batch mixing start date"
+  * extension[assignedManufacturer].valueReference = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
+  * extension[expirationDateClassification].valueCodeableConcept = $NCIT#C185182 "Approved"
+  * extension[batchUtilization].valueCodeableConcept =  $NCIT#C185328 "Stability Study"
+  * extension[batchQuantity].valueQuantity = 200 'kg' "kilograms"
+  * extension[container]
+    * extension[lotNumber].valueString = "000001"
+    * extension[type].valueCodeableConcept = $NCIT#C43193	"DRUM"
+    * extension[closureSystemDescription].valueString = "a metal drum lined with plastic"
+    * extension[closureType].valueCodeableConcept = $NCIT#C96115	"Continuous Thread, Metal"
+    * extension[quantity].valueRatio
+      * numerator = 200 'kg' "kilograms"
+      * denominator = 1 '1' "drum"
+* instance = true
+* code.reference = Reference(urn:uuid:d7d18caa-0acb-4a1b-bc7e-b3421e2242eb)
+
+Instance: d7d18caa-0acb-4a1b-bc7e-b3421e2242eb
+InstanceOf: pqcmc-routine-drug-substance
+Usage: #inline
+Title: "Glycerol Monostearate Routine Substance"
+Description: "An example Routine Drug substance for use in an example"
+* classification = $NCIT#C48807	"Chemical"
+* grade = $NCIT#C134006	"USP-NF"
+* manufacturer = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
+* code[unii].code = $UNII#230OU9XXE4
+* name[gsrs].name = "GLYCERYL MONOSTEARATE"
+* name[sub].name = "Glycerol Monostearate"
+
+Instance: 68bdb088-fed5-46dd-b718-d96d2e28b4af
+InstanceOf: EctdCompositionSP4454
+Usage: #inline
+Title: "Drug Substance Batch Analysis Composition"
+Description: "A substance batch analysis composition for use in an example"
+* status = #final
+* author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* title = "Glycerol Monostearate Powder Batch Analysis"
+* date = 2025-03-30
+* section[Api]
+  * title = "Substance Batch"
+  * entry = Reference(urn:uuid:00036eb7-fa63-41c9-b1d7-27b3ebb0a28d)
+
+Instance: SubstanceBatchAnalysisBundle
+InstanceOf: CMCeCTDDocumentSP4454
+Usage: #example
+Title: "Substance Batch Analysis Bundle (WIP)"
+Description: "an example substance batch analysis for Glycerol Monostearate"
+* identifier.system = $IDsys
+* identifier.value = "cd15f9f1-51ae-4112-85ef-7bf8eca3eccb"
+* timestamp = 2025-03-31T12:34:56.789Z
+* entry[0]
+  * resource = 68bdb088-fed5-46dd-b718-d96d2e28b4af
+  * fullUrl = "urn:uuid:68bdb088-fed5-46dd-b718-d96d2e28b4af"
+* entry[+]
+  * resource = 50bd6934-f0b8-4fb4-952e-f4fc5dc5d4c0
+  * fullUrl = "urn:uuid:50bd6934-f0b8-4fb4-952e-f4fc5dc5d4c0"
+* entry[+]
+  * resource = 1319e6a4-fcdc-4358-95b8-9cd5961ea482
+  * fullUrl = "urn:uuid:1319e6a4-fcdc-4358-95b8-9cd5961ea482"
+* entry[+]
+  * resource = 218d23e0-0219-4bdd-86aa-35145fa616b5
+  * fullUrl = "urn:uuid:218d23e0-0219-4bdd-86aa-35145fa616b5"
+* entry[+]
+  * resource = b8d1bcbe-b969-49a1-acc0-9dfa698e844a
+  * fullUrl = "urn:uuid:b8d1bcbe-b969-49a1-acc0-9dfa698e844a"
+* entry[+]
+  * resource = a71c68c0-2d24-43b0-a9bc-8f98eac5e50a
+  * fullUrl = "urn:uuid:a71c68c0-2d24-43b0-a9bc-8f98eac5e50a"
+* entry[+]
+  * resource = d68f393a-57d0-4180-b4fa-265affb76ecc
+  * fullUrl = "urn:uuid:d68f393a-57d0-4180-b4fa-265affb76ecc"
+* entry[+]
+  * resource = dabcbbb0-94b7-4ec3-80c2-114564c1c938
+  * fullUrl = "urn:uuid:dabcbbb0-94b7-4ec3-80c2-114564c1c938"
+* entry[+]
+  * resource = 30b89618-46dc-42de-a3f0-cf6285840303
+  * fullUrl = "urn:uuid:30b89618-46dc-42de-a3f0-cf6285840303"
+* entry[+]
+  * resource = 6160fc94-2eaa-4fed-a6e2-2b251e864caa
+  * fullUrl = "urn:uuid:6160fc94-2eaa-4fed-a6e2-2b251e864caa"
+* entry[+]
+  * resource = 774a68f3-0e82-4457-831f-db184b863e3c
+  * fullUrl = "urn:uuid:774a68f3-0e82-4457-831f-db184b863e3c"
+* entry[+]
+  * resource = 74678745-493e-4c0d-bfa1-40231c06144d
+  * fullUrl = "urn:uuid:74678745-493e-4c0d-bfa1-40231c06144d"
+* entry[+]
+  * resource = 3bb4278f-7c3a-417b-a4dc-ee63e0dd8bda
+  * fullUrl = "urn:uuid:3bb4278f-7c3a-417b-a4dc-ee63e0dd8bda"
+* entry[+]
+  * resource = c96745e6-1447-4094-bd35-d2c3680bf4b2
+  * fullUrl = "urn:uuid:c96745e6-1447-4094-bd35-d2c3680bf4b2"
+* entry[+]
+  * resource = 6c33cd89-a418-4e1d-8ff7-8924beb01e86
+  * fullUrl = "urn:uuid:6c33cd89-a418-4e1d-8ff7-8924beb01e86"
+* entry[+]
+  * resource = d7d18caa-0acb-4a1b-bc7e-b3421e2242eb
+  * fullUrl = "urn:uuid:d7d18caa-0acb-4a1b-bc7e-b3421e2242eb"
+* entry[+]
+  * resource = 00036eb7-fa63-41c9-b1d7-27b3ebb0a28d
+  * fullUrl = "urn:uuid:00036eb7-fa63-41c9-b1d7-27b3ebb0a28d"
+* entry[+]
+  * resource = 4f3e9af1-306b-4fad-bf04-7881400b266a
+  * fullUrl = "urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a"
+* entry[+]
+  * resource = e165f057-5eed-4e64-8328-4438fc88fb1b
+  * fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
