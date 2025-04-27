@@ -225,7 +225,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 """
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS
-  * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+  * modifierExtension contains pq-batch-range named batchRange 0..1 MS
   * modifierExtension[batchRange]
     * extension[low].value[x] from PqcmcUnitsMeasure
     * extension[high].value[x] from PqcmcUnitsMeasure
