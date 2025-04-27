@@ -38,7 +38,6 @@
 <artifact deprecated="true" id="DocumentReference/0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3" key="DocumentReference-0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3" name="Base64 Document Reference - Monosodium_D-thyroxine_hydrate.png"/>
 <artifact id="StructureDefinition/cmc-organization" key="StructureDefinition-cmc-organization" name="Basic Organization"/>
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
-<artifact id="Bundle/BatchAnalysisBundle" key="Bundle-BatchAnalysisBundle" name="Batch Analysis Bundle (WIP)"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization"/>
 <artifact deprecated="true" id="Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9" key="Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9" name="Bundle for 3.2.S.1"/>
@@ -139,7 +138,6 @@
 <artifact id="ValueSet/pqcmc-manufactured-dose-form-terminology" key="ValueSet-pqcmc-manufactured-dose-form-terminology" name="Manufactured Dose Form"/>
 <artifact id="StructureDefinition/pqcmc-product-part" key="StructureDefinition-pqcmc-product-part" name="Manufactured Drug Product"/>
 <artifact deprecated="true" id="Organization/4b565cf3-5353-48af-8cd6-5ccf4e9fd579" key="Organization-4b565cf3-5353-48af-8cd6-5ccf4e9fd579" name="Manufacturing Site (J. Jones Research)"/>
-<artifact id="StructureDefinition/mfg-test-site-location" key="StructureDefinition-mfg-test-site-location" name="Manufacturing and/or Test Site Location"/>
 <artifact deprecated="true" id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="Manufacturing and/or Test Site Organization"/>
 <artifact id="ValueSet/pqcmc-mfg-testing-site-terminology" key="ValueSet-pqcmc-mfg-testing-site-terminology" name="Manufacturing/Testing Site Responsibility Category Terminology"/>
 <artifact id="ValueSet/pqcmc-non-percentage-units" key="ValueSet-pqcmc-non-percentage-units" name="Non-Percentage Units"/>
@@ -203,6 +201,7 @@
 <artifact id="StructureDefinition/pq-timePoint-extension" key="StructureDefinition-pq-timePoint-extension" name="Study Interval"/>
 <artifact id="StructureDefinition/pq-protocol-extension" key="StructureDefinition-pq-protocol-extension" name="Study Protocol"/>
 <artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type"/>
+<artifact id="Bundle/SubstanceBatchAnalysisBundle" key="Bundle-SubstanceBatchAnalysisBundle" name="Substance Batch Analysis Bundle (WIP)"/>
 <artifact id="ValueSet/substance-classification" key="ValueSet-substance-classification" name="Substance Classification"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature-structure" key="StructureDefinition-pqcmc-drug-substance-nomenclature-structure" name="Substance General Information"/>
 <artifact id="ValueSet/pqcmc-substance-name-type" key="ValueSet-pqcmc-substance-name-type" name="Substance Name Type"/>

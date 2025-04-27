@@ -281,7 +281,7 @@ Usage: #inline
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <791>"
 * effectiveDateTime = "2025-03-15"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a) 
 * valueQuantity = 2.72 '[pH]' "pH"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
@@ -353,7 +353,6 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "Grey coloured capsule shaped film coated tablets, debossed with '45' on one side."
 * method.text = "Visual Inspection"
 
@@ -373,7 +372,6 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "The retention time of the principal peak corresponds to standard."
 * method.text = "HPLC Identification"
 
@@ -381,7 +379,7 @@ Instance: Dissolution
 InstanceOf: pq-result-observation
 Title: "Example Dissolution result"
 Description: "Demonstrates a test with three stages and three replicates."
-Usage: #inline
+Usage: #Example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Multi Stage"
 * status = #final
@@ -393,18 +391,18 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "All stage results conform to specification"
 * method.text = "Dissolution OXAZEPAM Capsules"
-* result[+] = Reference(DissolutionStage1)
-* result[+] = Reference(DissolutionStage2)
-* result[+] = Reference(DissolutionStage3)
+* hasMember[+] = Reference(urn:uuid:1213976b-ebb0-42f6-985d-f989356b6d59)
+* hasMember[+] = Reference(urn:uuid:210af775-ca90-4fe6-9b04-822c765933af)
+* hasMember[+] = Reference(urn:uuid:06522569-a7e8-4c9f-a7db-14c969c240c6)
 
-Instance: DissolutionStage1
+
+Instance: 1213976b-ebb0-42f6-985d-f989356b6d59
 InstanceOf: pq-result-observation
 Title: "Example Dissolution Stage 1 result"
 Description: "A result with three components."
-Usage: #inline
+Usage: #example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 1"
 * status = #final
@@ -416,7 +414,6 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "All replicates are NLT 40% and NMT 70% dissolved in 1 hour."
 * method.text = " Dissolution"
 * component[+]
@@ -450,11 +447,11 @@ Usage: #inline
     * extension[high].valueQuantity = 70 '%' "percent"
   * referenceRange.text = "NLT 40% and NMT 70% dissolved in 1 hour."    
 
-Instance: DissolutionStage2
+Instance: 210af775-ca90-4fe6-9b04-822c765933af
 InstanceOf: pq-result-observation
 Title: "Example Dissolution Stage 2 result"
 Description: "The stage 2 result with 3 replicates."
-Usage: #inline
+Usage: #example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 2"
 * status = #final
@@ -466,7 +463,6 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "All replicates are NLT 70% and NMT 95% dissolved in 2 hours."
 * method.text = " Dissolution"
 * component[+]
@@ -500,7 +496,7 @@ Usage: #inline
     * extension[high].valueQuantity = 95 '%' "percent"
   * referenceRange.text = "NLT 70% and NMT 95% dissolved in 2 hours."
 
-Instance: DissolutionStage3
+Instance: 06522569-a7e8-4c9f-a7db-14c969c240c6
 InstanceOf: pq-result-observation
 Title: "Example Dissolution Stage 3 result"
 Description: "The stage 3 result with 3 replicates in the component element."
@@ -628,16 +624,18 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "All impurities comform to corresponds to standard."
+* interpretation = $NCIT#C80262 "Conforms"
+// turn this into annotation
+//* note = "Total Impurities includes all detected peaks"
 * method.text = "Oxazepam Impurities"
-* result[+] = Reference(6Chloro4phenyl34dihydroquinazoline2carboxylicAcid)
-* result[+] = Reference(Oxazepam-ImpurityA)
-* result[+] = Reference(Z-2-Amino-5-chlorophenylphenylmethanoneOxime)
-* result[+] = Reference(HighestUnknown)
-* result[+] = Reference(TotalImpurities)
+* result[+] = Reference(urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d)
+* result[+] = Reference(urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0)
+* result[+] = Reference(urn:uuid:298b433e-0642-4735-bd6f-c460e6e4208d)
+* result[+] = Reference(urn:uuid:f8d2cd51-aad0-4f95-ad04-c12efdc1232d)
+* result[+] = Reference(urn:uuid:5655fffb-ea32-4cf9-96de-0950ad6dd07e)
 
-Instance: Z-2-Amino-5-chlorophenylphenylmethanoneOxime
+Instance: 298b433e-0642-4735-bd6f-c460e6e4208d
 InstanceOf: pq-result-observation
 Title: "Example Specified Identified Impurity result"
 Description: "Demonstating an Impurity result with an upper limit."
@@ -658,7 +656,7 @@ Usage: #inline
 * referenceRange.text = "LT 1.2%"
 * method.text = "Oxazepam Impurities"
 
-Instance: Oxazepam-ImpurityA
+Instance: 96dc657d-592f-4c91-b106-01701ccf2cb0
 InstanceOf: pq-result-observation
 Title: "Example Specified Unidentified Impurity result"
 Description: "Demonstating a  Specified Unidentified Impurity result with an upper limit."
@@ -679,7 +677,7 @@ Usage: #inline
 * referenceRange.text = "LT 1.2%"
 * method.text = "Oxazepam Impurities"
 
-Instance: 6Chloro4phenyl34dihydroquinazoline2carboxylicAcid
+Instance: 5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d
 InstanceOf: pq-result-observation
 Title: "Example 6-Chloro-4-phenyl-3,4-dihydroquinazoline- 2-carboxylic Acid"
 Description: "Example result for a Specified Identified Impurity"
@@ -700,7 +698,7 @@ Usage: #inline
 * referenceRange.text = "LT 2.0%"
 * method.text = "Oxazepam Impurities"
 
-Instance: HighestUnknown
+Instance: f8d2cd51-aad0-4f95-ad04-c12efdc1232d
 InstanceOf: pq-result-observation
 Title: "Example Highest Unknown Impurity result"
 Description: "Example result for a Unspecified Impurity with an upper limit"
@@ -721,7 +719,7 @@ Usage: #inline
 * referenceRange.text = "LT 0.2%"
 * method.text = "Oxazepam Impurities"
 
-Instance: TotalImpurities
+Instance: T5655fffb-ea32-4cf9-96de-0950ad6dd07e
 InstanceOf: pq-result-observation
 Title: "Example Total Impurities result"
 Description: "Example result for a Total Impurities with an upper limit"
@@ -758,6 +756,5 @@ Usage: #inline
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
 * referenceRange.text = "Complies with USP <467>"
 * method.text = "Residual Solvents"

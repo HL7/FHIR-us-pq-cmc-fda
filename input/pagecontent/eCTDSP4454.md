@@ -42,7 +42,189 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### Usage Patterns
 
-Waiting for example.  Will add code snippets for stages and replicates
+#### Batch Analysis Test Result Patterns
+
+This section describes the patterns used in reporting individual test results in a Batch Analysis Bundle. The numeric test results have multiple structures to capture the detail of the Observation referenceRange text. The following XML snippets illustrate how to implement the various test results types. Each example below shows the FHIR element structure and a code block with sample content.
+
+Note: "..." is used to compress the XML so that the relevant sections can be seen more clearly.
+
+##### Qualitative Result (valueString)
+
+Used when the observation reports a qualitative assessment (e.g., odor, appearance).
+
+**Key Characteristic Elements:**
+- `valueString`
+- `interpretation`
+- `referenceRange.text`
+
+```xml
+<Observation>
+          <category>
+          <coding>
+            <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+            <code value="C205026"/>
+            <display value="Organoleptic"/>
+          </coding>
+        </category>
+  ...
+  <valueString>No unpleasant odor</valueString>
+  ...
+  <referenceRange>
+    <text>Pellet form without unpleasant odor</text>
+  </referenceRange>
+</Observation>
+```
+
+##### Numeric Result (valueQuantity)
+
+Used when the observation quantifies an assay (e.g., content purity). The referenceRange.modifierExtension elements high and low are optional.  Use both when reprenting a range acceptance criteria.  Use high when the value must be NMT and use low when the valule is NLT.
+
+**Key Characteristic Elements:**
+- `valueQuantity`
+- `referenceRange.modifierExtension` with `low` (and sometimes `high`)
+
+```xml
+<Observation>
+ <category>
+   <coding>
+     <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+     <code value="C60819"/>
+     <display value="Assay"/>
+   </coding>
+ </category>
+ ...
+  <text value="Assay Monostearate"/>
+  ...
+  <valueQuantity>
+   <value value="98.7"/>
+   <unit value="percent"/>
+   <system value="http://unitsofmeasure.org"/>
+   <code value="%"/>
+  </valueQuantity>
+  <interpretation>...<display value="Conforms"/>...</interpretation>
+  ...
+ <referenceRange>
+   <modifierExtension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-batch-range">
+     <extension url="low">
+       <valueQuantity>
+  <value value="95"/>
+  <unit value="percent"/>
+  <system value="http://unitsofmeasure.org"/>
+  <code value="%"/>
+       </valueQuantity>
+     </extension>
+   </modifierExtension>
+   <text value="≥ 95%"/>
+ </referenceRange>
+</Observation>
+```
+
+##### Pass/Fail Result
+
+Used when only "Pass", "Qualified", or similar is reported.
+
+**Key Characteristic Elements:**
+- `valueString` examples "Pass" or "Qualified"
+- `interpretation`  interpretation codes are $NCIT#C80262 "Conforms" and $NCIT#C133998 "Does not conform"
+- `referenceRange.text`
+
+```xml
+<Observation>
+  ...
+  <valueString value="Pass"/>
+  <interpretation>...<display value="Conforms"/>...</interpretation>
+  <referenceRange>
+    <text>Complies with USP-467</text>
+  </referenceRange>
+</Observation>
+```
+
+##### Replicates using component
+
+Used when multiple replicate results are part of the same observation. Replicates are individual tests are executed on multiple samples to give greater validity to the findings. An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed.
+
+**Key Characteristics:**
+- Each `component` holds a result for a replicate.
+- `component.code` identifies the sub-measurement for example and individual result acceptance criteria can differ from the average reported in Observation.valueQuantity.
+- `component.valueQuantity` or `valueString` contains the actual measurement for each replicate.
+- pq-replicate-extension identifies the replicate number.
+
+```xml
+<Observation>
+...
+  <component>
+     <extension
+       url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-replicate-extension">
+     <valueInteger value="1"/>
+   </extension>
+...
+   <valueQuantity>
+     <value value="2.65"/>
+     <unit value="pH"/>
+     <system value="http://unitsofmeasure.org"/>
+     <code value="[pH]"/>
+   </valueQuantity>
+...  
+  </component>
+  <component>
+     <extension
+       url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-replicate-extension">
+     <valueInteger value="2"/>
+   </extension>
+...
+   <valueQuantity>
+     <value value="2.65"/>
+     <unit value="pH"/>
+     <system value="http://unitsofmeasure.org"/>
+     <code value="[pH]"/>
+   </valueQuantity>
+...  
+  </component>
+</Observation>
+```
+
+##### Multi-Stage Result Reporting (using hasMember)
+
+Used for tests that include multiple detailed sub-measurements.
+
+**Key Characteristic Elements:**
+- identifier.value equals "Multi-Stage" for the parent test
+- Parent Observation uses `hasMember` to reference detailed results for each stage of the test.
+- identifier.value equals the stage name of the stege result contained in the member observation resource.
+- If the staged test also has replicates, each replicate is reported as a component of the member observation.  The replicate number must be maintained accross the all the stages. 
+
+```xml
+<Observation>
+tbd
+</Observation>
+```
+
+#####  Result with Child Observations
+
+**Key Characteristic Elements:**
+- `valueString` = "Qualified"
+- `hasMember` to detailed element-specific Observations
+
+```xml
+<Observation>
+  <category>Material Properties/Measurements</category>
+  <code>USP <401> Fats and Fixed Oils</code>
+  <valueString>Qualified</valueString>
+  <hasMember>
+    <reference value="Observation/AcidValue"/>
+    <reference value="Observation/SaponificationValue"/>
+  </hasMember>
+</Observation>
+```
+
+#### Notes
+
+- All tests must include an `interpretation` to indicate conformance.
+- Units must align with UCUM coding where applicable.
+- Use `modifierExtension` for numeric ranges (high/low limits).
+- Use `valueString` for qualitative assessments.
+- Use `component` when multiple replicate results are reported under a single Observation.
+...  
 
 ### Examples
 
