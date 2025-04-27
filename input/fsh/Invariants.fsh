@@ -430,3 +430,14 @@ Expression: "extension.where(url = 'specificationOid').exists() or (
   extension.where(url = 'specificationVersion').exists()
 )"
 Severity: #error
+
+Invariant: cmc-range-extension-required
+Description: "When the value in a ResultObservition is a Quantity, the batch range modifier extension must be present"
+Expression: "
+  value.ofType(Quantity) implies 
+  referenceRange.modifierExtension.where(
+    url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-batch-range'
+  ).exists()
+"
+Severity: #error
+
