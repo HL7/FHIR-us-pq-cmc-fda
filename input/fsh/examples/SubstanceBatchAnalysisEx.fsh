@@ -19,7 +19,7 @@ Usage: #inline
 * result[+] = Reference(urn:uuid:b8d1bcbe-b969-49a1-acc0-9dfa698e844a)
 * result[+] = Reference(urn:uuid:6160fc94-2eaa-4fed-a6e2-2b251e864caa)
 * result[+] = Reference(urn:uuid:a0676c71-06f4-4c04-b864-817a0347941c)
-* result[+] = Reference(Dissolution)
+* result[+] = Reference(urn:uuid:20317ec0-a631-4cdf-88a1-0496b5e3acaf)
 
 Instance: 50bd6934-f0b8-4fb4-952e-f4fc5dc5d4c0
 InstanceOf: ResultObservation

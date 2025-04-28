@@ -154,7 +154,7 @@ Description: "a manufacturing site to be used in an example"
   * type.coding = $NCIT#C134004 "FEI"
   * value = "6981397"
   * system = "urn:oid:2.16.840.1.113883.4.82"
-* type = $NCIT#C101509 "Testing"
+* type = $NCIT#C101509 // synonym needs to be added to tx.fhir.org
 * name = "mega_chem_Site"
 * contact.address
   * line[0] = "350 W Main Street"
@@ -175,45 +175,93 @@ Description: "an example batch analysis bundle using the specification from Spec
 * timestamp = 2025-03-31T12:34:56.789Z
 * entry[0].resource = 554cfdc4-9766-4344-9490-214b770a8925
 * entry[=].fullUrl = "urn:uuid:554cfdc4-9766-4344-9490-214b770a8925"
-* entry[+]
+* entry[+] // 1
   * resource = 60d31f18-5f74-4042-b4fa-c73a4aa510ff
   * fullUrl = "urn:uuid:60d31f18-5f74-4042-b4fa-c73a4aa510ff"
-* entry[+]
+* entry[+] // 2
   * resource = fff1c47f-a9af-452e-9402-a8842103a3ec
   * fullUrl = "urn:uuid:fff1c47f-a9af-452e-9402-a8842103a3ec"
-* entry[+]
+* entry[+] // 3
   * resource = 4f3e9af1-306b-4fad-bf04-7881400b266a
   * fullUrl = "urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a"
-* entry[+]
+* entry[+] // 4
   * resource = 022a4874-3ceb-46f8-a242-c15fbcd5165f
   * fullUrl = "urn:uuid:022a4874-3ceb-46f8-a242-c15fbcd5165f"
-* entry[+]
+* entry[+] // 5
   * resource = c13c9826-7f33-4d5b-869f-cd802f09e86d
   * fullUrl = "urn:uuid:c13c9826-7f33-4d5b-869f-cd802f09e86d"
-* entry[+]
+* entry[+] // 6
   * resource = ab6d7e66-64fc-46bf-bb74-55a0d864d13c
   * fullUrl = "urn:uuid:ab6d7e66-64fc-46bf-bb74-55a0d864d13c"
-* entry[+]
+* entry[+] // 7
   * resource = 3253f528-16e2-49a3-aca0-8d7371bc5335
   * fullUrl = "urn:uuid:3253f528-16e2-49a3-aca0-8d7371bc5335"
-* entry[+]
+* entry[+] // 8
   * resource = 9066b2e2-1091-4f2c-9fdb-9118bf7b0b24
   * fullUrl = "urn:uuid:9066b2e2-1091-4f2c-9fdb-9118bf7b0b24"
-* entry[+]
+* entry[+] // 9
   * resource = 46ab3b3a-de05-40d7-9d0f-8f286a76f6df
   * fullUrl = "urn:uuid:46ab3b3a-de05-40d7-9d0f-8f286a76f6df"
-* entry[+]
+* entry[+] // 10
   * resource = 5d4dc90b-4e71-4355-80cc-8ef4fc927cd6
   * fullUrl = "urn:uuid:5d4dc90b-4e71-4355-80cc-8ef4fc927cd6"
-* entry[+]
+* entry[+] // 11
   * resource = e165f057-5eed-4e64-8328-4438fc88fb1b
   * fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
-* entry[+]
+* entry[+] // 12
   * resource = b2727746-84a9-4e3f-ae76-b847deea3afe
   * fullUrl = "urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe"
-* entry[+]
+* entry[+] // 13
   * resource = a0676c71-06f4-4c04-b864-817a0347941c
   * fullUrl = "urn:uuid:a0676c71-06f4-4c04-b864-817a0347941c"
+* entry[+] // 14
+  * resource = 1213976b-ebb0-42f6-985d-f989356b6d59
+  * fullUrl = "urn:uuid:1213976b-ebb0-42f6-985d-f989356b6d59"
+* entry[+] // 15
+  * resource = 210af775-ca90-4fe6-9b04-822c765933af
+  * fullUrl = "urn:uuid:210af775-ca90-4fe6-9b04-822c765933af"
+* entry[+] // 16
+  * resource = 06522569-a7e8-4c9f-a7db-14c969c240c6
+  * fullUrl = "urn:uuid:06522569-a7e8-4c9f-a7db-14c969c240c6"
+* entry[+] // 17
+  * resource = 5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d
+  * fullUrl = "urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d"
+* entry[+] // 18
+  * resource = 96dc657d-592f-4c91-b106-01701ccf2cb0
+  * fullUrl = "urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0"
+* entry[+] // 19
+  * resource = 298b433e-0642-4735-bd6f-c460e6e4208d
+  * fullUrl = "urn:uuid:298b433e-0642-4735-bd6f-c460e6e4208d"
+* entry[+] // 20
+  * resource = f8d2cd51-aad0-4f95-ad04-c12efdc1232d
+  * fullUrl = "urn:uuid:f8d2cd51-aad0-4f95-ad04-c12efdc1232d"
+* entry[+] // 21
+  * resource = 5655fffb-ea32-4cf9-96de-0950ad6dd07e
+  * fullUrl = "urn:uuid:5655fffb-ea32-4cf9-96de-0950ad6dd07e"
+* entry[+] // 22
+  * resource = 00a33e09-4ce7-4bac-b616-a392911a429e
+  * fullUrl = "urn:uuid:00a33e09-4ce7-4bac-b616-a392911a429e"
+* entry[+] // 23
+  * resource = eee4fd0c-4adb-4aad-be21-cab199583f56
+  * fullUrl = "urn:uuid:eee4fd0c-4adb-4aad-be21-cab199583f56"
+* entry[+] // 24
+  * resource = 20317ec0-a631-4cdf-88a1-0496b5e3acaf
+  * fullUrl = "urn:uuid:20317ec0-a631-4cdf-88a1-0496b5e3acaf"
+* entry[+] // 25
+  * resource = f220a83d-214d-4a5c-917b-88c25e125c90
+  * fullUrl = "urn:uuid:f220a83d-214d-4a5c-917b-88c25e125c90"
+* entry[+] // 26
+  * resource = 30f3b020-f474-4eec-881c-7dd4d12baf0b
+  * fullUrl = "urn:uuid:30f3b020-f474-4eec-881c-7dd4d12baf0b"
+* entry[+] // 27
+  * resource = b590b63c-a9b3-4469-bcfe-21793b588641
+  * fullUrl = "urn:uuid:b590b63c-a9b3-4469-bcfe-21793b588641"
+* entry[+] // 28
+  * resource = b932d0d9-53a9-457d-81cc-c5488d18cb58
+  * fullUrl = "urn:uuid:b932d0d9-53a9-457d-81cc-c5488d18cb58"
+* entry[+] // 29
+  * resource = 07e9b239-6791-43ba-bf09-637475a83e19
+  * fullUrl = "urn:uuid:07e9b239-6791-43ba-bf09-637475a83e19"
 
 // #Manufacturer: e165f057-5eed-4e64-8328-4438fc88fb1b
 // #Performer: 4f3e9af1-306b-4fad-bf04-7881400b266a
@@ -235,14 +283,14 @@ Description: "an example Product Batch Analysis"
 * subject = Reference(urn:uuid:fff1c47f-a9af-452e-9402-a8842103a3ec)
 * result[+] = Reference(urn:uuid:022a4874-3ceb-46f8-a242-c15fbcd5165f)
 * result[+] = Reference(urn:uuid:a0676c71-06f4-4c04-b864-817a0347941c)
-* result[+] = Reference(Description)
-* result[+] = Reference(IdentificationByHPLC)
-* result[+] = Reference(Dissolution)
-* result[+] = Reference(UniformityOfDosageUnits)
-* result[+] = Reference(WaterContent)
-* result[+] = Reference(Assay)
-* result[+] = Reference(Impurities)
-* result[+] = Reference(ResidualSolvents)
+* result[+] = Reference(urn:uuid:00a33e09-4ce7-4bac-b616-a392911a429e)
+* result[+] = Reference(urn:uuid:eee4fd0c-4adb-4aad-be21-cab199583f56)
+* result[+] = Reference(urn:uuid:20317ec0-a631-4cdf-88a1-0496b5e3acaf)
+* result[+] = Reference(urn:uuid:f220a83d-214d-4a5c-917b-88c25e125c90)
+* result[+] = Reference(urn:uuid:30f3b020-f474-4eec-881c-7dd4d12baf0b)
+* result[+] = Reference(urn:uuid:b590b63c-a9b3-4469-bcfe-21793b588641)
+* result[+] = Reference(urn:uuid:b932d0d9-53a9-457d-81cc-c5488d18cb58)
+* result[+] = Reference(urn:uuid:07e9b239-6791-43ba-bf09-637475a83e19)
 
 Instance: 022a4874-3ceb-46f8-a242-c15fbcd5165f
 InstanceOf: ResultObservation
@@ -336,7 +384,7 @@ Usage: #inline
     * extension[high].valueQuantity = 5.0 '[pH]' "pH"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
 
-Instance: Description
+Instance: 00a33e09-4ce7-4bac-b616-a392911a429e
 InstanceOf: pq-result-observation
 Title: "Example Description/Appearance result"
 Description: "Example observation with a text result"
@@ -356,7 +404,7 @@ Usage: #inline
 * referenceRange.text = "Grey coloured capsule shaped film coated tablets, debossed with '45' on one side."
 * method.text = "Visual Inspection"
 
-Instance: IdentificationByHPLC
+Instance: eee4fd0c-4adb-4aad-be21-cab199583f56
 InstanceOf: pq-result-observation
 Title: "Example Identification result"
 Description: "Example result with a alueString result."
@@ -375,7 +423,7 @@ Usage: #inline
 * referenceRange.text = "The retention time of the principal peak corresponds to standard."
 * method.text = "HPLC Identification"
 
-Instance: Dissolution
+Instance: 20317ec0-a631-4cdf-88a1-0496b5e3acaf
 InstanceOf: pq-result-observation
 Title: "Example Dissolution result"
 Description: "Demonstrates a test with three stages and three replicates."
@@ -406,7 +454,7 @@ Usage: #example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 1"
 * status = #final
-* category = $NCIT#C85492 "Dissolution"
+* category = $NCIT#C60821 "Solubility"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Dissolution 1 hour"
@@ -455,7 +503,7 @@ Usage: #example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 2"
 * status = #final
-* category = $NCIT#C85492 "Dissolution"
+* category = $NCIT#C60821 "Solubility"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Dissolution  2 hours"
@@ -504,7 +552,7 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 3"
 * status = #final
-* category = $NCIT#C85492 "Dissolution"
+* category = $NCIT#C60821 "Solubility"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Dissolution 4 hours"
@@ -544,7 +592,7 @@ Usage: #inline
     * extension[low].valueQuantity = 80 '%' "percent"
   * referenceRange.text = "NLT 80% (Q) dissolved in 4 hours."
 
-Instance: UniformityOfDosageUnits
+Instance: f220a83d-214d-4a5c-917b-88c25e125c90
 InstanceOf: pq-result-observation
 Title: "Example Dose Uniformity"
 Description: "Water Content"
@@ -552,7 +600,7 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C48542 "Uniformity"
+* category = $NCIT#C134250 "Uniformity"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Uniformity of Dosage Units"
@@ -565,7 +613,7 @@ Usage: #inline
 * referenceRange.text = "LT 15 %"
 * method.text = "Weight Variation"
 
-Instance: WaterContent
+Instance: 30f3b020-f474-4eec-881c-7dd4d12baf0b
 InstanceOf: pq-result-observation
 Title: "Example Moisture Content result"
 Description: "Demonstating a Water Content result with an upper limit."
@@ -573,7 +621,7 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C41338 "Moisture Content"
+* category = $NCIT#C134002 "Residual Solvent"
 * code
   * coding = $NCIT#C96103 "Proprietary"
 * code.text = "Water Content"
@@ -586,7 +634,7 @@ Usage: #inline
 * referenceRange.text = "NMT 10.0%"
 * method.text = "Karl Fischer Titration"
 
-Instance: Assay
+Instance: b590b63c-a9b3-4469-bcfe-21793b588641
 InstanceOf: pq-result-observation
 Title: "Example Assay result"
 Description: "Demonstating a result with a lower and an upper limit."
@@ -594,7 +642,7 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C25499 "Assay"
+* category = $NCIT#C60819 "Assay"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Assay"
@@ -608,7 +656,7 @@ Usage: #inline
 * referenceRange.text = "90% to 110% of labeled amount."
 * method.text = "Assay"
 
-Instance: Impurities
+Instance: b932d0d9-53a9-457d-81cc-c5488d18cb58
 InstanceOf: pq-result-observation
 Title: "Example of Impurities for Oxazepam"
 Description: "Example demonstrates use of Test category and sub-categories against the same method via multiple tests. "
@@ -629,11 +677,11 @@ Usage: #inline
 // turn this into annotation
 //* note = "Total Impurities includes all detected peaks"
 * method.text = "Oxazepam Impurities"
-* result[+] = Reference(urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d)
-* result[+] = Reference(urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0)
-* result[+] = Reference(urn:uuid:298b433e-0642-4735-bd6f-c460e6e4208d)
-* result[+] = Reference(urn:uuid:f8d2cd51-aad0-4f95-ad04-c12efdc1232d)
-* result[+] = Reference(urn:uuid:5655fffb-ea32-4cf9-96de-0950ad6dd07e)
+* hasMember[+] = Reference(urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d)
+* hasMember[+] = Reference(urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0)
+* hasMember[+] = Reference(urn:uuid:298b433e-0642-4735-bd6f-c460e6e4208d)
+* hasMember[+] = Reference(urn:uuid:f8d2cd51-aad0-4f95-ad04-c12efdc1232d)
+* hasMember[+] = Reference(urn:uuid:5655fffb-ea32-4cf9-96de-0950ad6dd07e)
 
 Instance: 298b433e-0642-4735-bd6f-c460e6e4208d
 InstanceOf: pq-result-observation
@@ -719,7 +767,7 @@ Usage: #inline
 * referenceRange.text = "LT 0.2%"
 * method.text = "Oxazepam Impurities"
 
-Instance: T5655fffb-ea32-4cf9-96de-0950ad6dd07e
+Instance: 5655fffb-ea32-4cf9-96de-0950ad6dd07e
 InstanceOf: pq-result-observation
 Title: "Example Total Impurities result"
 Description: "Example result for a Total Impurities with an upper limit"
@@ -740,7 +788,7 @@ Usage: #inline
 * referenceRange.text = "LT 3.0%"
 * method.text = "Oxazepam Impurities"
 
-Instance: ResidualSolvents
+Instance: 07e9b239-6791-43ba-bf09-637475a83e19
 InstanceOf: pq-result-observation
 Title: "Example Residual Solvents result"
 Description: "Example result for a Residual Solvents test with a valueString result."
@@ -748,7 +796,7 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C64496 "Residual Solvents"
+* category = $NCIT#C134002 "Residual Solvent"
 * code
   * coding = $NCIT#C96102 "Compendial"
   * text = "Residual Solvents"

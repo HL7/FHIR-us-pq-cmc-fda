@@ -434,7 +434,7 @@ Severity: #error
 Invariant: cmc-range-extension-required
 Description: "When the value in a ResultObservition is a Quantity, the batch range modifier extension must be present"
 Expression: "
-  value.ofType(Quantity) implies 
+  value.ofType(Quantity).exists() implies 
   referenceRange.modifierExtension.where(
     url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-batch-range'
   ).exists()

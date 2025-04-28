@@ -49,6 +49,8 @@ Title: "Target Range"
 Description: "The FHIR Range datatype uses Simple Quantities to represent the high and low bounds, which do not allow a comparator to be set. This extension allows the high and low bounds to have a comparator"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation.referenceRange"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component.referenceRange"
 * . ?!
 * . ^isModifierReason = "When present, the target cannot have a referenceRange.low or referenceRange.high; instead this extension acts as its low and high"
 * extension 1..2 MS
