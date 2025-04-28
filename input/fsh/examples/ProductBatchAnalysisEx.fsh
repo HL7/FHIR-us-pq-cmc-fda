@@ -657,7 +657,7 @@ Usage: #inline
 * method.text = "Assay"
 
 Instance: b932d0d9-53a9-457d-81cc-c5488d18cb58
-InstanceOf: pq-result-observation
+InstanceOf: ResultObservation
 Title: "Example of Impurities for Oxazepam"
 Description: "Example demonstrates use of Test category and sub-categories against the same method via multiple tests. "
 Usage: #inline
@@ -674,8 +674,9 @@ Usage: #inline
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "All impurities comform to corresponds to standard."
 * interpretation = $NCIT#C80262 "Conforms"
-// turn this into annotation
-//* note = "Total Impurities includes all detected peaks"
+* note.text = """
+  Total Impurities includes all detected peaks
+"""
 * method.text = "Oxazepam Impurities"
 * hasMember[+] = Reference(urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d)
 * hasMember[+] = Reference(urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0)
