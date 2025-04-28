@@ -120,12 +120,10 @@ Description: "Example result - upper limit acceptance criteria"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)  // or create a new test site
-* valueQuantity.value = 1.0
-* valueQuantity.unit = "mgKOH/g"         // figure out these units
-* valueQuantity.code = #mgKOH/g
+* valueQuantity = 1.0 'mg{KOH}/g' "mgKOH/g"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 2.0 'mgKOH/g' "[mgKOH/g]"
+  * extension[high].valueQuantity = 2.0 'mg{KOH}/g' "mgKOH/g"
 * referenceRange.text = "≤ 2.0 mgKOH/g"
 * method.text = "Acid Value"
 
@@ -166,10 +164,10 @@ Description: "Example result - uppper limit numeric acceptance criteria"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 0.8 'g/100g' "[g/100g]"
+* valueQuantity = 0.8 'g/(100.g)' "g/100g"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[low].valueQuantity = 4.0 'g/100g' "[g/100g]"  // figure out these units
+  * extension[low].valueQuantity = 4.0 'g/(100.g)' "g/100g"  // figure out these units
 * referenceRange.text = "≤ 4.0 g/100g"
 * method.text = "Iodine Value"
 
@@ -187,11 +185,11 @@ Description: "Example result - range numeric complex unit acceptance criteria"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)  // or create a new test site
-* valueQuantity = 158 'mgKOH/g' "[mgKOH/g]"
+* valueQuantity = 158 'mg{KOH}/g' "mgKOH/g"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
-  * extension[low].valueQuantity = 155 'mgKOH/g' "[mgKOH/g]"
-  * extension[high].valueQuantity = 165 'mgKOH/g' "[mgKOH/g]"
+  * extension[low].valueQuantity = 155 'mg{KOH}/g' "mgKOH/g"
+  * extension[high].valueQuantity = 165 'mg{KOH}/g' "mgKOH/g"
 * referenceRange.text = "155-165 mgKOH/g"
 * method.text = "Saponification Value"
 
@@ -356,7 +354,7 @@ Usage: #example
 Title: "Substance Batch Analysis Bundle (WIP)"
 Description: "an example substance batch analysis for Glycerol Monostearate"
 * identifier.system = $IDsys
-* identifier.value = "cd15f9f1-51ae-4112-85ef-7bf8eca3eccb"
+* identifier.value = "urn:uuid:cd15f9f1-51ae-4112-85ef-7bf8eca3eccb"
 * timestamp = 2025-03-31T12:34:56.789Z
 * entry[0]
   * resource = 68bdb088-fed5-46dd-b718-d96d2e28b4af
@@ -415,3 +413,18 @@ Description: "an example substance batch analysis for Glycerol Monostearate"
 * entry[+]
   * resource = e165f057-5eed-4e64-8328-4438fc88fb1b
   * fullUrl = "urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b"
+* entry[+]
+  * resource = a0676c71-06f4-4c04-b864-817a0347941c
+  * fullUrl = "urn:uuid:a0676c71-06f4-4c04-b864-817a0347941c"
+* entry[+]
+  * resource = 20317ec0-a631-4cdf-88a1-0496b5e3acaf
+  * fullUrl = "urn:uuid:20317ec0-a631-4cdf-88a1-0496b5e3acaf"
+* entry[+]
+  * resource = 1213976b-ebb0-42f6-985d-f989356b6d59
+  * fullUrl = "urn:uuid:1213976b-ebb0-42f6-985d-f989356b6d59"
+* entry[+]
+  * resource = 210af775-ca90-4fe6-9b04-822c765933af
+  * fullUrl = "urn:uuid:210af775-ca90-4fe6-9b04-822c765933af"
+* entry[+]
+  * resource = 06522569-a7e8-4c9f-a7db-14c969c240c6
+  * fullUrl = "urn:uuid:06522569-a7e8-4c9f-a7db-14c969c240c6"

@@ -23,6 +23,7 @@ Title: "Drug Manufacturing Site - Vandechemie"
 Description: "Example of Manufacturing site using the CodedOrganization profile - Vandechemie"
  Usage: #inline 
 * name = "Vandechemie"
+* type = $NCIT#C214875 "Manufacturing"
 * contact.address
   * type = #postal
 * contact.address.text = "Vandechemie, Ruzettelaan 39234, Blankenberge, 8370, Belgium"
