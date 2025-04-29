@@ -66,7 +66,7 @@ RuleSet: manufacturing-batch-extension-commonalities
     The batch size can be defined either by a fixed quantity or by the amount produced in a fixed time interval. [Source: ICH Q7 - Part of the definition of Batch]
   """
   * valueQuantity MS
-  * valueQuantity from PqcmcUnitsMeasure (required)
+  * valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
     * value 1..1 MS
     * code 1..1 MS
 * extension[additionalInformation] MS

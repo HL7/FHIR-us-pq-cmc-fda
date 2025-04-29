@@ -143,7 +143,7 @@ Examples: White to off-white cake; 22.5 - 27.5 mg/ml Note: This is the text as i
 * goal.target.detailQuantity  0..1 MS
 * goal.target.detailQuantity ^short = "ValueNumeric"
 * goal.target.detailQuantity ^definition = """The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]"""
-* goal.target.detailQuantity from  PqcmcUnitsMeasure (required)  
+* goal.target.detailQuantity from  http://hl7.org/fhir/ValueSet/ucum-units (required)  
 * goal.target.detailQuantity.value 1..1 MS
 * goal.target.detailQuantity.comparator 0..1 MS
 * goal.target.detailQuantity.unit 1..1 MS

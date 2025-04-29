@@ -1242,7 +1242,7 @@ Title: "Non-Percentage Units"
 Description: "Units of Measure terminologies that do not represent percentages"
 * ^experimental = false
 * ^status = #active
-* include codes from valueset PqcmcUnitsMeasure
+* include codes from valueset http://hl7.org/fhir/ValueSet/ucum-units
 * exclude codes from valueset PqcmcPercentageUnits
 
 ValueSet: PqcmcRepresentationTypes

@@ -41,13 +41,13 @@ Description: "Includes the properties of the drug product as manufactured."
   * strength[x] MS
   * strength[x] only Ratio
     * numerator 1..1 MS
-    * numerator from PqcmcUnitsMeasure (required)
+    * numerator from http://hl7.org/fhir/ValueSet/ucum-units (required)
       * ^short = "Strength Numeric Numerator"
       * ^definition = """
         The content of an ingredient expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dosage form. This should be the strength as listed on the label. [Source: Adapted from NCI EVS C53294]
       """
     * denominator 1..1 MS
-    * denominator from PqcmcUnitsMeasure (required)
+    * denominator from http://hl7.org/fhir/ValueSet/ucum-units (required)
       * ^short = "Strength Numeric Denominator"
       * ^definition = """
         Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]

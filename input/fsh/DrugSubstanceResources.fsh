@@ -329,7 +329,7 @@ Description: "Substance General Information containing Drug Substance (Active In
 * molecularWeight.amount.unit ^definition = """The labeled unit of measure for the molecular weight. [Source: Adapted for NCI EVS C117055]
  """
 * molecularWeight.amount.code 1..1 MS
-* molecularWeight.amount from PqcmcUnitsMeasure (extensible)
+* molecularWeight.amount from http://hl7.org/fhir/ValueSet/ucum-units (extensible)
 * . obeys cmc-structure-required
 * . obeys cmc-substance-structure-graphic-required
 * structure 1..1 MS

@@ -35,7 +35,7 @@ Description: "Contains elements related to the intervals of the stability study.
 * extension[timePoint]
   * value[x] 1..1 MS
   * value[x] only Quantity
-  * value[x] from PqcmcUnitsMeasure (required)
+  * value[x] from http://hl7.org/fhir/ValueSet/ucum-units (required)
     * ^short = "Interval"
     * ^definition = """
       Storage time of the batch in a climatic chamber. [Source: eStability Implementation Guide]

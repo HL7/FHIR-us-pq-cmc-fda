@@ -255,7 +255,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
   * type.text = "Product Total Weight Numeric Numerator"
   * value[x] 1..1 MS
   * value[x] only Quantity
-  * value[x] from PqcmcUnitsMeasure (extensible)
+  * value[x] from http://hl7.org/fhir/ValueSet/ucum-units (extensible)
     * comparator MS
       * ^short = "Product Total Weight Operator"
       * ^definition = """
@@ -273,7 +273,7 @@ Product Non-proprietary Name: A name unprotected by trademark rights that is ent
   * type.text = "Product Total Weight Numeric Denominator"
   * value[x] 1..1 MS
   * value[x] only SimpleQuantity
-  * value[x] from PqcmcUnitsMeasure (extensible)
+  * value[x] from http://hl7.org/fhir/ValueSet/ucum-units (extensible)
     * value 1..1 MS
 
 * property[TotWgtTxt]
@@ -748,7 +748,7 @@ Description: "Listing of all components of the dosage form to be used in the man
   * type.text = "Batch Quantity"
   * value[x] 1..1 MS
   * value[x] only Quantity
-  * value[x] from PqcmcUnitsMeasure (required)
+  * value[x] from http://hl7.org/fhir/ValueSet/ucum-units (required)
     * value 1..1 MS
     * code
       * ^short = "Quantity UOM"

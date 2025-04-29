@@ -274,7 +274,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     """	
   * value[x] 1..1 MS	
   * value[x] only Quantity or string
-  * valueQuantity from PqcmcUnitsMeasure (required)
+  * valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
     * value 1..1 MS
       * ^short = "ValueNumeric"	
       * ^definition = """
@@ -303,8 +303,8 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   * referenceRange 1..1 MS
     * modifierExtension contains pq-batch-range named batchRange 1..1 MS
     * modifierExtension[batchRange]
-      * extension[low].value[x] from PqcmcUnitsMeasure
-      * extension[high].value[x] from PqcmcUnitsMeasure
+      * extension[low].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+      * extension[high].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
     * low 0..0 MS
     * high 0..0 MS
     * text 1..1 MS 
