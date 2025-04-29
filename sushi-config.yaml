@@ -32,7 +32,7 @@ menu:
   Home: index.html
   General Instructions: 
     Topics: instruction.html
-    Frequently Used UCUM Codes: UCUM_in_PQCMC.md
+    Frequently Used UCUM Codes: UCUMinPQCMC.md
   eCTD Substance Profiles:
     General Information (3.2.S.1): eCTD32S10.html
     Control of Materials (3.2.S.2.3): eCTD32S23.html
@@ -59,8 +59,8 @@ pages:
   instruction.html:
     title: "General Instructions"
     generation: markdown
-  UCUM_in_PQCMC.html:
-    title: "UCUM Code in PQ/CMC"
+  UCUMinPQCMC.html:
+    title: "UCUM Codes"
     generation: markdown
   eCTD32S10.html:
     title: "General Information (3.2.S.1)"
