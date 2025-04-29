@@ -40,7 +40,7 @@
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
 <artifact id="Bundle/BatchAnalysisBundle" key="Bundle-BatchAnalysisBundle" name="Batch Analysis Bundle"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
-<artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch utilization"/>
+<artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch Utilization"/>
 <artifact deprecated="true" id="Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9" key="Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9" name="Bundle for 3.2.S.1"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p32" key="StructureDefinition-cmc-ectd-document-32p32" name="CMC eCTD 32P32 Document"/>
@@ -143,7 +143,7 @@
 <artifact id="StructureDefinition/pqcmc-product-part" key="StructureDefinition-pqcmc-product-part" name="Manufactured Drug Product"/>
 <artifact deprecated="true" id="Organization/4b565cf3-5353-48af-8cd6-5ccf4e9fd579" key="Organization-4b565cf3-5353-48af-8cd6-5ccf4e9fd579" name="Manufacturing Site (J. Jones Research)"/>
 <artifact deprecated="true" id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="Manufacturing and/or Test Site Organization"/>
-<artifact id="ValueSet/pqcmc-mfg-testing-site-terminology" key="ValueSet-pqcmc-mfg-testing-site-terminology" name="Manufacturing/Testing Site Responsibility Category Terminology"/>
+<artifact id="ValueSet/pqcmc-mfg-testing-site-terminology" key="ValueSet-pqcmc-mfg-testing-site-terminology" name="Manufacturing/Testing Site Responsibility Category"/>
 <artifact id="ValueSet/pqcmc-non-percentage-units" key="ValueSet-pqcmc-non-percentage-units" name="Non-Percentage Units"/>
 <artifact deprecated="true" id="StructureDefinition/optional-denominator" key="StructureDefinition-optional-denominator" name="Optional Denominator"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-org-identifier-type-terminology" key="ValueSet-pqcmc-org-identifier-type-terminology" name="Organization-Site Identifier Terminology"/>
@@ -181,7 +181,8 @@
 <artifact id="ValueSet/pqcmc-source-type-terminology" key="ValueSet-pqcmc-source-type-terminology" name="Source Type"/>
 <artifact id="ValueSet/cmc-specification-types-vs" key="ValueSet-cmc-specification-types-vs" name="Specification Section Type"/>
 <artifact id="StructureDefinition/pq-specification-status-extension" key="StructureDefinition-pq-specification-status-extension" name="Specification Status"/>
-<artifact id="ValueSet/pqcmc-specification-status-terminology" key="ValueSet-pqcmc-specification-status-terminology" name="Specification Status Terminology"/>
+<artifact id="ValueSet/pqcmc-specification-status-terminology" key="StructureDefinition-pq-specification-status-extension" name="Specification Status"/>
+<artifact deprecated="true" id="ValueSet/pqcmc-specification-status-terminology" key="ValueSet-pqcmc-specification-status-terminology" name="Specification Status Terminology"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-specification-type-terminology" key="StructureDefinition-pq-specification-type-extension" name="Specification Type"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-specification-type-terminology" key="ValueSet-pqcmc-specification-type-terminology" name="Specification Type Terminology"/>
 <artifact deprecated="true" id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="Sponsor Organization"/>
@@ -195,7 +196,7 @@
 <artifact id="ValueSet/pqcmc-storage-conditions-terminology" key="ValueSet-pqcmc-storage-conditions-terminology" name="Storage Conditions"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-strength-operator-terminology" key="ValueSet-pqcmc-strength-operator-terminology" name="Strength Operator Terminology"/>
 <artifact id="StructureDefinition/strength-extension" key="StructureDefinition-strength-extension" name="Strength Type"/>
-<artifact id="ValueSet/pqcmc-strength-type-terminology" key="ValueSet-pqcmc-strength-type-terminology" name="Strength Type Terminology"/>
+<artifact id="ValueSet/pqcmc-strength-type-terminology" key="ValueSet-pqcmc-strength-type-terminology" name="Strength Type"/>
 <artifact deprecated="true" id="Ingredient/fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" key="Ingredient-fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" name="Strength info for the Active Ingredient"/>
 <artifact deprecated="true" id="Ingredient/3791c4ce-2b43-4d7b-b195-0e5f88f28dab" key="Ingredient-3791c4ce-2b43-4d7b-b195-0e5f88f28dab" name="Strength information - Grape skin extract"/>
 <artifact deprecated="true" id="Ingredient/7f10a35e-228d-42db-8918-6ccada78454d" key="Ingredient-7f10a35e-228d-42db-8918-6ccada78454d" name="Strength information for the Active Ingredient - acetaminophen"/>
@@ -217,7 +218,7 @@
 <artifact deprecated="true" id="StructureDefinition/pq-order-extension" key="StructureDefinition-pq-order-extension" name="Test Order | Stage Sequence Order"/>
 <artifact id="ValueSet/pqcmc-test-usage-terminology" key="ValueSet-pqcmc-test-usage-terminology" name="Test Usage"/>
 <artifact id="StructureDefinition/codeable-concept-text-only" key="StructureDefinition-codeable-concept-text-only" name="Text Only Codeable Concept"/>
-<artifact id="ValueSet/pqcmc-units-of-measure" key="ValueSet-pqcmc-units-of-measure" name="Units Of Measure"/>
+<artifact deprecated="true" id="ValueSet/pqcmc-units-of-measure" key="ValueSet-pqcmc-units-of-measure" name="Units Of Measure"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-units-of-measure-terminology" key="ValueSet-pqcmc-units-of-measure-terminology" name="Units Of Measure Terminology"/>
 <artifact deprecated="true" id="Organization/e99bddfa-c1b5-435b-bbe8-24816b4e23e5" key="Organization-e99bddfa-c1b5-435b-bbe8-24816b4e23e5" name="Vidinaid"/>
 <artifact deprecated="true" id="PlanDefinition/5819b223-d3d2-419f-b617-b3a9a3625b89" key="PlanDefinition-5819b223-d3d2-419f-b617-b3a9a3625b89" name="Water Specification Example"/>
@@ -231,6 +232,7 @@
 <artifact id="StructureDefinition/ectd-composition-32p70" key="StructureDefinition-ectd-composition-32p70" name="eCTD Product Container Closure System Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32p10" key="StructureDefinition-ectd-composition-32p10" name="eCTD Product Description and Composition"/>
 <artifact deprecated="true" id="Composition/d332acdf-4874-407b-9950-528f14c6bea2" key="Composition-d332acdf-4874-407b-9950-528f14c6bea2" name="eCTD Product Specification Composition SP4151"/>
+<artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD Sections"/>
 <artifact id="StructureDefinition/ectd-composition-sp4151" key="StructureDefinition-ectd-composition-sp4151" name="eCTD Specification"/>
 <artifact id="StructureDefinition/ectd-composition-sp7383" key="StructureDefinition-ectd-composition-sp7383" name="eCTD Stability Data Composition"/>
 <artifact id="StructureDefinition/ectd-composition-sp7181" key="StructureDefinition-ectd-composition-sp7181" name="eCTD Stability Summary and Conclusion Composition"/>
@@ -238,25 +240,25 @@
 <artifact id="StructureDefinition/ectd-composition-32s60" key="StructureDefinition-ectd-composition-32s60" name="eCTD Substance Container Closure System Composition"/>
 <artifact id="StructureDefinition/ectd-composition-32s23" key="StructureDefinition-ectd-composition-32s23" name="eCTD Substance Control of Materials"/>
 <artifact id="StructureDefinition/ectd-composition-32s10" key="StructureDefinition-ectd-composition-32s10" name="eCTD Substance General Information"/>
-<artifact id="ValueSet/cmc-comp-section-types-vs" key="ValueSet-cmc-comp-section-types-vs" name="eCTD sections"/>
+<page key="eCTD32S3" name=" Characterisation (3.2.S.3)"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>
 <page key="artifacts" name="Artifact List"/>
 <page key="eCTDSP4454" name="Batch Analyses (3.2.S.4.4 &amp; 3.2.P.5.4)"/>
+<page key="eCTD32P32" name="Batch Formula (3.2.P.3.2)"/>
 <page key="change_notes" name="Change Notes"/>
+<page key="eCTD32P55" name="Characterisation of Impurities (3.2.P.5.5)"/>
+<page key="eCTD32S60" name="Container Closure System (3.2.S.6)"/>
+<page key="eCTD32S23" name="Control of Materials (3.2.S.2.3)"/>
 <page key="eCTD32P10" name="Description and Composition of the Drug Product (3.2.P.1)"/>
 <page key="downloads" name="Downloads"/>
 <page key="eCTD32S10" name="General Information (3.2.S.1)"/>
 <page key="instruction" name="General Instructions"/>
 <page key="index" name="Home"/>
-<page key="eCTD32P32" name="Product Batch Formula (3.2.P.3.2)"/>
-<page key="eCTD32P55" name="Product Characterisation of Impurities (3.2.P.5.5)"/>
 <page key="eCTDSP4151" name="Specification (3.2.S.4.1, 3.2.P.4 and 3.2.P.5.1)"/>
 <page key="eCTDSP7383" name="Stability Data (3.2.S.7.3 &amp; 3.2.P.8.3)"/>
 <page key="eCTDSP7181" name="Stability Summary (3.2.S.7.1 &amp; 3.2.P.8.1)"/>
-<page key="eCTD32S3" name="Substance Characterisation (3.2.S.3)"/>
-<page key="eCTD32S60" name="Substance Container Closure System (3.2.S.6)"/>
-<page key="eCTD32S23" name="Substance Control of Materials (3.2.S.2.3)"/>
 <page key="toc" name="Table of Contents"/>
+<page key="UCUM_in_PQCMC" name="UCUM Code in PQ/CMC"/>
 </specification>

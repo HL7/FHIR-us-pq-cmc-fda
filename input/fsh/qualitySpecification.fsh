@@ -1,6 +1,6 @@
 Extension: SpecificationStatusExtension
 Id: pq-specification-status-extension
-Title: "Specification Status"
+Title: "Specification Current Status"
 Description: "A classification of the regulatory status of the specification."
 * ^context[+].type = #element
 * ^context[=].expression = "PlanDefinition"

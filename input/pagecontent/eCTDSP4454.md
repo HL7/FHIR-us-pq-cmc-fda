@@ -335,7 +335,7 @@ Additionally, there is an example Batch Analysis to show the reference to a Drug
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="productBatchAnalysisdSpec.png" />
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="productBatchAnalysis.png" />
 
 </figure>
 
