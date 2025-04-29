@@ -59,12 +59,24 @@ The diagram below shows the choreography of FHIR Resources that are leveraged in
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="figure3.png" alt="FHIR Resources leveraged in PQ/CMC Phase 1 Scope"/>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="figure3.png" alt="FHIR Resources leveraged in PQ/CMC "/>
   <figcaption style="text-align: center">Figure 3: PQ/CMC FHIR Resources</figcaption>
 </figure>
 
 {::options parse_block_html="true" /}
 
+Note: The ResearchStudy resource will be leveraged for Stability-	related profiles in the near futurePQ/CMC FHIR Resource Grid
+#### IG Profiles.  
+
+The grid below shows which FHIR Resources are being leveraged in the various PQ/CMC FHIR .
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="ProfileGrid.png" alt="FHIR Resources leveraged per Bundle profiles/>
+  <figcaption style="text-align: center">Figure 3: PQ/CMC FHIR Resources per Bundle Profile</figcaption>
+</figure>
+
+{::options parse_block_html="true" /}
 
 #### Credits
 
@@ -83,11 +95,14 @@ The development of this Implementation Guide is an initiative funded by the US F
   
 At HL7, the PQ/CMC Project is sponsored by the HL7 Biomedical Research & Regulation (BR&R) Work-Group..
 
-The PQ/CMC team would like to acknowledge the contribution of the BR&R WG members who have participated in the Medication-related FHIR resource discussions and helped refine the resources.
+The PQ/CMC team would like to acknowledge the following teams for their contribution to this PQ/CMC FHIR IG:
 
-The PQ/CMC team would like to acknowledge the Drug Quality Reviewers from FDA CDER, CBER, and CVM for their domain expertise in development of the PQ/CMC data standards and controlled terminology which are represented in this IG.
+The FDA Drug Quality Reviewers from CDER, CBER and CVM for their domain expertise in the development of the PQ/CMC data standards and supporting controlled terminology.  All the domain content in this IG reflects the FDA PQ/CMC data standards work.  
 
-The PQ/CMC team would like to acknowledge the National Cancer Institute's Enterprise Vocabulary Service (NCI EVS) team for their support in registering the PQ/CMC terminology in the NCI Thesaurus (NCIt).
+The HL7 Biomedical Research & Regulation (BR&R) WG members who have participated in the Medication Definition related FHIR resource discussions to help refine these resources as well as review the PQ/CMC FHIR IG and provide useful feedback. 
+
+The National Cancer Institute's Enterprise Vocabulary Service (NCI EVS) team for their support in registering the PQ/CMC terminology in the NCI Thesaurus (NCIt).
+
 #### IP Statements
 {% include ip-statements.xhtml %} 
 

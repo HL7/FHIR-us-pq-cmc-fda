@@ -15,7 +15,7 @@ Description: "Terminology used to qualify the information pertaining to impurity
 
 ValueSet: PqcmcBatchUtilizationTerminology	
 Id: pqcmc-batch-utilization-terminology	
-Title: "Batch utilization"	
+Title: "Batch Utilization"	
 Description: "Terminology used to qualify the information pertaining to batch utilization in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 	
 * ^experimental = false
@@ -365,7 +365,7 @@ Description: "A category of terminology used to qualify the information pertaini
 
 ValueSet: CmcCompSectionTypesVS
 Id: cmc-comp-section-types-vs
-Title: "eCTD sections"
+Title: "eCTD Sections"
 Description: "Value set of all codes in Code system PQCMC Comp Section Types."
 * ^experimental = false
 * ^status = #active
@@ -438,7 +438,7 @@ Description: "Value set of all codes in Code system PQCMC Comp Section Types."
 
 //ValueSet: PqcmcChemicalStructureDataFileOriginTerminology
 //Id: pqcmc-chemical-structure-datafile-origin-terminology
-//Title: "Chemical Structure Datafile Origin Terminology"
+//Title: "Chemical Structure Datafile Origin"
 //Description: "Terminology used to qualify the information pertaining to chemical structure data file origins in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 //* $NCIT#C16275 "Calculated"
 //* $NCIT#C133995 "Experimental"
@@ -591,7 +591,7 @@ Description: "Terminology used to qualify the information pertaining to containe
 
 //ValueSet:alueSet: PqcmcCoPackagedIndicatorTerminology
 //Id: pqcmc-copackaged-indicator-terminology
-//Title: "Co-packaged Indicator Terminology"
+//Title: "Co-packaged Indicator"
 //Description: "Terminology used to qualify the information pertaining to copackaged indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 //* $NCIT#C49487 "No"
 //* $NCIT#C49488 "Yes"
@@ -610,7 +610,7 @@ Description: "Terminology used to qualify the information pertaining to drug pro
 
 //ValueSet: PqcmcDrugSubstanceProductIndicatorTerminology
 //Id: pqcmc-drug-substance-product-indicator-terminology
-//Title: "Drug substance Product Indicator Terminology"
+//Title: "Drug Substance Product Indicator"
 //Description: "Terminology used to qualify the information pertaining to drug substance product indicators in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 //* $NCIT#C1909 "Product"
 //* $NCIT#C45306 "SUBSTANCE"
@@ -711,7 +711,7 @@ Description: "Terminology used to qualify the information pertaining to source t
 
 ValueSet: PqcmcSpecificationStatusTerminology
 Id: pqcmc-specification-status-terminology
-Title: "Specification Status Terminology"
+Title: "Specification Status"
 Description: "Terminology used to qualify the information pertaining to specification statuses in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -747,7 +747,7 @@ Description: "Terminology used to qualify the information pertaining to specific
 
 ValueSet: PqcmcStrengthTypeTerminology
 Id: pqcmc-strength-type-terminology
-Title: "Strength Type Terminology"
+Title: "Strength Type"
 Description: "Terminology used to qualify the information pertaining to strength types in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."
 
 * ^experimental = false
@@ -953,97 +953,97 @@ Description: "Terminology used for representation of the information on pharmace
 * $NCIT#C87542 "PENDANT"
 * $NCIT#C185352 "DRUG-ELUTING CONTACT LENS"
 
-ValueSet: PqcmcUnitsMeasure
-Id: pqcmc-units-of-measure
-Title: "Units Of Measure"
-Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
-Note: Includes SPL Unit of Presentation Terminology"
+//ValueSet: PqcmcUnitsMeasure
+//Id: pqcmc-units-of-measure
+//Title: "Units Of Measure"
+//Description: "Terminology used to qualify the information pertaining to units of measure in the framework of the //Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents.
+//Note: Includes SPL Unit of Presentation Terminology"
 
-* ^experimental = false
-* ^status = #active
+//*	" ^experimental = false
+//*	" ^status = #active
 
-* $UCUM#{actuation} "actuation"
-* $UCUM#[Amb'a'1'U] "Amb a 1 units"
-* $UCUM#[arb'U] "arbitrary unit"
-* $UCUM#[Btu] "British thermal unit"
-* $UCUM#{Can} "Can"
-* $UCUM#cm "centimeter"
-* $UCUM#cP "centiPoise"
-* $UCUM#[CFU] "colony forming unit"
-* $UCUM#m3 "cubic meter"
-* $UCUM#d "day"
-* $UCUM#Cel "degree Celsius"
-* $UCUM#[degF] "degree Fahrenheit"
-* $UCUM#deg "degree"
-* $UCUM#[EU] "Ehrlich unit"
-* $UCUM#U "enzyme Unit"
-* $UCUM#[gal_us] "Queen Anne's wine gallon"
-* $UCUM#g "gram"
-* $UCUM#h "hour"
-* $UCUM#[in_i] "inch (international)"
-* $UCUM#[iU] "international unit"
-* $UCUM#K "Kelvin"
-* $UCUM#{kDa} "kiloDalton"
-* $UCUM#kg "kilogram"
-* $UCUM#kgf "kilogram-force"
-* $UCUM#[lbf_av] "pound force"
-* $UCUM#L "liter"
-* $UCUM#m "meter"
-* $UCUM#ug "microgram"
-* $UCUM#ug/{actuation} "micrograms per actuation"
-* $UCUM#uL "microliter"
-* $UCUM#umol "micromole"
-* $UCUM#um "micrometer"
-* $UCUM#umho "micromho"
-* $UCUM#mg "milligram"
-* $UCUM#mL "milliliter"
-* $UCUM#mm "millimeter"
-* $UCUM#mmol "millimole"
-* $UCUM#mosm "milliosmole"
-* $UCUM#mS "milliSiemens"
-* $UCUM#min "minute"
-* $UCUM#mol "mole"
-* $UCUM#mo "month"
-* $UCUM#ng "nanogram"
-* $UCUM#nm "nanometer"
-* $UCUM#nmol "nanomole"
-* $UCUM#N "Newton"
-* $UCUM#1 "1*"
-* $UCUM#[oz_av] "ounce (US and British)"
-* $UCUM#[ppb] "part per billion"
-* $UCUM#[ppm] "part per million"
-* $UCUM#[pptr] "part per trillion"
-* $UCUM#[ppth] "parts per thousand"
-* $UCUM#{tot} "particles total count"
-* $UCUM#pg "picogram"
-* $UCUM#pmol "picomole"
-* $UCUM#[pt_us] "pint"
-* $UCUM#[lb_av] "pound (US and British)"
-* $UCUM#[psi] "pound per square inch"
-* $UCUM#[qt_us] "quart"
-* $UCUM#rad "radian"
-* $UCUM#s "second"
-* $UCUM#m2 "square meter"
-* $UCUM#{tbl} "tablets"
-* $UCUM#u "unified atomic mass unit"
-* $UCUM#(m2.d) "meter squared in 24 hours"
-* $UCUM#{Vial} "Vial"
-* $UCUM#wk "week"
-* $UCUM#a "year"
-* $UCUM#[pH] "[pH]"
-* $UCUM#[dqt_us] "dry quart"
-* $UCUM#[dpt_us] "dry pint"
-* $UCUM#mho "mho"
-* $UCUM#ms "millisecond"
-* $UCUM#S "Siemens"
-* $UCUM#[NTU] "Nephelometric Turbidity Unit"
-* $UCUM#[FNU] "Formazin Nephelometric Unit"
-* $UCUM#{JTU} "Jackson Turbidity Unit"
-* $UCUM#mg% "milligram per deciliter"
-* $UCUM#%{WeightToWeight} "percent WeightToWeight"  
-* $UCUM#%{WeightToVolume} "percent WeightToVolume"
-* $UCUM#% "percent"
-* $UCUM#%{VolumeToVolume} "percent VolumeToVolume"
+//*	" $UCUM#{actuation} "actuation"
+//*	" $UCUM#[Amb'a'1'U] "Amb a 1 units"
+//*	" $UCUM#[arb'U] "arbitrary unit"
+//*	" $UCUM#[Btu] "British thermal unit"
+//*	" $UCUM#{Can} "Can"
+//*	" $UCUM#cm "centimeter"
+//*	" $UCUM#cP "centiPoise"
+//*	" $UCUM#[CFU] "colony forming unit"
+//*	" $UCUM#m3 "cubic meter"
+//*	" $UCUM#d "day"
+//*	" $UCUM#Cel "degree Celsius"
+//*	" $UCUM#[degF] "degree Fahrenheit"
+//*	" $UCUM#deg "degree"
+//*	" $UCUM#[EU] "Ehrlich unit"
+//*	" $UCUM#U "enzyme Unit"
+//*	" $UCUM#[gal_us] "Queen Anne's wine gallon"
+//*	" $UCUM#g "gram"
+//*	" $UCUM#h "hour"
+//*	" $UCUM#[in_i] "inch (international)"
+//*	" $UCUM#[iU] "international unit"
+//*	" $UCUM#K "Kelvin"
+//*	" $UCUM#{kDa} "kiloDalton"
+//*	" $UCUM#kg "kilogram"
+//*	" $UCUM#kgf "kilogram-force"
+//*	" $UCUM#[lbf_av] "pound force"
+//*	" $UCUM#L "liter"
+//*	" $UCUM#m "meter"
+//*	" $UCUM#ug "microgram"
+//*	" $UCUM#ug/{actuation} "micrograms per actuation"
+//*	" $UCUM#uL "microliter"
+//*	" $UCUM#umol "micromole"
+//*	" $UCUM#um "micrometer"
+//*	" $UCUM#umho "micromho"
+//*	" $UCUM#mg "milligram"
+//*	" $UCUM#mL "milliliter"
+//*	" $UCUM#mm "millimeter"
+//*	" $UCUM#mmol "millimole"
+//*	" $UCUM#mosm "milliosmole"
+//*	" $UCUM#mS "milliSiemens"
+//*	" $UCUM#min "minute"
+//*	" $UCUM#mol "mole"
+//*	" $UCUM#mo "month"
+//*	" $UCUM#ng "nanogram"
+//*	" $UCUM#nm "nanometer"
+//*	" $UCUM#nmol "nanomole"
+//*	" $UCUM#N "Newton"
+//*	" $UCUM#1 "1//*	""
+//*	" $UCUM#[oz_av] "ounce (US and British)"
+//*	" $UCUM#[ppb] "part per billion"
+//*	" $UCUM#[ppm] "part per million"
+//*	" $UCUM#[pptr] "part per trillion"
+//*	" $UCUM#[ppth] "parts per thousand"
+//*	" $UCUM#{tot} "particles total count"
+//*	" $UCUM#pg "picogram"
+//*	" $UCUM#pmol "picomole"
+//*	" $UCUM#[pt_us] "pint"
+//*	" $UCUM#[lb_av] "pound (US and British)"
+//*	" $UCUM#[psi] "pound per square inch"
+//*	" $UCUM#[qt_us] "quart"
+//*	" $UCUM#rad "radian"
+//*	" $UCUM#s "second"
+//*	" $UCUM#m2 "square meter"
+//*	" $UCUM#{tbl} "tablets"
+//*	" $UCUM#u "unified atomic mass unit"
+//*	" $UCUM#(m2.d) "meter squared in 24 hours"
+//*	" $UCUM#{Vial} "Vial"
+//*	" $UCUM#wk "week"
+//*	" $UCUM#a "year"
+//*	" $UCUM#[pH] "[pH]"
+//*	" $UCUM#[dqt_us] "dry quart"
+//*	" $UCUM#[dpt_us] "dry pint"
+//*	" $UCUM#mho "mho"
+//*	" $UCUM#ms "millisecond"
+//*	" $UCUM#S "Siemens"
+//*	" $UCUM#[NTU] "Nephelometric Turbidity Unit"
+//*	" $UCUM#[FNU] "Formazin Nephelometric Unit"
+//*	" $UCUM#{JTU} "Jackson Turbidity Unit"
+//*	" $UCUM#mg% "milligram per deciliter"
+//*	" $UCUM#%{WeightToWeight} "percent WeightToWeight"  
+//*	" $UCUM#%{WeightToVolume} "percent WeightToVolume"
+//*	" $UCUM#% "percent"
+//*	" $UCUM#%{VolumeToVolume} "percent VolumeToVolume"
 
 ValueSet: SplDrugRouteofAdministrationTerminology
 Id: spl-drug-route-of-administration-terminology
@@ -1315,7 +1315,7 @@ Description: "Terminology used to qualify the information pertaining to stabilit
 
 ValueSet: PqcmcMfgTestingSiteTerminology	
 Id: pqcmc-mfg-testing-site-terminology	
-Title: "Manufacturing/Testing Site Responsibility Category Terminology "	
+Title: "Manufacturing/Testing Site Responsibility Category"	
 Description: "High level classification of manufacturing/testin sites based on functions or services."
 * ^experimental = false
 * ^status = #active
