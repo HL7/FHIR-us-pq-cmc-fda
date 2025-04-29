@@ -185,17 +185,116 @@ Used when multiple replicate results are part of the same observation. Replicate
 
 ##### Multi-Stage Result Reporting (using hasMember)
 
-Used for tests that include multiple detailed sub-measurements.
+Used for tests that include multiple stages which are levels within a sequential test.
 
 **Key Characteristic Elements:**
 - identifier.value equals "Multi-Stage" for the parent test
 - Parent Observation uses `hasMember` to reference detailed results for each stage of the test.
-- identifier.value equals the stage name of the stege result contained in the member observation resource.
-- If the staged test also has replicates, each replicate is reported as a component of the member observation.  The replicate number must be maintained accross the all the stages. 
+- The stages within the hasMember reference list should be entered in the order in which they should be displayed.
+- identifier.value equals the stage name of the stage result contained in the member observation resource.
+- The observation profile is the same for both the parent observation and the member observations.
+
+```xml
+<resource>
+ <Observation>
+...
+  <category>Material Properties/Measurements</category>
+...
+  <hasMember>
+    <reference value="Stage1Observation"/>
+    <reference value="Stage2Observation"/>
+    <reference value="Stage3Observation"/>    
+  </hasMember>
+ </Observation>
+</resource>
+
+<resource>
+   <Observation>
+  <id value="tage1Observation"/>
+...
+  <identifier>
+    <value value="Stage 1"/>
+  </identifier>
+...
+  </category>
+  <code>
+...
+    <text value="Dissolution 1 hour"/>
+  </code>
+...
+  <referenceRange>
+    <text value="All replicates are NLT 40% and NMT 70% dissolved in 1 hour."/>
+  </referenceRange>
+   </Observation>
+</resource>
+```
+
+##### Stage Test with replicates
+
+Used when multiple replicate results for the same stages aas part of the same test
+
+**Key Characteristics:**
+- Each `component` holds a result for a replicate or stage.
+- `component.valueQuantity` or `valueString` contains the actual measurement.
+- Replicate number is recorded with `pq-replicate-extension`
+- Target ranges per replicate captured with `modifierExtension`
+- The stage  replicate is reported as a component of the member observation.  The replicate number must be maintained accross the all the stages. 
 
 ```xml
 <Observation>
-tbd
+...
+  <category>Dissolution</category>
+...  
+  <component>
+    <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-replicate-extension">
+      <valueInteger value="1"/>
+    </extension>
+    <code> 
+    ...
+      <text>Dissolution 1 hour</text>
+    </code>
+    <valueQuantity>
+      <value>52.65</value>
+      <unit>percent</unit>
+    </valueQuantity>
+...
+    <referenceRange>
+      <modifierExtension>
+        <extension url="low">
+          <valueQuantity value="40" unit="percent"/>
+        </extension>
+        <extension url="high">
+          <valueQuantity value="70" unit="percent"/>
+        </extension>
+      </modifierExtension>
+      <text>NLT 40% and NMT 70% dissolved in 1 hour.</text>
+    </referenceRange>
+  </component>
+  <component>
+    <extension url="http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-replicate-extension">
+      <valueInteger value="2"/>
+    </extension>
+    <code>
+    ...
+      <text>Dissolution 1 hour</text>
+    </code>
+    <valueQuantity>
+      <value>67.7</value>
+      <unit>percent</unit>
+    </valueQuantity>
+...
+    <referenceRange>
+      <modifierExtension>
+        <extension url="low">
+          <valueQuantity value="40" unit="percent"/>
+        </extension>
+        <extension url="high">
+          <valueQuantity value="70" unit="percent"/>
+        </extension>
+      </modifierExtension>
+      <text>NLT 40% and NMT 70% dissolved in 1 hour.</text>
+    </referenceRange>
+  </component>
 </Observation>
 ```
 
@@ -224,8 +323,31 @@ tbd
 - Use `modifierExtension` for numeric ranges (high/low limits).
 - Use `valueString` for qualitative assessments.
 - Use `component` when multiple replicate results are reported under a single Observation.
-...  
+- Replicates should be tagged using the `pq-replicate-extension`.
 
-### Examples
+### Example 3.2.S.4.4 and 3.2.P.5.4 Bundles
 
-This image demonstrates a TBD. The XML can be found on the [Artifacts](artifacts.html) page and does not contain the narrative in the image, rather it contains the narrative generated for all examples by the IG publisher program. It is on the artifacts page and in the Bundle profile.
+This example demonstrates a quality specification for a Drug Product. The first image displays the XML for 3.2.P.5.4 as it appears in a browser with the narrative inserted in the composition text element. The XML can be found on the Artifacts page. The XML file with the publisher narrative is on the artifacts page and in the Bundle profile. [Bundle-BatchAnalysisBundle](Bundle-BatchAnalysisBundle.html)  
+
+Additionally, there is an example Batch Analysis to show the reference to a Drug Substance [Bundle-SubstanceBatchAnalysisBundle](Bundle-SubstanceBatchAnalysisBundle.html). Its [narrative layout](#drug-substance-batch-analysis-example) is shown below the Drug Product Batch Analysis.
+
+#### Drug Product Batch Analysis Example
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="productBatchAnalysisdSpec.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}
+
+#### Drug Substance Batch Analysis Example
+  This is an example showing a drug substance batch analysis.
+
+{::options parse_block_html="false" /}
+<figure>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="substanceBatchAnalysis.png" />
+
+</figure>
+
+{::options parse_block_html="true" /}

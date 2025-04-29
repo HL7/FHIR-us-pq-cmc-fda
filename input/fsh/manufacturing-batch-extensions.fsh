@@ -45,7 +45,7 @@ RuleSet: manufacturing-batch-extension-commonalities
   * valueCodeableConcept MS
   * valueCodeableConcept only CodeableConceptTextOnly
 * extension[assignedManufacturer] 1..1 MS
-  * ^short = "Assigned Manufacturer"
+  * ^short = "Manufacturing Site"
   * valueReference MS
   * insert PQReference(valueReference)
   * valueReference only Reference(CodedOrganization)

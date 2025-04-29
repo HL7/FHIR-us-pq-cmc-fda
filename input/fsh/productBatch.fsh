@@ -17,7 +17,7 @@ Description: "Includes the properties of the drug product as manufactured."
 * marketingAuthorizationHolder 0..1 MS
 * insert PQReference(marketingAuthorizationHolder)
 * marketingAuthorizationHolder only Reference(CodedOrganization)
-  * ^short = ""
+  * ^short = "Manufacturer"
 * doseForm 0..1 MS
 * doseForm from SplPharmaceuticalDosageFormTerminology (required)
   * ^definition = """

@@ -168,8 +168,8 @@ Description: "a manufacturing site to be used in an example"
 Instance: BatchAnalysisBundle
 InstanceOf: CMCeCTDDocumentSP4454
 Usage: #example
-Title: "Batch Analysis Bundle (WIP)"
-Description: "an example batch analysis bundle using the specification from SpecificationProductBundle"
+Title: "Batch Analysis Bundle"
+Description: "An example batch analysis bundle for a drug product"
 * identifier.system = $IDsys
 * identifier.value = "urn:uuid:5156901c-0e23-4422-9a2b-e06392087813"
 * timestamp = 2025-03-31T12:34:56.789Z
@@ -434,7 +434,7 @@ Usage: #Example
 * category = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
-  * text = "Dissolution"
+  * text = "Dissolution Oxazepam"
 * effectiveDateTime = "2022-01-06"
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Pass"
@@ -445,7 +445,6 @@ Usage: #Example
 * hasMember[+] = Reference(urn:uuid:210af775-ca90-4fe6-9b04-822c765933af)
 * hasMember[+] = Reference(urn:uuid:06522569-a7e8-4c9f-a7db-14c969c240c6)
 
-
 Instance: 1213976b-ebb0-42f6-985d-f989356b6d59
 InstanceOf: pq-result-observation
 Title: "Example Dissolution Stage 1 result"
@@ -454,7 +453,7 @@ Usage: #example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 1"
 * status = #final
-* category = $NCIT#C60821 "Solubility"
+* category = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Dissolution 1 hour"
@@ -466,7 +465,7 @@ Usage: #example
 * method.text = " Dissolution"
 * component[+]
   * extension[replicate].valueInteger = 1
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 1 hour"
   * valueQuantity = 52.65 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (40% - 70%)"
@@ -476,7 +475,7 @@ Usage: #example
   * referenceRange.text = "NLT 40% and NMT 70% dissolved in 1 hour."
 * component[+]
   * extension[replicate].valueInteger = 2
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 1 hour"
   * valueQuantity = 67.70 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (40% - 70%)"
@@ -486,7 +485,7 @@ Usage: #example
   * referenceRange.text = "NLT 40% and NMT 70% dissolved in 1 hour."
 * component[+]
   * extension[replicate].valueInteger = 3
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 1 hour"
   * valueQuantity = 46.75 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (40% - 70%)"
@@ -503,7 +502,7 @@ Usage: #example
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 2"
 * status = #final
-* category = $NCIT#C60821 "Solubility"
+* category = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Dissolution  2 hours"
@@ -515,30 +514,27 @@ Usage: #example
 * method.text = " Dissolution"
 * component[+]
   * extension[replicate].valueInteger = 1
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 2 hours"
   * valueQuantity = 62.65 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
-  * referenceRange.text = "Spec range (70% - 95%)"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 70 '%' "percent"
     * extension[high].valueQuantity = 95 '%' "percent"
   * referenceRange.text = "NLT 70% and NMT 95% dissolved in 2 hours."
 * component[+]
   * extension[replicate].valueInteger = 2
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 2 hours"
   * valueQuantity = 77.70 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
-  * referenceRange.text = "Spec range (70% - 95%)"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 70 '%' "percent"
     * extension[high].valueQuantity = 95 '%' "percent"
   * referenceRange.text = "NLT 70% and NMT 95% dissolved in 2 hours."
 * component[+]
   * extension[replicate].valueInteger = 3
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 2 hours"
   * valueQuantity = 59.75 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
-  * referenceRange.text = "Spec range (70% - 95%)"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 70 '%' "percent"
     * extension[high].valueQuantity = 95 '%' "percent"
@@ -552,7 +548,7 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 3"
 * status = #final
-* category = $NCIT#C60821 "Solubility"
+* category = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Dissolution 4 hours"
@@ -566,28 +562,25 @@ Usage: #inline
 * method.text = " Dissolution"
 * component[+]
   * extension[replicate].valueInteger = 1
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 4 hours"
   * valueQuantity = 83.50 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
-  * referenceRange.text = "Spec NLT 80%"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 80 '%' "percent"
   * referenceRange.text = "NLT 80% (Q) dissolved in 4 hours."
 * component[+]
   * extension[replicate].valueInteger = 2
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 4 hours"
   * valueQuantity = 86.40 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
-  * referenceRange.text = "Spec NLT 80%"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 80 '%' "percent"
   * referenceRange.text = "NLT 80% (Q) dissolved in 4 hours."
 * component[+]
   * extension[replicate].valueInteger = 3
-  * code.text = "pH Replicate"
+  * code.text = "Dissolution 4 hours"
   * valueQuantity = 95.65 '%' "percent"
   * interpretation = $NCIT#C80262 "Conforms"
-  * referenceRange.text = "Spec NLT 80%"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 80 '%' "percent"
   * referenceRange.text = "NLT 80% (Q) dissolved in 4 hours."

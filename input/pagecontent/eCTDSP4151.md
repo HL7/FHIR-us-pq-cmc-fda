@@ -7,6 +7,7 @@ The Quality Specification bundle profile provides a mechanism for the industry t
 ### Implementer Instructions
 
 * A Quality Specification has one or more Tests.
+* The combination of Specification Title, Specification Subtitile, and Specification Version is assumed to be unique across all Specifications.
 * Tests and the stages within them should be entered in the XML bundle in the order in which they should be displayed.
 * Each Test has one or more Stages.
 * Each Stage has one or more Acceptance Criteria.

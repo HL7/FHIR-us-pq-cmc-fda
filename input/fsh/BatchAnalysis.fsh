@@ -143,7 +143,9 @@ Id: pq-result-observation
 Title: "Result Observation"	
 Description: "Profile for an observation in a batch-analysis report or a stability report"	
 * . obeys cmc-range-extension-required
-* extension contains pq-pullDate-extension named actualpulldate 0..1 MS		
+* extension contains pq-pullDate-extension named actualpulldate 0..1 MS
+* extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+    * ^short = "Test Additional Information"
 * identifier.value 1..1 MS	
   * ^short = "Stage Name"	
   * ^definition = """
@@ -214,7 +216,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     Examples: Conforms, Does not Conform
   """
 * note MS	
-  * ^short = "Additional Information"	
+  * ^short = "Result Additional Information"	
 * note ^definition = """
   A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
   Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
@@ -260,7 +262,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
       Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
     """
   * extension contains pq-additional-info-extension named additionalInfo 0..1 MS
-    * ^short = "Stage Additional Info"
+    * ^short = "Stage Additional Information"
   * code 1..1 MS
   * code only CodeableConceptTextOnly
     * ^short = "Test Name | Relative Retention Time"
