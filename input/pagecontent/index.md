@@ -72,7 +72,7 @@ The grid below shows which FHIR Resources are being leveraged in the various PQ/
 
 {::options parse_block_html="false" /}
 <figure>
-  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="ProfileGrid.png" alt="FHIR Resources leveraged per Bundle profiles/>
+  <img style="padding-top:0;padding-bottom:30px" width="1200px" src="ProfileGrid.png" alt="FHIR Resources leveraged per Bundle profiles"/>
   <figcaption style="text-align: center">Figure 4: PQ/CMC FHIR Resources per Bundle Profile</figcaption>
 </figure>
 
