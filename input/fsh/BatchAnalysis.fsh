@@ -145,7 +145,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
 * . obeys cmc-range-extension-required
 * extension contains pq-pullDate-extension named actualpulldate 0..1 MS
 * extension contains pq-additional-info-extension named additionalInfo 0..1 MS
-    * ^short = "Test Additional Information"
+  * ^short = "Test Additional Information"
 * identifier.value 1..1 MS	
   * ^short = "Stage Name"	
   * ^definition = """
