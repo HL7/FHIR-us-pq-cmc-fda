@@ -97,7 +97,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[StructureDefinition-pq-result-observation.html]]
 
       **ValueSets:**
-      - observation-status
       [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
       [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
       [[ValueSet-pqcmc-test-category-terminology.html Test Category]]
@@ -108,7 +107,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[StructureDefinition-pq-replicate-extension.html Replicate]]
       [[StructureDefinition-pq-batch-range.html Batch Target Range]]
       [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
-      [[StructureDefinition-pq-pullDate-extension.html  Pull Date (Stability Only)]]
+      [[StructureDefinition-pq-pullDate-extension.html Pull Date (Stability Only) ]]
     }
     obj6 *-- objXObs
   }
@@ -117,7 +116,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
 
 
   BatchAnalysis -[#darkred]--> CodedOrganization
-  BatchAnalysis -[#darkred]--> ResultObservation
+  BatchAnalysis -[#darkred]-> ResultObservation
   BatchAnalysis -[#darkred]--> CH
   CH -[#green]--> DrugProductBatch
   CH -[#green]-> DrugSubstanceBatch
