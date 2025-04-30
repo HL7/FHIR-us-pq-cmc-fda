@@ -114,14 +114,14 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
 
   diamond CH
 
-
   BatchAnalysis -[#darkred]--> CodedOrganization
   BatchAnalysis -[#darkred]-> ResultObservation
   BatchAnalysis -[#darkred]--> CH
   CH -[#green]--> DrugProductBatch
   CH -[#green]-> DrugSubstanceBatch
   ResultObservation -[#darkred]--> MfgSiteOrganization
-  ResultObservation -[#darkred]-> ResultObservation
+  ResultObservation -[#darkred]-> ResultObservation : Only staged or mutliple measurement tests
   N1 -[#darkred]-> BatchAnalysis
+  N1 -[#darkred]-> CodedOrganization
 }
 @enduml
