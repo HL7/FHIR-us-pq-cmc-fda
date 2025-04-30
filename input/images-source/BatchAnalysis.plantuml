@@ -101,9 +101,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
       [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
       [[ValueSet-pqcmc-test-category-terminology.html Test Category]]
       UCUM Codes
-                     
-      **Recursion**
-      Only used for Staged or multi-measurment tests
+       
     }
 
     object "**Extensions**" as objXObs {
@@ -117,15 +115,16 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
 
   diamond CH
 
-  BatchAnalysis -[#darkred]--> CH
+
   N1 -[#darkred]-> CodedOrganization
-  BatchAnalysis -[#darkred]--> CodedOrganization
+  BatchAnalysis -[#darkred]-> CodedOrganization
+   BatchAnalysis -[#darkred]--> CH
   BatchAnalysis -[#darkred]--> ResultObservation
   CH -[#green]--> DrugProductBatch
   CH -[#green]--> DrugSubstanceBatch
 
   N1 -[#darkred]-> BatchAnalysis
-  ResultObservation -[#darkred]--> MfgSiteOrganization
-  ResultObservation -[#darkred]--> ResultObservation
+  ResultObservation -[#darkred]-> MfgSiteOrganization
+  ResultObservation -[#darkred]--> ResultObservation : Only used for Staged or multi-measurment tests
 }
 @enduml
