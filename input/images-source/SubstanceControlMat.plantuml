@@ -20,7 +20,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s23.html eCTD Heading 3.2.S.2
             [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
             [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
             [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
-            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+            [[http://hl7.org/fhir/ValueSet/ucum-units.html UCUM Codes]]
         }
         object "**Extensions**" as objQSEx {
             [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
@@ -58,7 +58,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s23.html eCTD Heading 3.2.S.2
         object "**Parent:** Organization" as objAu {
             **Page:**
             [[StructureDefinition-cmc-organization.html]]
-     
+
         }
     }
 

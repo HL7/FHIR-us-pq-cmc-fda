@@ -40,7 +40,8 @@ package "eCTD Drug Substance Bundle" as NODES {
             [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
             [[ValueSet-pqcmc-test-method-origin-terminology.html Test Method Origin Terminology]]
             [[ValueSet-pqcmc-test-usage-terminology.html Test Usage Terminology]]
-            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+           UCUM Codes
+            
         }
         object "**Extensions**" as objallQSEx {
             Approval Status
@@ -57,7 +58,7 @@ package "eCTD Drug Substance Bundle" as NODES {
             [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
             **ValueSets:**
             [[ValueSet-substance-classification.html Substance Classification]]
-            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+           UCUM Codes
             Chemical Structure Data File Type Terminology
             Substance Name Type
         }
@@ -86,7 +87,7 @@ package "eCTD Drug Substance Bundle" as NODES {
             **Page:**
             [[StructureDefinition-pqcmc-polymorphic-form.html]]
             **ValueSets:**
-            [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+           UCUM Codes
             Chemical Structure Data File Type Terminology
         }
     }

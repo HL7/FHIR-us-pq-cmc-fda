@@ -10,122 +10,119 @@ skinparam ClassBorderThickness 4
 
 
 package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.5.4 and 3.2.S.4.4 Batch Analysis Bundle]]" as NODES {
-  
-  node "DrugProductBatch" as NN {
-
-    object "**Parent:** Medication" as obj3 {
-      **Page:**
-      [[StructureDefinition-pqcmc-drug-product-instance.html]]
-      **ValueSets:**
-      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
-      Expiration Date Classification Terminology
-      [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
-      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
-
-    }
-
-    object "**Extensions**" as objExsBatch  {
-      [[StructureDefinition-drug-product-manufacturing-batch.html drug-product-manufacturing-batch]]
-    }
-   
-  }
-  node "BatchAnalysis" as N2 {
-
-
-    object "**Parent:** DiagnosticReport" as obj2 {
-      **Page:**
-      [[StructureDefinition-pqcmc-batch-analysis.html]]
-    }
-    object "**Extensions**" as objQSEx {
-      [[StructureDefinition-pq-quality-specification-extension.html  Quality Specification Reference]]
-
-    }
-    obj2 *-- objQSEx
-  }
-  node "CodedOrganization" as NSO {
-
-    object "**Parent:** Organization" as objAu {
-      **Page:**
-      [[StructureDefinition-cmc-organization.html]]
-      
-    }
-  }
-  diamond CH
-
-  node "DrugSubstanceBatch" as NNS {
-
-    object "**Parent:** Substance" as obj4 {
-      **Page:**
-      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
-      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
-    }
-    object "**Extensions**" as objExs2 {
- drug-substance-manufacturing-batch
-    }
-
-    objExs2 *-- obj4
-  }
-
-    node "SubstanceDefinitionHandle" as NNSH {
-
-    object "**Parent:** SubstanceDefinition" as obj4 {
-      **Page:**
-      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
-      **ValueSets:**
-      [[ValueSet-substance-classification.html Substance Classification]]
-      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
-    }
-
-  }
-
-  node "ResultObservation" as NNOBS {
-
-    object "**Parent:** Observation" as observ3 {
-      **Page:**
-      [[StructureDefinition-pq-result-observation.html]]
-      **ValueSets:**
-      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
-      [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
-    }
-    object "**Extensions**" as objExsObserv  {
-      [[StructureDefinition-pq-pullDate-extension.html Actual Pull Date]]
-      interpretationCode
-      [[StructureDefinition-pq-replicate-extension.html Replicate]]
-    }
-    objExsObserv *-- observ3
-  }
-
 
   node "EctdCompositionSP4454" as N1 {
-
     object "**Parent:** Composition" as obj1 {
       **Page:**
       [[StructureDefinition-ectd-composition-sp4454.html]]
+
       **ValueSets:**
       [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
     }
   }
 
+  node "BatchAnalysis" as  BatchAnalysis {
+    object "**Parent:** DiagnosticReport" as obj2 {
+      **Page:**
+      [[StructureDefinition-pqcmc-batch-analysis.html]]
+    }
+    object "**Extensions**" as  obj2Ex {
+      [[StructureDefinition-pq-quality-specification-extension.html Quality Specification Reference]]
+      [[StructureDefinition-drug-product-manufacturing-batch.html Batch Utilization | Batch Size ]]
+    }
+    obj2 *-- obj2Ex
+  }
 
-  N1 -[#darkred]-> CH
-  N1 -[#darkred]--> N2
-  N1 -[#darkred]--> NSO
-  CH -[#green]-> NNS
-  CH -[#green]-> NN
-  NNS -[#darkred]--> NSO
-  NNS -[#darkred]-->NNSH
-  NN -[#darkred]--> NSO
-  N2 -[#darkred]--> CH
-  N2 -[#darkred]--> NSO
-  N2 -[#darkred]-> NNOBS
-  NNOBS -[#darkred]--> NSO
+  node "CodedOrganization" as CodedOrganization {
 
+    object "**Parent:** Organization" as objAu {
+      **Page:**
+      [[StructureDefinition-cmc-organization.html]]
+    }
+  }
+
+  node "DrugProductBatch" as DrugProductBatch {
+    object "**Parent:** Medication" as obj3 {
+      **Page:**
+      [[StructureDefinition-pqcmc-drug-product-instance.html]]
+
+      **ValueSets:**
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      UCUM Codes
+      [[ValueSet-cmc-product-name-types-vs.html Product Name Types]]
+    }
+
+    object "**Extensions**" as  objExsBatch {
+
+      [[StructureDefinition-drug-product-manufacturing-batch.html Drug Product Manufacturing Batch ]]
+    }
+    obj3 *-- objExsBatch
+  }
+
+
+  node "DrugSubstanceBatch" as DrugSubstanceBatch {
+
+    object "**Parent:** Substance" as obj4 {
+      **Page:**
+      [[StructureDefinition-pqcmc-drug-substance-batch.html]]
+
+      **ValueSets:**
+      [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
+      [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+      [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
+      [[ValueSet-pqcmc-expiration-date-classification-terminology.html Expiration Date Classification]]
+      UCUM Codes
+    }
+    object "**Extensions**" as objXDs {
+
+      [[StructureDefinition-drug-substance-manufacturing-batch.html Drug Substance Manufacturing Batch]]
+    }
+    obj4 *-- objXDs
+  }
+
+  node "MfgSiteOrganization" as  MfgSiteOrganization {
+    object "**Parent:** CodedOrganization" as obj5 {
+      **Page:**
+      [[StructureDefinition-mfg-test-site-organization.html]]
+
+      **ValueSets:**
+      [[ValueSet-pqcmc-mfg-testing-site-terminology.html Manufacturing/Testing Site Responsibility Category]]
+    }
+  }
+
+  node "ResultObservation" as ResultObservation  {
+
+    object "**Parent:** Observation" as obj6 {
+      **Page:**
+      [[StructureDefinition-pq-result-observation.html]]
+
+      **ValueSets:**
+      - observation-status
+      [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+      [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
+      [[ValueSet-pqcmc-test-category-terminology.html Test Category]]
+      UCUM Codes
+    }
+
+    object "**Extensions**" as objXObs {
+      [[StructureDefinition-pq-replicate-extension.html Replicate]]
+      [[StructureDefinition-pq-batch-range.html Batch Target Range]]
+      [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+      [[StructureDefinition-pq-pullDate-extension.html  Pull Date (Stability Only)]]
+    }
+    obj6 *-- objXObs
+  }
+
+  diamond CH
+
+
+  BatchAnalysis -[#darkred]--> CodedOrganization
+  BatchAnalysis -[#darkred]--> ResultObservation
+  BatchAnalysis -[#darkred]--> CH
+  CH -[#green]--> DrugProductBatch
+  CH -[#green]-> DrugSubstanceBatch
+  ResultObservation -[#darkred]--> MfgSiteOrganization
+  ResultObservation -[#darkred]-> ResultObservation
+  N1 -[#darkred]-> BatchAnalysis
 }
 @enduml

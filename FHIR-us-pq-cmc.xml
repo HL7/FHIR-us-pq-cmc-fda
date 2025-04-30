@@ -40,6 +40,7 @@
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
 <artifact id="Bundle/BatchAnalysisBundle" key="Bundle-BatchAnalysisBundle" name="Batch Analysis Bundle"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
+<artifact id="StructureDefinition/pq-batch-range" key="StructureDefinition-pq-batch-range" name="Batch Target Range"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch Utilization"/>
 <artifact deprecated="true" id="Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9" key="Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9" name="Bundle for 3.2.S.1"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
@@ -179,8 +180,8 @@
 <artifact deprecated="true" id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
 <artifact id="DocumentReference/de75e338-626c-4503-a25d-4fcdd8e39bee" key="DocumentReference-de75e338-626c-4503-a25d-4fcdd8e39bee" name="SDF File in a Structure Reference"/>
 <artifact id="ValueSet/pqcmc-source-type-terminology" key="ValueSet-pqcmc-source-type-terminology" name="Source Type"/>
+<artifact id="StructureDefinition/pq-specification-status-extension" key="StructureDefinition-pq-specification-status-extension" name="Specification Current Status"/>
 <artifact id="ValueSet/cmc-specification-types-vs" key="ValueSet-cmc-specification-types-vs" name="Specification Section Type"/>
-<artifact id="StructureDefinition/pq-specification-status-extension" key="StructureDefinition-pq-specification-status-extension" name="Specification Status"/>
 <artifact id="ValueSet/pqcmc-specification-status-terminology" key="StructureDefinition-pq-specification-status-extension" name="Specification Status"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-specification-status-terminology" key="ValueSet-pqcmc-specification-status-terminology" name="Specification Status Terminology"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-specification-type-terminology" key="StructureDefinition-pq-specification-type-extension" name="Specification Type"/>
@@ -196,7 +197,7 @@
 <artifact id="ValueSet/pqcmc-storage-conditions-terminology" key="ValueSet-pqcmc-storage-conditions-terminology" name="Storage Conditions"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-strength-operator-terminology" key="ValueSet-pqcmc-strength-operator-terminology" name="Strength Operator Terminology"/>
 <artifact id="StructureDefinition/strength-extension" key="StructureDefinition-strength-extension" name="Strength Type"/>
-<artifact id="ValueSet/pqcmc-strength-type-terminology" key="ValueSet-pqcmc-strength-type-terminology" name="Strength Type"/>
+<artifact id="ValueSet/pqcmc-strength-type-terminology" key="ValueSet-pqcmc-strength-type-terminology" name="Strength Type Codes"/>
 <artifact deprecated="true" id="Ingredient/fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" key="Ingredient-fc09842a-8f71-48f2-9f9f-ff2441b2eb6f" name="Strength info for the Active Ingredient"/>
 <artifact deprecated="true" id="Ingredient/3791c4ce-2b43-4d7b-b195-0e5f88f28dab" key="Ingredient-3791c4ce-2b43-4d7b-b195-0e5f88f28dab" name="Strength information - Grape skin extract"/>
 <artifact deprecated="true" id="Ingredient/7f10a35e-228d-42db-8918-6ccada78454d" key="Ingredient-7f10a35e-228d-42db-8918-6ccada78454d" name="Strength information for the Active Ingredient - acetaminophen"/>
@@ -211,7 +212,6 @@
 <artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature-structure" key="StructureDefinition-pqcmc-drug-substance-nomenclature-structure" name="Substance General Information"/>
 <artifact id="ValueSet/pqcmc-substance-name-type" key="ValueSet-pqcmc-substance-name-type" name="Substance Name Type"/>
 <artifact deprecated="true" id="StructureDefinition/supplier-organization" key="StructureDefinition-supplier-organization" name="Supplier Organization"/>
-<artifact id="StructureDefinition/pq-batch-range" key="StructureDefinition-pq-target-range" name="Target Range"/>
 <artifact id="StructureDefinition/pq-target-range" key="StructureDefinition-pq-target-range" name="Target Range"/>
 <artifact id="ValueSet/pqcmc-test-category-terminology" key="ValueSet-pqcmc-test-category-terminology" name="Test Category"/>
 <artifact id="ValueSet/pqcmc-test-method-origin-terminology" key="ValueSet-pqcmc-test-method-origin-terminology" name="Test Method Origin"/>
@@ -260,5 +260,5 @@
 <page key="eCTDSP7383" name="Stability Data (3.2.S.7.3 &amp; 3.2.P.8.3)"/>
 <page key="eCTDSP7181" name="Stability Summary (3.2.S.7.1 &amp; 3.2.P.8.1)"/>
 <page key="toc" name="Table of Contents"/>
-<page key="UCUM_in_PQCMC" name="UCUM Code in PQ/CMC"/>
+<page key="UCUMinPQCMC" name="UCUM Codes"/>
 </specification>

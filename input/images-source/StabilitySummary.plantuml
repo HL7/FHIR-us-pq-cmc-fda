@@ -48,7 +48,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
                   **Page:**
                   [[StructureDefinition-pqcmc-stability-summary.html]]
                   **ValueSets:**
-                  [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+                 UCUM Codes
                   Storage Conditions Terminology
             }
 

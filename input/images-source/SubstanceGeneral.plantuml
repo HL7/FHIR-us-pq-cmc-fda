@@ -17,7 +17,7 @@ package "[[StructureDefinition-cmc-ectd-document-32s10.html eCTD Heading 3.2.S.1
       [[StructureDefinition-pqcmc-drug-substance-nomenclature-structure.html]]
       **ValueSets:**
       [[ValueSet-substance-classification.html Substance Classification]]
-      [[ValueSet-pqcmc-units-of-measure.html Units Of Measure]]
+     UCUM Codes
       [[ValueSet-pqcmc-chemical-structure-datafile-type-terminology.html Chemical Structure Data File Type Terminology]]
       [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
       [[ValueSet-pqcmc-representation-types.html Representation Types]]
