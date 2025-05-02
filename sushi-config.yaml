@@ -25,14 +25,14 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:
-  hl7.terminology.r5: 6.2.0
+  hl7.terminology.r5: 6.3.0
 
 menu:
   Table of Contents: toc.html
   Home: index.html
-  General Instructions: 
-    Topics: instruction.html
-    Frequently Used UCUM Codes: UCUMinPQCMC.html
+  Instructions: 
+    TGeneral: instruction.html
+    Terminology: TermOverview.html
   eCTD Substance Profiles:
     General Information (3.2.S.1): eCTD32S10.html
     Control of Materials (3.2.S.2.3): eCTD32S23.html
@@ -59,7 +59,7 @@ pages:
   instruction.html:
     title: "General Instructions"
     generation: markdown
-  UCUMinPQCMC.html:
+  TermOverview.html:
     title: "UCUM Codes"
     generation: markdown
   eCTD32S10.html:

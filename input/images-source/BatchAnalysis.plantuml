@@ -125,6 +125,6 @@ package "[[StructureDefinition-cmc-ectd-document-sp4454.html eCTD Heading 3.2.P.
 
   N1 -[#darkred]-> BatchAnalysis
   ResultObservation -[#darkred]-> MfgSiteOrganization
-  ResultObservation -[#darkred]--> ResultObservation : Only used for Staged or multi-measurment tests
+  ResultObservation -[#darkred]--> ResultObservation : Only used for Staged or multi-measurement tests
 }
 @enduml

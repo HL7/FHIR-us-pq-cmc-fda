@@ -508,7 +508,7 @@ Description: "The fields needed to represent the Batch Analyses to be included u
     SECTION SLICES
 */
 // need check that subject only Reference(DrugProductInstance or DrugSubstanceInstance) matches section selected.
-* section 1.. MS
+* section 1..1 MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #closed

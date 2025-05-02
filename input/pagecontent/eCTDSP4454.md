@@ -1,5 +1,7 @@
 ### Domain Overview
 
+Batch analyses in drug products refer to the testing and evaluation of a specific quantity of a drug, known as a batch, to ensure it meets the required standards for quality, safety, and efficacy before being released for distribution. This process involves various tests and evaluations, including chemical, physical, and biological assessments.
+
 The Batch Analyses bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.4.4 and 3.2.P.5.4 folder content to the FDA. The contents of these sections include a description of the batch of drug product or drug substance, including lot number, expiration date, batch usage, information about the container in which the batch is stored, the results associated with analyzing or evaluating the quality of the drug product or drug substance based on the release specification, and identification of the facility where the testing occurred.
 
 ### Implementer Instructions
@@ -75,6 +77,39 @@ Used when the observation reports a qualitative assessment (e.g., odor, appearan
 </Observation>
 ```
 
+##### Qualitative Equal Result (valueQuantity)
+
+Used when the observation reports a qualitative result where the reference range is a single value and the acceptance criterion contains and equal assigment.  It is similar to qualitative result in that the the refernece range only uses the text element, but the observed value is recorded as a Quantity value and requires
+
+**Key Characteristic Elements:**
+- `valueQuantity`
+- `comparator`
+
+```xml
+<Observation>
+  <category>
+    <coding>
+      <system value="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl"/>
+      <code value="C134256"/>
+      <display value="Microbial Limits"/>
+    </coding>
+  </category>
+  ...
+  <valueQuantity>
+   <value value="23"/>
+   <comparator value="="/>
+   <unit value="colony forming unit"/>
+   <system value="http://unitsofmeasure.org"/>
+   <code value=[CFU]/>
+  </valueQuantity>
+  <interpretation>...<display value="Conforms"/>...</interpretation>
+  ...
+  <referenceRange>
+    <text>Record Collony Forming Units</text>
+  </referenceRange>
+</Observation>
+```
+
 ##### Numeric Result (valueQuantity)
 
 Used when the observation quantifies an assay (e.g., content purity). The referenceRange.modifierExtension elements high and low are optional.  Use both when reprenting a range acceptance criteria.  Use high when the value must be NMT and use low when the valule is NLT.
@@ -114,7 +149,7 @@ Used when the observation quantifies an assay (e.g., content purity). The refere
        </valueQuantity>
      </extension>
    </modifierExtension>
-   <text value="≥ 95%"/>
+   <text value="NLT 95%"/>
  </referenceRange>
 </Observation>
 ```

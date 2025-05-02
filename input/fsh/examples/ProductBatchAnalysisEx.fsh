@@ -155,19 +155,19 @@ Description: "a manufacturing site to be used in an example"
   * value = "6981397"
   * system = "urn:oid:2.16.840.1.113883.4.82"
 * type = $NCIT#C101509 // synonym needs to be added to tx.fhir.org
-* name = "mega_chem_Site"
+* name = "MegaChem Services"
 * contact.address
   * line[0] = "350 W Main Street"
   * type = #postal
 * contact.address.city = "Rochester"
 * contact.address.country = "USA"
 * contact.address.postalCode = "14608"
-* contact.address.text = "mega_chem_Site, 350 W Main Street, Rochester, NY, United States"
+* contact.address.text = "MegaChem Services, 350 W Main Street, Rochester, NY, United States"
 * contact.address.state = "NY"
 
 Instance: BatchAnalysisBundle
 InstanceOf: CMCeCTDDocumentSP4454
-Usage: #example
+Usage: #inline
 Title: "Batch Analysis Bundle"
 Description: "An example batch analysis bundle for a drug product"
 * identifier.system = $IDsys
@@ -300,12 +300,10 @@ Description: "A result observation for use in an example"
 * extension[actualpulldate].valueDateTime = "2025-03-15"
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C134255 "Loss on Drying"
-* code
-  * coding = $NCIT#C96102 "Compendial"
-  * text = "USP <731>"
+* category.coding = $NCIT#C134255 "Loss on Drying"
+* category.text = "Loss on Drying" 
 * effectiveDateTime = "2025-03-15"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * valueQuantity = 0.1 '%' "percent"
 * interpretation = $NCIT#C80262 "Conforms"
 * method.text = "mass measurement"
@@ -313,7 +311,8 @@ Description: "A result observation for use in an example"
   * extension[low].valueQuantity = 0.0 '%' "percent"
   * extension[high].valueQuantity = 0.5 '%' "percent"
 * referenceRange
-  * text = "LT 0.5%" // original text
+* category.text = "LT 0.5%" // original text
+* method.coding = $NCIT#C96102 "Compendial"
 * method.text = "USP <731> Loss on Drying"
 
 Instance: a0676c71-06f4-4c04-b864-817a0347941c
@@ -324,19 +323,18 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2025-03-15" 
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C205029 "pH"
-* code
-  * coding = $NCIT#C96102 "Compendial"
-  * text = "USP <791>"
+* category.coding = $NCIT#C205029 "pH"
+* category.text = "USP <791>"
 * effectiveDateTime = "2025-03-15"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a) 
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe) 
 * valueQuantity = 2.72 '[pH]' "pH"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
   * extension[low].valueQuantity = 3.0 '[pH]' "pH"
   * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * referenceRange
-  * text = "Spec range (pH 3.0 – 5.0)"
+* category.text = "Spec range (pH 3.0 – 5.0)"
+* method.coding = $NCIT#C96102 "Compendial" 
 * method.text = "USP <791> pH Determination"
 * component[+]
   * extension[replicate].valueInteger = 1
@@ -384,25 +382,23 @@ Usage: #inline
     * extension[high].valueQuantity = 5.0 '[pH]' "pH"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
 
-Instance: 00a33e09-4ce7-4bac-b616-a392911a429e
-InstanceOf: pq-result-observation
-Title: "Example Description/Appearance result"
-Description: "Example observation with a text result"
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C138990 "Description/Appearance"
-* status = #final
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Description"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueString = "Pass"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.text = "Grey coloured capsule shaped film coated tablets, debossed with '45' on one side."
-* method.text = "Visual Inspection"
+Instance: 00a33e09-4ce7-4bac-b616-a392911a429e		
+InstanceOf: pq-result-observation		
+Title: "Example Description/Appearance result"		
+Description: "Example observation with a text result"		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C138990 "Description/Appearance"			
+* category.text = "Description"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueString = "Pass"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.text = "Grey coloured capsule shaped film coated tablets, debossed with '45' on one side."		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Visual Inspection"
 
 Instance: eee4fd0c-4adb-4aad-be21-cab199583f56
 InstanceOf: pq-result-observation
@@ -412,35 +408,35 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Single Stage"
 * status = #final
-* category = $NCIT#C138993 "Identification"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Identification By HPLC"
+* category.coding = $NCIT#C138993 "Identification"
+* category.text = "Identification By HPLC"
 * effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "The retention time of the principal peak corresponds to standard."
+* method.coding = $NCIT#C96103 "Proprietary"
 * method.text = "HPLC Identification"
 
 Instance: 20317ec0-a631-4cdf-88a1-0496b5e3acaf
 InstanceOf: pq-result-observation
 Title: "Example Dissolution result"
 Description: "Demonstrates a test with three stages and three replicates."
-Usage: #Example
+Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Multi Stage"
 * status = #final
-* category = $NCIT#C134253 "Dissolution"
+* category.coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
-  * text = "Dissolution Oxazepam"
+* category.text = "Dissolution Oxazepam"
 * effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "All stage results conform to specification"
-* method.text = "Dissolution OXAZEPAM Capsules"
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Dissolution OXAZEPAM Capsules"
 * hasMember[+] = Reference(urn:uuid:1213976b-ebb0-42f6-985d-f989356b6d59)
 * hasMember[+] = Reference(urn:uuid:210af775-ca90-4fe6-9b04-822c765933af)
 * hasMember[+] = Reference(urn:uuid:06522569-a7e8-4c9f-a7db-14c969c240c6)
@@ -449,20 +445,21 @@ Instance: 1213976b-ebb0-42f6-985d-f989356b6d59
 InstanceOf: pq-result-observation
 Title: "Example Dissolution Stage 1 result"
 Description: "A result with three components."
-Usage: #example
+Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 1"
 * status = #final
-* category = $NCIT#C134253 "Dissolution"
+* category.coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
-  * text = "Dissolution 1 hour"
+* category.text = "Dissolution 1 hour"
 * effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "All replicates are NLT 40% and NMT 70% dissolved in 1 hour."
-* method.text = " Dissolution"
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Dissolution OXAZEPAM Capsules"
 * component[+]
   * extension[replicate].valueInteger = 1
   * code.text = "Dissolution 1 hour"
@@ -498,20 +495,21 @@ Instance: 210af775-ca90-4fe6-9b04-822c765933af
 InstanceOf: pq-result-observation
 Title: "Example Dissolution Stage 2 result"
 Description: "The stage 2 result with 3 replicates."
-Usage: #example
+Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 2"
 * status = #final
-* category = $NCIT#C134253 "Dissolution"
+* category.coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
-  * text = "Dissolution  2 hours"
+* category.text = "Dissolution  2 hours"
 * effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "All replicates are NLT 70% and NMT 95% dissolved in 2 hours."
-* method.text = " Dissolution"
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Dissolution OXAZEPAM Capsules"
 * component[+]
   * extension[replicate].valueInteger = 1
   * code.text = "Dissolution 2 hours"
@@ -548,18 +546,19 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 3"
 * status = #final
-* category = $NCIT#C134253 "Dissolution"
+* category.coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
-  * text = "Dissolution 4 hours"
+* category.text = "Dissolution 4 hours"
 * effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
 * valueString = "Pass"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
   * extension[low].valueQuantity = 80 '%' "percent"
 * referenceRange.text = "All replicates are NLT 80% (Q) dissolved in 4 hours."
-* method.text = " Dissolution"
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Dissolution OXAZEPAM Capsules"
 * component[+]
   * extension[replicate].valueInteger = 1
   * code.text = "Dissolution 4 hours"
@@ -585,218 +584,209 @@ Usage: #inline
     * extension[low].valueQuantity = 80 '%' "percent"
   * referenceRange.text = "NLT 80% (Q) dissolved in 4 hours."
 
-Instance: f220a83d-214d-4a5c-917b-88c25e125c90
-InstanceOf: pq-result-observation
-Title: "Example Dose Uniformity"
-Description: "Water Content"
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C134250 "Uniformity"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Uniformity of Dosage Units"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 9.5 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 15 '%' "percent"
-* referenceRange.text = "LT 15 %"
-* method.text = "Weight Variation"
+Instance: f220a83d-214d-4a5c-917b-88c25e125c90		
+InstanceOf: pq-result-observation		
+Title: "Example Dose Uniformity"		
+Description: "Water Content"		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C134250 "Uniformity"		
+* category.text = "Uniformity of Dosage Units"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 9.5 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 15 '%' "percent"		
+* referenceRange.text = "LT 15 %"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Weight Variation"
+		
+Instance: 30f3b020-f474-4eec-881c-7dd4d12baf0b		
+InstanceOf: pq-result-observation		
+Title: "Example Moisture Content result"		
+Description: "Demonstating a Water Content result with an upper limit."		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C134002 "Residual Solvent"		
+* code.text = "Water Content"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)		
+* valueQuantity = 8.2 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 10 '%' "percent"		
+* referenceRange.text = "NMT 10.0%"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Karl Fischer Titration"
+		
+Instance: b590b63c-a9b3-4469-bcfe-21793b588641		
+InstanceOf: pq-result-observation		
+Title: "Example Assay result"		
+Description: "Demonstating a result with a lower and an upper limit."		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C60819 "Assay"		
+* category.text = "Assay"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 101.2  '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[low].valueQuantity = 90 '%' "percent"		
+  * extension[high].valueQuantity = 110 '%' "percent"		
+* referenceRange.text = "90% to 110% of labeled amount."		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Assay OXAZEPAM"
+		
+Instance: b932d0d9-53a9-457d-81cc-c5488d18cb58		
+InstanceOf: ResultObservation		
+Title: "Example of Impurities for Oxazepam"		
+Description: "Example demonstrates use of Test category and sub-categories against the same method via multiple tests. "		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C204971 "Impurity"		
+* category.text = "Impurities"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueString = "Pass"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.text = "All impurities comform to corresponds to standard."		
+* interpretation = $NCIT#C80262 "Conforms"		
+* note.text = """		
+  Total Impurities includes all detected peaks		
+"""		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Oxazepam Impurities"
+* hasMember[+] = Reference(urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d)		
+* hasMember[+] = Reference(urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0)		
+* hasMember[+] = Reference(urn:uuid:298b433e-0642-4735-bd6f-c460e6e4208d)		
+* hasMember[+] = Reference(urn:uuid:f8d2cd51-aad0-4f95-ad04-c12efdc1232d)		
+* hasMember[+] = Reference(urn:uuid:5655fffb-ea32-4cf9-96de-0950ad6dd07e)		
+		
+Instance: 298b433e-0642-4735-bd6f-c460e6e4208d		
+InstanceOf: pq-result-observation		
+Title: "Example Specified Identified Impurity result"		
+Description: "Demonstating an Impurity result with an upper limit."		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C205039 "Specified Identified Impurity"		
+* category.text = "Related Substances - (Z)-(2-Amino-5-chlorophenyl)(phenyl)methanone Oxime"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 0.29 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 1.2 '%' "percent"		
+* referenceRange.text = "LT 1.2%"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Oxazepam Impurities"
+		
+Instance: 96dc657d-592f-4c91-b106-01701ccf2cb0		
+InstanceOf: pq-result-observation		
+Title: "Example Specified Unidentified Impurity result"		
+Description: "Demonstating a  Specified Unidentified Impurity result with an upper limit."		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C205040 "Specified Unidentified Impurity"		
+* category.text = "Related Substances - Oxazepam - Impurity A"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 0.89 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 1.2 '%' "percent"		
+* referenceRange.text = "LT 1.2%"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Oxazepam Impurities"
+		
+Instance: 5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d		
+InstanceOf: pq-result-observation		
+Title: "Example 6-Chloro-4-phenyl-3,4-dihydroquinazoline- 2-carboxylic Acid"		
+Description: "Example result for a Specified Identified Impurity"		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C205039 "Specified Identified Impurity"		
+* category.text = "Related Substances - 6-Chloro-4-phenyl-3,4-dihydroquinazoline- 2-carboxylic Acid"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 1.10 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 2.0 '%' "percent"		
+* referenceRange.text = "LT 2.0%"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Oxazepam Impurities"
+		
+Instance: f8d2cd51-aad0-4f95-ad04-c12efdc1232d		
+InstanceOf: pq-result-observation		
+Title: "Example Highest Unknown Impurity result"		
+Description: "Example result for a Unspecified Impurity with an upper limit"		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C205052 "Unspecified Impurity"		
+* category.text = "Related Substances - Highest Unknown"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 1.69 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 0.2 '%' "percent"		
+* referenceRange.text = "LT 0.2%"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Oxazepam Impurities"
+		
+Instance: 5655fffb-ea32-4cf9-96de-0950ad6dd07e		
+InstanceOf: pq-result-observation		
+Title: "Example Total Impurities result"		
+Description: "Example result for a Total Impurities with an upper limit"		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C205047 "Total Impurities"		
+* category.text = "Related Substances - Total Impurities"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueQuantity = 2.28 '%' "percent"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.modifierExtension[batchRange]		
+  * extension[high].valueQuantity = 3.0 '%' "percent"		
+* referenceRange.text = "LT 3.0%"		
+* method.coding = $NCIT#C96103 "Proprietary"
+* method.text =	"Oxazepam Impurities"
+		
+Instance: 07e9b239-6791-43ba-bf09-637475a83e19		
+InstanceOf: pq-result-observation		
+Title: "Example Residual Solvents result"		
+Description: "Example result for a Residual Solvents test with a valueString result."		
+Usage: #inline		
+* extension[actualpulldate].valueDateTime = "2022-01-06"		
+* identifier.value = "Single Stage"		
+* status = #final		
+* category.coding = $NCIT#C134002 "Residual Solvent"		
+* category.text = "Residual Solvents"		
+* effectiveDateTime = "2022-01-06"		
+* performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
+* valueString = "Pass"		
+* interpretation = $NCIT#C80262 "Conforms"		
+* referenceRange.text = "Complies with USP <467>"		
+* method.coding = $NCIT#C96102 "Compendial"
+* method.text =	"Residual Solvents"
 
-Instance: 30f3b020-f474-4eec-881c-7dd4d12baf0b
-InstanceOf: pq-result-observation
-Title: "Example Moisture Content result"
-Description: "Demonstating a Water Content result with an upper limit."
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C134002 "Residual Solvent"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-* code.text = "Water Content"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 8.2 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 10 '%' "percent"
-* referenceRange.text = "NMT 10.0%"
-* method.text = "Karl Fischer Titration"
-
-Instance: b590b63c-a9b3-4469-bcfe-21793b588641
-InstanceOf: pq-result-observation
-Title: "Example Assay result"
-Description: "Demonstating a result with a lower and an upper limit."
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C60819 "Assay"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Assay"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 101.2  '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[low].valueQuantity = 90 '%' "percent"
-  * extension[high].valueQuantity = 110 '%' "percent"
-* referenceRange.text = "90% to 110% of labeled amount."
-* method.text = "Assay"
-
-Instance: b932d0d9-53a9-457d-81cc-c5488d18cb58
-InstanceOf: ResultObservation
-Title: "Example of Impurities for Oxazepam"
-Description: "Example demonstrates use of Test category and sub-categories against the same method via multiple tests. "
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C204971 "Impurity"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Impurities"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueString = "Pass"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.text = "All impurities comform to corresponds to standard."
-* interpretation = $NCIT#C80262 "Conforms"
-* note.text = """
-  Total Impurities includes all detected peaks
-"""
-* method.text = "Oxazepam Impurities"
-* hasMember[+] = Reference(urn:uuid:5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d)
-* hasMember[+] = Reference(urn:uuid:96dc657d-592f-4c91-b106-01701ccf2cb0)
-* hasMember[+] = Reference(urn:uuid:298b433e-0642-4735-bd6f-c460e6e4208d)
-* hasMember[+] = Reference(urn:uuid:f8d2cd51-aad0-4f95-ad04-c12efdc1232d)
-* hasMember[+] = Reference(urn:uuid:5655fffb-ea32-4cf9-96de-0950ad6dd07e)
-
-Instance: 298b433e-0642-4735-bd6f-c460e6e4208d
-InstanceOf: pq-result-observation
-Title: "Example Specified Identified Impurity result"
-Description: "Demonstating an Impurity result with an upper limit."
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C205039 "Specified Identified Impurity"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Related Substances - (Z)-(2-Amino-5-chlorophenyl)(phenyl)methanone Oxime"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 0.29 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 1.2 '%' "percent"
-* referenceRange.text = "LT 1.2%"
-* method.text = "Oxazepam Impurities"
-
-Instance: 96dc657d-592f-4c91-b106-01701ccf2cb0
-InstanceOf: pq-result-observation
-Title: "Example Specified Unidentified Impurity result"
-Description: "Demonstating a  Specified Unidentified Impurity result with an upper limit."
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C205040 "Specified Unidentified Impurity"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Related Substances - Oxazepam - Impurity A"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 0.89 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 1.2 '%' "percent"
-* referenceRange.text = "LT 1.2%"
-* method.text = "Oxazepam Impurities"
-
-Instance: 5d78322d-4bb2-4e0a-9ce1-d2678ff09f1d
-InstanceOf: pq-result-observation
-Title: "Example 6-Chloro-4-phenyl-3,4-dihydroquinazoline- 2-carboxylic Acid"
-Description: "Example result for a Specified Identified Impurity"
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C205039 "Specified Identified Impurity"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Related Substances - 6-Chloro-4-phenyl-3,4-dihydroquinazoline- 2-carboxylic Acid"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 1.10 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 2.0 '%' "percent"
-* referenceRange.text = "LT 2.0%"
-* method.text = "Oxazepam Impurities"
-
-Instance: f8d2cd51-aad0-4f95-ad04-c12efdc1232d
-InstanceOf: pq-result-observation
-Title: "Example Highest Unknown Impurity result"
-Description: "Example result for a Unspecified Impurity with an upper limit"
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C205052 "Unspecified Impurity"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Related Substances - Highest Unknown"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 1.69 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 0.2 '%' "percent"
-* referenceRange.text = "LT 0.2%"
-* method.text = "Oxazepam Impurities"
-
-Instance: 5655fffb-ea32-4cf9-96de-0950ad6dd07e
-InstanceOf: pq-result-observation
-Title: "Example Total Impurities result"
-Description: "Example result for a Total Impurities with an upper limit"
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C205047 "Total Impurities"
-* code
-  * coding = $NCIT#C96103 "Proprietary"
-  * text = "Related Substances - Total Impurities"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueQuantity = 2.28 '%' "percent"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.modifierExtension[batchRange]
-  * extension[high].valueQuantity = 3.0 '%' "percent"
-* referenceRange.text = "LT 3.0%"
-* method.text = "Oxazepam Impurities"
-
-Instance: 07e9b239-6791-43ba-bf09-637475a83e19
-InstanceOf: pq-result-observation
-Title: "Example Residual Solvents result"
-Description: "Example result for a Residual Solvents test with a valueString result."
-Usage: #inline
-* extension[actualpulldate].valueDateTime = "2022-01-06"
-* identifier.value = "Single Stage"
-* status = #final
-* category = $NCIT#C134002 "Residual Solvent"
-* code
-  * coding = $NCIT#C96102 "Compendial"
-  * text = "Residual Solvents"
-* effectiveDateTime = "2022-01-06"
-* performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
-* valueString = "Pass"
-* interpretation = $NCIT#C80262 "Conforms"
-* referenceRange.text = "Complies with USP <467>"
-* method.text = "Residual Solvents"

@@ -66,9 +66,9 @@ The diagram below shows the choreography of FHIR Resources that are leveraged in
 {::options parse_block_html="true" /}
 
 Note: The ResearchStudy resource will be leveraged for Stability-	related profiles in the near futurePQ/CMC FHIR Resource Grid
-#### IG Profiles.  
+#### PQ/CMC FHIR Resource Grid
 
-The grid below shows which FHIR Resources are being leveraged in the various PQ/CMC FHIR .
+The grid below shows which FHIR Resources are being leveraged in the various PQ/CMC FHIR Profiles.  Note: The ResearchStudy resource will be leveraged for Stability-related profiles in the near future.
 
 {::options parse_block_html="false" /}
 <figure>

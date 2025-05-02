@@ -154,13 +154,13 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   """
 * status MS	
 * category 1..1 MS
-* category from PqcmcTestCategoryTerminology (required)
-  * ^short = "Test Category | Test Subcategory"
-  * ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* code MS
-* code only CodeableConceptTextOnly
-  * ^short = "Test Name | RRT"	
-  * ^definition = """
+* category ^short = "Test Category | Test Subcategory"
+* category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding 1..1 MS
+* category.coding from PqcmcTestCategoryTerminology (required)
+* category.text 1..1 MS
+* category.text ^short = "Test Name | RRT"	
+* category.text ^definition = """
     Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
     Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
     Note: as defined by the sponsor
@@ -169,7 +169,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     Example: 1:23 (a ratio)
     Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
   """
-
+* code.text = "NA"
 * effective[x] 1..1 MS	
 * effective[x] only dateTime	
   * ^short = "Test Date"	
@@ -222,12 +222,15 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
   Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
 """
 * method 1..1 MS
-* method only CodeableConceptTextOnly
-  * ^short = "Analytical Procedure"	
-  * ^definition = """
-  The name of the technique used to determine the nature of a characteristic. [Source: SME Defined] . 
-  Note: The full descriptor of the technique is part of the next data element - Reference to Procedure
+* method ^short = "Test Method Origin"
+* method ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
+* method.coding 1..1 MS
+* method.coding from PqcmcTestMethodOriginTerminology (required)
+* method.text 1..1 MS
+* method.text ^short = "Analytical Procedure"
+* method.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
 """
+
 // need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
 * referenceRange 1..1 MS
   * modifierExtension contains pq-batch-range named batchRange 0..1 MS
