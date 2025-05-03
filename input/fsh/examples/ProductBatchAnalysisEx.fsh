@@ -3,8 +3,9 @@ InstanceOf: DrugProductBatch
 Usage: #inline
 Title: "Example Product Batch"
 Description: "an example product batch"
-* identifier.value = "OxazepamProduct"
-* identifier.type = $NCIT#C71898 "Proprietary Name"
+* identifier[Proprietary].value = "OxazepamProduct"
+* identifier[Nonproprietary].value = "OXAZEPAM 20mg"
+// * identifier[Proprietary].type = $NCIT#C71898 "Proprietary Name"
 * batch
   * extension[medication-batch]
     * extension[assignedManufacturer].valueReference = Reference(urn:uuid:e165f057-5eed-4e64-8328-4438fc88fb1b)
@@ -167,7 +168,7 @@ Description: "a manufacturing site to be used in an example"
 
 Instance: BatchAnalysisBundle
 InstanceOf: CMCeCTDDocumentSP4454
-Usage: #inline
+Usage: #example
 Title: "Batch Analysis Bundle"
 Description: "An example batch analysis bundle for a drug product"
 * identifier.system = $IDsys
@@ -311,7 +312,7 @@ Description: "A result observation for use in an example"
   * extension[low].valueQuantity = 0.0 '%' "percent"
   * extension[high].valueQuantity = 0.5 '%' "percent"
 * referenceRange
-* category.text = "LT 0.5%" // original text
+  * text = "LT 0.5%" // original text
 * method.coding = $NCIT#C96102 "Compendial"
 * method.text = "USP <731> Loss on Drying"
 
@@ -327,19 +328,19 @@ Usage: #inline
 * category.text = "USP <791>"
 * effectiveDateTime = "2025-03-15"
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe) 
-* valueQuantity = 2.72 '[pH]' "pH"
+* valueQuantity = 3.72 '[pH]' "pH"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.modifierExtension[batchRange]
   * extension[low].valueQuantity = 3.0 '[pH]' "pH"
   * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * referenceRange
-* category.text = "Spec range (pH 3.0 – 5.0)"
+  * text = "Spec range (pH 3.0 – 5.0)"
 * method.coding = $NCIT#C96102 "Compendial" 
 * method.text = "USP <791> pH Determination"
 * component[+]
   * extension[replicate].valueInteger = 1
   * code.text = "pH Replicate"
-  * valueQuantity = 2.65 '[pH]' "pH"
+  * valueQuantity = 3.65 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
@@ -348,7 +349,7 @@ Usage: #inline
 * component[+]
   * extension[replicate].valueInteger = 2
   * code.text = "pH Replicate"
-  * valueQuantity = 2.70 '[pH]' "pH"
+  * valueQuantity = 3.70 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
@@ -357,7 +358,7 @@ Usage: #inline
 * component[+]
   * extension[replicate].valueInteger = 3
   * code.text = "pH Replicate"
-  * valueQuantity = 2.75 '[pH]' "pH"
+  * valueQuantity = 3.75 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
@@ -366,7 +367,7 @@ Usage: #inline
 * component[+]
   * extension[replicate].valueInteger = 4
   * code.text = "pH Replicate"
-  * valueQuantity = 2.74 '[pH]' "pH"
+  * valueQuantity = 3.74 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.text = "Spec range (pH 3.0 – 5.0)"
   * referenceRange.modifierExtension[batchRange]
@@ -375,7 +376,7 @@ Usage: #inline
 * component[+]
   * extension[replicate].valueInteger = 5
   * code.text = "pH Replicate"
-  * valueQuantity = 2.76 '[pH]' "pH"
+  * valueQuantity = 3.76 '[pH]' "pH"
   * interpretation = $NCIT#C80262 "Conforms"
   * referenceRange.modifierExtension[batchRange]
     * extension[low].valueQuantity = 3.0 '[pH]' "pH"
@@ -613,7 +614,7 @@ Usage: #inline
 * identifier.value = "Single Stage"		
 * status = #final		
 * category.coding = $NCIT#C134002 "Residual Solvent"		
-* code.text = "Water Content"		
+* category.text = "Water Content"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)		
 * valueQuantity = 8.2 '%' "percent"		

@@ -30,7 +30,7 @@ Description: "Example result - string acceptance criteria.  This method is both 
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C205026 "Organoleptic"
-* code
+* method
   * coding = $NCIT#C96103 "Proprietary"
   * text = "GMS90 Odor"
 * effectiveDateTime = 2020-10-03
@@ -38,7 +38,7 @@ Description: "Example result - string acceptance criteria.  This method is both 
 * valueString = "No unpleasant odor"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "Pellet form without unpleasant odor"
-* method.text = "Evaluation of Crude Drugs"
+* category.text = "Evaluation of Crude Drugs"
 
 Instance: 1319e6a4-fcdc-4358-95b8-9cd5961ea482
 InstanceOf: ResultObservation
@@ -49,7 +49,7 @@ Description: "Example result - lower limit acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C60819 "Assay"
-* code
+* method
   * coding = $NCIT#C96103 "Proprietary"
   * text = "Assay Monostearate"
 * effectiveDateTime = 2020-10-02
@@ -59,7 +59,7 @@ Description: "Example result - lower limit acceptance criteria"
 * referenceRange.modifierExtension[batchRange]
   * extension[low].valueQuantity = 95 '%' "percent"
 * referenceRange.text = "≥ 95%"
-* method.text = "Assay of Total Monostearate"
+* category.text = "Assay of Total Monostearate"
 
 Instance: 218d23e0-0219-4bdd-86aa-35145fa616b5
 InstanceOf: ResultObservation
@@ -70,7 +70,7 @@ Description: "Example result - numeric upper only range acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C60819 "Assay"
-* code
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "Assay - Free Glycerol"
 * effectiveDateTime = 2020-10-04
@@ -80,7 +80,7 @@ Description: "Example result - numeric upper only range acceptance criteria"
 * referenceRange.modifierExtension[batchRange]
   * extension[high].valueQuantity = 1.5 '%' "percent"
 * referenceRange.text = "≤ 1.5%"
-* method.text = "Assay of Free Glycerol"
+* category.text = "Assay of Free Glycerol"
 
 Instance: b8d1bcbe-b969-49a1-acc0-9dfa698e844a
 InstanceOf: ResultObservation
@@ -92,7 +92,7 @@ Description: "Example result - group tests conform"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C25483 "Material Properties/Measurements"
-* code
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-05
@@ -100,7 +100,7 @@ Description: "Example result - group tests conform"
 * valueString = "Qualified"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "Fat and Oil passed all test in method"  // check notes on if this is required when has memeber used
-* method.text = "Fats and Fixed Oils"
+* category.text = "Fats and Fixed Oils"
 * hasMember[+] = Reference(urn:uuid:a71c68c0-2d24-43b0-a9bc-8f98eac5e50a)
 * hasMember[+] = Reference(urn:uuid:d68f393a-57d0-4180-b4fa-265affb76ecc)
 * hasMember[+] = Reference(urn:uuid:dabcbbb0-94b7-4ec3-80c2-114564c1c938)
@@ -115,7 +115,7 @@ Description: "Example result - upper limit acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C25483 "Material Properties/Measurements"
-* code
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
@@ -125,7 +125,7 @@ Description: "Example result - upper limit acceptance criteria"
 * referenceRange.modifierExtension[batchRange]
   * extension[high].valueQuantity = 2.0 'mg{KOH}/g' "mgKOH/g"
 * referenceRange.text = "≤ 2.0 mgKOH/g"
-* method.text = "Acid Value"
+* category.text = "Acid Value"
 
 Instance: d68f393a-57d0-4180-b4fa-265affb76ecc
 InstanceOf: ResultObservation
@@ -136,7 +136,7 @@ Description: "Example result - range acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C25483 "Material Properties/Measurements"
-* code
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
@@ -148,7 +148,7 @@ Description: "Example result - range acceptance criteria"
   * extension[low].valueQuantity = 60.0 'Cel' "degree Celsius"
   * extension[high].valueQuantity = 70.0 'Cel' "degree Celsius"
 * referenceRange.text = "60.0-70.0 °C"
-* method.text = "Melting Point"
+* category.text = "Melting Point"
 
 Instance: dabcbbb0-94b7-4ec3-80c2-114564c1c938
 InstanceOf: ResultObservation
@@ -159,7 +159,7 @@ Description: "Example result - uppper limit numeric acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C25483 "Material Properties/Measurements"
-* code
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
@@ -169,7 +169,7 @@ Description: "Example result - uppper limit numeric acceptance criteria"
 * referenceRange.modifierExtension[batchRange]
   * extension[low].valueQuantity = 4.0 'g/(100.g)' "g/100g"  // figure out these units
 * referenceRange.text = "≤ 4.0 g/100g"
-* method.text = "Iodine Value"
+* category.text = "Iodine Value"
 
 Instance: 30b89618-46dc-42de-a3f0-cf6285840303
 InstanceOf: ResultObservation
@@ -180,7 +180,7 @@ Description: "Example result - range numeric complex unit acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C25483 "Material Properties/Measurements"
-* code
+* method
   * coding = $NCIT#C96102 "Compendial"  
   * text = "USP <401> Fats and Fixed Oils"
 * effectiveDateTime = 2020-10-03
@@ -191,7 +191,7 @@ Description: "Example result - range numeric complex unit acceptance criteria"
   * extension[low].valueQuantity = 155 'mg{KOH}/g' "mgKOH/g"
   * extension[high].valueQuantity = 165 'mg{KOH}/g' "mgKOH/g"
 * referenceRange.text = "155-165 mgKOH/g"
-* method.text = "Saponification Value"
+* category.text = "Saponification Value"
 
 Instance: 6160fc94-2eaa-4fed-a6e2-2b251e864caa
 InstanceOf: ResultObservation
@@ -202,7 +202,8 @@ Description: "Example result - multiple tests in method acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C205014 "Elemental Impurity"
-* code
+  * text = "Heavy Metals"
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <231>"
 * effectiveDateTime = 2020-10-05
@@ -210,7 +211,6 @@ Description: "Example result - multiple tests in method acceptance criteria"
 * valueString = "Qualified"
 * interpretation = $NCIT#C80262 "Conforms"
 * referenceRange.text = "All regulated elements passed the acceptance criteria defined in USP <233> "
-* method.text = "Heavy Metals"
 * hasMember[+] = Reference(urn:uuid:774a68f3-0e82-4457-831f-db184b863e3c)
 * hasMember[+] = Reference(urn:uuid:74678745-493e-4c0d-bfa1-40231c06144d)
 * hasMember[+] = Reference(urn:uuid:3bb4278f-7c3a-417b-a4dc-ee63e0dd8bda)
@@ -225,7 +225,8 @@ Description: "Example result - first member in group"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C205014 "Elemental Impurity"
-* code
+  * text = "Arsenic Impurity"
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <231>"
 * effectiveDateTime = 2020-10-03
@@ -235,7 +236,6 @@ Description: "Example result - first member in group"
 * referenceRange.modifierExtension[batchRange]
   * extension[high].valueQuantity = 2 '[pH]' "pH"
 * referenceRange.text = "≤ 2 mg/kg"
-* method.text = "Arsenic"
 
 Instance: 74678745-493e-4c0d-bfa1-40231c06144d
 InstanceOf: ResultObservation
@@ -246,7 +246,8 @@ Description: "Example result - second member in group"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C205014 "Elemental Impurity"
-* code
+  * text = "Lead Impurity"
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <231>"
 * effectiveDateTime = 2020-10-03
@@ -256,7 +257,6 @@ Description: "Example result - second member in group"
 * referenceRange.modifierExtension[batchRange]
   * extension[high].valueQuantity = 5.0 '[pH]' "pH"
 * referenceRange.text = "≤ 5 mg/kg"
-* method.text = "Lead"
 
 Instance: 3bb4278f-7c3a-417b-a4dc-ee63e0dd8bda
 InstanceOf: ResultObservation
@@ -267,7 +267,8 @@ Description: "Example result - high only acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C205014 "Elemental Impurity"
-* code
+  * text = "Mercury Impurities"
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <231>"
 * effectiveDateTime = 2020-10-03
@@ -276,7 +277,6 @@ Description: "Example result - high only acceptance criteria"
 * referenceRange.modifierExtension[batchRange]
   * extension[high].valueQuantity = 1 '[pH]' "pH"
 * referenceRange.text = "≤ 1 mg/kg"
-* method.text = "Mercury"
 * valueString = "Qualified"
 
 Instance: c96745e6-1447-4094-bd35-d2c3680bf4b2
@@ -288,15 +288,14 @@ Description: "Example result - text acceptance criteria"
 * identifier.value = "Single Stage"
 * status = #final
 * category = $NCIT#C205014 "Elemental Impurity"
-
-* code
+* category.text = "Cadmium Impurities"
+* method
   * coding = $NCIT#C96102 "Compendial"
   * text = "USP <231>"
 * effectiveDateTime = 2020-10-03
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * valueString = "Qualified"
 * interpretation = $NCIT#C80262 "Conforms"
-* method.text = "Cadmium"
 * referenceRange.text = "Conforms"
 
 Instance: 6c33cd89-a418-4e1d-8ff7-8924beb01e86
@@ -428,3 +427,6 @@ Description: "an example substance batch analysis for Glycerol Monostearate"
 * entry[+]
   * resource = 06522569-a7e8-4c9f-a7db-14c969c240c6
   * fullUrl = "urn:uuid:06522569-a7e8-4c9f-a7db-14c969c240c6"
+* entry[+]
+  * resource = b2727746-84a9-4e3f-ae76-b847deea3afe
+  * fullUrl = "urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe"

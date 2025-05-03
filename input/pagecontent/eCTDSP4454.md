@@ -77,13 +77,12 @@ Used when the observation reports a qualitative assessment (e.g., odor, appearan
 </Observation>
 ```
 
-##### Qualitative Equal Result (valueQuantity)
+##### Quantitative Equal Result (valueQuantity)
 
-Used when the observation reports a qualitative result where the reference range is a single value and the acceptance criterion contains and equal assigment.  It is similar to qualitative result in that the the refernece range only uses the text element, but the observed value is recorded as a Quantity value and requires
+Used when the observation reports a qualitative result. Typically used in conjunction with a reference range which provides a high or low (or both) acceptance criterion. Tests where only the result needs to be recorded (but no limit is prescribed) do not need a reference range.
 
 **Key Characteristic Elements:**
 - `valueQuantity`
-- `comparator`
 
 ```xml
 <Observation>
@@ -97,7 +96,6 @@ Used when the observation reports a qualitative result where the reference range
   ...
   <valueQuantity>
    <value value="23"/>
-   <comparator value="="/>
    <unit value="colony forming unit"/>
    <system value="http://unitsofmeasure.org"/>
    <code value=[CFU]/>

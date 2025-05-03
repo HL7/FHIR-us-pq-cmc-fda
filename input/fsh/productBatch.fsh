@@ -12,7 +12,21 @@ Description: "Includes the properties of the drug product as manufactured."
     Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
   """
   * type 1..1 MS
-  * type from CmcProductNameTypesVS (required)
+  * type from CmcProductNameTypesVS (required) // this might be redundant now because the slices are exhaustive -- if someone wants to provide an 
+                                               // identifier other than prop or non-prop they can't
+  * value 1..1 MS
+* identifier
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Need to at least have a non-proprietary name present"
+  * ^slicing.ordered = false
+* identifier contains Nonproprietary 1..1 MS
+* identifier[Nonproprietary]
+  * type = $NCIT#C96971 "Nonproprietary Name"
+* identifier contains Proprietary 0..1 MS
+* identifier[Proprietary]
+  * type = $NCIT#C71898 "Proprietary Name"
 // hold authroization for eStability
 * marketingAuthorizationHolder 0..1 MS
 * insert PQReference(marketingAuthorizationHolder)

@@ -169,6 +169,7 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     Example: 1:23 (a ratio)
     Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
   """
+* code.text 1..1 MS
 * code.text = "NA"
 * effective[x] 1..1 MS	
 * effective[x] only dateTime	
