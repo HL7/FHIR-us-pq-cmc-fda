@@ -106,9 +106,6 @@
 <artifact deprecated="true" id="Bundle/a242b79e-b706-49d3-93ba-b4364ab2baa3" key="Bundle-a242b79e-b706-49d3-93ba-b4364ab2baa3" name="Example Batch Formula bundle"/>
 <artifact deprecated="true" id="Bundle/49d3b79e-b436-a242-93ba-b706b4364ab2" key="Bundle-49d3b79e-b436-a242-93ba-b706b4364ab2" name="Example Batch Formula bundle with two layers"/>
 <artifact deprecated="true" id="Composition/5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" key="Composition-5c0d341e-6e4f-457c-811d-cfaf3eb62ecd" name="Example Composition for CTD 3.2.S.2.3"/>
-<artifact id="Observation/1213976b-ebb0-42f6-985d-f989356b6d59" key="Observation-1213976b-ebb0-42f6-985d-f989356b6d59" name="Example Dissolution Stage 1 result"/>
-<artifact id="Observation/210af775-ca90-4fe6-9b04-822c765933af" key="Observation-210af775-ca90-4fe6-9b04-822c765933af" name="Example Dissolution Stage 2 result"/>
-<artifact id="Observation/20317ec0-a631-4cdf-88a1-0496b5e3acaf" key="Observation-20317ec0-a631-4cdf-88a1-0496b5e3acaf" name="Example Dissolution result"/>
 <artifact deprecated="true" id="SubstanceDefinition/5f66b17e-e3c0-4ee4-8106-59faa34d70f7" key="SubstanceDefinition-5f66b17e-e3c0-4ee4-8106-59faa34d70f7" name="Example RoutineSubstanceDefinition"/>
 <artifact deprecated="true" id="SubstanceDefinition/580c28ac-1a2c-49fa-9be3-de997da5edcf" key="SubstanceDefinition-580c28ac-1a2c-49fa-9be3-de997da5edcf" name="Example RoutineSubstanceDefinition - IBUPROFEN"/>
 <artifact deprecated="true" id="SubstanceDefinition/cd84a8b5-4e96-551c-15c6-c97c943eb38a" key="SubstanceDefinition-cd84a8b5-4e96-551c-15c6-c97c943eb38a" name="Example RoutineSubstanceDefinition for Asprin"/>
@@ -260,5 +257,5 @@
 <page key="eCTDSP7383" name="Stability Data (3.2.S.7.3 &amp; 3.2.P.8.3)"/>
 <page key="eCTDSP7181" name="Stability Summary (3.2.S.7.1 &amp; 3.2.P.8.1)"/>
 <page key="toc" name="Table of Contents"/>
-<page key="UCUMinPQCMC" name="UCUM Codes"/>
+<page key="TermOverview" name="UCUM Codes"/>
 </specification>
