@@ -19,15 +19,15 @@ Description: "Definition for a document bundle with the CMC eCTD 32P1 profiles (
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
 * entry contains
-    Composition 1..1 and
-    FinishedProduct 1..1 and
-    DrugProduct 1..* and
-    ContainerClosure 1..* and
-    Organization 0..* and
-    DrugProductComponent 0..* and
-    ComponentSubstance 0..* and
-    GraphicsFile 0..* and
-    StructureFile 0..* 
+    Composition 1..1 MS and
+    FinishedProduct 1..1 MS and
+    DrugProduct 1..* MS and
+    ContainerClosure 1..* MS and
+    Organization 0..* MS and
+    DrugProductComponent 0..* MS and
+    ComponentSubstance 0..* MS and
+    GraphicsFile 0..* MS and
+    StructureFile 0..* MS
 * entry[Composition].resource only EctdComposition32P10
 * entry[FinishedProduct].resource only FinishedProduct
 * entry[DrugProduct].resource only DrugProductDescription or DrugProductHandle
@@ -63,11 +63,11 @@ Description: "Definition for a document bundle with the CMC eCTD 32S1 profiles (
   * ^slicing.description = ""
   * ^slicing.ordered = false
 * entry contains
-  Composition 1..1 and
-  Organization 0..* and
-  StructureDefinition 1..* and
-  GraphicsFiles 0..* and
-  StructureFiles 0..*
+  Composition 1..1 MS and
+  Organization 0..* MS and
+  StructureDefinition 1..* MS and
+  GraphicsFiles 0..* MS and
+  StructureFiles 0..* MS
 * entry[Composition].resource only EctdComposition32S10
 * entry[Organization].resource only CodedOrganization
 // The intersection of all possible DrugSubstanceNomenclatureStructures and
@@ -98,12 +98,12 @@ Description: "Definition for a document bundle with the CMC eCTD 32S23 profiles 
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
 * entry contains
-    Composition 1..1 and
-    RoutineSubstance 1..* and // there must be at least one subject
-    Organization 1..* and
-    Excipient 0..* and
-    RoutineProduct 0..* and
-    Specification 1..*
+    Composition 1..1 MS and
+    RoutineSubstance 1..* MS and // there must be at least one subject
+    Organization 1..* MS and
+    Excipient 0..* MS and
+    RoutineProduct 0..* MS and
+    Specification 1..* MS
 * entry[Composition].resource only EctdComposition32S23
 * entry[Organization].resource only CodedOrganization
 // The intersection of all possible routine substances
@@ -135,12 +135,12 @@ Description: "Definition for a document bundle with the CMC eCTD SP4151 profiles
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
 * entry contains
-  Composition 1..1 and
-  Organization 1..* and
-  Specification 1..1 and
-  RoutineSubstance 0..1 and
-  RoutineProduct 0..1 and
-  ExcipientRaw 0..1
+  Composition 1..1 MS and
+  Organization 1..* MS and
+  Specification 1..1 MS and
+  RoutineSubstance 0..1 MS  and
+  RoutineProduct 0..1 MS and
+  ExcipientRaw 0..1 MS
 * entry[Composition].resource only EctdCompositionSP4151
 * entry[Organization].resource only CodedOrganization
 * entry[Specification].resource only QualitySpecification
@@ -173,12 +173,12 @@ Description: "Definition for a document bundle with the CMC eCTD 32S3 profiles (
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "The specific bundle entries that are needed for a Substance Characterisation document."
 * entry contains
-    Composition 1..1 and
-    Characterisation 1..1 and
-    Organization 1..* and
-    Impurity 0..* and
-    GraphicsFile 0..* and
-    StructureFile 0..*
+    Composition 1..1 MS and
+    Characterisation 1..1 MS and
+    Organization 1..* MS and
+    Impurity 0..* MS and
+    GraphicsFile 0..* MS and
+    StructureFile 0..* MS
 * entry[Composition].resource only EctdComposition32S3
 * entry[Characterisation].resource only DrugSubstanceCharacterisation
 * entry[Organization].resource only CodedOrganization
@@ -207,13 +207,13 @@ Description: "Definition for a document bundle with the CMC eCTD 32P32 profiles 
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
-    Composition 1..1 and
-    Organization 1..* and
-    BatchFormulaMedicinalProduct 1..1 and
-    BatchFormula 1..* and
-    Ingredient 0..* and
-    RoutineSubstance 0..* and
-    ExcipientRaw 0..*
+    Composition 1..1 MS and
+    Organization 1..* MS and
+    BatchFormulaMedicinalProduct 1..1 MS and
+    BatchFormula 1..* MS and
+    Ingredient 0..* MS and
+    RoutineSubstance 0..* MS and
+    ExcipientRaw 0..* MS
 * entry[Composition].resource only EctdComposition32P32
 * entry[Organization].resource only CodedOrganization
 * entry[BatchFormulaMedicinalProduct].resource only BatchFormulaMedicinalProduct
@@ -241,12 +241,12 @@ Description: "Definition for a document bundle with the CMC eCTD 32P55 profile (
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
-    Composition 1..1 and
-    Organization 1..1 and
-    DrugProduct 1..1 and
-    Impurity 0..* and
-    GraphicsFile 0..* and
-    StructureFile 0..*
+    Composition 1..1 MS and
+    Organization 1..1 MS and
+    DrugProduct 1..1 MS and
+    Impurity 0..* MS and
+    GraphicsFile 0..* MS and
+    StructureFile 0..* MS
 * entry[Composition].resource only EctdComposition32P55
 * entry[Organization].resource only CodedOrganization
 * entry[DrugProduct].resource only DrugProductwithImpurities
