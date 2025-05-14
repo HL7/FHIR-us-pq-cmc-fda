@@ -376,15 +376,31 @@ Severity: #error
 Invariant: cmc-amount-ratio-or-quantity
 Severity: #error
 Description: "The amount ratio extension and an amount with a non-percentage unit are mutually exclusive"
+// Logically: either the modifier extension exists or an amount without a percentage sign in it exists.
+// (all of the percentage units will always have the '%' symbol in it) 
+// I didn't know fhirpath had a dedicated XOR in it!
 Expression: "defineVariable('system','http://unitsofmeasure.org').select(
-  modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')
-  .union(
-    amount.where(
-        system = %system and 
-        code.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units')
-    )
-  ).count() = 1
+  modifierExtension.where(url= 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio').exists()
+  xor
+  amount.where(
+    system = %system and
+    code.matches('%').not()
+  ).exists()
 )"
+// ***OLDINVARIANT ***
+// NOTE: this expression should work. It doesn't after switching to the big UCUM value set
+// provided by FHIR. my only guess is it has to do with the memberOf() function not working
+// for whatever reason when expanding the non-percentage units valueset.
+
+// Expression: "defineVariable('system','http://unitsofmeasure.org').select(
+//   modifierExtension.where(url = 'http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/pq-amount-ratio')
+//   .union(
+//     amount.where(
+//         system = %system and 
+//         code.memberOf('http://hl7.org/fhir/us/pq-cmc-fda/ValueSet/pqcmc-non-percentage-units')
+//     )
+//   ).count() = 1
+// )"
 // Logically: Either the amount ratio extension or an amount that isn't a percent must be present, and they
 // can never be present at the same time, so their combined count is always 1
 
