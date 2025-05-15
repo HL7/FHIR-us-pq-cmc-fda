@@ -456,3 +456,35 @@ Expression: "
   ).exists()
 "
 Severity: #warning
+
+
+Invariant: cmc-valid-test-category-hierachies
+Description: "If a child test category is used, its corresponding parent code must also be present"
+Severity: #error
+// Logic: 
+// Define bunch of variables where the name of the variable is the parent code,
+// and the value is a collection of all the possible children for that parent.
+// there is always exactly one parent code, thanks to the slicing rules on the
+// corresponding element, and potentially one child code. If there are two codings,
+// and one of them is a special parent that has children, then the other coding must
+// be from the correct collection.
+Expression: "defineVariable('C60819',('C204845'|'C205001'|'C81183'|'C205003'|'C205007'|'C205015'|'C205018'|'C205020'|'C62352'|'C171277'|'C205038'|'C64858'|'C205006')).select(
+defineVariable('C134250',('C205004'|'C205019'|'C134115'|'C205050')).select(
+defineVariable('C205026',('C138990'|'C139027'|'C134262'|'C134261')).select(
+defineVariable('C193381',('C205024')).select(
+defineVariable('C25483',('C205022'|'C205017'|'C205209'|'C205053'|'C205021'|'C205016'|'C205206'|'C205045'|'C205036'|'C205011'|'C205010'|'C205009'|'C205037'|'C205025'|'C205034'|'C205033'|'C205035'|'C205005'|'C205044'|'C205043'|'C205042')).select(
+defineVariable('C18951',('C16643'|'C205054'|'C205031'|'C205002'|'C205008')).select(
+defineVariable('C204971',('C205039'|'C205040'|'C205052'|'C205047'|'C205048'|'C205051'|'C205014'|'C204890'|'C134254'|'C134002')).select(
+  coding.count() = 2 implies (
+    coding.exists(('C60819'|'C134250'|'C205026'|'C193381'|'C25483'|'C18951') contains code) 
+    implies (
+      (coding.exists(code = 'C60819') implies coding.exists(%C60819 contains code)) and
+      (coding.exists(code = 'C134250') implies coding.exists(%C134250 contains code)) and
+      (coding.exists(code = 'C205026') implies coding.exists(%C205026 contains code)) and
+      (coding.exists(code = 'C193381') implies coding.exists(%C193381 contains code)) and
+      (coding.exists(code = 'C25483') implies coding.exists(%C25483 contains code)) and
+      (coding.exists(code = 'C18951') implies coding.exists(%C18951 contains code)) and
+      (coding.exists(code = 'C204971') implies coding.exists(%C204971 contains code))
+    )
+  )
+)))))))"

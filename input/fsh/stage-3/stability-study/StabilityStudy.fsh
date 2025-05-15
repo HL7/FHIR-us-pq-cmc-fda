@@ -249,3 +249,83 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * result MS
 * insert PQReference(result)
 * result only Reference(ResultObservation)
+
+
+Profile: StabilityStudyProtocol
+Parent: PlanDefinition
+Id: pq-stability-study-protocol
+Title: "Stability Study Protocol"
+Description: "Defines the protocol for a stability study, including storage conditions, container closures, time points, and tests."
+* title 1..1 MS
+  * ^short = "Protocol Title"
+  * ^definition = "The title of the stability study protocol provided by the sponsor or manufacturer."
+* description 0..1 MS
+  * ^short = "Protocol Description"
+  * ^definition = "A narrative description of the overall stability study design including objectives, scope, and general approach."
+ 
+// Top-level Storage Condition
+* action 1..* MS
+  * title 1..1 MS
+    * ^short = "Storage Condition Title"
+    * ^definition = "Descriptive title for the storage condition and orientation, typically the ICH storage condition code or description (e.g., 25°C/60%RH Upright)."
+  * code 1..1 MS
+    * coding 2..2 MS
+    * coding ^slicing.discriminator.type = #value
+    * coding ^slicing.discriminator.path = "$this"
+    * coding ^slicing.rules = #closed
+    * coding ^slicing.description = "Slice on the coding itself"
+    * coding ^slicing.ordered = false
+    * coding contains
+      storage 1..1 MS and
+      orientation 1..1 MS
+    * coding[storage] from PqcmcStorageConditionsTerminology (required)
+      * ^short = "Storage Conditions Temp.RH"
+      * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
+    * coding[orientation] from PqcmcContainerOrientationTerminology	 (required)
+      * ^short = "Container Orientation"
+      * ^definition = """
+      The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+      Examples: horizontal, upright.
+    """
+  * title 1..1 MS
+    * ^short = "Container Closure Title"
+    * ^definition = "Descriptive title for the container closure system being evaluated under the specified storage condition."
+  * description 1..1 MS
+    * ^short = "Container Closure Description"
+    * ^definition = "Detailed description of the container closure system, including materials and configuration (e.g., HDPE Bottle with Induction Seal)."
+    // Nested Time Points under Container Closure
+  * action 1..* MS
+    * title 1..1 MS
+      * ^short = "Time Point Title"
+      * ^definition = "Descriptive title for the scheduled evaluation time point (e.g., 3 Months)."
+    * timingTiming 1..1 MS
+      * ^short = "Time Point Schedule"
+      * ^definition = "Timing schedule specifying when the samples will be evaluated (e.g., 3, 6, 12 months)."
+* goal MS
+* goal ^short = "What Tests are Planed for this time point"
+
+* goal.description MS
+* goal.description obeys cmc-valid-test-category-hierachies
+  * coding 1..2 MS
+    * ^short = "Test Category | Test Subcategory"
+    * ^definition = """
+      A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties.
+    """
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #closed
+    * ^slicing.description = "the first coding must be a parent, the second one may be a child"
+    * ^slicing.ordered = false
+  * coding contains 
+      parent 1..1 MS and
+      child 0..1 MS
+  * coding[parent] from PqcmcTestCategoryParentTerminology (required)
+  * coding[child] from PqcmcTestCategoryChildTerminology (required)    
+// * goal.description 1..1 MS
+* goal.description.text 1..1 MS
+* goal.description.text ^short = "Test Name"
+* goal.description.text ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
+  Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+  Note: as defined by the sponsor
+  """
+
