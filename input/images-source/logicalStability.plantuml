@@ -1,0 +1,125 @@
+@startuml
+skinparam rectangle {
+    BackgroundColor #f9f9f9
+    BorderColor black
+}
+
+entity "Overall Stability Study" as OverallStudy {
+  * Overall Study Identifier
+  * Title
+  * Sponsor / Owner
+  * Overall Objective
+  * Regulatory Reference
+  * Summary of Combined Outcomes
+}
+
+entity "Stability Sub-Study" as SubStudy {
+  * Sub-Study Identifier
+  * Sub-Study Type
+  * Objective
+  * Linked Protocol Reference
+}
+
+entity "Product" as Product {
+  * Product Identifier
+  * Type
+  * Formulation Description
+  * Dosage Form
+  * Strength / Concentration
+}
+
+entity "Batch" as Batch {
+  * Batch Identifier
+  * Manufacturing Process Description
+  * Production Scale
+  * Manufacturing Site
+  * Manufacture Date
+  * Container Closure System
+}
+
+entity "Storage Condition" as StorageCondition {
+  * Condition Identifier
+  * Temperature
+  * Humidity
+  * Duration
+  * Storage Orientation
+  * Light Exposure Condition
+}
+
+entity "Timepoint" as Timepoint {
+  * Timepoint Identifier
+  * Time (e.g., 0, 1, 3, 6, 12 months)
+}
+
+entity "Result" as Result {
+  * Result Identifier
+  * Measured Value
+  * Status (Pass/Fail)
+  * Deviation Justification
+}
+
+entity "Test Type" as TestType {
+  * Test Identifier
+  * Test Name
+  * Stability-Indicating
+  * Pharmacopoeial Reference
+}
+
+entity "Test Method" as TestMethod {
+  * Method Identifier
+  * Description
+  * Validation Status
+  * Release vs Stability Method
+}
+
+entity "Acceptance Criteria" as AcceptanceCriteria {
+  * Criteria Identifier
+  * Specification Limit
+  * Shelf Life Limit
+  * Justification Notes
+}
+
+entity "Container Closure System" as ContainerClosureSystem {
+  * System Identifier
+  * Material Type
+  * Semi-Permeable
+  * Functional Role
+}
+
+entity "Statistical Evaluation" as StatisticalEvaluation {
+  * Evaluation Identifier
+  * Model Used
+  * Outcome Description
+  * Shelf Life Prediction
+}
+
+entity "Excursion Assessment" as ExcursionAssessment {
+  * Assessment Identifier
+  * Excursion Description
+  * Impact Evaluation
+  * Resolution Actions
+}
+
+entity "Device Integration" as DeviceIntegration {
+  * Device Identifier
+  * Functional Characteristics
+  * Impact on Drug Performance
+}
+
+' Hierarchical Relationship
+OverallStudy ||--o{ SubStudy
+
+' Sub-Study Relationships
+SubStudy ||--o{ Batch
+SubStudy ||--o{ StorageCondition
+StorageCondition ||--o{ Timepoint
+Timepoint ||--o{ Result
+Result }o--|| TestType
+TestType ||--o{ TestMethod
+TestType ||--o{ AcceptanceCriteria
+Batch ||--|| ContainerClosureSystem
+SubStudy ||--o{ StatisticalEvaluation
+SubStudy ||--o{ ExcursionAssessment
+Product ||--o{ DeviceIntegration
+
+@enduml
