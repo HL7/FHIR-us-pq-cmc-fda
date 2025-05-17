@@ -26,7 +26,7 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:
   hl7.terminology.r5: 6.3.0
-  hl7.fhir.uv.extensions.r6: 1.0.0
+  # hl7.fhir.uv.extensions.r6: 1.0.0
 
 menu:
   Table of Contents: toc.html

@@ -95,40 +95,100 @@ Description: "Profile for describing main and Sub-Stability studies for drug sub
     The rationale for why the Stability study was terminated. [Source: SME Defined]
   """
 
+Extension: PQCMCStabilitySubStudyFocusAndObjective
+Id: pqcmc-stability-sub-study-focus-and-objective
+Title: "PQCMC Stability Sub Study Focus And Objective"
+Description: """
+  In R6, ResearchStudy has two BackboneElements called objective and focus. 
+  They capture a lot of meaningful information. Until R6 this extension will be used instead.
+  This extension will be laid out in a way that corresponds to R6 though it will not capture
+  everything that these BackboneElements do in r6.
+"""
+* ^context.type = #element
+* ^context.expression = "ResearchStudy"
+* extension contains 
+  focus 1..1 MS and 
+  objective 1..1 MS
+* extension[focus]
+  * ^short = "Suppoting information for cycled testing and matrixed study designs."
+  * value[x] 1..1 MS
+  * value[x] only Reference
+  * insert PQReference(valueReference)
+  * valueReference only Reference(CycledTestingPlanDefinition)
+* extension[objective].extension contains
+  name 1..1 MS and
+  outcomeMeasure 1..1 MS
+* extension[objective]
+  * ^short = "Study Design and Justification"
+  * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
+  * extension[name]
+    * ^short = "Label"
+    * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
+    * value[x] 1..1 MS
+    * value[x] only string
+  * extension[outcomeMeasure].extension contains
+    comparator 1..* MS and
+    summaryMeasure 0..1 MS and
+    endpointAnalysisPlan 0..1 MS
+  * extension[outcomeMeasure]
+    * extension[comparator]
+      * ^short = "Specific product or group under study"
+      * ^definition = """
+        Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile) 
+        representing the population or configuration being studied.
+        Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
+      """
+      * value[x] 1..1 MS
+      * value[x] only Reference
+      * insert PQReference(valueReference)
+      * valueReference only Reference(StabilityGroups)
+    * extension[summaryMeasure]
+      * value[x] 1..1 MS
+      * value[x] only CodeableConcept
+      * valueCodeableConcept only CodeableConceptTextOnly
+    * extension[endpointAnalysisPlan]
+      * ^short = "Linked Design or Evidence"
+      * ^definition = "References to supporting BracketingStudyEvidence."
+      * value[x] 1..1 MS
+      * value[x] only Reference
+      * insert PQReference(valueReference)
+      * valueReference only Reference(BracketingStudyEvidence)
+
 Profile: StabilitySubStudy
 Parent: ResearchStudy
 Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
 Description: "Profile for the a stability sub-study."
 
-// Cross-version R6 Extensions
-* extension contains 
-    http://hl7.org/fhir/StructureDefinition/researchstudy-focus named r6focus 0..* and
-    http://hl7.org/fhir/StructureDefinition/researchstudy-objective named r6Objective 0..*
-// R6 focus
-* insert PQReference(extension[r6focus].focus)
-* extension[r6focus].focus only Reference(CycledTestingPlanDefinition)
-*  ^short = "Suppoting information for cycled testing and matrixed study designs."
-// R6 objective 
-* extension[r6Objective] 0..* MS
-  * ^short = "Study Design and Justification"
-  * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
-* extension[r6Objective].name 1..1 MS
-  * ^short = "extension[r6Objective] Label"
-  * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
-* extension[r6Objective].outcomeMeasure.comparator 1..* MS
-  * ^short = "Specific product or group under study"
-  * ^definition = """Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile) 
-  representing the population or configuration being studied.
-  Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
-  """
-* extension[r6Objective].outcomeMeasure.comparator only Reference(StabilityGroups)
-* extension[r6Objective].outcomeMeasure.summaryMeasure MS
-  * ^short = "Linked Design or Evidence"
-  * ^definition = "References to supporting BracketingStudyEvidence."
-  * description 1..1 MS
-* extension[r6Objective].outcomeMeasure.endpointAnalysisPlan only Reference(BracketingStudyEvidence or MatrixedStudyEvidence)
+// // Cross-version R6 Extensions
+// * extension contains 
+//     http://hl7.org/fhir/StructureDefinition/researchstudy-focus named r6focus 0..* and
+//     http://hl7.org/fhir/StructureDefinition/researchstudy-objective named r6Objective 0..*
+// // R6 focus
+// * insert PQReference(extension[r6focus].focus)
+// * extension[r6focus].focus only Reference(CycledTestingPlanDefinition)
+// *  ^short = "Suppoting information for cycled testing and matrixed study designs."
+// // R6 objective 
+// * extension[r6Objective] 0..* MS
+//   * ^short = "Study Design and Justification"
+//   * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
+// * extension[r6Objective].name 1..1 MS
+//   * ^short = "extension[r6Objective] Label"
+//   * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
+// * extension[r6Objective].outcomeMeasure.comparator 1..* MS
+//   * ^short = "Specific product or group under study"
+//   * ^definition = """Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile) 
+//   representing the population or configuration being studied.
+//   Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
+//   """
+// * extension[r6Objective].outcomeMeasure.comparator only Reference(StabilityGroups)
+// * extension[r6Objective].outcomeMeasure.summaryMeasure MS
+//   * ^short = "Linked Design or Evidence"
+//   * ^definition = "References to supporting BracketingStudyEvidence."
+//   * description 1..1 MS
+// * extension[r6Objective].outcomeMeasure.endpointAnalysisPlan only Reference(BracketingStudyEvidence or MatrixedStudyEvidence)
 // R5 elements
+* extension contains pqcmc-stability-sub-study-focus-and-objective named focusAndObjective 1..1 MS
 * identifier 1..1 MS
   * ^definition = """
     An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
@@ -150,7 +210,7 @@ Description: "Profile for the a stability sub-study."
 * protocol ^short = "Sub-Stability Protocol"
 * protocol ^definition = "Reference to the Main Study protocol with the "
 * insert PQReference(protocol)
-* protocol only Reference (StabilityStudyProtocol)
+* protocol only Reference(StabilityStudyProtocol)
 * protocol.display 1..1 MS 
 // * protocol.display ^short = // no Short??
 * protocol.display ^definition = """
@@ -404,12 +464,30 @@ Description: "Profile for defining stability studies with cycling conditions usi
 * action.relatedAction.targetId 1..1 MS
 * action.relatedAction.relationship 1..1 MS
 
+Extension: PQCMCStabilityGroupsMedicationMember
+Id: pqcmc-stability-groups-medication-member
+Title: "PQCMC Stability Groups Medication Member"
+Description: "In FHIR version R5, Group cannot reference a Medication or Substance in its 'member' element, whereas it can in R6. Until R6 this extension will be used."
+* ^context.type = #element
+* ^context.expression = "Group"
+* . ?!
+* . ^isModifierReason = "When present, this extension functions as the Group's 'member' element."
+* value[x] 1..1 MS
+* value[x] only Reference
+// the profile and literalReference stuff will be done in StabilityGroups
+* valueReference only Reference(Medication or Substance)
+
 Profile: StabilityGroups
 Parent: Group
 Id: stability-groups
 Title: "Stability Groups Profile"
 Description: "Profile for defining groups of Medication or Substance used in stability studies, such as bracketed or matrixed product groupings."
-
+* modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
+* modifierExtension[member]
+  * ^short = "Group members"
+  * ^definition = "References to the Medication or Substance resources that are part of this stability group, used for bracketing, matrixing, or other study designs."
+  * insert PQReference(valueReference)
+  * valueReference only Reference(DrugProductBatch or DrugSubstanceBatch)
 // Require group name
 * name 1..1 MS
   * ^short = "Label for the stability group"
@@ -420,11 +498,26 @@ Description: "Profile for defining groups of Medication or Substance used in sta
   * ^short = "Membership type for the stability group"
   * ^definition = "Enumerate the set of stability studies."
 // Restrict members to Medication or Substance
-* member 1..* MS
+// * member 1..* MS
 // WIP: can't reference Medication until r6
 //* member.entity only Reference(DrugProductBatch or DrugSubstanceBatch)
-  * ^short = "Group members"
-  * ^definition = "References to the Medication or Substance resources that are part of this stability group, used for bracketing, matrixing, or other study designs."
+
+Extension: PQCMCEvidenceProductReference
+Id: pqcmc-evidence-product-reference
+Title: "PQCMC Evidence Product Reference"
+Description: """
+  In R6, the Evidence profile has a 'relatesTo' Backbone Element which can be used 
+  to reference MedicinalProductDefinition, to say which product this stability data 
+  is for. R5 has no equivalent so until R6 this extension will be used
+"""
+* ^context.type = #element
+* ^context.expression = "Evidence"
+* value[x] 1..1 MS
+* value[x] only Reference
+* insert PQReference(valueReference)
+* valueReference only Reference(DrugProductHandle)
+
+
 
 Profile: BracketingStudyEvidence
 Parent: Evidence
@@ -432,17 +525,17 @@ Id: bracketing-study-evidence
 Title: "Bracketing Study Evidence Profile"
 Description: "Profile for capturing interpolation-based stability inferences from bracketing designs."
 
-// Cross-version R6 Extensions
-* extension contains 
-    http://hl7.org/fhir/StructureDefinition/evidence-relatesto named r6relatesto 0..* and
+// // Cross-version R6 Extensions
+// * extension contains 
+//     http://hl7.org/fhir/StructureDefinition/evidence-relatesto named r6relatesto 0..* and
 
-// R6 focus
-* insert PQReference(fr6relatesto)
-* extension[r6relatesto]
-*  ^short = "The product(s) whoes stabiliyt is inferred from the bracketed study evidence."
-  * type = http://hl7.org/fhir/artifact-relationship-type#comments-on	"Is Comment On"
-  * targetReference only Reference(DrugProductHandle)
-
+// // R6 focus
+// * insert PQReference(fr6relatesto)
+// * extension[r6relatesto]
+// *  ^short = "The product(s) whoes stabiliyt is inferred from the bracketed study evidence."
+//   * type = http://hl7.org/fhir/artifact-relationship-type#comments-on	"Is Comment On"
+// * targetReference only Reference(DrugProductHandle)
+* extension contains pqcmc-evidence-product-reference named productReference 0..1 MS
 // Require active status
 * status 1..1 MS
   * ^short = "Evidence status"
