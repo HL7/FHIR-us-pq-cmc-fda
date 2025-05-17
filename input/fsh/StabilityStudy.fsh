@@ -160,7 +160,6 @@ Description: "Profile for the a stability sub-study."
 * insert PQReference(partOf)
 * partOf only Reference(StabilityStudy or StabilitySubStudy)
   * ^short = "Reference to main study or associated study"
-
 * condition 3..4 MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "coding"
@@ -220,7 +219,6 @@ Description: "Profile for the a stability sub-study."
   Note:  Bracketing, Complex, Cycled-Simple and Matrixing require additional elements.
   """ 
 * classifier  from pqcmc-study-type-terminology (required)
-
 * result MS
 * insert PQReference(result)
 * result only Reference(StabilityStudyIntervalReport)
@@ -427,6 +425,17 @@ Parent: Evidence
 Id: bracketing-study-evidence
 Title: "Bracketing Study Evidence Profile"
 Description: "Profile for capturing interpolation-based stability inferences from bracketing designs."
+
+// Cross-version R6 Extensions
+* extension contains 
+    http://hl7.org/fhir/StructureDefinition/evidence-relatesto named r6relatesto 0..* and
+
+// R6 focus
+* insert PQReference(fr6relatesto)
+* extension[r6relatesto]
+*  ^short = "The product(s) whoes stabiliyt is inferred from the bracketed study evidence."
+  * type = http://hl7.org/fhir/artifact-relationship-type#comments-on	"Is Comment On"
+  * targetReference only Reference(DrugProductHandle)
 
 // Require active status
 * status 1..1 MS
