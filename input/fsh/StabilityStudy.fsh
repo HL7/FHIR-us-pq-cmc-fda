@@ -58,20 +58,20 @@ Description: "Profile for describing main and Sub-Stability studies for drug sub
     The rationale for submitting the stability data. [Source: SME Defined]
     Examples: Annual Report, NDA, Pre-market approval.
   """
-* focus[x] 1..* MS
+* focus 1..* MS
   * ^short = """The Drug Substance or Drug Product(s) included in the stabiltiy study.
   Note: When utilizing a bracketed study design, include untested products as with those representing the extreme conditions in a bracketed stability study.
   """
-* insert PQReference(focus[x])
-* focus[x] only Reference(DrugProductHandle or SubstanceDefinitionHandle)  
+* insert PQCodeableReference(focus)
+* focus only CodeableReference(DrugProductHandle or SubstanceDefinitionHandle)  
 
 * description 0..1 MS
-    * ^short = "Study Purpose"
-    * ^definition = """
-      A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
-      Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film
-      Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
-    """
+  * ^short = "Study Purpose"
+  * ^definition = """
+    A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
+    Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film
+    Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
+  """
 * period 1..1 MS
   * start 1..1 MS
     * ^short = "Study Start Date"
@@ -106,8 +106,8 @@ Description: "Profile for the a stability sub-study."
     http://hl7.org/fhir/StructureDefinition/researchstudy-focus named r6focus 0..* and
     http://hl7.org/fhir/StructureDefinition/researchstudy-objective named r6Objective 0..*
 // R6 focus
-* insert PQReference(focus)
-* extension[r6focus]. only Reference(CycledTestingPlanDefinition)
+* insert PQReference(extension[r6focus].focus)
+* extension[r6focus].focus only Reference(CycledTestingPlanDefinition)
 *  ^short = "Suppoting information for cycled testing and matrixed study designs."
 // R6 objective 
 * extension[r6Objective] 0..* MS
@@ -152,14 +152,16 @@ Description: "Profile for the a stability sub-study."
 * insert PQReference(protocol)
 * protocol only Reference (StabilityStudyProtocol)
 * protocol.display 1..1 MS 
-* protocol.display ^short =
-* protocol.display definition = "Provide the 'Storage Condition, Orientation and Container Title' from the PlanDefinition.action.title element
- in the StabilityStudyProtocol profile consistent with this sub-study"
+// * protocol.display ^short = // no Short??
+* protocol.display ^definition = """
+  Provide the 'Storage Condition, Orientation and Container Title' from the PlanDefinition.action.title element
+  in the StabilityStudyProtocol profile consistent with this sub-study
+"""
 * partOf MS
- * ^definition = "Use partOf to maintain a hierarchical relationship between stability studies."
 * insert PQReference(partOf)
 * partOf only Reference(StabilityStudy or StabilitySubStudy)
   * ^short = "Reference to main study or associated study"
+  * ^definition = "Use partOf to maintain a hierarchical relationship between stability studies."
 
 * condition 3..4 MS
   * ^slicing.discriminator.type = #value
@@ -209,7 +211,7 @@ Description: "Profile for the a stability sub-study."
   * ^definition = """
     The rationale for why the Stability study was terminated. [Source: SME Defined]
   """
- * note
+* note
   * ^short = "Sub-Study Additional Information"
   * ^definition = """
     A placeholder for providing comments about the stability study. [Source: SME Defined]
@@ -277,7 +279,7 @@ Description: "Defines the protocol for a stability study, including storage cond
       An alphanumeric identifier assigned to a prospective protocol plan by the sponsoring organization. [Source: SME Defined]
     """
 * version 1..1 MS
- * ^short = "Protocol Version"
+  * ^short = "Protocol Version"
   * ^definition = """
       The alphanumeric text assigned by the sponsor to a particular edition of a stability study that is sequential. [Source: SME Defined]
       Examples: 2.1, 2.2 or A1, Aw or P1, P2, etc.
@@ -364,33 +366,35 @@ Description: "Profile for defining stability studies with cycling conditions usi
 
 // Require at least one goal to define the cycle
 * goal 1..* MS
- * goal.target.detailCodeableConcept 1..1 MS
-    * coding 4..4 MS
-    * coding ^slicing.discriminator.type = #value
-    * coding ^slicing.discriminator.path = "$this"
-    * coding ^slicing.rules = #closed
-    * coding ^slicing.description = "Slice on the coding itself"
-    * coding ^slicing.ordered = false
-    * coding contains
-      storage 1..1 MS  and
-      orientation 1..1 MS and
-      containerType 1..1 MS and
-      closureType 1..1 MS
-    * coding[storage] from PqcmcStorageConditionsTerminology (required)
-      * ^short = "Storage Conditions Temp.RH"
-      * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
-    * coding[orientation] from PqcmcContainerOrientationTerminology	 (required)
-      * ^short = "Container Orientation"
-      * ^definition = """
-      The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
-      Examples: horizontal, upright.
-    """
-    * coding[containerType] from PqcmcContainerTypeTerminology (required)
-      * ^short =  "Container Type"
-      * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
-    * coding[closureType] from PqcmcClosureTypeTerminology (required)
-      * ^short = "Closure Type"
-      * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+* goal.target.detail[x] 1..1 MS
+* goal.target.detail[x] only CodeableConcept
+* goal.target.detailCodeableConcept
+  * coding 4..4 MS
+  * coding ^slicing.discriminator.type = #value
+  * coding ^slicing.discriminator.path = "$this"
+  * coding ^slicing.rules = #closed
+  * coding ^slicing.description = "Slice on the coding itself"
+  * coding ^slicing.ordered = false
+  * coding contains
+    storage 1..1 MS  and
+    orientation 1..1 MS and
+    containerType 1..1 MS and
+    closureType 1..1 MS
+  * coding[storage] from PqcmcStorageConditionsTerminology (required)
+    * ^short = "Storage Conditions Temp.RH"
+    * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
+  * coding[orientation] from PqcmcContainerOrientationTerminology	 (required)
+    * ^short = "Container Orientation"
+    * ^definition = """
+    The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+    Examples: horizontal, upright.
+  """
+  * coding[containerType] from PqcmcContainerTypeTerminology (required)
+    * ^short =  "Container Type"
+    * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+  * coding[closureType] from PqcmcClosureTypeTerminology (required)
+    * ^short = "Closure Type"
+    * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
 // Require at least one action linked to a goal
 * action 1..* MS
 * action.title 1..1 MS
@@ -413,12 +417,13 @@ Description: "Profile for defining groups of Medication or Substance used in sta
   * ^definition = "A human-readable name used to identify the group, such as 'High Strength Bracket' or 'Smallest Package Size Group'."
 // Require membership specification
 * membership 1..1 MS
-* membership.value = "enumerated"
+* membership.value = #enumerated
   * ^short = "Membership type for the stability group"
   * ^definition = "Enumerate the set of stability studies."
 // Restrict members to Medication or Substance
 * member 1..* MS
-* member.entity only Reference(DrugProductBatch or DrugSubstanceBatch)
+// WIP: can't reference Medication until r6
+//* member.entity only Reference(DrugProductBatch or DrugSubstanceBatch)
   * ^short = "Group members"
   * ^definition = "References to the Medication or Substance resources that are part of this stability group, used for bracketing, matrixing, or other study designs."
 
@@ -437,31 +442,46 @@ Description: "Profile for capturing interpolation-based stability inferences fro
   * ^short = "Bracketing study summary"
   * ^definition = "A summary of the statistical justification used to demonstrate that testing extremes (e.g., smallest and largest package sizes) brackets the behavior of intermediate configurations."
 // Require variable definitions for population and comparators
- * ^short = "Bracketed package sizes or configurations"
+  * ^short = "Bracketed package sizes or configurations"
   * ^definition = "Defines the extremes used in the bracketing study, such as smallest and largest package sizes or strengths."
-* variableDefinition[0].description 1..1 MS
-  * ^short = "Description of the bracketed extreme"
-  * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
-* variableDefinition[0].variableRole 1..1 MS
-  * ^short = "Comparator Role"
-  * ^definition = "Marks one extreme batch as a comparator for the interpolation."
-* variableDefinition[0] = http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
-* variableDefinition[0].observed 1..1 MS
-  * ^short = "Observed High Batch"
-  * ^definition = "Reference to the high-strength or extreme batch used in the interpolation."
-* variableDefinition[0].observed only Reference (StabilityGroups)
-
-* variableDefinition[1].description 1..1 MS
-  * ^short = "Description of the bracketed extreme"
-  * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
-* variableDefinition[1].variableRole 1..1 MS
-  * ^short = "Comparator Role"
-  * ^definition = "Marks the second extreme batch as a comparator for the interpolation."
-* variableDefinition[1] = http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
-* variableDefinition[1].observed 1..1 MS
-  * ^short = "Observed Low Batch"
-  * ^definition = "Reference to the low-strength or second extreme batch used in the interpolation."
-* variableDefinition[1].observed only Reference (StabilityGroups)
+* variableDefinition 2..* MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "note.text"
+  * ^slicing.rules = #open
+  * ^slicing.description = ""
+  * note 1..1 MS
+    * text 1..1 MS
+* variableDefinition contains 
+  upper 1..1 MS and
+  lower 1..1 MS
+* variableDefinition[upper]
+  * description 1..1 MS
+    * ^short = "Description of the bracketed extreme"
+    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
+  * variableRole 1..1 MS
+    * ^short = "Comparator Role"
+    * ^definition = "Marks one extreme batch as a comparator for the interpolation."
+  * variableRole = http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
+  * observed 1..1 MS
+    * ^short = "Observed High Batch"
+    * ^definition = "Reference to the high-strength or extreme batch used in the interpolation."
+  * insert PQReference(observed)
+  * observed only Reference(StabilityGroups)
+  * note.text = "upper"
+* variableDefinition[lower]
+  * description 1..1 MS
+    * ^short = "Description of the bracketed extreme"
+    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
+  * variableRole 1..1 MS
+    * ^short = "Comparator Role"
+    * ^definition = "Marks the second extreme batch as a comparator for the interpolation."
+  * variableRole =  http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
+  * observed 1..1 MS
+    * ^short = "Observed Low Batch"
+    * ^definition = "Reference to the low-strength or second extreme batch used in the interpolation."
+  * insert PQReference(observed)
+  * observed only Reference(StabilityGroups)
+  * note.text = "lower"
 // Statistical result to justify bracketing
 * statistic 1..* MS
   * ^short = "Statistical outcome supporting bracketing"
