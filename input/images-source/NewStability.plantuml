@@ -1,90 +1,61 @@
-
 @startuml
+skinparam linetype ortho
+title Stability Study FHIR Shorthand Profiles (+ External References)
 
-package "StudyControl" {
-    component "ResearchStudy-Defines the overall study" as RS
-    folder "PlanDefinition-Study Protocol" as PD
-    rectangle "PlanDefinition.action Timepoints - Test Logic" as Action
+' ========== PROFILES ==========
+class StabilityStudy <<ResearchStudy>> {
+  * primaryPurposeType : PqcmcStabilityStudyReasonTerminology [required]
+  --
+  (No extensions)
+}
+class StabilitySubStudy <<ResearchStudy>> {
+  + extension: pqcmc
+  --
+  condition[substudytype] : PqcmcStudyTypeTerminology [required]
+  condition[storage] : PqcmcStorageConditionsTerminology [required]
+  condition[storagecategory] : PqcmcStorageConditionCategoryTerminology [required]
+  condition[orientation] : PqcmcContainerOrientationTerminology [required]
+}
+class StabilityStudyIntervalReport <<DiagnosticReport>> {
+  (No extensions or value sets)
+}
+class StabilityStudyProtocol <<PlanDefinition>> {
+  coding[parent] : PqcmcTestCategoryParentTerminology [required]
+  coding[child] : PqcmcTestCategoryChildTerminology [required]
+  coding[storage] : PqcmcStorageConditionsTerminology [required]
+  coding[containerType] : PqcmcContainerTypeTerminology [required]
+  coding[closureType] : PqcmcClosureTypeTerminology [required]
+  --
+  (No extensions)
+}
+class CycledTestingPlanDefinition <<PlanDefinition>> {
+  coding[storage] : PqcmcStorageConditionsTerminology [required]
+  coding[containerType] : PqcmcContainerTypeTerminology [required]
+  coding[closureType] : PqcmcClosureTypeTerminology [required]
+  --
+  (No extensions)
+}
+class StabilityGroups <<Group>> {
+  (No extensions or value sets)
+}
+class BracketingStudyEvidence <<Evidence>> {
+  + extension: pqcmc
+  (No value sets)
+}
+class MatrixedStudyEvidence <<Evidence>> {
+  (No extensions or value sets)
 }
 
-package "ProductVariants" {
-    rectangle "Group: Low Strength" as G_Low #LightBlue
-    rectangle "Group: Middle Strength(Bracketed)" as G_Mid
-    rectangle "Group: High Strength" as G_High #LightBlue
-    rectangle "Group: Batch 1" as G_B1
-    rectangle "Group: Batch 2 (Matrixed)" as G_B2
-    rectangle "Group: Cycled Batch" as G_Cycle
-    rectangle "Medication" as Med
-}
+' ========== EXTERNAL CLASSES (REFERENCED BUT NOT DEFINED) ==========
+class DrugProductHandle <<external>>
+class SubstanceDefinitionHandle <<external>>
 
-package "Observations" {
-    note "Obs: Expiration - Low" as Obs_Low #LightBlue
-    note "Obs: Expiration - High" as Obs_High #LightBlue
-    note "Obs: Expiration - Interpolated Mid" as Obs_Mid #LightGrey
-    note "Obs: Matrixed Result-B2" as Obs_Matrix
-    note "Obs: Freeze Result" as Obs_Freeze
-    note "Obs: Thaw Result" as Obs_Thaw
-}
+' ========== REFERENCES ==========
+StabilityStudy --> StabilityStudyProtocol : protocol
 
-package "Evidence2" {
-    folder "EvidenceRegression" as Evidence
-}
-
-
-
-' Relationships
-RS --> PD : protocol →
-PD --> Action : includes
-
-' Study Types reference Action
-Standard --> Action
-Bracketed --> Action
-Matrixed --> Action
-Cycled --> Action
-
-' ResearchStudy includes Groups
-RS --> G_Low : subject →
-RS --> G_Mid
-RS --> G_High
-RS --> G_B1
-RS --> G_B2
-RS --> G_Cycle
-
-' Medication referenced
-G_Low --> Med
-G_Mid --> Med
-G_High --> Med
-G_B1 --> Med
-G_B2 --> Med
-G_Cycle --> Med
-
-' Bracketed middle group marked untested
-G_Mid --> Ext_Bracket
-
-' Observations for tested groups
-Obs_Low --> G_Low : subject →
-Obs_High --> G_High : subject →
-Obs_Matrix --> G_B2 : subject →
-Obs_Freeze --> G_Cycle : subject →
-Obs_Thaw --> G_Cycle
-
-' Interpolated result
-Obs_Mid --> G_Mid : subject →
-Obs_Mid --> Obs_Low : derivedFrom →
-Obs_Mid --> Obs_High
-
-' Matrixing type
-G_B2 --> Ext_Matrix
-
-' Cycled type
-Action --> Ext_Cycle
-Obs_Freeze --> Action : partOf →
-Obs_Thaw --> Action : partOf →
-
-' Evidence supports interpolated result
-Evidence --> Obs_Mid : outcome →
-Evidence --> G_Mid : exposureVariant →
-Evidence ..> Obs_Low : supporting →
-Evidence ..> Obs_High
+' Add references from FSH file (parsed previously):
+' - StabilityStudy.focus only CodeableReference(DrugProductHandle or SubstanceDefinitionHandle)
+StabilityStudy ..> DrugProductHandle : focus
+StabilityStudy ..> SubstanceDefinitionHandle : focus
 
 @enduml

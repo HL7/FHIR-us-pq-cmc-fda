@@ -69,7 +69,7 @@ The **CycledTestingPlanDefinition** profile specializes the FHIR **PlanDefinitio
   - Lists tests like **potency and appearance** to be performed in each cycle.
   - Links back to the parent **StabilityStudy**.
 
-##### Why This Matters:
+##### Importance:
 - Provides clear **procedural documentation** for reproducibility.
 - Supports **regulatory transparency** on how cycled tests were performed.
 - Enables **automated execution or validation** by downstream systems.
@@ -99,7 +99,7 @@ The **MatrixedStudyEvidence** profile specializes the FHIR **Evidence** resource
   - Explains how those tests cover the **untested combinations**.
   - Links back to the parent **StabilityStudy**.
 
-##### Why This Matters:
+##### Importance:
 - Reduces **testing burden** while maintaining scientific validity.
 - Provides **structured evidence** that regulators can review and validate.
 - Supports **modular and reusable** documentation across submissions.
@@ -135,7 +135,7 @@ The **BracketingStudyEvidence** profile specializes the FHIR **Evidence** resour
   - Provides scientific or empirical justification.
   - Links back to the parent **StabilityStudy**.
 
-##### Why This Matters:
+##### Importance:
 - Reduces cost and time by minimizing the number of tests without compromising data integrity.
 - Facilitates structured, traceable evidence for regulatory authorities.
 - Enables automation and reuse in future submissions by standardizing how bracketing evidence is reported.
@@ -147,26 +147,25 @@ There is no profile for **Complex Studies** as they are a combination of any of 
 - Any combination of two or more of the other types, for example cycled testing that takes adantage of matrix testing.
 - The required elements for any of the profiles used to report Complex studies will be required. For exmaple, a cycled matrixed testing scheme would require both CycledTestingPlanDefinition and MatrixedStudyEvidence.
 
-|## Comparison Table: Required Elements
+#### Comparison Table: Required Elements
 
-| **Element**                           | **BracketingStudyEvidence** _(Evidence)_                           | **CycledTestingPlanDefinition** _(PlanDefinition)_                     | **MatrixedStudyEvidence** _(Evidence)_                                  |
-|---------------------------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| **id**                                | ✅                                                     | ✅                                                         | ✅                                                         |
-| **status**                            | ✅ (e.g., draft, active, retired)                              | ✅ (e.g., draft, active, retired)                                  | ✅ (e.g., draft, active, retired)                                 |
-| **description**                       | ✅ — Summary of bracketing justification                | ✅ — Description of the cycling procedures                  | ✅ — Summary of matrixed design justification              |
-| **exposureBackground**                | ✅ — Reference to StabilityStudy                              | ❌                                                          | ✅ — Reference to StabilityStudy                                 |
-| **exposureVariant**                   | ✅ — Tested and untested products                              | ❌                                                          | ✅ — Matrix conditions and combinations tested                    |
-| **outcome**                           | ✅ — Evidence of equivalence                                  | ❌                                                          | ✅ — Evidence supporting coverage by matrixed conditions          |
-| **action.title**                      | ❌                                                      | ✅ — Title of each cycle or step in the plan                       | ❌                                                          |
-| **action.description**                | ❌                                                      | ✅ — Description of the actions in the cycling procedure          | ❌                                                          |
-| **action.timing[x]**                   | ❌                                                      | ✅ — Timing details for each cycle                                | ❌                                                          |
-| **action.code**                       | ❌                                                      | ✅ — Code describing the type of testing in the action             | ❌                                                          |
-| **goal**                              | ❌                                                      | ✅ — High-level goal of the testing plan                          | ❌                                                          |
-| **relatedArtifact**                   | Optional — Supporting references or documents                       | Optional — References to protocols, publications, or procedures         | Optional — Supporting references or documents                           |
-| **note**                              | Optional — Additional descriptive notes                              | Optional — Additional descriptive notes                                 | Optional — Additional descriptive notes                                 |
-| **identifier**                        | Optional — Study identifier                                          | Optional — Protocol identifier                                          | Optional — Study identifier                                             |
-| **extension[r6relatesto]**            |✅ — Reference to Drug Product    |❌                       | ❌                |
-"""
+| **Element**                           | **BracketingStudyEvidence** _(Evidence)_                          | **CycledTestingPlanDefinition** _(PlanDefinition)_                  | **MatrixedStudyEvidence** _(Evidence)_                               |
+|---------------------------------------|--------------------------------------------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
+| **id**                                | ✅                                                                  | ✅                                                                    | ✅                                                                    |
+| **status**                            | ✅ (e.g., draft, active, retired)                                   | ✅ (e.g., draft, active, retired)                                     | ✅ (e.g., draft, active, retired)                                     |
+| **description**                       | ✅ — Summary of bracketing justification                            | ✅ — Description of the cycling procedures                           | ✅ — Summary of matrixed design justification                         |
+| **exposureBackground**                | ✅ — Reference to StabilityStudy                                    | ❌                                                                    | ✅ — Reference to StabilityStudy                                     |
+| **exposureVariant**                   | ✅ — Tested and untested products                                   | ❌                                                                    | ✅ — Matrix conditions and combinations tested                       |
+| **outcome**                           | ✅ — Evidence of equivalence                                        | ❌                                                                    | ✅ — Evidence supporting coverage by matrixed conditions             |
+| **action.title**                      | ❌                                                                  | ✅ — Title of each cycle or step in the plan                          | ❌                                                                    |
+| **action.description**                | ❌                                                                  | ✅ — Description of the actions in the cycling procedure              | ❌                                                                    |
+| **action.timing[x]**                   | ❌                                                                  | ✅ — Timing details for each cycle                                    | ❌                                                                    |
+| **action.code**                       | ❌                                                                  | ✅ — Code describing the type of testing in the action                | ❌                                                                    |
+| **goal**                              | ❌                                                                  | ✅ — High-level goal of the testing plan                              | ❌                                                                    |
+| **relatedArtifact**                   | Optional — Supporting references or documents                       | Optional — References to protocols, publications, or procedures      | Optional — Supporting references or documents                        |
+| **note**                              | Optional — Additional descriptive notes                             | Optional — Additional descriptive notes                              | Optional — Additional descriptive notes                              |
+| **identifier**                        | Optional — Study identifier                                         | Optional — Protocol identifier                                       | Optional — Study identifier                                          |
+| **extension[focus]**                  | ✅ — Reference to Drug Product                                      | ❌                                                                    | ❌                                                                    |
 
 ### Representation in FHIR
 
@@ -189,7 +188,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### CTD 3.2.S.7.3 and 3.2.P.8.3 Profile Map
 
-<div width="1200px">{%include Stability.svg%}</div>
+<div width="1200px">{%include NewStability.svg%}</div>
 
 ### Usage Patterns
 
