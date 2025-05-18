@@ -148,11 +148,12 @@ Description: """
       * valueCodeableConcept only CodeableConceptTextOnly
     * extension[endpointAnalysisPlan]
       * ^short = "Linked Design or Evidence"
-      * ^definition = "References to supporting BracketingStudyEvidence."
+      * result
+      * ^definition = "References to supporting BracketingStudyEvidence or MatrixedStudyEvidence."
       * value[x] 1..1 MS
       * value[x] only Reference
       * insert PQReference(valueReference)
-      * valueReference only Reference(BracketingStudyEvidence)
+      * valueReference only Reference(MatrixedStudyEvidence or BracketingStudyEvidence)
 
 Profile: StabilitySubStudy
 Parent: ResearchStudy

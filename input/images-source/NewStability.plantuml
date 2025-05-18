@@ -1,61 +1,118 @@
 @startuml
-skinparam linetype ortho
-title Stability Study FHIR Shorthand Profiles (+ External References)
+' -------- Profiles --------
+class BracketingStudyEvidence
+class CycledTestingPlanDefinition
+class MatrixedStudyEvidence
+class StabilityGroups
+class StabilityStudy
+class StabilityStudyIntervalReport
+class StabilityStudyProtocol
+class StabilitySubStudy
 
-' ========== PROFILES ==========
-class StabilityStudy <<ResearchStudy>> {
-  * primaryPurposeType : PqcmcStabilityStudyReasonTerminology [required]
-  --
-  (No extensions)
-}
-class StabilitySubStudy <<ResearchStudy>> {
-  + extension: pqcmc
-  --
-  condition[substudytype] : PqcmcStudyTypeTerminology [required]
-  condition[storage] : PqcmcStorageConditionsTerminology [required]
-  condition[storagecategory] : PqcmcStorageConditionCategoryTerminology [required]
-  condition[orientation] : PqcmcContainerOrientationTerminology [required]
-}
-class StabilityStudyIntervalReport <<DiagnosticReport>> {
-  (No extensions or value sets)
-}
-class StabilityStudyProtocol <<PlanDefinition>> {
-  coding[parent] : PqcmcTestCategoryParentTerminology [required]
-  coding[child] : PqcmcTestCategoryChildTerminology [required]
-  coding[storage] : PqcmcStorageConditionsTerminology [required]
-  coding[containerType] : PqcmcContainerTypeTerminology [required]
-  coding[closureType] : PqcmcClosureTypeTerminology [required]
-  --
-  (No extensions)
-}
-class CycledTestingPlanDefinition <<PlanDefinition>> {
-  coding[storage] : PqcmcStorageConditionsTerminology [required]
-  coding[containerType] : PqcmcContainerTypeTerminology [required]
-  coding[closureType] : PqcmcClosureTypeTerminology [required]
-  --
-  (No extensions)
-}
-class StabilityGroups <<Group>> {
-  (No extensions or value sets)
-}
-class BracketingStudyEvidence <<Evidence>> {
-  + extension: pqcmc
-  (No value sets)
-}
-class MatrixedStudyEvidence <<Evidence>> {
-  (No extensions or value sets)
-}
+' -------- Extensions --------
+class PQCMCEvidenceProductReference <<Extension>>
+class PQCMCStabilityGroupsMedicationMember <<Extension>>
+class PQCMCStabilitySubStudyFocusAndObjective <<Extension>>
+class PullIntervalExtension <<Extension>>
 
-' ========== EXTERNAL CLASSES (REFERENCED BUT NOT DEFINED) ==========
-class DrugProductHandle <<external>>
+' -------- ValueSets --------
+class PqcmcClosureTypeTerminology          <<ValueSet>>
+class PqcmcContainerOrientationTerminology <<ValueSet>>
+class PqcmcContainerTypeTerminology        <<ValueSet>>
+class PqcmcIntervalDescriptionCodeTerminology <<ValueSet>>
+class PqcmcStabilityStudyReasonTerminology <<ValueSet>>
+class PqcmcStorageConditionCategoryTerminology <<ValueSet>>
+class PqcmcStorageConditionsTerminology    <<ValueSet>>
+class PqcmcStudyTypeTerminology            <<ValueSet>>
+class PqcmcTestCategoryChildTerminology    <<ValueSet>>
+class PqcmcTestCategoryParentTerminology   <<ValueSet>>
+class "pqcmc-study-type-terminology"       <<ValueSet>>
+
+' -------- External resources referenced --------
+class CodedOrganization        <<external>>
+class DrugProductBatch         <<external>>
+class DrugProductHandle        <<external>>
+class DrugSubstanceBatch       <<external>>
+class Medication               <<external>>
+class ResultObservation        <<external>>
+class Substance                <<external>>
 class SubstanceDefinitionHandle <<external>>
+class focus                    <<external>>
+class observed                 <<external>>
+class partOf                   <<external>>
+class performer                <<external>>
+class protocol                 <<external>>
+class result                   <<external>>
+class subject                  <<external>>
+class valueReference           <<external>>
 
-' ========== REFERENCES ==========
-StabilityStudy --> StabilityStudyProtocol : protocol
+' -------- Relationships --------
+' – Extension → ValueSet
+PullIntervalExtension --> PqcmcIntervalDescriptionCodeTerminology : uses
 
-' Add references from FSH file (parsed previously):
-' - StabilityStudy.focus only CodeableReference(DrugProductHandle or SubstanceDefinitionHandle)
-StabilityStudy ..> DrugProductHandle : focus
-StabilityStudy ..> SubstanceDefinitionHandle : focus
+' – StabilityStudy and related
+StabilityStudy --> StabilityStudyProtocol
+StabilityStudy --> PqcmcStabilityStudyReasonTerminology : uses
+StabilityStudy --> focus
+StabilityStudy --> DrugProductHandle
+StabilityStudy --> SubstanceDefinitionHandle
 
+' – PQCMCStabilitySubStudyFocusAndObjective
+PQCMCStabilitySubStudyFocusAndObjective --> valueReference
+PQCMCStabilitySubStudyFocusAndObjective --> CycledTestingPlanDefinition
+PQCMCStabilitySubStudyFocusAndObjective --> StabilityGroups
+PQCMCStabilitySubStudyFocusAndObjective --> BracketingStudyEvidence
+
+' – StabilitySubStudy
+StabilitySubStudy --> protocol
+StabilitySubStudy --> StabilityStudyProtocol
+StabilitySubStudy --> partOf
+StabilitySubStudy --> StabilityStudy
+StabilitySubStudy --> PqcmcStudyTypeTerminology : uses
+StabilitySubStudy --> PqcmcStorageConditionsTerminology : uses
+StabilitySubStudy --> PqcmcStorageConditionCategoryTerminology : uses
+StabilitySubStudy --> PqcmcContainerOrientationTerminology : uses
+StabilitySubStudy --> "pqcmc-study-type-terminology" : uses
+StabilitySubStudy --> result
+StabilitySubStudy --> StabilityStudyIntervalReport
+
+' – StabilityStudyIntervalReport
+StabilityStudyIntervalReport --> subject
+StabilityStudyIntervalReport --> DrugProductBatch
+StabilityStudyIntervalReport --> DrugSubstanceBatch
+StabilityStudyIntervalReport --> performer
+StabilityStudyIntervalReport --> CodedOrganization
+StabilityStudyIntervalReport --> result
+StabilityStudyIntervalReport --> ResultObservation
+StabilityStudyIntervalReport --> MatrixedStudyEvidence
+StabilityStudyIntervalReport --> BracketingStudyEvidence
+
+' – StabilityStudyProtocol
+StabilityStudyProtocol --> PqcmcTestCategoryParentTerminology : uses
+StabilityStudyProtocol --> PqcmcTestCategoryChildTerminology  : uses
+StabilityStudyProtocol --> PqcmcStorageConditionsTerminology  : uses
+StabilityStudyProtocol --> PqcmcContainerOrientationTerminology : uses
+StabilityStudyProtocol --> PqcmcContainerTypeTerminology     : uses
+StabilityStudyProtocol --> PqcmcClosureTypeTerminology       : uses
+
+' – CycledTestingPlanDefinition
+CycledTestingPlanDefinition --> PqcmcStorageConditionsTerminology : uses
+CycledTestingPlanDefinition --> PqcmcContainerOrientationTerminology : uses
+CycledTestingPlanDefinition --> PqcmcContainerTypeTerminology : uses
+CycledTestingPlanDefinition --> PqcmcClosureTypeTerminology  : uses
+
+' – StabilityGroups
+StabilityGroups --> valueReference
+StabilityGroups --> DrugProductBatch
+StabilityGroups --> DrugSubstanceBatch
+
+' – Misc extension links
+PQCMCStabilityGroupsMedicationMember --> Medication
+PQCMCStabilityGroupsMedicationMember --> Substance
+PQCMCEvidenceProductReference        --> valueReference
+PQCMCEvidenceProductReference        --> DrugProductHandle
+
+' – BracketingStudyEvidence
+BracketingStudyEvidence --> observed
+BracketingStudyEvidence --> StabilityGroups
 @enduml
