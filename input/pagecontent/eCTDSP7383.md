@@ -19,23 +19,24 @@ Stability testing confirms that drug substances and finished products maintain q
 | Matrixing            | Q1D           | Test a subset of combinations (e.g., time‑points × containers) and justify coverage of the untested set. |
 | Cycled               | Q1E, Q1A(R2)  | Subject product to environmental cycles (e.g., freeze–thaw) that mimic real‑world handling.           |
 | In‑use               | Q1A(R2)       | Assess stability from first opening / reconstitution through the end‑of‑use period.                   |
-##### ICH Background on Stability Study Types
+
+#### ICH Background on Stability Study Types
 
 ICH Q1A (R2) defines the overall framework for stability testing, including the need to evaluate chemical, physical, biological, and microbiological properties over time. ICH Q1D and Q1E provide more detailed guidance on special study designs such as bracketing and matrixing.
 
-###### Standard and Accelerated Studies
+#### Standard and Accelerated Studies
 
 Standard long-term studies typically assess stability under recommended storage conditions for the intended shelf life. Accelerated studies expose the product to higher temperature and humidity to predict longer-term stability.
 
-###### Bracketing Studies
+#### Bracketing Studies
 
 ICH Q1D defines **bracketing** as the design of a stability schedule in which only the extremes of certain design factors (e.g., strength, container size) are tested. The assumption is that stability of intermediate levels is represented by the tested extremes. Bracketing requires scientific or statistical justification and is generally appropriate when the extremes are expected to behave similarly to the intermediates.
 
-###### Matrixing Studies
+#### Matrixing Studies
 
 Also covered by ICH Q1D, **matrixing** involves testing only a subset of the total number of possible samples at each time point. This reduces the testing burden while still providing sufficient information to support shelf-life claims. Matrixing requires a risk-based justification that considers product knowledge, manufacturing consistency, and stability data.
 
-###### Cycled and In-Use Studies
+##### Cycled and In-Use Studies
 
 ICH Q1E and Q1A recognize the need for **cycled studies**, such as freeze-thaw or light-dark cycling, and in-use testing to simulate real-world handling conditions. **In-use studies** assess stability during the period after opening or reconstitution. These studies typically define cycles or use conditions and evaluate their impact on product quality.
 
@@ -73,7 +74,7 @@ Profiles are not used in isolation; the diagram supplied in the PlantUML file sh
 |                         | PQCMCStabilityGroupsMedicationMember         | Links a Medication or Substance to StabilityGroups.                              |
 |                         | PullIntervalExtension                        | Declares scheduled or unscheduled pull intervals; binds to PqcmcIntervalDescriptionCodeTerminology. |
 
-> **Tip for implementers**: Store StabilityStudyProtocol once and reference it from every sub‑study. This avoids duplication and keeps bundles small.
+> **Note**: The StabilityStudyProtocol is refernced from the main study once and  referenced from every sub‑study. This avoids duplication and keeps bundles small.
 
 ### Sub‑Study Artefacts in Depth
 Applications must support selection, definition, and linkage of these plans to specific StabilitySubStudy instances. Different profiles capture study design intentions.  The special study types are detailed here:
