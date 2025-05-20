@@ -556,7 +556,7 @@ Description: "The fields needed to represent the Batch Analyses to be included u
   * insert PQReference(entry)
   * entry only Reference(BatchAnalysis)
 
-  Profile: EctdCompositionSP7383
+Profile: EctdCompositionSP7383
 Parent: Composition
 Id: ectd-composition-sp7383
 Title: "eCTD Stability Data Composition"
