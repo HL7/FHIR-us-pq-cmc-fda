@@ -288,7 +288,7 @@ Description: "The fields needed to represent the Product Description, Container 
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#ich_3.2.p.1 "Description and Composition of the Drug Product"
+* type = $SectionTypes#ich_3.2.p.1 "m3.2.p.1 description and composition of the drug product"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -327,7 +327,7 @@ Description: "The fields needed to represent the Substance Nomenclature and Stru
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#ich_3.2.s.1 "General Information"
+* type = $SectionTypes#ich_3.2.s.1 "m3.2.s.1 general information"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -350,7 +350,7 @@ Description: "The fields needed to represent the Substance Control of Materials 
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#ich_3.2.s.2.3 "Control of Materials"
+* type = $SectionTypes#ich_3.2.s.2.3 "m3.2.s.2.3 control of materials"
 * subject 1..1 MS
 * insert PQReference(subject)
 * subject only Reference(SubstanceDefinitionHandle)
@@ -377,7 +377,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#ich_3.2.p.3.2 "Batch Formula"
+* type = $SectionTypes#ich_3.2.p.3.2 "m3.2.p.3.2 batch formula"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -396,7 +396,7 @@ Description: "The fields needed to represent the Product Batch Formula to be inc
   * ^definition = """
     Product Batch Formula to be included under the 3.2.P.3.2 eCTD heading.
   """
-  * code = $SectionTypes#ich_3.2.p.3.2 "Batch Formula"
+  * code = $SectionTypes#ich_3.2.p.3.2 "m3.2.p.3.2 batch formula"
   * title 1..1 MS
   * entry 1..1 MS
   * insert PQReference(entry)
@@ -411,7 +411,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#ich_3.2.p.5.5 "Characterisation of Impurities"
+* type = $SectionTypes#ich_3.2.p.5.5 "m3.2.p.5.5 characterisation of impurities"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -430,7 +430,7 @@ Description: "The fields needed to represent the Product Characterisation of Imp
   * ^definition = """
     Product Characterisation of Impurities to be included under the 3.2.P.5.5 eCTD heading.
   """
-  * code = $SectionTypes#ich_3.2.p.5.5 "Characterisation of Impurities"
+  * code = $SectionTypes#ich_3.2.p.5.5 "m3.2.p.5.5 characterisation of impurities"
   * title 1..1 MS
   * entry 1..1 MS
   * insert PQReference(entry)
@@ -444,7 +444,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 
 * status = #final
 * identifier 0..1 MS
-* type = $SectionTypes#ich_3.2.s.3 "Characterisation"
+* type = $SectionTypes#ich_3.2.s.3 "m3.2.s.3 characterisation"
 * author 1..1 MS
 * insert PQReference(author)
 * author only Reference(CodedOrganization)
@@ -461,7 +461,7 @@ Description: "The fields needed to represent the Substance Structure and Impurit
 * section contains Structure 1..1 MS
 * section[Structure] ^definition = "Substance Characterisation to be included under the 3.2.S.3 eCTD heading."
 * section[Structure].code 1..1 MS
-* section[Structure].code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
+* section[Structure].code = $SectionTypes#ich_3.2.s.3.1 "m3.2.s.3.1 elucidation of structure and other characteristics"
 * section[Structure].title 1..1 MS
 * section[Structure].entry 1..1 MS
 * insert PQReference(section[Structure].entry)
