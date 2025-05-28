@@ -25,7 +25,10 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 
 dependencies:
-  hl7.terminology.r5: 6.3.0
+  hl7.terminology.r5:
+    id: hl7_terminology_r5
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    version: 6.3.0
   
 menu:
   Table of Contents: toc.html
