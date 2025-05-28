@@ -78,7 +78,7 @@ Description: "Profile for describing main and Sub-Stability studies for drug sub
     * ^definition = """
       The date the product or substance is put into the stability chamber for a given set of storage conditions [Source: SME Defined]
     """
-  * end 0..1 MS
+  * end 1..1 MS
     * ^short = "Study End Date"
     * ^definition = """
       The date the study or sub-study completes or terminates. [Source: SME Defined]
@@ -201,7 +201,7 @@ Description: "Profile for the a stability sub-study."
     * ^definition = """
       The date the product or substance is put into the stability chamber for a given set of storage conditions [Source: SME Defined]
     """
-  * end 0..1 MS
+  * end 1..1 MS
     * ^short = "Sub-Study End Date"
     * ^definition = """
       The date the study completes or terminates. [Source: SME Defined]
@@ -262,7 +262,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * performer only Reference(CodedOrganization)
   * ^short = "Test Site"
   * ^definition = """
-    Reference to the organization profile that contains the name, identifer(s) and address of the testing site.
+    Reference to the organization profile that contains the name, identifer(s) and address of the primary testing site.
   """
 * result MS
 * insert PQReference(result)
