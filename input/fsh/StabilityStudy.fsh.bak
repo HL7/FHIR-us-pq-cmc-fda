@@ -1,0 +1,1240 @@
+Extension: PullIntervalExtension
+Id: pq-timePoint-extension
+Title: "Study Interval"
+Description: "Contains elements related to the intervals of the stability study."
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
+* extension contains
+    timePoint 1..1 MS and
+    timePointDescription 1..1 MS
+* extension[timePoint]
+  * value[x] 1..1 MS
+  * value[x] only Quantity
+  * value[x] from http://hl7.org/fhir/ValueSet/ucum-units (required)
+    * ^short = "Interval"
+    * ^definition = """
+      Storage time of the batch in a climatic chamber. [Source: eStability Implementation Guide]
+    """
+    * value 1..1 MS
+    * code 1..1 MS
+      * ^short = "Interval Unit"
+      * ^definition = "The partitions of the study pause. [Source: eStability Implementation Guide]"
+* extension[timePointDescription]
+  * value[x] 1..1 MS
+  * value[x] only Coding
+  * value[x] from PqcmcIntervalDescriptionCodeTerminology (required)
+    * ^short = "Interval Description Code"
+    * ^definition = """
+      This code describes any 'delay' that happened during testing, e.g., none (Immediate) or freeze sample (Delayed Frozen). [Source: NCIt].
+    """
+
+Profile: StabilityStudy
+Parent: ResearchStudy
+Id: pq-stability-study
+Title: "Stability Study"
+Description: "Profile for describing main and Sub-Stability studies for drug substances and products."
+
+* identifier 1..1 MS
+  * ^short = "Study Identifier"
+  * ^definition = """
+    An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
+    Example: Study Number- 565758
+  """
+* version 0..1 MS
+* version ^short = "Study Identifier Version"
+* title 1..1 MS
+  * ^short = "Study Name"
+  * ^definition = """
+    A non-unique textual identifier given to the drug stability study by the sponsoring organization. [Source: SME Defined]
+  """
+* protocol 0..1 MS 
+* protocol only Reference (StabilityStudyProtocol)
+* protocol ^short = "main Stability Protocol"
+* protocol ^definition = "The structured plan for assessing the quality of a drug product or substance over time under specified storage conditions. It outlines the storage parameters, container closure systems, sampling time points, and tests  to be applied. The protocol provides the basis for generating data to support shelf life, retest periods, or regulatory submissions."
+* primaryPurposeType 1..1 MS
+* primaryPurposeType from PqcmcStabilityStudyReasonTerminology (required)
+  * ^short = "Study Reason"
+  * ^definition = """
+    The rationale for submitting the stability data. [Source: SME Defined]
+    Examples: Annual Report, NDA, Pre-market approval.
+  """
+* focus 1..* MS
+  * ^short = """The Drug Substance or Drug Product(s) included in the stabiltiy study.
+  Note: When utilizing a bracketed study design, include untested products as with those representing the extreme conditions in a bracketed stability study.
+  """
+* insert PQCodeableReference(focus)
+* focus only CodeableReference(DrugProductHandle or SubstanceDefinitionHandle)  
+
+* description 0..1 MS
+  * ^short = "Study Purpose"
+  * ^definition = """
+    A textual description intended to provide a high level objective and rationale for the study. [Source: SME Defined]
+    Example: The purpose of this study EX 2010PRD5758 is to confirm the stability of BellaVie ™ (2 AMINOBUTYROLE ACID, DL) 2.0 mg, Pink Film
+    Coated Extended Release Tablets (Product 54321) per the NDA post approval stability commitments
+  """
+* period 1..1 MS
+  * start 1..1 MS
+    * ^short = "Study Start Date"
+    * ^definition = """
+      The date the product or substance is put into the stability chamber for a given set of storage conditions [Source: SME Defined]
+    """
+  * end 0..1 MS
+    * ^short = "Study End Date"
+    * ^definition = """
+      The date the study or sub-study completes or terminates. [Source: SME Defined]
+    """
+* note
+  * ^short = "Study Additional Information"
+  * ^definition = """
+    A placeholder for providing comments about the stability study. [Source: SME Defined]
+  """
+* whyStopped 0..1 MS
+* whyStopped only CodeableConceptTextOnly
+  * ^short = "Reason Stopped"
+  * ^definition = """
+    The rationale for why the Stability study was terminated. [Source: SME Defined]
+  """
+
+Extension: PQCMCStabilitySubStudyFocusAndObjective
+Id: pqcmc-stability-sub-study-focus-and-objective
+Title: "PQCMC Stability Sub Study Focus And Objective"
+Description: """
+  In R6, ResearchStudy has two BackboneElements called objective and focus. 
+  They capture a lot of meaningful information. Until R6 this extension will be used instead.
+  This extension will be laid out in a way that corresponds to R6 though it will not capture
+  everything that these BackboneElements do in r6.
+"""
+* ^context.type = #element
+* ^context.expression = "ResearchStudy"
+* extension contains 
+  focus 1..1 MS and 
+  objective 1..1 MS
+* extension[focus]
+  * ^short = "Suppoting information for cycled testing and matrixed study designs."
+  * value[x] 1..1 MS
+  * value[x] only Reference
+  * insert PQReference(valueReference)
+  * valueReference only Reference(CycledTestingPlanDefinition)
+* extension[objective].extension contains
+  name 1..1 MS and
+  outcomeMeasure 1..1 MS
+* extension[objective]
+  * ^short = "Study Design and Justification"
+  * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
+  * extension[name]
+    * ^short = "Label"
+    * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
+    * value[x] 1..1 MS
+    * value[x] only string
+  * extension[outcomeMeasure].extension contains
+    comparator 1..* MS and
+    summaryMeasure 0..1 MS and
+    endpointAnalysisPlan 0..1 MS
+  * extension[outcomeMeasure]
+    * extension[comparator]
+      * ^short = "Specific product or group under study"
+      * ^definition = """
+        Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile) 
+        representing the population or configuration being studied.
+        Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
+      """
+      * value[x] 1..1 MS
+      * value[x] only Reference
+      * insert PQReference(valueReference)
+      * valueReference only Reference(StabilityGroups)
+    * extension[summaryMeasure]
+      * value[x] 1..1 MS
+      * value[x] only CodeableConcept
+      * valueCodeableConcept only CodeableConceptTextOnly
+    * extension[endpointAnalysisPlan]
+      * ^short = "Linked Design or Evidence"
+      * result
+      * ^definition = "References to supporting BracketingStudyEvidence or MatrixedStudyEvidence."
+      * value[x] 1..1 MS
+      * value[x] only Reference
+      * insert PQReference(valueReference)
+      * valueReference only Reference(MatrixedStudyEvidence or BracketingStudyEvidence)
+
+Profile: StabilitySubStudy
+Parent: ResearchStudy
+Id: pq-stability-sub-study
+Title: "Stability Sub-Study"
+Description: "Profile for the a stability sub-study."
+
+// // Cross-version R6 Extensions
+// * extension contains 
+//     http://hl7.org/fhir/StructureDefinition/researchstudy-focus named r6focus 0..* and
+//     http://hl7.org/fhir/StructureDefinition/researchstudy-objective named r6Objective 0..*
+// // R6 focus
+// * insert PQReference(extension[r6focus].focus)
+// * extension[r6focus].focus only Reference(CycledTestingPlanDefinition)
+// *  ^short = "Suppoting information for cycled testing and matrixed study designs."
+// // R6 objective 
+// * extension[r6Objective] 0..* MS
+//   * ^short = "Study Design and Justification"
+//   * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
+// * extension[r6Objective].name 1..1 MS
+//   * ^short = "extension[r6Objective] Label"
+//   * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
+// * extension[r6Objective].outcomeMeasure.comparator 1..* MS
+//   * ^short = "Specific product or group under study"
+//   * ^definition = """Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile) 
+//   representing the population or configuration being studied.
+//   Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
+//   """
+// * extension[r6Objective].outcomeMeasure.comparator only Reference(StabilityGroups)
+// * extension[r6Objective].outcomeMeasure.summaryMeasure MS
+//   * ^short = "Linked Design or Evidence"
+//   * ^definition = "References to supporting BracketingStudyEvidence."
+//   * description 1..1 MS
+// * extension[r6Objective].outcomeMeasure.endpointAnalysisPlan only Reference(BracketingStudyEvidence or MatrixedStudyEvidence)
+// R5 elements
+* extension contains pqcmc-stability-sub-study-focus-and-objective named focusAndObjective 1..1 MS
+* identifier 1..1 MS
+  * ^definition = """
+    An alphanumeric identifier assigned to a study as executed by the sponsoring organization. [Source: SME Defined]
+    Example: Study Number- 565758
+  """
+* version 0..1 MS
+  * ^short = "Sub-Study Identifier Version (optional)"
+* title 1..1 MS
+  * ^short = "Sub-Study Name"
+  * ^definition = """
+    A textual identifier given to the drug stability sub-study by the sponsoring organization. [Source: SME Defined]
+  """
+* label.value  
+  *  ^short = "Storage Condition, Orientation and Container Title"
+  * ^definition = """
+    The Storage Condition, Orientation and Container Title defined in the main study protocol.
+  """
+* protocol 1..1 MS 
+* protocol ^short = "Sub-Stability Protocol"
+* protocol ^definition = "Reference to the Main Study protocol with the "
+* insert PQReference(protocol)
+* protocol only Reference(StabilityStudyProtocol)
+* protocol.display 1..1 MS 
+// * protocol.display ^short = // no Short??
+* protocol.display ^definition = """
+  Provide the 'Storage Condition, Orientation and Container Title' from the PlanDefinition.action.title element
+  in the StabilityStudyProtocol profile consistent with this sub-study
+"""
+* partOf MS
+* insert PQReference(partOf)
+* partOf only Reference(StabilityStudy or StabilitySubStudy)
+  * ^short = "Reference to main study or associated study"
+  * ^definition = "Use partOf to maintain a hierarchical relationship between stability studies."
+
+* condition 3..4 MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "coding"
+  * ^slicing.rules = #closed // or #closed if you don't want other concepts
+* condition contains
+    substudytype 1..1 MS and
+    storage 1..1 MS and
+    storagecategory 1..1 MS and
+    orientation 0..1 MS
+* condition[substudytype] from PqcmcStudyTypeTerminology (required)
+  * ^short = "Sub-Study Type"
+  * ^definition = """
+    A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
+    Examples: Standard, Cycled-simple.
+  """
+* condition[storage] from PqcmcStorageConditionsTerminology (required)
+  * ^short = "Storage Conditions Temp.RH"
+  * ^definition = """
+    The temperature and the relative humidity under which the study was performed. [Source: SME Defined]
+  """
+* condition[storagecategory] from PqcmcStorageConditionCategoryTerminology (required)
+  * ^short = "Storage Condition Category"
+  * ^definition = """
+    A classification of storage conditions (temperature and humidity) that is designed to check the chemical degradation or physical change of a drug substance or drug product. [Source: SME Defined]
+  """
+* condition[orientation] from PqcmcContainerOrientationTerminology (required)
+  * ^short = "Container Orientation"
+  * ^definition = """
+    The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+    Examples: horizontal, upright.
+  """
+* period 1..1 MS
+  * start 1..1 MS
+    * ^short = "Sub-Study Start Date"
+    * ^definition = """
+      The date the product or substance is put into the stability chamber for a given set of storage conditions [Source: SME Defined]
+    """
+  * end 0..1 MS
+    * ^short = "Sub-Study End Date"
+    * ^definition = """
+      The date the study completes or terminates. [Source: SME Defined]
+    """
+* whyStopped 0..1 MS
+* whyStopped only CodeableConceptTextOnly
+  * ^short = "Reason Stopped"
+  * ^definition = """
+    The rationale for why the Stability study was terminated. [Source: SME Defined]
+  """
+* note
+  * ^short = "Sub-Study Additional Information"
+  * ^definition = """
+    A placeholder for providing comments about the stability study. [Source: SME Defined]
+  """ 
+* classifier  1..1 MS
+  * ^short = "Sub-Study Type"
+  * ^definition = """The specific method used to evaluate how a product maintains its quality, safety, and efficacy over time under various environmental conditions. Common types include: Bracketing, Complex, Cycled-Simple, Matrixing, Photostability and	Staandard.
+  Note:  Bracketing, Complex, Cycled-Simple and Matrixing require additional elements.
+  """ 
+* classifier  from pqcmc-study-type-terminology (required)
+* result MS
+* insert PQReference(result)
+* result only Reference(StabilityStudyIntervalReport)
+  * ^short = "Link to stability study results"
+
+Profile: StabilityStudyIntervalReport
+Parent: DiagnosticReport
+Id: pqcmc-stability-study-interval-report
+Title: "Stability Study Interval Report"
+Description: "Batch or lot stability testing to ensure that pharmaceutical products continue to meet the product specification or determine the expiry period."
+
+* extension contains 
+  pq-timePoint-extension named studyInterval 1..1 MS and
+  pq-quality-specification-extension named qualitySpecification 1..1 MS and
+  pq-additional-info-extension named substudy-additional-info 0..* MS
+* extension[substudy-additional-info] 
+  * ^short = "Sub-Study Additional"
+  * ^definition = """
+    A placeholder for providing comments about the stability study. [Source: SME Defined]
+  """
+* identifier 0..1 MS
+  * ^short = "optional user designated identifier"	
+* status MS
+  * ^short = "Status of the batch analysis"
+  * ^definition = """
+    The status of the batch analysis. Consult the HL7 list of permitted values in http://hl7.org/fhir/ValueSet/diagnostic-report-status.
+  """
+* code 1..1 MS
+* code only CodeableConceptTextOnly
+  * ^short = "Name for this study interval analysis."
+* subject 1..1 MS
+* insert PQReference(subject)
+* subject only Reference(DrugProductBatch or DrugSubstanceBatch)
+  * ^short = "A batch placed under study to determine the maintained performance parameters over time."
+* performer 1..1 MS
+* insert PQReference(performer)
+* performer only Reference(CodedOrganization)
+  * ^short = "Test Site"
+  * ^definition = """
+    Reference to the organization profile that contains the name, identifer(s) and address of the testing site.
+  """
+* result MS
+* insert PQReference(result)
+* result only Reference(ResultObservation)
+
+Profile: StabilityStudyProtocol
+Parent: PlanDefinition
+Id: pq-stability-study-protocol
+Title: "Stability Study Protocol"
+Description: "Defines the protocol for a stability study, including storage conditions, container closures, time points, and tests."
+* identifier 1..1 MS 
+  * ^short = "Protocol Identifier"
+  * ^definition = """
+      An alphanumeric identifier assigned to a prospective protocol plan by the sponsoring organization. [Source: SME Defined]
+    """
+* version 1..1 MS
+  * ^short = "Protocol Version"
+  * ^definition = """
+      The alphanumeric text assigned by the sponsor to a particular edition of a stability study that is sequential. [Source: SME Defined]
+      Examples: 2.1, 2.2 or A1, Aw or P1, P2, etc.
+    """
+* title 1..1 MS
+  * ^short = "Protocol Title"
+  * ^definition = "The title of the stability study protocol provided by the sponsor or manufacturer."
+* status MS
+* description 0..1 MS
+  * ^short = "Protocol Description"
+  * ^definition = "A narrative description of the main stability study design including objectives, scope, and general approach."
+* goal.description MS
+* goal.description obeys cmc-valid-test-category-hierachies
+  * coding 1..2 MS
+    * ^short = "Test Category | Test Subcategory"
+    * ^definition = """
+      A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties.
+    """
+    * ^slicing.discriminator.type = #value
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #closed
+    * ^slicing.description = "the first coding must be a parent, the second one may be a child"
+    * ^slicing.ordered = false
+  * coding contains 
+      parent 1..1 MS and
+      child 0..1 MS
+  * coding[parent] from PqcmcTestCategoryParentTerminology (required)
+  * coding[child] from PqcmcTestCategoryChildTerminology (required)    
+// * goal.description 1..1 MS
+* goal.description.text 1..1 MS
+* goal.description.text ^short = "Test Name"
+* goal.description.text ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
+  Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+  Note: as defined by the sponsor
+  """
+// Sub-Study Storage Conditions and container 
+* action 1..* MS
+  * title 1..1 MS
+    * ^short = "Storage Condition, Orientation and Container Title"
+    * ^definition = "Descriptive title for the storage condition, orientation and container."
+  * code 1..1 MS
+    * coding 4..4 MS
+    * coding ^slicing.discriminator.type = #value
+    * coding ^slicing.discriminator.path = "$this"
+    * coding ^slicing.rules = #closed
+    * coding ^slicing.description = "Slice on the coding itself"
+    * coding ^slicing.ordered = false
+    * coding contains
+      storage 1..1 MS  and
+      orientation 1..1 MS and
+      containerType 1..1 MS and
+      closureType 1..1 MS
+    * coding[storage] from PqcmcStorageConditionsTerminology (required)
+      * ^short = "Storage Conditions Temp.RH"
+      * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
+    * coding[orientation] from PqcmcContainerOrientationTerminology	 (required)
+      * ^short = "Container Orientation"
+      * ^definition = """
+      The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+      Examples: horizontal, upright.
+    """
+    * coding[containerType] from PqcmcContainerTypeTerminology (required)
+      * ^short =  "Container Type"
+      * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+    * coding[closureType] from PqcmcClosureTypeTerminology (required)
+      * ^short = "Closure Type"
+      * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+  * action 1..* MS
+    * title 1..1 MS
+      * ^short = "Time Point Title"
+      * ^definition = "Descriptive title for the scheduled evaluation time point (e.g., 3 Months)."
+    * timingTiming 1..1 MS
+      * ^short = "Time Point Schedule"
+      * ^definition = "Timing schedule specifying when the samples will be evaluated (e.g., 3, 6, 12 months)."
+    * goalId 1..* MS
+    * goalId ^short = "Test to be performed at this time point"
+
+
+Profile: CycledTestingPlanDefinition
+Parent: PlanDefinition
+Id: cycled-testing-plan
+Title: "Cycled Testing Plan Profile"
+Description: "Profile for defining stability studies with cycling conditions using goals to represent cycles."
+
+// Require at least one goal to define the cycle
+* goal 1..* MS
+* goal.target.detail[x] 1..1 MS
+* goal.target.detail[x] only CodeableConcept
+* goal.target.detailCodeableConcept
+  * coding 4..4 MS
+  * coding ^slicing.discriminator.type = #value
+  * coding ^slicing.discriminator.path = "$this"
+  * coding ^slicing.rules = #closed
+  * coding ^slicing.description = "Slice on the coding itself"
+  * coding ^slicing.ordered = false
+  * coding contains
+    storage 1..1 MS  and
+    orientation 1..1 MS and
+    containerType 1..1 MS and
+    closureType 1..1 MS
+  * coding[storage] from PqcmcStorageConditionsTerminology (required)
+    * ^short = "Storage Conditions Temp.RH"
+    * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
+  * coding[orientation] from PqcmcContainerOrientationTerminology	 (required)
+    * ^short = "Container Orientation"
+    * ^definition = """
+    The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+    Examples: horizontal, upright.
+  """
+  * coding[containerType] from PqcmcContainerTypeTerminology (required)
+    * ^short =  "Container Type"
+    * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+  * coding[closureType] from PqcmcClosureTypeTerminology (required)
+    * ^short = "Closure Type"
+    * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+// Require at least one action linked to a goal
+* action 1..* MS
+* action.title 1..1 MS
+* action.description 1..1 MS
+* action.goalId 1..1 MS
+// Allow linking actions in sequence
+* action.relatedAction 0..* MS
+* action.relatedAction.targetId 1..1 MS
+* action.relatedAction.relationship 1..1 MS
+
+Extension: PQCMCStabilityGroupsMedicationMember
+Id: pqcmc-stability-groups-medication-member
+Title: "PQCMC Stability Groups Medication Member"
+Description: "In FHIR version R5, Group cannot reference a Medication or Substance in its 'member' element, whereas it can in R6. Until R6 this extension will be used."
+* ^context.type = #element
+* ^context.expression = "Group"
+* . ?!
+* . ^isModifierReason = "When present, this extension functions as the Group's 'member' element."
+* value[x] 1..1 MS
+* value[x] only Reference
+// the profile and literalReference stuff will be done in StabilityGroups
+* valueReference only Reference(Medication or Substance)
+
+Profile: StabilityGroups
+Parent: Group
+Id: stability-groups
+Title: "Stability Groups Profile"
+Description: "Profile for defining groups of Medication or Substance used in stability studies, such as bracketed or matrixed product groupings."
+* modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
+* modifierExtension[member]
+  * ^short = "Group members"
+  * ^definition = "References to the Medication or Substance resources that are part of this stability group, used for bracketing, matrixing, or other study designs."
+  * insert PQReference(valueReference)
+  * valueReference only Reference(DrugProductBatch or DrugSubstanceBatch)
+// Require group name
+* name 1..1 MS
+  * ^short = "Label for the stability group"
+  * ^definition = "A human-readable name used to identify the group, such as 'High Strength Bracket' or 'Smallest Package Size Group'."
+// Require membership specification
+* membership 1..1 MS
+* membership.value = #enumerated
+  * ^short = "Membership type for the stability group"
+  * ^definition = "Enumerate the set of stability studies."
+// Restrict members to Medication or Substance
+// * member 1..* MS
+// WIP: can't reference Medication until r6
+//* member.entity only Reference(DrugProductBatch or DrugSubstanceBatch)
+
+Extension: PQCMCEvidenceProductReference
+Id: pqcmc-evidence-product-reference
+Title: "PQCMC Evidence Product Reference"
+Description: """
+  In R6, the Evidence profile has a 'relatesTo' Backbone Element which can be used 
+  to reference MedicinalProductDefinition, to say which product this stability data 
+  is for. R5 has no equivalent so until R6 this extension will be used
+"""
+* ^context.type = #element
+* ^context.expression = "Evidence"
+* value[x] 1..1 MS
+* value[x] only Reference
+* insert PQReference(valueReference)
+* valueReference only Reference(DrugProductHandle)
+
+
+
+Profile: BracketingStudyEvidence
+Parent: Evidence
+Id: bracketing-study-evidence
+Title: "Bracketing Study Evidence Profile"
+Description: "Profile for capturing interpolation-based stability inferences from bracketing designs."
+
+// // Cross-version R6 Extensions
+// * extension contains 
+//     http://hl7.org/fhir/StructureDefinition/evidence-relatesto named r6relatesto 0..* and
+
+// // R6 focus
+// * insert PQReference(fr6relatesto)
+// * extension[r6relatesto]
+// *  ^short = "The product(s) whoes stabiliyt is inferred from the bracketed study evidence."
+//   * type = http://hl7.org/fhir/artifact-relationship-type#comments-on	"Is Comment On"
+// * targetReference only Reference(DrugProductHandle)
+* extension contains pqcmc-evidence-product-reference named productReference 0..1 MS
+// Require active status
+* status 1..1 MS
+  * ^short = "Evidence status"
+  * ^definition = "The status of the evidence record, typically 'active' for valid inferences."
+// Description of the evidence  
+* description 1..1 MS
+  * ^short = "Bracketing study summary"
+  * ^definition = "A summary of the statistical justification used to demonstrate that testing extremes (e.g., smallest and largest package sizes) brackets the behavior of intermediate configurations."
+// Require variable definitions for population and comparators
+  * ^short = "Bracketed package sizes or configurations"
+  * ^definition = "Defines the extremes used in the bracketing study, such as smallest and largest package sizes or strengths."
+* variableDefinition 2..* MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "note.text"
+  * ^slicing.rules = #open
+  * ^slicing.description = ""
+  * note 1..1 MS
+    * text 1..1 MS
+* variableDefinition contains 
+  upper 1..1 MS and
+  lower 1..1 MS
+* variableDefinition[upper]
+  * description 1..1 MS
+    * ^short = "Description of the bracketed extreme"
+    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
+  * variableRole 1..1 MS
+    * ^short = "Comparator Role"
+    * ^definition = "Marks one extreme batch as a comparator for the interpolation."
+  * variableRole = http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
+  * observed 1..1 MS
+    * ^short = "Observed High Batch"
+    * ^definition = "Reference to the high-strength or extreme batch used in the interpolation."
+  * insert PQReference(observed)
+  * observed only Reference(StabilityGroups)
+  * note.text = "upper"
+* variableDefinition[lower]
+  * description 1..1 MS
+    * ^short = "Description of the bracketed extreme"
+    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
+  * variableRole 1..1 MS
+    * ^short = "Comparator Role"
+    * ^definition = "Marks the second extreme batch as a comparator for the interpolation."
+  * variableRole =  http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
+  * observed 1..1 MS
+    * ^short = "Observed Low Batch"
+    * ^definition = "Reference to the low-strength or second extreme batch used in the interpolation."
+  * insert PQReference(observed)
+  * observed only Reference(StabilityGroups)
+  * note.text = "lower"
+// Statistical result to justify bracketing
+* statistic 1..* MS
+  * ^short = "Statistical outcome supporting bracketing"
+  * ^definition = "Details the statistical analysis, such as regression models or equivalence testing, that supports the bracketing conclusion."
+* statistic.description 1..1 MS
+  * ^short = "Explanation of the statistical result"
+  * ^definition = "A narrative summary of the statistical outcome showing that the tested extremes bracket the untested configurations."
+* statistic.quantity 0..1 MS
+  * ^short = "Interpolated Expiration Duration"
+  * ^definition = "The interpolated shelf life or expiration duration, typically expressed in months for the untested intermediate."
+
+
+Profile: MatrixedStudyEvidence
+Parent: Evidence
+Id: matrixed-study-evidence
+Title: "Matrixed Study Evidence Profile"
+Description: "Profile for capturing the results and justification for a matrixed stability study design."
+
+// Require title and description to document the matrixing rationale
+* title 1..1 MS
+  * ^short = "Matrixing design label"
+  * ^definition = "Title describing the matrixing plan, such as 'Reduced Time Point Matrix for Stability Study'."
+* description 1..1 MS
+  * ^short = "Rationale for matrixing design"
+  * ^definition = "Detailed narrative describing the scientific or risk-based rationale for reducing the testing matrix."
+* status 1..1 MS
+  * ^short = "Evidence status"
+  * ^definition = "The status of the evidence record, typically 'active' for valid conclusions."
+// Variable definitions representing the tested configurations
+* variableDefinition 1..* MS
+  * ^short = "Matrixed Configurations Evaluated"
+  * ^definition = "Definitions of the product configurations, strengths, packages, or time points tested as part of the matrixed study."
+// Optional description of each variable
+* variableDefinition.description 0..1 MS
+  * ^short = "Description of Matrixed Variable"
+  * ^definition = "Narrative description of the variable being evaluated in the matrixed design."
+// Statistical summary of the matrixed study
+* statistic 1..1 MS
+  * ^short = "Matrixed Study Result Summary"
+  * ^definition = "Statistical summary of the matrixed design outcomes."
+* statistic.description 1..1 MS
+  * ^short = "Result Description"
+  * ^definition = "Narrative summary describing the matrixed study design and key findings."
+// Optional quantitative outcome
+* statistic.quantity 0..1 MS
+  * ^short = "Summarized Quantitative Outcome"
+  * ^definition = "Optional quantitative summary of the matrixed study results, such as predicted shelf life or failure rate."
+
+  //---------------------------------------added for daigram
+
+  Profile: CodedOrganization
+Parent: Organization
+Id: cmc-organization
+Title: "Basic Organization"
+Description: "A profile for the data elements required to identify the sponsor and/or the supplier of the drug products or substances."
+* insert DUNSandFEINumber
+* name 1..1 MS
+* contact 1..* MS
+* contact.address 1..1 MS
+* contact.address only PqAddress
+
+Profile: DrugProductBatch
+Parent: Medication
+Id: pqcmc-drug-product-instance
+Title: "Drug Product Manufactured Instance"
+Description: "Includes the properties of the drug product as manufactured."
+
+* identifier 1..* MS
+  * ^short = "Product Proprietary Name | Product Non-Proprietary Name"
+  * ^definition = """
+    Product Proprietary Name: The exclusive name of a drug product owned by a company under trademark law regardless of registration status with the US Patent and Trademark Office (PTO). [Source: SME Defined]
+    Note:  Excludes dosage form, route of administration and strength. Example:  Tylenol 
+    Product Non-proprietary Name: A name unprotected by trademark rights that is entirely in the public domain. It may be used without restriction by the public at large, both lay and professional. [Source: SME Defined]
+  """
+  * type 1..1 MS
+  * type from CmcProductNameTypesVS (required) // this might be redundant now because the slices are exhaustive -- if someone wants to provide an 
+                                               // identifier other than prop or non-prop they can't
+  * value 1..1 MS
+* identifier
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "type"
+  * ^slicing.rules = #open
+  * ^slicing.description = "Need to at least have a non-proprietary name present"
+  * ^slicing.ordered = false
+* identifier contains Nonproprietary 1..1 MS
+* identifier[Nonproprietary]
+  * type = $NCIT#C96971 "Nonproprietary Name"
+* identifier contains Proprietary 0..1 MS
+* identifier[Proprietary]
+  * type = $NCIT#C71898 "Proprietary Name"
+// hold authroization for eStability
+* marketingAuthorizationHolder 0..1 MS
+* insert PQReference(marketingAuthorizationHolder)
+* marketingAuthorizationHolder only Reference(CodedOrganization)
+  * ^short = "Manufacturer"
+* doseForm 0..1 MS
+* doseForm from SplPharmaceuticalDosageFormTerminology (required)
+  * ^definition = """
+    The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+    Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+    Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+  """
+* ingredient 1..* MS
+  * item MS
+  * insert PQCodeableReference(item)
+  * item only CodeableReference(IngredientBatch)
+    * ^short = "UNII"
+    * ^definition = """
+      The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+      Example: 362O9ITL9D
+      Note: If a UNII does not exist, please go to
+      * http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+    """
+  * isActive 1..1 MS
+    * ^short = "Active ingredient indicator"
+  * strength[x] MS
+  * strength[x] only Ratio
+    * numerator 1..1 MS
+    * numerator from http://hl7.org/fhir/ValueSet/ucum-units (required)
+      * ^short = "Strength Numeric Numerator"
+      * ^definition = """
+        The content of an ingredient expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dosage form. This should be the strength as listed on the label. [Source: Adapted from NCI EVS C53294]
+      """
+    * denominator 1..1 MS
+    * denominator from http://hl7.org/fhir/ValueSet/ucum-units (required)
+      * ^short = "Strength Numeric Denominator"
+      * ^definition = """
+        Specifies the quantity of the ingredient (s) consistent with a single unit dose or as expressed on the label. [Source: SME Defined]
+        Note: Kg value is only applicable for veterinary applications. 
+        Note: This is the denominator value when expressing the strength for APIs Example: 5 mg per 100 mL
+      """
+* batch 1..1 MS
+  * extension contains drug-product-manufacturing-batch named medication-batch 1..1 MS
+  * lotNumber 1..1 MS
+    * ^short = "Batch or Lot Number (Bulk Batch ID)"
+    * ^definition = """
+      A combination of letters, numbers, or symbols, or any combination of them, from which the complete history of the manufacture, processing, packing, holding, and distribution of a batch or lot of drug product or other material can be determined. [Source: Adapted reference: 21 CFR 210.3 Definitions (4/1/2014)]
+    """
+  * expirationDate 0..1 MS
+    * ^short = "Expiration Date"
+    * ^definition = """
+      The date the manufacturer guarantees the full potency and safety of a particular batch/lot of medicinal product. The complete point in time date consisting of day, month and year shall be specified using the ISO 8601 date format. [Source: ISO IDMP 11615-2017]
+    """
+
+Profile: DrugProductHandle
+Parent: MedicinalProductDefinition
+Id: pqcmc-drug-product-handle 
+Title: "Drug Product Handle"
+Description: "Includes the essential identifying information of the drug product required to link to other profiles about the product in the eCTD structure. Profile on MedicinalProductDefinition."
+
+* identifier 0..1 MS
+* identifier ^short = "Optional user designated identifier"
+* description 0..0 MS
+* insert DosageForm
+* insert RouteOfAdministration
+* insert ProprietaryAndNonProprietaryNames
+* name.usage.jurisdiction 0..0
+* crossReference 0..0 MS
+
+Profile: DrugProductDescription
+Parent: MedicinalProductDefinition
+Id: pqcmc-drug-product-description
+Title: "Drug Product Description"
+Description: "Includes the properties of the drug product and components. Profile of Drug Product profile."
+
+* identifier 0..1 
+* identifier ^short = "optional user designated identifier"	
+* description 1..1 MS
+* description ^short = "Drug Product Description"
+* description ^definition = """A textual narrative describing the drug product or products. [Source: SME Defined]
+Examples: dosage form, container closure system, purpose."""
+* combinedPharmaceuticalDoseForm 1..1 MS
+* combinedPharmaceuticalDoseForm from SplPharmaceuticalDosageFormTerminology (required)
+  * ^short = "Product Dosage Form"
+  * ^definition = """
+    The form in which active and/or inert ingredient(s) are physically presented as indicated on the packaging according to the USP. [Source: NCI EVS - C42636]
+    Examples: tablet, capsule, solution, cream, etc. that contains a drug substance generally, but not necessarily, in association with excipients. [Source: ICH Q1A(R2)] See also 21 CFR 314.3.
+    Note: If there is a new dosage form that does not exist in the controlled terminology, then propose this new dosage form during sponsor meetings with FDA.
+
+    SME comment -- this is the marketed dosage form
+  """
+* insert RouteOfAdministration
+* insert ProprietaryAndNonProprietaryNames
+* name.usage.jurisdiction 0..0
+* crossReference 0..* MS
+* crossReference.product MS
+* crossReference.product ^short = "Co-Packaged Product"
+* insert PQCodeableReference(crossReference.product)
+
+Profile: DrugSubstanceBatch
+Parent: Substance
+Id: pqcmc-drug-substance-batch
+Title: "Drug Substance Manufactured Batch"
+Description: "Includes the properties of the drug substance as manufactured."
+
+* extension contains drug-substance-manufacturing-batch named api-batch 1..1 MS
+* identifier 1..1 MS
+  * ^short = "Drug Substance Lot Number"
+  * ^definition = """
+    Lot number of the drug substance used in manufacturing a drug product batch. [Source: SME Defined]
+  """
+  * value 1..1 MS
+* code MS
+* insert PQCodeableReference(code)
+* code only CodeableReference(SubstanceDefinitionHandle)
+    // * ^short = "UNII| CAS Number|Substance Name" // Need rule that it be any of 3 kinds * code.concept.coding
+    // * ^definition = """
+    //   Substance Name: A commonly used name or a systematic name assigned to the material or compound. [Source: SME Defined] Examples: acetaminophen; acetamide, N- (4-hydroxyphenyl)-; 4- hydroxyacetanilide; rituximab, OkT
+
+    //   CAS: Number Chemical Abstract Service (CAS) Registry Numbers (often referred to as CAS RNs or CAS Numbers) are used to provide identifiers for chemical substances. A CAS Registry Number itself has no inherent chemical significance but provides a way to identify a chemical substance or molecular structure when there are many possible systematic, generic, proprietary or trivial names. [Source: Adapted from CAS.org] Example: CAS [103-90-2]
+
+    //   UNII: The UNII is a non-proprietary, free, unique, unambiguous, non-semantic, alphanumeric identifier based on a substance’s molecular structure and/or descriptive information. [Source: http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/]
+    //   Example: 362O9ITL9D
+    //   Note: If a UNII does not exist, please go to http://www.fda.gov/ForIndustry/DataStandards/SubstanceRegistrationSystem-UniqueIngredientIdentifierUNII/
+    // """
+* expiry 0..1 MS
+  * ^short = "Retest Date"
+  * ^definition = "The date after which samples of the drug substance should be examined to ensure compliance with the specification and thus suitable for use in the manufacture of a given drug product [Source: Adapted from Q1A(R2)]"
+
+Profile: ResultObservation	
+Parent: Observation	
+Id: pq-result-observation	
+Title: "Result Observation"	
+Description: "Profile for an observation in a batch-analysis report or a stability report"	
+* . obeys cmc-range-extension-required
+* extension contains pq-pullDate-extension named actualpulldate 0..1 MS
+* extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+  * ^short = "Test Additional Information"
+* identifier.value 1..1 MS	
+  * ^short = "Stage Name"	
+  * ^definition = """
+    A set of discrete sequential steps performed on a given test. [Source: SME Defined]
+    Note: This is either 'Single Stage' for non-staged tests and 'Multi-Stage' for tests with more than one stage. Use hasMember to report multiple stages.
+  """
+* status MS	
+* category 1..1 MS
+* category ^short = "Test Category | Test Subcategory"
+* category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding 1..1 MS
+* category.coding from PqcmcTestCategoryTerminology (required)
+* category.text 1..1 MS
+* category.text ^short = "Test Name | RRT"	
+* category.text ^definition = """
+    Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+    Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+    Note: as defined by the sponsor
+
+    RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+    Example: 1:23 (a ratio)
+    Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
+  """
+* code.text 1..1 MS
+* code.text = "NA"
+* effective[x] 1..1 MS	
+* effective[x] only dateTime	
+  * ^short = "Test Date"	
+  * ^definition = """
+    The date when a particular test was performed. [Source: SME Defined].
+  """
+* performer 1..1 MS
+* insert PQReference(performer)
+* performer only Reference(CodedOrganization)	
+  * ^short = "Testing Site Unique Identifier"	
+  * ^definition = """
+    A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined].
+  """
+* value[x] 1..1 MS	
+* value[x]  only Quantity or string or integer
+* valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
+// * valueQuantity from PqcmcUnitsMeasure (required)
+  * value 1..1 MS
+    * ^short = "ValueNumeric"	
+    * ^definition = """
+      The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]
+    """
+  * code 1..1 MS	
+    * ^short = "ValueNumeric UOM"	
+    * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
+* valueString MS
+ 	* ^short = "Value"
+  * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]
+    Note: For tests that do not have a gro  N
+    """
+* valueInteger MS
+  * ^short = "Number of Stages | No Aggregates "
+  * ^definition = """
+    The number of stages reported 
+    or
+    Enter 0 when there is no Aggregate measure for the replicates.
+    """
+* dataAbsentReason MS	
+* interpretation 1..1 MS	
+* interpretation from PqcmcConformanceCriteriaTerminology (required)	
+  * ^short = "Conformance to Criteria"	
+  * ^definition = """
+    A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+    Examples: Conforms, Does not Conform
+  """
+* note MS	
+  * ^short = "Result Additional Information"	
+* note ^definition = """
+  A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
+  Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
+"""
+* method 1..1 MS
+* method ^short = "Test Method Origin"
+* method ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
+* method.coding 1..1 MS
+* method.coding from PqcmcTestMethodOriginTerminology (required)
+* method.text 1..1 MS
+* method.text ^short = "Analytical Procedure"
+* method.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
+"""
+
+// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
+* referenceRange 1..1 MS
+  * modifierExtension contains pq-batch-range named batchRange 0..1 MS
+  * modifierExtension[batchRange]
+    * extension[low].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+    * extension[high].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+  * low 0..0
+  * high 0..0
+  * text 1..1 MS 
+    * ^short = "Original Text | Text Value"	
+    * ^definition = """
+      The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+      Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+      Note: This is the text as it appears in the Specification.
+    """
+    * ^comment = """
+      Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
+    """	
+* hasMember 0..* MS	
+* insert PQReference(hasMember)
+* hasMember only Reference(ResultObservation)
+  * ^short = """
+    Note: Used to link to test results for Staged tests. Sequence Name must match the name in the quality spedificaition.
+    """	
+* component 0..* MS	
+  * ^short = "Replicates"	
+  * extension contains pq-replicate-extension named replicate  1..1 MS	
+    * ^short = "Replicate Number"	
+    * ^definition = """
+      An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
+      Examples: Prepare six aliquots from the sample.
+      Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
+    """
+  * extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+    * ^short = "Stage Additional Information"
+  * code 1..1 MS
+  * code only CodeableConceptTextOnly
+    * ^short = "Test Name | Relative Retention Time"
+    * ^definition = """
+      Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+      Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+      Note: as defined by the sponsor.
+      Relative Retention Time:The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+      Example: 1:23 (a ratio)
+      Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
+    """	
+  * value[x] 1..1 MS	
+  * value[x] only Quantity or string
+  * valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
+    * value 1..1 MS
+      * ^short = "ValueNumeric"	
+      * ^definition = """
+        The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]
+      """
+    * code 1..1 MS	
+      * ^short = "ValueNumeric UOM"	
+      * ^definition = """
+        A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]
+      """	
+  * valueString 0..1 MS
+    * ^short = "Value"	
+    * ^definition = """
+      The acceptable qualitative or text value of the result of the test.[Source: SME Defined]
+      Note: Enter 
+    """
+  * dataAbsentReason MS	
+  * interpretation 1..1 MS	
+  * interpretation from PqcmcConformanceCriteriaTerminology (required)	
+    * ^short = "Conformance to Criteria"	
+    * ^definition = """
+      A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+      Examples: Conforms, Does not Conform
+    """
+// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
+  * referenceRange 1..1 MS
+    * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+    * modifierExtension[batchRange]
+      * extension[low].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+      * extension[high].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+    * low 0..0 MS
+    * high 0..0 MS
+    * text 1..1 MS 
+      * ^short = "Original Text"	
+      * ^definition = """
+        The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+        Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+        Note: This is the text as it appears in the Specification.
+      """
+      * ^comment = """
+        Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
+      """	
+Profile: ResultObservation	
+Parent: Observation	
+Id: pq-result-observation	
+Title: "Result Observation"	
+Description: "Profile for an observation in a batch-analysis report or a stability report"	
+* . obeys cmc-range-extension-required
+* extension contains pq-pullDate-extension named actualpulldate 0..1 MS
+* extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+  * ^short = "Test Additional Information"
+* identifier.value 1..1 MS	
+  * ^short = "Stage Name"	
+  * ^definition = """
+    A set of discrete sequential steps performed on a given test. [Source: SME Defined]
+    Note: This is either 'Single Stage' for non-staged tests and 'Multi-Stage' for tests with more than one stage. Use hasMember to report multiple stages.
+  """
+* status MS	
+* category 1..1 MS
+* category ^short = "Test Category | Test Subcategory"
+* category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* category.coding 1..1 MS
+* category.coding from PqcmcTestCategoryTerminology (required)
+* category.text 1..1 MS
+* category.text ^short = "Test Name | RRT"	
+* category.text ^definition = """
+    Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+    Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+    Note: as defined by the sponsor
+
+    RRT: The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+    Example: 1:23 (a ratio)
+    Note:  This is the title or name of the impurity (sometimes expressed as a ratio) and not the value. 
+  """
+* code.text 1..1 MS
+* code.text = "NA"
+* effective[x] 1..1 MS	
+* effective[x] only dateTime	
+  * ^short = "Test Date"	
+  * ^definition = """
+    The date when a particular test was performed. [Source: SME Defined].
+  """
+* performer 1..1 MS
+* insert PQReference(performer)
+* performer only Reference(CodedOrganization)	
+  * ^short = "Testing Site Unique Identifier"	
+  * ^definition = """
+    A unique identifier assigned to the establishment (facility) which performs the testing. [Source: SME Defined].
+  """
+* value[x] 1..1 MS	
+* value[x]  only Quantity or string or integer
+* valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
+// * valueQuantity from PqcmcUnitsMeasure (required)
+  * value 1..1 MS
+    * ^short = "ValueNumeric"	
+    * ^definition = """
+      The acceptable quantitative or numeric value for the result of the test. [Source: SME Defined]
+    """
+  * code 1..1 MS	
+    * ^short = "ValueNumeric UOM"	
+    * ^definition = "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds. [Source: NCI EVS - C25709]"	
+* valueString MS
+ 	* ^short = "Value"
+  * ^definition = """The acceptable qualitative or text value of the result of the test. [Source: SME Defined]
+    Note: For tests that do not have a gro  N
+    """
+* valueInteger MS
+  * ^short = "Number of Stages | No Aggregates "
+  * ^definition = """
+    The number of stages reported 
+    or
+    Enter 0 when there is no Aggregate measure for the replicates.
+    """
+* dataAbsentReason MS	
+* interpretation 1..1 MS	
+* interpretation from PqcmcConformanceCriteriaTerminology (required)	
+  * ^short = "Conformance to Criteria"	
+  * ^definition = """
+    A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+    Examples: Conforms, Does not Conform
+  """
+* note MS	
+  * ^short = "Result Additional Information"	
+* note ^definition = """
+  A placeholder for providing any comments that are relevant to the Batch. [Source: SME Defined]
+  Examples: first batch manufactured at a new facility; first batch manufactured using a new Active Pharmaceutical Ingredient (API) source, new process, new container closure. 
+"""
+* method 1..1 MS
+* method ^short = "Test Method Origin"
+* method ^definition = "A coded value specifying the source of the method. [Source: SME Defined] Example: Compendial"
+* method.coding 1..1 MS
+* method.coding from PqcmcTestMethodOriginTerminology (required)
+* method.text 1..1 MS
+* method.text ^short = "Analytical Procedure"
+* method.text ^definition = """The name of the technique used to determine the nature of a characteristic. [Source: SME Defined].
+"""
+
+// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
+* referenceRange 1..1 MS
+  * modifierExtension contains pq-batch-range named batchRange 0..1 MS
+  * modifierExtension[batchRange]
+    * extension[low].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+    * extension[high].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+  * low 0..0
+  * high 0..0
+  * text 1..1 MS 
+    * ^short = "Original Text | Text Value"	
+    * ^definition = """
+      The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+      Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+      Note: This is the text as it appears in the Specification.
+    """
+    * ^comment = """
+      Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
+    """	
+* hasMember 0..* MS	
+* insert PQReference(hasMember)
+* hasMember only Reference(ResultObservation)
+  * ^short = """
+    Note: Used to link to test results for Staged tests. Sequence Name must match the name in the quality spedificaition.
+    """	
+* component 0..* MS	
+  * ^short = "Replicates"	
+  * extension contains pq-replicate-extension named replicate  1..1 MS	
+    * ^short = "Replicate Number"	
+    * ^definition = """
+      An identification number for a member of the set of results for a test, usually the sequence order in which the test was executed. Individual test are executed on multiple samples to give greater validity to the findings. [Source: SME Defined]
+      Examples: Prepare six aliquots from the sample.
+      Test 8 samples. If any fall above 110%, test an additional 7 samples. Record all replicate values as stated in the method.
+    """
+  * extension contains pq-additional-info-extension named additionalInfo 0..1 MS
+    * ^short = "Stage Additional Information"
+  * code 1..1 MS
+  * code only CodeableConceptTextOnly
+    * ^short = "Test Name | Relative Retention Time"
+    * ^definition = """
+      Test Name: The textual description of a procedure or analytical method. [Source: SME Defined]
+      Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
+      Note: as defined by the sponsor.
+      Relative Retention Time:The ratio of the retention time of a component relative to that of another used as a reference obtained under identical conditions as an alias for the name of the unidentified impurities. [Source: Adapted from USP] 
+      Example: 1:23 (a ratio)
+      Note: This is the title or name of the impurity (sometimes expressed as a ratio) and not the value.
+    """	
+  * value[x] 1..1 MS	
+  * value[x] only Quantity or string
+  * valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
+    * value 1..1 MS
+      * ^short = "ValueNumeric"	
+      * ^definition = """
+        The acceptable quantitative or numeric value for the result of the test.[Source: SME Defined]
+      """
+    * code 1..1 MS	
+      * ^short = "ValueNumeric UOM"	
+      * ^definition = """
+        A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds.[Source: NCI EVS - C25709]
+      """	
+  * valueString 0..1 MS
+    * ^short = "Value"	
+    * ^definition = """
+      The acceptable qualitative or text value of the result of the test.[Source: SME Defined]
+      Note: Enter 
+    """
+  * dataAbsentReason MS	
+  * interpretation 1..1 MS	
+  * interpretation from PqcmcConformanceCriteriaTerminology (required)	
+    * ^short = "Conformance to Criteria"	
+    * ^definition = """
+      A coded value specifying whether the results of a particular test on a given batch of a drug substance or a drug product comply with the acceptance criteria. [Source: SME Defined] 
+      Examples: Conforms, Does not Conform
+    """
+// need rule for refernece range. If non-numeric test, the Interpretation code is on the range = 'NA'	
+  * referenceRange 1..1 MS
+    * modifierExtension contains pq-batch-range named batchRange 1..1 MS
+    * modifierExtension[batchRange]
+      * extension[low].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+      * extension[high].value[x] from http://hl7.org/fhir/ValueSet/ucum-units
+    * low 0..0 MS
+    * high 0..0 MS
+    * text 1..1 MS 
+      * ^short = "Original Text"	
+      * ^definition = """
+        The text of the acceptance criteria as provided in the specification. [Source: SME Defined] 
+        Examples: White to off-white cake; 22.5 - 27.5 mg/ml 
+        Note: This is the text as it appears in the Specification.
+      """
+      * ^comment = """
+        Note: For non-numeric tests, the Original Text is the only required element for referenceRange.
+      """	
+
+Profile: EctdCompositionSP7383
+Parent: Composition
+Id: ectd-composition-sp7383
+Title: "eCTD Stability Data Composition"
+Description: "The fields needed to represent the Stability Data to be included under the 3.2.P.8.3 , 3.2.S.7.3 and 3.2.P.4.5 eCTD headings. References Sponsor Organization and Stability Study."
+* status = #final
+* identifier 0..1 MS
+* type = $SectionTypes#SP7383 "Stability Data"
+* author 1..1 MS
+* insert PQReference(author)
+* author only Reference(CodedOrganization)
+/*
+    SECTION SLICES
+*/
+* section 1.. MS
+  * entry MS
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "code"
+  * ^slicing.rules = #closed
+  * ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Data profile: RoutineDrugProduct or Routine Api"
+* section contains
+    DrugProduct 0..1 MS and
+    Api 0..1 MS
+* section[DrugProduct]
+  * ^definition = "Product Stability Data to be included under the 3.2.P.8.3 eCTD heading."
+  * code = $SectionTypes#32P83 "Product Stability Data"
+  * title 1..1 MS
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(StabilityStudy)
+* section[Api] 
+  * ^definition = "Drug Substance Stability Data to be included under the 3.2.S.7.3 eCTD heading."
+  * code = $SectionTypes#32S73 "Substance Stability Data"
+  * title 1..1 MS
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(StabilityStudy)
+// need check that subject type in instance matches the seciton selected.
+
+Profile: CMCeCTDDocumentSP7383
+Parent: Bundle
+Id: cmc-ectd-document-sp7383
+Title: "CMC eCTD SP7383 Document"
+Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles."
+* . ^short = "CMC eCTD SP7383 Bundle"
+* . obeys cmc-stability-mandatory-pull-date
+* identifier 1..1 MS
+* type MS
+  * ^short = "document"
+* type = #document (exactly)
+* timestamp 1..1 MS
+* entry 1..* MS
+  * fullUrl 1..1 MS //each entry must have a fullUrl
+  * resource 1..1 MS // each entry must have a resource
+  * ^slicing.discriminator.type = #profile
+  * ^slicing.discriminator.path = "resource"
+  * ^slicing.rules = #open
+* entry contains
+    Composition 1..1 MS
+* entry[Composition].resource only ectd-composition-sp7383

@@ -78,7 +78,7 @@ Description: "Profile for describing main and Sub-Stability studies for drug sub
     * ^definition = """
       The date the product or substance is put into the stability chamber for a given set of storage conditions [Source: SME Defined]
     """
-  * end 0..1 MS
+  * end 1..1 MS
     * ^short = "Study End Date"
     * ^definition = """
       The date the study or sub-study completes or terminates. [Source: SME Defined]
@@ -94,65 +94,6 @@ Description: "Profile for describing main and Sub-Stability studies for drug sub
   * ^definition = """
     The rationale for why the Stability study was terminated. [Source: SME Defined]
   """
-
-Extension: PQCMCStabilitySubStudyFocusAndObjective
-Id: pqcmc-stability-sub-study-focus-and-objective
-Title: "PQCMC Stability Sub Study Focus And Objective"
-Description: """
-  In R6, ResearchStudy has two BackboneElements called objective and focus. 
-  They capture a lot of meaningful information. Until R6 this extension will be used instead.
-  This extension will be laid out in a way that corresponds to R6 though it will not capture
-  everything that these BackboneElements do in r6.
-"""
-* ^context.type = #element
-* ^context.expression = "ResearchStudy"
-* extension contains 
-  focus 1..1 MS and 
-  objective 1..1 MS
-* extension[focus]
-  * ^short = "Suppoting information for cycled testing and matrixed study designs."
-  * value[x] 1..1 MS
-  * value[x] only Reference
-  * insert PQReference(valueReference)
-  * valueReference only Reference(CycledTestingPlanDefinition)
-* extension[objective].extension contains
-  name 1..1 MS and
-  outcomeMeasure 1..1 MS
-* extension[objective]
-  * ^short = "Study Design and Justification"
-  * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
-  * extension[name]
-    * ^short = "Label"
-    * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
-    * value[x] 1..1 MS
-    * value[x] only string
-  * extension[outcomeMeasure].extension contains
-    comparator 1..* MS and
-    summaryMeasure 0..1 MS and
-    endpointAnalysisPlan 0..1 MS
-  * extension[outcomeMeasure]
-    * extension[comparator]
-      * ^short = "Specific product or group under study"
-      * ^definition = """
-        Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile) 
-        representing the population or configuration being studied.
-        Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
-      """
-      * value[x] 1..1 MS
-      * value[x] only Reference
-      * insert PQReference(valueReference)
-      * valueReference only Reference(StabilityGroups)
-    * extension[summaryMeasure]
-      * value[x] 1..1 MS
-      * value[x] only CodeableConcept
-      * valueCodeableConcept only CodeableConceptTextOnly
-    * extension[endpointAnalysisPlan]
-      * ^short = "Linked Design or Evidence"
-      * ^definition = "References to supporting BracketingStudyEvidence."
-      * value[x] 1..1 MS
-      * value[x] only Reference
-      * insert PQReference(valueReference)
-      * valueReference only Reference(BracketingStudyEvidence)
 
 Profile: StabilitySubStudy
 Parent: ResearchStudy
@@ -219,7 +160,7 @@ Description: "Profile for the a stability sub-study."
 """
 * partOf MS
 * insert PQReference(partOf)
-* partOf only Reference(StabilityStudy or StabilitySubStudy)
+* partOf only Reference(StabilityStudy)
   * ^short = "Reference to main study or associated study"
   * ^definition = "Use partOf to maintain a hierarchical relationship between stability studies."
 
@@ -260,7 +201,7 @@ Description: "Profile for the a stability sub-study."
     * ^definition = """
       The date the product or substance is put into the stability chamber for a given set of storage conditions [Source: SME Defined]
     """
-  * end 0..1 MS
+  * end 1..1 MS
     * ^short = "Sub-Study End Date"
     * ^definition = """
       The date the study completes or terminates. [Source: SME Defined]
@@ -321,7 +262,7 @@ Description: "Batch or lot stability testing to ensure that pharmaceutical produ
 * performer only Reference(CodedOrganization)
   * ^short = "Test Site"
   * ^definition = """
-    Reference to the organization profile that contains the name, identifer(s) and address of the testing site.
+    Reference to the organization profile that contains the name, identifer(s) and address of the primary testing site.
   """
 * result MS
 * insert PQReference(result)
@@ -388,9 +329,9 @@ Description: "Defines the protocol for a stability study, including storage cond
     * coding ^slicing.ordered = false
     * coding contains
       storage 1..1 MS  and
-      orientation 1..1 MS and
-      containerType 1..1 MS and
-      closureType 1..1 MS
+      orientation 1..1 MS //and
+//      containerType 1..1 MS and
+//      closureType 1..1 MS
     * coding[storage] from PqcmcStorageConditionsTerminology (required)
       * ^short = "Storage Conditions Temp.RH"
       * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
@@ -464,171 +405,245 @@ Description: "Profile for defining stability studies with cycling conditions usi
 * action.relatedAction.targetId 1..1 MS
 * action.relatedAction.relationship 1..1 MS
 
-Extension: PQCMCStabilityGroupsMedicationMember
-Id: pqcmc-stability-groups-medication-member
-Title: "PQCMC Stability Groups Medication Member"
-Description: "In FHIR version R5, Group cannot reference a Medication or Substance in its 'member' element, whereas it can in R6. Until R6 this extension will be used."
+Extension: PQCMCStabilitySubStudyFocusAndObjective
+Id: pqcmc-stability-sub-study-focus-and-objective
+Title: "PQCMC Stability Sub Study Focus And Objective"
+Description: """
+  In R6, ResearchStudy has two BackboneElements called objective, focus and relates to.
+  They capture a lot of meaningful information. Until R6 this extension will be used instead.
+  This extension will be laid out in a way that corresponds to R6 though it will not capture
+  everything that these BackboneElements do in r6.
+"""
 * ^context.type = #element
-* ^context.expression = "Group"
-* . ?!
-* . ^isModifierReason = "When present, this extension functions as the Group's 'member' element."
-* value[x] 1..1 MS
-* value[x] only Reference
-// the profile and literalReference stuff will be done in StabilityGroups
-* valueReference only Reference(Medication or Substance)
+* ^context.expression = "ResearchStudy"
+* extension contains
+  focus 1..1 MS //and
+ // objective 1..1 MS
+* extension[focus]
+  * ^short = "Suppoting information for cycled testing and matrixed study designs."
+  * value[x] 1..1 MS
+  * value[x] only Reference
+  * insert PQReference(valueReference)
+  * valueReference only Reference(CycledTestingPlanDefinition)
 
-Profile: StabilityGroups
+* relatesTo	MS
+* ^short = "Suppoting information for cycled testing study designs."
+  * type = http://hl7.org/fhir/ValueSet/artifact-relationship-type#composed-of "Composed Of"
+  * value[x] 1..* MS
+  * ^short = "The sub-studies that are members of the sequence of condiditons in the cycled study."
+  * value[x] only Reference
+  * insert PQReference(valueReference)
+  * valueReference only Reference(StabilityCycleGroups)
+
+//* extension[objective].extension contains
+//  name 1..1 MS and
+//  outcomeMeasure 1..1 MS
+//* extension[objective]
+//  * ^short = "Study Design and Justification"
+//  * ^definition = "Links to Matrixing, Cycled Testing Plans or Bracketing Evidence providing study design or scientific justification."
+//  * extension[name]
+//    * ^short = "Label"
+//    * ^definition = "A label describing the study design eobjective, such as 'Matrixing Justification' or 'Cycled Testing Plan'."
+//    * value[x] 1..1 MS
+//    * value[x] only string
+//  * extension[outcomeMeasure].extension contains
+//    comparator 1..* MS and
+//    summaryMeasure 0..1 MS and
+//    endpointAnalysisPlan 0..1 MS
+//  * extension[outcomeMeasure]
+//    * extension[comparator]
+//      * ^short = "Specific product or group under study"
+//      * ^definition = """
+//        Reference to the specific Medication, Substance, or Stability Group (defined in StabilityGroups profile)
+//        representing the population or configuration being studied.
+//        Note: For Cycled Studies these are all the studies that constitute the cycle of storage condidtions
+//        """
+////        Note: For bracketing studies it is best to group the extreme batches together for re-use in BracketingStudyEvidence and have two comparator groups here.
+//
+//      * value[x] 1..1 MS
+//      * value[x] only Reference
+//      * insert PQReference(valueReference)
+//      * valueReference only Reference(tabilityCyleGroups)
+//    * extension[summaryMeasure]
+//      * value[x] 1..1 MS
+//      * value[x] only CodeableConcept
+//      * valueCodeableConcept only CodeableConceptTextOnly
+//    * extension[endpointAnalysisPlan]
+//      * ^short = "Linked Design or Evidence"
+//      * result
+//      * ^definition = "References to supporting BracketingStudyEvidence or MatrixedStudyEvidence."
+//      * value[x] 1..1 MS
+//      * value[x] only Reference
+//      * insert PQReference(valueReference)
+//      * valueReference only Reference(MatrixedStudyEvidence or BracketingStudyEvidence)
+ 
+
+Profile: StabilityCycleGroups
 Parent: Group
 Id: stability-groups
-Title: "Stability Groups Profile"
-Description: "Profile for defining groups of Medication or Substance used in stability studies, such as bracketed or matrixed product groupings."
+Title: "Stability Cycle Groups Profile"
+Description: "Profile for defining groups of Stability Sub-Studies used in a cycled stability study."
 * modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
 * modifierExtension[member]
   * ^short = "Group members"
-  * ^definition = "References to the Medication or Substance resources that are part of this stability group, used for bracketing, matrixing, or other study designs."
+  * ^definition = "References to the Sub-Study resources that are part of this stability group, used for cycled study designs."
   * insert PQReference(valueReference)
-  * valueReference only Reference(DrugProductBatch or DrugSubstanceBatch)
+  * valueReference only Reference(StabilitySubStudy)
 // Require group name
 * name 1..1 MS
   * ^short = "Label for the stability group"
-  * ^definition = "A human-readable name used to identify the group, such as 'High Strength Bracket' or 'Smallest Package Size Group'."
+  * ^definition = "A human-readable name used to identify the group, such as 'Freeze - Thaw."
 // Require membership specification
 * membership 1..1 MS
 * membership.value = #enumerated
   * ^short = "Membership type for the stability group"
   * ^definition = "Enumerate the set of stability studies."
-// Restrict members to Medication or Substance
-// * member 1..* MS
-// WIP: can't reference Medication until r6
-//* member.entity only Reference(DrugProductBatch or DrugSubstanceBatch)
-
-Extension: PQCMCEvidenceProductReference
-Id: pqcmc-evidence-product-reference
-Title: "PQCMC Evidence Product Reference"
-Description: """
-  In R6, the Evidence profile has a 'relatesTo' Backbone Element which can be used 
-  to reference MedicinalProductDefinition, to say which product this stability data 
-  is for. R5 has no equivalent so until R6 this extension will be used
-"""
-* ^context.type = #element
-* ^context.expression = "Evidence"
-* value[x] 1..1 MS
-* value[x] only Reference
-* insert PQReference(valueReference)
-* valueReference only Reference(DrugProductHandle)
 
 
+// ----- Bracketting and Matrixing ---  save for after connectathon ---------------------------
 
-Profile: BracketingStudyEvidence
-Parent: Evidence
-Id: bracketing-study-evidence
-Title: "Bracketing Study Evidence Profile"
-Description: "Profile for capturing interpolation-based stability inferences from bracketing designs."
+//Extension: PQCMCStabilityGroupsMedicationMember
+//Id: pqcmc-stability-groups-medication-member
+//Title: "PQCMC Stability Groups Medication Member"
+//Description: "In FHIR version R5, Group cannot reference a Medication or Substance in its 'member' element, whereas it can in R6. Until R6 this extension will be used."
+//* ^context.type = #element
+//* ^context.expression = "Group"
+//* . ?!
+//* . ^isModifierReason = "When present, this extension functions as the Group's 'member' element."
+//* value[x] 1..1 MS
+//* value[x] only Reference
+//// the profile and literalReference stuff will be done in StabilityGroups
+//* valueReference only Reference(Medication or Substance)
 
-// // Cross-version R6 Extensions
-// * extension contains 
-//     http://hl7.org/fhir/StructureDefinition/evidence-relatesto named r6relatesto 0..* and
-
-// // R6 focus
-// * insert PQReference(fr6relatesto)
-// * extension[r6relatesto]
-// *  ^short = "The product(s) whoes stabiliyt is inferred from the bracketed study evidence."
-//   * type = http://hl7.org/fhir/artifact-relationship-type#comments-on	"Is Comment On"
-// * targetReference only Reference(DrugProductHandle)
-* extension contains pqcmc-evidence-product-reference named productReference 0..1 MS
-// Require active status
-* status 1..1 MS
-  * ^short = "Evidence status"
-  * ^definition = "The status of the evidence record, typically 'active' for valid inferences."
-// Description of the evidence  
-* description 1..1 MS
-  * ^short = "Bracketing study summary"
-  * ^definition = "A summary of the statistical justification used to demonstrate that testing extremes (e.g., smallest and largest package sizes) brackets the behavior of intermediate configurations."
-// Require variable definitions for population and comparators
-  * ^short = "Bracketed package sizes or configurations"
-  * ^definition = "Defines the extremes used in the bracketing study, such as smallest and largest package sizes or strengths."
-* variableDefinition 2..* MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "note.text"
-  * ^slicing.rules = #open
-  * ^slicing.description = ""
-  * note 1..1 MS
-    * text 1..1 MS
-* variableDefinition contains 
-  upper 1..1 MS and
-  lower 1..1 MS
-* variableDefinition[upper]
-  * description 1..1 MS
-    * ^short = "Description of the bracketed extreme"
-    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
-  * variableRole 1..1 MS
-    * ^short = "Comparator Role"
-    * ^definition = "Marks one extreme batch as a comparator for the interpolation."
-  * variableRole = http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
-  * observed 1..1 MS
-    * ^short = "Observed High Batch"
-    * ^definition = "Reference to the high-strength or extreme batch used in the interpolation."
-  * insert PQReference(observed)
-  * observed only Reference(StabilityGroups)
-  * note.text = "upper"
-* variableDefinition[lower]
-  * description 1..1 MS
-    * ^short = "Description of the bracketed extreme"
-    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
-  * variableRole 1..1 MS
-    * ^short = "Comparator Role"
-    * ^definition = "Marks the second extreme batch as a comparator for the interpolation."
-  * variableRole =  http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
-  * observed 1..1 MS
-    * ^short = "Observed Low Batch"
-    * ^definition = "Reference to the low-strength or second extreme batch used in the interpolation."
-  * insert PQReference(observed)
-  * observed only Reference(StabilityGroups)
-  * note.text = "lower"
-// Statistical result to justify bracketing
-* statistic 1..* MS
-  * ^short = "Statistical outcome supporting bracketing"
-  * ^definition = "Details the statistical analysis, such as regression models or equivalence testing, that supports the bracketing conclusion."
-* statistic.description 1..1 MS
-  * ^short = "Explanation of the statistical result"
-  * ^definition = "A narrative summary of the statistical outcome showing that the tested extremes bracket the untested configurations."
-* statistic.quantity 0..1 MS
-  * ^short = "Interpolated Expiration Duration"
-  * ^definition = "The interpolated shelf life or expiration duration, typically expressed in months for the untested intermediate."
-
-
-Profile: MatrixedStudyEvidence
-Parent: Evidence
-Id: matrixed-study-evidence
-Title: "Matrixed Study Evidence Profile"
-Description: "Profile for capturing the results and justification for a matrixed stability study design."
-
-// Require title and description to document the matrixing rationale
-* title 1..1 MS
-  * ^short = "Matrixing design label"
-  * ^definition = "Title describing the matrixing plan, such as 'Reduced Time Point Matrix for Stability Study'."
-* description 1..1 MS
-  * ^short = "Rationale for matrixing design"
-  * ^definition = "Detailed narrative describing the scientific or risk-based rationale for reducing the testing matrix."
-* status 1..1 MS
-  * ^short = "Evidence status"
-  * ^definition = "The status of the evidence record, typically 'active' for valid conclusions."
-// Variable definitions representing the tested configurations
-* variableDefinition 1..* MS
-  * ^short = "Matrixed Configurations Evaluated"
-  * ^definition = "Definitions of the product configurations, strengths, packages, or time points tested as part of the matrixed study."
-// Optional description of each variable
-* variableDefinition.description 0..1 MS
-  * ^short = "Description of Matrixed Variable"
-  * ^definition = "Narrative description of the variable being evaluated in the matrixed design."
-// Statistical summary of the matrixed study
-* statistic 1..1 MS
-  * ^short = "Matrixed Study Result Summary"
-  * ^definition = "Statistical summary of the matrixed design outcomes."
-* statistic.description 1..1 MS
-  * ^short = "Result Description"
-  * ^definition = "Narrative summary describing the matrixed study design and key findings."
-// Optional quantitative outcome
-* statistic.quantity 0..1 MS
-  * ^short = "Summarized Quantitative Outcome"
-  * ^definition = "Optional quantitative summary of the matrixed study results, such as predicted shelf life or failure rate."
+//
+//Extension: PQCMCEvidenceProductReference
+//Id: pqcmc-evidence-product-reference
+//Title: "PQCMC Evidence Product Reference"
+//Description: """
+//  In R6, the Evidence profile has a 'relatesTo' Backbone Element which can be used
+//  to reference MedicinalProductDefinition, to say which product this stability data
+//  is for. R5 has no equivalent so until R6 this extension will be used
+//"""
+//* ^context.type = #element
+//* ^context.expression = "Evidence"
+//* value[x] 1..1 MS
+//* value[x] only Reference
+//* insert PQReference(valueReference)
+//* valueReference only Reference(DrugProductHandle)
+//
+//
+//
+//Profile: BracketingStudyEvidence
+//Parent: Evidence
+//Id: bracketing-study-evidence
+//Title: "Bracketing Study Evidence Profile"
+//Description: "Profile for capturing interpolation-based stability inferences from bracketing designs."
+//
+//// // Cross-version R6 Extensions
+//// * extension contains
+////     http://hl7.org/fhir/StructureDefinition/evidence-relatesto named r6relatesto 0..* and
+//
+//// // R6 focus
+//// * insert PQReference(fr6relatesto)
+//// * extension[r6relatesto]
+//// *  ^short = "The product(s) whoes stabiliyt is inferred from the bracketed study evidence."
+////   * type = http://hl7.org/fhir/artifact-relationship-type#comments-on
+//// * targetReference only Reference(DrugProductHandle)
+//* extension contains pqcmc-evidence-product-reference named productReference 0..1 MS
+//// Require active status
+//* status 1..1 MS
+//  * ^short = "Evidence status"
+//  * ^definition = "The status of the evidence record, typically 'active' for valid inferences."
+//// Description of the evidence
+//* description 1..1 MS
+//  * ^short = "Bracketing study summary"
+//  * ^definition = "A summary of the statistical justification used to demonstrate that testing extremes (e.g., smallest and largest package sizes) brackets the behavior of intermediate configurations."
+//// Require variable definitions for population and comparators
+//  * ^short = "Bracketed package sizes or configurations"
+//  * ^definition = "Defines the extremes used in the bracketing study, such as smallest and largest package sizes or strengths."
+//* variableDefinition 2..* MS
+//  * ^slicing.discriminator.type = #value
+//  * ^slicing.discriminator.path = "note.text"
+//  * ^slicing.rules = #open
+//  * ^slicing.description = ""
+//  * note 1..1 MS
+//    * text 1..1 MS
+//* variableDefinition contains
+//  upper 1..1 MS and
+//  lower 1..1 MS
+//* variableDefinition[upper]
+//  * description 1..1 MS
+//    * ^short = "Description of the bracketed extreme"
+//    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
+//  * variableRole 1..1 MS
+//    * ^short = "Comparator Role"
+//    * ^definition = "Marks one extreme batch as a comparator for the interpolation."
+//  * variableRole = http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
+//  * observed 1..1 MS
+//    * ^short = "Observed High Batch"
+//    * ^definition = "Reference to the high-strength or extreme batch used in the interpolation."
+//  * insert PQReference(observed)
+//  * observed only Reference(StabilityGroups)
+//  * note.text = "upper"
+//* variableDefinition[lower]
+//  * description 1..1 MS
+//    * ^short = "Description of the bracketed extreme"
+//    * ^definition = "A human-readable description of the bracketed configuration being evaluated, such as a specific package size."
+//  * variableRole 1..1 MS
+//    * ^short = "Comparator Role"
+//    * ^definition = "Marks the second extreme batch as a comparator for the interpolation."
+//  * variableRole =  http://terminology.hl7.org/CodeSystem/variable-role#exposure "exposure"
+//  * observed 1..1 MS
+//    * ^short = "Observed Low Batch"
+//    * ^definition = "Reference to the low-strength or second extreme batch used in the interpolation."
+//  * insert PQReference(observed)
+//  * observed only Reference(StabilityGroups)
+//  * note.text = "lower"
+//// Statistical result to justify bracketing
+//* statistic 1..* MS
+//  * ^short = "Statistical outcome supporting bracketing"
+//  * ^definition = "Details the statistical analysis, such as regression models or equivalence testing, that supports the bracketing conclusion."
+//* statistic.description 1..1 MS
+//  * ^short = "Explanation of the statistical result"
+//  * ^definition = "A narrative summary of the statistical outcome showing that the tested extremes bracket the untested configurations."
+//* statistic.quantity 0..1 MS
+//  * ^short = "Interpolated Expiration Duration"
+//  * ^definition = "The interpolated shelf life or expiration duration, typically expressed in months for the untested intermediate."
+//
+//
+//Profile: MatrixedStudyEvidence
+//Parent: Evidence
+//Id: matrixed-study-evidence
+//Title: "Matrixed Study Evidence Profile"
+//Description: "Profile for capturing the results and justification for a matrixed stability study design."
+//
+//// Require title and description to document the matrixing rationale
+//* title 1..1 MS
+//  * ^short = "Matrixing design label"
+//  * ^definition = "Title describing the matrixing plan, such as 'Reduced Time Point Matrix for Stability Study'."
+//* description 1..1 MS
+//  * ^short = "Rationale for matrixing design"
+//  * ^definition = "Detailed narrative describing the scientific or risk-based rationale for reducing the testing matrix."
+//* status 1..1 MS
+//  * ^short = "Evidence status"
+//  * ^definition = "The status of the evidence record, typically 'active' for valid conclusions."
+//// Variable definitions representing the tested configurations
+//* variableDefinition 1..* MS
+//  * ^short = "Matrixed Configurations Evaluated"
+//  * ^definition = "Definitions of the product configurations, strengths, packages, or time points tested as part of the matrixed study."
+//// Optional description of each variable
+//* variableDefinition.description 0..1 MS
+//  * ^short = "Description of Matrixed Variable"
+//  * ^definition = "Narrative description of the variable being evaluated in the matrixed design."
+//// Statistical summary of the matrixed study
+//* statistic 1..1 MS
+//  * ^short = "Matrixed Study Result Summary"
+//  * ^definition = "Statistical summary of the matrixed design outcomes."
+//* statistic.description 1..1 MS
+//  * ^short = "Result Description"
+//  * ^definition = "Narrative summary describing the matrixed study design and key findings."
+//// Optional quantitative outcome
+//* statistic.quantity 0..1 MS
+//  * ^short = "Summarized Quantitative Outcome"
+//  * ^definition = "Optional quantitative summary of the matrixed study results, such as predicted shelf life or failure rate."
+//
