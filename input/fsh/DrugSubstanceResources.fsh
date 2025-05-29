@@ -1,6 +1,6 @@
 Extension: StrengthExtension
 Id:  strength-extension
-Title: "Strength Extension"
+Title: "Strength Type"
 Description: "Strength Type (for API)"
 * ^context[+].type = #element
 * ^context[=].expression = "Ingredient.substance.strength"
