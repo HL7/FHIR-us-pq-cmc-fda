@@ -477,7 +477,7 @@ defineVariable('C18951',('C16643'|'C205054'|'C205031'|'C205002'|'C205008')).sele
 defineVariable('C204971',('C205039'|'C205040'|'C205052'|'C205047'|'C205048'|'C205051'|'C205014'|'C204890'|'C134254'|'C134002')).select(
   coding.count() = 2 implies (
     coding.exists(('C60819'|'C134250'|'C205026'|'C193381'|'C25483'|'C18951') contains code) 
-    implies (
+    and (
       (coding.exists(code = 'C60819') implies coding.exists(%C60819 contains code)) and
       (coding.exists(code = 'C134250') implies coding.exists(%C134250 contains code)) and
       (coding.exists(code = 'C205026') implies coding.exists(%C205026 contains code)) and
