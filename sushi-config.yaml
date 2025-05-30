@@ -28,7 +28,7 @@ dependencies:
   hl7.terminology.r5:
     id: hl7_terminology_r5
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-    version: 6.3.0
+    version: 6.4.0
   
 menu:
   Table of Contents: toc.html
