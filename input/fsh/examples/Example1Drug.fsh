@@ -107,6 +107,7 @@ Usage: #inline
 * sourceMaterial.genus.text = "zea"
 * sourceMaterial.species.text = "mays"
 * sourceMaterial.countryOfOrigin = $Country#ARG "Argentina"    
+* sourceMaterial.part.text = "kernel"
 
 Instance: d01421cc-6488-468b-a676-d3e7281875e2
 InstanceOf: DrugProductComponent
@@ -310,13 +311,13 @@ Usage: #inline
 * title = "eCTD Product Description and Composition for Example1Drug"
 * section[ProductDescription].title = "Product Description for Example1Drug"
 * section[ProductDescription].entry = Reference(urn:uuid:5772a6f2-cde1-4903-bfcf-1639340205cc)
-* section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
+// * section[ProductDescription].code = $SectionTypes#32P11 "Product Description"
 * section[ContainerClosure].title = "Container Closure Description for Example1Drug"
 * section[ContainerClosure].entry = Reference(urn:uuid:77ad6922-9c59-43d1-93cb-29d063cc2e8c)
-* section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
+// * section[ContainerClosure].code = $SectionTypes#32P13 "Product Container Closure Description"
 * section[ProductComposition].title = "Product Composition for Example1Drug"
 * section[ProductComposition].entry = Reference(urn:uuid:a8316fc9-8ca8-4115-81c1-9f8f84c99149)
-* section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
+// * section[ProductComposition].code = $SectionTypes#32P12 "Product Composition"
 
 Instance: DescriptionCompositionBundle
 InstanceOf: CMCeCTDDocument32P10

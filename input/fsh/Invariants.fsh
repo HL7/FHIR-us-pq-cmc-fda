@@ -39,12 +39,12 @@ Severity: #error
 
 Invariant: cmc-structure-required
 Description: "A structure is required in code for any of these categories: 'Chemical', 'Mixture', 'Nucleic Acids','Polymer','Protein'."
-Expression: "classification.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and code in ('C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
+Expression: "classification.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and (code in 'C48807' | 'C45305' | 'C706' | 'C48803' |'C17021') ).exists() implies structure.exists()"
 Severity: #error
 
 Invariant: cmc-source-material
 Description: "IF raw material source type equals Microbial, Animal, Plant, Insect or Human THEN the 4 source related attributes are required and the manufacturer and supplier information is highly desirable."
-Expression: "sourceMaterial.type.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and code in ('C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258')).exists()
+Expression: "sourceMaterial.type.coding.where(system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and (code in 'C14182' | 'C14225' | 'C14227' | 'C14329' | 'C14258')).exists()
 implies (sourceMaterial.genus.exists() and  sourceMaterial.species.exists() and sourceMaterial.part.exists() and sourceMaterial.countryOfOrigin.exists())"
 Severity: #error
 
@@ -420,7 +420,7 @@ Invariant: cmc-structure-representation-required
 Description: "Either a file or string structure representation is required"
 Expression: "representation.type.coding.where(
   system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl'
-  and (code in ('C45253' | 'C103240'))
+  and (code in 'C45253' | 'C103240')
 ).exists()"
 Severity: #error
 

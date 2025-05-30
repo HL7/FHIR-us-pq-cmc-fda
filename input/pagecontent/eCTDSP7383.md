@@ -49,10 +49,10 @@ Profiles are not used in isolation:
 * StabilityStudy profile reference design plans.
 * **DrugProductBatch / DrugSubstanceBatch**: Provide the manufacturing and packaging context for the material being tested.
 * **StabilityGroups**: When matrixing or bracketing designs are used, ResultObservations may be associated with groupings of products or strengths rather than individual batches.
-* StabilitySubStudy references CycledTestingPlanDefinition, MatrixingPlanDefinition, or BracketingStudyEvidence.
-* **BracketingStudyEvidence** and **MatrixedStudyEvidence**: These profiles support scientific or statistical inferences based on reduced testing designs. They reference variableDefinitions that describe the tested extremes or matrixed configurations.
-* **CycledTestingPlanDefinition** and **MatrixingPlanDefinition**: These PlanDefinition-based profiles outline the procedural framework for collecting 
-* ResultObservation depends on linking to DrugProductBatch or DrugSubstanceBatch. ResultObservation profle in cycled or matrixed studies, specify actions and goals that define the testing sequence and objectives. The ResultObservation profile is detailed on [Batch Analyses (3.2.S.4.4 & 3.2.P.5.4)](eCTDSP4454.html).
+* StabilitySubStudy references CycledTestingPlanDefinition.
+
+* **CycledTestingPlanDefinition**: This PlanDefinition-based profile specify actions and goals that define the testing sequence and objectives in cycled studies.
+* ResultObservation depends on linking to DrugProductBatch or DrugSubstanceBatch for container clousre information.  The ResultObservation profile is detailed on [Batch Analyses (3.2.S.4.4 & 3.2.P.5.4)](eCTDSP4454.html).
 
 ### Implementer‑Focused Model Map
 
@@ -63,9 +63,7 @@ Profiles are not used in isolation; the diagram supplied in the PlantUML file sh
 | Study definition        | StabilityStudy                               | Top‑level study record; references StabilityStudyProtocol and one or more StabilitySubStudy instances. |
 |                         | StabilityStudyProtocol                       | PlanDefinition template listing storage conditions, containers, time‑points, and tests. |
 | Sub‑studies             | StabilitySubStudy                            | A single design variant (e.g., matrixed, cycled). Points to design evidence or plan. |
-| Special‑study artefacts | BracketingStudyEvidence (Evidence)           | Scientific justification for bracketing.                                          |
-|                         | MatrixedStudyEvidence (Evidence)             | Matrix design and coverage rationale.                                             |
-|                         | CycledTestingPlanDefinition (PlanDefinition) | Stepwise procedure for cycled (freeze‑thaw, light–dark, etc.) studies.             |
+| Special‑study artefacts | CycledTestingPlanDefinition (PlanDefinition) | Stepwise procedure for cycled (freeze‑thaw, light–dark, etc.) studies.             |
 | Results & reports       | StabilityStudyIntervalReport                 | Consolidates ResultObservation resources for one pull interval.                   |
 | Product context         | DrugProductBatch / DrugSubstanceBatch (external) | Identify the material under test.                                                |
 |                         | StabilityGroups                              | Logical grouping of products or strengths for matrixed & bracketing designs.      |
@@ -111,101 +109,12 @@ The **CycledTestingPlanDefinition** profile specializes the FHIR **PlanDefinitio
 - Supports **regulatory transparency** on how cycled tests were performed.
 - Enables **automated execution or validation** by downstream systems.
 
-#### The MatrixedStudyEvidence Profile
-
-The **MatrixedStudyEvidence** profile specializes the FHIR **Evidence** resource to document and justify the use of **matrixing** in stability studies. Matrixing involves testing only a **subset of the full set of combinations** (e.g., time points, container/closure systems, storage conditions) with the assumption that untested combinations behave similarly.
-
-##### Key Purposes:
-1. **Document Matrix Design:**
-   - Describes **which factors** (e.g., time points, container types) were reduced in the testing matrix.
-   - Lists **tested combinations** and **untested combinations** covered by extrapolation.
-
-2. **Link to Stability Study:**
-   - References the parent **StabilityStudy** to clarify the scope of matrixing.
-
-3. **Provide Outcome Evidence:**
-   - States **scientific justification** and **evidence** (e.g., statistical data, historical data) showing that untested combinations are **represented** by the tested ones.
-
-4. **Support Regulatory Review:**
-   - Presents matrixing **evidence in a structured, reusable format** suitable for regulatory submissions.
-
-##### Example Usage:
-- You have **3 storage conditions**, **4 time points**, and **2 container types**, but you decide to test **only half** of the combinations based on risk assessment.
-- You create a **MatrixedStudyEvidence** instance that:
-  - Lists the **subset tested**.
-  - Explains how those tests cover the **untested combinations**.
-  - Links back to the parent **StabilityStudy**.
-
-##### Importance:
-- Reduces **testing burden** while maintaining scientific validity.
-- Provides **structured evidence** that regulators can review and validate.
-- Supports **modular and reusable** documentation across submissions.
-"""
-
-#### The BracketingStudyEvidence Profile
-
-The **BracketingStudyEvidence** profile specializes the FHIR **Evidence** resource to document and justify the use of a *bracketing* design in pharmaceutical stability studies. Bracketing is a recognized strategy in ICH Q1D where only the extremes of certain product characteristics (e.g., strength, fill volume, container size) are tested, with the assumption that intermediate conditions will be covered by the extremes.
-
-### Key Purposes:
-1. **Document Justification:**  
-   Records the scientific rationale for why testing only the extreme conditions is considered valid and sufficient.
-  
-2. **Declare Tested and Untested Variants:**  
-   - Lists **tested variants** (e.g., smallest and largest container sizes).
-   - Lists **untested variants** that are assumed to be covered.
-
-3. **Link to Stability Study:**  
-   References the parent **StabilityStudy** profile to clarify the context of the evidence.
-
-4. **Provide Outcome Evidence:**  
-   - States the **results** or **analysis** supporting the claim that untested variants behave equivalently to the tested extremes.
-   - This may include references to study data, reports, or literature.
-
-5. **Support Regulatory Review:**  
-   Provides structured evidence that can be reused or referenced in regulatory submissions, reducing redundant testing while ensuring regulatory compliance.
-
-##### Example Usage:
-- You conduct stability tests on the **smallest and largest** container sizes of a liquid drug product.
-- You create a **BracketingStudyEvidence** instance that:
-  - References these tested sizes.
-  - References the untested but covered intermediate Drug Product.
-  - Provides scientific or empirical justification.
-  - Links back to the parent **StabilityStudy**.
-
-##### Importance:
-- Reduces cost and time by minimizing the number of tests without compromising data integrity.
-- Facilitates structured, traceable evidence for regulatory authorities.
-- Enables automation and reuse in future submissions by standardizing how bracketing evidence is reported.
-
 #### **Complex Studies**
 
 There is no profile for **Complex Studies** as they are a combination of any of features of these special study types. Classify the study as Complex when it uses a combination of Cycled, Bracketing or Matrixing in Testing. 
 
 - Any combination of two or more of the other types, for example cycled testing that takes adantage of matrix testing.
 - The required elements for any of the profiles used to report Complex studies will be required. For exmaple, a cycled matrixed testing scheme would require both CycledTestingPlanDefinition and MatrixedStudyEvidence.
-
-#### Comparison Table: Required Elements
-
-| **Element**                           | **BracketingStudyEvidence** _(Evidence)_                          | **CycledTestingPlanDefinition** _(PlanDefinition)_                  | **MatrixedStudyEvidence** _(Evidence)_                               |
-|---------------------------------------|--------------------------------------------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| **id**                                | ✅                                                                  | ✅                                                                    | ✅                                                                    |
-| **Element**                           | **BracketingStudyEvidence** _(Evidence)_                          | **CycledTestingPlanDefinition** _(PlanDefinition)_                  | **MatrixedStudyEvidence** _(Evidence)_                               |
-|---------------------------------------|--------------------------------------------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| id	                                | ✅                                                                  | ✅                                                                    | ✅                                                                    |
-| status	                            | ✅ (e.g., draft, active, retired)                                   | ✅ (e.g., draft, active, retired)                                     | ✅ (e.g., draft, active, retired)                                     |
-| description	                       | ✅ — Summary of bracketing justification                            | ✅ — Description of the cycling procedures                           | ✅ — Summary of matrixed design justification                         |
-| exposureBackground / subject | ✅ — StabilityStudy        | —                                            | ✅ — StabilityStudy              |
-| exposureVariant / variable | ✅ — extremes & assumed variants | —                                        | ✅ — tested vs inferred combinations |
-| outcome / resultingEvidence | ✅ — evidence of equivalence | —                                          | ✅ — evidence of coverage        |
-| action.title	                      | ❌                                                                  | ✅ — Title of each cycle or step in the plan                          | ❌                                                                    |
-| action.description	                | ❌                                                                  | ✅ — Description of the actions in the cycling procedure              | ❌                                                                    |
-| action.timing[x]	                   | ❌                                                                  | ✅ — Timing details for each cycle                                    | ❌                                                                    |
-| action.code	                       | ❌                                                                  | ✅ — Code describing the type of testing in the action                | ❌                                                                    |
-| goal	                              | ❌                                                                  | ✅ — High-level goal of the testing plan                              | ❌                                                                    |
-| relatedArtifact	                   | Optional — Supporting references or documents                       | Optional — References to protocols, publications, or procedures      | Optional — Supporting references or documents                        |
-| note	                              | Optional — Additional descriptive notes                             | Optional — Additional descriptive notes                              | Optional — Additional descriptive notes                              |
-| identifier	                        | Optional — Study identifier                                         | Optional — Protocol identifier                                       | Optional — Study identifier                                          |
-| extension[focus]   | ✅ — DrugProductHandle              | —                                            | —                                |
 
 
 ### Representation in FHIR
@@ -224,9 +133,6 @@ The domain concepts of Stability Data are represented in FHIR in this IG section
 * roup
   * [StabilityGroups](StructureDefinition-stability-groups.html) (StabilityGroups) profile on the [Group](http://hl7.org/fhir/R5/group.html) resource
 *Evidence
-  * [BracketingStudyEvidence](StructureDefinition-bracketing-study-evidence.html) (BracketingStudyEvidence) profile on the [Evidence](http://hl7.org/fhir/R5/evidence.html) resource
-  * [MatrixedStudyEvidence](StructureDefinition-matrixed-study-evidence.html) (MatrixedStudyEvidence) profile on the [Evidence](http://hl7.org/fhir/R5/evidence.html) resource* Product Batch
-* Medication
   * [Drug Product Manufactured Instance](StructureDefinition-pqcmc-drug-product-instance.html) (DrugProductBatch) profile on the [Medication](https://hl7.org/fhir/R5/medication.html) resource
 * Substance Batch
 * Substance

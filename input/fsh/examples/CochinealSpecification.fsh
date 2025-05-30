@@ -215,7 +215,7 @@ Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/pq-cmc-fda/StructureDefinition/ectd-composition-sp4151"
 * identifier.value = "CochinealSpecificationComposition"
 * status = #final
-* type.coding = $SectionTypes#ich_3.2.p.4 "Control of Excipients"
+* type.coding = $SectionTypes#ich_3.2.p.4 "m3.2.p.4 control of excipients"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2024-01-01T19:42:35.254Z
 * title = """Cochineal specification Composition Example"""

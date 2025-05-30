@@ -291,24 +291,14 @@ Description: "Defines the protocol for a stability study, including storage cond
 * description 0..1 MS
   * ^short = "Protocol Description"
   * ^definition = "A narrative description of the main stability study design including objectives, scope, and general approach."
-* goal.description MS
-* goal.description obeys cmc-valid-test-category-hierachies
+* goal.description 1..1 MS
   * coding 1..2 MS
     * ^short = "Test Category | Test Subcategory"
     * ^definition = """
       A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties.
     """
-    * ^slicing.discriminator.type = #value
-    * ^slicing.discriminator.path = "$this"
-    * ^slicing.rules = #closed
-    * ^slicing.description = "the first coding must be a parent, the second one may be a child"
-    * ^slicing.ordered = false
-  * coding contains 
-      parent 1..1 MS and
-      child 0..1 MS
-  * coding[parent] from PqcmcTestCategoryParentTerminology (required)
-  * coding[child] from PqcmcTestCategoryChildTerminology (required)    
-// * goal.description 1..1 MS
+  * coding.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
+  * coding from PqcmcTestCategoryTerminology (required)
 * goal.description.text 1..1 MS
 * goal.description.text ^short = "Test Name"
 * goal.description.text ^definition = """The textual description of a procedure or analytical method. [Source: SME Defined]
@@ -341,12 +331,12 @@ Description: "Defines the protocol for a stability study, including storage cond
       The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
       Examples: horizontal, upright.
     """
-    * coding[containerType] from PqcmcContainerTypeTerminology (required)
-      * ^short =  "Container Type"
-      * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
-    * coding[closureType] from PqcmcClosureTypeTerminology (required)
-      * ^short = "Closure Type"
-      * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
+    // * coding[containerType] from PqcmcContainerTypeTerminology (required)
+    //   * ^short =  "Container Type"
+    //   * ^definition = "The kind of container that drug substances and finished dosage forms are contained in, which could include both the immediate (or primary) and secondary containers [Source: Adapted from NCI Thesaurus C4164]"
+    // * coding[closureType] from PqcmcClosureTypeTerminology (required)
+    //   * ^short = "Closure Type"
+    //   * ^definition = "The kind of closures used for the container in which the drug substances and finished dosage forms are stored. [Source: SME Defined]"
   * action 1..* MS
     * title 1..1 MS
       * ^short = "Time Point Title"
@@ -360,8 +350,8 @@ Description: "Defines the protocol for a stability study, including storage cond
 
 Profile: CycledTestingPlanDefinition
 Parent: PlanDefinition
-Id: cycled-testing-plan
-Title: "Cycled Testing Plan Profile"
+Id: pq-cycled-testing-plan
+Title: "Cycled Testing Plan"
 Description: "Profile for defining stability studies with cycling conditions using goals to represent cycles."
 
 // Require at least one goal to define the cycle
@@ -417,7 +407,8 @@ Description: """
 * ^context.type = #element
 * ^context.expression = "ResearchStudy"
 * extension contains
-  focus 1..1 MS //and
+  focus 1..1 MS and
+  relatesTo 1..1 MS
  // objective 1..1 MS
 * extension[focus]
   * ^short = "Suppoting information for cycled testing and matrixed study designs."
@@ -426,11 +417,9 @@ Description: """
   * insert PQReference(valueReference)
   * valueReference only Reference(CycledTestingPlanDefinition)
 
-* relatesTo	MS
-* ^short = "Suppoting information for cycled testing study designs."
-  * type = http://hl7.org/fhir/ValueSet/artifact-relationship-type#composed-of "Composed Of"
-  * value[x] 1..* MS
-  * ^short = "The sub-studies that are members of the sequence of condiditons in the cycled study."
+* extension[relatesTo]
+  * ^short = "Suppoting information for cycled testing study designs."
+  * value[x] 1..1 MS
   * value[x] only Reference
   * insert PQReference(valueReference)
   * valueReference only Reference(StabilityCycleGroups)
@@ -483,12 +472,12 @@ Parent: Group
 Id: stability-groups
 Title: "Stability Cycle Groups Profile"
 Description: "Profile for defining groups of Stability Sub-Studies used in a cycled stability study."
-* modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
-* modifierExtension[member]
-  * ^short = "Group members"
-  * ^definition = "References to the Sub-Study resources that are part of this stability group, used for cycled study designs."
-  * insert PQReference(valueReference)
-  * valueReference only Reference(StabilitySubStudy)
+// * modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
+// * modifierExtension[member]
+//   * ^short = "Group members"
+//   * ^definition = "References to the Sub-Study resources that are part of this stability group, used for cycled study designs."
+//   * insert PQReference(valueReference)
+//   * valueReference only Reference(StabilitySubStudy)
 // Require group name
 * name 1..1 MS
   * ^short = "Label for the stability group"
@@ -498,7 +487,6 @@ Description: "Profile for defining groups of Stability Sub-Studies used in a cyc
 * membership.value = #enumerated
   * ^short = "Membership type for the stability group"
   * ^definition = "Enumerate the set of stability studies."
-
 
 // ----- Bracketting and Matrixing ---  save for after connectathon ---------------------------
 

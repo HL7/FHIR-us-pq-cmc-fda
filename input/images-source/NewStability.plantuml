@@ -1,0 +1,204 @@
+@startuml Stability
+allowmixing
+'Mixed model of use case and object
+skinparam svgDimensionStyle true
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
+package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.8.3, 3.2.S.7.3 and 3.2.P.4.5 Stability Study Bundle]]" as NODES {
+
+    node "EctdCompositionSP7383" as ectdComposition {
+
+        object "**Parent:** Composition" as obj1 {
+            **Page:**
+            [[StructureDefinition-ectd-composition-sp7383.html]]
+
+            **ValueSets:**
+            [[ValueSet-cmc-comp-section-types-vs.html Code system PQCMC Comp Section Types]]
+        }
+    }
+
+    node "StabilityStudy" as stabilityStudy {
+
+        object "**Parent:** ResearchStudy" as objMain {
+            **Page:**
+            [[StructureDefinition-pq-stability-study.html]]
+            **ValueSets:**
+            [[ValueSet-PqcmcStabilityStudyReasonTerminology Stability Study Reason Terminology]]
+        }
+
+        object "**Extensions**" as objExsMain  {
+            Study Protocol
+            Additional Information
+        }
+        objExsMain *-- objMain
+    }
+
+    node StabilitySubStudy as stabilitySubStudy {
+        object "**Parent:** ResearchStudy" as obj2 {
+            **Page:**
+            [[StructureDefinition-pq-stability-sub-study.html]]
+            **ValueSets:**
+            [[ValueSet-PqcmcStudyTypeTerminology Study Type Terminology]]
+            [[ValueSet-PqcmcStorageConditionsTerminology Storage Conditions Terminology]]
+            [[ValueSet-PqcmcStorageConditionCategoryTerminology]]
+            [[ValueSet-PqcmcContainerOrientationTerminology Container Orientation Terminology]]
+        }
+        object "**Extensions**" as ext11 {
+            [[StructureDefinition-pqcmc-stability-sub-study-focus-and-objective.html Drug Substance Manufacturing Batch]]
+        }
+        obj2 *-- ext11
+
+    }
+
+    node "StabilityStudyIntervalReport" as stabilityStudyIntervalReport {
+        object "**Parent:** DiagnosticReport" as objinterval {
+            **Page:**
+            [[StructureDefinition-pqcmc-stability-study-interval-report.html]]
+        }
+        object "**Extensions**" as objIntEx {
+            [[StructureDefinition-pq-timePoint-extension.html Pull Interval Extension]]
+            [[StructureDefinition-pq-quality-specification-extension.html Quality Specification Reference]]
+            [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+        }
+        objinterval *-- objIntEx
+    }
+
+    diamond CH
+
+    node "StabilityStudyProtocol "as stabilityStudyProtocol {
+        object "**Parent:** PlanDefinition" as obj5 {
+            **Page:**
+            [[StructureDefinition-pq-stability-study-protocol.html Stability Study Protocol]]
+            **ValueSets:**
+
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+            [[ValueSet-pqcmc-storage-conditions-terminology.html Storage Conditions]]
+            [[ValueSet-pqcmc-container-orientation-terminology.html Container Orientation]]
+        }
+    }
+
+    node "CycledTestingPlanDefinition" as cycledTestingPlan {
+        object "**Parent:** PlanDefinition" as obj4 {
+            **Page:**
+            [[StructureDefinition-pq-cycled-testing-plan.html Cycled Testing Plan]]
+
+            **ValueSets:**
+            [[ValueSet-pqcmc-storage-conditions-terminology.html Storage Conditions]]
+            [[ValueSet-pqcmc-container-orientation-terminology.html Container Orientation]]
+        }
+
+    }
+
+    node "CodedOrganization" as codedOrganization {
+
+        object "**Parent:** Organization" as objAu {
+            **Page:**
+            [[StructureDefinition-cmc-organization.html]]
+        }
+    }
+
+
+    node "DrugProductBatch" as drugProductBatch {
+        object "**Parent:** Medication" as obj3 {
+            **Page:**
+            [[StructureDefinition-pqcmc-drug-product-instance.html]]
+
+            **ValueSets:**
+            [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+            UCUM Codes
+            [[ValueSet-cmc-product-name-types-vs.html Product Name Types]]
+        }
+
+        object "**Extensions**" as  objExsBatch {
+
+            [[StructureDefinition-drug-product-manufacturing-batch.html Drug Product Manufacturing Batch ]]
+        }
+        obj3 *-- objExsBatch
+    }
+
+
+    node "DrugSubstanceBatch" as drugSubstanceBatch {
+
+        object "**Parent:** Substance" as obj7 {
+            **Page:**
+            [[StructureDefinition-pqcmc-drug-substance-batch.html]]
+
+            **ValueSets:**
+            [[ValueSet-pqcmc-batch-utilization-terminology.html Batch utilization Terminology]]
+            [[ValueSet-pqcmc-container-type-terminology.html Container Type Terminology]]
+            [[ValueSet-pqcmc-closure-type-terminology.html Closure Type Terminology]]
+            [[ValueSet-pqcmc-expiration-date-classification-terminology.html Expiration Date Classification]]
+            UCUM Codes
+        }
+        object "**Extensions**" as objXDs {
+
+            [[StructureDefinition-drug-substance-manufacturing-batch.html Drug Substance Manufacturing Batch]]
+        }
+        obj7 *-- objXDs
+    }
+
+    node "MfgSiteOrganization" as  MfgSiteOrganization {
+        object "**Parent:** CodedOrganization" as obj8 {
+            **Page:**
+            [[StructureDefinition-mfg-test-site-organization.html]]
+
+            **ValueSets:**
+            [[ValueSet-pqcmc-mfg-testing-site-terminology.html Manufacturing/Testing Site Responsibility Category]]
+        }
+    }
+
+    node "ResultObservation" as resultObservation  {
+
+        object "**Parent:** Observation" as obj6 {
+            **Page:**
+            [[StructureDefinition-pq-result-observation.html]]
+
+            **ValueSets:**
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category Terminology]]
+            [[ValueSet-pqcmc-conformance-to-criteria-terminology.html Conformance Criteria Terminology]]
+            [[ValueSet-pqcmc-test-category-terminology.html Test Category]]
+            UCUM Codes
+
+        }
+
+        object "**Extensions**" as objXObs {
+            [[StructureDefinition-pq-replicate-extension.html Replicate]]
+            [[StructureDefinition-pq-batch-range.html Batch Target Range]]
+            [[StructureDefinition-pq-additional-info-extension.html Additional Information]]
+            [[StructureDefinition-pq-pullDate-extension.html Pull Date (Stability Only) ]]
+        }
+        obj6 *-- objXObs
+        object "**Note:**" as referenceNote {
+            Recursion only used for Staged or multi-measurement tests
+        }
+
+    }
+
+
+    ectdComposition -[#darkred]--> codedOrganization
+    stabilityStudy -[#darkred]-> stabilityStudyProtocol
+    stabilitySubStudy -[#darkred]-> stabilityStudyProtocol
+    drugProductBatch -[#darkred]--> codedOrganization
+    resultObservation -[#darkred]--> codedOrganization
+    ectdComposition -[#darkred]--> stabilityStudy
+    stabilitySubStudy -[#darkred]-> stabilityStudy
+    stabilitySubStudy -[#darkred]--> cycledTestingPlan
+    stabilitySubStudy -[#darkred]--> stabilityStudyIntervalReport
+    stabilityStudyIntervalReport -[#darkred]--> CH
+    CH -[#green]--> drugProductBatch
+    CH -[#green]--> drugSubstanceBatch
+    resultObservation -[#darkred]-> resultObservation
+
+    stabilityStudyIntervalReport -[#darkred]--> codedOrganization
+    stabilityStudyIntervalReport -[#darkred]--> resultObservation
+
+    resultObservation -[#darkred]-> MfgSiteOrganization
+
+
+}
+
+@enduml

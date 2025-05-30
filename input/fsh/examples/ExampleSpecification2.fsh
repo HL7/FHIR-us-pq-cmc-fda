@@ -124,7 +124,7 @@ Usage: #inline
 
 * identifier.value = "ExampleSpecification2"
 * status = #final
-* type.coding = $SectionTypes#ich_3.2.s.4.1 "Specification"
+* type.coding = $SectionTypes#ich_3.2.s.4.1 "m3.2.s.4.1 specification"
 * author = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)
 * date = 2023-12-15T22:36:51.299Z
 * title = """Quality Specification for an API"""

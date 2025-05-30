@@ -42,7 +42,6 @@
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
 <artifact id="StructureDefinition/pq-batch-range" key="StructureDefinition-pq-batch-range" name="Batch Target Range"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch Utilization"/>
-<artifact id="StructureDefinition/bracketing-study-evidence" key="StructureDefinition-bracketing-study-evidence" name="Bracketing Study Evidence Profile"/>
 <artifact deprecated="true" id="Bundle/30536c0e-456c-4f90-9f02-da7be1d289e9" key="Bundle-30536c0e-456c-4f90-9f02-da7be1d289e9" name="Bundle for 3.2.S.1"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p10" key="StructureDefinition-cmc-ectd-document-32p10" name="CMC eCTD 32P10 Document"/>
 <artifact id="StructureDefinition/cmc-ectd-document-32p32" key="StructureDefinition-cmc-ectd-document-32p32" name="CMC eCTD 32P32 Document"/>
@@ -79,7 +78,7 @@
 <artifact id="ValueSet/pqcmc-container-type-terminology" key="ValueSet-pqcmc-container-type-terminology" name="Container Type"/>
 <artifact id="StructureDefinition/ContainerClosure" key="StructureDefinition-ContainerClosure" name="ContainerClosure"/>
 <artifact deprecated="true" id="StructureDefinition/content-percent" key="StructureDefinition-content-percent" name="Content Percent"/>
-<artifact id="StructureDefinition/cycled-testing-plan" key="StructureDefinition-cycled-testing-plan" name="Cycled Testing Plan Profile"/>
+<artifact id="StructureDefinition/pq-cycled-testing-plan" key="StructureDefinition-pq-cycled-testing-plan" name="Cycled Testing Plan"/>
 <artifact id="StructureDefinition/cmc-document-reference" key="StructureDefinition-cmc-document-reference" name="Document Reference Attachment"/>
 <artifact deprecated="true" id="Organization/e165f057-5eed-4e64-8328-4438fc88fb1b" key="Organization-e165f057-5eed-4e64-8328-4438fc88fb1b" name="Drug Manufacturing Site - Vandechemie"/>
 <artifact id="StructureDefinition/pqcmc-product-batch-formula" key="StructureDefinition-pqcmc-product-batch-formula" name="Drug Product Batch Formula"/>
@@ -144,7 +143,6 @@
 <artifact deprecated="true" id="Organization/4b565cf3-5353-48af-8cd6-5ccf4e9fd579" key="Organization-4b565cf3-5353-48af-8cd6-5ccf4e9fd579" name="Manufacturing Site (J. Jones Research)"/>
 <artifact deprecated="true" id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="Manufacturing and/or Test Site Organization"/>
 <artifact id="ValueSet/pqcmc-mfg-testing-site-terminology" key="ValueSet-pqcmc-mfg-testing-site-terminology" name="Manufacturing/Testing Site Responsibility Category"/>
-<artifact id="StructureDefinition/matrixed-study-evidence" key="StructureDefinition-matrixed-study-evidence" name="Matrixed Study Evidence Profile"/>
 <artifact id="ValueSet/pqcmc-non-percentage-units" key="ValueSet-pqcmc-non-percentage-units" name="Non-Percentage Units"/>
 <artifact deprecated="true" id="StructureDefinition/optional-denominator" key="StructureDefinition-optional-denominator" name="Optional Denominator"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-org-identifier-type-terminology" key="ValueSet-pqcmc-org-identifier-type-terminology" name="Organization-Site Identifier Terminology"/>
@@ -152,10 +150,8 @@
 <artifact id="CodeSystem/cmc-hierarchy-supplement" key="CodeSystem-cmc-hierarchy-supplement" name="PQ-CMC-FDA NCIt Hierarchy Supplement"/>
 <artifact deprecated="true" id="CodeSystem/temporary" key="CodeSystem-cmc-ncit-dummy" name="PQ-CMC-FDA Temporary Codes"/>
 <artifact id="StructureDefinition/pqcmc-attachment" key="StructureDefinition-pqcmc-attachment" name="PQCMC Attachment"/>
-<artifact id="StructureDefinition/pqcmc-evidence-product-reference" key="StructureDefinition-pqcmc-evidence-product-reference" name="PQCMC Evidence Product Reference"/>
 <artifact id="ValueSet/pqcmc-name-part-terminology" key="ValueSet-pqcmc-name-part-terminology" name="PQCMC Name Part"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-product-characteristic" key="ValueSet-pqcmc-product-characteristic" name="PQCMC Product Characteristic"/>
-<artifact id="StructureDefinition/pqcmc-stability-groups-medication-member" key="StructureDefinition-pqcmc-stability-groups-medication-member" name="PQCMC Stability Groups Medication Member"/>
 <artifact id="StructureDefinition/pqcmc-stability-sub-study-focus-and-objective" key="StructureDefinition-pqcmc-stability-sub-study-focus-and-objective" name="PQCMC Stability Sub Study Focus And Objective"/>
 <artifact id="StructureDefinition/packaged-product-substance-reference" key="StructureDefinition-packaged-product-substance-reference" name="Packaged Product Substance Reference"/>
 <artifact id="ValueSet/pqcmc-percentage-units" key="ValueSet-pqcmc-percentage-units" name="Percentage Units"/>
@@ -193,7 +189,7 @@
 <artifact deprecated="true" id="ValueSet/pqcmc-specification-type-terminology" key="ValueSet-pqcmc-specification-type-terminology" name="Specification Type Terminology"/>
 <artifact deprecated="true" id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="Sponsor Organization"/>
 <artifact deprecated="true" id="Organization/b69435a0-45c6-4d44-9fde-b354e17408d7" key="Organization-b69435a0-45c6-4d44-9fde-b354e17408d7" name="Sponsor of API"/>
-<artifact id="StructureDefinition/stability-groups" key="StructureDefinition-stability-groups" name="Stability Groups Profile"/>
+<artifact id="StructureDefinition/stability-groups" key="StructureDefinition-stability-groups" name="Stability Cycle Groups Profile"/>
 <artifact id="StructureDefinition/pq-stability-study" key="StructureDefinition-pq-stability-study" name="Stability Study"/>
 <artifact id="StructureDefinition/pqcmc-stability-study-interval-report" key="StructureDefinition-pqcmc-stability-study-interval-report" name="Stability Study Interval Report"/>
 <artifact id="StructureDefinition/pq-stability-study-protocol" key="StructureDefinition-pq-stability-study-protocol" name="Stability Study Protocol"/>

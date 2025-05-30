@@ -135,7 +135,7 @@ Description: "Composition containing eCTD Substance General Information"
 Usage: #inline
 * identifier.value = "Substance General - levoThyroxine"
 * status = #final
-* type.coding = $SectionTypes#ich_3.2.s.1 "General Information"
+* type.coding = $SectionTypes#ich_3.2.s.1 "m3.2.s.1 general information"
 * author = Reference(urn:uuid:b69435a0-45c6-4d44-9fde-b354e17408d7)
 * date = 2023-12-15T22:19:47.022Z
 * title = "eCTD Substance General Information for levoThyroxine"

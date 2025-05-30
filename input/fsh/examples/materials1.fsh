@@ -75,6 +75,7 @@ Usage: #inline
 * sourceMaterial.genus.text = "palmaria"
 * sourceMaterial.species.text = "palmata"
 * sourceMaterial.countryOfOrigin =  $Country#USA "United States of America" 
+* sourceMaterial.part.text = "whole"
 
 Instance: fd84a8b5-9e96-451c-a5c6-097c943eb38a
 InstanceOf: ExcipientRaw
@@ -552,13 +553,13 @@ Usage: #inline
 * date = 2023-12-05T01:34:39.502Z
 * title = """Control of Materials Example"""
 * section[+]
-  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
+  * code = $SectionTypes#ich_3.2.s.3.1 "m3.2.s.3.1 elucidation of structure and other characteristics"
   * entry = Reference(urn:uuid:ab241f8c-d21e-4382-a70a-52190dbdf07e)
 * section[+]
-  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
+  * code = $SectionTypes#ich_3.2.s.3.1 "m3.2.s.3.1 elucidation of structure and other characteristics"
   * entry = Reference(urn:uuid:a2cba634-a481-4b07-9bd4-62c7ada31e1b)
 * section[+]
-  * code = $SectionTypes#ich_3.2.s.3.1 "Elucidation of Structure and other Characteristics"
+  * code = $SectionTypes#ich_3.2.s.3.1 "m3.2.s.3.1 elucidation of structure and other characteristics"
   * entry = Reference(urn:uuid:5819b223-d3d2-419f-b617-b3a9a3625b89)
 
 
