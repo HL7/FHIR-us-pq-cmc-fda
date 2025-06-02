@@ -151,7 +151,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### CTD 3.2.S.7.3 and 3.2.P.8.3 Profile Map
 
-<div width="1200px">{%include NewStability.svg%}</div>
+<div width="1200px">{%include Stability.svg%}</div>
 
 ### Usage Patterns
 
