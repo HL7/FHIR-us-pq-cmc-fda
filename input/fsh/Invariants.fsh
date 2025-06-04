@@ -15,7 +15,7 @@ implies code.where(
   system = 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' and
   code = 'C17021'
 ).exists() implies code.where(
-  code.coding.exists(system = 'https://www.uniprot.org')
+  code.coding.exists(system = 'http://terminology.hl7.org/NamingSystem/UniProt')
 ).exists())"
 Severity: #error
 
