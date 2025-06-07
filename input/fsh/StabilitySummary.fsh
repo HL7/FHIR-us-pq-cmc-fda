@@ -81,17 +81,17 @@ Description: "Observation capturing one set of stability parameters (assay, impu
     Note: This is either 'Single Stage' for non-staged tests and 'Multi-Stage' for tests with more than one stage. Use hasMember to report multiple stages.
   """
 * status MS	
-* category
-  * coding[storage] from PqcmcStorageConditionsTerminology (required)
-    * ^short = "Storage Conditions Temp.RH"
-    * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
+* category MS
+* category from PqcmcStorageConditionsTerminology (required)
+  * ^short = "Storage Conditions Temp.RH"
+  * ^definition = " The temperature and the relative humidity under which the study was performed. [Source: SME Defined]"
 * code 1..1 MS
-  * coding[orientation] from PqcmcContainerOrientationTerminology	 (required)
-    * ^short = "Container Orientation"
-    * ^definition = """
-      The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
-      Examples: horizontal, upright.
-    """
+* code from PqcmcContainerOrientationTerminology (required)
+  * ^short = "Container Orientation"
+  * ^definition = """
+    The placement of a container during storage to understand the interactions between the product and the closure. [Source: SME Defined]
+    Examples: horizontal, upright.
+  """
 * subject 1..1 MS
   * ^short = "A single medication batch/lot or a single subtance batch/lot"	
 * subject only Reference(DrugProductBatch or DrugSubstanceBatch)	
@@ -99,16 +99,17 @@ Description: "Observation capturing one set of stability parameters (assay, impu
 * component 1..* MS	
   * ^short = "Interval"	
   * extension contains pq-timePoint-extension named studyInterval 1..1 MS 
-* component.code 1..2 MS
-* component.code ^short = "Test Category | Test Subcategory"
-* component.code ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* component.code from PqcmcTestCategoryTerminology (required)
+* component.code.coding 1..2 MS
+  * ^short = "Test Category | Test Subcategory"
+  * ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* component.code.coding from PqcmcTestCategoryTerminology (required)
+* component
   * value[x] 1..1 MS	
     * ^short = "Summary Result"
     * ^definition = """For a single replicate enter the single value. For multiple replicates either:
     enter the mean as a quantity or enter the upper and lower values as a  range
     """	
-  * value[x] only Quantity or string
+  * value[x] only Quantity or string or Range
   * valueQuantity from http://hl7.org/fhir/ValueSet/ucum-units (required)
     * value 1..1 MS
       * ^short = "ValueNumeric"	

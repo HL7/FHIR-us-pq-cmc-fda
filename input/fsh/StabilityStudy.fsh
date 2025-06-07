@@ -2,7 +2,6 @@ Extension: PullIntervalExtension
 Id: pq-timePoint-extension
 Title: "Study Interval"
 Description: "Contains elements related to the intervals of the stability study."
-Parent: Observation
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 * ^context[+].type = #element
@@ -235,8 +234,7 @@ Id: pqcmc-stability-study-interval-report
 Title: "Stability Study Interval Report"
 Description: "Batch or lot stability testing to ensure that pharmaceutical products continue to meet the product specification or determine the expiry period."
 
-* extension contains 
-  pq-timePoint-extension named studyInterval 1..1 MS and
+* extension contains pq-timePoint-extension named studyInterval 1..1 MS and
   pq-quality-specification-extension named qualitySpecification 1..1 MS and
   pq-additional-info-extension named substudy-additional-info 0..* MS
 * extension[substudy-additional-info] 
@@ -360,7 +358,7 @@ Description: "Profile for defining stability studies with cycling conditions usi
 * goal.target.detail[x] 1..1 MS
 * goal.target.detail[x] only CodeableConcept
 * goal.target.detailCodeableConcept
-  * coding 2..2 MS
+  * coding MS
   * coding ^slicing.discriminator.type = #value
   * coding ^slicing.discriminator.path = "$this"
   * coding ^slicing.rules = #closed
