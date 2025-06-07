@@ -2,8 +2,12 @@ Extension: PullIntervalExtension
 Id: pq-timePoint-extension
 Title: "Study Interval"
 Description: "Contains elements related to the intervals of the stability study."
+Parent: Observation
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"	
+
 * extension contains
     timePoint 1..1 MS and
     timePointDescription 1..1 MS
@@ -164,21 +168,15 @@ Description: "Profile for the a stability sub-study."
   * ^short = "Reference to main study or associated study"
   * ^definition = "Use partOf to maintain a hierarchical relationship between stability studies."
 
-* condition 3..4 MS
+* condition 2..3 MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "coding"
   * ^slicing.rules = #closed // or #closed if you don't want other concepts
 * condition contains
-    substudytype 1..1 MS and
     storage 1..1 MS and
     storagecategory 1..1 MS and
     orientation 0..1 MS
-* condition[substudytype] from PqcmcStudyTypeTerminology (required)
-  * ^short = "Sub-Study Type"
-  * ^definition = """
-    A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
-    Examples: Standard, Cycled-simple.
-  """
+
 * condition[storage] from PqcmcStorageConditionsTerminology (required)
   * ^short = "Storage Conditions Temp.RH"
   * ^definition = """
@@ -219,14 +217,17 @@ Description: "Profile for the a stability sub-study."
   """ 
 * classifier  1..1 MS
   * ^short = "Sub-Study Type"
-  * ^definition = """The specific method used to evaluate how a product maintains its quality, safety, and efficacy over time under various environmental conditions. Common types include: Bracketing, Complex, Cycled-Simple, Matrixing, Photostability and	Staandard.
-  Note:  Bracketing, Complex, Cycled-Simple and Matrixing require additional elements.
-  """ 
-* classifier  from pqcmc-study-type-terminology (required)
+  * ^definition =  """
+    A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
+    Examples: Standard, Cycled.
+  """
+* classifier from PqcmcStudyTypeTerminology (required)
 * result MS
 * insert PQReference(result)
 * result only Reference(StabilityStudyIntervalReport)
-  * ^short = "Link to stability study results"
+  * ^short = """Link to stability study results. 
+  Note:  For studies classified as  Bracketing, Matrixing or Complex enter all Stability Study Interval Report used to support the 
+  """
 
 Profile: StabilityStudyIntervalReport
 Parent: DiagnosticReport
@@ -305,13 +306,13 @@ Description: "Defines the protocol for a stability study, including storage cond
   Examples: Assay by HPLC, moisture by Karl Fischer, analysis for impurities.
   Note: as defined by the sponsor
   """
-// Sub-Study Storage Conditions and container 
+// Sub-Study Storage Conditions and container orientation
 * action 1..* MS
   * title 1..1 MS
     * ^short = "Storage Condition, Orientation and Container Title"
     * ^definition = "Descriptive title for the storage condition, orientation and container."
   * code 1..1 MS
-    * coding 4..4 MS
+    * coding 2..2 MS
     * coding ^slicing.discriminator.type = #value
     * coding ^slicing.discriminator.path = "$this"
     * coding ^slicing.rules = #closed
@@ -359,7 +360,7 @@ Description: "Profile for defining stability studies with cycling conditions usi
 * goal.target.detail[x] 1..1 MS
 * goal.target.detail[x] only CodeableConcept
 * goal.target.detailCodeableConcept
-  * coding 4..4 MS
+  * coding 2..2 MS
   * coding ^slicing.discriminator.type = #value
   * coding ^slicing.discriminator.path = "$this"
   * coding ^slicing.rules = #closed
@@ -418,7 +419,7 @@ Description: """
   * valueReference only Reference(CycledTestingPlanDefinition)
 
 * extension[relatesTo]
-  * ^short = "Suppoting information for cycled testing study designs."
+  * ^short = "Suppoting information for cycled testing studies in the group."
   * value[x] 1..1 MS
   * value[x] only Reference
   * insert PQReference(valueReference)

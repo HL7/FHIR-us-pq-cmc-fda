@@ -1,14 +1,18 @@
 ### Domain Overview
 
+Stability testing is the discipline that establishes how long a drug substance or finished dosage form can be stored while still meeting its quality specifications. The global baseline comes from ICH Q1A(R2), which mandates a core data package—long-term, intermediate, and accelerated studies—for every new-drug or marketing authorization application. These studies expose the product to well-controlled temperature and humidity conditions over time, generating quantitative evidence that supports an initial shelf-life or retest period. In the United States, 21 CFR 211.166 elevates this requirement to law, obliging manufacturers to maintain a “written, scientifically sound” stability program as part of current Good Manufacturing Practice (CGMP).
+
+Complementary ICH guidances refine how those studies may be optimized and interpreted. ICH Q1D introduces bracketing and matrixing, two reduced-design strategies that let companies test only the extremes of a product range or a systematic subset of time-points without compromising regulatory confidence. Once the data are collected, ICH Q1E governs their statistical treatment—pooling batches, trending results, and performing regression analyses—to justify the final labeled shelf life. Together, these documents create a harmonized, risk-based framework that tells developers exactly what to study, how to study it, and how to translate raw measurements into the expiration dates and storage statements that appear on every package.
+
+Stability testing confirms that drug substances and finished products maintain quality, efficacy, and safety throughout their shelf life. Global guidance comes from the ICH Q1‑series—especially Q1A(R2), Q1B, Q1C, Q1D, and Q1E—covering standard, accelerated, in‑use, bracketing, matrixed, photostability, and cycled studies. The profiles in this model implement those expectations with FHIR R6 resources, enabling interoperability and automated validation.
+
 The Stability Data bundle profile provides a mechanism for the industry to submit Module 3 CTD 3.2.S.7.3 and 3.2.P.8.3 folder content to the FDA. The contents of this section include the results associated with the evaluation of the drug substance or drug product over time based on the stability study, including the pull date, the amount of th ebatch was stored in the climatic chamber, and identification of the facility where the evaluation occurred.  It captures:
 
 - the study design (planned storage conditions, container/closure, time‑points, tests)
-- the execution context (pull date, batch quantity placed in the chamber, testing facility)
+- the execution context (pull date, date batch quantity placed in the chamber, testing facility)
 - the results for each batch or grouped product under the study design
 
 Stability studies are an essential part of pharmaceutical development, regulatory submission, and lifecycle management. Their purpose is to confirm that drug products and drug substances maintain their quality, efficacy, and safety throughout their intended shelf life under various environmental conditions.
-
-Stability testing confirms that drug substances and finished products maintain quality, efficacy, and safety throughout their shelf life. Global guidance comes from the ICH Q1‑series—especially Q1A(R2), Q1B, Q1C, Q1D, and Q1E—covering standard, accelerated, in‑use, bracketing, matrixed, photostability, and cycled studies. The profiles in this model implement those expectations with FHIR R6 resources, enabling interoperability and automated validation.
 
 ### ICH Background on Stability Study Types
 

@@ -299,6 +299,27 @@ Description: "Definition for a document bundle with the CMC eCTD SP7383 profiles
     Composition 1..1 MS
 * entry[Composition].resource only ectd-composition-sp7383
 
+Profile: CMCeCTDDocumentSP7181
+Parent: Bundle
+Id: cmc-ectd-document-sp7181
+Title: "CMC eCTD SP7181 Document"
+Description: "Definition for a document bundle with the CMC eCTD SP7181 profiles."
+* . ^short = "CMC eCTD SP7181 Bundle"
+* identifier 1..1 MS
+* type MS
+* type = #document (exactly)
+* type ^short = "document"
+* timestamp 1..1 MS
+* entry 1..* MS
+* entry.fullUrl 1..1 MS //each entry must have a fullUrl
+* entry.resource 1..1 MS // each entry must have a resource
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry contains
+    Composition 1..1 MS
+* entry[Composition].resource only ectd-composition-sp7181
+
 /*Compositions Stage 1--------------------------------------------------------------------------------------*/
 
 Profile: EctdCompositionSP4151
@@ -583,14 +604,129 @@ Description: "The fields needed to represent the Stability Data to be included u
   * ^definition = "Product Stability Data to be included under the 3.2.P.8.3 eCTD heading."
   * code = $SectionTypes#32P83 "Product Stability Data"
   * title 1..1 MS
-  * entry 1..1 MS
+  * text 1..1 MS
+    * ^definition = "Enter a summary table of all stability studies in the bundle."
+  * entry 1..* MS
   * insert PQReference(entry)
   * entry only Reference(StabilityStudy)
 * section[Api] 
   * ^definition = "Drug Substance Stability Data to be included under the 3.2.S.7.3 eCTD heading."
   * code = $SectionTypes#32S73 "Substance Stability Data"
   * title 1..1 MS
-  * entry 1..1 MS
+  * text 1..1 MS
+    * ^definition = "Enter a summary table of all stability studies in the bundle."  
+  * entry 1..* MS
   * insert PQReference(entry)
   * entry only Reference(StabilityStudy)
 // need check that subject type in instance matches the seciton selected.
+
+Profile: EctdCompositionSP7181
+Parent: Composition
+Id: ectd-composition-sp7181
+Title: "eCTD Stability Summary and Conclusion Composition"
+Description: "The fields needed to represent the Stability Summary and Conclusion to be included in the 3.2.P.8.3 and 3.2.S.7.3 eCTD headings. References Sponsor Organization and Stability Study."
+* status = #final
+* identifier 0..1 MS
+/* do or on type code*/
+* type = $SectionTypes#SP7181 "Stability Summary and Conclusion"
+* author 1..1 MS
+* insert PQReference(author)
+* author only Reference(CodedOrganization)
+* title 1..1 MS
+/*
+    SECTION SLICES for Subject
+*/
+* section 1.. MS
+* section.entry MS
+* section ^slicing.discriminator.type = #value
+* section ^slicing.discriminator.path = "code"
+* section ^slicing.rules = #closed
+* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Summary and Conclusion profile."
+* section contains
+  DrugProduct 0..1 MS and
+  Api 0..1 MS
+* section[DrugProduct] 
+  * ^definition = "Product Stability Summary and Conclusion to be included under the 3.2.P.8.3 eCTD heading."
+  * code = $SectionTypes#32P83 "Product Stability Data"
+  * title 1..1 MS
+  * entry MS
+  * insert PQReference(entry)
+  * entry only Reference(DrugProductHandle)
+* section[Api]
+  * ^definition = "Substance Stability Summary and Conclusion to be included under the 3.2.S.7.3 eCTD heading."
+  * code = $SectionTypes#32S73 "Substance Stability Data"
+  * title 1..1 MS
+  * entry MS
+  * insert PQReference(entry)
+  * entry only Reference(SubstanceDefinitionHandle)
+
+/* Slice the Composition.section by section.title */
+* section.section ^slicing.discriminator[0].type = #value
+* section.section ^slicing.discriminator[0].path = "title"
+* section.section ^slicing.rules = #open
+* section.section contains 
+      StudyDesign 1..1 MS and
+      TestParameters 1..1 MS and
+      LongTerm 0..1 MS and
+      Intermediate 0..1 MS and
+      Accelerated 0..1 MS and
+      TrendAnalysis 1..1 MS and
+      Conclusion 1..1 MS and
+      StorageStatement 1..1 MS
+
+/* 1. Study Design (free-text) */
+* section.section[StudyDesign].title = "Study Design"
+* section.section[StudyDesign].text 1..1 MS
+
+/* 2. Test Parameters & Acceptance Criteria (free-text) */
+* section.section[TestParameters].title = "Test Parameters & Acceptance Criteria"
+* section.section[TestParameters].text 1..1 MS
+* section.section[TestParameters].entry 1..1 MS
+* section.section[TestParameters]
+  * insert PQReference(entry)
+  * entry 1..1 MS  
+  * entry only Reference(StabilitySpecSummary)
+
+/* 3. Tabulated Results (Long-term) — code = CC203 */
+* section.section[LongTerm].title = "Tabulated Results (Long-term)"
+* section.section[LongTerm].code = $NCIT#CC203 "Long term"
+* section.section[LongTerm].text 1..1 MS
+* section.section[LongTerm]
+  * insert PQReference(entry)
+  * entry 1..* MS  
+  * entry only Reference(ResultSummary)
+
+/* 4. Tabulated Results (Intermediate) — code = CC202 */
+* section.section[Intermediate].title = "Tabulated Results (Intermediate)"
+* section.section[Intermediate].code = $NCIT#CC202 "Intermediate"
+* section.section[Intermediate].text 1..1 MS
+* section.section[Intermediate]
+  * insert PQReference(entry)
+  * entry 1..* MS  
+  * entry only Reference(ResultSummary)
+
+/* 5. Tabulated Results (Accelerated) — code = CC201 */
+* section.section[Accelerated].title = "Tabulated Results (Accelerated)"
+* section.section[Accelerated].code = $NCIT#CC201 "Accelerated"
+* section.section[Accelerated].text 1..1 MS
+* section.section[Accelerated]
+  * insert PQReference(entry)
+  * entry 1..* MS  
+  * entry only Reference(ResultSummary)
+
+/* 6. Trend Analysis (unsliced except for optional graphic) */
+* section.section[TrendAnalysis].title = "Trend Analysis"
+* section.section[TrendAnalysis].section 1..* MS
+* section.section[TrendAnalysis].section ^short = "Allows an optional reference to a graphic immediately after the narrative paragraph. In other words, authors can put their text into section.text and then, if desired, attach one or more graphics via section.entry referencing a Base64DocumentReference resource."
+* section.section[TrendAnalysis].section.text 1..1 MS
+* section.section[TrendAnalysis].section
+  * insert PQReference(entry)
+  * entry 0..* MS
+  * entry only Reference(GraphicReference)
+/* 7. Conclusion (free-text) */
+* section.section[Conclusion].title = "Conclusion"
+* section.section[Conclusion].text 1..1 MS
+
+/* 8. Storage Statement (free-text) */
+* section.section[StorageStatement].title = "Storage Statement"
+* section.section[StorageStatement].text 1..1 MS
