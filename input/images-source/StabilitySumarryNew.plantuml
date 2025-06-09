@@ -1,0 +1,144 @@
+@startuml StabilitySummary
+allowmixing
+'Mixed model of use case and object
+skinparam svgDimensionStyle false
+skinparam ObjectBackgroundColor LightYellow
+skinparam ObjectBorderColor #A80036
+skinparam activityDiamondBorderColor #A80036
+skinparam activityDiamondBackgroundColor lawnGreen
+skinparam ClassBorderThickness 4
+
+package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle]]" as NODES {
+
+
+  ' Bundle container for all entries
+  class Bundle <<Bundle>> {
+    +type: document
+  }
+
+  ' Composition profile for stability summary
+  class EctdCompositionSP7181 <<Composition>> {
+    +status = final
+    +type = SP7181 "Stability Summary and Conclusion"
+    +identifier: Identifier
+    +title: string
+  }
+
+  ' Reference to sponsoring organization
+  class CodedOrganization <<Organization>> {
+    +name: string
+    +contact: Contact
+  }
+
+  ' Address profile for contacts
+  class PqAddress <<Address>> {
+    +type: AddressType
+    +line[1..2]
+    +city: string
+    +state: string
+    +postalCode: string
+  }
+
+  ' Drug product handle
+  class DrugProductHandle <<MedicinalProductDefinition>> {
+    +identifier: Identifier
+    +name: string
+  }
+
+  ' Drug substance definition handle
+  class SubstanceDefinitionHandle <<SubstanceDefinition>> {
+    +identifier: Identifier
+    +classification: CodeableConcept
+    +grade: CodeableConcept
+  }
+
+  ' Drug substance batch profile
+  class DrugSubstanceBatch <<Substance>> {
+    +identifier: Identifier
+    +extension: drug-substance-manufacturing-batch
+  }
+
+  ' PlanDefinition for specification of stability tests
+  class StabilitySpecSummary <<PlanDefinition>> {
+    +identifier: string
+    +status
+    +category: PqcmcStorageConditionsTerminology
+    +code: PqcmcContainerOrientationTerminology
+  }
+
+  ' Observation for result summary
+  class ResultSummary <<Observation>> {
+    +identifier: string
+    +status
+    +category: PqcmcStorageConditionsTerminology
+    +code: PqcmcContainerOrientationTerminology
+    +subject: Bundle-> (DrugProductBatch or DrugSubstanceBatch)
+    +component: Quantity|String|Range
+    +extension: pq-timePoint-extension
+  }
+
+  ' DocumentReference for graphic attachments
+  class GraphicReference <<Base64DocumentReference>> {
+    +abstract = true
+  }
+
+  ' Attachment profile for graphics
+  class GraphicAttachment <<Attachment>> {
+    +contentType from PqcmcGraphicalFileTypes
+  }
+
+  ' Extensions
+  class PQReference <<Extension>> {
+    +references: Reference
+  }
+  class pq_timePoint_extension <<Extension>> {
+    +timePoint: Quantity
+    +timePointDescription: string
+  }
+
+  ' ValueSets
+  class PqcmcStorageConditionsTerminology <<ValueSet>> {
+    +codes NCIT#C133936...#C96148
+  }
+  class PqcmcContainerOrientationTerminology <<ValueSet>> {
+    +codes NCIT#...
+  }
+  class PqcmcTestCategoryParentTerminology <<ValueSet>>
+  class PqcmcTestCategoryChildTerminology <<ValueSet>>
+  class PqcmcGraphicalFileTypes <<ValueSet>>
+
+  ' Relationships inside the Bundle
+  Bundle o-- EctdCompositionSP7181 : entry
+  EctdCompositionSP7181 o-- CodedOrganization : author
+  CodedOrganization o-- PqAddress : contact.address
+
+  ' Composition sections referencing other resources
+  EctdCompositionSP7181 o-- DrugProductHandle : section(entry)[DrugProduct]
+  EctdCompositionSP7181 o-- SubstanceDefinitionHandle : section(entry)[Api]
+  EctdCompositionSP7181 o-- StabilitySpecSummary : section(section)[Test Parameters & Acceptance Criteria]
+
+  ' Results section entries
+  EctdCompositionSP7181 o-- ResultSummary : section(section)[Tabulated Results]
+
+  ' Trend Analysis graphics
+  EctdCompositionSP7181 o-- GraphicReference : section(section)[Trend Analysis].entry
+  GraphicReference o-- GraphicAttachment : content.attachment
+
+  ' Observations reference extensions and ValueSets
+  ResultSummary ..> pq_timePoint_extension
+  ResultSummary ..> PqcmcStorageConditionsTerminology : category
+  ResultSummary ..> PqcmcContainerOrientationTerminology : code
+
+  ' PlanDefinition uses ValueSets
+  StabilitySpecSummary ..> PqcmcStorageConditionsTerminology : category
+  StabilitySpecSummary ..> PqcmcContainerOrientationTerminology : code
+  StabilitySpecSummary ..> PqcmcTestCategoryParentTerminology : component.code
+  StabilitySpecSummary ..> PqcmcTestCategoryChildTerminology : component.code
+
+  ' GraphicAttachment binds to file-type ValueSet
+  GraphicAttachment ..> PqcmcGraphicalFileTypes : contentType
+
+  ' PQReference extension usage
+  EctdCompositionSP7181 ..> PQReference : author, section.entry
+}
+@enduml

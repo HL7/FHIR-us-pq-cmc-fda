@@ -35,7 +35,7 @@ Profile: StabilityStudy
 Parent: ResearchStudy
 Id: pq-stability-study
 Title: "Stability Study"
-Description: "Profile for describing main and Sub-Stability studies for drug substances and products."
+Description: "Profile for describing a stability study for drug substances and products."
 
 * identifier 1..1 MS
   * ^short = "Study Identifier"
@@ -52,7 +52,7 @@ Description: "Profile for describing main and Sub-Stability studies for drug sub
   """
 * protocol 0..1 MS 
 * protocol only Reference (StabilityStudyProtocol)
-* protocol ^short = "main Stability Protocol"
+* protocol ^short = "Stability Protocol"
 * protocol ^definition = "The structured plan for assessing the quality of a drug product or substance over time under specified storage conditions. It outlines the storage parameters, container closure systems, sampling time points, and tests  to be applied. The protocol provides the basis for generating data to support shelf life, retest periods, or regulatory submissions."
 * primaryPurposeType 1..1 MS
 * primaryPurposeType from PqcmcStabilityStudyReasonTerminology (required)
