@@ -191,12 +191,12 @@
 <artifact deprecated="true" id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="Sponsor Organization"/>
 <artifact deprecated="true" id="Organization/b69435a0-45c6-4d44-9fde-b354e17408d7" key="Organization-b69435a0-45c6-4d44-9fde-b354e17408d7" name="Sponsor of API"/>
 <artifact id="StructureDefinition/stability-groups" key="StructureDefinition-stability-groups" name="Stability Cycle Groups Profile"/>
+<artifact id="StructureDefinition/pqcmc-stability-spec-summary" key="StructureDefinition-pqcmc-stability-spec-summary" name="Stability Specification Summary"/>
 <artifact id="StructureDefinition/pq-stability-study" key="StructureDefinition-pq-stability-study" name="Stability Study"/>
 <artifact id="StructureDefinition/pqcmc-stability-study-interval-report" key="StructureDefinition-pqcmc-stability-study-interval-report" name="Stability Study Interval Report"/>
 <artifact id="StructureDefinition/pq-stability-study-protocol" key="StructureDefinition-pq-stability-study-protocol" name="Stability Study Protocol"/>
 <artifact id="ValueSet/pqcmc-stability-study-reason-terminology" key="ValueSet-pqcmc-stability-study-reason-terminology" name="Stability Study Reason"/>
 <artifact id="StructureDefinition/pq-stability-sub-study" key="StructureDefinition-pq-stability-sub-study" name="Stability Sub-Study"/>
-<artifact id="StructureDefinition/pqcmc-stability-spec-summary" key="StructureDefinition-pqcmc-stability-spec-summary" name="Stability Summary"/>
 <artifact id="ValueSet/pqcmc-storage-condition-category-terminology" key="ValueSet-pqcmc-storage-condition-category-terminology" name="Storage Condition Category"/>
 <artifact id="ValueSet/pqcmc-storage-conditions-terminology" key="ValueSet-pqcmc-storage-conditions-terminology" name="Storage Conditions"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-strength-operator-terminology" key="ValueSet-pqcmc-strength-operator-terminology" name="Strength Operator Terminology"/>

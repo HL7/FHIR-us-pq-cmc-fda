@@ -54,7 +54,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### CTD 3.2.S.7.1 and 3.2.P.8.1 Profile Map
 
-<div>{%include SStabilitySummaryNew.svg%}</div>
+<div>{%include StabilitySummaryNew.svg%}</div>
 
 ### Usage Patterns
 
