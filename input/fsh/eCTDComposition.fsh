@@ -634,37 +634,14 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 * author only Reference(CodedOrganization)
 * title 1..1 MS
 /*
-    SECTION SLICES for Subject
+    SECTION SLICES 
+    Slice the Composition.section by section.title 
 */
-* section 1.. MS
-* section.entry MS
-* section ^slicing.discriminator.type = #value
-* section ^slicing.discriminator.path = "code"
-* section ^slicing.rules = #closed
-* section ^slicing.description = "Slice based on the different sections that are needed in an ectd document. The code must correpond to the subject of the Stability Summary and Conclusion profile."
-* section contains
-  DrugProduct 0..1 MS and
-  Api 0..1 MS
-* section[DrugProduct] 
-  * ^definition = "Product Stability Summary and Conclusion to be included under the 3.2.P.8.3 eCTD heading."
-  * code = $SectionTypes#32P83 "Product Stability Data"
-  * title 1..1 MS
-  * entry MS
-  * insert PQReference(entry)
-  * entry only Reference(DrugProductHandle)
-* section[Api]
-  * ^definition = "Substance Stability Summary and Conclusion to be included under the 3.2.S.7.3 eCTD heading."
-  * code = $SectionTypes#32S73 "Substance Stability Data"
-  * title 1..1 MS
-  * entry MS
-  * insert PQReference(entry)
-  * entry only Reference(SubstanceDefinitionHandle)
-
-/* Slice the Composition.section by section.title */
-* section.section ^slicing.discriminator[0].type = #value
-* section.section ^slicing.discriminator[0].path = "title"
-* section.section ^slicing.rules = #open
-* section.section contains 
+* section ^slicing.discriminator[0].type = #value
+* section ^slicing.discriminator[0].path = "title"
+* section ^slicing.rules = #open
+* section contains 
+      StudySubject 1..1 MS and
       StudyDesign 1..1 MS and
       TestParameters 1..1 MS and
       LongTerm 0..1 MS and
@@ -674,59 +651,67 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
       Conclusion 1..1 MS and
       StorageStatement 1..1 MS
 
-/* 1. Study Design (free-text) */
-* section.section[StudyDesign].title = "Study Design"
-* section.section[StudyDesign].text 1..1 MS
+/* Study Subject refernece */
+* section[StudySubject].title = "Study Subject"
+* section[StudySubject].entry 1..1 MS
+* section[StudySubject]
+  * insert PQReference(entry)
+  * entry 1..1 MS  
+  * entry only Reference(DrugProductHandle or SubstanceDefinitionHandle)
 
-/* 2. Test Parameters & Acceptance Criteria (free-text) */
-* section.section[TestParameters].title = "Test Parameters & Acceptance Criteria"
-* section.section[TestParameters].text 1..1 MS
-* section.section[TestParameters].entry 1..1 MS
-* section.section[TestParameters]
+/* Study Design (free-text) */
+* section[StudyDesign].title = "Study Design"
+* section[StudyDesign].text 1..1 MS
+
+/* Test Parameters & Acceptance Criteria (reference) */
+* section[TestParameters].title = "Test Parameters & Acceptance Criteria"
+* section[TestParameters].text 0..1 MS
+* section[TestParameters].entry 1..1 MS
+* section[TestParameters]
   * insert PQReference(entry)
   * entry 1..1 MS  
   * entry only Reference(StabilitySpecSummary)
 
-/* 3. Tabulated Results (Long-term) — code = CC203 */
-* section.section[LongTerm].title = "Tabulated Results (Long-term)"
-* section.section[LongTerm].code = $NCIT#CC203 "Long term"
-* section.section[LongTerm].text 1..1 MS
-* section.section[LongTerm]
+/* Tabulated Results (Long-term) — code = CC203 */
+* section[LongTerm].title = "Tabulated Results (Long-term)"
+* section[LongTerm].code = $NCIT#C212883 "Long Term Testing"
+* section[LongTerm].text 0..1 MS
+* section[LongTerm]
   * insert PQReference(entry)
   * entry 1..* MS  
   * entry only Reference(ResultSummary)
 
 /* 4. Tabulated Results (Intermediate) — code = CC202 */
-* section.section[Intermediate].title = "Tabulated Results (Intermediate)"
-* section.section[Intermediate].code = $NCIT#CC202 "Intermediate"
-* section.section[Intermediate].text 1..1 MS
-* section.section[Intermediate]
+* section[Intermediate].title = "Tabulated Results (Intermediate)"
+* section[Intermediate].code = $NCIT#CC202 "Intermediate Testing"
+* section[Intermediate].text 1..1 MS
+* section[Intermediate]
   * insert PQReference(entry)
   * entry 1..* MS  
   * entry only Reference(ResultSummary)
 
 /* 5. Tabulated Results (Accelerated) — code = CC201 */
-* section.section[Accelerated].title = "Tabulated Results (Accelerated)"
-* section.section[Accelerated].code = $NCIT#CC201 "Accelerated"
-* section.section[Accelerated].text 1..1 MS
-* section.section[Accelerated]
+* section[Accelerated].title = "Tabulated Results (Accelerated)"
+* section[Accelerated].code = $NCIT#C212882 "Accelerated Testing"
+* section[Accelerated].text 1..1 MS
+* section[Accelerated]
   * insert PQReference(entry)
   * entry 1..* MS  
   * entry only Reference(ResultSummary)
 
 /* 6. Trend Analysis (unsliced except for optional graphic) */
-* section.section[TrendAnalysis].title = "Trend Analysis"
-* section.section[TrendAnalysis].section 1..* MS
-* section.section[TrendAnalysis].section ^short = "Allows an optional reference to a graphic immediately after the narrative paragraph. In other words, authors can put their text into section.text and then, if desired, attach one or more graphics via section.entry referencing a Base64DocumentReference resource."
-* section.section[TrendAnalysis].section.text 1..1 MS
-* section.section[TrendAnalysis].section
+* section[TrendAnalysis].title = "Trend Analysis"
+* section[TrendAnalysis].section 1..* MS
+* section[TrendAnalysis].section ^short = "Allows an optional reference to a graphic immediately after the narrative paragraph. In other words, authors can put their text into section.text and then, if desired, attach one or more graphics via section.entry referencing a Base64DocumentReference resource."
+* section[TrendAnalysis].section.text 1..1 MS
+* section[TrendAnalysis].section
   * insert PQReference(entry)
   * entry 0..* MS
   * entry only Reference(GraphicReference)
 /* 7. Conclusion (free-text) */
-* section.section[Conclusion].title = "Conclusion"
-* section.section[Conclusion].text 1..1 MS
+* section[Conclusion].title = "Conclusion"
+* section[Conclusion].text 1..1 MS
 
 /* 8. Storage Statement (free-text) */
-* section.section[StorageStatement].title = "Storage Statement"
-* section.section[StorageStatement].text 1..1 MS
+* section[StorageStatement].title = "Storage Statement"
+* section[StorageStatement].text 1..1 MS

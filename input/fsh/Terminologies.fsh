@@ -1285,10 +1285,10 @@ Title: "Storage Condition Category"
 Description: "Terminology used to qualify the information pertaining to stability study storage condition categories in the framework of the Pharmaceutical Quality/Chemistry, Manufacturing and Controls documents."	
 * ^experimental = false
 * ^status = #active
-	
-* $NCIT#CC201 "Accelerated"
-* $NCIT#CC202 "Intermediate"
-* $NCIT#CC203 "Long term"
+
+* $NCIT#C212881	"Accelerated Testing"
+* $NCIT#C212882	"Intermediate Testing"
+* $NCIT#C212883	"Long Term Testing"
 
 ValueSet: PqcmcStabilityStudyReasonTerminology	
 Id: pqcmc-stability-study-reason-terminology	

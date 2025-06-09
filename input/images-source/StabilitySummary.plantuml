@@ -39,10 +39,17 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
     +postalCode: string
   }
 
-  ' Drug product handle
-  class DrugProductHandle <<MedicinalProductDefinition>> {
-    +identifier: Identifier
-    +name: string
+
+    node "DrugProductHandle" as DrugProductHandle {
+
+    object "**Parent:** MedicinalProductDefinition" as objcross {
+      **Page:**
+      [[StructureDefinition-pqcmc-drug-product-handle.html]]
+      **ValueSets:**
+      [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+      [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+      [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
+    }
   }
 
   ' Drug substance definition handle
