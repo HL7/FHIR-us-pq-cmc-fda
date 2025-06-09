@@ -1,7 +1,7 @@
 Profile: StabilitySpecSummary
 Parent: PlanDefinition
 Id: pqcmc-stability-spec-summary
-Title: "Stability Summary"
+Title: "Stability Specification Summary"
 Description: "Summary of the types of studies conducted (forced degradation, photostability, and stress testing), protocols used, and the results of the studies"
 
 * identifier 1..1 MS

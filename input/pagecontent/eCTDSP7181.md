@@ -42,7 +42,7 @@ By codifying the stability summary as a single `Composition` with discrete refer
 The domain concepts of Stability Summary are represented in FHIR in this IG section. Below is a high-level FHIR resource mapping to guide the understanding of how the domain concepts are represented using profiles on FHIR resources. Detail study of the profiles and each of the resources will be needed to develop a deeper understanding of this Stability Summary FHIR bundle profile. Concepts that are key to this domain include the following:
 
 * Stability Summary
-  * [Stability Summary](StructureDefinition-pqcmc-stability-summary.html) (StabilitySummary) profile on [PlanDefinition](https://hl7.org/fhir/R5/plandefinition.html) resource
+  * [Stability Testing Summary](StructureDefinition-pqcmc-stability-spec-summary.html) (StabilitySpecSummary) profile on [PlanDefinition](https://hl7.org/fhir/R5/plandefinition.html) resource
 * Drug Product
   * [Drug Product Handle](StructureDefinition-pqcmc-drug-product-handle.html) (DrugProductHandle) profile on [MedicinalProductDefinition](http://hl7.org/fhir/R5/medicinalproductdefinition.html) resource
 * API 
@@ -54,7 +54,7 @@ Note: profile computable names (in parenthesis above) map to names in the Profil
 
 ### CTD 3.2.S.7.1 and 3.2.P.8.1 Profile Map
 
-<div>{%include StabilitySumarryNew.svg%}</div>
+<div>{%include SStabilitySummaryNew.svg%}</div>
 
 ### Usage Patterns
 

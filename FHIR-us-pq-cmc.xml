@@ -178,6 +178,7 @@
 <artifact id="StructureDefinition/pq-replicate-extension" key="StructureDefinition-pq-replicate-extension" name="Replicate Number"/>
 <artifact id="ValueSet/pqcmc-representation-types" key="ValueSet-pqcmc-representation-types" name="Representation Types"/>
 <artifact id="StructureDefinition/pq-result-observation" key="StructureDefinition-pq-result-observation" name="Result Observation"/>
+<artifact id="StructureDefinition/pq-result-summary" key="StructureDefinition-pq-result-summary" name="Result Summary"/>
 <artifact deprecated="true" id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
 <artifact id="DocumentReference/de75e338-626c-4503-a25d-4fcdd8e39bee" key="DocumentReference-de75e338-626c-4503-a25d-4fcdd8e39bee" name="SDF File in a Structure Reference"/>
 <artifact id="ValueSet/pqcmc-source-type-terminology" key="ValueSet-pqcmc-source-type-terminology" name="Source Type"/>
@@ -195,7 +196,7 @@
 <artifact id="StructureDefinition/pq-stability-study-protocol" key="StructureDefinition-pq-stability-study-protocol" name="Stability Study Protocol"/>
 <artifact id="ValueSet/pqcmc-stability-study-reason-terminology" key="ValueSet-pqcmc-stability-study-reason-terminology" name="Stability Study Reason"/>
 <artifact id="StructureDefinition/pq-stability-sub-study" key="StructureDefinition-pq-stability-sub-study" name="Stability Sub-Study"/>
-<artifact id="StructureDefinition/pqcmc-stability-summary" key="StructureDefinition-pqcmc-stability-summary" name="Stability Summary"/>
+<artifact id="StructureDefinition/pqcmc-stability-spec-summary" key="StructureDefinition-pqcmc-stability-spec-summary" name="Stability Summary"/>
 <artifact id="ValueSet/pqcmc-storage-condition-category-terminology" key="ValueSet-pqcmc-storage-condition-category-terminology" name="Storage Condition Category"/>
 <artifact id="ValueSet/pqcmc-storage-conditions-terminology" key="ValueSet-pqcmc-storage-conditions-terminology" name="Storage Conditions"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-strength-operator-terminology" key="ValueSet-pqcmc-strength-operator-terminology" name="Strength Operator Terminology"/>
