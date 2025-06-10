@@ -11,11 +11,6 @@ skinparam ClassBorderThickness 4
 package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.7.1 and 3.2.P.8.1 Stability Summary Bundle]]" as NODES {
 
 
-  ' Bundle container for all entries
-  class Bundle <<Bundle>> {
-    +type: document
-  }
-
   ' Composition profile for stability summary
   class EctdCompositionSP7181 <<Composition>> {
     +status = final
@@ -24,23 +19,18 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
     +title: string
   }
 
-  ' Reference to sponsoring organization
-  class CodedOrganization <<Organization>> {
-    +name: string
-    +contact: Contact
+
+  node "CodedOrganization" as CodedOrganization  {
+
+    object "**Parent:** Organization" as objDP {
+      **Page:**
+      [[StructureDefinition-cmc-organization.html]]
+    }
   }
 
-  ' Address profile for contacts
-  class PqAddress <<Address>> {
-    +type: AddressType
-    +line[1..2]
-    +city: string
-    +state: string
-    +postalCode: string
-  }
+  diamond CH
 
-
-    node "DrugProductHandle" as DrugProductHandle {
+  node "DrugProductHandle" as DrugProductHandle {
 
     object "**Parent:** MedicinalProductDefinition" as objcross {
       **Page:**
@@ -52,12 +42,18 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
     }
   }
 
-  ' Drug substance definition handle
-  class SubstanceDefinitionHandle <<SubstanceDefinition>> {
-    +identifier: Identifier
-    +classification: CodeableConcept
-    +grade: CodeableConcept
+  node "SubstanceDefinitionHandle" as SubstanceDefinitionHandle {
+
+    object "**Parent:** SubstanceDefinition" as obj3 {
+      **Page:**
+      [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+      **ValueSets:**
+      [[ValueSet-substance-classification.html Substance Classification]]
+      [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+      [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+    }
   }
+
 
   ' Drug substance batch profile
   class DrugSubstanceBatch <<Substance>> {
@@ -115,13 +111,14 @@ package "[[StructureDefinition-cmc-ectd-document-sp7181.html eCTD Heading 3.2.S.
   class PqcmcGraphicalFileTypes <<ValueSet>>
 
   ' Relationships inside the Bundle
-  Bundle o-- EctdCompositionSP7181 : entry
+
   EctdCompositionSP7181 o-- CodedOrganization : author
-  CodedOrganization o-- PqAddress : contact.address
 
   ' Composition sections referencing other resources
-  EctdCompositionSP7181 o-- DrugProductHandle : section(entry)[DrugProduct]
-  EctdCompositionSP7181 o-- SubstanceDefinitionHandle : section(entry)[Api]
+  EctdCompositionSP7181 -[#darkred]--> CH
+  CH -[#green]--> DrugProductHandle : section(entry)[Api]
+  CH -[#green]--> SubstanceDefinitionHandle : section(entry)[DrugProduct]
+
   EctdCompositionSP7181 o-- StabilitySpecSummary : section(section)[Test Parameters & Acceptance Criteria]
 
   ' Results section entries

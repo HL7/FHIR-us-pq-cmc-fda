@@ -653,7 +653,7 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 
 /* Study Subject refernece */
 * section[StudySubject].title = "Study Subject"
-* section[StudySubject].entry 1..1 MS
+* section[StudySubject].entry 1..* MS
 * section[StudySubject]
   * insert PQReference(entry)
   * entry 1..1 MS  
