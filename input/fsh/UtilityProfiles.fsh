@@ -71,7 +71,18 @@ Description: "A profile that represents the document or diagram in base64."
 * content.attachment MS
 * content.attachment only PqcmcAttachment
 
- 
+Profile: MarkdownReference
+Parent: DocumentReference
+Id: markdown-reference
+Title: "Markdown Reference"
+Description: "A Document Reference to an attachment that contains markdown. Even though markdown is considered human readable, the 'data' field is base64 encoded."
+* status = #current
+* content MS
+  * attachment MS
+    * contentType 1..1 MS
+    * contentType = #text/markdown
+    * data 1..1 MS
+
 Extension: AditionalInformationExtension
 Id: pq-additional-info-extension
 Title: "Additional Information"

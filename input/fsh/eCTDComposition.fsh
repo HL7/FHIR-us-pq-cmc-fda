@@ -656,16 +656,18 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 * section[StudySubject].entry 1..* MS
 * section[StudySubject]
   * insert PQReference(entry)
-  * entry 1..1 MS  
+  * entry 1..1 MS
   * entry only Reference(DrugProductHandle or SubstanceDefinitionHandle)
 
 /* Study Design (free-text) */
-* section[StudyDesign].title = "Study Design"
-* section[StudyDesign].text 1..1 MS
+* section[StudyDesign]
+  * title = "Study Design"
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(MarkdownReference)
 
 /* Test Parameters & Acceptance Criteria (reference) */
 * section[TestParameters].title = "Test Parameters & Acceptance Criteria"
-* section[TestParameters].text 0..1 MS
 * section[TestParameters].entry 1..1 MS
 * section[TestParameters]
   * insert PQReference(entry)
@@ -675,43 +677,61 @@ Description: "The fields needed to represent the Stability Summary and Conclusio
 /* Tabulated Results (Long-term) — code = CC203 */
 * section[LongTerm].title = "Tabulated Results (Long-term)"
 * section[LongTerm].code = $NCIT#C212883 "Long Term Testing"
-* section[LongTerm].text 0..1 MS
 * section[LongTerm]
-  * insert PQReference(entry)
-  * entry 1..* MS  
-  * entry only Reference(ResultSummary)
+  * entry ^slicing.discriminator.type = #profile
+  * entry ^slicing.discriminator.path = "$this.resolve()"
+  * entry ^slicing.rules = #closed
+  * entry contains 
+    resultSummary 1..* MS and
+    markdownDescription 1..1 MS
+  * insert PQReference(entry[resultSummary])
+  * entry[resultSummary] only Reference(ResultSummary)
+  * insert PQReference(entry[markdownDescription])
+  * entry[markdownDescription] only Reference(MarkdownReference)
 
 /* 4. Tabulated Results (Intermediate) — code = CC202 */
 * section[Intermediate].title = "Tabulated Results (Intermediate)"
 * section[Intermediate].code = $NCIT#CC202 "Intermediate Testing"
-* section[Intermediate].text 1..1 MS
 * section[Intermediate]
   * insert PQReference(entry)
-  * entry 1..* MS  
-  * entry only Reference(ResultSummary)
+  * entry ^slicing.discriminator[0].type = #profile
+  * entry ^slicing.discriminator[0].path = "$this.resolve()"
+  * entry ^slicing.rules = #closed
+  * entry contains 
+    resultSummary 1..* MS and
+    markdownDescription 1..1 MS
+  * entry[resultSummary] only Reference(ResultSummary)
+  * entry[markdownDescription] only Reference(MarkdownReference)
 
 /* 5. Tabulated Results (Accelerated) — code = CC201 */
 * section[Accelerated].title = "Tabulated Results (Accelerated)"
 * section[Accelerated].code = $NCIT#C212882 "Accelerated Testing"
-* section[Accelerated].text 1..1 MS
 * section[Accelerated]
   * insert PQReference(entry)
-  * entry 1..* MS  
-  * entry only Reference(ResultSummary)
-
+  * entry ^slicing.discriminator[0].type = #profile
+  * entry ^slicing.discriminator[0].path = "$this.resolve()"
+  * entry ^slicing.rules = #closed
+  * entry contains 
+    resultSummary 1..* MS and
+    markdownDescription 1..1 MS
+  * entry[resultSummary] only Reference(ResultSummary)
+  * entry[markdownDescription] only Reference(MarkdownReference)
 /* 6. Trend Analysis (unsliced except for optional graphic) */
-* section[TrendAnalysis].title = "Trend Analysis"
-* section[TrendAnalysis].section 1..* MS
-* section[TrendAnalysis].section ^short = "Allows an optional reference to a graphic immediately after the narrative paragraph. In other words, authors can put their text into section.text and then, if desired, attach one or more graphics via section.entry referencing a Base64DocumentReference resource."
-* section[TrendAnalysis].section.text 1..1 MS
-* section[TrendAnalysis].section
+* section[TrendAnalysis]
+  * title = "Trend Analysis"
+  * entry 1..* MS
   * insert PQReference(entry)
-  * entry 0..* MS
-  * entry only Reference(GraphicReference)
+  * entry only Reference(GraphicReference or MarkdownReference)
 /* 7. Conclusion (free-text) */
-* section[Conclusion].title = "Conclusion"
-* section[Conclusion].text 1..1 MS
+* section[Conclusion]
+  * title = "Conclusion"
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(MarkdownReference)
 
 /* 8. Storage Statement (free-text) */
-* section[StorageStatement].title = "Storage Statement"
-* section[StorageStatement].text 1..1 MS
+* section[StorageStatement]
+  * title = "Storage Statement"
+  * entry 1..1 MS
+  * insert PQReference(entry)
+  * entry only Reference(MarkdownReference)
