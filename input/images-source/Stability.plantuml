@@ -69,7 +69,7 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
 
     diamond CH
 
-    node "StabilityStudyProtocol "as stabilityStudyProtocol {
+    node "StabilityStudyProtocol" as stabilityStudyProtocol {
         object "**Parent:** PlanDefinition" as obj5 {
             **Page:**
             [[StructureDefinition-pq-stability-study-protocol.html Stability Study Protocol]]
@@ -173,11 +173,39 @@ package "[[StructureDefinition-cmc-ectd-document-sp7383.html eCTD Heading 3.2.P.
         object "**Note:**" as referenceNote {
             Recursion only used for Staged or multi-measurement tests
         }
-
     }
 
+    diamond CH2
+
+    node "DrugProductHandle" as MDI {
+
+        object "**Parent:** MedicinalProductDefinition" as obj44 {
+            **Page:**
+            [[StructureDefinition-pqcmc-drug-product-handle.html]]
+            **ValueSets:**
+            [[ValueSet-spl-drug-route-of-administration-terminology.html Drug Route Of Administration Terminology]]
+            [[ValueSet-spl-pharmaceutical-dosage-form-terminology.html Pharmaceutical Dosage Form Terminology]]
+            [[ValueSet-pqcmc-name-part-terminology.html PQCMC Name Part Terminology]]
+        }
+    }
+
+    node "SubstanceDefinitionHandle for API" as SubHandle {
+
+        object "**Parent:** SubstanceDefinition" as obj77 {
+            **Page:**
+            [[StructureDefinition-pqcmc-routine-drug-substance.html]]
+            **ValueSets:**
+            [[ValueSet-substance-classification.html Substance Classification]]
+            [[ValueSet-pqcmc-quality-benchmark-terminology.html Quality Benchmark Terminology]]
+            [[ValueSet-pqcmc-substance-name-type.html Substance Name Type]]
+
+        }
+    }
 
     ectdComposition -[#darkred]--> codedOrganization
+    stabilityStudy -[#darkred]--> CH2
+    CH2 -[#green]--> MDI
+    CH2 -[#green]--> SubHandle
     stabilityStudy -[#darkred]-> stabilityStudyProtocol
     stabilitySubStudy -[#darkred]-> stabilityStudyProtocol
     drugProductBatch -[#darkred]--> codedOrganization

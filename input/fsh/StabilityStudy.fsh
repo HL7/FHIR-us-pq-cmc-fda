@@ -91,6 +91,13 @@ Description: "Profile for describing a stability study for drug substances and p
   * ^definition = """
     A placeholder for providing comments about the stability study. [Source: SME Defined]
   """
+* classifier  1..1 MS
+  * ^short = "Sub-Study Type"
+  * ^definition =  """
+    A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
+    Examples: Standard, Cycled.
+  """
+* classifier from PqcmcStudyTypeTerminology (required)  
 * whyStopped 0..1 MS
 * whyStopped only CodeableConceptTextOnly
   * ^short = "Reason Stopped"
@@ -102,7 +109,7 @@ Profile: StabilitySubStudy
 Parent: ResearchStudy
 Id: pq-stability-sub-study
 Title: "Stability Sub-Study"
-Description: "Profile for the a stability sub-study."
+Description: "A part of a Stability Study.  The role of the sub-study is determined by the classification of the Stability study irefernce by the partOf element."
 
 // // Cross-version R6 Extensions
 // * extension contains 
@@ -159,7 +166,7 @@ Description: "Profile for the a stability sub-study."
 // * protocol.display ^short = // no Short??
 * protocol.display ^definition = """
   Provide the 'Storage Condition, Orientation and Container Title' from the PlanDefinition.action.title element
-  in the StabilityStudyProtocol profile consistent with this sub-study
+  in the StabilityStudyProtocol profile consistent with this sub-study.
 """
 * partOf MS
 * insert PQReference(partOf)
@@ -214,13 +221,6 @@ Description: "Profile for the a stability sub-study."
   * ^definition = """
     A placeholder for providing comments about the stability study. [Source: SME Defined]
   """ 
-* classifier  1..1 MS
-  * ^short = "Sub-Study Type"
-  * ^definition =  """
-    A categorization of studies that identifies whether there are single or multiple phases of the study sometimes simulating the periods of use. [Source: SME Defined]
-    Examples: Standard, Cycled.
-  """
-* classifier from PqcmcStudyTypeTerminology (required)
 * result MS
 * insert PQReference(result)
 * result only Reference(StabilityStudyIntervalReport)
@@ -410,18 +410,18 @@ Description: """
   relatesTo 1..1 MS
  // objective 1..1 MS
 * extension[focus]
-  * ^short = "Suppoting information for cycled testing and matrixed study designs."
+  * ^short = "Suppoting information for cycled testing study designs."
   * value[x] 1..1 MS
   * value[x] only Reference
   * insert PQReference(valueReference)
   * valueReference only Reference(CycledTestingPlanDefinition)
 
 * extension[relatesTo]
-  * ^short = "Suppoting information for cycled testing studies in the group."
+  * ^short = "Suppoting information for cycled, matrixed and bracket testing studies in the group."
   * value[x] 1..1 MS
   * value[x] only Reference
   * insert PQReference(valueReference)
-  * valueReference only Reference(StabilityCycleGroups)
+  * valueReference only Reference(StabilityGroups)
 
 //* extension[objective].extension contains
 //  name 1..1 MS and
@@ -466,11 +466,11 @@ Description: """
 //      * valueReference only Reference(MatrixedStudyEvidence or BracketingStudyEvidence)
  
 
-Profile: StabilityCycleGroups
+Profile: StabilityGroups
 Parent: Group
 Id: stability-groups
-Title: "Stability Cycle Groups Profile"
-Description: "Profile for defining groups of Stability Sub-Studies used in a cycled stability study."
+Title: "Stability Groups Profile"
+Description: "Profile for defining groups of Stability Sub-Studies used in a cycled, matrixing and bracketing stability study."
 // * modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
 // * modifierExtension[member]
 //   * ^short = "Group members"

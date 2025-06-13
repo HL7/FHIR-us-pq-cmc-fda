@@ -153,11 +153,11 @@ Description: "Profile for an observation in a batch-analysis report or a stabili
     Note: This is either 'Single Stage' for non-staged tests and 'Multi-Stage' for tests with more than one stage. Use hasMember to report multiple stages.
   """
 * status MS	
-* category 1..1 MS
+* category 1..2 MS
 * category ^short = "Test Category | Test Subcategory"
 * category ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
-* category.coding 1..1 MS
-* category.coding from PqcmcTestCategoryTerminology (required)
+* category.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
+* category from PqcmcTestCategoryTerminology (required)
 * category.text 1..1 MS
 * category.text ^short = "Test Name | RRT"	
 * category.text ^definition = """

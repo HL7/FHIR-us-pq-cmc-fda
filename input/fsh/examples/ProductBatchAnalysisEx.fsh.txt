@@ -390,8 +390,9 @@ Description: "Example observation with a text result"
 Usage: #inline		
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
-* status = #final		
-* category.coding = $NCIT#C138990 "Description/Appearance"			
+* status = #final	
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C138990 "Description/Appearance"			
 * category.text = "Description"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -409,7 +410,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Single Stage"
 * status = #final
-* category.coding = $NCIT#C138993 "Identification"
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C138993 "Identification"
 * category.text = "Identification By HPLC"
 * effectiveDateTime = "2022-01-06"
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)
@@ -427,7 +429,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Multi Stage"
 * status = #final
-* category.coding = $NCIT#C134253 "Dissolution"
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
 * category.text = "Dissolution Oxazepam"
@@ -450,7 +453,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 1"
 * status = #final
-* category.coding = $NCIT#C134253 "Dissolution"
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
 * category.text = "Dissolution 1 hour"
@@ -500,7 +504,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 2"
 * status = #final
-* category.coding = $NCIT#C134253 "Dissolution"
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
 * category.text = "Dissolution  2 hours"
@@ -547,7 +552,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"
 * identifier.value = "Stage 3"
 * status = #final
-* category.coding = $NCIT#C134253 "Dissolution"
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C134253 "Dissolution"
 * code
   * coding = $NCIT#C96103 "Proprietary"
 * category.text = "Dissolution 4 hours"
@@ -593,7 +599,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C134250 "Uniformity"		
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C134250 "Uniformity"		
 * category.text = "Uniformity of Dosage Units"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -612,8 +619,10 @@ Description: "Demonstating a Water Content result with an upper limit."
 Usage: #inline		
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
-* status = #final		
-* category.coding = $NCIT#C134002 "Residual Solvent"		
+* status = #final	
+/* OOPS  Replace the test category when it gets in NCIt*/	
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C134002 "Residual Solvent"		
 * category.text = "Water Content"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:4f3e9af1-306b-4fad-bf04-7881400b266a)		
@@ -633,7 +642,8 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C60819 "Assay"		
+* category[+].coding.extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C60819 "Assay"		
 * category.text = "Assay"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -681,7 +691,10 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C205039 "Specified Identified Impurity"		
+* category[+].extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C204971 "Impurity"
+* category[+].extension[categoryLevel].valuePositiveInt = 2
+* category[=].coding = $NCIT#C205039 "Specified Identified Impurity"		
 * category.text = "Related Substances - (Z)-(2-Amino-5-chlorophenyl)(phenyl)methanone Oxime"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -700,8 +713,11 @@ Description: "Demonstating a  Specified Unidentified Impurity result with an upp
 Usage: #inline		
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
-* status = #final		
-* category.coding = $NCIT#C205040 "Specified Unidentified Impurity"		
+* status = #final	
+* category[+].extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C204971 "Impurity"
+* category[+].extension[categoryLevel].valuePositiveInt = 2
+* category[=].coding = $NCIT#C205040 "Specified Unidentified Impurity"		
 * category.text = "Related Substances - Oxazepam - Impurity A"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -721,7 +737,10 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C205039 "Specified Identified Impurity"		
+* category[+].extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C204971 "Impurity"
+* category[+].extension[categoryLevel].valuePositiveInt = 2
+* category[=].coding = $NCIT#C205039 "Specified Identified Impurity"		
 * category.text = "Related Substances - 6-Chloro-4-phenyl-3,4-dihydroquinazoline- 2-carboxylic Acid"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -741,7 +760,10 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C205052 "Unspecified Impurity"		
+* category[+].extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C204971 "Impurity"
+* category[+].extension[categoryLevel].valuePositiveInt = 2
+* category[=].coding = $NCIT#C205052 "Unspecified Impurity"		
 * category.text = "Related Substances - Highest Unknown"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -761,7 +783,10 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C205047 "Total Impurities"		
+* category[+].extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C204971 "Impurity"
+* category[+].extension[categoryLevel].valuePositiveInt = 2
+* category[=].coding = $NCIT#C205047 "Total Impurities"		
 * category.text = "Related Substances - Total Impurities"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		
@@ -781,7 +806,10 @@ Usage: #inline
 * extension[actualpulldate].valueDateTime = "2022-01-06"		
 * identifier.value = "Single Stage"		
 * status = #final		
-* category.coding = $NCIT#C134002 "Residual Solvent"		
+* category[+].extension[categoryLevel].valuePositiveInt = 1
+* category[=].coding = $NCIT#C204971 "Impurity"
+* category[+].extension[categoryLevel].valuePositiveInt = 2
+* category[=].coding = $NCIT#C134002 "Residual Solvent"		
 * category.text = "Residual Solvents"		
 * effectiveDateTime = "2022-01-06"		
 * performer = Reference(urn:uuid:b2727746-84a9-4e3f-ae76-b847deea3afe)		

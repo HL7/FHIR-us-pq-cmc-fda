@@ -98,32 +98,39 @@ Description: "an example Stability Spec Summary instance for the Stability Summa
 * action[+]
   * title = "Assay (% Label Claim)"
   * code.text = "HPLC"
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason = $NCIT#C60819 "Assay"
   * goalId = "3c20460a-e082-424b-a40b-4e1c55cf8656"
 * action[+]
   * title = "Associated Impurities (%)"
   * code.text = "HPLC (RODP)"
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason = $NCIT#C204971 "Impurity"
   * goalId = "8e4b1c64-af7a-4aa1-afec-a4dfca634e78"
-* action[+]
-  * title = "Water Content (% w/w)"
-  * code.text = "Karl Fischer"
-  * reason = $NCIT#C134002 "Residual Solvent"
-  * goalId = "a69618c3-4b93-4eff-8246-34c1bc02d081"
+//* action[+]
+//  * title = "Water Content (% w/w)"
+//  * code.text = "Karl Fischer"
+//  * reason = $NCIT#? "Moisture Content"
+//  * goalId = "a69618c3-4b93-4eff-8246-34c1bc02d081"
 * action[+]
   * title = "Residual Solvents (Class 2)"
   * code.text = "GC"
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
+  * reason = $NCIT#C204971 "Impurity"
+  * reason[+].extension[categoryLevel].valuePositiveInt = 2
   * reason = $NCIT#C134002 "Residual Solvent"
   * goalId = "df12e247-f1ce-478d-92ce-db1e4c177a01"
 * action[+]
   * title = "Description (Powder Color)"
   * code.text = "Visual"
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
   * reason = $NCIT#C205026 "Organoleptic"
   * goalId = "3c0bb990-5a37-42fc-bdf5-e23ef4b8ab9b"
 * action[+]
   * title = "pH (aq. solution)"
   * code.text = "pH Meter"
-  * reason = $NCIT#C205029 "pH"
+  * reason[+].extension[categoryLevel].valuePositiveInt = 1
+  * reason[=].coding = $NCIT#C205029 "pH"
   * goalId = "61bce85b-051b-4dca-b9fe-7a4bf5940bf5"
 
 

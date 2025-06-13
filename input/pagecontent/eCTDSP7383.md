@@ -46,79 +46,42 @@ ICH Q1E and Q1A recognize the need for **cycled studies**, such as freeze-thaw o
 
 ### Implementer Instructions
 
-These profiles should consider data requirements, relationships, validation, and user workflows. Understanding the scientific and regulatory context—such as the implications of bracketing, matrixing, and cycled testing—will help build applications that not only produce valid FHIR resources but also support real-world regulatory and scientific needs.  Each Stability Data bundle contains the results associated with a single maain stability study, which contains an evaluation of a multiple sub-studies on batches under multiple conditions of an active substance or a single batch of product. However, it is possible that the Stability Data bundle contains only one photo-stability study.  
+#### Root: **EctdCompositionSP7383**  
+The root of the stability-data model is the **EctdCompositionSP7383** profile, a Composition resource constrained to represent the eCTD Module 3.2.S/P “Stability Data” section. This Composition is sliced into two main sections—one for drug-substance stability and one for drug-product stability—each of which holds `entry` references to one or more **StabilityStudy** instances. In practice, you instantiate a single EctdCompositionSP7383 and then bundle under its sections all of the StabilityStudy resources (one per study) that you intend to submit.
 
-Profiles are not used in isolation:
+#### **StabilityStudy** (ResearchStudy)  
+Each **StabilityStudy** (modeled as a ResearchStudy) captures the overarching metadata for a particular run of stability testing, such as “Study 1234 – Long-term & Accelerated.” Key elements include a unique identifier, a human-readable title, and a `protocol` reference to the detailed plan. Critically, each StabilityStudy is classified—using a coded element constrained by a custom terminology—to one of the ICH-defined study types: Standard (long-term/intermediate/accelerated, per ICH Q1A(R2)), Photostability (light-exposure conditions, per ICH Q1B), Cycled (sequential cycles of differing conditions), Bracketing (extreme-condition endpoints, per ICH Q1D), or Matrixing (a subset of combinations, also per ICH Q1D).
 
-* StabilityStudy profile reference design plans.
-* **DrugProductBatch / DrugSubstanceBatch**: Provide the manufacturing and packaging context for the material being tested.
-* **StabilityGroups**: When matrixing or bracketing designs are used, ResultObservations may be associated with groupings of products or strengths rather than individual batches.
-* StabilitySubStudy references CycledTestingPlanDefinition.
+#### **StabilityStudyProtocol** (PlanDefinition)  
+The detailed design of each study is captured in the **StabilityStudyProtocol** profile, a PlanDefinition. This protocol enumerates the planned storage conditions, sampling timepoints, and test methods as a series of `action` elements—e.g. long-term 25 °C/60 % RH at 0, 3, 6, 12 months; accelerated 40 °C/75 % RH at 0, 1, 3 months; or defined light-exposure cycles for photostability. By referencing this PlanDefinition, each StabilityStudy clearly binds to its intended experimental design, ensuring consistency between what was planned and what was executed.
 
-* **CycledTestingPlanDefinition**: This PlanDefinition-based profile specify actions and goals that define the testing sequence and objectives in cycled studies.
-* ResultObservation depends on linking to DrugProductBatch or DrugSubstanceBatch for container clousre information.  The ResultObservation profile is detailed on [Batch Analyses (3.2.S.4.4 & 3.2.P.5.4)](eCTDSP4454.html).
+#### **StabilitySubStudy** (ResearchStudy)  
+To represent the actual arms or “cells” within a study—whether that be different temperature/humidity conditions or successive freeze/thaw cycles—the **StabilitySubStudy** profile (another ResearchStudy) slices the parent study into discrete sub-studies. Each SubStudy points back to its parent via `partOf` and carries attributes for `condition` (storage parameters, category such as long-term vs. accelerated, orientation), `period` for its start and end dates, and a `result` reference to its measured data. For a Standard study, three SubStudies (one each for long-term, intermediate, accelerated) are common; for a Cycled study, you might have one SubStudy per cycle; for Photostability, a single SubStudy captures the light-exposure cell.
 
-### Implementer‑Focused Model Map
+#### **StabilityStudyIntervalReport** (DiagnosticReport)  
+The measured results at each sampling interval are encapsulated by the **StabilityStudyIntervalReport** profile on DiagnosticReport. Each IntervalReport carries a `PullIntervalExtension` to indicate the timepoint (e.g. “3 months”), a `qualitySpecification` extension to capture the test method specification, and links to Observation resources for each analyte result. This separation of data from design preserves a clean boundary: PlanDefinition for intent, ResearchStudy for study metadata, and DiagnosticReport for data.
 
-Profiles are not used in isolation; the diagram supplied in the PlantUML file shows every relationship.
+#### **StabilityGroups** (Group)  
+For reduced-design studies (Bracketing and Matrixing per ICH Q1D), a **StabilityGroups** profile (on Group) provides a logical grouping of the relevant SubStudy instances. A StabilityGroups resource names the grouping (e.g. “Bracketing – High & Low Temperatures”), enumerates its design type, and lists the member SubStudies. In a Bracketing scenario you would have two SubStudies (high- and low-extremes) and one Group that brings them together, whereas in Matrixing you might select a subset of condition combinations and group those SubStudies accordingly.
 
-| Category                | Profile or Extension                         | Role in the bundle                                                                 |
-|------------------------|----------------------------------------------|------------------------------------------------------------------------------------|
-| Study definition        | StabilityStudy                               | Top‑level study record; references StabilityStudyProtocol and one or more StabilitySubStudy instances. |
-|                         | StabilityStudyProtocol                       | PlanDefinition template listing storage conditions, containers, time‑points, and tests. |
-| Sub‑studies             | StabilitySubStudy                            | A single design variant (e.g., matrixed, cycled). Points to design evidence or plan. |
-| Special‑study artefacts | CycledTestingPlanDefinition (PlanDefinition) | Stepwise procedure for cycled (freeze‑thaw, light–dark, etc.) studies.             |
-| Results & reports       | StabilityStudyIntervalReport                 | Consolidates ResultObservation resources for one pull interval.                   |
-| Product context         | DrugProductBatch / DrugSubstanceBatch (external) | Identify the material under test.                                                |
-|                         | StabilityGroups                              | Logical grouping of products or strengths for matrixed & bracketing designs.      |
-| Key extensions          | PQCMCStabilitySubStudyFocusAndObjective       | Adds focus / objective metadata to a sub‑study; may reference other artefacts.    |
-|                         | PQCMCEvidenceProductReference                | Connects an Evidence profile to a specific DrugProductHandle.                     |
-|                         | PQCMCStabilityGroupsMedicationMember         | Links a Medication or Substance to StabilityGroups.                              |
-|                         | PullIntervalExtension                        | Declares scheduled or unscheduled pull intervals; binds to PqcmcIntervalDescriptionCodeTerminology. |
-
-> **Note**: The StabilityStudyProtocol is refernced from the main study once and  referenced from every sub‑study. This avoids duplication and keeps bundles small.
-
-### Sub‑Study Artefacts in Depth
-Applications must support selection, definition, and linkage of these plans to specific StabilitySubStudy instances. Different profiles capture study design intentions.  The special study types are detailed here:
-
-#### The CycledTestingPlanDefinition Profile
-
-The **CycledTestingPlanDefinition** profile specializes the FHIR **PlanDefinition** resource to document and operationalize **cycled stability studies**. Cycled studies subject the product to **repeated environmental changes** such as freeze-thaw, high-humidity exposure, or temperature cycling to simulate real-world stress conditions.
-
-##### Key Purposes:
-1. **Define Cycle Details:**
-   - Specifies **how many cycles** are performed.
-   - Describes **the environmental conditions** for each cycle (e.g., -20°C for 24 hours, then 25°C/60% RH for 24 hours).
-   - Provides **timing and sequencing** of actions.
-
-2. **List Tests After Each Cycle:**
-   - Defines the **specific tests** (e.g., potency, appearance, particulate matter) performed after each cycle or at the end of the cycling sequence.
-
-3. **Link to Stability Study:**
-   - Referenced from the **StabilityStudy** as the procedural definition for conducting cycled testing.
-
-4. **Guide Execution or Interpretation:**
-   - Enables automated or manual execution of the procedure by providing a structured, machine-readable definition.
-   - Supports downstream **data interpretation** by documenting the intended procedure.
-
-##### Example Usage:
-- You design a **freeze-thaw study** involving **3 cycles** where the product is frozen at -20°C for 24 hours and then thawed at 25°C for 24 hours.
-- You create a **CycledTestingPlanDefinition** instance that:
-  - Details each freeze and thaw step.
-  - Lists tests like **potency and appearance** to be performed in each cycle.
-  - Links back to the parent **StabilityStudy**.
-
-##### Importance:
-- Provides clear **procedural documentation** for reproducibility.
-- Supports **regulatory transparency** on how cycled tests were performed.
-- Enables **automated execution or validation** by downstream systems.
-
+#### Summary  
+In summary, an eCTD stability submission involves: creating one `EctdCompositionSP7383` Composition; adding multiple **StabilityStudy** instances (each with a classifier for Standard, Photostability, Cycled, Bracketing, or Matrixing); attaching each study’s **StabilityStudyProtocol**; breaking each study into **StabilitySubStudy** arms; capturing results in **StabilityStudyIntervalReport** resources; and—where needed—assembling reduced-design SubStudies into **StabilityGroups**. This layered architecture aligns precisely with ICH Q1A(R2), Q1B, and Q1D definitions, ensuring regulatory-compliant submission and clear traceability from study intent through execution to results.  
+ 
 #### **Complex Studies**
 
 There is no profile for **Complex Studies** as they are a combination of any of features of these special study types. Classify the study as Complex when it uses a combination of Cycled, Bracketing or Matrixing in Testing. 
 
 - Any combination of two or more of the other types, for example cycled testing that takes adantage of matrix testing.
 - The required elements for any of the profiles used to report Complex studies will be required. For exmaple, a cycled matrixed testing scheme would require both CycledTestingPlanDefinition and MatrixedStudyEvidence.
+
+#### **Requiements Summary**
+| Study type      | ICH ref   | Protocol actions                                                | Sub-studies                                         | Interval reports                        | Grouping                                    |
+|-----------------|-----------|-----------------------------------------------------------------|------------------------------------------------------|-----------------------------------------|---------------------------------------------|
+| **Standard**    | Q1A(R2)   | Actions for long-term, intermediate, accelerated timepoints     | 3 sub-studies: one per storageCategory slice         | 1–n IntervalReports per sub-study       | n/a                                         |
+| **Photostability** | Q1B     | Actions specifying ICH Q1B light-exposure conditions             | 1 sub-study for photostability cell                  | IntervalReports at required intervals   | n/a                                         |
+| **Cycled**      | –         | Actions defining each cycle (e.g. freeze-thaw cycles)           | 1 sub-study per cycle, each with its own period      | Reports per cycle                       | optional via StabilityGroups                |
+| **Bracketing**  | Q1D       | May reuse Standard protocol actions but only extremes           | 2 sub-studies (high & low extremes)                  | Reports for each extreme                | Group both in a StabilityGroups instance    |
+| **Matrixing**   | Q1D       | Protocol actions as defined in Q1D for selecting subset         | Sub-studies for each selected cell in the matrix     | Reports per cell                        | Group all selected in StabilityGroups       |
 
 
 ### Representation in FHIR

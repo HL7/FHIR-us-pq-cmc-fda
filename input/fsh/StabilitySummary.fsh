@@ -42,6 +42,7 @@ Note: as defined by the sponsor
 * action.reason 1..2 MS
 * action.reason ^short = "Test Category | Test Subcategory"
 * action.reason ^definition = "A high level grouping of quality attributes for products, substances, raw materials, excipients, intermediates and reagents.  [Source: SME Defined]  Examples: Assay, Biological Properties."
+* action.reason.extension contains pq-hierarchical-level-extension named categoryLevel 1..1 MS
 * action.reason from PqcmcTestCategoryTerminology (required)
 * action.documentation 0..1 MS
 * action.documentation.type = http://hl7.org/fhir/related-artifact-type#documentation
