@@ -38,7 +38,6 @@
 <artifact deprecated="true" id="DocumentReference/0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3" key="DocumentReference-0382d6b1-b656-4e9a-b5c8-9110c4d3f6b3" name="Base64 Document Reference - Monosodium_D-thyroxine_hydrate.png"/>
 <artifact id="StructureDefinition/cmc-organization" key="StructureDefinition-cmc-organization" name="Basic Organization"/>
 <artifact id="StructureDefinition/pqcmc-batch-analysis" key="StructureDefinition-pqcmc-batch-analysis" name="Batch Analysis"/>
-<artifact id="Bundle/BatchAnalysisBundle" key="Bundle-BatchAnalysisBundle" name="Batch Analysis Bundle"/>
 <artifact id="StructureDefinition/pqcmc-batch-formula-product" key="StructureDefinition-pqcmc-batch-formula-product" name="Batch Formula Drug Product Identification"/>
 <artifact id="StructureDefinition/pq-batch-range" key="StructureDefinition-pq-batch-range" name="Batch Target Range"/>
 <artifact id="ValueSet/pqcmc-batch-utilization-terminology" key="ValueSet-pqcmc-batch-utilization-terminology" name="Batch Utilization"/>
@@ -143,6 +142,7 @@
 <artifact deprecated="true" id="Organization/4b565cf3-5353-48af-8cd6-5ccf4e9fd579" key="Organization-4b565cf3-5353-48af-8cd6-5ccf4e9fd579" name="Manufacturing Site (J. Jones Research)"/>
 <artifact deprecated="true" id="StructureDefinition/mfg-test-site-organization" key="StructureDefinition-mfg-test-site-organization" name="Manufacturing and/or Test Site Organization"/>
 <artifact id="ValueSet/pqcmc-mfg-testing-site-terminology" key="ValueSet-pqcmc-mfg-testing-site-terminology" name="Manufacturing/Testing Site Responsibility Category"/>
+<artifact id="StructureDefinition/markdown-reference" key="StructureDefinition-markdown-reference" name="Markdown Reference"/>
 <artifact id="ValueSet/pqcmc-non-percentage-units" key="ValueSet-pqcmc-non-percentage-units" name="Non-Percentage Units"/>
 <artifact deprecated="true" id="StructureDefinition/optional-denominator" key="StructureDefinition-optional-denominator" name="Optional Denominator"/>
 <artifact deprecated="true" id="ValueSet/pqcmc-org-identifier-type-terminology" key="ValueSet-pqcmc-org-identifier-type-terminology" name="Organization-Site Identifier Terminology"/>
@@ -181,6 +181,7 @@
 <artifact id="StructureDefinition/pq-result-summary" key="StructureDefinition-pq-result-summary" name="Result Summary"/>
 <artifact deprecated="true" id="StructureDefinition/pqcmc-routine-drug-product" key="StructureDefinition-pqcmc-routine-drug-product" name="Routine Drug Product"/>
 <artifact id="DocumentReference/de75e338-626c-4503-a25d-4fcdd8e39bee" key="DocumentReference-de75e338-626c-4503-a25d-4fcdd8e39bee" name="SDF File in a Structure Reference"/>
+<artifact id="Bundle/StabilitySummaryBundleWIP" key="Bundle-StabilitySummaryBundleWIP" name="SP7181 Bundle (WIP)"/>
 <artifact id="ValueSet/pqcmc-source-type-terminology" key="ValueSet-pqcmc-source-type-terminology" name="Source Type"/>
 <artifact id="StructureDefinition/pq-specification-status-extension" key="StructureDefinition-pq-specification-status-extension" name="Specification Current Status"/>
 <artifact id="ValueSet/cmc-specification-types-vs" key="ValueSet-cmc-specification-types-vs" name="Specification Section Type"/>
@@ -190,7 +191,7 @@
 <artifact deprecated="true" id="ValueSet/pqcmc-specification-type-terminology" key="ValueSet-pqcmc-specification-type-terminology" name="Specification Type Terminology"/>
 <artifact deprecated="true" id="StructureDefinition/cmc-sponsor-organization" key="StructureDefinition-cmc-sponsor-organization" name="Sponsor Organization"/>
 <artifact deprecated="true" id="Organization/b69435a0-45c6-4d44-9fde-b354e17408d7" key="Organization-b69435a0-45c6-4d44-9fde-b354e17408d7" name="Sponsor of API"/>
-<artifact id="StructureDefinition/stability-groups" key="StructureDefinition-stability-groups" name="Stability Cycle Groups Profile"/>
+<artifact id="StructureDefinition/stability-groups" key="StructureDefinition-stability-groups" name="Stability Groups Profile"/>
 <artifact id="StructureDefinition/pqcmc-stability-spec-summary" key="StructureDefinition-pqcmc-stability-spec-summary" name="Stability Specification Summary"/>
 <artifact id="StructureDefinition/pq-stability-study" key="StructureDefinition-pq-stability-study" name="Stability Study"/>
 <artifact id="StructureDefinition/pqcmc-stability-study-interval-report" key="StructureDefinition-pqcmc-stability-study-interval-report" name="Stability Study Interval Report"/>
@@ -210,7 +211,6 @@
 <artifact id="ValueSet/pqcmc-structure-data-types" key="ValueSet-pqcmc-structure-data-types" name="Structure Data Types"/>
 <artifact id="StructureDefinition/pq-timePoint-extension" key="StructureDefinition-pq-timePoint-extension" name="Study Interval"/>
 <artifact id="ValueSet/pqcmc-study-type-terminology" key="ValueSet-pqcmc-study-type-terminology" name="Study Type"/>
-<artifact id="Bundle/SubstanceBatchAnalysisBundle" key="Bundle-SubstanceBatchAnalysisBundle" name="Substance Batch Analysis Bundle (WIP)"/>
 <artifact id="ValueSet/substance-classification" key="ValueSet-substance-classification" name="Substance Classification"/>
 <artifact id="StructureDefinition/pqcmc-drug-substance-nomenclature-structure" key="StructureDefinition-pqcmc-drug-substance-nomenclature-structure" name="Substance General Information"/>
 <artifact id="ValueSet/pqcmc-substance-name-type" key="ValueSet-pqcmc-substance-name-type" name="Substance Name Type"/>

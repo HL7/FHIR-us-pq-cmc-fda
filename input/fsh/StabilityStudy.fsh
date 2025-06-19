@@ -209,6 +209,7 @@ Description: "A part of a Stability Study.  The role of the sub-study is determi
     * ^short = "Sub-Study End Date"
     * ^definition = """
       The date the study completes or terminates. [Source: SME Defined]
+    Note: If the StabilityStudy is cylced and the Sub-Study is includes data from a standard study, entet the last interval it was storeage was in that condition, not the last interval of the stanard study.
     """
 * whyStopped 0..1 MS
 * whyStopped only CodeableConceptTextOnly
@@ -471,12 +472,12 @@ Parent: Group
 Id: stability-groups
 Title: "Stability Groups Profile"
 Description: "Profile for defining groups of Stability Sub-Studies used in a cycled, matrixing and bracketing stability study."
-// * modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
-// * modifierExtension[member]
-//   * ^short = "Group members"
-//   * ^definition = "References to the Sub-Study resources that are part of this stability group, used for cycled study designs."
-//   * insert PQReference(valueReference)
-//   * valueReference only Reference(StabilitySubStudy)
+* modifierExtension contains pqcmc-stability-groups-medication-member named member 1..1 MS
+ * modifierExtension[member]
+   * ^short = "Group members"
+   * ^definition = "References to the Sub-Study resources that are part of this stability group, used for cycled study designs."
+   * insert PQReference(valueReference)
+   * valueReference only Reference(StabilitySubStudy)
 // Require group name
 * name 1..1 MS
   * ^short = "Label for the stability group"
